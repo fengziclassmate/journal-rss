@@ -28,7 +28,7 @@ https://fengziclassmate.github.io/journal-rss/grsm-early-access.xml
 - `https://ch.whu.edu.cn/showRssInfo.htm`：按 `/rss/{year}_{issue}.xml` 扫描 2020-2026 年 1-12 期，空期自动跳过。
 - `https://www.tandfonline.com/journals/tjde20`：Taylor & Francis RSS 不稳定，改用 Crossref 按 ISSN `1753-8955` 拉取 *International Journal of Digital Earth* 从 `2026-06-01` 到运行当天的 journal article，单独输出到 `ijde.xml`。
 - `https://www.sciencedirect.com/journal/pattern-recognition`：ScienceDirect 页面不直接抓取，改用 Crossref 按 ISSN `0031-3203` 拉取 *Pattern Recognition* 从 `2026-06-01` 到运行当天的 journal article，单独输出到 `pattern-recognition.xml`。
-- `https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286`：IEEE Xplore 页面不稳定，改用 Crossref 按 ISSN `2168-6831` 拉取 *IEEE Geoscience and Remote Sensing Magazine* 从 `2026-06-01` 到运行当天的 Early Access journal article，单独输出到 `grsm-early-access.xml`。
+- `https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286`：IEEE Xplore 页面不稳定，改用 Crossref 按 ISSN `2168-6831` 拉取 *IEEE Geoscience and Remote Sensing Magazine* 从 `2026-02-01` 到运行当天的 Early Access journal article，单独输出到 `grsm-early-access.xml`。
 
 建议定时任务每天运行一次即可，不要高频抓取。
 

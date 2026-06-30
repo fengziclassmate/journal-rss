@@ -70,7 +70,7 @@ CROSSREF_JOURNALS = [
         "source": "IEEE Geoscience and Remote Sensing Magazine Early Access",
         "issn": "2168-6831",
         "homepage": "https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286",
-        "from_date": "2026-06-01",
+        "from_date": "2026-02-01",
         "output": "grsm-early-access.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/grsm-early-access.xml",
         "feed_title": "GRSM Early Access RSS",
