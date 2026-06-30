@@ -638,6 +638,7 @@ def write_rss(
     feed_link: str,
     feed_description: str,
     max_items: int,
+    prefix_item_titles: bool = True,
 ) -> int:
     items = sorted(
         items,
@@ -662,7 +663,8 @@ def write_rss(
 
     for item in items:
         item_el = ET.SubElement(channel, "item")
-        ET.SubElement(item_el, "title").text = f"[{item.source}] {item.title}"
+        title = f"[{item.source}] {item.title}" if prefix_item_titles else item.title
+        ET.SubElement(item_el, "title").text = title
         ET.SubElement(item_el, "link").text = item.link
         ET.SubElement(item_el, "guid").text = item.guid or item.link
         ET.SubElement(item_el, "category").text = item.source
@@ -802,6 +804,7 @@ def main() -> int:
                 f"to the current run date."
             ),
             max_items=args.max_items,
+            prefix_item_titles=False,
         )
         log(f"[info] wrote {crossref_written} items to {journal_output}")
     return 0
