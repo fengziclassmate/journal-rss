@@ -28,6 +28,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Iterable
+from zoneinfo import ZoneInfo
 
 try:
     from bs4 import BeautifulSoup
@@ -46,6 +47,7 @@ DEFAULT_HEADERS = {
 }
 
 UTC = dt.timezone.utc
+RUN_TIMEZONE = ZoneInfo("Asia/Shanghai")
 
 CROSSREF_JOURNALS = [
     {
@@ -65,6 +67,15 @@ CROSSREF_JOURNALS = [
         "output": "pattern-recognition.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/pattern-recognition.xml",
         "feed_title": "Pattern Recognition RSS",
+    },
+    {
+        "source": "Sustainable Cities and Society",
+        "issn": "2210-6707",
+        "homepage": "https://www.sciencedirect.com/journal/sustainable-cities-and-society",
+        "from_date": "2026-06-01",
+        "output": "scs.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/scs.xml",
+        "feed_title": "Sustainable Cities and Society RSS",
     },
     {
         "source": "IEEE Geoscience and Remote Sensing Magazine Early Access",
@@ -496,7 +507,7 @@ def fetch_crossref_journal_items(
     issn = journal["issn"]
     base_url = f"https://api.crossref.org/journals/{issn}/works"
     from_date = journal.get("from_date") or f"{start_year}-01-01"
-    until_date = journal.get("until_date") or dt.datetime.now(UTC).date().isoformat()
+    until_date = journal.get("until_date") or dt.datetime.now(RUN_TIMEZONE).date().isoformat()
     date_filter_map = {
         "pub": ("from-pub-date", "until-pub-date", "published"),
         "published": ("from-pub-date", "until-pub-date", "published"),
