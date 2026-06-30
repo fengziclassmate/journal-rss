@@ -66,6 +66,18 @@ CROSSREF_JOURNALS = [
         "feed_link": "https://fengziclassmate.github.io/journal-rss/pattern-recognition.xml",
         "feed_title": "Pattern Recognition RSS",
     },
+    {
+        "source": "IEEE Geoscience and Remote Sensing Magazine Early Access",
+        "issn": "2168-6831",
+        "homepage": "https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286",
+        "from_date": "2026-06-01",
+        "output": "grsm-early-access.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/grsm-early-access.xml",
+        "feed_title": "GRSM Early Access RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
+        "early_access_only": "true",
+    },
 ]
 
 
@@ -419,18 +431,24 @@ def crossref_item_to_feed_item(
     *,
     source: str,
     source_url: str,
+    date_fields: list[str] | None = None,
 ) -> FeedItem | None:
     doi = str(item.get("DOI") or "").strip()
     title = clean_html_text(first_text(item.get("title")))
     if not title or not doi:
         return None
 
-    published = (
-        date_parts_to_datetime(item.get("published-online"))
-        or date_parts_to_datetime(item.get("published-print"))
-        or date_parts_to_datetime(item.get("published"))
-        or date_parts_to_datetime(item.get("created"))
-    )
+    date_fields = date_fields or [
+        "published-online",
+        "published-print",
+        "published",
+        "created",
+    ]
+    published = None
+    for field in date_fields:
+        published = date_parts_to_datetime(item.get(field))
+        if published:
+            break
     link = str(item.get("URL") or "").strip() or f"https://doi.org/{doi}"
     container = clean_html_text(first_text(item.get("container-title")))
     volume = str(item.get("volume") or "").strip()
@@ -479,6 +497,26 @@ def fetch_crossref_journal_items(
     base_url = f"https://api.crossref.org/journals/{issn}/works"
     from_date = journal.get("from_date") or f"{start_year}-01-01"
     until_date = journal.get("until_date") or dt.datetime.now(UTC).date().isoformat()
+    date_filter_map = {
+        "pub": ("from-pub-date", "until-pub-date", "published"),
+        "published": ("from-pub-date", "until-pub-date", "published"),
+        "created": ("from-created-date", "until-created-date", "created"),
+        "deposit": ("from-deposit-date", "until-deposit-date", "deposited"),
+        "deposited": ("from-deposit-date", "until-deposit-date", "deposited"),
+    }
+    from_filter, until_filter, sort_field = date_filter_map.get(
+        journal.get("date_filter", "pub"),
+        date_filter_map["pub"],
+    )
+    date_fields = [
+        field.strip()
+        for field in journal.get(
+            "date_fields",
+            "published-online,published-print,published,created",
+        ).split(",")
+        if field.strip()
+    ]
+    early_access_only = journal.get("early_access_only", "").lower() == "true"
     cursor = "*"
     rows = 1000
     collected: list[FeedItem] = []
@@ -487,11 +525,11 @@ def fetch_crossref_journal_items(
     while True:
         params = {
             "filter": (
-                f"from-pub-date:{from_date},"
-                f"until-pub-date:{until_date},"
+                f"{from_filter}:{from_date},"
+                f"{until_filter}:{until_date},"
                 "type:journal-article"
             ),
-            "sort": "published",
+            "sort": sort_field,
             "order": "desc",
             "rows": str(rows),
             "cursor": cursor,
@@ -509,10 +547,13 @@ def fetch_crossref_journal_items(
             total_results = int(message.get("total-results") or 0)
         items = message.get("items") or []
         for item in items:
+            if early_access_only and (item.get("volume") or item.get("issue")):
+                continue
             feed_item = crossref_item_to_feed_item(
                 item,
                 source=source,
                 source_url=journal.get("homepage", base_url),
+                date_fields=date_fields,
             )
             if feed_item:
                 collected.append(feed_item)
