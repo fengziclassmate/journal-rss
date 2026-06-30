@@ -16,6 +16,7 @@ import datetime as dt
 import email.utils
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -45,6 +46,27 @@ DEFAULT_HEADERS = {
 }
 
 UTC = dt.timezone.utc
+
+CROSSREF_JOURNALS = [
+    {
+        "source": "International Journal of Digital Earth",
+        "issn": "1753-8955",
+        "homepage": "https://www.tandfonline.com/journals/tjde20",
+        "from_date": "2026-06-01",
+        "output": "ijde.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/ijde.xml",
+        "feed_title": "International Journal of Digital Earth RSS",
+    },
+    {
+        "source": "Pattern Recognition",
+        "issn": "0031-3203",
+        "homepage": "https://www.sciencedirect.com/journal/pattern-recognition",
+        "from_date": "2026-06-01",
+        "output": "pattern-recognition.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/pattern-recognition.xml",
+        "feed_title": "Pattern Recognition RSS",
+    },
+]
 
 
 @dataclasses.dataclass
@@ -157,6 +179,36 @@ def issue_to_datetime(year: int | None, issue: str | int | None) -> dt.datetime 
     month = int(match.group(0)) if match else 1
     month = min(max(month, 1), 12)
     return dt.datetime(int(year), month, 1, tzinfo=UTC)
+
+
+def date_parts_to_datetime(value: dict[str, object] | None) -> dt.datetime | None:
+    if not value:
+        return None
+    date_parts = value.get("date-parts")
+    if not date_parts or not isinstance(date_parts, list) or not date_parts[0]:
+        return None
+    parts = list(date_parts[0])
+    try:
+        year = int(parts[0])
+        month = int(parts[1]) if len(parts) > 1 else 1
+        day = int(parts[2]) if len(parts) > 2 else 1
+        return dt.datetime(year, month, day, tzinfo=UTC)
+    except (TypeError, ValueError):
+        return None
+
+
+def clean_html_text(value: str) -> str:
+    value = html.unescape(value or "")
+    soup = BeautifulSoup(value, "html.parser")
+    return " ".join(soup.get_text(" ", strip=True).split())
+
+
+def first_text(value: object) -> str:
+    if isinstance(value, list) and value:
+        return str(value[0])
+    if isinstance(value, str):
+        return value
+    return ""
 
 
 def parse_year_issue_from_text(text: str) -> tuple[int | None, str | None]:
@@ -347,6 +399,135 @@ def fetch_ch_whu_feed(year: int, issue: int) -> list[FeedItem]:
     )
 
 
+def crossref_author_text(authors: list[dict[str, object]] | None) -> str:
+    if not authors:
+        return ""
+    names: list[str] = []
+    for author in authors[:8]:
+        given = str(author.get("given") or "").strip()
+        family = str(author.get("family") or "").strip()
+        name = " ".join(part for part in [given, family] if part)
+        if name:
+            names.append(name)
+    if authors and len(authors) > 8:
+        names.append("et al.")
+    return ", ".join(names)
+
+
+def crossref_item_to_feed_item(
+    item: dict[str, object],
+    *,
+    source: str,
+    source_url: str,
+) -> FeedItem | None:
+    doi = str(item.get("DOI") or "").strip()
+    title = clean_html_text(first_text(item.get("title")))
+    if not title or not doi:
+        return None
+
+    published = (
+        date_parts_to_datetime(item.get("published-online"))
+        or date_parts_to_datetime(item.get("published-print"))
+        or date_parts_to_datetime(item.get("published"))
+        or date_parts_to_datetime(item.get("created"))
+    )
+    link = str(item.get("URL") or "").strip() or f"https://doi.org/{doi}"
+    container = clean_html_text(first_text(item.get("container-title")))
+    volume = str(item.get("volume") or "").strip()
+    issue = str(item.get("issue") or "").strip()
+    page = str(item.get("page") or "").strip()
+    authors = crossref_author_text(item.get("author"))
+    abstract = clean_html_text(str(item.get("abstract") or ""))
+
+    details: list[str] = []
+    if authors:
+        details.append(authors)
+    citation_bits = [container]
+    if volume:
+        citation_bits.append(f"vol. {volume}")
+    if issue:
+        citation_bits.append(f"issue {issue}")
+    if page:
+        citation_bits.append(f"pp. {page}")
+    citation = ", ".join(bit for bit in citation_bits if bit)
+    if citation:
+        details.append(citation)
+    details.append(f"DOI: {doi}")
+    if abstract:
+        details.append(abstract)
+
+    return FeedItem(
+        source=source,
+        title=title,
+        link=link,
+        description="<br/>".join(details),
+        published=published,
+        guid=doi,
+        source_url=source_url,
+    )
+
+
+def fetch_crossref_journal_items(
+    journal: dict[str, str],
+    *,
+    start_year: int,
+    end_year: int,
+    mailto: str,
+) -> list[FeedItem]:
+    source = journal["source"]
+    issn = journal["issn"]
+    base_url = f"https://api.crossref.org/journals/{issn}/works"
+    from_date = journal.get("from_date") or f"{start_year}-01-01"
+    until_date = journal.get("until_date") or dt.datetime.now(UTC).date().isoformat()
+    cursor = "*"
+    rows = 1000
+    collected: list[FeedItem] = []
+    total_results: int | None = None
+
+    while True:
+        params = {
+            "filter": (
+                f"from-pub-date:{from_date},"
+                f"until-pub-date:{until_date},"
+                "type:journal-article"
+            ),
+            "sort": "published",
+            "order": "desc",
+            "rows": str(rows),
+            "cursor": cursor,
+            "mailto": mailto,
+        }
+        url = base_url + "?" + urllib.parse.urlencode(params)
+        headers = {
+            "Accept": "application/json",
+            "User-Agent": f"journal-rss-aggregator/1.0 (mailto:{mailto})",
+        }
+        raw = fetch_bytes(url, headers=headers, timeout=60, retries=3)
+        data = json.loads(raw.decode("utf-8"))
+        message = data.get("message", {})
+        if total_results is None:
+            total_results = int(message.get("total-results") or 0)
+        items = message.get("items") or []
+        for item in items:
+            feed_item = crossref_item_to_feed_item(
+                item,
+                source=source,
+                source_url=journal.get("homepage", base_url),
+            )
+            if feed_item:
+                collected.append(feed_item)
+
+        if not items or len(collected) >= total_results:
+            break
+        next_cursor = message.get("next-cursor")
+        if not next_cursor or next_cursor == cursor:
+            break
+        cursor = str(next_cursor)
+        time.sleep(1.2)
+
+    return collected
+
+
 def collect_parallel(
     jobs: Iterable[object],
     fetcher,
@@ -509,6 +690,16 @@ def main() -> int:
     parser.add_argument("--feed-link", default="https://example.com/feed.xml")
     parser.add_argument("--max-items", type=int, default=5000)
     parser.add_argument("--workers", type=int, default=5)
+    parser.add_argument(
+        "--crossref-mailto",
+        default=os.environ.get("CROSSREF_MAILTO", "rss@example.com"),
+        help="Email used for Crossref polite API requests.",
+    )
+    parser.add_argument(
+        "--crossref-output-dir",
+        default=None,
+        help="Directory for separate Crossref journal feeds. Defaults to the main output directory.",
+    )
     args = parser.parse_args()
 
     all_items: list[FeedItem] = []
@@ -563,8 +754,9 @@ def main() -> int:
         feed_title="Journal RSS Aggregator",
         feed_link=args.feed_link,
         feed_description=(
-            f"Combined journal feed for dqxxkx current issue and "
-            f"ygxb/ch.whu issues from {args.start_year} to {args.end_year}."
+            f"Combined journal feed for dqxxkx current issue, "
+            f"ygxb/ch.whu issues, and configured Crossref journals "
+            f"from configured date ranges."
         ),
         max_items=args.max_items,
     )
@@ -572,6 +764,46 @@ def main() -> int:
         f"[info] wrote {written_count} items to {args.output} "
         f"({len(final_items)} unique items collected)"
     )
+
+    crossref_output_dir = (
+        Path(args.crossref_output_dir)
+        if args.crossref_output_dir
+        else output_path.parent
+    )
+    for journal in CROSSREF_JOURNALS:
+        source = journal["source"]
+        journal_output = crossref_output_dir / journal["output"]
+        log(f"[info] crossref: fetching {source}")
+        try:
+            crossref_items = fetch_crossref_journal_items(
+                journal,
+                start_year=args.start_year,
+                end_year=args.end_year,
+                mailto=args.crossref_mailto,
+            )
+            log(f"[info] crossref: {source}: {len(crossref_items)} items")
+        except Exception as exc:  # noqa: BLE001
+            log(f"[warn] crossref failed for {source}: {exc}")
+            crossref_items = read_existing_feed_items(journal_output)
+            if crossref_items:
+                log(
+                    f"[info] preserved {len(crossref_items)} existing "
+                    f"{source} items from {journal_output}"
+                )
+
+        crossref_items = dedupe_items(crossref_items)
+        crossref_written = write_rss(
+            crossref_items,
+            journal_output,
+            feed_title=journal.get("feed_title", f"{source} RSS"),
+            feed_link=journal["feed_link"],
+            feed_description=(
+                f"{source} articles from {journal.get('from_date', f'{args.start_year}-01-01')} "
+                f"to the current run date."
+            ),
+            max_items=args.max_items,
+        )
+        log(f"[info] wrote {crossref_written} items to {journal_output}")
     return 0
 
 
