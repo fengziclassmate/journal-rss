@@ -21,4 +21,6 @@ https://fengziclassmate.github.io/journal-rss/feed.xml
 
 建议定时任务每天运行一次即可，不要高频抓取。
 
-本仓库已包含 GitHub Actions 工作流 `.github/workflows/update-feed.yml`，默认每天北京时间 06:20 自动刷新，也可以在 GitHub 的 Actions 页面手动运行。
+本仓库已包含 GitHub Actions 工作流 `.github/workflows/update-feed.yml`，默认每天北京时间 06:20 自动刷新并部署 GitHub Pages，也可以在 GitHub 的 Actions 页面手动运行。
+
+如果 Pages 首次访问仍然是 404，请到仓库 `Settings -> Pages`，把 `Build and deployment -> Source` 设为 `GitHub Actions`。
