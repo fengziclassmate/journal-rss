@@ -110,6 +110,18 @@ CROSSREF_JOURNALS = [
         "date_fields": "created,deposited,published-online,published-print,published",
         "early_access_only": "true",
     },
+    {
+        "source": "IEEE Transactions on Pattern Analysis and Machine Intelligence Early Access",
+        "issn": "0162-8828",
+        "homepage": "https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=4359286",
+        "from_date": "2025-01-01",
+        "output": "tpami-early-access.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/tpami-early-access.xml",
+        "feed_title": "TPAMI Early Access RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
+        "early_access_only": "true",
+    },
 ]
 
 
