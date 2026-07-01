@@ -78,6 +78,15 @@ CROSSREF_JOURNALS = [
         "feed_title": "Sustainable Cities and Society RSS",
     },
     {
+        "source": "Applied Soft Computing",
+        "issn": "1568-4946",
+        "homepage": "https://www.sciencedirect.com/journal/applied-soft-computing",
+        "from_date": "2026-06-01",
+        "output": "asc.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/asc.xml",
+        "feed_title": "Applied Soft Computing RSS",
+    },
+    {
         "source": "IEEE Geoscience and Remote Sensing Magazine Early Access",
         "issn": "2168-6831",
         "homepage": "https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286",
