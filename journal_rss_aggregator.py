@@ -98,6 +98,18 @@ CROSSREF_JOURNALS = [
         "date_fields": "created,deposited,published-online,published-print,published",
         "early_access_only": "true",
     },
+    {
+        "source": "IEEE Transactions on Geoscience and Remote Sensing Early Access",
+        "issn": "0196-2892",
+        "homepage": "https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=4358825",
+        "from_date": "2026-03-01",
+        "output": "tgrs-early-access.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/tgrs-early-access.xml",
+        "feed_title": "TGRS Early Access RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
+        "early_access_only": "true",
+    },
 ]
 
 

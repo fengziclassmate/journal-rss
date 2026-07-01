@@ -21,6 +21,7 @@ https://fengziclassmate.github.io/journal-rss/pattern-recognition.xml
 https://fengziclassmate.github.io/journal-rss/scs.xml
 https://fengziclassmate.github.io/journal-rss/asc.xml
 https://fengziclassmate.github.io/journal-rss/grsm-early-access.xml
+https://fengziclassmate.github.io/journal-rss/tgrs-early-access.xml
 ```
 
 当前抓取规则：
@@ -33,6 +34,7 @@ https://fengziclassmate.github.io/journal-rss/grsm-early-access.xml
 - `https://www.sciencedirect.com/journal/sustainable-cities-and-society`：ScienceDirect 页面不直接抓取，改用 Crossref 按 ISSN `2210-6707` 拉取 *Sustainable Cities and Society* 从 `2026-06-01` 到运行当天的 journal article，单独输出到 `scs.xml`。
 - `https://www.sciencedirect.com/journal/applied-soft-computing`：ScienceDirect 页面不直接抓取，改用 Crossref 按 ISSN `1568-4946` 拉取 *Applied Soft Computing* 从 `2026-06-01` 到运行当天的 journal article，单独输出到 `asc.xml`。
 - `https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286`：IEEE Xplore 页面不稳定，改用 Crossref 按 ISSN `2168-6831` 拉取 *IEEE Geoscience and Remote Sensing Magazine* 从 `2026-02-01` 到运行当天的 Early Access journal article，单独输出到 `grsm-early-access.xml`。
+- `https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=4358825`：IEEE Xplore 页面不稳定，改用 Crossref 按 ISSN `0196-2892` 拉取 *IEEE Transactions on Geoscience and Remote Sensing* 从 `2026-03-01` 到运行当天的 Early Access journal article，单独输出到 `tgrs-early-access.xml`。
 
 建议定时任务每天运行一次即可，不要高频抓取。
 
