@@ -658,6 +658,7 @@ def fetch_crossref_journal_items(
     rows = 1000
     collected: list[FeedItem] = []
     current_issue_candidates: list[tuple[tuple[int, int, int, str, str], tuple[str, str], FeedItem]] = []
+    current_issue_target: tuple[str, str] | None = None
     total_results: int | None = None
 
     while True:
@@ -684,6 +685,7 @@ def fetch_crossref_journal_items(
         if total_results is None:
             total_results = int(message.get("total-results") or 0)
         items = message.get("items") or []
+        page_current_issue_keys: set[tuple[str, str]] = set()
         for item in items:
             if early_access_only and (item.get("volume") or item.get("issue")):
                 continue
@@ -698,6 +700,7 @@ def fetch_crossref_journal_items(
             if feed_item and current_issue_only:
                 issue_key = crossref_formal_issue_key(item)
                 if issue_key:
+                    page_current_issue_keys.add(issue_key)
                     current_issue_candidates.append(
                         (
                             crossref_formal_issue_sort_key(item, feed_item.published),
@@ -710,6 +713,15 @@ def fetch_crossref_journal_items(
 
         if not items or len(collected) >= total_results:
             break
+        if current_issue_only and current_issue_candidates:
+            newest_candidate = max(
+                current_issue_candidates,
+                key=lambda candidate: candidate[0],
+            )
+            if current_issue_target is None:
+                current_issue_target = newest_candidate[1]
+            elif current_issue_target not in page_current_issue_keys:
+                break
         next_cursor = message.get("next-cursor")
         if not next_cursor or next_cursor == cursor:
             break
