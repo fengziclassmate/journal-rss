@@ -122,6 +122,76 @@ CROSSREF_JOURNALS = [
         "date_fields": "created,deposited,published-online,published-print,published",
         "early_access_only": "true",
     },
+    {
+        "source": "International Journal of Digital Earth Current Issue",
+        "issn": "1753-8955",
+        "homepage": "https://www.tandfonline.com/journals/tjde20",
+        "from_date": "2025-01-01",
+        "output": "ijde-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/ijde-current-issue.xml",
+        "feed_title": "International Journal of Digital Earth Current Issue RSS",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "Pattern Recognition Current Issue",
+        "issn": "0031-3203",
+        "homepage": "https://www.sciencedirect.com/journal/pattern-recognition",
+        "from_date": "2025-01-01",
+        "output": "pattern-recognition-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/pattern-recognition-current-issue.xml",
+        "feed_title": "Pattern Recognition Current Issue RSS",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "Sustainable Cities and Society Current Issue",
+        "issn": "2210-6707",
+        "homepage": "https://www.sciencedirect.com/journal/sustainable-cities-and-society",
+        "from_date": "2025-01-01",
+        "output": "scs-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/scs-current-issue.xml",
+        "feed_title": "Sustainable Cities and Society Current Issue RSS",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "Applied Soft Computing Current Issue",
+        "issn": "1568-4946",
+        "homepage": "https://www.sciencedirect.com/journal/applied-soft-computing",
+        "from_date": "2025-01-01",
+        "output": "asc-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/asc-current-issue.xml",
+        "feed_title": "Applied Soft Computing Current Issue RSS",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "IEEE Geoscience and Remote Sensing Magazine Current Issue",
+        "issn": "2168-6831",
+        "homepage": "https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6245518",
+        "from_date": "2025-01-01",
+        "output": "grsm-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/grsm-current-issue.xml",
+        "feed_title": "GRSM Current Issue RSS",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "IEEE Transactions on Geoscience and Remote Sensing Current Issue",
+        "issn": "0196-2892",
+        "homepage": "https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=36",
+        "from_date": "2025-01-01",
+        "output": "tgrs-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/tgrs-current-issue.xml",
+        "feed_title": "TGRS Current Issue RSS",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "IEEE Transactions on Pattern Analysis and Machine Intelligence Current Issue",
+        "issn": "0162-8828",
+        "homepage": "https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=34",
+        "from_date": "2025-01-01",
+        "output": "tpami-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/tpami-current-issue.xml",
+        "feed_title": "TPAMI Current Issue RSS",
+        "current_issue_only": "true",
+    },
 ]
 
 
@@ -251,6 +321,28 @@ def date_parts_to_datetime(value: dict[str, object] | None) -> dt.datetime | Non
         return dt.datetime(year, month, day, tzinfo=UTC)
     except (TypeError, ValueError):
         return None
+
+
+def first_int(value: object) -> int:
+    match = re.search(r"\d+", str(value or ""))
+    return int(match.group(0)) if match else -1
+
+
+def crossref_formal_issue_key(item: dict[str, object]) -> tuple[str, str] | None:
+    volume = str(item.get("volume") or "").strip()
+    issue = str(item.get("issue") or "").strip()
+    if not volume:
+        return None
+    return volume, issue
+
+
+def crossref_formal_issue_sort_key(
+    item: dict[str, object],
+    published: dt.datetime | None,
+) -> tuple[int, int, int, str, str]:
+    volume, issue = crossref_formal_issue_key(item) or ("", "")
+    date_key = published.toordinal() if published else 0
+    return (date_key, first_int(volume), first_int(issue), volume, issue)
 
 
 def clean_html_text(value: str) -> str:
@@ -561,9 +653,11 @@ def fetch_crossref_journal_items(
         if field.strip()
     ]
     early_access_only = journal.get("early_access_only", "").lower() == "true"
+    current_issue_only = journal.get("current_issue_only", "").lower() == "true"
     cursor = "*"
     rows = 1000
     collected: list[FeedItem] = []
+    current_issue_candidates: list[tuple[tuple[int, int, int, str, str], tuple[str, str], FeedItem]] = []
     total_results: int | None = None
 
     while True:
@@ -593,13 +687,25 @@ def fetch_crossref_journal_items(
         for item in items:
             if early_access_only and (item.get("volume") or item.get("issue")):
                 continue
+            if current_issue_only and not crossref_formal_issue_key(item):
+                continue
             feed_item = crossref_item_to_feed_item(
                 item,
                 source=source,
                 source_url=journal.get("homepage", base_url),
                 date_fields=date_fields,
             )
-            if feed_item:
+            if feed_item and current_issue_only:
+                issue_key = crossref_formal_issue_key(item)
+                if issue_key:
+                    current_issue_candidates.append(
+                        (
+                            crossref_formal_issue_sort_key(item, feed_item.published),
+                            issue_key,
+                            feed_item,
+                        )
+                    )
+            elif feed_item:
                 collected.append(feed_item)
 
         if not items or len(collected) >= total_results:
@@ -609,6 +715,19 @@ def fetch_crossref_journal_items(
             break
         cursor = str(next_cursor)
         time.sleep(1.2)
+
+    if current_issue_only:
+        if not current_issue_candidates:
+            return []
+        target_issue_key = max(
+            current_issue_candidates,
+            key=lambda candidate: candidate[0],
+        )[1]
+        return [
+            feed_item
+            for _, issue_key, feed_item in current_issue_candidates
+            if issue_key == target_issue_key
+        ]
 
     return collected
 
@@ -885,8 +1004,12 @@ def main() -> int:
             feed_title=journal.get("feed_title", f"{source} RSS"),
             feed_link=journal["feed_link"],
             feed_description=(
-                f"{source} articles from {journal.get('from_date', f'{args.start_year}-01-01')} "
-                f"to the current run date."
+                f"{source} current formal issue articles."
+                if journal.get("current_issue_only", "").lower() == "true"
+                else (
+                    f"{source} articles from {journal.get('from_date', f'{args.start_year}-01-01')} "
+                    f"to the current run date."
+                )
             ),
             max_items=args.max_items,
             prefix_item_titles=False,

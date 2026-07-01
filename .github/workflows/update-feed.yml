@@ -47,12 +47,12 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update RSS feed"
-          file_pattern: feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml
+          file_pattern: feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml
 
       - name: Prepare Pages artifact
         run: |
           mkdir -p _site
-          cp feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml index.html .nojekyll _site/
+          cp feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml index.html .nojekyll _site/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
