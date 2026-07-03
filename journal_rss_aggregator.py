@@ -98,6 +98,17 @@ CROSSREF_JOURNALS = [
         "date_fields": "created,deposited,published-online,published-print,published",
     },
     {
+        "source": "Computers, Environment and Urban Systems",
+        "issn": "0198-9715",
+        "homepage": "https://www.sciencedirect.com/journal/computers-environment-and-urban-systems",
+        "from_date": "2026-06-01",
+        "output": "ceus.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/ceus.xml",
+        "feed_title": "CEUS RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
+    },
+    {
         "source": "IEEE Geoscience and Remote Sensing Magazine Early Access",
         "issn": "2168-6831",
         "homepage": "https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286",
@@ -181,6 +192,18 @@ CROSSREF_JOURNALS = [
         "output": "cities-current-issue.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/cities-current-issue.xml",
         "feed_title": "Cities Current Issue RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "Computers, Environment and Urban Systems Current Issue",
+        "issn": "0198-9715",
+        "homepage": "https://www.sciencedirect.com/journal/computers-environment-and-urban-systems/vol/129/suppl/C",
+        "from_date": "2026-06-01",
+        "output": "ceus-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/ceus-current-issue.xml",
+        "feed_title": "CEUS Current Issue RSS",
         "date_filter": "created",
         "date_fields": "created,deposited,published-online,published-print,published",
         "current_issue_only": "true",
@@ -663,8 +686,9 @@ def fetch_crossref_journal_items(
         "deposit": ("from-deposit-date", "until-deposit-date", "deposited"),
         "deposited": ("from-deposit-date", "until-deposit-date", "deposited"),
     }
+    date_filter = journal.get("date_filter", "pub")
     from_filter, until_filter, sort_field = date_filter_map.get(
-        journal.get("date_filter", "pub"),
+        date_filter,
         date_filter_map["pub"],
     )
     date_fields = [
@@ -681,7 +705,6 @@ def fetch_crossref_journal_items(
     rows = 1000
     collected: list[FeedItem] = []
     current_issue_candidates: list[tuple[tuple[int, int, int, str, str], tuple[str, str], FeedItem]] = []
-    current_issue_target: tuple[str, str] | None = None
     total_results: int | None = None
 
     while True:
@@ -708,7 +731,6 @@ def fetch_crossref_journal_items(
         if total_results is None:
             total_results = int(message.get("total-results") or 0)
         items = message.get("items") or []
-        page_current_issue_keys: set[tuple[str, str]] = set()
         for item in items:
             if early_access_only and (item.get("volume") or item.get("issue")):
                 continue
@@ -723,7 +745,6 @@ def fetch_crossref_journal_items(
             if feed_item and current_issue_only:
                 issue_key = crossref_formal_issue_key(item)
                 if issue_key:
-                    page_current_issue_keys.add(issue_key)
                     current_issue_candidates.append(
                         (
                             crossref_formal_issue_sort_key(item, feed_item.published),
@@ -736,15 +757,6 @@ def fetch_crossref_journal_items(
 
         if not items or len(collected) >= total_results:
             break
-        if current_issue_only and current_issue_candidates:
-            newest_candidate = max(
-                current_issue_candidates,
-                key=lambda candidate: candidate[0],
-            )
-            if current_issue_target is None:
-                current_issue_target = newest_candidate[1]
-            elif current_issue_target not in page_current_issue_keys:
-                break
         next_cursor = message.get("next-cursor")
         if not next_cursor or next_cursor == cursor:
             break
