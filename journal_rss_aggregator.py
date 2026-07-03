@@ -58,6 +58,8 @@ CROSSREF_JOURNALS = [
         "output": "ijde.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/ijde.xml",
         "feed_title": "International Journal of Digital Earth RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
     },
     {
         "source": "Pattern Recognition",
@@ -67,6 +69,8 @@ CROSSREF_JOURNALS = [
         "output": "pattern-recognition.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/pattern-recognition.xml",
         "feed_title": "Pattern Recognition RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
     },
     {
         "source": "Sustainable Cities and Society",
@@ -76,6 +80,8 @@ CROSSREF_JOURNALS = [
         "output": "scs.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/scs.xml",
         "feed_title": "Sustainable Cities and Society RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
     },
     {
         "source": "Applied Soft Computing",
@@ -85,6 +91,8 @@ CROSSREF_JOURNALS = [
         "output": "asc.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/asc.xml",
         "feed_title": "Applied Soft Computing RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
     },
     {
         "source": "Applied Geography",
