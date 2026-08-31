@@ -967,6 +967,7 @@ def write_rss(
     feed_description: str,
     max_items: int,
     prefix_item_titles: bool = True,
+    feed_language: str = "zh-CN",
 ) -> int:
     items = sorted(
         items,
@@ -980,7 +981,7 @@ def write_rss(
     ET.SubElement(channel, "title").text = feed_title
     ET.SubElement(channel, "link").text = feed_link
     ET.SubElement(channel, "description").text = feed_description
-    ET.SubElement(channel, "language").text = "zh-CN"
+    ET.SubElement(channel, "language").text = feed_language
     ET.SubElement(channel, "lastBuildDate").text = email.utils.format_datetime(
         dt.datetime.now(UTC)
     )
@@ -994,7 +995,7 @@ def write_rss(
         title = f"[{item.source}] {item.title}" if prefix_item_titles else item.title
         ET.SubElement(item_el, "title").text = title
         ET.SubElement(item_el, "link").text = item.link
-        ET.SubElement(item_el, "guid").text = item.guid or item.link
+        ET.SubElement(item_el, "guid", isPermaLink="false").text = item.guid or item.link
         ET.SubElement(item_el, "category").text = item.source
         if item.description:
             ET.SubElement(item_el, "description").text = item.description
@@ -1137,6 +1138,7 @@ def main() -> int:
             ),
             max_items=args.max_items,
             prefix_item_titles=False,
+            feed_language="en",
         )
         log(f"[info] wrote {crossref_written} items to {journal_output}")
     return 0

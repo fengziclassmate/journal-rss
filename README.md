@@ -1,5 +1,7 @@
 # Journal RSS Aggregator
 
+Zotero 订阅重复标记、标题译文缓存与已读归档见 [Journal RSS Memory](zotero-feed-memory/README.md)。这些个人状态只保存在本机，不随公开 RSS 发布。英文期刊的语言标记为 `en`，中文汇总为 `zh-CN`。
+
 这个目录里有一个可直接运行的 RSS 聚合脚本：
 
 ```bash
