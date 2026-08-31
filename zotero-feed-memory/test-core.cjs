@@ -73,3 +73,18 @@ test('marking unread does not restore an older read timestamp from another subsc
   m.observe(item({readAt:3000}));
   assert.equal(r.readAt,3000);
 });
+test('skipped Chinese titles and deferred failures do not starve English translations', () => {
+  const titles=[...Array(25).fill('地理信息研究方法'),item().title];
+  assert.deepEqual(titles.filter(t=>C.translationDue(t,'zh')), [item().title]);
+  assert.equal(C.translationDue(item().title,'zh','',2000,1000),false);
+  assert.equal(C.translationDue(item().title,'zh','',2000,3000),true);
+});
+test('a reused homepage does not collapse different articles or conflicting DOIs', () => {
+  const m=memory();
+  const a=m.observe(item({guid:'first',url:'https://example.com',title:'First article on regional planning and geographical modelling'}));
+  const b=m.observe(item({guid:'second',url:'https://example.com',title:'Second article on regional planning and geographical modelling'}));
+  assert.notEqual(a.key,b.key);
+  const c=m.observe(item({guid:'first',url:'https://example.com',doi:'10.1234/a'}));
+  const d=m.observe(item({guid:'first',url:'https://example.com',doi:'10.1234/b'}));
+  assert.notEqual(c.key,d.key);
+});

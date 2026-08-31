@@ -19,6 +19,13 @@ async function startup() {
     const feed = new Zotero.Feed({ name: 'Smoke custom feed', url: 'https://example.invalid/smoke.xml',
       refreshInterval: 100000, cleanupReadAfter: 30, cleanupUnreadAfter: 90 });
     await feed.saveTx();
+    for(let i=0;i<25;i++) {
+      const chinese=new Zotero.FeedItem('journalArticle');
+      chinese.libraryID=feed.id; chinese.guid='smoke-zh-'+i;
+      chinese.setField('title','城市空间信息研究方法 '+i);
+      chinese.setField('url','https://example.invalid/chinese/'+i);
+      await chinese.saveTx();
+    }
     let item = new Zotero.FeedItem('journalArticle');
     item.libraryID = feed.id;
     item.guid = '10.1016/smoke2026';
@@ -28,7 +35,7 @@ async function startup() {
     await Zotero.JournalRSSMemory.runOnce();
     // Startup background work may already own the serial worker.
     for(let i=0;i<100 && !item.getField('extra').includes('测试译文');i++) await Zotero.Promise.delay(100);
-    check(item.getField('extra').includes('测试译文'), 'automatic title translation');
+    check(item.getField('extra').includes('测试译文'), 'English title translated despite 25 preceding Chinese titles');
     check(calls === 1, 'one service request');
     item.fromJSON({ itemType:'journalArticle', title:item.getField('title'), url:item.getField('url'), date:'2026-08-31' });
     await item.saveTx();

@@ -168,12 +168,8 @@ var RSSMemoryAddon = (() => {
   }
   async function translateOne(item) {
     const title = field(item, "title"), language = target();
-    if (!title || memory.translation(title, language)) return;
-    const letters = (title.match(/[A-Za-z]/g) || []).length;
-    const han = (title.match(/[\u3400-\u9fff]/g) || []).length;
-    if (language.startsWith("zh") && han > letters) return;
     const key = C.translationKey(title, language);
-    if ((retries.get(key) || 0) > Date.now()) return;
+    if (!C.translationDue(title, language, memory.translation(title, language), retries.get(key))) return;
     if (!Zotero.PDFTranslate?.api?.translate) { lastError = "Translate for Zotero 未启用"; return; }
     if (serviceBusy) return;
     serviceBusy = true;
@@ -209,7 +205,9 @@ var RSSMemoryAddon = (() => {
       for (const { item } of snapshots) {
         if (!alive || !enabled() || count >= 20) break;
         const title = field(item, "title");
-        if (memory.translation(title, target()) || seen.has(C.titleKey(title))) continue;
+        if (!C.translationDue(title, target(), memory.translation(title, target()),
+          retries.get(C.translationKey(title, target()))) || seen.has(C.titleKey(title))) continue;
+        if (serviceBusy) break;
         if (!await Zotero.Items.getAsync(item.id)) continue;
         seen.add(C.titleKey(title));
         try { await translateOne(item); } catch (error) { log(error); retries.set(C.translationKey(title, target()), Date.now() + 3600000); }

@@ -6,6 +6,12 @@
   const titleKey = value => String(value || "").normalize("NFKC").replace(/\s+/g, " ").trim();
   const langKey = value => String(value || "zh").toLowerCase().replace(/_/g, "-");
   const translationKey = (title, language) => JSON.stringify([langKey(language), titleKey(title)]);
+  function translationDue(title, language, cachedText = "", retryAt = 0, now = Date.now()) {
+    if (!titleKey(title) || cachedText || retryAt > now) return false;
+    const letters = (title.match(/[A-Za-z]/g) || []).length;
+    const han = (title.match(/[\u3400-\u9fff]/g) || []).length;
+    return !(langKey(language).startsWith("zh") && han > letters);
+  }
   function safeURL(value) {
     try {
       const url = new URL(value);
@@ -21,7 +27,7 @@
   function identifiers(item) {
     const text = [item.doi, item.guid, item.url, item.description].filter(Boolean).join(" ");
     const ids = [];
-    const doi = text.match(/10\.\d{4,9}\/[^\s<>"'&]+/i)?.[0]?.replace(/[.,;]+$/, "").toLowerCase();
+    const doi = text.match(/10\.\d{4,9}\/[^\s<>"'&?#]+/i)?.[0]?.replace(/[.,;]+$/, "").toLowerCase();
     if (doi) ids.push(`doi:${doi}`);
     const pii = text.match(/\bS\d{15}[\dX]\b/i)?.[0];
     if (pii) ids.push(`pii:${pii.toUpperCase()}`);
@@ -52,9 +58,19 @@
       }
     }
     find(item) {
-      for (const id of identifiers(item)) {
+      const ids = identifiers(item);
+      const doi = ids.find(id => id.startsWith("doi:"));
+      for (const id of ids) {
         const key = this.index.get(id);
-        if (key && own(this.data.records, key)) return this.data.records[key];
+        if (!key || !own(this.data.records, key)) continue;
+        const record = this.data.records[key];
+        const otherDOI = record.ids.find(value => value.startsWith("doi:"));
+        if (doi && otherDOI && doi !== otherDOI) continue;
+        if (id.startsWith("url:") && !ids.some(value => value.startsWith("guid:") && record.ids.includes(value))) {
+          const title = titleKey(item.title);
+          if (title.length < 40 || title !== titleKey(record.title)) continue;
+        }
+        return record;
       }
       return null;
     }
@@ -138,7 +154,7 @@
     if (value) lines.push(`${key}: ${String(value).replace(/\r?\n/g, " ")}`);
     return lines.filter(Boolean).join("\n");
   }
-  const api = { DAY, Memory, emptyState, titleKey, translationKey, safeURL, identifiers, getExtra, setExtra };
+  const api = { DAY, Memory, emptyState, titleKey, translationKey, translationDue, safeURL, identifiers, getExtra, setExtra };
   root.RSSMemoryCore = api;
   if (typeof module !== "undefined") module.exports = api;
 })(typeof globalThis === "undefined" ? this : globalThis);
