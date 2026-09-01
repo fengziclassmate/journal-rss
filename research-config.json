@@ -1,0 +1,80 @@
+{
+  "base_url": "https://fengziclassmate.github.io/journal-rss",
+  "research_profile": "GIS博士研究：城市更新与时空数据挖掘、LLM和多智能体、遥感变化检测、多源数据融合与地理空间智能。",
+  "topics": {
+    "primary": [
+      "Urban Remote Sensing",
+      "GIS",
+      "Geographic Information System",
+      "Urban Renewal",
+      "Urban Planning",
+      "Spatio-temporal",
+      "Geospatial",
+      "Remote Sensing"
+    ],
+    "methods": [
+      "Deep Learning",
+      "Transformer",
+      "Segmentation",
+      "Computer Vision",
+      "Foundation Model",
+      "Graph Neural Network",
+      "Large Language Model",
+      "Multi-Agent"
+    ]
+  },
+  "selection": {
+    "min_score": 45,
+    "max_papers_per_day": 10
+  },
+  "state": {
+    "max_unselected_papers": 2500
+  },
+  "llm": {
+    "model": "deepseek-chat",
+    "endpoint": "https://api.deepseek.com/chat/completions",
+    "candidate_limit": 30,
+    "batch_size": 10,
+    "max_tokens": 4096
+  },
+  "sources": {
+    "email": {
+      "enabled": true,
+      "server": "imap.qq.com",
+      "port": 993,
+      "mailbox": "INBOX",
+      "max_emails": 3
+    },
+    "arxiv": {
+      "enabled": true,
+      "max_results": 100,
+      "page_delay_seconds": 3,
+      "query": "all:\"urban remote sensing\" OR all:\"urban renewal\" OR all:\"urban planning\" OR all:geospatial OR all:\"spatio-temporal\" OR all:\"geographic information system\""
+    },
+    "crossref": {
+      "created_lookback_days": 7,
+      "max_records_per_journal": 300,
+      "workers": 3,
+      "mailto": "rss@example.com",
+      "journals": [
+        {"short_name": "Applied Geography", "name": "Applied Geography", "issn": "0143-6228"},
+        {"short_name": "Applied Soft Computing", "name": "Applied Soft Computing", "issn": "1568-4946"},
+        {"short_name": "Artificial Intelligence", "name": "Artificial Intelligence", "issn": "0004-3702"},
+        {"short_name": "Computer Science Review", "name": "Computer Science Review", "issn": "1574-0137"},
+        {"short_name": "IJGIS", "name": "International Journal of Geographical Information Science", "issn": "1365-8816"},
+        {"short_name": "CEUS", "name": "Computers, Environment and Urban Systems", "issn": "0198-9715"},
+        {"short_name": "EIAR", "name": "Environmental Impact Assessment Review", "issn": "0195-9255"},
+        {"short_name": "Information Fusion", "name": "Information Fusion", "issn": "1566-2535"},
+        {"short_name": "JAG", "name": "International Journal of Applied Earth Observation and Geoinformation", "issn": "1569-8432"},
+        {"short_name": "ISPRS JPRS", "name": "ISPRS Journal of Photogrammetry and Remote Sensing", "issn": "0924-2716"},
+        {"short_name": "Landscape and Urban Planning", "name": "Landscape and Urban Planning", "issn": "0169-2046"},
+        {"short_name": "Pattern Recognition", "name": "Pattern Recognition", "issn": "0031-3203"},
+        {"short_name": "RSE", "name": "Remote Sensing of Environment", "issn": "0034-4257"},
+        {"short_name": "Science Bulletin", "name": "Science Bulletin", "issn": "2095-9273"},
+        {"short_name": "SCS", "name": "Sustainable Cities and Society", "issn": "2210-6707"},
+        {"short_name": "Cities", "name": "Cities", "issn": "0264-2751"},
+        {"short_name": "Urban Climate", "name": "Urban Climate", "issn": "2212-0955"}
+      ]
+    }
+  }
+}
