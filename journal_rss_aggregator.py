@@ -184,6 +184,7 @@ CROSSREF_JOURNALS = [
         "date_filter": "created",
         "date_fields": "created,deposited,published-online,published-print,published",
         "early_access_only": "true",
+        "max_items": 125,
     },
     {
         "source": "International Journal of Digital Earth Current Issue",
@@ -1013,6 +1014,13 @@ def write_rss(
     return len(items)
 
 
+def journal_item_limit(journal: dict[str, str | int], default: int) -> int:
+    configured = journal.get("max_items")
+    if configured is None:
+        return default
+    return min(default, max(1, int(configured)))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--start-year", type=int, default=2020)
@@ -1123,6 +1131,7 @@ def main() -> int:
                 )
 
         crossref_items = dedupe_items(crossref_items)
+        item_limit = journal_item_limit(journal, args.max_items)
         crossref_written = write_rss(
             crossref_items,
             journal_output,
@@ -1136,7 +1145,7 @@ def main() -> int:
                     f"to the current run date."
                 )
             ),
-            max_items=args.max_items,
+            max_items=item_limit,
             prefix_item_titles=False,
             feed_language="en",
         )

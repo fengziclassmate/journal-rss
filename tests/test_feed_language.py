@@ -3,7 +3,7 @@ import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from journal_rss_aggregator import FeedItem, write_rss
+from journal_rss_aggregator import FeedItem, journal_item_limit, write_rss
 
 
 class FeedLanguageTests(unittest.TestCase):
@@ -26,6 +26,11 @@ class FeedLanguageTests(unittest.TestCase):
             write_rss([], path, feed_title='Combined', feed_link='https://example.com/rss.xml',
                       feed_description='Chinese journals', max_items=10)
             self.assertEqual(ET.parse(path).findtext('./channel/language'), 'zh-CN')
+
+    def test_journal_specific_limit_caps_large_early_access_feed(self):
+        self.assertEqual(journal_item_limit({'max_items': 125}, 500), 125)
+        self.assertEqual(journal_item_limit({'max_items': 125}, 50), 50)
+        self.assertEqual(journal_item_limit({}, 500), 500)
 
 
 if __name__ == '__main__':
