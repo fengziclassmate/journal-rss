@@ -3,7 +3,7 @@ import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from journal_rss_aggregator import FeedItem, journal_item_limit, write_rss
+from journal_rss_aggregator import CROSSREF_JOURNALS, FeedItem, journal_item_limit, write_rss
 
 
 class FeedLanguageTests(unittest.TestCase):
@@ -31,6 +31,14 @@ class FeedLanguageTests(unittest.TestCase):
         self.assertEqual(journal_item_limit({'max_items': 125}, 500), 125)
         self.assertEqual(journal_item_limit({'max_items': 125}, 50), 50)
         self.assertEqual(journal_item_limit({}, 500), 500)
+
+    def test_jgsa_has_latest_and_current_issue_feeds(self):
+        feeds = {item['output']: item for item in CROSSREF_JOURNALS if item['issn'] == '2509-8829'}
+
+        self.assertEqual(set(feeds), {'jgsa.xml', 'jgsa-current-issue.xml'})
+        self.assertNotIn('current_issue_only', feeds['jgsa.xml'])
+        self.assertEqual(feeds['jgsa-current-issue.xml']['current_issue_only'], 'true')
+        self.assertEqual(feeds['jgsa.xml']['from_date'], '2026-06-01')
 
 
 if __name__ == '__main__':
