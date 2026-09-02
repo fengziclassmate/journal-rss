@@ -2,24 +2,77 @@
   "date": "2026-09-01",
   "guid": "arxiv-email-daily:2026-09-01",
   "paper_keys": [
+    "arxiv:2608.30865",
     "arxiv:2608.30817",
+    "arxiv:2608.30471",
+    "arxiv:2608.30277",
+    "arxiv:2608.29880",
+    "arxiv:2608.29680",
+    "arxiv:2608.29426",
+    "arxiv:2608.29384",
+    "arxiv:2608.28706",
+    "arxiv:2608.28680",
+    "arxiv:2608.28628",
+    "arxiv:2512.18128",
+    "arxiv:2602.19736",
+    "arxiv:2608.25952",
     "arxiv:2608.30672",
+    "arxiv:2608.31159",
+    "arxiv:2608.30768",
+    "arxiv:2608.30730",
+    "arxiv:2608.30709",
     "arxiv:2608.30661",
+    "arxiv:2608.30633",
+    "arxiv:2608.30498",
+    "arxiv:2608.30094",
+    "arxiv:2608.30054",
+    "arxiv:2608.29958",
+    "arxiv:2608.29944",
     "arxiv:2608.29793",
-    "arxiv:2608.29992",
-    "arxiv:2608.29923",
-    "arxiv:2605.09687",
-    "arxiv:2608.30392",
-    "arxiv:2608.30924",
-    "arxiv:2608.30714"
+    "arxiv:2608.29640",
+    "arxiv:2608.29220",
+    "arxiv:2608.29112"
   ],
-  "paper_count": 10,
+  "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1582",
-    "deepseek": "ok:30"
+    "deepseek": "ok:29"
   },
-  "updated_at": "2026-09-02T01:24:53.018693+00:00",
+  "updated_at": "2026-09-02T02:18:14.499549+00:00",
+  "analysis_stats": {
+    "total": 1582,
+    "analyzed": 1582,
+    "high": 150,
+    "medium": 238,
+    "low": 242,
+    "below_threshold": 952
+  },
   "papers": [
+    {
+      "key": "arxiv:2608.30865",
+      "title": "Predicting Residential Rents in Dakar Using Machine Learning",
+      "title_zh": "使用机器学习预测达喀尔的住宅租金",
+      "url": "https://arxiv.org/abs/2608.30865",
+      "doi": "",
+      "arxiv_id": "2608.30865",
+      "authors": [
+        "Amadou Tidiane Kassa Diallo"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T14:29:04+00:00",
+      "score": 95,
+      "reason": "该研究直接针对城市住宅租金预测，构建了完整的机器学习流程，并深入分析了特征重要性，与用户在城市更新和时空数据挖掘方面的研究高度相关。",
+      "tags": [
+        "机器学习",
+        "房价预测",
+        "城市分析",
+        "SHAP",
+        "特征工程"
+      ],
+      "abstract": "Dakar's residential rental market remains poorly documented despite its economic and social importance: 54.4% of households are renters, compared to 23.3% nationally. This study develops a complete machine learning pipeline to predict residential rents in Dakar, from data collection to model interpretation. An original dataset of 1,507 rental listings was built through systematic web scraping and a documented cleaning pipeline, then enriched with four purpose-built features, including a luxury score and a keyword-based quality score. Five models were compared: linear regression, Random Forest (baseline), XGBoost, and LightGBM optimized through Bayesian optimization with Optuna, using leakage-free KFold target encoding for location. The optimized XGBoost model achieved the best performance with an $R^2$ of 0.847, an MAE of 210,902 XOF, and an RMSE of 324,195 XOF. Feature importance was assessed using native XGBoost gain and SHAP values, revealing a substantial difference in the ranking of location, which appears as a minor predictor by gain but as the second most influential variable by SHAP. This result carries methodological implications for hedonic studies using target-encoded categorical variables. This study provides an interpretable benchmark for Dakar's rental market and highlights several avenues for improvement, including the integration of geospatial features and conformal prediction.",
+      "summary_zh": "开发了一个完整的机器学习流程来预测达喀尔的住宅租金，包括数据收集、清洗、特征工程和模型比较。优化的XGBoost模型取得了最佳性能，并通过SHAP值揭示了位置特征的重要性。",
+      "insight_zh": "在目标编码的背景下，基于增益和SHAP值的特征重要性排序可能产生显著差异，这对城市属性研究中解读模型和选择特征具有重要的方法论启示。"
+    },
     {
       "key": "arxiv:2608.30817",
       "title": "A Composition-Aware Pretraining Framework for Geospatial Foundation Models",
@@ -48,6 +101,354 @@
       "abstract": "Geospatial foundation models have emerged as state-of-the-art methods for downstream Earth observation tasks. However, existing pretraining methodologies process imagery through a single-concept lens, failing to capture the highly compositional nature of complex satellite scenes. We propose a composition-aware pretraining framework that explicitly encodes fractional land-cover mixtures. Each satellite image cell is mapped to a histogram representing its fractional land-cover distribution, which we term the \"composition target\". These targets serve as the primary prediction objective and are distilled into the backbone using Earth Mover's Distance. Experimental evaluation shows that composition-aware pretraining yields substantial gains on region-level understanding tasks requiring semantic similarity judgment, including zero-shot image retrieval and scene classification, while remaining competitive on tasks requiring fine-grained spatial precision, such as segmentation and object detection. With a 36.8M-parameter backbone, our framework outperforms SatMAE and Prithvi-EO-2.0, which contain 303M and 600M parameters, respectively, in most retrieval and scene classification settings. On the fine-grained ForestNet-12 dataset, a rigorous testbed for compositional discrimination, our method boosts baseline mAP@10 from 0.279 to 0.434, a 55.6% relative improvement, providing direct evidence for the effectiveness of explicit composition modeling. The code implementation can be found at https://github.com/05kashyap/GFM_Composition_Pretraining",
       "summary_zh": "提出一种组合感知预训练框架，将卫星影像单元映射到土地覆盖分数直方图作为组合目标，使用推土机距离进行蒸馏，在区域级理解任务上显著优于SatMAE和Prithvi-EO-2.0等大型模型，并在ForestNet-12上mAP@10提升55.6%。",
       "insight_zh": "显式建模土地覆盖组合信息能有效增强基础模型对复杂场景的语义理解，为地理空间基础模型的预训练提供了新方向。"
+    },
+    {
+      "key": "arxiv:2608.30471",
+      "title": "HorizonNet for visual terrain navigation",
+      "title_zh": "HorizonNet：用于视觉地形导航的地平线检测与匹配方法",
+      "url": "https://arxiv.org/abs/2608.30471",
+      "doi": "",
+      "arxiv_id": "2608.30471",
+      "authors": [
+        "Bertil Grelsson",
+        "Andreas Robinson",
+        "Michael Felsberg",
+        "Fahad Shahbaz Khan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T08:58:13+00:00",
+      "score": 95,
+      "reason": "该研究直接针对水面无人艇的视觉定位问题，利用全景图像提取地平线并与DEM数据匹配。这是典型的遥感与地理空间数据融合应用，与GIS博士研究方向中的多源数据融合与地理空间智能高度契合。",
+      "tags": [
+        "视觉定位",
+        "水面无人艇",
+        "地平线检测",
+        "DEM匹配",
+        "CNN"
+      ],
+      "abstract": "This paper investigates the problem of position estimation of unmanned surface vessels (USVs) operating in coastal areas or in the archipelago. We propose a position estimation method where the horizon line is extracted in a 360 degree panoramic image around the USV. We design a CNN architecture to determine an approximate horizon line in the image and implicitly determine the camera orientation (the pitch and roll angles). The panoramic image is warped to compensate for the camera orientation and to generate an image from an approximately level camera. A second CNN architecture is designed to extract the pixelwise horizon line in the warped image. The extracted horizon line is correlated with digital elevation model (DEM) data in the Fourier domain using a MOSSE correlation filter. Finally, we determine the location of the maximum correlation score over the search area to estimate the position of the USV. Comprehensive experiments are performed in a field trial in the archipelago. Our approach provides promising results by achieving position estimates with GPS-level accuracy.",
+      "summary_zh": "本文提出一种基于全景图像地平线提取的USV定位方法。通过两个CNN分别估计相机姿态和提取像素级地平线，然后将地平线与DEM数据在傅里叶域进行MOSSE相关滤波匹配，最终实现GPS级精度的位置估计。",
+      "insight_zh": "该研究展示了将视觉感知与地理空间数据（DEM）深度融合的潜力，通过提取具有物理意义的地平线特征进行定位，为在GNSS拒止环境下的自主导航提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.30277",
+      "title": "SimCRAFT: Distilling Remote Sensing Agents via Synthetic Trajectories and Contextual Retrieval-Augmented Fine-Tuning",
+      "title_zh": "SimCRAFT：通过合成轨迹和上下文检索增强微调蒸馏遥感智能体",
+      "url": "https://arxiv.org/abs/2608.30277",
+      "doi": "",
+      "arxiv_id": "2608.30277",
+      "authors": [
+        "Haoran Wang",
+        "Jing Yao",
+        "Xu Yang",
+        "Zeqing Wang",
+        "Yang Zhang",
+        "Pedram Ghamisi",
+        "Zhengchao Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T05:45:33+00:00",
+      "score": 95,
+      "reason": "该研究针对遥感智能体对大型通用LLM的依赖问题，提出将复杂的遥感编排能力蒸馏到轻量级模型中，与申请人关于LLM和多智能体、地理空间智能的研究方向高度契合。",
+      "tags": [
+        "遥感智能体",
+        "知识蒸馏",
+        "检索增强微调",
+        "工作流规划",
+        "轻量级模型"
+      ],
+      "abstract": "The unprecedented surge in Earth observation data volume and diversity has exposed a critical bottleneck for traditional manual workflows, catalyzing the emergence of Remote Sensing (RS) Agents. However, the practical deployment of these advanced agents is severely hindered by their heavy reliance on large-scale general-purpose LLMs, which lack deep domain expertise and impose prohibitive infrastructure demands. To resolve this, we propose SimCRAFT, a model-agnostic framework that distills sophisticated RS orchestration capabilities into a compact 7B-scale model. Addressing data scarcity, we first pair a multiagent synthesis engine with a Mock Execution Engine that checks schema correctness, inter-tool dependencies, and sensor/tool compatibility, producing SimRS-14k, a large-scale, constraint-validated workflow planning corpus. Second, we propose Contextual Retrieval-Augmented Fine-Tuning (CRAFT) that finetunes the model to reason analogically by adapting retrieved Standard Operating Procedures to novel queries under a noise-robust objective, generalizing RAFT to multi-step RS workflow planning without mechanical copying. Extensive experiments demonstrate that SimCRAFT-7B significantly outperforms openweights LLMs and rivals advanced closedsource models and specialized RS agents, while reproducing across three 7B backbones. This work contributes a competitive open-weights baseline for lightweight RS intelligence, enabling efficient autonomous deployment under resource-constrained or resource-conserving conditions.",
+      "summary_zh": "为解决遥感（RS）智能体对大规模通用LLM的依赖和基础设施要求过高的问题，提出了模型无关的框架SimCRAFT，将复杂的RS编排能力蒸馏到7B规模的模型中。通过多智能体合成引擎和模拟执行引擎生成大规模、约束验证的工作流规划语料SimRS-14k。提出上下文检索增强微调（CRAFT），使模型能够类比推理，适应检索到的标准操作程序，泛化到新查询。实验表明SimCRAFT-7B显著优于开放权重LLM，可与高级闭源模型和专用RS智能体相媲美。",
+      "insight_zh": "通过合成轨迹和上下文检索增强微调，可以将大型模型的遥感任务编排能力有效蒸馏到轻量级模型中，实现资源受限条件下的高效自主部署。"
+    },
+    {
+      "key": "arxiv:2608.29880",
+      "title": "Perceive to Hypothesize, Verify to Ground: An Agentic Reasoning Framework for Open-World Geo-Localization",
+      "title_zh": "感知以假设，验证以落地：面向开放世界地理定位的智能体推理框架",
+      "url": "https://arxiv.org/abs/2608.29880",
+      "doi": "",
+      "arxiv_id": "2608.29880",
+      "authors": [
+        "Yutian Jiang",
+        "Ruijie Li",
+        "Sisuo Lyu",
+        "Xixuan Hao",
+        "Qingxiang Liu",
+        "Yongzi Yu",
+        "Yuxuan Liang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T16:19:10+00:00",
+      "score": 95,
+      "reason": "该研究直接针对开放世界地理定位问题，提出了一个基于感知-验证的智能体推理框架，并构建了包含推理轨迹的新数据集，与GIS博士研究方向中的LLM、多智能体和时空数据挖掘高度契合。",
+      "tags": [
+        "地理定位",
+        "智能体",
+        "视觉语言模型",
+        "推理",
+        "证据验证",
+        "数据集"
+      ],
+      "abstract": "Open-world geo-localization requires models to reason over ambiguous visual cues through multi-step reasoning and external knowledge grounding. While recent large vision-language models exhibit strong multimodal reasoning capabilities, existing approaches still suffer from perceptual hallucination and context drift due to the lack of explicit evidence-grounded verification. In this work, we reformulate geo-localization as a human-like perceive-then-verify reasoning problem and propose GeoPAVE (Geo-localization Perception-and-Verification-Engine), a bi-level agentic framework that contains perception-based hypothesis generation via single-pass rollouts and verification-based evidence grounding for decision actions: support, refute, and refine. To support rigorous evaluation, we further introduce PAVED, a novel dataset derived from real-world user check-in data, equipped with comprehensive reasoning trajectories featuring multi-hop queries, multi-round tool invocations, and structured perception-verification traces. The dataset and code are available at https://github.com/Arandinglv/GeoPAVE.",
+      "summary_zh": "开放世界地理定位需要模型通过多步推理和外部知识进行推理。现有方法常因缺乏显式证据验证而出现感知幻觉和上下文漂移。本文提出GeoPAVE，一个双层智能体框架，包含基于感知的假设生成（单次rollout）和基于验证的证据落地（支持、反驳、细化三种决策动作）。为严格评估，作者引入PAVED数据集，该数据集源自真实用户签到数据，包含多跳查询、多轮工具调用和结构化感知-验证轨迹。",
+      "insight_zh": "将地理定位重构为感知-验证的智能体推理过程，可有效减少视觉语言模型的幻觉，为城市尺度或开放世界的空间认知与定位任务提供了新的技术路径。"
+    },
+    {
+      "key": "arxiv:2608.29680",
+      "title": "GeoRay: Gauge-Aware Feed-Forward Satellite 3D Reconstruction in the Geodetic Frame",
+      "title_zh": "GeoRay：地理坐标框架下考虑测量基准的前馈卫星3D重建",
+      "url": "https://arxiv.org/abs/2608.29680",
+      "doi": "",
+      "arxiv_id": "2608.29680",
+      "authors": [
+        "Zhe Dong",
+        "Wanqing Wu",
+        "Yuzhe Sun",
+        "Haochen Jiang",
+        "Yuchen Ma",
+        "Lecheng Ren",
+        "Tianzhu Liu",
+        "Yanfeng Gu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T09:27:36+00:00",
+      "score": 95,
+      "reason": "论文提出GeoRay方法，实现卫星影像在绝对地理坐标框架下的前馈3D重建，处理RPC相机和非中心投影，直接解决遥感摄影测量核心问题，与GIS博士研究方向高度契合。",
+      "tags": [
+        "卫星3D重建",
+        "地理坐标框架",
+        "RPC相机",
+        "前馈模型",
+        "绝对精度"
+      ],
+      "abstract": "Feed-forward 3D foundation models reconstruct perspective scenes in one pass. Satellite photogrammetry needs a different product, one that domain adaptation alone does not deliver: dense surface height in an absolute geodetic frame under non-central rational polynomial cameras (RPCs). Perspective-pretrained features are not reliably observable along RPC height rays, absolute elevation carries a low-order height--datum gauge exchangeable with sensor bias to first order, and monocular and multi-view cues fail in different regions. \\method{} treats all three. Lightweight ray-consistent adapters make a frozen backbone matchable along native RPC rays. An explicit datum mechanism separates relief from absolute level and is equivariant to the vertical origin by construction, so one trained model serves zero-, one-, and sparse-control inference. Calibrated inverse-variance fusion combines the two relief streams. \\bench{}, our absolute-frame benchmark of eighteen systems across in-domain, cross-dataset, and cross-city tiers, scores absolute placement without registration or test-reference leakage. On 26 held-out US3D tiles, \\method{} attains $2.99$\\,m absolute MAE at $91.9\\%$ coverage, improves completeness-aware accuracy by $46.4$ points over the strongest compliant feed-forward baseline, remains the most accurate such system under both transfer shifts, and runs in $24$\\,s model-forward time per tile. Code and models will be released at https://github.com/HIT-SIRS/GeoRay",
+      "summary_zh": "论文提出GeoRay方法，用于卫星摄影测量中的稠密地表高度重建，在绝对地理坐标框架下处理非中心有理多项式相机（RPCs）。方法包含轻量级射线一致适配器、显式基准机制和校准逆方差融合。在18个系统的绝对框架基准上，GeoRay在26个US3D瓦片上达到2.99米绝对MAE和91.9%覆盖率，比最强合规前馈基线提升46.4个点的完整性感知精度，单瓦片前向时间24秒。",
+      "insight_zh": "卫星3D重建需要专门处理RPC相机和绝对基准，域适应不足以解决，GeoRay展示了在绝对框架下高效重建的可行性。"
+    },
+    {
+      "key": "arxiv:2608.29426",
+      "title": "Polis: 3D Self-Supervision at City Scale",
+      "title_zh": "Polis：城市尺度的3D自监督学习",
+      "url": "https://arxiv.org/abs/2608.29426",
+      "doi": "",
+      "arxiv_id": "2608.29426",
+      "authors": [
+        "Alexander Rusnak",
+        "Sophia Kovalenko",
+        "Jingru Wang",
+        "Ismail Moudden",
+        "Xiru Wang",
+        "Fr\\'ed\\'eric Kaplan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-29T20:07:51+00:00",
+      "score": 95,
+      "reason": "该研究提出首个面向城市尺度3D点云的自监督方法，与GIS博士研究方向中的城市更新、遥感变化检测和多源数据融合高度契合，直接服务于城市级地理空间智能。",
+      "tags": [
+        "3D自监督",
+        "城市尺度",
+        "点云",
+        "表征学习",
+        "城市分析"
+      ],
+      "abstract": "Reliable semantic representations derived from city-scale 3D models are increasingly important for urban analysis, infrastructure monitoring, autonomous systems, and heritage conservation. However, urban scenes of large spatial extent captured through aerial surveying differ substantially from the indoor, object-level, and self-driving LiDAR data used to pretrain most 3D self-supervised models. We introduce Polis, to our knowledge the first application of Sketched Isotropic Gaussian Regularization (SIGReg) as an objective for a native point cloud encoder, and evaluate it through a frozen-feature benchmark spanning fourteen city- and building-scale corpora. Polis combines geometrically matched cosine invariance, SIGReg, and VICReg-style anti-collapse terms with a 12.8k-scene outdoor pretraining mixture and gravity-preserving spatial view sampling. Controlled ablations show that this objective outperforms student--teacher architecture alternatives, as well as Polis versions without anti-collapse terms, on the same representative outdoor corpus. On three pretraining-disjoint city datasets, Polis reaches $23.8\\%$ mean mIoU versus $16.3\\%$ for the next-best encoder under high-capacity frozen probing, and $17.3\\%$ versus $16.1\\%$ at a matched point and voxel budget. The same city-scale lead holds on datasets whose training sets were seen in pretraining. On localized terrestrial captures with fine-grained facade and streetscape labels, the ranking reverses. Our results show that distributionally-regularized joint embedding architectures can be successful on challenging city-scale 3D scenes, and that transfer improves when self-supervision is designed for the capture geometry and spatial context of this domain while also revealing the limits of this specialization.",
+      "summary_zh": "该研究提出Polis，首次将Sketched Isotropic Gaussian Regularization (SIGReg)作为原生点云编码器的目标函数，并通过涵盖14个城市和建筑尺度语料库的冻结特征基准进行评估。Polis结合了几何匹配的余弦不变性、SIGReg和VICReg风格的反坍缩项，使用12.8k场景的室外预训练混合数据和重力保持的空间视图采样。在三个预训练不相交的城市数据集上，Polis在高容量冻结探测下达到23.8%的平均mIoU，而次优编码器为16.3%。但在局部地面捕获的细粒度立面标签上，排名反转。",
+      "insight_zh": "针对城市尺度捕获几何和空间上下文设计的自监督目标能显著提升3D语义表征的迁移性能，但专业化也带来了在局部地面场景上的局限性，提示需要根据应用场景选择或设计自监督方法。"
+    },
+    {
+      "key": "arxiv:2608.29384",
+      "title": "FiLM-GPNet: Geometry-Aware Pseudo-Supervised Phase Restoration with Zero-Shot Generalization for Large Temporal InSAR Stacks",
+      "title_zh": "FiLM-GPNet：用于大时序InSAR堆栈的几何感知伪监督相位恢复与零样本泛化",
+      "url": "https://arxiv.org/abs/2608.29384",
+      "doi": "",
+      "arxiv_id": "2608.29384",
+      "authors": [
+        "Getnet Demil",
+        "Muhammad Farhan Humayun",
+        "Tomi Westerlund",
+        "Jukka Heikkonen",
+        "Mourad Oussalah"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-29T17:50:18+00:00",
+      "score": 95,
+      "reason": "该研究针对时序InSAR相位恢复提出几何感知网络，直接解决遥感变化检测和地表形变监测中的关键问题，与GIS博士研究方向高度契合。",
+      "tags": [
+        "InSAR",
+        "phase restoration",
+        "deep learning",
+        "geometry-aware",
+        "zero-shot",
+        "SAR"
+      ],
+      "abstract": "The growing availability of dense commercial Synthetic Aperture Radar (SAR) time series enables temporal Interferometric SAR (InSAR) analysis, but fixed classical filters fail under heterogeneous acquisition geometries, degrading phase quality and temporal consistency. We propose FiLM-GPNet, a geometry-conditioned network for wrapped-phase restoration that explicitly adapts to acquisition differences using Feature-wise Linear Modulation (FiLM) and a 7D per-pair geometry descriptor. The model is trained with pseudo-supervision from Goldstein-filtered interferograms and regularized by interferometric physics via triplet-closure consistency, while also estimating per-pixel aleatoric uncertainty. Experiments on three Capella Spotlight stacks from the IEEE GRSS 2026 Data Fusion Contest show that FiLM-GPNet reduces temporal residual by 68% (Hawaii) and 66% (Western Australia) relative to the Goldstein baseline, alongside closure error reductions of 10% and 13%, respectively. In Western Australia, it further improves unwrapping success rate by 7.7 percentage points and Digital Elevation Model (DEM) Normalized Median Absolute Deviation (NMAD) by 31%. The model also shows strong zero-shot generalization to a geographically and geometrically distinct third stack (Los Angeles) without retraining, supporting geometry-conditioned restoration as an effective alternative to fixed classical filtering across heterogeneous stacks.",
+      "summary_zh": "该研究提出FiLM-GPNet，一种几何条件网络，利用特征级线性调制（FiLM）和7D几何描述符适应不同采集几何，进行包裹相位恢复。模型通过Goldstein滤波干涉图的伪监督和干涉物理的三元组闭合一致性正则化训练，并估计逐像素偶然不确定性。在三个Capella Spotlight堆栈上，相比Goldstein基线，时间残差降低68%和66%，闭合误差降低10%和13%，并提升了相位解缠成功率和DEM精度，且对未见堆栈具有零样本泛化能力。",
+      "insight_zh": "该研究证明了几何条件化恢复是固定经典滤波的有效替代方案，能够提升异质堆栈下的相位质量和时序一致性，对大规模InSAR形变监测具有重要意义。"
+    },
+    {
+      "key": "arxiv:2608.28706",
+      "title": "Variable-Granularity Tokenization for High-Resolution Object Detection",
+      "title_zh": "面向高分辨率目标检测的变粒度Token化",
+      "url": "https://arxiv.org/abs/2608.28706",
+      "doi": "",
+      "arxiv_id": "2608.28706",
+      "authors": [
+        "Khayrul Islam"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T18:39:32+00:00",
+      "score": 95,
+      "reason": "该论文针对高分辨率航空图像目标检测，提出了一种基于局部可分离性和结构几何的训练自由tokenizer，在VisDrone和AI-TOD-v2上取得了SOTA结果。这与遥感变化检测、目标识别高度相关，其变粒度token化思想对处理高分辨率遥感影像具有直接应用价值。",
+      "tags": [
+        "目标检测",
+        "token化",
+        "高分辨率",
+        "遥感",
+        "ViT"
+      ],
+      "abstract": "ViT detectors fix a uniform token grid before any learned stage. A native-resolution aerial detector must then choose between resolving few-pixel objects and staying inside compute and memory limits. We introduce VGTok, a training-free tokenizer that sets patch granularity per region from pixels, ahead of the encoder. VGTok scores each region by multi-scale morphological top-hat separability from its surround, then thresholds those scores at a per-image percentile, which fixes the token budget. A structure-tensor gate ($\\lambda_{\\min}$) refines only where two-dimensional object structure supports it, leaving one-dimensional clutter coarse. The resulting token set is a strict partition of the image. In a Co-DETR detector with an EVA-02 ViT-L encoder, VGTok clears every published VisDrone-val AP and AP$_S$ at every budget from 40\\% to 100\\% of tokens. At 40\\% it records 44.22 AP with three fifths of the sequence discarded before the first transformer block; dense, it reaches 48.38 AP, $6.08$ above the strongest published entry. VGTok transfers to AI-TOD-v2 untouched, same scorer and same rank, and sets a new state of the art at 37.27 AP and 19.51 AP$_{vt}$. As a pure drop-in into a frozen checkpoint it reaches 36.29 AP at 78.5\\% of tokens, above every published entry, where our 376.3M-parameter detector clears a 3.0B multi-expert model. We show that a token budget fixed before the backbone, from local separability and structure geometry alone, holds accuracy on the tiny-object regimes that dominate aerial detection, at $3.1\\times$ less encoder compute and $1.9\\times$ less encoder memory. Code and models are available at",
+      "summary_zh": "提出了VGTok，一种无需训练的tokenizer，根据像素级形态学top-hat可分离性和结构张量门控，为图像不同区域分配不同粒度的patch。在Co-DETR检测器上，VGTok在40% token预算下即超越所有已发表结果，并在全预算下刷新VisDrone和AI-TOD-v2的SOTA，同时显著降低计算和内存开销。",
+      "insight_zh": "在编码器之前根据局部图像复杂度动态分配token粒度，能有效平衡高分辨率遥感影像中微小目标检测的精度与效率，表明基于图像内容的自适应tokenization是提升检测性能的关键。"
+    },
+    {
+      "key": "arxiv:2608.28680",
+      "title": "Multi-Sensor Mapping of Vulnerable Urban Settlements Using SAR, Multispectral, and Hyperspectral Imagery: A Case Study in C\\'ordoba, Argentina",
+      "title_zh": "基于SAR、多光谱和高光谱影像的脆弱城市聚落多传感器制图：以阿根廷科尔多瓦为例",
+      "url": "https://arxiv.org/abs/2608.28680",
+      "doi": "",
+      "arxiv_id": "2608.28680",
+      "authors": [
+        "Luigi Russo",
+        "Anabella Ferral",
+        "Silvia Liberata Ullo",
+        "Paolo Gamba"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T07:05:36+00:00",
+      "score": 95,
+      "reason": "该研究直接涉及多源遥感数据（SAR、多光谱、高光谱）融合用于城市非正规聚落（贫民窟）制图，与博士研究方向中的城市更新、遥感变化检测和多源数据融合高度相关。",
+      "tags": [
+        "多传感器融合",
+        "深度学习",
+        "城市更新",
+        "非正规聚落",
+        "遥感变化检测",
+        "多源数据融合"
+      ],
+      "abstract": "Informal settlements represent a major urban challenge in rapidly expanding cities, yet their identification from Earth Observation (EO) data remains difficult because of their heterogeneous appearance and incomplete official inventories. This work presents a multi-sensor deep learning (DL) framework for slum-likelihood mapping in C\\'ordoba, Argentina, integrating high-resolution PlanetScope multispectral (MS) imagery, COSMO-SkyMed (CSK) Synthetic Aperture Radar (SAR) data, and medium-resolution PRISMA hyperspectral (HS) observations. The problem is formulated as a patch-level classification task using the official Registro Nacional de Barrios Populares (ReNaBaP) inventory as reference, and the models are evaluated through four geographically partitioned folds. SAR-only and MS-only baselines, their configurations with PRISMA HS support, and early fusion (EF), middle fusion (MF), and late fusion (LF) strategies are systematically compared. Results show that LF+HS provides the best overall balance between classification performance and spatial selectivity, while PRISMA contributes complementary spectral information alongside the higher-resolution MS and SAR representations. Beyond the standard evaluation against ReNaBaP, an external municipal vulnerability layer is used to interpret detections outside the official polygons, showing that several apparent false positives overlap broader vulnerable urban areas. Thermal analysis further shows that ReNaBaP settlements exhibit significantly higher surface temperatures than their immediate surroundings during a heatwave event, indicating localised surface-heat amplification. Taken together, these results suggest that multi-sensor EO fusion can support both the mapping of ReNaBaP settlements and the interpretation of broader urban vulnerability patterns.",
+      "summary_zh": "本研究提出了一个多传感器深度学习框架，用于在阿根廷科尔多瓦绘制贫民窟似然图。该框架整合了高分辨率PlanetScope多光谱影像、COSMO-SkyMed SAR数据和中等分辨率PRISMA高光谱数据，并以官方贫民窟清单为参考，将问题构建为块级分类任务。研究系统比较了不同传感器组合及早期、中期、晚期融合策略，结果显示晚期融合结合高光谱数据在分类性能和空间选择性上表现最佳。外部脆弱性图层和热分析进一步验证了检测结果的可靠性。",
+      "insight_zh": "多传感器EO融合不仅能绘制官方清单内的贫民窟，还能识别更广泛的脆弱城市区域，且贫民窟在热浪事件中表现出显著更高的地表温度，表明其存在局部地表热放大效应。"
+    },
+    {
+      "key": "arxiv:2608.28628",
+      "title": "CDEP Agent: Connecting Meteorologically Detected Temporal Compound Events to Real-World Documentary Evidence",
+      "title_zh": "CDEP智能体：将气象检测到的时序复合事件与现实世界文档证据连接",
+      "url": "https://arxiv.org/abs/2608.28628",
+      "doi": "",
+      "arxiv_id": "2608.28628",
+      "authors": [
+        "Zhuoran Li",
+        "Weiyi Kong",
+        "Boer Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-07-31T17:25:18+00:00",
+      "score": 95,
+      "reason": "该研究利用LLM智能体将气象检测到的复合事件与现实世界文档证据连接，涉及多源数据融合和灾害响应，与GIS和时空数据挖掘高度相关。",
+      "tags": [
+        "LLM智能体",
+        "复合事件",
+        "气象",
+        "证据链",
+        "灾害响应"
+      ],
+      "abstract": "Compound drought-to-extreme-precipitation (CDEP) events are recognized in climate science as a growing driver of extreme impact, but whether this recognition carries over into real-world early warning and post-event documentation is unknown, so a meteorologically real CDEP event may pass with neither advance warning nor any later record. Here we present CDEP Agent, an auditable LLM-agent framework that tests this mismatch directly by linking CDEP candidates detected from meteorological reanalysis to real-world hazard and impact evidence across sources with different spatial scales, temporal resolutions, and reporting conventions. Using California as a case study, we identify 408 candidate CDEP events from ERA5 observations during 2021-2025 and evaluate each against the U.S. Drought Monitor, NOAA Storm Events, and public webpages along five dimensions: antecedent drought, extreme rainfall, local impact, hazard-impact attribution, and explicit drought-to-rainfall linkage. Only 34.3% of candidates are corroborated on both hazard components, and just 1.5% are ever explicitly linked to their antecedent drought, indicating that most meteorologically detected CDEP events go undocumented and their compound nature almost never enters the record at all. Our framework gives climate scientists a way to test physical event definitions against what actually gets documented, and gives social scientists, economists, and disaster-response agencies a provenance-linked evidence base for compound events that current warning and reporting systems largely fail to capture.",
+      "summary_zh": "提出CDEP Agent框架，将气象再分析检测到的干旱-极端降水复合事件与美国干旱监测、NOAA风暴事件和公共网页等证据进行关联评估。在加州案例中，仅34.3%的候选事件在灾害组件上得到证实，1.5%被明确关联到前期干旱。",
+      "insight_zh": "大多数气象检测到的复合事件未被记录，其复合性质几乎从未进入正式记录，表明现有预警和报告系统存在显著缺口。"
+    },
+    {
+      "key": "arxiv:2512.18128",
+      "title": "SERA-H: Super-Resolution of Sentinel Time Series for Fine-Scale Canopy Height Mapping",
+      "title_zh": "SERA-H：用于精细尺度冠层高度制图的Sentinel时间序列超分辨率",
+      "url": "https://arxiv.org/abs/2512.18128",
+      "doi": "",
+      "arxiv_id": "2512.18128",
+      "authors": [
+        "Thomas Boudras",
+        "Martin Schwartz",
+        "Rasmus Fensholt",
+        "Martin Brandt",
+        "Ibrahim Fayad",
+        "Jean-Pierre Wigneron",
+        "Gabriel Belouze",
+        "Fajwel Fogel",
+        "and Philippe Ciais"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "该研究直接针对Sentinel时间序列进行超分辨率以生成精细尺度的冠层高度图，与遥感变化检测和多源数据融合高度相关，对城市植被监测和更新评估有直接价值。",
+      "tags": [
+        "遥感变化检测",
+        "超分辨率",
+        "时间序列",
+        "冠层高度",
+        "Sentinel"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出SERA-H方法，通过超分辨率技术提升Sentinel卫星时间序列的空间分辨率，从而生成更精细的冠层高度图，改善植被结构监测。",
+      "insight_zh": "该方法可能提升城市森林和绿地的高频动态监测能力，为城市更新中的生态评估提供更精确的数据支持。"
+    },
+    {
+      "key": "arxiv:2602.19736",
+      "title": "InfScene-SR: Seamless Super-Resolution of Arbitrarily Large Remote-Sensing Scenes via Variance-Preserving Joint Denoising",
+      "title_zh": "InfScene-SR：通过方差保持联合去噪实现任意大遥感场景的无缝超分辨率",
+      "url": "https://arxiv.org/abs/2602.19736",
+      "doi": "",
+      "arxiv_id": "2602.19736",
+      "authors": [
+        "Shoukun Sun",
+        "Zhe Wang",
+        "Xiang Que",
+        "Jiyin Zhang",
+        "Xiaogang Ma"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "直接针对遥感大场景的超分辨率重建，与遥感变化检测和多源数据融合高度相关。",
+      "tags": [
+        "遥感超分辨率",
+        "联合去噪",
+        "大场景处理"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出一种方差保持的联合去噪方法，实现任意大小遥感场景的无缝超分辨率重建。",
+      "insight_zh": "该方法可提升遥感影像的细节质量，为变化检测提供更清晰的输入。"
+    },
+    {
+      "key": "arxiv:2608.25952",
+      "title": "Spatial-Knowledge-Graph-Grounded LLM Agents for Neighborhood Livability Evaluation",
+      "title_zh": "基于空间知识图谱的LLM智能体用于社区宜居性评估",
+      "url": "https://arxiv.org/abs/2608.25952",
+      "doi": "",
+      "arxiv_id": "2608.25952",
+      "authors": [
+        "Haiyan Hao"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "该文将空间知识图谱与LLM智能体结合用于社区宜居性评估，直接涉及城市更新、时空数据挖掘与LLM应用，与研究方向高度契合。",
+      "tags": [
+        "空间知识图谱",
+        "LLM智能体",
+        "社区宜居性",
+        "城市评估"
+      ],
+      "abstract": "%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---",
+      "summary_zh": "本文提出一种以空间知识图谱为支撑的LLM智能体框架，用于评估社区宜居性，整合多源空间数据与语言模型推理能力。",
+      "insight_zh": "空间知识图谱可为LLM提供结构化地理上下文，增强其在城市评估任务中的可解释性与准确性，是城市智能分析的重要方向。"
     },
     {
       "key": "arxiv:2608.30672",
@@ -79,6 +480,135 @@
       "insight_zh": "层次化多智能体协作能有效应对遥感任务的阶段依赖性和错误传播问题，为构建可靠遥感智能体提供了有效方案。"
     },
     {
+      "key": "arxiv:2608.31159",
+      "title": "BRF-GS: Hyperspectral Bidirectional Reflectance Factor Modeling and Image Generation Based on 3D Gaussian Splatting",
+      "title_zh": "BRF-GS：基于3D高斯泼溅的高光谱双向反射率因子建模与图像生成",
+      "url": "https://arxiv.org/abs/2608.31159",
+      "doi": "",
+      "arxiv_id": "2608.31159",
+      "authors": [
+        "Yiling Yao",
+        "Wenjuan Zhang",
+        "Bowen Wang",
+        "Bocheng Li",
+        "Wentao Song",
+        "Bing Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T17:56:57+00:00",
+      "score": 90,
+      "reason": "该研究直接面向遥感场景，利用3D高斯泼溅进行BRF建模和高光谱多角度反射率图像生成，与用户的研究方向（遥感变化检测、多源数据融合）高度契合。",
+      "tags": [
+        "高光谱",
+        "3D高斯泼溅",
+        "BRF建模",
+        "图像生成",
+        "遥感"
+      ],
+      "abstract": "The bidirectional reflectance factor (BRF) characterizes the directional radiative properties of terrestrial surfaces. However, existing three-dimensional (3D) radiative transfer models require complex scene construction and computationally intensive radiative transfer solvers, limiting efficient generation of multi-angle hyperspectral reflectance imagery. 3D Gaussian Splatting (3DGS) offers an efficient framework for neural scene representation and novel view synthesis, but its low-order spherical harmonics representation is insufficient for complex directional reflectance, while the high dimensionality and inter-band quality differences of hyperspectral data introduce additional challenges. To address these challenges, we propose BRF-GS, a 3DGS-based framework for BRF modeling and hyperspectral reflectance image generation. BRF-GS introduces a hybrid BRDF-driven kernel to represent complex directional reflectance, selects geometry-reliable spectral bands for robust 3D scene initialization, and adopts a two-stage training strategy that decouples geometry optimization from spectral modeling. We further construct the AIR-BRF dataset, a multi-angle hyperspectral directional reflectance dataset comprising three scenes with diverse natural and artificial targets. Experiments demonstrate that BRF-GS achieves superior spatial and spectral fidelity and accurately reproduces characteristic view-dependent BRF responses. The proposed framework provides an efficient data-driven approach for BRF modeling and multi-angle hyperspectral reflectance image generation in remote sensing scenes.",
+      "summary_zh": "提出BRF-GS，一个基于3D高斯泼溅的框架，用于BRF建模和高光谱反射率图像生成。它引入混合BRDF驱动核，选择几何可靠的波段进行初始化，并采用两阶段训练策略，以高效生成多角度高光谱图像。",
+      "insight_zh": "3D高斯泼溅为高效、数据驱动的BRF建模和多角度高光谱图像生成提供了新途径，有望支持更真实的遥感场景模拟和变化检测研究。"
+    },
+    {
+      "key": "arxiv:2608.30768",
+      "title": "CORAL: A Benchmark for Structure-aware and Brain-wide Neuron Reconstruction in Light Microscopy",
+      "title_zh": "CORAL：光显微镜下结构感知的全脑神经元重建基准",
+      "url": "https://arxiv.org/abs/2608.30768",
+      "doi": "",
+      "arxiv_id": "2608.30768",
+      "authors": [
+        "Zekang Yang",
+        "Jiamin Li",
+        "Zhenghua Li",
+        "Jiaqi Fan",
+        "Zengcai Guo",
+        "Xiaolin Hu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T13:32:59+00:00",
+      "score": 90,
+      "reason": "该研究构建了神经元重建基准，强调结构感知评估和全脑尺度扩展，与GIS中的三维空间结构分析和遥感图像中的目标提取任务高度相关。其提出的结构感知指标和局部到全局的追踪框架，对地理空间数据的拓扑分析和完整目标重建具有重要参考价值。",
+      "tags": [
+        "神经元重建",
+        "光显微镜",
+        "基准数据集",
+        "结构感知",
+        "全脑成像"
+      ],
+      "abstract": "Automatic neuron reconstruction from light microscopy images is a central problem in computational neuroanatomy. While recent methods have achieved encouraging results on local image blocks, it remains unclear whether such progress translates to reconstruction that is both structurally accurate and scalable to the whole-brain scale. We present CORAL, the first benchmark for structure-aware evaluation of automatic neuron reconstruction from light microscopy images at both local and whole-brain scales. Built on a high-quality whole-brain fMOST dataset with carefully curated annotations, CORAL establishes two progressive tasks: block-level reconstruction, which evaluates reconstruction methods under limited spatial context, and brain-wide reconstruction, which assesses complete neuron reconstruction at the whole-brain scale. To account for topological correctness beyond geometric distance similarity, we introduce a structure-aware metric based on fiber prediction. To further achieve complete neuron reconstruction across the entire brain, we develop a brain-wide neuron tracing framework that extends arbitrary local reconstruction methods to the whole-brain scale through an iterative local-to-global process. Using this benchmark, we provide the first structure-aware comparison of mainstream methods for local neuron reconstruction and further evaluate their performance in brain-wide reconstruction. Our results underscore the importance of structure-aware evaluation and the need for more robust methods for complete neuron reconstruction.",
+      "summary_zh": "本文提出CORAL，首个用于光显微镜图像神经元重建的结构感知基准，包含局部和全脑两个尺度的任务。引入基于纤维预测的结构感知指标，并开发了将局部重建方法扩展到全脑尺度的追踪框架。通过基准评估，揭示了结构感知评估的重要性以及现有方法在完整神经元重建上的不足。",
+      "insight_zh": "在神经元重建等空间结构提取任务中，仅依赖几何距离相似度不够，需要引入拓扑结构感知的评估指标，并开发从局部到全局的扩展框架以实现完整目标重建。"
+    },
+    {
+      "key": "arxiv:2608.30730",
+      "title": "E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation",
+      "title_zh": "E-Commerce Bench：评估LLM智能体在长期自主业务运营中的表现",
+      "url": "https://arxiv.org/abs/2608.30730",
+      "doi": "",
+      "arxiv_id": "2608.30730",
+      "authors": [
+        "Wei Fan",
+        "Xinjie Shen",
+        "Xudong Guo",
+        "Jianhong Tu",
+        "Yang Su",
+        "Yinger Zhang",
+        "Lianghao Deng",
+        "Fengyu Wang",
+        "Baohua Dong",
+        "Yangqiu Song",
+        "Dayiheng Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T13:03:57+00:00",
+      "score": 90,
+      "reason": "该研究提出一个长期、动态的电商运营基准，评估LLM智能体在复杂环境下的探索、学习和适应能力，与博士研究中LLM和多智能体在动态城市环境下的决策和优化高度相关，提供了评估和设计智能体的重要参考。",
+      "tags": [
+        "LLM智能体",
+        "长期任务",
+        "电子商务",
+        "基准测试",
+        "多智能体",
+        "动态环境"
+      ],
+      "abstract": "Long-horizon agentic tasks go beyond chaining short tasks over more interaction turns. Their evolving dynamic environments and long-range dependencies require Large Language Models (LLMs) to continually explore, learn from experience, and adapt their policies over thousands of steps. We introduce E-Commerce Bench, the first open-source benchmark that integrates multi-round counterpart negotiation and dynamic events into a year-long business operation. Over a 365-day year, an LLM agent concurrently runs multiple online stores, researching the market, negotiating with suppliers to source inventory, optimizing sales strategies, fulfilling orders, handling returns, and managing cash flow to maximize its end-of-year total assets. To construct a realistic merchant-side operating environment, the product and supplier data are derived from a real e-commerce platform, while a year-long calendar of promotions, natural disasters, and supply-chain shocks continually reshapes demand. For reproducibility, both sides of the market are deterministic: customer purchases and returns follow a fixed demand model, while a negotiation kernel determines supplier pricing, concessions, and decisions, with an LLM used only to verbalize them. We evaluate 18 frontier models across seven dimensions, including year-end assets, and find that no single model dominates. GPT-5.6 Sol earns the most, growing the 100,000 opening stake into 1,431,425, yet it ranks 16th of 18 on fraud avoidance and trails Fable5 in operational efficiency. Among open-weight models, Qwen3.8-Max-Preview leads with 416,252, 38% above GLM 5.2 (high), and achieves the strongest learning over the horizon, progressively bargaining down prices across repeated orders. Our code is available at https://github.com/QwenLM/E-CommerceBench.",
+      "summary_zh": "引入E-Commerce Bench，一个集成了多轮对手谈判和动态事件的全年业务运营基准。LLM智能体需同时运营多个在线商店，进行市场研究、谈判、销售、履行订单和管理现金流。评估了18个前沿模型，发现没有单一模型占优：GPT-5.6 Sol赚最多，但欺诈规避排名倒数第三；Qwen3.8-Max-Preview在开源模型中领先，并展现出最强的学习能力。",
+      "insight_zh": "该研究表明，在长期、动态的复杂任务中，不同LLM智能体在不同维度（如盈利能力、风险规避、学习能力）上各有优劣，没有全能模型。这强调了针对特定目标选择和优化智能体策略的重要性。"
+    },
+    {
+      "key": "arxiv:2608.30709",
+      "title": "RailSyn: Diagnosis-Guided Image Generation for Traceable Data Completion in Railway Foreign Object Detection",
+      "title_zh": "RailSyn：诊断引导的图像生成用于铁路异物检测中的可追溯数据补全",
+      "url": "https://arxiv.org/abs/2608.30709",
+      "doi": "",
+      "arxiv_id": "2608.30709",
+      "authors": [
+        "Quan Hao",
+        "Chenxi Zhang",
+        "Ziyang Tao",
+        "Yuyuan Zhou",
+        "Yudong Wang",
+        "Rui Shi",
+        "Lechuan Xu",
+        "Changhao Liu",
+        "Liguo Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T12:47:28+00:00",
+      "score": 90,
+      "reason": "该研究针对铁路异物检测中的稀缺正样本问题，提出诊断引导的图像生成框架，与遥感变化检测中的小样本、数据增强和域适应问题高度契合，且涉及智能体规划，与多智能体主题相关。",
+      "tags": [
+        "铁路异物检测",
+        "诊断引导生成",
+        "数据补全",
+        "目标检测",
+        "域适应"
+      ],
+      "abstract": "Railway foreign object detection (RFOD) is critical to safe railway operation, yet scarce real positive samples incompletely represent task-relevant variations in object scale, intrusion relation, railway scene, illumination, and adverse weather. Existing synthetic augmentation can improve RFOD detection, but its gains lack an explicit account of the task-relevant deficiencies complemented by the generated data. We therefore introduce RailSyn, a diagnosis-guided framework comprising a real-referenced Inspector and a requirement-aligned Generator. The Inspector constructs a variable-radius empirical cover from finite real observations to localize candidate completion regions and profile synthetic pools. The resulting audit identifies railway-context, intrusion-semantic, and visual-consistency requirements; the Generator addresses them through domain adaptation, agent-planned placement and physical contact relations, and plan-consistent conditional refinement. Using the Inspector, we further trace representation-space changes across generation variants; the complete system attains a local-shell occupation of $C_{gap}$ to 13.64%, which measures generated coverage of real-derived completion regions. Extensive experiments show AP50--95 gains of up to 4.9 points and consistent improvements across nine mainstream detectors, demonstrating broad cross-architecture utility.",
+      "summary_zh": "针对铁路异物检测中真实正样本稀缺、无法完整表征任务相关变化的问题，提出RailSyn框架，包含真实参考的检查器和需求对齐的生成器。检查器构建变半径经验覆盖以定位候选补全区域并分析合成池，识别铁路上下文、入侵语义和视觉一致性需求；生成器通过域适应、智能体规划放置和物理接触关系以及计划一致的条件细化来满足这些需求。实验表明，完整系统实现了13.64%的局部壳占用率，在九个主流检测器上AP50-95提升最高达4.9点。",
+      "insight_zh": "通过诊断引导的方式明确生成数据所需补全的任务相关缺陷，可显著提升合成数据对检测器的增强效果，且具有跨架构的泛化能力。"
+    },
+    {
       "key": "arxiv:2608.30661",
       "title": "SwarmBench: Can Large Language Models Act as Agent Swarm Orchestrators?",
       "title_zh": "SwarmBench：大语言模型能否充当智能体集群编排者？",
@@ -106,6 +636,183 @@
       "abstract": "Large language model-based multi-agent systems are evolving from fixed interaction topologies toward dynamically orchestrated Agent Swarms. However, existing benchmarks are still largely based on single-agent or general-purpose agent tasks, making it difficult to systematically evaluate key orchestration capabilities. We propose SwarmBench, a benchmark that evaluates model performance from multiple perspectives, including accuracy, efficiency, cost, and process quality. Experimental results show that current models exhibit substantial differences in orchestration capability. These differences are reflected not only in final accuracy, efficiency, and cost, but also in the overall quality of the orchestration process itself. Based on these findings, we further propose SwarmExp, a simple yet effective method based on experience extraction and experience replay, which consistently improves the orchestration performance of large language models.",
       "summary_zh": "该论文提出了SwarmBench，一个从准确性、效率、成本和过程质量等多个角度评估LLM编排智能体集群能力的基准。实验发现当前模型在编排能力上存在显著差异，并进一步提出了基于经验提取和回放的SwarmExp方法，能持续提升LLM的编排性能。",
       "insight_zh": "该研究为评估和提升LLM在动态多智能体系统中的编排能力提供了系统化的方法和工具，这对于设计复杂的城市更新多智能体模拟系统至关重要，其经验回放机制或可提升智能体协作的效率和鲁棒性。"
+    },
+    {
+      "key": "arxiv:2608.30633",
+      "title": "Quantum-Grassmann-Plucker Token Mixing for Deep Learning-Based Post-Disaster Damage Assessment",
+      "title_zh": "量子-格拉斯曼-普吕克标记混合用于基于深度学习的灾后损毁评估",
+      "url": "https://arxiv.org/abs/2608.30633",
+      "doi": "",
+      "arxiv_id": "2608.30633",
+      "authors": [
+        "Kooroush Farahkhah",
+        "Umut Lagap",
+        "Taha Rezaei",
+        "Saman Ghaffarian"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T11:42:27+00:00",
+      "score": 90,
+      "reason": "该研究利用卫星影像进行灾后建筑损毁评估，是遥感变化检测和灾害应急响应的典型应用，并探索了新型的视觉Transformer架构，与GIS博士研究方向高度契合。",
+      "tags": [
+        "灾害评估",
+        "卫星影像",
+        "视觉Transformer",
+        "量子机器学习",
+        "迁移学习"
+      ],
+      "abstract": "Timely post-disaster building damage assessment from satellite imagery is a critical engineering decision support task, yet it remains constrained by class imbalance, ambiguous intermediate damage states, and limited cross-event transferability. This study presents, to our knowledge, the first application of Grassmann-Plucker (GP) token mixing to computer vision and introduces two extensions for image classification: the Quantum-inspired Grassmann-Plucker (QGP) head and the Hybrid Quantum Machine Learning Grassmann-Plucker (HQML-GP) head. The GP head represents multiscale relationships among image patch tokens by encoding subspaces formed by token pairs with Plucker coordinates; QGP enriches these coordinates with amplitude-derived probability features, whereas HQML-GP incorporates expectation values generated by a simulated quantum circuit into the geometric token representation. Paired pre- and post-event image patches from the xBD tornado dataset were processed using a frozen six-channel Vision Transformer base encoder with 16 x 16-pixel patches. The three GP-based heads were compared with multilayer perceptron and Transformer baselines under identical training, checkpoint selection, and evaluation protocols. Joplin and Moore tornado samples were used for model development and seen-event testing, while Tuscaloosa was reserved for unseen-event evaluation. QGP led both test sets in accuracy and macro-F1: 83.46% and 64.50% for the seen events, and 66.45% and 52.70% for the unseen event. Although HQML-GP obtained the highest validation macro-F1 of 65.63%, it did not surpass QGP on either test set and required substantially more training time per epoch. These results establish GP token mixing as a competitive attention-free alternative to conventional Transformer-based token mixing for paired satellite image damage classification.",
+      "summary_zh": "本研究首次将格拉斯曼-普吕克标记混合应用于计算机视觉，并提出了量子启发和混合量子机器学习两种扩展头，用于处理灾前灾后卫星影像对，以进行建筑损毁分类。研究使用冻结的六通道视觉Transformer编码器，在xBD龙卷风数据集上对比了三种基于GP的头与多层感知机和Transformer基线。结果显示，量子启发的QGP头在已见和未见事件的测试集上均取得了最高的准确率和宏F1分数，证明了GP标记混合作为注意力机制替代方案的竞争力。",
+      "insight_zh": "该研究表明，将几何代数（如格拉斯曼-普吕克坐标）与量子计算思想引入视觉Transformer，可以提升模型在数据不平衡和跨事件泛化场景下的表现，为遥感影像分析提供了新的架构思路。"
+    },
+    {
+      "key": "arxiv:2608.30498",
+      "title": "CM2: Multimodal Cultural Reasoning via an Integrated Multi-Agent Framework",
+      "title_zh": "CM2：基于集成多智能体框架的多模态文化推理",
+      "url": "https://arxiv.org/abs/2608.30498",
+      "doi": "",
+      "arxiv_id": "2608.30498",
+      "authors": [
+        "Qi Li",
+        "Zhaojie Kang",
+        "Yingjie He",
+        "Zheng Lin",
+        "Hao Zhang",
+        "Guangxin Wu",
+        "Yan Gong",
+        "Rong Fu",
+        "and Jianyuan Ni"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T09:29:04+00:00",
+      "score": 90,
+      "reason": "论文提出多模态文化推理的多智能体框架CM2，与LLM和多智能体研究方向高度契合，其跨模态感知、检索增强和推理机制对地理空间多模态数据融合与推理有直接借鉴意义。",
+      "tags": [
+        "多模态",
+        "文化推理",
+        "多智能体",
+        "检索增强",
+        "跨模态仲裁"
+      ],
+      "abstract": "Multimodal Large Language Models (MLLMs) have shown remarkable success in STEM domains, where progress is often driven by vertical, step-by-step deduction under relatively stable symbol systems. Their horizontal, interdisciplinary cultural reasoning, however, remains underexplored.We propose CM2, a multi-agent framework grounded in the cognitive pathway of human cultural interpretation. CM2 integrates multimodal perception, retrieval-augmented generation, networked reasoning, gated fusion, and reward-driven feedback.Experiments on CM2D across multiple MLLM backbones show consistent gains over CoT and typical reasoning paradigms; ablations validate each module's contribution, and conflict analyses confirm genuine cross-modal arbitration.",
+      "summary_zh": "本文提出CM2，一个基于人类文化解读认知路径的多智能体框架。CM2集成了多模态感知、检索增强生成、网络化推理、门控融合和奖励驱动反馈。在CM2D基准上的实验表明，在多个MLLM骨干网络上，CM2相比CoT和典型推理范式持续获得性能提升；消融实验验证了每个模块的贡献，冲突分析确认了真正的跨模态仲裁。",
+      "insight_zh": "通过模拟人类文化解读的认知路径，并集成多模态感知、检索增强和网络化推理，可以有效提升多模态大模型在横向跨学科文化推理任务上的表现。"
+    },
+    {
+      "key": "arxiv:2608.30094",
+      "title": "A Hybrid State-Space Approach for Census-Tract Population Estimation",
+      "title_zh": "一种用于人口普查区人口估计的混合状态空间方法",
+      "url": "https://arxiv.org/abs/2608.30094",
+      "doi": "",
+      "arxiv_id": "2608.30094",
+      "authors": [
+        "Jackson R. Ye",
+        "Alexandre V. Morozov"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T23:43:06+00:00",
+      "score": 90,
+      "reason": "提出基于MambaVision混合状态空间模型直接从行政区影像估计人口，是遥感与深度学习的交叉应用，与博士研究方向中的遥感变化检测和多源数据融合高度相关。",
+      "tags": [
+        "人口估计",
+        "遥感影像",
+        "状态空间模型",
+        "Mamba",
+        "人口普查"
+      ],
+      "abstract": "Sequence models---the architecture family behind large language models and, increasingly, state-of-the-art image recognition---have redefined how machines learn from high-dimensional data. Yet population estimation from satellite imagery, a task that underpins infrastructure planning, public health, and disaster response, has scarcely benefited: leading systems still bind population to a uniform raster, disaggregating census counts onto grid cells through weighting surfaces built from ancillary data (e.g., in WorldPop and LandScan), which can introduce systematic spatial bias, and predicting population per grid cell with convolutional neural networks. In this approach, the administrative-unit structure in which the census was actually collected is discarded. We close this gap with MambaPop, which renders each administrative unit as a single polygon-masked satellite image and treats tract-level population estimation as a sequence-modeling problem over its image patches, pairing each tract image directly with its population label and eliminating the disaggregation step entirely. Built on the hybrid state-space--attention MambaVision backbone, MambaPop is, to our knowledge, the first method to learn population directly from an administrative unit's own image as well as the first to apply a state-space based (Mamba) hybrid architecture to the population estimation task. Across all $\\sim$84{,}000 contiguous-US census tracts of the 2020 census, MambaPop attains a mean absolute error (MAE) of $1{,}141$ persons per tract, matching the strongest convolutional baseline (YOLOv11, MAE $1{,}122$).",
+      "summary_zh": "提出了MambaPop方法，将每个行政单元渲染为单个多边形掩膜的卫星图像，并将人口估计视为序列建模问题。该方法基于MambaVision混合状态空间-注意力骨干网络，直接学习行政单元图像与人口标签的映射，消除了传统方法中的空间分解步骤。在全美约84,000个普查区上达到与最强卷积基线相当的精度。",
+      "insight_zh": "将行政单元作为整体进行序列建模，避免了传统栅格分解带来的空间偏差，为人口估计提供了新思路，并展示了状态空间模型在遥感任务中的潜力。"
+    },
+    {
+      "key": "arxiv:2608.30054",
+      "title": "When 3D Gaussian Splatting Recovers Real Surfaces",
+      "title_zh": "当3D高斯泼溅恢复真实表面时",
+      "url": "https://arxiv.org/abs/2608.30054",
+      "doi": "",
+      "arxiv_id": "2608.30054",
+      "authors": [
+        "Songhe Wang",
+        "David Johnathan Miller"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T21:30:26+00:00",
+      "score": 90,
+      "reason": "该论文深入探讨了3D高斯泼溅（3DGS）在三维重建中恢复真实表面的数学条件，与遥感变化检测和三维城市建模高度相关，为理解重建算法的几何可靠性提供了理论基础。",
+      "tags": [
+        "3D Gaussian Splatting",
+        "三维重建",
+        "几何与外观解耦",
+        "表面重建",
+        "数学框架"
+      ],
+      "abstract": "When does 3D Gaussian Splatting (3DGS) recover the true scene surface rather than just overfitting view-dependent appearance? We answer this by developing a mathematical framework based on a first-hit rendering abstraction that cleanly isolates geometry from appearance. We prove that geometric misalignment forcefully converts spatial textures into high-frequency angular signals via parallax. This establishes a strict identifiability window: if angular capacity is bounded, surface-consistent solutions are mathematically preferred; if unrestricted, the same images can be perfectly explained by an incorrect, opaque billboard geometry. Experiments on synthetic stress tests confirm this prediction, showing billboard failures emerge precisely at high angular capacities. Conversely, in the real-world datasets we evaluate under standard capture protocols, reconstructions remain surface-consistent even at high SH degrees, which is consistent with the prediction that rich spatial texture can push billboard solutions outside the tested angular-capacity range.",
+      "summary_zh": "本文通过首次命中渲染抽象建立数学框架，证明了几何错位会通过视差将空间纹理转化为高频角度信号，从而在角度容量受限时，表面一致的解在数学上更受青睐；反之，无限制的角度容量可能导致错误的广告牌式几何也能完美解释图像。实验验证了该预测。",
+      "insight_zh": "该研究为3DGS在真实场景中的表面重建可靠性提供了理论边界，提示在三维重建应用中需关注采集协议和模型容量对几何精度的影响。"
+    },
+    {
+      "key": "arxiv:2608.29958",
+      "title": "RIDGE: Region-Informed Derivative-Guided Evidence Selection for Long Video Understanding",
+      "title_zh": "RIDGE：用于长视频理解中的区域感知、导数引导的证据选择",
+      "url": "https://arxiv.org/abs/2608.29958",
+      "doi": "",
+      "arxiv_id": "2608.29958",
+      "authors": [
+        "Shanqing Xu",
+        "Meng Luo",
+        "Mengchen Qian",
+        "Yuhui Gao",
+        "Siyue Peng",
+        "Xiaohan Zhong",
+        "Xiaojin Zhang",
+        "Zhongyu Wei",
+        "Wei Chen",
+        "and Xiang Bai"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T18:40:51+00:00",
+      "score": 90,
+      "reason": "该研究提出一种将帧-查询相似度序列作为时序信号进行区域感知选择的框架，其方法论与遥感时间序列分析中关键帧或关键时期识别高度契合，可直接应用于城市变化检测。",
+      "tags": [
+        "长视频理解",
+        "帧选择",
+        "时序信号",
+        "视觉语言模型",
+        "区域感知"
+      ],
+      "abstract": "Long videos contain far more visual content than Large Vision-Language Models (LVLMs) can process under a fixed visual-token budget, making frame selection essential. Existing query-aware selectors usually estimate frame-query relevance and build a compact subset from high-scoring frames. Although their mechanisms differ, the similarity sequence is still often treated primarily as values to rank or sample from, rather than as an ordered signal whose shape reflects how query-relevant evidence emerges, peaks, and fades over time. This can obscure frames that explain, contextualize, or follow an event, because such evidence may lie on the rising or falling sides of a nearby relevance peak and receive lower absolute scores. We propose RIDGE, a frame selection framework that reads the frame-query similarity curve as a temporal signal. By using local changes and curvature, RIDGE partitions the timeline into structural regions and applies region-specific selection to preserve event cores, transitions, buildup, aftermath, and contextual frames under a fixed budget. It is a lightweight post-processing step on precomputed frame-query scores and requires neither training nor iterative LVLM calls. Across four long-video benchmarks and three backbones, RIDGE achieves the best performance in most settings and remains competitive in the others.",
+      "summary_zh": "提出RIDGE框架，将帧-查询相似度曲线视为时序信号，利用局部变化和曲率将时间线划分为结构区域，并应用区域特定选择策略，在固定预算下保留事件核心、过渡、铺垫、余波和上下文帧。该方法是对预计算帧-查询分数的轻量级后处理，无需训练或迭代LVLM调用。在四个长视频基准和三个骨干网络上，RIDGE在大多数设置中取得最佳性能。",
+      "insight_zh": "将相似度序列视为具有形状的时序信号，而非仅用于排序的值，能够更有效地捕捉事件演化的关键证据，该思想可迁移至遥感时间序列分析中的关键变化时期识别。"
+    },
+    {
+      "key": "arxiv:2608.29944",
+      "title": "On the Role of MRI Sequences in Cross-Dataset Generalization for Brain Tumor Segmentation",
+      "title_zh": "MRI序列在脑肿瘤分割跨数据集泛化中的作用研究",
+      "url": "https://arxiv.org/abs/2608.29944",
+      "doi": "",
+      "arxiv_id": "2608.29944",
+      "authors": [
+        "Henrique Zan Grande",
+        "Jo\\~ao G. Pitol",
+        "Lucas B. Schuck",
+        "Rafael V. Serenato",
+        "Rayson Laroca",
+        "Andre Gustavo Hochuli"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T18:17:18+00:00",
+      "score": 90,
+      "reason": "系统评估了不同MRI序列对跨数据集分割模型鲁棒性的影响，并探讨了有限域适应下的性能提升，对理解多源遥感数据中不同波段/特征对模型泛化能力的影响具有直接借鉴意义。",
+      "tags": [
+        "脑肿瘤分割",
+        "跨数据集泛化",
+        "MRI序列",
+        "域适应",
+        "U-Net"
+      ],
+      "abstract": "Brain tumor segmentation in magnetic resonance imaging (MRI) is a critical task for diagnosis and treatment planning. Despite the success of deep learning architectures such as U-Net and its variants, performance degradation across datasets remains a major challenge, particularly under domain shift and limited annotated data. To address this issue, this study systematically evaluates how individual MRI sequences influence model robustness across two well-known datasets. A ResUNet-based framework is employed, where each modality is trained independently to isolate its effect under a controlled cross-dataset evaluation protocol with tumor size stratification, without target-domain training, or with limited domain adaptation. Results show that the T2f/FLAIR sequence achieves the best cross-dataset performance, with Dice scores exceeding 75%. It consistently outperforms other modalities across most tumor size ranges, while multi-sequence training further improves performance. Additionally, even limited target-domain adaptation yields rapid initial gains, reducing the need for extensive annotations and costly retraining. Our source code is publicly available at https://github.com/henrique-zan/brain_tumor_segmentation/.",
+      "summary_zh": "系统评估了单个MRI序列对模型跨数据集鲁棒性的影响。使用ResUNet框架，在受控的跨数据集评估协议下独立训练每种模态。结果显示T2f/FLAIR序列跨数据集性能最佳，Dice超过75%，多序列训练可进一步提升性能，且有限的域适应能带来快速的初始性能提升。",
+      "insight_zh": "在跨数据集任务中，不同输入模态对模型泛化能力的贡献存在显著差异，识别并优先利用最具鲁棒性的模态，并结合少量目标域数据进行适应，是提升模型迁移能力的有效策略。"
     },
     {
       "key": "arxiv:2608.29793",
@@ -137,181 +844,95 @@
       "insight_zh": "该框架通过结构化潜流和分阶段生成策略，有效应对城市尺度点云生成中的规模与拼接难题，为城市三维重建和更新评估提供了新的技术路径。"
     },
     {
-      "key": "arxiv:2608.29992",
-      "title": "SVI2LoD3: Agent-Driven Reconstruction of LoD3 Facade Openings in Semantic 3D City Models from Volunteered Street View Imagery using Large Language and Visual Models",
-      "title_zh": "SVI2LoD3：利用大语言和视觉模型从众包街景影像智能体驱动重建语义3D城市模型中的LoD3立面开口",
-      "url": "https://arxiv.org/abs/2608.29992",
+      "key": "arxiv:2608.29640",
+      "title": "LLMODE: Aligning ODEs with LLMs via Gated Token Injection for Irregular Spatio-Temporal Forecasting",
+      "title_zh": "LLMODE：通过门控令牌注入对齐ODE与LLM以实现不规则时空预测",
+      "url": "https://arxiv.org/abs/2608.29640",
       "doi": "",
-      "arxiv_id": "2608.29992",
+      "arxiv_id": "2608.29640",
       "authors": [
-        "Elmehdi Kanna",
-        "Lukas Arzoumanidis",
-        "Huynh Duc An Son Nguyen",
-        "Youness Dehbi"
+        "Di Zhang",
+        "Jingyang Zhang",
+        "Ziqian Wang",
+        "Chi Zhang",
+        "Yikun Ban",
+        "Ziwei Zhang",
+        "Ruijie Wang"
       ],
       "venue": "arXiv",
-      "published": "2026-08-30T19:37:01+00:00",
-      "score": 85,
-      "reason": "论文直接面向3D城市模型LoD3重建，利用街景影像和LLM/视觉模型，与城市更新和地理空间智能高度相关。",
+      "published": "2026-08-30T08:02:20+00:00",
+      "score": 90,
+      "reason": "该研究利用冻结的LLM骨干网络处理不规则时空数据，提出新的token高效框架，与申请人的时空数据挖掘和LLM研究方向高度相关。",
       "tags": [
-        "3D城市模型",
-        "LoD3",
-        "街景影像",
+        "时空预测",
         "大语言模型",
-        "视觉模型",
-        "零样本分割"
+        "不规则采样",
+        "ODE",
+        "图神经网络"
       ],
-      "abstract": "This paper presents an end-to-end, agent-driven pipeline for the LoD3 reconstruction of facade openings in 3D city models, producing directly usable CityGML-conform outputs. In contrast to existing approaches that rely on supervised semantic segmentation and therefore require large amounts of manually annotated training data, the proposed method employs a zero-shot segmentation strategy. This substantially reduces the annotation effort while still achieving strong performance in our benchmark on the eTRIMS dataset. A further key contribution is the enforcement of correct partonomic hierarchies, thereby producing CityGML-conform LoD3 building models. Beyond the reconstruction pipeline itself, this work also introduces a novel evaluation metric for facade reconstruction, termed Facade Feature Distance (FFD). Unlike conventional metrics such as mIoU or FRDS, which assess similarity primarily through pixel-wise overlap, FFD measures distance in a high-level feature space derived from a vision transformer. In doing so, it captures both semantic correctness and architectural layout, providing a more suitable assessment of facade reconstruction quality. The proposed pipeline and evaluation strategy together offer a practical and scalable contribution toward the automated generation and analysis of semantically enriched 3D city models. The developed code is published at: https://github.com/hcu-cml/citydb-SVI2LoD3-ai.",
-      "summary_zh": "本文提出一个端到端的智能体驱动流程，用于3D城市模型中立面开口的LoD3重建，直接生成符合CityGML标准的输出。该方法采用零样本分割策略，减少人工标注，并引入新的评估指标Facade Feature Distance (FFD)来衡量重建质量。",
-      "insight_zh": "利用零样本分割和LLM驱动的智能体流程，可以显著降低生成语义丰富的3D城市模型的门槛，为城市更新的自动化分析提供了可扩展的解决方案。"
+      "abstract": "Large language models (LLMs) have shown promise for spatio-temporal forecasting, but existing approaches often rely on regularly sampled token sequences and struggle with irregular observations because of temporal asynchrony, representation-space misalignment, and limited context windows. We propose LLMODE, a token-efficient framework for irregular spatio-temporal forecasting with a frozen LLM backbone. LLMODE first uses a graph-aware ODE encoder to reconstruct irregular graph observations as a continuous-time latent trajectory. A Fixed-Budget Perceiver Resampler then compresses this variable-length trajectory into a fixed number of dynamic memory tokens. In parallel, compact statistical descriptors are encoded and resampled into context memory tokens. A dual-source gated cross-attention module injects both memories into the frozen LLM, enabling controlled utilization of external spatio-temporal evidence. Experiments on three real-world urban datasets and two physical-dynamics benchmarks show competitive overall performance, with clearer advantages under sparse or dynamically complex irregular sampling. Additional evaluations on unseen urban regions further demonstrate strong zero-shot generalization without adaptation.",
+      "summary_zh": "针对现有基于LLM的时空预测方法依赖规则采样、难以处理不规则观测的问题，提出LLMODE框架。该框架使用图感知ODE编码器将不规则图观测重建为连续时间潜在轨迹，通过固定预算Perceiver重采样器将变长轨迹压缩为固定数量的动态记忆令牌，并利用双源门控交叉注意力模块将外部时空证据注入冻结的LLM。在三个真实城市数据集和两个物理动力学基准上表现出有竞争力的性能，在稀疏或动态复杂的不规则采样下优势更明显，并展现出强大的零样本泛化能力。",
+      "insight_zh": "通过ODE编码器和门控注意力机制，可以有效地将不规则时空观测与冻结的LLM对齐，实现token高效且具有零样本泛化能力的时空预测。"
     },
     {
-      "key": "arxiv:2608.29923",
-      "title": "Towards Continual Test-Time Adaptation of Vision-Language Models in Open-Vocabulary Semantic Segmentation",
-      "title_zh": "开放词汇语义分割中视觉-语言模型的持续测试时适应",
-      "url": "https://arxiv.org/abs/2608.29923",
+      "key": "arxiv:2608.29220",
+      "title": "SGPDFuse: Semantically-Guided Physics-Disentanglement General Multi-Modal Image Fusion",
+      "title_zh": "SGPDFuse：语义引导的物理解耦通用多模态图像融合",
+      "url": "https://arxiv.org/abs/2608.29220",
       "doi": "",
-      "arxiv_id": "2608.29923",
+      "arxiv_id": "2608.29220",
       "authors": [
-        "Chandler Timm C. Doloriel",
-        "Yunbei Zhang",
-        "Sarthak Kumar Maharana",
-        "Muhammad Salman Siddiqui",
-        "Tor Kristian Stevik",
-        "Fadi Al Machot",
-        "Kristian Hovde Liland",
-        "Habib Ullah"
+        "Haozhen Wei",
+        "Chengjun Jiang",
+        "Yutong Guo",
+        "Xinrui Ju",
+        "Xingyuan Li",
+        "Xiang Chen",
+        "and Jinyuan Liu"
       ],
       "venue": "arXiv",
-      "published": "2026-08-30T17:39:14+00:00",
-      "score": 85,
-      "reason": "该研究提出稳定化框架DAF，解决开放词汇语义分割在持续测试时分布偏移下的脆弱性，并在遥感数据集LoveDA上验证，与遥感影像理解和模型鲁棒性研究高度相关。",
+      "published": "2026-08-29T12:08:27+00:00",
+      "score": 90,
+      "reason": "提出语义引导的物理解耦多模态图像融合方法，利用基础模型和物理先验分离本质内容与环境干扰，对遥感多源数据融合具有高度相关性。",
       "tags": [
-        "开放词汇分割",
-        "测试时适应",
-        "视觉-语言模型",
+        "multimodal image fusion",
+        "physics-disentanglement",
+        "semantic guidance",
+        "foundation model",
+        "remote sensing"
+      ],
+      "abstract": "Multimodal image fusion (MMIF) aims to integrate complementary sensor data into a single representation that preserves intrinsic scene reality while eliminating environmental interferences. Most existing approaches rely on blind feature aggregation, which excels at signal accumulation but fails to distinguish essential content from physical degradations. We propose SGPDFuse, which bridges this gap by mapping inputs into a physics-disentangled structural representation via a Semantic-Physical Parametric Bridge (SPPB) built on pretrained vision foundation models, utilizing the Intrinsic-Variation principle to decouple invariant scene attributes from transient environmental factors. To guide this decomposition, we introduce a Semantic Alignment mechanism: we explicitly anchor the fused representation to salient semantic features in the same foundation model feature space via cosine similarity to preserve critical targets, while enforcing physical texture fidelity through Gram-matrix regularization to strictly eliminate unnatural artifacts. Extensive experiments demonstrate that SGPDFuse achieves state-of-the-art performance across infrared-visible, multi-focus, and multi-exposure benchmarks using a single architecture.",
+      "summary_zh": "针对现有融合方法盲目特征聚合、无法区分本质内容与物理退化的问题，提出SGPDFuse。它通过基于预训练视觉基础模型的语义-物理参数桥（SPPB）将输入映射到物理解耦的结构表示，利用内在-变化原则分离不变场景属性与瞬态环境因素，并通过语义对齐和Gram矩阵正则化引导融合。",
+      "insight_zh": "将物理解耦与语义对齐结合，可让融合结果在保留关键目标的同时消除环境干扰，实现单一架构下的多模态通用融合。"
+    },
+    {
+      "key": "arxiv:2608.29112",
+      "title": "NFAD: Nuisance-Filtered Anomaly Detection Under Distribution Shift",
+      "title_zh": "NFAD：分布偏移下的干扰过滤异常检测",
+      "url": "https://arxiv.org/abs/2608.29112",
+      "doi": "",
+      "arxiv_id": "2608.29112",
+      "authors": [
+        "Dat Cao",
+        "Son Nghiem",
+        "Phan Nguyen",
+        "Jun Rekimoto",
+        "Jhih-Ciang Wu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-29T07:41:34+00:00",
+      "score": 90,
+      "reason": "针对分布偏移下的异常检测，通过显式建模干扰子空间提升鲁棒性，与遥感变化检测中的光照、视角等环境变化问题高度相关。",
+      "tags": [
+        "异常检测",
+        "分布偏移",
+        "工业检测",
         "遥感",
-        "分布偏移"
+        "变化检测"
       ],
-      "abstract": "Open-vocabulary semantic segmentation (OVSS) relies on vision-language alignment to recognize arbitrary text-defined categories, yet this alignment is fragile under continual test-time distribution shift. Our diagnostic analysis reveals that entropy minimization drives patch-level class collapse, continual updates erode vision-language alignment, and redundant gradients from low-shift samples waste computation. We propose Diversify, Anchor, and Filter (DAF), a stabilization framework that augments entropy-based adaptation with a marginal diversity loss that resists collapse, a cross-modal anchor consistency loss that constrains feature drift relative to a frozen source model, and feature salience filtering that skips low-value backward passes to offset part of the source-anchor overhead. We evaluate on five datasets spanning natural scenes, autonomous driving, underwater imagery, and remote sensing with their corrupted variants. Across the evaluated continual shifts, DAF remains stable where entropy minimization collapses, improving mIoU by over 8 points on Pascal VOC20-C, over 9 points on LoveDA, and over 3 points on Foggy Cityscapes compared to the source model, and is robust to aggressive adaptation and learning rate choices.",
-      "summary_zh": "提出DAF框架，通过边际多样性损失、跨模态锚定一致性损失和特征显著性过滤，稳定熵最小化适应过程，在五个数据集（包括遥感LoveDA）上显著提升mIoU，并增强对激进适应和学习率的鲁棒性。",
-      "insight_zh": "针对持续分布偏移的稳定化策略能有效防止视觉-语言模型在适应过程中的崩溃，为遥感开放词汇分割的实用化提供了方法支持。"
-    },
-    {
-      "key": "arxiv:2605.09687",
-      "title": "Spatial-Frequency Gated Swin Transformer for Cross-Sensor Remote Sensing Super-Resolution",
-      "title_zh": "用于跨传感器遥感图像超分辨率的空间-频率门控Swin Transformer",
-      "url": "https://arxiv.org/abs/2605.09687",
-      "doi": "",
-      "arxiv_id": "2605.09687",
-      "authors": [
-        "Md Aminur Hossain",
-        "Ayush V. Patel",
-        "Sanjay K. Singh",
-        "Yogesh Jethani",
-        "Biplab Banerjee"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 85,
-      "reason": "该论文直接针对遥感图像超分辨率任务，提出了一种结合空间与频率信息的Swin Transformer改进模型，与您的研究方向（遥感变化检测、多源数据融合）高度相关，尤其是在处理跨传感器数据方面具有潜在应用价值。",
-      "tags": [
-        "遥感",
-        "超分辨率",
-        "Transformer",
-        "跨传感器",
-        "Swin Transformer"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "该论文提出了一种名为空间-频率门控Swin Transformer的模型，用于解决跨传感器遥感图像的超分辨率问题。模型通过门控机制有效融合空间域和频率域的信息，以提升超分辨率重建的性能。",
-      "insight_zh": "该研究强调了在遥感图像超分辨率中融合空间与频率信息的重要性，并针对跨传感器场景进行了专门设计，这为处理多源遥感数据融合中的分辨率差异问题提供了新的技术思路。"
-    },
-    {
-      "key": "arxiv:2608.30392",
-      "title": "Foundation Models Meet Agriculture: Challenges Beyond Pretraining",
-      "title_zh": "基础模型遇上农业：预训练之外的挑战",
-      "url": "https://arxiv.org/abs/2608.30392",
-      "doi": "",
-      "arxiv_id": "2608.30392",
-      "authors": [
-        "Vishal Nedungadi",
-        "Xingguo Xiong",
-        "Marc Ru{\\ss}wurm",
-        "Ioannis N. Athanasiadis"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-31T07:47:57+00:00",
-      "score": 80,
-      "reason": "该研究系统评估了地球观测基础模型在农业任务中的性能瓶颈，识别预训练-部署模态差距和任务空间结构问题，与遥感基础模型应用和多源数据融合高度相关，对理解模型泛化有重要启示。",
-      "tags": [
-        "基础模型",
-        "农业",
-        "遥感",
-        "模态差距",
-        "任务空间",
-        "泛化"
-      ],
-      "abstract": "Global food security and sustainable climate action increasingly rely on robust, scalable agricultural monitoring. Earth observation foundation models have emerged as powerful, label-efficient tools across general remote sensing domains, yet early attempts to deploy them for agricultural applications have yielded surprisingly poor results. We hypothesize that this performance gap stems from the extreme heterogeneity of agricultural landscapes and the inherent inability of current earth observation foundation models to adapt to task-specific nuances. In this work, we systematically evaluate two critical bottlenecks hindering the deployment of foundation models in agricultural tasks, benchmarking two earth observation foundation models, a foundation model designed for tabular data, and conventional supervised baselines across seven real-world agricultural datasets spanning yield prediction, phenology estimation, and crop classification. First, we identify a pretraining-deployment modality gap: agricultural downstream tasks frequently require diverse, non-imagery data modalities that earth observation foundation models are architecturally unequipped to ingest, while a foundation model built for tabular data handles this heterogeneity more naturally. Second, we formalize the agricultural task space across five structural axes to demonstrate why current models fail to generalize reliably, resulting in highly unstable model rankings across evaluation settings. By characterizing these structural and modal gaps, our insights highlight the friction between general-purpose architectures and specialized agricultural downstream data, providing a strategic roadmap for developing the next generation of domain-aware foundation models.",
-      "summary_zh": "系统评估两个地球观测基础模型、一个表格数据基础模型和传统监督基线在七个农业数据集上的表现，识别出预训练-部署模态差距和农业任务空间的结构性轴，解释当前模型泛化不稳定的原因。",
-      "insight_zh": "农业任务的异质性和非影像数据模态需求是基础模型应用的主要障碍，通用架构与领域数据之间的摩擦为领域感知模型设计提供了战略方向。"
-    },
-    {
-      "key": "arxiv:2608.30924",
-      "title": "TRIPPULSE: Multi-Agent Travel Planning with Review-Grounded Reasoning",
-      "title_zh": "TRIPPULSE：基于评论推理的多智能体旅行规划",
-      "url": "https://arxiv.org/abs/2608.30924",
-      "doi": "",
-      "arxiv_id": "2608.30924",
-      "authors": [
-        "Priyanshu Karmakar",
-        "Borru Vijay Sai",
-        "Shubhojit Mallick",
-        "Abhik Jana",
-        "Shreya Ghosh",
-        "Manish Gupta"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-31T15:02:37+00:00",
-      "score": 75,
-      "reason": "该研究提出基于多智能体和LLM的旅行规划框架，融合评论信息进行个性化推荐，与LLM和多智能体在城市与时空场景中的应用高度相关，对城市服务推荐和时空行为建模有参考价值。",
-      "tags": [
-        "多智能体",
-        "LLM",
-        "旅行规划",
-        "评论挖掘",
-        "时空约束",
-        "个性化"
-      ],
-      "abstract": "Travel itinerary generation requires balancing strict spatio-temporal constraints with human preferences. Existing LLM-based planners mainly rely on structured attributes and pre- defined traveler personas, but real travel deci- sions are often shaped by reviews that reveal experiential factors such as comfort, safety, ser- vice quality, ambiance, crowding, and hidden risks absent from structured databases. Incor- porating such review information is therefore critical to realistic, user-centric itinerary gen- eration. We propose TRIPPULSE1, a multi- agent framework for review-grounded travel planning. Instead of relying on a monolithic planner (and face context and reasoning bot- tlenecks), TRIPPULSE2 decomposes itinerary generation into specialized agents (each op- erating over localized contexts) for accom- modations, transportation, meals, attractions, and events, coordinated through a global or- chestrator with scheduling mechanisms that enforce temporal and budget feasibility. We augment TRIPCRAFT with 100K+ real-world reviews and introduce Review-Grounded Per- sona Alignment (RGPA), an LLM-as-a-Judge metric for evaluating alignment with human- centric travel experiences. Experiments across multiple trip durations and diverse proprietary and open-source models show that TRIPPULSE maintains strong constraint satisfaction while generating more personalized and experien- tially grounded itineraries.",
-      "summary_zh": "提出TRIPPULSE，一种多智能体旅行规划框架，将行程生成分解为住宿、交通、餐饮、景点和事件等专业智能体，由全局协调器调度以满足时空和预算约束，并引入基于评论的个性化对齐指标RGPA。",
-      "insight_zh": "该研究通过多智能体分解和评论信息融合，在满足严格时空约束的同时提升行程个性化，展示了LLM在复杂时空决策任务中的潜力。"
-    },
-    {
-      "key": "arxiv:2608.30714",
-      "title": "SegWave: Wavelet-Driven Segmentation of Tampered Regions",
-      "title_zh": "SegWave：基于小波驱动的篡改区域分割",
-      "url": "https://arxiv.org/abs/2608.30714",
-      "doi": "",
-      "arxiv_id": "2608.30714",
-      "authors": [
-        "Siddhi Pravin Lipare",
-        "Vishesh Kumar",
-        "Akshay Agarwal"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-31T12:54:11+00:00",
-      "score": 75,
-      "reason": "该论文提出了一种结合空间与频率域信息的图像篡改检测方法，属于图像取证领域，与您的研究方向（遥感变化检测）在技术方法（频率域分析、Transformer）上高度相关，可应用于遥感影像的真实性验证，关联度较高。",
-      "tags": [
-        "图像取证",
-        "篡改检测",
-        "小波变换",
-        "Transformer",
-        "频率域"
-      ],
-      "abstract": "Verifying image authenticity is increasingly difficult, posing serious risks across journalism, law enforcement, and political domains. Most existing forensic methods rely on high-level visual artifacts and treat frame detection as a simple binary task. To address this, we propose SegWave, a hybrid framework that jointly leverages spatial and frequency-domain cues for image tampering detection. SegWave integrates a transformer-based architecture with the Discrete Wavelet Transform (DWT) to capture localized, multi-scale frequency inconsistencies indicative of manipulation. To further improve localization effectiveness, we introduce an Adaptive Sub-band Attention module (ASA) that dynamically highlights the informative high-frequency wavelet components. Extensive experiments on multiple benchmark datasets demonstrate that SegWave consistently outperforms state-of-the-art tampering detection methods in challenging evaluation settings.",
-      "summary_zh": "SegWave是一个混合框架，结合了Transformer架构和离散小波变换（DWT），以捕捉局部、多尺度的频率不一致性，用于图像篡改检测和定位。该框架还引入了自适应子带注意力模块（ASA）来动态突出信息丰富的高频小波分量，在多个基准数据集上优于现有方法。",
-      "insight_zh": "该研究强调了在图像取证中联合利用空间和频率域线索的重要性，其小波驱动的注意力机制或可借鉴到遥感变化检测中，用于捕捉地物变化在频率域上的细微特征。"
+      "abstract": "Recent advances in anomaly detection (AD) for industrial inspection have pushed performance on standard benchmarks toward saturation. However, strong benchmark performance does not necessarily translate to real-world deployment, as these benchmarks are primarily collected under controlled acquisition conditions. Changes in illumination, background, viewpoint, and other environmental factors can shift normal samples away from the learned normal distribution and cause false anomaly responses. We address AD under such distribution shifts by explicitly modeling nuisance variation from changing imaging conditions in feature space. Without anomaly labels or target-domain data, our Nuisance-Filtered Anomaly Detection (NFAD) framework estimates a nuisance subspace from matched feature displacements induced by content-preserving perturbations and suppresses its contribution to anomaly residuals at inference. The same subspace supports two complementary branches: full projection for image-level detection and selective suppression for pixel-level localization, preserving evidence of localized defects. On AeBAD-S, a benchmark specifically designed for AD under acquisition shifts, NFAD achieves 91.0\\% image-level AUROC, establishing a new state of the art. Notably, this robustness does not come at the expense of conventional AD performance: NFAD remains competitive on standard benchmarks that do not explicitly evaluate distribution shift, including VisA, Real-IAD, and MVTec AD. These results show that explicitly suppressing such nuisance variation improves AD under distribution shift while preserving strong performance in standard settings.",
+      "summary_zh": "提出NFAD框架，在无异常标签和目标域数据情况下，从内容保持扰动引起的特征位移中估计干扰子空间，并在推理时抑制其贡献，在AeBAD-S上达到SOTA，且不牺牲标准基准性能。",
+      "insight_zh": "显式建模并抑制成像条件变化引起的干扰子空间，可显著提升异常检测在分布偏移下的鲁棒性，该思路可直接应用于遥感变化检测中的环境因素校正。"
     }
   ]
 }

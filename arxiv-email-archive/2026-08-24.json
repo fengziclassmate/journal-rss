@@ -2,24 +2,78 @@
   "date": "2026-08-24",
   "guid": "arxiv-email-daily:2026-08-24",
   "paper_keys": [
+    "arxiv:2608.20548",
     "arxiv:2608.21041",
+    "arxiv:2504.09772",
+    "arxiv:2506.16633",
+    "arxiv:2605.19624",
     "arxiv:2608.21277",
+    "arxiv:2608.21160",
     "arxiv:2608.21136",
+    "arxiv:2608.21099",
     "arxiv:2608.21055",
+    "arxiv:2608.20916",
+    "arxiv:2608.20874",
+    "arxiv:2608.20788",
+    "arxiv:2608.20777",
+    "arxiv:2608.20720",
+    "arxiv:2608.20663",
+    "arxiv:2608.20639",
+    "arxiv:2608.20634",
+    "arxiv:2608.20608",
+    "arxiv:2608.20365",
+    "arxiv:2608.20342",
     "arxiv:2604.03212",
+    "arxiv:2512.12142",
+    "arxiv:2411.08881",
+    "arxiv:2409.11307",
+    "arxiv:2603.11252",
+    "arxiv:2607.25153",
+    "arxiv:2608.16824",
     "arxiv:2608.20944",
-    "arxiv:2608.20870",
-    "arxiv:2608.20807",
-    "arxiv:2608.20656",
-    "arxiv:2608.21057"
+    "arxiv:2608.20886"
   ],
-  "paper_count": 10,
+  "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:479",
-    "deepseek": "ok:30"
+    "deepseek": "ok:426"
   },
-  "updated_at": "2026-09-02T01:18:31.433263+00:00",
+  "updated_at": "2026-09-02T01:52:02.642683+00:00",
+  "analysis_stats": {
+    "total": 479,
+    "analyzed": 479,
+    "high": 34,
+    "medium": 80,
+    "low": 78,
+    "below_threshold": 287
+  },
   "papers": [
+    {
+      "key": "arxiv:2608.20548",
+      "title": "Keep Your Friends Close, and the Right Neighbours Closer: Disaster-Conditioned Kernel-Regularized Graph Attention for Building Damage Classification",
+      "title_zh": "亲近朋友，更亲近正确的邻居：灾害条件核正则化图注意力用于建筑损坏分类",
+      "url": "https://arxiv.org/abs/2608.20548",
+      "doi": "",
+      "arxiv_id": "2608.20548",
+      "authors": [
+        "Fuad Hasan",
+        "Chul Min Yeum"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-20T20:20:10+00:00",
+      "score": 95,
+      "reason": "该研究聚焦灾害后建筑损坏分类，利用空间上下文和图注意力网络，与城市更新和遥感变化检测高度相关，直接应用于灾害评估和城市韧性研究。",
+      "tags": [
+        "建筑损坏分类",
+        "图注意力网络",
+        "空间上下文",
+        "灾害",
+        "xBD"
+      ],
+      "abstract": "Disaster damage is spatial: buildings rarely fail in isolation. Yet using spatial context for damage classification remains surprisingly underexplored, and many pipelines still rely primarily on per-building appearance cues even when the dominant uncertainty is spatially structured. Complicating matters, the right neighbourhood is not the same across events. Floods, hurricanes, and wildfires can exhibit very different clustering behaviour, making spatial reasoning valuable but easy to misuse - naive context aggregation can improve visual coherence while oversmoothing boundaries or propagating structured errors. We study this tension on xBD (the dataset used in the xView2 challenge) in a controlled post-localization, classification-only setup: each building is represented by a pre/post combined (PPC) patch cropped from the provided polygons, and spatial context is modelled with GPS-derived building graphs. Our approach keeps local evidence \"close\" by preserving strong spatial relationships in disaster damage patterns, while bringing only the right neighbours \"closer\" through a disaster-type-conditioned graph model that injects a learnable multi-scale spatial kernel prior into attention, allowing the effective neighbourhood scale to adapt across disaster types rather than being learned as a single global smoothing rule. To discourage coherence-by-smoothing, we add a residual de-correlation loss that penalizes positive Moran's~I in prediction residuals. We evaluate the method under event and dataset shift with a leave-one-event-out (LOEO) protocol on xBD and cross-dataset transfer from xBD to Ida-BD. The model improves macro-F1 and substantially reduces residual spatial autocorrelation under zero-shot event shift, indicating better use of spatial context rather than naive smoothing and enabling more reliable transfer to unseen events within known disaster types.",
+      "summary_zh": "本文提出一种灾害类型条件图模型，通过注入可学习的多尺度空间核先验到注意力机制中，自适应调整邻域尺度，并添加残差去相关损失以抑制平滑导致的伪相干性。在xBD数据集上的留一事件验证和跨数据集迁移实验中，该方法提高了宏F1分数并显著降低了残差空间自相关。",
+      "insight_zh": "灾害类型决定了建筑损坏的空间聚类模式，灾害条件化的空间上下文建模能更有效地利用邻域信息，提升损坏分类的泛化能力。"
+    },
     {
       "key": "arxiv:2608.21041",
       "title": "CoST: Semantic-Aware Urban Understanding via Spatial-Temporal Alignment",
@@ -49,6 +103,95 @@
       "insight_zh": "该研究强调了多时相影像中语义对齐的重要性，并提出了对比学习框架来提升地理空间表征的泛化性和可解释性，为城市动态监测和跨区域城市模型迁移提供了新思路。"
     },
     {
+      "key": "arxiv:2504.09772",
+      "title": "Two Heads are Better Than One: Test-time Scaling of Multi-agent Collaborative Reasoning",
+      "title_zh": "三个臭皮匠顶个诸葛亮：多智能体协同推理的测试时扩展",
+      "url": "https://arxiv.org/abs/2504.09772",
+      "doi": "",
+      "arxiv_id": "2504.09772",
+      "authors": [
+        "Can Jin",
+        "Hongwu Peng",
+        "Qixin Zhang",
+        "Yang Zhou",
+        "Yujin Tang",
+        "Tong Che",
+        "Dimitris N. Metaxas"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "该论文探讨了多智能体协同推理在测试时扩展的性能，是您多智能体系统研究的核心相关文献。",
+      "tags": [
+        "多智能体",
+        "协同推理",
+        "测试时扩展",
+        "LLM"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文研究了多智能体协同推理在测试时扩展的效果，但摘要内容不完整，仅提供了标题和会议信息。",
+      "insight_zh": "多智能体协同推理可能通过测试时计算扩展来提升性能，但具体机制和效果需进一步查阅全文。"
+    },
+    {
+      "key": "arxiv:2506.16633",
+      "title": "GeoExplain: Multimodal Reasoning based on Hierarchy of Visual Information in Street View",
+      "title_zh": "GeoExplain：基于街景视觉信息层次的多模态推理",
+      "url": "https://arxiv.org/abs/2506.16633",
+      "doi": "",
+      "arxiv_id": "2506.16633",
+      "authors": [
+        "Fenghua Cheng",
+        "Jinxiang Wang",
+        "Sen Wang",
+        "Zi Huang",
+        "Xue Li"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "该论文聚焦街景图像的多模态推理，与GIS博士研究中城市更新、遥感变化检测及多源数据融合高度相关，可为城市空间感知与地理空间智能提供新方法。",
+      "tags": [
+        "street view",
+        "multimodal reasoning",
+        "visual hierarchy",
+        "urban perception",
+        "geospatial intelligence"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出GeoExplain框架，利用街景图像中视觉信息的层次结构进行多模态推理，以增强对城市环境的理解与解释。",
+      "insight_zh": "街景视觉层次推理可提升城市空间语义理解，为城市更新评估提供细粒度证据。"
+    },
+    {
+      "key": "arxiv:2605.19624",
+      "title": "Component-Aware Structure-Preserving Style Transfer for Satellite Visual Sim2Real Data Construction",
+      "title_zh": "面向卫星视觉Sim2Real数据构建的组件感知结构保持风格迁移",
+      "url": "https://arxiv.org/abs/2605.19624",
+      "doi": "",
+      "arxiv_id": "2605.19624",
+      "authors": [
+        "Zongwu Xie",
+        "Yonglong Zhang",
+        "Yifan Yang",
+        "Yang Liu",
+        "and Baoshi Cao",
+        "Guanghu Xie"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "该论文专门针对卫星图像的Sim2Real数据构建，提出组件感知的结构保持风格迁移方法，与遥感数据增强和城市更新研究高度相关。",
+      "tags": [
+        "风格迁移",
+        "卫星图像",
+        "Sim2Real",
+        "结构保持",
+        "组件感知"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "论文提出了一种组件感知的结构保持风格迁移方法，用于卫星图像的Sim2Real数据构建，以提升仿真数据的真实性。",
+      "insight_zh": "通过组件感知和结构保持，可在风格迁移中保留关键地物结构，为遥感数据增强提供了更精细的解决方案。"
+    },
+    {
       "key": "arxiv:2608.21277",
       "title": "ConceptTS: LLM-Guided Concept Bottlenecks for Interpretable Multivariate Time-Series Forecasting",
       "title_zh": "ConceptTS：LLM引导的概念瓶颈用于可解释多变量时间序列预测",
@@ -74,6 +217,33 @@
       "abstract": "State-of-the-art multivariate time-series forecasters can model complex temporal and cross-variable dependencies, yet their opaque representations provide limited insight into why a particular forecast is produced. This lack of transparency restricts their use in settings where practitioners must understand and assess the factors underlying a prediction. We introduce ConceptTS, an interpretable forecasting framework that organizes its predictions around named, human-readable concepts. ConceptTS uses a large language model to propose task-relevant concepts and generate executable labeling rules, translating the language model's domain knowledge into direct supervision without costly manual concept annotation. The proposed concepts are organized into three complementary bottlenecks that describe the historical context, local forecast intervals, and the full forecast horizon. A shared decoder combines representations derived from their predicted activations to construct the forecast, making the model's decision process explicit and supporting direct concept-level interventions. Experiments on the Beijing Multi-Site Air Quality dataset show that ConceptTS achieves accuracy competitive with strong black-box baselines while producing semantically meaningful concept activations.",
       "summary_zh": "ConceptTS是一个可解释的预测框架，围绕命名的人类可读概念组织预测。它使用大语言模型提出任务相关概念并生成可执行的标注规则，将语言模型的领域知识转化为直接监督，无需昂贵的人工概念标注。概念被组织为三个互补的瓶颈，分别描述历史上下文、局部预测区间和完整预测范围。共享解码器结合概念激活表示来构建预测，使决策过程明确并支持概念级干预。",
       "insight_zh": "该研究展示了如何利用LLM的领域知识来构建可解释的预测模型，其概念瓶颈方法为城市空气质量等时空预测任务提供了透明度和可干预性，是LLM与时空数据挖掘结合的有益探索。"
+    },
+    {
+      "key": "arxiv:2608.21160",
+      "title": "Human-JEPA: A Human-Centric Vision Model that Perceives and Anticipates",
+      "title_zh": "Human-JEPA：一个能感知和预测的人类中心视觉模型",
+      "url": "https://arxiv.org/abs/2608.21160",
+      "doi": "",
+      "arxiv_id": "2608.21160",
+      "authors": [
+        "Hui Wei",
+        "Licai Sun",
+        "Guoying Zhao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T14:32:08+00:00",
+      "score": 85,
+      "reason": "研究提出Human-JEPA，一种以人为中心的视觉模型，通过锚定预测在视频上训练，同时擅长静态感知和未来预测，与遥感视频变化检测和动态场景理解高度相关。",
+      "tags": [
+        "人类中心视觉",
+        "视频预测",
+        "自监督学习",
+        "姿态估计",
+        "行人重识别"
+      ],
+      "abstract": "Machines that understand humans should perceive the present and anticipate the future. Existing human-centric vision model are pretrained on human images, set the state of the art in static dense perception, so motion and anticipation are out of reach. Here we present Human-JEPA, a human-centric vision model trained on video by anchored forecasting: dense targets are pinned to a frozen copy of the initialization, preventing a silent collapse of dense perception, and block masks are replaced by a pure past-to-future split, avoiding a five-point action tax and a seventeen-point re-identification collapse. Under frozen probes, Human-JEPA leads the pixel-anchored specialists on pose and person re-identification at 2.7 times fewer parameters, conceding high-resolution dense parsing, and its released predictor head is the first that does not degrade anticipation. A single safely adapted model thus serves both halves of understanding humans.",
+      "summary_zh": "理解人类的机器应能感知当下并预测未来。现有以人为中心的视觉模型在静态图像上预训练，无法进行运动预测。Human-JEPA在视频上通过锚定预测训练：密集目标被固定到初始化的冻结副本上，防止密集感知的静默崩溃，并用纯过去到未来的分割替代块掩码。在冻结探针下，Human-JEPA在姿态估计和行人重识别上以2.7倍少的参数领先像素锚定专家，其发布的预测头是第一个不降低预测能力的。",
+      "insight_zh": "通过锚定预测策略在视频上训练，可以同时获得高质量的静态感知能力和不损害感知的未来预测能力。"
     },
     {
       "key": "arxiv:2608.21136",
@@ -102,6 +272,38 @@
       "insight_zh": "将几何信息与语义信息显式融合，并采用流式处理架构，是提升开放世界3D场景理解鲁棒性和效率的关键，对城市级动态三维感知有重要启示。"
     },
     {
+      "key": "arxiv:2608.21099",
+      "title": "A2DINOv3: Rethinking Multi-Modal Object Detection via Socialized Collaboration",
+      "title_zh": "A2DINOv3：通过社会化协作重新思考多模态目标检测",
+      "url": "https://arxiv.org/abs/2608.21099",
+      "doi": "",
+      "arxiv_id": "2608.21099",
+      "authors": [
+        "Jiekang Feng",
+        "Zhihe Fan",
+        "Yunqi Zhu",
+        "Xinjie Yao",
+        "Yueying Zhang",
+        "Yike Gao",
+        "Ranxin Li",
+        "Guanzuo Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T13:44:46+00:00",
+      "score": 85,
+      "reason": "论文提出多模态目标检测新框架，并在航空遥感数据集GAIIC上验证了性能，与GIS博士研究方向中的遥感变化检测和多源数据融合高度相关。",
+      "tags": [
+        "多模态目标检测",
+        "遥感",
+        "基础模型",
+        "DINOv3",
+        "跨模态融合"
+      ],
+      "abstract": "Multi-modal object detection is essential for robust scene understanding in challenging conditions, including low-light and adverse environments. Recent vision foundation models (e.g., DINOv3) have exhibited strong representation capabilities, yet adapting them to multi-modal scenarios remains challenging. Existing dense cross-modal fusion strategies often force heterogeneous modalities to interact indiscriminately, which may introduce redundant information and disrupt the valuable pre-trained representations. To address this issue, we revisit multi-modal fusion from the perspective of socialized learning and propose adapter to DINOv3 (A2DINOv3), a multi-expert collaboration framework with a Socialized Collaboration Protocol (SCP). Specifically, RGB and infrared branches are modeled as heterogeneous experts that independently preserve their specialized knowledge while exchanging complementary information through selective and constrained interactions. This design mitigates harmful cross-modal interference and prevents degradation of pre-trained priors during adaptation. Furthermore, a zero-initialization strategy is introduced to gradually activate cross-modal collaboration, enabling a smooth transition from modality-specific learning to cooperative representation learning. Extensive experiments on four multi-modal benchmarks, including aerial detection (GAIIC), autonomous driving (FLIR), low-light surveillance (LLVIP), and diverse real-world scenarios (M3FD), demonstrate that A2DINOv3 consistently achieves state-of-the-art performance in multi-modal object detection.",
+      "summary_zh": "论文针对多模态目标检测中现有密集跨模态融合策略可能引入冗余信息并破坏预训练表示的问题，提出了一种基于社会化学习的多专家协作框架A2DINOv3。该框架将RGB和红外分支视为异构专家，通过选择性约束交互来交换互补信息，并采用零初始化策略逐步激活跨模态协作。在包括航空检测（GAIIC）、自动驾驶（FLIR）、低光监控（LLVIP）和多样现实场景（M3FD）的四个基准上取得了最先进性能。",
+      "insight_zh": "将预训练基础模型适配到多模态场景时，采用选择性、受约束的交互而非全量融合，能有效减少跨模态干扰并保留预训练知识，这一思路对遥感多源数据融合具有借鉴意义。"
+    },
+    {
       "key": "arxiv:2608.21055",
       "title": "CoAnchor: Robust Collaborative Perception under Spatio-Temporal Misalignment via Object-Level Anchors",
       "title_zh": "CoAnchor：基于目标级锚点的时空错位鲁棒协同感知",
@@ -128,6 +330,316 @@
       "abstract": "Collaborative perception extends the sensing range of a single vehicle by fusing observations from nearby agents, which improves the robustness of autonomous driving. In realistic deployments, however, the received collaborator messages are often affected by both communication delay and relative-pose noise, which jointly cause stale observations, spatial misalignment, and unstable feature fusion. Existing methods usually address these issues from either the spatial or temporal side, but handling them jointly in a unified and efficient manner remains challenging. In this paper, we propose CoAnchor, an anchor-centric spatio-temporal alignment framework for asynchronous collaborative perception. Instead of directly reasoning on dense BEV features, CoAnchor builds sparse object-level spatio-temporal anchors as a shared interface for pose correction and tightly connects spatial refinement, temporal propagation, and current-time verification within one unified loop, while keeping the overall correction process lightweight. Extensive experiments on both simulated and real-world datasets illustrate that CoAnchor remains competitive under clean settings and improves the robustness under joint delay and pose perturbations with a favorable practical accuracy-efficiency trade-off.",
       "summary_zh": "协同感知通过融合邻近智能体的观测来扩展单车感知范围，但实际部署中通信延迟和相对位姿噪声会导致观测过时和空间错位。现有方法通常分别处理空间或时间问题，难以统一高效地解决。CoAnchor构建稀疏的目标级时空锚点作为位姿校正的共享接口，将空间细化、时间传播和当前时刻验证紧密集成在一个统一循环中，在保持轻量级的同时提升了在联合延迟和位姿扰动下的鲁棒性。",
       "insight_zh": "该研究为多智能体协同感知中的时空对齐问题提供了一种统一且高效的解决方案，其锚点中心的设计思路可借鉴到城市多源时空数据融合中，以处理数据在时间和空间上的不一致性。"
+    },
+    {
+      "key": "arxiv:2608.20916",
+      "title": "Semantically Compatible Knowledge Distillation for Cross-Domain Object Detection with Vision Foundation Models",
+      "title_zh": "基于视觉基础模型的语义兼容知识蒸馏用于跨域目标检测",
+      "url": "https://arxiv.org/abs/2608.20916",
+      "doi": "",
+      "arxiv_id": "2608.20916",
+      "authors": [
+        "Qifeng Zhang",
+        "Ting Xiang",
+        "Zeyuan Bai",
+        "Changjian Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T09:36:02+00:00",
+      "score": 85,
+      "reason": "论文针对跨域目标检测提出基于视觉基础模型的知识蒸馏框架，解决师生特征图空间尺度不匹配和域偏移问题，与遥感变化检测中的域适应和目标识别高度相关。",
+      "tags": [
+        "目标检测",
+        "域适应",
+        "知识蒸馏",
+        "视觉基础模型"
+      ],
+      "abstract": "Vision foundation models (VFMs) offer strong generalization capabilities for domain-adaptive object detection (DAOD). However, existing VFM-based methods overlook the spatial-scale discrepancy between teacher and student feature maps, resulting in semantic incompatibility that weakens both feature alignment and pseudo-label learning. Moreover, domain shift can cause source-trained VFM teachers to miss target-domain objects, limiting the quality of their pseudo-labels. To address these issues, we propose the Semantic Localization-Enhanced Teacher (SLE-T), a semantically compatible knowledge-distillation framework built around a lightweight SLE Adapter for DINOv2. SLE Adapter injects pretrained local-texture priors into DINOv2 to improve cross-domain recognition and reformulates its features into dense representations that are spatially and semantically compatible with the student detector. SLE-T transfers the resulting teacher knowledge through either pseudo-label learning or feature alignment. We instantiate SLE-T with DINOv2-B and DINOv2-L (the ViT-B and ViT-L variants) and compare them with the larger DINOv2-G teacher. Extensive experiments on three DAOD benchmarks demonstrate that our method achieves state-of-the-art performance, and ablation studies confirm the importance of teacher-student semantic compatibility. Notably, SLE-T with DINOv2-B produces competitive or superior pseudo-labels using approximately one-quarter of the training time of DINOv2-G and substantially less GPU memory, demonstrating efficient VFM knowledge transfer under limited computational resources.",
+      "summary_zh": "论文提出语义定位增强教师（SLE-T）框架，通过轻量级SLE适配器注入预训练局部纹理先验到DINOv2，改进跨域识别，并将其特征重构为与学生检测器空间和语义兼容的密集表示。SLE-T通过伪标签学习或特征对齐传递教师知识。在三个DAOD基准上的实验表明，该方法达到最先进性能，且DINOv2-B变体以约四分之一的训练时间和更少GPU内存产生有竞争力或更优的伪标签。",
+      "insight_zh": "确保师生特征图在空间和语义上的兼容性对于有效的知识蒸馏至关重要。轻量级适配器可高效利用大型视觉基础模型进行跨域知识迁移。"
+    },
+    {
+      "key": "arxiv:2608.20874",
+      "title": "Multi-Modal Traffic Sign Detection with Semantic Attributes for Autonomous Driving",
+      "title_zh": "面向自动驾驶的具有语义属性的多模态交通标志检测",
+      "url": "https://arxiv.org/abs/2608.20874",
+      "doi": "",
+      "arxiv_id": "2608.20874",
+      "authors": [
+        "Meda Lazar",
+        "Sourab Sridhar",
+        "Shashwata Gupta",
+        "Alexandra Tripcea",
+        "Varun Ravi",
+        "Senthil Yogamani"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T08:51:39+00:00",
+      "score": 85,
+      "reason": "研究多模态交通标志检测，结合相机和LiDAR数据，涉及目标检测和跨区域泛化，与GIS和遥感中的多源数据融合及目标识别高度相关。",
+      "tags": [
+        "多模态",
+        "交通标志检测",
+        "自动驾驶",
+        "LiDAR",
+        "目标检测"
+      ],
+      "abstract": "Reliable traffic sign detection is a prerequisite for the global deployment of autonomous driving systems, where regulatory compliance and road safety depend on perceiving signs correctly across regions, ranges, and weather conditions. Despite recent progress, vision-based methods continue to face three fundamental limitations: poor cross-regional generalization due to high diversity across countries, degraded performance on small-object detection at long ranges (traffic signs occupy as little as $10{\\times}10$ pixels at 200m), and fragile temporal tracking under the strongly non-linear perspective distortion that occurs as a vehicle approaches a sign. In this paper, we address the problem of robust, long-range, region-agnostic traffic sign perception by combining camera and Light Detection and Ranging (LiDAR) sensing. We present a multi-modal detection framework whose Intensity-Aware Deformable Fusion module aligns retro-reflective LiDAR cues with camera features, anchoring detection on geometric invariants rather than region-specific visual appearance. We further introduce a dual motion-model tracker that explicitly accounts for non-linear perspective transformations during vehicle approach, substantially improving temporal consistency over linear motion assumptions. Additionally, we develop a semantic attribute classification pipeline that estimates occlusion level, readability, sign embeddedness, and road relevance, providing actionable context to downstream planning. Extensive evaluation on our dataset, spanning 60+ countries and 2,500+ hours of driving data, shows that the proposed pipeline achieves an Object Miss Ratio (OMR) of 0.49% across 221,068 evaluation sequences, demonstrating globally generalizable traffic sign perception in commercial-grade autonomous driving systems.",
+      "summary_zh": "本文提出一种结合相机和LiDAR的多模态交通标志检测框架，通过强度感知可变形融合模块和对反射LiDAR线索与相机特征的对齐，实现跨区域、长距离的鲁棒检测。同时引入双运动模型跟踪器和语义属性分类，在覆盖60多个国家、2500多小时驾驶数据上实现了0.49%的目标漏检率。",
+      "insight_zh": "利用LiDAR的几何不变性可有效提升交通标志检测的跨区域泛化能力，多模态融合是解决复杂环境下小目标检测的关键。"
+    },
+    {
+      "key": "arxiv:2608.20788",
+      "title": "M2Depth: Unifying Monocular Depth Foundation Priors with Multi-View Stereo",
+      "title_zh": "M2Depth：统一单目深度基础先验与多视图立体",
+      "url": "https://arxiv.org/abs/2608.20788",
+      "doi": "",
+      "arxiv_id": "2608.20788",
+      "authors": [
+        "Byeonggwon Lee",
+        "Sanggi Lee",
+        "Siwoo Lee",
+        "Khang Truong Giang",
+        "and Soohwan Song"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T07:01:42+00:00",
+      "score": 85,
+      "reason": "研究多视图立体与单目深度先验的融合，与遥感三维重建和深度估计高度相关，可直接应用于城市三维建模。",
+      "tags": [
+        "多视图立体",
+        "深度估计",
+        "单目深度先验"
+      ],
+      "abstract": "Deep learning-based Multi-View Stereo (MVS) has advanced significantly but often generalizes poorly to unseen scenes, particularly in occluded areas or regions with limited view overlap. To mitigate this, recent approaches integrate Depth Foundation Models (DFMs) into MVS pipelines to provide monocular depth priors. However, existing methods typically rely on a static, one-way fusion scheme, which fails to fully exploit the complementary strengths of both modalities. We propose a novel framework that overcomes this limitation by tightly coupling a DFM with a cascade MVS pipeline through a bidirectional mutual refinement strategy. Our method leverages MVS depth to resolve the scale ambiguity in monocular predictions, while the monocular depth, in turn, enhances the structural completeness and fine-grained detail of the MVS estimate. Furthermore, we introduce a prior-guided cost volume refinement mechanism that effectively integrates multi-view and monocular information via attention-based fusion and discretized depth bins, thereby promoting local geometric consistency. Extensive experiments demonstrate that our method outperforms state-of-the-art MVS approaches on standard benchmarks, producing more complete and generalizable depth maps with sharp boundaries. Furthermore, although not explicitly designed for sparse-view settings, our framework generalizes remarkably well, competing favorably with even dedicated sparse-view methods while maintaining a superior accuracy-efficiency trade-off.",
+      "summary_zh": "本文提出双向互惠细化框架，紧密耦合深度基础模型与级联MVS，解决尺度模糊和结构完整性问题，在标准基准上优于现有方法。",
+      "insight_zh": "双向融合策略可提升遥感多视角影像的三维重建精度，尤其在遮挡和弱纹理区域，对城市更新中的三维建模有重要价值。"
+    },
+    {
+      "key": "arxiv:2608.20777",
+      "title": "Tree-of-Concerns: Hierarchical Multi-Agent Debate for Unstated-Limitation Extraction in Scientific Critique",
+      "title_zh": "关注树：用于科学评论中未陈述局限性提取的层次化多智能体辩论",
+      "url": "https://arxiv.org/abs/2608.20777",
+      "doi": "",
+      "arxiv_id": "2608.20777",
+      "authors": [
+        "Sahil Mishra",
+        "Niranjan Rajeev",
+        "Tanmoy Chakraborty"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T06:41:57+00:00",
+      "score": 85,
+      "reason": "该论文提出了一种基于多智能体LLM的层次化辩论框架，用于从科学论文中提取未陈述的局限性，这与研究者在LLM和多智能体方面的研究兴趣高度契合。",
+      "tags": [
+        "多智能体",
+        "LLM",
+        "科学文献分析",
+        "层次化辩论",
+        "缺陷提取"
+      ],
+      "abstract": "As scientific literature grows and papers increasingly under-report limitations, multi-agent LLMs offer a promising approach to systematically uncover these hidden failure modes. Here, we introduce Tree-of-Concerns, a multi-agent framework that deploys specialized skeptic personas, each operating through a category-specific analytical lens, as parallel debate trees to extract unstated limitations from scientific papers. Each persona conducts structured, evidence-grounded argumentation, while a Panel Review mechanism re-evaluates each surviving claim from all five perspectives to correct category drift and severity miscalibration. Through experiments on ToC-Bench, our benchmark of 414 research papers with 1,905 unstated limitations, sourced from reviewer-reported weaknesses and follow-up citation critiques, we demonstrate that ToC improves precision by 79% and coverage by 11% relative to strongest baselines, surfacing specific, evidence-grounded concerns that support reviewers in systematic evaluation.",
+      "summary_zh": "论文介绍了Tree-of-Concerns，一个多智能体框架，通过部署专门的怀疑论者角色，以并行辩论树的形式从科学论文中提取未陈述的局限性。每个角色进行基于证据的论证，并由小组审查机制从五个角度重新评估存活的声明。在包含414篇论文和1905个未陈述局限性的ToC-Bench基准上，该方法相比最强基线将精确率提高了79%，覆盖率提高了11%。",
+      "insight_zh": "多智能体辩论框架通过角色分工和层次化审查，能够系统性地揭示科学文献中隐含的失败模式，为自动化科学评论提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.20720",
+      "title": "AffordAny: Open-World 3D Affordance Grounding from Monocular RGB Images via Vision-Language-Guided Geometric Reasoning",
+      "title_zh": "AffordAny：通过视觉-语言引导的几何推理从单目RGB图像进行开放世界3D可供性定位",
+      "url": "https://arxiv.org/abs/2608.20720",
+      "doi": "",
+      "arxiv_id": "2608.20720",
+      "authors": [
+        "Junqi Wu",
+        "Kaihua Tang",
+        "Xuanwen Chen",
+        "Hongzhi Li",
+        "Jianqiang Huang",
+        "Xian-Sheng Hua"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T03:55:56+00:00",
+      "score": 85,
+      "reason": "论文提出从单目RGB图像进行开放世界3D可供性定位的框架，结合VLM和几何推理，与GIS中从遥感影像理解三维空间功能属性高度相关，具有较强借鉴意义。",
+      "tags": [
+        "3D可供性",
+        "视觉-语言模型",
+        "开放世界",
+        "单目RGB",
+        "几何推理"
+      ],
+      "abstract": "Open-world 3D affordance grounding requires localizing functional object parts in 3D given free-form language queries. Existing methods typically assume pre-built object-centric 3D geometry and closed affordance ontologies, limiting deployment from raw RGB observations. We present AffordAny, an end-to-end framework that uses one monocular RGB image to construct large-scale text-conditioned 3D part supervision, ground affordances with a frozen vision-language model (VLM) guided decoder, and improve open-world generalization through pseudo-label self-training. Our automated pipeline produces a benchmark of 5,334 objects and 10,633 part-level samples spanning 473 categories, an order-of-magnitude increase in categorical diversity over prior work. The decoder progressively fuses frozen Cosmos-2B features with 3D geometry through spatial projection, instruction-conditioned semantic compression, and bidirectional geometry-semantics interaction. Minimal-perturbation pseudo-label self-training further adds new objects without human annotation. Under a systematic generalization protocol evaluating unseen objects, unseen categories, and unseen instruction paraphrases, our approach achieves 0.428 IoU on unseen objects and 0.315 IoU on unseen categories after self-training, with unseen-category mIoU improving by 6.3% relative (p<0.01) and an instruction sensitivity gap of only 0.105, demonstrating effectiveness and robustness of our method.",
+      "summary_zh": "开放世界3D可供性定位要求根据自由形式语言查询在3D中定位功能对象部件。现有方法通常假设预构建的对象中心3D几何和封闭可供性本体，限制从原始RGB观测部署。论文提出AffordAny，端到端框架，使用单目RGB图像构建大规模文本条件3D部件监督，用冻结VLM引导解码器定位可供性，并通过伪标签自训练改善开放世界泛化。自动化流程产生5,334个对象和10,633个部件级样本，覆盖473个类别。解码器通过空间投影、指令条件语义压缩和双向几何-语义交互，逐步融合冻结Cosmos-2B特征与3D几何。在系统化泛化协议下，方法在未见对象上达到0.428 IoU，未见类别上达到0.315 IoU，未见类别mIoU相对提升6.3%。",
+      "insight_zh": "利用单目RGB和冻结VLM进行开放世界3D可供性定位，通过大规模自动标注和自训练实现泛化，为从遥感影像理解城市三维空间功能提供了新范式。"
+    },
+    {
+      "key": "arxiv:2608.20663",
+      "title": "Shortcut Learning in a Public Grape Disease Dataset: Annotation Granularity as a Modulator, Not a Cause",
+      "title_zh": "公共葡萄病害数据集中的捷径学习：标注粒度作为调节因素而非原因",
+      "url": "https://arxiv.org/abs/2608.20663",
+      "doi": "",
+      "arxiv_id": "2608.20663",
+      "authors": [
+        "Pushuo Wang (Shenyang Institute of Technology)"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T01:39:34+00:00",
+      "score": 85,
+      "reason": "论文深入分析了公共葡萄病害数据集中标注粒度对目标检测模型捷径学习的影响，并通过反事实重训练验证了因果关系。这与遥感变化检测和农业应用中的数据集质量与模型鲁棒性问题直接相关。",
+      "tags": [
+        "农业遥感",
+        "目标检测",
+        "捷径学习",
+        "数据集偏差",
+        "标注粒度"
+      ],
+      "abstract": "Public datasets for agricultural disease detection are usually judged fit for use from reported metrics, which say nothing about whether the annotation scheme is internally consistent. On one public grape disease dataset (3288 images, 11995 boxes, 6 classes), varying model capacity, input resolution and detection paradigm yields a test-set mAP50 range comparable to seed-to-seed noise, with the bottleneck at small objects across all five architectures. The finding lies on the data side: one class is annotated at whole-leaf level (median box area 43.16% of the image) while the other five are annotated at lesion level. On 5156 cross-species images containing no grape, 65.7% of the false-positive boxes fall into that one class, an over-representation of 13.41x relative to its share of the training annotations. Counterfactual retraining establishes a causal effect of granularity on the magnitude of the shortcut: shrinking only that class's boxes cuts its cross-species false positives by 66%, and a placebo control confirms the effect is specific to the manipulated class. A manipulation in the opposite direction, with criteria registered in advance, returns a negative result: coarsening the finest class to whole-leaf level (0.57% to 40.37%), matched in box count and share of annotations and with higher in-distribution AP, still leaves its cross-species false positives at zero boxes, while the unmanipulated original class holds 50.0% of them. Annotation granularity is therefore a modulator of this shortcut, not its cause: it can amplify or attenuate a sink that already exists, but cannot create one, and what fixes the destination remains open. We also give a granularity screening statistic requiring neither images nor training, and show airborne lesion-level detection to be optically out of reach. The failure mode is invisible to in-distribution evaluation.",
+      "summary_zh": "研究发现一个公共葡萄病害数据集中，一类目标以整叶级别标注，而其他五类以病斑级别标注，导致模型在该类上产生跨物种假阳性。反事实实验证明，标注粒度是捷径的调节因素而非原因，可以放大或减弱已存在的偏差，但不能创造偏差。",
+      "insight_zh": "在构建遥感或农业检测数据集时，标注粒度的一致性至关重要，它可能显著影响模型学习到的特征，但无法从根本上决定模型是否依赖背景等捷径，需要从数据源头和模型设计两方面入手。"
+    },
+    {
+      "key": "arxiv:2608.20639",
+      "title": "MV2GF: Multi-view Pedestrian Detection with a Visual Geometric Foundation Model",
+      "title_zh": "MV2GF：使用视觉几何基础模型的多视图行人检测",
+      "url": "https://arxiv.org/abs/2608.20639",
+      "doi": "",
+      "arxiv_id": "2608.20639",
+      "authors": [
+        "Taiga Yamane",
+        "Satoshi Suzuki",
+        "Ryo Masumura",
+        "Shota Orihashi",
+        "Tomohiro Tanaka",
+        "Mana Ihori",
+        "Naoki Makishima"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T00:26:55+00:00",
+      "score": 85,
+      "reason": "该论文利用视觉几何基础模型提升多视图行人检测的泛化能力，涉及多视图几何和3D感知，与研究者对多源数据融合和地理空间智能的兴趣高度相关。",
+      "tags": [
+        "多视图",
+        "行人检测",
+        "视觉几何基础模型",
+        "3D投影",
+        "泛化"
+      ],
+      "abstract": "Multi-View Pedestrian Detection (MVPD) aims to detect pedestrians in the form of a bird's eye view map from multi-view images. Recent MVPD methods adopt a unified framework that projects 2D image features into a 3D world space and aggregates them into a single feature. Although they are effective, they struggle to generalize to unseen camera configurations during training due to two main issues. First, they are difficult to capture accurate visual geometry across views in unseen camera configurations. Second, they make detection models highly dependent on distortion patterns during training arising from their image feature projection. To address these, we leverage a visual geometric foundation model and propose MV2GF. This foundation model has exhibited strong generalization in capturing visual geometry across views and predicting accurate 3D attributes in diverse camera configurations. MV2GF fuses task-specific features with general-purpose geometric features extracted by the foundation model to effectively capture the visual geometry even in unseen camera configurations. Furthermore, MV2GF projects each pixel in the image features to an appropriate 3D location using 3D pointmaps predicted by the foundation model, preventing the detection model from depending on distortion patterns during training. Our experiments demonstrate the effectiveness of leveraging a visual geometric foundation model for MVPD and that MV2GF generalizes better than existing methods.",
+      "summary_zh": "论文提出MV2GF，利用视觉几何基础模型解决多视图行人检测在未见相机配置下泛化能力差的问题。该方法融合任务特定特征与基础模型提取的通用几何特征，并使用预测的3D点图将图像像素投影到合适的3D位置，避免模型依赖训练时的畸变模式。",
+      "insight_zh": "视觉几何基础模型能够提供跨相机配置的通用几何先验，有效提升多视图检测模型对未知配置的泛化能力。"
+    },
+    {
+      "key": "arxiv:2608.20634",
+      "title": "AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale",
+      "title_zh": "AgentMercury：你的智能体可以在大规模业务场景中合成可验证环境",
+      "url": "https://arxiv.org/abs/2608.20634",
+      "doi": "",
+      "arxiv_id": "2608.20634",
+      "authors": [
+        "Minbyul Jeong",
+        "Chanwoong Yoon"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T00:15:45+00:00",
+      "score": 85,
+      "reason": "该论文提出一个可扩展的框架，用于从高层业务场景合成可执行环境，这与GIS中城市更新场景的模拟和智能体训练高度相关，特别是多智能体强化学习在复杂环境中的应用。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "环境合成",
+        "强化学习",
+        "可扩展框架"
+      ],
+      "abstract": "Agents learn to act through interaction with environments, yet the environments used for training are often manually constructed or synthesized around predefined tasks and benchmarks. This task-centric paradigm makes it difficult to scale environments that reflect realistic and evolving workflows where diverse tasks can naturally emerge from the underlying world. We introduce AgentMercury, a scalable framework for synthesizing executable environments from high-level business scenarios. Rather than constructing an environment for a specific task, AgentMercury first instantiates a persistent world with entities, services, tools, state, and executable cross-service invariants, from which diverse tasks and interaction trajectories can subsequently emerge. We construct 4,783 executable environments spanning 14 industries and 50 countries, and use them as training substrates for reinforcement learning. Despite being generated without targeting the evaluation benchmarks, policies trained on these business-oriented environments improve substantially on both enterprise workflows and out-of-domain benchmarks spanning reasoning, coding, scientific computing, and tool use. In our experiments, Qwen3.5-4B improves from 12.3 to 15.7 on EnterpriseOps-GYM and from 45.9 to 56.0 on AIME26 after training on AgentMercury environments. We further show that the construction process itself can be learned: fine-tuning Qwen3.5-35B-A3B on construction traces increases executable-world authoring success from 3.3% to 83.3% on held-out business scenarios. These results show that scenario-grounded environments can provide useful and generalizable learning signals beyond benchmark-specific training, while their construction can itself become a learnable capability.",
+      "summary_zh": "AgentMercury是一个可扩展框架，用于从高层业务场景合成可执行环境。它首先实例化一个包含实体、服务、工具、状态和可执行跨服务不变量的持久世界，从中可以涌现出多样化的任务和交互轨迹。作者构建了覆盖14个行业和50个国家的4783个可执行环境，并将其作为强化学习的训练基底。实验表明，在这些业务导向环境上训练的策略在推理、编码、科学计算和工具使用等基准上均有显著提升。",
+      "insight_zh": "该研究展示了场景化环境生成可以作为超越基准特定训练的通用学习信号，其构建过程本身也可以成为一种可学习的能力，这为城市更新中复杂场景的模拟和智能体训练提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.20608",
+      "title": "A Dataset-Centric Benchmark of Deep Learning Methods for Grape Leaf Disease Classification and Detection",
+      "title_zh": "葡萄叶病害分类与检测深度学习方法的以数据集为中心的基准",
+      "url": "https://arxiv.org/abs/2608.20608",
+      "doi": "",
+      "arxiv_id": "2608.20608",
+      "authors": [
+        "Petar Canoski",
+        "Vlatko Spasev",
+        "Ivica Dimitrovski",
+        "Ivan Kitanovski",
+        "Petre Lameski"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-20T23:17:09+00:00",
+      "score": 85,
+      "reason": "该研究提供数据集中心的深度学习基准，评估分类与检测性能，与遥感变化检测中的数据集构建和跨数据集泛化问题高度相关，可为城市更新中的地物识别提供方法论参考。",
+      "tags": [
+        "遥感",
+        "深度学习",
+        "数据集基准",
+        "变化检测",
+        "农业"
+      ],
+      "abstract": "Grape leaf disease recognition is important for precision agriculture, enabling early diagnosis, timely intervention, and improved vineyard management. Although deep learning has achieved strong results, many studies rely on few datasets, often acquired under controlled conditions, and may not reflect real vineyard challenges such as complex backgrounds, variable illumination, occlusion, leaf pose, disease severity, and device differences. This paper presents a dataset-centric benchmark of deep learning methods for grape leaf disease classification and detection. We analyze publicly available datasets in terms of disease categories, annotation types, acquisition conditions, image characteristics, class distributions, provenance, and task suitability. Representative models are evaluated in three settings: image-level classification, region-level classification, and object detection. Classification is assessed using accuracy, while detection is evaluated using mAP@50 and mAP@50:95. Cross-dataset experiments further examine transfer between datasets with compatible disease categories but different visual and annotation characteristics. Results show near-saturated classification performance on several controlled or derivative datasets, greater difficulty on heterogeneous datasets, and substantial variation in detection performance across annotation settings. Cross-dataset performance drops sharply, especially for object detection, indicating that shared disease labels do not necessarily define equivalent recognition tasks. The benchmark emphasizes dataset provenance, realistic field evaluation, annotation compatibility, and external validation for reliable vineyard disease recognition.",
+      "summary_zh": "构建了一个以数据集为中心的基准，分析公开葡萄叶病害数据集的特征，并在图像级分类、区域级分类和目标检测三种设置下评估代表性模型。结果显示在受控数据集上分类性能接近饱和，在异构数据集上难度更大，跨数据集性能显著下降，尤其是目标检测。",
+      "insight_zh": "共享的类别标签并不一定定义等效的识别任务，跨数据集性能下降表明需要重视数据集来源和外部验证。"
+    },
+    {
+      "key": "arxiv:2608.20365",
+      "title": "Trilingual Topic Modeling of Sri Lankan Parliamentary Debates",
+      "title_zh": "斯里兰卡议会辩论的三语种主题建模",
+      "url": "https://arxiv.org/abs/2608.20365",
+      "doi": "",
+      "arxiv_id": "2608.20365",
+      "authors": [
+        "Himath Dhanapala",
+        "Haren Daishika",
+        "Himandhi Kuruppu",
+        "Sithija Seneviratne",
+        "Ashini Kavindya",
+        "Patalee Narasinghe",
+        "Sandeepa Weerasekara",
+        "Nisansa de Silva",
+        "Sandareka Wickramanayake"
+      ],
+      "venue": "arXiv",
+      "published": "2026-06-18T19:00:11+00:00",
+      "score": 85,
+      "reason": "论文处理了斯里兰卡议会辩论的三语种（僧伽罗语、泰米尔语、英语）语料库，通过LLM提取和嵌入聚类进行主题建模。这与GIS中处理多语言、多脚本的地理文本数据（如历史地名、多语种地图注记）进行时空主题分析高度相关，且方法具有借鉴意义。",
+      "tags": [
+        "多语种",
+        "主题建模",
+        "议会辩论",
+        "LLM",
+        "密度聚类"
+      ],
+      "abstract": "Sri Lankan parliamentary debates (Hansards) constitute a trilingual corpus of speeches in Sinhala, Tamil, and English, including code-mixed content, yet remain inaccessible to standard NLP pipelines due to layout-complex PDFs, multilingual scripts, and agglutinative morphology. We present an end-to-end framework that addresses these challenges through LLM-based text extraction followed by a multilingual embedding and density-based clustering pipeline for topic modeling. A hybrid semantic-lexical extension, BiTopic, is further explored to improve interpretability and recover speeches otherwise discarded as noise. Applied to 19,553 speeches spanning 2017-2026, the pipeline recovers 30 macro-topics achieving a cluster purity (BCP) of 0.673, whose temporal trajectories align unsupervised with major national events including the 2019 Easter Sunday attacks and the 2022 economic crisis. Traditional LDA fails on this corpus due to cross-lingual fragmentation, whereas the proposed approach successfully identifies thematic structure across all three languages without supervision.",
+      "summary_zh": "论文提出了一个端到端框架，用于处理斯里兰卡议会辩论（Hansards）这一包含僧伽罗语、泰米尔语和英语的三语种语料库。该框架通过LLM进行文本提取，然后使用多语种嵌入和基于密度的聚类进行主题建模，并引入混合语义-词汇扩展方法BiTopic提高可解释性。在19,553篇演讲上成功恢复了30个宏观主题，其时间轨迹与2019年复活节袭击和2022年经济危机等重大国家事件吻合。",
+      "insight_zh": "结合LLM和密度聚类的方法能有效处理多语种、代码混合的地理政治文本，并从中提取出与时空事件高度相关的主题轨迹，为GIS中的多语种社会感知分析提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.20342",
+      "title": "PrimeAgentOrchestrator: Memory-Primed Agent Spawning for Personal AI Infrastructure",
+      "title_zh": "PrimeAgentOrchestrator：用于个人AI基础设施的记忆预置智能体生成",
+      "url": "https://arxiv.org/abs/2608.20342",
+      "doi": "",
+      "arxiv_id": "2608.20342",
+      "authors": [
+        "Myron Koch (Peak Summit Labs)"
+      ],
+      "venue": "arXiv",
+      "published": "2026-05-08T15:34:25+00:00",
+      "score": 85,
+      "reason": "该论文介绍了为LLM编码智能体注入记忆的系统，涉及多智能体生命周期管理和异构记忆系统融合，与您在多智能体系统和LLM应用方面的研究高度相关。",
+      "tags": [
+        "LLM智能体",
+        "记忆系统",
+        "多智能体",
+        "系统架构",
+        "生命周期管理"
+      ],
+      "abstract": "Large language model (LLM) coding agents start each session with an empty context window, discarding accumulated knowledge from prior work. We present PrimeAgentOrchestrator (PAO), a system that spawns new instances of Claude Code -- Anthropic's terminal-based coding agent -- pre-loaded with relevant memories compiled from the user's existing personal databases. At spawn time, PAO queries two independently-operated memory backends in parallel (a PostgreSQL entity-observation database and a Cloudflare Worker semantic search index), fuses results using backend-specific retrieval strategies, and delivers the compiled briefing via filesystem injection that exploits the host agent's configuration auto-read behavior. PAO manages the full agent lifecycle including trust pre-seeding, readiness polling with error detection, and adaptive terminal text injection. We report on four months of regular deployment (December 2025 through March 2026) as an experience report, documenting three generations of context delivery mechanisms, the failure modes that motivated each redesign, and the engineering tradeoffs of bridging heterogeneous memory systems rather than building a unified one.",
+      "summary_zh": "该论文介绍了PrimeAgentOrchestrator系统，该系统在生成Claude Code实例时，从用户个人数据库预加载相关记忆。系统并行查询两个记忆后端，融合结果并通过文件系统注入，管理智能体的完整生命周期。",
+      "insight_zh": "为LLM智能体提供持久化记忆和上下文预置是提升其连续工作能力的关键，这为构建城市更新领域的多智能体协作系统提供了架构参考。"
     },
     {
       "key": "arxiv:2604.03212",
@@ -165,6 +677,174 @@
       "insight_zh": "在遥感分割的类增量场景中，低曲率原型流可有效保持旧类知识，为持续学习提供稳健方案。"
     },
     {
+      "key": "arxiv:2512.12142",
+      "title": "MeltwaterBench: Deep learning for spatiotemporal downscaling of surface meltwater",
+      "title_zh": "MeltwaterBench：用于地表融水时空降尺度的深度学习",
+      "url": "https://arxiv.org/abs/2512.12142",
+      "doi": "",
+      "arxiv_id": "2512.12142",
+      "authors": [
+        "Bj\\\"orn L\\\"utjens",
+        "Patrick Alexander",
+        "Raf Antwerpen",
+        "Til Widmann",
+        "Guido Cervone",
+        "Marco Tedesco"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该论文研究地表融水的时空降尺度，涉及深度学习与时空数据挖掘，与您遥感变化检测和时空数据挖掘的研究方向高度相关。",
+      "tags": [
+        "深度学习",
+        "时空降尺度",
+        "地表融水",
+        "水文遥感"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文提出了一个用于地表融水时空降尺度的深度学习基准，但摘要内容不完整。",
+      "insight_zh": "深度学习在时空降尺度任务中具有应用潜力，该基准可为相关研究提供评估平台。"
+    },
+    {
+      "key": "arxiv:2411.08881",
+      "title": "Can We Trust AI Agents? A Case Study of an LLM-Based Multi-Agent System for Ethical AI",
+      "title_zh": "我们能信任AI智能体吗？一个基于LLM的多智能体系统用于伦理AI的案例研究",
+      "url": "https://arxiv.org/abs/2411.08881",
+      "doi": "",
+      "arxiv_id": "2411.08881",
+      "authors": [
+        "Jos\\'e Antonio Siqueira de Cerqueira",
+        "Mamia Agbese",
+        "Rebekah Rousi",
+        "Nannan Xi",
+        "Juho Hamari",
+        "and Pekka Abrahamsson"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该文直接研究基于LLM的多智能体系统的可信度问题，与作者在LLM和多智能体方面的研究方向高度契合，对构建可靠的地理空间智能体具有重要启示。",
+      "tags": [
+        "LLM智能体",
+        "多智能体系统",
+        "可信AI",
+        "伦理"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "本文通过一个用于伦理AI的基于LLM的多智能体系统案例，探讨了AI智能体的可信度问题，分析了此类系统在可靠性、安全性和伦理方面面临的挑战。",
+      "insight_zh": "在将LLM多智能体系统应用于城市更新等复杂决策场景时，必须对其可信度进行严格评估，并建立相应的伦理与安全框架。"
+    },
+    {
+      "key": "arxiv:2409.11307",
+      "title": "GS-Net: Heterogeneous Vehicle Data Reuse via Generalizable Plug-and-Play 3DGS Module",
+      "title_zh": "GS-Net：通过通用即插即用3DGS模块重用异构车辆数据",
+      "url": "https://arxiv.org/abs/2409.11307",
+      "doi": "",
+      "arxiv_id": "2409.11307",
+      "authors": [
+        "Yichen Zhang",
+        "Zihan Wang",
+        "Jiali Han",
+        "Peilin Li",
+        "Jiaxun Zhang",
+        "Jianqiang Wang",
+        "Lei He",
+        "Keqiang Li"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "提出通用即插即用3DGS模块实现异构车辆数据重用，与多源数据融合和遥感变化检测高度相关，可应用于城市动态监测。",
+      "tags": [
+        "3DGS",
+        "车辆数据",
+        "即插即用",
+        "多源数据融合"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出GS-Net，一个通用即插即用3DGS模块，能有效重用异构车辆数据，提升三维场景重建的泛化能力。",
+      "insight_zh": "即插即用模块设计可促进多源异构数据的集成，为城市三维建模提供灵活方案。"
+    },
+    {
+      "key": "arxiv:2603.11252",
+      "title": "Radiometric fingerprinting of object surfaces using mobile laser scanning and semantic 3D road space models",
+      "title_zh": "利用移动激光扫描和语义三维道路空间模型对物体表面进行辐射指纹识别",
+      "url": "https://arxiv.org/abs/2603.11252",
+      "doi": "",
+      "arxiv_id": "2603.11252",
+      "authors": [
+        "Benedikt Schwab",
+        "Thomas H. Kolbe"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该论文直接涉及移动激光扫描和语义三维道路空间模型，属于地理空间数据分析和城市环境建模，与GIS博士研究方向高度相关。",
+      "tags": [
+        "移动激光扫描",
+        "辐射指纹",
+        "道路空间",
+        "语义三维模型"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "论文提出了一种利用移动激光扫描数据结合语义三维道路空间模型，对物体表面进行辐射指纹识别的方法。",
+      "insight_zh": "通过语义三维模型辅助辐射特征提取，可提高物体表面识别的准确性，为城市环境中的精细目标识别提供了新思路。"
+    },
+    {
+      "key": "arxiv:2607.25153",
+      "title": "OpenPVMapper: A Multi-source, Nationwide Database of Rooftop Photovoltaic Systems in France",
+      "title_zh": "OpenPVMapper：法国多源全国屋顶光伏系统数据库",
+      "url": "https://arxiv.org/abs/2607.25153",
+      "doi": "",
+      "arxiv_id": "2607.25153",
+      "authors": [
+        "Gabiel Kasmi"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该论文构建了法国全国范围的屋顶光伏系统多源数据库，直接涉及遥感影像解译与地理空间数据挖掘，与城市更新中的能源基础设施监测高度相关。",
+      "tags": [
+        "屋顶光伏",
+        "多源数据",
+        "数据库",
+        "法国",
+        "遥感"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "本文介绍了OpenPVMapper，一个基于多源数据构建的法国全国屋顶光伏系统数据库，整合了遥感影像、地理信息等多源数据，为光伏系统的空间分布与动态监测提供基础数据支撑。",
+      "insight_zh": "多源数据融合构建全国性屋顶光伏数据库的方法，可为城市更新中可再生能源设施的空间规划与评估提供可复制的技术框架。"
+    },
+    {
+      "key": "arxiv:2608.16824",
+      "title": "GEO-Flag: Detecting and Measuring GEO-Optimized Web Content",
+      "title_zh": "GEO-Flag：检测与测量地理优化Web内容",
+      "url": "https://arxiv.org/abs/2608.16824",
+      "doi": "",
+      "arxiv_id": "2608.16824",
+      "authors": [
+        "Junjie Chu",
+        "Ye Leng",
+        "Mingjie Li",
+        "Yun Shen",
+        "Xinyue Shen",
+        "Yang Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该研究聚焦于地理优化Web内容的检测与测量，直接关联地理空间智能与多源数据融合，对城市更新中的地理信息提取与时空数据挖掘具有方法论参考价值。",
+      "tags": [
+        "地理空间智能",
+        "Web内容分析",
+        "地理信息检索",
+        "空间数据挖掘"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出GEO-Flag方法，用于识别和量化针对地理位置的Web内容优化，可能涉及地理标签、本地化关键词等特征分析。",
+      "insight_zh": "该方法可辅助城市更新中从海量Web数据中提取地理关联信息，增强对区域动态的感知能力。"
+    },
+    {
       "key": "arxiv:2608.20944",
       "title": "SuppreSensing: Expert-Guided Feature Recalibration and Discrepancy Augmentation for Multimodal Object Detection",
       "title_zh": "SuppreSensing：专家引导的特征重校准与差异增强用于多模态目标检测",
@@ -193,110 +873,38 @@
       "insight_zh": "该研究提出的专家引导融合机制为处理多源遥感数据中的异质性和噪声提供了有效方案，其选择性协作思想可应用于城市多源数据融合，以提升特征表达的鲁棒性和判别力。"
     },
     {
-      "key": "arxiv:2608.20870",
-      "title": "RDANet: Relative Degradation Aware Network for Infrared Small Target Detection",
-      "title_zh": "RDANet：用于红外小目标检测的相对退化感知网络",
-      "url": "https://arxiv.org/abs/2608.20870",
+      "key": "arxiv:2608.20886",
+      "title": "EviRank: Structured Relevance Evidence for Multimodal Image Re-ranking",
+      "title_zh": "EviRank：用于多模态图像重排序的结构化相关性证据",
+      "url": "https://arxiv.org/abs/2608.20886",
       "doi": "",
-      "arxiv_id": "2608.20870",
+      "arxiv_id": "2608.20886",
       "authors": [
-        "Rui Liu",
-        "Jing Nie",
-        "and Ying Fu"
+        "Enjun Du",
+        "Siyi Liu",
+        "Zirong Chen",
+        "Xinyu Zuo",
+        "Jinwen Luo",
+        "Ruiwen Tao",
+        "Lisheng Duan",
+        "Haijin Liang",
+        "Jin Ma",
+        "Junfu Pu",
+        "Yongqi Zhang"
       ],
       "venue": "arXiv",
-      "published": "2026-08-21T08:41:43+00:00",
-      "score": 75,
-      "reason": "该研究关注遥感影像中红外小目标检测的鲁棒性问题，提出了多尺度抗混叠下采样和原型引导模块，与遥感变化检测中的目标识别和背景抑制技术相关。",
+      "published": "2026-08-21T09:04:39+00:00",
+      "score": 80,
+      "reason": "论文提出基于结构化证据的多模态图像重排序方法，将查询解析为语义槽约束，与多源数据融合和地理空间智能中的信息检索相关，但领域为通用图像检索。",
       "tags": [
-        "红外小目标检测",
-        "遥感影像",
-        "抗混叠下采样",
-        "原型引导",
-        "鲁棒性"
+        "多模态检索",
+        "图像重排序",
+        "证据",
+        "语义约束"
       ],
-      "abstract": "Infrared small target detection is still challenging in remote sensing imagery, because the targets are extremely small, exhibit weak local contrast, and are often embedded in complex and highly variable backgrounds. In addition to these inherent difficulties, we observe that existing detectors often show unstable performance when the target scale changes or when the scene background varies. This scale- and scene-sensitive degradation indicates that current methods are insufficient in simultaneously preserving target structure during feature downsampling and maintaining discriminative local contrast under background shifts, which finally results in unbalanced detection performance across different conditions. To improve detection robustness, this paper proposes a Relative Degradation Aware Network (RDANet) for infrared small target detection. RDANet consists of two dedicated modules: Multi-Scale Anti-Alias Downsampling (MSAD) and Prototype-Guided Skip Memory (PGSM). MSAD introduces multi-scale anti-alias filtering together with pixel-fold aggregation to reduce aliasing effects during resolution reduction, so that target shape information can be better preserved while irrelevant background responses are suppressed. PGSM further enhances the skip features by retrieving patch-level prototypes from a shared memory and adaptively integrating them into the current representation, which helps maintain stable local contrast cues under diverse scene backgrounds. Experiments on three public benchmarks show that RDANet achieves the best performance on most evaluation metrics, while scale- and background-stratified evaluations indicate more stable behavior across target sizes and scene complexity. The code is available at https://github.com/BIT-RuiLiu/RDANet.",
-      "summary_zh": "红外小目标检测因目标极小、对比度低且背景复杂而具有挑战性。现有检测器在目标尺度变化或背景变化时性能不稳定。RDANet提出多尺度抗混叠下采样模块以减少降采样过程中的混叠效应，保留目标形状信息；原型引导跳跃记忆模块通过检索共享记忆中的块级原型来增强跳跃特征，以在多样背景下维持稳定的局部对比度线索。在三个公开基准上取得了最佳性能。",
-      "insight_zh": "该研究针对红外小目标检测中的尺度敏感和背景敏感问题，提出了有效的模块化解决方案，其抗混叠和原型引导思想对提升遥感变化检测中弱小目标的识别稳定性具有参考价值。"
-    },
-    {
-      "key": "arxiv:2608.20807",
-      "title": "Neuro-Geospatial Modelling of EEG Affective States Using Literature-Informed Environmental Context",
-      "title_zh": "基于文献引导环境上下文的EEG情感状态神经地理空间建模",
-      "url": "https://arxiv.org/abs/2608.20807",
-      "doi": "",
-      "arxiv_id": "2608.20807",
-      "authors": [
-        "Utsav Poudel",
-        "Jagannath Aryal",
-        "Subramaniyaswamy Vairavasundaram"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-21T07:25:53+00:00",
-      "score": 70,
-      "reason": "该研究将环境数据作为辅助地理空间模态用于EEG情感分类，探索了文献引导的环境先验，与多源数据融合和地理空间智能的研究方向相关。",
-      "tags": [
-        "神经地理空间建模",
-        "EEG",
-        "环境上下文",
-        "多模态",
-        "情感分类"
-      ],
-      "abstract": "Environmental exposures such as air pollution and greenness have been associated with affective and cognitive outcomes, but EEG and environmental datasets are rarely jointly georeferenced. We investigate whether literature-informed environmental priors can serve as an auxiliary geospatial modality for EEG-based affective-state classification when individual-level exposure data are unavailable. We combine 30-channel EEG from the EAV benchmark (42 participants, aged 20-30 years) with environmental representations derived from OpenAQ, Sentinel-2, Sentinel-5P, and OpenStreetMap data for Astana. A dual-tower architecture combines EEG-Conformer representations with a graph-based environmental encoder. Because the datasets are not co-registered, environmental context is treated as a literature-informed prior rather than measured exposure. Subject-level repeated splits, permutation and label-shuffling controls, dose-response reversal, and domain-shift experiments distinguish architecture-level gains from prior-dependent gains. The multimodal model achieves 76.2% accuracy versus 67.4% for EEG alone. Controls disrupting environmental-label structure retain part of this gain, indicating that the improvement is not attributable solely to environmental information. Replacing the Astana environmental distribution with an independently modeled Singapore distribution reduces accuracy to 72.8%. These findings demonstrate technical feasibility but do not establish an observed or causal exposure-affect association. The study provides a framework for future jointly collected mobile EEG-environment studies. Implementation: https://github.com/r11up/geo-cog",
-      "summary_zh": "该研究探讨了在缺乏个体暴露数据时，文献引导的环境先验能否作为EEG情感分类的辅助地理空间模态。研究结合30通道EEG数据与来自OpenAQ、Sentinel-2等来源的环境表征，采用双塔架构。多模态模型准确率达到76.2%，高于仅用EEG的67.4%。但控制实验表明，性能提升并非完全归因于环境信息，且替换环境分布后准确率下降，说明技术可行但未建立因果关联。",
-      "insight_zh": "该研究展示了将环境地理数据与神经信号结合的技术可行性，并强调了在数据未配准情况下将环境上下文作为先验而非实测暴露的重要性，为未来移动EEG与环境联合研究提供了框架。"
-    },
-    {
-      "key": "arxiv:2608.20656",
-      "title": "RiskTraf: Risk-Extrapolated Residual Learning for Multi-Variate Traffic Flow Prediction",
-      "title_zh": "RiskTraf：用于多变量交通流预测的风险外推残差学习",
-      "url": "https://arxiv.org/abs/2608.20656",
-      "doi": "",
-      "arxiv_id": "2608.20656",
-      "authors": [
-        "Guangyu Wang",
-        "Zhidan Liu"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-21T01:26:15+00:00",
-      "score": 65,
-      "reason": "该研究提出了一个保留原始多变量交通数据的基准套件和模型无关的风险外推残差插件，与时空数据挖掘和城市交通分析相关。",
-      "tags": [
-        "交通流预测",
-        "多变量",
-        "风险外推",
-        "残差学习",
-        "基准数据集"
-      ],
-      "abstract": "Traffic sensors commonly record flow, speed, and occupancy, but standard traffic flow forecasting benchmarks and models rarely exploit all three raw measurements reliably. Although speed and occupancy provide sensor-native traffic-state information beyond flow alone, existing releases often omit these variables, replace them with proxies, or contain logically inconsistent records. Moreover, direct empirical risk minimization over three-variable inputs may exploit regime-dependent shortcuts, as the relationships among flow, speed, and occupancy vary substantially between free-flow and congested states. We introduce \\textbf{PEMSB-3V}, a public benchmark suite that preserves raw flow, speed, and occupancy measurements from PeMS detectors for flow prediction. We also propose \\textbf{RiskTraf}, a model-agnostic risk-extrapolated residual plug-in. For each trained spatio-temporal backbone, RiskTraf freezes the selected checkpoint and learns a lightweight zero-start residual head from historical speed and occupancy. The residual head constructs ordered traffic-risk environments and optimizes horizon-wise flow corrections with a risk extrapolation objective, thereby mitigating regime-specific shortcut correlations without modifying the backbone. Extensive experiments demonstrate that RiskTraf consistently improves diverse forecasting backbones and outperforms debiasing and distribution-shift adaptation methods. Our code and benchmark are available at https://github.com/Guangyu4/RiskTraf.",
-      "summary_zh": "标准交通流预测基准很少可靠地利用流量、速度和占用率全部三种原始测量值。RiskTraf提出了PEMSB-3V基准套件，保留PeMS检测器的原始数据。同时提出模型无关的风险外推残差插件，冻结已训练骨干网络，学习轻量级残差头，通过构建有序交通风险环境和风险外推目标来缓解特定状态下的捷径相关，不修改骨干网络即可提升多种预测模型的性能。",
-      "insight_zh": "该研究强调了多变量交通数据中逻辑一致性的重要性，并提出了风险外推的残差学习方法来应对不同交通状态下的分布变化，为城市交通流预测提供了新的鲁棒性提升思路。"
-    },
-    {
-      "key": "arxiv:2608.21057",
-      "title": "Designing a Robust LLM-Based Evaluation System for Agentic AI in Drug Discovery Through Human Alignment",
-      "title_zh": "通过人类对齐设计用于药物发现中智能体AI的鲁棒LLM评估系统",
-      "url": "https://arxiv.org/abs/2608.21057",
-      "doi": "",
-      "arxiv_id": "2608.21057",
-      "authors": [
-        "Emma Granqvist",
-        "Roc\\'io Mercado",
-        "Samuel Genheden"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-21T12:58:24+00:00",
-      "score": 55,
-      "reason": "论文探讨了如何构建与人类专家对齐的LLM评估系统，其评估维度和对齐方法对评估GIS中的智能体系统（如城市规划助手）具有参考价值。",
-      "tags": [
-        "LLM评估",
-        "智能体",
-        "人类对齐",
-        "药物发现"
-      ],
-      "abstract": "Agentic large language model (LLM) systems are reshaping scientific workflows in chemistry and drug discovery, but evaluating their open-ended, tool-augmented outputs remains a fundamental bottleneck. Reference-based metrics such as BLEU and ROUGE fail to capture semantic correctness, while expert human evaluation does not scale to the iteration speed these systems demand. The LLM-as-a-Judge paradigm has emerged as a scalable alternative, but existing drug discovery benchmarks deploy LLM judges without validating their alignment with human experts. In this work, we present an LLM-as-a-Judge evaluation framework for ChatInvent, an agentic drug discovery assistant deployed at AstraZeneca, with four contributions. First, we define four output-quality evaluation dimensions---Completeness, Relevancy, Structural Clarity, and Scope Adherence---alongside deterministic Tool Call Correctness checks. Second, we validate the judge through a human alignment study with five expert annotators, comparing Gemini 3.1 Pro, Claude Opus 4.7, GPT-5, and Llama 3.1 70B as candidate judges. Third, we optimize the best-performing judge using few-shot demonstrations of human-annotated examples, improving alignment with the human majority vote from 0.80 to 0.86. Fourth, applying the optimized judge to 70 held-out questions, we surface concrete limitations and find that informal phrasings do not systematically degrade output quality; if anything, it is helpful to have the LLM rewrite the original question before querying the agent. Our framework provides a reusable template for human-aligned evaluation of agentic systems in scientific domains.",
-      "summary_zh": "本文为药物发现助手ChatInvent构建了一个LLM-as-a-Judge评估框架。他们定义了四个输出质量评估维度，并通过人类对齐研究验证了评判模型，使用少样本示例优化了最佳评判模型，使其与人类多数投票的一致性从0.80提升到0.86。应用优化后的评判模型揭示了系统的具体局限性。",
-      "insight_zh": "在评估科学领域的智能体系统时，建立与人类专家对齐的自动化评估器至关重要，这为GIS智能体的性能验证提供了可复用的模板。"
+      "abstract": "Real-world image search queries are multimodal and compositional: ``find this shirt in pink'' specifies an entity to retain, an attribute to modify, and context to ignore. Yet existing re-rankers either compress such multifaceted relevance into an opaque embedding or rely on free-form chain-of-thought that easily omits or hallucinates fine-grained constraints. Drawing on rubric- and checklist-based evaluation from NLP, we recast multimodal image re-ranking as a semantic constraint satisfaction problem and propose EviRank, which parses any query - text-only, image-only, or composed - into a unified evidence package: typed criteria across six semantic slots (e.g., entities, attributes, relations), each labelled required, forbidden, or ignorable. Re-ranking then reduces to evidence-conditioned verification, combining deterministic rubric scoring and evidence-grounded listwise comparison in a single training-free procedure. The explicit evidence can further serve as structured supervision for optionally distilling a lightweight student. Across five benchmarks spanning text-to-image, image-to-image, and composed image retrieval, EviRank achieves state-of-the-art performance, and the distilled student preserves over 90% of the teacher's capability at substantially lower cost.",
+      "summary_zh": "论文将多模态图像重排序视为语义约束满足问题，提出EviRank，将任何查询（纯文本、纯图像或组合）解析为统一的证据包：跨六个语义槽（如实体、属性、关系）的类型化标准，每个标记为必需、禁止或可忽略。重排序简化为证据条件验证，结合确定性评分和证据基础的列表式比较。在五个基准上达到最先进性能，蒸馏学生模型保留教师90%以上能力且成本更低。",
+      "insight_zh": "将多模态查询解析为结构化语义约束，并进行证据条件验证，比使用不透明嵌入或自由文本推理更可靠，可减少幻觉和遗漏。"
     }
   ]
 }

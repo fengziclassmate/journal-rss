@@ -3,22 +3,50 @@
   "guid": "arxiv-email-daily:2026-08-27",
   "paper_keys": [
     "arxiv:2608.26088",
+    "arxiv:2608.25888",
+    "arxiv:2608.25858",
+    "arxiv:2608.25808",
     "arxiv:2608.25698",
     "arxiv:2608.25039",
+    "arxiv:2608.24956",
+    "arxiv:2512.17021",
+    "arxiv:2608.25992",
+    "arxiv:2608.25935",
+    "arxiv:2608.25823",
+    "arxiv:2608.25810",
     "arxiv:2608.25485",
+    "arxiv:2608.25149",
+    "arxiv:2608.24886",
+    "arxiv:2509.08897",
+    "arxiv:2606.03890",
+    "arxiv:2509.09297",
+    "arxiv:2608.25986",
+    "arxiv:2608.25960",
+    "arxiv:2608.25937",
+    "arxiv:2608.25920",
+    "arxiv:2608.25907",
+    "arxiv:2608.25836",
+    "arxiv:2608.25770",
+    "arxiv:2608.25744",
+    "arxiv:2608.25717",
     "arxiv:2608.25700",
-    "arxiv:2510.04916",
-    "arxiv:2608.25955",
-    "arxiv:2608.25523",
-    "arxiv:2602.17068",
-    "arxiv:2608.26081"
+    "arxiv:2608.25693",
+    "arxiv:2608.25608"
   ],
-  "paper_count": 10,
+  "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:587",
-    "deepseek": "ok:30"
+    "deepseek": "ok:523"
   },
-  "updated_at": "2026-09-02T01:21:45.927198+00:00",
+  "updated_at": "2026-09-02T02:01:01.156662+00:00",
+  "analysis_stats": {
+    "total": 587,
+    "analyzed": 587,
+    "high": 65,
+    "medium": 101,
+    "low": 87,
+    "below_threshold": 334
+  },
   "papers": [
     {
       "key": "arxiv:2608.26088",
@@ -71,6 +99,97 @@
       "abstract": "Addressing critical global challenges, from food security and disaster risk to disease outbreaks and socio-economic vulnerability, demands high-fidelity geospatial modeling. However, building predictive planetary models remains bottlenecked by a fragmented data ecosystem, requiring manual data retrieval, multimodal data curation and fusion along with iterative model selection. We present the Planetary Prediction Engine (PPE), an autonomous AI system that executes this end-to-end workflow directly from natural-language queries. PPE synthesizes multimodal datasets on the fly, retrieving spatiotemporally relevant covariates across open-web and Earth observation platforms (Data Commons, Google Earth Engine) and fusing them with geospatial foundation model embeddings (PDFM, AlphaEarth). Simultaneously, it searches over task-tailored model architecture families with automated overfitting guards. Across diverse tasks, geographies, and scientific domains, PPE consistently outperforms state-of-the-art or manually tuned expert baselines. For US spatial regression, PPE improves mean $R^2$ across 21 CDC health indicators (76.8% vs. 60.0%), FEMA national risk indices (64.9% vs. 60.0%), and the Social Vulnerability Index (66.2% vs. 58.6%). For spatial downscaling in data-scarce settings, PPE integrates localized proxies to double baseline accuracy in Nigerian food security indicators ($R^2$ of 66.1% vs. 31.5%). For epidemiological nowcasting of the 2026 DRC Bundibugyo Ebola outbreak, PPE achieves a Recall@10 of 83.3% (identifying 15 of 18 newly invaded health zones across five weekly forecasts), a +10.3 percentage-point improvement over the public state-of-the-art modeling (~73%). By combining autonomous multimodal planetary data discovery with targeted model optimization, PPE lowers the technical barrier to planetary-scale analytics, enabling rapid, customized, expert-level deployment.",
       "summary_zh": "提出行星预测引擎(PPE)，一个自主AI系统，可直接从自然语言查询执行端到端地理空间预测工作流。它动态检索并融合多模态数据集（如Data Commons、Google Earth Engine）与地理空间基础模型嵌入（PDFM、AlphaEarth），并自动搜索任务定制模型架构。在多项任务中优于现有方法，如美国健康指标回归R²提升至76.8%，尼日利亚粮食安全指标精度翻倍。",
       "insight_zh": "将LLM驱动的自主数据发现与基础模型嵌入相结合，可显著提升跨领域地理空间预测的准确性和自动化程度，为行星尺度建模提供了新范式。"
+    },
+    {
+      "key": "arxiv:2608.25888",
+      "title": "Embedding NDRE Trajectories into Contrastive Learning for Label-Free, Physiology-Aware Crop-Stress Staging and DSS Outputs",
+      "title_zh": "将NDRE轨迹嵌入对比学习用于无标签、生理感知的作物胁迫分期及决策支持系统输出",
+      "url": "https://arxiv.org/abs/2608.25888",
+      "doi": "",
+      "arxiv_id": "2608.25888",
+      "authors": [
+        "Shafqaat Ahmad"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T15:01:56+00:00",
+      "score": 95,
+      "reason": "论文利用Sentinel-2 NDRE时间序列轨迹，通过对比学习进行作物胁迫阶段识别，与遥感变化检测、多源数据融合及地理空间智能方向高度契合，其方法可直接迁移至城市植被或生态监测。",
+      "tags": [
+        "遥感变化检测",
+        "对比学习",
+        "作物胁迫",
+        "Sentinel-2",
+        "时间序列",
+        "决策支持"
+      ],
+      "abstract": "Timely detection of crop stress is critical for sustaining yields under increasing drought frequency, yet conventional vegetation index thresholds or image-based clustering often fail to capture stress progression, limiting their value for farm decision-making. To address this gap, we present EigenCL, a physiology-guided contrastive learning framework that stages crop stress from Sentinel-2 NDRE trajectories, with the goal of providing interpretable and transferable stress diagnostics for decision support systems (DSS). EigenCL was trained on 10,000 maize NDRE patches from drought-affected Iowa fields in 2020 and tested on Nebraska fields in 2023 without retraining, with validation incorporating soil-moisture records, U.S. Drought Monitor maps, and county-level yield statistics. The model produced four physiologically coherent stress clusters (Healthy, Mild, Moderate, Severe), significantly outperforming baselines including K-Means, SimCLR, ProtoCLR, and an ablation model (Silhouette = 0.748, DBI = 0.35, CHI = 49,624). Clusters aligned with maize growth stages, with severe stress peaking around tasseling-silking (VT-R1), a stage known to drive yield loss; moreover, EigenCL clusters correlated with soil moisture at 0-14-day lags (rho up to 0.72) and matched yield anomalies in drought-affected counties. By embedding NDRE trajectory dynamics into contrastive learning, EigenCL enables early stress alerts and interpretable DSS outputs (e.g., heatmaps, scouting priorities, regional risk indices), extending beyond single-date NDRE thresholds and supporting scalable monitoring for climate-smart agronomy.",
+      "summary_zh": "提出EigenCL框架，利用Sentinel-2 NDRE时间序列轨迹进行作物胁迫分期。模型在爱荷华州玉米田训练，在内布拉斯加州无重训练测试，成功识别出四个生理一致的胁迫簇，并与土壤湿度、产量异常等外部数据高度相关，优于多种基线方法。",
+      "insight_zh": "该研究展示了利用卫星时间序列轨迹进行无监督生理状态识别的潜力，为城市绿地健康监测、植被物候变化检测等提供了可借鉴的对比学习框架。"
+    },
+    {
+      "key": "arxiv:2608.25858",
+      "title": "Precipitation Downscaling Using Foundation Model-Conditioned Diffusion",
+      "title_zh": "基于基础模型条件扩散的降水降尺度",
+      "url": "https://arxiv.org/abs/2608.25858",
+      "doi": "",
+      "arxiv_id": "2608.25858",
+      "authors": [
+        "Victor Nascimento Ribeiro",
+        "Jorge Guevara",
+        "Jorge Sebastian Moraga",
+        "Chris Lucas",
+        "Natalie Lord",
+        "Andrew Taylor",
+        "Edward Lockhart",
+        "Will Trojak",
+        "Johannes Schmude",
+        "and Anne Jones"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T14:30:39+00:00",
+      "score": 95,
+      "reason": "该研究直接针对降水降尺度，利用扩散模型和基础模型条件化，与GIS和遥感中的气候数据空间降尺度高度相关。",
+      "tags": [
+        "降水降尺度",
+        "扩散模型",
+        "基础模型",
+        "条件生成",
+        "水文",
+        "气候"
+      ],
+      "abstract": "High-resolution precipitation fields are essential for hydrological impact assessment, yet global climate model outputs are too coarse and biased for direct use. AI-based statistical downscaling with diffusion models offers a promising approach, but the mechanism by which large-scale atmospheric predictors condition generation remains largely unexplored. We investigate three conditioning strategies for a denoising diffusion probabilistic model applied to daily precipitation downscaling: channel concatenation of upsampled coarse predictors, cross-attention conditioning with a learned convolutional encoder, and cross-attention conditioning with the frozen encoder of the pretrained Prithvi WxC weather foundation model. All strategies are evaluated against an unconditioned baseline under identical conditions using probabilistic, distributional, spectral, and extreme-event metrics for the Colorado River Basin. Concatenation conditioning achieves the lowest point-wise CRPS and MSE, but tends to produce over-smoothed fields that suppress high-intensity events. In contrast, cross-attention conditioning provides substantially better distributional realism and modest improvements in spectral fidelity. Improvements are greatest for extremes: the Prithvi-WxC conditioned model retains over half of >100mm/day events, although estimates are uncertain due to limited samples. When trained on the full dataset, the learned convolutional model performs similarly to the foundation model-conditioned approach while requiring lower computational resources. However, the Prithvi-WxC-conditioned model achieves comparable performance with only five years of training data. These results indicate that cross-attention conditioning offers advantages over simple concatenation for probabilistic precipitation downscaling, and that pre-trained foundation model representations may offer benefits in data-limited settings.",
+      "summary_zh": "高分辨率降水场对水文影响评估至关重要，但全球气候模型输出粗糙。本文研究扩散模型三种条件化策略：通道拼接、学习卷积编码器交叉注意力、预训练Prithvi WxC基础模型冻结编码器交叉注意力。在科罗拉多河流域评估，拼接条件化获得最低点级CRPS和MSE但过度平滑；交叉注意力条件化提供更好的分布真实性和频谱保真度，对极端事件保留更好。基础模型条件化在仅5年训练数据下达到可比性能。",
+      "insight_zh": "交叉注意力条件化优于简单拼接，尤其在极端降水事件保留方面，基础模型条件化在数据有限时更具优势。"
+    },
+    {
+      "key": "arxiv:2608.25808",
+      "title": "TDFNet: Tri-projection Deformable Fusion Network for Panoramic Salient Object Detection",
+      "title_zh": "TDFNet：用于全景显著性检测的三投影可变形融合网络",
+      "url": "https://arxiv.org/abs/2608.25808",
+      "doi": "",
+      "arxiv_id": "2608.25808",
+      "authors": [
+        "Qiangqiang Zhou",
+        "Jiacong Yu",
+        "Jiawei Xu",
+        "Yong Chen",
+        "Xin Huang",
+        "Ping Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T13:54:44+00:00",
+      "score": 95,
+      "reason": "该研究针对全景图像几何失真问题，提出三投影可变形融合网络，与遥感影像处理中的几何校正和多源数据融合高度相关，对城市遥感全景分析有直接应用价值。",
+      "tags": [
+        "全景图像",
+        "显著性检测",
+        "多投影融合",
+        "可变形注意力",
+        "几何校正"
+      ],
+      "abstract": "Recent years have witnessed the growing potential of panoramic salient object detection in robotic vision, virtual reality, and related applications. However, projecting spherical scenes onto 2D planes inevitably introduces geometric distortions, which fundamentally limit the effectiveness of existing projection-based methods. Specifically, Equirectangular Projection (ERP) suffers from severe polar stretching distortions, while cube map projection introduces discontinuities across cube-face boundaries, resulting in degraded feature discriminability and compromised geometric consistency. To address these limitations, we propose TDFNet, the first Tri-projection Deformable Fusion Network for panoramic salient object detection, exploiting complementary projection representations to alleviate geometric distortions and improve detection performance.Specifically, we design a cross-projection deformable attention (CDA) module that leverages spatial correspondences between different projections to construct geometry-aware sampling locations, guiding deformable attention for cross-projection contextual aggregation and enhancing robustness against projection-induced deformations. Furthermore, we introduce a latitude-guided fusion module, which utilizes spherical latitude priors to construct geometric confidence weights for adaptively balancing ERP and CMP features. Meanwhile, LGF incorporates distortion-reduced semantic references from Tangent Projection to achieve cross-projection feature refinement and spatial alignment.By constructing a three-branch encoding architecture based on ERP, CMP, and Tangent Projection, TDFNet simultaneously preserves global spatial continuity, local geometric details, and fine-grained boundary information.",
+      "summary_zh": "提出TDFNet，首个三投影可变形融合网络，利用ERP、CMP和Tangent三种投影的互补表示缓解几何失真。设计跨投影可变形注意力模块，利用投影间空间对应构建几何感知采样位置；引入纬度引导融合模块，利用球面纬度先验构建几何置信权重，自适应平衡不同投影特征。",
+      "insight_zh": "多投影互补表示与几何感知注意力机制，可有效缓解全景影像的投影失真问题，提升显著性检测性能。"
     },
     {
       "key": "arxiv:2608.25698",
@@ -130,6 +249,189 @@
       "insight_zh": "该研究揭示了LLM智能体在地理空间规划任务中的瓶颈并非模型规模或推理长度，而是缺乏基于真实世界多模态数据的落地规划能力，这为开发更有效的智能体规划策略指明了方向。"
     },
     {
+      "key": "arxiv:2608.24956",
+      "title": "Synergising Local Geo-Environmental Characteristics with Spatial Context for Enhancing Landslide Susceptibility Mapping",
+      "title_zh": "协同局部地理环境特征与空间上下文以提升滑坡易发性制图",
+      "url": "https://arxiv.org/abs/2608.24956",
+      "doi": "",
+      "arxiv_id": "2608.24956",
+      "authors": [
+        "Yusen Cheng",
+        "Lei Fan",
+        "Qinfeng Zhu",
+        "Cheng Zhang",
+        "Yangyang Li",
+        "Ron Mahabir"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T02:32:10+00:00",
+      "score": 95,
+      "reason": "该论文提出一种融合局部地理环境特征与空间上下文的新策略用于滑坡易发性制图，属于GIS和遥感在自然灾害领域的典型应用，与博士研究方向中的多源数据融合和地理空间智能高度相关。",
+      "tags": [
+        "滑坡易发性",
+        "空间上下文",
+        "特征融合",
+        "CNN",
+        "地质灾害"
+      ],
+      "abstract": "Data-driven methods are widely used in landslide susceptibility mapping (LSM) because they can effectively model the complex relationships between landslides and geo-environmental conditions. Existing data-driven approaches generally follow two types of data representations. Pixel-based models focus solely on the geo-environmental characteristics of a specific landslide but neglect the influence of its surrounding environment. Patch-based models incorporate surrounding spatial context but may include pixels with weak or no spatial relevance to the target landslide location. To address this limitation, this study proposes a Local-Geo and Spatial Context Fusion (LGSCF) strategy, which synergises the geo-environmental characteristics of landslide points with their corresponding spatial context through a feature-wise modulation mechanism. We tested the LGSCF strategy by integrating it into several representative convolutional neural network (CNN) architectures, creating nine different LGSCF-based models. The study area covers approximately 2644 km2 across Jenai and Sinyi Townships in Nantou County, Taiwan, and the dataset comprises 5332 landslide samples and an equal number of non-landslide samples. The results show that LGSCF-based models consistently outperform their original versions, achieving F1-scores up to 87.09% and AUC values up to 0.9472. Furthermore, the susceptibility maps produced by LGSCF-based models show that known landslides are more accurately concentrated in \"very high\" susceptibility zones with fewer misclassifications. These findings demonstrate that our fusion strategy can significantly improve the accuracy of landslide susceptibility mapping.",
+      "summary_zh": "针对现有像素级模型忽略周围环境、而补丁级模型可能包含无关像素的问题，提出局部地理与空间上下文融合（LGSCF）策略。该策略通过特征级调制机制，将滑坡点的地理环境特征与其对应的空间上下文进行协同。在台湾南投县仁爱乡和信义乡约2644平方公里的区域，使用5332个滑坡样本和等量非滑坡样本进行测试。结果表明，集成LGSCF的九个CNN模型性能均优于原始版本，F1分数最高达87.09%，AUC最高达0.9472，且生成的易发性图更准确地将已知滑坡集中在“极高”易发区。",
+      "insight_zh": "该研究通过特征级调制机制有效融合了点尺度的局部环境信息和面尺度的空间上下文，解决了像素级与补丁级表征的各自局限，为滑坡易发性制图提供了一种更精确的数据融合策略。"
+    },
+    {
+      "key": "arxiv:2512.17021",
+      "title": "FORMSpoT: Revealing Fine-Scale Forest Disturbances from Nation-Wide 1.5 m Forest Canopy Height Time Series",
+      "title_zh": "FORMSpoT：从全国1.5米森林冠层高度时间序列揭示细尺度森林扰动",
+      "url": "https://arxiv.org/abs/2512.17021",
+      "doi": "",
+      "arxiv_id": "2512.17021",
+      "authors": [
+        "Martin Schwartz",
+        "Fajwel Fogel",
+        "Nikola Besic",
+        "Damien Robert",
+        "Louis Geist",
+        "Jean-Pierre Renaud",
+        "Jean-Matthieu Monnet",
+        "Clemens Mosig",
+        "C\\'edric Vega",
+        "Alexandre d'Aspremont",
+        "Loic Landrieu",
+        "Philippe Ciais"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "该研究直接利用全国1.5米分辨率的森林冠层高度时间序列揭示细尺度森林扰动，与遥感变化检测和城市更新中的植被监测高度相关，方法上具有直接借鉴意义。",
+      "tags": [
+        "森林扰动",
+        "时间序列",
+        "高分辨率遥感",
+        "变化检测"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文提出了FORMSpoT方法，利用全国范围的1.5米分辨率森林冠层高度时间序列数据，检测和揭示细尺度的森林扰动事件，如局部砍伐或灾害。",
+      "insight_zh": "该研究展示了高分辨率时间序列在细尺度变化检测中的潜力，其方法可推广至城市植被和绿地变化的精细监测。"
+    },
+    {
+      "key": "arxiv:2608.25992",
+      "title": "ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs",
+      "title_zh": "ProgRouter：质量-成本权衡下多智能体LLM工作流的在线进度引导编排",
+      "url": "https://arxiv.org/abs/2608.25992",
+      "doi": "",
+      "arxiv_id": "2608.25992",
+      "authors": [
+        "Songyuan Li",
+        "Ahmed M. Abdelmoniem",
+        "Shiqiang Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T16:42:02+00:00",
+      "score": 90,
+      "reason": "该研究针对多智能体LLM工作流中的动态路由和成本-质量权衡问题，提出在线进度引导的编排框架，与LLM和多智能体研究方向高度契合。",
+      "tags": [
+        "多智能体LLM",
+        "路由优化",
+        "成本控制",
+        "工作流编排",
+        "在线决策"
+      ],
+      "abstract": "Multi-agent large language model (LLM) workflows have emerged as a powerful paradigm for solving complex, open-ended tasks through collaborative reasoning among specialized LLM agents, but they incur substantial operating costs due to repeated LLM invocations and long-horizon context accumulation. Existing cascade routing methods make one-shot, query-level decisions and cannot adapt to the dynamic, state-dependent nature of multi-step workflows, in which the right LLM at each step depends on evolving task progress, remaining task difficulty, and cost-efficiency requirements. We present ProgRouter, an online progress-guided routing framework that adaptively selects LLM agents across workflow steps to preserve task-solving quality while adhering to time and cost budgets. ProgRouter introduces a multi-view task progress scorer that combines coarse workflow outcome regimes with fine-grained signals on subtask completion, progress trends, and workflow state quality. Then, a dual-path task progress predictor and an adaptive meta-gating mechanism estimate the progress gain for each candidate routed LLM. ProgRouter makes online step-wise routing decisions that balance progress gain, task time budgets, and long-term operating cost efficiency. Experiments on HumanEval Plus, MBPP, MATH-500, and ASQA, spanning agentic code generation, mathematical reasoning, and retrieval-augmented long-form question answering, demonstrate that ProgRouter reduces the operating cost relative to key baselines while maintaining strong task-solving performance.",
+      "summary_zh": "提出ProgRouter框架，通过多视图任务进度评分器和双路径进度预测器，在每一步动态选择最合适的LLM代理，以在满足时间和成本预算的同时保持任务解决质量。实验表明，该方法在多个基准上降低了运营成本并保持了强性能。",
+      "insight_zh": "多智能体LLM工作流的效率优化需从静态查询级路由转向动态步骤级决策，利用任务进度信号可有效平衡质量与成本。"
+    },
+    {
+      "key": "arxiv:2608.25935",
+      "title": "TAU-Agent: An Agentic Retrieval-Augmented Framework for Traffic Anomaly Understanding",
+      "title_zh": "TAU-Agent：用于交通异常理解的智能体检索增强框架",
+      "url": "https://arxiv.org/abs/2608.25935",
+      "doi": "",
+      "arxiv_id": "2608.25935",
+      "authors": [
+        "Yuqiang Lin",
+        "Yan Shi",
+        "Sam Lockyer",
+        "Harish Tayyar Madabushi",
+        "Adrian Evans",
+        "Wenbin Li",
+        "Yinhai Wang",
+        "Nic Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T15:50:38+00:00",
+      "score": 90,
+      "reason": "该论文提出了一个用于交通异常理解的智能体检索增强框架，直接涉及视频中的异常检测、推理和解释，与GIS中智能交通系统、视频遥感分析和时空事件挖掘高度相关。",
+      "tags": [
+        "交通异常理解",
+        "智能体",
+        "检索增强",
+        "视频理解",
+        "视觉语言模型"
+      ],
+      "abstract": "Traffic Anomaly Understanding (TAU) requires models and systems to detect, reason about, and explain anomalous events in transportation videos. To address this challenge, we propose TAU-Agent, an agentic retrieval-augmented framework for traffic anomaly understanding. Given a task query, a central retrieval agent orchestrates two visual perception tools, namely a Video Captioning Tool and an Open-Vocabulary Tracking Tool, to retrieve and select query-relevant evidence, including captions, temporal intervals, and object trajectories. The selected evidence, together with sampled video frames and the input query, is provided to a supervised fine-tuned vision-language model for final reasoning and answer generation. We evaluate TAU-Agent on both the in-domain and the out-of-domain benchmarks from the AI City Challenge 2026. TAU-Agent achieves scores of 0.6779 on Track 3, 0.3998 on Track 7, and 67.9275 on Track 8, ranking second, twelfth, and fifth, respectively. Code is available at: https://github.com/siri-rouser/TAU-Agent.",
+      "summary_zh": "本文提出TAU-Agent，一个用于交通异常理解（TAU）的智能体检索增强框架。该框架由一个中央检索智能体协调两个视觉感知工具（视频字幕工具和开放词汇跟踪工具），以检索和选择与查询相关的证据，如字幕、时间间隔和物体轨迹。选定的证据连同视频帧和查询被提供给一个经过监督微调的视觉语言模型进行最终推理和答案生成。在AI City Challenge 2026基准上取得了有竞争力的成绩。",
+      "insight_zh": "通过智能体编排多个视觉工具进行证据检索，可以有效地增强视觉语言模型在特定领域（如交通）的推理和解释能力，这种范式对构建复杂地理空间事件理解的智能系统具有直接参考价值。"
+    },
+    {
+      "key": "arxiv:2608.25823",
+      "title": "Learning Continuous Regional Temperature Fields with Lead-Time and Resolution Queries",
+      "title_zh": "基于时效和分辨率查询的连续区域温度场学习",
+      "url": "https://arxiv.org/abs/2608.25823",
+      "doi": "",
+      "arxiv_id": "2608.25823",
+      "authors": [
+        "Chunlei Shi",
+        "Jiong Wang",
+        "Yi-Lin Wei",
+        "Junming Hou",
+        "Jinjin Liu",
+        "Yecheng Zhang",
+        "and Dan Niu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T14:04:31+00:00",
+      "score": 90,
+      "reason": "该研究提出连续时空温度预测器，支持查询依赖的预报时效和分辨率，与GIS时空数据建模和气象遥感应用高度相关。",
+      "tags": [
+        "温度预测",
+        "神经场",
+        "连续时空",
+        "查询条件",
+        "ERA5",
+        "区域预报"
+      ],
+      "abstract": "Accurate regional near-surface temperature forecasting is fundamental to short-range weather services and downstream risk assessment. Existing deep learning-based regional forecasters commonly produce a fixed set of future frames on a prescribed grid, limiting their use when forecast products must be evaluated at query-dependent lead times or display resolutions. To overcome these fixed-output constraints, we formulate regional T2M forecasting as query-conditioned continuous spatiotemporal temperature field evaluation and propose the Continuous Spatiotemporal Temperature Forecaster (CSTF), a neural field that turns forecast lead time and output resolution into explicit queries when evaluating 2-m temperature (T2M). Specifically, CSTF first encodes multivariable ERA5 histories into latent meteorological states and then decodes T2M as a coordinate-based field. Accordingly, spatial location, forecast lead time, and output resolution are introduced as queries, enabling standard hourly forecasts, intermediate lead-time diagnostics, and resolution-controllable outputs within a unified field-evaluation framework. Furthermore, to maintain coherence across flexible field queries, we design spatial-gradient, temporal-difference, and scale-consistency objectives that regularize regional thermal structures, lead-wise evolution, and cross-resolution agreement. Experiments on the Southeast China 0-6 h ERA5-Land benchmark demonstrate that CSTF achieves the best aggregate deterministic skill, including a 17.0 percent reduction in Bias, with global-scope diagnostics further illustrating flexible lead-time and resolution-controllable inference.",
+      "summary_zh": "现有深度学习区域预报器输出固定未来帧和网格，限制查询依赖的预报产品。本文提出CSTF神经场，将预报时效和输出分辨率作为显式查询，编码多变量ERA5历史为潜在气象状态，解码T2M为坐标基场。设计空间梯度、时间差分和尺度一致性目标正则化。在东南中国0-6小时ERA5-Land基准上，CSTF取得最佳综合确定性技能，Bias降低17.0%，支持灵活时效和分辨率推理。",
+      "insight_zh": "将预报时效和分辨率作为查询条件，神经场可实现灵活的区域温度场评估，统一标准预报和中间诊断。"
+    },
+    {
+      "key": "arxiv:2608.25810",
+      "title": "Label-Free Foundational Model Selection for Medical Image Classification under Distribution Shift via Pseudo Label Discrepancy",
+      "title_zh": "分布偏移下医学图像分类的无标签基础模型选择：基于伪标签差异",
+      "url": "https://arxiv.org/abs/2608.25810",
+      "doi": "",
+      "arxiv_id": "2608.25810",
+      "authors": [
+        "Juan I\\~naki Larrea",
+        "Lucas Mansilla",
+        "Enzo Ferrante"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T13:56:29+00:00",
+      "score": 90,
+      "reason": "研究解决无标签目标域下基础模型选择问题，提出基于伪标签差异的评估标准，与多源数据融合和模型泛化评估高度相关，对城市遥感影像分析中的模型选择有直接借鉴意义。",
+      "tags": [
+        "基础模型选择",
+        "医学影像",
+        "分布偏移",
+        "伪标签",
+        "无标签评估"
+      ],
+      "abstract": "Foundation models are increasingly deployed for medical image analysis. However, under the inter-institutional distribution shift typical of deployment, their performance varies widely and cannot be known without target-domain labels, which are rarely available. This leaves a practical question unresolved: given several candidate foundational models and labeled-data from a source domain, which one to deploy in an unlabeled target domain? We propose a label-free selection criterion built on SUDO, a framework for evaluating clinical AI systems without ground-truth annotations. SUDO partitions the unlabeled target data by predicted probability and, for each region, measures a pseudo-label discrepancy reflecting class contamination; aggregated across regions, this yields a score (AURCC) requiring neither target annotation nor fine-tuning. We show that AURCC can be used to rank a variety of vision-language models (BioMedCLIP, CXR-CLIP, CheXzero, MedCLIP, MedImageInsight, CLIP) on chest X-ray classification across three inter-hospital shift scenarios, under zero-shot and MLP-probe regimes. The AURCC ranking recovers the ground-truth ranking with Spearman rho up to 0.943 (p<0.05). Against the natural baseline of ranking by held-out source accuracy, AURCC is competitive when the labeled source is large and yields a more accurate ranking once it is small; the regime of interest in resource-constrained settings.",
+      "summary_zh": "提出基于SUDO框架的无标签选择标准AURCC，通过划分无标签目标域数据并测量各区域的伪标签差异，无需目标标注或微调即可评估模型。在胸部X光分类的三种跨医院偏移场景下，AURCC排序与真实排序的Spearman rho最高达0.943，且在源域数据少时优于基于源域准确率的基线。",
+      "insight_zh": "伪标签差异可作为无标签目标域下模型性能的有效代理指标，为资源受限场景中的基础模型选择提供了实用方案。"
+    },
+    {
       "key": "arxiv:2608.25485",
       "title": "Semi-Supervised Adaptation of Vision-Language Models for Image Classification",
       "title_zh": "用于图像分类的视觉-语言模型的半监督适应",
@@ -160,6 +462,411 @@
       "insight_zh": "该研究提供了一种在标注样本稀缺的情况下，有效适应视觉-语言模型到遥感领域的解决方案，其递归标签挖掘和类平衡策略对于降低遥感应用中的标注成本具有重要意义。"
     },
     {
+      "key": "arxiv:2608.25149",
+      "title": "SNAP-KG: Streaming Node Assignment via Projection for Knowledge Graph Entity Integration",
+      "title_zh": "SNAP-KG：面向知识图谱实体集成的流式节点分配",
+      "url": "https://arxiv.org/abs/2608.25149",
+      "doi": "",
+      "arxiv_id": "2608.25149",
+      "authors": [
+        "Jui-Chien Lin",
+        "Mohammad Mohammadi Amiri",
+        "Oshani Seneviratne"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T20:56:01+00:00",
+      "score": 90,
+      "reason": "该研究针对知识图谱中持续到达的新实体，提出了一种流式节点分配框架，支持归纳式推理，无需重训练即可将新实体映射到嵌入空间。这与地理空间数据中持续更新的实体（如新POI、新道路）的集成和关联高度相关。",
+      "tags": [
+        "知识图谱",
+        "流式节点分配",
+        "归纳推理",
+        "实体解析",
+        "图聚类"
+      ],
+      "abstract": "Knowledge graph (KG) construction pipelines must continuously integrate newly arriving entities into a growing graph. Unlike inserting triples between existing nodes, a newly arriving entity has no graph connectivity: it emerges from the acquisition phase as a raw feature vector and must be assigned to a semantic community before entity resolution and link prediction can operate over a tractable candidate set. Existing multi-view graph clustering methods exploit multiple relation types as structural views, but are transductive: they assume a fixed graph and cannot assign unseen entities without retraining. We propose SNAP-KG (Streaming Node Assignment via Projection for Knowledge Graph Entity Integration), a framework supporting graph-structural multi-view relational clustering and inductive inference for streaming entities. SNAP-KG trains a projector to map a new entity directly to the learned embedding space using only raw features, enabling immediate cluster assignment without graph access or model retraining. Experiments on five benchmark multi-view graph datasets and a production-scale KG of 2.4 million nodes demonstrate multiple orders-of-magnitude inference speedups over retraining-based approaches and competitive clustering quality. As a candidate scoping mechanism for downstream tasks, SNAP-KG achieves 62-75% candidate search reduction on the five benchmark datasets and 97% on OGB-WikiKG2 for entity resolution and link prediction.",
+      "summary_zh": "论文提出SNAP-KG框架，用于知识图谱中流式到达实体的归纳式聚类和分配。它训练一个投影器，仅使用原始特征即可将新实体映射到学习到的嵌入空间，实现即时聚类分配，无需图访问或模型重训练，并在多个数据集上验证了其速度和聚类质量。",
+      "insight_zh": "该框架为动态更新的地理空间知识图谱提供了高效的实体集成方案，能够快速将新发现的地理实体（如新建筑、新店铺）归入正确的语义社区，为下游的实体解析和链接预测提供支持。"
+    },
+    {
+      "key": "arxiv:2608.24886",
+      "title": "VLM-based automatic multi-granularity graph representation of building layouts for design informatics",
+      "title_zh": "基于VLM的建筑物布局多粒度图表示自动构建用于设计信息学",
+      "url": "https://arxiv.org/abs/2608.24886",
+      "doi": "",
+      "arxiv_id": "2608.24886",
+      "authors": [
+        "Song Guo",
+        "Zhuoshi Chen",
+        "Maosu Li",
+        "Weimin Zhuang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-05-08T00:27:11+00:00",
+      "score": 90,
+      "reason": "该研究直接涉及建筑平面图的自动图表示构建，与城市更新和GIS中的建筑信息建模、空间关系提取高度相关，且使用了VLM技术。",
+      "tags": [
+        "VLM",
+        "建筑布局",
+        "图表示",
+        "设计信息学",
+        "多粒度"
+      ],
+      "abstract": "Architectural floorplan images encode rich relational knowledge among functional spaces, which underpins design retrieval, knowledge-based reasoning, and BIM enrichment through the building lifecycle. However, it remains challenging to automatically construct task-adaptive graph representations for public buildings. To address this gap, we first define a multi-granularity Level-of-Graphs (LoGs) for public building layouts. Methodologically, we present a Vision-Language Model (VLM)-based automatic LoG construction through node identification, edge inference, text parsing, and graph coarsening. VLM-generated representations are systematically evaluated and tested in real-world tasks, using 147 academic library floorplans worldwide as a case study. Experiments showed VLM-generated graphs were broadly consistent with human-labeled graphs (matched node ratio >= 92%; 509.3 s per floor plan for three-LoG graph generation). Meso-grained graphs yield the best node-level zone prediction (Macro F1 = 0.647, at 65% of fine-grained complexity), while coarse-grained graphs are most effective for graph-level layout quality evaluation (Spearman's \\r{ho} = 0.610, at 16% of fine-grained complexity). By enabling scalable, annotation-free extraction of structured layout information from floorplan images, this study advances design informatics by converting plan images into knowledge representations, thereby enhancing the utilization of design information across the building life cycle.",
+      "summary_zh": "该论文定义了公共建筑布局的多粒度图级别（LoGs），并提出基于视觉语言模型的自动构建方法，通过节点识别、边推断、文本解析和图粗化实现，在147个图书馆平面图案例中验证了其与人工标注的一致性。",
+      "insight_zh": "VLM能够从建筑平面图图像中自动提取结构化的多粒度图表示，这为建筑信息模型（BIM）的自动丰富和设计知识推理提供了可扩展的途径。"
+    },
+    {
+      "key": "arxiv:2509.08897",
+      "title": "Recurrence Meets Transformers for Universal Multimodal Retrieval",
+      "title_zh": "递归与Transformer结合实现通用多模态检索",
+      "url": "https://arxiv.org/abs/2509.08897",
+      "doi": "",
+      "arxiv_id": "2509.08897",
+      "authors": [
+        "Davide Caffagni",
+        "Sara Sarto",
+        "Marcella Cornia",
+        "Lorenzo Baraldi",
+        "Rita Cucchiara"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "提出通用多模态检索架构，与多源数据融合和地理空间智能中的跨模态检索高度相关。",
+      "tags": [
+        "多模态检索",
+        "递归网络",
+        "Transformer",
+        "通用检索"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该研究结合递归网络和Transformer架构，提出一种通用多模态检索方法，在多个基准上验证了有效性。",
+      "insight_zh": "递归与Transformer的融合可增强多模态特征提取，为遥感与文本数据的联合检索提供新思路。"
+    },
+    {
+      "key": "arxiv:2606.03890",
+      "title": "OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs",
+      "title_zh": "OVO-S-Bench：多模态LLM流式空间智能的分层基准",
+      "url": "https://arxiv.org/abs/2606.03890",
+      "doi": "",
+      "arxiv_id": "2606.03890",
+      "authors": [
+        "Yifei Li",
+        "Pengyiang Liu",
+        "Yuhang Zang",
+        "Zhongyue Shi",
+        "Qi Fu",
+        "Hongye Hao",
+        "Jiwen Lu"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "构建流式空间智能基准，直接评估多模态LLM在动态空间场景中的表现，与城市时空数据挖掘高度契合。",
+      "tags": [
+        "流式空间智能",
+        "多模态LLM",
+        "基准测试",
+        "时空数据"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "本文提出OVO-S-Bench，一个分层基准测试，用于评估多模态大语言模型在流式空间智能任务中的能力，涵盖动态场景理解与推理。",
+      "insight_zh": "该基准可为城市动态监测和实时空间决策提供评估工具，推动LLM在时空数据挖掘中的应用。"
+    },
+    {
+      "key": "arxiv:2509.09297",
+      "title": "Model-Agnostic Open-Set Air-to-Air Visual Object Detection for Reliable UAV Perception",
+      "title_zh": "模型无关的开放集空对空视觉目标检测用于可靠无人机感知",
+      "url": "https://arxiv.org/abs/2509.09297",
+      "doi": "",
+      "arxiv_id": "2509.09297",
+      "authors": [
+        "Spyridon Loukovitis",
+        "Anastasios Arsenos",
+        "Vasileios Karampinis",
+        "Athanasios Voulodimos"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 88,
+      "reason": "研究无人机视觉开放集检测，与遥感变化检测中的未知目标识别和城市动态监测直接相关。",
+      "tags": [
+        "开放集检测",
+        "无人机感知",
+        "目标检测",
+        "模型无关"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "论文提出一种模型无关的开放集检测方法，提升无人机在空对空场景中对未知目标的识别能力。",
+      "insight_zh": "开放集检测技术可增强遥感变化检测对未知地物变化的响应，提升城市更新监测的适应性。"
+    },
+    {
+      "key": "arxiv:2608.25986",
+      "title": "Multi-Granularity Context-Enhanced RAG over Multimodal Knowledge Graphs",
+      "title_zh": "多模态知识图谱上的多粒度上下文增强RAG",
+      "url": "https://arxiv.org/abs/2608.25986",
+      "doi": "",
+      "arxiv_id": "2608.25986",
+      "authors": [
+        "Zongyu Wu",
+        "Yilong Wang",
+        "Xiaochen Wang",
+        "Minhua Lin",
+        "Zhichao Xu",
+        "Fenglong Ma",
+        "Xiang Zhang",
+        "Suhang Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T16:38:02+00:00",
+      "score": 85,
+      "reason": "该研究提出多粒度上下文增强的多模态知识图谱构建框架，提升GraphRAG性能，与多源数据融合和地理空间知识图谱构建高度相关，可增强城市更新中的多模态信息检索与生成。",
+      "tags": [
+        "多模态知识图谱",
+        "检索增强生成",
+        "上下文增强",
+        "多粒度",
+        "GraphRAG"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) is widely used to mitigate hallucination issues in large language models (LLMs) and multimodal large language models (MLLMs). In particular, knowledge graph (KG)-based RAG leverages structured knowledge to provide (M)LLMs with high-quality external information. Building on these works, recent studies have explored multimodal knowledge graphs (MMKGs) as knowledge bases for GraphRAG. This enables Graph RAG to integrate knowledge across multiple modalities, thereby further enhancing its performance. However, existing MMKG-based RAG methods generally follow a common pipeline in which different modalities are largely processed independently before being fusion. As a result, textual context is only used to a limited extent during visual information extraction and subsequent multimodal knowledge fusion. This brings a semantic gap between images and text which limits the multimodal GraphRAG performance. To address this issue, we propose a novel framework for constructing a Context-Enhanced MMKG (CEMMKG) to better support multimodal GraphRAG. The proposed CEMMKG enriches each image with complementary textual context at both local and global scopes. Local context goes beyond the surrounding text by incorporating sentences that are semantically related to the image, while global context provides a summary of the entire passage. We further introduce a multi-granularity design for the local context, allowing it to capture semantically relevant information at different levels of detail. Extensive experiments on the selected vision-centric dataset validate that CEMMKG is effective in leveraging contextual information to improve MMKG-based RAG performance. Moreover, its effectiveness across different MMKG-based RAG methods demonstrates its broad applicability.",
+      "summary_zh": "本文提出构建上下文增强多模态知识图谱（CEMMKG）的框架，通过为每个图像补充局部和全局范围的文本上下文，增强多模态GraphRAG性能。局部上下文包含与图像语义相关的句子，全局上下文提供整个段落的摘要，并引入多粒度设计捕捉不同细节级别的语义相关信息。实验证明CEMMKG能有效利用上下文信息提升MMKG-based RAG性能。",
+      "insight_zh": "多粒度上下文增强能够弥合图像与文本之间的语义差距，显著提升多模态知识图谱在检索增强生成中的表现。"
+    },
+    {
+      "key": "arxiv:2608.25960",
+      "title": "LivingRAG: Augmenting Graph RAG with Experience",
+      "title_zh": "LivingRAG：用经验增强图RAG",
+      "url": "https://arxiv.org/abs/2608.25960",
+      "doi": "",
+      "arxiv_id": "2608.25960",
+      "authors": [
+        "Yuzhuo Cui",
+        "Zongye Zhang",
+        "Qingjie Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T16:21:06+00:00",
+      "score": 85,
+      "reason": "该论文提出了一种可写入和复用推理经验的图RAG框架，直接针对多跳问答中知识检索和推理效率问题，与GIS中基于知识图谱的地理问答和时空数据挖掘高度相关。",
+      "tags": [
+        "图RAG",
+        "检索增强生成",
+        "知识图谱",
+        "多跳问答",
+        "经验复用"
+      ],
+      "abstract": "Graph-based RAG improves multi-hop question answering by organizing evidence as a knowledge graph. However, most existing RAG systems process each query in isolation and discard useful reasoning from the LLM's response after inference. As a result, later related queries need to retrieve evidence and reason from scratch. We propose LivingRAG, a Graph RAG framework with writable and reusable reasoning experience. LivingRAG adds a writable experience store to a graph-based retrieval backbone, enabling verified experiences to be reused during inference in two ways. Stored graph signals help retrieval find entities and passages that were useful in earlier related queries. Stored summaries provide a reference reasoning pattern for answer generation. We analyze online QA streams and find reusable signals from shared entities, graph neighborhoods, and question templates. Experiments on multi-hop QA benchmarks show that LivingRAG improves accuracy over strong RAG baselines and reduces completion-token use when relevant prior experience is reused.",
+      "summary_zh": "本文提出LivingRAG，一个具有可写和可复用推理经验的图RAG框架。它在基于图的检索骨干上增加了一个可写的经验存储，使得经过验证的经验可以在推理时以两种方式复用：存储的图信号帮助检索，存储的摘要提供推理模式参考。在多跳问答基准上的实验表明，LivingRAG提高了准确性并减少了完成令牌的使用。",
+      "insight_zh": "将历史查询的推理经验（如图信号和摘要）显式存储并复用于后续相关查询，可以有效提升多跳问答的效率和准确性，这对构建持续学习和自适应的地理空间问答系统具有启发意义。"
+    },
+    {
+      "key": "arxiv:2608.25937",
+      "title": "Candidate supply and answer selection shape the value of LLM judging in multi-agent systems",
+      "title_zh": "候选供给和答案选择塑造多智能体系统中LLM评判的价值",
+      "url": "https://arxiv.org/abs/2608.25937",
+      "doi": "",
+      "arxiv_id": "2608.25937",
+      "authors": [
+        "Jia-Hao Ji",
+        "Sijie Li",
+        "Jiabei Cheng",
+        "Zixi She",
+        "Jin-Tai Yu",
+        "Zhiyuan Yuan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T15:52:20+00:00",
+      "score": 85,
+      "reason": "该论文系统研究了多智能体系统中LLM评判的价值，分析了候选生成、通信和最终答案选择对系统性能的影响。这与研究者的LLM和多智能体研究方向高度契合，其发现对设计和优化用于地理空间推理或文本挖掘的多智能体系统具有直接指导意义。",
+      "tags": [
+        "多智能体",
+        "大语言模型",
+        "LLM评判",
+        "候选生成",
+        "答案选择"
+      ],
+      "abstract": "Multi-agent systems (MAS) sometimes already have the potential to answer correctly, but still report a wrong answer. Explaining this outcome is difficult because generation, communication and final answer-selection rules usually change simultaneously. We conceptualize multi-agent reasoning as an evolutionary pipeline of candidate generation, peer communication and terminal selection, wherein consensus without quality control can exhibit patterns of memetic drift. We study two questions: (1) when an LLM judge provides effective selection pressure by supplying a signal of answer correctness for candidates generated in a multi-agent system, and (2) when using that signal improves the reported answer. To map judge reliability, we analysed 15,336 questions from MMLU-Pro, GPQA, MedXpertQA and MuSR, with Humanity's Last Exam analysed separately. To test these rules, we replayed 81,390 fixed candidate pools drawn from 16,278 questions across five benchmarks. We report three findings. (1) A correct answer is often already present among the generated candidates, but the system can still converge on and report a wrong answer. (2) Judge reliability is not a fixed trait of the model, but varies with the task, the generator and how rare the correct answer is. (3) Combining answer frequency with the judge's evaluation changed only the final answer-selection rule and raised accuracy from 63.82% to 70.82-70.95%, primarily by rescuing correct answers that were outnumbered by popular errors. In the systems studied here, the value of generating more candidates depends on whether those extra samples make correct answers present, frequent or recognisable. By isolating generation, recognition and selection, these findings establish a diagnostic basis for designing multi-agent architectures that protect generated correct answers from being lost.",
+      "summary_zh": "本文将多智能体推理概念化为候选生成、同伴通信和终端选择的进化流水线。通过分析15,336个问题和回放81,390个固定候选池，研究了LLM评判何时能提供有效的选择压力以及何时能改善最终答案。研究发现：(1) 正确答案常已存在于候选池中，但系统仍可能报告错误答案；(2) 评判可靠性随任务、生成器和正确答案稀有度变化；(3) 结合答案频率与评判评估可将准确率从63.82%提升至70.82-70.95%，主要通过纠正被流行错误数量压倒的正确答案。",
+      "insight_zh": "该研究强调了在多智能体系统中，生成、识别和选择环节的分离诊断对于架构设计至关重要。在GIS应用中，这意味着不仅要关注候选答案的生成，更要设计有效的选择机制，以充分利用多智能体系统的潜力。"
+    },
+    {
+      "key": "arxiv:2608.25920",
+      "title": "Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems",
+      "title_zh": "修复还是重采样？重新思考LLM多智能体系统中的故障调试",
+      "url": "https://arxiv.org/abs/2608.25920",
+      "doi": "",
+      "arxiv_id": "2608.25920",
+      "authors": [
+        "Zhongwen Luan",
+        "Xiaoyu Zhang",
+        "Ming Hu",
+        "Yue Yang",
+        "Jiongchi Yu",
+        "Xiaohong Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T15:33:47+00:00",
+      "score": 85,
+      "reason": "该研究系统评估多智能体LLM系统的故障调试方法，提出因果修复框架，对提升多智能体系统可靠性至关重要，与LLM和多智能体方向紧密相关。",
+      "tags": [
+        "多智能体系统",
+        "LLM",
+        "故障调试",
+        "因果修复",
+        "可靠性"
+      ],
+      "abstract": "As large language model (LLM)-based multi-agent systems (MASs) are increasingly applied to long-horizon complex tasks, their reliability has emerged as the core bottleneck hindering their real-world deployment. Existing MAS debugging and repair methods typically rely on rerunning and resampling the entire execution trajectory. However, a fundamental question remains to be answered: do these methods causally repair MAS failures or merely stochastically repair by leveraging the randomness of LLM sampling? To evaluate the effectiveness of MAS repair methods, we introduce SymTrace, a controlled evaluation framework that records the MAS execution trajectory and establishes intervention anchors. During replay, it effectively reconstructs the execution before the anchor using recorded logs and only regenerates the downstream trajectory, thereby enabling the reliable reproduction of MAS failures. We further construct the dataset SymFail, comprising 536 human-annotated failure trajectories with graph-linked locations, categories, and trace evidence. Based on these foundations, we conduct a large-scale empirical study across three mainstream MAS frameworks. Our findings reveal that existing unguided rerun methods are highly unreliable, exhibiting low failure reproduction and repair rates (only 67.97% and 6.90%, respectively). Building upon these findings, we further explore the effectiveness of a symptom-driven intervention method, which successfully repairs 20.15% of the failed cases (a 191.89% improvement to state-of-the-art repair methods). This study aims to provide actionable insights for MAS debugging and repair research, paving the way for the robust deployment of multi-agent systems.",
+      "summary_zh": "提出SymTrace框架和SymFail数据集，用于评估多智能体系统修复方法的因果有效性。研究发现现有重运行方法故障复现和修复率低，而症状驱动的干预方法修复率显著提升，为多智能体系统调试提供新思路。",
+      "insight_zh": "多智能体LLM系统的故障修复需从随机重采样转向因果干预，基于症状的定向修复能更有效地提升系统可靠性。"
+    },
+    {
+      "key": "arxiv:2608.25907",
+      "title": "Quantum-Inspired Modeling of Driving Behavior",
+      "title_zh": "驾驶行为的量子启发建模",
+      "url": "https://arxiv.org/abs/2608.25907",
+      "doi": "",
+      "arxiv_id": "2608.25907",
+      "authors": [
+        "Mohammad Elayan",
+        "Omid Armantalab",
+        "Wissam Kontar"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T15:24:42+00:00",
+      "score": 85,
+      "reason": "该研究提出一种新颖的量子启发驾驶行为表示方法，在无监督条件下从轨迹数据中学习可解释的驾驶模式，与GIS中的轨迹数据挖掘和驾驶行为分析高度相关。",
+      "tags": [
+        "驾驶行为",
+        "量子启发模型",
+        "无监督学习",
+        "交通流",
+        "自动驾驶"
+      ],
+      "abstract": "Driver behavior is heterogeneous, context-dependent, and changes over time, and these properties shape the traffic phenomena we observe. Most models, however, fix in advance which behavioral variables interact and how. Behavior outside that form is absorbed as noise, while models flexible enough to capture it tend to lose interpretability. We introduce a quantum-inspired representation of driver behavior that combines properties usually treated separately or in part: it is continuous, probabilistic, context-dependent, history-dependent, and represents interactions among behavioral variables as learned from data. Each driver is encoded as an evolving density matrix, providing a unified representation of behavioral uncertainty, temporal evolution, and context-dependent behavioral variation. Trained without supervision on the I-24 MOTION dataset, the framework recovers three interpretable driving profiles representing three regimes: free flow, transition, and congestion. The profiles capture the behavioral range of the data and the smooth transitions drivers make between regimes as conditions change. The same representation also reproduces known macroscopic phenomena, aligning with the fundamental diagram and reproducing hysteresis loops. We also show how the representation supports practical use: it supplies context-dependent parameters to classical car-following models, and gives an autonomous vehicle a live behavioral read of the surrounding drivers with a short-horizon forecast of their motion. The framework points toward models of traffic that are interpretable and trustworthy by construction. We release an open-source toolkit on GitHub (https://github.com/mselayan/quantum-driver-representation) spanning data processing, training, inference, and analysis.",
+      "summary_zh": "本文引入一种量子启发的驾驶行为表示方法，将每个驾驶员编码为一个演化的密度矩阵，统一表示行为不确定性、时间演化和上下文相关的行为变化。在I-24 MOTION数据集上无监督训练后，该框架恢复了三种可解释的驾驶模式：自由流、过渡和拥堵。该表示还能复现已知的宏观现象，如基本图和滞后回线，并可向经典跟车模型提供上下文相关参数，为自动驾驶车辆提供周围驾驶员的实时行为解读和短期运动预测。",
+      "insight_zh": "该研究展示了一种能够统一表示行为不确定性、上下文依赖和时间演化的新方法，并能从数据中无监督地发现可解释的驾驶模式。这种表示方法为更细致地理解和预测城市交通流动态提供了新工具，对智能交通和自动驾驶有潜在价值。"
+    },
+    {
+      "key": "arxiv:2608.25836",
+      "title": "Socialized Detector Learning: Trajectory-Guided and Reciprocal Distillation for Heterogeneous Object Detectors",
+      "title_zh": "社会化检测器学习：异构目标检测器的轨迹引导与互蒸馏",
+      "url": "https://arxiv.org/abs/2608.25836",
+      "doi": "",
+      "arxiv_id": "2608.25836",
+      "authors": [
+        "Weihao Li",
+        "Yunqi Zhu",
+        "Zhihe Fan",
+        "Ruipu Zhao",
+        "Boan Tao",
+        "Xinjie Yao",
+        "Yan Fan",
+        "Pengfei Zhu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T14:14:31+00:00",
+      "score": 85,
+      "reason": "该研究提出社会化的检测器学习框架，通过轨迹引导和互蒸馏实现异构检测器间的知识迁移，与多智能体协作和知识共享主题高度相关，可为城市更新中的多源数据融合与协同分析提供方法借鉴。",
+      "tags": [
+        "知识蒸馏",
+        "目标检测",
+        "多智能体",
+        "轨迹规划",
+        "模型协作"
+      ],
+      "abstract": "Object detection knowledge is fragmented across independently trained, heterogeneous detectors with complementary category supports. In socialized learning, this knowledge resides in a society, and learning aims to evolve the society collectively through exchange. However, aggregation-based socialization does not explicitly plan transfer order, whereas progressive multi-teacher distillation considers order but remains a one-way student enhancement in a shared category space. Building on Socialized Learning, we formulate Socialized Detector Learning (SDL) for heterogeneous, category-specialized object detectors and propose Trajectory-Guided and Reciprocal Distillation (TGRD).TGRD estimates directed operational Inter-Detector Transfer Difficulty (IDTD) from held-out feature-alignment residuals, precomputes a fixed score table, and greedily constructs a carrier trajectory. Along the trajectory, knowledge is progressively consolidated into a union-category carrier and then returned to experts through reciprocal transfer. A conditional proxy-certificate analysis shows that, under stated assumptions, the progressive certificate is no larger than an aggregated-target counterpart. On MS COCO with four heterogeneous experts and two carrier initializations, final carriers outperform epoch-matched simultaneous aggregation controls by 2.6 AP in both settings. Reciprocal detectors attain 20.8--28.4 AP on previously unsupported categories while remaining within 1.3 AP of original expert-specific performance. These results support order-aware progressive consolidation followed by reciprocal transfer as a viable mechanism for detector-society evolution.",
+      "summary_zh": "针对异构目标检测器知识碎片化问题，提出社会化检测器学习（SDL）框架，通过估计检测器间迁移难度并构建载体轨迹，沿轨迹渐进整合知识至联合类别载体，再通过互蒸馏回传给专家。在MS COCO上，最终载体性能优于同期聚合控制2.6 AP，互蒸馏检测器在未支持类别上达到20.8-28.4 AP，且专家性能损失在1.3 AP以内。",
+      "insight_zh": "有序的渐进式知识整合与互蒸馏机制，可有效促进异构模型间的知识共享与集体进化，为多智能体协作系统设计提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.25770",
+      "title": "HypoForge: A Self-Improving Multi-Agent Framework for Automated Hypothesis Generation and Testing via Scientific Skill Learning",
+      "title_zh": "HypoForge：通过科学技能学习实现假设生成与测试的自我改进多智能体框架",
+      "url": "https://arxiv.org/abs/2608.25770",
+      "doi": "",
+      "arxiv_id": "2608.25770",
+      "authors": [
+        "Ziqing Qian",
+        "Jiaying Lei",
+        "Yifang Wang",
+        "Nan Cao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T13:14:23+00:00",
+      "score": 85,
+      "reason": "该研究提出经验引导的多智能体框架，用于自动化假设生成与测试，与LLM和多智能体在城市更新研究中的应用高度相关。",
+      "tags": [
+        "多智能体",
+        "假设生成",
+        "科学发现",
+        "LLM",
+        "技能学习",
+        "自我改进"
+      ],
+      "abstract": "Large language models (LLMs) have enabled AI scientist systems to automate scientific discovery, yet existing approaches most rely on static prompting or fixed workflows and fail to accumulate experience for continual improvement. We propose HypoForge, an experience-guided multi-agent framework that learns reusable scientific skills for automated hypothesis generation and hypothesis testing. HypoForge is built on the observation that these two stages involve different supervision signals. For hypothesis generation, where explicit feedback is unavailable, HypoForge adopts an adversarial generator--discriminator mechanism to improve reasoning through comparative critique. For hypothesis testing, where empirical feedback is available, HypoForge learns testing skills from execution outcomes and ground-truth results. By matching skill learning strategies with stage-specific supervision, HypoForge enables continual improvement without fine-tuning foundation models. Experiments on hypothesis generation and testing benchmarks show that HypoForge consistently outperforms existing AI scientist frameworks and skill-level variants. Further analysis demonstrates the effectiveness of the proposed stage-specific skill learning paradigms.",
+      "summary_zh": "LLM使AI科学家系统自动化科学发现，但现有方法依赖静态提示或固定工作流，无法积累经验。本文提出HypoForge，经验引导的多智能体框架，学习可复用科学技能。假设生成阶段采用对抗生成器-判别器机制改进推理；假设测试阶段从执行结果和真值学习测试技能。通过匹配技能学习策略与阶段特定监督，无需微调基础模型即可持续改进。在基准上优于现有AI科学家框架。",
+      "insight_zh": "阶段特定监督信号匹配技能学习策略，可让多智能体系统在假设生成与测试中持续自我改进。"
+    },
+    {
+      "key": "arxiv:2608.25744",
+      "title": "A Constitutive Markov Physics-Informed Neural Operator (MPNO) for Autoregressive Stability in Transient Dynamics",
+      "title_zh": "用于瞬态动力学自回归稳定的本构马尔可夫物理信息神经算子（MPNO）",
+      "url": "https://arxiv.org/abs/2608.25744",
+      "doi": "",
+      "arxiv_id": "2608.25744",
+      "authors": [
+        "Wenpu Du",
+        "Peng Zhou",
+        "Yunlong Xia",
+        "Sinuo Xin",
+        "Congcong Zhang",
+        "Boyang Zhang",
+        "Yi Zhang",
+        "Wenzheng Xu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T12:54:37+00:00",
+      "score": 85,
+      "reason": "提出用于瞬态动力学PDE预测的物理信息神经算子，强调自回归稳定性，与遥感变化检测和时空建模中的物理约束方法高度相关。",
+      "tags": [
+        "神经算子",
+        "PDE",
+        "瞬态动力学",
+        "物理信息",
+        "自回归稳定性"
+      ],
+      "abstract": "Neural operators applied to transient-dynamics PDEs with strong discontinuities exhibit autoregressive instability: in concrete-penetration stress-field prediction, the wavelet neural operator (WNO) diverges in autoregressive rollout, while MeshGraphNets collapse to zero predictions. WNO's instability stems from the lack of a structural constraint on the spectral radius of its propagation operator; the Fourier neural operator (FNO) is stable in these measurements but only emergently, not by construction. We propose a constitutive Markov physics-informed neural operator (MPNO) modeling one-step evolution as a Markov (row-stochastic) propagation operator. Physics-coupled edge weights (acoustic-impedance harmonic mean, contact area, and traction amplitude) encode material-interface constitutive information into a nonnegative symmetric adjacency matrix W; after normalizing the graph Laplacian L = D - W by lambda_max, the propagator P = I - alpha*L~ is constructively constrained to spectral radius rho(P) <= 1, suppressing exponential amplification of autoregressive errors. Stability is thus a designable architectural property, not an optimized loss objective. On three PDEs (Burgers and two-dimensional transverse-section concrete penetration), MPNO rolls out stably with bounded error on all test seeds at 100/135/165 m/s; the single-step relative L2 error is 0.7304 +/- 0.0008, better than WNO and comparable to FNO at about one quarter of FNO's parameters. The edge-weight formula transfers across scenarios by replacing material-property variables. With about 20K parameters, MPNO delivers roughly 10^5x inference speedup over LS-DYNA.",
+      "summary_zh": "针对神经算子在强间断瞬态动力学PDE预测中的自回归不稳定问题，提出MPNO模型。该模型将单步演化建模为马尔可夫（行随机）传播算子，通过物理耦合的边权重构造非负对称邻接矩阵，并归一化图拉普拉斯算子，从而在结构上约束传播算子的谱半径不超过1，实现架构层面的稳定性。在Burgers方程和混凝土侵彻问题上验证了其稳定性和准确性。",
+      "insight_zh": "将物理约束（如本构关系）直接编码到神经算子的架构中，可以设计性地保证自回归稳定性，而非依赖损失函数优化，这对长时序物理过程预测至关重要。"
+    },
+    {
+      "key": "arxiv:2608.25717",
+      "title": "When RAG Fails to Equalize: Geo-bias in Factual Question Answering over Public Companies",
+      "title_zh": "当RAG无法实现均等：上市公司事实问答中的地理偏差",
+      "url": "https://arxiv.org/abs/2608.25717",
+      "doi": "",
+      "arxiv_id": "2608.25717",
+      "authors": [
+        "Abhinav Havaldar",
+        "Enrico Santus"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T12:34:12+00:00",
+      "score": 85,
+      "reason": "该研究直接探讨了RAG系统在地理事实问答中的地理偏差问题，与地理空间智能和LLM应用高度相关，对理解地理知识表示和检索增强的局限性有重要价值。",
+      "tags": [
+        "RAG",
+        "地理偏差",
+        "大语言模型",
+        "事实问答",
+        "地理空间智能"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) is widely assumed to mitigate factual errors in large language models (LLMs), but it remains unclear whether retrieval uniformly compensates for missing knowledge. We study this question in a controlled factual QA setting over public companies, constructing a benchmark of approximately 2,000 firms across global equity indices. We evaluate six LLMs on four atomic attributes under four conditions: no-context, perfect context, misleading context, and distraction context. We find strong geographic disparities in no-context accuracy, indicating uneven parametric knowledge. While perfect context improves performance, it does not eliminate these gaps: gains are correlated with baseline accuracy, suggesting retrieval effectiveness is coupled to internal representations. Under misleading context, models frequently copy incorrect information. Larger models improve overall performance but do not remove these structural effects. These results challenge the view of RAG as a universal corrective and highlight the interaction between model knowledge, context quality, and entity representation.",
+      "summary_zh": "该研究构建了一个包含全球约2000家上市公司的基准，在受控的事实问答环境中评估了六个大语言模型在四种上下文条件下的表现。研究发现，无上下文时存在显著的地理差异，表明参数化知识不均衡。完美上下文虽能提升性能，但无法消除差距，且增益与基线准确率相关。在误导性上下文下，模型常复制错误信息。",
+      "insight_zh": "RAG并非通用的纠错机制，其检索效果与模型内部的地理知识表征紧密耦合，这提示在构建地理空间智能系统时，需关注并缓解模型固有的地理知识偏差。"
+    },
+    {
       "key": "arxiv:2608.25700",
       "title": "Tropospheric temperature and humidity profile retrieval from Meteosat Flexible Combined Imager based on deep learning",
       "title_zh": "基于深度学习的新一代气象卫星对流层温湿度廓线反演",
@@ -188,136 +895,58 @@
       "insight_zh": "空间感知的深度学习模型能够从静止卫星成像仪观测中独立提取可靠的对流层廓线，减少对NWP背景场的依赖，为气象遥感反演提供了新途径。"
     },
     {
-      "key": "arxiv:2510.04916",
-      "title": "Semantics-Aware Hierarchical Consensus Learning for Remote Sensing Image Classification",
-      "title_zh": "用于遥感图像分类的语义感知层次化一致性学习",
-      "url": "https://arxiv.org/abs/2510.04916",
+      "key": "arxiv:2608.25693",
+      "title": "Unsupervised Anatomical Feature Learning via Diffusion Models: Enhanced Medical Image Segmentation with Denoising Diffusion Probabilistic Models",
+      "title_zh": "通过扩散模型进行无监督解剖特征学习：利用去噪扩散概率模型增强医学图像分割",
+      "url": "https://arxiv.org/abs/2608.25693",
       "doi": "",
-      "arxiv_id": "2510.04916",
+      "arxiv_id": "2608.25693",
       "authors": [
-        "Giulio Weikmann",
-        "Gianmarco Perantoni",
-        "Lorenzo Bruzzone"
+        "Akshat G",
+        "Divyansh Gupta",
+        "Shaleen Bhatnagar",
+        "Shilpa Ankalaki",
+        "Tusar Kanti Mishra"
       ],
       "venue": "arXiv",
-      "published": "",
+      "published": "2026-08-26T12:10:56+00:00",
       "score": 85,
-      "reason": "论文主题为遥感图像分类，属于博士研究方向中的遥感变化检测与地理空间智能范畴，具有直接相关性。",
+      "reason": "该论文利用无监督扩散模型提取解剖特征以增强医学图像分割，与用户对遥感变化检测和深度学习的研究兴趣高度相关，尤其是在低数据场景下的特征学习。",
       "tags": [
-        "遥感图像分类",
-        "语义感知",
-        "层次化学习",
-        "一致性学习"
+        "扩散模型",
+        "医学图像分割",
+        "无监督学习",
+        "解剖特征",
+        "U-Net"
       ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "该论文提出了一种用于遥感图像分类的语义感知层次化一致性学习方法。摘要内容不完整，但标题表明其核心是利用语义信息，通过层次化的结构来学习图像特征，并强调不同层级或视角下的一致性，以提升分类性能。",
-      "insight_zh": "该研究可能通过引入语义先验和层次化一致性约束，来增强遥感图像分类模型对复杂地物和场景的理解能力，从而提升分类的准确性和鲁棒性。"
+      "abstract": "Acquiring pixel-level annotations for medical image segmentation is a severe bottleneck. Traditional U-Net architectures, while effective, learn local texture patterns and lack awareness of global anatomical structures, leading to boundary delineation failures in low-data regimes. This research paper proposes utilizing unsupervised Denoising Diffusion Probabilistic Models (DDPMs) to extract anatomical features. We train a DDPM on 21 unlabeled abdominal CT scans to learn structural representations, transferring the encoder weights to a downstream segmentation task evaluated on the BTCV multi-organ dataset. Diffusion pretraining significantly improved liver segmentation: Dice increased from $0.75\\pm0.36$ to $0.93\\pm0.16$ ($p < 5.33\\times10^{-26}$, 0.529 Cohen's d), Average Surface Distance (ASD) decreased by 66%, and 95th-percentile Hausdorff Distance (HD95) reduced by 45%. For kidney segmentation, Dice improved from $0.90\\pm0.19$ to $0.95\\pm0.10$ ($p < 4.01\\times10^{-11}$). Multi-organ pooled performance showed a 68% variance reduction and a 74% improvement in boundary precision (Dice $0.95\\pm0.07$). Crucially, frozen encoder models retained > 80% of fine-tuned performance without exposure to segmentation labels, proving the existence of learned anatomical priors. In low-data scenarios, diffusion-pretrained models maintained robust performance with only 50% (Dice: 0.92 liver, 0.94 kidney), 25%, and even 10% (Dice: 0.89 liver, 0.71 kidney) of labeled data. Using unlabeled images for diffusion-based pretraining successfully embeds robust anatomical features prior to human supervision, transforming U-Nets into anatomy-aware systems.",
+      "summary_zh": "本文提出利用无监督去噪扩散概率模型（DDPM）提取解剖特征，并将编码器权重迁移到下游分割任务。在BTCV多器官数据集上，扩散预训练显著提高了肝脏和肾脏分割的Dice分数，降低了表面距离，并在仅使用10%标注数据时仍保持稳健性能。",
+      "insight_zh": "利用未标注图像进行扩散预训练可以有效地嵌入鲁棒的解剖特征，将U-Net转变为具有解剖意识的系统，这为遥感图像中利用无标注数据进行预训练提供了借鉴。"
     },
     {
-      "key": "arxiv:2608.25955",
-      "title": "The emergence and evolution of a referential code in populations of bee-like agents",
-      "title_zh": "蜂类智能体群体中指称代码的出现与演化",
-      "url": "https://arxiv.org/abs/2608.25955",
+      "key": "arxiv:2608.25608",
+      "title": "When Should a Network Emit Geometry, and When Should It Detect It? Readout, Reconciliation, and Representation in Floorplan Vectorization",
+      "title_zh": "网络何时应生成几何，何时应检测几何？平面图矢量化中的读出、协调与表征",
+      "url": "https://arxiv.org/abs/2608.25608",
       "doi": "",
-      "arxiv_id": "2608.25955",
+      "arxiv_id": "2608.25608",
       "authors": [
-        "Grzegorz Chrupa{\\l}a"
+        "He Zhang"
       ],
       "venue": "arXiv",
-      "published": "2026-08-26T13:25:35+00:00",
-      "score": 80,
-      "reason": "该研究提出谱系中心的生成式系统Praxist，将可复现工件与评估结果转化为证据图，显著提升自主研发效率并降低成本，对地理空间智能中的自动化算法研发与验证具有重要启示。",
+      "published": "2026-08-26T10:25:09+00:00",
+      "score": 85,
+      "reason": "直接研究建筑平面图矢量化，属于城市更新与时空数据挖掘中的建筑信息提取，与GIS博士研究方向高度相关。",
       "tags": [
-        "自主研发",
-        "智能体",
-        "谱系追踪",
-        "证据图",
-        "自动化评估"
+        "建筑平面图矢量化",
+        "深度学习",
+        "序列生成",
+        "热图检测",
+        "基准数据集"
       ],
-      "abstract": "Autonomous R\\&D agents now write, run, and improve executable artifacts under automated evaluation---but largely as laboratory instruments: shown on curated benchmarks, with gains that are hard to trace to a cause and costs well above what sustained engineering practice absorbs. The limitation is structural. Most systems treat each attempt as nearly self-contained, so logs, memories, and search trees record what happened without establishing which design element produced an improvement, whether its evidence survived validation, or how it recombines with others. Long campaigns therefore keep re-learning the same lessons. We introduce Praxist, a lineage-centered generational system that converts reproducible artifacts and evaluator outcomes into a typed evidence graph of findings, lane-structured frontiers, and agendas. Separating local artifact construction from cohort-level evidence synthesis lets later attempts inherit validated mechanisms, unresolved claims, and useful constraints, and leaves results attached to an inspectable lineage. On the standardized 75-task MLE-bench suite, the finalized official-grader results give Praxist 60 medals (80.0\\%), 49 of them gold, against 55 medals (73.3\\%) and 34 gold for a Claude Code baseline on Claude Opus 4.8---at a recorded model spend of US\\$3,054 versus US\\$38,370, roughly a twelfth of the cost. Four case studies---quantitative trading, LiDAR-inertial-visual SLAM, tokamak magnetic control, and rocket landing---carry the same process into open-ended engineering problems, improving on each task-native baseline in headline accuracy, survival, or resource cost, with the discovery path on record. Stronger artifacts at an order of magnitude less spend, each backed by an auditable lineage, are, to our knowledge, first brought together here: the operating profile production research requires, not the one a benchmark demonstration establishes. arXiv:2608.17889 (*cross-listing*) Date: Tue, 18 Aug 2026 15:23:06 GMT (3737kb) Title: VisDocAgentBench: Benchmarking Agents for Visually Rich Document Retrieval Authors: Lexiang Hu, Yanzhao Zhang, Mingxin Li, Dingkun Long, Yikang Li, Fuwei Zhang, Yisen Wang, Zhouchen Lin Categories: cs.IR cs.AI cs.CV ------------------------------------------------------------------------------ Evaluation artifacts specify a forward computation: a task, scorer, and reported metric. They do not necessarily license the claim attached to that metric because the historical evidence and alternative semantics needed to replay it may be unbound. We formalize this missing claim-replay layer through a frozen substrate D, a grounded family F, a claim query q, and the resulting identified set. We then census all 124 mechanically eligible Inspect Evals units at a pinned commit. Every unit receives a terminal disposition; 110 stop before deterministic inference because required historical evidence or semantic grounding is unavailable. Where execution closes, exact values, winners, complete orders, and pairwise relations separate by claim resolution and by primary versus review family. The audit therefore returns typed stops, instability witnesses, and stable substructure rather than forcing one evaluator meaning or one robust/not-robust label. arXiv:2608.24895 (*cross-listing*) Date: Fri, 3 Jul 2026 15:51:28 GMT (14938kb) Title: Real-time closed-loop protocol to assess neural variability in temporal coding Authors: Alberto Ayala, Angel Lareo, Pablo Varona, Francisco B. Rodriguez Categories: q-bio.NC cs.AI cs.NE cs.SY eess.SP eess.SY ------------------------------------------------------------------------------ Large language model (LLM) agents that interact with graphical user interfaces increasingly rely on either raw screenshots or platform-specific accessibility application programming interfaces (APIs) to perceive interface state. Both approaches have limitations for assistive applications: screenshot-based perception lacks the semantic roles and relationships required by screen readers, while platform-specific APIs such as Windows UI Automation, macOS Accessibility, Android AccessibilityService, and web ARIA require separate integrations for each platform. This paper proposes an architecture that uses the Model Context Protocol (MCP) as a unified transport and schema layer between heterogeneous accessibility frameworks and LLM-based assistive agents. An MCP accessibility server exposes ARIA-aligned roles, labels, states, and focusable-element hierarchies through a platform-independent representation, enabling consistent interaction across operating systems and applications. The framework also introduces an MCP resource model for persisting user accessibility preferences across sessions. The architecture is analyzed with respect to three research questions: protocol extensibility for accessibility-tree representation, latency and semantic fidelity trade-offs between accessibility trees and screenshot-based perception, and support for persistent accessibility profiles through MCP resources. Rather than presenting an empirical implementation, this work contributes a conceptual framework supported by comparative analysis of accessibility APIs, GUI agent architectures, and the MCP specification. The analysis suggests that a standardized MCP accessibility layer can reduce platform-specific integration complexity while preserving the semantic information required for accessible AI agents, providing a foundation for future implementation and evaluation. arXiv:2608.24899 (*cross-listing*) Date: Mon, 13 Jul 2026 23:11:07 GMT (404kb) Title: aipsy-judge: A Specialized, Psychologist-Corrected Local Judge for the Psychological Safety of Conversational AI Authors: Michael Keeman, Anastasia Keeman Categories: cs.HC cs.AI cs.CY Comments: 24 pages, 3 figures, 6 tables. Model available at https://huggingface.co/keidolabs/aipsy-judge-1.0 (Apache-2.0) MSC-class: 68T50, 68T07 ACM-class: I.2.7; I.2.6; K.4.1 ------------------------------------------------------------------------------ In this paper we present a generative AI application developed to support both teachers and students in secondary education. The system employs two Large Language Models-LLMs, Gemini and DeepSeek, and a Small Language Model-SLM, Gemma, integrated within a Retrieval Augmented Generation - RAG framework, creating a pedagogically grounded, Greek-language assistant capable of adapting its reasoning and communication style to the user role. Unlike conventional chatbots, the assistant introduces pedagogical persona switching, a dual-role mechanism that enables the same AI model to act as both a teaching companion and a learning guide. Utilizing a RAG paradigm tailored to the Greek educational domain, the architecture segments official textbooks into coherent units. Enriched with specific metadata, these units preserve curricular structure and instructional context, demonstrating how generative AI optimizes modern instructional design. The initial case study focuses on home economics in Greek lower secondary education, a cross-disciplinary subject that integrates elements of economics, health education, and social responsibility. The assistant has been developed to support both learners and educators in complementary ways. In future classroom implementations, students will be able to use it to clarify key concepts such as financial literacy, resource management, and healthy living, while teachers could employ it to design authentic instructional materials, formative assessments, and classroom activities aligned with the official curriculum. The study elevates the concept beyond a simple chatbot, proposing a structured, contextually adaptive framework for pedagogical generative assistants that effectively bridge technology, curriculum, and human learning. arXiv:2608.24907 (*cross-listing*) Date: Tue, 21 Jul 2026 15:06:02 GMT (44kb) Title: PA-CoT: Profile-Adaptive Chain-of-Thought for Personalized Nutritional Consulting Authors: Evgenii Garmashov, Nikita Kulin, Artur Khairullin, Viktor Zhuravlev, Daniil Sukhorukov, Mikhail Mozikov, Ilya Makarov, Sergey Muravyov Categories: cs.HC cs.AI cs.CL cs.LG Comments: Accepted at the ICML 2026 Workshop on Structured Data for Health (SD4H) ------------------------------------------------------------------------------ Multimodal large language models are increasingly used in interactive systems, yet ensuring consistent, trustworthy reasoning across heterogeneous modalities remains challenging. We present a context-aware, multi-agent framework that integrates textual queries, numerical data, visual representations, and model-derived signals for explainable time-series forecasting. A distinctive feature is that it turns predominantly visual forecasting outputs (e.g., trend plots) into structured, model-aware textual explanations. We argue that this makes the approach a natural foundation for non-visual, accessible interaction of particular relevance to blind and visually impaired users, for whom plot-centric interfaces are largely inaccessible. The framework supports three progressively richer pipelines (baseline, interpretable, explainable), enabling systematic comparison of unimodal, perception-driven, and model-aware responses. In an exploratory evaluation using an LLM-based judge as an early-stage proxy for human assessment, the explainable configuration improves overall explanation quality by up to 32% over a numerical baseline, with notable gains in trustworthiness and model awareness. We position user-centered validation with target users, including screen-reader and speech-interface users, as the essential next step rather than a claim established here. arXiv:2608.24912 (*cross-listing*) Date: Sun, 26 Jul 2026 08:37:58 GMT (3600kb) Title: Analyzing and Correcting Benevolence Bias in Large Language Models Authors: Yuanzi Li, Junhao Wang, Minghui Liu, Boyi Li, Bingchen Chen, Zihang Tian, Jingyu Zhao, Yuhan Wang, Lei Wang, Pei Wang, Jinchao Wu, Xu Chen Categories: cs.HC cs.AI ------------------------------------------------------------------------------ This technical report describes Botnoi Group's methodology and results for rapidly fine-tuning the open-source NVIDIA Canary 180M Flash and NVIDIA Canary 1B Flash multitask models for speech-to-text tasks using the NVIDIA NeMo framework, with a focus on telephony-grade audio. To support this adaptation, we construct a telephony-oriented fine-tuning dataset from live voicebot system recordings and prompted speech with telephony-oriented augmentation. We evaluate four targeted experiments-language adaptation (Thai), telephony robustness, domain-specific jargon (names and addresses), and latency-using character error rate (CER) for accuracy and real-time factor (RTFx) for inference speed. Results show that fine-tuning substantially improves recognition in noisy telephony environments, reducing CER from 23.31% to 9.04% on BOTNOI telephony data, and further improves business-critical names and addresses from 16.98% to 3.78% CER through domain-specific adaptation. Overall, our results show that domain-adaptive fine-tuning enhances business-critical terminology while preserving real-time responsiveness for production voicebot deployments. arXiv:2608.24931 (*cross-listing*) Date: Sun, 23 Aug 2026 03:48:19 GMT (1229kb) Title: Modality Contribution Score - A Per-Patient Framework for Quantifying the Relative Diagnostic Contribution of Structural MRI and Amyloid PET in Alzheimer's Disease Authors: Dawa Chyophel Lepcha, Aaliya Ali, Sophie A. Martin, Deepika Koundal, Pierrick Coupe, Shabbir Syed-Abdul Categories: eess.IV cs.AI cs.CV cs.LG Comments: 15 pages, 7 figures, Under review ------------------------------------------------------------------------------ An audio language model is a black box in a specific way: we see what it says, never what it works out on the way there, and chain-of-thought monitoring helps only if the model writes its reasoning down. Reading a base Qwen3-Omni with a l",
-      "summary_zh": "提出Praxist，一个以谱系为中心的生成式系统，将可复现工件和评估结果转化为类型化证据图、前沿和议程。在MLE-bench基准上获得60枚奖牌（80%），成本仅为Claude Code基线的约1/12。在量化交易、LiDAR SLAM等案例中均优于任务原生基线。",
-      "insight_zh": "通过显式追踪设计元素的谱系和证据，自主研发系统能避免重复学习，以更低成本产生更强工件，为地理空间算法的自动化研发提供了高效范式。"
-    },
-    {
-      "key": "arxiv:2608.25523",
-      "title": "TOPAS: Workflow-Aware Prefix-State Scheduling for Multi-Agent LLM Serving",
-      "title_zh": "TOPAS：面向多智能体LLM服务的工作流感知前缀状态调度",
-      "url": "https://arxiv.org/abs/2608.25523",
-      "doi": "",
-      "arxiv_id": "2608.25523",
-      "authors": [
-        "Hongqiu Ni",
-        "Han Tian",
-        "Chi Zhang",
-        "Guopeng Li",
-        "Haisheng Tan"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-26T08:33:10+00:00",
-      "score": 80,
-      "reason": "该研究针对多智能体LLM服务中的调度优化问题，与申请人研究兴趣中的LLM和多智能体方向高度相关，其任务级调度和缓存管理思想可应用于地理空间智能中的多智能体协同。",
-      "tags": [
-        "multi-agent LLM",
-        "scheduling",
-        "prefix caching",
-        "workflow optimization"
-      ],
-      "abstract": "Prefix caching introduces a fundamental tradeoff in multi-agent large language model (LLM) serving: retaining a long system-prompt key-value (KV) cache for an agent accelerates future calls, yet it reduces the GPU memory available for batching concurrent requests. In multi-stage workflows, existing schedulers tend to prioritize either immediate prefix locality or overall workflow progress. However, under a shared KV cache budget, optimizing either objective in isolation can prolong tasklevel job completion time (JCT) through downstream delays or frequent prefix replacement. To strike a balance, we here propose TOPAS, a Task-Oriented Prefix-Aware Scheduler that jointly decides which agent prefixes to keep in the cache and which requests to schedule for execution. TOPAS scores candidate post-decision states by trading off the expected reduction in each task's longest remaining service path against the near-term benefit of downstream prefix reuse, accounting for the costs of prefix movement and preemption. A task-level aging mechanism is also incorporated to prevent starvation. We implement TOPAS within the SGLang framework and assess its performance on three synthetic DAGs and two MetaGPT software-development workflows. Compared with the best performing baseline for each workload and metric, TOPAS reduces the mean/p99 JCT by up to 39.8%/49.4% on the synthetic workloads, while lowering mean JCT by 9.8% on MetaGPT-SOP and mean/p99 JCT by 22.0%/26.6% on MetaGPT-TL.",
-      "summary_zh": "论文提出了TOPAS，一种面向任务的前缀感知调度器，用于在多智能体LLM服务中联合决策保留哪些代理前缀以及调度哪些请求执行。它通过权衡任务最长剩余服务路径的预期减少与下游前缀重用的近期收益来评分候选决策状态，并引入任务级老化机制防止饥饿。在SGLang框架中的实验表明，与最佳基线相比，TOPAS显著降低了任务级作业完成时间。",
-      "insight_zh": "该研究揭示了在多智能体LLM系统中，全局任务级调度优化比局部前缀缓存优化更为重要，为设计高效的地理空间多智能体协作系统提供了调度策略参考。"
-    },
-    {
-      "key": "arxiv:2602.17068",
-      "title": "Spatio-temporal dual-stage hypergraph MARL for human-centric multimodal corridor traffic signal control",
-      "title_zh": "面向以人为本的多模式廊道交通信号控制的时空双阶段超图多智能体强化学习",
-      "url": "https://arxiv.org/abs/2602.17068",
-      "doi": "",
-      "arxiv_id": "2602.17068",
-      "authors": [
-        "Xiaocai Zhang",
-        "Neema Nassir",
-        "Milad Haghani"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 80,
-      "reason": "论文涉及时空数据挖掘和多智能体强化学习在交通领域的应用，与博士研究方向中的时空数据挖掘和多智能体系统高度相关。",
-      "tags": [
-        "多智能体强化学习",
-        "时空数据",
-        "交通信号控制",
-        "超图"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "该论文提出了一种时空双阶段超图多智能体强化学习方法，用于多模式廊道的交通信号控制。其核心是利用超图结构建模复杂的时空交互，并通过双阶段学习策略来优化以人为本的交通控制目标。摘要内容不完整。",
-      "insight_zh": "该研究可能通过超图神经网络捕捉交通流中复杂的多智能体时空依赖关系，从而在保障通行效率的同时，更好地满足不同交通参与者的需求。"
-    },
-    {
-      "key": "arxiv:2608.26081",
-      "title": "SwarmWorld: Stigmergic technological evolution in societies of language-model agents",
-      "title_zh": "SwarmWorld：语言模型智能体社会中的共识性技术演化",
-      "url": "https://arxiv.org/abs/2608.26081",
-      "doi": "",
-      "arxiv_id": "2608.26081",
-      "authors": [
-        "Subhadeep Pal",
-        "Fiona Y. Wang",
-        "Markus J. Buehler"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-26T17:45:34+00:00",
-      "score": 75,
-      "reason": "论文研究语言模型智能体社会的自组织和集体智能涌现，与博士研究中LLM和多智能体方向相关，但应用场景非地理空间。",
-      "tags": [
-        "多智能体",
-        "LLM智能体",
-        "涌现行为",
-        "集体智能",
-        "技术演化"
-      ],
-      "abstract": "Collective intelligence can emerge when individuals coordinate through a shared environment, allowing local actions to accumulate into durable social organization. Language-model agents offer a new substrate for this process, yet most multi-agent systems rely on direct conversation, predefined roles, or centralized workflows. It remains unclear whether decentralized agents can build functional technologies and outperform independent search. Here, initially homogeneous LLM agents in SwarmWorld self-organize without assigned roles or recipes into evolving technological societies. Agents explore a spatial environment, process resources, test materials, construct persistent artifacts, and write executable controllers evaluated by a deterministic simulator under unseen disturbances after the agents are removed. SwarmWorld splits cognition from consequence: agents propose architectures and controllers within fixed action and material schemas, while the simulated world determines function. Shared societies develop broader, more resilient technological portfolios than a strong best-of-N isolated-search baseline, although isolated search remains competitive for the strongest artifact. Agents differentiate into exploration, construction, maintenance, and coordination behaviors, transitioning as the world matures. Technologies accumulate through collaborative construction, executable inheritance, and persistent agent-artifact networks, with most reuse beginning through physical observation rather than communication. Explicit cultural mechanisms amplify collaboration and organization, but functional benefits depend on outcome and timescale. Physical stigmergy alone supports capable societies, while interaction drives persistent technological ecologies rather than universally superior individual inventions.",
-      "summary_zh": "SwarmWorld研究初始同质的LLM智能体如何在无预设角色或规则的情况下，通过共享环境自组织成演化的技术社会。智能体探索空间、处理资源、构建持久化人工制品并编写可执行控制器。研究发现，共享社会能发展出更广泛、更具韧性的技术组合，智能体会分化为探索、构建、维护和协调等行为，技术通过协作构建和可执行继承得以积累。",
-      "insight_zh": "该研究表明，基于物理环境的间接协作（共识性）足以支撑智能体社会形成复杂的技术能力，而直接的交互沟通则更多影响社会组织的持久性，而非普遍提升技术性能。"
+      "abstract": "A network trained to recover the walls, openings, and rooms of a rasterized floorplan can produce its output in two ways: by emitting the geometry as an autoregressive coordinate sequence, or by detecting it on dense junction and centerline heatmaps and assembling a graph. We compare the two readouts on the same trained network. On real scans (CubiCasa5K) detection is better on every wall measure (+2.7 wall F1 at tolerance 0.05, +5.1 at 0.015; paired bootstrap intervals exclude zero), and reading an opening heatmap the decoder never used raises opening F1 by 2.6x without retraining. Within real scans the readout's advantage grows with plan size and reverses on small plans; on clean vector renders sequence decoding is better by 5 to 8 points where its training covered the render style, while under full domain shift the readout, given calibrated thresholds, stays ahead; neither ink density nor plan size explains the reversal. With matched data and recipe, a room-centric system with a reconciliation step and a wall-first sequence model reach comparable wall quality, so the output representation matters less than is usually assumed. A prior from the other family helps at the output but not at the input: deterministic fusion of the two outputs raises wall F1 by 7 points, whereas conditioning one model on the other's output gives no gain in three forms, including two ground-truth-content controls. We also provide an edit-cost metric that scores a draft by the human work needed to correct it, corrected CubiCasa5K annotations, and ResPlan-FP, a CC BY 4.0 benchmark of 16,998 plans with frozen splits and three baseline tracks. Code, the benchmark, and the corrected annotations are available at https://github.com/Cyprinus12138/fpvec-lab",
+      "summary_zh": "比较了同一网络上两种读出方式：自回归坐标序列生成与密集连接/中心线热图检测。在真实扫描上检测在所有墙体指标上更优，且读取解码器未使用的开口热图可提升开口F1 2.6倍。在干净矢量渲染上序列解码更优，但领域偏移下检测更稳健。确定性融合两种输出可提升墙体F1 7点，而条件化模型无增益。提供了编辑成本指标、修正的CubiCasa5K标注和ResPlan-FP基准。",
+      "insight_zh": "输出表征方式对平面图矢量化性能影响小于通常假设，但融合不同读出方式可显著提升性能，提示多模态输出融合的潜力。"
     }
   ]
 }

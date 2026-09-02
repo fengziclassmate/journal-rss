@@ -2,24 +2,111 @@
   "date": "2026-08-31",
   "guid": "arxiv-email-daily:2026-08-31",
   "paper_keys": [
+    "arxiv:2608.28549",
+    "arxiv:2608.28288",
     "arxiv:2608.28247",
+    "arxiv:2608.28020",
+    "arxiv:2608.27529",
     "arxiv:2608.28517",
+    "arxiv:2608.27521",
     "arxiv:2608.28567",
+    "arxiv:2608.28552",
+    "arxiv:2608.28343",
+    "arxiv:2608.28240",
+    "arxiv:2608.28096",
+    "arxiv:2608.28033",
+    "arxiv:2608.27992",
+    "arxiv:2608.27984",
+    "arxiv:2608.27860",
+    "arxiv:2608.27840",
+    "arxiv:2608.27633",
+    "arxiv:2608.27549",
     "arxiv:2606.17092",
+    "arxiv:2506.04970",
+    "arxiv:2603.16742",
+    "arxiv:2603.23607",
+    "arxiv:2608.28461",
     "arxiv:2608.28273",
     "arxiv:2608.27998",
-    "arxiv:2608.28264",
-    "arxiv:2608.27942",
-    "arxiv:2608.27971",
-    "arxiv:2608.28241"
+    "arxiv:2608.27964",
+    "arxiv:2608.27948",
+    "arxiv:2608.27856",
+    "arxiv:2608.27688"
   ],
-  "paper_count": 10,
+  "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:509",
-    "deepseek": "ok:30"
+    "deepseek": "ok:448"
   },
-  "updated_at": "2026-09-02T01:23:44.979933+00:00",
+  "updated_at": "2026-09-02T02:05:45.021494+00:00",
+  "analysis_stats": {
+    "total": 509,
+    "analyzed": 509,
+    "high": 33,
+    "medium": 85,
+    "low": 81,
+    "below_threshold": 310
+  },
   "papers": [
+    {
+      "key": "arxiv:2608.28549",
+      "title": "Video Generative Models as Geometry Learner",
+      "title_zh": "视频生成模型作为几何学习者",
+      "url": "https://arxiv.org/abs/2608.28549",
+      "doi": "",
+      "arxiv_id": "2608.28549",
+      "authors": [
+        "Haosen Yang",
+        "Jifei Song",
+        "Zhensong Zhang",
+        "Xiatian Zhu",
+        "Jiankang Deng"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T17:25:31+00:00",
+      "score": 95,
+      "reason": "该论文利用预训练视频生成模型进行几何估计，与遥感三维重建、地形分析等方向高度相关，为利用生成式先验解决遥感几何问题提供了新思路。",
+      "tags": [
+        "视频生成模型",
+        "几何估计",
+        "深度估计",
+        "法线估计",
+        "零样本学习"
+      ],
+      "abstract": "Recent generative approaches to geometry estimation adapt pretrained image diffusion models and treat the task as image-conditioned generation. Leveraging off-the-shelf image diffusion models, they either (i) train task-specific geometry models (for depth and surface normal estimation) independently, losing the opportunity of exploring the intrinsic correlation of these geometric targets, or (ii) jointly fine-tune modified image diffusion backbones (e.g., altered self-attention), which typically demands substantial labeled data. To overcome these limitations in a principled fashion, we repurpose pretrained video generative models as a unified and data-efficient framework for geometry estimation, formulated innovatively as a next-frames prediction task. Our method, GeoNeXt, inherits naturally structured knowledge and richer priors from the video model, while further adapting them for joint modeling of images and geometry targets (image <-> geometry), enabling more data efficient and effective learning of geometry. Extensive experiments validate our method for zero-shot monocular depth and surface normal estimation across diverse datasets, outperforming both previous task-specific and unified generative competitors while using substantially less training data. Notably, our method rivals discriminative state-of-the-art approaches trained on over 100x more data and even standouts on several benchmarks.",
+      "summary_zh": "GeoNeXt将预训练视频生成模型重新用于几何估计，将其构建为下一帧预测任务，实现了数据高效的零样本单目深度和表面法线估计，性能优于现有生成式方法。",
+      "insight_zh": "视频生成模型蕴含的时空先验可被有效迁移到几何估计任务，为遥感三维信息提取提供了新范式。"
+    },
+    {
+      "key": "arxiv:2608.28288",
+      "title": "GeoFF3D: Coordinate-Anchored Feed-Forward Reconstruction for Large-Scale UAV Mapping",
+      "title_zh": "GeoFF3D：用于大规模无人机测绘的坐标锚定前馈重建",
+      "url": "https://arxiv.org/abs/2608.28288",
+      "doi": "",
+      "arxiv_id": "2608.28288",
+      "authors": [
+        "Xiang Yang",
+        "Yongli Wang",
+        "Yunsheng Zhang",
+        "Jun Li",
+        "Hao Chen",
+        "Haifeng Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T12:51:57+00:00",
+      "score": 95,
+      "reason": "该论文直接针对大规模无人机测绘的3D重建问题，与GIS中的遥感、摄影测量和地理空间智能高度相关，且提出的坐标锚定和分层聚合框架对城市更新中的三维建模有直接应用价值。",
+      "tags": [
+        "UAV mapping",
+        "3D reconstruction",
+        "feed-forward",
+        "large-scale",
+        "georeferencing"
+      ],
+      "abstract": "Existing feed-forward 3D reconstruction methods typically process a bounded number of images and recover cameras and geometry in local or internally normalized frames. Extending them to large-scale UAV mapping requires scalable multi-chunk processing and reliable aggregation, while full Sim(3) alignment can become unstable for near collinear trajectories. We present GeoFF3D, which combines a coordinate-anchored model with a spatial large-scale reconstruction framework (SLRF). The model uses georeferenced camera translations and optional geometric priors to predict camera poses and dense point maps directly in a gravity-aligned Z-up metric frame. SLRF partitions images into spatially overlapping chunks, propagates shared-view priors, and aggregates local reconstructions hierarchically, while remaining applicable to different bounded-view models. Across nine aerial mapping blocks, GeoFF3D achieves the best average reconstruction quality, improving F@5 from 0.829 for Pi3X + SLRF to 0.877. On long UAVScenes sequences, it reaches 0.848, compared with 0.687 for Pi3X + SLRF and 0.451 for the strongest evaluated SLAM/streaming baseline. GeoFF3D reconstructs 2,000 images in approximately five minutes, demonstrating scalable and robust large-scale UAV reconstruction.The code is available at https://github.com/yanxian-ll/GeoFF3D.",
+      "summary_zh": "本文提出GeoFF3D，结合坐标锚定模型与空间大规模重建框架（SLRF）。该模型利用地理参考相机平移和可选几何先验，直接在重力对齐的Z-up公制坐标系中预测相机姿态和稠密点图。SLRF将图像划分为空间重叠块，传播共享视图先验，并分层聚合局部重建。在九个航空测绘块上，GeoFF3D取得最佳平均重建质量，F@5从0.829提升至0.877；在长序列UAVScenes上达到0.848。GeoFF3D约五分钟可重建2000张图像，展示了可扩展性和鲁棒性。",
+      "insight_zh": "该研究通过坐标锚定和分层聚合策略，有效解决了前馈3D重建方法在大规模无人机测绘中的扩展性和稳定性问题，为高效、鲁棒的大范围地理空间三维重建提供了新方案。"
+    },
     {
       "key": "arxiv:2608.28247",
       "title": "A comprehensive and trustworthy benchmark of AI methods for change detection in Earth observation",
@@ -49,6 +136,67 @@
       "abstract": "Change detection in Earth observation (EO) is critical for monitoring land surface transformations, yet recent research in the field is constrained by inconsistent evaluation protocols and a narrow focus on predictive accuracy without regard for computational efficiency. To address this, we present a standardized, open-source benchmark for evaluating state-of-the-art (SOTA) deep learning methods for Earth observation change detection. We conduct a comprehensive analysis of ten representative model architectures, ranging from convolutional networks (CNNs) to vision transformers (ViTs), across ten heterogeneous change detection datasets. We rigorously evaluate these models with identical experimental protocols, comparing models trained from scratch against those utilizing pre-trained weights. Furthermore, we evaluate predictive performance alongside computational efficiency, including parameter counts and inference latency. Our findings reveal that well-optimized classical architectures, such as Siamese U-Nets, frequently outperform more complex contemporary models when computational efficiency is factored in, and that pre-training consistently provides a significant performance boost with no additional inference cost. To ensure complete transparency and reproducibility, all experimental resources, including standardized data splits, training scripts, training logs, and model checkpoints are publicly available and adhere to FAIR principles (Findable, Accessible, Interoperable, and Reusable).",
       "summary_zh": "提出了一个开源基准，对十种代表性深度学习模型在十个变化检测数据集上进行统一协议评估，同时考量预测性能与计算效率，发现优化良好的经典架构（如Siamese U-Net）在效率维度上常优于复杂模型，且预训练能带来显著性能提升。",
       "insight_zh": "在遥感变化检测中，模型选择需权衡精度与效率，经典架构结合预训练可能是实用且高效的方案。"
+    },
+    {
+      "key": "arxiv:2608.28020",
+      "title": "3D-USE: From Image-Level to Scene-Level Underwater Enhancement",
+      "title_zh": "3D-USE：从图像级到场景级的水下增强",
+      "url": "https://arxiv.org/abs/2608.28020",
+      "doi": "",
+      "arxiv_id": "2608.28020",
+      "authors": [
+        "Jieyu Yuan",
+        "Yuanlin Zhang",
+        "Jihong Li",
+        "Chunle Guo",
+        "Huimin Lu",
+        "Chongyi Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T07:34:13+00:00",
+      "score": 95,
+      "reason": "论文提出从图像级到场景级的水下增强方法，与遥感变化检测和三维重建高度相关，其处理退化观测和实现一致增强渲染的思路对城市三维建模有直接借鉴意义。",
+      "tags": [
+        "水下增强",
+        "三维重建",
+        "神经渲染"
+      ],
+      "abstract": "Underwater 3D reconstruction faithfully reproduces the color shifts and visibility loss of captured views, while physical inversion may leave estimation errors in the recovered scene appearance. We formulate Underwater Scene-level Enhancement (USE) as learning a persistent, visibility-enhanced 3D scene representation from degraded multi-view underwater observations, enabling consistent enhanced rendering. Realizing USE requires both a reliable scene representation for enhancement and a consistent enhancement target without paired enhanced 3D data. Therefore, we present 3D-USE, a two-stage framework. First, the Medium Radial Basis Anchor Representation (MediumRBF) establishes a medium-aware Gaussian scene by representing water effects with shared radial-basis anchors and explicitly decomposing object and medium contributions. Based on this fixed scene representation, Appearance Transition Consensus (ATC) transfers paired 2D underwater image enhancement (UIE) knowledge into scene-global and Gaussian-local targets, avoiding direct supervision from inconsistent enhanced views. An Underwater Bilateral Appearance Field (U-BAF) then realizes these targets in Gaussian radiance and medium appearance. The scene directly renders enhanced novel views without a 2D UIE model at inference. Experiments on real underwater scenes show improved visibility and cross-view consistency while preserving reconstruction quality.",
+      "summary_zh": "论文将水下场景级增强定义为从退化的多视角水下观测中学习持久、可见性增强的3D场景表示。提出了3D-USE两阶段框架，首先通过MediumRBF建立介质感知的高斯场景，然后通过ATC转移2D增强知识，最后由U-BAF实现增强渲染。实验证明该方法能提升可见性和跨视角一致性。",
+      "insight_zh": "该研究通过显式建模介质效应和转移2D增强知识，实现了无需配对3D数据的场景级增强，为处理雾天、雨雪等退化条件下的三维重建提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.27529",
+      "title": "Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction",
+      "title_zh": "重新审视长时程流式三维重建的局部上下文",
+      "url": "https://arxiv.org/abs/2608.27529",
+      "doi": "",
+      "arxiv_id": "2608.27529",
+      "authors": [
+        "Jiarong Han",
+        "Jincheng Xiong",
+        "Yuzhou Liu",
+        "Linzhe Shi",
+        "Changjie Wu",
+        "Ning Guo",
+        "Mu Xu",
+        "Hang Zhang",
+        "Ming Qian"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T15:07:38+00:00",
+      "score": 95,
+      "reason": "该研究聚焦于从极长视频进行流式三维重建，提出仅使用局部上下文的方法，在保持有界内存和计算的同时实现长期稳定性，这与GIS中大规模场景的在线重建和动态监测高度相关。",
+      "tags": [
+        "三维重建",
+        "流式处理",
+        "长时序",
+        "相机位姿",
+        "局部上下文"
+      ],
+      "abstract": "Streaming 3D reconstruction from extremely long videos requires estimating camera motion and scene geometry online under bounded memory and computation. Early streaming models achieve causal, bounded-cost inference using finite context buffers or compact recurrent states, yet their estimates often deteriorate as sequences grow. Recent methods improve long-horizon stability by coupling short-range context with persistent or multi-level long-range memory. We pursue a different route: we keep the learned temporal state strictly local and formulate predictions whose targets remain independent of sequence length. We present ABot-Recon, a simple streaming model that caches KV features from only the preceding 11 frames. It predicts a point map in the current camera coordinate system together with an adjacent-frame relative pose. These predictions remain equivariant under changes of reference frame, and global poses and geometry are recovered through sequential composition. To reduce accumulated drift, a lightweight temporal refiner improves relative rotations using recent visual and motion context, while a composition-aware pose loss supervises multi-step pose composition. Extensive evaluations on challenging long-sequence benchmarks demonstrate the superior long-horizon performance of our local-context approach. On Oxford Spires, ABot-Recon achieves an ATE of 4.35 m and an RPE-R of $0.12^\\circ$, reducing both errors by approximately 40\\% relative to the best prior results.",
+      "summary_zh": "从极长视频进行流式三维重建需要在有界内存和计算下在线估计相机运动和场景几何。早期流式模型使用有限上下文缓冲区或紧凑递归状态实现因果、有界成本推断，但估计常随序列增长而恶化。近期方法通过耦合短程上下文与持久或多级长程记忆来改善长期稳定性。本文采用不同路线：保持学习的时间状态严格局部，并制定目标独立于序列长度的预测。提出ABot-Recon，一个简单的流式模型，仅缓存前11帧的KV特征。它预测当前相机坐标系中的点图以及相邻帧相对位姿。这些预测在参考系变化下保持等变，全局位姿和几何通过顺序组合恢复。为减少累积漂移，轻量级时间精化器利用近期视觉和运动上下文改进相对旋转，而组合感知位姿损失监督多步位姿组合。在具有挑战性的长序列基准上，ABot-Recon在Oxford Spires上实现ATE 4.35米和RPE-R 0.12度，相对最佳先前结果均减少约40%误差。",
+      "insight_zh": "严格局部上下文配合等变预测和组合感知损失，能在长序列流式重建中有效控制漂移，表明局部信息的高效利用可替代复杂的长程记忆机制。"
     },
     {
       "key": "arxiv:2608.28517",
@@ -82,6 +230,33 @@
       "insight_zh": "在跨模态翻译中，目标域先验和跨模态依赖是可分离的学习任务，优先学习前者能显著提升数据效率和翻译的真实感，为多源遥感数据融合提供了新思路。"
     },
     {
+      "key": "arxiv:2608.27521",
+      "title": "Dandelion: A Spherical Flower for Neural Simulation of Planetary Dynamics",
+      "title_zh": "Dandelion：用于行星动力学神经模拟的球面花",
+      "url": "https://arxiv.org/abs/2608.27521",
+      "doi": "",
+      "arxiv_id": "2608.27521",
+      "authors": [
+        "Till Muser",
+        "Giovanni Abati",
+        "Ivan Dokmani\\'c"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T12:43:03+00:00",
+      "score": 90,
+      "reason": "该研究提出球面版本的神经PDE求解器Dandelion，并发布原生球面PDE基准套件，直接面向气象和海洋动力学模拟，与GIS中地球系统建模和空间数据分析高度相关。",
+      "tags": [
+        "球面神经网络",
+        "PDE求解",
+        "气象",
+        "海洋",
+        "几何深度学习"
+      ],
+      "abstract": "Many dynamical processes unfold on the sphere but the default scientific machine learning architectures are Euclidean. Applying these architectures on a regular lat-lon grid causes problems: Cartesian convolutions become distorted at high latitude; 2D FFTs in Fourier neural operators incorrectly assume double periodicity; Cartesian positional encodings in ViTs distort spherical geodesic distances. Recent work moves towards natively spherical primitives, including spherical convolutions (e.g., DeepSphere or DISCO), Spherical Fourier Neural Operators (SFNOs), and geodesic attention. Here we propose Dandelion, a spherical version of Flower, a warp-based neural PDE solver. Layers of Dandelion predict a tangent-plane displacement and transport features along great circles. We obtain a U-Net-like structure by implementing hierarchical pooling entirely in the spherical-harmonic domain. There are thus no convolutions: spatial mixing is achieved only through spherical coordinate changes, or warps. To compare Dandelion with existing spherical architectures, we release an evolving benchmark suite of challenging, natively-spherical PDE datasets including a modified Galewsky jet, anomalous chained turbulence, Cahn-Hilliard decomposition, spherical Riemann shocks, Held-Suarez dry atmospheric transport and global ocean dynamics. This new benchmark fills the gap in existing spherical datasets which are either too small and stylized, or much too large (ERA5) for model iteration. Dandelion is best or second-best on every dataset, and the gap to non-warp baselines widens with resolution: at $256\\times 512$, Dandelion and Flower2D occupy the top two slots in both single-step prediction and rollout.",
+      "summary_zh": "许多动力学过程在球面上展开，但默认的科学机器学习架构是欧几里得的。在规则经纬网格上应用这些架构会导致问题：笛卡尔卷积在高纬度畸变；傅里叶神经算子中的2D FFT错误假设双周期性；ViT中的笛卡尔位置编码扭曲球面测地距离。近期工作转向原生球面原语，包括球面卷积、球面傅里叶神经算子（SFNO）和测地注意力。本文提出Dandelion，Flower（基于扭曲的神经PDE求解器）的球面版本。Dandelion的层预测切平面位移并沿大圆传输特征。通过完全在球谐域实现层次池化获得类似U-Net的结构。因此没有卷积：空间混合仅通过球面坐标变化（或扭曲）实现。为比较Dandelion与现有球面架构，发布了一个不断发展的基准套件，包含具有挑战性的原生球面PDE数据集，包括修改的Galewsky射流、异常链式湍流、Cahn-Hilliard分解、球面Riemann激波、Held-Suarez干大气传输和全球海洋动力学。Dandelion在每个数据集上都是最佳或第二佳，且与非扭曲基线的差距随分辨率增大而扩大。",
+      "insight_zh": "原生球面架构（如基于扭曲的方法）在球面PDE模拟中优于欧几里得方法，且优势随分辨率增加而扩大，这为高分辨率地球系统建模提供了新的架构选择。"
+    },
+    {
       "key": "arxiv:2608.28567",
       "title": "GeBDA: Building Damage Assessment as Text-Based Sequence Prediction",
       "title_zh": "GeBDA：基于文本序列预测的建筑物损毁评估",
@@ -108,6 +283,325 @@
       "abstract": "Conventionally, Building Damage Assessment (BDA) is tackled either with dedicated network architectures or by fine-tuning geospatial image foundation models. In this work, we ask whether a general-purpose Vision-Language Model (VLM) can localize buildings and grade their damage through autoregressive sequence generation alone. We cast BDA as predicting a variable-length set of bounding boxes, each specified by its coordinates and a damage label. Our preliminary implementation, based on the open Gemma model, achieves promising damage mapping results from only bi-temporal satellite images and a suitable text prompt.",
       "summary_zh": "传统建筑物损毁评估（BDA）依赖专用网络架构或微调地理空间图像基础模型。该研究探索通用视觉语言模型（VLM）能否仅通过自回归序列生成来定位建筑物并评估其损毁等级。他们将BDA任务转化为预测一组可变长度的边界框，每个框由其坐标和损毁标签指定。基于开源Gemma模型的初步实现，仅利用双时相卫星图像和文本提示即可获得有前景的损毁映射结果。",
       "insight_zh": "通用VLM具备通过序列生成直接完成BDA任务的潜力，这为遥感变化检测提供了一种新的范式，即无需专门设计检测头或复杂的微调流程。"
+    },
+    {
+      "key": "arxiv:2608.28552",
+      "title": "Advancing Interaction-Sensitive Feature Selection: Novel Relief-Based Algorithms, Expanded Comparisons, and Recommendations for Biomedical Data Mining",
+      "title_zh": "推进交互敏感的特征选择：新型Relief算法、扩展比较及生物医学数据挖掘建议",
+      "url": "https://arxiv.org/abs/2608.28552",
+      "doi": "",
+      "arxiv_id": "2608.28552",
+      "authors": [
+        "Kia Kazemi-Nia",
+        "Harsh Bandhey",
+        "Philip J. Freda",
+        "Ryan J. Urbanowicz"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T17:28:50+00:00",
+      "score": 85,
+      "reason": "该论文聚焦于交互敏感的特征选择算法，并进行了大规模基准比较，对处理高维、多源地理空间数据（如遥感影像特征）的特征工程有重要参考价值。",
+      "tags": [
+        "特征选择",
+        "Relief算法",
+        "生物医学",
+        "高维数据",
+        "特征交互"
+      ],
+      "abstract": "As a precursor to high-dimensional biomedical data modeling, reliable feature selection can reduce computational expense, improve modeling performance, and yield simpler, more interpretable models. However, most filter-based feature selection methods struggle to detect feature interactions, while wrapper or embedded feature selection methods are computationally expensive. Relief-based algorithms (RBAs) are filter methods that are sensitive to feature interactions while mitigating these other limitations. This study (1) refactors, optimizes, and expands the scikit-rebate Python package with existing and newly proposed RBA variants and (2) conducts rigorous RBA benchmark comparisons across diverse genomic simulations. We expand scikit-rebate to include SWRF*, mu-Relief, and 5 novel RBA variants implementing alternative strategies for neighbor selection and feature scoring. All RBAs were evaluated to compare predictive feature ranking and runtime across simulated genomic datasets varying in sample size, number of features, heritability, and underlying association type (e.g. main effects and interactions). All RBAs, except mu-Relief, were proficient in detecting 2-way interactions in noisy data. RBAs utilizing 'far' scoring were best at detecting 2-way interactions - with MultiSWRFDB* top-performing - but were far less sensitive to main effects. SWRF, MultiSWRF, MultiSURF, and MultiSWRFDB yielded top performance across main effect and 2-way interaction datasets with MultiSWRFDB performing best when also considering 3-way interactions. Refactoring of scikit-rebate resulted in 10 to 35-fold reductions in RBA runtimes. The newly introduced RBAs were among the strongest performing, and by robustly retaining both main effects and 2-way epistatic interactions, these algorithms preserve predictive signals for downstream modeling.",
+      "summary_zh": "该研究扩展了scikit-rebate包，引入多种新型Relief算法，并在模拟基因组数据上进行了严格基准测试，发现MultiSWRFDB*在检测特征交互方面表现最佳，同时大幅提升了运行效率。",
+      "insight_zh": "交互敏感的特征选择方法对于挖掘多源地理数据中的复杂非线性关系至关重要。"
+    },
+    {
+      "key": "arxiv:2608.28343",
+      "title": "Denoising-Aware Temporal Point Cloud Completion for 3D Crop Architecture Recovery and Phenotypic Trait Extraction",
+      "title_zh": "去噪感知的时间点云补全用于3D作物结构恢复与表型性状提取",
+      "url": "https://arxiv.org/abs/2608.28343",
+      "doi": "",
+      "arxiv_id": "2608.28343",
+      "authors": [
+        "Mrudul Mittal",
+        "Soumyashree Kar"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T13:57:46+00:00",
+      "score": 85,
+      "reason": "该研究聚焦于时间序列3D点云补全与作物表型提取，与城市更新中的时空数据挖掘和遥感变化检测在方法论上高度相关，特别是处理时序点云数据的技术可迁移至城市三维变化检测。",
+      "tags": [
+        "3D点云",
+        "时间序列",
+        "表型提取",
+        "合成数据集",
+        "去噪",
+        "点云补全"
+      ],
+      "abstract": "High-throughput phenotyping depends on accurate 3D reconstruction of plants across growth stages, yet the development and evaluation of temporal completion methods are limited by the lack of datasets with complete geometric ground truth. To address this challenge, we introduce SynthCrop4D, a procedurally generated synthetic dataset of temporally evolving plant point clouds that provides controllable noise, occlusion, and complete plant geometry for benchmarking reconstruction methods. Using this dataset, we evaluate a two-stage pipeline that combines spatial denoising and temporal point cloud completion. First, a denoising module removes structural artifacts from raw laser-scanned point clouds. The resulting data are then processed by an Adaptive Temporal PoinTr model that reconstructs the current growth stage (t) using information from the previous stage (t-1), enabling recovery of regions missing due to self-occlusion. We evaluate the proposed framework on both SynthCrop4D and the real-world Pheno4D dataset (tomato and maize) under settings with and without denoising. Results show that denoising substantially improves reconstruction quality, with the best configuration achieving a Chamfer Distance of 0.0061 on SynthCrop4D (Temporal PoinTr + Mamba-DG) and an F-Score of 0.2080 on Pheno4D (Vanilla PoinTr + Mamba-DG). We further demonstrate the use of completed point clouds for phenotypic trait extraction, including plant height, canopy width, and convex hull volume, obtaining hull-volume MAEs of 0.021 on synthetic data and 0.343 on real data. Together, SynthCrop4D and the proposed pipeline provide a benchmark and methodology for temporal plant reconstruction and high-throughput crop phenotyping.",
+      "summary_zh": "本文提出SynthCrop4D合成数据集，用于评估时间点云补全方法。该数据集提供可控噪声、遮挡和完整植物几何。作者评估了一个两阶段流程：先进行空间去噪，再使用自适应时间PoinTr模型利用前一时刻信息重建当前时刻，以恢复自遮挡区域。在SynthCrop4D和真实Pheno4D数据集上的实验表明，去噪显著提升重建质量，并展示了补全点云在植物高度、冠幅和凸包体积等表型性状提取中的应用。",
+      "insight_zh": "该研究强调了在时序点云处理中，去噪预处理对后续补全任务的关键作用，并验证了利用时间上下文信息进行点云补全的有效性，为城市三维动态监测提供了方法论参考。"
+    },
+    {
+      "key": "arxiv:2608.28240",
+      "title": "WilLaGS: Latent-Conditional 3D Appearance Fields for Robust Gaussian Splatting In-the-Wild",
+      "title_zh": "WilLaGS：用于野外鲁棒高斯泼溅的潜在条件三维外观场",
+      "url": "https://arxiv.org/abs/2608.28240",
+      "doi": "",
+      "arxiv_id": "2608.28240",
+      "authors": [
+        "Yuhao Bai",
+        "Qianqiu Tan",
+        "Lilong Chen",
+        "Huanhuan Lv",
+        "Lijun Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T11:55:53+00:00",
+      "score": 85,
+      "reason": "该论文提出一种用于野外场景的鲁棒三维高斯泼溅方法，与遥感中的三维重建和场景理解高度相关，其处理光照变化和瞬态物体的思路对城市级三维建模有重要参考价值。",
+      "tags": [
+        "三维重建",
+        "高斯泼溅",
+        "神经渲染",
+        "计算机视觉"
+      ],
+      "abstract": "3D Gaussian Splatting (3DGS) delivers real-time and high-fidelity rendering but remains challenged by unconstrained in-the-wild scenes, where drastic appearance variations and transient objects violate multi-view consistency. Existing methods are fundamentally limited by independent and discrete embeddings that struggle to capture continuous environmental changes or model spatially-varying local illumination. To address these limitations, we propose ------------------------------------------------------------------------------",
+      "summary_zh": "本文针对三维高斯泼溅在无约束野外场景中面临的外观变化和瞬态物体问题，提出一种潜在条件三维外观场方法，以捕捉连续的环境变化和空间变化的局部光照。",
+      "insight_zh": "通过引入潜在条件外观场，可以有效提升三维重建在复杂环境下的鲁棒性，这对于城市更新中的动态场景建模和可视化具有重要意义。"
+    },
+    {
+      "key": "arxiv:2608.28096",
+      "title": "Ex-Sim(3)-Reg: 2D-3D Correspondence Pruning via Extended Sim(3) Registration",
+      "title_zh": "Ex-Sim(3)-Reg：通过扩展Sim(3)配准进行2D-3D对应点剪枝",
+      "url": "https://arxiv.org/abs/2608.28096",
+      "doi": "",
+      "arxiv_id": "2608.28096",
+      "authors": [
+        "Pei An",
+        "Muyao Peng",
+        "Junfeng Ding",
+        "Jiaqi Yang",
+        "Liangliang Nan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T09:02:38+00:00",
+      "score": 85,
+      "reason": "论文研究图像到点云配准中的对应点剪枝，是遥感与摄影测量中多源数据融合的关键技术，与GIS博士研究方向中的多源数据融合高度相关。",
+      "tags": [
+        "2D-3D配准",
+        "对应点剪枝",
+        "Sim(3)配准",
+        "深度噪声",
+        "点云"
+      ],
+      "abstract": "Learning-based image-to-point-cloud (I2P) registration has garnered increasing attention in recent years. Nevertheless, existing methods still struggle with severe outliers under challenging scenarios with unseen, low-inlier, or distorted cases. A fast and robust 2D-3D correspondence pruning method is therefore highly desirable. Recently, a promising scheme lifts 2D-3D correspondences to 3D-3D correspondences using depth priors, casting correspondence pruning as a Sim(3) registration problem. However, depth priors estimated from monocular images are inherently noisy, which undermines the reliability of this scheme. In this paper, to explicitly model non-negligible depth noise, we reformulate correspondence pruning as an extended Sim(3) registration problem and propose a simple yet effective pruning algorithm termed Ex-Sim(3)-Reg. We further provide a theoretical analysis to justify the effectiveness of our method. Extensive experiments on the 7-Scenes, RGBD-V2, ScanNet, and TUM datasets demonstrate that Ex-Sim(3)-Reg achieves up to ------------------------------------------------------------------------------",
+      "summary_zh": "针对图像到点云配准中深度先验噪声导致对应点质量下降的问题，将对应点剪枝建模为扩展Sim(3)配准问题，提出Ex-Sim(3)-Reg算法，并给出理论分析。在多个基准数据集上验证了其有效性。",
+      "insight_zh": "该研究显式建模深度噪声，为鲁棒的2D-3D配准提供了新思路，可应用于遥感影像与LiDAR点云的自动配准，提升多源数据融合精度。"
+    },
+    {
+      "key": "arxiv:2608.28033",
+      "title": "ZipMVS: Multi-View Stereo with Compressed Cost Volumes",
+      "title_zh": "ZipMVS：使用压缩成本体的多视图立体",
+      "url": "https://arxiv.org/abs/2608.28033",
+      "doi": "",
+      "arxiv_id": "2608.28033",
+      "authors": [
+        "Guanglin Jin",
+        "Hongshan Yu",
+        "Javier Civera",
+        "Zhaoxin Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T07:48:22+00:00",
+      "score": 85,
+      "reason": "论文提出了一种内存高效的多视图立体三维重建方法，与遥感变化检测和三维城市建模高度相关，其压缩成本体的策略对处理大规模遥感数据有直接借鉴意义。",
+      "tags": [
+        "多视图立体",
+        "三维重建",
+        "内存优化"
+      ],
+      "abstract": "Multi-view stereo (MVS) methods typically deliver highly accurate 3D reconstructions from multiple registered RGB images, thanks to the highly informative, geometric constraints between them. However, their substantial memory requirements remain a major obstacle for deployment in domains such as aerospace and autonomous systems, where resource efficiency is critical. In this work, we introduce ZipMVS, an MVS method specifically designed for efficient high-quality reconstruction. We propose a novel depth-hypothesis strategy that enables substantial compression of the cost volume, hence greatly reducing GPU memory consumption while preserving reconstruction accuracy. Experiments on the DTU and Tanks and Temples datasets show that ZipMVS achieves competitive reconstruction quality compared with other efficiency-oriented MVS methods, while achieving a competitive balance between reconstruction quality and GPU memory usage. The code is available at https://github.com/JihnGlyn/ZipMVS",
+      "summary_zh": "论文介绍了ZipMVS，一种专为高效高质量重建设计的多视图立体方法。该方法提出了一种新的深度假设策略，能够大幅压缩成本体，从而显著降低GPU内存消耗，同时保持重建精度。在DTU和Tanks and Temples数据集上验证了其有效性。",
+      "insight_zh": "该研究通过压缩成本体有效解决了MVS方法内存占用大的问题，为在资源受限的航空航天和自主系统等场景中部署高质量三维重建提供了可行方案。"
+    },
+    {
+      "key": "arxiv:2608.27992",
+      "title": "GOD: Govern, Observe, and Direct - A Real-Time Control Room for Agent Societies",
+      "title_zh": "GOD：治理、观察与引导——智能体社会的实时控制室",
+      "url": "https://arxiv.org/abs/2608.27992",
+      "doi": "",
+      "arxiv_id": "2608.27992",
+      "authors": [
+        "Yige Luo",
+        "Ran Guan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T06:59:28+00:00",
+      "score": 85,
+      "reason": "该论文提出一个用于智能体社会的实时控制室，支持空间回放、定向干预和实验打包。这与GIS博士研究中多智能体建模和城市更新模拟高度相关，其空间回放和干预功能可应用于城市动态模拟与交互式分析。",
+      "tags": [
+        "多智能体系统",
+        "智能体社会",
+        "控制室",
+        "空间回放",
+        "交互式分析"
+      ],
+      "abstract": "Generative-agent systems are easier to start than to inspect. A run can contain many agents, locations, messages, commands, and model calls, yet the operator often gets either a finished replay or raw logs. That makes it hard to ask why an agent moved, test a small intervention, or package a run for another researcher. GOD is a local-first control room for agent societies. From the same browser workflow, an operator can issue targeted questions or interventions and inspect the resulting replay state. The system combines a setup wizard, Agent Studio, Map Studio, a spatial replay interface, Ask and Intervene commands, and portable experiment, map, and agent packs. Its technical contribution is the command and artifact loop: live controls and replay evidence share the same operator command model, while package contracts separate scenario, map, and profile data from local runtime state. The public release includes hosted Smallville-style and PKU replays, the open-source repository, and downloadable packs. We evaluate this path on 15 completed run slots. Across the 14 intervention runs, 78 of 84 target-agent checks recorded the commanded destination, and 169 of 182 state answers matched a saved location or action string.",
+      "summary_zh": "GOD是一个本地优先的智能体社会控制室，允许操作员通过浏览器工作流进行定向提问或干预，并检查回放状态。系统包含设置向导、智能体工作室、地图工作室、空间回放界面、询问与干预命令以及可移植的实验、地图和智能体包。其技术贡献在于命令与工件循环，将实时控制和回放证据统一在同一操作员命令模型下，并通过包契约将场景、地图和配置文件与本地运行时状态分离。",
+      "insight_zh": "该系统的空间回放和干预机制为城市更新模拟提供了可交互的分析框架，有助于理解多智能体在城市环境中的行为动态。"
+    },
+    {
+      "key": "arxiv:2608.27984",
+      "title": "When Evidence Shapes Collaboration: Knowledge-Conditioned Topology Generation for Multi-Agent Systems",
+      "title_zh": "当证据塑造协作：面向多智能体系统的知识条件化拓扑生成",
+      "url": "https://arxiv.org/abs/2608.27984",
+      "doi": "",
+      "arxiv_id": "2608.27984",
+      "authors": [
+        "Yangxiao Jiang",
+        "Jiarun Fan",
+        "Mingcong Xu",
+        "Yanxi Guo",
+        "Jiwen Feng",
+        "Shanqing Xu",
+        "Mengchen Qian",
+        "Wei Chen",
+        "Xiaojin Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T06:52:50+00:00",
+      "score": 85,
+      "reason": "该论文提出知识引导的智能体拓扑生成器（K-GAT），将外部证据直接整合到自回归图生成中，解决多智能体系统中的结构-知识错配问题。这与申请人关于LLM和多智能体在城市更新中的应用研究高度契合，其知识条件化拓扑生成方法对设计高效、可靠的智能体协作结构具有重要参考价值。",
+      "tags": [
+        "多智能体系统",
+        "知识图谱",
+        "拓扑生成",
+        "大语言模型",
+        "神经符号"
+      ],
+      "abstract": "Multi-Agent Systems (MAS) have recently moved from static workflows toward dynamically generated collaboration topologies. However, existing topology generation methods rely primarily on the parametric knowledge of large language models, with external search or retrieval used only as a reactive tool rather than an explicit determinant of collaboration structure. This leads to structure-knowledge misalignment, where systems exhibit redundant interactions or insufficient verification in knowledge-intensive tasks. We propose K-GAT (Knowledge-Guided Agent Topology Generator), a neuro-symbolic framework that formulates collaboration topology design as a knowledge-conditioned structure learning problem, integrating external evidence directly into autoregressive graph generation. Extensive experiments on knowledge-intensive benchmarks demonstrate K-GAT's efficiency and effectiveness: notably on the expert-level GPQA dataset, K-GAT outperforms the LLM-Debate baseline by a substantial margin of +15.7% in accuracy, while consuming less than half the computational tokens.",
+      "summary_zh": "该论文提出K-GAT（知识引导的智能体拓扑生成器），一种神经符号框架，将协作拓扑设计形式化为知识条件化的结构学习问题，直接将外部证据整合到自回归图生成中。在知识密集型基准测试中，K-GAT表现出高效性和有效性，尤其在GPQA数据集上，相比LLM-Debate基线准确率提升15.7%，且消耗的计算token不到一半。",
+      "insight_zh": "该研究表明，将外部知识显式地作为协作结构生成的约束条件，而非仅作为反应性工具，能显著提升多智能体系统在知识密集型任务上的性能和效率，为设计面向复杂决策任务的智能体协作机制提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.27860",
+      "title": "From Perspective to Fisheye Depth Estimation and Open-Vocabulary Segmentation",
+      "title_zh": "从透视到鱼眼：深度估计与开放词汇分割的域适应方法",
+      "url": "https://arxiv.org/abs/2608.27860",
+      "doi": "",
+      "arxiv_id": "2608.27860",
+      "authors": [
+        "Rit Gangopadhyay",
+        "Alex Wong"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T03:10:18+00:00",
+      "score": 85,
+      "reason": "该文针对鱼眼图像中视觉基础模型失效的问题，提出可学习的畸变扩展器（DEX）进行域适应，对遥感中广角或特殊几何成像下的深度估计与分割任务具有直接的方法论价值。",
+      "tags": [
+        "鱼眼相机",
+        "深度估计",
+        "开放词汇分割",
+        "视觉基础模型",
+        "域适应"
+      ],
+      "abstract": "Vision foundation models are capable of generalizing across 3-dimensional (3D) scenes with high-fidelity estimates; their empirical success can be attributed to training on large-scale datasets of perspective images. However, when transferred to wide field-of-view (FoV) images, such as those captured by fisheye cameras, they return erroneous outputs due to a covariate shift stemming from the radial distortion on the image pixels. We propose a method to generalize vision foundation models to fisheye cameras. The crux of our method lies in a set of learnable parameters, termed Distortion Extenders (DEX), that model the fisheye distortion coefficients and the distributional shift between fisheye and perspective images encoded in the latent space. By minimizing a self-supervised alignment loss, DEX transforms the latent embeddings of fisheye images to resemble those of perspective images to recover high-fidelity estimates. DEX is architecture- and task-agnostic: We demonstrate DEX on monocular depth estimation and open-vocabulary segmentation for convolution- and Transformer-based architectures, where we consistently improve over baselines across indoor and outdoor fisheye datasets. As a byproduct, the activations of DEX can also be decoded to distortion coefficients to support camera calibration. Code available at: https://github.com/Suchisrit/DEX.",
+      "summary_zh": "本文提出一种方法，通过可学习的参数集Distortion Extenders（DEX）建模鱼眼畸变系数和潜在空间中的分布偏移，使视觉基础模型能够泛化到鱼眼图像。通过自监督对齐损失，DEX将鱼眼图像的潜在嵌入转换为类似透视图像，从而恢复高保真估计，并可用于相机标定。",
+      "insight_zh": "通过在潜在空间建模畸变而非在像素空间矫正，可有效将透视图像预训练模型迁移至鱼眼图像，该思路对处理非标准几何成像的遥感数据具有借鉴意义。"
+    },
+    {
+      "key": "arxiv:2608.27840",
+      "title": "An Empirical Evaluation of Cross-City POI Recommendation on a Large-Scale Benchmark",
+      "title_zh": "大规模基准下跨城市兴趣点推荐的实证评估",
+      "url": "https://arxiv.org/abs/2608.27840",
+      "doi": "",
+      "arxiv_id": "2608.27840",
+      "authors": [
+        "Peibo Li",
+        "Yang Song",
+        "Hao Xue",
+        "Maarten de Rijke",
+        "Flora D. Salim"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T02:16:33+00:00",
+      "score": 85,
+      "reason": "论文聚焦跨城市POI推荐，是城市计算与时空数据挖掘的核心议题，与GIS博士研究方向高度相关。其关于大语言模型智能体方法在城市推荐任务中表现的诊断性分析，对理解LLM在地理场景中的应用具有直接参考价值。",
+      "tags": [
+        "POI推荐",
+        "城市计算",
+        "基准测试",
+        "跨城市迁移",
+        "大语言模型"
+      ],
+      "abstract": "Cross-city point-of-interest (POI) recommendation is crucial for navigating unfamiliar urban environments, yet its progress has historically been constrained by data limitations. Using the recently proposed large-scale benchmark Trip World, we empirically re-examine whether conclusions drawn on small prior benchmarks still hold under worldwide coverage, low home-destination region overlap, and large, semantically rich POI inventories. Our evaluation surfaces three bottlenecks of representative state-of-the-art methods: (1) hometown-aware models appear to rely more on destination-region priors than on user-specific preference transfer; (2) their accuracy-efficiency trade-off degrades at this scale, where the simplest model is among the strongest; and (3) existing mechanisms for integrating semantic metadata yield little benefit. We further include a diagnostic pilot on agentic methods adapted from next-POI recommendation, finding that naive adaptation trails a simple popularity prior even though the relevant semantic signal is present in the data. These results highlight the need for task-specific designs that support cross-city preference transfer, semantic grounding, and scalable reasoning over unseen destination inventories.",
+      "summary_zh": "利用新提出的大规模基准Trip World，重新审视了在小型基准上得出的跨城市POI推荐结论。评估发现代表性SOTA方法存在三个瓶颈：家乡感知模型更依赖目的地先验而非用户偏好迁移；在规模扩大时精度-效率权衡退化；整合语义元数据的机制收益甚微。对基于智能体的方法进行诊断性试验，发现朴素适配甚至不如简单的流行度先验。",
+      "insight_zh": "跨城市POI推荐需要针对任务特化的设计，以支持跨城市偏好迁移、语义基础和对未见目的地库存的可扩展推理，而非简单依赖大规模数据或通用智能体框架。"
+    },
+    {
+      "key": "arxiv:2608.27633",
+      "title": "Depth-Aware Pothole Detection Using YOLO and RT-DETR at the Edge",
+      "title_zh": "基于YOLO和RT-DETR的边缘深度感知坑洞检测",
+      "url": "https://arxiv.org/abs/2608.27633",
+      "doi": "",
+      "arxiv_id": "2608.27633",
+      "authors": [
+        "Md Monjurul Ahsan Prodhan",
+        "Md Nour Hossain"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T19:18:08+00:00",
+      "score": 85,
+      "reason": "论文研究基于RGB-D的坑洞检测与深度测量，直接应用于城市基础设施管理，与GIS中城市更新和道路维护高度相关。",
+      "tags": [
+        "坑洞检测",
+        "深度估计",
+        "RGB-D",
+        "边缘计算",
+        "YOLO"
+      ],
+      "abstract": "Pothole detection and its severity measurement is still an important challenges in urban infrastructure management, where late maintenance directly contributes to vehicle damage, road accidents, and escalating repair costs. Existing automated approaches depend on 2D RGB images and cannot measure physical depth of potholes. In this paper, we present a depthaware pothole detection framework and then compare five architectures: YOLOv8n, YOLOv8nSeg, YOLOv9t, RTDETRL, and RTDETRX for RGB-D sensor fusion-based detection and automated depth measurement. A custom offline augmentation pipeline is used here to simulate adverse road monitoring conditions. All models are trained on the PothRGBD dataset with an 80% training and 20% validation split and evaluated using Precision, Recall, mAP@50, and mAP@50_95. Before measuring the depth data, all depth maps are corrected for camera tilt using RANSAC ground-plane orthorectification and all zero-valued sensor pixels are cast to NaN before any statistic is computed. YOLOv8nSeg achieves the highest mAP@50 of 0.9556 and mAP@50_95 of 0.6758 with the most accurate depth estimate of 2.96 cm with the pixel-precise Dseg algorithm. YOLOv8n achieves the fastest inference at 3.6ms. RTDETRX achieves the highest detection confidence at 92.70%. An important finding is that even after full RANSAC orthorectification, bounding box models overestimate pothole depth by 0.16 to 0.21 cm compared to pixel precise segmentation masks. This confirms that the pavement inclusion bias is structural rather than a calibration artifact.",
+      "summary_zh": "提出深度感知坑洞检测框架，比较五种架构在RGB-D融合下的性能，发现YOLOv8nSeg在精度和深度估计上最优，并揭示边界框模型存在结构性深度高估偏差。",
+      "insight_zh": "该研究为城市道路病害的自动化检测提供了高效方案，其深度估计偏差分析对GIS中基于影像的定量测量具有方法论上的启示。"
+    },
+    {
+      "key": "arxiv:2608.27549",
+      "title": "Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning",
+      "title_zh": "代码即世界：用于物理推理的可执行世界表征的智能体发现",
+      "url": "https://arxiv.org/abs/2608.27549",
+      "doi": "",
+      "arxiv_id": "2608.27549",
+      "authors": [
+        "Hanyang Wang",
+        "Yimo Cai",
+        "Weiliang Chen",
+        "Jiawei Chi",
+        "Haowen Sun",
+        "Qiyu Dai",
+        "Yi-Hsin Hung",
+        "Xingzhuo Guo",
+        "Jinshan Ren",
+        "Runmao Yao",
+        "Ziwei Liu",
+        "Mingsheng Long",
+        "Yueqi Duan",
+        "Jun Gao",
+        "Jiangran Lyu",
+        "Fangfu Liu",
+        "Jialong Wu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T17:57:25+00:00",
+      "score": 85,
+      "reason": "该研究提出用可执行代码表示物理世界，并通过智能体循环从多模态观测中构建和验证，这与GIS中构建可计算、可验证的空间世界模型高度契合，为时空数据挖掘和地理空间智能提供了新范式。",
+      "tags": [
+        "世界模型",
+        "可执行代码",
+        "物理推理",
+        "视觉语言模型",
+        "智能体"
+      ],
+      "abstract": "Physical understanding and reasoning depend on forming compact and generalizable representations of the world. While modern vision-language models can recognize and explain diverse physical events, they often lack explicit representations of the underlying mechanisms-such as object states, physical parameters, and governing dynamics-needed for reliably reasoning how the world evolves and responds to interventions. In this work, we introduce Code-as-World, a paradigm that represents physical worlds through executable world representations. By expressing physical composition, dynamic evolution, and visual appearance as executable code, Code-as-World provides a compact, quantitatively grounded, and controllable abstraction of the physical world. To construct such representations from multimodal observations, such as natural-language descriptions or real-world videos, we develop an agentic discovery loop inspired by abductive reasoning, where an agent proposes, executes, renders, verifies, and iteratively refines executable world hypotheses. As a concrete application, we use verified executable worlds to provide scalable physical supervision for training vision-language models on quantitative physical reasoning. Experiments show that Code-as-World-VL achieves state-of-the-art performance on QuantiPhy and surpasses leading proprietary models, highlighting the potential of executable world representations as a scalable foundation for physical intelligence.",
+      "summary_zh": "物理理解和推理依赖于形成紧凑且可泛化的世界表征。现代视觉语言模型能识别和解释多样的物理事件，但往往缺乏对底层机制（如对象状态、物理参数和控制动力学）的显式表征。本文引入Code-as-World范式，将物理世界表示为可执行的世界表征。通过将物理组成、动态演化和视觉外观表达为可执行代码，提供紧凑、定量可接地且可控的物理世界抽象。为从多模态观测（如自然语言描述或真实世界视频）构建此类表征，开发了受溯因推理启发的智能体发现循环，其中智能体提出、执行、渲染、验证并迭代细化可执行世界假设。作为具体应用，使用验证过的可执行世界为训练视觉语言模型提供可扩展的物理监督。实验表明Code-as-World-VL在QuantiPhy上达到最先进性能，并超越领先的专有模型。",
+      "insight_zh": "将物理世界编码为可执行代码并利用智能体循环验证，为构建可计算、可验证的空间表征提供了新路径，有望推动地理空间智能从感知向推理发展。"
     },
     {
       "key": "arxiv:2606.17092",
@@ -137,6 +631,142 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "针对多智能体GIS系统，进行风险评估并提出提示词加固优化方法，以增强系统安全性。",
       "insight_zh": "多智能体GIS系统的安全性可通过优化提示词来加固，这为城市更新中的智能决策系统提供了安全保障思路。"
+    },
+    {
+      "key": "arxiv:2506.04970",
+      "title": "Bringing SAM to new heights: Leveraging elevation data for tree crown segmentation from drone imagery",
+      "title_zh": "将SAM提升到新高度：利用高程数据进行无人机影像树冠分割",
+      "url": "https://arxiv.org/abs/2506.04970",
+      "doi": "",
+      "arxiv_id": "2506.04970",
+      "authors": [
+        "M\\'elisande Teng",
+        "Arthur Ouaknine",
+        "Etienne Lalibert\\'e",
+        "Yoshua Bengio",
+        "David Rolnick",
+        "Hugo Larochelle"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该研究利用高程数据增强SAM模型进行无人机影像树冠分割，直接涉及遥感图像分析和深度学习，与遥感变化检测和地理空间智能高度相关。",
+      "tags": [
+        "遥感",
+        "树冠分割",
+        "无人机影像",
+        "高程数据",
+        "SAM"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该研究探索了将高程数据集成到SAM模型中，以提升无人机影像中树冠分割的性能，但摘要内容不完整，具体方法细节和实验结果未详述。",
+      "insight_zh": "由于摘要信息有限，无法提取具体洞见，但该研究提示高程信息可以作为辅助模态增强基础分割模型在遥感任务中的表现。"
+    },
+    {
+      "key": "arxiv:2603.16742",
+      "title": "When the City Teaches the Car: Label-Free 3D Perception from Infrastructure",
+      "title_zh": "当城市教会汽车：基于基础设施的无标签3D感知",
+      "url": "https://arxiv.org/abs/2603.16742",
+      "doi": "",
+      "arxiv_id": "2603.16742",
+      "authors": [
+        "Zhen Xu",
+        "Jinsu Yoo",
+        "Cristian Bautista",
+        "Zanming Huang",
+        "Tai-Yu Pan",
+        "Zhenzhen Liu",
+        "Katie Z Luo",
+        "Mark Campbell",
+        "Bharath Hariharan",
+        "Wei-Lun Chao"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该论文研究利用城市基础设施进行无标签3D感知，与城市更新中的智能交通和城市感知高度相关，且涉及多源数据融合。",
+      "tags": [
+        "基础设施感知",
+        "无标签3D感知",
+        "车路协同",
+        "城市感知"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文探讨了如何利用城市基础设施（如摄像头）来训练车辆进行3D感知，无需人工标注数据。",
+      "insight_zh": "基础设施驱动的无标签学习为城市级3D感知提供了新范式，可能推动城市更新中的智能交通系统发展，但需解决数据同步和隐私问题。"
+    },
+    {
+      "key": "arxiv:2603.23607",
+      "title": "Reasoning models do not yet follow their reasoning in autonomous driving: The KITScenes LongTail Dataset",
+      "title_zh": "推理模型在自动驾驶中尚未遵循其推理：KITScenes长尾数据集",
+      "url": "https://arxiv.org/abs/2603.23607",
+      "doi": "",
+      "arxiv_id": "2603.23607",
+      "authors": [
+        "Royden Wagner",
+        "Omer Sahin Tas",
+        "Jaime Villa",
+        "Felix Hauser",
+        "Yinzhe Shen",
+        "Marlon Steiner",
+        "Dominik Strutz",
+        "Carlos Fernandez",
+        "Quentin Delfosse",
+        "Christoph Weinhuber",
+        "Christian Kinzig",
+        "Guillermo S. Gutierrez-Cabello",
+        "Hendrik K\\\"onigshof",
+        "Fabian Immel",
+        "Richard Schwarzkopf",
+        "Nils Alexander Rack",
+        "Kevin R\\\"osch",
+        "Kaiwen Wang",
+        "Jan-Hendrik Pauls",
+        "Martin Lauer",
+        "Igor Gilitschenski",
+        "Holger Caesar",
+        "Christoph Stiller"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "论文研究推理模型在自动驾驶中的行为，涉及长尾数据集和场景理解，与城市更新中的时空数据挖掘和地理空间智能高度相关，尤其是城市交通场景分析。",
+      "tags": [
+        "自动驾驶",
+        "推理模型",
+        "长尾数据集",
+        "KITScenes"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "构建KITScenes长尾数据集，评估推理模型在自动驾驶场景中的表现，发现模型推理与实际行为存在不一致。",
+      "insight_zh": "该研究揭示了推理模型在复杂城市环境中的局限性，提示在城市更新应用中需谨慎依赖模型推理结果。"
+    },
+    {
+      "key": "arxiv:2608.28461",
+      "title": "Anatomy-Aware Promptable Segmentation with Online Interactive Training for AUTOPET V",
+      "title_zh": "解剖感知的可提示分割与在线交互训练用于AUTOPET V挑战",
+      "url": "https://arxiv.org/abs/2608.28461",
+      "doi": "",
+      "arxiv_id": "2608.28461",
+      "authors": [
+        "Pablo Lozano-Jimenez",
+        "Sergio Romero-Tapiador",
+        "Ruben Tolosana"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T15:49:58+00:00",
+      "score": 80,
+      "reason": "该文提出一种解剖感知的可提示分割模型用于PET/CT病变分割，其器官监督、交互式训练和示踪剂分类路由策略，对遥感图像中多类别目标分割和交互式标注方法具有方法论参考价值。",
+      "tags": [
+        "医学影像",
+        "PET/CT",
+        "交互式分割",
+        "nnU-Net",
+        "解剖感知"
+      ],
+      "abstract": "We present an anatomy-aware, promptable model for whole-body lesion segmentation in FDG and PSMA PET/CT, developed for the AUTOPET V challenge. The proposed method is built as family of nnU-Net-based models and trained in two stages: i) a pre-training stage that produces a strong initial segmentation, and ii) an online interactive stage that learns to exploit scribble prompts, refining the prediction over successive interactions. Anatomical context is incorporated through organ supervision using a single shared head that predicts lesions and organs from the same features, which reduces false positives arising from physiological uptake. Also as the tracer (i.e., FDG/PSMA) is not provided at inference, we add a tracer classifier based on image processing and a random forest over coronal MIP features, routing each study to a combined FDG+PSMA model or to a PSMA-specific model. Across four-fold cross-validation the organ-supervised model achieves the best and most stable performance, the interactive stage improves the Dice score monotonically with each prompt, and PSMA-specific training yields the strongest tracer-wise results.",
+      "summary_zh": "本文提出一个解剖感知、可提示的模型，用于FDG和PSMA PET/CT中的全身病变分割。模型基于nnU-Net，通过两阶段训练：预训练和在线交互学习，利用器官监督减少假阳性，并加入示踪剂分类器路由到特定模型。",
+      "insight_zh": "通过共享特征头进行器官监督可有效抑制生理性摄取造成的假阳性，交互式训练能持续提升分割精度，这些策略可迁移至遥感影像中地物与背景的区分及精细化标注。"
     },
     {
       "key": "arxiv:2608.28273",
@@ -198,121 +828,118 @@
       "insight_zh": "多智能体LLM框架可高效处理跨学科文献，其幻觉控制策略和人工验证流程对大规模证据挖掘有重要参考价值。"
     },
     {
-      "key": "arxiv:2608.28264",
-      "title": "Finding Where the Buck Stops: An Automated Failure Attribution-Based Reflection Framework for Multi-Agent Collaboration",
-      "title_zh": "找到责任所在：面向多智能体协作的自动化失败归因反思框架",
-      "url": "https://arxiv.org/abs/2608.28264",
+      "key": "arxiv:2608.27964",
+      "title": "AERA: Adaptive Evidence Residual Allocation for Efficient Test-Time Reasoning",
+      "title_zh": "AERA：自适应证据残差分配用于高效测试时推理",
+      "url": "https://arxiv.org/abs/2608.27964",
       "doi": "",
-      "arxiv_id": "2608.28264",
+      "arxiv_id": "2608.27964",
       "authors": [
-        "Xiaoqing Wang",
-        "Keman Huang",
-        "Bin Liang",
-        "Hongyu Li",
-        "Xiaoyong Du",
-        "Wuqiong Pan"
+        "Ziming Wang",
+        "Ivor Tsang",
+        "Hangwei Qian"
       ],
       "venue": "arXiv",
-      "published": "2026-08-28T12:26:03+00:00",
-      "score": 75,
-      "reason": "该文聚焦多智能体协作中的失败归因与反思，与LLM和多智能体研究方向高度相关，可借鉴其诊断-纠正范式。",
+      "published": "2026-08-28T06:21:07+00:00",
+      "score": 80,
+      "reason": "该论文提出一种自适应测试时推理方法，通过学习判断额外计算是否可能恢复更好的答案，显著减少推理计算量。这与GIS博士研究中利用LLM进行复杂空间推理时的计算效率优化高度相关。",
       "tags": [
-        "多智能体",
-        "LLM",
-        "反思机制",
-        "故障归因"
+        "测试时推理",
+        "自适应计算",
+        "LLM推理",
+        "效率优化",
+        "强化学习"
       ],
-      "abstract": "Multi-agent systems (MAS) powered by large language models have shown promise for complex tasks but suffer from high failure rates. Current self-reflection methods for MAS require all agents to reflect upon failure, overlooking a critical reality: failures typically stem from a specific agent leading the task astray, namely the decisive error agent, while others merely fulfill their regular duties. Forcing regular-behaving agents to reflect contaminates their memory with wrong insights. Hence, we propose DoCtOR (Diagnose-then-Correct PPO-enhanced Reflection), a novel reflection framework that enhances multi-agent collaboration. DoCtOR first identifies the decisive error step and decisive error agent through automated failure attribution, then employs counterfactual reasoning to generate a corrected decisive error step, and finally engages only the decisive error agent to produce targeted reflections. Experimental results show DoCtOR achieves 22%, 26%, and 27% improvements over initial success rates on HotPotQA, ChartQAPro, and Mind2Web datasets, outperforming Reflexion, Retroformer, and COPPER. We further establish the generalizability of our diagnose-then-correct paradigm and demonstrate that in low-resource settings, focusing reflection on reasoning steps after the decisive error step achieves comparable quality to reflecting on the complete failure trajectory.",
-      "summary_zh": "提出DoCtOR框架，通过自动化失败归因定位关键错误智能体，仅对其执行反事实推理和定向反思，提升多智能体系统在多个基准上的任务成功率。",
-      "insight_zh": "在多智能体反思中，仅对关键错误智能体进行针对性反思可避免污染正常智能体的记忆，并提升整体性能。"
+      "abstract": "Test-time scaling improves language-model reasoning by generating additional candidate solutions, but allocating the same inference budget to every problem is computationally wasteful. Existing adaptive stopping methods commonly rely on confidence, agreement, or answer stability, implicitly assuming that stronger current evidence indicates that further computation is unnecessary. We show that this assumption can fail: checkpoint-level correctness evolves non-monotonically, and observable evidence may strengthen before an answer collapses or weaken before it recovers. Motivated by this mismatch, we introduce Adaptive Evidence Residual Allocation (AERA), a sequential controller that learns whether additional computation is likely to recover a better answer from checkpoint-observable evidence. AERA characterizes cumulative response prefixes using answer-distribution, temporal, re-solving, semantic, and compute features, and repeatedly decides whether to stop or allocate the next response block. Future checkpoint correctness is used only to construct offline supervision and is never available to the controller at inference time. Across GSM8K and GPQA Diamond, AERA identifies question-specific residual opportunities while substantially reducing inference computation. In a frozen-threshold incremental-generation evaluation on 300 untouched GSM8K questions, AERA achieves 92.61% accuracy versus 93.01% with 128 responses while reducing completion tokens by 95.99%. These results suggest that adaptive reasoning should estimate the future value of computation rather than equating present confidence with correctness.",
+      "summary_zh": "AERA是一个顺序控制器，学习从检查点可观察证据判断额外计算是否可能恢复更好的答案。它使用答案分布、时间、重新求解、语义和计算特征来表征累积响应前缀，并反复决定停止或分配下一个响应块。在GSM8K和GPQA Diamond上，AERA识别特定问题的残差机会，同时大幅减少推理计算。在300个未接触的GSM8K问题上，AERA达到92.61%的准确率，同时减少95.99%的完成令牌。",
+      "insight_zh": "自适应推理策略可应用于地理空间LLM，在保证推理质量的同时降低计算成本。"
     },
     {
-      "key": "arxiv:2608.27942",
-      "title": "CASTANET: Causality-Aware Spatio-Temporal Adversarial Network Using Traffic Incident Effects",
-      "title_zh": "CASTANET：利用交通事故影响的因果感知时空对抗网络",
-      "url": "https://arxiv.org/abs/2608.27942",
+      "key": "arxiv:2608.27948",
+      "title": "Temporal Memory-Aware Online Test-Time Adaptation on Dynamic Graphs",
+      "title_zh": "动态图上的时间记忆感知在线测试时自适应",
+      "url": "https://arxiv.org/abs/2608.27948",
       "doi": "",
-      "arxiv_id": "2608.27942",
+      "arxiv_id": "2608.27948",
       "authors": [
-        "Toshiya Kitahara",
-        "Ryu Shirakami",
-        "Koh Takeuchi",
-        "Hisashi Kashima"
+        "Bo Li",
+        "Xin Zheng",
+        "Ming Jin",
+        "Can Wang",
+        "Shirui Pan"
       ],
       "venue": "arXiv",
-      "published": "2026-08-28T05:34:07+00:00",
-      "score": 75,
-      "reason": "研究突发事件引起的非周期性交通拥堵预测，涉及时空图神经网络与因果推断，与城市更新中的交通影响分析高度相关。",
+      "published": "2026-08-28T05:41:39+00:00",
+      "score": 80,
+      "reason": "该论文研究动态图上的在线测试时自适应方法，处理结构连通性和节点语义随时间演化的分布偏移问题。这与申请人关于时空数据挖掘和城市动态变化分析的研究高度相关，其方法可直接应用于城市更新场景中的动态网络建模与预测。",
       "tags": [
-        "时空预测",
         "图神经网络",
-        "交通",
-        "因果推断",
-        "突发事件"
+        "测试时自适应",
+        "动态图",
+        "时间序列",
+        "分布偏移"
       ],
-      "abstract": "Predicting non-periodic traffic congestion caused by sudden incidents (e.g., accidents and road damage) is crucial for advanced intelligent transportation systems. However, incident-driven congestion is difficult to forecast because incidents are extremely sparse, occur at specific times and locations, and have heterogeneous impacts depending on the traffic context. While recent deep learning approaches have significantly improved periodic traffic forecasting, their performance on non-periodic congestion remains limited, partly because incident records are not explicitly incorporated and their occurrence is strongly biased in space and time. To address these challenges, we propose CASTANET, which integrates spatio-temporal graph neural networks and causal treatment effect estimation to utilize incident records while mitigating selection bias. Experiments on real-world traffic data and accident records from Tokyo, which we treat as incidents, show that CASTANET reduces RMSE by 4.0% overall compared to the best baseline and by 10.1% on incident-conditioned evaluation, with gains reaching 14.55% under severe congestion.",
-      "summary_zh": "提出CASTANET模型，整合时空图神经网络与因果处理效应估计，利用事故记录预测非周期性交通拥堵，并缓解选择偏差。",
-      "insight_zh": "显式纳入稀疏事故记录并校正选择偏差，可显著提升突发事件下交通拥堵预测的准确性。"
+      "abstract": "Test-time adaptation (TTA) on graphs aims to adapt a graph neural network (GNN) that is well-trained on the training graph to the test graph, which involves potential distribution shifts that may harm model generalization and test-time inference. While recent efforts have investigated TTA on static graphs, there is still a research gap on dynamic graphs learned with dynamic GNN (DGNN) models, where both structural connectivity and node semantics evolve continuously over time. This makes adapting a DGNN model for reliable test-time performance substantially challenging. To fill this gap, in this work, we propose a novel framework of temporal memory-aware Online Test-Time Adaptation on Dynamic Graphs, named DGOTTA, to effectively adapt well-trained DGNNs during test time. Specifically, the proposed DGOTTA contains three modules: (1) temporal-aware augmentation, to extend the diversity of test dynamic graphs for addressing complex temporal and spatial shifts; (2) memory-aware model prediction, to alleviate catastrophic forgetting; (3) consistency-guided online adaptation, to enforce temporal alignment and memory smoothness. Extensive experiments on three real-world datasets and four DGNN backbones demonstrate that DGOTTA significantly improves generalization under diverse distribution shifts and multiple model architectures.",
+      "summary_zh": "该论文提出DGOTTA框架，用于动态图上训练好的动态图神经网络（DGNN）的测试时自适应。框架包含三个模块：时间感知增强、记忆感知模型预测和一致性引导的在线自适应，以应对复杂的时间和空间偏移。在三个真实数据集和四个DGNN骨干上的实验表明，DGOTTA显著提升了模型在多种分布偏移下的泛化能力。",
+      "insight_zh": "该研究为动态图上的模型自适应提供了有效方案，其时间记忆机制和一致性约束对于处理城市动态系统中持续演化的数据分布具有重要启示，可提升时空预测模型的鲁棒性和时效性。"
     },
     {
-      "key": "arxiv:2608.27971",
-      "title": "GAAT: Geometry-Aware Alignment Transformer for Multimodal UAV Perception",
-      "title_zh": "GAAT：用于多模态无人机感知的几何感知对齐Transformer",
-      "url": "https://arxiv.org/abs/2608.27971",
+      "key": "arxiv:2608.27856",
+      "title": "FedEHR-Agents: Federated Agentic Optimization for Automated EHR Modeling",
+      "title_zh": "FedEHR-Agents：用于自动化电子健康记录建模的联邦智能体优化",
+      "url": "https://arxiv.org/abs/2608.27856",
       "doi": "",
-      "arxiv_id": "2608.27971",
+      "arxiv_id": "2608.27856",
       "authors": [
-        "Jingpu Yang",
-        "Debin Tang",
-        "Yilin Sun",
-        "Fengxian Ji",
-        "Jiahua Zhu",
-        "Wenrui Ding",
-        "Yufeng Wang"
+        "Jun Bai",
+        "Ruilin Wang",
+        "Yue Li"
       ],
       "venue": "arXiv",
-      "published": "2026-08-28T06:36:17+00:00",
-      "score": 70,
-      "reason": "研究无人机多模态感知的几何感知对齐，涉及遥感与多源数据融合，与GIS博士研究方向中的多源数据融合相关。",
+      "published": "2026-08-28T03:02:10+00:00",
+      "score": 80,
+      "reason": "该文提出以经验为中心的联邦智能体优化框架，用于自动化EHR建模，其跨机构隐私保护协作和智能体经验共享的思想，与GIS中多源数据融合和分布式地理建模高度相关。",
       "tags": [
-        "无人机",
-        "多模态",
-        "Transformer",
-        "几何对齐",
-        "感知"
+        "联邦学习",
+        "智能体",
+        "电子健康记录",
+        "经验聚合",
+        "大语言模型"
       ],
-      "abstract": "Unmanned aerial vehicle (UAV) multimodal perception integrates visible (RGB), infrared (IR), synthetic aperture radar (SAR), and depth sensors for scene understanding under diverse conditions. However, differences in optics, resolution, and mounting often limit practical systems to global or image-center alignment. After tokenization, parallax, platform motion, and lens distortion can shift corresponding patch centers across modalities, weakening the spatial correspondence assumed by dense contrastive learning and cross-modal fusion. We propose GAAT (Geometry-Aware Alignment Transformer), an alignment-first pretrained model that estimates local correspondence reliability before cross-modal interaction. GAAT introduces syncPATC, which learns patch-center consistency under synchronized view transformations without correspondence annotations. It emits geometric priors, including token and query confidence, query centers, and sub-token offsets, that identify reliable local anchors across residual misalignment. Guided by these priors, MG-Sparse-MMA performs query-mediated sparse fusion over top-K_s reliable regions, replacing dense all-patch interaction with geometry-calibrated local updates. RA-QCGCL aligns pretraining supervision with this sparse query bottleneck through reliable patch-to-patch, patch-to-query, and query-to-query contrastive branches. We introduce UAVMeta and StateBench, which provide four acquisition-state scores derived from platform telemetry and image statistics: camera reliability, observation scale, viewpoint stability, and flight maneuver complexity. Extensive experiments across six downstream tasks demonstrate consistently superior transfer performance, establishing GAAT as a state-of-the-art multimodal foundation model for UAV perception. StateBench further enables a systematic diagnosis of real-world acquisition conditions.",
-      "summary_zh": "提出GAAT模型，通过几何感知对齐和稀疏融合，解决无人机多模态感知中的错位问题，提升跨模态融合性能。",
-      "insight_zh": "几何先验引导的稀疏融合可有效应对多模态数据间的残余错位，对无人机遥感应用有重要价值。"
+      "abstract": "Recent advances in large language models are enabling autonomous clinical agents to perform increasingly complex electronic health record (EHR) modeling workflows. However, agents deployed at individual hospitals remain constrained by institution-specific data and modeling environments, while direct cross-hospital collaboration is restricted by the sensitivity of patient-level EHR data. Although federated learning (FL) provides a natural foundation for privacy-preserving collaboration, existing approaches remain predominantly model-centric, limiting federation to prediction models or their updates while overlooking the richer modeling experience accumulated by autonomous agents. To address this limitation, we propose FedEHR-Agents, an experience-centric federated agentic optimization framework for automated EHR modeling. Each hospital deploys an autonomous clinical EHR agent that performs data preprocessing and model development while refining local clinical modeling experience through historical memory, task-specific evaluation, and TextGrad-based prompt refinement. The federated server performs evidence-guided experience aggregation to integrate reliable and complementary modeling experience across heterogeneous hospitals and distills the aggregated experience into global meta-prompts for subsequent local refinement. Extensive experiments on real-world multi-hospital EHR benchmarks demonstrate that FedEHR-Agents consistently outperforms local and federated baselines across diverse clinical prediction tasks and remains robust across different federation scales and LLM backbones. These results establish clinical modeling experience as a promising collaborative object beyond conventional parameter-centric FL and point toward federated autonomous clinical intelligence.",
+      "summary_zh": "提出FedEHR-Agents框架，每个医院部署自主临床EHR智能体进行数据预处理和模型开发，并通过历史记忆和提示词优化积累经验，联邦服务器进行证据引导的经验聚合，生成全局元提示词，实现跨医院的隐私保护协作。",
+      "insight_zh": "将智能体积累的建模经验作为联邦协作对象，超越了传统参数中心化联邦学习，为地理空间领域中的跨机构协作建模提供了新范式。"
     },
     {
-      "key": "arxiv:2608.28241",
-      "title": "Beyond Task-Only Matching: Personalized Skill Routing with Counterfactual Evaluation",
-      "title_zh": "超越纯任务匹配：基于反事实评估的个性化技能路由",
-      "url": "https://arxiv.org/abs/2608.28241",
+      "key": "arxiv:2608.27688",
+      "title": "SafeStep: An Interactive Demonstration of Semantic Communication for Pedestrian Safety Monitoring",
+      "title_zh": "SafeStep：用于行人安全监控的语义通信交互演示",
+      "url": "https://arxiv.org/abs/2608.27688",
       "doi": "",
-      "arxiv_id": "2608.28241",
+      "arxiv_id": "2608.27688",
       "authors": [
-        "Tianle Wang",
-        "Yanghe Zou",
-        "Xiang Liu",
-        "Ziyao Huang",
-        "Chenchen Fu",
-        "Weiwei Wu"
+        "Christian McDowell",
+        "Andrea Panebianco",
+        "Jeremiah Yang",
+        "Sirin Chakraborty",
+        "Samuel Chamoun",
+        "Travis Ross",
+        "Yin Sun"
       ],
       "venue": "arXiv",
-      "published": "2026-08-28T11:55:56+00:00",
-      "score": 60,
-      "reason": "该文研究LLM智能体的个性化技能路由，与LLM和多智能体方向相关，但未涉及地理空间应用。",
+      "published": "2026-08-27T20:25:50+00:00",
+      "score": 80,
+      "reason": "开发了用于行人安全监控的实时语义通信平台，涉及视频流处理和位置轨迹提取，与城市感知和时空数据挖掘高度相关。",
       "tags": [
-        "LLM智能体",
-        "技能路由",
-        "个性化",
-        "反事实评估"
+        "语义通信",
+        "行人安全",
+        "实时监控",
+        "视频流",
+        "边缘计算"
       ],
-      "abstract": "The rapid expansion of reusable skill repositories makes skill routing a critical capability for large language model (LLM) agents. Existing methods treat routing as task-only semantic matching. However, when users with incompatible constraints issue an identical request, this assumption conflates task relevance with skill suitability: a task-only router can select a semantically plausible skill that is unsuitable for the requesting user. To expose this failure mode, we formulate \\textit{personalized skill routing} as profile-conditioned retrieval, in which relevance depends jointly on the task and the user profile. We first introduce a profile-counterfactual benchmark, in which the task is held fixed while changes in the user profile induce changes in the reference skill. We further construct paired counterfactual supervision and propose SkillFeed, a progressive retrieve-and-rerank framework that first establishes task--skill alignment and then learns profile-conditioned discrimination. By retrieving body-level evidence and reranking semantically similar but profile-conflicting candidates, SkillFeed identifies skills that satisfy both task requirements and user constraints. On SkillFeed-Bench, SkillFeed attains 75.1\\% top-1 retrieval accuracy, a 23.1-point improvement over the corresponding pretrained routing baseline. Adding profile conditioning yields a 35.1-point gain on queries where user profile changes the reference skill. This contrast shows that user profiles are most consequential precisely when they change skill suitability. Our website is publicly available at http://www.aiskillfeed.com .",
-      "summary_zh": "提出个性化技能路由问题，构建反事实基准和SkillFeed框架，通过渐进式检索与重排序，结合用户画像进行技能选择，显著提升路由准确性。",
-      "insight_zh": "技能路由需同时考虑任务与用户约束，用户画像在改变技能适用性时对路由结果影响显著。"
+      "abstract": "In this paper, we develop SafeStep, an interactive browser-based semantic communication platform for live pedestrian safety monitoring. SafeStep extracts pedestrian information from four live traffic-camera feeds, transmits it through a semantic communication transceiver over an Additive White Gaussian Noise (AWGN) channel, and renders user-specific positions, trajectories, and risk labels. The platform allows to independently select the transceiver, Signal-to-Noise Ratio (SNR), codelength, and Age of Information (AoI), and demonstrates the transceiver performance of the selected configuration through live pedestrian safety monitoring to each browser. SafeStep compares a recently proposed semantic communication design called Meta-VIB with five baseline transceivers. Meta-VIB uses a compact neural model with only $4.16$ million parameters to generalize across varying SNR, codelength, and AoI values without online retraining. Experimental results show that Meta-VIB achieves mean task-loss reductions of up to $92.1\\%$. On one high-end GPU server, the integrated concurrent-access workload maintains the target $5$ frames/s through $20$ users. At $100$ users, each requesting a distinct configuration, SafeStep records no request failures and a mean application response time below $1$ s, but its mean per-browser frame rate falls to approximately $1$ frame/s. To our knowledge, SafeStep is the first real-time semantic communication platform to make AoI-induced downstream degradation directly observable in live monitoring applications.",
+      "summary_zh": "开发了SafeStep，一个基于浏览器的交互式语义通信平台，用于实时行人安全监控。平台从四个实时交通摄像头提取行人信息，通过语义通信收发器在AWGN信道上传输，并渲染用户特定位置、轨迹和风险标签。Meta-VIB收发器仅用416万参数即可在不同SNR、码长和AoI下泛化，平均任务损失降低高达92.1%。",
+      "insight_zh": "语义通信能高效传输行人安全监控所需的关键信息，且轻量模型可适应不同信道条件，支持实时应用。"
     }
   ]
 }

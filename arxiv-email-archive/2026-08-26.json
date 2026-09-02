@@ -3,22 +3,50 @@
   "guid": "arxiv-email-daily:2026-08-26",
   "paper_keys": [
     "arxiv:2608.24263",
+    "arxiv:2608.23857",
     "arxiv:2608.23746",
+    "arxiv:2605.05535",
+    "arxiv:2608.24738",
     "arxiv:2608.24665",
+    "arxiv:2608.24154",
     "arxiv:2608.24133",
+    "arxiv:2608.23740",
+    "arxiv:2608.23622",
+    "arxiv:2608.24809",
+    "arxiv:2608.24782",
     "arxiv:2608.24756",
     "arxiv:2608.24715",
-    "arxiv:2608.23626",
-    "arxiv:2608.24764",
-    "arxiv:2608.24364",
-    "arxiv:2608.24747"
+    "arxiv:2608.24680",
+    "arxiv:2608.24471",
+    "arxiv:2608.24441",
+    "arxiv:2608.24366",
+    "arxiv:2608.24237",
+    "arxiv:2608.24223",
+    "arxiv:2608.24212",
+    "arxiv:2608.24130",
+    "arxiv:2608.24087",
+    "arxiv:2608.24043",
+    "arxiv:2608.23930",
+    "arxiv:2608.23922",
+    "arxiv:2608.23903",
+    "arxiv:2608.23867",
+    "arxiv:2608.23855",
+    "arxiv:2608.23845"
   ],
-  "paper_count": 10,
+  "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:620",
-    "deepseek": "ok:30"
+    "deepseek": "ok:539"
   },
-  "updated_at": "2026-09-02T01:20:36.042010+00:00",
+  "updated_at": "2026-09-02T01:58:45.290597+00:00",
+  "analysis_stats": {
+    "total": 620,
+    "analyzed": 620,
+    "high": 57,
+    "medium": 111,
+    "low": 101,
+    "below_threshold": 351
+  },
   "papers": [
     {
       "key": "arxiv:2608.24263",
@@ -53,6 +81,36 @@
       "insight_zh": "该研究创新性地利用视觉语言模型的常识推理能力来指导遥感变化数据的合成，解决了传统基于手工规则方法在变化类型覆盖和灵活性上的局限，为提升变化检测模型的泛化能力提供了新的数据增强思路。"
     },
     {
+      "key": "arxiv:2608.23857",
+      "title": "UHI-Bench: Benchmarking Dual-Source Urban Heat Island Modeling Across Cities in Diverse Climate Regimes",
+      "title_zh": "UHI-Bench：跨不同气候区城市的双源城市热岛建模基准",
+      "url": "https://arxiv.org/abs/2608.23857",
+      "doi": "",
+      "arxiv_id": "2608.23857",
+      "authors": [
+        "Wanyun Ling",
+        "Chenxi Liu",
+        "Yi Xie",
+        "Aopu Xu",
+        "Zhuoqi Zeng",
+        "and Ziyue Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T22:00:52+00:00",
+      "score": 95,
+      "reason": "论文直接针对城市热岛（UHI）建模，整合了动态气象和静态城市形态数据，并评估了跨城市迁移能力，与您的研究方向（城市更新、多源数据融合）高度契合。",
+      "tags": [
+        "城市热岛",
+        "基准测试",
+        "多源数据",
+        "跨城市迁移",
+        "气候区"
+      ],
+      "abstract": "Urban heat islands (UHIs) are intensifying under climate change, exacerbating thermal exposure risks. Their two primary observations, land surface temperature UHI (LST-UHI) and near-surface air temperature UHI (AirT-UHI), capture physically distinct aspects of urban heat. However, most studies rely on a single source, and substituting one for the other can substantially bias the magnitude and spatial variability of human heat exposure. Accurate UHI modeling also requires dynamic meteorological drivers and static urban morphology features, but spatiotemporal incompatibilities hinder their alignment. Cloud gaps in LST observations and sparse AirT station networks further limit dual-source UHI modeling, motivating cross-city transfer across diverse climates. To bridge these gaps, we introduce UHI-Bench, the first UHI benchmark for dual-source UHI modeling that integrates dynamic and static environmental context. Following a unified signal, mechanism, and transfer framework, it evaluates over 20 baselines from four model families on five tasks across 20 cities and nine K\\\"oppen climate classes. Results show that no model is uniformly best, although foundation models remain consistently competitive and stable. Environmental covariates generally improve performance, but their utility varies across sources and tasks. Cross-city transferability is better explained by overlap in UHI regimes than by climate-zone similarity. With the dataset and standardized pipeline, our work provides practical guidance for urban heat modeling, promotes climate data equity, and supports future advances in climate research.",
+      "summary_zh": "本文提出UHI-Bench，首个用于双源UHI建模的基准，整合动态和静态环境上下文。它评估了20个城市、9个 Köppen 气候区、5个任务上的20多个基线模型。结果显示没有模型普遍最优，基础模型表现稳定；环境协变量通常提升性能；跨城市迁移性由UHI制度重叠而非气候区相似性解释。",
+      "insight_zh": "城市热岛建模应同时考虑地表温度和近地表气温，且跨城市迁移时，UHI制度的相似性比气候区划分更重要，这为城市更新中的热环境评估提供了方法论指导。"
+    },
+    {
       "key": "arxiv:2608.23746",
       "title": "CRISP: Calibration-Aware Visual State Space Duality for Remote Sensing Semantic Segmentation",
       "title_zh": "CRISP：用于遥感语义分割的校准感知视觉状态空间对偶",
@@ -78,6 +136,58 @@
       "abstract": "State space models, especially Visual State Space Duality (VSSD), have emerged as efficient linear-time alternatives to Transformers for dense visual tasks. However, we observe that VSSD compresses spatial context into a global aggregation that suppresses high-frequency responses, causing excessive boundary smoothing in remote sensing semantic segmentation. To address this, we propose CRISP, a calibration framework with two components. Its core, the Duality Calibration Operator (DCO), restores local contrast and boundary responses through residual injection and frequency calibration within the VSSD backbone, without altering its linear complexity. To retain the recovered detail, an Orthogonal Multi-Prototype (OMP) head assigns multiple orthogonally constrained prototypes per class to model large intra-class variance. Extensive experiments on Potsdam, Vaihingen, and LoveDA show that, with approximately 30M parameters, CRISP achieves consistent gains in mean F1 (mF) and mIoU while remaining competitive with state-of-the-art methods. Code is available at https://github.com/crazylifeha/CRISP.",
       "summary_zh": "本文提出CRISP框架，包含核心的双重校准算子（DCO）和正交多原型（OMP）分割头，以恢复VSSD骨干网络中被抑制的局部对比度和边界响应。在Potsdam、Vaihingen和LoveDA数据集上，CRISP以约30M参数取得了持续的精度提升。",
       "insight_zh": "该研究指出了状态空间模型在遥感分割中的边界平滑问题，并提供了有效的校准方案，对开发高效、高精度的遥感分割模型具有重要参考价值。"
+    },
+    {
+      "key": "arxiv:2605.05535",
+      "title": "Housing Potential Common Data Model and City Digital Twin",
+      "title_zh": "住房潜力公共数据模型与城市数字孪生",
+      "url": "https://arxiv.org/abs/2605.05535",
+      "doi": "",
+      "arxiv_id": "2605.05535",
+      "authors": [
+        "Megan Katsumi",
+        "Mark Fox",
+        "Anderson Wong",
+        "Divnoor Chatha"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "直接涉及住房潜力的公共数据模型与城市数字孪生，与城市更新和时空数据挖掘高度相关，是核心研究主题。",
+      "tags": [
+        "City Digital Twin",
+        "Common Data Model",
+        "Housing",
+        "Urban Planning"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文探讨了住房潜力的公共数据模型及其在城市数字孪生中的应用，旨在通过标准化数据模型支持城市规划与更新决策。",
+      "insight_zh": "该研究强调了数据标准化在城市数字孪生中的重要性，为城市更新中的多源数据融合提供了模型基础。"
+    },
+    {
+      "key": "arxiv:2608.24738",
+      "title": "TorchMorph: CUDA-accelerated Morphological Transforms",
+      "title_zh": "TorchMorph：CUDA加速的形态学变换",
+      "url": "https://arxiv.org/abs/2608.24738",
+      "doi": "",
+      "arxiv_id": "2608.24738",
+      "authors": [
+        "Kai Zhao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T15:46:45+00:00",
+      "score": 90,
+      "reason": "该论文介绍TorchMorph，一个CUDA加速的形态学变换库，与遥感图像处理和GIS分析高度相关。其支持批量GPU操作，可显著加速地理空间数据中的形状和掩膜处理，且API兼容scipy，便于集成。",
+      "tags": [
+        "Morphological Transforms",
+        "CUDA",
+        "PyTorch",
+        "GPU Acceleration",
+        "Image Processing"
+      ],
+      "abstract": "Morphological transforms are long-standing tools for shape and mask processing, but the de facto reference implementation in the Python ecosystem, i.e. scipy.ndimage, is CPU-only, single-array, and therefore unusable inside a GPU training loop without an expensive device-to-host round trip. GPU vision libraries built on PyTorch cover a narrow subset of these operators, typically restricted to two spatial dimensions and flat structuring elements. We present TorchMorph, a lightweight PyTorch extension that closes this gap. TorchMorph exposes 22 public operators covering binary morphology, greyscale morphology, exact and approximate distance transforms, and entropy-regularised optimal transport, all implemented as fused CUDA kernels that operate directly on (B, C, Spatial...) CUDA tensors with up to eight spatial dimensions. The API deliberately mirrors scipy.ndimage argument-for-argument, including border modes, structuring-element origins and pre-allocated outputs, so that existing pipelines port with a change of import. We describe the layered architecture and the kernel designs behind each operator family. Against single-threaded CPU references, batched execution reaches up to 1.1e3 times the throughput of scipy.ndimage on greyscale morphology and up to 350x on exact Euclidean distance transforms, while the Sinkhorn solver runs up to 42x faster than POT. Binary and chamfer operators reproduce their SciPy counterparts exactly, and every float-valued operator agrees with the CPU reference to within 1.8e-6 absolute error. TorchMorph is released under the MIT licence at https://intcomp.github.io/tm.",
+      "summary_zh": "本文提出TorchMorph，一个轻量级PyTorch扩展，提供22个形态学算子，包括二值/灰度形态学、距离变换和最优传输，全部实现为融合CUDA内核，支持最多8维张量。其API镜像scipy.ndimage，批量执行速度比CPU参考快达1100倍。",
+      "insight_zh": "GPU加速的形态学变换库能极大提升遥感影像处理效率，且与现有Python生态兼容，这为大规模地理空间数据分析（如城市形态提取）提供了高性能工具。"
     },
     {
       "key": "arxiv:2608.24665",
@@ -107,6 +217,44 @@
       "insight_zh": "当前基于公共数据的电力中断预测模型在现实部署条件下泛化能力有限，需要更现实的评估协议和更好的数据覆盖。"
     },
     {
+      "key": "arxiv:2608.24154",
+      "title": "Rethinking Pre-Training and Augmentation for Zero-Shot Cross-City Object Detection",
+      "title_zh": "重新思考零样本跨城市目标检测的预训练与增强",
+      "url": "https://arxiv.org/abs/2608.24154",
+      "doi": "",
+      "arxiv_id": "2608.24154",
+      "authors": [
+        "Long Hoang Pham",
+        "Quoc Pham-Nam Ho",
+        "Huy-Hung Nguyen",
+        "Duong Nguyen-Ngoc Tran",
+        "Ngoc Doan-Minh Huynh",
+        "Cu Quoc Le",
+        "Hoang-Khang Nguyen",
+        "Hyung-Min Jeon",
+        "Chi Dai Tran",
+        "Son Hong Phan",
+        "Duong Khac Vu",
+        "Trinh Le Ba Khanh",
+        "Jae Wook Jeon"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T07:16:42+00:00",
+      "score": 90,
+      "reason": "该研究直接针对跨城市目标检测中的地理域偏移问题，是GIS和遥感领域中的核心挑战，与博士研究中遥感变化检测和多源数据融合高度相关，且提出的方法具有实际应用价值。",
+      "tags": [
+        "目标检测",
+        "跨城市泛化",
+        "预训练",
+        "数据增强",
+        "域偏移",
+        "交通监控"
+      ],
+      "abstract": "Real-world deployment of traffic surveillance systems is bottlenecked by geographic domain shift, in which models trained in one city underperform when applied to an unseen target city. Conventional domain adaptation relies on hyperparameter-sensitive architectures or direct profiling of target data. Both are fundamentally precluded in privacy-conscious ecosystems that require completely blind training and evaluation loops. In this setting, we explore the effects of pre-training and augmentation in addressing the domain shift problem. Specifically, we propose a new modular training pipeline for object detection structured around two core orthogonal pillars: (1) a multi-dataset pre-training strategy featuring a class-agnostic objectness distillation to decouple structural vehicle geometry from semantic taxonomies, and (2) a domain-resilient augmentation stream featuring a novel Grayworld transformation that forces global attention heads to strip volatile chromatic shortcuts in favor of robust shape priors. When evaluated with the real-time transformer-based detector RF-DETR, our framework bridges cross-city distribution gaps while using limited GPU memory (16GB). Our optimized variants, RF-DETR-HR and RF-DETR-Grayworld, deliver a substantial empirical gain of +24.29 over the baseline, achieving 1st place (47.53 mAP) on the AI City Challenge Track 6 leaderboard. Code and data are available at: ------------------------------------------------------------------------------",
+      "summary_zh": "针对交通监控系统面临的地理域偏移问题，本文提出一种模块化训练流程，包含两个核心支柱：(1) 多数据集预训练策略，采用类无关的物体性蒸馏来解耦结构车辆几何与语义分类；(2) 域弹性增强流，引入Grayworld变换以强制全局注意力头剥离易变的颜色捷径，转而依赖稳健的形状先验。在RF-DETR检测器上评估，该方法在有限GPU内存下弥合了跨城市分布差距，在AI City Challenge Track 6上以47.53 mAP获得第一名，比基线提升+24.29。",
+      "insight_zh": "该研究表明，通过精心设计的预训练和增强策略，可以在不访问目标域数据的情况下有效缓解地理域偏移，为隐私敏感场景下的模型部署提供了新思路。"
+    },
+    {
       "key": "arxiv:2608.24133",
       "title": "PlaceSeek: Human-Centered Geospatial Retrieval of Urban Outdoor Places via Semantic Grounding and Affective Alignment",
       "title_zh": "PlaceSeek：通过语义锚定和情感对齐实现以人为本的城市户外场所地理空间检索",
@@ -131,6 +279,121 @@
       "abstract": "People search for urban outdoor places not only by category or function, but also by what activities a place can support and how it is perceived. Existing geospatial retrieval remains largely POIcentric and metadata-driven, making it difficult to satisfy openended, affective, or activity-oriented needs. We present PlaceSeek, a human-centered outdoor place retrieval framework that maps natural-language queries to geolocated street-view imagery. PlaceSeek introduces an intent-aware retrieval mechanism that decomposes user queries into functional and affective sub-intents. A Semantic Grounding Module verifies whether candidate street-view results contain the physical evidence needed to support the intended activity, while an Affective Alignment Module re-ranks physically valid candidates using a LoRA-adapted vision-language model trained on human urban perception judgments. We evaluate PlaceSeek on 31,956 street-view locations in Milan across 10 naturallanguage queries annotated by five human evaluators. PlaceSeek achieves 88.0% Precision@5, a mean match score of 3.39/4.0, and 0.920 nDCG@5, outperforming CLIP, fine-tuned CLIP, SigLIP, and a VQA-based baseline. Ablation results show that physical grounding is essential for retrieval validity, while affective alignment improves ranking quality among physically valid candidates. These findings highlight that complex urban spatial queries require modeling both verifiable visual evidence and human perceptual preferences. PlaceSeek provides a potential framework for human-centered nextgeneration geospatial retrieval systems.",
       "summary_zh": "PlaceSeek是一个以人为本的户外场所检索框架，将自然语言查询映射到带地理位置的街景影像。它引入意图感知的检索机制，将用户查询分解为功能性和情感性子意图。语义锚定模块验证候选街景结果是否包含支持预期活动的物理证据，情感对齐模块则使用在人类城市感知判断上训练的LoRA适配视觉语言模型对物理有效候选进行重排序。在米兰的31,956个街景位置上的评估中，PlaceSeek在Precision@5、匹配分数和nDCG@5上均优于CLIP、SigLIP和VQA基线。消融实验表明，物理锚定对于检索有效性至关重要，而情感对齐则能提升排序质量。",
       "insight_zh": "该研究强调了在城市空间检索中同时建模可验证的视觉证据和人类感知偏好的必要性，其将功能性子意图与情感子意图分离并分别处理的方法，为构建更符合人类需求的下一代地理空间检索系统提供了有价值的框架。"
+    },
+    {
+      "key": "arxiv:2608.23740",
+      "title": "AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace",
+      "title_zh": "AgentRoom：基于CRDT共享工作区的并发多智能体编码",
+      "url": "https://arxiv.org/abs/2608.23740",
+      "doi": "",
+      "arxiv_id": "2608.23740",
+      "authors": [
+        "Seonglae Cho",
+        "Donghyun Lee"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T18:28:33+00:00",
+      "score": 90,
+      "reason": "该研究提出了基于CRDT的实时协作编辑协议，用于解决并发多智能体编码的协调问题，与博士研究方向中的LLM和多智能体系统高度契合，对设计协作式地理空间分析智能体有直接启发。",
+      "tags": [
+        "多智能体",
+        "CRDT",
+        "协作编辑",
+        "LLM",
+        "软件工程"
+      ],
+      "abstract": "Concurrent multi-agent coding promises division of labor across modules, robustness through redundancy, and parallel exploration at the natural granularity of multi-file projects. Realtime collaborative editing protocols solve this coordination problem for human teams via Conflict-free Replicated Data Types (CRDTs), but the LLMs underneath generate one token at a time and existing multi-agent coding systems inherit this serial limit: they either sequence agents through phase handoffs or pool independent samples without coordination, and a single agent abandons up to half of hard tasks with a one-file stub-and-exit. AgentRoom is a realtime collaborative editing protocol for concurrent coding agents. Its runtime layer exposes file-level claim, status, and broadcast as MCP tools on a CRDT-merged shared filesystem. Five frontier coding-CLI models ran four backend coding tasks, with cross-language checks in Python DevBench and Rust+axum. For CLI-stable models, AgentRoom with 2 agents abandons fewer tasks than Solo and has less run-to-run variation. At matched-compute, one positive mean LLM-judge contrast puts AgentRoom over parallel-merge. The other contrast, a bundle probe, puts full AgentRoom above each partial case: an ordering rather than a percentage split. Coordination, not parallelism or CRDT-merge, bears the load.",
+      "summary_zh": "提出了AgentRoom，一个用于并发编码智能体的实时协作编辑协议。其运行时层通过MCP工具在CRDT合并的共享文件系统上暴露文件级声明、状态和广播功能。五个前沿编码CLI模型在四个后端编码任务上进行了测试。对于CLI稳定的模型，使用2个智能体的AgentRoom比Solo放弃的任务更少，且运行间变化更小。在匹配计算量下，一个正的LLM-judge对比显示AgentRoom优于并行合并。另一个对比（bundle probe）显示完整的AgentRoom优于每个部分情况。研究表明，协调机制而非并行性或CRDT合并本身承担了主要负载。",
+      "insight_zh": "在多智能体协作系统中，智能体间的实时协调协议（如基于CRDT的共享状态）比简单的并行或合并策略更能有效提升整体任务完成率和稳定性，这对构建复杂的多智能体城市模拟系统至关重要。"
+    },
+    {
+      "key": "arxiv:2608.23622",
+      "title": "LLM Agents Perform Controlled Experiments Using Simulation Models",
+      "title_zh": "LLM智能体利用仿真模型进行受控实验",
+      "url": "https://arxiv.org/abs/2608.23622",
+      "doi": "",
+      "arxiv_id": "2608.23622",
+      "authors": [
+        "Yuchen Xia",
+        "Michael Weyrich",
+        "Nasser Jazdi",
+        "Johannes St\\\"umpfle",
+        "Johannes Sigel",
+        "Akshay Narla",
+        "Gavin K. Reynolds",
+        "Anna Jawor-Baczynska",
+        "Pol Llopart"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-22T18:54:52+00:00",
+      "score": 90,
+      "reason": "该研究提出的多智能体框架将LLM与仿真模型耦合，通过设计实验、执行比较仿真和综合证据来优化过程参数，这与您将LLM和多智能体用于城市更新模拟与决策支持的研究方向高度契合，提供了可借鉴的推理范式。",
+      "tags": [
+        "LLM Agent",
+        "多智能体",
+        "仿真实验",
+        "科学发现",
+        "过程优化"
+      ],
+      "abstract": "Large language models (LLMs) have shown strong capabilities in reasoning, planning, and tool use, but many scientific and engineering tasks require more than plausible text and code generation. They require understanding how a system responds to intervention, which in practice depends on controlled experimentation. In this work, we propose a multi-agent framework that enables LLM agents to conduct controlled experiments with scientific simulation models for pharmaceutical process design. Given a user query and a baseline configuration, the system constructs a structured task representation, designs experiments, executes comparative simulation, interprets the resulting outcomes, and synthesizes evidence-based recommendations for process parameter optimization. By coupling language models with high-fidelity simulation models in an interactive agent framework, the proposed system supports reasoning through intervention, comparison, and observation. As a result, it produces more specific and actionable outputs than language-only reasoning. In an industrial application setting, this advantage is reflected in higher output specificity as well as improved user-rated correctness and helpfulness. Ablation studies and visualized case analyses further demonstrate the effectiveness and practical utility of simulation-integrated experimental reasoning.",
+      "summary_zh": "本文提出一个多智能体框架，使LLM能够针对科学仿真模型进行受控实验。系统能构建任务表示、设计实验、执行比较仿真、解释结果并给出基于证据的参数优化建议。在工业应用中，该方法比纯语言推理产生更具体、更正确、更有用的输出。",
+      "insight_zh": "将LLM的推理能力与高保真仿真模型结合，能实现“通过干预、比较和观察”的推理，这为城市更新中多方案情景模拟与政策效果评估提供了新思路，即利用智能体自动探索参数空间并生成可操作的决策建议。"
+    },
+    {
+      "key": "arxiv:2608.24809",
+      "title": "Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch",
+      "title_zh": "结构有界的智能体图探索用于证据溯源的学术深度搜索",
+      "url": "https://arxiv.org/abs/2608.24809",
+      "doi": "",
+      "arxiv_id": "2608.24809",
+      "authors": [
+        "Rima Hazra",
+        "Sayan Layek",
+        "Somnath Banerjee",
+        "Soumen Chakrabarti",
+        "Animesh Mukherjee"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T16:51:26+00:00",
+      "score": 85,
+      "reason": "该研究提出结构有界的智能体图探索方法用于学术深度搜索，强调可检查性和证据溯源。城市更新研究中常需进行文献综述和证据挖掘，该方法可提升研究效率。",
+      "tags": [
+        "智能体",
+        "图探索",
+        "学术搜索",
+        "证据溯源",
+        "引文网络"
+      ],
+      "abstract": "We present Crase, a bounded and inspectable alternative to deep research agents for scholarly search. Instead of an open-ended search loop, Crase queries a search engine once for seed papers, expands them along their 1.5-hop citation neighborhood, prunes citation edges whose claims lack entailment support, and ranks the remaining papers with a recency-aware random walk. This makes the candidate set, the reason each paper is kept, and the stopping condition explicit and fixed before inference. On LitSearch and one further benchmarks over a 500K-paper arXiv corpus, Crase outperforms deep research agents built on proprietary models by up to 3$\\times$ recall@50 at roughly a third of the cost.",
+      "summary_zh": "本文提出Crase，一种有界且可检查的学术搜索深度研究智能体替代方案。它通过一次搜索获取种子论文，沿1.5跳引文邻域扩展，剪除缺乏蕴含支持的引文边，并用考虑时效性的随机游走对剩余论文排序。该方法在多个基准上以约三分之一的成本超越了基于专有模型的深度研究智能体。",
+      "insight_zh": "通过固定候选集、明确保留原因和停止条件，可实现比开放搜索循环更高效且可检查的学术搜索，为城市更新领域的系统性文献综述提供了有力工具。"
+    },
+    {
+      "key": "arxiv:2608.24782",
+      "title": "Image Difference Quantification Using Autoencoder-Based Latent Representations",
+      "title_zh": "基于自编码器潜在表示的图像差异量化",
+      "url": "https://arxiv.org/abs/2608.24782",
+      "doi": "",
+      "arxiv_id": "2608.24782",
+      "authors": [
+        "Manish Sharma",
+        "Timothy Yim",
+        "Clifton Forlines"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T16:23:47+00:00",
+      "score": 85,
+      "reason": "该论文提出基于自编码器潜在空间的图像差异量化方法，与遥感变化检测高度相关。其利用余弦相似度在潜在空间衡量图像差异，可应用于多时相遥感影像的变化分析，且与感知质量相关。",
+      "tags": [
+        "Autoencoder",
+        "Latent Representation",
+        "Image Similarity",
+        "Change Detection",
+        "Perceptual Quality"
+      ],
+      "abstract": "Traditional image similarity metrics such as Mean Squared Error (MSE), Peak Signal-to-Noise Ratio (PSNR), and the Structural Similarity Index Measure (SSIM) rely on pixel-level comparisons and often fail to capture perceptually meaningful differences between images. In contrast, latent representations learned by deep neural networks encode high-level semantic information that is more closely aligned with human visual perception. This paper proposes a convolutional autoencoder-based framework for quantifying image differences using cosine similarity in latent space. The learned compact embeddings enable robust differentiation between visually distinct images under variations in illumination, pose, and background. Extensive evaluation on dog-cat images and additional cross-domain datasets demonstrates clear class-wise clustering and strong inter-class separability in the latent space, with 98.4% of dog-cat image pairs exhibiting similarity scores below 0.5. Further validation using the TID2013 dataset shows that latent-space distance correlates positively with human Mean Opinion Scores (MOS), demonstrating sensitivity to perceptually relevant image distortions. The proposed approach provides a computationally efficient and semantically grounded alternative to conventional pixel-based similarity metrics, with potential applications in content-based retrieval, perceptual quality assessment, and semantic similarity analysis.",
+      "summary_zh": "本文提出一种基于卷积自编码器的框架，在潜在空间中使用余弦相似度量化图像差异。该方法在猫狗图像和TID2013数据集上验证，显示出清晰的类别聚类和与人类感知评分（MOS）的正相关性，为传统像素级相似度指标提供了语义层面的替代方案。",
+      "insight_zh": "潜在空间中的距离度量能更好地捕捉语义变化，这为遥感变化检测提供了新思路，即通过学习到的紧凑表示而非原始像素来识别地表覆盖变化，可能对光照和视角变化更具鲁棒性。"
     },
     {
       "key": "arxiv:2608.24756",
@@ -191,115 +454,470 @@
       "insight_zh": "该研究展示了将超分辨率技术应用于静止轨道卫星云产品的潜力，为大气监测、天气预报等应用提供更精细的云信息，其跨传感器数据构建思路对多源数据融合研究具有参考价值。"
     },
     {
-      "key": "arxiv:2608.23626",
-      "title": "A survey detection channel overrides the pixels in an astronomical foundation model, and biases tomographic mean redshifts",
-      "title_zh": "一项调查检测通道覆盖了天文基础模型中的像素，并偏置了层析红移",
-      "url": "https://arxiv.org/abs/2608.23626",
+      "key": "arxiv:2608.24680",
+      "title": "Game2World Engine: Unlocking In-the-Wild Gameplay Videos for World Model Training",
+      "title_zh": "Game2World引擎：解锁野外游戏视频用于世界模型训练",
+      "url": "https://arxiv.org/abs/2608.24680",
       "doi": "",
-      "arxiv_id": "2608.23626",
+      "arxiv_id": "2608.24680",
       "authors": [
-        "Ihor Kendiukhov"
+        "Wenxuan Shen",
+        "Dongna Jin",
+        "Dongping Chen"
       ],
       "venue": "arXiv",
-      "published": "2026-08-23T01:10:54+00:00",
-      "score": 80,
-      "reason": "该研究通过因果干预审计天文基础模型，揭示了训练数据中系统性的不完整性偏差，对理解多模态基础模型在科学数据中的应用风险具有重要启示，与地理空间智能中的数据可靠性研究相关。",
+      "published": "2026-08-25T15:13:32+00:00",
+      "score": 85,
+      "reason": "该研究提出从游戏视频中提取和去除UI元素以训练世界模型，其核心的UI去除技术可类比于遥感影像中的云/阴影去除或地物遮挡处理，对视频数据预处理和生成模型训练有重要借鉴意义。",
       "tags": [
-        "基础模型",
-        "天文",
-        "数据偏差",
-        "因果干预",
-        "红移估计"
+        "世界模型",
+        "视频生成",
+        "游戏视频",
+        "UI去除",
+        "数据增强"
       ],
-      "abstract": "Foundation models for astronomy are trained on survey pixels together with the catalogue products derived from those pixels. Those catalogues are incomplete at a measurable rate, and a model trained on both inherits that incompleteness as a systematic. We audit AION-1, a 39-modality transformer trained on more than 200 million objects, using causal interventions on its inputs. Holding the image tokens byte-identical and editing only the survey segmentation map changes every quantity the model reports -- flux, size, ellipticity, redshift -- by 110-4400 times a matched placebo. The mechanism is detection gating, presence at the field centre (r = 0.47), not the light the mask encloses (r = 0.30); across 322 real blends the model ignores how the pipeline partitioned the light (R = -0.006). Nor is the preference specific to that channel: contradicted catalogue photometry leaves the model nine times worse than supplying no metadata at all. The Legacy Survey pipeline leaves 3.68% of targets with no segment covering their position. Propagating that rate, with a miss represented by the fields the pipeline actually returns, shifts tomographic mean redshifts by a median 0.71 times the LSST DESC requirement over 40 assignments and exceeds it in 12; observed positional errors take the worst bin to 8.3 times. Drawing the misses by their measured magnitude dependence rather than uniformly does not change it. Spectroscopy removes the effect, withholding the detection channel removes it at no measurable cost, and the effect grows with model scale. Two further limits lie in the tokeniser: its image codec resolves 28 effective states on source patches against 934 for the spectrum codec, and the redshift readout is quantisation-limited. Sparse dictionaries are unreliable causal handles: across 15, recovery spans 26-75% and moves up to 18 points on the seed alone.",
-      "summary_zh": "该研究审计了AION-1天文基础模型，发现其预测结果主要由调查分割图（检测通道）而非图像像素驱动。训练数据中的不完整性导致模型产生系统性偏差，进而影响层析红移估计，其偏差量可超过LSST DESC要求。",
-      "insight_zh": "该研究警示，在训练多模态科学基础模型时，必须谨慎处理辅助数据（如目录产品）中的系统性缺失，否则模型会继承并放大这些偏差，影响下游科学推断的可靠性。"
+      "abstract": "Video games provide a scalable source of training data for video world models, offering diverse environments, complex interactions, and abundant in-the-wild gameplay videos. However, raw gameplay footage entangles the game world with screen-space interfaces, introducing game-specific biases and irrelevant dynamics that hinder world-model training. To address this problem, we introduce GameUI-Taxonomy and G2WEngine, a full-stack framework that formalizes gameplay UI grounding and removal. G2WEngine automatically extracts reusable UI assets from real gameplay videos and synthesizes temporally coherent UI overlays on clean footage. Using this engine, we construct Game2World, comprising 96K synthetic paired videos with precise reconstruction targets and 1,079 in-the-wild clips from 303 games for realistic evaluation. Its asset library contains 5,132 verified UI elements across 21 taxonomy categories, collected from 1,010 representative gameplay frames. Based on Game2World, we propose GameCleaner, a mask-free gameplay UI removal model that combines multimodal semantic understanding with video editing capabilities. Unlike mask-based methods, GameCleaner directly identifies and removes diverse HUD elements while preserving the underlying scene content and temporal dynamics. In a controlled pilot, world models trained on UI-free gameplay improve overall VideoReward by 6.83% over those trained on UI-overlaid data. On UI-removal evaluation, GameCleaner achieves an average AAR of 95.36 on synthetic videos, outperforming the strongest temporal mask baseline by 57.3%, and obtains the best in-the-wild AAR of 80.05 with 99.8 background preservation. These results demonstrate the scalable potential of transforming Internet gameplay videos into high-quality world-model training data. Code, dataset, and model will be available at https://github.com/Dongping-Chen/Game2World.",
+      "summary_zh": "视频游戏为视频世界模型提供了可扩展的训练数据来源。然而，原始游戏画面将游戏世界与屏幕空间界面纠缠在一起，引入了特定于游戏的偏差和无关动态。本文提出GameUI-Taxonomy和G2WEngine框架，用于形式化游戏UI的定位和移除。G2WEngine自动从真实游戏视频中提取可复用的UI资产，并在干净画面上合成时间连贯的UI叠加。基于此构建了Game2World数据集，并提出了GameCleaner，一种无掩码的游戏UI移除模型。实验表明，在无UI的游戏画面上训练的世界模型，其VideoReward提升了6.83%。",
+      "insight_zh": "该研究提出的将复杂场景中的无关动态元素（如UI）与核心环境分离的方法，可启发遥感领域中的地物解耦或数据清洗技术，以提升下游模型（如变化检测、视频预测）的训练质量。"
     },
     {
-      "key": "arxiv:2608.24764",
-      "title": "Evidence Blindness in Direct Corpus Interaction: Persistent Navigation with AtlasNav",
-      "title_zh": "直接语料库交互中的证据盲区：使用AtlasNav进行持久导航",
-      "url": "https://arxiv.org/abs/2608.24764",
+      "key": "arxiv:2608.24471",
+      "title": "Implicit Q-learning-bootstrapped ant colony optimization for maritime moving-target observation scheduling with agile satellites",
+      "title_zh": "基于隐式Q学习引导的蚁群优化用于敏捷卫星海上移动目标观测调度",
+      "url": "https://arxiv.org/abs/2608.24471",
       "doi": "",
-      "arxiv_id": "2608.24764",
+      "arxiv_id": "2608.24471",
       "authors": [
-        "Hongyu Guo",
-        "Zhiyu Zheng",
-        "Zhao Cao"
+        "He Wang",
+        "Junyu Wu",
+        "Yeye Liu",
+        "Yifan Zhou",
+        "Jie Zhang",
+        "Hui Li",
+        "Yanjie Song",
+        "Liang Li"
       ],
       "venue": "arXiv",
-      "published": "2026-08-25T16:03:02+00:00",
-      "score": 75,
-      "reason": "论文探讨了LLM智能体在直接语料库交互中的证据盲区问题，并提出持久化多视图导航框架，与LLM和多智能体研究方向高度相关。",
+      "published": "2026-08-25T12:17:25+00:00",
+      "score": 85,
+      "reason": "该论文研究海上移动目标观测的卫星调度问题，属于地理空间优化领域，与城市更新中的时空数据挖掘和优化方法高度相关。",
       "tags": [
-        "大语言模型",
-        "智能体",
-        "信息检索",
-        "语料库导航"
+        "卫星调度",
+        "蚁群优化",
+        "Q学习",
+        "移动目标观测",
+        "组合优化"
       ],
-      "abstract": "Large language model agents are moving beyond conventional retrieval-augmented generation toward direct interaction with external corpora. Direct Corpus Interaction (DCI) keeps the full corpus accessible, yet reachable evidence can remain unusable under finite interaction budgets. Required evidence may fail to surface, a surfaced supporting document may remain unopened, or an opened document may fail to expose its decisive fragment. We call this progressive silent loss Evidence Blindness and quantify it through stage-wise evidence realization. Within the DCI paradigm, raw interaction adds little reusable corpus organization, while dynamic-workspace methods reconstruct a query-conditioned interaction space from each query and trajectory. In both cases, useful structure is recovered largely online. We instead formulate large-scale agentic search as finite-budget navigation over reusable corpus structure. We introduce AtlasNav, a persistent multi-view corpus-navigation framework that retains direct corpus interaction but organizes the corpus once into a Corpus Atlas, allowing each query to navigate adaptively rather than reconstruct shared structure. On BrowseComp-Plus, AtlasNav achieves 92.05% strict accuracy while reducing recorded online inference cost by 30.21% relative to the prior dynamic-workspace state of the art. Under matched budgets, it realizes the complete required evidence earlier and approaches the same model's evidence-supplied empirical reference more rapidly. The same representation principle remains effective under PhantomWiki's distinct corpus organization and controlled 10K-1M scaling, and transfers competitively to heterogeneous enterprise knowledge. These results show that agentic search depends not only on accessible evidence, but also on how the corpus is represented so that limited interaction becomes effective navigation.",
-      "summary_zh": "提出证据盲区概念，指在有限交互预算下，LLM智能体无法有效利用语料库中证据的现象。为此引入AtlasNav框架，将语料库组织为持久化的Corpus Atlas，使查询能够自适应导航。在BrowseComp-Plus上达到92.05%的准确率，并将在线推理成本降低30.21%。",
-      "insight_zh": "智能体搜索的性能不仅取决于证据的可访问性，还取决于语料库结构的组织方式，持久化结构比动态重建更高效。"
+      "abstract": "Maritime moving-target observation scheduling with agile Earth observation satellites is a dynamic, sequence-dependent combinatorial optimization problem. Sea-surface targets move continuously, causing feasible observation windows to vary with target motion and satellite orbital geometry. The scheduler must jointly determine task selection, satellite assignment, observation-window selection, and observation ordering under time-window, attitude-maneuvering, onboard-resource, and cloud-affected availability constraints. This paper proposes an implicit Q-learning-bootstrapped ant colony optimization method, termed IQACO, for multi-satellite maritime moving-target observation scheduling. Rather than directly learning a task-selection policy, IQACO embeds an offline implicit Q-learning module into constructive ant colony optimization to adaptively adjust the pheromone factor, heuristic factor, and evaporation rate. A compact search-state representation captures pheromone distribution, current and historical-best solution quality, and iteration progress. During online scheduling, ant colony optimization constructs feasible observation sequences, while the learned policy regulates exploration and exploitation according to the current search state. Experiments on 14 scenarios with different scales and satellite configurations show that IQACO obtains the highest mean observation benefit in every scenario, improves the result of conventional ant colony optimization by 3.40\\%--9.40\\%, accelerates convergence, and remains stable under different objective-weight settings. These results demonstrate that offline value learning provides an effective adaptive search-control mechanism for constrained maritime moving-target observation scheduling.",
+      "summary_zh": "该论文提出了一种隐式Q学习引导的蚁群优化方法（IQACO），用于多卫星海上移动目标观测调度。通过离线Q学习模块自适应调整蚁群参数，实验表明IQACO在14个场景中均获得最高平均观测收益，并加速了收敛。",
+      "insight_zh": "离线价值学习可有效控制构造式搜索的探索与利用，为动态环境下的组合优化问题提供了新的解决思路。"
     },
     {
-      "key": "arxiv:2608.24364",
-      "title": "B-MIM: Biased Masked Image Modeling for Generalizable Segmentation of Fine-Grained Anatomical Structures",
-      "title_zh": "B-MIM：用于精细解剖结构可泛化分割的偏置掩码图像建模",
-      "url": "https://arxiv.org/abs/2608.24364",
+      "key": "arxiv:2608.24441",
+      "title": "A Behavior-Guided Online Probabilistic Forecasting Method for Electric vehicle Charging Loads",
+      "title_zh": "一种行为引导的电动汽车充电负荷在线概率预测方法",
+      "url": "https://arxiv.org/abs/2608.24441",
       "doi": "",
-      "arxiv_id": "2608.24364",
+      "arxiv_id": "2608.24441",
       "authors": [
-        "Sebasti\\'an Gonz\\'alez",
-        "Karen Sanchez",
-        "Jos\\'e M. Saavedra",
-        "Marcelo Pizarro",
-        "Bernard Ghanem"
+        "Chenghan Li",
+        "Qingxiang Liu",
+        "Yinliang Xu",
+        "Yuxuan Liang"
       ],
       "venue": "arXiv",
-      "published": "2026-08-25T10:20:05+00:00",
-      "score": 75,
-      "reason": "该研究提出一种偏向局部重建的自监督预训练方法，以提升对精细解剖结构的泛化能力，其方法论对遥感图像中精细地物（如道路、建筑物边缘）的表示学习具有借鉴意义。",
+      "published": "2026-08-25T11:57:06+00:00",
+      "score": 85,
+      "reason": "该研究聚焦于电动汽车充电负荷的在线概率预测，明确考虑了充电站的行为异质性和时间演变，这与城市更新中交通与能源基础设施的时空动态分析高度相关。其提出的行为引导和漂移感知框架，对处理城市数据中的非平稳性具有直接借鉴意义。",
       "tags": [
-        "自监督预训练",
-        "医学影像",
-        "CT分割",
-        "掩码图像建模",
-        "精细结构"
+        "电动汽车充电负荷",
+        "在线概率预测",
+        "概念漂移",
+        "行为引导",
+        "时空数据挖掘"
       ],
-      "abstract": "Self-supervised pretraining enables transferable representations for medical imaging, yet most CT encoders remain biased toward coarse semantic understanding, limiting their sensitivity to fine-grained anatomical structures such as vessels or small tumors. In this paper, we introduce Biased Masked Image Modeling (B-MIM), a modification of the iBOT objective that stochastically reduces global semantic alignment to prioritize local patch reconstruction. This bias encourages the encoder to capture high-frequency morphological details and structural continuity. We curate a multi-institutional CT abdominal dataset of 9,955 filtered studies from 17 public sources and pretrain a 3D Swin Transformer backbone using B-MIM. Across inter-dataset experiments on liver vessel segmentation, the proposed encoder improves topological fidelity (clDice) and achieves competitive Dice scores in tumor segmentation, compared to fully fine-tuned baselines, despite updating only a fraction of the parameters. Our results suggest that reducing global semantic pressure during pretraining enhances generalization to intricate anatomical structures.",
-      "summary_zh": "本文提出B-MIM，通过随机减少全局语义对齐以优先进行局部patch重建，使编码器捕获高频形态细节。在包含9955个CT研究的数据集上预训练的3D Swin Transformer，在肝脏血管分割中提升了拓扑保真度（clDice），并在肿瘤分割中取得了有竞争力的Dice分数。",
-      "insight_zh": "该研究表明，在预训练中降低全局语义压力可以增强模型对精细结构的感知能力，这一策略可能适用于遥感图像中细小地物的分割任务。"
+      "abstract": "Electric vehicle (EV) charging loads exhibit strong behavioral heterogeneity and temporal variability, posing significant challenges for online probabilistic forecasting under evolving operating conditions. In particular, persistent charging patterns may differ substantially across stations, while recent behavioral changes can continuously alter the underlying load distributions. This paper proposes a behavior-guided online probabilistic forecasting framework that explicitly characterizes persistent station-specific patterns and recent behavioral changes. A dual-timescale behavior representation is constructed to distinguish long-term charging characteristics from recent behavioral states and quantify their deviations. These behavioral changes are further semantically encoded to guide drift-aware forecasting adaptation, while a delayed-feedback mechanism ensures temporally consistent online updates when observations become available across different forecasting horizons. Experiments on ten heterogeneous real-world charging stations demonstrate that the proposed method consistently outperforms conventional forecasting models and concept-drift-aware online baselines in forecasting accuracy and probabilistic reliability. For 1-h-ahead forecasting, the proposed method reduces MSE and Pinball loss by 15.3\\% and 17.8\\%, respectively, over the corresponding best baselines. For 4-h-ahead forecasting, the improvements further reach 16.8\\% and 22.6\\%, respectively, demonstrating consistent performance gains under evolving charging behaviors and extended forecasting horizons.",
+      "summary_zh": "针对电动汽车充电负荷的行为异质性和时间变异性，本文提出了一种行为引导的在线概率预测框架。该框架构建了双时间尺度行为表征，以区分长期充电特征和近期行为状态，并量化其偏差。行为变化被语义编码以指导漂移感知的预测适应，同时采用延迟反馈机制确保不同预测时域下在线更新的一致性。在10个真实充电站的实验中，该方法在1小时和4小时预测时域上，相较于最优基线，MSE分别降低了15.3%和16.8%，Pinball损失分别降低了17.8%和22.6%。",
+      "insight_zh": "该研究表明，将行为特征显式建模并用于引导预测模型的在线适应，能有效应对城市基础设施数据中的概念漂移。这提示在城市更新动态评估中，融合多时间尺度的行为信息（如长期模式与近期变化）是提升预测鲁棒性的关键。"
     },
     {
-      "key": "arxiv:2608.24747",
-      "title": "SkillForge: Evolving Verifiable Skills for Reinforcement Learning Agents",
-      "title_zh": "SkillForge：为强化学习智能体进化可验证技能",
-      "url": "https://arxiv.org/abs/2608.24747",
+      "key": "arxiv:2608.24366",
+      "title": "Variance-Guided Spatial Attention Fusion for Robust End-to-End Driving under Asymmetric Sensor Degradation",
+      "title_zh": "方差引导的空间注意力融合用于非对称传感器退化下的鲁棒端到端驾驶",
+      "url": "https://arxiv.org/abs/2608.24366",
       "doi": "",
-      "arxiv_id": "2608.24747",
+      "arxiv_id": "2608.24366",
       "authors": [
-        "Shidong Yang",
-        "Ziyu Ma",
-        "Tongwen Huang",
-        "Xucong Wang",
-        "Renda Li",
-        "Yiming Hu",
-        "Yong Wang",
-        "Xiangxiang Chu"
+        "Weizhi Tao",
+        "Zengwang Jin",
+        "Xiao Wang",
+        "Hailong Huang"
       ],
       "venue": "arXiv",
-      "published": "2026-08-25T15:52:10+00:00",
-      "score": 70,
-      "reason": "论文提出SkillForge框架，使LLM智能体能够通过环境交互验证和优化技能，与LLM和多智能体研究方向紧密相关。",
+      "published": "2026-08-25T10:27:02+00:00",
+      "score": 85,
+      "reason": "论文提出方差引导的空间注意力融合方法，处理相机和LiDAR在非对称退化下的鲁棒融合，与多源数据融合和不确定性量化高度相关，对遥感数据融合具有直接借鉴意义。",
       "tags": [
-        "强化学习",
-        "大语言模型",
-        "技能学习",
-        "智能体"
+        "多模态融合",
+        "不确定性估计",
+        "自动驾驶",
+        "传感器退化"
       ],
-      "abstract": "Large language model (LLM) agents are trained with reinforcement learning (RL) for complex decision-making tasks. However, most RL-trained agents remain episodic and cannot accumulate reusable knowledge across episodes. Recent skill-based approaches, such as SkillRL, attempt to address this issue by extracting skills from raw trajectories, but treat the skill bank as an append-only repository without verifying whether stored skills remain effective. In this paper, we propose SkillForge, a framework for continuous skill evolution that enables skills to be verified and refined through environment interaction. By making skill usage explicit during agent interaction, RL can directly optimize both environment actions and skill invocation decisions. SkillForge further introduces evidence-based skill verification and multi-pathway skill induction, allowing the skill bank to continuously grow while maintaining its quality. Extensive experiments on ALFWorld, WebShop, and AppWorld show that SkillForge consistently outperforms SkillRL, demonstrating the effectiveness of continuously verified skills in training stronger LLM agents.",
-      "summary_zh": "提出SkillForge框架，通过环境交互实现技能的持续进化，包括基于证据的技能验证和多路径技能归纳。在ALFWorld、WebShop和AppWorld上的实验表明，SkillForge持续优于SkillRL。",
-      "insight_zh": "对技能库进行持续验证和优化，而非简单追加，能有效提升LLM智能体在复杂决策任务中的表现。"
+      "abstract": "End-to-end multimodal driving has progressed rapidly by fusing camera and LiDAR streams. Existing pipelines remain fragile under asymmetric sensor degradation, where either an entire modality or only a localized region is corrupted while other regions remain useful. The key difficulty is not simply to add an uncertainty head, but to obtain dense reliability supervision, calibrate this reliability against physical fault severity, and use it before unreliable features bias the planner. We propose Variance-Guided Spatial Attention Fusion (VG-SAF), in which dense heteroscedastic reliability estimates act as interpretable spatial gates. The framework couples three components. First, a physically grounded augmentor simulates representative camera and LiDAR failures and emits a continuous spatial mask, providing dense supervision without additional annotation. Second, modality-specific experts predict per-pixel reliability scales through cross-branch dense distillation in log space, enforcing a monotone severity-to-scale response. Third, calibrated reliability maps drive a hybrid attention mechanism that suppresses unreliable cells with a local spatial gate and arbitrates between modalities through a cross-modal trust softmax. A Laplace uncertainty head emits a systemic waypoint uncertainty scale that signals severe or combined sensor degradation, including severities outside the training ranges. On the CARLA Longest6 benchmark, VG-SAF consistently improves closed-loop robustness over the baselines across camera-only, LiDAR-only, and joint degradation regimes, as measured by driving score, route completion, and infraction score.",
+      "summary_zh": "提出VG-SAF框架，利用密集异方差可靠性估计作为空间门控，结合物理增强器、模态专家和混合注意力机制，在传感器局部或整体退化时提升闭环驾驶鲁棒性。",
+      "insight_zh": "在多模态融合中，利用密集可靠性估计作为空间门控，并在特征影响规划器之前进行校准，可有效应对非对称传感器退化，提升系统鲁棒性。"
+    },
+    {
+      "key": "arxiv:2608.24237",
+      "title": "STRIVE: Multi-Agent Structured Temporal Reasoning with Integrated Verification for Longitudinal Radiology Report Generation",
+      "title_zh": "STRIVE：集成验证的多智能体结构化时序推理用于纵向放射学报告生成",
+      "url": "https://arxiv.org/abs/2608.24237",
+      "doi": "",
+      "arxiv_id": "2608.24237",
+      "authors": [
+        "Junyeong Maeng",
+        "Eunsong Kang",
+        "Heung-Il Suk"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T08:43:15+00:00",
+      "score": 85,
+      "reason": "论文提出多智能体结构化时序推理框架用于纵向放射学报告生成，与LLM和多智能体研究方向高度相关，其分解推理和验证机制可应用于城市更新中的时序分析。",
+      "tags": [
+        "多智能体",
+        "时序推理",
+        "放射学报告",
+        "验证",
+        "LLM"
+      ],
+      "abstract": "Longitudinal radiology report generation (LRRG) requires identifying both current findings and their changes relative to a prior study. Existing methods jointly model diagnosis, attribute estimation, temporal comparison, and language generation within implicit representations, which can cause task interference, obscure the evidence underlying each decision, and limit error traceability. They also model progression states as independent labels, ignoring their ordered structure and thus treating missed changes and direction reversals equally. We present STRIVE, Multi-Agent Structured Temporal Reasoning with Integrated Verification for LRRG, which decomposes clinical reasoning into specialized Diagnosis, Attribute, and Temporal Change Agents that produce explicit intermediate evidence. In particular, the Temporal Change Agent is further post-trained using Progression-Aware GRPO, a verifiable, shaped reward that assigns partial credit to direction-preserving errors while scoring direction reversals lowest. STRIVE performs verification at two stages: a deterministic Consistency Gate reconciles the agent outputs before report generation, and a Validation Agent checks whether the generated report is supported by the aggregated clinical evidence. On Longitudinal-MIMIC, STRIVE attains the best clinical efficacy among recent methods and more than doubles Longitudinal Change Concordance (LCC), a measure of temporal agreement with the reference report, over the strongest baseline.",
+      "summary_zh": "本文提出STRIVE框架，将临床推理分解为诊断、属性和时序变化智能体，产生显式中间证据，并通过两阶段验证确保报告与证据一致，在基准上达到最优性能。",
+      "insight_zh": "该研究展示了分解推理和验证机制在复杂时序任务中的有效性，为多智能体系统的可解释性和可靠性提供了范例。"
+    },
+    {
+      "key": "arxiv:2608.24223",
+      "title": "Event-Based Motion Estimation via Oriented Distance Fields",
+      "title_zh": "基于方向距离场的事件驱动运动估计",
+      "url": "https://arxiv.org/abs/2608.24223",
+      "doi": "",
+      "arxiv_id": "2608.24223",
+      "authors": [
+        "Lei Sun",
+        "Yuqin Ma",
+        "Weilun Li",
+        "Haoran Liang",
+        "Runyi Yang",
+        "Kaiwei Wang",
+        "Danda Pani Paudel",
+        "and Luc Van Gool"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T08:27:42+00:00",
+      "score": 85,
+      "reason": "论文提出基于事件相机的运动估计方法，涉及视觉感知和实时处理，与遥感变化检测中的运动分析和视觉传感器处理有较强方法学关联。",
+      "tags": [
+        "事件相机",
+        "运动估计",
+        "方向距离场",
+        "图像去模糊",
+        "低功耗跟踪"
+      ],
+      "abstract": "Event-based motion estimation is central to tasks that demand high temporal resolution and robustness to fast motion. Existing methods typically rely on iterative optimization or repeated hypothesis comparison, offsetting the sensor's low-latency advantage. We propose Oriented Distance Field Motion Estimation (ODF Motion Estimation), which replaces this optimization with a single averaging step over a precomputed field of event distance vectors, combined with an adaptive event-count selection strategy and a parameter-free trail filter. On public and self-collected datasets, ODF motion estimation reaches sub-pixel accuracy at the lowest latency among compared methods. We validate its generality on two downstream applications rather than treating them as separate contributions. First, the estimated trajectory is converted into a blur kernel and paired with a compact iterative-unfolding network, trained on simulated motion-estimation noise, for real-time non-blind image deblurring, attaining competitive or superior PSNR/SSIM with under 1M parameters. Second, the same precomputed field is repurposed for directional event filtering in a low-power asynchronous pupil and glint tracker, sustaining stable tracking for tens of seconds while lowering a near-eye module's power draw.",
+      "summary_zh": "事件相机运动估计对高时间分辨率和快速运动鲁棒性至关重要。提出方向距离场运动估计（ODF Motion Estimation），用预计算事件距离向量的单次平均步骤替代迭代优化，结合自适应事件计数选择和参数自由轨迹滤波器。在公共和自采数据集上达到亚像素精度和最低延迟。该方法还应用于实时非盲图像去模糊和低功耗异步瞳孔闪烁跟踪。",
+      "insight_zh": "预计算方向距离场可将事件运动估计简化为单次平均步骤，在保持亚像素精度的同时实现极低延迟。"
+    },
+    {
+      "key": "arxiv:2608.24212",
+      "title": "NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation",
+      "title_zh": "NeoWorld-Pro：从单目图像编程交互式场景用于具身仿真",
+      "url": "https://arxiv.org/abs/2608.24212",
+      "doi": "",
+      "arxiv_id": "2608.24212",
+      "authors": [
+        "Yumeng He",
+        "Yichen Song",
+        "Xiaotian Yang",
+        "Weijia Zhang",
+        "Zanwei Zhou",
+        "Junru Gong",
+        "Xiaokang Yang",
+        "Yunbo Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T08:19:39+00:00",
+      "score": 85,
+      "reason": "该论文提出NeoWorld-Pro框架，利用多模态大语言模型（MLLM）将单目RGB图像转换为可交互的3D环境程序，并进行物理在环验证。这与GIS中的三维场景重建、城市建模和虚拟地理环境构建高度相关，为从视觉数据自动生成仿真就绪的场景提供了新方法。",
+      "tags": [
+        "具身智能",
+        "单目图像",
+        "场景重建",
+        "程序化生成",
+        "多模态大模型",
+        "物理仿真"
+      ],
+      "abstract": "The advancement of Embodied AI necessitates high-quality simulation assets that faithfully mirror the real world. However, transforming raw visual observations into simulation-ready scenes remains challenging due to the lack of physical grounding and scene-level interactivity in current image-to-URDF methods. We propose NeoWorld-Pro, a framework that reformulates monocular scene reconstruction as procedural programming for interactive 3D environments. Leveraging the zero-shot reasoning and code synthesis capabilities of MLLMs, NeoWorld-Pro converts a single RGB image into executable programs specifying object geometry, articulation, and physical properties. A physics-in-the-loop mechanism then iteratively refines the generated programs by validating their execution in a physics engine, enforcing physically plausible articulations, valid object compositions and interactions, and accurate spatial relationships. Experiments show that NeoWorld-Pro outperforms open-loop and prior monocular reconstruction methods, while enabling complex downstream tasks such as stable stacking and fine-grained manipulation.",
+      "summary_zh": "论文提出NeoWorld-Pro框架，将单目场景重建重构为交互式3D环境的程序化编程。它利用MLLM的零样本推理和代码合成能力，将单张RGB图像转换为指定对象几何、关节和物理属性的可执行程序，并通过物理在环机制迭代优化，确保物理上合理的关节、对象组成和空间关系。实验表明其优于开环和先前的单目重建方法，并支持稳定堆叠和精细操作等下游任务。",
+      "insight_zh": "该研究展示了将物理知识融入生成式场景重建的潜力，通过程序化表示和物理验证，弥合了视觉感知与物理仿真之间的鸿沟，为构建高保真、可交互的虚拟地理环境提供了新范式。"
+    },
+    {
+      "key": "arxiv:2608.24130",
+      "title": "Syn2RealTrack: Bridging the Gap Between Synthetic and Real-World Datasets for Online Multi-View Multi-Target Tracking",
+      "title_zh": "Syn2RealTrack：弥合合成与真实数据集差距的在线多视角多目标跟踪",
+      "url": "https://arxiv.org/abs/2608.24130",
+      "doi": "",
+      "arxiv_id": "2608.24130",
+      "authors": [
+        "Duong Nguyen-Ngoc Tran",
+        "Ngoc Doan-Minh Huynh",
+        "Cu Quoc Le",
+        "Hoang-Khang Nguyen",
+        "Long Hoang Pham",
+        "Huy-Hung Nguyen",
+        "Quoc Pham-Nam Ho",
+        "Trinh Le Ba Khanh",
+        "Chi Dai Tran",
+        "Duong Khac Vu",
+        "Son Hong Phan",
+        "Hyung-Min Jeon",
+        "Jae Wook Jeon"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T06:48:50+00:00",
+      "score": 85,
+      "reason": "该论文直接针对仓库场景的多视角3D感知，处理合成到真实的域差距，与GIS中的多源数据融合和地理空间智能高度相关。",
+      "tags": [
+        "多视角多目标跟踪",
+        "合成到真实迁移",
+        "3D感知",
+        "仓库场景"
+      ],
+      "abstract": "Multi-camera 3D perception systems for warehouse scenes are trained largely on synthetic data and evaluated on physically captured environments. The resulting synthetic-to-real gap, which corrupts ground-plane localization and cross-camera identity association, is usually treated as one deficiency for a single domain-adaptation module to absorb; we argue instead that it enters the pipeline at three separable points: the camera calibration, the object shape prior, and the assumption that the object census is known, each admitting a different local remedy. Our online pipeline, Syn2RealTrack, follows this decomposition: lens distortion is recovered from images alone under a calibration that provides none, detections are fused across views by a visibility-weighted part-based descriptor that abstains on occluded parts rather than guessing, person height is measured in closed form from calibration instead of copied from a synthetic prior, and a closed-world cardinality prior is paired with a causal filter that removes the phantom boxes the prior manufactures. The system therefore adapts by reallocating trust between geometry and appearance without retraining a feature extractor. On the AI City Challenge 2026 Track~1 evaluation server it reaches a 3D Higher Order Tracking Accuracy (HOTA) of 52.0118%. The code will be released at https://github.com/SKKUAutoLab/aic26_mc3dp",
+      "summary_zh": "仓库场景的多相机3D感知系统主要基于合成数据训练，并在物理捕获环境中评估。本文认为合成到真实的差距在三个可分离点进入流程：相机标定、物体形状先验和物体数量已知的假设，每个点都有不同的局部补救措施。提出的Syn2RealTrack在线流程遵循这一分解：从图像中恢复镜头畸变，通过可见性加权部分描述符合并跨视图检测，从标定中闭式测量人体高度，并将封闭世界基数先验与因果过滤器配对以移除幻影框。在AI City Challenge 2026 Track 1上达到52.0118%的3D HOTA。",
+      "insight_zh": "将合成到真实的域差距分解为多个可独立处理的点，并通过在几何和外观之间重新分配信任，可以在不重新训练特征提取器的情况下实现有效的域适应。"
+    },
+    {
+      "key": "arxiv:2608.24087",
+      "title": "Knowing When to Ask for Help: Bayesian Self-Escalation in Hierarchical LLM Agents",
+      "title_zh": "知道何时求助：层级LLM智能体中的贝叶斯自我升级",
+      "url": "https://arxiv.org/abs/2608.24087",
+      "doi": "",
+      "arxiv_id": "2608.24087",
+      "authors": [
+        "Nadeem Shaikh"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T05:35:07+00:00",
+      "score": 85,
+      "reason": "该研究探讨LLM智能体在推理过程中自我升级的决策机制，与LLM多智能体系统的设计与优化高度相关。",
+      "tags": [
+        "LLM智能体",
+        "贝叶斯决策",
+        "层级委派",
+        "最优停止"
+      ],
+      "abstract": "Current LLM agent systems decide delegation before reasoning begins (a router picks a model) or after a response is complete (a verifier scores it and may retry). We study a third regime: an agent that recognises, during its own reasoning, that it is unlikely to succeed and transfers control to a stronger model. We formulate intra-generation delegation as a Bayesian optimal-stopping problem over a learned competence posterior -- an online estimate of the agent's eventual task success whose sufficient statistics are learned from labelled trajectories, not read off raw entropy. We derive the myopic escalation threshold in closed form, characterise the optimal policy via dynamic programming, and prove that the optimal policy is a time-varying threshold with no shape assumption on the raw signal. We further prove exponential separation of the oracle belief at the Chernoff-information rate of the signal, a regret bound governed by the calibration of the posterior, and a finite-sample guarantee: with n labelled calibration trajectories the deployed plug-in policy's regret decays as 1/sqrt(n). A controlled simulation study confirms each prediction of the theory, including the predicted 1/sqrt(n) rate. We additionally report a real-model validation on a Qwen2.5-Coder 1.5B->7B code cascade (MBPP, 257 tasks), confirming two of three pre-registered predictions: the escalation frontier dominates post-hoc routing at equal cost, and the cumulative competence belief's discrimination rises over generation.",
+      "summary_zh": "研究了一种新的LLM智能体委派模式：智能体在推理过程中识别自身可能失败并主动将控制权转移给更强模型。将此问题建模为贝叶斯最优停止问题，推导了闭式升级阈值，证明了最优策略是时变阈值，并提供了遗憾界的理论保证。模拟和真实模型验证了理论预测。",
+      "insight_zh": "智能体在推理过程中基于学习到的能力后验进行动态升级，比事后的路由或验证更高效，为设计自适应LLM系统提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.24043",
+      "title": "ConsensusTAS: Self-Supervised Temporal Action Segmentation for Long-Horizon Construction Videos",
+      "title_zh": "ConsensusTAS：用于长时序施工视频的自监督时间动作分割",
+      "url": "https://arxiv.org/abs/2608.24043",
+      "doi": "",
+      "arxiv_id": "2608.24043",
+      "authors": [
+        "Xiaoshan Zhou",
+        "Yafei Sun"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T04:05:15+00:00",
+      "score": 85,
+      "reason": "该研究针对长时序施工视频的自监督时间动作分割，与GIS博士研究中遥感变化检测和视频数据处理高度相关，且其方法在CPU上运行，具有实际应用价值。",
+      "tags": [
+        "时间动作分割",
+        "自监督学习",
+        "施工视频",
+        "长时序",
+        "人机协作",
+        "视频理解"
+      ],
+      "abstract": "Recognizing sequential construction activities is important for collaborative human-robot work; for example, robots are able to understand workers' current and upcoming actions and provide timely tool delivery or physical support. However, despite extensive research on construction worker activity recognition, existing studies have been limited to classifying activity categories, such as climbing, lifting, and walking, instead of recognizing fine-grained activity transitions from long-horizon sequences. Addressing this problem is challenging because annotating action temporal boundaries in long construction videos is time-consuming. In this study, we propose ConsensusTAS, a label-free, self-supervised learning approach to segment continuous video streams into distinct activity phases by exploiting the internal consensus of candidate segmentations. We evaluated our algorithm on three public datasets, where it outperformed state-of-the-art methods, achieving an F1@10 of 73.08 on GTEA, an F1@10 of 64.33 on Breakfast, and an F1@50 of 33.50 on static-camera videos from Assembly101. We also tested it on real-world construction videos, where post-hoc evaluation showed that the model successfully recognized and segmented actions within the composite activity of bricklaying, such as spreading mortar on a brick, placing the brick, pressing, and aligning. Compared with other temporal action segmentation models that require computationally intensive large vision-language models, our method can run on a CPU, which provides practical value for video surveillance and human-robot collaboration on mobile robotic platforms.",
+      "summary_zh": "本文提出ConsensusTAS，一种无标签的自监督学习方法，通过利用候选分割的内部一致性来将连续视频流分割为不同的活动阶段。在三个公共数据集上，该方法优于现有技术，在GTEA上F1@10达73.08，Breakfast上F1@10达64.33，Assembly101静态相机视频上F1@50达33.50。在真实施工视频测试中，模型成功识别并分割了砌砖复合活动中的动作，如铺砂浆、放砖、按压和对齐。与需要大型视觉语言模型的方法相比，该方法可在CPU上运行，为视频监控和移动机器人平台上的人机协作提供了实用价值。",
+      "insight_zh": "该研究展示了自监督方法在无需昂贵标注的情况下识别长时序施工活动的能力，其轻量级特性使其适用于资源受限的移动平台，对智能施工监控有重要意义。"
+    },
+    {
+      "key": "arxiv:2608.23930",
+      "title": "SceneReGen: Generative Reconstruction of 3D Scenes from a Single Image",
+      "title_zh": "SceneReGen：从单张图像生成式重建3D场景",
+      "url": "https://arxiv.org/abs/2608.23930",
+      "doi": "",
+      "arxiv_id": "2608.23930",
+      "authors": [
+        "Zefan Tian",
+        "Yuteng Ye",
+        "Yiheng Zhang",
+        "Yuhang Yang",
+        "Xueqiang Lv",
+        "Shizhou Zhang",
+        "Le Liu",
+        "Di Xu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T00:29:37+00:00",
+      "score": 85,
+      "reason": "该研究聚焦单图像3D场景生成式重建，是计算机视觉与图形学的核心问题，与遥感三维重建、自动驾驶场景理解高度相关。",
+      "tags": [
+        "3D重建",
+        "单图像重建",
+        "生成模型",
+        "场景理解",
+        "自动驾驶"
+      ],
+      "abstract": "Single-image 3D scene reconstruction must complete partially observed objects and place them coherently in a shared observation-aligned scene frame. Object-level generative priors offer strong completion ability, but their centered, scale-normalized outputs are typically expressed in an object frame, creating a fundamental representation gap between object generation and scene reconstruction. We introduce SceneReGen, a generative reconstruction framework that reinterprets scene reconstruction as the generation and assembly of complete object assets in a shared observation-aligned scene frame. SceneReGen addresses the generation-reconstruction gap through selective pose factorization: each object's observed orientation is encoded directly in the generated mesh, while translation and scale are estimated from instance-level and global scene evidence. Given a scene image and instance masks, a geometry encoder extracts dense cues; learnable shape queries condition a pretrained DiT-based 3D generator to produce complete meshes in their observed orientations, while position queries fuse object and scene features to assemble them in the shared frame. On the 3D-FUTURE evaluation subset, SceneReGen achieves the best scene-level CD, scene-level F-Score, and 3D bounding-box IoU among the evaluated methods, ties the best object-level CD, and ranks second in object-level F-Score. Qualitative outputs in autonomous-driving and embodied-AI scenes further illustrate the potential of asset-centric reconstruction beyond indoor furniture.",
+      "summary_zh": "该研究提出SceneReGen框架，将单图像3D场景重建重新定义为在共享观察对齐场景帧中生成和组装完整对象资产。通过选择性姿态分解，对象的观察方向直接编码在生成网格中，而平移和尺度从实例级和全局场景证据中估计。在3D-FUTURE评估子集上，该方法在场景级CD、F-Score和3D边界框IoU上取得最佳结果。",
+      "insight_zh": "该研究通过将对象生成与场景组装分离，有效弥合了对象级生成先验与场景级重建之间的表示差距，为从单张图像进行高质量3D场景重建提供了新思路，并展示了在自动驾驶和具身AI场景中的应用潜力。"
+    },
+    {
+      "key": "arxiv:2608.23922",
+      "title": "Data Mixing as Mixture Experiment: Response Surface Methodology and Optimal Design for Large Language Model Pretraining",
+      "title_zh": "数据混合作为混合物实验：面向大语言模型预训练的响应面方法与最优设计",
+      "url": "https://arxiv.org/abs/2608.23922",
+      "doi": "",
+      "arxiv_id": "2608.23922",
+      "authors": [
+        "Yicheng Mao",
+        "Hongru Du"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T23:56:38+00:00",
+      "score": 85,
+      "reason": "论文将LLM预训练中的数据混合问题形式化为经典混合物实验，并应用响应面方法和最优设计，与时空数据挖掘中的多源数据融合和实验设计高度相关。",
+      "tags": [
+        "数据混合",
+        "实验设计",
+        "LLM预训练",
+        "响应面模型",
+        "优化"
+      ],
+      "abstract": "Data mixing is a central design problem in large language model pretraining: given a fixed token budget, practitioners must decide how much data to allocate to each domain. Recent proxy-based methods address this problem by training small models on candidate mixtures, fitting a response model, and using the response to select mixtures for larger-scale training. We show that this workflow has the structure of a classical mixture experiment. Under this view, data domains are mixture components, token shares are component proportions, proxy-training runs are experimental design points, and validation loss defines a response surface over the probability simplex. We develop this formulation using sparse second-order Scheff\\'{e} response-surface models and construct model-robust $\\mathcal{I}$-optimal designs for proxy data-mixing experiments. Using RegMix as an empirical case study, we demonstrate how the framework can both interpret observed mixture responses and design more efficient proxy experiments. The Scheff\\'{e} analysis shows that domain value is strongly relational: several domains that are weak under additive effects become favourable through pairwise interactions, especially through combinations with web-derived text. The sparse Scheff\\'{e} model preserves mixture rankings across model scales and remains competitive with a flexible machine-learning predictor while providing an explicit decomposition of additive and interaction effects. In a simulation study calibrated to observed proxy-training responses, model-robust $\\mathcal{I}$-optimal designs recover the relevant mixture ordering after removing about 25\\% of the original proxy runs. These results suggest that LLM data mixing should be treated not only as a prediction problem, but also as an experimental-design problem in which the proxy mixtures themselves can be chosen to improve statistical efficiency.",
+      "summary_zh": "论文将LLM预训练中的数据混合问题视为混合物实验，使用稀疏二阶Scheffé响应面模型分析不同数据域及其交互作用对验证损失的影响，并构建模型鲁棒的I-最优设计来优化代理实验。研究揭示了数据域价值的相对性，并证明了该方法在实验效率上的优势。",
+      "insight_zh": "将数据混合视为实验设计问题，并利用响应面模型显式分解各数据源的独立与交互效应，为多源地理数据融合中的最优配比和实验设计提供了严谨的统计学框架。"
+    },
+    {
+      "key": "arxiv:2608.23903",
+      "title": "Continual Visual Learning under Evolving Semantic Concept Shift",
+      "title_zh": "语义概念演化下的持续视觉学习",
+      "url": "https://arxiv.org/abs/2608.23903",
+      "doi": "",
+      "arxiv_id": "2608.23903",
+      "authors": [
+        "Ismail Lamaakal",
+        "Chaymae Yahyati",
+        "Yassine Maleh",
+        "Khalid El Makkaoui",
+        "Ibrahim Ouahbi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T23:14:46+00:00",
+      "score": 85,
+      "reason": "论文研究视觉基础模型在语义概念演化下的持续学习问题，提出了选择性更新视觉-语义映射的框架，这与遥感变化检测中地物分类体系随时间演化、需要持续更新模型的研究方向高度契合。",
+      "tags": [
+        "持续学习",
+        "语义漂移",
+        "视觉基础模型",
+        "概念演化",
+        "变化检测"
+      ],
+      "abstract": "Visual foundation models are commonly adapted under the assumption that the appearance of incoming data may change while the semantic meaning of the prediction task remains fixed. In long-lived visual systems, however, taxonomies, policies, and concept definitions can themselves evolve, causing the same visual evidence to require a different interpretation. We study this setting as evolving semantic concept shift and introduce SemReWrite, a framework for selectively updating obsolete visual--semantic mappings while preserving knowledge that remains valid. SemReWrite represents changes between old and revised semantic specifications, combines semantic discrepancy with sparse revised supervision to localize affected visual regions, and uses an input-dependent low-rank rewriting mechanism together with structured semantic memory, preservation, and obsolete-decision suppression. We further introduce EvoShift-Bench, spanning ImageNet, iNaturalist, CUB-200-2011, and DomainNet, with semantic transitions including class split, merge, boundary revision, insertion, partial redefinition, recurrence, and mixed semantic--appearance shift. To explicitly evaluate selective semantic revision, we introduce Rewrite Accuracy (RA) and Preservation Accuracy (PA) for affected and unaffected regions, respectively, Obsolete Retention (OR) for measuring residual outdated semantic associations, and the Selective Revision Score (SRS), which jointly summarizes rewriting and preservation performance. Experiments show that SemReWrite achieves a stronger balance between learning revised semantics and retaining unaffected knowledge than prompt replacement, conventional fine-tuning, parameter-efficient adaptation, and continual-learning strategies.",
+      "summary_zh": "本文研究视觉基础模型在任务语义定义（如分类体系、政策）随时间演化时的适应问题，提出SemReWrite框架。该框架通过表示新旧语义规范之间的差异，结合语义差异和稀疏的修订监督来定位受影响的视觉区域，并使用输入相关的低秩重写机制、结构化语义记忆和过时决策抑制来选择性更新过时的视觉-语义映射。作者还引入了包含多种语义转换类型的EvoShift-Bench基准和新的评估指标。实验表明，SemReWrite在平衡学习修订语义和保留有效知识方面优于现有方法。",
+      "insight_zh": "该研究为遥感影像分类中地物类别定义随政策或认知变化而更新提供了新的技术路径，可提升长期运行的变化检测系统的适应性和准确性。"
+    },
+    {
+      "key": "arxiv:2608.23867",
+      "title": "Markets, Not Planners: Decentralized Orchestration of LLM Agents with Private Information",
+      "title_zh": "市场而非规划者：具有私有信息的LLM智能体的去中心化编排",
+      "url": "https://arxiv.org/abs/2608.23867",
+      "doi": "",
+      "arxiv_id": "2608.23867",
+      "authors": [
+        "Xiao Liu",
+        "Haoyang Li",
+        "Songwei Li",
+        "Hongbo Fang",
+        "Fengli Xu",
+        "Feng Shi",
+        "James Evans"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T22:15:37+00:00",
+      "score": 85,
+      "reason": "论文探讨了LLM多智能体的去中心化编排机制，与您的研究方向（LLM和多智能体）高度相关。其市场化的任务分配和层级委托机制，可为城市更新中的多智能体协同决策提供新思路。",
+      "tags": [
+        "LLM Agents",
+        "多智能体",
+        "市场机制",
+        "任务分配",
+        "城市更新"
+      ],
+      "abstract": "As LLM agents proliferate, built by different parties and with different capabilities and costs, orchestrating them is more like assembling labor across the economy than a computer calling a subroutine. Existing orchestration is typically centralized, with a single planner assigning every task, but this creates a bottleneck as agent pools grow, requires private information (e.g., agents' execution costs), and can easily be manipulated, such that a single inserted preference nearly doubles a favored agent's task share under a centralized LLM allocator. We introduce AgentLance, a repeated labor market in which agents bid on tasks using their private costs and self-maintained strategy notes, an allocator selects winners from bids and public reputation records, and a VCG-style payment rule rewards cost-aware bidding. Complex tasks are handled by hierarchical delegation: winning agents can decompose work and subcontract it through the same mechanism. Across mathematical reasoning, code generation, knowledge-intensive QA, and agentic tasks, AgentLance matches agents to their specializations, shifts work toward cheaper agents as cost sensitivity rises, and consistently outperforms single-model, centralized-orchestration, and market baselines. Diagnosing market failures, including inaccurate cost self-estimation and sub-optimal bidding, then correcting them in controlled experiments yields further gains, charting a path toward more efficient agent economies.",
+      "summary_zh": "本文提出AgentLance，一个重复劳动力市场，智能体使用私有成本和策略笔记对任务进行投标，分配器根据投标和公共声誉记录选择获胜者，并采用VCG式支付规则。复杂任务通过层级委托处理。实验表明，该方法在数学推理、代码生成、知识密集型问答和智能体任务上优于单模型、集中式编排和市场基线。",
+      "insight_zh": "去中心化的市场机制可能比集中式规划更有效地编排大规模LLM智能体，这为城市更新中涉及多方利益相关者的复杂决策提供了新的组织范式。"
+    },
+    {
+      "key": "arxiv:2608.23855",
+      "title": "In-Context Inpainting for Time Series Forecasting",
+      "title_zh": "用于时间序列预测的上下文修复方法",
+      "url": "https://arxiv.org/abs/2608.23855",
+      "doi": "",
+      "arxiv_id": "2608.23855",
+      "authors": [
+        "Thang Nguyen",
+        "Dung Nguyen",
+        "Romero Morais",
+        "Truyen Tran"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T21:57:56+00:00",
+      "score": 85,
+      "reason": "该研究将时间序列预测重构为视觉修复任务，利用大型视觉模型的泛化能力，为时空数据挖掘提供了新的跨模态范式，与博士研究方向中的多源数据融合与地理空间智能高度相关。",
+      "tags": [
+        "时间序列预测",
+        "视觉基础模型",
+        "视觉上下文学习",
+        "多模态",
+        "模式补全"
+      ],
+      "abstract": "We propose ICI-Time, a novel framework that reframes time series forecasting as a visual inpainting task, leveraging the generalisation power of large vision models (LVMs). Unlike methods that require specialised temporal architectures and extensive domain-specific training, ICI-Time transforms time series into structured visual representations (area charts) and applies visual in-context learning, reformulating forecasting as pattern completion within a grid-structured prompt that pre-trained vision transformers can solve without fine-tuning or architectural modification. Temporal dependencies are represented through spatial layout, with a consistent, invertible mapping between numerical and visual domains. Extensive experiments across epidemiology, meteorology, and power systems demonstrate that ICI-Time performs competitively against deep learning baselines and shows promising adaptability under limited-data settings, introducing a new paradigm that bridges temporal and visual domains.",
+      "summary_zh": "提出了ICI-Time框架，将时间序列预测转化为视觉修复任务，利用大型视觉模型（LVM）的泛化能力。该方法将时间序列转换为结构化视觉表示（面积图），并应用视觉上下文学习，将预测重构为网格结构提示中的模式补全，无需微调或架构修改即可由预训练视觉Transformer解决。时间依赖通过空间布局表示，数值与视觉域之间存在一致且可逆的映射。在流行病学、气象学和电力系统上的实验表明，ICI-Time与深度学习基线相比具有竞争力，并在有限数据设置下展现出良好的适应性。",
+      "insight_zh": "将时间序列数据转化为视觉模式并利用视觉基础模型进行推理，可能为地理时空数据（如遥感时间序列）的预测和分析提供一种新的、无需大量领域特定训练的思路。"
+    },
+    {
+      "key": "arxiv:2608.23845",
+      "title": "Object Counting Across Modalities: Taxonomies, Benchmarks, Applications, and Open Challenges",
+      "title_zh": "跨模态目标计数：分类法、基准、应用与开放挑战",
+      "url": "https://arxiv.org/abs/2608.23845",
+      "doi": "",
+      "arxiv_id": "2608.23845",
+      "authors": [
+        "Joana Konadu Owusu",
+        "Shivanand Venkanna Sheshappanavar"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T21:32:56+00:00",
+      "score": 85,
+      "reason": "该综述系统梳理了跨模态目标计数方法，涵盖遥感领域，并提出了评估基础设施的挑战，与多源数据融合和地理空间智能的研究方向高度相关。",
+      "tags": [
+        "object counting",
+        "foundation models",
+        "remote sensing",
+        "benchmark",
+        "taxonomy",
+        "survey"
+      ],
+      "abstract": "Object-counting methods have rapidly shifted from class-specific density regression to open-vocabulary, foundation-model-backed counters. These methods now enumerate instances from various visual and textual prompts. While this shift marks major conceptual progress, our survey argues that claims of universal generality have outpaced the evaluative infrastructure. Most progress metrics rely on a few saturated benchmarks that models exploit for statistical regularities. Newly introduced diagnostic datasets reveal systematic failures in semantic grounding, temporal identity, and spatial reasoning with occlusion. To address these failures, we introduce a five-axis taxonomy (modality, mechanism, prompting, supervision level, and generalization setting). We use this taxonomy to audit the literature across application domains, including microscopy, remote sensing, crowd counting, and agriculture. This formalizes prevailing challenges into six structural contradictions. From these, we propose a roadmap for compositional scene understanding, active counting agents, and unified multimodal evaluation protocols. The main imperative is to build a robust evaluation infrastructure to distinguish open-world generalization from benchmark-specific optimization, rather than simple incremental engineering.",
+      "summary_zh": "本文是一篇关于目标计数方法的综述，指出该领域已从特定类别的密度回归转向基于开放词汇和基础模型的计数方法。作者认为通用性的宣称已超越评估基础设施，现有基准易被模型利用统计规律。文章提出一个五轴分类法（模态、机制、提示、监督级别和泛化设置），并用于审计包括遥感在内的多个应用领域，将挑战归纳为六个结构性矛盾，最后提出组合场景理解、主动计数代理和统一多模态评估协议的路线图。",
+      "insight_zh": "目标计数模型的评估需要更稳健的基础设施，以区分真正的开放世界泛化与针对特定基准的优化，这对于遥感等应用领域的模型可靠性至关重要。"
     }
   ]
 }

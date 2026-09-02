@@ -4,21 +4,49 @@
   "paper_keys": [
     "arxiv:2608.27456",
     "arxiv:2608.27290",
+    "arxiv:2608.27175",
+    "arxiv:2608.26737",
+    "arxiv:2608.26722",
+    "arxiv:2608.26451",
+    "arxiv:2608.26188",
     "arxiv:2608.26471",
+    "arxiv:2608.26807",
+    "arxiv:2608.26665",
     "arxiv:2608.26489",
+    "arxiv:2608.26142",
+    "arxiv:2603.19873",
+    "arxiv:2608.27365",
+    "arxiv:2608.27260",
+    "arxiv:2608.27122",
+    "arxiv:2608.26978",
     "arxiv:2608.26970",
-    "arxiv:2608.26812",
-    "arxiv:2608.26013",
-    "arxiv:2608.26644",
-    "arxiv:2608.26107",
-    "arxiv:2608.26624"
+    "arxiv:2608.26921",
+    "arxiv:2608.26868",
+    "arxiv:2608.26833",
+    "arxiv:2608.26759",
+    "arxiv:2608.26757",
+    "arxiv:2608.26752",
+    "arxiv:2608.26724",
+    "arxiv:2608.26647",
+    "arxiv:2608.26613",
+    "arxiv:2608.26594",
+    "arxiv:2608.26490",
+    "arxiv:2608.26226"
   ],
-  "paper_count": 10,
+  "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:623",
-    "deepseek": "ok:30"
+    "deepseek": "ok:566"
   },
-  "updated_at": "2026-09-02T01:22:46.822148+00:00",
+  "updated_at": "2026-09-02T02:03:38.025027+00:00",
+  "analysis_stats": {
+    "total": 623,
+    "analyzed": 623,
+    "high": 46,
+    "medium": 100,
+    "low": 105,
+    "below_threshold": 372
+  },
   "papers": [
     {
       "key": "arxiv:2608.27456",
@@ -94,6 +122,139 @@
       "insight_zh": "针对稀有且与背景高度混淆的目标，硬负样本挖掘是提升分割模型性能的关键策略，且模型展现出一定的时间泛化能力，这对于动态监测具有重要意义。"
     },
     {
+      "key": "arxiv:2608.27175",
+      "title": "Temporal Sensitivity Analysis of Tessera Embeddings",
+      "title_zh": "Tessera嵌入的时间敏感性分析",
+      "url": "https://arxiv.org/abs/2608.27175",
+      "doi": "",
+      "arxiv_id": "2608.27175",
+      "authors": [
+        "Julia Guerrero-Viu",
+        "Alex L\\'opez-Cifuentes",
+        "Ignacio P\\'erez-Villar",
+        "Fabio Pacifici"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T14:25:34+00:00",
+      "score": 95,
+      "reason": "该研究直接针对地球观测基础模型Tessera的时间敏感性进行控制实验，评估不同观测窗口对土地利用/覆盖制图的影响。这与GIS博士研究中遥感变化检测和土地利用分类高度相关，提供了关于时间覆盖作为可调成本的重要见解。",
+      "tags": [
+        "地球观测",
+        "基础模型",
+        "时间敏感性",
+        "土地利用/覆盖",
+        "嵌入向量"
+      ],
+      "abstract": "Many Earth Observation applications need land-use/land-cover maps that are both precise and frequently updated, yet the strongest Earth Observation foundation models build their embeddings from a full year of observations. We present a controlled study of the temporal sensitivity of Tessera, one of these leading foundation models, for land-use/land-cover mapping. Keeping the encoder frozen, we recompute its embeddings over varying observation windows, from a full year down to a single day. We use them as inputs to a linear probe and a UNet segmentation head, benchmarking both of them against from-scratch networks on LUCAS, DynamicEarthNet, and PASTIS-R datasets. We show that the value of the embeddings is task-dependent. Where classes are separated by phenology, as for the crop types of PASTIS-R, they reach a mean Intersection-over-Union of $58.3$, about $46\\%$ above the best from-scratch model. Where classes are temporally stable (e.g., forests in DynamicEarthNet and LUCAS), embedding-based and from-scratch models match only under full supervision. On both datasets, Tessera embeddings remain markedly more label-efficient. Degradation under shorter temporal windows is gradual and class-dependent. Contracting the window from one year to one month costs $39\\%$ of the segmentation accuracy on PASTIS-R but only $5\\%$ on DynamicEarthNet. Single-day embeddings still classify land cover in LUCAS at $3.4$ times the chance level. Our study shows that temporal coverage is therefore a tunable cost rather than a fixed prerequisite, opening regimes such as near-real-time mapping and faster land-use/land-cover refresh cycles.",
+      "summary_zh": "该研究对地球观测基础模型Tessera进行时间敏感性控制实验，在冻结编码器的情况下，从全年到单日不同观测窗口重新计算嵌入，用于线性探针和UNet分割头。结果显示嵌入价值因任务而异：对物候分离的作物类型，mIoU达58.3%，比从头训练高46%；对时间稳定类别，仅在完全监督下匹配。时间窗口缩短的影响是渐进的且依赖类别，从一年缩至一个月在PASTIS-R上损失39%精度，但在DynamicEarthNet上仅损失5%。",
+      "insight_zh": "该研究揭示了地球观测基础模型的时间嵌入价值是任务依赖的，时间覆盖是可调成本而非固定前提，为近实时制图和更快的土地利用/覆盖更新周期提供了可能性，对变化检测研究具有直接指导意义。"
+    },
+    {
+      "key": "arxiv:2608.26737",
+      "title": "Generative Semantic Scene Completion",
+      "title_zh": "生成式语义场景补全",
+      "url": "https://arxiv.org/abs/2608.26737",
+      "doi": "",
+      "arxiv_id": "2608.26737",
+      "authors": [
+        "Shi Chen",
+        "Weifeng Ge"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T07:29:15+00:00",
+      "score": 95,
+      "reason": "该论文研究户外LiDAR语义场景补全，提出生成式方法，与遥感变化检测和三维地理空间数据处理高度相关，对城市更新中的三维城市建模有直接参考价值。",
+      "tags": [
+        "语义场景补全",
+        "生成模型",
+        "离散扩散",
+        "LiDAR",
+        "点云"
+      ],
+      "abstract": "Outdoor LiDAR semantic scene completion (SSC) recovers a dense semantic voxel grid from a scan observing 1% of the target volume, under class imbalance beyond 7,000x. We recast SSC as generative semantic scene completion (GSSC): a single discrete-diffusion formulation in three roles. First, paired sparse-dense scene synthesis (PS$^3$) generates matched sparse LiDAR observations with their dense semantic completions, addressing the long tail at its source and yielding the PS$^3$-SemanticKITTI corpus we train on alongside SemanticKITTI. Second, semantic-guided generative scene completion (SGSC) generates the scene from noise with multinomial discrete diffusion, conditioned on the sparse scan through a bird's-eye-view semantic map and a sparse 3D feature stream. Third, the same framework instead refines an existing completion in one flow-matching step: structured source discrete diffusion (S$^2$D$^2$). S$^2$D$^2$ improves the mIoU of SGSC's own output and every external SSC base tested, without base retraining or test-time adaptation. On the strongest base, one step without test-time augmentation reaches 38.8% mIoU on the SemanticKITTI hidden test. To our knowledge that is the best causal, single-sweep, single-sample result on that leaderboard, +2.1 pp over the previous best published score under the same restriction. Four correction steps with eight-view test-time augmentation reach 39.2%, outside that restriction.",
+      "summary_zh": "本文将LiDAR语义场景补全(SSC)重构为生成式语义场景补全(GSSC)，采用单一离散扩散公式。该方法包括配对稀疏-密集场景合成(PS3)、语义引导生成场景补全(SGSC)和结构化源离散扩散(S2D2)。S2D2在无需基础模型重训练或测试时适应的情况下，提高了SGSC自身输出和所有外部SSC基线的mIoU。在最强基线上，单步无测试时增强达到38.8% mIoU，据作者所知是SemanticKITTI隐藏测试中最佳因果、单扫描、单样本结果。",
+      "insight_zh": "将场景补全视为生成问题，利用离散扩散模型可以有效处理极端类别不平衡和稀疏输入，为三维城市建模提供了新范式。"
+    },
+    {
+      "key": "arxiv:2608.26722",
+      "title": "UniGeo: A Multi-modal Large Language Model for Text-Guided Cross-View Geo-Localization",
+      "title_zh": "UniGeo：用于文本引导跨视角地理定位的多模态大语言模型",
+      "url": "https://arxiv.org/abs/2608.26722",
+      "doi": "",
+      "arxiv_id": "2608.26722",
+      "authors": [
+        "Jiahao Wen",
+        "Hang Yu",
+        "Zhedong Zheng"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T07:13:35+00:00",
+      "score": 95,
+      "reason": "论文提出用于文本引导的无人机跨视角地理定位的多模态大模型，直接涉及遥感与地理空间智能，与GIS博士研究方向高度契合，其方法可应用于城市更新中的遥感图像检索与定位。",
+      "tags": [
+        "多模态大模型",
+        "地理定位",
+        "遥感",
+        "跨视角"
+      ],
+      "abstract": "Text-guided drone geo-localization aims to identify a target region in a large-scale image gallery from a natural-language description. Existing methods mainly formulate this task as direct matching between an open-ended text query and candidate images. However, incomplete queries and highly similar candidates often make global cross-modal matching insufficient for reliable fine-grained localization. We propose UniGeo, a unified multimodal large language model (MLLM) for text-guided drone geo-localization. Built on a shared vision-language framework, UniGeo jointly supports geo-semantic understanding, cross-view semantic generation, and candidate-level verification. Specifically, it establishes stable correspondences among local scene elements, spatial relations, and language descriptions through geo-semantic learning, and further models semantic mappings between drone and satellite views through cross-view generation. Based on these capabilities, a plug-and-play verification module performs fine-grained discrimination among highly confusable candidates. We further introduce a multi-stage training strategy that progressively learns geo-semantic understanding, cross-view generation, and candidate verification, improving adaptation to text-guided geo-localization. Experiments demonstrate consistent improvements across multiple retrieval backbones. On GeoText-1652, UniGeo improves R@10 and mAP by 13.59 and 2.83 percentage points, respectively, validating its effectiveness for fine-grained text-guided drone geo-localization.",
+      "summary_zh": "提出UniGeo，一个统一的多模态大语言模型，用于文本引导的无人机地理定位。模型在共享视觉语言框架上联合支持地理语义理解、跨视角语义生成和候选级验证，通过多阶段训练策略逐步学习这些能力，在GeoText-1652数据集上显著提升了检索精度。",
+      "insight_zh": "通过将地理语义理解、跨视角生成和候选验证整合到统一框架中，有效解决了不完整查询和高相似候选带来的细粒度定位挑战，为遥感图像的自然语言检索提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.26451",
+      "title": "Toward Equitable Low-Carbon Mobility: Fairness-Aware Demand Prediction for Expanding Bike-Sharing Systems",
+      "title_zh": "迈向公平低碳出行：面向扩张中共享单车系统的公平感知需求预测",
+      "url": "https://arxiv.org/abs/2608.26451",
+      "doi": "",
+      "arxiv_id": "2608.26451",
+      "authors": [
+        "Man Luo",
+        "Yixuan Zhao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T22:57:40+00:00",
+      "score": 95,
+      "reason": "该文针对共享单车系统扩张中的冷启动预测和公平资源分配问题，提出公平感知的图神经网络，与城市更新、时空数据挖掘和公平性研究高度契合，是GIS博士研究的核心相关方向。",
+      "tags": [
+        "公平性",
+        "图神经网络",
+        "需求预测",
+        "共享单车",
+        "城市计算",
+        "时空数据挖掘"
+      ],
+      "abstract": "Bike-sharing systems are an important component of low-carbon urban mobility, but continued expansion creates challenges in both cold-start prediction and equitable resource allocation. Newly deployed stations lack historical ridership records, causing a mismatch between training and inference for graph-based models on evolving networks. Historical demand may also encode structural inequalities, as lower ridership in low-income neighborhoods can reflect limited infrastructure access rather than weak latent demand. Models trained directly on such data may therefore reinforce existing mobility disparities. We propose FairGIN, a fairness-aware graph neural network for demand prediction in expanding bike-sharing systems. FairGIN integrates three components. Expansion-Simulated Increment Training stochastically simulates network expansion during training to reduce the cold-start distribution gap. Attention-Based Knowledge Transfer combines station-adaptive temperature scaling with orthogonal embedding alignment to transfer representations from data-rich existing stations to data-sparse new stations. Fairness-Aware Optimization introduces income-stratified regularization and an equity-calibrated deployment score to support more inclusive station placement. Experiments on NYC and Seattle demonstrate that FairGIN achieves state-of-the-art predictive accuracy across diverse expansion scenarios while substantially reducing income-based disparities without compromising overall system efficiency.",
+      "summary_zh": "针对共享单车系统扩张中新站点冷启动预测和需求数据中隐含的结构性不平等问题，提出了FairGIN，一个公平感知的图神经网络。它通过扩张模拟增量训练减少冷启动分布差距，利用基于注意力的知识迁移从数据丰富站点向新站点迁移表示，并引入收入分层正则化和公平校准部署评分，在纽约和西雅图数据集上实现了高精度预测并显著减少了收入差异。",
+      "insight_zh": "在预测模型中显式建模公平性约束，可在保持系统效率的同时缓解基础设施扩张带来的出行不平等，为城市低碳交通规划提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.26188",
+      "title": "Is Your Neighborhood Safe? Place-based Stigma in Large Language Models' Urban Safety Judgments",
+      "title_zh": "你的社区安全吗？大语言模型城市安全判断中的地方污名化",
+      "url": "https://arxiv.org/abs/2608.26188",
+      "doi": "",
+      "arxiv_id": "2608.26188",
+      "authors": [
+        "Huy Nguyen",
+        "Yue Lin"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-23T02:40:41+00:00",
+      "score": 95,
+      "reason": "直接研究LLM对城市社区安全判断中的地名刻板印象，与城市更新、社会公平和地理空间智能高度相关，是核心交叉领域。",
+      "tags": [
+        "城市安全",
+        "地名刻板印象",
+        "LLM偏见",
+        "城市计算",
+        "社会公平"
+      ],
+      "abstract": "Large language models are increasingly used to inform safety decisions in cities, such as where it is safe to walk, rent, or travel. We ask whether such judgments track measured risk or the patterns attached to an urban neighborhood's name. We probe seven instruct-tuned models under three conditions that dissociate name from geography: coordinates-only, name-only, and name+coordinates, across 186 neighborhoods in Los Angeles and Chicago, joined to violent crime and American Community Survey data. First, ratings are nearly flat under coordinates for six of seven models, while names carry most between neighborhood variation and are moderately calibrated to violent crime; only at frontier scale does the coordinate channel show appreciable variation. Second, names lower safety ratings more for neighborhoods with higher shares of the locally dominant marginalized group (percent Black in Chicago, percent Hispanic in Los Angeles), and this name effect tracks demographic share in all seven models and both cities. In Los Angeles, where demographic share and crime are more separable, the effect survives controls for crime and income and is confirmed by crime-matched pairs. An enforcement-elasticity analysis further shows that over-caution tracks near-fully-reported homicide rather than discretionary, deployment-driven offenses. Third, the effect scales with geographic knowledge: models that better distinguish real neighborhoods apply more demographic stereotype to them. Because neighborhood names carry both genuine crime signal and demographic stereotype, removing names reduces both bias and accuracy. We discuss implications for deploying LLMs in advice and decision-support settings.",
+      "summary_zh": "研究了七个指令微调LLM对洛杉矶和芝加哥186个社区的安全评分，发现模型评分主要受地名而非坐标影响，且地名对安全评分的影响与当地主导边缘化群体比例相关，即使控制犯罪和收入因素后依然存在。模型地理知识越强，应用的人口统计刻板印象越多。",
+      "insight_zh": "LLM在提供城市安全建议时，其判断可能受地名所附带的人口统计刻板印象影响，而非纯粹的实际风险，这揭示了在利用LLM进行城市决策支持时必须警惕的潜在社会偏见。"
+    },
+    {
       "key": "arxiv:2608.26471",
       "title": "Mapping Woody Vegetation from Multi-Source Imagery and Prediction Fusion for Enhanced Data Efficiency and Accuracy",
       "title_zh": "基于多源影像与预测融合的木本植被制图：提升数据效率与精度",
@@ -120,6 +281,66 @@
       "abstract": "Tree cover maps are a fundamental remote sensing product, used to derive ecological insights about the landscape and are essential to change detection, vegetation mapping and fire monitoring programs. However, comprehensive tree cover mapping requires reliable and high-quality imagery, free of cloud and weather defects to ensure accurate model outputs. Deep learning approaches can generate high quality maps with minimal human intervention but require large amounts of human annotated data to be successful. In this work we propose a framework consisting of methods that aim to improve the data efficiency and robustness of deep learning models using data fusion techniques to segment woody vegetation defined as vegetation over the height of 2m across the state of New South Wales, Australia. To improve robustness against varying image quality, we propose an image composition method that normalizes the imagery and removes defects, whilst also minimizing the reliance on individual image quality by proposing a prediction fusion method. The two methods resulted in an error reduction of 38.2% and 53.6% respectively compared to single-source imagery. To address deep learning approaches' limitation of requiring large amounts of data, we apply label transfer to multiple sources of imagery as a form of data augmentation to improve data efficiency. Learning from multiple image sources was shown to be the biggest improvement in performance, resulting in an error reduction between 28.1% to 76.2% across the different validation experiments, whilst reducing the standard deviation of performance across image dates by a factor of 13.",
       "summary_zh": "该研究针对澳大利亚新南威尔士州，提出了一种结合影像合成、预测融合和标签迁移的框架，用于分割高度超过2米的木本植被。影像合成和预测融合方法分别将误差降低了38.2%和53.6%。通过标签迁移进行多源学习是性能提升最大的因素，在不同验证实验中误差降低了28.1%至76.2%，并将不同日期影像的性能标准差降低了13倍。",
       "insight_zh": "多源数据融合不仅能提升模型的鲁棒性，还能通过标签迁移显著提高数据效率，是构建大规模、高精度植被制图系统的有效途径。"
+    },
+    {
+      "key": "arxiv:2608.26807",
+      "title": "Behavior2Trip: Towards Personalized Travel Planning via User Behavior Trajectory",
+      "title_zh": "Behavior2Trip：通过用户行为轨迹实现个性化旅行规划",
+      "url": "https://arxiv.org/abs/2608.26807",
+      "doi": "",
+      "arxiv_id": "2608.26807",
+      "authors": [
+        "Zihao Cheng",
+        "Yingyu Shan",
+        "Hongru Wang",
+        "Zeming Liu",
+        "Xinyi Wang",
+        "Xiangrong Zhu",
+        "Yuhang Guo",
+        "Wei Lin",
+        "Yunhong Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T08:47:31+00:00",
+      "score": 90,
+      "reason": "该研究提出基于用户历史行为轨迹的个性化旅行规划任务和基准，并构建了强化学习智能体。这与GIS博士研究中利用时空数据挖掘用户行为模式、构建智能体的方向高度契合，其方法论可直接应用于城市更新中的居民行为分析与个性化服务推荐。",
+      "tags": [
+        "智能体",
+        "强化学习",
+        "用户行为轨迹",
+        "个性化推荐",
+        "旅行规划"
+      ],
+      "abstract": "Travel planning agents assist users in generating personalized travel plans by modeling their individual preferences. Existing agents either rely on explicit user instructions or engage in multi-turn clarification to elicit user preferences. However, both approaches overlook the rich behavioral signals latent in users' past behaviors, which implicitly encode their preferences. This over-reliance on active user input increases interaction burden and limits plan personalization. To bridge this gap, we introduce a new task, Behavior-Aware Travel Planning, which infers user preferences directly from past behaviors and generates personalized travel plans. To facilitate research on this task, we introduce Behavior2Trip, a benchmark constructed from one of the largest Chinese online travel platforms, comprising 11,400 instances. Each instance represents an average of 39.8 past user behaviors spanning 14 attributes across 5 preference dimensions. We further propose B2T-Agent, a reinforcement learning-based agent that leverages user behavior trajectories, interacts with external tools for preference-aligned retrieval, and maintains an internal memory module. Experiments on Behavior2Trip show that GPT-4.1 achieves a full-constraint pass rate of only 0.5\\% on the hardest tasks, while B2T-Agent built upon Qwen3-8B outperforms all baselines, highlighting the substantial challenge of this task. Moreover, Qwen3-8B trained with B2T-Agent also outperforms GPT-4.1 on the TravelPlanner benchmark, demonstrating strong generalization. Code and data are available at https://github.com/BUAA-IRIP-LLM/Behavior2Trip",
+      "summary_zh": "本文提出行为感知旅行规划任务，直接从用户历史行为中推断偏好并生成个性化计划。作者构建了包含11,400个实例的基准Behavior2Trip，并提出了基于强化学习的B2T-Agent，该智能体利用行为轨迹、外部工具和内部记忆模块，在实验中显著优于GPT-4.1等基线。",
+      "insight_zh": "用户历史行为轨迹蕴含丰富的隐式偏好，利用强化学习智能体对其进行建模，可有效减少对用户主动输入的依赖，提升个性化服务的质量，这对城市更新中的个体行为建模与决策支持具有重要参考价值。"
+    },
+    {
+      "key": "arxiv:2608.26665",
+      "title": "Hull First, Wake Second: Wake-Reliance Suppression for Robust Maritime Vessel Detection",
+      "title_zh": "船体优先，尾流其次：用于鲁棒海上船舶检测的尾流依赖抑制",
+      "url": "https://arxiv.org/abs/2608.26665",
+      "doi": "",
+      "arxiv_id": "2608.26665",
+      "authors": [
+        "Yefan Wang",
+        "Xingyu Wang",
+        "Ruibiao Zhu",
+        "Yusen Wu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T06:19:13+00:00",
+      "score": 90,
+      "reason": "论文针对遥感图像中船舶检测的尾流依赖问题提出新框架，直接涉及遥感目标检测，与GIS博士研究方向中的遥感变化检测高度相关，其方法可应用于城市更新中的水域监测。",
+      "tags": [
+        "遥感",
+        "目标检测",
+        "船舶检测",
+        "变化检测"
+      ],
+      "abstract": "Maritime vessel detectors often face scenes where hulls are small, low-contrast, or blurred, while wakes are longer and easier to detect. This creates a wake-reliance problem: detectors may miss slow or stationary vessels with weak wakes, or produce false positives on wake-like water clutter. We propose HullWake, a hull-first wake-second framework for robust maritime vessel detection. HullWake separates proposal-centered hull evidence from directional wake context, extracts wake cues with bidirectional proposal-anchored corridors, and suppresses wake-dominant predictions through wake response supervision, wake-attenuated consistency, wake-only confidence suppression, and hull--wake decorrelation. We also introduce a wake-oriented evaluation protocol covering weak/no-wake vessels, wake-like hard negatives, worst-group AP, and confidence drop after wake attenuation. Experiments are conducted on Curated-Wake, a wake-oriented maritime dataset of about 10,000 images curated from Ships/Vessels in Aerial Images, the SMD benchmark, and SeaDronesSee, with newly added detection- and segmentation-level wake annotations. Compared with box-only detectors and mask-supervised segmentation baselines, HullWake improves overall AP, weak/no-wake robustness, wake-like false positives, worst-group AP, and confidence stability after wake attenuation.",
+      "summary_zh": "提出HullWake框架，解决船舶检测器过度依赖尾流线索的问题。框架分离船体证据与方向性尾流上下文，通过多种机制抑制尾流主导的预测，并引入面向尾流的评估协议。在约10,000张图像的Curated-Wake数据集上验证了其在弱/无尾流船舶和尾流样假阳性场景下的鲁棒性提升。",
+      "insight_zh": "在目标检测中，明确建模并抑制对辅助线索（如尾流）的过度依赖，可以显著提升模型在目标本身特征较弱或存在干扰时的鲁棒性。"
     },
     {
       "key": "arxiv:2608.26489",
@@ -150,6 +371,182 @@
       "insight_zh": "通过调整损失函数来对齐最终应用指标，可以更有效地控制模型在精确率和召回率之间的权衡，同时，精心设计的影像生成技术有望提升模型在罕见事件检测上的零样本泛化能力。"
     },
     {
+      "key": "arxiv:2608.26142",
+      "title": "Position Is All You Need: A Free Lunch Token Compression Strategy for MLLM-based Referring Expression Segmentation",
+      "title_zh": "位置即一切：基于MLLM的指代表达分割的免费Token压缩策略",
+      "url": "https://arxiv.org/abs/2608.26142",
+      "doi": "",
+      "arxiv_id": "2608.26142",
+      "authors": [
+        "Yuhan Liu",
+        "Yixiong Zou",
+        "Yuhua Li",
+        "Ruixuan Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-06-26T13:20:23+00:00",
+      "score": 90,
+      "reason": "研究多模态大语言模型中指代表达分割的token压缩方法，发现位置信息是关键，提出基于位置的压缩策略，与遥感图像分割和视觉语言模型应用高度相关。",
+      "tags": [
+        "MLLM",
+        "指代表达分割",
+        "Token压缩",
+        "位置信息",
+        "遥感图像分割"
+      ],
+      "abstract": "Referring Expression Segmentation (RES) aims to generate pixel-wise segmentation masks from complex and implicit textual queries. While recent advances in Multimodal Large Language Models (MLLMs) have substantially boosted RES performance, their prohibitive computational overhead remains a critical bottleneck, which, however, is rarely explored. To fill this gap, we first evaluate typical token compression methods on this task and observe a surprising performance degradation. In this paper, we aim to understand this phenomenon for a solution. By extensive experiments, we find that token compression for RES requires preserving the original position embeddings and local neighboring spatial structures, indicating that visual token position information is far more critical than in other tasks. Building on this insight, we ask: Can we design the token compression method purely based on the position information? Therefore, we propose PAYN, a plug-and-play, training-free token compression method that relies solely on position information. PAYN retains tokens that are adequately distributed in every local neighboring region while strictly preserving original positional indices, thereby maintaining spatial relational consistency. Experiments on multiple RES benchmarks demonstrate that our method outperforms existing token compression methods, verifying that position is indeed all you need for token compression in the MLLM-based RES task. Codes are avaliable at https://github.com/YuhanLiu231/PAYN.",
+      "summary_zh": "论文发现指代表达分割中token压缩需保留原始位置嵌入和局部空间结构，提出PAYN方法，仅基于位置信息保留token，在多个基准上优于现有压缩方法。",
+      "insight_zh": "该发现对遥感图像理解中的视觉语言模型效率优化有直接启示，位置信息在空间任务中至关重要。"
+    },
+    {
+      "key": "arxiv:2603.19873",
+      "title": "SIMPLER: Efficient Foundation Model Adaptation via Similarity-Guided Layer Pruning for Earth Observation",
+      "title_zh": "SIMPLER：通过相似性引导的层剪枝实现地球观测基础模型的高效适配",
+      "url": "https://arxiv.org/abs/2603.19873",
+      "doi": "",
+      "arxiv_id": "2603.19873",
+      "authors": [
+        "V\\'ictor Barreiro",
+        "Johannes Jakubik",
+        "Francisco Arg\\\"uello",
+        "Dora B. Heras"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "该研究关注地球观测基础模型的高效适配，通过相似性引导的层剪枝，直接涉及遥感领域，与GIS研究高度相关。",
+      "tags": [
+        "Earth observation",
+        "foundation model",
+        "layer pruning",
+        "efficiency"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要缺失，但根据标题，研究提出了一种基于相似性引导的层剪枝方法，用于高效适配地球观测基础模型。",
+      "insight_zh": "通过层剪枝可以降低地球观测基础模型的计算成本，提高其在实际应用中的效率。"
+    },
+    {
+      "key": "arxiv:2608.27365",
+      "title": "KnockGS:interaction-Grounded Calibrationof Physical Gaussian Representations",
+      "title_zh": "KnockGS：交互校准的物理高斯表示",
+      "url": "https://arxiv.org/abs/2608.27365",
+      "doi": "",
+      "arxiv_id": "2608.27365",
+      "authors": [
+        "Chenchen Ge",
+        "Hanwen Shen",
+        "Bowen Jing",
+        "Jiyuan Cai",
+        "Xiaofeng Wang",
+        "Hongsen Lei",
+        "Weitao Zhou",
+        "Dandan Zhang",
+        "Haibao Yu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T17:03:38+00:00",
+      "score": 85,
+      "reason": "该论文提出了一种从物体动态响应中估计3D高斯表示材料参数的方法，这与GIS中三维城市建模、动态场景理解和物理仿真高度相关，为构建可交互、物理一致的数字孪生提供了新思路。",
+      "tags": [
+        "3D高斯泼溅",
+        "物理模拟",
+        "参数校准",
+        "交互响应",
+        "动态场景"
+      ],
+      "abstract": "Physics-integrated 3D Gaussian representations now allow reconstructed deformable objects to be simulated and rendered under explicit material models. Existing pipelines, however, assume that material parameters are known or manually specified, limiting their applicability when these parameters must be inferred from observed object dynamics. We propose KnockGS, an interaction-response PhysicalGS framework that estimates the elasticity and density scales of a 3D Gaussian object from its dynamics under a known applied force. Rather than treating physical simulation only as a forward process, we turn the force-induced response into a calibration signal: temporal response features are xtracted from the observed dynamics, the two material scales are estimated from those features, and the estimate is then frozen and written back into the same simulator so that it can be tested on an interaction it was never fitted to.We evaluate the framework on both parameter recovery and response-level fidelity. The estimated scales are compared against hidden ground truth, and the re-simulated object is measured against the target using 3D particle trajectories, response-curve statistics, and rendered-frame quality. Across five held-out material targets, our method recovers the scales substantially more accurately than response retrieval, global regression, or a fixed default material, and the frozen estimate remains predictive under interactions that differ in direction and in magnitude. Interaction response therefore carries enough information to calibrate material scales in physically grounded 3D Gaussian representations.Our study is a first step toward interactive PhysicalGS systems that calibrate a Gaussian asset whose rendered appearance and simulated response are consistent.",
+      "summary_zh": "KnockGS是一个交互响应的物理高斯框架，通过观察物体在已知外力下的动态来估计其弹性尺度和密度尺度。该方法将力诱导的响应作为校准信号，提取时间响应特征来估计材料参数，并将估计值写回模拟器进行验证。",
+      "insight_zh": "研究表明，交互响应信息足以校准物理3D高斯表示中的材料尺度，这是迈向交互式物理高斯系统（PhysicalGS）的第一步。"
+    },
+    {
+      "key": "arxiv:2608.27260",
+      "title": "What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents",
+      "title_zh": "何为好的智能体数据？关于LLM智能体数据生成的ACE视角",
+      "url": "https://arxiv.org/abs/2608.27260",
+      "doi": "",
+      "arxiv_id": "2608.27260",
+      "authors": [
+        "Xingshan Zeng",
+        "Zishan Xu",
+        "Boju Zhang",
+        "Yuzhou Wu",
+        "Lingzhi Wang",
+        "Jianghao Lin",
+        "Liangyou Li",
+        "Yasheng Wang",
+        "Lifeng Shang",
+        "Xin Jiang",
+        "Weinan Zhang",
+        "Yong Yu",
+        "Qun Liu",
+        "Weiwen Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T15:43:50+00:00",
+      "score": 85,
+      "reason": "该论文提出了智能体数据生成的框架性分析，与LLM和多智能体研究方向高度契合，对理解和设计GIS智能体的训练数据具有重要指导意义。",
+      "tags": [
+        "智能体数据",
+        "数据生成",
+        "LLM智能体",
+        "ACE框架"
+      ],
+      "abstract": "LLM agents increasingly rely on generated interaction data to learn how to interact with external environments. Agentic data generation must maintain consistency among environments, tasks, interactions, and success signals while producing experience that is useful rather than merely abundant. Existing work spans many agent domains, but domain-centered organization and heterogeneous evaluation often obscure common generation mechanisms and conflate candidate construction with verification and selection. This work develops a two-level framework for the field. First, we represent agentic data as a common factorized object $(E,q,\\tau,v)$, comprising an environment specification, task signal, interaction realization, and optional verifier. We organize generation paradigms by their primary anchor and dependency structure. Second, we formulate generation as constrained distribution design through the Accuracy-Complexity-divErsity (ACE) lens. Accuracy establishes the feasible support of grounded and internally consistent data. Within this support, Complexity places learning mass relative to the capability of a declared learner and execution configuration, while divErsity controls coverage and redundancy of data. Using this framework, we explore how prior work verifies generated experience, constructs and calibrates difficulty, and expands behavioral coverage. The literature reveals a shift toward execution-grounded accuracy, learner-relative complexity, and diversity beyond surface variation or dataset size. We further discuss broader directions and emerging trends in agentic data generation through the ACE lens, including their implications for scaling, data sources, training regimes and adaptive learning. Overall, the central challenge is not simply to generate more data, but to continually allocate valid, informative, and non-redundant experience as agents and environments evolve.",
+      "summary_zh": "该工作为智能体数据生成领域构建了一个两层框架：首先将智能体数据表示为因子化对象(E,q,τ,v)，其次通过准确性-复杂性-多样性（ACE）视角将生成过程视为约束分布设计。文章梳理了现有工作，并指出领域正转向执行接地准确性、学习者相对复杂性和超越表面变化的多样性。",
+      "insight_zh": "智能体数据生成的核心挑战不在于生成更多数据，而在于通过ACE框架进行约束设计，确保数据的准确性、与学习者能力的匹配度以及行为覆盖的多样性。"
+    },
+    {
+      "key": "arxiv:2608.27122",
+      "title": "Cone Extended Rayleigh Quotients for Directed Graph Learning: Minimax Spectral Certificates, Sensitivity, and Adaptive Control",
+      "title_zh": "用于有向图学习的锥扩展瑞利商：极小极大谱证书、灵敏度与自适应控制",
+      "url": "https://arxiv.org/abs/2608.27122",
+      "doi": "",
+      "arxiv_id": "2608.27122",
+      "authors": [
+        "Yavdat Sh. Il'yasov",
+        "Nur F. Valeev"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T13:37:02+00:00",
+      "score": 85,
+      "reason": "该研究提出了针对有向图的锥扩展瑞利商框架，用于谱认证、灵敏度分析和自适应控制。这与GIS中的有向网络分析（如交通流、河流网络）和图信号处理高度相关，提供了坚实的数学基础。",
+      "tags": [
+        "有向图学习",
+        "谱理论",
+        "瑞利商",
+        "灵敏度分析",
+        "自适应控制"
+      ],
+      "abstract": "Directed graph learning naturally leads to trainable nonsymmetric propagation operators with distinct right and left spectral structures. Building on the two-sided cone Rayleigh framework for generalized pencils \\[ B_\\theta-\\lambda G, \\] we develop a learning-oriented methodology for spectral certification, sensitivity analysis, and control without requiring symmetry, nonnegativity, or cone preservation. In the positive-orthant setting, computable lower and upper cone bounds provide an a posteriori enclosure of a distinguished cone level, while smooth soft-min/max surrogates preserve rigorous one-sided bounds with explicit approximation errors and remain differentiable with respect to the trainable parameters. For a simple interior level, the right and left modes satisfy \\[ D\\lambda_C(B)[H]=v_C^T H u_C, \\] yielding first-order optimal graph-supported interventions under prescribed perturbation budgets and motivating adaptive spectral control. Numerical experiments demonstrate the applicability of the approach beyond cone-preserving operators and in directed learning settings. Signed nonsymmetric perturbations reveal a transition from interior eigenpairs to boundary complementary quasi-pairs, including non-spectral cone levels, while controlled experiments show that symmetrization can remove predictive information carried solely by edge direction. On the directed Cora citation network, adaptive recomputation of the right--left sensitivity reduces the distinguished spectral level by approximately $21.5\\%$ under a cumulative edge-weight reduction budget of $0.5\\%$, with no observed change in test accuracy for the trained model and data split considered.",
+      "summary_zh": "本文基于广义束的两侧锥瑞利框架，为有向图学习中的非对称传播算子开发了学习导向的谱认证、灵敏度分析和控制方法。该方法无需对称性、非负性或锥保持性。作者推导了可计算的锥上下界，并展示了右-左模式对谱的灵敏度公式，从而支持一阶最优图干预和自适应谱控制。在Cora引文网络上的实验表明，该方法能有效降低谱水平且不影响测试精度。",
+      "insight_zh": "该研究为有向图上的谱分析提供了新工具，其灵敏度分析和自适应控制方法可直接应用于地理有向网络（如道路、河流）的优化和干预。"
+    },
+    {
+      "key": "arxiv:2608.26978",
+      "title": "Terrain signatures in Welsh settlement names",
+      "title_zh": "威尔士聚落地名中的地形特征",
+      "url": "https://arxiv.org/abs/2608.26978",
+      "doi": "",
+      "arxiv_id": "2608.26978",
+      "authors": [
+        "Oktay Karaku\\c{s}",
+        "Can Eyupoglu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T11:24:11+00:00",
+      "score": 85,
+      "reason": "论文直接分析威尔士聚落地名与地形的关系，属于地理信息科学领域，与城市更新和空间数据挖掘相关。",
+      "tags": [
+        "地理信息",
+        "地名",
+        "地形",
+        "空间分析"
+      ],
+      "abstract": "Landscapes are named, but whether names retain measurable environmental information beyond broad geographic structure is rarely tested. We analysed 3,757 Welsh settlements using a frozen, source-audited 24-element lexical framework, preregistered outcome-specific models and geographically structured validation. The central comparison contrasted 101 settlements carrying high-terrain elements (\\textit{bryn} or \\textit{mynydd}) with 139 carrying low-terrain elements (\\textit{cwm} or \\textit{pant}). High-terrain names occupied locations 24.4 m higher relative to their 2-km surroundings (95\\% CI, 10.8--38.1 m; Holm-adjusted $p$ = 0.00137). The association remained positive across prespecified 1-, 2- and 5-km neighbourhood definitions and was reproduced using an independently produced elevation source (24.1 m; 95\\% CI, 10.6--37.6 m). Adding terrain-name polarity to a non-lexical spatial and settlement baseline reduced geographically held-out mean squared error by 4.63\\%, 6.22\\% and 7.30\\% under 10-, 25- and 50-km spatial blocking, respectively, although improvement varied among held-out regions. River-related names provided weaker, directionally consistent evidence, while the preregistered woodland model was non-estimable. Residual spatial structure, unresolved name language and the absence of independent external replication limit interpretation. Selected Welsh settlement-name categories therefore retain measurable information about present-day terrain within Wales, without establishing individual etymology, causal naming, historical environmental memory or transferability to other naming systems.",
+      "summary_zh": "论文分析了3757个威尔士聚落，发现含高地地形元素（如bryn、mynydd）的地名比含低地元素（如cwm、pant）的地名平均高出24.4米，且该关联在多种邻域定义和独立高程数据下稳健。",
+      "insight_zh": "地名能保留可测量的地形信息，为历史地理和城市空间结构研究提供了新证据，但需注意其局限性和不可迁移性。"
+    },
+    {
       "key": "arxiv:2608.26970",
       "title": "TEMPLAR Wales: A georeferenced environmental and toponymic dataset of Welsh settlements",
       "title_zh": "TEMPLAR Wales：威尔士定居点的地理参考环境与地名数据集",
@@ -176,145 +573,343 @@
       "insight_zh": "该数据集为地名学、语言地理学和环境景观研究提供了可复用的基础，并明确区分了计算检测结果与验证词源或历史重建。"
     },
     {
-      "key": "arxiv:2608.26812",
-      "title": "Hyperspectral Diffusion Equivariant Imaging (HyDiff-EI): A Self-supervised Framework for Hyperspectral Image Inpainting",
-      "title_zh": "高光谱扩散等变成像（HyDiff-EI）：用于高光谱图像修复的自监督框架",
-      "url": "https://arxiv.org/abs/2608.26812",
+      "key": "arxiv:2608.26921",
+      "title": "AraMS-28k: The Largest Publicly Released Line-Level Dataset of Historical Arabic Manuscripts with Margin and Insertion-Anchor Annotations",
+      "title_zh": "AraMS-28k：最大规模公开的历史阿拉伯语手稿行级数据集，含页边距与插入锚点标注",
+      "url": "https://arxiv.org/abs/2608.26921",
       "doi": "",
-      "arxiv_id": "2608.26812",
+      "arxiv_id": "2608.26921",
       "authors": [
-        "Shuo Li",
-        "Mike Davies",
-        "and Mehrdad Yaghoobi"
+        "Mohamed Guechaoui",
+        "Mohamed Diaa Zellagui",
+        "Souleyman Chaib",
+        "Sahraoui Dhelim"
       ],
       "venue": "arXiv",
-      "published": "2026-08-27T08:49:40+00:00",
-      "score": 75,
-      "reason": "论文提出了一种用于高光谱图像修复的自监督扩散框架，直接涉及遥感图像处理，与遥感变化检测和多源数据融合相关，相关性较高。",
+      "published": "2026-08-27T10:16:41+00:00",
+      "score": 85,
+      "reason": "该研究构建了大规模历史阿拉伯语手稿数据集，并提出了结合多模态LLM与人工审核的标注流程，与博士研究中多源数据融合、地理空间智能及LLM应用方向高度相关，为处理复杂文档数据提供了新思路。",
       "tags": [
-        "高光谱图像",
-        "扩散模型",
-        "自监督",
-        "图像修复",
-        "遥感"
+        "历史文档分析",
+        "多模态LLM",
+        "数据集构建",
+        "文本识别",
+        "版面分析"
       ],
-      "abstract": "A novel Hyperspectral diffusion Equivariant Imaging (HyDiff-EI) framework for solving the hyperspectral image (HSI) inpainting problem has been presented here. Unlike conventional diffusion-based methods that rely on large-scale pretraining, HyDiff-EI is a test-time optimization framework that learns directly from a single corrupted HSI acquisition. This makes it flexible for different sensor configurations and particularly well-suited for practical remote sensing scenarios where large annotated hyperspectral datasets are limited. To address the ill-posed nature of unsupervised inpainting, we embed equivariant consistency constraints within the diffusion process. By leveraging the inherent geometric symmetries and intrinsic characteristics of HSIs, HyDiff-EI bridges the gap between generative diffusion modeling and self-consistent physical priors. We empirically show that coupling diffusion modeling with equivariant priors substantially enhances noise robustness and generalizability. Extensive experiments on real-world datasets including Chikusei, Botswana, and EMIT demonstrate that HyDiff-EI offers remarkable inpainting quality over existing self-supervised and diffusion-based algorithms in both noiseless and noisy cases.",
-      "summary_zh": "HyDiff-EI是一个用于解决高光谱图像（HSI）修复问题的测试时优化框架，直接从单个损坏的HSI采集数据中学习，无需大规模预训练。该框架在扩散过程中嵌入等变一致性约束，利用HSI的几何对称性和内在特征，在真实数据集上的实验表明其在无噪声和有噪声情况下均优于现有自监督和基于扩散的算法。",
-      "insight_zh": "将扩散模型与等变先验相结合，可以在无需大规模训练数据的情况下提高高光谱图像修复的噪声鲁棒性和泛化能力。"
+      "abstract": "We introduce AraMS-28k, the largest publicly released line-level dataset of genuine historical Arabic manuscripts, comprising 14 books, 3,043 pages, and 28,600 annotated text lines (27,971 main-text, 629 margin). Thirteen books are hand-copied manuscripts spanning three script traditions -- Naskh, Ruq'ah, and Maghrebi -- and one is a lithographed printed edition included to broaden format diversity. Each line is labelled as main-text or margin, and margin lines that have an unambiguous attachment point in the main text are further annotated with an insertion anchor, recovering the manuscript's true non-linear reading order at line-level granularity -- to our knowledge the first such annotation released for a historical Arabic manuscript corpus. Because reference transcriptions are fully vocalised while manuscript hands are typically undiacritised, we release both the raw diacritised transcription and a diacritic-normalised counterpart for every line. The dataset was constructed with RefLAM, a reference-grounded annotation pipeline that aligns multimodal-LLM OCR against independently sourced clean transcriptions and routes every line through human review, combining automatic verification with expert oversight. We describe the construction and quality-control process, present the annotation schema, report dataset statistics at both the corpus and per-book level, and provide baseline HTR results using Kraken and HATFormer, including a cross-script generalisation gradient from in-distribution pages to fully unseen books. AraMS-28k is released with page images, line-level annotations, and fixed train/val/test splits under CC BY-NC-SA 4.0 to support reproducible research on Arabic manuscript recognition, layout analysis, and reading-order recovery.",
+      "summary_zh": "介绍AraMS-28k数据集，包含14本书、3043页、28600行标注文本，区分正文与页边距，并为页边距行标注插入锚点以恢复非线性阅读顺序。数据集通过RefLAM流程构建，该流程利用多模态LLM进行OCR并与独立转录对齐，且经过人工审核。",
+      "insight_zh": "该研究展示了多模态LLM在专业领域数据标注中的潜力，其参考 grounded 的标注流程可借鉴于地理空间数据中复杂对象的半自动标注，以提高效率与准确性。"
     },
     {
-      "key": "arxiv:2608.26013",
-      "title": "VISA: Agentic Self-Evolving Data Synthesis for Multimodal Instruction Following",
-      "title_zh": "VISA：用于多模态指令跟随的智能体自演化数据合成",
-      "url": "https://arxiv.org/abs/2608.26013",
+      "key": "arxiv:2608.26868",
+      "title": "CGS-SLAM: Collaborative Gaussian Splatting based SLAM for Multi-Agent Reconstruction",
+      "title_zh": "CGS-SLAM：面向多智能体重建的协同高斯泼溅SLAM",
+      "url": "https://arxiv.org/abs/2608.26868",
       "doi": "",
-      "arxiv_id": "2608.26013",
+      "arxiv_id": "2608.26868",
       "authors": [
-        "Min Zeng",
-        "Guanxin Tan",
-        "Libin Cen",
-        "Yafei Wen",
-        "Rui Hu",
-        "Liuyang Bian",
-        "Xiaolong Chen",
-        "Xiaoxin Chen"
+        "Jean-Daniel de Ambrogi",
+        "Aladine Chetouani",
+        "Vincent Nguyen",
+        "Aur\\'elien Chateigner"
       ],
       "venue": "arXiv",
-      "published": "2026-08-26T16:55:58+00:00",
-      "score": 70,
-      "reason": "论文研究多模态指令跟随的数据合成方法，涉及智能体框架，与博士研究中LLM和多智能体方向相关，但非地理空间应用。",
+      "published": "2026-08-27T09:31:18+00:00",
+      "score": 85,
+      "reason": "研究多智能体协同的3D高斯泼溅SLAM系统，直接涉及多智能体协同、三维重建和地理空间智能，与GIS博士研究方向高度相关。",
       "tags": [
-        "多模态",
-        "数据合成",
-        "指令跟随",
-        "智能体",
-        "自演化"
+        "SLAM",
+        "多智能体",
+        "三维重建",
+        "高斯泼溅",
+        "协同建图"
       ],
-      "abstract": "Multimodal instruction-following models require training data that is accurate, diverse, verifiable, and challenging. Existing synthesis pipelines typically follow a one-pass generate-and-filter paradigm, discarding feedback from failed samples, verifier outcomes, and target-model errors. We present VISA (Visual Instruction Synthesis Agent), an agentic framework that reformulates multimodal instruction synthesis as a self-evolving loop. At each round, VISA analyzes an image to filter incompatible constraints and discover new verifiable ones, samples diversity- and difficulty-aware constraint sets from persistent memory, generates candidate instructions, and verifies the resulting samples with executable tools and structured large language model judges. Failed samples trigger diagnostic-guided recovery, while accepted samples are probed against the target model to estimate difficulty. The resulting verifier signals and target-model failure profiles are written back to memory, allowing subsequent rounds to adaptively expand the constraint space, reduce template repetition, and focus on unresolved model weaknesses. The same verifier contracts further provide reward signals for reinforcement learning without a separately trained reward model. Experiments on MM-IFEval show that VISA consistently improves multimodal instruction following over strong baselines, while preserving general multimodal capability across seven public benchmarks.",
-      "summary_zh": "VISA是一个智能体框架，将多模态指令合成重塑为一个自演化循环。它分析图像以过滤不兼容约束并发现新的可验证约束，从持久记忆中采样约束集，生成候选指令，并用可执行工具和LLM评判器进行验证。失败样本触发诊断引导恢复，成功样本则用于评估目标模型难度，反馈信号被写回记忆以指导后续轮次，从而扩展约束空间、减少模板重复并聚焦于模型弱点。",
-      "insight_zh": "该研究表明，将数据合成构建为一个利用验证反馈和目标模型错误进行自我演化的循环过程，可以持续生成更准确、多样且具有挑战性的训练数据，从而有效提升多模态指令跟随模型的能力。"
+      "abstract": "Recent advances in SLAM have leveraged 3DGS for photorealistic reconstruction and novel view synthesis. However, most methods rely on RGB-D input, which is unavailable on consumer-grade smartphones, and few integrate 3DGS within a collaborative framework. Therefore, we present CGS-SLAM, a hybrid decentralized/centralized system enabling multi-agent 3DGS SLAM using only RGB and inertial data. Each agent performs local tracking with inertial data as a motion prior and reconstructs a scaled map using a metric monocular depth estimator (Depth Pro). Keyframe encodings are shared among agents, enabling dynamic keyframing in regions of spatial overlaps with other agents, enhancing submap alignment. Afterwards, a central server aligns submaps using VGGT as a view alignment model. This bidirectional communication keeps communication cost low during mapping and global reconstruction in difficult GNSS-denied environments. Experiments on multiple datasets demonstrate competitive tracking performance, improved rendering quality over state-of-the-art methods, and accurate submap alignment.",
+      "summary_zh": "提出CGS-SLAM系统，一种混合去中心化/中心化的多智能体3D高斯泼溅SLAM框架，仅使用RGB和惯性数据即可实现协同建图。各智能体本地跟踪并重建，通过共享关键帧编码进行动态关键帧选择，最后由中心服务器对齐子地图，在GNSS受限环境下实现高质量重建。",
+      "insight_zh": "通过共享关键帧编码而非原始数据，结合中心化对齐，可以在低通信成本下实现多智能体协同的高质量三维重建，为复杂环境下的协同感知提供了有效方案。"
     },
     {
-      "key": "arxiv:2608.26644",
-      "title": "Real-time Unsupervised Object Discovery from Asynchronous Event Streams",
-      "title_zh": "从异步事件流中进行实时无监督目标发现",
-      "url": "https://arxiv.org/abs/2608.26644",
+      "key": "arxiv:2608.26833",
+      "title": "Rethinking Image Processing for the Age of AI: A Problem-First Framework for Scientific Progress",
+      "title_zh": "为AI时代重新思考图像处理：面向科学进步的问题优先框架",
+      "url": "https://arxiv.org/abs/2608.26833",
       "doi": "",
-      "arxiv_id": "2608.26644",
+      "arxiv_id": "2608.26833",
       "authors": [
-        "Pratham G. Shenwai",
-        "Hemant Kumar Singh",
-        "Sridhar Ravi"
+        "Guoping Qiu"
       ],
       "venue": "arXiv",
-      "published": "2026-08-27T05:53:04+00:00",
-      "score": 60,
-      "reason": "论文提出了一种基于事件流的无监督移动目标发现框架，涉及时空聚类和实时感知，与时空数据挖掘相关，但应用场景为事件相机视觉，相关性中等。",
+      "published": "2026-08-27T09:05:39+00:00",
+      "score": 85,
+      "reason": "该论文批判了模型优先的研究模式，倡导问题优先框架，对包括遥感、城市更新在内的整个AI应用领域具有重要的方法论指导意义，与GIS研究范式反思高度相关。",
       "tags": [
-        "事件相机",
-        "无监督",
-        "目标发现",
-        "时空聚类",
-        "实时感知"
+        "问题优先",
+        "图像处理",
+        "AI",
+        "研究方法论",
+        "科学进步"
       ],
-      "abstract": "Event cameras capture pixel-level intensity changes with microsecond resolution to produce highly sparse asynchronous data streams. For visual perception in latency-critical environments, we propose a lightweight, training-free framework for discovery of moving objects based on spatio-temporal clustering. This framework is driven by two core contributions. First, a linear-time Spatio-temporal Probabilistic Event Filter (SPEF) that introduces an adaptive event acceptance threshold to distinguish salient motion structures from background noise. Second, an Event Morton Code Clustering (EMCC) module that bypasses expensive distance matrix computation to efficiently group events for unsupervised discovery of moving objects. On the E-MLB dataset benchmark, SPEF achieves the best denoising performance among classical filtering methods and remains competitive with learning-based approaches without requiring any offline training. On object discovery, EMCC achieves the highest overall accuracy and lowest execution time across the FRED and eTraM datasets, outperforming established density-based clustering baselines by a substantial margin. Overall, this work establishes a new performance benchmark for classical object discovery in event data, providing a highly scalable, training-free solution for resource-constrained visual perception. The code is available at https://github.com/PrathamShenwai/SPEF_EMCC",
-      "summary_zh": "论文提出了一种轻量级、无需训练的框架，用于从事件相机数据中发现移动物体。该框架包括一个线性时间的时空概率事件过滤器（SPEF）和一个事件莫顿码聚类（EMCC）模块。在基准数据集上，SPEF在经典滤波方法中取得最佳去噪性能，EMCC在目标发现方面取得了最高准确率和最低执行时间。",
-      "insight_zh": "利用时空聚类和高效编码，可以在无需训练的情况下实现事件流中移动目标的实时发现。"
+      "abstract": "Modern AI has greatly expanded the capabilities of image processing. However, the ready availability of powerful models, public datasets, and benchmark leaderboards has also en- couraged a model-first research pattern: researchers increasingly begin with an available architecture and optimize it on a public benchmark, rather than beginning with the underlying real-world imaging problem. This can produce impressive benchmark results without necessarily improving our understanding or solution of the real problem. This paper argues for a problem-first approach that distinguishes the physical imaging problem, solution principle, statistical estimator, and computational implementation, while clarifying what modern AI can achieve and which fundamental problems remain unsolved. Through case studies of super- resolution and low-light enhancement, we show how benchmark datasets may define tasks that differ substantially from the real-world problems they are intended to represent, and why performance improvements must be interpreted within the conditions under which they are obtained. We propose a six-stage workflow that places problem formulation, image acquisition, information-loss analysis, assumptions, ambiguity, and evaluation before model and dataset selection. The paper also proposes clearer standards for evidence, reproducibility, uncertainty, and claims of state-of-the-art performance. More fundamentally, it calls for a change in research culture and education so that future researchers learn to understand imaging problems deeply and use modern AI to achieve genuine scientific and technical advancement.",
+      "summary_zh": "论文指出现有图像处理研究存在模型优先的问题，提出应区分物理成像问题、解决方案原理、统计估计器和计算实现，并倡导问题优先的研究方法。通过超分辨率和低光增强案例，展示了基准数据集任务与真实问题之间的差异，并提出六阶段工作流程和更清晰的证据标准。",
+      "insight_zh": "在遥感图像处理和城市更新分析中，应警惕基准数据集驱动的模型优化，需从真实地理问题出发，明确信息损失和假设，以确保AI模型的实际应用价值，而非仅追求基准分数。"
     },
     {
-      "key": "arxiv:2608.26107",
-      "title": "EduRiskX: A Neuro-Symbolic Framework with F-Logic Reasoning for Early Academic Risk Prediction",
-      "title_zh": "EduRiskX：用于早期学术风险预测的神经符号框架与F-Logic推理",
-      "url": "https://arxiv.org/abs/2608.26107",
+      "key": "arxiv:2608.26759",
+      "title": "Fixed-Haven Reservation for Online Multi-Agent Pickup and Delivery in Dense Warehouses",
+      "title_zh": "密集仓库中在线多智能体拣选与配送的固定安全港预留",
+      "url": "https://arxiv.org/abs/2608.26759",
       "doi": "",
-      "arxiv_id": "2608.26107",
+      "arxiv_id": "2608.26759",
       "authors": [
-        "Yu Fu",
-        "Yongqi Kang",
-        "Yong Zhao",
-        "Rongfang Bie"
+        "Taisei Hirayama",
+        "Kohei Yoshida",
+        "Hiroki Sakaji",
+        "Itsuki Noda"
       ],
       "venue": "arXiv",
-      "published": "2026-05-12T05:59:11+00:00",
-      "score": 55,
-      "reason": "论文提出了一种结合Transformer和符号推理的学术风险预测框架，涉及时间序列建模和可解释性，与时空数据挖掘方法有共通之处，但应用领域为教育，相关性中等。",
+      "published": "2026-08-27T07:54:13+00:00",
+      "score": 85,
+      "reason": "论文研究密集仓库中的多智能体拣选与配送问题，提出固定安全港预留机制，与GIS博士研究中多智能体协同和时空数据挖掘方向高度相关，其算法思想可应用于城市物流和交通调度。",
       "tags": [
-        "神经符号",
-        "学术风险预测",
-        "Transformer",
-        "可解释性",
-        "教育数据挖掘"
+        "多智能体",
+        "路径规划",
+        "仓储物流",
+        "算法"
       ],
-      "abstract": "Predicting students' academic risk in online education is crucial for enabling timely interventions that can improve retention and learning outcomes. However, existing models often suffer from limited early detection capability and insufficient interpretability, leading to a \"black-box\" trust crisis that hinders their adoption in real-world pedagogical settings. To address these challenges, we propose EduRiskX, a neuro-symbolic framework that integrates a temporal Transformer-based predictor with F-Logic symbolic reasoning. The neural component models longitudinal student activity sequences using temporal attention, class-weighted loss, and dynamic weekly truncation. Acting as a data-driven expert system, an F-Logic rule base -- grounded in established educational theories (Engagement Theory and Student Integration Model) to mimic the diagnostic logic of human educators -- is constructed exclusively from the training data. The neural risk probability and the symbolic confidence score are then combined through a logistic regression-based fusion mechanism that learns the relative contribution of each signal. Experiments on the Open University Learning Analytics Dataset (OULAD) using a strict 80/10/10 student-level split show that EduRiskX achieves an accuracy of 0.900 and an F1-score of 0.894 at the end of the semester (Week 38), with an average early detection week of 9.32 and a detection rate of 94.30 percent. Compared with state-of-the-art time-series models (PatchTST, iTransformer) and common deep learning baselines (LSTM, CNN), EduRiskX yields improved recall and earlier risk identification under identical conditions. Beyond predictive performance, the F-Logic module provides structured rule-based explanations linking predictions to observable behavioral patterns and educational theories.",
-      "summary_zh": "EduRiskX是一个神经符号框架，结合了基于时间Transformer的预测器和F-Logic符号推理。神经组件对纵向学生活动序列建模，符号规则库模拟教育者的诊断逻辑，两者通过逻辑回归融合。在OULAD数据集上，该框架在学期末达到0.900的准确率和0.894的F1分数，平均早期检测周数为9.32周，检测率为94.30%。",
-      "insight_zh": "将神经预测与基于理论的符号推理相结合，可以提高时间序列预测模型的早期检测能力和可解释性。"
+      "abstract": "Dense warehouses often contain single-lane aisles, dead ends, and tree-like guidepaths that leave little room for idle agents to wait without blocking others. Existing Multi-Agent Pickup and Delivery (MAPD) guarantees for completing all finitely released tasks typically rely on extra waiting endpoints that planned paths can avoid, or on biconnected topology; these assumptions may fail in such layouts. We study fixed-Haven reservation for online MAPD, where pickup-delivery tasks are released over time. Each agent owns a fixed Safe Haven (Haven for short), usually its start cell, that only the owner may occupy and that other agents treat as blocked. For finite task releases, we prove that this fixed-Haven contract completes all released tasks under Haven-Reachability and explicit planning/progress assumptions. We implement the contract in SHARP, a Safe-Haven Retreat Planner that keeps every busy or retreating agent on a collision-free reserved route ending at its Haven. We compare SHARP with representative TP and PIBT-family MAPD baselines: Token Passing (TP), Priority Inheritance with Backtracking (PIBT), and PIBT with Temporary Priority and Temporary Avoidance (PIBTTP-TA) for biconnected main areas with attached trees. In the robustness sweep, SHARP is the only method with 100% success on all tested configurations, at substantially higher centralized planning cost on tree-like layouts. A TP-style fixed-home-return counterfactual with full-route validation also recovers robustness on tested tree-like layouts, suggesting that fixed return is a central robustness mechanism there. A no-overwrite variant shows that disabling mid-retreat reassignment worsens service time (release-to-delivery latency) by 1.89 times and makespan by 1.53 times in the tested high-load tree condition.",
+      "summary_zh": "针对密集仓库中单车道、死胡同和树状路径导致智能体等待空间不足的问题，提出固定安全港（Haven）预留机制，每个智能体拥有一个专属的安全等待单元。基于此机制实现SHARP规划器，在多种测试配置下实现100%的成功率，并分析了固定返回机制对鲁棒性的重要作用。",
+      "insight_zh": "在拓扑受限的环境中，为每个智能体分配专属的等待区域是保证任务完成的关键机制，这种思想可推广到城市交通或物流网络中关键节点的资源预留策略。"
     },
     {
-      "key": "arxiv:2608.26624",
-      "title": "Text-to-seed generation: Training-free open-vocabulary seeded semantic segmentation via re-purposing diffusion as text-guided seed generator",
-      "title_zh": "文本到种子生成：通过重新利用扩散模型作为文本引导的种子生成器实现免训练的开放词汇种子语义分割",
-      "url": "https://arxiv.org/abs/2608.26624",
+      "key": "arxiv:2608.26757",
+      "title": "DEEPCHART: How Far are LLMs from Faithful Data-Science Chart Generation?",
+      "title_zh": "DEEPCHART：LLM在忠实数据科学图表生成方面还有多远？",
+      "url": "https://arxiv.org/abs/2608.26757",
       "doi": "",
-      "arxiv_id": "2608.26624",
+      "arxiv_id": "2608.26757",
       "authors": [
-        "Kumju Jo",
-        "Heesun Jung",
-        "Sungyong Baik"
+        "Jiahui tang",
+        "Kuicai Dong",
+        "Dexun Li",
+        "Hongchao Gu",
+        "Haocheng Yu",
+        "Wei Han",
+        "Chen Zhang",
+        "Yong Liu",
+        "Hao Wang",
+        "Enhong Chen"
       ],
       "venue": "arXiv",
-      "published": "2026-08-27T05:26:37+00:00",
-      "score": 50,
-      "reason": "该研究提出了一种利用扩散模型生成种子点来引导SAM进行开放词汇分割的方法，涉及基础模型的应用与组合，与用户的地理空间智能研究方向有技术关联。",
+      "published": "2026-08-27T07:53:08+00:00",
+      "score": 85,
+      "reason": "该研究构建了面向真实数据科学工作流的图表生成基准，评估LLM在数据提取、推理和渲染各阶段的忠实度。这与GIS中利用LLM生成专题地图、数据可视化报告等任务高度相关，其评估框架和方法可用于检验地理空间数据可视化的可靠性。",
       "tags": [
-        "开放词汇分割",
-        "语义分割",
-        "扩散模型",
-        "SAM",
-        "文本引导"
+        "图表生成",
+        "数据幻觉",
+        "基准测试",
+        "数据科学",
+        "LLM评估"
       ],
-      "abstract": "Open-vocabulary semantic segmentation (OVSS) aims to segment image regions corresponding to arbitrary text queries. Although the Segment Anything Model (SAM) is a powerful foundation model for segmentation, its standalone performance on OVSS remains limited. Existing methods therefore often use SAM to refine coarse masks predicted by other models, but this strategy is unreliable when the initial masks are inaccurate. In this work, we argue that more reliable segmentation can be achieved by exploiting SAM as a region expansion module guided by accurate object points (i.e., seeds) rather than inaccurate coarse masks. Inspired by classical seeded segmentation, we reformulate OVSS as text-guided seed localization followed by seed-based region expansion. To realize this idea, we propose Text-to-Seed (T2S), a training-free framework that leverages the text-to-region correspondence of Stable Diffusion to generate attention-based seed points for target categories described by text. These sparse seeds are then used as point prompts for SAM to produce full object masks. Without task-specific training or additional annotations, T2S achieves strong performance on standard OVSS benchmarks, demonstrating the effectiveness of combining semantic grounding with seed-driven spatial segmentation.",
-      "summary_zh": "该研究提出了一种名为Text-to-Seed (T2S)的免训练框架，用于开放词汇语义分割。T2S利用Stable Diffusion的文本-区域对应关系生成目标类别的注意力种子点，然后将这些稀疏种子点作为SAM的点提示来生成完整的目标掩码。该方法在标准OVSS基准上取得了强劲性能，无需任务特定训练或额外标注。",
-      "insight_zh": "将扩散模型的语义理解能力与SAM的空间分割能力相结合，通过种子点这一中间表示，为开放词汇分割提供了一种无需训练的可靠新思路。"
+      "abstract": "Faithful chart generation in real-world data-science workflows requires grounding visualizations in scattered evidence, computing chart-ready quantities, and rendering them accurately. Modern LLMs can produce visually plausible, instruction-compliant charts, yet data-level hallucinations remain difficult to detect in long, noisy, and multimodal contexts. To measure this gap, we introduce DEEPCHART, an expert-annotated benchmark of 1,482 task-conditioned chart-generation instances drawn from real-world scientific papers, financial filings, and ecosystem reports. DEEPCHART formulates chart generation as an Extract--Reason--Visualize pipeline and evaluates source-data extraction, derived-data reasoning, and chart rendering stage by stage. Experiments with state-of-the-art models show that visually plausible charts often conceal data-level hallucinations, with extraction and reasoning errors common in realistic long and multimodal settings. These findings suggest that larger context windows alone are insufficient; faithful chart generation also requires reliable evidence extraction and quantitative reasoning before rendering. Our benchmark and associated resources are available at https://github.com/tangdouer1005/DeepChart.",
+      "summary_zh": "本文提出DEEPCHART基准，包含1,482个来自真实论文、财报和报告的图表生成实例，将任务分解为提取-推理-可视化三阶段进行评估。实验发现，现有模型生成的图表虽视觉上合理，但常存在数据级幻觉，提取和推理错误在长上下文和多模态场景中普遍。",
+      "insight_zh": "视觉上合理的图表可能隐藏数据级错误，忠实的数据可视化不仅需要更大的上下文窗口，更依赖于可靠的证据提取和定量推理能力，这对地理空间数据可视化工具的评估与开发具有重要启示。"
+    },
+    {
+      "key": "arxiv:2608.26752",
+      "title": "Glass Surface Detection Grounded in 3D Visual Geometry",
+      "title_zh": "基于3D视觉几何的玻璃表面检测",
+      "url": "https://arxiv.org/abs/2608.26752",
+      "doi": "",
+      "arxiv_id": "2608.26752",
+      "authors": [
+        "Yiwei Lu",
+        "Ke Xu",
+        "Tao Yan",
+        "Xiaojun Chang",
+        "Radu Timofte",
+        "Rynson W. H. Lau"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T07:49:21+00:00",
+      "score": 85,
+      "reason": "该研究将玻璃表面检测与3D视觉几何结合，其方法可类比于遥感中建筑物玻璃屋顶或温室等特殊地物的检测，具有较高的方法迁移潜力。",
+      "tags": [
+        "玻璃检测",
+        "3D几何",
+        "多任务学习",
+        "场景理解"
+      ],
+      "abstract": "Glass surface detection (GSD) is critical for scene understanding and reconstruction, and yet remains challenging due to the transparency and reflectivity of glass surfaces. Existing GSD methods typically rely on 2D appearance cues, which may fail in geometrically ambiguous scenes. In this paper, we propose a paradigm shift: grounding GSD in 3D visual geometry to explicitly model the physical existence of glass surfaces. Our method first distills rich 3D priors from the visual geometry grounded transformer (VGGT) and generates glass-aware 3D representations. It then exploits multi-tasking learning with a novel glass detection head, consisting of two core modules: a Frequency Self-Attention Module (FSAM) that identifies glass-specific spectral features for glass surface localization, and a Geometry Grounding Block (GeGB) that selectively grounds 2D features in 3D geometry for glass surface segmentation. Extensive experiments demonstrate that our method achieves state-of-the-art performance across seven standard GSD benchmarks, generalizes well to video/multi-modal data, and substantially improves reconstruction in glass scenes. Code is available in https://github.com/YT3DVision/VGGT_GLASS.",
+      "summary_zh": "本文提出将玻璃表面检测建立在3D视觉几何上，以显式建模玻璃表面的物理存在。方法首先从视觉几何基础模型蒸馏丰富的3D先验，生成玻璃感知的3D表示，然后通过多任务学习，利用频率自注意力模块和几何接地块进行玻璃表面定位与分割。在七个标准基准上达到最先进性能，并显著改善玻璃场景的重建。",
+      "insight_zh": "将2D外观线索与3D几何先验结合，可有效解决透明或反射表面的检测难题，这为遥感中难以通过纯光谱特征识别的特殊地物提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.26724",
+      "title": "GeoMAD: Geometry-Aware Multi-View Anomaly Detection via Deformable Fusion and Distributional Alignment",
+      "title_zh": "GeoMAD：基于可变形融合和分布对齐的几何感知多视图异常检测",
+      "url": "https://arxiv.org/abs/2608.26724",
+      "doi": "",
+      "arxiv_id": "2608.26724",
+      "authors": [
+        "Shang-Fu Chen",
+        "Jhih-Ciang Wu",
+        "Kuan-Chuan Peng",
+        "Wen-Huang Cheng",
+        "Kai-Lung Hua"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T07:15:15+00:00",
+      "score": 85,
+      "reason": "该研究提出几何感知的多视图异常检测方法，与遥感变化检测和多源数据融合高度相关，可借鉴其融合与对齐策略。",
+      "tags": [
+        "多视图异常检测",
+        "几何感知",
+        "可变形融合",
+        "分布对齐",
+        "工业检测"
+      ],
+      "abstract": "Multi-view anomaly detection (MvAD) detects defects by exploiting complementary observations from multiple camera viewpoints. The central challenge is to fuse views with sufficient geometric awareness while remaining scalable to multi-class industrial settings. Existing methods typically fall into two extremes: voxel-based fusion provides explicit geometric alignment but requires costly 3D construction and class-specific assumptions, whereas lightweight patch-based fusion is efficient but relies on discrete candidate matching and lacks continuous cross-view correspondence. In this paper, we propose GeoMAD, a unified multi-view, multi-class AD framework that addresses both geometric correspondence deficiency and distributional inconsistency. Our regularization loss that aligns each view's bottleneck distribution against a per-instance view-centric target, enforcing global consistency without pixel-level correspondence. Together, CDFM and DVA bridge local geometric correspondence and global distributional consistency, providing geometry-aware and distribution-consistent fusion while preserving the efficiency of 2D feature-space learning. Extensive experiments on Real-IAD and MANTA-Tiny show that GeoMAD achieves strong detection and localization performance in unified MvAD.",
+      "summary_zh": "提出GeoMAD框架，通过可变形融合模块和分布对齐损失，解决多视图异常检测中的几何对应和分布不一致问题。",
+      "insight_zh": "在2D特征空间中结合局部几何对应与全局分布一致性，可在保持效率的同时提升多视图检测性能。"
+    },
+    {
+      "key": "arxiv:2608.26647",
+      "title": "Tissue-Mixture Entropy-Weighted Reconstruction for Partial-Volume-Aware Brain MRI Super-Resolution",
+      "title_zh": "组织混合熵加权重建：部分容积感知的脑MRI超分辨率",
+      "url": "https://arxiv.org/abs/2608.26647",
+      "doi": "",
+      "arxiv_id": "2608.26647",
+      "authors": [
+        "Xiao Tong",
+        "Wenyun Yang",
+        "Ziheng Zhang",
+        "Jingzhi Han",
+        "Zhaochu Luo",
+        "Jinbo Yang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T05:58:41+00:00",
+      "score": 85,
+      "reason": "该论文提出部分容积感知的MRI超分辨率重建方法，与遥感图像超分辨率重建在方法论上高度相关，特别是熵加权和边缘区域处理，对GIS中的遥感影像处理有直接借鉴意义。",
+      "tags": [
+        "脑MRI超分辨率",
+        "部分容积效应",
+        "熵加权",
+        "重建",
+        "医学影像"
+      ],
+      "abstract": "Full-image objectives in brain magnetic resonance imaging (MRI) super-resolution (SR) can underweight tissue-transition regions affected by the partial-volume effect (PVE), as these regions occupy only a small fraction of the image. Binary boundaries also do not capture the continuous mixture of cerebrospinal fluid, gray matter, and white matter within a voxel. We propose Anatomy-Guided Gaussian-Parameter Warping with PVE-Balanced Reconstruction (AGW-PBR), which combines a low-resolution (LR)-only reconstruction backbone with a training-time objective that emphasizes tissue transitions. The backbone integrates LR-derived Sobel guidance, soft latent-basis assignment, and bounded grid-anchored residual warping. Fixed, quality-controlled tissue fractions derived from registered T1/T2/PD IXI images are converted into tissue-mixture entropy, which defines mean-normalized reconstruction weights within validated PVE support. These sidecars are used only during training, and inference requires only the LR image. AGW-PBR is evaluated on T2-weighted IXI images at 2x, 4x, and 6x using three seeds and subject-level paired analyses. At 4x, test-only SynthSeg masks independently assess reconstruction in tissue-interface and non-interface regions. Targeted ablations examine valid-support supervision, spatially aligned entropy weighting, and soft latent assignment. The AGW-backbone is also trained from scratch on fastMRI at 4x without PVE supervision. AGW-PBR improves full-image reconstruction across the tested IXI scales and regional fidelity at 4x, while the PVE-free backbone retains strong performance on fastMRI. These findings support tissue-mixture entropy weighting for partial-volume-aware brain MRI SR.",
+      "summary_zh": "本文提出解剖引导的高斯参数扭曲与PVE平衡重建（AGW-PBR），结合仅低分辨率（LR）的重建骨干和强调组织过渡的训练目标。骨干整合LR导出的Sobel引导、软潜基分配和有界网格锚定残差扭曲。固定、质量控制的组织分数转换为组织混合熵，定义重建权重。在IXI T2加权图像上评估，AGW-PBR在2x、4x和6x尺度上改善全图像重建和区域保真度，而无需PVE监督的骨干在fastMRI上保持强性能。",
+      "insight_zh": "该研究的熵加权策略可迁移到遥感图像超分辨率，特别是处理地物边界混合像元，提升重建精度。"
+    },
+    {
+      "key": "arxiv:2608.26613",
+      "title": "Technical Comparative Benchmarking Study: Advanced AI Hybrid Methods for Renewable Energy Farm Optimization and Forecasting",
+      "title_zh": "先进AI混合方法在可再生能源场优化与预测中的技术比较基准研究",
+      "url": "https://arxiv.org/abs/2608.26613",
+      "doi": "",
+      "arxiv_id": "2608.26613",
+      "authors": [
+        "Majid Masoumi",
+        "Asghar Dashtiy",
+        "Mohammad Dehghan",
+        "Mina Rajabi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T04:52:23+00:00",
+      "score": 85,
+      "reason": "论文对多种AI方法在可再生能源场优化和预测中的性能进行了系统比较，涉及时空数据建模和混合模型，与GIS博士研究中的多源数据融合和时空数据挖掘方向高度相关。",
+      "tags": [
+        "机器学习",
+        "能源预测",
+        "混合模型",
+        "时空数据"
+      ],
+      "abstract": "This study provides a comprehensive benchmarking of conventional machine learning (ML), ensemble learning, deep neural networks, recurrent architectures, Transformers, graph based models, and hybrid ensemble deep learning approaches under complementary renewable energy scenarios. Three datasets are considered: a large scale WEC dataset, a 16 WEC dataset, and operational 10 min SCADA measurements at the Penmanshiel wind farm. For structured WEC layout data, tree ensembles exhibited a clear advantage over conventional ML and neural predictors because randomized partitioning and boosting efficiently captured nonlinear layout power interactions without requiring explicit feature representation learning. The Extra Trees was the strongest model, achieving considerable results. Relative to the MLP baseline, this corresponds to an approximately 63.7% reduction in MAE, demonstrating the suitability of randomized tree ensembles for high dimensional structured WEC data. Also, STGCN reduced the MAE to approximately 167.0 kW and achieved R = 0.93 by explicitly learning spatial and temporal turbine interactions. The best overall forecasting accuracy was obtained by the RF BiLSTM hybrid, with an MAE=150.5 kW. Compared with standalone LSTM, this represents an approximately 75% reduction in MAE, while improving on STGCN by approximately 10.0%. Finally, the experiments reveal that no single AI architecture is universally optimal: randomized and boosted ensembles are particularly effective for structured WEC surrogate modeling, graph networks become advantageous when explicit spatial interactions dominate, and ensemble recurrent hybrids provide the strongest balance when nonlinear tabular relationships and temporal dynamics coexist.",
+      "summary_zh": "对传统机器学习、集成学习、深度神经网络、循环架构、Transformer、图模型和混合集成深度学习方法在互补可再生能源场景下进行了全面基准测试。基于WEC和风电场SCADA数据，发现树集成适合结构化布局数据，图网络适合显式空间交互，而RF-BiLSTM混合模型在整体预测精度上最优。",
+      "insight_zh": "没有单一AI架构是普遍最优的，模型选择应基于数据结构和任务特性：结构化数据用树集成，显式空间交互用图网络，非线性时序关系用混合循环模型。"
+    },
+    {
+      "key": "arxiv:2608.26594",
+      "title": "SimCast-S2S: An Efficient Generative Model for Subseasonal Precipitation Forecasting via Transfer Learning from Climate Simulations",
+      "title_zh": "SimCast-S2S：一种基于气候模拟迁移学习的高效次季节降水预报生成模型",
+      "url": "https://arxiv.org/abs/2608.26594",
+      "doi": "",
+      "arxiv_id": "2608.26594",
+      "authors": [
+        "Hiep V. Dang",
+        "Antonios Mamalakis"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T04:20:55+00:00",
+      "score": 85,
+      "reason": "该文提出一种基于潜扩散模型的次季节降水预报框架，通过迁移学习解决数据稀缺问题。其不确定性量化、高效生成和迁移学习策略对遥感时序预测和地球系统建模具有重要参考价值。",
+      "tags": [
+        "生成模型",
+        "潜扩散模型",
+        "降水预报",
+        "迁移学习",
+        "气候模拟"
+      ],
+      "abstract": "Subseasonal-to-seasonal (S2S) precipitation forecasting has substantial financial and societal impact, yet remains challenging because of weak predictive signals, high associated uncertainty, and the computational cost of operational systems, which constrains simulation fidelity. We introduce SimCast-S2S, a generative latent-diffusion framework for probabilistic S2S precipitation forecasting that addresses three major bottlenecks in data-driven prediction. First, because S2S prediction requires uncertainty quantification rather than only deterministic point forecasts, SimCast-S2S is the first data-driven system that uses a diffusion-based generative pipeline for S2S prediction, enabling effective sampling from the underlying conditional distribution. Second, since generating large probabilistic ensembles is computationally costly in physical space, SimCast-S2S instead operates in a compact latent space learned by variational autoencoders, enabling efficient large-ensemble generation. Third, diffusion models typically require large training datasets; SimCast-S2S overcomes this via transfer learning with low-rank adaptation (LoRA), pretraining on large ensembles of climate simulations before fine-tuning on limited reanalysis data. On reanalysis data, SimCast-S2S outperforms deep learning baselines, including convolutional neural networks and U-Net architectures. Notably, despite using only a subset of atmospheric input variables and no post-processing, bias correction, or calibration, SimCast-S2S remains competitive with, and in many cases outperforms, state-of-the-art operational systems such as the ECMWF-S2S baseline. These results indicate that latent generative modeling combined with simulation-to-reanalysis transfer learning offers an efficient and scalable path toward data-driven probabilistic S2S precipitation forecasting.",
+      "summary_zh": "针对次季节降水预报中预测信号弱、不确定性高和计算成本大的问题，提出了SimCast-S2S，一种生成式潜扩散模型。该模型在变分自编码器学习的紧凑潜空间中进行扩散生成，并通过低秩适应（LoRA）从气候模拟预训练迁移至再分析数据微调，实现了高效的概率预报，性能优于深度学习基线，并与ECMWF-S2S等业务系统相当。",
+      "insight_zh": "潜空间生成建模结合模拟到再分析的迁移学习，为数据稀缺的地球物理预报问题提供了一条高效且可扩展的路径。"
+    },
+    {
+      "key": "arxiv:2608.26490",
+      "title": "Bayesian methods and Markov chain Monte Carlo algorithms for curve reconstruction and point cloud data analysis",
+      "title_zh": "用于曲线重建和点云数据分析的贝叶斯方法与马尔可夫链蒙特卡洛算法",
+      "url": "https://arxiv.org/abs/2608.26490",
+      "doi": "",
+      "arxiv_id": "2608.26490",
+      "authors": [
+        "Asir Intesar Tushar",
+        "Ioannis Sgouralis"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-27T00:26:00+00:00",
+      "score": 85,
+      "reason": "该研究提出了一种用于点云数据分析和曲线重建的贝叶斯框架，与遥感中的LiDAR数据处理和地理空间智能高度相关。其不确定性量化方法对城市更新中的三维建模和变化检测具有重要参考价值。",
+      "tags": [
+        "点云",
+        "贝叶斯方法",
+        "MCMC",
+        "曲线重建",
+        "不确定性量化",
+        "LiDAR"
+      ],
+      "abstract": "Point-cloud data routinely captured by modern imaging and sensor technologies provide detailed geometric descriptions of objects and environments, but their analysis is hindered by large data volumes, localization noise, and missing information. In addition, existing point-cloud reconstruction pipelines typically return a single best-fit structure without uncertainty quantification. We introduce a fully Bayesian framework for representing point-cloud data and reconstructing closed curves, in which observed points are modeled as noisy perturbations of latent locations constrained to lie on the underlying curve that is regularized by a non-parametric prior. Posterior inference in our framework is carried out using a series of Markov chain Monte Carlo samplers tailored to point-cloud characteristics. Numerical experiments, including synthetic examples and real-world LiDAR datasets, show accurate reconstructions and quantified uncertainty over the recovered curves.",
+      "summary_zh": "本文提出一个全贝叶斯框架，用于表示点云数据并重建闭合曲线。该框架将观测点建模为潜在位置的噪声扰动，这些位置受限于底层曲线，并通过非参数先验进行正则化。使用一系列针对点云特征定制的MCMC采样器进行后验推断。在合成数据和真实LiDAR数据集上的实验表明，该方法能够实现精确重建并量化不确定性。",
+      "insight_zh": "该研究为点云分析提供了一种能够量化不确定性的贝叶斯方法，这对于遥感应用中需要评估重建结果可靠性的场景（如城市三维建模）具有重要意义。"
+    },
+    {
+      "key": "arxiv:2608.26226",
+      "title": "LLM Agents for Time-Series: A Survey",
+      "title_zh": "用于时间序列的LLM智能体：综述",
+      "url": "https://arxiv.org/abs/2608.26226",
+      "doi": "",
+      "arxiv_id": "2608.26226",
+      "authors": [
+        "Yilong Chen",
+        "Xiao Qin",
+        "Chenghao Liu",
+        "Liang Wu",
+        "Noelle I. Samia",
+        "Kaize Ding"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T15:48:35+00:00",
+      "score": 85,
+      "reason": "该综述系统性地梳理了基于LLM的智能体在时间序列问题上的应用，采用问题驱动的分类法，涵盖预测、异常检测、决策支持等。这与GIS博士研究中利用LLM和多智能体进行时空数据挖掘和城市动态分析高度相关，提供了任务导向的设计指南。",
+      "tags": [
+        "LLM智能体",
+        "时间序列",
+        "综述",
+        "时空数据挖掘"
+      ],
+      "abstract": "LLM-based agents are increasingly being developed for time-series problems, but their design choices vary substantially across task settings. This survey adopts a problem-driven taxonomy that organizes these systems by the time-series problems they address rather than by isolated technical components. We group existing systems into four categories: forecasting and reasoning, augmentation and synthesis, anomaly detection and diagnosis, and decision support. Within each category, we examine how task requirements shape agent architecture, tool use, and memory design. We further summarize representative datasets and environments, and compare reported model performance under shared or closely related settings. Overall, this survey offers a task-oriented guide to designing LLM-based agents for time-series problems and identifies open gaps for future work.",
+      "summary_zh": "本综述采用问题驱动的分类法，将基于LLM的智能体系统按其所解决的时间序列问题分为四类：预测与推理、增强与合成、异常检测与诊断、决策支持。文章探讨了任务需求如何塑造智能体架构、工具使用和记忆设计，总结了代表性数据集和环境，并比较了在共享或相近设置下的模型性能，为设计用于时间序列问题的LLM智能体提供了任务导向指南。",
+      "insight_zh": "LLM智能体在时间序列问题上的设计选择应主要由具体任务需求驱动，而非孤立的技术组件，这为构建面向城市动态预测、异常事件检测等GIS应用的智能体提供了清晰的分类和设计思路。"
     }
   ]
 }

@@ -185,12 +185,15 @@ class IdentityAndScoringTests(unittest.TestCase):
             return json.dumps({"choices": [{"message": {"content": json.dumps(results, ensure_ascii=False)}}]}).encode()
 
         request_mock.side_effect = response
-        config = {"research_profile": "GIS", "llm": {"batch_size": 10, "max_tokens": 4096}}
+        config = {
+            "research_profile": "GIS",
+            "llm": {"batch_size": 10, "max_tokens": 4096, "workers": 3},
+        }
 
         status = analyze_with_deepseek(store, keys, config)
 
         self.assertEqual(status, "ok:21")
-        self.assertEqual(batch_sizes, [10, 10, 1])
+        self.assertEqual(sorted(batch_sizes), [1, 10, 10])
         self.assertTrue(all(store.data["papers"][key]["title_zh"] for key in keys))
 
 
@@ -198,36 +201,102 @@ class FeedOutputTests(unittest.TestCase):
     @mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": "test-key"})
     @mock.patch("research_rss.analyze_with_deepseek")
     @mock.patch("research_rss.fetch_arxiv_email_deliveries")
+    def test_email_only_run_restores_completed_analysis_before_retry(
+        self, fetch_mock, analyze_mock
+    ):
+        cached = Paper("arxiv-email", "2609.00001", "Cached GIS paper", "https://arxiv.org/abs/2609.00001")
+        missing = Paper("arxiv-email", "2609.00002", "Missing GIS paper", "https://arxiv.org/abs/2609.00002")
+        fetch_mock.return_value = ([EmailDelivery("2026-09-02", "hash-1", [cached, missing])], "ok:1")
+
+        def analyze(store, keys, config):
+            from research_rss import _analysis_hash
+
+            self.assertEqual(keys, ["arxiv:2609.00002"])
+            record = store.data["papers"][keys[0]]
+            record["score"] = 80
+            record["title_zh"] = "缺失论文译文"
+            record["analysis_hash"] = _analysis_hash(record, config)
+            return "ok:1"
+
+        analyze_mock.side_effect = analyze
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / "output"
+            archive = output / "arxiv-email-analysis"
+            archive.mkdir(parents=True)
+            (archive / "2026-09-02.json").write_text(
+                json.dumps(
+                    {
+                        "papers": [
+                            {
+                                "key": "arxiv:2609.00001",
+                                "score": 95,
+                                "reason": "已缓存",
+                                "tags": ["GIS"],
+                                "title_zh": "缓存论文译文",
+                                "summary_zh": "缓存摘要",
+                                "insight_zh": "缓存启发",
+                            }
+                        ]
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            config = root / "config.json"
+            config.write_text(
+                json.dumps(
+                    {
+                        "base_url": "https://example.test",
+                        "research_profile": "GIS",
+                        "topics": {"primary": ["GIS"], "methods": []},
+                        "selection": {"min_score": 45, "max_papers_per_day": 10},
+                        "llm": {"candidate_limit": 30},
+                        "email_only": {"analysis_mode": "all-v1", "max_papers_per_day": 30},
+                        "sources": {"email": {"enabled": True}},
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            run_email_only(config, root / "state.json", output, now=dt.datetime(2026, 9, 2, tzinfo=UTC))
+
+            daily = ET.parse(output / "arxiv-email-daily.xml")
+            self.assertIn("DeepSeek 已分析 2/2", daily.findtext("./channel/item/description") or "")
+
+    @mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": "test-key"})
+    @mock.patch("research_rss.analyze_with_deepseek")
+    @mock.patch("research_rss.fetch_arxiv_email_deliveries")
     def test_email_only_run_uses_mailbox_papers_and_separate_guids(
         self, fetch_mock, analyze_mock
     ):
-        first = Paper(
-            source="arxiv-email",
-            paper_id="2609.00001",
-            title="GIS from email",
-            url="https://arxiv.org/abs/2609.00001",
-        )
-        second = Paper(
-            source="arxiv-email",
-            paper_id="2609.00002",
-            title="Remote sensing from email",
-            url="https://arxiv.org/abs/2609.00002",
-        )
+        papers = [
+            Paper(
+                source="arxiv-email",
+                paper_id=f"2609.{index:05d}",
+                title=f"GIS email paper {index:02d}",
+                url=f"https://arxiv.org/abs/2609.{index:05d}",
+            )
+            for index in range(40)
+        ]
         fetch_mock.return_value = (
             [
-                EmailDelivery("2026-09-02", "hash-1", [first]),
-                EmailDelivery("2026-09-02", "hash-2", [second]),
+                EmailDelivery("2026-09-02", "hash-1", papers[:20]),
+                EmailDelivery("2026-09-02", "hash-2", papers[20:]),
             ],
             "ok:2",
         )
 
         def analyze(store, keys, _config):
+            from research_rss import _analysis_hash
+
             for key in keys:
                 record = store.data["papers"][key]
                 record["score"] = 90
                 record["title_zh"] = f"译文 {record['title']}"
-                record["analysis_hash"] = "cached-for-test"
-            return "ok:2"
+                record["analysis_hash"] = _analysis_hash(record, _config)
+            return f"ok:{len(keys)}"
 
         analyze_mock.side_effect = analyze
 
@@ -244,6 +313,13 @@ class FeedOutputTests(unittest.TestCase):
                         "topics": {"primary": ["GIS", "Remote Sensing"], "methods": []},
                         "selection": {"min_score": 45, "max_papers_per_day": 10},
                         "llm": {"candidate_limit": 30},
+                        "email_only": {
+                            "analysis_mode": "all-v1",
+                            "max_emails": 10,
+                            "max_papers_per_day": 30,
+                            "min_score": 45,
+                            "llm_workers": 8,
+                        },
                         "sources": {"email": {"enabled": True}},
                     }
                 ),
@@ -262,14 +338,20 @@ class FeedOutputTests(unittest.TestCase):
             titles = [item.findtext("title") for item in paper_root.findall("./channel/item")]
             guids = [item.findtext("guid") for item in paper_root.findall("./channel/item")]
             daily_description = daily_root.findtext("./channel/item/description") or ""
+            full_archive = json.loads(
+                (output / "arxiv-email-analysis/2026-09-02.json").read_text(encoding="utf-8")
+            )
 
-            self.assertCountEqual(titles, [first.title, second.title])
+            self.assertEqual(len(analyze_mock.call_args.args[1]), 40)
+            self.assertEqual(len(titles), 30)
+            self.assertEqual(len(full_archive["papers"]), 40)
             self.assertTrue(all(guid.startswith("arxiv-email:") for guid in guids))
             self.assertEqual(
                 daily_root.findtext("./channel/item/guid"),
                 "arxiv-email-daily:2026-09-02",
             )
             self.assertIn("arxiv-email: ok:2", daily_description)
+            self.assertIn("DeepSeek 已分析 40/40", daily_description)
             self.assertNotIn("crossref", daily_description.lower())
             saved = json.loads(state.read_text(encoding="utf-8"))
             self.assertCountEqual(saved["processed_email_hashes"], ["hash-1", "hash-2"])

@@ -551,10 +551,12 @@ def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, 
         return "cached"
     settings = config.get("llm", {})
     batch_size = max(1, min(int(settings.get("batch_size", 10)), 20))
+    batches = [pending[offset : offset + batch_size] for offset in range(0, len(pending), batch_size)]
+    workers = max(1, min(int(settings.get("workers", 1)), 16, len(batches)))
     completed = 0
     failures = 0
-    for offset in range(0, len(pending), batch_size):
-        batch = pending[offset : offset + batch_size]
+
+    def request_batch(batch: list[str]) -> tuple[list[str], list[dict[str, Any]] | None]:
         entries = []
         for key in batch:
             record = store.data["papers"][key]
@@ -595,29 +597,43 @@ def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, 
             text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text, flags=re.IGNORECASE)
             results = json.loads(text)
         except (KeyError, TypeError, ValueError, OSError, urllib.error.URLError):
-            failures += 1
-            continue
-        by_id = {item.get("id"): item for item in results if isinstance(item, dict)}
-        for key in batch:
-            item = by_id.get(key)
-            if not item:
+            return batch, None
+        return batch, results if isinstance(results, list) else None
+
+    if workers == 1:
+        responses = map(request_batch, batches)
+    else:
+        executor = concurrent.futures.ThreadPoolExecutor(max_workers=workers)
+        responses = executor.map(request_batch, batches)
+
+    try:
+        for batch_index, (batch, results) in enumerate(responses, 1):
+            if results is None:
+                failures += 1
                 continue
-            record = store.data["papers"][key]
-            try:
-                record["score"] = max(0, min(100, int(item.get("relevance_score", record.get("score", 0)))))
-            except (TypeError, ValueError):
-                pass
-            record["tags"] = [clean_text(tag) for tag in item.get("tags", []) if clean_text(tag)][:8]
-            record["reason"] = clean_text(item.get("reason_zh"))
-            record["title_zh"] = clean_text(item.get("title_zh"))
-            record["summary_zh"] = clean_text(item.get("summary_zh"))
-            record["insight_zh"] = clean_text(item.get("insight_zh"))
-            record["analysis_hash"] = _analysis_hash(record, config)
-            completed += 1
-        print(
-            f"[info] deepseek batch={offset // batch_size + 1}/{(len(pending) + batch_size - 1) // batch_size} "
-            f"completed={completed}/{len(pending)}"
-        )
+            by_id = {item.get("id"): item for item in results if isinstance(item, dict)}
+            for key in batch:
+                item = by_id.get(key)
+                if not item:
+                    continue
+                record = store.data["papers"][key]
+                try:
+                    record["score"] = max(0, min(100, int(item.get("relevance_score", record.get("score", 0)))))
+                except (TypeError, ValueError):
+                    pass
+                record["tags"] = [clean_text(tag) for tag in item.get("tags", []) if clean_text(tag)][:8]
+                record["reason"] = clean_text(item.get("reason_zh"))
+                record["title_zh"] = clean_text(item.get("title_zh"))
+                record["summary_zh"] = clean_text(item.get("summary_zh"))
+                record["insight_zh"] = clean_text(item.get("insight_zh"))
+                record["analysis_hash"] = _analysis_hash(record, config)
+                completed += 1
+            print(
+                f"[info] deepseek batch={batch_index}/{len(batches)} completed={completed}/{len(pending)}"
+            )
+    finally:
+        if workers > 1:
+            executor.shutdown(wait=True)
     return f"ok:{completed}" if not failures else f"partial:{completed}/{len(pending)};failed-batches:{failures}"
 
 
@@ -751,6 +767,13 @@ def _daily_description(store: PaperStore, digest: dict[str, Any]) -> str:
             f'({record.get("score", 0)}/100)</li>'
         )
     parts.append("</ol>")
+    stats = digest.get("analysis_stats", {})
+    if stats:
+        parts.append(
+            f"<p><strong>完整分析：</strong>DeepSeek 已分析 {stats.get('analyzed', 0)}/{stats.get('total', 0)}；"
+            f"80–100 分 {stats.get('high', 0)} 篇；60–79 分 {stats.get('medium', 0)} 篇；"
+            f"45–59 分 {stats.get('low', 0)} 篇；低于 45 分 {stats.get('below_threshold', 0)} 篇。</p>"
+        )
     status = "；".join(f"{name}: {value}" for name, value in digest.get("source_status", {}).items())
     parts.append(f"<p><strong>采集状态：</strong>{html.escape(status)}</p>")
     return "".join(parts)
@@ -848,7 +871,8 @@ def select_papers(
     existing = list(dict.fromkeys(store.data.get("digests", {}).get(day, {}).get("paper_keys", [])))
     maximum = int(config.get("selection", {}).get("max_papers_per_day", 10))
     available = max(0, maximum - len(existing))
-    if available == 0:
+    analyze_all = bool(config.get("llm", {}).get("analyze_all", False))
+    if available == 0 and not analyze_all:
         store.data.setdefault("runtime", {})["llm_status"] = "not-run:digest-full"
         return existing[:maximum]
     candidates = []
@@ -872,7 +896,8 @@ def select_papers(
         key for key in candidates
         if store.data["papers"][key].get("analysis_hash") != _analysis_hash(store.data["papers"][key], config)
     ]
-    analyze_limit = min(len(pending), int(config.get("llm", {}).get("candidate_limit", 30)))
+    configured_limit = int(config.get("llm", {}).get("candidate_limit", 30))
+    analyze_limit = len(pending) if configured_limit <= 0 else min(len(pending), configured_limit)
     try:
         status = analyze_with_deepseek(store, pending[:analyze_limit], config)
     except Exception as error:
@@ -903,7 +928,7 @@ def _write_email_only_outputs(store: PaperStore, output_dir: Path, base_url: str
         title="QQ 邮箱 arXiv 每日速递",
         description="仅记录 QQ 邮箱 arXiv 推送邮件的每日筛选结果",
         item_title="QQ 邮箱 arXiv 每日速递",
-        archive_path="arxiv-email-archive",
+        archive_path="arxiv-email-analysis",
     )
     write_daily_archive(
         store,
@@ -911,6 +936,109 @@ def _write_email_only_outputs(store: PaperStore, output_dir: Path, base_url: str
         base_url,
         title="QQ 邮箱 arXiv 每日速递",
     )
+
+
+def _email_runtime_config(config: dict[str, Any]) -> dict[str, Any]:
+    settings = config.get("email_only", {})
+    runtime = dict(config)
+    runtime["selection"] = {
+        **config.get("selection", {}),
+        "min_score": int(settings.get("min_score", 45)),
+        "max_papers_per_day": int(settings.get("max_papers_per_day", 30)),
+    }
+    runtime["llm"] = {
+        **config.get("llm", {}),
+        "candidate_limit": 0,
+        "analyze_all": True,
+        "workers": int(settings.get("llm_workers", 8)),
+    }
+    runtime["state"] = {
+        **config.get("state", {}),
+        "max_unselected_papers": int(settings.get("max_state_papers", 10000)),
+    }
+    return runtime
+
+
+def _email_analysis_stats(store: PaperStore, keys: list[str], config: dict[str, Any]) -> dict[str, int]:
+    records = [store.data["papers"][key] for key in dict.fromkeys(keys) if key in store.data["papers"]]
+    analyzed = [record for record in records if record.get("analysis_hash") == _analysis_hash(record, config)]
+    scores = [int(record.get("score", 0)) for record in analyzed]
+    return {
+        "total": len(records),
+        "analyzed": len(analyzed),
+        "high": sum(score >= 80 for score in scores),
+        "medium": sum(60 <= score < 80 for score in scores),
+        "low": sum(45 <= score < 60 for score in scores),
+        "below_threshold": sum(score < 45 for score in scores),
+    }
+
+
+def write_email_analysis_archive(
+    store: PaperStore,
+    directory: Path,
+    day: str,
+    keys: list[str],
+    stats: dict[str, int],
+) -> None:
+    directory.mkdir(parents=True, exist_ok=True)
+    records = [store.data["papers"][key] for key in dict.fromkeys(keys) if key in store.data["papers"]]
+    records.sort(key=lambda record: (record.get("score", 0), record.get("title", "")), reverse=True)
+    fields = (
+        "key", "title", "title_zh", "url", "arxiv_id", "authors", "categories", "published",
+        "score", "reason", "tags", "summary_zh", "insight_zh",
+    )
+    papers = [{name: record.get(name) for name in fields} for record in records]
+    payload = {"date": day, "analysis_stats": stats, "papers": papers}
+    (directory / f"{day}.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    rows = []
+    for paper in papers:
+        translated = f"<br><span>{html.escape(paper['title_zh'])}</span>" if paper.get("title_zh") else ""
+        summary = paper.get("summary_zh") or "分析暂缺"
+        reason = paper.get("reason") or ""
+        rows.append(
+            f'<article><h2><a href="{html.escape(paper["url"], quote=True)}">{html.escape(paper["title"])}</a>{translated}</h2>'
+            f'<p>{html.escape(clean_text(summary))}</p><small>相关度 {paper.get("score", 0)}/100 · {html.escape(reason)}</small></article>'
+        )
+    document = (
+        "<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        f"<title>QQ 邮箱 arXiv 完整分析 {day}</title><style>body{{max-width:1000px;margin:40px auto;padding:0 20px;font:16px/1.7 sans-serif}}"
+        "article{padding:16px 0;border-bottom:1px solid #ddd}h2{font-size:18px}span,small{color:#566}a{color:#165d9c}</style></head><body>"
+        f"<h1>QQ 邮箱 arXiv 完整分析 | {day}</h1><p>DeepSeek 已分析 {stats['analyzed']}/{stats['total']} 篇；"
+        f"80–100 分 {stats['high']} 篇，60–79 分 {stats['medium']} 篇，45–59 分 {stats['low']} 篇，"
+        f"低于 45 分 {stats['below_threshold']} 篇。</p>"
+        + "".join(rows)
+        + "</body></html>"
+    )
+    (directory / f"{day}.html").write_text(document, encoding="utf-8")
+
+
+def write_email_analysis_index(directory: Path) -> None:
+    directory.mkdir(parents=True, exist_ok=True)
+    days = sorted((path.stem for path in directory.glob("*.json")), reverse=True)
+    links = "".join(f'<li><a href="{day}.html">{day}</a></li>' for day in days)
+    document = (
+        "<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+        "<title>QQ 邮箱 arXiv 完整分析归档</title></head><body><h1>QQ 邮箱 arXiv 完整分析归档</h1><ul>"
+        + links
+        + "</ul></body></html>"
+    )
+    (directory / "index.html").write_text(document, encoding="utf-8")
+
+
+def load_email_analysis_cache(directory: Path) -> dict[str, dict[str, Any]]:
+    cached: dict[str, dict[str, Any]] = {}
+    for path in directory.glob("*.json"):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for paper in payload.get("papers", []):
+            if isinstance(paper, dict) and paper.get("key") and paper.get("title_zh"):
+                cached[paper["key"]] = paper
+    return cached
 
 
 def run_email_only(
@@ -922,33 +1050,68 @@ def run_email_only(
     now: dt.datetime | None = None,
 ) -> int:
     config = json.loads(config_path.read_text(encoding="utf-8"))
+    email_config = _email_runtime_config(config)
     store = PaperStore.load(state_path)
     now = now or dt.datetime.now(UTC)
     base_url = config["base_url"].rstrip("/")
 
     if offline:
         _write_email_only_outputs(store, output_dir, base_url)
+        write_email_analysis_index(output_dir / "arxiv-email-analysis")
         print(f"[info] email-only offline rebuild papers={len(store.data['papers'])} digests={len(store.data.get('digests', {}))}")
         return 0
 
-    maximum = int(config.get("email_only", {}).get("max_emails", 10))
+    settings = config.get("email_only", {})
+    analysis_mode = settings.get("analysis_mode", "all-v1")
+    runtime = store.data.setdefault("runtime", {})
+    if runtime.get("email_analysis_mode") != analysis_mode:
+        store.data["processed_email_hashes"] = []
+        store.data["digests"] = {}
+        for record in store.data["papers"].values():
+            record["digest_dates"] = []
+            record["email_days"] = []
+        runtime["email_analysis_mode"] = analysis_mode
+
+    maximum = int(settings.get("max_emails", 10))
     deliveries, fetch_status = fetch_arxiv_email_deliveries(
         store,
         config,
         max_emails=maximum,
         now=now,
     )
+    archived_analysis = load_email_analysis_cache(output_dir / "arxiv-email-analysis")
     grouped: dict[str, dict[str, Any]] = {}
     seen_at = now.astimezone(UTC).isoformat()
     for delivery in deliveries:
-        group = grouped.setdefault(delivery.received_day, {"keys": [], "messages": 0, "papers": 0})
+        group = grouped.setdefault(delivery.received_day, {"keys": [], "hashes": [], "messages": 0, "papers": 0})
+        group["hashes"].append(delivery.message_hash)
         group["messages"] += 1
         group["papers"] += len(delivery.papers)
         for paper in delivery.papers:
-            group["keys"].append(store.upsert(paper, now=seen_at))
+            key = store.upsert(paper, now=seen_at)
+            record = store.data["papers"][key]
+            record["email_days"] = list(dict.fromkeys([*record.get("email_days", []), delivery.received_day]))
+            cached = archived_analysis.get(key)
+            if cached and record.get("analysis_hash") != _analysis_hash(record, email_config):
+                for name in ("score", "reason", "tags", "title_zh", "summary_zh", "insight_zh"):
+                    record[name] = cached.get(name, record.get(name))
+                record["analysis_hash"] = _analysis_hash(record, email_config)
+            group["keys"].append(key)
 
+    successful_hashes: list[str] = []
     for day, group in sorted(grouped.items()):
-        selected = select_papers(store, config, day, candidate_keys=group["keys"])
+        day_keys = [
+            key for key, record in store.data["papers"].items()
+            if day in record.get("email_days", [])
+        ]
+        previous = store.data.get("digests", {}).get(day, {})
+        for key in previous.get("paper_keys", []):
+            record = store.data["papers"].get(key)
+            if record:
+                record["digest_dates"] = [value for value in record.get("digest_dates", []) if value != day]
+        store.data.setdefault("digests", {}).pop(day, None)
+        selected = select_papers(store, email_config, day, candidate_keys=day_keys)
+        stats = _email_analysis_stats(store, day_keys, email_config)
         statuses = {
             "arxiv-email": f"ok:{group['messages']};papers:{group['papers']}",
             "deepseek": store.data.get("runtime", {}).get("llm_status", "not-run"),
@@ -960,14 +1123,18 @@ def run_email_only(
             statuses,
             guid_prefix="arxiv-email-daily",
         )
+        store.data["digests"][day]["analysis_stats"] = stats
+        write_email_analysis_archive(store, output_dir / "arxiv-email-analysis", day, day_keys, stats)
+        if stats["analyzed"] == stats["total"]:
+            successful_hashes.extend(group["hashes"])
 
-    hashes = [delivery.message_hash for delivery in deliveries]
-    processed = list(dict.fromkeys([*store.data.get("processed_email_hashes", []), *hashes]))
+    processed = list(dict.fromkeys([*store.data.get("processed_email_hashes", []), *successful_hashes]))
     store.data["processed_email_hashes"] = processed[-5000:]
     store.data["last_run"] = seen_at
     store.data.setdefault("runtime", {})["email_fetch_status"] = fetch_status
-    prune_unselected(store, config, now)
+    prune_unselected(store, email_config, now)
     _write_email_only_outputs(store, output_dir, base_url)
+    write_email_analysis_index(output_dir / "arxiv-email-analysis")
     store.save(state_path)
     print(
         f"[info] email-only messages={len(deliveries)} papers={sum(len(item.papers) for item in deliveries)} "

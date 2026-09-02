@@ -17,10 +17,11 @@ https://fengziclassmate.github.io/journal-rss/arxiv-email-daily.xml
 - `research-daily.xml`：每天一条，记录当天的精选论文以及每个来源的采集状态。
 - `research-archive/`：每日 JSON 和 HTML 快照，不依赖 RSS 阅读器的保留期限。
 - `arxiv-email-papers.xml`：只从 QQ 邮箱收到的 arXiv daily alert 中筛选，每篇论文一条，不使用 Crossref 或 arXiv API 候选。
-- `arxiv-email-daily.xml`：只汇总当天 QQ 邮箱 arXiv 邮件的精选结果，并显示邮件数、邮件论文数和 DeepSeek 状态。
+- `arxiv-email-daily.xml`：只汇总当天 QQ 邮箱 arXiv 邮件的精选结果，并显示邮件数、DeepSeek 完成数和各相关度区间统计。
 - `arxiv-email-archive/`：邮箱专属日报的 JSON 和 HTML 历史快照。
+- `arxiv-email-analysis/`：保存当天全部邮箱论文的 DeepSeek 相关度、中文标题、摘要、理由和研究启发；这些记录不会全部进入 Zotero。
 
-邮箱专属管线使用独立的 `research-data/arxiv-email-state.json`，不会与融合速递共享邮件去重状态。它按邮件头中的收件日期归档，先对邮件论文进行关键词初筛，再由 DeepSeek 分析最多 30 篇候选，最终每天推送相关度不低于 45 分的前 10 篇。除每天 06:20 的常规更新外，工作日北京时间 20:30 会再运行一次邮箱专属管线，以等待当天 arXiv 邮件到达。
+邮箱专属管线使用独立的 `research-data/arxiv-email-state.json`，不会与融合速递共享邮件去重状态。它按 QQ IMAP 实际收件日期归档，由 DeepSeek 分析邮件内全部论文，再向 RSS 推送相关度不低于 45 分的前 30 篇。模型请求按每批 10 篇、最多 8 批并行执行；失败批次不会把邮件标记为完成，下次运行会自动重试。除每天 06:20 的常规更新外，工作日北京时间 20:30 会再运行一次邮箱专属管线，以等待当天 arXiv 邮件到达。
 
 科研速递通过 `research_rss.py` 生成。arXiv API 与 Crossref 不需要私密凭证；邮箱和 DeepSeek 为可选增强功能。若要启用它们，在 GitHub 仓库的 `Settings -> Secrets and variables -> Actions` 中配置：
 
