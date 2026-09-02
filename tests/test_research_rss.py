@@ -8,13 +8,16 @@ from pathlib import Path
 from unittest import mock
 
 from research_rss import (
+    EmailDelivery,
     Paper,
     PaperStore,
     analyze_with_deepseek,
     build_daily_record,
     crossref_date_filter,
+    imap_received_datetime,
     keyword_score,
     parse_arxiv_email,
+    run_email_only,
     prune_unselected,
     run,
     select_papers,
@@ -28,6 +31,13 @@ UTC = dt.timezone.utc
 
 
 class ArxivEmailTests(unittest.TestCase):
+    def test_imap_internal_date_controls_mailbox_day(self):
+        received = imap_received_datetime(
+            b'1 (RFC822 {42} INTERNALDATE "02-Sep-2026 00:15:00 +0800")'
+        )
+
+        self.assertEqual(received.isoformat(), "2026-09-02T00:15:00+08:00")
+
     def test_folded_headers_and_versions_are_preserved(self):
         body = """\\\\
 arXiv:2608.12345v2
@@ -185,6 +195,85 @@ class IdentityAndScoringTests(unittest.TestCase):
 
 
 class FeedOutputTests(unittest.TestCase):
+    @mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": "test-key"})
+    @mock.patch("research_rss.analyze_with_deepseek")
+    @mock.patch("research_rss.fetch_arxiv_email_deliveries")
+    def test_email_only_run_uses_mailbox_papers_and_separate_guids(
+        self, fetch_mock, analyze_mock
+    ):
+        first = Paper(
+            source="arxiv-email",
+            paper_id="2609.00001",
+            title="GIS from email",
+            url="https://arxiv.org/abs/2609.00001",
+        )
+        second = Paper(
+            source="arxiv-email",
+            paper_id="2609.00002",
+            title="Remote sensing from email",
+            url="https://arxiv.org/abs/2609.00002",
+        )
+        fetch_mock.return_value = (
+            [
+                EmailDelivery("2026-09-02", "hash-1", [first]),
+                EmailDelivery("2026-09-02", "hash-2", [second]),
+            ],
+            "ok:2",
+        )
+
+        def analyze(store, keys, _config):
+            for key in keys:
+                record = store.data["papers"][key]
+                record["score"] = 90
+                record["title_zh"] = f"译文 {record['title']}"
+                record["analysis_hash"] = "cached-for-test"
+            return "ok:2"
+
+        analyze_mock.side_effect = analyze
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            config = root / "config.json"
+            state = root / "email-state.json"
+            output = root / "output"
+            config.write_text(
+                json.dumps(
+                    {
+                        "base_url": "https://example.test",
+                        "research_profile": "GIS",
+                        "topics": {"primary": ["GIS", "Remote Sensing"], "methods": []},
+                        "selection": {"min_score": 45, "max_papers_per_day": 10},
+                        "llm": {"candidate_limit": 30},
+                        "sources": {"email": {"enabled": True}},
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            run_email_only(
+                config,
+                state,
+                output,
+                now=dt.datetime(2026, 9, 2, 12, tzinfo=UTC),
+            )
+
+            paper_root = ET.parse(output / "arxiv-email-papers.xml")
+            daily_root = ET.parse(output / "arxiv-email-daily.xml")
+            titles = [item.findtext("title") for item in paper_root.findall("./channel/item")]
+            guids = [item.findtext("guid") for item in paper_root.findall("./channel/item")]
+            daily_description = daily_root.findtext("./channel/item/description") or ""
+
+            self.assertCountEqual(titles, [first.title, second.title])
+            self.assertTrue(all(guid.startswith("arxiv-email:") for guid in guids))
+            self.assertEqual(
+                daily_root.findtext("./channel/item/guid"),
+                "arxiv-email-daily:2026-09-02",
+            )
+            self.assertIn("arxiv-email: ok:2", daily_description)
+            self.assertNotIn("crossref", daily_description.lower())
+            saved = json.loads(state.read_text(encoding="utf-8"))
+            self.assertCountEqual(saved["processed_email_hashes"], ["hash-1", "hash-2"])
+
     def test_daily_record_is_idempotent_and_feeds_have_stable_guids(self):
         store = PaperStore.empty()
         paper = Paper(

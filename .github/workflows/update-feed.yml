@@ -7,6 +7,7 @@ on:
       - main
   schedule:
     - cron: "20 22 * * *"
+    - cron: "30 12 * * 1-5"
 
 permissions:
   contents: write
@@ -36,6 +37,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Generate feed
+        if: github.event_name != 'schedule' || github.event.schedule == '20 22 * * *'
         run: >
           python journal_rss_aggregator.py
           --start-year 2020
@@ -44,6 +46,7 @@ jobs:
           --feed-link https://fengziclassmate.github.io/journal-rss/feed.xml
 
       - name: Generate research digest feeds
+        if: github.event_name != 'schedule' || github.event.schedule == '20 22 * * *'
         env:
           ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
@@ -51,11 +54,21 @@ jobs:
           CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
         run: python research_rss.py
 
+      - name: Generate QQ mailbox arXiv feeds
+        env:
+          ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
+          ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: >
+          python research_rss.py
+          --email-only
+          --state research-data/arxiv-email-state.json
+
       - name: Commit feed changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update RSS feed"
-          file_pattern: feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml cities.xml ceus.xml jgsa.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml research-papers.xml research-daily.xml research-data/state.json research-archive/*.json research-archive/*.html
+          file_pattern: feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml cities.xml ceus.xml jgsa.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml research-papers.xml research-daily.xml research-data/state.json research-archive/*.json research-archive/*.html arxiv-email-papers.xml arxiv-email-daily.xml research-data/arxiv-email-state.json arxiv-email-archive/*.json arxiv-email-archive/*.html
 
       - name: Prepare Pages artifact
         run: |
@@ -63,6 +76,8 @@ jobs:
           cp feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml cities.xml ceus.xml jgsa.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml index.html .nojekyll _site/
           cp research-papers.xml research-daily.xml _site/
           cp -r research-archive _site/
+          cp arxiv-email-papers.xml arxiv-email-daily.xml _site/
+          cp -r arxiv-email-archive _site/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

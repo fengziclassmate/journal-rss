@@ -117,6 +117,13 @@ class Paper:
         return list(dict.fromkeys(aliases))
 
 
+@dataclass(slots=True)
+class EmailDelivery:
+    received_day: str
+    message_hash: str
+    papers: list[Paper]
+
+
 class PaperStore:
     def __init__(self, data: dict[str, Any]):
         if data.get("version") != 1 or not isinstance(data.get("papers"), dict):
@@ -451,14 +458,42 @@ def _email_text(message: email_module.message.Message) -> str:
     return fallback
 
 
-def fetch_arxiv_emails(store: PaperStore, config: dict[str, Any]) -> tuple[list[Paper], list[str], str]:
+def imap_received_datetime(metadata: bytes | str) -> dt.datetime | None:
+    text = metadata.decode("ascii", errors="replace") if isinstance(metadata, bytes) else str(metadata)
+    match = re.search(r'INTERNALDATE\s+"([^"]+)"', text, flags=re.IGNORECASE)
+    if not match:
+        return None
+    try:
+        return dt.datetime.strptime(match.group(1), "%d-%b-%Y %H:%M:%S %z")
+    except ValueError:
+        return None
+
+
+def _email_received_day(
+    message: email_module.message.Message,
+    fallback: dt.datetime,
+    received_at: dt.datetime | None = None,
+) -> str:
+    received = received_at or parse_datetime(message.get("Date")) or fallback.astimezone(UTC)
+    china_time = received.astimezone(dt.timezone(dt.timedelta(hours=8)))
+    return china_time.date().isoformat()
+
+
+def fetch_arxiv_email_deliveries(
+    store: PaperStore,
+    config: dict[str, Any],
+    *,
+    max_emails: int | None = None,
+    now: dt.datetime | None = None,
+) -> tuple[list[EmailDelivery], str]:
     settings = config.get("sources", {}).get("email", {})
     if not settings.get("enabled", True):
-        return [], [], "disabled"
+        return [], "disabled"
     address = os.environ.get("ARXIV_EMAIL_ADDRESS")
     auth_code = os.environ.get("ARXIV_EMAIL_AUTH_CODE")
     if not address or not auth_code:
-        return [], [], "disabled:no-secrets"
+        return [], "disabled:no-secrets"
+    now = now or dt.datetime.now(UTC)
     connection = imaplib.IMAP4_SSL(settings.get("server", "imap.qq.com"), int(settings.get("port", 993)))
     try:
         connection.login(address, auth_code)
@@ -467,11 +502,10 @@ def fetch_arxiv_emails(store: PaperStore, config: dict[str, Any]) -> tuple[list[
         if status != "OK":
             raise RuntimeError("IMAP search failed")
         known = set(store.data.get("processed_email_hashes", []))
-        papers: list[Paper] = []
-        hashes: list[str] = []
-        maximum = max(1, int(settings.get("max_emails", 30)))
+        deliveries: list[EmailDelivery] = []
+        maximum = max(1, int(max_emails if max_emails is not None else settings.get("max_emails", 30)))
         for message_number in message_ids[0].split()[-maximum:]:
-            status, values = connection.fetch(message_number, "(RFC822)")
+            status, values = connection.fetch(message_number, "(RFC822 INTERNALDATE)")
             if status != "OK" or not values or not isinstance(values[0], tuple):
                 continue
             message = email_module.message_from_bytes(values[0][1])
@@ -479,14 +513,26 @@ def fetch_arxiv_emails(store: PaperStore, config: dict[str, Any]) -> tuple[list[
             digest = hashlib.sha256(message_id.encode("utf-8", errors="replace")).hexdigest()
             if digest in known:
                 continue
-            papers.extend(parse_arxiv_email(_email_text(message)))
-            hashes.append(digest)
-        return papers, hashes, f"ok:{len(hashes)}"
+            deliveries.append(
+                EmailDelivery(
+                    received_day=_email_received_day(message, now, imap_received_datetime(values[0][0])),
+                    message_hash=digest,
+                    papers=parse_arxiv_email(_email_text(message)),
+                )
+            )
+        return deliveries, f"ok:{len(deliveries)}"
     finally:
         try:
             connection.logout()
         except imaplib.IMAP4.error:
             pass
+
+
+def fetch_arxiv_emails(store: PaperStore, config: dict[str, Any]) -> tuple[list[Paper], list[str], str]:
+    deliveries, status = fetch_arxiv_email_deliveries(store, config)
+    papers = [paper for delivery in deliveries for paper in delivery.papers]
+    hashes = [delivery.message_hash for delivery in deliveries]
+    return papers, hashes, status
 
 
 def _analysis_hash(record: dict[str, Any], config: dict[str, Any]) -> str:
@@ -568,6 +614,10 @@ def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, 
             record["insight_zh"] = clean_text(item.get("insight_zh"))
             record["analysis_hash"] = _analysis_hash(record, config)
             completed += 1
+        print(
+            f"[info] deepseek batch={offset // batch_size + 1}/{(len(pending) + batch_size - 1) // batch_size} "
+            f"completed={completed}/{len(pending)}"
+        )
     return f"ok:{completed}" if not failures else f"partial:{completed}/{len(pending)};failed-batches:{failures}"
 
 
@@ -585,14 +635,21 @@ def prune_unselected(store: PaperStore, config: dict[str, Any], now: dt.datetime
     return len(remove)
 
 
-def build_daily_record(store: PaperStore, day: str, paper_keys: list[str], source_status: dict[str, str]) -> dict[str, Any]:
+def build_daily_record(
+    store: PaperStore,
+    day: str,
+    paper_keys: list[str],
+    source_status: dict[str, str],
+    *,
+    guid_prefix: str = "research-daily",
+) -> dict[str, Any]:
     for key in dict.fromkeys(paper_keys):
         record = store.data["papers"].get(key)
         if record is not None:
             record["digest_dates"] = list(dict.fromkeys([*record.get("digest_dates", []), day]))
     return {
         "date": day,
-        "guid": f"research-daily:{day}",
+        "guid": f"{guid_prefix}:{day}",
         "paper_keys": list(dict.fromkeys(paper_keys)),
         "paper_count": len(set(paper_keys)),
         "source_status": dict(sorted(source_status.items())),
@@ -643,15 +700,24 @@ def _paper_description(record: dict[str, Any]) -> str:
     return "".join(parts)
 
 
-def write_paper_feed(store: PaperStore, path: Path, feed_url: str, max_items: int = 500) -> None:
-    rss, channel = _rss_root("科研精选论文", feed_url, "arXiv 与期刊来源的个性化科研论文精选", "en")
+def write_paper_feed(
+    store: PaperStore,
+    path: Path,
+    feed_url: str,
+    max_items: int = 500,
+    *,
+    title: str = "科研精选论文",
+    description: str = "arXiv 与期刊来源的个性化科研论文精选",
+    guid_prefix: str = "research",
+) -> None:
+    rss, channel = _rss_root(title, feed_url, description, "en")
     records = [record for record in store.data["papers"].values() if record.get("digest_dates")]
     records.sort(key=lambda item: (max(item["digest_dates"]), item.get("published", "")), reverse=True)
     for record in records[:max_items]:
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = record["title"]
         ET.SubElement(item, "link").text = record["url"]
-        ET.SubElement(item, "guid", isPermaLink="false").text = f"research:{record['key']}"
+        ET.SubElement(item, "guid", isPermaLink="false").text = f"{guid_prefix}:{record['key']}"
         description = _paper_description(record)
         ET.SubElement(item, "description").text = description
         ET.SubElement(item, f"{{{CONTENT_NS}}}encoded").text = description
@@ -690,13 +756,23 @@ def _daily_description(store: PaperStore, digest: dict[str, Any]) -> str:
     return "".join(parts)
 
 
-def write_daily_feed(store: PaperStore, path: Path, feed_url: str, max_items: int = 400) -> None:
-    rss, channel = _rss_root("科研论文每日速递", feed_url, "每天一条的科研论文采集与精选记录", "zh-CN")
+def write_daily_feed(
+    store: PaperStore,
+    path: Path,
+    feed_url: str,
+    max_items: int = 400,
+    *,
+    title: str = "科研论文每日速递",
+    description: str = "每天一条的科研论文采集与精选记录",
+    item_title: str = "科研论文每日速递",
+    archive_path: str = "research-archive",
+) -> None:
+    rss, channel = _rss_root(title, feed_url, description, "zh-CN")
     for day, digest in sorted(store.data.get("digests", {}).items(), reverse=True)[:max_items]:
         item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = f"科研论文每日速递 | {day} | {digest['paper_count']} 篇"
+        ET.SubElement(item, "title").text = f"{item_title} | {day} | {digest['paper_count']} 篇"
         base_url = feed_url.rsplit("/", 1)[0]
-        ET.SubElement(item, "link").text = f"{base_url}/research-archive/{day}.html"
+        ET.SubElement(item, "link").text = f"{base_url}/{archive_path}/{day}.html"
         ET.SubElement(item, "guid", isPermaLink="false").text = digest["guid"]
         ET.SubElement(item, "description").text = _daily_description(store, digest)
         published = dt.datetime.fromisoformat(day).replace(tzinfo=dt.timezone(dt.timedelta(hours=8)))
@@ -722,7 +798,13 @@ def _public_digest(store: PaperStore, digest: dict[str, Any]) -> dict[str, Any]:
     return {**digest, "papers": papers}
 
 
-def write_daily_archive(store: PaperStore, directory: Path, base_url: str) -> None:
+def write_daily_archive(
+    store: PaperStore,
+    directory: Path,
+    base_url: str,
+    *,
+    title: str = "科研论文每日速递",
+) -> None:
     directory.mkdir(parents=True, exist_ok=True)
     links = []
     for day, digest in sorted(store.data.get("digests", {}).items(), reverse=True):
@@ -741,7 +823,7 @@ def write_daily_archive(store: PaperStore, directory: Path, base_url: str) -> No
             "<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
             f"<title>科研论文每日速递 {day}</title><style>body{{max-width:900px;margin:40px auto;padding:0 20px;font:16px/1.7 sans-serif}}"
             "article{padding:16px 0;border-bottom:1px solid #ddd}h2{font-size:19px}span,small{color:#566}a{color:#165d9c}</style></head><body>"
-            f"<h1>科研论文每日速递 | {day}</h1><p>本期 {digest['paper_count']} 篇。采集状态：{html.escape(status)}</p>"
+            f"<h1>{html.escape(title)} | {day}</h1><p>本期 {digest['paper_count']} 篇。采集状态：{html.escape(status)}</p>"
             + "".join(rows)
             + "</body></html>"
         )
@@ -749,14 +831,20 @@ def write_daily_archive(store: PaperStore, directory: Path, base_url: str) -> No
         links.append(f'<li><a href="{day}.html">{day}</a> ({digest["paper_count"]} 篇)</li>')
     index = (
         "<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
-        "<title>科研论文每日速递归档</title></head><body><h1>科研论文每日速递归档</h1><ul>"
+        f"<title>{html.escape(title)}归档</title></head><body><h1>{html.escape(title)}归档</h1><ul>"
         + "".join(links)
         + "</ul></body></html>"
     )
     (directory / "index.html").write_text(index, encoding="utf-8")
 
 
-def select_papers(store: PaperStore, config: dict[str, Any], day: str) -> list[str]:
+def select_papers(
+    store: PaperStore,
+    config: dict[str, Any],
+    day: str,
+    *,
+    candidate_keys: Iterable[str] | None = None,
+) -> list[str]:
     existing = list(dict.fromkeys(store.data.get("digests", {}).get(day, {}).get("paper_keys", [])))
     maximum = int(config.get("selection", {}).get("max_papers_per_day", 10))
     available = max(0, maximum - len(existing))
@@ -764,7 +852,11 @@ def select_papers(store: PaperStore, config: dict[str, Any], day: str) -> list[s
         store.data.setdefault("runtime", {})["llm_status"] = "not-run:digest-full"
         return existing[:maximum]
     candidates = []
-    for key, record in store.data["papers"].items():
+    keys = list(dict.fromkeys(candidate_keys)) if candidate_keys is not None else list(store.data["papers"])
+    for key in keys:
+        record = store.data["papers"].get(key)
+        if record is None:
+            continue
         if record.get("digest_dates"):
             continue
         paper = record_as_paper(record)
@@ -793,6 +885,95 @@ def select_papers(store: PaperStore, config: dict[str, Any], day: str) -> list[s
     minimum = int(config.get("selection", {}).get("min_score", 45))
     additions = [key for key in candidates if store.data["papers"][key].get("score", 0) >= minimum][:available]
     return [*existing, *additions]
+
+
+def _write_email_only_outputs(store: PaperStore, output_dir: Path, base_url: str) -> None:
+    write_paper_feed(
+        store,
+        output_dir / "arxiv-email-papers.xml",
+        f"{base_url}/arxiv-email-papers.xml",
+        title="QQ 邮箱 arXiv 精选论文",
+        description="仅从 QQ 邮箱当天收到的 arXiv 推送邮件中筛选的论文",
+        guid_prefix="arxiv-email",
+    )
+    write_daily_feed(
+        store,
+        output_dir / "arxiv-email-daily.xml",
+        f"{base_url}/arxiv-email-daily.xml",
+        title="QQ 邮箱 arXiv 每日速递",
+        description="仅记录 QQ 邮箱 arXiv 推送邮件的每日筛选结果",
+        item_title="QQ 邮箱 arXiv 每日速递",
+        archive_path="arxiv-email-archive",
+    )
+    write_daily_archive(
+        store,
+        output_dir / "arxiv-email-archive",
+        base_url,
+        title="QQ 邮箱 arXiv 每日速递",
+    )
+
+
+def run_email_only(
+    config_path: Path,
+    state_path: Path,
+    output_dir: Path,
+    *,
+    offline: bool = False,
+    now: dt.datetime | None = None,
+) -> int:
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    store = PaperStore.load(state_path)
+    now = now or dt.datetime.now(UTC)
+    base_url = config["base_url"].rstrip("/")
+
+    if offline:
+        _write_email_only_outputs(store, output_dir, base_url)
+        print(f"[info] email-only offline rebuild papers={len(store.data['papers'])} digests={len(store.data.get('digests', {}))}")
+        return 0
+
+    maximum = int(config.get("email_only", {}).get("max_emails", 10))
+    deliveries, fetch_status = fetch_arxiv_email_deliveries(
+        store,
+        config,
+        max_emails=maximum,
+        now=now,
+    )
+    grouped: dict[str, dict[str, Any]] = {}
+    seen_at = now.astimezone(UTC).isoformat()
+    for delivery in deliveries:
+        group = grouped.setdefault(delivery.received_day, {"keys": [], "messages": 0, "papers": 0})
+        group["messages"] += 1
+        group["papers"] += len(delivery.papers)
+        for paper in delivery.papers:
+            group["keys"].append(store.upsert(paper, now=seen_at))
+
+    for day, group in sorted(grouped.items()):
+        selected = select_papers(store, config, day, candidate_keys=group["keys"])
+        statuses = {
+            "arxiv-email": f"ok:{group['messages']};papers:{group['papers']}",
+            "deepseek": store.data.get("runtime", {}).get("llm_status", "not-run"),
+        }
+        store.data.setdefault("digests", {})[day] = build_daily_record(
+            store,
+            day,
+            selected,
+            statuses,
+            guid_prefix="arxiv-email-daily",
+        )
+
+    hashes = [delivery.message_hash for delivery in deliveries]
+    processed = list(dict.fromkeys([*store.data.get("processed_email_hashes", []), *hashes]))
+    store.data["processed_email_hashes"] = processed[-5000:]
+    store.data["last_run"] = seen_at
+    store.data.setdefault("runtime", {})["email_fetch_status"] = fetch_status
+    prune_unselected(store, config, now)
+    _write_email_only_outputs(store, output_dir, base_url)
+    store.save(state_path)
+    print(
+        f"[info] email-only messages={len(deliveries)} papers={sum(len(item.papers) for item in deliveries)} "
+        f"days={len(grouped)}"
+    )
+    return 0
 
 
 def run(config_path: Path, state_path: Path, output_dir: Path, *, offline: bool = False, now: dt.datetime | None = None) -> int:
@@ -868,7 +1049,10 @@ def main() -> int:
     parser.add_argument("--state", type=Path, default=Path("research-data/state.json"))
     parser.add_argument("--output-dir", type=Path, default=Path("."))
     parser.add_argument("--offline", action="store_true", help="regenerate feeds from state without network or mailbox access")
+    parser.add_argument("--email-only", action="store_true", help="build feeds only from QQ mailbox arXiv alerts")
     args = parser.parse_args()
+    if args.email_only:
+        return run_email_only(args.config, args.state, args.output_dir, offline=args.offline)
     return run(args.config, args.state, args.output_dir, offline=args.offline)
 
 

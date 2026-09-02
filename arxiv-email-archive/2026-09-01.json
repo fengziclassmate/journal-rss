@@ -1,0 +1,317 @@
+{
+  "date": "2026-09-01",
+  "guid": "arxiv-email-daily:2026-09-01",
+  "paper_keys": [
+    "arxiv:2608.30817",
+    "arxiv:2608.30672",
+    "arxiv:2608.30661",
+    "arxiv:2608.29793",
+    "arxiv:2608.29992",
+    "arxiv:2608.29923",
+    "arxiv:2605.09687",
+    "arxiv:2608.30392",
+    "arxiv:2608.30924",
+    "arxiv:2608.30714"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:1582",
+    "deepseek": "ok:30"
+  },
+  "updated_at": "2026-09-02T01:24:53.018693+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2608.30817",
+      "title": "A Composition-Aware Pretraining Framework for Geospatial Foundation Models",
+      "title_zh": "地理空间基础模型的组合感知预训练框架",
+      "url": "https://arxiv.org/abs/2608.30817",
+      "doi": "",
+      "arxiv_id": "2608.30817",
+      "authors": [
+        "Aryan Kashyap Naveen",
+        "Abhishek Srinivas",
+        "Pranav Moothedath",
+        "Shrutilipi Bhattacharjee"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T14:00:12+00:00",
+      "score": 95,
+      "reason": "该研究提出面向地理空间基础模型的组合感知预训练框架，显式编码土地覆盖混合比例，显著提升场景分类和检索性能，与遥感变化检测和多源数据融合高度相关，对地理空间智能有重要贡献。",
+      "tags": [
+        "地理空间基础模型",
+        "预训练",
+        "土地覆盖",
+        "组合学习",
+        "遥感影像",
+        "场景分类"
+      ],
+      "abstract": "Geospatial foundation models have emerged as state-of-the-art methods for downstream Earth observation tasks. However, existing pretraining methodologies process imagery through a single-concept lens, failing to capture the highly compositional nature of complex satellite scenes. We propose a composition-aware pretraining framework that explicitly encodes fractional land-cover mixtures. Each satellite image cell is mapped to a histogram representing its fractional land-cover distribution, which we term the \"composition target\". These targets serve as the primary prediction objective and are distilled into the backbone using Earth Mover's Distance. Experimental evaluation shows that composition-aware pretraining yields substantial gains on region-level understanding tasks requiring semantic similarity judgment, including zero-shot image retrieval and scene classification, while remaining competitive on tasks requiring fine-grained spatial precision, such as segmentation and object detection. With a 36.8M-parameter backbone, our framework outperforms SatMAE and Prithvi-EO-2.0, which contain 303M and 600M parameters, respectively, in most retrieval and scene classification settings. On the fine-grained ForestNet-12 dataset, a rigorous testbed for compositional discrimination, our method boosts baseline mAP@10 from 0.279 to 0.434, a 55.6% relative improvement, providing direct evidence for the effectiveness of explicit composition modeling. The code implementation can be found at https://github.com/05kashyap/GFM_Composition_Pretraining",
+      "summary_zh": "提出一种组合感知预训练框架，将卫星影像单元映射到土地覆盖分数直方图作为组合目标，使用推土机距离进行蒸馏，在区域级理解任务上显著优于SatMAE和Prithvi-EO-2.0等大型模型，并在ForestNet-12上mAP@10提升55.6%。",
+      "insight_zh": "显式建模土地覆盖组合信息能有效增强基础模型对复杂场景的语义理解，为地理空间基础模型的预训练提供了新方向。"
+    },
+    {
+      "key": "arxiv:2608.30672",
+      "title": "HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving",
+      "title_zh": "HiRS-Agent：用于可靠长时序遥感任务求解的层次化多智能体系统",
+      "url": "https://arxiv.org/abs/2608.30672",
+      "doi": "",
+      "arxiv_id": "2608.30672",
+      "authors": [
+        "Boyang Mu",
+        "Zhiwei Wei",
+        "Mugen Peng",
+        "Wenjia Xu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T12:13:41+00:00",
+      "score": 92,
+      "reason": "该研究提出层次化多智能体系统解决长时序遥感任务，与LLM和多智能体在遥感中的应用高度契合，直接面向遥感任务求解的可靠性和工具使用优化，对地理空间智能研究有重要价值。",
+      "tags": [
+        "多智能体",
+        "遥感",
+        "LLM",
+        "长时序任务",
+        "工具使用",
+        "层次架构"
+      ],
+      "abstract": "Recent advances in large language models and multimodal models have pushed remote sensing (RS) processing from simple perception models to agentic systems designed to tackle complex, long-horizon RS tasks. However, existing systems often rely on monolithic decision-making frameworks, which fail to accommodate the multi-stage, interdependent nature of RS tasks. This centralized approach leads to challenges such as unstable task execution, incorrect tool usage, and error propagation across stages. To address these issues, we propose HiRS-Agent, a hierarchical multi-agent system for long-horizon RS task solving. HiRS-Agent adopts a two-level collaborative architecture: the Manager Layer handles dynamic routing, step-level verification, replanning, and termination control, while the Specialist Layer organizes domain-specific tools according to the RS workflow and is responsible for subtask reasoning and tool execution. To further enhance the system's capability, we introduce a two-stage supervised tuning strategy and a verification-guided hierarchical reinforcement learning stage to jointly optimize coordination and tool-use policies. Experiments on Earth-Agent Benchmark and ThinkGeo show that HiRS-Agent substantially improves long-horizon tool-use capability and final-task correctness, demonstrating the effectiveness of structured multi-agent collaboration for reliable RS agents. The code is publicly available at https://github.com/IntelliSensing/HiRS-Agent.",
+      "summary_zh": "提出HiRS-Agent，一种层次化多智能体系统，采用管理层和专家层两级协作架构，结合两阶段监督微调和验证引导的层次强化学习，在Earth-Agent Benchmark和ThinkGeo上显著提升长时序工具使用能力和任务正确性。",
+      "insight_zh": "层次化多智能体协作能有效应对遥感任务的阶段依赖性和错误传播问题，为构建可靠遥感智能体提供了有效方案。"
+    },
+    {
+      "key": "arxiv:2608.30661",
+      "title": "SwarmBench: Can Large Language Models Act as Agent Swarm Orchestrators?",
+      "title_zh": "SwarmBench：大语言模型能否充当智能体集群编排者？",
+      "url": "https://arxiv.org/abs/2608.30661",
+      "doi": "",
+      "arxiv_id": "2608.30661",
+      "authors": [
+        "Jinshan Gao",
+        "Zhuoran Jin",
+        "Tianyi Men",
+        "Kang Liu",
+        "Jun Zhao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T12:02:04+00:00",
+      "score": 90,
+      "reason": "该论文提出了一个专门评估LLM作为智能体集群编排者能力的基准测试，直接涉及LLM和多智能体系统，与您的研究方向（LLM和多智能体）高度契合，对于构建和评估城市更新中的多智能体协同系统具有直接参考价值。",
+      "tags": [
+        "大语言模型",
+        "多智能体系统",
+        "智能体编排",
+        "基准测试",
+        "经验回放"
+      ],
+      "abstract": "Large language model-based multi-agent systems are evolving from fixed interaction topologies toward dynamically orchestrated Agent Swarms. However, existing benchmarks are still largely based on single-agent or general-purpose agent tasks, making it difficult to systematically evaluate key orchestration capabilities. We propose SwarmBench, a benchmark that evaluates model performance from multiple perspectives, including accuracy, efficiency, cost, and process quality. Experimental results show that current models exhibit substantial differences in orchestration capability. These differences are reflected not only in final accuracy, efficiency, and cost, but also in the overall quality of the orchestration process itself. Based on these findings, we further propose SwarmExp, a simple yet effective method based on experience extraction and experience replay, which consistently improves the orchestration performance of large language models.",
+      "summary_zh": "该论文提出了SwarmBench，一个从准确性、效率、成本和过程质量等多个角度评估LLM编排智能体集群能力的基准。实验发现当前模型在编排能力上存在显著差异，并进一步提出了基于经验提取和回放的SwarmExp方法，能持续提升LLM的编排性能。",
+      "insight_zh": "该研究为评估和提升LLM在动态多智能体系统中的编排能力提供了系统化的方法和工具，这对于设计复杂的城市更新多智能体模拟系统至关重要，其经验回放机制或可提升智能体协作的效率和鲁棒性。"
+    },
+    {
+      "key": "arxiv:2608.29793",
+      "title": "GridFlow: Structured Latent Flow for Seamless City-Scale 3D Point Cloud Generation",
+      "title_zh": "GridFlow：面向无缝城市尺度3D点云生成的结构化潜流",
+      "url": "https://arxiv.org/abs/2608.29793",
+      "doi": "",
+      "arxiv_id": "2608.29793",
+      "authors": [
+        "Xinyu Wang",
+        "Muhammad Ibrahim",
+        "Atif Mansoor",
+        "Ajmal Mian"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T13:39:36+00:00",
+      "score": 90,
+      "reason": "该研究直接面向城市尺度3D点云生成，利用卫星影像、语义分割图和DSM等多源遥感数据，与城市更新和三维城市建模高度相关，对城市空间分析与可视化有重要价值。",
+      "tags": [
+        "3D点云生成",
+        "城市尺度",
+        "遥感影像",
+        "城市更新",
+        "多模态",
+        "深度学习"
+      ],
+      "abstract": "Generating realistic 3D city environments from remote sensing data is important for simulation, urban planning, and mixed reality, yet existing point cloud generation methods are limited to single objects or bounded indoor scenes and cannot handle the scale, seamless tiling, and partial observability challenges of city-scale generation. We present \\ours{}, a multi-stage framework that generates dense, colored point clouds ($10^5$ points per $150\\text{m}{\\times}150\\text{m}$ tile) at city scale, conditioned on satellite imagery, semantic segmentation maps, and digital surface models (DSM). A ------------------------------------------------------------------------------",
+      "summary_zh": "提出GridFlow，一种多阶段框架，用于生成城市尺度密集彩色3D点云（每150m×150m瓦片10^5点），以卫星影像、语义分割图和数字表面模型（DSM）为条件，解决城市尺度生成中的规模、无缝拼接和部分可观测性挑战。",
+      "insight_zh": "该框架通过结构化潜流和分阶段生成策略，有效应对城市尺度点云生成中的规模与拼接难题，为城市三维重建和更新评估提供了新的技术路径。"
+    },
+    {
+      "key": "arxiv:2608.29992",
+      "title": "SVI2LoD3: Agent-Driven Reconstruction of LoD3 Facade Openings in Semantic 3D City Models from Volunteered Street View Imagery using Large Language and Visual Models",
+      "title_zh": "SVI2LoD3：利用大语言和视觉模型从众包街景影像智能体驱动重建语义3D城市模型中的LoD3立面开口",
+      "url": "https://arxiv.org/abs/2608.29992",
+      "doi": "",
+      "arxiv_id": "2608.29992",
+      "authors": [
+        "Elmehdi Kanna",
+        "Lukas Arzoumanidis",
+        "Huynh Duc An Son Nguyen",
+        "Youness Dehbi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T19:37:01+00:00",
+      "score": 85,
+      "reason": "论文直接面向3D城市模型LoD3重建，利用街景影像和LLM/视觉模型，与城市更新和地理空间智能高度相关。",
+      "tags": [
+        "3D城市模型",
+        "LoD3",
+        "街景影像",
+        "大语言模型",
+        "视觉模型",
+        "零样本分割"
+      ],
+      "abstract": "This paper presents an end-to-end, agent-driven pipeline for the LoD3 reconstruction of facade openings in 3D city models, producing directly usable CityGML-conform outputs. In contrast to existing approaches that rely on supervised semantic segmentation and therefore require large amounts of manually annotated training data, the proposed method employs a zero-shot segmentation strategy. This substantially reduces the annotation effort while still achieving strong performance in our benchmark on the eTRIMS dataset. A further key contribution is the enforcement of correct partonomic hierarchies, thereby producing CityGML-conform LoD3 building models. Beyond the reconstruction pipeline itself, this work also introduces a novel evaluation metric for facade reconstruction, termed Facade Feature Distance (FFD). Unlike conventional metrics such as mIoU or FRDS, which assess similarity primarily through pixel-wise overlap, FFD measures distance in a high-level feature space derived from a vision transformer. In doing so, it captures both semantic correctness and architectural layout, providing a more suitable assessment of facade reconstruction quality. The proposed pipeline and evaluation strategy together offer a practical and scalable contribution toward the automated generation and analysis of semantically enriched 3D city models. The developed code is published at: https://github.com/hcu-cml/citydb-SVI2LoD3-ai.",
+      "summary_zh": "本文提出一个端到端的智能体驱动流程，用于3D城市模型中立面开口的LoD3重建，直接生成符合CityGML标准的输出。该方法采用零样本分割策略，减少人工标注，并引入新的评估指标Facade Feature Distance (FFD)来衡量重建质量。",
+      "insight_zh": "利用零样本分割和LLM驱动的智能体流程，可以显著降低生成语义丰富的3D城市模型的门槛，为城市更新的自动化分析提供了可扩展的解决方案。"
+    },
+    {
+      "key": "arxiv:2608.29923",
+      "title": "Towards Continual Test-Time Adaptation of Vision-Language Models in Open-Vocabulary Semantic Segmentation",
+      "title_zh": "开放词汇语义分割中视觉-语言模型的持续测试时适应",
+      "url": "https://arxiv.org/abs/2608.29923",
+      "doi": "",
+      "arxiv_id": "2608.29923",
+      "authors": [
+        "Chandler Timm C. Doloriel",
+        "Yunbei Zhang",
+        "Sarthak Kumar Maharana",
+        "Muhammad Salman Siddiqui",
+        "Tor Kristian Stevik",
+        "Fadi Al Machot",
+        "Kristian Hovde Liland",
+        "Habib Ullah"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T17:39:14+00:00",
+      "score": 85,
+      "reason": "该研究提出稳定化框架DAF，解决开放词汇语义分割在持续测试时分布偏移下的脆弱性，并在遥感数据集LoveDA上验证，与遥感影像理解和模型鲁棒性研究高度相关。",
+      "tags": [
+        "开放词汇分割",
+        "测试时适应",
+        "视觉-语言模型",
+        "遥感",
+        "分布偏移"
+      ],
+      "abstract": "Open-vocabulary semantic segmentation (OVSS) relies on vision-language alignment to recognize arbitrary text-defined categories, yet this alignment is fragile under continual test-time distribution shift. Our diagnostic analysis reveals that entropy minimization drives patch-level class collapse, continual updates erode vision-language alignment, and redundant gradients from low-shift samples waste computation. We propose Diversify, Anchor, and Filter (DAF), a stabilization framework that augments entropy-based adaptation with a marginal diversity loss that resists collapse, a cross-modal anchor consistency loss that constrains feature drift relative to a frozen source model, and feature salience filtering that skips low-value backward passes to offset part of the source-anchor overhead. We evaluate on five datasets spanning natural scenes, autonomous driving, underwater imagery, and remote sensing with their corrupted variants. Across the evaluated continual shifts, DAF remains stable where entropy minimization collapses, improving mIoU by over 8 points on Pascal VOC20-C, over 9 points on LoveDA, and over 3 points on Foggy Cityscapes compared to the source model, and is robust to aggressive adaptation and learning rate choices.",
+      "summary_zh": "提出DAF框架，通过边际多样性损失、跨模态锚定一致性损失和特征显著性过滤，稳定熵最小化适应过程，在五个数据集（包括遥感LoveDA）上显著提升mIoU，并增强对激进适应和学习率的鲁棒性。",
+      "insight_zh": "针对持续分布偏移的稳定化策略能有效防止视觉-语言模型在适应过程中的崩溃，为遥感开放词汇分割的实用化提供了方法支持。"
+    },
+    {
+      "key": "arxiv:2605.09687",
+      "title": "Spatial-Frequency Gated Swin Transformer for Cross-Sensor Remote Sensing Super-Resolution",
+      "title_zh": "用于跨传感器遥感图像超分辨率的空间-频率门控Swin Transformer",
+      "url": "https://arxiv.org/abs/2605.09687",
+      "doi": "",
+      "arxiv_id": "2605.09687",
+      "authors": [
+        "Md Aminur Hossain",
+        "Ayush V. Patel",
+        "Sanjay K. Singh",
+        "Yogesh Jethani",
+        "Biplab Banerjee"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该论文直接针对遥感图像超分辨率任务，提出了一种结合空间与频率信息的Swin Transformer改进模型，与您的研究方向（遥感变化检测、多源数据融合）高度相关，尤其是在处理跨传感器数据方面具有潜在应用价值。",
+      "tags": [
+        "遥感",
+        "超分辨率",
+        "Transformer",
+        "跨传感器",
+        "Swin Transformer"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文提出了一种名为空间-频率门控Swin Transformer的模型，用于解决跨传感器遥感图像的超分辨率问题。模型通过门控机制有效融合空间域和频率域的信息，以提升超分辨率重建的性能。",
+      "insight_zh": "该研究强调了在遥感图像超分辨率中融合空间与频率信息的重要性，并针对跨传感器场景进行了专门设计，这为处理多源遥感数据融合中的分辨率差异问题提供了新的技术思路。"
+    },
+    {
+      "key": "arxiv:2608.30392",
+      "title": "Foundation Models Meet Agriculture: Challenges Beyond Pretraining",
+      "title_zh": "基础模型遇上农业：预训练之外的挑战",
+      "url": "https://arxiv.org/abs/2608.30392",
+      "doi": "",
+      "arxiv_id": "2608.30392",
+      "authors": [
+        "Vishal Nedungadi",
+        "Xingguo Xiong",
+        "Marc Ru{\\ss}wurm",
+        "Ioannis N. Athanasiadis"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T07:47:57+00:00",
+      "score": 80,
+      "reason": "该研究系统评估了地球观测基础模型在农业任务中的性能瓶颈，识别预训练-部署模态差距和任务空间结构问题，与遥感基础模型应用和多源数据融合高度相关，对理解模型泛化有重要启示。",
+      "tags": [
+        "基础模型",
+        "农业",
+        "遥感",
+        "模态差距",
+        "任务空间",
+        "泛化"
+      ],
+      "abstract": "Global food security and sustainable climate action increasingly rely on robust, scalable agricultural monitoring. Earth observation foundation models have emerged as powerful, label-efficient tools across general remote sensing domains, yet early attempts to deploy them for agricultural applications have yielded surprisingly poor results. We hypothesize that this performance gap stems from the extreme heterogeneity of agricultural landscapes and the inherent inability of current earth observation foundation models to adapt to task-specific nuances. In this work, we systematically evaluate two critical bottlenecks hindering the deployment of foundation models in agricultural tasks, benchmarking two earth observation foundation models, a foundation model designed for tabular data, and conventional supervised baselines across seven real-world agricultural datasets spanning yield prediction, phenology estimation, and crop classification. First, we identify a pretraining-deployment modality gap: agricultural downstream tasks frequently require diverse, non-imagery data modalities that earth observation foundation models are architecturally unequipped to ingest, while a foundation model built for tabular data handles this heterogeneity more naturally. Second, we formalize the agricultural task space across five structural axes to demonstrate why current models fail to generalize reliably, resulting in highly unstable model rankings across evaluation settings. By characterizing these structural and modal gaps, our insights highlight the friction between general-purpose architectures and specialized agricultural downstream data, providing a strategic roadmap for developing the next generation of domain-aware foundation models.",
+      "summary_zh": "系统评估两个地球观测基础模型、一个表格数据基础模型和传统监督基线在七个农业数据集上的表现，识别出预训练-部署模态差距和农业任务空间的结构性轴，解释当前模型泛化不稳定的原因。",
+      "insight_zh": "农业任务的异质性和非影像数据模态需求是基础模型应用的主要障碍，通用架构与领域数据之间的摩擦为领域感知模型设计提供了战略方向。"
+    },
+    {
+      "key": "arxiv:2608.30924",
+      "title": "TRIPPULSE: Multi-Agent Travel Planning with Review-Grounded Reasoning",
+      "title_zh": "TRIPPULSE：基于评论推理的多智能体旅行规划",
+      "url": "https://arxiv.org/abs/2608.30924",
+      "doi": "",
+      "arxiv_id": "2608.30924",
+      "authors": [
+        "Priyanshu Karmakar",
+        "Borru Vijay Sai",
+        "Shubhojit Mallick",
+        "Abhik Jana",
+        "Shreya Ghosh",
+        "Manish Gupta"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T15:02:37+00:00",
+      "score": 75,
+      "reason": "该研究提出基于多智能体和LLM的旅行规划框架，融合评论信息进行个性化推荐，与LLM和多智能体在城市与时空场景中的应用高度相关，对城市服务推荐和时空行为建模有参考价值。",
+      "tags": [
+        "多智能体",
+        "LLM",
+        "旅行规划",
+        "评论挖掘",
+        "时空约束",
+        "个性化"
+      ],
+      "abstract": "Travel itinerary generation requires balancing strict spatio-temporal constraints with human preferences. Existing LLM-based planners mainly rely on structured attributes and pre- defined traveler personas, but real travel deci- sions are often shaped by reviews that reveal experiential factors such as comfort, safety, ser- vice quality, ambiance, crowding, and hidden risks absent from structured databases. Incor- porating such review information is therefore critical to realistic, user-centric itinerary gen- eration. We propose TRIPPULSE1, a multi- agent framework for review-grounded travel planning. Instead of relying on a monolithic planner (and face context and reasoning bot- tlenecks), TRIPPULSE2 decomposes itinerary generation into specialized agents (each op- erating over localized contexts) for accom- modations, transportation, meals, attractions, and events, coordinated through a global or- chestrator with scheduling mechanisms that enforce temporal and budget feasibility. We augment TRIPCRAFT with 100K+ real-world reviews and introduce Review-Grounded Per- sona Alignment (RGPA), an LLM-as-a-Judge metric for evaluating alignment with human- centric travel experiences. Experiments across multiple trip durations and diverse proprietary and open-source models show that TRIPPULSE maintains strong constraint satisfaction while generating more personalized and experien- tially grounded itineraries.",
+      "summary_zh": "提出TRIPPULSE，一种多智能体旅行规划框架，将行程生成分解为住宿、交通、餐饮、景点和事件等专业智能体，由全局协调器调度以满足时空和预算约束，并引入基于评论的个性化对齐指标RGPA。",
+      "insight_zh": "该研究通过多智能体分解和评论信息融合，在满足严格时空约束的同时提升行程个性化，展示了LLM在复杂时空决策任务中的潜力。"
+    },
+    {
+      "key": "arxiv:2608.30714",
+      "title": "SegWave: Wavelet-Driven Segmentation of Tampered Regions",
+      "title_zh": "SegWave：基于小波驱动的篡改区域分割",
+      "url": "https://arxiv.org/abs/2608.30714",
+      "doi": "",
+      "arxiv_id": "2608.30714",
+      "authors": [
+        "Siddhi Pravin Lipare",
+        "Vishesh Kumar",
+        "Akshay Agarwal"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T12:54:11+00:00",
+      "score": 75,
+      "reason": "该论文提出了一种结合空间与频率域信息的图像篡改检测方法，属于图像取证领域，与您的研究方向（遥感变化检测）在技术方法（频率域分析、Transformer）上高度相关，可应用于遥感影像的真实性验证，关联度较高。",
+      "tags": [
+        "图像取证",
+        "篡改检测",
+        "小波变换",
+        "Transformer",
+        "频率域"
+      ],
+      "abstract": "Verifying image authenticity is increasingly difficult, posing serious risks across journalism, law enforcement, and political domains. Most existing forensic methods rely on high-level visual artifacts and treat frame detection as a simple binary task. To address this, we propose SegWave, a hybrid framework that jointly leverages spatial and frequency-domain cues for image tampering detection. SegWave integrates a transformer-based architecture with the Discrete Wavelet Transform (DWT) to capture localized, multi-scale frequency inconsistencies indicative of manipulation. To further improve localization effectiveness, we introduce an Adaptive Sub-band Attention module (ASA) that dynamically highlights the informative high-frequency wavelet components. Extensive experiments on multiple benchmark datasets demonstrate that SegWave consistently outperforms state-of-the-art tampering detection methods in challenging evaluation settings.",
+      "summary_zh": "SegWave是一个混合框架，结合了Transformer架构和离散小波变换（DWT），以捕捉局部、多尺度的频率不一致性，用于图像篡改检测和定位。该框架还引入了自适应子带注意力模块（ASA）来动态突出信息丰富的高频小波分量，在多个基准数据集上优于现有方法。",
+      "insight_zh": "该研究强调了在图像取证中联合利用空间和频率域线索的重要性，其小波驱动的注意力机制或可借鉴到遥感变化检测中，用于捕捉地物变化在频率域上的细微特征。"
+    }
+  ]
+}

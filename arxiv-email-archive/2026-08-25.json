@@ -1,0 +1,329 @@
+{
+  "date": "2026-08-25",
+  "guid": "arxiv-email-daily:2026-08-25",
+  "paper_keys": [
+    "arxiv:2608.22485",
+    "arxiv:2608.21754",
+    "arxiv:2607.24772",
+    "arxiv:2608.21567",
+    "arxiv:2506.20073",
+    "arxiv:2608.22634",
+    "arxiv:2605.17949",
+    "arxiv:2608.23479",
+    "arxiv:2603.00604",
+    "arxiv:2608.23503"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:1098",
+    "deepseek": "ok:30"
+  },
+  "updated_at": "2026-09-02T01:19:29.328544+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2608.22485",
+      "title": "HeatTok: Enhancing Remote Sensing Image Understanding via Thermodiffusion-based Tokenization",
+      "title_zh": "HeatTok：通过热扩散标记化增强遥感图像理解",
+      "url": "https://arxiv.org/abs/2608.22485",
+      "doi": "",
+      "arxiv_id": "2608.22485",
+      "authors": [
+        "Yingying Yan",
+        "Jiaqi Tang",
+        "Wei Wei",
+        "Qianzhou Wang",
+        "Jinjian Wu",
+        "Botong Geng",
+        "Jianmin Chen",
+        "Yuyang Xia",
+        "Lei Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-23T16:11:09+00:00",
+      "score": 95,
+      "reason": "该研究针对遥感图像中多模态大语言模型的视觉标记化问题，提出基于热扩散的语义感知标记器，直接服务于遥感图像理解，与博士研究方向高度契合。",
+      "tags": [
+        "遥感图像理解",
+        "多模态大语言模型",
+        "标记化",
+        "热扩散",
+        "位置编码"
+      ],
+      "abstract": "Current visual tokenizers in Multimodal Large Language Models (MLLMs) predominantly rely on patch-based partitioning, which causes severe semantic mixture and object fragmentation in remote sensing imagery due to the irregular contours of geo-objects. Moreover, existing adaptive methods struggle to extract precise object-level tokens and lack dedicated geometric positional encodings for irregular regions. In this paper, we propose HeatTok, a semantic-aware tokenizer driven by thermodiffusion aggregation. Inspired by the physical principles of heat conduction, HeatTok adaptively merges adjacent homogeneous regions to generate semantically independent, object-aligned irregular tokens. To enable MLLMs to perceive these irregular shapes, we design the Gaussian Multimodal Rotary Positional Embedding (G-MRoPE), which models token spatial distributions via 2D Gaussians and explicitly injects center, scale, and orientation cues. Extensive evaluations on the VRSBench and EarthVQA datasets demonstrate that HeatTok effectively preserves object-level semantic integrity and achieves state-of-the-art performance under a reasonable token budget. The code is available: https://github.com/YingyingYan1/HeatTok.",
+      "summary_zh": "该研究提出HeatTok，一种由热扩散聚合驱动的语义感知标记器，用于多模态大语言模型（MLLM）中的遥感图像理解。HeatTok受热传导物理原理启发，自适应合并相邻同质区域，生成语义独立、对象对齐的不规则标记。同时设计了高斯多模态旋转位置编码（G-MRoPE），通过二维高斯分布建模标记空间分布，注入中心、尺度和方向信息。在VRSBench和EarthVQA数据集上取得了最先进性能。",
+      "insight_zh": "该研究通过物理启发的热扩散聚合生成对象级语义标记，并配合专门设计的几何位置编码，有效解决了遥感图像中不规则地物导致的语义混合和对象碎片化问题，为MLLM在遥感领域的应用提供了新的标记化范式。"
+    },
+    {
+      "key": "arxiv:2608.21754",
+      "title": "Fidelity-Diversity-Consistency (FDC): Data Pruning for Remote Sensing Change Detection",
+      "title_zh": "保真度-多样性-一致性（FDC）：用于遥感变化检测的数据剪枝",
+      "url": "https://arxiv.org/abs/2608.21754",
+      "doi": "",
+      "arxiv_id": "2608.21754",
+      "authors": [
+        "Dongyao Zhu",
+        "Ranga Raju Vatsavai"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-22T03:33:03+00:00",
+      "score": 95,
+      "reason": "直接针对遥感变化检测中的数据剪枝问题，与博士研究方向中的遥感变化检测高度相关，且提出了新的方法FDC。",
+      "tags": [
+        "数据剪枝",
+        "遥感变化检测",
+        "数据质量",
+        "基准测试",
+        "深度学习"
+      ],
+      "abstract": "Despite the success of data pruning (DP) in reducing training data sizes and improving downstream model performance in classification and segmentation tasks, its potential in remote sensing change detection remains unexplored. For the first time, we benchmark six representative DP methods across building- and forest-change datasets, CNN- and transformer-based models, and three pruning budgets, and show that existing baselines yield no reliable advantage over random selection. Notably, even the strongest evaluated baseline, Feature Diversity, is matched or exceeded by $\\sim$33\\% of randomly sampled subsets. To understand the underlying mechanism, we conduct a systematic regression study over 540 randomly sampled data subsets, characterizing each with four descriptors covering label statistics, image diversity, and feature-space geometry. Random Forest models show that \\emph{change distribution fidelity} is the most prominent factor in determining the quality of change detection data subsets, a property absent from the existing pruning literature. Our analyses further show that pixel-wise image diversity and label-feature consistency are secondary factors. We translate these findings into Fidelity-Diversity-Consistency (FDC), a simple two-stage pruning method that shows consistent improvements over existing baselines across change detection benchmarks and backbones, especially at lower pruning ratios. Code is available at ------------------------------------------------------------------------------",
+      "summary_zh": "该论文首次在遥感变化检测任务中系统评估了六种代表性数据剪枝方法，发现现有方法相比随机选择并无可靠优势。通过回归分析，作者发现变化分布保真度是决定子集质量的最关键因素，并据此提出了一个简单的两阶段剪枝方法FDC，在多个基准和骨干网络上取得了持续改进。",
+      "insight_zh": "在遥感变化检测中，数据子集的质量主要取决于其对变化分布的保真度，而非单纯的多样性或一致性，这为设计更有效的数据剪枝策略提供了新的理论依据。"
+    },
+    {
+      "key": "arxiv:2607.24772",
+      "title": "RSMeM: Knowledge-Enhanced Memory Evolution for Remote Sensing Agents with Systematic Evaluation",
+      "title_zh": "RSMeM：面向遥感智能体的知识增强记忆演化与系统评估",
+      "url": "https://arxiv.org/abs/2607.24772",
+      "doi": "",
+      "arxiv_id": "2607.24772",
+      "authors": [
+        "Bingxian Wu",
+        "Yu Zhang",
+        "Zonghao Guo",
+        "Tang Liu",
+        "Chen Qian",
+        "Yuxiang Lu",
+        "Xingbo Du",
+        "Yanghao Li",
+        "Yidan Zhang",
+        "Chi Chen",
+        "Ling Yao",
+        "Maosong Sun"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "论文主题与博士研究方向中的LLM和多智能体、遥感变化检测高度契合，直接涉及遥感智能体的知识增强与记忆演化，并包含系统评估方法。",
+      "tags": [
+        "遥感智能体",
+        "知识增强",
+        "记忆机制",
+        "大语言模型",
+        "系统评估"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文提出了RSMeM框架，通过知识增强的记忆演化机制来提升遥感智能体的性能，并进行了系统性的评估。",
+      "insight_zh": "该研究可能为遥感领域中的智能体提供一种利用外部知识库动态更新记忆的方法，从而增强其在复杂地理空间任务中的推理和决策能力。"
+    },
+    {
+      "key": "arxiv:2608.21567",
+      "title": "Quantifying geographic domain shift to decouple the geospatial transferability of human mobility flow generation models",
+      "title_zh": "量化地理域偏移以解耦人类移动流生成模型的地理空间迁移性",
+      "url": "https://arxiv.org/abs/2608.21567",
+      "doi": "",
+      "arxiv_id": "2608.21567",
+      "authors": [
+        "Zhiyong Zhou",
+        "Song Gao",
+        "Qianheng Zhang",
+        "Feng Zhang",
+        "Zhenhong Du"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T19:15:20+00:00",
+      "score": 90,
+      "reason": "该研究系统量化地理域偏移以解耦人类移动流生成模型的空间迁移性，直接涉及地理空间数据挖掘和模型泛化，与博士研究方向高度相关。",
+      "tags": [
+        "人类移动性",
+        "地理空间迁移性",
+        "域偏移",
+        "生成模型",
+        "空间分析"
+      ],
+      "abstract": "Human mobility serves as an essential proxy for understanding social, economic, and environmental dynamics in urban systems. Geospatial transferability, which measures a model's capability in a new location or unseen region, is a critical dimension for comparing different human mobility generation models. However, few studies have studied the intrinsic characteristics of geospatial transferability. To this end, this study systematically investigates the geospatial transferability of four representative human mobility generation models using a large-scale benchmark dataset of census tract level commuting flows across 2265 counties in the United States. Inspired by the domain adaptation theory in machine learning, we introduce geographic domain shift to describe the intrinsic differences in geographic feature distributions and spatial structures between source and target regions, which may jointly affect model transferability. Moreover, we propose two metrics, mutual information and spatial shift, to quantify the geographic domain shift. To examine their associations with model transferability, we employ linear mixed-effects regression to analyze the associations between geographic domain shifts and transferability. Our results reveal substantial spatial heterogeneity and asymmetry in transfer performance across regions. Both information shift and spatial shift exhibit statistically significant and complementary explanatory power. This indicates that geospatial transferability depends not only on model design but also on intrinsic geographic differences. These findings provide a novel methodological framework for evaluating and improving the geospatial transferability of human mobility generation models and support more robust and fair human mobility data synthesis across diverse regions. It also offers insights on spatial transferability for GeoAI model development.",
+      "summary_zh": "该研究利用美国2265个县的人口普查区通勤流基准数据集，系统研究了四种代表性人类移动生成模型的地理空间迁移性。受域适应理论启发，引入地理域偏移来描述源区域和目标区域在地理特征分布和空间结构上的内在差异，并提出互信息和空间偏移两个量化指标。通过线性混合效应回归分析，发现信息偏移和空间偏移对模型迁移性具有显著且互补的解释力。",
+      "insight_zh": "该研究揭示了地理空间迁移性不仅取决于模型设计，还受源-目标区域间内在地理差异的显著影响，为评估和改进移动生成模型在不同区域间的泛化能力提供了新的方法论框架。"
+    },
+    {
+      "key": "arxiv:2506.20073",
+      "title": "A Modular Multitask Reasoning Framework Integrating Spatio-temporal Models and LLMs",
+      "title_zh": "集成时空模型与LLM的模块化多任务推理框架",
+      "url": "https://arxiv.org/abs/2506.20073",
+      "doi": "",
+      "arxiv_id": "2506.20073",
+      "authors": [
+        "Kethmi Hirushini Hettige",
+        "Jiahao Ji",
+        "Cheng Long",
+        "Shili Xiang",
+        "Gao Cong",
+        "Jingyuan Wang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "论文主题直接结合了时空模型与LLM，与博士研究方向中的时空数据挖掘和LLM高度相关，其模块化多任务推理框架具有重要参考价值。",
+      "tags": [
+        "时空模型",
+        "大语言模型",
+        "多任务推理",
+        "模块化框架"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文提出了一种模块化的多任务推理框架，该框架将时空模型与大型语言模型进行集成，以处理需要时空理解和语言推理的复杂任务。",
+      "insight_zh": "该框架可能为城市更新分析中结合动态时空数据与语义理解提供了一种新的技术路径，有助于处理需要多源知识融合的推理问题。"
+    },
+    {
+      "key": "arxiv:2608.22634",
+      "title": "GeoRisk-RAG: A Hierarchy-Aware Risk Framework for Improving RAG Reliability through Selective Answering",
+      "title_zh": "GeoRisk-RAG：一种用于提高RAG可靠性的层级感知风险框架",
+      "url": "https://arxiv.org/abs/2608.22634",
+      "doi": "",
+      "arxiv_id": "2608.22634",
+      "authors": [
+        "Meenu Ravi",
+        "Shailik Sarkar",
+        "Lulwah AlKulaib",
+        "Yordanos Tessema",
+        "Chang-Tien Lu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-23T22:39:21+00:00",
+      "score": 85,
+      "reason": "针对RAG系统中的地理有效性问题提出了新框架，直接关联LLM和多智能体在地理空间领域的应用，对城市更新中的决策支持具有潜在价值。",
+      "tags": [
+        "RAG",
+        "地理有效性",
+        "选择性回答",
+        "自然灾害",
+        "大语言模型"
+      ],
+      "abstract": "Current work on improving reliability in large language model (LLM)- generated answers has primarily leveraged Retrieval-Augmented Generation (RAG), knowledge-graph augmentation, and reinforcement learning. While these methods are adept at enhancing and measuring reliability through semantic similarity and faithfulness, they often struggle to distinguish semantic similarity from geographic validity. This is especially critical in natural hazard management domains where geographic granularity (i.e., town vs. city vs. state) is significant for decision-making, as responses valid in one municipality may not transfer to another. In such domains, a confidently wrong answer carries greater risk than abstaining. We present GeoRisk-RAG, a novel hierarchy-aware framework that addresses this geographic-validity gap through selective answering. This framework explicitly estimates geographic applicability using a Directed Acyclic Graph (DAG)-based distance for context retrieval before response generation. Experiments on a novel held-out wildfire-related question-answering (QA) dataset show that GeoRisk-RAG significantly reduces false confidence rates for location-dependent questions, lowering the rate to 0.009 compared with ~0.090 for standard semantic similarity and reranking baselines, while consistently achieving higher human preference alignment. This work provides a more comprehensive assessment of end-to-end RAG pipelines by integrating geographic validity and selective-answering behavior for safer decision-making in geospatial domains.",
+      "summary_zh": "本文提出GeoRisk-RAG框架，通过有向无环图（DAG）距离显式估计地理适用性，并在生成回答前进行上下文检索，以解决RAG系统中语义相似性与地理有效性混淆的问题。在野火相关问答数据集上，该方法显著降低了位置相关问题的错误置信率。",
+      "insight_zh": "在自然灾害管理等地理敏感领域，RAG系统必须区分语义相似性和地理有效性，通过选择性回答机制可以有效降低错误置信带来的风险，提高决策安全性。"
+    },
+    {
+      "key": "arxiv:2605.17949",
+      "title": "SkyNative: A Native Multimodal Architecture for Remote Sensing Vision-Language Understanding",
+      "title_zh": "SkyNative：用于遥感视觉-语言理解的原生多模态架构",
+      "url": "https://arxiv.org/abs/2605.17949",
+      "doi": "",
+      "arxiv_id": "2605.17949",
+      "authors": [
+        "Xiao Yang",
+        "Ronghao Fu",
+        "Zhiwen Lin",
+        "Zhuoran Duan",
+        "Lang Sun",
+        "Jiaqi Liu",
+        "Jiashun Zhu",
+        "Jiasen Hu",
+        "Xu Na",
+        "Bo Yang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "论文聚焦于遥感领域的视觉-语言多模态理解，与博士研究方向中的多源数据融合和地理空间智能紧密相关。",
+      "tags": [
+        "多模态",
+        "遥感视觉语言",
+        "原生架构",
+        "遥感理解"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文提出了SkyNative，一种原生的多模态架构，专门设计用于遥感图像的视觉-语言理解任务。",
+      "insight_zh": "该研究可能通过原生多模态设计，更有效地对齐遥感影像与文本描述，为地理空间智能中的跨模态检索和问答提供新思路。"
+    },
+    {
+      "key": "arxiv:2608.23479",
+      "title": "Geometry-Driven Opti-Acoustic Co-Registration and View-Invariant Reflectivity Mapping for Side-Scan Sonar",
+      "title_zh": "几何驱动的光学-声学联合配准与视角不变反射率映射用于侧扫声纳",
+      "url": "https://arxiv.org/abs/2608.23479",
+      "doi": "",
+      "arxiv_id": "2608.23479",
+      "authors": [
+        "Taqi Hamoda",
+        "Nuno Gracias"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T16:44:46+00:00",
+      "score": 80,
+      "reason": "论文聚焦于光学与声学影像的跨模态配准，属于多源数据融合的典型应用，与博士研究方向中的多源数据融合高度相关，但应用场景为水下环境。",
+      "tags": [
+        "侧扫声纳",
+        "多模态配准",
+        "几何驱动",
+        "反射率映射",
+        "水下测绘"
+      ],
+      "abstract": "Side-Scan Sonar (SSS) is a primary modality for large-scale underwater mapping, yet automated perception and cross-modal alignment are severely bottlenecked by acoustic complexities such as speckle noise, shadows, and extreme viewpoint dependencies. Traditional handcrafted descriptors and modern deep learning matchers fail to bridge the physical domain gap between optical and acoustic imagery without 3D geometric constraints. To overcome these limitations, we propose a novel geometry-driven framework for pixel-level opti-acoustic co-registration and view-invariant reflectivity mapping. Our method utilizes Structure-from-Motion (SfM) to reconstruct a dense 3D seafloor mesh, acting as a geometric anchor between the visual and acoustic domains. We introduce a First Bottom Return (FBR) extraction algorithm to dynamically correct non-linear altitude drift caused by uncalibrated SfM reconstruction. Furthermore, we apply an inverse Lambertian model and a dual-Gaussian weighting function to isolate the intrinsic seabed reflectivity, effectively neutralizing slant-range propagation loss and geometric view-dependence. By deterministically associating these isolated acoustic properties with optical pixels, our pipeline generates highly accurate, strictly co-registered multi-modal datasets. This automated, physics-guided approach eliminates the need for manual annotation and paves the way for advanced self-supervised learning in benthic habitat mapping.",
+      "summary_zh": "该论文提出了一种几何驱动框架，利用SfM重建的海底3D网格作为几何锚点，实现侧扫声纳与光学影像的像素级配准，并生成视角不变的反射率图。",
+      "insight_zh": "该研究展示了如何利用物理几何约束解决跨模态数据融合中的关键难题，其思路对城市中航空与地面、光学与SAR等异构数据的配准具有方法论上的启发。"
+    },
+    {
+      "key": "arxiv:2603.00604",
+      "title": "Data-Centric Benchmark for Label Noise Estimation and Ranking in Remote Sensing Binary Building Segmentation",
+      "title_zh": "遥感二值建筑物分割中标签噪声估计与排序的数据中心基准",
+      "url": "https://arxiv.org/abs/2603.00604",
+      "doi": "",
+      "arxiv_id": "2603.00604",
+      "authors": [
+        "Keiller Nogueira",
+        "Codrut-Andrei Diaconu",
+        "D\\'avid Kerekes",
+        "Jakob Gawlikowski",
+        "C\\'edric L\\'eonard",
+        "Nassim Ait Ali Braham",
+        "June Moh Goo",
+        "Zichao Zeng",
+        "Zhipeng Liu",
+        "Pallavi Jain",
+        "Andrea Nascetti",
+        "Ronny H\\\"ansch"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 80,
+      "reason": "聚焦遥感建筑物分割中的标签噪声估计与排序，属于数据-centric AI在遥感领域的应用，与博士研究方向中的数据质量和变化检测紧密相关。",
+      "tags": [
+        "标签噪声",
+        "数据为中心",
+        "基准测试",
+        "建筑物分割",
+        "遥感"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文建立了一个数据中心基准，用于评估和比较遥感二值建筑物分割任务中标签噪声的估计与排序方法。",
+      "insight_zh": "该工作为遥感分割任务中的标签噪声问题提供了标准化的评估平台，有助于推动更鲁棒的模型训练和数据清洗方法的发展。"
+    },
+    {
+      "key": "arxiv:2608.23503",
+      "title": "Action-Aligned Retrieval with Pairwise Multimodal Reranking for Text-Based Person Anomaly Search",
+      "title_zh": "基于成对多模态重排序的动作对齐检索用于文本描述的行人异常搜索",
+      "url": "https://arxiv.org/abs/2608.23503",
+      "doi": "",
+      "arxiv_id": "2608.23503",
+      "authors": [
+        "Thanh-Khoi Nguyen",
+        "Thanh-Nhan Vo",
+        "Trong-Thuan Nguyen",
+        "Minh-Triet Tran"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T17:04:34+00:00",
+      "score": 75,
+      "reason": "论文涉及基于文本的行人异常行为检索，结合了视觉-语言模型和重排序技术，与博士研究方向中的多源数据融合和地理空间智能（视频理解）相关。",
+      "tags": [
+        "多模态检索",
+        "行人异常搜索",
+        "视觉语言模型",
+        "重排序",
+        "动作对齐"
+      ],
+      "abstract": "Text-based person anomaly search requires distinguishing individuals based on fine-grained, context-dependent behaviors rather than mere appearance. Existing methods struggle to capture these context-conditioned actions, frequently relying on isolated skeletal geometry, discarding raw query details during reformulation, or utilizing absolute pointwise scoring for multimodal verification. To address these limitations, we propose \\textbf{ActPair}, a unified three-stage coarse-to-fine framework that combines action-aligned retrieval with pairwise multimodal reranking to bridge the pose-semantic gap. First, we fine-tune a vision-language model (VLM) with an action-aligned multi-task objective that encourages the representations to encode action-discriminative semantics. Second, we perform parallel late-fusion retrieval using the original query and a large language model (LLM)-generated context-grounded rewrite, retaining complementary details from both semantic views. Finally, we propose an efficient off-the-shelf reranking module that leverages a pivot-promote algorithm to perform direct pairwise visual comparisons, mitigating residual spatial and compositional ambiguities without the prohibitive inference costs of exhaustive evaluation. Extensive experiments demonstrate that our framework achieves the best results among the compared methods on the Pedestrian Anomaly Behavior (PAB) public test and transfers effectively to an unseen, non-anomaly-specific dataset.",
+      "summary_zh": "该论文提出了ActPair框架，通过动作对齐的多任务学习和成对多模态重排序，来解决文本描述的行人异常行为检索中的姿态-语义鸿沟问题。",
+      "insight_zh": "该研究提出的动作对齐和成对比较策略，可能为城市视频监控中的细粒度事件检索和异常行为分析提供更有效的技术方案。"
+    }
+  ]
+}

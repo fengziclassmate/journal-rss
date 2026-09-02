@@ -1,0 +1,305 @@
+{
+  "date": "2026-08-26",
+  "guid": "arxiv-email-daily:2026-08-26",
+  "paper_keys": [
+    "arxiv:2608.24263",
+    "arxiv:2608.23746",
+    "arxiv:2608.24665",
+    "arxiv:2608.24133",
+    "arxiv:2608.24756",
+    "arxiv:2608.24715",
+    "arxiv:2608.23626",
+    "arxiv:2608.24764",
+    "arxiv:2608.24364",
+    "arxiv:2608.24747"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:620",
+    "deepseek": "ok:30"
+  },
+  "updated_at": "2026-09-02T01:20:36.042010+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2608.24263",
+      "title": "Real-World Knowledge-Guided Change Data Synthesis for Remote Sensing",
+      "title_zh": "真实世界知识引导的遥感变化数据合成",
+      "url": "https://arxiv.org/abs/2608.24263",
+      "doi": "",
+      "arxiv_id": "2608.24263",
+      "authors": [
+        "Yaoyi Qi",
+        "Xingxing Weng",
+        "Chao Pang",
+        "Yongkang Cui",
+        "Xiangyu Hao",
+        "Xiaokang Zhang",
+        "Guibo Zhu",
+        "Gui-Song Xia"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T08:51:05+00:00",
+      "score": 95,
+      "reason": "该研究直接针对遥感变化检测中的数据合成问题，利用视觉语言模型作为知识源，与用户的研究方向（遥感变化检测、多源数据融合）高度契合，具有很高的直接相关性。",
+      "tags": [
+        "遥感",
+        "变化检测",
+        "数据合成",
+        "视觉语言模型",
+        "知识引导"
+      ],
+      "abstract": "Change data synthesis provides a cost-effective solution for expanding training data and improving the performance of change detection models. However, existing synthesis methods typically rely on handcrafted rules to simulate changes, where limited coverage of class transitions restricts the diversity of synthesized data, while predefined transition designs limit their flexibility in accommodating varied change types. In this work, we introduce KnowChange, a knowledge-guided change data synthesis framework that leverages pretrained vision-language models as knowledge sources to reason about plausible change locations and class transitions from pre-change scenes and desired change types. By integrating knowledge-guided change simulation with generalizable synthesis models, KnowChange enables flexible synthesis of diverse change types within a unified framework. Extensive experiments demonstrate that KnowChange-generated data consistently outperforms existing synthetic datasets in both synthetic-to-real transfer and synthetic data augmentation, despite being generated at a compact scale. Further analyses show that the knowledge-guided change simulation can be seamlessly integrated into existing synthesis pipelines and enhance the downstream utility of synthesized data.",
+      "summary_zh": "该论文提出KnowChange框架，一种知识引导的变化数据合成方法。它利用预训练的视觉语言模型作为知识源，从变化前场景和期望的变化类型中推理出合理的变化位置和类别转换。通过将知识引导的变化模拟与可泛化的合成模型集成，KnowChange能够在统一框架内灵活合成多种变化类型。实验表明，尽管生成规模紧凑，但KnowChange生成的数据在合成到真实迁移和合成数据增强方面均优于现有合成数据集。进一步分析显示，其知识引导的变化模拟可无缝集成到现有合成流程中。",
+      "insight_zh": "该研究创新性地利用视觉语言模型的常识推理能力来指导遥感变化数据的合成，解决了传统基于手工规则方法在变化类型覆盖和灵活性上的局限，为提升变化检测模型的泛化能力提供了新的数据增强思路。"
+    },
+    {
+      "key": "arxiv:2608.23746",
+      "title": "CRISP: Calibration-Aware Visual State Space Duality for Remote Sensing Semantic Segmentation",
+      "title_zh": "CRISP：用于遥感语义分割的校准感知视觉状态空间对偶",
+      "url": "https://arxiv.org/abs/2608.23746",
+      "doi": "",
+      "arxiv_id": "2608.23746",
+      "authors": [
+        "Kangning Wang",
+        "Haopeng Zhang",
+        "Zhiguo Jiang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-24T18:35:00+00:00",
+      "score": 95,
+      "reason": "该研究专门针对遥感语义分割任务，提出校准框架以解决状态空间模型在边界处理上的不足，与遥感图像分析的核心研究方向高度契合。",
+      "tags": [
+        "语义分割",
+        "状态空间模型",
+        "遥感",
+        "边界校准",
+        "深度学习"
+      ],
+      "abstract": "State space models, especially Visual State Space Duality (VSSD), have emerged as efficient linear-time alternatives to Transformers for dense visual tasks. However, we observe that VSSD compresses spatial context into a global aggregation that suppresses high-frequency responses, causing excessive boundary smoothing in remote sensing semantic segmentation. To address this, we propose CRISP, a calibration framework with two components. Its core, the Duality Calibration Operator (DCO), restores local contrast and boundary responses through residual injection and frequency calibration within the VSSD backbone, without altering its linear complexity. To retain the recovered detail, an Orthogonal Multi-Prototype (OMP) head assigns multiple orthogonally constrained prototypes per class to model large intra-class variance. Extensive experiments on Potsdam, Vaihingen, and LoveDA show that, with approximately 30M parameters, CRISP achieves consistent gains in mean F1 (mF) and mIoU while remaining competitive with state-of-the-art methods. Code is available at https://github.com/crazylifeha/CRISP.",
+      "summary_zh": "本文提出CRISP框架，包含核心的双重校准算子（DCO）和正交多原型（OMP）分割头，以恢复VSSD骨干网络中被抑制的局部对比度和边界响应。在Potsdam、Vaihingen和LoveDA数据集上，CRISP以约30M参数取得了持续的精度提升。",
+      "insight_zh": "该研究指出了状态空间模型在遥感分割中的边界平滑问题，并提供了有效的校准方案，对开发高效、高精度的遥感分割模型具有重要参考价值。"
+    },
+    {
+      "key": "arxiv:2608.24665",
+      "title": "Data Leakage Inflates Generalizability of Power Outage Prediction Models",
+      "title_zh": "数据泄漏夸大了电力中断预测模型的泛化能力",
+      "url": "https://arxiv.org/abs/2608.24665",
+      "doi": "",
+      "arxiv_id": "2608.24665",
+      "authors": [
+        "Yamil Essus",
+        "Ranga Raju Vatsavai",
+        "Benjamin Rachunok"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T15:05:55+00:00",
+      "score": 90,
+      "reason": "论文系统评估了电力中断预测模型在空间、时间和事件层面的泛化能力，并指出数据泄漏问题，对GeoAI和时空数据挖掘研究具有重要方法论启示。",
+      "tags": [
+        "数据泄漏",
+        "模型泛化",
+        "GeoAI",
+        "基础模型",
+        "风险评估"
+      ],
+      "abstract": "Power outage prediction models are increasingly used in assessments of climate-driven infrastructure risk, yet current evaluation practices obscure whether these models generalize to the novel conditions such applications require. We identify three common methodological choices in power outage prediction models that influence their ability to generalize across spatial, temporal, and event-based settings. We compare the predictive performance impacts of different methodological decisions using publicly available data for the U.S. East Coast from 2018 to 2023 and feature sets derived from weather reanalysis and land-cover data, and embeddings from a GeoAI foundation model (Prithvi WxC). Specifically, we assess model performance under multiple test selection strategies, including unfiltered random splits, leave-one-state-out, and leave-one-event-out designs, which increasingly approximate real-world deployment conditions. While random train-test splits yield strong performance, we show that these results are inflated by spatial and temporal autocorrelation. Under spatial and temporal holdout experiments, predictive accuracy degrades substantially, with models often failing to outperform a simple null baseline. Incorporating GeoAI foundation model embeddings yields limited and inconsistent improvements, primarily for spatial generalization, and does not resolve poor event-level transferability. These findings suggest that, given current data availability and evaluation practices, publicly trained outage prediction models offer limited and uncertain operational value. Progress will likely require improved data coverage, more realistic evaluation protocols, and a shift in focus from marginal modeling advances toward addressing structural data constraints.",
+      "summary_zh": "识别了电力中断预测模型中影响泛化能力的三个方法论选择，并使用美国东海岸2018-2023年数据评估不同测试策略。随机分割表现良好，但在空间和时间留出实验中性能大幅下降，GeoAI基础模型嵌入仅带来有限改进。",
+      "insight_zh": "当前基于公共数据的电力中断预测模型在现实部署条件下泛化能力有限，需要更现实的评估协议和更好的数据覆盖。"
+    },
+    {
+      "key": "arxiv:2608.24133",
+      "title": "PlaceSeek: Human-Centered Geospatial Retrieval of Urban Outdoor Places via Semantic Grounding and Affective Alignment",
+      "title_zh": "PlaceSeek：通过语义锚定和情感对齐实现以人为本的城市户外场所地理空间检索",
+      "url": "https://arxiv.org/abs/2608.24133",
+      "doi": "",
+      "arxiv_id": "2608.24133",
+      "authors": [
+        "Ziqi Cui",
+        "Shangyu Lou"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T06:57:29+00:00",
+      "score": 90,
+      "reason": "该研究针对城市户外场所的检索，结合了自然语言查询、街景影像和人类感知偏好，与用户在城市更新、时空数据挖掘和地理空间智能方面的研究兴趣高度相关。",
+      "tags": [
+        "地理空间检索",
+        "街景影像",
+        "视觉语言模型",
+        "人类感知",
+        "城市户外空间"
+      ],
+      "abstract": "People search for urban outdoor places not only by category or function, but also by what activities a place can support and how it is perceived. Existing geospatial retrieval remains largely POIcentric and metadata-driven, making it difficult to satisfy openended, affective, or activity-oriented needs. We present PlaceSeek, a human-centered outdoor place retrieval framework that maps natural-language queries to geolocated street-view imagery. PlaceSeek introduces an intent-aware retrieval mechanism that decomposes user queries into functional and affective sub-intents. A Semantic Grounding Module verifies whether candidate street-view results contain the physical evidence needed to support the intended activity, while an Affective Alignment Module re-ranks physically valid candidates using a LoRA-adapted vision-language model trained on human urban perception judgments. We evaluate PlaceSeek on 31,956 street-view locations in Milan across 10 naturallanguage queries annotated by five human evaluators. PlaceSeek achieves 88.0% Precision@5, a mean match score of 3.39/4.0, and 0.920 nDCG@5, outperforming CLIP, fine-tuned CLIP, SigLIP, and a VQA-based baseline. Ablation results show that physical grounding is essential for retrieval validity, while affective alignment improves ranking quality among physically valid candidates. These findings highlight that complex urban spatial queries require modeling both verifiable visual evidence and human perceptual preferences. PlaceSeek provides a potential framework for human-centered nextgeneration geospatial retrieval systems.",
+      "summary_zh": "PlaceSeek是一个以人为本的户外场所检索框架，将自然语言查询映射到带地理位置的街景影像。它引入意图感知的检索机制，将用户查询分解为功能性和情感性子意图。语义锚定模块验证候选街景结果是否包含支持预期活动的物理证据，情感对齐模块则使用在人类城市感知判断上训练的LoRA适配视觉语言模型对物理有效候选进行重排序。在米兰的31,956个街景位置上的评估中，PlaceSeek在Precision@5、匹配分数和nDCG@5上均优于CLIP、SigLIP和VQA基线。消融实验表明，物理锚定对于检索有效性至关重要，而情感对齐则能提升排序质量。",
+      "insight_zh": "该研究强调了在城市空间检索中同时建模可验证的视觉证据和人类感知偏好的必要性，其将功能性子意图与情感子意图分离并分别处理的方法，为构建更符合人类需求的下一代地理空间检索系统提供了有价值的框架。"
+    },
+    {
+      "key": "arxiv:2608.24756",
+      "title": "Weakly Supervised Seafloor Segmentation for Seagrass Habitat Mapping in Side-Scan Sonar Imagery",
+      "title_zh": "用于侧扫声纳影像海草栖息地制图的弱监督海底分割",
+      "url": "https://arxiv.org/abs/2608.24756",
+      "doi": "",
+      "arxiv_id": "2608.24756",
+      "authors": [
+        "Hayat Rajani",
+        "Nuno Gracias",
+        "Rafael Garcia"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T15:55:49+00:00",
+      "score": 85,
+      "reason": "论文研究基于侧扫声纳影像的海草栖息地弱监督语义分割，属于遥感图像处理和变化检测相关领域，与GIS和遥感研究高度相关。",
+      "tags": [
+        "遥感",
+        "弱监督学习",
+        "图像分割",
+        "声纳影像",
+        "栖息地制图"
+      ],
+      "abstract": "Seagrass meadows are crucial blue-carbon habitats, and mapping their extent is a prerequisite for coastal management and carbon inventory. Optical satellite sensors cover large areas but cannot reach deep or turbid water, whereas side-scan sonar (SSS) images the seabed at high resolution and at any depth. Interpreting SSS, however, still relies on dense manual annotation, which is slow and costly. We address this by adapting a weakly supervised semantic segmentation framework to SSS benthic habitat mapping, so that pixel-level maps are learned from image-level labels alone. The framework couples a ViT-based encoder-decoder with a classification branch, extracts class activation maps, and refines them into pseudo-labels with a dense conditional random field that we tune for the noise and weak boundaries of acoustic imagery. It follows an iterative self-training scheme, together with a sampling strategy to cope with the strong class imbalance of the data. We also study the effect of different loss functions on segmentation quality, finding Lov\\'asz-Softmax loss the most effective. On a held-out transect, the refined pseudo-labels reached an mIoU of 89.3\\% against the ground truth, and the segmentation branch, trained without any pixel-level labels, reached 87.6\\%. Self-supervised pretraining on unlabelled SSS added a further 3\\% in mean intersection-over-union. Field trials further demonstrate the generalizability of the trained model. These results show that accurate and label-efficient benthic habitat mapping from side-scan sonar is feasible at the scale needed for coast-wide seagrass monitoring.",
+      "summary_zh": "提出一种弱监督语义分割框架，仅使用图像级标签即可从侧扫声纳影像中学习像素级海底栖息地地图。该方法结合ViT编码器-解码器、分类分支、类激活图和条件随机场，并采用迭代自训练。在保留航迹上，细化伪标签mIoU达89.3%，分割分支达87.6%。",
+      "insight_zh": "弱监督方法能够以较低标注成本实现高精度的声纳影像栖息地制图，自监督预训练可进一步提升性能。"
+    },
+    {
+      "key": "arxiv:2608.24715",
+      "title": "Deep Learning Super Resolution for Satellite Cloud Mask Downscaling",
+      "title_zh": "用于卫星云掩膜降尺度的深度学习超分辨率",
+      "url": "https://arxiv.org/abs/2608.24715",
+      "doi": "",
+      "arxiv_id": "2608.24715",
+      "authors": [
+        "Angelos Georgakis",
+        "Valentina Kanaki",
+        "Giorgos Giannopoulos",
+        "Stella Girtsou",
+        "Ioannis Kontogiorgakis",
+        "Charalampos Kontoes",
+        "Kostas Philippopoulos"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T15:34:18+00:00",
+      "score": 85,
+      "reason": "该研究直接针对遥感云掩膜产品，利用深度学习超分辨率技术进行降尺度，并构建了跨传感器数据集，与多源数据融合和遥感变化检测的研究方向高度相关。",
+      "tags": [
+        "深度学习",
+        "超分辨率",
+        "云检测",
+        "多源数据融合",
+        "遥感"
+      ],
+      "abstract": "A vast amount of optical satellite data is being transmitted to Earth-based servers every day, and more than half of this data is affected by haze or clouds. Additionally, this data suffers from the fundamental trade-off between spatial and temporal resolution, which remains largely unresolved, making the acquisition of continuous high-resolution satellite observations of clouds an ongoing challenge. This work addresses this challenge by proposing two Deep Learning super-resolution methods for the accurate downscaling of SEVIRI cloud mask products, as well as a novel cross-sensor cloud mask dataset called SEVMOD-CM, created by spatially and temporally matching MODIS and SEVIRI satellite observations. The two proposed models are a CNN-based (SpatialCNN) and a GAN-based (SpatialGAN) Neural Network. Trained on the SEVIRI spectral and cloud mask products, the proposed methods predict the corresponding MODIS Cloud masks, achieving a 4x spatial enhancement across sensor domains. Both approaches are evaluated experimentally, and compared against the standard bicubic interpolation upsampling technique. The experimental results demonstrate the value of the proposed models and dataset for the remote sensing community, highlighting the benefits of applying super-resolution techniques to geostationary-derived cloud mask products for applications such as atmospheric monitoring, weather forecasting, disaster risk reduction, solar energy forecasting, and climate research.",
+      "summary_zh": "该工作提出两种深度学习超分辨率方法（基于CNN的SpatialCNN和基于GAN的SpatialGAN），用于将SEVIRI云掩膜产品降尺度到MODIS分辨率，并创建了跨传感器云掩膜数据集SEVMOD-CM。实验表明，所提方法优于双三次插值，实现了4倍空间增强。",
+      "insight_zh": "该研究展示了将超分辨率技术应用于静止轨道卫星云产品的潜力，为大气监测、天气预报等应用提供更精细的云信息，其跨传感器数据构建思路对多源数据融合研究具有参考价值。"
+    },
+    {
+      "key": "arxiv:2608.23626",
+      "title": "A survey detection channel overrides the pixels in an astronomical foundation model, and biases tomographic mean redshifts",
+      "title_zh": "一项调查检测通道覆盖了天文基础模型中的像素，并偏置了层析红移",
+      "url": "https://arxiv.org/abs/2608.23626",
+      "doi": "",
+      "arxiv_id": "2608.23626",
+      "authors": [
+        "Ihor Kendiukhov"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-23T01:10:54+00:00",
+      "score": 80,
+      "reason": "该研究通过因果干预审计天文基础模型，揭示了训练数据中系统性的不完整性偏差，对理解多模态基础模型在科学数据中的应用风险具有重要启示，与地理空间智能中的数据可靠性研究相关。",
+      "tags": [
+        "基础模型",
+        "天文",
+        "数据偏差",
+        "因果干预",
+        "红移估计"
+      ],
+      "abstract": "Foundation models for astronomy are trained on survey pixels together with the catalogue products derived from those pixels. Those catalogues are incomplete at a measurable rate, and a model trained on both inherits that incompleteness as a systematic. We audit AION-1, a 39-modality transformer trained on more than 200 million objects, using causal interventions on its inputs. Holding the image tokens byte-identical and editing only the survey segmentation map changes every quantity the model reports -- flux, size, ellipticity, redshift -- by 110-4400 times a matched placebo. The mechanism is detection gating, presence at the field centre (r = 0.47), not the light the mask encloses (r = 0.30); across 322 real blends the model ignores how the pipeline partitioned the light (R = -0.006). Nor is the preference specific to that channel: contradicted catalogue photometry leaves the model nine times worse than supplying no metadata at all. The Legacy Survey pipeline leaves 3.68% of targets with no segment covering their position. Propagating that rate, with a miss represented by the fields the pipeline actually returns, shifts tomographic mean redshifts by a median 0.71 times the LSST DESC requirement over 40 assignments and exceeds it in 12; observed positional errors take the worst bin to 8.3 times. Drawing the misses by their measured magnitude dependence rather than uniformly does not change it. Spectroscopy removes the effect, withholding the detection channel removes it at no measurable cost, and the effect grows with model scale. Two further limits lie in the tokeniser: its image codec resolves 28 effective states on source patches against 934 for the spectrum codec, and the redshift readout is quantisation-limited. Sparse dictionaries are unreliable causal handles: across 15, recovery spans 26-75% and moves up to 18 points on the seed alone.",
+      "summary_zh": "该研究审计了AION-1天文基础模型，发现其预测结果主要由调查分割图（检测通道）而非图像像素驱动。训练数据中的不完整性导致模型产生系统性偏差，进而影响层析红移估计，其偏差量可超过LSST DESC要求。",
+      "insight_zh": "该研究警示，在训练多模态科学基础模型时，必须谨慎处理辅助数据（如目录产品）中的系统性缺失，否则模型会继承并放大这些偏差，影响下游科学推断的可靠性。"
+    },
+    {
+      "key": "arxiv:2608.24764",
+      "title": "Evidence Blindness in Direct Corpus Interaction: Persistent Navigation with AtlasNav",
+      "title_zh": "直接语料库交互中的证据盲区：使用AtlasNav进行持久导航",
+      "url": "https://arxiv.org/abs/2608.24764",
+      "doi": "",
+      "arxiv_id": "2608.24764",
+      "authors": [
+        "Hongyu Guo",
+        "Zhiyu Zheng",
+        "Zhao Cao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T16:03:02+00:00",
+      "score": 75,
+      "reason": "论文探讨了LLM智能体在直接语料库交互中的证据盲区问题，并提出持久化多视图导航框架，与LLM和多智能体研究方向高度相关。",
+      "tags": [
+        "大语言模型",
+        "智能体",
+        "信息检索",
+        "语料库导航"
+      ],
+      "abstract": "Large language model agents are moving beyond conventional retrieval-augmented generation toward direct interaction with external corpora. Direct Corpus Interaction (DCI) keeps the full corpus accessible, yet reachable evidence can remain unusable under finite interaction budgets. Required evidence may fail to surface, a surfaced supporting document may remain unopened, or an opened document may fail to expose its decisive fragment. We call this progressive silent loss Evidence Blindness and quantify it through stage-wise evidence realization. Within the DCI paradigm, raw interaction adds little reusable corpus organization, while dynamic-workspace methods reconstruct a query-conditioned interaction space from each query and trajectory. In both cases, useful structure is recovered largely online. We instead formulate large-scale agentic search as finite-budget navigation over reusable corpus structure. We introduce AtlasNav, a persistent multi-view corpus-navigation framework that retains direct corpus interaction but organizes the corpus once into a Corpus Atlas, allowing each query to navigate adaptively rather than reconstruct shared structure. On BrowseComp-Plus, AtlasNav achieves 92.05% strict accuracy while reducing recorded online inference cost by 30.21% relative to the prior dynamic-workspace state of the art. Under matched budgets, it realizes the complete required evidence earlier and approaches the same model's evidence-supplied empirical reference more rapidly. The same representation principle remains effective under PhantomWiki's distinct corpus organization and controlled 10K-1M scaling, and transfers competitively to heterogeneous enterprise knowledge. These results show that agentic search depends not only on accessible evidence, but also on how the corpus is represented so that limited interaction becomes effective navigation.",
+      "summary_zh": "提出证据盲区概念，指在有限交互预算下，LLM智能体无法有效利用语料库中证据的现象。为此引入AtlasNav框架，将语料库组织为持久化的Corpus Atlas，使查询能够自适应导航。在BrowseComp-Plus上达到92.05%的准确率，并将在线推理成本降低30.21%。",
+      "insight_zh": "智能体搜索的性能不仅取决于证据的可访问性，还取决于语料库结构的组织方式，持久化结构比动态重建更高效。"
+    },
+    {
+      "key": "arxiv:2608.24364",
+      "title": "B-MIM: Biased Masked Image Modeling for Generalizable Segmentation of Fine-Grained Anatomical Structures",
+      "title_zh": "B-MIM：用于精细解剖结构可泛化分割的偏置掩码图像建模",
+      "url": "https://arxiv.org/abs/2608.24364",
+      "doi": "",
+      "arxiv_id": "2608.24364",
+      "authors": [
+        "Sebasti\\'an Gonz\\'alez",
+        "Karen Sanchez",
+        "Jos\\'e M. Saavedra",
+        "Marcelo Pizarro",
+        "Bernard Ghanem"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T10:20:05+00:00",
+      "score": 75,
+      "reason": "该研究提出一种偏向局部重建的自监督预训练方法，以提升对精细解剖结构的泛化能力，其方法论对遥感图像中精细地物（如道路、建筑物边缘）的表示学习具有借鉴意义。",
+      "tags": [
+        "自监督预训练",
+        "医学影像",
+        "CT分割",
+        "掩码图像建模",
+        "精细结构"
+      ],
+      "abstract": "Self-supervised pretraining enables transferable representations for medical imaging, yet most CT encoders remain biased toward coarse semantic understanding, limiting their sensitivity to fine-grained anatomical structures such as vessels or small tumors. In this paper, we introduce Biased Masked Image Modeling (B-MIM), a modification of the iBOT objective that stochastically reduces global semantic alignment to prioritize local patch reconstruction. This bias encourages the encoder to capture high-frequency morphological details and structural continuity. We curate a multi-institutional CT abdominal dataset of 9,955 filtered studies from 17 public sources and pretrain a 3D Swin Transformer backbone using B-MIM. Across inter-dataset experiments on liver vessel segmentation, the proposed encoder improves topological fidelity (clDice) and achieves competitive Dice scores in tumor segmentation, compared to fully fine-tuned baselines, despite updating only a fraction of the parameters. Our results suggest that reducing global semantic pressure during pretraining enhances generalization to intricate anatomical structures.",
+      "summary_zh": "本文提出B-MIM，通过随机减少全局语义对齐以优先进行局部patch重建，使编码器捕获高频形态细节。在包含9955个CT研究的数据集上预训练的3D Swin Transformer，在肝脏血管分割中提升了拓扑保真度（clDice），并在肿瘤分割中取得了有竞争力的Dice分数。",
+      "insight_zh": "该研究表明，在预训练中降低全局语义压力可以增强模型对精细结构的感知能力，这一策略可能适用于遥感图像中细小地物的分割任务。"
+    },
+    {
+      "key": "arxiv:2608.24747",
+      "title": "SkillForge: Evolving Verifiable Skills for Reinforcement Learning Agents",
+      "title_zh": "SkillForge：为强化学习智能体进化可验证技能",
+      "url": "https://arxiv.org/abs/2608.24747",
+      "doi": "",
+      "arxiv_id": "2608.24747",
+      "authors": [
+        "Shidong Yang",
+        "Ziyu Ma",
+        "Tongwen Huang",
+        "Xucong Wang",
+        "Renda Li",
+        "Yiming Hu",
+        "Yong Wang",
+        "Xiangxiang Chu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-25T15:52:10+00:00",
+      "score": 70,
+      "reason": "论文提出SkillForge框架，使LLM智能体能够通过环境交互验证和优化技能，与LLM和多智能体研究方向紧密相关。",
+      "tags": [
+        "强化学习",
+        "大语言模型",
+        "技能学习",
+        "智能体"
+      ],
+      "abstract": "Large language model (LLM) agents are trained with reinforcement learning (RL) for complex decision-making tasks. However, most RL-trained agents remain episodic and cannot accumulate reusable knowledge across episodes. Recent skill-based approaches, such as SkillRL, attempt to address this issue by extracting skills from raw trajectories, but treat the skill bank as an append-only repository without verifying whether stored skills remain effective. In this paper, we propose SkillForge, a framework for continuous skill evolution that enables skills to be verified and refined through environment interaction. By making skill usage explicit during agent interaction, RL can directly optimize both environment actions and skill invocation decisions. SkillForge further introduces evidence-based skill verification and multi-pathway skill induction, allowing the skill bank to continuously grow while maintaining its quality. Extensive experiments on ALFWorld, WebShop, and AppWorld show that SkillForge consistently outperforms SkillRL, demonstrating the effectiveness of continuously verified skills in training stronger LLM agents.",
+      "summary_zh": "提出SkillForge框架，通过环境交互实现技能的持续进化，包括基于证据的技能验证和多路径技能归纳。在ALFWorld、WebShop和AppWorld上的实验表明，SkillForge持续优于SkillRL。",
+      "insight_zh": "对技能库进行持续验证和优化，而非简单追加，能有效提升LLM智能体在复杂决策任务中的表现。"
+    }
+  ]
+}

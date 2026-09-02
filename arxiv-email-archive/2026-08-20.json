@@ -1,0 +1,320 @@
+{
+  "date": "2026-08-20",
+  "guid": "arxiv-email-daily:2026-08-20",
+  "paper_keys": [
+    "arxiv:2608.18755",
+    "arxiv:2608.18611",
+    "arxiv:2604.23309",
+    "arxiv:2608.19177",
+    "arxiv:2608.18709",
+    "arxiv:2608.18473",
+    "arxiv:2608.19063",
+    "arxiv:2608.19036",
+    "arxiv:2605.05962",
+    "arxiv:2608.19049"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:481",
+    "deepseek": "ok:30"
+  },
+  "updated_at": "2026-09-02T01:16:23.738168+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2608.18755",
+      "title": "SED-FOD: Scattering-Aware Expert Decomposition for Few-Shot Cross-Sensor SAR Object Detection",
+      "title_zh": "SED-FOD：用于少样本跨传感器SAR目标检测的散射感知专家分解",
+      "url": "https://arxiv.org/abs/2608.18755",
+      "doi": "",
+      "arxiv_id": "2608.18755",
+      "authors": [
+        "Shu Yang",
+        "Zhen Chen",
+        "Zhiyu Jiang",
+        "Yanlei Li",
+        "and Xingdong Liang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T10:02:30+00:00",
+      "score": 95,
+      "reason": "论文针对跨传感器SAR目标检测中的少样本域适应问题，提出散射感知的共享-特定特征分解框架，与遥感变化检测和多源数据融合研究方向高度相关，对提升遥感目标检测的泛化能力有重要价值。",
+      "tags": [
+        "SAR目标检测",
+        "少样本学习",
+        "域适应",
+        "散射感知",
+        "遥感"
+      ],
+      "abstract": "Synthetic aperture radar (SAR) object detection is an important part of remote sensing interpretation. However, because of variations in frequency band, resolution, background clutter, and target scattering responses, the performance of existing detectors often degrades when training and testing data are acquired from different SAR domains. Although domain adaptation methods offer a promising paradigm for solving this problem, most of them mainly pursue domain-invariant feature alignment and suppress sensor-dependent scattering characteristics that are useful for object detection. This problem becomes more challenging in few-shot scenarios, where only a few fully annotated target-domain SAR images are available. To address this issue, we propose a scattering-aware shared-specific feature decomposition framework for few-shot SAR domain adaptation object detection. We decompose detection features into a shared path and several soft-gated scattering-specific expert paths. The shared path learns transferable object structural information and is used for asymmetric domain alignment, while the scattering-specific experts adaptively compensate heterogeneous SAR responses. In addition, routing-domain auxiliary loss is introduced to encourage specific experts to capture sensor-dependent routing preferences, and an expert balancing loss is used to prevent routing collapse. Extensive experiments on four bidirectional heterogeneous SAR detection tasks between FARAD-X/FARAD-Ka and MiniSAR under different few-shot settings have been conducted and experimental results demonstrate that the proposed method achieves superior performance in both forward and reverse adaptation directions.",
+      "summary_zh": "提出一种散射感知的共享-特定特征分解框架，用于少样本SAR域适应目标检测。通过共享路径学习可迁移的物体结构信息，并利用软门控的散射特定专家路径补偿异构SAR响应，在多个双向异构SAR检测任务上取得了优越性能。",
+      "insight_zh": "将传感器特定的散射特征与域不变的结构特征分离，是提升跨传感器SAR目标检测性能的有效策略，为多源遥感数据融合和目标识别提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.18611",
+      "title": "Scalable Geospatial Machine Learning for Power-Line Asset Risk: Integrating Remote Sensing for Lightning and Vegetation Risk Modelling",
+      "title_zh": "可扩展的地理空间机器学习用于电力线路资产风险：集成遥感的闪电与植被风险建模",
+      "url": "https://arxiv.org/abs/2608.18611",
+      "doi": "",
+      "arxiv_id": "2608.18611",
+      "authors": [
+        "Artur Sokolovsky",
+        "Bhavik Merai",
+        "Moe Jafari",
+        "and Muen Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T06:54:04+00:00",
+      "score": 95,
+      "reason": "论文构建了模块化、可扩展的资产级电力故障概率建模框架，集成了SRTM、MODIS NDVI、LIS闪电数据、OSM等多源遥感与地理空间数据。这与研究兴趣中的多源数据融合与地理空间智能高度契合，其框架设计对城市基础设施风险评估具有直接应用价值。",
+      "tags": [
+        "地理空间机器学习",
+        "电力资产风险",
+        "遥感",
+        "多源数据融合",
+        "可解释性"
+      ],
+      "abstract": "Electric power networks are increasingly exposed to weather-sensitive failure mechanisms that require asset-level, spatially explicit risk modelling for effective intervention planning. This study contributes a modular, robust, and explainable probability-of-failure (PoF) modelling framework for utility asset management. The central contribution is an asset-level architecture that can be scaled to new environmental data sources and additional PoF types without reworking the underlying pipeline. This is particularly relevant for industry settings, where risk models must remain operationally maintainable while adapting to changing data availability, asset-management priorities, and climate-driven hazard conditions. We demonstrate the framework for vegetation-related and lightning-related failure modes using a harmonised geospatial machine-learning pipeline. The implementation integrates multi-source predictors, including topography (SRTM), vegetation condition (MODIS Normalised Difference Vegetation Index - NDVI), lightning climatology (LIS VHRMC), OpenStreetMap-derived proximity features, and utility operational records. The resulting architecture is computationally efficient, operationally extensible, and suitable for utility-scale deployment. It provides actionable asset-level risk stratification for inspection prioritisation, vegetation management, asset hardening, and resilience planning, supporting earlier intervention and more climate-resilient network operations.",
+      "summary_zh": "该研究提出了一个模块化、稳健且可解释的资产级故障概率（PoF）建模框架，用于电力设施管理。框架可扩展至新的环境数据源和故障类型，无需重构底层流程。作者集成了地形（SRTM）、植被状况（MODIS NDVI）、闪电气候学（LIS VHRMC）、OSM邻近特征和运营记录，针对植被和闪电相关故障模式进行了演示，实现了计算高效、可操作、适合公用事业规模部署的资产级风险分层。",
+      "insight_zh": "该工作展示了如何通过模块化架构将多源遥感数据无缝集成到运营风险管理中，其‘可扩展性’和‘可解释性’设计原则，为城市更新中类似的基础设施韧性评估提供了范本。"
+    },
+    {
+      "key": "arxiv:2604.23309",
+      "title": "STAND: Semantic Anchoring Constraint with Dual-Granularity Disambiguation for Remote Sensing Image Change Captioning",
+      "title_zh": "STAND：用于遥感图像变化描述的语义锚定约束与双粒度消歧",
+      "url": "https://arxiv.org/abs/2604.23309",
+      "doi": "",
+      "arxiv_id": "2604.23309",
+      "authors": [
+        "Yanpei Gong",
+        "Beichen Zhang",
+        "Hao Wang",
+        "Xuhang Fu",
+        "Zhaobo Qi",
+        "Xinyan Liu",
+        "Yuanrong Xu",
+        "Weigang Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "论文研究遥感图像变化描述任务，提出语义锚定约束和双粒度消歧方法，与遥感变化检测和自然语言处理结合，与GIS博士研究方向高度相关。",
+      "tags": [
+        "遥感图像变化描述",
+        "语义锚定",
+        "双粒度消歧",
+        "变化检测"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文针对遥感图像变化描述任务，提出了一种语义锚定约束和双粒度消歧方法。摘要内容不完整，但主题明确指向遥感变化描述，是遥感与自然语言处理的交叉研究。",
+      "insight_zh": "在遥感图像变化描述中引入语义锚定和双粒度消歧，有望提升描述文本的准确性和细粒度，为遥感变化检测结果的语义化表达提供了新方法。"
+    },
+    {
+      "key": "arxiv:2608.19177",
+      "title": "Image-Guided Pavement Defect Recognition in GPR Data with novel 3D Deep Learning Architecture",
+      "title_zh": "基于新型3D深度学习架构的图像引导探地雷达路面缺陷识别",
+      "url": "https://arxiv.org/abs/2608.19177",
+      "doi": "",
+      "arxiv_id": "2608.19177",
+      "authors": [
+        "Yuandong Pan",
+        "Linjun Lu",
+        "Mudan Wang",
+        "Florian Noichl",
+        "Fan Xue",
+        "Brian Sheil",
+        "Lavindra de Silva",
+        "Andr\\'e Borrmann",
+        "Ioannis Brilakis"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T17:53:54+00:00",
+      "score": 85,
+      "reason": "该研究聚焦于利用3D深度学习架构进行探地雷达（GPR）路面缺陷识别，属于遥感与地理空间智能在基础设施监测中的应用。其提出的RGB图像与3D GPR数据融合的标注流程，以及针对3D数据设计的CNN架构，与多源数据融合和深度学习变化检测的研究方向高度相关。",
+      "tags": [
+        "遥感变化检测",
+        "深度学习",
+        "3D CNN",
+        "GPR",
+        "路面检测",
+        "数据标注"
+      ],
+      "abstract": "Ground Penetrating Radar (GPR) is a widely adopted non-destructive sensing technology for subsurface inspection in civil and transportation engineering. Despite its potential for pavement condition assessment, the large-scale application of GPR in automated inspection has two key challenges: the scarcity of annotated real-world datasets and the lack of deep learning models designed for the unique characteristics of 3-Dimensional (3D) GPR data. This study addresses these limitations by firstly introducing a cost-effective data preparation pipeline that integrates orthomosaic Red Green Blue (RGB) imagery with 3D GPR scans to generate annotated 3D GPR datasets. The proposed method uses the aligned segments of RGB and GPR data, using pavement surface images as a reference to transfer labels of surface-visible defects to corresponding GPR segments, enabling efficient large-scale annotation in a real-world dataset collected on a highway section under operation. In addition to the dataset contribution, we propose a specialised 3D Convolutional Neural Network (CNN) architecture incorporating residual connections, mixed convolutional kernel sizes, and both depthwise and channelwise attention mechanisms to enhance feature representation and defect classification. The model is evaluated on binary classification tasks for detecting patch and crack defects in pavement structures. Experimental results demonstrate that the proposed network outperforms baseline architectures across multiple evaluation metrics. Ablation studies further confirm the effectiveness of the designed architectural components. This work contributes a scalable and practical method for real-world dataset generation, along with a novel deep learning framework.",
+      "summary_zh": "该研究针对探地雷达（GPR）在路面自动检测中面临的数据标注稀缺和缺乏适配3D数据模型两大挑战，提出了一种将正射RGB影像与3D GPR扫描对齐，利用表面可见缺陷标签迁移至GPR数据段的高效标注流程。同时，设计了一种包含残差连接、混合卷积核及深度和通道注意力的3D CNN架构，用于路面裂缝和修补缺陷的二分类任务。实验表明该模型在多个指标上优于基线。",
+      "insight_zh": "该研究展示了利用高分辨率表面影像作为桥梁，为难以解释的3D地下数据生成大规模训练标签的可行性，为基础设施领域的多源数据融合与自动化检测提供了可扩展的范式。"
+    },
+    {
+      "key": "arxiv:2608.18709",
+      "title": "A Critical Synthesis of Uncertainty Quantification and Foundation Models for Semantic Segmentation",
+      "title_zh": "语义分割中不确定性量化与基础模型的批判性综合",
+      "url": "https://arxiv.org/abs/2608.18709",
+      "doi": "",
+      "arxiv_id": "2608.18709",
+      "authors": [
+        "Steven Landgraf",
+        "Joceline Hinz",
+        "Markus Ulrich"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T09:09:42+00:00",
+      "score": 85,
+      "reason": "论文系统评估了基础模型在语义分割中的不确定性量化方法，直接关联遥感变化检测中对预测可靠性和泛化能力的需求。其关于校准、不确定性质量和计算成本的权衡分析，对构建安全、可信的地理空间智能系统具有重要参考价值。",
+      "tags": [
+        "不确定性量化",
+        "基础模型",
+        "语义分割",
+        "域偏移",
+        "可靠性"
+      ],
+      "abstract": "Foundation models are increasingly breaking what seemed to be impossible not long ago by enabling unprecedented accuracy and cross-domain generalization. Yet their lack of interpretability, tendency to be overconfident, and sensitivity to real-world domain shifts pose critical challenges for safety- and mission-critical applications. Uncertainty quantification (UQ) offers a principled way to address these issues, but its integration into segmentation foundation models has yet to be explored. In this paper we present the first systematic evaluation of UQ methods applied to a foundation model for semantic segmentation. We fine-tune a lightweight DPT decoder on top of the pretrained SAM2 encoder to establish a simple yet competitive baseline and benchmark four representative UQ approaches - Monte Carlo Dropout, Deep Sub-Ensemble, Test-Time Augmentation, and Evidential Deep Learning - across Cityscapes, NYUv2, and two challenging out-of-domain settings. Our analysis compares segmentation accuracy, calibration, uncertainty quality, and inference time, revealing clear trade-offs between predictive performance, reliability, and computational cost. These results highlight both the promise and the current limitations of uncertainty-aware foundation models, pointing to the need for future work that jointly optimizes accuracy, robustness, and efficiency for real-world deployment.",
+      "summary_zh": "基础模型在语义分割中展现出高精度和跨域泛化能力，但存在过度自信和域偏移敏感问题。本文首次系统评估了应用于分割基础模型（SAM2编码器+DPT解码器）的四种不确定性量化方法（MC Dropout、Deep Sub-Ensemble、TTA、Evidential Deep Learning），在Cityscapes、NYUv2及两个域外数据集上比较了精度、校准、不确定性质量和推理时间，揭示了预测性能、可靠性与计算成本之间的权衡。",
+      "insight_zh": "研究结果强调了不确定性感知基础模型的潜力与局限，指出未来需联合优化精度、鲁棒性和效率，这对于将分割模型部署于遥感等安全关键领域至关重要。"
+    },
+    {
+      "key": "arxiv:2608.18473",
+      "title": "A Locally Deployable Tool-Grounded LLM Multi-agent Framework for Automating Methane Emission Analysis and Reporting",
+      "title_zh": "本地可部署的工具型LLM多智能体框架，用于自动化甲烷排放分析与报告",
+      "url": "https://arxiv.org/abs/2608.18473",
+      "doi": "",
+      "arxiv_id": "2608.18473",
+      "authors": [
+        "Yang Yan",
+        "Zifan Zhou",
+        "Xuan Wang",
+        "Erum Hassan",
+        "Bilguunzaya Mijiddorj",
+        "Jie Cao",
+        "Bin Li",
+        "and Binbin Weng"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T02:58:12+00:00",
+      "score": 85,
+      "reason": "论文提出一个本地化部署的工具型LLM多智能体框架，用于自动化甲烷排放分析和报告，与LLM和多智能体研究方向高度契合，其工作流协调和自动化报告生成思路对城市更新中的数据分析和报告自动化有借鉴意义。",
+      "tags": [
+        "LLM多智能体",
+        "工具调用",
+        "甲烷监测",
+        "自动化报告",
+        "本地化部署"
+      ],
+      "abstract": "Methane field monitoring requires the integration of sampling design, meteorological interpretation, sensor processing, plume analysis, visualization, and reporting, but these steps are often distributed across separate expert-driven workflows. We developed a locally deployable, tool-grounded large language model (LLM) multi-agent framework for our low-cost methane sensing and field-monitoring campaigns. The framework uses LLM agents as workflow coordinators that link field measurements, meteorological data, deterministic sensor-processing routines, Gaussian plume inversion, and report generation, rather than directly estimating methane concentrations or emissions. Extensive field deployments across diverse real-world environments (e.g., wastewater treatment facilities, landfills, and oil and gas sites) demonstrate that our framework can achieve 92.0\\% accuracy in workflow routing and parameter extraction, 85.0\\% success in emission-rate estimation and plume prediction, and 95.0\\% success in generating editable reports under practical operating conditions. Compared with manual and general-purpose LLM-assisted workflows, it reduced workflow time from hours-level to minutes-level, lowered manual coordination and prompt-engineering requirements, and retained traceable plume-based outputs. In addition, most processing can be performed locally, reducing exposure of sensitive facility and field data to cloud services. These results indicate that tool-grounded LLM coordination can reduce the time, labor, usability, and data-security barriers of methane field monitoring.",
+      "summary_zh": "开发了一个本地可部署的工具型LLM多智能体框架，作为工作流协调器，连接现场测量、气象数据、传感器处理、高斯羽流反演和报告生成。在多种真实环境部署中，实现了92%的工作流路由准确率和85%的排放率估算成功率，并将工作流时间从小时级缩短至分钟级。",
+      "insight_zh": "工具型LLM多智能体框架能有效整合多源数据和专业处理流程，实现复杂分析任务的自动化，并支持本地化部署以保障数据安全，对城市更新中的多源数据融合和智能决策支持系统有重要参考价值。"
+    },
+    {
+      "key": "arxiv:2608.19063",
+      "title": "When Two Tracers Disagree: An Investigation of Multimodal Fusion for Clinical PET/CT Segmentation",
+      "title_zh": "当两种示踪剂不一致时：临床PET/CT分割中多模态融合的研究",
+      "url": "https://arxiv.org/abs/2608.19063",
+      "doi": "",
+      "arxiv_id": "2608.19063",
+      "authors": [
+        "Jack A. Johnson",
+        "Bart{\\l}omiej W. Papie\\.z"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T16:04:46+00:00",
+      "score": 80,
+      "reason": "论文系统比较了PSMA和FDG PET/CT多模态融合策略在病变分割中的表现，发现融合并未一致优于单示踪剂模型。这一‘负面’结果对多源遥感数据融合研究具有重要警示意义，提示需谨慎设计融合架构以保留各模态特有表征。",
+      "tags": [
+        "多模态融合",
+        "医学影像分割",
+        "PET/CT",
+        "nnU-Net",
+        "跨注意力"
+      ],
+      "abstract": "PSMA and FDG PET/CT visualise complementary biological information in prostate cancer. Combining both tracers could capture heterogeneous tumour phenotypes that may be missed by either alone, yet there is no consensus on effective deep learning architectures for fusing these modalities. We evaluated multimodal image-fusion strategies for automatic whole-body PET/CT lesion segmentation to estimate total tumour burden. Using the public DEEP-PSMA Challenge dataset, we trained tracer-specific 3D nnU-Net baselines and compared (i) early fusion with a single encoder and one decoder (OEOD) or two decoders (OETD), and (ii) intermediate fusion via a dual-encoder cross-attention U-Net (DECA-UNet). Tracer-specific baselines performed strongly (PSMA Dice = 0.93; FDG = 0.81). Fusion yielded mixed results: OEOD produced a combined Dice of 0.90 (on an easier, non-tracer-specific task), whilst the tracer-specific fusion models reached PSMA/FDG = 0.69/0.64 (OETD) and 0.76/0.57 (DECA-UNet). Whilst fusion often provided reasonable PSMA segmentation, FDG performance degraded and no strategy consistently exceeded the single-tracer baselines. Under the evaluated setting, tracer-specific models remain the stronger baseline; clinically useful gains from multimodal fusion will likely require architectures that better preserve tracer specific representations. Our code is available at: https://github.com/JackJ3636/DEEP_PSMA_code",
+      "summary_zh": "该研究评估了PSMA和FDG PET/CT多模态融合策略用于全身病变分割。基于DEEP-PSMA数据集，训练了示踪剂特异性3D nnU-Net基线，并比较了早期融合（单/双解码器）和基于双编码器交叉注意力的中间融合（DECA-UNet）。结果显示，单示踪剂基线性能强劲（PSMA Dice=0.93, FDG=0.81），而融合模型结果不一，FDG性能普遍下降，没有策略能持续超过单示踪剂基线。",
+      "insight_zh": "研究表明，在多模态融合中，简单融合可能损害特定模态的性能，架构设计需更好地保留各模态的特有表征。这一发现对遥感中异源数据（如光学与SAR）的融合策略选择具有直接参考意义。"
+    },
+    {
+      "key": "arxiv:2608.19036",
+      "title": "USR-Drive: Unified Driving Scene Representation via Joint Denoising of 3D Gaussians and Boxes",
+      "title_zh": "USR-Drive：通过3D高斯与边界框联合去噪实现统一驾驶场景表示",
+      "url": "https://arxiv.org/abs/2608.19036",
+      "doi": "",
+      "arxiv_id": "2608.19036",
+      "authors": [
+        "Li-Heng Chen",
+        "Haokai Pang",
+        "Chengye Su",
+        "Jiarun Liu",
+        "Qifeng Chen",
+        "Ziqian Ni",
+        "Jianxin Huang",
+        "Shi-Sheng Huang",
+        "Hongbo Fu",
+        "Sheng Yang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T15:29:06+00:00",
+      "score": 80,
+      "reason": "该研究提出了一种统一的驾驶场景表示学习框架，通过联合去噪3D高斯和3D边界框，将动态重建与实例级感知任务统一起来。其多模态扩散Transformer和统一位置编码的设计，对于多源数据融合和地理空间智能中的场景理解具有重要参考价值。",
+      "tags": [
+        "3D场景表示",
+        "自动驾驶",
+        "扩散模型",
+        "3D高斯",
+        "目标检测"
+      ],
+      "abstract": "Spatial representation learning for autonomous driving aims to map raw visual signals into structured 3D scene representations, where object-centric bounding boxes and rendering-oriented 3D primitives (\\eg, 3D Gaussians) serve as two distinct yet highly complementary levels for scene understanding. Existing methods typically treat dynamic reconstruction and instance-level perception as separate tasks, despite their shared goal of estimating the underlying 3D world state. As a result, dynamic reconstruction is under-constrained while 3D detection lacks geometric grounding. To address this gap, we propose USR-Drive, a unified conditional generative framework that, given only posed multi-view driving videos, jointly recovers dense dynamic geometry and instance-level object layouts within a shared scene representation. Specifically, USR-Drive represents dense Gaussian primitives and sparse 3D bounding boxes as two aligned latent token streams and jointly denoises them with a unified multi-modal diffusion Transformer. Unlike prior paradigms that use boxes as external conditions or predict them with detached modules, USR-Drive treats them as mutually constrained state variables with a Unified Positional Encoding (UPE) that aligns heterogeneous tokens within a shared metric spatiotemporal coordinate. Via such unified representation and generative framework, the two modalities reinforce each other: geometry supplies dense metric evidence for box prediction, while boxes provide instance-level structural priors that help preserve spatial consistency and reduce ambiguity in sequential 3D geometric representation. Our approach successfully delivers state-of-the-art results for both dynamic reconstruction and 3D detection on the nuScenes and VKitti datasets.",
+      "summary_zh": "该研究提出了USR-Drive框架，将稠密的3D高斯原语和稀疏的3D边界框表示为两个对齐的潜在token流，并通过统一的多模态扩散Transformer进行联合去噪。该框架通过统一位置编码对齐异构token，使几何重建和框预测相互增强，在nuScenes和VKitti数据集上实现了动态重建和3D检测的最优性能。",
+      "insight_zh": "该研究证明了将连续几何表示与离散语义表示置于同一生成式框架下联合优化，能够有效解决动态重建约束不足和检测缺乏几何基础的问题，为统一场景理解提供了新范式。"
+    },
+    {
+      "key": "arxiv:2605.05962",
+      "title": "Tatarstan Toponyms: A Bilingual Dataset and Hybrid RAG System for Geospatial Question Answering",
+      "title_zh": "鞑靼斯坦地名：用于地理空间问答的双语数据集和混合RAG系统",
+      "url": "https://arxiv.org/abs/2605.05962",
+      "doi": "",
+      "arxiv_id": "2605.05962",
+      "authors": [
+        "Mullosharaf K. Arabov",
+        "Svetlana S. Khaybullina",
+        "Dinara M. Naumetova"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 80,
+      "reason": "论文构建了双语地名数据集和混合RAG系统用于地理空间问答，与LLM、时空数据挖掘和地理空间智能研究方向高度相关，对城市更新中的地理信息检索和问答系统开发有直接参考价值。",
+      "tags": [
+        "地理空间问答",
+        "RAG",
+        "双语数据集",
+        "地名",
+        "LLM"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文构建了一个关于鞑靼斯坦地名的双语数据集，并开发了一个混合RAG系统用于地理空间问答。摘要内容不完整，但主题明确指向地理空间信息检索与问答。",
+      "insight_zh": "构建高质量的双语地理数据集和混合RAG系统，是提升地理空间问答准确性和可用性的关键，对城市更新中的地名解析和空间信息查询有重要应用前景。"
+    },
+    {
+      "key": "arxiv:2608.19049",
+      "title": "Multi-Agent Off-Policy Deep Reinforcement Learning for Smart Campus Coverage",
+      "title_zh": "面向智慧校园覆盖的多智能体离策略深度强化学习",
+      "url": "https://arxiv.org/abs/2608.19049",
+      "doi": "",
+      "arxiv_id": "2608.19049",
+      "authors": [
+        "Omar Rady",
+        "Mohamed Ayman",
+        "Ali Arafa",
+        "Mohamed Shalma"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T15:41:32+00:00",
+      "score": 75,
+      "reason": "该研究将多智能体深度强化学习应用于智慧校园场景下的毫米波基站优化部署问题，属于时空数据挖掘和智能体优化在城市建设中的典型应用。其对比了单智能体与多智能体方案，为城市尺度下的资源优化配置提供了方法论参考。",
+      "tags": [
+        "多智能体",
+        "深度强化学习",
+        "智能校园",
+        "基站部署",
+        "DDPG"
+      ],
+      "abstract": "Deep reinforcement learning (DRL) has recently gained a great attention due to its real-time adaptation and effectiveness in complex optimization problems. This paper investigates the optimal deployment of millimeter-wave (mmWave) base stations (BSs) in a realistic, non-convex campus topology. The optimization problem is NP-hard, due to the non-convex, non-smooth nature of the max-min fairness objective. To overcome these constraints, we formulate the BS placement as a Markov Decision Process (MDP) and systematically benchmark four DRL schemes: a discrete single-agent Deep Q-Network (DQN), a spatially partitioned Multi-Agent DQN, a continuous single-agent Deep Deterministic Policy Gradient (DDPG), and a geographically partitioned multi-agent DDPG framework. Numerical evaluations reveal that the multi-agent DDPG approach substantially outperforms single-agent in dense scenarios. Additionally full coverage is achieved, and a fairness Jain's index of 0.94 is obtained. Finally, the multi-agent demonstrates highly efficient computational convergence of dense scenarios with $400$ users.",
+      "summary_zh": "该研究将毫米波基站部署问题建模为马尔可夫决策过程，并系统比较了四种深度强化学习方案，包括离散/连续动作空间的单智能体与多智能体DQN和DDPG。数值评估表明，在密集用户场景下，多智能体DDPG方法性能显著优于单智能体，实现了全覆盖，公平性Jain指数达到0.94，且计算收敛效率高。",
+      "insight_zh": "该研究表明，在具有空间异质性和复杂约束的部署问题中，采用地理分区策略的多智能体强化学习框架能更高效地逼近最优解，为城市基础设施的智能规划提供了新思路。"
+    }
+  ]
+}

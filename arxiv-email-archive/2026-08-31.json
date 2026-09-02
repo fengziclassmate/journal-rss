@@ -1,0 +1,318 @@
+{
+  "date": "2026-08-31",
+  "guid": "arxiv-email-daily:2026-08-31",
+  "paper_keys": [
+    "arxiv:2608.28247",
+    "arxiv:2608.28517",
+    "arxiv:2608.28567",
+    "arxiv:2606.17092",
+    "arxiv:2608.28273",
+    "arxiv:2608.27998",
+    "arxiv:2608.28264",
+    "arxiv:2608.27942",
+    "arxiv:2608.27971",
+    "arxiv:2608.28241"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:509",
+    "deepseek": "ok:30"
+  },
+  "updated_at": "2026-09-02T01:23:44.979933+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2608.28247",
+      "title": "A comprehensive and trustworthy benchmark of AI methods for change detection in Earth observation",
+      "title_zh": "地球观测变化检测AI方法的综合可信基准",
+      "url": "https://arxiv.org/abs/2608.28247",
+      "doi": "",
+      "arxiv_id": "2608.28247",
+      "authors": [
+        "Tadej Tomani\\v{c}",
+        "Alice Baudhuin",
+        "Jan Soto\\v{s}ek",
+        "Jure Brence",
+        "Pan\\v{c}e Panov",
+        "Nikola Simidjievski",
+        "and Dragi Kocev"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T12:04:39+00:00",
+      "score": 95,
+      "reason": "该文构建了遥感变化检测的标准化基准，系统比较多种模型架构与效率，与遥感变化检测研究方向高度契合。",
+      "tags": [
+        "遥感变化检测",
+        "基准测试",
+        "深度学习",
+        "计算效率"
+      ],
+      "abstract": "Change detection in Earth observation (EO) is critical for monitoring land surface transformations, yet recent research in the field is constrained by inconsistent evaluation protocols and a narrow focus on predictive accuracy without regard for computational efficiency. To address this, we present a standardized, open-source benchmark for evaluating state-of-the-art (SOTA) deep learning methods for Earth observation change detection. We conduct a comprehensive analysis of ten representative model architectures, ranging from convolutional networks (CNNs) to vision transformers (ViTs), across ten heterogeneous change detection datasets. We rigorously evaluate these models with identical experimental protocols, comparing models trained from scratch against those utilizing pre-trained weights. Furthermore, we evaluate predictive performance alongside computational efficiency, including parameter counts and inference latency. Our findings reveal that well-optimized classical architectures, such as Siamese U-Nets, frequently outperform more complex contemporary models when computational efficiency is factored in, and that pre-training consistently provides a significant performance boost with no additional inference cost. To ensure complete transparency and reproducibility, all experimental resources, including standardized data splits, training scripts, training logs, and model checkpoints are publicly available and adhere to FAIR principles (Findable, Accessible, Interoperable, and Reusable).",
+      "summary_zh": "提出了一个开源基准，对十种代表性深度学习模型在十个变化检测数据集上进行统一协议评估，同时考量预测性能与计算效率，发现优化良好的经典架构（如Siamese U-Net）在效率维度上常优于复杂模型，且预训练能带来显著性能提升。",
+      "insight_zh": "在遥感变化检测中，模型选择需权衡精度与效率，经典架构结合预训练可能是实用且高效的方案。"
+    },
+    {
+      "key": "arxiv:2608.28517",
+      "title": "Learning the Target Priors Before Image Translation: A Decoupled Training Paradigm for Cross-Modal Image Translation in Remote Sensing",
+      "title_zh": "在图像翻译前学习目标先验：遥感跨模态图像翻译的解耦训练范式",
+      "url": "https://arxiv.org/abs/2608.28517",
+      "doi": "",
+      "arxiv_id": "2608.28517",
+      "authors": [
+        "Keyan Hu",
+        "Mingtao Wang",
+        "Ziyu Zhou",
+        "Tiandong Shi",
+        "Haifeng Li",
+        "Ji Qi",
+        "Chao Tao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T16:54:19+00:00",
+      "score": 90,
+      "reason": "该研究聚焦于遥感跨模态图像翻译（SAR到RGB、NIR到RGB），提出了一种解耦训练范式，与您在多源数据融合与地理空间智能方面的研究高度契合。",
+      "tags": [
+        "Cross-Modal Image Translation",
+        "SAR-to-RGB",
+        "NIR-to-RGB",
+        "Generative Prior",
+        "Parameter-Efficient"
+      ],
+      "abstract": "Cross-modal image translation in remote sensing must preserve source-observed content while matching the target-domain distribution. Existing methods jointly learn the target prior and cross-modal dependence from scarce paired data, overlooking a key asymmetry: only the latter intrinsically requires cross-modal correspondence. We formalize this distinction through conditional-score and denoising-risk analyses and propose Learning the Target Priors Before Image Translation (LTP-BIT), a prior-first paradigm that decouples the two learning tasks. LTP-BIT first learns a target-domain generative prior from large-scale unpaired imagery, then retains the pretrained backbone weights and learns source-conditioned control through P-DART, a parameter-efficient dual-stream architecture. Controlled experiments show that prior matching and scaling primarily improve target-domain realism, whereas instance fidelity relies more strongly on conditional adaptation. LTP-BIT achieves state-of-the-art performance across SAR-to-RGB and NIR-to-RGB benchmarks using only 9.81% task-specific parameters. On QXS-SAROPT, it retains near-full-data instance fidelity with only 25% of the paired samples.",
+      "summary_zh": "遥感跨模态图像翻译需在保留源图像内容的同时匹配目标域分布。现有方法从稀缺的成对数据中联合学习目标先验和跨模态依赖，忽略了二者在本质上的不对称性。该研究通过条件分数和去噪风险分析，提出LTP-BIT范式，将两个学习任务解耦：先在大规模非成对图像上学习目标域生成先验，然后冻结骨干网络权重，通过参数高效的P-DART双流架构学习源条件控制。实验表明，先验匹配和缩放主要提升目标域真实性，而实例保真度更依赖条件适应。该方法在SAR-to-RGB和NIR-to-RGB基准上达到最先进性能，仅使用9.81%的任务特定参数。",
+      "insight_zh": "在跨模态翻译中，目标域先验和跨模态依赖是可分离的学习任务，优先学习前者能显著提升数据效率和翻译的真实感，为多源遥感数据融合提供了新思路。"
+    },
+    {
+      "key": "arxiv:2608.28567",
+      "title": "GeBDA: Building Damage Assessment as Text-Based Sequence Prediction",
+      "title_zh": "GeBDA：基于文本序列预测的建筑物损毁评估",
+      "url": "https://arxiv.org/abs/2608.28567",
+      "doi": "",
+      "arxiv_id": "2608.28567",
+      "authors": [
+        "Olivier Dietrich",
+        "Krishna Sapkota",
+        "Konrad Schindler",
+        "Genady Beryozkin"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T17:44:55+00:00",
+      "score": 85,
+      "reason": "该研究直接涉及遥感变化检测中的建筑物损毁评估，并创新性地使用通用视觉语言模型进行自回归序列预测，与您的研究方向高度相关。",
+      "tags": [
+        "Building Damage Assessment",
+        "Vision-Language Model",
+        "Sequence Prediction",
+        "Remote Sensing",
+        "Change Detection"
+      ],
+      "abstract": "Conventionally, Building Damage Assessment (BDA) is tackled either with dedicated network architectures or by fine-tuning geospatial image foundation models. In this work, we ask whether a general-purpose Vision-Language Model (VLM) can localize buildings and grade their damage through autoregressive sequence generation alone. We cast BDA as predicting a variable-length set of bounding boxes, each specified by its coordinates and a damage label. Our preliminary implementation, based on the open Gemma model, achieves promising damage mapping results from only bi-temporal satellite images and a suitable text prompt.",
+      "summary_zh": "传统建筑物损毁评估（BDA）依赖专用网络架构或微调地理空间图像基础模型。该研究探索通用视觉语言模型（VLM）能否仅通过自回归序列生成来定位建筑物并评估其损毁等级。他们将BDA任务转化为预测一组可变长度的边界框，每个框由其坐标和损毁标签指定。基于开源Gemma模型的初步实现，仅利用双时相卫星图像和文本提示即可获得有前景的损毁映射结果。",
+      "insight_zh": "通用VLM具备通过序列生成直接完成BDA任务的潜力，这为遥感变化检测提供了一种新的范式，即无需专门设计检测头或复杂的微调流程。"
+    },
+    {
+      "key": "arxiv:2606.17092",
+      "title": "Securing Multi-Agent GIS Systems: Risk Evaluation and Prompt Hardening Optimization",
+      "title_zh": "保障多智能体GIS系统安全：风险评估与提示词加固优化",
+      "url": "https://arxiv.org/abs/2606.17092",
+      "doi": "",
+      "arxiv_id": "2606.17092",
+      "authors": [
+        "Kyle Gao",
+        "Pranavi Kotta",
+        "Linlin Xu",
+        "Jonathan Li",
+        "and David A. Clausi"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "直接研究多智能体GIS系统的安全风险与提示词加固，与GIS博士研究方向中的多智能体和城市更新高度契合。",
+      "tags": [
+        "多智能体",
+        "GIS",
+        "安全",
+        "提示工程",
+        "风险评估"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "针对多智能体GIS系统，进行风险评估并提出提示词加固优化方法，以增强系统安全性。",
+      "insight_zh": "多智能体GIS系统的安全性可通过优化提示词来加固，这为城市更新中的智能决策系统提供了安全保障思路。"
+    },
+    {
+      "key": "arxiv:2608.28273",
+      "title": "Learning to Transfer Across Modes: Towards Unified Urban Mobility Forecasting",
+      "title_zh": "跨模式迁移学习：迈向统一的城市出行预测",
+      "url": "https://arxiv.org/abs/2608.28273",
+      "doi": "",
+      "arxiv_id": "2608.28273",
+      "authors": [
+        "Yixuan Zhao",
+        "Man Luo"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T12:35:51+00:00",
+      "score": 80,
+      "reason": "该研究针对城市多模式交通需求预测，提出跨模式知识迁移的统一框架，与您在城市更新与时空数据挖掘方向的研究紧密相关。",
+      "tags": [
+        "Urban Mobility",
+        "Forecasting",
+        "Knowledge Transfer",
+        "Spatio-Temporal",
+        "Multi-Modal"
+      ],
+      "abstract": "Urban transportation systems consist of multiple mobility modes that coexist within the same city and exhibit complex interdependencies, leading to correlated demand dynamics across modes. However, forecasting demand jointly across different modes remains challenging due to substantial heterogeneity in space and the limited availability of historical data for emerging modes. Existing forecasting methods are largely developed for individual mobility modes and implicitly assume compatible spatial structures between source and target systems, which severely restricts their applicability in multi-modal settings. To address these challenges, we propose \\textbf{TransMod}, a unified framework for urban mobility demand forecasting that enables effective knowledge transfer across heterogeneous mobility modes. TransMod constructs a shared zone-level spatial representation that aligns mobility systems with different spatial granularities into a common space, thereby reducing structural mismatch and distributional shift. Built on this unified representation, TransMod further learns transferable spatio-temporal patterns from data-rich source modes and adapts them to data-scarce target modes, alleviating the dependence on extensive target-domain histories. Extensive experiments on real-world datasets demonstrate that TransMod consistently outperforms existing approaches and provides robust forecasting performance under limited target data.",
+      "summary_zh": "城市交通系统包含多种共存且相互依赖的出行模式，但现有预测方法大多针对单一模式开发，难以处理多模式间的空间异质性和新兴模式历史数据稀缺的问题。该研究提出TransMod框架，通过构建共享的区域级空间表示，将不同空间粒度的出行系统对齐到同一空间，从而减少结构不匹配和分布偏移。在此统一表示基础上，TransMod从数据丰富的源模式学习可迁移的时空模式，并适应到数据稀缺的目标模式。在真实数据集上的实验表明，TransMod在目标数据有限的情况下持续优于现有方法。",
+      "insight_zh": "通过构建统一的空间表示，可以实现不同城市出行模式间的知识迁移，有效缓解新兴模式数据稀缺问题，为城市多模式交通系统的联合建模提供了新框架。"
+    },
+    {
+      "key": "arxiv:2608.27998",
+      "title": "Automated Analysis Framework for Multilingual Climate-Health Literature Based on Multi-Agent Large Language Model",
+      "title_zh": "基于多智能体大语言模型的多语言气候健康文献自动化分析框架",
+      "url": "https://arxiv.org/abs/2608.27998",
+      "doi": "",
+      "arxiv_id": "2608.27998",
+      "authors": [
+        "Yuze Sun",
+        "Shihui Zhang",
+        "Jiancheng Pan",
+        "Yunjia Ye",
+        "Wentao Luo",
+        "Jiahao Li",
+        "Quan Zhang",
+        "Wenjia Cai",
+        "Xiaomeng Huang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T07:06:36+00:00",
+      "score": 80,
+      "reason": "利用多智能体大语言模型实现跨学科文献的自动化分析，与LLM和多智能体研究方向高度契合，可应用于城市更新文献挖掘。",
+      "tags": [
+        "多智能体",
+        "大语言模型",
+        "文献分析",
+        "气候健康",
+        "信息提取"
+      ],
+      "abstract": "The rapid proliferation of interdisciplinary and multilingual scientific literature has left traditional manual analysis and single-algorithm methods plagued by low efficiency, poor scalability, and insufficient domain adaptability. Targeting the literature analysis needs of the typical interdisciplinary climate-health field, this study proposes a multi-agent large language model automated analysis framework for multilingual scientific literature, which realizes full-process automation covering literature screening, structured information extraction, and standardized integration. With a central coordination module as the core, the framework deploys three dedicated agents for document evaluation, information extraction, and analytical review to mimic the literature analysis thinking of domain experts, and adopts a four-layer hallucination control strategy together with a manual verification procedure to ensure the accuracy and reliability of analytical outcomes. Validated on a bilingual Chinese-English corpus of 32,642 climate-health papers covering China from 1993 to 2023, the framework achieves an F1 score of 0.92 in core information extraction, and completes the extraction and standardization of 2,012 city-literature association pairs, offering effective technical support for large-scale evidence mining in the climate-health research domain.",
+      "summary_zh": "提出一个多智能体大语言模型框架，实现多语言科学文献的筛选、信息提取与标准化集成，并在气候健康领域验证了其有效性。",
+      "insight_zh": "多智能体LLM框架可高效处理跨学科文献，其幻觉控制策略和人工验证流程对大规模证据挖掘有重要参考价值。"
+    },
+    {
+      "key": "arxiv:2608.28264",
+      "title": "Finding Where the Buck Stops: An Automated Failure Attribution-Based Reflection Framework for Multi-Agent Collaboration",
+      "title_zh": "找到责任所在：面向多智能体协作的自动化失败归因反思框架",
+      "url": "https://arxiv.org/abs/2608.28264",
+      "doi": "",
+      "arxiv_id": "2608.28264",
+      "authors": [
+        "Xiaoqing Wang",
+        "Keman Huang",
+        "Bin Liang",
+        "Hongyu Li",
+        "Xiaoyong Du",
+        "Wuqiong Pan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T12:26:03+00:00",
+      "score": 75,
+      "reason": "该文聚焦多智能体协作中的失败归因与反思，与LLM和多智能体研究方向高度相关，可借鉴其诊断-纠正范式。",
+      "tags": [
+        "多智能体",
+        "LLM",
+        "反思机制",
+        "故障归因"
+      ],
+      "abstract": "Multi-agent systems (MAS) powered by large language models have shown promise for complex tasks but suffer from high failure rates. Current self-reflection methods for MAS require all agents to reflect upon failure, overlooking a critical reality: failures typically stem from a specific agent leading the task astray, namely the decisive error agent, while others merely fulfill their regular duties. Forcing regular-behaving agents to reflect contaminates their memory with wrong insights. Hence, we propose DoCtOR (Diagnose-then-Correct PPO-enhanced Reflection), a novel reflection framework that enhances multi-agent collaboration. DoCtOR first identifies the decisive error step and decisive error agent through automated failure attribution, then employs counterfactual reasoning to generate a corrected decisive error step, and finally engages only the decisive error agent to produce targeted reflections. Experimental results show DoCtOR achieves 22%, 26%, and 27% improvements over initial success rates on HotPotQA, ChartQAPro, and Mind2Web datasets, outperforming Reflexion, Retroformer, and COPPER. We further establish the generalizability of our diagnose-then-correct paradigm and demonstrate that in low-resource settings, focusing reflection on reasoning steps after the decisive error step achieves comparable quality to reflecting on the complete failure trajectory.",
+      "summary_zh": "提出DoCtOR框架，通过自动化失败归因定位关键错误智能体，仅对其执行反事实推理和定向反思，提升多智能体系统在多个基准上的任务成功率。",
+      "insight_zh": "在多智能体反思中，仅对关键错误智能体进行针对性反思可避免污染正常智能体的记忆，并提升整体性能。"
+    },
+    {
+      "key": "arxiv:2608.27942",
+      "title": "CASTANET: Causality-Aware Spatio-Temporal Adversarial Network Using Traffic Incident Effects",
+      "title_zh": "CASTANET：利用交通事故影响的因果感知时空对抗网络",
+      "url": "https://arxiv.org/abs/2608.27942",
+      "doi": "",
+      "arxiv_id": "2608.27942",
+      "authors": [
+        "Toshiya Kitahara",
+        "Ryu Shirakami",
+        "Koh Takeuchi",
+        "Hisashi Kashima"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T05:34:07+00:00",
+      "score": 75,
+      "reason": "研究突发事件引起的非周期性交通拥堵预测，涉及时空图神经网络与因果推断，与城市更新中的交通影响分析高度相关。",
+      "tags": [
+        "时空预测",
+        "图神经网络",
+        "交通",
+        "因果推断",
+        "突发事件"
+      ],
+      "abstract": "Predicting non-periodic traffic congestion caused by sudden incidents (e.g., accidents and road damage) is crucial for advanced intelligent transportation systems. However, incident-driven congestion is difficult to forecast because incidents are extremely sparse, occur at specific times and locations, and have heterogeneous impacts depending on the traffic context. While recent deep learning approaches have significantly improved periodic traffic forecasting, their performance on non-periodic congestion remains limited, partly because incident records are not explicitly incorporated and their occurrence is strongly biased in space and time. To address these challenges, we propose CASTANET, which integrates spatio-temporal graph neural networks and causal treatment effect estimation to utilize incident records while mitigating selection bias. Experiments on real-world traffic data and accident records from Tokyo, which we treat as incidents, show that CASTANET reduces RMSE by 4.0% overall compared to the best baseline and by 10.1% on incident-conditioned evaluation, with gains reaching 14.55% under severe congestion.",
+      "summary_zh": "提出CASTANET模型，整合时空图神经网络与因果处理效应估计，利用事故记录预测非周期性交通拥堵，并缓解选择偏差。",
+      "insight_zh": "显式纳入稀疏事故记录并校正选择偏差，可显著提升突发事件下交通拥堵预测的准确性。"
+    },
+    {
+      "key": "arxiv:2608.27971",
+      "title": "GAAT: Geometry-Aware Alignment Transformer for Multimodal UAV Perception",
+      "title_zh": "GAAT：用于多模态无人机感知的几何感知对齐Transformer",
+      "url": "https://arxiv.org/abs/2608.27971",
+      "doi": "",
+      "arxiv_id": "2608.27971",
+      "authors": [
+        "Jingpu Yang",
+        "Debin Tang",
+        "Yilin Sun",
+        "Fengxian Ji",
+        "Jiahua Zhu",
+        "Wenrui Ding",
+        "Yufeng Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T06:36:17+00:00",
+      "score": 70,
+      "reason": "研究无人机多模态感知的几何感知对齐，涉及遥感与多源数据融合，与GIS博士研究方向中的多源数据融合相关。",
+      "tags": [
+        "无人机",
+        "多模态",
+        "Transformer",
+        "几何对齐",
+        "感知"
+      ],
+      "abstract": "Unmanned aerial vehicle (UAV) multimodal perception integrates visible (RGB), infrared (IR), synthetic aperture radar (SAR), and depth sensors for scene understanding under diverse conditions. However, differences in optics, resolution, and mounting often limit practical systems to global or image-center alignment. After tokenization, parallax, platform motion, and lens distortion can shift corresponding patch centers across modalities, weakening the spatial correspondence assumed by dense contrastive learning and cross-modal fusion. We propose GAAT (Geometry-Aware Alignment Transformer), an alignment-first pretrained model that estimates local correspondence reliability before cross-modal interaction. GAAT introduces syncPATC, which learns patch-center consistency under synchronized view transformations without correspondence annotations. It emits geometric priors, including token and query confidence, query centers, and sub-token offsets, that identify reliable local anchors across residual misalignment. Guided by these priors, MG-Sparse-MMA performs query-mediated sparse fusion over top-K_s reliable regions, replacing dense all-patch interaction with geometry-calibrated local updates. RA-QCGCL aligns pretraining supervision with this sparse query bottleneck through reliable patch-to-patch, patch-to-query, and query-to-query contrastive branches. We introduce UAVMeta and StateBench, which provide four acquisition-state scores derived from platform telemetry and image statistics: camera reliability, observation scale, viewpoint stability, and flight maneuver complexity. Extensive experiments across six downstream tasks demonstrate consistently superior transfer performance, establishing GAAT as a state-of-the-art multimodal foundation model for UAV perception. StateBench further enables a systematic diagnosis of real-world acquisition conditions.",
+      "summary_zh": "提出GAAT模型，通过几何感知对齐和稀疏融合，解决无人机多模态感知中的错位问题，提升跨模态融合性能。",
+      "insight_zh": "几何先验引导的稀疏融合可有效应对多模态数据间的残余错位，对无人机遥感应用有重要价值。"
+    },
+    {
+      "key": "arxiv:2608.28241",
+      "title": "Beyond Task-Only Matching: Personalized Skill Routing with Counterfactual Evaluation",
+      "title_zh": "超越纯任务匹配：基于反事实评估的个性化技能路由",
+      "url": "https://arxiv.org/abs/2608.28241",
+      "doi": "",
+      "arxiv_id": "2608.28241",
+      "authors": [
+        "Tianle Wang",
+        "Yanghe Zou",
+        "Xiang Liu",
+        "Ziyao Huang",
+        "Chenchen Fu",
+        "Weiwei Wu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-28T11:55:56+00:00",
+      "score": 60,
+      "reason": "该文研究LLM智能体的个性化技能路由，与LLM和多智能体方向相关，但未涉及地理空间应用。",
+      "tags": [
+        "LLM智能体",
+        "技能路由",
+        "个性化",
+        "反事实评估"
+      ],
+      "abstract": "The rapid expansion of reusable skill repositories makes skill routing a critical capability for large language model (LLM) agents. Existing methods treat routing as task-only semantic matching. However, when users with incompatible constraints issue an identical request, this assumption conflates task relevance with skill suitability: a task-only router can select a semantically plausible skill that is unsuitable for the requesting user. To expose this failure mode, we formulate \\textit{personalized skill routing} as profile-conditioned retrieval, in which relevance depends jointly on the task and the user profile. We first introduce a profile-counterfactual benchmark, in which the task is held fixed while changes in the user profile induce changes in the reference skill. We further construct paired counterfactual supervision and propose SkillFeed, a progressive retrieve-and-rerank framework that first establishes task--skill alignment and then learns profile-conditioned discrimination. By retrieving body-level evidence and reranking semantically similar but profile-conflicting candidates, SkillFeed identifies skills that satisfy both task requirements and user constraints. On SkillFeed-Bench, SkillFeed attains 75.1\\% top-1 retrieval accuracy, a 23.1-point improvement over the corresponding pretrained routing baseline. Adding profile conditioning yields a 35.1-point gain on queries where user profile changes the reference skill. This contrast shows that user profiles are most consequential precisely when they change skill suitability. Our website is publicly available at http://www.aiskillfeed.com .",
+      "summary_zh": "提出个性化技能路由问题，构建反事实基准和SkillFeed框架，通过渐进式检索与重排序，结合用户画像进行技能选择，显著提升路由准确性。",
+      "insight_zh": "技能路由需同时考虑任务与用户约束，用户画像在改变技能适用性时对路由结果影响显著。"
+    }
+  ]
+}
