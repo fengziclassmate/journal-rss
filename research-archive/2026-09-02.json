@@ -1,0 +1,340 @@
+{
+  "date": "2026-09-02",
+  "guid": "research-daily:2026-09-02",
+  "paper_keys": [
+    "arxiv:2608.30672",
+    "arxiv:2608.30817",
+    "arxiv:2608.22634",
+    "arxiv:2026.10552",
+    "arxiv:2512.18128",
+    "arxiv:2605.09687",
+    "doi:10.1016/j.isprsjprs.2026.08.024",
+    "arxiv:2608.29793",
+    "arxiv:2608.19672",
+    "doi:10.1016/j.isprsjprs.2026.08.017"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-api": "ok:100",
+    "arxiv-email": "ok:0",
+    "crossref:Applied Geography": "ok:10",
+    "crossref:Applied Soft Computing": "ok:18",
+    "crossref:Artificial Intelligence": "ok:2",
+    "crossref:CEUS": "ok:3",
+    "crossref:Cities": "error:HTTPError",
+    "crossref:Computer Science Review": "ok:6",
+    "crossref:EIAR": "ok:15",
+    "crossref:IJGIS": "ok:3",
+    "crossref:ISPRS JPRS": "ok:10",
+    "crossref:Information Fusion": "ok:12",
+    "crossref:JAG": "ok:11",
+    "crossref:Landscape and Urban Planning": "ok:2",
+    "crossref:Pattern Recognition": "error:HTTPError",
+    "crossref:RSE": "error:HTTPError",
+    "crossref:SCS": "error:HTTPError",
+    "crossref:Science Bulletin": "error:HTTPError",
+    "crossref:Urban Climate": "error:HTTPError",
+    "deepseek": "ok:30"
+  },
+  "updated_at": "2026-09-02T00:23:55.412401+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2608.30672",
+      "title": "HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving",
+      "title_zh": "HiRS-Agent：用于可靠长时序遥感任务求解的分层多智能体系统",
+      "url": "https://arxiv.org/abs/2608.30672",
+      "doi": "",
+      "arxiv_id": "2608.30672",
+      "authors": [
+        "Boyang Mu",
+        "Zhiwei Wei",
+        "Mugen Peng",
+        "Wenjia Xu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T12:13:41+00:00",
+      "score": 100,
+      "reason": "该研究提出了一个用于解决长时序遥感任务的分层多智能体系统，直接针对遥感智能体领域的关键挑战，与LLM和多智能体在GIS中的应用高度契合。",
+      "tags": [
+        "多智能体",
+        "遥感",
+        "LLM",
+        "长时序任务",
+        "工具使用"
+      ],
+      "abstract": "Recent advances in large language models and multimodal models have pushed remote sensing (RS) processing from simple perception models to agentic systems designed to tackle complex, long-horizon RS tasks. However, existing systems often rely on monolithic decision-making frameworks, which fail to accommodate the multi-stage, interdependent nature of RS tasks. This centralized approach leads to challenges such as unstable task execution, incorrect tool usage, and error propagation across stages. To address these issues, we propose HiRS-Agent, a hierarchical multi-agent system for long-horizon RS task solving. HiRS-Agent adopts a two-level collaborative architecture: the Manager Layer handles dynamic routing, step-level verification, replanning, and termination control, while the Specialist Layer organizes domain-specific tools according to the RS workflow and is responsible for subtask reasoning and tool execution. To further enhance the system's capability, we introduce a two-stage supervised tuning strategy and a verification-guided hierarchical reinforcement learning stage to jointly optimize coordination and tool-use policies. Experiments on Earth-Agent Benchmark and ThinkGeo show that HiRS-Agent substantially improves long-horizon tool-use capability and final-task correctness, demonstrating the effectiveness of structured multi-agent collaboration for reliable RS agents. The code is publicly available at https://github.com/IntelliSensing/HiRS-Agent.",
+      "summary_zh": "提出了HiRS-Agent，一个用于长时序遥感任务求解的分层多智能体系统。系统采用两层协作架构：管理层负责动态路由、验证、重规划和终止控制；专家层根据遥感工作流组织领域特定工具并负责子任务推理。通过两阶段监督微调和验证引导的分层强化学习进行优化，在Earth-Agent Benchmark和ThinkGeo上显著提升了长时序工具使用能力和任务正确性。",
+      "insight_zh": "将复杂的遥感任务分解为分层多智能体协作，并引入验证机制，是提高长时序任务执行可靠性和准确性的有效架构。"
+    },
+    {
+      "key": "arxiv:2608.30817",
+      "title": "A Composition-Aware Pretraining Framework for Geospatial Foundation Models",
+      "title_zh": "地理空间基础模型的组成感知预训练框架",
+      "url": "https://arxiv.org/abs/2608.30817v1",
+      "doi": "10.1145/3841645.3843041",
+      "arxiv_id": "2608.30817",
+      "authors": [
+        "Aryan Kashyap Naveen",
+        "Abhishek Srinivas",
+        "Pranav Moothedath",
+        "Shrutilipi Bhattacharjee"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T14:00:12+00:00",
+      "score": 95,
+      "reason": "该研究提出了一种新的地理空间基础模型预训练框架，通过显式编码土地覆盖混合比例来提升模型性能，直接关系到遥感图像理解的核心任务。",
+      "tags": [
+        "地理空间基础模型",
+        "预训练",
+        "土地覆盖",
+        "场景分类",
+        "遥感"
+      ],
+      "abstract": "Geospatial foundation models have emerged as state-of-the-art methods for downstream Earth observation tasks. However, existing pretraining methodologies process imagery through a single-concept lens, failing to capture the highly compositional nature of complex satellite scenes. We propose a composition-aware pretraining framework that explicitly encodes fractional land-cover mixtures. Each satellite image cell is mapped to a histogram representing its fractional land-cover distribution, which we term the \"composition target\". These targets serve as the primary prediction objective and are distilled into the backbone using Earth Mover's Distance. Experimental evaluation shows that composition-aware pretraining yields substantial gains on region-level understanding tasks requiring semantic similarity judgment, including zero-shot image retrieval and scene classification, while remaining competitive on tasks requiring fine-grained spatial precision, such as segmentation and object detection. With a 36.8M-parameter backbone, our framework outperforms SatMAE and Prithvi-EO-2.0, which contain 303M and 600M parameters, respectively, in most retrieval and scene classification settings. On the fine-grained ForestNet-12 dataset, a rigorous testbed for compositional discrimination, our method boosts baseline mAP@10 from 0.279 to 0.434, a 55.6% relative improvement, providing direct evidence for the effectiveness of explicit composition modeling. The code implementation can be found at https://github.com/05kashyap/GFM_Composition_Pretraining",
+      "summary_zh": "提出了一种组成感知的预训练框架，将每个卫星图像单元映射到其土地覆盖分数直方图作为预测目标，并使用推土机距离进行蒸馏。实验表明，该方法在区域级理解任务（如零样本图像检索和场景分类）上显著优于SatMAE和Prithvi-EO-2.0等更大模型，并在细粒度数据集ForestNet-12上取得了大幅提升。",
+      "insight_zh": "显式建模遥感场景的组成性（即土地覆盖混合）是提升基础模型语义理解能力的有效途径，且能以更小的模型规模实现更优性能。"
+    },
+    {
+      "key": "arxiv:2608.22634",
+      "title": "GeoRisk-RAG: A Hierarchy-Aware Risk Framework for Improving RAG Reliability through Selective Answering",
+      "title_zh": "GeoRisk-RAG：一种层级感知的风险框架，通过选择性回答提高RAG可靠性",
+      "url": "https://arxiv.org/abs/2608.22634v1",
+      "doi": "",
+      "arxiv_id": "2608.22634",
+      "authors": [
+        "Meenu Ravi",
+        "Shailik Sarkar",
+        "Lulwah AlKulaib",
+        "Yordanos Tessema",
+        "Chang-Tien Lu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-23T22:39:21+00:00",
+      "score": 95,
+      "reason": "该研究直接针对地理空间领域的RAG可靠性问题，提出层级感知框架，与GIS博士研究方向中的LLM应用高度契合，具有很高的相关性。",
+      "tags": [
+        "检索增强生成",
+        "地理有效性",
+        "选择性回答",
+        "层级感知",
+        "自然灾害"
+      ],
+      "abstract": "Current work on improving reliability in large language model (LLM)- generated answers has primarily leveraged Retrieval-Augmented Generation (RAG), knowledge-graph augmentation, and reinforcement learning. While these methods are adept at enhancing and measuring reliability through semantic similarity and faithfulness, they often struggle to distinguish semantic similarity from geographic validity. This is especially critical in natural hazard management domains where geographic granularity (i.e., town vs. city vs. state) is significant for decision-making, as responses valid in one municipality may not transfer to another. In such domains, a confidently wrong answer carries greater risk than abstaining. We present GeoRisk-RAG, a novel hierarchy-aware framework that addresses this geographic-validity gap through selective answering. This framework explicitly estimates geographic applicability using a Directed Acyclic Graph (DAG)-based distance for context retrieval before response generation. Experiments on a novel held-out wildfire-related question-answering (QA) dataset show that GeoRisk-RAG significantly reduces false confidence rates for location-dependent questions, lowering the rate to 0.009 compared with ~0.090 for standard semantic similarity and reranking baselines, while consistently achieving higher human preference alignment. This work provides a more comprehensive assessment of end-to-end RAG pipelines by integrating geographic validity and selective-answering behavior for safer decision-making in geospatial domains.",
+      "summary_zh": "针对大语言模型在自然灾害管理中难以区分语义相似性与地理有效性的问题，提出GeoRisk-RAG框架。该框架在生成回答前，使用基于有向无环图的距离显式估计地理适用性，并支持选择性回答。在野火问答数据集上，该方法将位置相关问题的错误置信率从约0.090降至0.009，并获得了更高的人类偏好一致性。",
+      "insight_zh": "在涉及地理粒度的决策场景中，将地理有效性纳入检索和回答流程，并允许模型在不确定时放弃回答，能显著降低高风险错误，提升RAG系统的安全性。"
+    },
+    {
+      "key": "arxiv:2026.10552",
+      "title": "Parameter-efficient multimodal adaptation of vision foundation models for remote sensing semantic segmentation",
+      "title_zh": "遥感语义分割中视觉基础模型的参数高效多模态适配",
+      "url": "https://doi.org/10.1016/j.jag.2026.105520",
+      "doi": "10.1016/j.jag.2026.105520",
+      "arxiv_id": "2026.10552",
+      "authors": [
+        "Haocheng Li",
+        "Juepeng Zheng",
+        "Shuangxi Miao",
+        "Ruibo Lu",
+        "Guosheng Cai",
+        "Haohuan Fu",
+        "Jianxi Huang"
+      ],
+      "venue": "International Journal of Applied Earth Observation and Geoinformation",
+      "published": "2026-08-01T00:00:00+00:00",
+      "score": 95,
+      "reason": "该论文主题为遥感语义分割中视觉基础模型的多模态参数高效适配，直接涉及基础模型、多模态和遥感应用，与研究方向中的LLM、多智能体和遥感变化检测高度相关。",
+      "tags": [
+        "遥感",
+        "语义分割",
+        "视觉基础模型",
+        "多模态",
+        "参数高效"
+      ],
+      "abstract": "",
+      "summary_zh": "该论文摘要为空，但根据标题推断，其研究如何将预训练的视觉基础模型（如ViT）高效地适配到遥感语义分割任务中，并利用多模态数据（如光学、SAR或文本）进行参数高效的微调。",
+      "insight_zh": "该研究可能探索在遥感领域如何以少量可训练参数适配大型基础模型，并融合多模态信息以提升分割性能，这对于降低计算成本、实现遥感智能解译的轻量化部署具有重要意义。"
+    },
+    {
+      "key": "arxiv:2512.18128",
+      "title": "SERA-H: Super-Resolution of Sentinel Time Series for Fine-Scale Canopy Height Mapping",
+      "title_zh": "SERA-H：用于精细冠层高度制图的Sentinel时间序列超分辨率",
+      "url": "https://arxiv.org/abs/2512.18128v4",
+      "doi": "",
+      "arxiv_id": "2512.18128",
+      "authors": [
+        "Thomas Boudras",
+        "Martin Schwartz",
+        "Rasmus Fensholt",
+        "Martin Brandt",
+        "Ibrahim Fayad",
+        "Jean-Pierre Wigneron",
+        "Gabriel Belouze",
+        "Fajwel Fogel",
+        "Philippe Ciais"
+      ],
+      "venue": "arXiv",
+      "published": "2025-12-19T23:23:14+00:00",
+      "score": 95,
+      "reason": "该研究利用Sentinel时间序列和超分辨率技术生成高分辨率冠层高度图，与遥感变化检测和多源数据融合方向高度相关，具有很高的相关性。",
+      "tags": [
+        "冠层高度制图",
+        "超分辨率",
+        "时间序列",
+        "Sentinel",
+        "深度学习"
+      ],
+      "abstract": "High-resolution mapping of canopy height is essential for forest management and biodiversity monitoring. Although recent studies have led to the advent of deep learning methods using satellite imagery to predict height maps, these approaches often face a trade-off between data accessibility and spatial resolution. To overcome these limitations, we present SERA-H, an end-to-end model combining a super-resolution module (EDSR) and temporal attention encoding (UTAE). Trained under the supervision of high-density LiDAR-derived Canopy Height Models (CHM), our model generates 2.5 m resolution height maps from freely available Sentinel-1 and Sentinel-2 (10 m) time series data. Evaluated against an open-source benchmark dataset in France, SERA-H, with a MAE of 2.6 m and R2 of 0.82, not only outperforms standard Sentinel-1/2 baselines but also approaches the accuracy of methods based on commercial very high-resolution imagery (e.g., SPOT-6/7), while relying solely on freely available data. These results demonstrate that combining high-resolution ALS supervision with the spatio-temporal information embedded in Sentinel time series enables the reconstruction of spatial detail finer than the native resolution of the input imagery. By approaching the accuracy of costly commercial imagery, SERA-H opens the possibility of mapping temperate forests using publicly available data with high revisit frequency.",
+      "summary_zh": "提出SERA-H模型，结合超分辨率模块和时序注意力编码，在LiDAR衍生的冠层高度模型监督下，从免费的Sentinel-1和Sentinel-2时间序列数据生成2.5米分辨率的高度图。在法国基准数据集上，MAE为2.6米，R²为0.82，性能接近基于商业高分辨率影像的方法，且仅依赖免费数据。",
+      "insight_zh": "利用高分辨率激光雷达监督和Sentinel时间序列的时空信息，可以重建比输入影像原生分辨率更精细的空间细节，为使用免费数据实现高精度森林制图提供了可行途径。"
+    },
+    {
+      "key": "arxiv:2605.09687",
+      "title": "Spatial-Frequency Gated Swin Transformer for Cross-Sensor Remote Sensing Super-Resolution",
+      "title_zh": "用于跨传感器遥感超分辨率的空间-频率门控Swin Transformer",
+      "url": "https://arxiv.org/abs/2605.09687",
+      "doi": "",
+      "arxiv_id": "2605.09687",
+      "authors": [
+        "Md Aminur Hossain",
+        "Ayush V. Patel",
+        "Sanjay K. Singh",
+        "Yogesh Jethani",
+        "Biplab Banerjee"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "该论文标题直接涉及遥感图像超分辨率、跨传感器和Swin Transformer，完全属于遥感图像处理与深度学习交叉领域，与研究方向高度匹配。",
+      "tags": [
+        "遥感",
+        "超分辨率",
+        "Swin Transformer",
+        "跨传感器",
+        "空间频率"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该论文摘要为空，但根据标题推断，其提出了一种结合空间域和频率域信息的门控机制，并基于Swin Transformer架构，旨在解决跨传感器场景下的遥感图像超分辨率问题。",
+      "insight_zh": "由于摘要缺失，无法获取具体方法细节和实验结果。但标题表明其关注跨传感器超分辨率，这通常涉及不同传感器（如光学和SAR）之间的分辨率提升和特征融合，是遥感数据融合的重要方向。"
+    },
+    {
+      "key": "doi:10.1016/j.isprsjprs.2026.08.024",
+      "title": "Combining knowledge-based training data generation and deep learning algorithms for mapping surface water bodies, wetlands, and paddy rice in Northeast Asia",
+      "title_zh": "结合基于知识的训练数据生成和深度学习算法绘制东北亚地表水体、湿地和水稻",
+      "url": "https://doi.org/10.1016/j.isprsjprs.2026.08.024",
+      "doi": "10.1016/j.isprsjprs.2026.08.024",
+      "arxiv_id": "",
+      "authors": [
+        "Chenchen Zhang",
+        "Xiangming Xiao",
+        "Cheng Meng",
+        "Xinxin Wang",
+        "Leikun Yin",
+        "Dehua Mao",
+        "Shenglai Yin",
+        "Yuan Yao",
+        "Li Pan",
+        "Baihong Pan",
+        "Xuebin Yang",
+        "Yuanwei Qin",
+        "Jinwei Dong"
+      ],
+      "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "published": "2026-11-01T00:00:00+00:00",
+      "score": 90,
+      "reason": "该论文发表于ISPRS期刊，主题为利用知识驱动的训练数据生成和深度学习算法绘制地表水体、湿地和水稻，属于遥感地物分类与制图的核心研究，与研究方向高度相关。",
+      "tags": [
+        "遥感",
+        "水体",
+        "湿地",
+        "水稻",
+        "深度学习",
+        "知识驱动"
+      ],
+      "abstract": "",
+      "summary_zh": "该论文摘要为空，但根据标题推断，其研究重点是结合专家知识或规则来生成训练样本，并利用深度学习算法对东北亚地区的地表水体、湿地和水稻进行遥感制图。",
+      "insight_zh": "该研究可能针对东北亚地区复杂的地表覆盖类型，利用知识引导的样本生成策略来解决深度学习训练样本不足或标注不准的问题，是遥感智能解译中结合先验知识的典型应用。"
+    },
+    {
+      "key": "arxiv:2608.29793",
+      "title": "GridFlow: Structured Latent Flow for Seamless City-Scale 3D Point Cloud Generation",
+      "title_zh": "GridFlow：用于无缝城市尺度3D点云生成的结构化潜流",
+      "url": "https://arxiv.org/abs/2608.29793v1",
+      "doi": "",
+      "arxiv_id": "2608.29793",
+      "authors": [
+        "Xinyu Wang",
+        "Muhammad Ibrahim",
+        "Atif Mansoor",
+        "Ajmal Mian"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T13:39:36+00:00",
+      "score": 90,
+      "reason": "该研究直接针对城市尺度的3D点云生成，利用卫星影像、语义分割图和DSM等多源遥感数据，与城市更新和遥感变化检测高度相关。",
+      "tags": [
+        "3D点云生成",
+        "城市尺度",
+        "遥感",
+        "深度学习",
+        "多模态"
+      ],
+      "abstract": "Generating realistic 3D city environments from remote sensing data is important for simulation, urban planning, and mixed reality, yet existing point cloud generation methods are limited to single objects or bounded indoor scenes and cannot handle the scale, seamless tiling, and partial observability challenges of city-scale generation. We present \\ours{}, a multi-stage framework that generates dense, colored point clouds ($10^5$ points per $150\\text{m}{\\times}150\\text{m}$ tile) at city scale, conditioned on satellite imagery, semantic segmentation maps, and digital surface models (DSM). A \\emph{Grid-Aligned VAE} encodes each tile into a topology-preserving latent grid where tokens correspond to fixed spatial regions, enabling spatially coherent multi-modal conditioning and compact latent-space edge consistency that implicitly aligns thousands of boundary points for seamless cross-tile generation. A conditional rectified flow model synthesizes geometry latents from the fused multi-modal conditions, and an orientation-aware diffusion colorizer separately handles satellite-visible horizontal surfaces and occluded vertical façades. To support standardized evaluation, we build on public 3D data sources to introduce \\emph{City3D-MultiGen}, a benchmark of $163$K densely annotated tiles from Melbourne and London with aligned point clouds, satellite images, semantic maps, and elevation data. Experiments show that \\ours{} outperforms adapted point cloud generation baselines across all geometry metrics and produces visually coherent colored point clouds with seamless boundaries over arbitrarily large urban extents. Our benchmark details are available at https://huggingface.co/datasets/e32/City3D-MultiGen",
+      "summary_zh": "提出了一个多阶段框架GridFlow，用于从卫星影像、语义分割图和数字表面模型（DSM）等遥感数据中生成城市尺度的密集彩色3D点云。该方法采用网格对齐VAE、条件整流流模型和方向感知扩散着色器，实现了跨瓦片无缝生成。作者还构建了包含16.3万个标注瓦片的City3D-MultiGen基准数据集。",
+      "insight_zh": "该研究展示了利用多模态遥感数据和生成模型进行大规模城市3D重建的潜力，其网格对齐的潜空间设计为处理大规模、无缝拼接的城市数据提供了有效思路。"
+    },
+    {
+      "key": "arxiv:2608.19672",
+      "title": "SAGE-XGBoost: Spatially Augmented Graph Embeddings--Machine Learning Framework for Natural Hazards Susceptibility Mapping under Data Scarcity",
+      "title_zh": "SAGE-XGBoost：用于数据稀缺条件下自然灾害易发性制图的空间增强图嵌入机器学习框架",
+      "url": "https://arxiv.org/abs/2608.19672v1",
+      "doi": "",
+      "arxiv_id": "2608.19672",
+      "authors": [
+        "Mohammad H. Vahidnia",
+        "Ali Pourkarimi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-20T06:07:07+00:00",
+      "score": 90,
+      "reason": "该研究提出空间增强图嵌入框架，解决数据稀缺下的自然灾害易发性制图问题，与GIS博士研究方向中的时空数据挖掘和机器学习应用高度相关。",
+      "tags": [
+        "自然灾害易发性",
+        "图嵌入",
+        "数据增强",
+        "XGBoost",
+        "数据稀缺"
+      ],
+      "abstract": "Natural hazard susceptibility mapping is often constrained by limited labeled data, reducing the generalizability of conventional machine learning and limiting the applicability of complex deep learning models. This study proposes SAGE (Spatially Augmented Graph Embeddings), a structurally informed feature-engineering framework that combines controlled noise-based data augmentation with neighborhood-based graph embeddings to improve prediction under data-scarce conditions. A K-nearest neighbor graph is constructed to derive local spatial statistics, which are reduced using principal component analysis and integrated with environmental covariates and spatial coordinates. The resulting features are used with XGBoost to develop the SAGE-XGBoost model. The framework was evaluated for landslide and wildfire susceptibility mapping. SAGE-XGBoost consistently outperformed conventional and spatially explicit machine learning models. Compared with Spatial XGBoost, it achieved an absolute improvement of above 33 percentage points across the two case studies. The model reached AUC values of approximately 0.97 for landslide susceptibility and 0.95 for wildfire susceptibility. Feature importance analysis confirmed the contribution of graph embeddings to prediction, while their integration improved spatial coherence and reduced local noise amplification. Overall, SAGE-XGBoost provides an efficient and transferable alternative to deep representation learning for environmental hazard assessment and other geospatial prediction tasks under limited supervision.",
+      "summary_zh": "提出SAGE框架，通过基于噪声的数据增强和邻域图嵌入来改进数据稀缺条件下的预测。使用K近邻图提取局部空间统计量，经PCA降维后与协变量结合，用于XGBoost模型。在滑坡和野火易发性制图中，SAGE-XGBoost比空间XGBoost的AUC绝对提升超过33个百分点，分别达到约0.97和0.95。",
+      "insight_zh": "在标签数据有限时，通过图嵌入显式建模空间邻域关系并进行数据增强，可以显著提升机器学习模型的预测性能和空间一致性，是深度表示学习的有效替代方案。"
+    },
+    {
+      "key": "doi:10.1016/j.isprsjprs.2026.08.017",
+      "title": "Physics-informed regression-residual reconstruction and group fusion dual-attention transformer for methane plume detection",
+      "title_zh": "物理信息回归残差重建与组融合双注意力Transformer用于甲烷羽流检测",
+      "url": "https://doi.org/10.1016/j.isprsjprs.2026.08.017",
+      "doi": "10.1016/j.isprsjprs.2026.08.017",
+      "arxiv_id": "",
+      "authors": [
+        "Lanxin Wu",
+        "Jiangtao Peng",
+        "Bing Yang",
+        "Weiwei Sun"
+      ],
+      "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "published": "2026-11-01T00:00:00+00:00",
+      "score": 85,
+      "reason": "该论文发表于ISPRS期刊，主题为甲烷羽流检测，结合了物理信息、回归残差重建和Transformer，属于遥感气体监测和深度学习结合的前沿方向，与多源数据融合和地理空间智能相关。",
+      "tags": [
+        "遥感",
+        "甲烷检测",
+        "物理信息",
+        "Transformer",
+        "回归残差"
+      ],
+      "abstract": "",
+      "summary_zh": "该论文摘要为空，但根据标题推断，其提出了一种结合物理信息约束的回归残差重建方法，并设计了组融合双注意力Transformer架构，用于从遥感数据中检测甲烷羽流。",
+      "insight_zh": "该研究将物理模型（如大气传输模型）与深度学习相结合，通过残差重建和注意力机制提高甲烷检测的精度，体现了物理信息神经网络在环境遥感监测中的应用潜力。"
+    }
+  ]
+}
