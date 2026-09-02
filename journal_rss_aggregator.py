@@ -327,6 +327,8 @@ CROSSREF_JOURNALS = [
         "output": "tgrs-current-issue.xml",
         "feed_link": "https://fengziclassmate.github.io/journal-rss/tgrs-current-issue.xml",
         "feed_title": "TGRS Current Issue RSS",
+        "date_filter": "created",
+        "date_fields": "created,deposited,published-online,published-print,published",
         "current_issue_only": "true",
     },
     {

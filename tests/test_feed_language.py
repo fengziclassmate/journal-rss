@@ -40,6 +40,15 @@ class FeedLanguageTests(unittest.TestCase):
         self.assertEqual(feeds['jgsa-current-issue.xml']['current_issue_only'], 'true')
         self.assertEqual(feeds['jgsa.xml']['from_date'], '2026-06-01')
 
+    def test_tgrs_current_volume_uses_precise_metadata_dates(self):
+        feed = next(item for item in CROSSREF_JOURNALS if item['output'] == 'tgrs-current-issue.xml')
+
+        self.assertEqual(feed['date_filter'], 'created')
+        self.assertEqual(
+            feed['date_fields'],
+            'created,deposited,published-online,published-print,published',
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
