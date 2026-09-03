@@ -43,6 +43,33 @@ python research_rss.py --offline
 
 第二条命令仅根据已有状态重建 RSS，不访问网络、邮箱或模型服务。研究方向、期刊列表和筛选阈值在 `research-config.json` 中配置。
 
+## 计算机会议 RSS
+
+`conference_rss.py` 为 `conference-config.json` 中的 35 个会议分别生成独立 RSS，并生成一个关键词筛选、跨会议去重后的汇总源。独立源不截断条目，当前保留 2025 年至运行当年的全部可获取正式论文；没有可靠月日的论文只写年份，不伪造 `1 月 1 日`。
+
+```text
+https://fengziclassmate.github.io/journal-rss/conference-feeds/top-conference-daily.xml
+https://fengziclassmate.github.io/journal-rss/conference-feeds.opml
+```
+
+35 个独立订阅位于 `conference-feeds/<会议简称>.xml`。例如：
+
+```text
+https://fengziclassmate.github.io/journal-rss/conference-feeds/neurips.xml
+https://fengziclassmate.github.io/journal-rss/conference-feeds/icml.xml
+https://fengziclassmate.github.io/journal-rss/conference-feeds/cvpr.xml
+https://fengziclassmate.github.io/journal-rss/conference-feeds/sigspatial.xml
+https://fengziclassmate.github.io/journal-rss/conference-feeds/igarss.xml
+```
+
+ICLR、ICML、NeurIPS、CVPR、ICCV 和 ECCV 优先读取会议官方公开论文清单，DBLP 用于补充历史记录；其他会议主要通过 DBLP 正式出版记录生成，IGARSS 和 ISPRS 在缺少 DBLP 数据时使用 Crossref 补充。独立源与汇总源使用不同 GUID 命名空间，因此可以同时加入 Zotero。
+
+本地生成：
+
+```bash
+python conference_rss.py
+```
+
 这个目录里有一个可直接运行的 RSS 聚合脚本：
 
 ```bash
