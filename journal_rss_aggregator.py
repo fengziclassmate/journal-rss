@@ -161,6 +161,15 @@ CROSSREF_JOURNALS = [
         "date_fields": "created,deposited,published-online,published-print,published",
     },
     {
+        "source": "Earth System Science Data",
+        "issn": "1866-3516",
+        "homepage": "https://essd.copernicus.org/",
+        "from_date": "2026-06-01",
+        "output": "essd.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/essd.xml",
+        "feed_title": "ESSD RSS",
+    },
+    {
         "source": "IEEE Geoscience and Remote Sensing Magazine Early Access",
         "issn": "2168-6831",
         "homepage": "https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=8976286",
@@ -307,6 +316,16 @@ CROSSREF_JOURNALS = [
         "feed_title": "JGSA Current Issue RSS",
         "date_filter": "created",
         "date_fields": "created,deposited,published-online,published-print,published",
+        "current_issue_only": "true",
+    },
+    {
+        "source": "Earth System Science Data Current Issue",
+        "issn": "1866-3516",
+        "homepage": "https://essd.copernicus.org/articles/volumes.html",
+        "from_date": "2025-01-01",
+        "output": "essd-current-issue.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/essd-current-issue.xml",
+        "feed_title": "ESSD Current Issue RSS",
         "current_issue_only": "true",
     },
     {
@@ -770,6 +789,28 @@ def crossref_item_to_feed_item(
     )
 
 
+def crossref_query_params(
+    *,
+    from_filter: str,
+    from_date: str,
+    until_filter: str,
+    until_date: str,
+    cursor: str,
+    rows: int,
+    mailto: str,
+) -> dict[str, str]:
+    return {
+        "filter": (
+            f"{from_filter}:{from_date},"
+            f"{until_filter}:{until_date},"
+            "type:journal-article"
+        ),
+        "rows": str(rows),
+        "cursor": cursor,
+        "mailto": mailto,
+    }
+
+
 def fetch_crossref_journal_items(
     journal: dict[str, str],
     *,
@@ -783,14 +824,14 @@ def fetch_crossref_journal_items(
     from_date = journal.get("from_date") or f"{start_year}-01-01"
     until_date = journal.get("until_date") or dt.datetime.now(RUN_TIMEZONE).date().isoformat()
     date_filter_map = {
-        "pub": ("from-pub-date", "until-pub-date", "published"),
-        "published": ("from-pub-date", "until-pub-date", "published"),
-        "created": ("from-created-date", "until-created-date", "created"),
-        "deposit": ("from-deposit-date", "until-deposit-date", "deposited"),
-        "deposited": ("from-deposit-date", "until-deposit-date", "deposited"),
+        "pub": ("from-pub-date", "until-pub-date"),
+        "published": ("from-pub-date", "until-pub-date"),
+        "created": ("from-created-date", "until-created-date"),
+        "deposit": ("from-deposit-date", "until-deposit-date"),
+        "deposited": ("from-deposit-date", "until-deposit-date"),
     }
     date_filter = journal.get("date_filter", "pub")
-    from_filter, until_filter, sort_field = date_filter_map.get(
+    from_filter, until_filter = date_filter_map.get(
         date_filter,
         date_filter_map["pub"],
     )
@@ -809,20 +850,18 @@ def fetch_crossref_journal_items(
     collected: list[FeedItem] = []
     current_issue_candidates: list[tuple[tuple[int, int, int, str, str], tuple[str, str], FeedItem]] = []
     total_results: int | None = None
+    fetched_count = 0
 
     while True:
-        params = {
-            "filter": (
-                f"{from_filter}:{from_date},"
-                f"{until_filter}:{until_date},"
-                "type:journal-article"
-            ),
-            "sort": sort_field,
-            "order": "desc",
-            "rows": str(rows),
-            "cursor": cursor,
-            "mailto": mailto,
-        }
+        params = crossref_query_params(
+            from_filter=from_filter,
+            from_date=from_date,
+            until_filter=until_filter,
+            until_date=until_date,
+            cursor=cursor,
+            rows=rows,
+            mailto=mailto,
+        )
         url = base_url + "?" + urllib.parse.urlencode(params)
         headers = {
             "Accept": "application/json",
@@ -831,9 +870,12 @@ def fetch_crossref_journal_items(
         raw = fetch_bytes(url, headers=headers, timeout=60, retries=3)
         data = json.loads(raw.decode("utf-8"))
         message = data.get("message", {})
+        if not isinstance(message, dict):
+            raise RuntimeError(f"Crossref returned an invalid response: {message}")
         if total_results is None:
             total_results = int(message.get("total-results") or 0)
         items = message.get("items") or []
+        fetched_count += len(items)
         for item in items:
             if early_access_only and (item.get("volume") or item.get("issue")):
                 continue
@@ -858,7 +900,7 @@ def fetch_crossref_journal_items(
             elif feed_item:
                 collected.append(feed_item)
 
-        if not items or len(collected) >= total_results:
+        if not items or fetched_count >= total_results:
             break
         next_cursor = message.get("next-cursor")
         if not next_cursor or next_cursor == cursor:
