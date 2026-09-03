@@ -81,6 +81,13 @@ class FeedLanguageTests(unittest.TestCase):
         self.assertNotIn('sort', params)
         self.assertNotIn('order', params)
 
+    def test_workflow_publishes_every_crossref_feed(self):
+        workflow = Path('.github/workflows/update-feed.yml').read_text(encoding='utf-8')
+
+        for journal in CROSSREF_JOURNALS:
+            with self.subTest(output=journal['output']):
+                self.assertGreaterEqual(workflow.count(journal['output']), 2)
+
     @mock.patch('journal_rss_aggregator.fetch_bytes')
     def test_current_issue_stops_after_all_crossref_records_are_read(self, fetch_bytes):
         response = {
