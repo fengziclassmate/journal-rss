@@ -45,7 +45,7 @@ python research_rss.py --offline
 
 ## 计算机会议 RSS
 
-`conference_rss.py` 为 `conference-config.json` 中的 35 个会议分别生成独立 RSS，并生成一个关键词筛选、跨会议去重后的汇总源。独立源不截断条目，当前保留 2025 年至运行当年的全部可获取正式论文；没有可靠月日的论文只写年份，不伪造 `1 月 1 日`。
+`conference_rss.py` 为 `conference-config.json` 中的 35 个会议分别生成独立 RSS，并生成一个关键词筛选、跨会议去重后的汇总源。独立源不按关键词筛选、不截断条目，当前配置为 2025–2026 年的可获取正式论文；没有可靠月日的论文只写年份，不伪造 `1 月 1 日`。未来年份可调整配置中的 `end_year`。
 
 ```text
 https://fengziclassmate.github.io/journal-rss/conference-feeds/top-conference-daily.xml
@@ -62,7 +62,15 @@ https://fengziclassmate.github.io/journal-rss/conference-feeds/sigspatial.xml
 https://fengziclassmate.github.io/journal-rss/conference-feeds/igarss.xml
 ```
 
-ICLR、ICML、NeurIPS、CVPR、ICCV 和 ECCV 优先读取会议官方公开论文清单，DBLP 用于补充历史记录；其他会议主要通过 DBLP 正式出版记录生成，IGARSS 和 ISPRS 在缺少 DBLP 数据时使用 Crossref 补充。独立源与汇总源使用不同 GUID 命名空间，因此可以同时加入 Zotero。
+ICLR、ICML、NeurIPS、CVPR、ICCV 和 ECCV 优先读取会议官方公开论文清单，DBLP 用于补充历史记录；其他会议主要通过 DBLP 正式出版记录生成，IGARSS 使用 Crossref 补充，ISPRS 使用官方 Copernicus 卷目录。独立源与汇总源使用不同 GUID 命名空间，因此可以同时加入 Zotero。
+
+汇总源按标题及主题关键词筛选，保留历史匹配记录，每次发布重新去重；它不是只含当天论文的短列表，也没有调用 DeepSeek。上游未公开或未被索引的论文仍可能缺失，尤其是尚未公布完整论文集的会议年份。
+
+Zotero 可通过上面的 OPML 导入全部 36 个订阅。本机的 `zotero_subscribe_conferences.py` 使用 Zotero 自身接口登记订阅，重复执行不会新增重复源，也不会删除旧源或改动旧条目的已读状态。它校验数据目录为 `F:\Zotero`，需要临时启用仅限本机的 Zotero 调试服务器；操作后应关闭调试入口。
+
+首次创建时每 30 分钟错开一个源，后续每 24 小时更新。该安排依赖 Zotero 保持运行；若长时间关闭，重新打开时已到期的源仍可能集中更新。论文始终完整保留在在线独立源中；首次本地导入数量较大，可能耗时，已有清理设置不被改为永久保留。
+
+GitHub Actions 手动运行时可勾选 `conference_only`，仅重建会议源并保留其他 RSS。QQ 邮箱采集失败会显示警告，不再阻止会议源发布。
 
 本地生成：
 
