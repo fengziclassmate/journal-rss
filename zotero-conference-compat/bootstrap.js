@@ -15,13 +15,14 @@ async function startup({rootURI, resourceURI}) {
   for (const window of Zotero.getMainWindows()) await onMainWindowLoad({window});
 }
 async function onMainWindowLoad({window}) {
-  const view = window.ZoteroPane?.itemsView;
-  if (!view || !conferenceCompatScope) return;
-  const prototype = Object.getPrototypeOf(view);
+  if (!conferenceCompatScope || typeof window.require !== "function") return;
+  // The window hook can run before its first item-tree instance is assigned.
+  const prototype = window.require("zotero/itemTree").prototype;
   if (!conferenceSortPatches.has(prototype)) {
     conferenceSortPatches.set(prototype, conferenceCompatScope.installConferenceSort(prototype));
   }
-  if (view.collectionTreeRow?.isFeed?.()) await view.sort();
+  const view = window.ZoteroPane?.itemsView;
+  if (view?.collectionTreeRow?.isFeed?.()) await view.sort();
 }
 function shutdown() {
   undoConferenceParserPatch?.();
