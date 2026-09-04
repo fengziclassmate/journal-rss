@@ -49,6 +49,7 @@ class ConferencePaper:
     published: str = ""
     topics: list[str] = field(default_factory=list)
     matched_keywords: list[str] = field(default_factory=list)
+    presentation_date: str = ""
 
 
 class PoliteClient:
@@ -342,13 +343,13 @@ def fetch_virtual_json(
             continue
         authors = [clean_text(item.get("fullname")) for item in row.get("authors", []) if item.get("fullname")]
         event_time = clean_text(row.get("starttime"))
-        published = event_time[:10] if re.match(r"^\d{4}-\d{2}-\d{2}", event_time) else ""
+        presentation_date = event_time[:10] if re.match(r"^\d{4}-\d{2}-\d{2}", event_time) else ""
         topic = clean_text(row.get("topic"))
         guid = clean_text(row.get("uid")) or identity_from_fields("", title)
         papers.append(ConferencePaper(
             conference=conference["acronym"], conference_name=conference["name"],
             title=title, url=link, guid=f"{conference['slug']}:{guid}", year=year,
-            authors=authors, published=published, topics=[topic] if topic else [],
+            authors=authors, presentation_date=presentation_date, topics=[topic] if topic else [],
         ))
     return papers
 
@@ -560,10 +561,10 @@ def fetch_ieee_vis_page(
 
 
 def _crossref_date(item: dict[str, Any]) -> str:
-    for field_name in ("published-online", "published-print", "published", "created"):
+    for field_name in ("published-online", "published-print", "published"):
         parts = item.get(field_name, {}).get("date-parts", [])
-        if parts and parts[0]:
-            values = list(parts[0]) + [1, 1]
+        if parts and len(parts[0]) == 3:
+            values = parts[0]
             try:
                 return dt.date(int(values[0]), int(values[1]), int(values[2])).isoformat()
             except ValueError:
@@ -659,7 +660,7 @@ def write_rss(
     papers: Iterable[ConferencePaper], output: Path, *, title: str, link: str,
     description: str, guid_scope: str = "conference"
 ) -> int:
-    papers = sorted(papers, key=lambda p: (p.published, p.year, p.title.casefold()), reverse=True)
+    papers = sorted(papers, key=lambda p: (p.year, p.published, p.title.casefold()), reverse=True)
     rss = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = title
@@ -692,6 +693,8 @@ def write_rss(
         if paper.authors:
             parts.append(f"<p><strong>Authors:</strong> {html.escape('; '.join(paper.authors))}</p>")
         parts.append(f"<p><strong>Year:</strong> {paper.year}</p>")
+        if paper.presentation_date:
+            parts.append(f"<p><strong>Presentation date (not publication date):</strong> {html.escape(paper.presentation_date)}</p>")
         if paper.matched_keywords:
             parts.append(f"<p><strong>Matched keywords:</strong> {html.escape(', '.join(paper.matched_keywords))}</p>")
         ET.SubElement(item, "description").text = "".join(parts)

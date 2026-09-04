@@ -6,6 +6,7 @@ from pathlib import Path
 
 from conference_rss import (
     ConferencePaper,
+    _crossref_date,
     _is_main_paper,
     _parse_dblp_toc,
     deduplicate,
@@ -39,6 +40,30 @@ class ConferenceConfigTests(unittest.TestCase):
 
 
 class ConferenceFeedTests(unittest.TestCase):
+    def test_newer_year_precedes_older_exact_date(self):
+        papers = [
+            ConferencePaper("C", "C", "Older", "https://test/old", "old", 2025, published="2025-12-31"),
+            ConferencePaper("C", "C", "Newer", "https://test/new", "new", 2026),
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "feed.xml"
+            write_rss(papers, output, title="Test", link="https://test/feed", description="Test")
+            self.assertEqual(ET.parse(output).findtext("./channel/item/title"), "Newer")
+
+    def test_crossref_does_not_invent_precision_or_use_creation_date(self):
+        self.assertEqual(_crossref_date({"published": {"date-parts": [[2026]]}}), "")
+        self.assertEqual(_crossref_date({"published": {"date-parts": [[2026, 6]]}}), "")
+        self.assertEqual(_crossref_date({"created": {"date-parts": [[2026, 6, 1]]}}), "")
+        self.assertEqual(_crossref_date({"published-online": {"date-parts": [[2026, 6, 3]]}}), "2026-06-03")
+
+    def test_virtual_event_date_is_not_publication_date(self):
+        class Client:
+            def get(self, url):
+                return json.dumps({"results": [{"name": "Paper", "paper_url": "https://test/paper", "starttime": "2026-04-25T11:15:00-07:00"}]}).encode()
+
+        paper = fetch_virtual_json(Client(), {"acronym": "C", "name": "C", "slug": "c", "virtual_json": "https://test/{year}"}, 2026)[0]
+        self.assertEqual(paper.published, "")
+
     def test_copernicus_volume_parser_reads_real_dates_and_doi(self):
         document = b'''<div class="paperlist-object"><div class="published-date">03 Jul 2026</div><a class="article-title" href="https://example.test/paper">A Mapping Paper</a><div class="authors">Alice Example, Bob Example, and Carol Example</div><div class="citation">https://doi.org/10.5194/isprs-annals-test-1-2026, 2026</div></div>'''
         papers = parse_copernicus_volume(document, {"acronym": "ISPRS", "name": "ISPRS"}, 2026)
