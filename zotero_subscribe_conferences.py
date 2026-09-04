@@ -50,7 +50,7 @@ class ZoteroDebugger:
             if result.get("from") == actor:
                 return result
 
-    def evaluate(self, script: str) -> dict:
+    def evaluate(self, script: str, timeout_seconds: int = 600) -> dict:
         with tempfile.TemporaryDirectory(prefix="zotero-conference-") as temp:
             report = Path(temp) / "result.json"
             wrapper = """(async () => {
@@ -62,7 +62,7 @@ try {
 }
 })()""".replace("SCRIPT", script).replace("REPORT", json.dumps(str(report)))
             self._command(self.target["consoleActor"], "evaluateJSAsync", text=wrapper)
-            deadline = time.monotonic() + 600
+            deadline = time.monotonic() + timeout_seconds
             while time.monotonic() < deadline:
                 if report.exists():
                     result = json.loads(report.read_text(encoding="utf-8"))
