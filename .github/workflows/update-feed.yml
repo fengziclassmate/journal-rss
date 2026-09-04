@@ -2,6 +2,11 @@ name: Update and deploy RSS feed
 
 on:
   workflow_dispatch:
+    inputs:
+      conference_only:
+        description: Only refresh conference feeds; keep existing journal and email feeds
+        type: boolean
+        default: false
   push:
     branches:
       - main
@@ -50,7 +55,7 @@ jobs:
             ${{ runner.os }}-conference-http-
 
       - name: Generate feed
-        if: github.event_name != 'schedule' || github.event.schedule == '20 22 * * *'
+        if: inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
         run: >
           python journal_rss_aggregator.py
           --start-year 2020
@@ -59,7 +64,7 @@ jobs:
           --feed-link https://fengziclassmate.github.io/journal-rss/feed.xml
 
       - name: Generate research digest feeds
-        if: github.event_name != 'schedule' || github.event.schedule == '20 22 * * *'
+        if: inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
         env:
           ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
@@ -68,6 +73,9 @@ jobs:
         run: python research_rss.py
 
       - name: Generate QQ mailbox arXiv feeds
+        id: mailbox
+        if: inputs.conference_only != true
+        continue-on-error: true
         env:
           ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
@@ -76,6 +84,10 @@ jobs:
           python research_rss.py
           --email-only
           --state research-data/arxiv-email-state.json
+
+      - name: Report mailbox collection failure
+        if: steps.mailbox.outcome == 'failure'
+        run: echo "::warning::QQ mailbox collection failed. Existing email RSS files are retained; other feeds will still deploy."
 
       - name: Generate conference feeds
         run: python conference_rss.py
