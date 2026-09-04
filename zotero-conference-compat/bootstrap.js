@@ -1,4 +1,5 @@
 var undoConferenceParserPatch;
+var undoConferenceDatePatch;
 var conferenceCompatScope;
 var conferenceSortPatches = new Map();
 function install() {}
@@ -9,6 +10,7 @@ async function startup({rootURI, resourceURI}) {
   Services.scriptloader.loadSubScript((rootURI || resourceURI.spec) + "walker.js", conferenceCompatScope);
   const {SAXXMLReader} = ChromeUtils.importESModule("resource://zotero/feeds/SAXXMLReader.mjs");
   undoConferenceParserPatch = conferenceCompatScope.installConferenceWalker(SAXXMLReader.prototype);
+  undoConferenceDatePatch = conferenceCompatScope.installConferenceDatePrecision(Zotero.FeedItem.prototype);
   await Zotero.uiReadyPromise;
   for (const window of Zotero.getMainWindows()) await onMainWindowLoad({window});
 }
@@ -24,6 +26,8 @@ async function onMainWindowLoad({window}) {
 function shutdown() {
   undoConferenceParserPatch?.();
   undoConferenceParserPatch = null;
+  undoConferenceDatePatch?.();
+  undoConferenceDatePatch = null;
   for (const undo of conferenceSortPatches.values()) undo();
   conferenceSortPatches.clear();
   conferenceCompatScope = null;

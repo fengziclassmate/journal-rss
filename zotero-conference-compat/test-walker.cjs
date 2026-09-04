@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const {walkIteratively, installConferenceWalker, installConferenceSort} = require('./walker');
+const {walkIteratively, installConferenceWalker, installConferenceSort, installConferenceDatePrecision} = require('./walker');
 
 function element(name, children = []) {
   const node = {nodeType: 1, namespaceURI: 'test', localName: name, attributes: [], children};
@@ -62,3 +62,18 @@ assert.equal(view.getSortDirection(), 1);
 undoSort();
 assert.equal(view.getSortField(), 'id');
 console.log('Conference-only newest-first display and restoration passed');
+const feedProto = {fromJSON(json) { this.date = json.date + '-expanded'; }, setField(key, value) { this[key] = value; }};
+const undoDates = installConferenceDatePrecision(feedProto);
+const feedItem = Object.create(feedProto);
+feedItem.guid = 'conference:icml:sha256:test';
+feedItem.fromJSON({date: '2026'});
+assert.equal(feedItem.date, '2026');
+feedItem.fromJSON({date: '2026-06'});
+assert.equal(feedItem.date, '2026-06');
+feedItem.fromJSON({date: '2026-06-03'});
+assert.equal(feedItem.date, '2026-06-03-expanded');
+feedItem.guid = 'other:feed';
+feedItem.fromJSON({date: '2026'});
+assert.equal(feedItem.date, '2026-expanded');
+undoDates();
+console.log('Partial-date precision retained only for conference feed items');

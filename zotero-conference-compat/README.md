@@ -10,6 +10,8 @@ existing GUIDs are retained. Other URLs use Zotero's original implementation.
 It adds no timers, network requests, translation, cache, archive or item observers.
 Conference subscription views also sort by publication date descending rather
 than Zotero's default import-ID order. Other subscription views are unchanged.
+Year-only and month-only dates in conference entries retain their precision
+instead of being expanded by Zotero's FeedItem importer to January 1/the first day.
 Disabling it restores the original parser and sorting. It skips installation of the parser patch
 if a future Zotero version no longer has the recognized recursive walk method.
 

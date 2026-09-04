@@ -69,4 +69,20 @@ function installConferenceSort(prototype) {
   };
 }
 
-if (typeof module !== "undefined") module.exports = {walkIteratively, installConferenceWalker, installConferenceSort};
+function installConferenceDatePrecision(prototype) {
+  const original = prototype.fromJSON;
+  const replacement = function (json) {
+    const date = json.date;
+    const partial = this.guid?.startsWith("conference:") && /^\d{4}(?:-\d{2})?$/.test(date || "");
+    const result = original.apply(this, arguments);
+    // FeedItem.fromJSON expands ISO years to January 1; keep source precision.
+    if (partial) this.setField("date", date);
+    return result;
+  };
+  prototype.fromJSON = replacement;
+  return () => {
+    if (prototype.fromJSON === replacement) prototype.fromJSON = original;
+  };
+}
+
+if (typeof module !== "undefined") module.exports = {walkIteratively, installConferenceWalker, installConferenceSort, installConferenceDatePrecision};
