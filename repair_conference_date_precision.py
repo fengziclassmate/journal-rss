@@ -35,7 +35,8 @@ for (const [guid,date] of plan.dates) {
   const id=byGUID.get(guid);
   if (!id) continue;
   const item=Zotero.Items.get(id);
-  if (item.getField('date')!==date) changes.push({item,date});
+  const expanded = /^\\d{4}$/.test(date) ? date+'-01-01 00:00:00' : date+'-01 00:00:00';
+  if (item.getField('date')===expanded) changes.push({item,date});
 }
 if (APPLY) {
   for(let start=0; start<changes.length; start+=100) {

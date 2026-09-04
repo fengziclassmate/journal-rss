@@ -26,3 +26,11 @@ Install the generated XPI through Zotero's add-on manager. The patch is currentl
 targeted at Zotero 9.0.x. It does not change Zotero's installed application files.
 The parser still loads the complete feed in memory; this fixes stack overflow,
 not the storage and processing cost of importing tens of thousands of papers.
+
+For previously imported dates, `repair_conference_dates_offline.py --apply`
+requires Zotero to be closed, matches each GUID against the current public RSS,
+backs up the database, and corrects only known year-to-January-1 expansions.
+It verifies unchanged feed identities/read states and SQLite integrity before
+committing. Omitting `--apply` makes it a dry run. The API-based
+`repair_conference_date_precision.py` is available for smaller repairs while
+the local debugger is enabled; it saves changes in small transactions.
