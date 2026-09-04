@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const {walkIteratively, installConferenceWalker} = require('./walker');
+const {walkIteratively, installConferenceWalker, installConferenceSort} = require('./walker');
 
 function element(name, children = []) {
   const node = {nodeType: 1, namespaceURI: 'test', localName: name, attributes: [], children};
@@ -50,3 +50,15 @@ const modernWalk = modern._walk;
 installConferenceWalker(modern)();
 assert.equal(modern._walk, modernWalk);
 console.log('SAX events, 30,000 entries, unrelated feeds, shutdown and future-version guard passed');
+const proto = {getSortField() { return 'id'; }, getSortDirection() { return 1; }};
+const view = Object.create(proto);
+view.collectionTreeRow = {isFeed: () => true, ref: {url: 'https://fengziclassmate.github.io/journal-rss/conference-feeds/icml.xml'}};
+const undoSort = installConferenceSort(proto);
+assert.equal(view.getSortField(), 'date');
+assert.equal(view.getSortDirection(), -1);
+view.collectionTreeRow.ref.url = 'https://other.test/feed';
+assert.equal(view.getSortField(), 'id');
+assert.equal(view.getSortDirection(), 1);
+undoSort();
+assert.equal(view.getSortField(), 'id');
+console.log('Conference-only newest-first display and restoration passed');

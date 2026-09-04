@@ -45,4 +45,28 @@ function installConferenceWalker(prototype) {
   };
 }
 
-if (typeof module !== "undefined") module.exports = {walkIteratively, installConferenceWalker};
+function installConferenceSort(prototype) {
+  const originals = new Map();
+  const isConference = view => {
+    const row = view.collectionTreeRow;
+    return row?.isFeed?.() && row.ref?.url?.startsWith(
+      "https://fengziclassmate.github.io/journal-rss/conference-feeds/"
+    );
+  };
+  for (const [name, value] of [["getSortField", "date"], ["getSortDirection", -1]]) {
+    const original = prototype[name];
+    if (typeof original !== "function") continue;
+    const replacement = function () {
+      return isConference(this) ? value : original.apply(this, arguments);
+    };
+    originals.set(name, {original, replacement});
+    prototype[name] = replacement;
+  }
+  return () => {
+    for (const [name, {original, replacement}] of originals) {
+      if (prototype[name] === replacement) prototype[name] = original;
+    }
+  };
+}
+
+if (typeof module !== "undefined") module.exports = {walkIteratively, installConferenceWalker, installConferenceSort};

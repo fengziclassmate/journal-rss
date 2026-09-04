@@ -8,7 +8,9 @@ This add-on uses an iterative DOM traversal only for URLs starting with
 `https://fengziclassmate.github.io/journal-rss/conference-feeds/`. All items and
 existing GUIDs are retained. Other URLs use Zotero's original implementation.
 It adds no timers, network requests, translation, cache, archive or item observers.
-Disabling it restores the original parser. It skips installation of the patch
+Conference subscription views also sort by publication date descending rather
+than Zotero's default import-ID order. Other subscription views are unchanged.
+Disabling it restores the original parser and sorting. It skips installation of the parser patch
 if a future Zotero version no longer has the recognized recursive walk method.
 
 Build and test:
