@@ -88,6 +88,13 @@ class FeedLanguageTests(unittest.TestCase):
             with self.subTest(output=journal['output']):
                 self.assertGreaterEqual(workflow.count(journal['output']), 2)
 
+    def test_workflow_refreshes_mailbox_after_daily_email_arrival_without_rebuilding_conferences(self):
+        workflow = Path('.github/workflows/update-feed.yml').read_text(encoding='utf-8')
+
+        self.assertIn('cron: "30 6 * * 1-5"', workflow)
+        conference_step = workflow.split('- name: Generate conference feeds', 1)[1].split('- name:', 1)[0]
+        self.assertIn("github.event.schedule == '20 22 * * *'", conference_step)
+
     @mock.patch('journal_rss_aggregator.fetch_bytes')
     def test_current_issue_stops_after_all_crossref_records_are_read(self, fetch_bytes):
         response = {

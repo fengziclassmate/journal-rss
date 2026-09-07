@@ -12,6 +12,7 @@ on:
       - main
   schedule:
     - cron: "20 22 * * *"
+    - cron: "30 6 * * 1-5"
     - cron: "30 12 * * 1-5"
 
 permissions:
@@ -90,6 +91,7 @@ jobs:
         run: echo "::warning::QQ mailbox collection failed. Existing email RSS files are retained; other feeds will still deploy."
 
       - name: Generate conference feeds
+        if: inputs.conference_only == true || github.event_name != 'schedule' || github.event.schedule == '20 22 * * *'
         run: python conference_rss.py
 
       - name: Commit feed changes
