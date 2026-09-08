@@ -1,0 +1,334 @@
+{
+  "date": "2026-09-08",
+  "guid": "research-daily:2026-09-08",
+  "paper_keys": [
+    "arxiv:2609.04726",
+    "arxiv:2606.12821",
+    "arxiv:2609.05084",
+    "arxiv:2606.00733",
+    "arxiv:2609.04693",
+    "arxiv:2606.25647",
+    "arxiv:2502.00285",
+    "arxiv:2609.04779",
+    "arxiv:2609.00469",
+    "arxiv:2608.29640"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-api": "ok:100",
+    "arxiv-email": "ok:0",
+    "crossref:Applied Geography": "ok:3",
+    "crossref:Applied Soft Computing": "ok:50",
+    "crossref:Artificial Intelligence": "ok:4",
+    "crossref:CEUS": "ok:4",
+    "crossref:Cities": "ok:15",
+    "crossref:Computer Science Review": "ok:3",
+    "crossref:EIAR": "ok:15",
+    "crossref:IJGIS": "ok:6",
+    "crossref:ISPRS JPRS": "ok:13",
+    "crossref:Information Fusion": "ok:16",
+    "crossref:JAG": "ok:21",
+    "crossref:Landscape and Urban Planning": "ok:2",
+    "crossref:Pattern Recognition": "ok:63",
+    "crossref:RSE": "ok:11",
+    "crossref:SCS": "ok:17",
+    "crossref:Science Bulletin": "ok:12",
+    "crossref:Urban Climate": "ok:15",
+    "deepseek": "ok:30"
+  },
+  "updated_at": "2026-09-08T00:34:20.393346+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2609.04726",
+      "title": "Bridging Modalities and Tasks: A Unified Hierarchical ViT for SAR-to-Optical Translation and Semantic Segmentation",
+      "title_zh": "BMT：用于SAR到光学影像翻译与语义分割的统一分层ViT框架",
+      "url": "https://arxiv.org/abs/2609.04726",
+      "doi": "",
+      "arxiv_id": "2609.04726",
+      "authors": [
+        "Siyuan Liu",
+        "Xuze Zhang",
+        "Yongshun Wang",
+        "Licong Pan",
+        "Hang Liu",
+        "Huihui Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T04:50:19+00:00",
+      "score": 95,
+      "reason": "论文主题为SAR到光学影像翻译与语义分割的联合学习，直接涉及遥感影像处理与多模态融合，与用户研究中的遥感变化检测和多源数据融合方向高度契合。",
+      "tags": [
+        "SAR",
+        "光学影像",
+        "语义分割",
+        "多任务学习",
+        "视觉Transformer",
+        "遥感变化检测"
+      ],
+      "abstract": "Synthetic Aperture Radar (SAR) images have all-weather, day-and-night observation capabilities. However, compared with optical images, their speckle noise and non-intuitive scattering mechanism limit the interpretability of the images. Generative models for SAR-to-optical (S2O) conversion can improve visual interpretability, but existing methods often ignore the constraints on semantic structure, which are necessary for downstream tasks, for the sake of visual effects. We propose a unified collaborative dual-task learning framework, termed BMT (Bridging Modalities and Tasks), that jointly optimizes S2O image translation and semantic segmentation through a shared hierarchical Vision Transformer. The framework integrates: (1) a LocalViTBlock that fuses global self-attention with spatial depthwise convolution through a learnable gating mechanism; (2) an enhanced output module combining multi-scale refinement processing, color correction and anti-aliasing, which calibrates channel-level color statistics through feature fusion; (3) a ControlNet-style conditional injection mechanism that encodes SAR wavelet features and segmentation labels into a multi-scale feature pyramid and injects them at each encoder layer through zero-initialized convolution; (4) a bounded Kendall uncertainty weighting scheme that prevents either task from dominating the shared representation. We evaluate the framework under both paired and unpaired translation settings, on the public WHU-OPT-SAR paired dataset and a self-constructed unpaired ship dataset built from HRSID and DIOR, respectively. The experimental results show that the proposed method achieves competitive S2O translation quality and semantic segmentation performance. The dataset and source code have been publicly released at https://github.com/Lewisyuaner/BMT-S2O-main.",
+      "summary_zh": "提出BMT框架，通过共享的分层视觉Transformer联合优化SAR到光学影像翻译和语义分割任务。框架集成了局部ViT块、增强输出模块、ControlNet风格的条件注入机制和有界Kendall不确定性加权方案。在WHU-OPT-SAR和自建数据集上验证了其有效性。",
+      "insight_zh": "该研究强调了在生成任务中约束语义结构的重要性，其多任务联合学习与条件注入机制为遥感影像的跨模态生成与理解提供了新思路，有助于提升下游任务性能。"
+    },
+    {
+      "key": "arxiv:2606.12821",
+      "title": "GeoNatureAgent Benchmark: Benchmarking LLM Agents for Environmental Geospatial Analysis Across Frontier and Open-Weight Foundation Models",
+      "title_zh": "GeoNatureAgent基准：评估前沿与开源基础模型在环境地理空间分析中的LLM智能体表现",
+      "url": "https://arxiv.org/abs/2606.12821v2",
+      "doi": "10.1145/3841645.3844198",
+      "arxiv_id": "2606.12821",
+      "authors": [
+        "Gabriel Diaz-Ireland",
+        "Diego Prieto-Herráez",
+        "Mario García Peces",
+        "Javier Velázquez",
+        "Devika Jain"
+      ],
+      "venue": "arXiv",
+      "published": "2026-06-11T02:35:20+00:00",
+      "score": 95,
+      "reason": "论文提出了首个针对环境地理空间分析LLM智能体的基准测试，直接评估智能体通过结构化工具调用真实地理空间API的能力。这与GIS博士研究方向中的LLM和多智能体、地理空间智能高度契合，为评估和开发相关智能体提供了关键基准。",
+      "tags": [
+        "LLM智能体",
+        "地理空间分析",
+        "基准测试",
+        "环境科学",
+        "工具调用"
+      ],
+      "abstract": "Environmental scientists spend disproportionate effort on data wrangling rather than analysis. New AI agents can be a helpful tool, but no benchmark exists to evaluate AI agents that automate environmental geospatial workflows through structured tool calling against real APIs. We introduce the GeoNatureAgent Benchmark, the first benchmark for environmental analysis agents that operate via structured tool calls to a production-style geospatial API. The benchmark comprises 93 tasks across 18 categories. Tasks are evaluated against an open, self-hostable geospatial API that serves three environmental indicators across Spain and Portugal via sixteen tools. We evaluate nine frontier and open-weight LLMs, reporting capability and per-case cost as orthogonal axes. Results manifest that (1) Claude Sonnet 4 achieves the highest capability at 60.8% +/- 0.8%, followed closely by DeepSeek V3.2 at 56.3% +/- 3.1%, while no other model exceeds 51%; (2) the cost-accuracy Pareto frontier is occupied mostly by open-weight models, with DeepSeek V3.2 offering 93% of Claude's capability at 11.6x lower cost; and (3) structured tool calling against a real API provides a more discriminative measure of real-world agent capability, with mean accuracies 25-35 percentage points below those reported on general-purpose GIS benchmarks.",
+      "summary_zh": "环境科学家在数据整理上花费过多精力。为评估能通过结构化工具调用真实API来自动化环境地理空间工作流的AI智能体，论文引入了GeoNatureAgent基准。该基准包含93个任务，覆盖18个类别，通过一个开放、可自托管的、提供西班牙和葡萄牙三个环境指标的地理空间API进行评估。研究评估了九个前沿和开源LLM，结果显示：Claude Sonnet 4能力最高（60.8%），DeepSeek V3.2紧随其后（56.3%）；成本-精度帕累托前沿主要由开源模型占据；与通用GIS基准相比，结构化工具调用提供了更具区分度的真实世界智能体能力度量。",
+      "insight_zh": "针对特定领域（如环境分析）的、基于真实API的基准测试，比通用GIS基准更能揭示LLM智能体的实际应用能力，且开源模型在成本效益上展现出显著优势，这为地理空间智能体的落地应用选型提供了重要参考。"
+    },
+    {
+      "key": "arxiv:2609.05084",
+      "title": "ToPos: Automated Optimal Positioning on Topographic Manifolds using Constrained Geodesic Voronoi Decomposition",
+      "title_zh": "ToPos：利用约束测地线Voronoi分解在地形流形上进行自动化最优定位",
+      "url": "https://arxiv.org/abs/2609.05084v1",
+      "doi": "",
+      "arxiv_id": "2609.05084",
+      "authors": [
+        "Rajesh Raveendran",
+        "Akseli Vanhamaa",
+        "Jaakko Suutala",
+        "Antti Tikanmäki",
+        "Juha Röning"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T12:38:48+00:00",
+      "score": 90,
+      "reason": "论文提出了一种在地形流形上进行最优空间采样的自动化框架，直接处理地形变化和物理障碍，旨在实现面积均衡的分布。这与GIS博士研究方向中的空间分析和地理空间智能高度相关，其方法（基于测地距离的Voronoi分解）对城市更新中的基础设施部署、环境采样等应用具有直接价值。",
+      "tags": [
+        "地形流形",
+        "空间采样",
+        "地理信息系统",
+        "Voronoi图",
+        "优化"
+      ],
+      "abstract": "Reliable autonomous mapping, environmental sampling, last-mile logistics, and infrastructure deployment depend on the optimal surface area-balanced distribution of Spatial Reference Sites (SRS). Conventional 2D Euclidean methods often fail in high-relief environments by neglecting topographic variations and physical obstructions. This leads to significant planimetric distortion, spatial clustering, and the placement of targets in inaccessible or shadowed regions, compromising both data integrity and operational safety. This paper introduces ToPos, an automated framework for TOPography-aware Optimal Sampling on topographic manifolds. We treat the terrain as a discrete 2-dimensional manifold embedded in 3D Euclidean space and replace standard flat-map distances with non-Euclidean geodesic distances that follow the actual surface geometry. The point distribution is formulated as an optimization problem using a Constrained Geodesic Voronoi Decomposition, solved via a Riemannian Nesterov Accelerated Gradient (NAG) engine. Our approach restricts target locations to a feasible \"safe zone,\" accounting for non-traversable slopes, vegetation, environmental occlusions, etc. Through evaluations on non-convex sinusoidal manifolds, we show that ToPos mitigates planimetric distortion by utilizing geodesic metrics. This approach results in a $\\sim$74% improvement in optimal surface area-balanced distribution, as measured by the coefficient of variation (CV) of the Voronoi cell areas. The framework is architected as a Geographic Information System (GIS)-ready micro-service to bolster the mentioned applications. Index Terms: Topographic Manifolds, Geodesic Voronoi Decomposition, Infrastructure Deployment, 3D Mapping, Spatial Sampling, and Non-Euclidean Optimization.",
+      "summary_zh": "针对传统2D欧几里得方法在高起伏环境中忽略地形变化和物理障碍导致的空间分布不均、目标不可达等问题，提出ToPos框架。该框架将地形视为嵌入3D欧几里得空间的离散2维流形，用非欧几里得测地距离替代平面距离，并将点分布问题构建为约束测地线Voronoi分解的优化问题，通过黎曼Nesterov加速梯度引擎求解。方法将目标限制在可行的“安全区”内，在非凸正弦流形上的评估显示，该方法显著改善了最优面积均衡分布（Voronoi单元面积变异系数改善约74%）。该框架被设计为GIS就绪的微服务。",
+      "insight_zh": "将地形视为流形并使用测地距离进行空间优化，能有效缓解高起伏环境下的平面畸变问题，这提示在GIS分析中，尤其是在地形复杂区域，采用非欧几里得度量对于提升空间决策的准确性和安全性至关重要。"
+    },
+    {
+      "key": "arxiv:2606.00733",
+      "title": "Do simulated agents move like real people?",
+      "title_zh": "模拟代理的移动方式是否与真实人类一致？",
+      "url": "https://arxiv.org/abs/2606.00733v2",
+      "doi": "",
+      "arxiv_id": "2606.00733",
+      "authors": [
+        "Timothy LaRock",
+        "Chen Zhang",
+        "Jürgen Hackl"
+      ],
+      "venue": "arXiv",
+      "published": "2026-05-30T13:55:51+00:00",
+      "score": 90,
+      "reason": "论文开发了路径中心框架，结合直接路径比较和高阶网络模型，验证模拟代理与真实人类在道路网络上的移动模式差异。该研究直接针对城市交通模拟与人类移动性建模，是GIS和城市研究的核心议题。",
+      "tags": [
+        "人类移动性",
+        "合成人口",
+        "路径分析",
+        "高阶网络模型",
+        "城市交通",
+        "验证"
+      ],
+      "abstract": "Human mobility is increasingly represented using synthetic populations that offer scalable alternatives when individual-level observations are unavailable or sensitive. Yet validation typically emphasizes aggregate statistics, which can obscure whether simulated agents traverse transportation networks in ways that resemble real travelers. Here, we develop a path-centric framework that combines direct path-level comparisons with higher-order network models to compare observed and simulated mobility on a shared metropolitan road network. Observed and simulated paths share broad statistical regularities and short-range memory. Beyond these similarities, however, simulated mobility underrepresents long paths, exhibits greater redundancy among long route sequences, covers a smaller and partly different portion of the network, and is more predictable overall. These discrepancies show that agreement in aggregate mobility patterns does not imply fidelity in how travelers move through the underlying infrastructure. Higher-order path analysis therefore offers a framework for validating synthetic mobility at the spatial and sequential scales relevant to scientific inference, urban planning, and policy.",
+      "summary_zh": "本文开发了一个以路径为中心的验证框架，结合直接路径比较和高阶网络模型，在共享的城市道路网络上对比观测与模拟的移动数据，发现模拟移动在长路径、网络覆盖和可预测性等方面与真实数据存在显著差异。",
+      "insight_zh": "仅验证聚合统计量不足以证明模拟模型的保真度，高阶路径分析为在空间和序列尺度上验证合成移动性提供了更严格的框架，对城市规划和政策制定具有重要意义。"
+    },
+    {
+      "key": "arxiv:2609.04693",
+      "title": "Predicting Spatiotemporal Mobile Sensing-Based PM2.5 Concentrations Using Low-Rank Adapted Spatially Attentive Graph Neural Network",
+      "title_zh": "基于低秩自适应空间注意力图神经网络的移动感知PM2.5浓度时空预测",
+      "url": "https://arxiv.org/abs/2609.04693",
+      "doi": "",
+      "arxiv_id": "2609.04693",
+      "authors": [
+        "Om Chiddarwar",
+        "Priyanka Mandal",
+        "Praveen Kumar Chandaliya",
+        "Shriniwas Arkatkar"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T03:50:32+00:00",
+      "score": 85,
+      "reason": "论文研究基于移动感知数据的城市PM2.5浓度时空预测，属于典型的时空数据挖掘在城市环境中的应用，与用户研究方向中的时空数据挖掘和城市更新背景高度相关。",
+      "tags": [
+        "PM2.5预测",
+        "移动感知",
+        "图神经网络",
+        "时空预测",
+        "城市空气质量"
+      ],
+      "abstract": "Urban air quality can vary significantly along transit corridors, necessitating high-resolution monitoring. This work introduces a novel mobile-sensing dataset from Surat, Gujarat, India, comprising PM$*{2.5}$ concentrations, meteorological variables (temperature, humidity, wind speed, wind direction), and land-use features. To represent the spatiotemporal data as a graph, two node-definition strategies were used: (i) uniform segmentation (200--400~m intervals) and (ii) DBSCAN clustering to adaptively group dense observations. For each node, rolling mean and standard deviation of meteorological variables were computed. To model this high-dimensional data, we propose a SA-GNN for fine-grained, short-term PM$*{2.5}$ forecasting and hotspot identification. We compared SA-GNN with LSTM, RNN, GRU, and ANN models. These models performed well on low-resolution data but had difficulty capturing rapidly changing patterns in urban air quality. SA-GNN employs cluster-specific GRUs to capture localized temporal dependencies and a Graph Attention Network to learn spatial heterogeneity. This hybrid architecture effectively models rapid fluctuations and complex spatial interactions. On our dataset, SA-GNN achieved $R^2 = 0.95$, RMSE $= 6.8$, and MAE $= 4.2~\\si{\\micro\\gram\\per\\meter\\cubed}$, outperforming all baseline models. Combining spatial clustering with adaptive attention significantly improves forecasting, enabling real-time, fine-grained monitoring and supporting personalized exposure tracking and timely alerts for healthier cities.",
+      "summary_zh": "介绍了一个来自印度苏拉特的移动感知PM2.5数据集，并提出SA-GNN模型用于细粒度短期预测和热点识别。该模型结合了聚类特定的GRU和图注意力网络，以捕捉局部时间依赖和空间异质性，取得了优于基线模型的效果。",
+      "insight_zh": "该研究展示了移动感知数据与图神经网络结合在城市精细尺度监测中的潜力，其节点定义和空间注意力机制对处理非均匀分布的时空数据具有参考价值。"
+    },
+    {
+      "key": "arxiv:2606.25647",
+      "title": "Smallholder Farmers on Remote Islands Receiving Retrieval-Grounded Multilingual LLM Assistance and Agronomic Advice",
+      "title_zh": "偏远岛屿小农获得基于检索增强的多语言LLM辅助与农艺建议",
+      "url": "https://arxiv.org/abs/2606.25647v3",
+      "doi": "",
+      "arxiv_id": "2606.25647",
+      "authors": [
+        "Nikolaos D. Tantaroudas",
+        "Ilias Karachalios",
+        "Andrew J. McCracken"
+      ],
+      "venue": "arXiv",
+      "published": "2026-06-24T09:56:09+00:00",
+      "score": 85,
+      "reason": "论文介绍了一个嵌入地理空间感知农业代理的对话式AI助手，通过MCP工具检索本地化、带地理围栏的数据，为偏远岛屿小农提供多语言建议。这与GIS应用、时空数据挖掘、LLM智能体结合紧密，高度契合研究兴趣。",
+      "tags": [
+        "LLM",
+        "农业咨询",
+        "多语言",
+        "地理空间感知",
+        "检索增强",
+        "小农"
+      ],
+      "abstract": "Smallholder farming communities in remote, depopulating areas have limited access to agricultural advice, and their locally specific agronomic knowledge, often expressed in regional dialect, is poorly represented in the global corpora on which Large Language Models (LLMs) are trained. A general-purpose chatbot therefore answers fluently but unreliably, ungrounded in authoritative local data farmers can trust. This paper presents a conversational AI assistant, Falco eleonorae, embedded in a bilingual (Greek-primary, English-secondary) e-market platform serving farmers and cooperatives of a defined island area of interest. It is a thin Backend-for-Frontend (BFF) proxy in front of a geospatially-aware agronomic agent rather than a self-hosted model. Answer generation and tool selection are delegated to a managed upstream service on OpenAI GPT-5-family models, while one bounded task, describing an uploaded field photograph, is handled directly by a vision-capable model so only text reaches the agent, and voice input is transcribed by a managed EU streaming speech-to-text service. Grounding comes not from a self-hosted vector database but from tool-augmented retrieval: a Model Context Protocol (MCP) tool queries a curated, read-only, bilingual data interface exposing local crops, a seasonal calendar, traditional practices, a dialect glossary, products, agritourism experiences, cooperatives, and training content, each wrapped in a geospatial Well-Known Text envelope anchoring the agent to the area of interest. We detail its multilingual, voice, and image modalities, its progressive-web-application and accessibility design for low-bandwidth field use, and its security and data-protection posture, and argue that for a small, resource-constrained rural deployment a managed, grounded multilingual assistant is more attainable and trustworthy than a self-hosted model.",
+      "summary_zh": "本文介绍了一个名为Falco eleonorae的对话式AI助手，通过后端代理连接地理空间感知的农业代理，利用MCP工具查询带地理空间围栏的本地双语数据，为希腊岛屿的小农提供多语言、语音和图像交互的农艺建议。",
+      "insight_zh": "将LLM与地理空间感知的本地知识库结合，通过工具增强检索实现知识 grounding，为在资源受限地区提供精准、可信的地理信息服务提供了可行架构。"
+    },
+    {
+      "key": "arxiv:2502.00285",
+      "title": "TSMini: A Simple Yet Highly Effective Trajectory Similarity Learning Model",
+      "title_zh": "TSMini：一种简单但高效的轨迹相似性学习模型",
+      "url": "https://arxiv.org/abs/2502.00285v3",
+      "doi": "",
+      "arxiv_id": "2502.00285",
+      "authors": [
+        "Yanchuan Chang",
+        "Dingyang Lyu",
+        "Xu Cai",
+        "Christian S. Jensen",
+        "Jianzhong Qi"
+      ],
+      "venue": "arXiv",
+      "published": "2025-02-01T02:52:43+00:00",
+      "score": 85,
+      "reason": "论文聚焦于轨迹相似性学习，这是时空数据挖掘的核心基础问题，与GIS博士研究方向中的时空数据挖掘高度契合。提出的子视图建模机制和多粒度模式学习，对于理解城市动态、分析移动对象行为具有直接应用价值。",
+      "tags": [
+        "轨迹相似性",
+        "时空数据挖掘",
+        "深度学习",
+        "K近邻",
+        "轨迹模式"
+      ],
+      "abstract": "Trajectory similarity is fundamental to many spatio-temporal data mining applications. Recent studies propose deep learning models to approximate conventional trajectory similarity measures, exploiting their fast inference time once trained. Although efficient inference has been reported, challenges remain in similarity approximation accuracy due to difficulties in trajectory granularity modeling and in exploiting similarity signals in training data. To fill this gap, we propose TSMini, a highly effective trajectory similarity model with a sub-view modeling mechanism and a k nearest neighbor-based loss. The former enables learning multi-granularity trajectory patterns, while the latter guides TSMini to learn not only absolute similarity values between trajectories but also their relative similarity ranks. Together, these innovations enable highly accurate trajectory similarity approximation. Experiments show that TSMini outperforms the state-of-the-art models by 15% on average when learning widely used trajectory similarity measures.",
+      "summary_zh": "轨迹相似性是许多时空数据挖掘应用的基础。针对现有深度模型在轨迹相似性近似精度上的不足（源于轨迹粒度建模困难和训练数据中相似性信号利用不充分），提出TSMini模型。该模型包含一个子视图建模机制，用于学习多粒度轨迹模式，以及一个基于K近邻的损失函数，引导模型不仅学习轨迹间的绝对相似度值，还学习其相对相似度排名。实验表明，在学习广泛使用的轨迹相似性度量时，TSMini平均比最先进的模型性能提升15%。",
+      "insight_zh": "通过引入相对排序损失（K近邻损失），模型能够更有效地利用训练数据中的相似性结构信息，而不仅仅是绝对数值，这为提升时空数据挖掘中相似性学习的精度提供了新的优化视角。"
+    },
+    {
+      "key": "arxiv:2609.04779",
+      "title": "Dynamic Heterogeneous Graph Representation Learning: A Survey",
+      "title_zh": "动态异质图表示学习：综述",
+      "url": "https://arxiv.org/abs/2609.04779",
+      "doi": "",
+      "arxiv_id": "2609.04779",
+      "authors": [
+        "Huan Liu",
+        "Pengfei Jiao",
+        "Jie Yin",
+        "Hongjiang Chen",
+        "Zhidong Zhao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T06:17:19+00:00",
+      "score": 80,
+      "reason": "论文是关于动态异质图表示学习方法的系统性综述，涵盖了从早期嵌入方法到GNN和Transformer的最新进展。动态异质图是建模复杂时空交互（如城市中人与地点的动态关系）的强大工具，与GIS博士研究方向中的时空数据挖掘和城市更新分析高度相关。",
+      "tags": [
+        "动态异质图",
+        "图表示学习",
+        "图神经网络",
+        "Transformer",
+        "综述"
+      ],
+      "abstract": "Graph representation learning (GRL) serves as a canonical paradigm for modeling complex networks. However, real-world AI systems inherently manifest as evolving heterogeneous entities with complex interactions, posing significant challenges to static or homogeneous modeling. To address these complexities, representation learning for Dynamic Heterogeneous Graphs (DHGs) has emerged as a vital approach for learning low-dimensional representations that simultaneously preserve structural semantics and temporal dynamics. This survey presents the first systematic review of DHG representation learning methods. We first introduce a unified formal definition that encompasses both discrete-time and continuous-time DHGs from the perspective of temporal granularity. Building upon this formulation, we propose a novel algorithm-centric taxonomy that categorizes existing literature, including early embedding-based approaches, graph neural network (GNN)-based models, and relatively recent Transformer-based DHG methods, while explicitly highlighting their intrinsic modeling biases with respect to dynamic granularity. Furthermore, we summarize representative applications of DHG representation learning, along with commonly used datasets and benchmarks. Finally, we discuss promising research directions that guide future advances in this rapidly evolving field.",
+      "summary_zh": "该综述首次系统性地回顾了动态异质图（DHG）表示学习方法。文章首先从时间粒度的角度，提出了一个统一的形式化定义，涵盖离散时间和连续时间DHG。在此基础上，提出了一种以算法为中心的新分类法，将现有文献分为基于早期嵌入的方法、基于图神经网络（GNN）的模型和基于Transformer的DHG方法，并明确指出了它们在动态粒度建模上的内在偏差。最后，总结了DHG表示学习的代表性应用、常用数据集和基准，并讨论了未来研究方向。",
+      "insight_zh": "该综述通过统一形式化定义和算法中心分类法，清晰地梳理了动态异质图表示学习的研究脉络，并强调了不同方法在动态粒度建模上的内在偏差，这为在时空数据挖掘中选择和开发合适的动态图模型提供了重要的理论参考。"
+    },
+    {
+      "key": "arxiv:2609.00469",
+      "title": "SAM3-LoRA: Parameter-Efficient Adaptation of a Concept-Promptable Foundation Model for Multi-Class Structural Defect Segmentation",
+      "title_zh": "SAM3-LoRA：概念可提示基础模型在多类结构缺陷分割中的参数高效适配",
+      "url": "https://arxiv.org/abs/2609.00469",
+      "doi": "",
+      "arxiv_id": "2609.00469",
+      "authors": [
+        "P. Malaisree",
+        "S. Youwai",
+        "S. Janrungautai",
+        "D. Amorndechaphon",
+        "P. Rojanavasu",
+        "W. Songkitti"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-31T23:19:59+00:00",
+      "score": 80,
+      "reason": "研究将概念可提示的基础分割模型SAM3通过LoRA适配到特定领域（结构缺陷检测），其参数高效微调和提示策略对遥感影像中特定地物的分割任务具有直接参考价值。",
+      "tags": [
+        "SAM",
+        "LoRA",
+        "结构缺陷分割",
+        "参数高效微调",
+        "提示学习"
+      ],
+      "abstract": "Promptable segmentation foundation models such as SAM3 accept an open-vocabulary text concept and return every instance matching it, but adapting them to a specialized domain by full fine-tuning is computationally prohibitive for the organizations that would benefit most. This study applies Low-Rank Adaptation (LoRA) to SAM3 for multi-class structural defect segmentation and examines both how such a model can be supervised from conventional annotation and whether the resulting efficiency gain transfers across datasets. Two contributions are methodological. First, we describe a supervision procedure that trains a concept-promptable model directly from COCO-style class-labeled instance segmentation by using the category name itself as the prompt, requiring no prompt templates, no synonym expansion, and no learned class embeddings. Second, we identify and mitigate a failure mode specific to this setting: because a conventional annotation file yields positive prompts exclusively, the model's presence prediction decouples from the text condition and degenerates into responding to any prompt, a collapse that is invisible to every metric computed on positive prompts alone. Exhaustive hard-negative prompting, in which every dataset category absent from an image is issued as a zero-detection query, addresses this at no annotation cost. Two adapter placements were compared under an identical protocol, updating 0.121% and 1.341% of model parameters. On a purpose-built tunnel lining dataset, pixel intersection-over-union improved from 0.017 to 0.338 and instance-level recall from 0.375 to 0.672; on the independent public Structural Defects Dataset, from 0.017 to 0.855 and from 0.574 to 1.000. Improvements were directionally consistent across ten metrics on both datasets, and the largest per-category gains occurred precisely where zero-shot competence was absent.",
+      "summary_zh": "应用LoRA对SAM3进行参数高效微调，用于多类结构缺陷分割，并提出使用类别名作为提示的监督方法和穷举硬负提示来解决模型退化问题，在两个数据集上取得了显著性能提升。",
+      "insight_zh": "通过精心设计的提示策略和参数高效微调，能够以极低的计算成本将通用分割模型适配到专业领域，为遥感影像分析中的定制化分割提供了可行路径。"
+    },
+    {
+      "key": "arxiv:2608.29640",
+      "title": "LLMODE: Aligning ODEs with LLMs via Gated Token Injection for Irregular Spatio-Temporal Forecasting",
+      "title_zh": "LLMODE：通过门控令牌注入对齐ODE与LLM以实现不规则时空预测",
+      "url": "https://arxiv.org/abs/2608.29640v1",
+      "doi": "",
+      "arxiv_id": "2608.29640",
+      "authors": [
+        "Di Zhang",
+        "Jingyang Zhang",
+        "Ziqian Wang",
+        "Chi Zhang",
+        "Yikun Ban",
+        "Ziwei Zhang",
+        "Ruijie Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-30T08:02:20+00:00",
+      "score": 80,
+      "reason": "论文提出结合LLM与ODE的框架用于不规则时空预测，涉及时空数据挖掘与LLM应用，与GIS博士研究方向相关。",
+      "tags": [
+        "LLM",
+        "时空预测",
+        "不规则采样",
+        "图神经网络",
+        "ODE"
+      ],
+      "abstract": "Large language models (LLMs) have shown promise for spatio-temporal forecasting, but existing approaches often rely on regularly sampled token sequences and struggle with irregular observations because of temporal asynchrony, representation-space misalignment, and limited context windows. We propose LLMODE, a token-efficient framework for irregular spatio-temporal forecasting with a frozen LLM backbone. LLMODE first uses a graph-aware ODE encoder to reconstruct irregular graph observations as a continuous-time latent trajectory. A Fixed-Budget Perceiver Resampler then compresses this variable-length trajectory into a fixed number of dynamic memory tokens. In parallel, compact statistical descriptors are encoded and resampled into context memory tokens. A dual-source gated cross-attention module injects both memories into the frozen LLM, enabling controlled utilization of external spatio-temporal evidence. Experiments on three real-world urban datasets and two physical-dynamics benchmarks show competitive overall performance, with clearer advantages under sparse or dynamically complex irregular sampling. Additional evaluations on unseen urban regions further demonstrate strong zero-shot generalization without adaptation.",
+      "summary_zh": "提出LLMODE框架，使用图感知ODE编码器重建不规则图观测为连续时间潜在轨迹，并通过固定预算感知重采样器压缩为动态记忆令牌。双源门控交叉注意力将记忆注入冻结的LLM，实现外部时空证据的受控利用。",
+      "insight_zh": "将连续时间ODE表示与冻结LLM结合，通过门控机制注入外部证据，为处理不规则采样的时空预测提供了有效方案。"
+    }
+  ]
+}
