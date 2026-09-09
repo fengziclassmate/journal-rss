@@ -1,0 +1,909 @@
+{
+  "date": "2026-09-09",
+  "guid": "arxiv-email-daily:2026-09-09",
+  "paper_keys": [
+    "arxiv:2609.08391",
+    "arxiv:2609.08385",
+    "arxiv:2609.08268",
+    "arxiv:2609.07915",
+    "arxiv:2609.07753",
+    "arxiv:2609.07685",
+    "arxiv:2609.07349",
+    "arxiv:2609.06475",
+    "arxiv:2609.05953",
+    "arxiv:2609.05762",
+    "arxiv:2609.05761",
+    "arxiv:2609.05744",
+    "arxiv:2609.05523",
+    "arxiv:2602.00110",
+    "arxiv:2607.25524",
+    "arxiv:2603.05581",
+    "arxiv:2512.23243",
+    "arxiv:2609.09005",
+    "arxiv:2609.08777",
+    "arxiv:2609.08659",
+    "arxiv:2609.08572",
+    "arxiv:2609.07734",
+    "arxiv:2609.07520",
+    "arxiv:2609.07373",
+    "arxiv:2609.06737",
+    "arxiv:2609.05774",
+    "arxiv:2609.05740",
+    "arxiv:2406.09385",
+    "arxiv:2509.04772",
+    "arxiv:2603.25565"
+  ],
+  "paper_count": 30,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:1597",
+    "deepseek": "ok:1438"
+  },
+  "updated_at": "2026-09-09T11:47:04.655000+00:00",
+  "analysis_stats": {
+    "total": 1597,
+    "analyzed": 1596,
+    "high": 129,
+    "medium": 211,
+    "low": 195,
+    "below_threshold": 1061
+  },
+  "papers": [
+    {
+      "key": "arxiv:2609.08391",
+      "title": "From Coordinates to Candidate Regions: Temporal Change Localization via Region Selection in Remote Sensing Multimodal LLMs",
+      "title_zh": "从坐标到候选区域：遥感多模态大模型中基于区域选择的时序变化定位",
+      "url": "https://arxiv.org/abs/2609.08391",
+      "doi": "",
+      "arxiv_id": "2609.08391",
+      "authors": [
+        "Juwan Chung",
+        "Sungjune Park",
+        "Yeongyun Kim",
+        "Yong Man Ro"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T07:59:21+00:00",
+      "score": 95,
+      "reason": "该研究专门针对遥感多模态大模型中的时序变化定位问题，提出了区域选择范式，与个人研究方向中的遥感变化检测和LLM高度契合。",
+      "tags": [
+        "遥感多模态大模型",
+        "变化定位",
+        "区域选择",
+        "视觉定位",
+        "多时相"
+      ],
+      "abstract": "Remote sensing multimodal large language models (RS-MLLMs) have advanced scene understanding and visual question answering over satellite imagery, yet localizing specific objects or changed regions remains challenging. Existing approaches rely on generating bounding box coordinates as token sequences, which is fragile for the small, densely packed objects common in remote sensing and increasingly error-prone when multiple targets must be localized simultaneously. In this work, we present an RS-specific formulation of the region selection paradigm, previously explored in natural-image MLLMs, and extend it to temporal change localization over multi-image sequences. Our framework employs a text-conditioned region proposal module, encodes each candidate as special tokens carrying per-frame visual features enriched with spatial and temporal cues, and lets the LLM localize targets by selecting region tokens in its response. We construct a multi-task training and evaluation suite spanning localization, referring expression, visual grounding, and understanding tasks across single-image and multi-temporal settings. Experiments show that our approach substantially outperforms coordinate-generation baselines on temporal change localization, while improving single-image visual grounding and maintaining competitive understanding performance. Oracle analysis decomposes the contributions of the region proposer and the LLM selector, providing diagnostic insight unique to this framework. Our code will be available at https://github.com/juwan-kr/RS-RegionSelect.",
+      "summary_zh": "针对遥感多模态大模型（RS-MLLMs）在定位小且密集目标方面的不足，提出了一种区域选择范式。该方法通过文本条件区域提议模块生成候选区域，并将其编码为特殊token，使LLM通过选择区域token来定位目标。实验表明，该方法在时序变化定位任务上显著优于坐标生成基线。",
+      "insight_zh": "将目标定位从回归坐标转换为选择区域token，能更有效地利用LLM的推理能力，尤其适用于遥感图像中目标密集且尺寸小的场景。"
+    },
+    {
+      "key": "arxiv:2609.08385",
+      "title": "GALoc: Gravity Aligned Wireframes for Depth-Free Monocular Floorplan Localization",
+      "title_zh": "GALoc：用于无深度单目平面图定位的重力对齐线框",
+      "url": "https://arxiv.org/abs/2609.08385",
+      "doi": "",
+      "arxiv_id": "2609.08385",
+      "authors": [
+        "Jeahn Han",
+        "Minji Kim",
+        "Jeongbin Sohn",
+        "Jonghyeok Park",
+        "Matthias Wuest",
+        "and Pyojin Kim"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T07:56:14+00:00",
+      "score": 95,
+      "reason": "该研究提出了一种基于重力对齐线框的室内平面图定位方法，直接应用于室内定位与导航，是城市更新中室内空间分析的关键技术。",
+      "tags": [
+        "室内定位",
+        "平面图",
+        "线框",
+        "单目视觉",
+        "几何方法",
+        "SLAM"
+      ],
+      "abstract": "Floorplans are compact, appearance-invariant maps ideal for indoor localization, yet existing methods rely on depth networks that are brittle in cluttered scenes. We propose GALoc, a geometry-first framework that replaces depth prediction with gravity-aligned wireframes that satisfy verticality and coplanarity by construction. Given monocular RGB, camera intrinsics, relative poses, and IMU orientation, GALoc constructs a linear constraint matrix encoding verticality and coplanarity, and finds the camera gauge minimizing its smallest singular value via global search. The rectified wireframes are projected into bird's-eye-view layouts through a closed-form, FOV-consistent transformation and matched against the floorplan via metric-free SE(2) search. We evaluate end-to-end on Structured3D, with calibrated noise on Gibson, and on real-world author-collected sequences. When sufficient wall geometry is visible, GALoc matches or outperforms depth-based baselines -- achieving 88% sequential localization success at 0.1m over 100-step sequences on Gibson vs the baseline's 68% -- while abstaining in structure-blind scenes.",
+      "summary_zh": "GALoc提出了一种几何优先的框架，用重力对齐的线框替代深度预测，通过构造线性约束矩阵并全局搜索最小奇异值来估计相机位姿。矫正后的线框被投影到鸟瞰视图并与平面图进行匹配。在Structured3D和Gibson数据集上的实验表明，在可见墙体几何充足时，GALoc能达到或超过基于深度的方法的性能。",
+      "insight_zh": "利用重力对齐的线框几何约束，可以在无需深度信息的情况下实现鲁棒的室内定位，这对于结构复杂或深度传感器受限的室内环境尤为重要。"
+    },
+    {
+      "key": "arxiv:2609.08268",
+      "title": "Synergistic Fusion of Topological Structure and Temporal Semantics of Mobility for Urban Region Embedding",
+      "title_zh": "移动数据的拓扑结构与时间语义协同融合用于城市区域嵌入",
+      "url": "https://arxiv.org/abs/2609.08268",
+      "doi": "",
+      "arxiv_id": "2609.08268",
+      "authors": [
+        "Namwoo Kim",
+        "Jeeyun Chang",
+        "Kanghoon Lee",
+        "Yoonjin Yoon"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T05:22:58+00:00",
+      "score": 95,
+      "reason": "论文直接研究城市区域嵌入，融合移动数据的拓扑结构与时间语义，与GIS博士研究方向中的城市更新和时空数据挖掘高度契合。其提出的MoSS模型利用zigzag持续同调捕捉区域连接动态，是前沿的时空建模方法。",
+      "tags": [
+        "城市区域嵌入",
+        "时空数据挖掘",
+        "移动数据",
+        "拓扑结构",
+        "时序语义"
+      ],
+      "abstract": "Urban region embeddings have shown promising results in diverse urban sensing tasks such as crime, income, and service-call prediction. Recent methods improve representation quality by integrating mobility data with auxiliary modalities, using cross-view attention or contrastive objectives to align heterogeneous features into a unified region representation. However, leveraging the temporal dynamics of human mobility remains under-explored. Regional inflow and outflow fluctuate throughout the day, and inter-region connections emerge, persist, and dissolve over time. Moreover, prevailing fusion strategies combine views additively and miss the joint signal that emerges only when views co-occur. To address these gaps, we propose Mobility Stream-Structure Synergy (MoSS), which derives complementary views from mobility data: a Sequence view that preserves each region's hourly inflow/outflow profile, and a Structure view based on zigzag persistence diagrams that capture how regional connectivity emerges, persists, and dissolves over time. A synergy module then extracts emergent representations from the co-occurrence of these views through multi-degree interactions, explicitly capturing higher-order signal across views. Extensive experiments on New York City and Chicago show that MoSS achieves state-of-the-art performance across three downstream tasks using mobility data alone, outperforming baselines that rely on auxiliary modalities.",
+      "summary_zh": "论文提出MoSS框架，从移动数据中提取序列视图（区域逐时流入/流出）和结构视图（基于zigzag持续同调图捕捉区域连接的出现、持续与消失），并通过协同模块以多度交互提取跨视图的高阶信号。在纽约和芝加哥的实验中，仅使用移动数据即在犯罪、收入和服务呼叫预测等任务上达到最先进性能。",
+      "insight_zh": "城市区域嵌入应超越简单的多视图加性融合，利用持续同调等拓扑工具捕捉区域间动态连接的生命周期，并挖掘视图间协同出现的新兴信号，可显著提升下游预测任务表现。"
+    },
+    {
+      "key": "arxiv:2609.07915",
+      "title": "JEDI: JEPA-to-Edge Distillation for Efficient Cropland Segmentation from Satellite Imagery",
+      "title_zh": "JEDI：面向卫星影像农作物分割的JEPA到边缘设备蒸馏方法",
+      "url": "https://arxiv.org/abs/2609.07915",
+      "doi": "",
+      "arxiv_id": "2609.07915",
+      "authors": [
+        "Kishor Kumar Bhaumik",
+        "Nicolas Roque dos Santos",
+        "Jia Chen",
+        "Evangelos E. Papalexakis"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T19:29:45+00:00",
+      "score": 95,
+      "reason": "论文针对卫星影像的农作物分割，提出从大型JEPA模型到紧凑学生模型的知识蒸馏框架，直接涉及遥感影像分析和模型压缩，与遥感变化检测和地理空间智能高度相关。",
+      "tags": [
+        "遥感",
+        "语义分割",
+        "知识蒸馏",
+        "JEPA",
+        "边缘计算",
+        "农业"
+      ],
+      "abstract": "Large vision models provide useful representations for remote-sensing segmentation but are often too expensive for deployment at the satellite or field edge. Existing feature-level distillation methods also tend to assume similar teacher and student architectures and often stop feature alignment when task training begins. We introduce JEDI (JEPA-to-Edge Distillation), a two-stage framework that transfers representations from a large I-JEPA Vision Transformer teacher to a compact SegFormer student. First, JEDI aligns the student's terminal representation with the teacher's token space using cross-architecture projection and spatial alignment. It then jointly optimizes supervised segmentation, temperature-scaled response distillation, and persistent feature alignment throughout task adaptation. On CalCROP21, JEDI-B0 achieves 68.0 mean Intersection-over-Union (mIoU) with 4.04M parameters, improving over the standalone student by 16.0 points and coming within 2.0 points of the 70.0 mIoU achieved by the 639M-parameter teacher. We evaluate SegFormer B0, B1, and B2 students with 4.04M, 14.33M, and 28M parameters, respectively. Across all three variants, JEDI consistently outperforms response-, structure-, channel-, and relational-distillation baselines under the same teacher-student setting. These results show that persistent representation alignment is especially valuable under aggressive compression, substantially reducing model size and computation while preserving segmentation performance.",
+      "summary_zh": "本文提出JEDI框架，将大型I-JEPA ViT教师模型的知识蒸馏到紧凑的SegFormer学生模型。通过跨架构投影、空间对齐和持续特征对齐，JEDI-B0在CalCROP21上达到68.0 mIoU，比独立学生模型提升16.0点，接近639M参数教师模型的性能，且模型尺寸大幅减小。",
+      "insight_zh": "在任务适应阶段持续进行特征对齐，对于在激进压缩下保持分割性能至关重要，能显著减小模型规模并保持精度，适合边缘部署。"
+    },
+    {
+      "key": "arxiv:2609.07753",
+      "title": "Cross-modal learning for SAR target recognition using optical vision foundation models",
+      "title_zh": "利用光学视觉基础模型进行SAR目标识别的跨模态学习",
+      "url": "https://arxiv.org/abs/2609.07753",
+      "doi": "",
+      "arxiv_id": "2609.07753",
+      "authors": [
+        "Lucas Hirsch",
+        "James R. Hopgood",
+        "Javid Khan",
+        "Yoann Altmann",
+        "Mike E. Davies"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T16:54:30+00:00",
+      "score": 95,
+      "reason": "该研究直接探讨利用光学视觉基础模型进行SAR目标识别，是遥感与基础模型结合的前沿方向，与博士研究方向中的遥感变化检测和多源数据融合高度相关。",
+      "tags": [
+        "SAR",
+        "目标识别",
+        "跨模态学习",
+        "视觉基础模型",
+        "光学遥感",
+        "原型对齐"
+      ],
+      "abstract": "Synthetic Aperture Radar (SAR) is an important modality in a wide range of imaging applications due to its versatile, long range and near all weather operating capabilities. However, Automatic Target Recognition (ATR) remains a challenging problem due to limited labelled data, the strong speckle in SAR images and the significant domain gap between SAR and more abundant optical imagery. In contrast, electro-optical (EO) imagery benefits from massive datasets, clearer visual structure and powerful foundation models. In this work, we investigate how vision foundation models trained on optical data can provide class level supervision for SAR classification. We propose a cross-modal EO to SAR prototype alignment framework in which a frozen EO encoder, based on a DINOv3 vision foundation model, is used to construct class level optical prototypes without requiring strict EO/SAR pairs. A SAR model is then trained to classify SAR images while aligning its embeddings to the corresponding EO class prototype. At inference time, the SAR model operates independently, without access to optical imagery. We evaluate our approach on the UNICORNv2 dataset, an EO and SAR dataset of civilian vehicles with heavily speckled images and severe class imbalance. EO prototype alignment improves SAR classification accuracy over frozen DINOv3, SAR only finetuning and unpaired distribution alignment baselines, and t-SNE visualizations provide qualitative evidence of clearer separation among classes in the trained SAR embedding space. These results suggest that optical vision foundation models, despite being trained on visible spectrum imagery, provide transferable information for SAR image classification, offering a practical method for using large scale pretrained vision foundation models across challenging sensing modalities.",
+      "summary_zh": "论文提出一种跨模态EO到SAR原型对齐框架，使用在光学数据上预训练的冻结DINOv3视觉基础模型构建类别级光学原型，无需严格的EO/SAR配对。SAR模型在分类时将其嵌入与对应的光学原型对齐。在UNICORNv2数据集上，该方法在SAR图像分类准确率上优于冻结DINOv3、仅SAR微调和未配对分布对齐基线，t-SNE可视化也显示SAR嵌入空间中类别分离更清晰。",
+      "insight_zh": "光学视觉基础模型尽管在可见光谱上训练，但其特征能提供可迁移的类别级监督信息，用于提升SAR图像分类性能，为利用大规模预训练模型进行跨模态遥感分析提供了实用方法。"
+    },
+    {
+      "key": "arxiv:2609.07685",
+      "title": "CrowdTraj: A Benchmark for Dense Crowd Trajectory Prediction in Realistic Crowded Environments",
+      "title_zh": "CrowdTraj：真实拥挤环境中密集人群轨迹预测的基准",
+      "url": "https://arxiv.org/abs/2609.07685",
+      "doi": "",
+      "arxiv_id": "2609.07685",
+      "authors": [
+        "Antonius Bima Murti Wijaya",
+        "Paul Henderson",
+        "Marwa Mahmoud"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T16:06:24+00:00",
+      "score": 95,
+      "reason": "该研究提出了一个在真实密集场景下从检测到跟踪再到轨迹预测的端到端基准，与GIS博士研究中涉及的视频遥感、人群动态分析和城市公共安全高度相关。",
+      "tags": [
+        "行人轨迹预测",
+        "密集人群",
+        "基准数据集",
+        "目标检测与跟踪",
+        "CCTV"
+      ],
+      "abstract": "In real-world applications, pedestrian trajectory prediction models rely on inputs from detection and tracking systems. Prior trajectory prediction benchmarks either contain relatively sparse pedestrian interactions, assume perfect tracking inputs, or rely on overhead viewpoints that minimize occlusion and perspective distortion, limiting evaluation in realistic dense-crowd scenarios. We present CrowdTraj, a benchmark for pedestrian trajectory prediction in natural dense crowd scenes. Unlike previous datasets, CrowdTraj supports end-to-end evaluation from detection through tracking to trajectory prediction under severe occlusion in CCTV views. It also captures diverse, natural pedestrian behaviours, including abrupt directional changes rarely observed in existing benchmarks. CrowdTraj includes five diverse scenes, with an average of 1,146 unique pedestrians per scene, maximum frame-level densities ranging from 114 to 372 pedestrians, and over 3.2 million annotated head bounding boxes. CrowdTraj provides pixel and real-world coordinates via per-scene homography matrices for physically meaningful analysis. Our experimental results show that tracking accuracy (IDF1) drops to 0.68 to 0.70 in the densest scenes, compared with approximately 0.90 in less crowded scenes. Trajectory prediction training also becomes substantially more computationally expensive in dense scenes, with training times increasing by up to 8 times. These findings show that CrowdTraj exposes limitations in current trajectory prediction pipelines that remain hidden on existing sparse-crowd benchmarks, particularly in robustness to tracking noise and computational scalability.",
+      "summary_zh": "提出了CrowdTraj基准，用于在自然密集人群场景中进行行人轨迹预测。该基准支持在CCTV视角下从检测到跟踪再到预测的端到端评估，包含5个场景，平均每个场景有1146个行人，并提供了像素和真实世界坐标。实验揭示了在密集场景下跟踪精度下降和训练成本剧增的问题。",
+      "insight_zh": "现有的轨迹预测模型在密集、遮挡严重的真实场景下性能会显著下降，这暴露了当前基准在评估端到端鲁棒性方面的不足。"
+    },
+    {
+      "key": "arxiv:2609.07349",
+      "title": "Inferring Urban Mobility Interactions from Aggregated Dynamics",
+      "title_zh": "从聚合动态推断城市移动交互",
+      "url": "https://arxiv.org/abs/2609.07349",
+      "doi": "",
+      "arxiv_id": "2609.07349",
+      "authors": [
+        "Yi Wang",
+        "Jing Li",
+        "Jinliang Deng",
+        "Zhenghong Wang",
+        "Yizhi Zhang",
+        "Fan Zhang",
+        "Ivor W. Tsang",
+        "Yu Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T11:13:51+00:00",
+      "score": 95,
+      "reason": "直接从聚合计数推断OD流动矩阵，是城市时空数据挖掘的核心问题，与GIS博士研究方向高度契合。",
+      "tags": [
+        "城市流动性",
+        "OD矩阵推断",
+        "物理信息框架",
+        "聚合数据",
+        "时空数据挖掘"
+      ],
+      "abstract": "Real-time urban governance depends not only on knowing where people are, but on how they move between places, directional flows that could be conventionally resolved by tracking individuals through space, i.e., expensive to sustain and built on traces that are highly unique and readily re-identifiable. Here we show that this directional structure need not be observed to be known: aggregated counts which cities already collect retain enough information to reconstruct the temporal evolution of origin-destination (OD) matrix. Using an uncertainty-aware physics-informed framework, we infer future OD flows from area-level counts alone across twelve mobility datasets from cities in the United States and China, reaching accuracy comparable to models that take historical OD matrices as input. Probabilistic modeling corrects the systematic underestimation of sparse, high-value corridors and yields calibrated predictions consistent with observed flows. Architectures that respect the generation-before-assignment logic of transport planning recover interactions more faithfully, indicating that location-level spatial heterogeneity should be preserved before pairwise interactions are reconstructed. Because inference requires only aggregated observations after training, recovering interactions this way reduces reliance on continuous individual-level tracking, pointing toward a more deployable and less exposure-heavy basis for real-time urban intelligence.",
+      "summary_zh": "提出不确定性感知的物理信息框架，仅从区域级计数推断未来OD流。在12个城市数据集上达到与使用历史OD矩阵模型相当的精度，并纠正了稀疏高价值走廊的系统性低估。",
+      "insight_zh": "尊重交通规划中生成-分配逻辑的架构能更忠实恢复交互，表明位置级空间异质性应在重建成对交互前保留。"
+    },
+    {
+      "key": "arxiv:2609.06475",
+      "title": "Thinking with Cameras: Active Visual Reasoning via Dynamic Viewpoint Control for Surveillance Video Understanding",
+      "title_zh": "用摄像机思考：通过动态视角控制实现监控视频理解的主动视觉推理",
+      "url": "https://arxiv.org/abs/2609.06475",
+      "doi": "",
+      "arxiv_id": "2609.06475",
+      "authors": [
+        "Xiao Zhang",
+        "Wang Zeng",
+        "Sheng Jin",
+        "Wentao Liu",
+        "Chen Qian",
+        "Shichao Kan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-06T08:48:02+00:00",
+      "score": 95,
+      "reason": "该研究聚焦于监控视频理解，通过动态视角控制实现主动视觉推理，与城市更新中的智能监控、公共安全及多源数据融合高度相关。其提出的数据集构建方法和强化学习框架对时空数据挖掘和地理空间智能具有重要参考价值。",
+      "tags": [
+        "视频理解",
+        "视觉语言模型",
+        "主动视觉",
+        "强化学习",
+        "异常检测",
+        "监控视频"
+      ],
+      "abstract": "Large vision-language models (LVLMs) have recently achieved remarkable progress in general-purpose video understanding. However, their application to surveillance videos remains challenging due to the lack of large-scale domain-specific datasets and the limitation of passive observation from fixed viewpoints. In surveillance scenarios, critical visual evidence can be easily missed when targets are distant, small, occluded, or move beyond the current camera view. In this work, we introduce CamVLM, a new framework for Thinking with Cameras, which enables LVLMs to actively acquire visual evidence through dynamic viewpoint control rather than passively analyzing fixed video streams. We first construct CCTV-Anomaly, a large-scale surveillance video understanding dataset containing 14,459 videos across 10 anomaly categories, with detailed captions and event annotations. We further formulate viewpoint control as an active visual perception problem and build CamTrack-53K, an object-centric viewpoint trajectory dataset for learning camera actions. Moreover, we propose a reinforcement learning based viewpoint policy optimization framework, which models camera control as a sequential decision-making process and learns long-horizon observation strategies beyond supervised trajectory imitation. Extensive experiments demonstrate that CamVLM achieves state-of-the-art performance under both passive observation and dynamic viewpoint settings, validating the effectiveness of active camera-based reasoning for surveillance video understanding. Our datasets, model, and code will be available at https://github.com/xiaozhang79/CamVLM .",
+      "summary_zh": "本文提出CamVLM框架，使大型视觉语言模型(LVLM)能够通过动态视角控制主动获取视觉证据，而非被动分析固定视频流。作者构建了包含14,459个视频、10个异常类别的大规模监控视频理解数据集CCTV-Anomaly，以及用于学习摄像机动作的物体中心视角轨迹数据集CamTrack-53K。此外，提出基于强化学习的视角策略优化框架，将摄像机控制建模为序列决策过程。实验表明CamVLM在被动观察和动态视角设置下均达到最先进性能。",
+      "insight_zh": "将摄像机控制视为主动感知问题，可为城市环境中的动态目标追踪和异常事件检测提供新思路，其强化学习框架有望应用于智能摄像头的自适应调度。"
+    },
+    {
+      "key": "arxiv:2609.05953",
+      "title": "ProtoRAG: Prototype-Based Retrieval Augmentation for Few-Shot Fine-Grained Remote Sensing Object Detection",
+      "title_zh": "ProtoRAG：基于原型的检索增强用于少样本细粒度遥感目标检测",
+      "url": "https://arxiv.org/abs/2609.05953",
+      "doi": "",
+      "arxiv_id": "2609.05953",
+      "authors": [
+        "Jian Wang",
+        "Yuxiang Hong",
+        "Chufeng Zhou",
+        "Chao Pang",
+        "Xiaokang Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-05T07:40:19+00:00",
+      "score": 95,
+      "reason": "该研究直接针对遥感影像中的少样本细粒度目标检测问题，结合了多模态大模型和原型检索增强，与博士研究方向中的遥感变化检测和地理空间智能高度契合，具有很高的相关性。",
+      "tags": [
+        "少样本细粒度目标检测",
+        "遥感影像",
+        "检索增强",
+        "原型学习",
+        "多模态大模型"
+      ],
+      "abstract": "Few-shot fine-grained object detection (FGOD) in remote sensing imagery is challenging because limited annotations must support both object localization and discrimination among visually similar subcategories. Although multimodal large language models (MLLMs) provide strong coarse object localization, they lack explicit visual evidence for reliable fine-grained recognition. To address this limitation, we propose ProtoRAG, a prototype-based retrieval-augmented framework that decouples coarse localization from fine-grained recognition by equipping MLLMs with an external object-level visual memory. To construct a reliable visual memory from limited support samples, we introduce Discriminative Prototype Space Learning (DPSL), which encourages discriminative and prototype-stable representations through supervised contrastive learning and prototype-consistency regularization. We further develop an uncertainty-guided candidate-constrained reasoning strategy that augments MLLMs with retrieved candidate-specific visual references and invokes multimodal reasoning only for ambiguous instances. Extensive experiments show that ProtoRAG consistently surpasses representative baselines in nine few-shot settings, outperforming the strongest baselines by 14.80, 2.27, and 4.04 mAP$_{50}$ on MAR20, HRSC2016, and FAIR1M-2.0, respectively.",
+      "summary_zh": "提出ProtoRAG框架，通过为多模态大模型配备外部对象级视觉记忆，将粗略定位与细粒度识别解耦。引入判别性原型空间学习，利用监督对比学习和原型一致性正则化构建可靠的视觉记忆。并开发了不确定性引导的候选约束推理策略，仅对模糊实例调用多模态推理。在MAR20、HRSC2016和FAIR1M-2.0上，ProtoRAG在九个少样本设置中均优于最强基线。",
+      "insight_zh": "通过原型检索增强多模态大模型，有效解决了少样本条件下细粒度遥感目标识别中视觉证据不足的问题，为MLLM在遥感领域的应用提供了新范式。"
+    },
+    {
+      "key": "arxiv:2609.05762",
+      "title": "AAMBERS-UAV: Acquisition-Aware Multimodal Backbone Evaluation and Ranking for UAV Weedy Rice Segmentation",
+      "title_zh": "AAMBERS-UAV：用于无人机杂草水稻分割的采集感知多模态骨干评估与排名",
+      "url": "https://arxiv.org/abs/2609.05762",
+      "doi": "",
+      "arxiv_id": "2609.05762",
+      "authors": [
+        "Tarek Rahman",
+        "Nazim-E-Alam",
+        "Md Kishor Morol",
+        "Jannatun Noor"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T22:54:01+00:00",
+      "score": 95,
+      "reason": "该研究直接针对无人机遥感图像语义分割的基准评估协议问题，提出采集感知评估方法，对遥感图像分割和变化检测的模型评估具有重要方法论贡献。",
+      "tags": [
+        "无人机遥感",
+        "语义分割",
+        "多模态",
+        "基准评估",
+        "采集感知",
+        "杂草分割"
+      ],
+      "abstract": "UAV image collections contain spatially and temporally related frames, yet semantic-segmentation benchmarks commonly split them at image level. Such splitting can place samples from one acquisition in both model development and testing, obscuring transfer to a genuinely new survey. Using the 734-sample WeedyRice-RGBMS-DB, we fix a 124-image target-acquisition test set and compare two protocols with identical train, validation, and test counts: target-held-out, which excludes the target acquisition from development, and target-exposed, which admits its remaining images. SegFormer-B0 is evaluated with RGB, four-band multispectral (MS), and seven-channel RGB+MS input over two fixed-split seeds. RGB is strongest under complete acquisition holdout ($0.7317\\pm0.0201$ IoU), whereas RGB+MS becomes strongest after target exposure ($0.7822\\pm0.0269$). A fixed-split U-Net/ResNet18 replication confirms positive exposure gains for all three inputs, but retains RGB as the best modality under both protocols. Acquisition exposure therefore increases measured performance across both evaluated backbones, while its effect on modality ranking is architecture-dependent. A supplied-split audit reveals strong near-sequential dependence, and corruption tests show that early fusion is substantially more sensitive to RGB--MS displacement than to moderate radiometric scaling. These results support acquisition-aware same-test evaluation as a necessary complement to ordinary image-level splitting in multimodal UAV benchmarks. The code and supporting the findings of this study will be publicly released upon acceptance of the paper.",
+      "summary_zh": "针对UAV图像语义分割基准中图像级划分导致的数据泄漏问题，提出采集感知评估协议，在WeedyRice-RGBMS-DB上比较不同模态和骨干，发现采集暴露会提升性能但影响模态排名。",
+      "insight_zh": "在遥感多模态基准中，采用采集感知的评估协议是必要的，它能更真实地反映模型对全新调查的泛化能力，且模态选择的效果可能依赖于模型架构。"
+    },
+    {
+      "key": "arxiv:2609.05761",
+      "title": "GeoContext: One Context Ladder, Two Failure Modes in Vision-Language Geolocation: Flat Reliance on User-Provided Location Context and False Confirmation of Location Claims",
+      "title_zh": "GeoContext：视觉语言地理定位中的一个上下文阶梯与两种失败模式：对用户提供位置上下文的扁平依赖与对位置声明的错误确认",
+      "url": "https://arxiv.org/abs/2609.05761",
+      "doi": "",
+      "arxiv_id": "2609.05761",
+      "authors": [
+        "Yifan Zhang",
+        "Kai Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T22:52:31+00:00",
+      "score": 95,
+      "reason": "论文研究视觉语言模型的地理定位能力，并构建了考虑用户提供位置上下文的基准，与地理空间智能高度相关。",
+      "tags": [
+        "视觉定位",
+        "VLM",
+        "基准测试",
+        "地理空间智能"
+      ],
+      "abstract": "Visual geolocation benchmarks typically ask a model where an image was captured without accounting for the location context that users often provide. We introduce GeoContext, a resource supporting two complementary tasks: GeoHint, open-ended localization given a true but coarse location hint, and GeoVerify, binary verification of whether an image was taken within 150 m of a claimed place. GeoContext constructs a context ladder by stratifying nearby reference points according to distance and referenceability, allowing the image to remain fixed while the supplied context varies. The benchmark covers 109 sites in 30 cities and evaluates five vision-language models using 21,933 GeoHint responses and 6,270 GeoVerify responses. Our evaluation reveals three main patterns. First, hint repetition varies by only 1.5 percentage points across referenceability tiers and by less than 3 points across distance bands, while the resulting localization error increases steadily with hint distance. Second, behavior depends strongly on no-context performance: at sites with low no-context accuracy, the median ratio between localization error and hint distance is approximately 1.00, whereas at higher-accuracy sites it ranges from 0.24 to 0.69. After correcting for bias introduced by the site grouping procedure, only one of the five models retains a negative accuracy estimate when given a nearby hint. Third, in GeoVerify, no model reaches d' = 1 for decoys immediately beyond the 150 m tolerance. Model rankings also change when sensitivity is separated from response bias, and 83.8% of false acceptances are reported with confidence of at least 0.8. We release the benchmark, construction pipeline, audit decisions, and scoring code.",
+      "summary_zh": "视觉地理定位基准通常要求模型判断图像拍摄地点，而不考虑用户经常提供的位置上下文。作者引入了GeoContext，支持两个任务：GeoHint（给定真实但粗略的位置提示进行开放式定位）和GeoVerify（二元验证图像是否在声明地点150米内拍摄）。基准覆盖30个城市的109个地点，评估了五个视觉语言模型。结果揭示了三种主要模式：提示重复率变化不大，但定位误差随提示距离增加；模型行为强烈依赖于无上下文性能；在GeoVerify中，没有模型在150米容差之外的诱饵上达到d'=1。",
+      "insight_zh": "该研究揭示了VLM在利用用户提供的位置上下文时存在两种失败模式：一是对提示距离的扁平依赖，导致定位误差随距离增加；二是对位置声明的错误确认，模型在验证任务中表现不佳，且其排名会因区分敏感性和响应偏差而改变。"
+    },
+    {
+      "key": "arxiv:2609.05744",
+      "title": "Gaussian Linear Functional Manifold Method for Massive Point Cloud Data",
+      "title_zh": "面向海量点云数据的高斯线性函数流形方法",
+      "url": "https://arxiv.org/abs/2609.05744",
+      "doi": "",
+      "arxiv_id": "2609.05744",
+      "authors": [
+        "Hong Zhao",
+        "Tonglin Zhang",
+        "Baijian Yang",
+        "Jin Wei-Kocsis",
+        "and Songlin Fei"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T21:43:16+00:00",
+      "score": 95,
+      "reason": "论文直接针对大规模机载LiDAR点云数据的地形重建与地面点滤波问题，属于遥感变化检测和地理空间智能的核心范畴，与GIS博士研究方向高度契合。",
+      "tags": [
+        "LiDAR点云",
+        "地形重建",
+        "高斯过程",
+        "SVD",
+        "物理信息统计模型",
+        "地表形态"
+      ],
+      "abstract": "Reconstructing continuous terrain manifolds from massive, unstructured airborne LiDAR point clouds remains challenging in complex Wildland-Urban Interface (WUI) environments, where deep neural networks require costly point-wise annotations and nonparametric surface reconstruction methods often lack structural interpretability. This paper introduces the Gaussian Linear Functional Manifold (GLFM), a physics-informed statistical framework that represents continuous surface topography using deterministic linear functional bases while modeling microscale diffuse laser backscatter as an isotropic Gaussian process. To avoid the quadratic computational cost of exact constrained maximum likelihood estimation, we develop an algebraic singular value decomposition (SVD) rank-reduction algorithm that enables linear-time parameter estimation and closed-form quadric classification. Evaluated on 35.2 km^2 of real-world aerial LiDAR data, GLFM automatically filters ground points and extracts morphological features, achieving an adjusted Rand index (ARI) of 0.9933 against field-verified ground truth and outperforming four leading baselines while maintaining an out-of-core memory footprint. The framework provides a rigorous, interpretable, and scalable foundation for large-scale point cloud analytics.",
+      "summary_zh": "提出高斯线性函数流形（GLFM），一种物理信息统计框架，用确定性线性函数基表示连续地表地形，并将微观漫射激光后向散射建模为各向同性高斯过程。开发了基于SVD的秩缩减算法，实现线性时间参数估计和闭式二次曲面分类。在35.2平方公里的真实机载LiDAR数据上，GLFM自动过滤地面点并提取形态特征，调整兰德指数达0.9933，优于四种主流基线，且内存占用为核外模式。",
+      "insight_zh": "将物理信息与统计模型结合，并利用SVD秩缩减实现线性时间算法，为大规模点云数据的可解释、可扩展分析提供了新思路，有望应用于复杂城市环境的地形重建。"
+    },
+    {
+      "key": "arxiv:2609.05523",
+      "title": "Infrastructure-based Monocular 3D Vehicle Localization Framework with Experimental Validation",
+      "title_zh": "基于基础设施的单目3D车辆定位框架及实验验证",
+      "url": "https://arxiv.org/abs/2609.05523",
+      "doi": "",
+      "arxiv_id": "2609.05523",
+      "authors": [
+        "Akos T. Kopeczi-Bocz",
+        "Tian Mi",
+        "Gabor Orosz",
+        "Denes Takacs"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-01T09:21:14+00:00",
+      "score": 95,
+      "reason": "论文提出基于路侧单目相机直接估计车辆3D状态（位置、尺寸、航向角）的框架，是基础设施感知与智能交通领域的核心研究，与GIS博士研究方向中的多源数据融合和地理空间智能高度相关。",
+      "tags": [
+        "单目3D定位",
+        "路侧感知",
+        "基础设施",
+        "深度学习",
+        "智能交通"
+      ],
+      "abstract": "This paper presents a one-stage learning framework that maps monocular roadside-camera images directly to vehicle states in a ground-fixed coordinate frame. Unlike conventional approaches that first detect vehicles in the image plane and subsequently apply geometric post-processing, the proposed method leverages features from a pretrained object detector to jointly estimate each vehicle's ground-plane position, dimensions, and yaw angle. The framework therefore uses visual features not only for vehicle detection but also for direct spatial and orientation estimation. To support model training and evaluation, we develop a data-collection and label-generation pipeline based on synchronized video from a roadside camera and an unmanned aerial vehicle (UAV). Acting as a temporary top-view sensing platform, the UAV provides vehicle trajectories, dimensions, and orientations, which are transformed into the ground-fixed coordinate frame and temporally aligned with the roadside-camera images to generate ground-truth labels. The framework is evaluated using data collected during multiple experiments at the Mcity Test Facility. Results show that the proposed method can recover vehicle trajectories and orientations from monocular roadside imagery without a separate geometric post-processing stage, demonstrating its potential as a scalable approach to infrastructure-based perception at urban intersections.",
+      "summary_zh": "本文提出一种单阶段学习框架，将路侧单目相机图像直接映射到地面固定坐标系中的车辆状态，无需先检测后几何后处理的传统流程。框架利用预训练目标检测器的特征联合估计车辆的地面位置、尺寸和航向角。作者开发了基于路侧相机和无人机同步视频的数据采集与标签生成流程，并在Mcity试验场进行了实验验证。",
+      "insight_zh": "利用预训练检测器的特征直接回归车辆3D状态，可简化传统感知流程，为城市交叉口的规模化基础设施感知提供了一种可扩展方案。"
+    },
+    {
+      "key": "arxiv:2602.00110",
+      "title": "Observing Health Outcomes Using Remote Sensing Imagery and Geo-Context Guided Visual Transformer",
+      "title_zh": "利用遥感影像和地理上下文引导的视觉Transformer观测健康结果",
+      "url": "https://arxiv.org/abs/2602.00110",
+      "doi": "",
+      "arxiv_id": "2602.00110",
+      "authors": [
+        "Yu Li",
+        "Guilherme N. DeSouza",
+        "Praveen Rao",
+        "Chi-Ren Shyu"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "该研究结合遥感影像和地理上下文用于健康结果观测，是典型的遥感与社会科学交叉研究，与博士研究方向中的多源数据融合和地理空间智能高度契合。",
+      "tags": [
+        "遥感",
+        "健康",
+        "视觉Transformer",
+        "地理上下文",
+        "多源数据融合"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该文摘要为空，但标题表明其研究内容是利用遥感影像和地理上下文信息，通过视觉Transformer模型来观测或预测健康结果。",
+      "insight_zh": "将遥感衍生的环境特征与地理上下文结合，为健康地理学研究提供了新的数据驱动视角。"
+    },
+    {
+      "key": "arxiv:2607.25524",
+      "title": "ReLATE: Reliability-Guided Evidence Fusion for Robust UAV--Satellite cross-view Geo-Localization",
+      "title_zh": "ReLATE：可靠性引导的证据融合用于鲁棒的无人机-卫星跨视角地理定位",
+      "url": "https://arxiv.org/abs/2607.25524",
+      "doi": "",
+      "arxiv_id": "2607.25524",
+      "authors": [
+        "Haochen Jiang",
+        "Jialei Pan",
+        "Yuzhe Sun",
+        "Zhe Dong",
+        "Lecheng Ren",
+        "Yanfeng Gu",
+        "Tianzhu Liu"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "无人机与卫星跨视角地理定位是遥感与地理空间智能的核心方向，可靠性引导的证据融合方法对多源数据融合研究有直接借鉴意义。",
+      "tags": [
+        "UAV-Satellite",
+        "跨视角地理定位",
+        "证据融合",
+        "可靠性",
+        "多源数据"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出ReLATE框架，通过可靠性引导的证据融合策略，增强无人机与卫星跨视角地理定位的鲁棒性。",
+      "insight_zh": "在跨视角定位中显式建模证据可靠性可有效应对视角差异和噪声，提升定位精度，对空地协同感知有重要价值。"
+    },
+    {
+      "key": "arxiv:2603.05581",
+      "title": "Spatiotemporal Heterogeneity of AI-Driven Traffic Flow Patterns and Land Use Interaction: A GeoAI-Based Analysis of Multimodal Urban Mobility",
+      "title_zh": "AI驱动的交通流模式与土地利用交互的时空异质性：基于GeoAI的多模式城市流动性分析",
+      "url": "https://arxiv.org/abs/2603.05581",
+      "doi": "",
+      "arxiv_id": "2603.05581",
+      "authors": [
+        "Olaf Yunus Laitinen Imanov"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 95,
+      "reason": "论文直接涉及GeoAI、时空异质性、交通流模式与土地利用交互，与GIS博士研究方向高度契合。",
+      "tags": [
+        "GeoAI",
+        "时空数据",
+        "土地利用",
+        "交通流",
+        "城市流动性"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "该研究利用GeoAI方法分析多模式城市流动性中AI驱动的交通流模式与土地利用之间的时空异质性交互。",
+      "insight_zh": "该研究可能揭示不同土地利用类型对交通流模式影响的时空变化规律，为城市更新中的交通规划提供数据驱动见解。"
+    },
+    {
+      "key": "arxiv:2512.23243",
+      "title": "RAH-VLA: Resolution-Adaptive Hierarchical Vision-Language Alignment for Multimodal Remote Sensing Understanding",
+      "title_zh": "RAH-VLA：用于多模态遥感理解的分辨率自适应层次化视觉语言对齐",
+      "url": "https://arxiv.org/abs/2512.23243",
+      "doi": "",
+      "arxiv_id": "2512.23243",
+      "authors": [
+        "Siyu Zhang",
+        "Lianlei Shan",
+        "Runhe Qiu",
+        "and Wenxin Zhong"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 92,
+      "reason": "该研究直接针对多模态遥感理解，提出分辨率自适应的层次化视觉语言对齐方法，与博士研究方向中的多源数据融合和地理空间智能高度相关。",
+      "tags": [
+        "遥感理解",
+        "视觉语言对齐",
+        "分辨率自适应",
+        "多模态大模型",
+        "层次化模型"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，无法提供详细信息。",
+      "insight_zh": "该研究关注遥感影像中不同分辨率下的视觉语言对齐问题，旨在通过层次化结构提升多模态模型对遥感数据的理解能力。"
+    },
+    {
+      "key": "arxiv:2609.09005",
+      "title": "DXPR: Depth-Based Vision-LiDAR Cross-Modal Place Recognition Using Vision Foundation Models",
+      "title_zh": "DXPR：基于视觉基础模型的深度视觉-LiDAR跨模态位置识别",
+      "url": "https://arxiv.org/abs/2609.09005",
+      "doi": "",
+      "arxiv_id": "2609.09005",
+      "authors": [
+        "Yungsoo Han",
+        "Youngseok Jang",
+        "Seungwon Roh",
+        "Jeongyeon Seo",
+        "H. Jin Kim"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T16:42:47+00:00",
+      "score": 90,
+      "reason": "该研究提出一种基于深度图像的跨模态位置识别框架，利用视觉基础模型匹配单目相机与LiDAR地图，与多源数据融合和地理空间智能高度相关。",
+      "tags": [
+        "跨模态匹配",
+        "视觉基础模型",
+        "LiDAR",
+        "位置识别",
+        "深度图像",
+        "机器人定位"
+      ],
+      "abstract": "We present DXPR, a depth-based cross-modal place recognition (CMPR) framework that uses vision foundation models (VFMs) to match monocular camera queries against a LiDAR map without modality-specific encoders. This enables robots and autonomous vehicles to robustly localize using only cameras within pre-built LiDAR maps, even under severe seasonal, weather, and illumination changes. The key idea is to convert both camera images and LiDAR scans into a unified depth image representation so that a single VFM backbone with an aggregation head can learn modality-invariant global descriptors. To make pairwise metric learning faithful to scene geometry, we introduce a geometry-aware overlap miner: after cross-modal scale alignment of camera and LiDAR depth, we forward-warp measurements between views to compute a pixel-level overlap score. This score relabels ambiguous pairs and adaptively modulates the positive margin in a multi-similarity loss to avoid overfitting on weakly overlapping views. Extensive experiments on KITTI odometry and Boreas demonstrate strong performance and robustness across seasons, weather, and day/night. On KITTI, DXPR achieves near-perfect Recall@1 on most sequences and outperforms prior CMPR baselines. On Boreas, DXPR achieves intra-sequence performance on par with a strong single-modal baseline (DINOv2-SALAD), while showing clear improvements in the more challenging inter-sequence setting. Compared with RangeBEV, our method consistently performs better in both intra- and inter-sequence evaluations, demonstrating robustness under diverse seasonal and illumination changes.",
+      "summary_zh": "提出DXPR框架，通过将相机图像和LiDAR扫描统一为深度图像表示，使用视觉基础模型学习模态不变的全局描述符，实现仅用相机在LiDAR地图中鲁棒定位。引入几何感知重叠挖掘器，通过跨模态尺度对齐和前向扭曲计算像素级重叠分数，以优化度量学习。在KITTI和Boreas数据集上验证了跨季节、天气和昼夜变化的鲁棒性。",
+      "insight_zh": "将不同模态数据转换为统一深度图像表示，是消除模态差异、利用单一基础模型进行跨模态匹配的有效策略，为多源地理数据融合提供了新思路。"
+    },
+    {
+      "key": "arxiv:2609.08777",
+      "title": "AXS-Net: Interpretable Deep Unfolding for Hyperspectral Image Denoising via Spectral Basis Unmixing and Structured Noise Refinement",
+      "title_zh": "AXS-Net：通过光谱基解混和结构噪声细化实现可解释的高光谱图像去噪深度展开",
+      "url": "https://arxiv.org/abs/2609.08777",
+      "doi": "",
+      "arxiv_id": "2609.08777",
+      "authors": [
+        "Ziyi Guan",
+        "Jianping Zhang",
+        "Zheng Yang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T14:10:50+00:00",
+      "score": 90,
+      "reason": "该研究针对高光谱图像去噪，提出了一种基于深度展开的可解释网络，将信号与结构噪声分离。这与遥感图像预处理和变化检测高度相关，其将优化问题展开为网络结构的方法对构建可解释的遥感深度学习模型具有重要参考价值。",
+      "tags": [
+        "高光谱图像去噪",
+        "深度展开",
+        "光谱解混",
+        "结构噪声",
+        "可解释深度学习"
+      ],
+      "abstract": "Hyperspectral images (HSIs) are often degraded by mixed noise, including band-dependent Gaussian perturbations and structured artifacts such as stripes, dead-lines, and impulse noise. Most deep denoisers regress the clean image directly, entangling signal and structured noise. We instead model HSI denoising as $\\Y=\\A\\X+\\Snoise+\\Nnoise$, where $\\A\\X$ is a low-rank spectral-subspace (unmixing) reconstruction, $\\Snoise$ is structured sparse noise and $\\Nnoise$ is residual Gaussian noise. The resulting regularized optimization problem is unrolled into AXS-Net, a $K$-stage alternating proximal-point framework. Each stage combines an analytic spectral-basis gradient step, an SSX-Block proximal operator for abundance coefficients, and an SBlock proximal operator for the structured residual with column-consistent and sparse priors. This optimization correspondence exposes interpretable endmembers, abundance maps, and structured-noise estimates. Across ICVL, CAVE, and Harvard datasets and five noise configurations, the proposed AXS-Net achieves strong in-domain accuracy and competitive zero-shot transfer, with consistent gains across all five noise regimes on ICVL and Harvard. The recovered structured-noise closely follows the synthetic reference, and the recovered spectral basis is smooth and band-ordered rather than an arbitrary set of latent channels.",
+      "summary_zh": "该研究将高光谱图像去噪建模为低秩光谱子空间重建、结构化稀疏噪声和残差高斯噪声的组合，并将该正则化优化问题展开为K阶段交替近端框架AXS-Net。网络每阶段包含解析光谱基梯度步、丰度系数近端算子和结构残差近端算子。在ICVL、CAVE和Harvard数据集上的实验表明，AXS-Net在多种噪声配置下取得了优异的域内精度和具有竞争力的零样本迁移性能，且恢复的结构噪声和光谱基具有明确的可解释性。",
+      "insight_zh": "该研究展示了将物理模型与深度学习相结合以实现可解释和高性能遥感图像处理的有效性，其深度展开策略为处理其他遥感逆问题（如融合、超分辨率）提供了可借鉴的范式。"
+    },
+    {
+      "key": "arxiv:2609.08659",
+      "title": "TriCCOT: Tri-part Convolutional Conformal Transformer for Onboard Space Object Detection",
+      "title_zh": "TriCCOT：用于星载空间目标检测的三部分卷积共形Transformer",
+      "url": "https://arxiv.org/abs/2609.08659",
+      "doi": "",
+      "arxiv_id": "2609.08659",
+      "authors": [
+        "Adrien Dorise",
+        "Marjorie Bellizzi",
+        "Julia Cohen",
+        "St\\'ephane May"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T12:26:55+00:00",
+      "score": 90,
+      "reason": "论文针对星载地球观测中的目标检测，提出一种硬件友好的三部分架构TriCCOT，解决计算资源受限和原始数据噪声问题。这与遥感领域中的星载实时处理、边缘计算和硬件部署高度相关，对资源受限环境下的遥感应用有直接参考价值。",
+      "tags": [
+        "目标检测",
+        "星载处理",
+        "FPGA",
+        "卷积网络",
+        "Transformer",
+        "不确定性"
+      ],
+      "abstract": "Onboard object detection in Earth observation is constrained by limited computational resources and the absence of fully corrected imagery. While convolutional detectors are hardware-efficient, they often struggle to extract robust representations from raw and noisy data. Conversely, transformer-based models provide stronger global reasoning capabilities but remain difficult to deploy on FPGA accelerators due to quadratic attention complexity and non-compatible operations. We introduce TriCCOT, a tri-part architecture for robust and deployable onboard object detection. TriCCOT combines a convolutional region proposal network, a conformal prediction stage, and Aper-GATES, our hardware-friendly attention-based classifier. The region proposal network generates candidate bounding boxes, which are subsequently enlarged via conformal prediction, providing a distribution-free probabilistic coverage guarantee. The resulting crops are processed by Aper-GATES, which reformulates self-attention through convolutional projections, global channel statistics, and hardware-friendly gating operations, avoiding standard transformer operations that are poorly suited to CNN-oriented accelerators. Experiments on the DIOR and VDVRaw datasets demonstrate competitive detection performance and improved robustness to spatial blur and signal-dependent noise when compared to FPGA-compatible architectures. Finally, we report full deployment on a Xilinx Versal VCK190 FPGA without modifying the underlying DPU architecture, enabling unified CNN-Transformer inference for spaceborne embedded applications.",
+      "summary_zh": "论文提出TriCCOT，一种用于星载目标检测的三部分架构，结合卷积区域提议网络、共形预测阶段和硬件友好的注意力分类器Aper-GATES。区域提议网络生成候选框，并通过共形预测进行扩大，提供无分布的覆盖保证。Aper-GATES通过卷积投影、全局通道统计和门控操作重新构建自注意力，避免使用不适合CNN加速器的标准Transformer操作。在DIOR和VDVRaw数据集上展示了有竞争力的检测性能和鲁棒性，并在Xilinx Versal VCK190 FPGA上完成了部署。",
+      "insight_zh": "通过将卷积网络的高效性与重新设计的注意力机制相结合，可以在FPGA等边缘设备上实现鲁棒的Transformer风格推理，为星载或资源受限平台上的智能遥感应用提供了可行路径。"
+    },
+    {
+      "key": "arxiv:2609.08572",
+      "title": "AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems",
+      "title_zh": "AgentGrad：基于干预引导的多智能体系统提示词优化",
+      "url": "https://arxiv.org/abs/2609.08572",
+      "doi": "",
+      "arxiv_id": "2609.08572",
+      "authors": [
+        "Jaewon Chu",
+        "Jinwoo Seo",
+        "Jaewon Cho",
+        "Jeehye Na",
+        "Yunyang Xiong",
+        "Youngdae Kim",
+        "Hyunwoo J. Kim"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T11:07:04+00:00",
+      "score": 90,
+      "reason": "论文提出针对多智能体系统的提示词优化框架，与LLM和多智能体研究方向高度相关，其顺序干预和语义梯度抽象方法对地理空间智能中的多智能体协作具有借鉴意义。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "提示词优化",
+        "文本梯度",
+        "AgentGrad"
+      ],
+      "abstract": "Large language model (LLM)-based multi-agent systems (MAS) achieve strong performance by employing specialized multiple agents, yet their performance depends on the prompt design of each agent. For MAS prompt optimization, textual gradient methods that guide prompt updates using natural-language feedback have emerged as a leading paradigm. In this paper, we identify limitations in two stages of existing textual gradient approaches: gradient extraction and gradient aggregation. In gradient extraction, previous works select a target prompt without verifying whether modifying it resolves the failure, and derive gradients without agent-level supervision over the corresponding agent's intermediate output. In gradient aggregation, individual gradients are randomly grouped and concatenated, often mixing unrelated failure modes and producing prompts that fail to generalize. To address these limitations, we propose \\textbf{AgentGrad}, a prompt optimization framework for multi-agent systems based on sequential intervention and semantic textual gradient abstraction. For each failure, sequential intervention modifies the behavior of one agent at a time to identify the target agent whose modification resolves the failure. The modified output of the target agent then serves as agent-level supervision for extracting a fine-grained gradient. Semantic textual gradient abstraction clusters semantically similar gradients to prevent mixing unrelated failure modes, and abstracts each cluster into a generalized gradient that captures the shared corrective pattern. Experimental results show that AgentGrad achieves state-of-the-art performance across five MAS benchmarks and reduces wall-clock optimization time by $2.5\\times$ on average compared to the next-fastest baseline.",
+      "summary_zh": "本文指出多智能体系统性能依赖各智能体的提示词设计，并识别出现有文本梯度方法在梯度提取和聚合阶段的局限性。为此提出AgentGrad框架，通过顺序干预定位目标智能体，并利用语义文本梯度抽象来聚类和泛化梯度。实验表明，AgentGrad在五个多智能体基准上达到最先进性能，并将优化时间平均缩短2.5倍。",
+      "insight_zh": "在多智能体系统中，通过干预单个智能体行为来定位问题源头，并对语义相似的梯度进行抽象聚合，能有效提升提示词优化的效率和泛化能力。"
+    },
+    {
+      "key": "arxiv:2609.07734",
+      "title": "TV-SGS: Gaussian Splatting with Geometric Information Propagation via Tensor Voting under sparse views",
+      "title_zh": "TV-SGS：稀疏视图下基于张量投票的几何信息传播高斯泼溅",
+      "url": "https://arxiv.org/abs/2609.07734",
+      "doi": "",
+      "arxiv_id": "2609.07734",
+      "authors": [
+        "Harish N Sathishchandra",
+        "Philippos Mordohai"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T16:40:51+00:00",
+      "score": 90,
+      "reason": "论文提出一种改进高斯泼溅三维重建几何结构的方法，在稀疏视图下尤其有效，与遥感变化检测和三维城市建模高度相关。",
+      "tags": [
+        "三维重建",
+        "高斯泼溅",
+        "张量投票",
+        "稀疏视图",
+        "几何优化"
+      ],
+      "abstract": "Gaussian Splatting has been effective in inferring scene representations that excel in novel view synthesis. Multiple splats cooperate seamlessly to synthesize the pixels of novel views and are jointly optimized even though they only affect each other indirectly, via pixels they project to in common. We present an approach that enables direct communication among splats to enhance the geometric structures they form in 3D. This is accomplished by Tensor Voting, which was originally designed to infer structures from noisy inputs and has been adapted here to provide supervision during test-time optimization, leading to more accurate scene geometry. We introduce a new class of 3D losses that do not rely on rendering and can be combined with essentially all losses previously reported in the literature. Our 3D losses are especially effective when the input views are sparse and geometric regularization is essential due to limited supervision from the images. Our method is easy to integrate with a diverse set of backbones, and our experiments on the DTU and Tanks-and-Temples datasets demonstrate that TV-SGS improves the geometry of the outputs compared to the backbone, while maintaining or improving rendering quality.",
+      "summary_zh": "论文提出一种使高斯泼溅中的多个splat能够直接通信以增强其三维几何结构的方法。该方法通过引入张量投票，在测试时优化过程中提供监督，从而获得更精确的场景几何。作者提出了一类不依赖渲染的新型3D损失，可与现有损失结合，在输入视图稀疏时尤其有效。在DTU和Tanks-and-Temples数据集上的实验表明，TV-SGS在保持或提升渲染质量的同时，改善了输出几何。",
+      "insight_zh": "TV-SGS通过直接的三维几何监督，解决了稀疏视图下高斯泼溅因图像监督不足导致的几何结构不准确问题，且易于集成到多种现有骨干网络中。"
+    },
+    {
+      "key": "arxiv:2609.07520",
+      "title": "Topologically Consistent Agricultural Parcel Vectorization with Semantic-Guided Diffusion and Topology-Aware Polygonization",
+      "title_zh": "基于语义引导扩散和拓扑感知多边形化的拓扑一致农业地块矢量化",
+      "url": "https://arxiv.org/abs/2609.07520",
+      "doi": "",
+      "arxiv_id": "2609.07520",
+      "authors": [
+        "Weiqin Jiao",
+        "Xiaolong Zuo",
+        "Claudio Persello"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T14:02:48+00:00",
+      "score": 90,
+      "reason": "研究聚焦于农业地块的拓扑一致矢量化，属于遥感图像解译和变化检测的延伸，与博士研究方向中的遥感变化检测高度相关。",
+      "tags": [
+        "遥感变化检测",
+        "深度学习",
+        "拓扑一致性",
+        "农业地块",
+        "矢量化"
+      ],
+      "abstract": "Agricultural parcel polygons play a fundamental role in geospatial applications such as precision agriculture, land administration, and crop monitoring. Beyond regular polygon geometry and low vertex redundancy, practical parcel maps should avoid topological conflicts and preserve common boundaries between adjacent fields. Yet this requirement remains largely unresolved: segmentation-based methods mainly produce parcel masks or raster boundary cues and rely on heuristic raster-to-vector conversion, instance- and contour-based methods reconstruct parcels independently, and recent vector-oriented methods improve polygon regularity but do not explicitly recover adjacent parcels from a shared topological structure. To address this gap, we propose a semantic-guided diffusion framework for topologically consistent agricultural parcel vectorization. It couples joint edge--vertex latent diffusion with supervised multi-cue conditioning to generate geometrically regularised parcel-boundary and vertex primitives while suppressing false-positive responses. A topology-aware parcel polygon reconstruction method then converts these primitives into regular polygons by reconstructing parcel faces from a common planar graph, enabling adjacent predicted parcels to reuse shared boundaries and avoid mutual interior intrusion. Extensive experiments on the AI4SmallFarms and iFLYTEK datasets evaluate parcel vectorization in terms of pixel-level coverage, geometric fidelity, object-level correctness, and topological consistency. The results show strong and competitive performance, with zero measured intrusion ratio and the highest shared-edge recall, demonstrating the potential of the proposed framework for accurate, regular, and topologically consistent agricultural parcel vectorization.",
+      "summary_zh": "提出一种语义引导的扩散框架，用于生成拓扑一致的农业地块矢量图。该方法通过联合边缘-顶点潜在扩散和拓扑感知的多边形重建，从公共平面图中重建地块面，确保相邻地块共享边界，避免相互侵入。在AI4SmallFarms和iFLYTEK数据集上实现了零侵入率和最高的共享边界召回率。",
+      "insight_zh": "将拓扑一致性作为显式约束纳入地块矢量化流程，是生成高质量、可直接用于GIS分析成果的关键。"
+    },
+    {
+      "key": "arxiv:2609.07373",
+      "title": "TRAIL: Trajectory-Aware Visual Place Recognition against Unordered Databases",
+      "title_zh": "TRAIL：面向无序数据库的轨迹感知视觉位置识别",
+      "url": "https://arxiv.org/abs/2609.07373",
+      "doi": "",
+      "arxiv_id": "2609.07373",
+      "authors": [
+        "Dominik A. Kloepfer",
+        "Patrick Wenzel"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T11:49:42+00:00",
+      "score": 90,
+      "reason": "研究轨迹感知的视觉位置识别，利用序列上下文提升定位鲁棒性，与时空数据挖掘和城市环境下的位置服务高度相关。",
+      "tags": [
+        "视觉位置识别",
+        "轨迹分析",
+        "条件随机场",
+        "序列建模",
+        "无数据库结构"
+      ],
+      "abstract": "Modern Visual Place Recognition (VPR) methods excel on standard benchmarks yet remain brittle in feature-poor environments. By treating each query image in isolation, they discard the sequential context in any real trajectory. We formalize a task that exploits this context: given a query sequence, localize the final image against an unordered reference database -- which, unlike sequence-to-sequence methods, requires no sequential structure in the database. We propose TRAIL (TRajectory-Aware Image Localization), a principled framework based on Conditional Random Fields (CRF) that combines learned functions for visual similarity and for camera-motion consistency, refining a distribution over candidate references as each query arrives. A lightweight post-processing layer atop any pre-trained VPR backbone, TRAIL improves a state-of-the-art baseline by up to 8.3 percentage points on our primary benchmark, transfers to unseen datasets without retraining, and delivers its largest gains where visual cues are scarce.",
+      "summary_zh": "提出TRAIL框架，利用条件随机场结合视觉相似性和相机运动一致性，在无序参考数据库中定位查询序列的最终图像。作为轻量级后处理层，可提升现有VPR基线性能。",
+      "insight_zh": "在视觉线索稀缺的环境中，轨迹上下文能显著提升位置识别性能，且无需数据库具备序列结构。"
+    },
+    {
+      "key": "arxiv:2609.06737",
+      "title": "Monte Carlo-Based Ex-Ante Assessment of the Green Benefits of an AI-Driven Smart Agriculture Platform in Hainan",
+      "title_zh": "基于蒙特卡洛的海南AI驱动智慧农业平台绿色效益事前评估",
+      "url": "https://arxiv.org/abs/2609.06737",
+      "doi": "",
+      "arxiv_id": "2609.06737",
+      "authors": [
+        "Zhaoyang Li",
+        "Ruijie Zhang",
+        "Zhaoji Sun",
+        "Lu Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-06T17:19:43+00:00",
+      "score": 90,
+      "reason": "该研究构建了智慧农业平台的绿色价值评估框架，集成了包括卫星遥感在内的多源数据，并采用蒙特卡洛模拟进行不确定性分析。这与GIS博士研究中的多源数据融合和地理空间智能方向高度相关，且具有明确的政策应用价值。",
+      "tags": [
+        "智慧农业",
+        "碳核算",
+        "蒙特卡洛模拟",
+        "遥感应用",
+        "绿色价值评估",
+        "海南"
+      ],
+      "abstract": "Smart agriculture platforms are widely regarded as key carriers for implementing China's pesticide and fertilizer reduction, water-saving and carbon-reduction agendas, yet a unified quantitative framework for assessing their green value is still lacking. Taking an AI-driven decision platform for tropical agriculture as the object (integrating large-language-model question answering, multimodal pest diagnosis, IoT sensing, satellite remote sensing, and a closed-loop field record system), this study builds a cradle-to-farm-gate agricultural carbon accounting model covering pesticide and fertilizer production, field N2O, irrigation electricity and paddy CH4, translates platform interventions into quantifiable transmission parameters, and propagates parameter uncertainty by Monte Carlo simulation over three Hainan scenarios (mango, winter vegetable, rice/nanfan, area-weighted 40%:30%:30%). Under full adoption, median reductions are 23.5% (90% interval 15.0%-33.2%) for pesticide use, 21.0% (13.8%-28.9%) for fertilizer, 16.5% (10.9%-23.5%) for irrigation water, and 21.5% (16.1%-27.2%) for carbon intensity. Attainment probabilities are high for fertilizer reduction >=15% (90.6%) and clear carbon decline (98.1%), but only about 20% for aggregate water saving >=20%, favoring scenario-specific statements. Sobol first-order indices show soil-test recommendation and organic substitution jointly explain about 83% of the variance of aggregate carbon-intensity reduction. Convergence tests show 10,000 iterations stabilize all statistics; conservative/baseline/optimistic scenario bounds are reported. The framework offers a reproducible, calibration-ready methodology for ex-ante green-value assessment and pilot observation design.",
+      "summary_zh": "以海南热带农业AI决策平台为对象，构建了从摇篮到农场大门的农业碳核算模型，覆盖农药化肥生产、田间N2O、灌溉用电和水稻CH4。通过蒙特卡洛模拟传播参数不确定性，评估了平台干预措施在芒果、冬季蔬菜、水稻/南繁三种情景下的减量效果。结果显示全面采用后，农药、化肥、灌溉用水和碳强度的中位减排率分别为23.5%、21.0%、16.5%和21.5%。",
+      "insight_zh": "该研究提供了一个可复现、可校准的事前绿色价值评估方法论，通过量化不确定性为智慧农业平台的试点观察设计和政策制定提供了科学依据。"
+    },
+    {
+      "key": "arxiv:2609.05774",
+      "title": "Inference-Time Graph Engineering for Multi-Agent LLM Workflows",
+      "title_zh": "推理时图工程用于多智能体LLM工作流",
+      "url": "https://arxiv.org/abs/2609.05774",
+      "doi": "",
+      "arxiv_id": "2609.05774",
+      "authors": [
+        "Katherine Tieu",
+        "Dongqi Fu",
+        "Yinglong Xia",
+        "Hong Li",
+        "Hong Yan",
+        "Jingrui He"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T23:32:11+00:00",
+      "score": 90,
+      "reason": "该研究从图工程视角研究多智能体LLM工作流的编排，与LLM和多智能体研究方向高度契合，对地理空间智能中的复杂任务协同有借鉴意义。",
+      "tags": [
+        "多智能体",
+        "LLM",
+        "图工程",
+        "工作流编排",
+        "推理"
+      ],
+      "abstract": "Recent multi-agent LLM systems increasingly rely on graph-structured communication to coordinate specialized agents. We revisit multi-agent orchestration from a graph-engineering perspective: rather than optimizing a static topology, we synthesize a task-conditioned temporal workflow graph that jointly specifies agent connectivity and edge-level communication semantics. We introduce ReActNet, a training-free framework that compiles a query and a set of role-specialized agents into a sequence of directed communication graphs. Each graph snapshot corresponds to one reasoning stage, and each edge carries a natural-language instruction specifying the message that a source agent should provide to a target agent. The compiled temporal graph is then executed through structured message passing: agents update their reasoning states by integrating their previous states with messages from controller-assigned neighbors, and a final aggregator synthesizes the resulting states into the answer. This design separates graph compilation from graph execution, making multi-agent coordination explicit, inspectable, and task-conditioned without requiring reinforcement learning or gradient-based topology optimization. Across knowledge reasoning, mathematical problem solving, code generation, and GAIA-style assistant tasks, ReActNet consistently improves over fixed-topology and learned-topology baselines while maintaining competitive inference cost. These results suggest that effective multi-agent orchestration depends not only on which agents communicate, but also on engineering executable workflow graphs that encode when, why, and how information should flow during reasoning.",
+      "summary_zh": "提出ReActNet，一种免训练框架，将查询和角色化智能体编译为任务条件的时间工作流图，通过结构化消息传递执行，在多个任务上优于固定或学习拓扑的基线。",
+      "insight_zh": "有效的多智能体编排不仅取决于智能体间的通信，还取决于对信息流动时机、原因和方式的显式图工程，这为设计可解释、任务自适应的协同系统提供了新视角。"
+    },
+    {
+      "key": "arxiv:2609.05740",
+      "title": "SimTIO: A Simulation-Grounded Multi-Agent LLM Framework for Compositional Traffic Intervention Optimization",
+      "title_zh": "SimTIO：用于组合式交通干预优化的仿真接地多智能体LLM框架",
+      "url": "https://arxiv.org/abs/2609.05740",
+      "doi": "",
+      "arxiv_id": "2609.05740",
+      "authors": [
+        "Shuyang Li",
+        "Ruimin Ke"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-04T21:39:33+00:00",
+      "score": 90,
+      "reason": "论文提出一个基于仿真的多智能体LLM框架，用于组合和选择交通干预措施，并明确约束网络级性能。这与GIS博士研究中城市更新、时空数据挖掘和LLM多智能体的应用高度契合，是LLM在交通优化领域的一个直接应用案例。",
+      "tags": [
+        "multi-agent",
+        "LLM",
+        "traffic simulation",
+        "optimization",
+        "SUMO"
+      ],
+      "abstract": "Traffic analysts must translate diagnosed bottlenecks into executable interventions without allowing local improvements to degrade network-wide performance. This study presents SimTIO, a simulation-grounded multi-agent large language model framework for composing and selecting traffic interventions under explicit operational constraints. SimTIO first simulates an unmodified SUMO scenario to identify a baseline-frozen set of ten bottleneck edges. A grounded sampler then initializes signal-control, corridor-speed, and demand-preserving routing actions, while three specialist agents use measured simulation feedback to select one-parameter refinements from validator-confirmed mutation catalogs. Compatible actions are combined and re-simulated so that their interaction effects are measured rather than inferred. Final selection minimizes bottleneck time loss while constraining network-wide delay, neighboring-road spillover, throughput loss, and teleport events, with the unmodified scenario retained as a no-operation guard. Across 15 cases covering five U.S. urban networks, three synthetic-demand seeds, and 2,400 origin-destination trips per scenario, SimTIO reduced Top-10 bottleneck time loss by an average of 9.18 percent and network-wide delay by 2.78 percent. It found a feasible improving plan in 86.7 percent of cases, compared with 73.3 percent for grounded random search and 80.0 percent for a deterministic heuristic under the same seven-simulation budget, although the differences in Top-10 improvement were not statistically significant. These results support using LLMs as constrained, feedback-guided local search operators while reserving final decision authority for executable tools, microscopic simulation, and explicit safety constraints.",
+      "summary_zh": "SimTIO是一个仿真接地的多智能体LLM框架，用于在明确操作约束下组合和选择交通干预措施。它通过模拟未修改的SUMO场景识别瓶颈，由专家智能体基于仿真反馈选择单参数优化，并组合兼容动作进行再模拟以测量交互效应。在15个案例中，SimTIO平均减少了9.18%的Top-10瓶颈时间损失和2.78%的网络级延误。",
+      "insight_zh": "该研究表明，LLM可以作为受约束的、反馈引导的局部搜索算子，在仿真环境中优化复杂的城市交通干预方案。其将LLM的决策权限制在建议层面，而将最终决策权保留给可执行工具和仿真验证的思路，为在城市更新中安全、可靠地应用LLM进行方案优化提供了范例。"
+    },
+    {
+      "key": "arxiv:2406.09385",
+      "title": "Towards Vision-Language Geo-Foundation Model: A Survey",
+      "title_zh": "迈向视觉-语言地理基础模型：综述",
+      "url": "https://arxiv.org/abs/2406.09385",
+      "doi": "",
+      "arxiv_id": "2406.09385",
+      "authors": [
+        "Yue Zhou",
+        "Zhihang Zhong",
+        "Litong Feng",
+        "Wayne Zhang",
+        "Xue Jiang",
+        "Junchi Yan",
+        "Xue Yang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "直接综述视觉-语言地理基础模型，与GIS博士研究中多源数据融合和地理空间智能高度相关，提供领域全景和前沿方向。",
+      "tags": [
+        "视觉-语言",
+        "地理基础模型",
+        "综述",
+        "多模态"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "系统综述了视觉-语言地理基础模型的发展现状、关键技术和应用场景，涵盖多模态数据融合与地理空间理解。",
+      "insight_zh": "该综述为城市更新中融合遥感影像与文本信息提供了理论基础，并指出多模态地理模型的研究空白。"
+    },
+    {
+      "key": "arxiv:2509.04772",
+      "title": "Knowledge-Guided Vision-Language Inference for Image-Based Urban Flood Depth Estimation",
+      "title_zh": "知识引导的视觉语言推理用于基于图像的城市洪水深度估计",
+      "url": "https://arxiv.org/abs/2509.04772",
+      "doi": "",
+      "arxiv_id": "2509.04772",
+      "authors": [
+        "Zhangding Liu",
+        "Neda Mohammadi",
+        "and John E. Taylor"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 90,
+      "reason": "该研究结合知识引导的视觉语言推理进行城市洪水深度估计，直接涉及城市环境与多源数据融合，与GIS和城市更新高度相关。",
+      "tags": [
+        "知识引导",
+        "视觉语言推理",
+        "城市洪水",
+        "深度估计",
+        "多源数据"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出一种知识引导的视觉语言推理方法，利用图像估计城市洪水深度，融合领域知识提升准确性。",
+      "insight_zh": "知识引导可增强视觉语言模型在特定城市灾害场景的推理能力，为城市洪涝风险评估提供新思路。"
+    },
+    {
+      "key": "arxiv:2603.25565",
+      "title": "GeoHeight-Bench: Towards Height-Aware Multimodal Reasoning in Remote Sensing",
+      "title_zh": "GeoHeight-Bench：迈向遥感中的高度感知多模态推理",
+      "url": "https://arxiv.org/abs/2603.25565",
+      "doi": "",
+      "arxiv_id": "2603.25565",
+      "authors": [
+        "Xuran Hu",
+        "Zhitong Xiong",
+        "Zhongcheng Hong",
+        "Yifang Ban",
+        "Xiaoxiang Zhu",
+        "Wufan Zhao"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 88,
+      "reason": "该研究提出了面向遥感的高度感知多模态推理基准，直接涉及地理空间智能中的多模态理解和推理，与博士研究方向高度相关。",
+      "tags": [
+        "遥感",
+        "高度感知",
+        "多模态推理",
+        "基准测试",
+        "地理空间智能"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，无法提供详细信息。",
+      "insight_zh": "该基准聚焦于遥感场景中的高度信息，旨在评估和推动多模态模型对三维空间结构的理解和推理能力。"
+    }
+  ]
+}
