@@ -8,9 +8,12 @@ from unittest import mock
 from journal_rss_aggregator import (
     CROSSREF_JOURNALS,
     FeedItem,
+    OFFICIAL_FEED_URLS,
     crossref_query_params,
     fetch_crossref_journal_items,
+    filter_official_duplicates,
     journal_item_limit,
+    parse_official_feed_identity_keys,
     write_rss,
 )
 
@@ -80,6 +83,47 @@ class FeedLanguageTests(unittest.TestCase):
             'true',
         )
 
+    def test_every_custom_journal_has_an_official_feed_for_priority_deduplication(self):
+        self.assertEqual(
+            {journal['issn'] for journal in CROSSREF_JOURNALS},
+            set(OFFICIAL_FEED_URLS),
+        )
+
+    def test_official_feed_identities_include_doi_and_normalized_title(self):
+        raw = b'''<?xml version="1.0"?><rss><channel><item>
+          <title>Mapping cities: A test</title>
+          <link>https://example.test/article</link>
+          <description>doi:10.1016/J.TEST.2026.100001</description>
+        </item></channel></rss>'''
+
+        keys = parse_official_feed_identity_keys(raw)
+
+        self.assertIn('doi:10.1016/j.test.2026.100001', keys)
+        self.assertIn('title:mappingcitiesatest', keys)
+
+    def test_official_duplicates_are_removed_but_missing_articles_remain(self):
+        items = [
+            FeedItem(
+                source='Journal', title='Already official',
+                link='https://doi.org/10.1234/official', guid='10.1234/official',
+            ),
+            FeedItem(
+                source='Journal', title='Official by title',
+                link='https://doi.org/10.1234/title-match', guid='10.1234/title-match',
+            ),
+            FeedItem(
+                source='Journal', title='Only in custom feed',
+                link='https://doi.org/10.1234/missing', guid='10.1234/missing',
+            ),
+        ]
+
+        filtered = filter_official_duplicates(
+            items,
+            {'doi:10.1234/official', 'title:officialbytitle'},
+        )
+
+        self.assertEqual([item.guid for item in filtered], ['10.1234/missing'])
+
     def test_crossref_cursor_query_avoids_unsupported_publication_sort(self):
         params = crossref_query_params(
             from_filter='from-pub-date',
@@ -101,6 +145,7 @@ class FeedLanguageTests(unittest.TestCase):
         for journal in CROSSREF_JOURNALS:
             with self.subTest(output=journal['output']):
                 self.assertGreaterEqual(workflow.count(journal['output']), 2)
+        self.assertIn('official-feed-seen.json', workflow)
 
     def test_workflow_generates_conference_artifacts_before_every_pages_deployment(self):
         workflow = Path('.github/workflows/update-feed.yml').read_text(encoding='utf-8')

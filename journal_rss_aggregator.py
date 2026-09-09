@@ -22,6 +22,7 @@ import shutil
 import sys
 import subprocess
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -48,6 +49,30 @@ DEFAULT_HEADERS = {
 
 UTC = dt.timezone.utc
 RUN_TIMEZONE = ZoneInfo("Asia/Shanghai")
+
+OFFICIAL_FEED_URLS = {
+    "1753-8955": "https://www.tandfonline.com/feed/rss/tjde20",
+    "0031-3203": "https://rss.sciencedirect.com/publication/science/00313203",
+    "2210-6707": "https://rss.sciencedirect.com/publication/science/22106707",
+    "1568-4946": "https://rss.sciencedirect.com/publication/science/15684946",
+    "0143-6228": "https://rss.sciencedirect.com/publication/science/01436228",
+    "0197-3975": "https://rss.sciencedirect.com/publication/science/01973975",
+    "1566-2535": "https://rss.sciencedirect.com/publication/science/15662535",
+    "0264-2751": "https://rss.sciencedirect.com/publication/science/02642751",
+    "0198-9715": "https://rss.sciencedirect.com/publication/science/01989715",
+    "2509-8829": (
+        "https://link.springer.com/search.rss?query=&package=openaccessarticles&"
+        "content-type=Article&sortBy=newestFirst&search-within=Journal&"
+        "facet-journal-id=41651"
+    ),
+    "3050-5208": "https://rss.sciencedirect.com/publication/science/30505208",
+    "1866-3516": "https://essd.copernicus.org/articles/xml/rss2_0.xml",
+    "2168-6831": "https://ieeexplore.ieee.org/rss/TOC6245518.XML",
+    "0196-2892": "https://ieeexplore.ieee.org/rss/TOC36.XML",
+    "0162-8828": "https://ieeexplore.ieee.org/rss/TOC34.XML",
+}
+
+DOI_PATTERN = re.compile(r"10\.\d{4,9}/[^\s\"'<>]+", re.IGNORECASE)
 
 CROSSREF_JOURNALS = [
     {
@@ -540,6 +565,95 @@ def clean_html_text(value: str) -> str:
     value = html.unescape(value or "")
     soup = BeautifulSoup(value, "html.parser")
     return " ".join(soup.get_text(" ", strip=True).split())
+
+
+def normalized_title_identity(value: str) -> str:
+    plain = unicodedata.normalize("NFKC", clean_html_text(value))
+    normalized = "".join(character.lower() for character in plain if character.isalnum())
+    return f"title:{normalized}" if normalized else ""
+
+
+def doi_identities(*values: str) -> set[str]:
+    identities: set[str] = set()
+    for value in values:
+        text = html.unescape(value or "")
+        for match in DOI_PATTERN.finditer(text):
+            doi = match.group(0).rstrip(".,;:)]}>\"'").lower()
+            identities.add(f"doi:{doi}")
+    return identities
+
+
+def feed_item_identity_keys(item: FeedItem) -> set[str]:
+    identities = doi_identities(item.guid, item.link, item.description)
+    title_identity = normalized_title_identity(item.title)
+    if title_identity:
+        identities.add(title_identity)
+    return identities
+
+
+def parse_official_feed_identity_keys(raw: bytes) -> set[str]:
+    if not raw.strip():
+        return set()
+    root = ET.fromstring(raw)
+    identities: set[str] = set()
+    for element in root.iter():
+        if local_name(element.tag) != "item":
+            continue
+        title_identity = normalized_title_identity(child_text(element, "title"))
+        if title_identity:
+            identities.add(title_identity)
+        searchable_values = list(element.itertext())
+        searchable_values.extend(
+            attribute
+            for descendant in element.iter()
+            for attribute in descendant.attrib.values()
+        )
+        identities.update(doi_identities(*searchable_values))
+    return identities
+
+
+def filter_official_duplicates(
+    items: Iterable[FeedItem],
+    official_identities: set[str],
+) -> list[FeedItem]:
+    if not official_identities:
+        return list(items)
+    return [
+        item
+        for item in items
+        if feed_item_identity_keys(item).isdisjoint(official_identities)
+    ]
+
+
+def load_official_seen(path: Path) -> dict[str, set[str]]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        feeds = data.get("feeds", {})
+        if not isinstance(feeds, dict):
+            return {}
+        return {
+            str(url): {str(key) for key in keys}
+            for url, keys in feeds.items()
+            if isinstance(keys, list)
+        }
+    except (OSError, ValueError, TypeError):
+        return {}
+
+
+def save_official_seen(path: Path, feeds: dict[str, set[str]]) -> None:
+    payload = {
+        "version": 1,
+        "feeds": {url: sorted(keys) for url, keys in sorted(feeds.items())},
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    temporary.replace(path)
 
 
 def first_text(value: object) -> str:
@@ -1129,6 +1243,11 @@ def main() -> int:
         default=None,
         help="Directory for separate Crossref journal feeds. Defaults to the main output directory.",
     )
+    parser.add_argument(
+        "--official-seen-state",
+        default="official-feed-seen.json",
+        help="Persistent identities previously observed in official publisher feeds.",
+    )
     args = parser.parse_args()
 
     all_items: list[FeedItem] = []
@@ -1199,6 +1318,9 @@ def main() -> int:
         if args.crossref_output_dir
         else output_path.parent
     )
+    official_seen_path = Path(args.official_seen_state)
+    official_seen = load_official_seen(official_seen_path)
+    refreshed_official_feeds: set[str] = set()
     for journal in CROSSREF_JOURNALS:
         source = journal["source"]
         journal_output = crossref_output_dir / journal["output"]
@@ -1221,6 +1343,39 @@ def main() -> int:
                 )
 
         crossref_items = dedupe_items(crossref_items)
+        official_url = OFFICIAL_FEED_URLS[journal["issn"]]
+        if official_url not in refreshed_official_feeds:
+            refreshed_official_feeds.add(official_url)
+            try:
+                raw_official_feed = fetch_bytes(
+                    official_url,
+                    headers={
+                        "Accept": "application/rss+xml, application/xml, text/xml, */*",
+                    },
+                    timeout=60,
+                    retries=2,
+                )
+                current_identities = parse_official_feed_identity_keys(raw_official_feed)
+                if current_identities:
+                    official_seen.setdefault(official_url, set()).update(current_identities)
+                    log(
+                        f"[info] official RSS: {journal['issn']}: "
+                        f"remembered {len(official_seen[official_url])} identities"
+                    )
+            except Exception as exc:  # noqa: BLE001 - retained history remains usable.
+                log(f"[warn] official RSS failed for {official_url}: {exc}")
+
+        before_official_filter = len(crossref_items)
+        crossref_items = filter_official_duplicates(
+            crossref_items,
+            official_seen.get(official_url, set()),
+        )
+        removed_as_official = before_official_filter - len(crossref_items)
+        if removed_as_official:
+            log(
+                f"[info] official priority: removed {removed_as_official} "
+                f"duplicate {source} items"
+            )
         item_limit = journal_item_limit(journal, args.max_items)
         crossref_written = write_rss(
             crossref_items,
@@ -1240,6 +1395,7 @@ def main() -> int:
             feed_language="en",
         )
         log(f"[info] wrote {crossref_written} items to {journal_output}")
+    save_official_seen(official_seen_path, official_seen)
     return 0
 
 

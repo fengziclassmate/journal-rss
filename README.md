@@ -97,6 +97,8 @@ https://fengziclassmate.github.io/journal-rss/feed.xml
 
 单独期刊订阅地址：
 
+英文期刊采用“官网 RSS 优先、自建 RSS 补缺”的规则。生成时按 DOI 和规范化标题过滤官网已经出现的文章，并把历史官网条目标识累积保存在 `official-feed-seen.json` 中。因此文章从官网 RSS 的滚动窗口消失后，也不会重新作为自建新条目出现；官网临时不可访问时则沿用历史清单。
+
 ```text
 https://fengziclassmate.github.io/journal-rss/ijde.xml
 https://fengziclassmate.github.io/journal-rss/pattern-recognition.xml
