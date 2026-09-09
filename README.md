@@ -109,6 +109,8 @@ https://fengziclassmate.github.io/journal-rss/jgsa.xml
 https://fengziclassmate.github.io/journal-rss/jgsa-current-issue.xml
 https://fengziclassmate.github.io/journal-rss/essd.xml
 https://fengziclassmate.github.io/journal-rss/essd-current-issue.xml
+https://fengziclassmate.github.io/journal-rss/information-geography.xml
+https://fengziclassmate.github.io/journal-rss/information-geography-current-issue.xml
 ```
 
 当前抓取规则：
@@ -125,6 +127,7 @@ https://fengziclassmate.github.io/journal-rss/essd-current-issue.xml
 - `https://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=4359286`：IEEE Xplore 页面不稳定，改用 Crossref 按 ISSN `0162-8828` 拉取 *IEEE Transactions on Pattern Analysis and Machine Intelligence* 从 `2025-01-01` 到运行当天的 Early Access journal article，单独输出到 `tpami-early-access.xml`。
 - `https://link.springer.com/journal/41651`：按电子 ISSN `2509-8829` 拉取 *Journal of Geovisualization and Spatial Analysis* 从 `2026-06-01` 到运行当天的新文章，输出到 `jgsa.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `jgsa-current-issue.xml`。
 - `https://essd.copernicus.org/`：按电子 ISSN `1866-3516` 拉取 *Earth System Science Data* 从 `2026-06-01` 到运行当天的正式文章，输出到 `essd.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `essd-current-issue.xml`。
+- `https://www.sciencedirect.com/journal/information-geography`：按电子 ISSN `3050-5208` 拉取 *Information Geography* 从 `2026-06-01` 到运行当天的新文章，输出到 `information-geography.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `information-geography-current-issue.xml`。
 
 建议定时任务每天运行一次即可，不要高频抓取。
 

@@ -66,6 +66,20 @@ class FeedLanguageTests(unittest.TestCase):
         self.assertNotIn('current_issue_only', feeds['essd.xml'])
         self.assertEqual(feeds['essd-current-issue.xml']['current_issue_only'], 'true')
 
+    def test_information_geography_has_latest_and_current_issue_feeds(self):
+        feeds = {item['output']: item for item in CROSSREF_JOURNALS if item['issn'] == '3050-5208'}
+
+        self.assertEqual(
+            set(feeds),
+            {'information-geography.xml', 'information-geography-current-issue.xml'},
+        )
+        self.assertEqual(feeds['information-geography.xml']['from_date'], '2026-06-01')
+        self.assertNotIn('current_issue_only', feeds['information-geography.xml'])
+        self.assertEqual(
+            feeds['information-geography-current-issue.xml']['current_issue_only'],
+            'true',
+        )
+
     def test_crossref_cursor_query_avoids_unsupported_publication_sort(self):
         params = crossref_query_params(
             from_filter='from-pub-date',
