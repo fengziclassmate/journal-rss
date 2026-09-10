@@ -13,6 +13,7 @@ from journal_rss_aggregator import (
     fetch_crossref_journal_items,
     filter_official_duplicates,
     journal_item_limit,
+    load_official_mirror_paths,
     parse_official_feed_identity_keys,
     write_rss,
 )
@@ -100,6 +101,22 @@ class FeedLanguageTests(unittest.TestCase):
 
         self.assertIn('doi:10.1016/j.test.2026.100001', keys)
         self.assertIn('title:mappingcitiesatest', keys)
+
+    def test_official_mirror_paths_are_relative_to_their_config(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            config = root / 'official-feed-config.json'
+            config.write_text(json.dumps({'mirrors': [{
+                'source_url': 'https://publisher.test/cities.xml',
+                'output': 'official-feeds/cities.xml',
+            }]}), encoding='utf-8')
+
+            paths = load_official_mirror_paths(config)
+
+            self.assertEqual(
+                paths['https://publisher.test/cities.xml'],
+                root / 'official-feeds/cities.xml',
+            )
 
     def test_official_duplicates_are_removed_but_missing_articles_remain(self):
         items = [

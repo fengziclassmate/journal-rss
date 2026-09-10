@@ -55,6 +55,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-conference-http-
 
+      - name: Generate official feed mirrors
+        run: python official_feed_proxy.py
+
       - name: Generate feed
         if: inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
         run: >
@@ -95,9 +98,6 @@ jobs:
 
       - name: Generate conference feeds
         run: python conference_rss.py
-
-      - name: Generate official feed mirrors
-        run: python official_feed_proxy.py
 
       - name: Remove previously read Zotero items
         env:

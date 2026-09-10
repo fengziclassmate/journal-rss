@@ -167,9 +167,16 @@ def _feed_entries(root: ET.Element, path: Path) -> tuple[ET.Element, list[ET.Ele
 
 def _item_tokens(item: ET.Element) -> set[str]:
     links = _child_values(item, "link")
-    descriptions = _child_values(item, "description", "summary", "content", "encoded", "identifier")
+    guids = _child_values(item, "guid", "id")
+    is_digest = any(
+        guid.lower().startswith(("research-daily:", "arxiv-email-daily:", "conference:digest:"))
+        for guid in guids
+    )
+    descriptions = [] if is_digest else _child_values(
+        item, "description", "summary", "content", "encoded", "identifier"
+    )
     return identity_tokens(
-        guid=" ".join(_child_values(item, "guid", "id")),
+        guid=" ".join(guids),
         link=links[0] if links else "",
         title=" ".join(_child_values(item, "title")),
         description=" ".join(descriptions),

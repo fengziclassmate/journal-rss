@@ -95,6 +95,28 @@ class FeedFilterTests(unittest.TestCase):
             result = filter_feed(path, suppressed, key)
             self.assertEqual((result.removed, result.kept), (1, 1))
 
+    def test_digest_is_not_removed_when_only_a_paper_in_its_description_was_read(self):
+        key = b"test-key"
+        suppressed = hash_tokens(identity_tokens(doi="10.1234/read-paper"), key)
+        digest = """<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><item>
+  <title>QQ mailbox arXiv daily | 2026-09-10 | 30 papers</title>
+  <link>https://example.test/archive/2026-09-10.html</link>
+  <guid isPermaLink="false">arxiv-email-daily:2026-09-10</guid>
+  <description>Includes DOI 10.1234/read-paper among 30 papers</description>
+</item></channel></rss>"""
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "daily.xml"
+            path.write_text(digest, encoding="utf-8")
+
+            result = filter_feed(path, suppressed, key)
+
+            self.assertEqual((result.removed, result.kept), (0, 1))
+            self.assertEqual(
+                ET.parse(path).findtext("./channel/item/guid"),
+                "arxiv-email-daily:2026-09-10",
+            )
+
 
 class WorkflowTests(unittest.TestCase):
     def test_filter_runs_after_generation_and_before_publish(self):
@@ -112,6 +134,13 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("secrets.RSS_READ_FILTER_KEY", workflow)
         self.assertIn("Generate official feed mirrors", workflow)
         self.assertIn('--glob "official-feeds/*.xml"', workflow)
+
+    def test_official_snapshot_is_generated_before_custom_journal_feeds(self):
+        workflow = Path(".github/workflows/update-feed.yml").read_text(encoding="utf-8")
+
+        official_snapshot = workflow.index("- name: Generate official feed mirrors")
+        custom_journals = workflow.index("- name: Generate feed")
+        self.assertLess(official_snapshot, custom_journals)
 
 
 class ZoteroExportTests(unittest.TestCase):

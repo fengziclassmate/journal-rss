@@ -656,6 +656,23 @@ def save_official_seen(path: Path, feeds: dict[str, set[str]]) -> None:
     temporary.replace(path)
 
 
+def load_official_mirror_paths(path: Path) -> dict[str, Path]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        mirrors = data.get("mirrors", [])
+        if not isinstance(mirrors, list):
+            return {}
+        return {
+            str(item["source_url"]): path.parent / str(item["output"])
+            for item in mirrors
+            if isinstance(item, dict) and item.get("source_url") and item.get("output")
+        }
+    except (OSError, ValueError, TypeError):
+        return {}
+
+
 def first_text(value: object) -> str:
     if isinstance(value, list) and value:
         return str(value[0])
@@ -1248,6 +1265,11 @@ def main() -> int:
         default="official-feed-seen.json",
         help="Persistent identities previously observed in official publisher feeds.",
     )
+    parser.add_argument(
+        "--official-feed-config",
+        default="official-feed-config.json",
+        help="Publisher mirror configuration used for same-snapshot duplicate removal.",
+    )
     args = parser.parse_args()
 
     all_items: list[FeedItem] = []
@@ -1320,6 +1342,7 @@ def main() -> int:
     )
     official_seen_path = Path(args.official_seen_state)
     official_seen = load_official_seen(official_seen_path)
+    official_mirror_paths = load_official_mirror_paths(Path(args.official_feed_config))
     refreshed_official_feeds: set[str] = set()
     for journal in CROSSREF_JOURNALS:
         source = journal["source"]
@@ -1347,14 +1370,19 @@ def main() -> int:
         if official_url not in refreshed_official_feeds:
             refreshed_official_feeds.add(official_url)
             try:
-                raw_official_feed = fetch_bytes(
-                    official_url,
-                    headers={
-                        "Accept": "application/rss+xml, application/xml, text/xml, */*",
-                    },
-                    timeout=60,
-                    retries=2,
-                )
+                mirror_path = official_mirror_paths.get(official_url)
+                if mirror_path and mirror_path.exists():
+                    raw_official_feed = mirror_path.read_bytes()
+                    log(f"[info] official RSS snapshot: {mirror_path}")
+                else:
+                    raw_official_feed = fetch_bytes(
+                        official_url,
+                        headers={
+                            "Accept": "application/rss+xml, application/xml, text/xml, */*",
+                        },
+                        timeout=60,
+                        retries=2,
+                    )
                 current_identities = parse_official_feed_identity_keys(raw_official_feed)
                 if current_identities:
                     official_seen.setdefault(official_url, set()).update(current_identities)
