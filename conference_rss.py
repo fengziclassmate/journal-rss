@@ -705,6 +705,32 @@ def write_rss(
     return len(papers)
 
 
+def _existing_rss_item_count(output: Path) -> int:
+    if not output.exists():
+        return 0
+    try:
+        return len(ET.parse(output).findall("./channel/item"))
+    except (ET.ParseError, OSError):
+        return 0
+
+
+def write_rss_preserving_existing(
+    papers: Iterable[ConferencePaper], output: Path, *, title: str, link: str,
+    description: str, guid_scope: str = "conference"
+) -> tuple[int, bool]:
+    papers = list(papers)
+    existing_count = _existing_rss_item_count(output)
+    if not papers and existing_count:
+        return existing_count, True
+    return (
+        write_rss(
+            papers, output, title=title, link=link, description=description,
+            guid_scope=guid_scope,
+        ),
+        False,
+    )
+
+
 def write_opml(config: dict[str, Any], output: Path) -> None:
     root = ET.Element("opml", {"version": "2.0"})
     head = ET.SubElement(root, "head")
@@ -752,17 +778,22 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
     client = PoliteClient(cache_dir=Path(".conference-cache"))
     counts: dict[str, int] = {}
     all_papers: list[ConferencePaper] = []
+    preserved_feeds: list[str] = []
     for conference in config["conferences"]:
         papers = collect_conference(client, conference, start_year, end_year)
         feed_url = f"{config['base_url']}/{conference['slug']}.xml"
-        counts[conference["slug"]] = write_rss(
+        count, preserved = write_rss_preserving_existing(
             papers, output_dir / f"{conference['slug']}.xml",
             title=f"{conference['acronym']} Papers",
             link=feed_url,
             description=f"All indexed full papers from {conference['name']} ({start_year}-{end_year}).",
             guid_scope=f"conference:{conference['slug']}",
         )
-        print(f"{conference['acronym']}: {counts[conference['slug']]} papers")
+        counts[conference["slug"]] = count
+        if preserved:
+            preserved_feeds.append(conference["slug"])
+        suffix = " (preserved fallback)" if preserved else ""
+        print(f"{conference['acronym']}: {count} papers{suffix}")
         all_papers.extend(papers)
     selected: list[ConferencePaper] = []
     for paper in deduplicate(all_papers):
@@ -770,12 +801,19 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
         if paper.matched_keywords:
             selected.append(paper)
     digest_url = f"{config['base_url']}/top-conference-daily.xml"
-    counts["top-conference-daily"] = write_rss(
-        selected, output_dir / "top-conference-daily.xml", title="Top Conference Daily Digest",
+    digest_papers = [] if preserved_feeds else selected
+    digest_count, digest_preserved = write_rss_preserving_existing(
+        digest_papers, output_dir / "top-conference-daily.xml", title="Top Conference Daily Digest",
         link=digest_url,
         description="Keyword-filtered and deduplicated papers from 35 conference feeds.",
         guid_scope="conference:digest",
     )
+    counts["top-conference-daily"] = digest_count
+    if digest_preserved:
+        print(
+            "Top Conference Daily Digest: "
+            f"{digest_count} papers (preserved because {len(preserved_feeds)} source feeds failed)"
+        )
     write_opml(config, output_dir.parent / "conference-feeds.opml")
     write_index(config, output_dir / "index.html")
     return counts

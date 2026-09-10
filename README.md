@@ -95,6 +95,8 @@ Zotero 可通过上面的 OPML 导入全部 36 个订阅。本机的 `zotero_sub
 
 GitHub Actions 手动运行时可勾选 `conference_only`，仅重建会议源并保留其他 RSS。QQ 邮箱采集失败会显示警告，不再阻止会议源发布。
 
+`conference-feed-fallback.zip` 保存一份完整会议基线。Actions 在抓取前恢复该基线；单个会议上游临时返回空结果时保留已有非空 XML，并同时保留上一版汇总源，避免 DBLP 或会议网站波动把未读论文发布成空源。成功抓取的会议仍会正常覆盖更新，随后统一应用 Zotero 已读过滤。
+
 本地生成：
 
 ```bash

@@ -90,6 +90,9 @@ jobs:
         if: steps.mailbox.outcome == 'failure'
         run: echo "::warning::QQ mailbox collection failed. Existing email RSS files are retained; other feeds will still deploy."
 
+      - name: Restore conference fallback
+        run: python -m zipfile -e conference-feed-fallback.zip .
+
       - name: Generate conference feeds
         run: python conference_rss.py
 

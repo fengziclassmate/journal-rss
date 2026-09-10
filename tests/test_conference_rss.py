@@ -2,6 +2,7 @@ import json
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
+import zipfile
 from pathlib import Path
 
 from conference_rss import (
@@ -17,6 +18,7 @@ from conference_rss import (
     parse_robotics_proceedings,
     write_opml,
     write_rss,
+    write_rss_preserving_existing,
 )
 
 
@@ -38,8 +40,42 @@ class ConferenceConfigTests(unittest.TestCase):
             self.assertEqual(len(outlines), 36)
             self.assertTrue(any(node.get("xmlUrl", "").endswith("top-conference-daily.xml") for node in outlines))
 
+    def test_fallback_archive_contains_every_nonempty_conference_feed(self):
+        with zipfile.ZipFile("conference-feed-fallback.zip") as archive:
+            for conference in self.config["conferences"]:
+                path = f"conference-feeds/{conference['slug']}.xml"
+                root = ET.fromstring(archive.read(path))
+                self.assertGreater(len(root.findall("./channel/item")), 0, path)
+            self.assertIn("conference-feeds/top-conference-daily.xml", archive.namelist())
+
 
 class ConferenceFeedTests(unittest.TestCase):
+    def test_empty_collection_preserves_existing_nonempty_feed(self):
+        old = ConferencePaper("C", "C", "Existing", "https://test/old", "old", 2026)
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "feed.xml"
+            write_rss([old], output, title="Test", link="https://test/feed", description="Test")
+
+            count, preserved = write_rss_preserving_existing(
+                [], output, title="Test", link="https://test/feed", description="Test"
+            )
+
+            self.assertEqual(count, 1)
+            self.assertTrue(preserved)
+            self.assertEqual(ET.parse(output).findtext("./channel/item/title"), "Existing")
+
+    def test_empty_collection_can_create_initial_empty_feed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "feed.xml"
+
+            count, preserved = write_rss_preserving_existing(
+                [], output, title="Test", link="https://test/feed", description="Test"
+            )
+
+            self.assertEqual(count, 0)
+            self.assertFalse(preserved)
+            self.assertEqual(ET.parse(output).findall("./channel/item"), [])
+
     def test_newer_year_precedes_older_exact_date(self):
         papers = [
             ConferencePaper("C", "C", "Older", "https://test/old", "old", 2025, published="2025-12-31"),

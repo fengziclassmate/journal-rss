@@ -67,9 +67,11 @@ class WorkflowTests(unittest.TestCase):
         workflow = Path(".github/workflows/update-feed.yml").read_text(encoding="utf-8")
 
         generated = workflow.index("- name: Generate conference feeds")
+        restored = workflow.index("- name: Restore conference fallback")
         filtered = workflow.index("- name: Remove previously read Zotero items")
         committed = workflow.index("- name: Commit feed changes")
         published = workflow.index("- name: Prepare Pages artifact")
+        self.assertLess(restored, generated)
         self.assertLess(generated, filtered)
         self.assertLess(filtered, committed)
         self.assertLess(committed, published)
