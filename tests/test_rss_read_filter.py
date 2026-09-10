@@ -18,6 +18,22 @@ RSS = """<?xml version="1.0" encoding="utf-8"?>
 </channel></rss>
 """
 
+ATOM = """<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Official Atom</title>
+  <entry><title>Read paper</title><id>atom:read</id><link href="https://doi.org/10.1234/ABC" /></entry>
+  <entry><title>Unread paper</title><id>atom:unread</id><link href="https://example.test/unread" /></entry>
+</feed>
+"""
+
+RDF = """<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/">
+  <channel rdf:about="https://example.test"><title>Official RDF</title></channel>
+  <item rdf:about="https://doi.org/10.1234/ABC"><title>Read paper</title><link>https://doi.org/10.1234/ABC</link></item>
+  <item rdf:about="https://example.test/unread"><title>Unread paper</title><link>https://example.test/unread</link></item>
+</rdf:RDF>
+"""
+
 
 class IdentityTests(unittest.TestCase):
     def test_doi_urls_and_plain_dois_share_an_identity(self):
@@ -61,6 +77,24 @@ class FeedFilterTests(unittest.TestCase):
 
             self.assertEqual((first.removed, second.removed), (1, 0))
 
+    def test_filter_supports_atom(self):
+        key = b"test-key"
+        suppressed = hash_tokens(identity_tokens(doi="10.1234/abc"), key)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "feed.atom"
+            path.write_text(ATOM, encoding="utf-8")
+            result = filter_feed(path, suppressed, key)
+            self.assertEqual((result.removed, result.kept), (1, 1))
+
+    def test_filter_supports_rdf_rss(self):
+        key = b"test-key"
+        suppressed = hash_tokens(identity_tokens(doi="10.1234/abc"), key)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "feed.rdf"
+            path.write_text(RDF, encoding="utf-8")
+            result = filter_feed(path, suppressed, key)
+            self.assertEqual((result.removed, result.kept), (1, 1))
+
 
 class WorkflowTests(unittest.TestCase):
     def test_filter_runs_after_generation_and_before_publish(self):
@@ -76,6 +110,8 @@ class WorkflowTests(unittest.TestCase):
         self.assertLess(filtered, committed)
         self.assertLess(committed, published)
         self.assertIn("secrets.RSS_READ_FILTER_KEY", workflow)
+        self.assertIn("Generate official feed mirrors", workflow)
+        self.assertIn('--glob "official-feeds/*.xml"', workflow)
 
 
 class ZoteroExportTests(unittest.TestCase):

@@ -6,6 +6,10 @@ Zotero 订阅重复标记、标题译文缓存与已读归档见 [Journal RSS Me
 
 自建 RSS 发布前会通过 `rss_read_filter.py` 排除 Zotero 中已经读过的条目。过滤不按数量或年份截断：未读论文继续完整保留，已读论文的 DOI、URL、GUID、arXiv ID 和标题会转换为带私密密钥的 HMAC 指纹，并由 `read-suppression.json` 追加保存。即使 Zotero 后续删除本地条目，历史指纹也不会丢失，因此文章不会在下一次抓取时重新进入自建 RSS。
 
+出版社官方 RSS 同样通过 `official_feed_proxy.py` 原样镜像到 `official-feeds/` 后再执行已读过滤。镜像保留官方 GUID、论文链接和元数据，只替换 Zotero 的订阅抓取地址；因此已读条目清理后不会因官网 RSS 仍保留该条目而再次作为未读导入。抓取失败时保留上一次有效镜像。
+
+Zotero 中的官方订阅地址由 `zotero_switch_official_feeds.py` 原位切换，原订阅库和已有条目不重建；传入 `--rollback` 可以恢复出版社直连地址。
+
 `zotero_read_sync.py` 负责从 `F:\Zotero\zotero.sqlite` 导出已读状态。Zotero 正在运行并锁定主数据库时，脚本会读取最近的 Zotero 数据库备份，不会强制关闭 Zotero；这可能让刚标记的已读条目延迟到下一次 Zotero 备份后生效。计划任务每天运行一次，只在发现新指纹时提交并推送，随后 GitHub Actions 自动重新生成和部署 RSS。
 
 签名密钥仅保存在本机并配置为仓库 Secret `RSS_READ_FILTER_KEY`，不会进入 Git。官方直连 RSS 无法被本仓库删除；但从官方源读过且可通过 DOI 或标题识别的文章，会从对应的自建源中过滤掉。

@@ -25,6 +25,7 @@ from typing import Iterable
 ATOM_NS = "http://www.w3.org/2005/Atom"
 CONTENT_NS = "http://purl.org/rss/1.0/modules/content/"
 DC_NS = "http://purl.org/dc/elements/1.1/"
+RDF_NS = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 DOI_RE = re.compile(r"10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.IGNORECASE)
 ARXIV_RE = re.compile(
     r"(?:arxiv:\s*|arxiv\.org/(?:abs|pdf)/)(\d{4}\.\d{4,5})(?:v\d+)?",
@@ -36,6 +37,7 @@ TRACKING_QUERY_KEYS = {"dgcid", "utm_campaign", "utm_content", "utm_medium", "ut
 ET.register_namespace("atom", ATOM_NS)
 ET.register_namespace("content", CONTENT_NS)
 ET.register_namespace("dc", DC_NS)
+ET.register_namespace("rdf", RDF_NS)
 
 
 @dataclass(frozen=True)
@@ -132,34 +134,58 @@ def load_suppression(path: Path, key: bytes) -> set[str]:
     return set(hashes)
 
 
+def _local_name(tag: str) -> str:
+    return tag.rsplit("}", 1)[-1].lower()
+
+
+def _child_values(item: ET.Element, *names: str) -> list[str]:
+    wanted = {name.lower() for name in names}
+    values: list[str] = []
+    for child in item:
+        if _local_name(child.tag) not in wanted:
+            continue
+        value = child.get("href", "") if _local_name(child.tag) == "link" else ""
+        value = value or "".join(child.itertext())
+        if value:
+            values.append(value)
+    return values
+
+
+def _feed_entries(root: ET.Element, path: Path) -> tuple[ET.Element, list[ET.Element]]:
+    root_name = _local_name(root.tag)
+    if root_name == "rss":
+        channel = next((node for node in root if _local_name(node.tag) == "channel"), None)
+        if channel is None:
+            raise ValueError(f"RSS document has no channel: {path}")
+        return channel, [node for node in channel if _local_name(node.tag) == "item"]
+    if root_name == "rdf":
+        return root, [node for node in root if _local_name(node.tag) == "item"]
+    if root_name == "feed":
+        return root, [node for node in root if _local_name(node.tag) == "entry"]
+    raise ValueError(f"Unsupported RSS, RDF, or Atom document: {path}")
+
+
 def _item_tokens(item: ET.Element) -> set[str]:
+    links = _child_values(item, "link")
+    descriptions = _child_values(item, "description", "summary", "content", "encoded", "identifier")
     return identity_tokens(
-        guid=item.findtext("guid", ""),
-        link=item.findtext("link", ""),
-        title=item.findtext("title", ""),
-        description=" ".join(
-            filter(
-                None,
-                (
-                    item.findtext("description", ""),
-                    item.findtext(f"{{{CONTENT_NS}}}encoded", ""),
-                ),
-            )
-        ),
+        guid=" ".join(_child_values(item, "guid", "id")),
+        link=links[0] if links else "",
+        title=" ".join(_child_values(item, "title")),
+        description=" ".join(descriptions),
+        doi=" ".join(_child_values(item, "doi", "identifier")),
     )
 
 
 def filter_feed(path: Path, suppressed: set[str], key: bytes) -> FilterResult:
     tree = ET.parse(path)
-    channel = tree.getroot().find("channel")
-    if channel is None:
-        raise ValueError(f"Not an RSS 2.0 document: {path}")
+    parent, entries = _feed_entries(tree.getroot(), path)
     removed = 0
-    for item in list(channel.findall("item")):
+    for item in entries:
         if hash_tokens(_item_tokens(item), key) & suppressed:
-            channel.remove(item)
+            parent.remove(item)
             removed += 1
-    kept = len(channel.findall("item"))
+    kept = len(entries) - removed
     if removed:
         tree.write(path, encoding="utf-8", xml_declaration=True)
     return FilterResult(path=path, kept=kept, removed=removed)
