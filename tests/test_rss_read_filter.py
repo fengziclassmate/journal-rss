@@ -1,6 +1,7 @@
 import json
 import sqlite3
 import tempfile
+import time
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -117,6 +118,14 @@ class ZoteroExportTests(unittest.TestCase):
             self.assertIn(old_hash, payload["hashes"])
             self.assertTrue(hash_tokens({"guid:scope:read"}, key) <= set(payload["hashes"]))
             self.assertFalse(hash_tokens({"guid:scope:unread"}, key) <= set(payload["hashes"]))
+
+            first_content = suppression.read_bytes()
+            first_mtime = suppression.stat().st_mtime_ns
+            time.sleep(0.02)
+            second = export_read_state(database, suppression, key)
+            self.assertEqual(second.new_hashes, 0)
+            self.assertEqual(suppression.read_bytes(), first_content)
+            self.assertEqual(suppression.stat().st_mtime_ns, first_mtime)
 
 
 if __name__ == "__main__":

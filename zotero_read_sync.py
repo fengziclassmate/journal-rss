@@ -89,31 +89,33 @@ def export_read_state(database: Path, suppression: Path, key: bytes) -> ExportRe
             )
         )
     combined = previous | discovered
-    payload = {
-        "version": 1,
-        "algorithm": "hmac-sha256",
-        "key_id": key_id(key),
-        "updated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
-        "source_database": database.name,
-        "source_database_modified_at": dt.datetime.fromtimestamp(
-            database.stat().st_mtime, dt.timezone.utc
-        ).replace(microsecond=0).isoformat(),
-        "read_items_seen": len(records),
-        "hashes": sorted(combined),
-    }
-    suppression.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(
-        "w", encoding="utf-8", dir=suppression.parent, delete=False, newline="\n"
-    ) as stream:
-        json.dump(payload, stream, ensure_ascii=False, indent=2)
-        stream.write("\n")
-        temporary = Path(stream.name)
-    temporary.replace(suppression)
+    new_hashes = combined - previous
+    if new_hashes or not suppression.exists():
+        payload = {
+            "version": 1,
+            "algorithm": "hmac-sha256",
+            "key_id": key_id(key),
+            "updated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
+            "source_database": database.name,
+            "source_database_modified_at": dt.datetime.fromtimestamp(
+                database.stat().st_mtime, dt.timezone.utc
+            ).replace(microsecond=0).isoformat(),
+            "read_items_seen": len(records),
+            "hashes": sorted(combined),
+        }
+        suppression.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            "w", encoding="utf-8", dir=suppression.parent, delete=False, newline="\n"
+        ) as stream:
+            json.dump(payload, stream, ensure_ascii=False, indent=2)
+            stream.write("\n")
+            temporary = Path(stream.name)
+        temporary.replace(suppression)
     return ExportResult(
         database=database,
         read_items=len(records),
         previous_hashes=len(previous),
-        new_hashes=len(combined - previous),
+        new_hashes=len(new_hashes),
         total_hashes=len(combined),
     )
 
