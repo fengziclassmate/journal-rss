@@ -93,11 +93,21 @@ jobs:
       - name: Generate conference feeds
         run: python conference_rss.py
 
+      - name: Remove previously read Zotero items
+        env:
+          RSS_READ_FILTER_KEY: ${{ secrets.RSS_READ_FILTER_KEY }}
+        run: >
+          python rss_read_filter.py
+          --root .
+          --suppression read-suppression.json
+          --glob "*.xml"
+          --glob "conference-feeds/*.xml"
+
       - name: Commit feed changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update RSS feed"
-          file_pattern: feed.xml official-feed-seen.json ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml information-geography.xml cities.xml ceus.xml jgsa.xml essd.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml information-geography-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml essd-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml research-papers.xml research-daily.xml research-data/state.json research-archive/*.json research-archive/*.html arxiv-email-papers.xml arxiv-email-daily.xml research-data/arxiv-email-state.json arxiv-email-archive/*.json arxiv-email-archive/*.html arxiv-email-analysis/*.json arxiv-email-analysis/*.html
+          file_pattern: read-suppression.json feed.xml official-feed-seen.json ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml information-geography.xml cities.xml ceus.xml jgsa.xml essd.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml information-geography-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml essd-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml research-papers.xml research-daily.xml research-data/state.json research-archive/*.json research-archive/*.html arxiv-email-papers.xml arxiv-email-daily.xml research-data/arxiv-email-state.json arxiv-email-archive/*.json arxiv-email-archive/*.html arxiv-email-analysis/*.json arxiv-email-analysis/*.html
 
       - name: Prepare Pages artifact
         run: |

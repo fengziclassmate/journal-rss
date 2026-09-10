@@ -2,6 +2,25 @@
 
 Zotero 订阅重复标记、标题译文缓存与已读归档见 [Journal RSS Memory](zotero-feed-memory/README.md)。这些个人状态只保存在本机，不随公开 RSS 发布。英文期刊的语言标记为 `en`，中文汇总为 `zh-CN`。
 
+## Zotero 已读过滤
+
+自建 RSS 发布前会通过 `rss_read_filter.py` 排除 Zotero 中已经读过的条目。过滤不按数量或年份截断：未读论文继续完整保留，已读论文的 DOI、URL、GUID、arXiv ID 和标题会转换为带私密密钥的 HMAC 指纹，并由 `read-suppression.json` 追加保存。即使 Zotero 后续删除本地条目，历史指纹也不会丢失，因此文章不会在下一次抓取时重新进入自建 RSS。
+
+`zotero_read_sync.py` 负责从 `F:\Zotero\zotero.sqlite` 导出已读状态。Zotero 正在运行并锁定主数据库时，脚本会读取最近的 Zotero 数据库备份，不会强制关闭 Zotero；这可能让刚标记的已读条目延迟到下一次 Zotero 备份后生效。计划任务每天运行一次，只在发现新指纹时提交并推送，随后 GitHub Actions 自动重新生成和部署 RSS。
+
+签名密钥仅保存在本机并配置为仓库 Secret `RSS_READ_FILTER_KEY`，不会进入 Git。官方直连 RSS 无法被本仓库删除；但从官方源读过且可通过 DOI 或标题识别的文章，会从对应的自建源中过滤掉。
+
+手动同步命令：
+
+```powershell
+python zotero_read_sync.py `
+  --database F:\Zotero\zotero.sqlite `
+  --suppression F:\Zotero\journal-rss-read-sync\read-suppression.json `
+  --key-file F:\Zotero\journal-rss-read-filter.key `
+  --repo F:\Zotero\journal-rss-read-sync `
+  --push
+```
+
 ## 科研论文速递
 
 仓库同时整合了原有的 arXiv 邮件收集和每日论文速递功能。两个公开订阅分别承担不同用途：
