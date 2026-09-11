@@ -30,7 +30,7 @@ try {
       }
       feed.url = targetURL;
       feed.refreshInterval = 1440;
-      feed.cleanupReadAfter = 3;
+      feed.cleanupReadAfter = 1;
       feed.cleanupUnreadAfter = 999;
       await feed.saveTx({skipSelect: true});
       result.updated++;

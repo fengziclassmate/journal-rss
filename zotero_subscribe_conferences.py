@@ -107,6 +107,8 @@ try {
       if (feed) {
         feed.name = spec.name;
         feed.refreshInterval = 1440;
+        feed.cleanupReadAfter = 1;
+        feed.cleanupUnreadAfter = 999;
         await feed.saveTx({skipSelect: true});
         result.updated.push({id: feed.libraryID, name: feed.name, url: feed.url});
       }
@@ -114,7 +116,9 @@ try {
         feed = new Zotero.Feed({
           name: spec.name,
           url: spec.url,
-          refreshInterval: 1440
+          refreshInterval: 1440,
+          cleanupReadAfter: 1,
+          cleanupUnreadAfter: 999
         });
         // Stagger initial imports over 18 hours instead of loading 100k entries at once.
         const nextCheck = new Date(Date.now() + (30 + index * 30 - 1440) * 60000);

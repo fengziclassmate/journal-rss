@@ -11,10 +11,10 @@ ATOM = b"<feed xmlns='http://www.w3.org/2005/Atom'><title>x</title><entry><title
 
 
 class OfficialFeedProxyTests(unittest.TestCase):
-    def test_config_has_75_unique_official_mirrors(self):
+    def test_config_has_76_unique_official_mirrors(self):
         mirrors = load_config(Path("official-feed-config.json"))
-        self.assertEqual(len(mirrors), 75)
-        self.assertEqual(len({item["mirror_url"] for item in mirrors}), 75)
+        self.assertEqual(len(mirrors), 76)
+        self.assertEqual(len({item["mirror_url"] for item in mirrors}), 76)
 
     def test_counts_rss_and_atom_entries(self):
         self.assertEqual(feed_entry_count(RSS), 1)
@@ -61,6 +61,8 @@ class OfficialFeedProxyTests(unittest.TestCase):
         rollback = migration_script(mirrors, rollback=True)
         self.assertIn('"current_url": "https://publisher.test/rss"', forward)
         self.assertIn('"target_url": "https://publisher.test/rss"', rollback)
+        self.assertIn('feed.cleanupReadAfter = 1', forward)
+        self.assertIn('feed.cleanupUnreadAfter = 999', forward)
 
 
 if __name__ == "__main__":

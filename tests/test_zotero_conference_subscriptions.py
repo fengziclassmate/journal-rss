@@ -51,6 +51,8 @@ global.Zotero = {
   assert.deepEqual([...feeds.values()].slice(1).map(f => f._feedLastCheck), checks);
   assert.equal(new Set(checks).size, 36);
   assert.ok([...feeds.values()].slice(1).every(f => f.refreshInterval === 1440));
+  assert.ok([...feeds.values()].slice(1).every(f => f.cleanupReadAfter === 1));
+  assert.ok([...feeds.values()].slice(1).every(f => f.cleanupUnreadAfter === 999));
   Zotero.DataDirectory.dir = 'D:\\Other';
   await assert.rejects(register, /Unexpected Zotero data directory/);
   console.log('registration, idempotence, stagger and directory guard passed');
