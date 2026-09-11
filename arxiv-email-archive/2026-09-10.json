@@ -3,6 +3,7 @@
   "guid": "arxiv-email-daily:2026-09-10",
   "paper_keys": [
     "arxiv:2602.19326",
+    "arxiv:2609.09762",
     "arxiv:2609.09578",
     "arxiv:2601.07268",
     "arxiv:2606.24138",
@@ -26,26 +27,25 @@
     "arxiv:2604.10169",
     "arxiv:2609.10315",
     "arxiv:2609.10177",
+    "arxiv:2609.09764",
     "arxiv:2609.10155",
     "arxiv:2609.10263",
     "arxiv:2609.10158",
-    "arxiv:2609.09429",
-    "arxiv:2609.09396",
-    "arxiv:2609.09374"
+    "arxiv:2609.09754"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:485",
-    "deepseek": "partial:0/200;failed-batches:20"
+    "deepseek": "partial:10/200;failed-batches:19"
   },
-  "updated_at": "2026-09-10T21:54:29.788708+00:00",
+  "updated_at": "2026-09-11T00:22:59.042666+00:00",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 285,
-    "high": 8,
-    "medium": 17,
-    "low": 25,
-    "below_threshold": 235
+    "analyzed": 295,
+    "high": 9,
+    "medium": 18,
+    "low": 27,
+    "below_threshold": 241
   },
   "papers": [
     {
@@ -81,6 +81,33 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅提供分隔线）。",
       "insight_zh": "从标题推断，该工作可能探索利用层次化智能体框架处理城市地理空间要素的依赖关系与修改操作，或与城市更新规划中的自动化编辑任务相关，但摘要未提供具体方法、数据或结论。"
+    },
+    {
+      "key": "arxiv:2609.09762",
+      "title": "MethaneFuse: Learning from Multi-Sensor Satellite Observations for Methane Plume Detection",
+      "title_zh": "MethaneFuse：从多传感器卫星观测中学习甲烷羽流检测",
+      "url": "https://arxiv.org/abs/2609.09762",
+      "doi": "",
+      "arxiv_id": "2609.09762",
+      "authors": [
+        "Yuyao Wang",
+        "Juliana Y. Leung",
+        "Di Niu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-09T06:04:56+00:00",
+      "score": 88,
+      "reason": "该论文研究多传感器卫星观测融合用于甲烷羽流检测，与用户的多源数据融合和遥感变化检测方向高度契合。",
+      "tags": [
+        "遥感",
+        "多源数据融合",
+        "变化检测",
+        "甲烷羽流检测",
+        "多传感器卫星观测"
+      ],
+      "abstract": "Methane plume detection from satellite imagery is constrained by incomplete observations: public satellites provide complementary spatial, spectral, and atmospheric evidence, but real plume cases rarely contain fully paired multi-sensor measurements because of revisit schedules, cloud coverage, acquisition quality, and the transient nature of emissions. Most learning-based detectors rely on single-sensor inputs, especially Sentinel-2 (S2), leaving many reported plume cases unusable. We construct MethaneUnion, a temporal multi-sensor dataset built from Carbon Mapper plume reports and matched S2, Landsat 8/9 (L8/9), EMIT, and Sentinel-5P (S5P) observations. Built on MethaneUnion, MethaneFuse learns from heterogeneous satellite observations under partial sensor availability without requiring complete four-sensor measurements. MethaneUnion expands usable coverage from 3,211 valid S2-matched plume cases to 8,981 reported plume cases with multi-sensor observations. At the representative 480 m setting, MethaneFuse achieves 84.87 F1 and 93.62 AUROC, improving over the strongest baseline by 5.65 F1 and 8.30 AUROC points while reducing false positives by 8.19 points. Sensor-availability experiments show that MethaneFuse improves detection when S2 is available and transfers plume knowledge to L8/9, EMIT, and S5P when S2 is unavailable. These results demonstrate the value of learning from incomplete heterogeneous sensor observations for practical methane plume detection.",
+      "summary_zh": "卫星影像的甲烷羽流检测受限于不完整观测：公共卫星提供互补的空间、光谱和大气证据，但由于重访周期、云覆盖、采集质量和排放的瞬态特性，真实羽流案例很少包含完全配对的多传感器测量。大多数基于学习的检测器依赖单传感器输入，尤其是Sentinel-2（S2），导致许多已报告的羽流案例无法使用。我们构建了MethaneUnion，一个基于Carbon Mapper羽流报告并匹配S2、Landsat 8/9（L8/9）、EMIT和Sentinel-5P（S5P）观测的时间多传感器数据集。基于MethaneUnion，MethaneFuse在部分传感器可用的情况下从异构卫星观测中学习，无需完整的四传感器测量。MethaneUnion将可用覆盖从3,211个有效S2匹配羽流案例扩展到8,981个具有多传感器观测的报告羽流案例。在代表性的480米设置下，MethaneFuse达到84.87 F1和93.62 AUROC，相比最强基线提升5.65 F1和8.30 AUROC点，同时将假阳性降低8.19点。传感器可用性实验表明，MethaneFuse在S2可用时提升检测性能，并在S2不可用时将羽流知识迁移到L8/9、EMIT和S5P。这些结果证明了从非完整异构传感器观测中学习对实际甲烷羽流检测的价值。",
+      "insight_zh": "该工作展示了在传感器观测不完整条件下进行多源卫星数据融合的有效策略，其处理异构传感器缺失的框架对城市遥感变化检测中的多源数据融合具有方法借鉴意义。"
     },
     {
       "key": "arxiv:2609.09578",
@@ -759,6 +786,40 @@
       "insight_zh": "该框架的对比示例与响应条件检索思路可迁移至地理空间多模态推理任务（如遥感影像问答），但其摘要未涉及地理空间数据或城市应用，需进一步验证在空间推理场景中的适用性。"
     },
     {
+      "key": "arxiv:2609.09764",
+      "title": "SocialRL: Refining LLMs' Social Intelligence through Multi-turn Reinforcement Learning and Reward Design",
+      "title_zh": "SocialRL：通过多轮强化学习与奖励设计精炼LLM的社会智能",
+      "url": "https://arxiv.org/abs/2609.09764",
+      "doi": "",
+      "arxiv_id": "2609.09764",
+      "authors": [
+        "Jianing Wang",
+        "Xintao Wang",
+        "Aili Chen",
+        "Jie Shi",
+        "Hongcheng Guo",
+        "Jun Gao",
+        "Wenxuan Zhao",
+        "Chengkun Lang",
+        "Yuanli Guo",
+        "Yanghua Xiao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-09T06:06:34+00:00",
+      "score": 62,
+      "reason": "该论文研究LLM的社会智能与多轮强化学习，与用户研究画像中的LLM和多智能体方向直接相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "强化学习",
+        "社会智能",
+        "对话系统"
+      ],
+      "abstract": "Social intelligence enables agents to read social context, infer intent, and adapt over sustained dialogue. As language models become autonomous collaborators, it is central to building effective and trustworthy human-AI interaction. Existing reinforcement learning methods optimize single-turn utterances and sparse outcome rewards, producing short-sighted policies that struggle to manage goal-relationship tensions across multi-turn interactions. We propose SocialRL, a multi-turn reinforcement learning framework addressing both challenges. First, we apply multi-turn reinforcement learning using PPO that propagates delayed outcome rewards back to each turn, enabling long-horizon planning. Second, we design six process reward dimensions capturing the goal-relationship trade-off, including goal advancement, relational attunement, contextual coherence, etc. A reward model dynamically generates fine-grained scoring criteria for each dimension, while a stage-aware weight schedule prioritizes relationship-building in early turns, goal advancement mid-way, and balanced closure late. Across multiple social-dialogue benchmarks, SocialRL improves Goal Achievement by an average of 9.2 percentage points over the corresponding Base models. These results demonstrate the effectiveness of SocialRL across synthetic and real social scenes, as well as standard and challenging social scenarios.",
+      "summary_zh": "社会智能使智能体能够解读社会语境、推断意图并在持续对话中适应。随着语言模型成为自主协作者，社会智能对于构建有效且可信的人机交互至关重要。现有强化学习方法优化单轮话语和稀疏结果奖励，产生短视策略，难以在多轮交互中管理目标与关系的张力。我们提出SocialRL，一个多轮强化学习框架以应对这两个挑战。首先，我们使用PPO进行多轮强化学习，将延迟的结果奖励传播回每一轮，实现长时程规划。其次，我们设计六个过程奖励维度来捕捉目标-关系权衡，包括目标推进、关系协调、语境连贯性等。奖励模型为每个维度动态生成细粒度评分标准，而阶段感知权重调度在早期轮次优先关系建立，中期优先目标推进，后期优先平衡收尾。在多个社会对话基准上，SocialRL相比对应的基础模型平均提升目标达成率9.2个百分点。这些结果证明了SocialRL在合成与真实社会场景以及标准与挑战性社会场景中的有效性。",
+      "insight_zh": "该工作表明多轮强化学习结合过程奖励设计可提升LLM的社会交互能力，其阶段感知奖励调度思路或可迁移至多智能体协作场景，但论文未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.10155",
       "title": "From Retrieval to Weights: Parametric Individualization of Small Language Models with Individual Text Corpora",
       "title_zh": "从检索到权重：基于个体文本语料的小语言模型参数化个性化",
@@ -842,85 +903,35 @@
       "insight_zh": "其组合感知与空间关系校准机制或可为遥感变化检测中的新类别/新变化类型发现提供思路，但摘要未涉及遥感数据，跨域适用性尚不明确。"
     },
     {
-      "key": "arxiv:2609.09429",
-      "title": "Applying foundation model embeddings towards urban livability evaluation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09429",
+      "key": "arxiv:2609.09754",
+      "title": "LexAgentHallu: A Hierarchical Benchmark for Profiling Hallucinations in Legal Agents",
+      "title_zh": "LexAgentHallu：面向法律智能体幻觉剖析的分层基准",
+      "url": "https://arxiv.org/abs/2609.09754",
       "doi": "",
-      "arxiv_id": "2609.09429",
+      "arxiv_id": "2609.09754",
       "authors": [
-        "Ayush Khot",
-        "Wen Zhou",
-        "Shaowen Wang"
+        "Yujin Zhou",
+        "Mingxuan Zheng",
+        "Chuxue Cao",
+        "Huang Yidan",
+        "Jiale Chen",
+        "Yike Guo",
+        "Sirui Han"
       ],
       "venue": "arXiv",
-      "published": "2026-09-08T20:28:47+00:00",
+      "published": "2026-09-09T05:52:53+00:00",
       "score": 55,
-      "reason": "关键词命中：Geospatial、Foundation Model",
+      "reason": "该论文研究法律智能体的幻觉评估，与用户的LLM和多智能体研究方向相关，但应用领域为法律而非地理空间。",
       "tags": [
-        "Geospatial",
-        "Foundation Model"
+        "LLM",
+        "多智能体",
+        "法律智能体",
+        "幻觉基准",
+        "工具调用"
       ],
-      "abstract": "While accurate measurement of socioeconomic indicators remains challenging in data-scarce regions, which limits policy interventions and resource allocation, high-resolution geospatial data is widely available and can contain information on various livability statistics. We investigate which physical features are encoded within foundation model embeddings, such as AlphaEarth, AnySat, and TerraMind, and provide a systematic framework for identifying the most predictive geospatial indicators. By analyzing how different types of geospatial data influence urban livability predictions, our approach enables researchers to prioritize the most informative features for their specific applications. Additionally, we demonstrate how to leverage foundation model embeddings to enhance prediction performance for these outcomes. This work contributes a principled methodology for extracting actionable information from satellite imagery while accounting for complex spatial dependencies, with applications in predicting urban livability in regions with limited observation data.",
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09396",
-      "title": "VANTAGE-Bench: Evaluating the Infrastructure AI Gap in Vision-Language Models",
-      "title_zh": "VANTAGE-Bench：评估视觉语言模型中的基础设施 AI 差距",
-      "url": "https://arxiv.org/abs/2609.09396",
-      "doi": "",
-      "arxiv_id": "2609.09396",
-      "authors": [
-        "Zaid Pervaiz Bhat",
-        "Nimra Nayyar",
-        "Arihant Jain",
-        "Lap Fung Chan",
-        "John Suchanek",
-        "Yu Wang",
-        "Varun Praveen",
-        "Tomasz Kornuta",
-        "Vidya Nariyambut Murali"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-08T19:50:25+00:00",
-      "score": 55,
-      "reason": "该文提出评估基础设施 AI 中视觉语言模型能力的基准，涵盖物流、交通和智能空间等固定摄像头场景，涉及时空理解与地理空间智能，与研究方向有一定关联。",
-      "tags": [
-        "视觉语言模型",
-        "基础设施AI",
-        "时空基准",
-        "固定摄像头",
-        "目标跟踪"
-      ],
-      "abstract": "As Vision-Language Models (VLMs) advance toward physical deployment, the focus has remained on action-oriented Embodied AI evaluated on subject-centric consumer video. This overlooks a pervasive class of Physical AI: Infrastructure AI, which relies on fixed cameras for open-loop insights like safety monitoring and operational logging. We introduce VANTAGE-Bench, a benchmark measuring this \"Infrastructure AI Gap.\" It spans three operational domains (Logistics, Transportation, and Smart Spaces), unifies image and video evaluation across semantic, spatial, temporal, and spatio-temporal capabilities, and moves beyond multiple-choice to eight task formulations including dense captioning and spatio-temporal grounding. It adds a single-pass trajectory protocol for Single Object Tracking and, to our knowledge, the first such evaluation on fixed-camera infrastructure video, scored against specialist trackers. Annotation spans three regimes over 3,346 media assets: 3,342 video-task annotations, 4,281 image-grounding annotations, and 27,404 detection boxes. Evaluating 17 models zero-shot, we find the shortfall relative to consumer-centric benchmarks is concentrated, not general. Event verification, referring expressions, and temporal localization fall roughly 9 to 24 points at every model scale, while video question answering stays within 5.3 points of VideoMME and 2D spatial pointing shows no shortfall against BLINK. The temporal pillar is weakest in absolute terms: no system exceeds 55.7 mIoU on temporal localization or 37.3 SODA_c on dense video captioning. On tracking, frontier models come within roughly 5 points of specialist trackers over short horizons but separate as the horizon extends. Open-weight models lead 2D object localization outright, so neither scale nor proprietary access explains the pattern. Data, evaluation harness, and leaderboard: https://vantage-bench.org/",
-      "summary_zh": "随着视觉语言模型（VLM）迈向物理部署，关注点仍集中在以主体为中心的消费视频上评估的行动导向具身 AI。这忽视了普遍存在的一类物理 AI：基础设施 AI，它依赖固定摄像头进行安全监控和运营记录等开环洞察。我们提出 VANTAGE-Bench，一个衡量这种“基础设施 AI 差距”的基准。它涵盖三个运营领域（物流、交通和智能空间），统一了图像和视频在语义、空间、时间和时空能力上的评估，并超越多项选择，包含密集描述和时空定位等八种任务形式。它增加了用于单目标跟踪的单次轨迹协议，并且据我们所知，这是首个针对固定摄像头基础设施视频的此类评估，并与专家跟踪器进行评分对比。标注覆盖 3,346 个媒体资产上的三种机制：3,342 个视频任务标注、4,281 个图像定位标注和 27,404 个检测框。对 17 个模型进行零样本评估，我们发现相对于以消费者为中心的基准，差距是集中的而非普遍的。事件验证、指代表达和时间定位在每个模型规模上下降约 9 到 24 个点，而视频问答与 VideoMME 的差距保持在 5.3 个点以内，2D 空间指向相对 BLINK 没有差距。时间支柱在绝对值上最弱：没有系统在时间定位上超过 55.7 mIoU，或在密集视频描述上超过 37.3 SODA_c。在跟踪方面，前沿模型在短时域内与专家跟踪器相差约 5 个点，但随着时域延长差距扩大。开放权重模型在 2D 物体定位上 outright 领先，因此既非规模也非专有",
-      "insight_zh": "该基准揭示了 VLM 在固定摄像头基础设施场景中的时空理解短板，其任务设计与评估协议可为城市监控与地理空间智能中的多模态模型评测提供参考。"
-    },
-    {
-      "key": "arxiv:2609.09374",
-      "title": "An Autonomous GeoAI Agent for Arctic Eco-Navigation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09374",
-      "doi": "",
-      "arxiv_id": "2609.09374",
-      "authors": [
-        "Samira Alkaee Taleghan",
-        "Younghyun Koo",
-        "Farnoush Banaei-Kashani"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-08T19:15:36+00:00",
-      "score": 55,
-      "reason": "关键词命中：Geospatial、Multi-Agent",
-      "tags": [
-        "Geospatial",
-        "Multi-Agent"
-      ],
-      "abstract": "Arctic maritime navigation is becoming increasingly important as changing sea-ice conditions expand seasonal accessibility while simultaneously introducing substantial operational, environmental, and community risks. Arctic route planning is inherently a multi-criteria problem: routes that improve vessel safety or efficiency may increase exposure to sea ice, sensitive ecosystems, or nearby communities. Existing routing methods prioritize travel time, fuel use, and navigational risk, often overlooking ecological and community impacts. We introduce a human-in-the-loop, multi-agent GeoAI system for Arctic eco-navigation that integrates operational, physical, ecological, and community-related criteria within a unified routing framework. Multiple specialized agents coordinate geospatial data acquisition and preparation, multi-objective route generation, and skyline-based decision support. The ecological criteria explicitly account for exposure to sensitive areas, including Essential Fish Habitat and seal critical habitat. By considering these ecosystem impacts and potential community burdens while keeping consequential value judgments under human control, the framework supports safer, more transparent, and socially responsible Arctic navigation. Project page and code are publicly available. https://samiraat.github.io/Arctic-Eco-Navigation-Agent/, https://github.com/samiraat/Arctic-Eco-Navigation-Agent",
-      "summary_zh": "",
-      "insight_zh": ""
+      "abstract": "As large language models are increasingly deployed as tool-augmented legal agents, they introduce agentic hallucinations where tool-call and reasoning errors cascade into fabricated holdings and miscited authority. However, existing legal benchmarks evaluate only single-turn QA with outcome-level metrics, while agentic hallucination benchmarks lack legal-specific diagnostic capability. Neither answers to what extent and how a legal agent hallucinates along its trajectory. To address these limitations, we introduce LexAgentHallu, a legal agentic hallucination benchmark designed to evaluate to what extent and how legal agents fail along multi-step trajectories. Built through a four-stage expert-in-the-loop pipeline, LexAgentHallu contains 3414 instances across 17 legal categories and 6 task types. Each instance is annotated under a dual-layer hallucination taxonomy of 7 high-level categories and 27 fine-grained subclasses, covering both substantive errors and agent-procedural failures. We further design fine-grained metrics that quantify to what extent and localize how each failure occurs along an agent's execution path. Our evaluation across 18 proprietary and open-source agents uncovers a Right-Answer-Wrong-Reason effect and reveals that hallucination subclasses cluster rather than scatter, forming distinct agentic framework, legal task, and category profiles. These findings, invisible to outcome-level evaluation, validate the diagnostic power of LexAgentHallu for evaluating agentic hallucination in law.",
+      "summary_zh": "随着大语言模型越来越多地被部署为工具增强的法律智能体，它们引入了智能体幻觉，即工具调用和推理错误级联为虚构的裁判要旨和错误引用的权威依据。然而，现有法律基准仅评估单轮问答的结果级指标，而智能体幻觉基准缺乏法律特定的诊断能力。两者都无法回答法律智能体在其轨迹中在多大程度上以及如何产生幻觉。为弥补这些局限，我们提出LexAgentHallu，一个法律智能体幻觉基准，旨在评估法律智能体在多步轨迹中在多大程度上以及如何失败。通过四阶段专家参与流程构建，LexAgentHallu包含3,414个实例，涵盖17个法律类别和6种任务类型。每个实例按照双层幻觉分类法标注，包含7个高层类别和27个细粒度子类，覆盖实质性错误和智能体程序性失败。我们进一步设计细粒度指标，量化失败程度并定位其在智能体执行路径中的发生方式。对18个专有和开源智能体的评估揭示了“答案正确但推理错误”效应，并发现幻觉子类呈聚集而非分散分布，形成不同的智能体框架、法律任务和类别画像。这些结果在结果级评估中不可见，验证了LexAgentHallu在法律领域评估智能体幻觉的诊断能力。",
+      "insight_zh": "该基准提出的轨迹级幻觉诊断方法和双层分类体系，可为地理空间智能体的可靠性评估提供方法论参考，但论文本身未涉及地理空间领域。"
     }
   ]
 }

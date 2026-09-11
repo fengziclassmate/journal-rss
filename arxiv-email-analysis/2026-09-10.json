@@ -2,11 +2,11 @@
   "date": "2026-09-10",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 285,
-    "high": 8,
-    "medium": 17,
-    "low": 25,
-    "below_threshold": 235
+    "analyzed": 295,
+    "high": 9,
+    "medium": 18,
+    "low": 27,
+    "below_threshold": 241
   },
   "papers": [
     {
@@ -105,6 +105,34 @@
       ],
       "summary_zh": "由于仅提供了标题与占位摘要，无法获取具体方法、数据集与实验结果。从标题可知，该工作提出 Sat2City v2，旨在从单张卫星影像直接生成原生三维城市资产，属于遥感影像到三维城市几何/资产的生成式建模研究。",
       "insight_zh": "该工作可能为城市更新研究提供从卫星影像快速构建三维城市模型的途径，但其具体技术路线、精度与适用性需依据全文进一步确认。"
+    },
+    {
+      "key": "arxiv:2609.09762",
+      "title": "MethaneFuse: Learning from Multi-Sensor Satellite Observations for Methane Plume Detection",
+      "title_zh": "MethaneFuse：从多传感器卫星观测中学习甲烷羽流检测",
+      "url": "https://arxiv.org/abs/2609.09762",
+      "arxiv_id": "2609.09762",
+      "authors": [
+        "Yuyao Wang",
+        "Juliana Y. Leung",
+        "Di Niu"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-09-09T06:04:56+00:00",
+      "score": 88,
+      "reason": "该论文研究多传感器卫星观测融合用于甲烷羽流检测，与用户的多源数据融合和遥感变化检测方向高度契合。",
+      "tags": [
+        "遥感",
+        "多源数据融合",
+        "变化检测",
+        "甲烷羽流检测",
+        "多传感器卫星观测"
+      ],
+      "summary_zh": "卫星影像的甲烷羽流检测受限于不完整观测：公共卫星提供互补的空间、光谱和大气证据，但由于重访周期、云覆盖、采集质量和排放的瞬态特性，真实羽流案例很少包含完全配对的多传感器测量。大多数基于学习的检测器依赖单传感器输入，尤其是Sentinel-2（S2），导致许多已报告的羽流案例无法使用。我们构建了MethaneUnion，一个基于Carbon Mapper羽流报告并匹配S2、Landsat 8/9（L8/9）、EMIT和Sentinel-5P（S5P）观测的时间多传感器数据集。基于MethaneUnion，MethaneFuse在部分传感器可用的情况下从异构卫星观测中学习，无需完整的四传感器测量。MethaneUnion将可用覆盖从3,211个有效S2匹配羽流案例扩展到8,981个具有多传感器观测的报告羽流案例。在代表性的480米设置下，MethaneFuse达到84.87 F1和93.62 AUROC，相比最强基线提升5.65 F1和8.30 AUROC点，同时将假阳性降低8.19点。传感器可用性实验表明，MethaneFuse在S2可用时提升检测性能，并在S2不可用时将羽流知识迁移到L8/9、EMIT和S5P。这些结果证明了从非完整异构传感器观测中学习对实际甲烷羽流检测的价值。",
+      "insight_zh": "该工作展示了在传感器观测不完整条件下进行多源卫星数据融合的有效策略，其处理异构传感器缺失的框架对城市遥感变化检测中的多源数据融合具有方法借鉴意义。"
     },
     {
       "key": "arxiv:2601.07268",
@@ -752,6 +780,40 @@
       "insight_zh": "该工作表明基于仿真的验证可将模糊的诊断推理任务转化为可扩展的强化学习问题，这一思路或可迁移至地理空间异常检测与城市更新因果推断场景，但需注意其当前验证环境为数字广告而非地理空间数据。"
     },
     {
+      "key": "arxiv:2609.09764",
+      "title": "SocialRL: Refining LLMs' Social Intelligence through Multi-turn Reinforcement Learning and Reward Design",
+      "title_zh": "SocialRL：通过多轮强化学习与奖励设计精炼LLM的社会智能",
+      "url": "https://arxiv.org/abs/2609.09764",
+      "arxiv_id": "2609.09764",
+      "authors": [
+        "Jianing Wang",
+        "Xintao Wang",
+        "Aili Chen",
+        "Jie Shi",
+        "Hongcheng Guo",
+        "Jun Gao",
+        "Wenxuan Zhao",
+        "Chengkun Lang",
+        "Yuanli Guo",
+        "Yanghua Xiao"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-09T06:06:34+00:00",
+      "score": 62,
+      "reason": "该论文研究LLM的社会智能与多轮强化学习，与用户研究画像中的LLM和多智能体方向直接相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "强化学习",
+        "社会智能",
+        "对话系统"
+      ],
+      "summary_zh": "社会智能使智能体能够解读社会语境、推断意图并在持续对话中适应。随着语言模型成为自主协作者，社会智能对于构建有效且可信的人机交互至关重要。现有强化学习方法优化单轮话语和稀疏结果奖励，产生短视策略，难以在多轮交互中管理目标与关系的张力。我们提出SocialRL，一个多轮强化学习框架以应对这两个挑战。首先，我们使用PPO进行多轮强化学习，将延迟的结果奖励传播回每一轮，实现长时程规划。其次，我们设计六个过程奖励维度来捕捉目标-关系权衡，包括目标推进、关系协调、语境连贯性等。奖励模型为每个维度动态生成细粒度评分标准，而阶段感知权重调度在早期轮次优先关系建立，中期优先目标推进，后期优先平衡收尾。在多个社会对话基准上，SocialRL相比对应的基础模型平均提升目标达成率9.2个百分点。这些结果证明了SocialRL在合成与真实社会场景以及标准与挑战性社会场景中的有效性。",
+      "insight_zh": "该工作表明多轮强化学习结合过程奖励设计可提升LLM的社会交互能力，其阶段感知奖励调度思路或可迁移至多智能体协作场景，但论文未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.10177",
       "title": "Beyond Surface Imitation: Contrastive Modeling for Reasoning Path Alignment in Multimodal In-Context Learning",
       "title_zh": "超越表面模仿：多模态上下文学习中推理路径对齐的对比建模",
@@ -934,6 +996,37 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作提出一种生成式模型SurF，用于多变量不规则时间序列的预测任务。",
       "insight_zh": "摘要缺失，无法判断其模型架构、生成机制与评测基准；不规则时间序列建模在城市传感器数据、交通流与遥感时序分析中具有潜在应用价值，但需进一步确认方法细节。"
+    },
+    {
+      "key": "arxiv:2609.09754",
+      "title": "LexAgentHallu: A Hierarchical Benchmark for Profiling Hallucinations in Legal Agents",
+      "title_zh": "LexAgentHallu：面向法律智能体幻觉剖析的分层基准",
+      "url": "https://arxiv.org/abs/2609.09754",
+      "arxiv_id": "2609.09754",
+      "authors": [
+        "Yujin Zhou",
+        "Mingxuan Zheng",
+        "Chuxue Cao",
+        "Huang Yidan",
+        "Jiale Chen",
+        "Yike Guo",
+        "Sirui Han"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-09T05:52:53+00:00",
+      "score": 55,
+      "reason": "该论文研究法律智能体的幻觉评估，与用户的LLM和多智能体研究方向相关，但应用领域为法律而非地理空间。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "法律智能体",
+        "幻觉基准",
+        "工具调用"
+      ],
+      "summary_zh": "随着大语言模型越来越多地被部署为工具增强的法律智能体，它们引入了智能体幻觉，即工具调用和推理错误级联为虚构的裁判要旨和错误引用的权威依据。然而，现有法律基准仅评估单轮问答的结果级指标，而智能体幻觉基准缺乏法律特定的诊断能力。两者都无法回答法律智能体在其轨迹中在多大程度上以及如何产生幻觉。为弥补这些局限，我们提出LexAgentHallu，一个法律智能体幻觉基准，旨在评估法律智能体在多步轨迹中在多大程度上以及如何失败。通过四阶段专家参与流程构建，LexAgentHallu包含3,414个实例，涵盖17个法律类别和6种任务类型。每个实例按照双层幻觉分类法标注，包含7个高层类别和27个细粒度子类，覆盖实质性错误和智能体程序性失败。我们进一步设计细粒度指标，量化失败程度并定位其在智能体执行路径中的发生方式。对18个专有和开源智能体的评估揭示了“答案正确但推理错误”效应，并发现幻觉子类呈聚集而非分散分布，形成不同的智能体框架、法律任务和类别画像。这些结果在结果级评估中不可见，验证了LexAgentHallu在法律领域评估智能体幻觉的诊断能力。",
+      "insight_zh": "该基准提出的轨迹级幻觉诊断方法和双层分类体系，可为地理空间智能体的可靠性评估提供方法论参考，但论文本身未涉及地理空间领域。"
     },
     {
       "key": "arxiv:2605.30002",
@@ -1558,6 +1651,37 @@
       "insight_zh": "摘要缺失，无法评估其数据来源、精度与实时性指标；野火烟雾制图属于遥感环境监测范畴，若方法可迁移，或对时空数据挖掘与变化检测有参考意义，但需确认具体技术细节。"
     },
     {
+      "key": "arxiv:2609.09737",
+      "title": "Distilling Image Prototypes for Guided Test-Time Adaptation",
+      "title_zh": "蒸馏图像原型用于引导测试时适应",
+      "url": "https://arxiv.org/abs/2609.09737",
+      "arxiv_id": "2609.09737",
+      "authors": [
+        "Liwen Wang",
+        "Xingbo Dong",
+        "Iman Yi Liao",
+        "Deyin Liu",
+        "Massimo Tistarelli",
+        "Lin Yuanbo Wu",
+        "Zhe Jin"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-09T05:27:09+00:00",
+      "score": 45,
+      "reason": "该论文研究测试时适应方法以应对分布偏移，与遥感变化检测中的域适应问题有潜在关联，但论文本身未涉及遥感或地理空间应用。",
+      "tags": [
+        "测试时适应",
+        "原型蒸馏",
+        "域偏移",
+        "遥感变化检测"
+      ],
+      "summary_zh": "测试时适应（TTA）增强了模型对分布偏移的鲁棒性，但面临两个关键挑战：噪声伪标签导致的误差累积和源知识的灾难性遗忘。旨在缓解误差累积的不确定性方法往往产生过度自信或计算昂贵的估计，而旨在通过原型回放防止遗忘的策略依赖静态表示，随着模型适应容易失配。为解决这些问题，本文提出一个新框架——蒸馏图像原型引导的测试时适应（DIPTTA）。该方法的核心是引入蒸馏图像原型（DIP），一组紧凑的合成图像，作为源知识的动态可再生锚点。该原型支持动态特征回放机制，持续生成与模型当前状态对齐的特征原型，从而有效防止灾难性遗忘。此外，DIP锚定了一种源校准的不确定性估计方法，通过利用稳定的源知识提供偏差更小的样本可靠性度量，从而稳健地抑制误差累积。在多个基准上的大量实验表明，DIPTTA显著优于最先进方法，尤其在严重域偏移下。源代码见https://github.com/LiwenWang919/DIPTTA。",
+      "insight_zh": "该工作提出的动态原型回放和源校准不确定性估计方法，在概念上可应用于遥感变化检测中的跨域适应问题，但论文未涉及地理空间数据或应用。"
+    },
+    {
       "key": "arxiv:2609.10154",
       "title": "CompassOPD: Cross-Family On-Policy Distillation via Within-Family Likelihood Shifts",
       "title_zh": "CompassOPD：基于族内似然偏移的跨族在线策略蒸馏",
@@ -1981,6 +2105,44 @@
       ],
       "summary_zh": "大语言模型面对恶意微调仍然脆弱，这推动了针对有害人格漂移的训练时防御。预防性引导在微调期间注入不良特质人格向量并在评测时移除，但其持久保护机制尚不清楚。作者分析其时序优化动态，发现防御源于早期补偿性适应阶段，随后进入校正信号衰减的稳态阶段；在参数空间中，注意力输出投影成为防御更新的主导残差写入路径。通过干预增量保持（IDP）和IDP延续实验，作者进一步表明保留或重新注入权重偏移无法维持保护，说明预防性引导依赖主动适应而非静态防御。基于此，作者提出渐进强度调度（PIS），从适度注入强度开始，在静态强度对齐开始衰减后增加强度。在评测的Qwen2.5和Gemma-3模型上，PIS相比静态强度引导提升了安全鲁棒性，同时减少了有害特质表达。",
       "insight_zh": "该研究揭示防御依赖主动适应过程，对理解LLM在持续微调下的行为稳定性有参考价值，但与地理空间智能无直接关联。"
+    },
+    {
+      "key": "arxiv:2609.09707",
+      "title": "Which Tokens Should SFT Actually Learn? A Token-Trimming Perspective on Mathematical Reasoning",
+      "title_zh": "SFT究竟应该学习哪些令牌？数学推理的令牌修剪视角",
+      "url": "https://arxiv.org/abs/2609.09707",
+      "arxiv_id": "2609.09707",
+      "authors": [
+        "Yaning Jia",
+        "Chunhui Zhang",
+        "Wenxuan Xu",
+        "Xingjian Diao",
+        "Xiaoyuan Wang",
+        "Soroush Vosoughi"
+      ],
+      "categories": [
+        "cs.AI",
+        "Linguistics:",
+        "EMNLP",
+        "2026.",
+        "14",
+        "pages.",
+        "Code",
+        "available",
+        "at",
+        "https://github.com/karpning/TrimSFT"
+      ],
+      "published": "2026-09-09T04:46:15+00:00",
+      "score": 35,
+      "reason": "该论文研究LLM监督微调中的令牌级重加权方法，与用户的LLM研究方向有间接关联，但聚焦数学推理而非地理空间应用。",
+      "tags": [
+        "LLM",
+        "监督微调",
+        "数学推理",
+        "令牌重加权"
+      ],
+      "summary_zh": "监督微调（SFT）对所有目标令牌应用统一的交叉熵损失，尽管不同令牌对数学推理提供不等的学习信号。这种统一处理可能过度锐化已掌握的令牌，同时放大对不确定、低置信度令牌的学习压力，导致次优的训练动态。我们提出修剪对数差距SFT（TrimSFT），一种简单的令牌级重加权方法，根据金标准令牌与其最强竞争者之间的对数差距缩放SFT损失。TrimSFT从两个极端修剪监督：已掌握的令牌（大对数差距）和当前模型弱支持的令牌（小或负对数差距），将学习集中在两者之间的中间对数差距区域。我们用中心在边界m、带宽τ的高斯权重实例化这一原则，无需参考模型或额外前向传播。我们在Llama、Qwen和DeepMath系列的六个基础模型上跨五个数学推理基准评估TrimSFT。TrimSFT持续优于标准SFT，在六个模型中的五个上达到最佳平均性能，在MATH500上相比SFT提升高达+26.9分。进一步分析表明，带宽τ比精确的边界位置更重要，仅从一侧移除监督压力的半修剪变体产生较差的权衡。令牌级对数差距分布分析表明，TrimSFT比统一SFT或单调重加权方法以更平衡的方式重塑模型置信度。这些结果表明，推理SFT可以从修剪两个极端而非统一对待所有令牌中受益。",
+      "insight_zh": "该工作提出的令牌级重加权策略在方法论上对LLM微调有参考价值，但与用户的地理空间智能和城市更新研究方向关联较弱。"
     },
     {
       "key": "arxiv:2608.18062",
@@ -3134,6 +3296,35 @@
       "insight_zh": "该研究提出嵌入空间各向同性扰动作为新增强轴，避免像素级操作破坏跨模态对齐，其思路对遥感多源数据融合中保持模态间语义一致性的增强策略具有潜在借鉴意义。"
     },
     {
+      "key": "arxiv:2609.09736",
+      "title": "IAE-VTG: Interaction-Aligned Action-Entity Video Temporal Grounding",
+      "title_zh": "IAE-VTG：交互对齐的动作-实体视频时序定位",
+      "url": "https://arxiv.org/abs/2609.09736",
+      "arxiv_id": "2609.09736",
+      "authors": [
+        "Shiwen Zhao",
+        "Qi Zhang",
+        "Sezer Karaoglu",
+        "Theo Gevers",
+        "Martin R. Oswald"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "published": "2026-09-09T05:25:37+00:00",
+      "score": 30,
+      "reason": "该论文研究视频时序定位中的动作-实体交互建模，与用户研究画像关联较弱，仅在多模态交互建模方法层面有间接参考价值。",
+      "tags": [
+        "视频时序定位",
+        "多模态",
+        "动作-实体交互",
+        "视频理解"
+      ],
+      "summary_zh": "视频时序定位（VTG）定位与自然语言查询匹配的视频片段。许多查询描述特定实体执行的动作。现有方法通常将查询整体编码或使用通用视频-文本交互，而未明确检查动作和实体是否同时出现。因此它们可能选择包含两个概念但不包含查询所描述事件的片段。我们提出交互对齐的动作-实体视频时序定位（IAE-VTG），在表示和训练分配两个层面建模这种关系。首先，细粒度解耦交互模块（FDIM）分离动作和实体相关的查询信息，并将其与互补的运动和外观特征对齐。然后结合令牌级交互构建捕捉动作与实体关系的表示。其次，交互敏感分配（ISA）将这种交互证据加入二分匹配，使训练目标同时基于时间重叠和语义兼容性选择。这减少了来自时间上合理但语义上不正确的候选的监督。在QVHighlights、Charades-STA和TACoS上的实验表明，IAE-VTG持续改进强基线，并在标准定位指标上达到竞争性或最先进性能。额外分析表明，该方法在相似动作或实体多次出现时尤为有效，并为复杂事件产生更可靠的分配。",
+      "insight_zh": "该工作提出的动作-实体解耦交互建模思路，在方法论上对地理空间事件的多模态理解有潜在启发，但与用户核心研究方向关联有限。"
+    },
+    {
       "key": "arxiv:2605.14175",
       "title": "Grounded Continuation: A Linear-Time Runtime Verifier for LLM Conversations",
       "title_zh": "接地延续：面向LLM对话的线性时间运行时验证器",
@@ -3262,6 +3453,32 @@
       ],
       "summary_zh": "摘要缺失，无法提供具体内容概述。从标题推测，该研究可能提出一种基于进化策略的方法来实现可扩展的模型对齐。",
       "insight_zh": "若该方法可用于大规模LLM对齐，可能对多智能体地理空间模拟中的智能体行为对齐有潜在启发，但需完整摘要确认。"
+    },
+    {
+      "key": "arxiv:2609.09705",
+      "title": "Cross-Species Animal Re-Identification with Semantic Consistency Learning",
+      "title_zh": "基于语义一致性学习的跨物种动物重识别",
+      "url": "https://arxiv.org/abs/2609.09705",
+      "arxiv_id": "2609.09705",
+      "authors": [
+        "Shuoyi Chen",
+        "Yuejia Li",
+        "Mang Ye"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T04:41:01+00:00",
+      "score": 30,
+      "reason": "该论文研究跨物种动物重识别的语义一致性学习，与用户研究画像关联较弱，仅在跨域泛化表征学习方法层面有间接参考价值。",
+      "tags": [
+        "跨物种动物重识别",
+        "语义一致性学习",
+        "域泛化",
+        "表征学习"
+      ],
+      "summary_zh": "可泛化的动物重识别（ReID）旨在跨物种识别个体动物，这些物种具有多样的形态和生态背景。与人物ReID中不同域共享相似身体结构不同，动物物种往往表现出截然不同的解剖结构和视觉模式，难以建立共享的视觉对应关系。因此，跨物种学习的表示倾向于形成碎片化的嵌入空间，严重限制了跨物种泛化。为应对这一挑战，我们提出语义一致性学习（SCL），一个旨在学习在外观变化下保持稳定同时保留跨物种共享语义结构的表示的框架。SCL包含两个互补组件。前景-背景解耦谱归一化（FDSNorm）通过区域感知方式抑制环境引起的风格变化来稳定特征统计，而跨物种邻域建模（CNM）通过动态特征邻域捕捉跨物种可迁移的关系结构。在11个公开动物ReID数据集上的大量实验表明，SCL在多种跨物种评估协议下持续优于最先进方法，并有效泛化到先前未见过的物种和生态域。代码见https://github.com/Kemalau/ECCV-26-SCL。",
+      "insight_zh": "该工作提出的前景-背景解耦和跨域邻域建模方法，在概念上与遥感影像中的域适应和跨场景泛化有相似性，但论文本身属于动物重识别领域。"
     },
     {
       "key": "arxiv:2609.09150",
@@ -3769,6 +3986,34 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线）。从标题可推断，该工作通过视觉与语言模型的协同强化学习，支持在多种临床任务上进行可扩展的按需分析。",
       "insight_zh": "摘要缺失，无法评估具体方法与结果。其视觉-语言协同与按需分析范式或可迁移至遥感影像的按需解译与变化检测，但文中未涉及地理空间数据，迁移可行性需进一步研究。"
+    },
+    {
+      "key": "arxiv:2609.09716",
+      "title": "Scaling E-Commerce Attribute Extraction with Parallel Decoding",
+      "title_zh": "通过并行解码扩展电商属性抽取",
+      "url": "https://arxiv.org/abs/2609.09716",
+      "arxiv_id": "2609.09716",
+      "authors": [
+        "Nikhita Vedula",
+        "Dushyanta Dhyani",
+        "Bryan Wang",
+        "Shervin Malmasi"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-09T05:01:28+00:00",
+      "score": 25,
+      "reason": "该论文研究LLM在电商属性抽取中的应用，与用户的LLM研究方向有间接关联，但应用领域为电商而非地理空间。",
+      "tags": [
+        "LLM",
+        "属性抽取",
+        "电商",
+        "并行解码",
+        "知识库构建"
+      ],
+      "summary_zh": "客户依赖特定产品属性来比较产品并做出购买决策，但电商目录杂乱且非结构化，难以识别哪些属性最重要并大规模抽取它们。标准属性值抽取（AVE）系统平等对待所有属性，产生大量不一致的属性集，无法反映消费者用于区分产品的因素。我们提出一个两阶段LLM流水线，首先为每个产品类别发现紧凑的、排序的购买区分性属性模式，然后使用微调的紧凑LLM（Qwen3-4B）结合超并行解码（HPD）从目录文本中抽取其值。该流水线达到85%的抽取准确率，与其蒸馏来源的基础LLM相当，同时相比基础LLM降低92%的推理成本，支持产品发现和目录丰富化的生产规模使用。由此产生的类别级结构化表示有效构成自动构建的产品知识库，为不同产品类别提供一致、可比较的属性，可支撑下游知识密集型应用。",
+      "insight_zh": "该工作展示的LLM流水线结合并行解码进行结构化信息抽取的方法，在方法论上对地理空间文本数据挖掘有潜在参考，但论文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2502.14043",
@@ -5484,6 +5729,40 @@
       ],
       "summary_zh": "由于仅提供标题与占位摘要，无法获取具体方法细节。从标题可知，该工作提出一种基于多样性的高效经验回放方法，用于提升深度强化学习效率。",
       "insight_zh": "该研究可能对多智能体仿真中的样本效率问题有参考价值，但与地理空间智能的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.09728",
+      "title": "EEGBind: Detecting Source-Level Interictal Epileptiform Discharges via EEG-Centric Multimodal Binding",
+      "title_zh": "EEGBind：通过以EEG为中心的多模态绑定检测源级发作间期癫痫样放电",
+      "url": "https://arxiv.org/abs/2609.09728",
+      "arxiv_id": "2609.09728",
+      "authors": [
+        "Muchen Li",
+        "Anglin Liu",
+        "Xuetian Gao",
+        "Ruijian Xu",
+        "Jintai Chen"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.MM",
+        "q-bio.NC",
+        "on",
+        "Multimedia",
+        "(MM",
+        "'26)"
+      ],
+      "published": "2026-09-09T05:15:22+00:00",
+      "score": 20,
+      "reason": "该论文研究EEG多模态绑定用于癫痫放电分类，与用户研究画像无直接关联，仅在多模态融合方法论层面有极弱的间接参考。",
+      "tags": [
+        "EEG",
+        "多模态融合",
+        "癫痫放电检测",
+        "医学信号处理"
+      ],
+      "summary_zh": "发作间期癫痫样放电（IED）的源级分析对于术前评估和治疗规划具有重要意义，因为它有助于表征癫痫样活动可能产生的区域。除了检测IED是否存在，该场景还需要将IED阳性活动分配到临床有意义的脑区类别。该场景具有挑战性，因为短EEG窗口中的源区证据可能微弱、部分且受被试变异性、类别不平衡和不完美多模态上下文的影响。我们提出EEGBind，一个以EEG为中心的多模态绑定框架，用于五类源级IED分类。EEGBind将EEG作为主要模态，在以EEG为中心的表示周围绑定同步的视频上下文特征。EEGBind不依赖早期或过强的多模态融合（这可能扰动源敏感的EEG表示），而是将视频上下文作为辅助证据用于稳健分类。进一步使用视图一致性修复阶段来提高隐藏集鲁棒性，同时保持学习到的源类别边界。在NeuroMM 2026 Grand Challenge Track 3 NMM-Source-IED基准上，EEGBind达到0.8395的加权F1，优于强竞争者。这些结果支持以EEG为中心的多模态绑定作为源级IED分类的实用策略。开源代码见https://github.com/HKUSTGZ-ML4Health-Lab/NeuroMM2026_IED_Detection。",
+      "insight_zh": "该工作提出的以主模态为中心、辅助模态作为补充证据的融合策略，在方法论上与多源地理空间数据融合有概念相似性，但论文本身属于医学信号处理领域。"
     },
     {
       "key": "arxiv:2608.11889",
@@ -7489,6 +7768,38 @@
       ],
       "summary_zh": "论文提出VestigeKV，一种针对NoPE MLA模型的KV缓存驱逐方法。它利用缓存中64维解耦分支作为查询无关的显著性信号，将缓存行分区为参与层和归档层，在不训练、不量化的前提下，在长上下文检索任务中保持了高准确率。",
       "insight_zh": "在特定模型架构（NoPE MLA）中，KV缓存本身可能携带可用于高效驱逐的固有信号，这为设计更高效的推理缓存管理提供了新思路。"
+    },
+    {
+      "key": "arxiv:2609.09719",
+      "title": "StreamAlign: Streaming Text-Aligned Speech Tokenization",
+      "title_zh": "StreamAlign：流式文本对齐语音分词",
+      "url": "https://arxiv.org/abs/2609.09719",
+      "arxiv_id": "2609.09719",
+      "authors": [
+        "Kang-wook Kim",
+        "Jinyoung Park",
+        "Jinsoo Kim",
+        "Sehun Lee",
+        "Sang Hoon Woo",
+        "Gunhee Kim"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.SD",
+        "eess.AS",
+        "https://ishlove77.github.io/StreamAlign/"
+      ],
+      "published": "2026-09-09T05:03:12+00:00",
+      "score": 15,
+      "reason": "该论文研究流式文本对齐语音分词，与用户研究画像无直接关联。",
+      "tags": [
+        "语音分词",
+        "流式处理",
+        "语音语言模型",
+        "文本对齐"
+      ],
+      "summary_zh": "文本对齐语音分词方法已经出现，以更好地将语音令牌与LLM令牌空间对齐，从而更有效地利用预训练LLM。然而，它们依赖离线自动语音识别（ASR），导致两个关键局限：（i）需要完整话语才能分词，无法实时流式处理；（ii）ASR与LLM之间的词汇不匹配，将声学粒度从子词级降低到词级。我们提出StreamAlign，一个文本对齐语音分词框架，支持实时语音-文本联合建模的流式分词。StreamAlign通过结合字符级RNN-Transducer对齐和词级ASR引导执行在线语音-文本对齐，在保持识别准确率的同时缓解ASR-LLM词汇不匹配。一个主动词边界分类器在块边界预测词完成，将分词延迟从560毫秒降至270毫秒。在LibriSpeech上，StreamAlign在评估的分词器中达到最低WER和最高UTMOS。此外，StreamAlign-SLM，一个在StreamAlign单元上训练的语音语言模型，在语音续写方面优于其他端到端语音语言模型，并在SALMon和口语StoryCloze上达到最强的整体一致性。",
+      "insight_zh": "该工作属于语音处理领域，与用户的城市更新、时空数据挖掘和地理空间智能研究方向无直接关联。"
     },
     {
       "key": "arxiv:2605.21384",
@@ -10055,39 +10366,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09707",
-      "title": "Which Tokens Should SFT Actually Learn? A Token-Trimming Perspective on Mathematical Reasoning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09707",
-      "arxiv_id": "2609.09707",
-      "authors": [
-        "Yaning Jia",
-        "Chunhui Zhang",
-        "Wenxuan Xu",
-        "Xingjian Diao",
-        "Xiaoyuan Wang",
-        "Soroush Vosoughi"
-      ],
-      "categories": [
-        "cs.AI",
-        "Linguistics:",
-        "EMNLP",
-        "2026.",
-        "14",
-        "pages.",
-        "Code",
-        "available",
-        "at",
-        "https://github.com/karpning/TrimSFT"
-      ],
-      "published": "2026-09-09T04:46:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09684",
       "title": "Which Medical Questions Deserve Rationales? Perturbation-Sensitive Selection for Robust QA",
       "title_zh": "",
@@ -10639,33 +10917,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09719",
-      "title": "StreamAlign: Streaming Text-Aligned Speech Tokenization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09719",
-      "arxiv_id": "2609.09719",
-      "authors": [
-        "Kang-wook Kim",
-        "Jinyoung Park",
-        "Jinsoo Kim",
-        "Sehun Lee",
-        "Sang Hoon Woo",
-        "Gunhee Kim"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.SD",
-        "eess.AS",
-        "https://ishlove77.github.io/StreamAlign/"
-      ],
-      "published": "2026-09-09T05:03:12+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10112",
       "title": "Storage-Scalable Progressive Semantic Communication via Knowledge-Base Reuse",
       "title_zh": "",
@@ -10816,34 +11067,6 @@
       "insight_zh": "摘要缺失，无法判断其具体贡献；从标题看可能探讨量子学习中的谱几何方法，但与地理空间智能的关联性未在摘要中体现。"
     },
     {
-      "key": "arxiv:2609.09764",
-      "title": "SocialRL: Refining LLMs' Social Intelligence through Multi-turn Reinforcement Learning and Reward Design",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09764",
-      "arxiv_id": "2609.09764",
-      "authors": [
-        "Jianing Wang",
-        "Xintao Wang",
-        "Aili Chen",
-        "Jie Shi",
-        "Hongcheng Guo",
-        "Jun Gao",
-        "Wenxuan Zhao",
-        "Chengkun Lang",
-        "Yuanli Guo",
-        "Yanghua Xiao"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-09T06:06:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09864",
       "title": "Shifting Relational Paradigms for Affective Computing: Affective Resonance, Vitality Affects, and Vocal Interaction Fields",
       "title_zh": "",
@@ -10972,28 +11195,6 @@
         "cs.AI"
       ],
       "published": "2026-09-08T06:21:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09716",
-      "title": "Scaling E-Commerce Attribute Extraction with Parallel Decoding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09716",
-      "arxiv_id": "2609.09716",
-      "authors": [
-        "Nikhita Vedula",
-        "Dushyanta Dhyani",
-        "Bryan Wang",
-        "Shervin Malmasi"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-09T05:01:28+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -11689,28 +11890,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09762",
-      "title": "MethaneFuse: Learning from Multi-Sensor Satellite Observations for Methane Plume Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09762",
-      "arxiv_id": "2609.09762",
-      "authors": [
-        "Yuyao Wang",
-        "Juliana Y. Leung",
-        "Di Niu"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "published": "2026-09-09T06:04:56+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09791",
       "title": "MUCnoHARM@GermEval Shared Task 2026: Retrieval-based In-Context Learning for Defamatory Offences, and Where It Falls Short",
       "title_zh": "",
@@ -11920,31 +12099,6 @@
         "paper"
       ],
       "published": "2026-09-09T12:19:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09754",
-      "title": "LexAgentHallu: A Hierarchical Benchmark for Profiling Hallucinations in Legal Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09754",
-      "arxiv_id": "2609.09754",
-      "authors": [
-        "Yujin Zhou",
-        "Mingxuan Zheng",
-        "Chuxue Cao",
-        "Huang Yidan",
-        "Jiale Chen",
-        "Yike Guo",
-        "Sirui Han"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-09T05:52:53+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12237,30 +12391,6 @@
         "cs.LG"
       ],
       "published": "2026-09-09T17:31:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09736",
-      "title": "IAE-VTG: Interaction-Aligned Action-Entity Video Temporal Grounding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09736",
-      "arxiv_id": "2609.09736",
-      "authors": [
-        "Shiwen Zhao",
-        "Qi Zhang",
-        "Sezer Karaoglu",
-        "Theo Gevers",
-        "Martin R. Oswald"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.MM"
-      ],
-      "published": "2026-09-09T05:25:37+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12722,35 +12852,6 @@
       "insight_zh": "摘要为空，无法推断其方法或结论；该研究聚焦语音智能体评估，与多智能体系统评估存在方法论上的潜在借鉴价值，但与GIS主题无直接关联。"
     },
     {
-      "key": "arxiv:2609.09728",
-      "title": "EEGBind: Detecting Source-Level Interictal Epileptiform Discharges via EEG-Centric Multimodal Binding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09728",
-      "arxiv_id": "2609.09728",
-      "authors": [
-        "Muchen Li",
-        "Anglin Liu",
-        "Xuetian Gao",
-        "Ruijian Xu",
-        "Jintai Chen"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.MM",
-        "q-bio.NC",
-        "on",
-        "Multimedia",
-        "(MM",
-        "'26)"
-      ],
-      "published": "2026-09-09T05:15:22+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2604.26964",
       "title": "Dont Just Teach, Explain! A Gamified 20Q Recommender for Cybersecurity Education",
       "title_zh": "不只是教，还要解释！面向网络安全教育的游戏化20问推荐器",
@@ -12837,32 +12938,6 @@
         "cs.CL"
       ],
       "published": "2026-09-08T06:23:07+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09737",
-      "title": "Distilling Image Prototypes for Guided Test-Time Adaptation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09737",
-      "arxiv_id": "2609.09737",
-      "authors": [
-        "Liwen Wang",
-        "Xingbo Dong",
-        "Iman Yi Liao",
-        "Deyin Liu",
-        "Massimo Tistarelli",
-        "Lin Yuanbo Wu",
-        "Zhe Jin"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-09T05:27:09+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13084,27 +13159,6 @@
         "cs.LG"
       ],
       "published": "2026-09-09T15:46:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09705",
-      "title": "Cross-Species Animal Re-Identification with Semantic Consistency Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09705",
-      "arxiv_id": "2609.09705",
-      "authors": [
-        "Shuoyi Chen",
-        "Yuejia Li",
-        "Mang Ye"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T04:41:01+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
