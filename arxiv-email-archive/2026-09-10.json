@@ -15,6 +15,7 @@
     "arxiv:2609.08938",
     "arxiv:2609.07298",
     "arxiv:2609.10371",
+    "arxiv:2609.09451",
     "arxiv:2609.07941",
     "arxiv:2609.03829",
     "arxiv:2608.18915",
@@ -30,22 +31,21 @@
     "arxiv:2609.08372",
     "arxiv:2609.05758",
     "arxiv:2604.10169",
-    "arxiv:2609.10315",
-    "arxiv:2609.10177"
+    "arxiv:2609.10315"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:485",
-    "deepseek": "partial:10/190;failed-batches:18"
+    "deepseek": "partial:34/174;failed-batches:14"
   },
-  "updated_at": "2026-09-11T06:01:16.715368+00:00",
+  "updated_at": "2026-09-11T11:47:50.929202+00:00",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 305,
+    "analyzed": 345,
     "high": 13,
-    "medium": 19,
-    "low": 29,
-    "below_threshold": 244
+    "medium": 21,
+    "low": 33,
+    "below_threshold": 278
   },
   "papers": [
     {
@@ -434,6 +434,34 @@
       "abstract": "High-resolution water mapping supports environmental monitoring and related applications, but accurate pixel-level labels are difficult and costly to produce. Official hydrographic vectors provide scalable weak supervision, but they contain artifacts like boundary noise, temporal mismatch, and omissions of small water structures. We propose a two-stage framework for weakly supervised water segmentation in high resolution multispectral imagery. Stage 1 learns initial masks from rasterized vector pseudo-labels, and Stage 2 converts these masks into structured component-wise prompts for localized refinement. On a manually corrected validation set, refinement improves SegFormer-B0 from 0.9509 to 0.9535 IoU and U-Net from 0.9408 to 0.9486 IoU, with corresponding F1 gains from 0.9749 to 0.9762 and 0.9695 to 0.9736. It leads to sharper shorelines, reduced boundary spillover, and better thin-structure delineation. The results indicate that prompt-guided refinement can improve pseudo-label-based water segmentation by targeting local errors that are poorly captured by global training supervision.",
       "summary_zh": "高分辨率水体制图支持环境监测及相关应用，但精确的像素级标签难以且昂贵地获取。官方水文矢量提供了可扩展的弱监督，但包含边界噪声、时间不匹配和小型水体结构遗漏等伪影。我们提出一个用于高分辨率多光谱影像弱监督水体分割的两阶段框架。第一阶段从栅格化矢量伪标签学习初始掩码，第二阶段将这些掩码转换为结构化的组件级提示以进行局部细化。在人工校正的验证集上，细化将 SegFormer-B0 从 0.9509 提升至 0.9535 IoU，U-Net 从 0.9408 提升至 0.9486 IoU，F1 相应从 0.9749 提升至 0.9762 和从 0.9695 提升至 0.9736。它带来更清晰的海岸线、减少的边界溢出和更好的细结构描绘。结果表明，提示引导细化可以通过针对全局训练监督难以捕捉的局部错误，改进基于伪标签的水体分割。",
       "insight_zh": "该工作表明将弱标签转化为结构化提示进行局部细化可有效提升遥感分割质量，其两阶段框架或可迁移至城市变化检测中的弱监督地物提取任务。"
+    },
+    {
+      "key": "arxiv:2609.09451",
+      "title": "Uncertainty-Aware Sea-Ice Type Mapping with Multiple Ice Charts",
+      "title_zh": "面向多冰图的不确定性感知海冰类型制图",
+      "url": "https://arxiv.org/abs/2609.09451",
+      "doi": "",
+      "arxiv_id": "2609.09451",
+      "authors": [
+        "Samira Alkaee Taleghan",
+        "Younghyun Koo",
+        "Andrew P. Barrett",
+        "Farnoush Banaei-Kashani"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T21:02:44+00:00",
+      "score": 78,
+      "reason": "该文研究遥感海冰类型制图中的多标注者标签不确定性与模型不确定性，属于遥感变化检测/制图与多源数据融合相关方向，与地理空间智能研究高度相关。",
+      "tags": [
+        "海冰类型制图",
+        "不确定性量化",
+        "多标注者标签不确定性",
+        "遥感",
+        "深度学习"
+      ],
+      "abstract": "Sea-ice stage of development (SoD) describes the age and associated thickness of sea ice and provides important information for navigation, and operational ice monitoring. SoD labels are obtained from operational ice charts, where trained analysts interpret satellite observations and assign standardized stage codes to regions with similar ice conditions. These codes often represent ranges of compatible ice thicknesses rather than exact physical values. Deep-learning methods can automate SoD mapping and commonly adopt operational ice charts as reference labels for training. These annotations are not exact, however; this is because chart interpretation relies on analyst judgement and on the observations available at the time, so different ice services may assign different SoD labels to the same conditions. We term this variation across independently produced expert annotations multi-annotator label uncertainty; collapsing the annotations into a single deterministic target discards this variation. A second source of uncertainty originates in the learned model itself. In this paper, we quantify both sources: annotation uncertainty from disagreement among independent ice-service charts and model uncertainty from the learned predictive models. We then evaluate their relationship by testing whether model uncertainty is higher where ice services disagree. We observe that supervision incorporating information from multiple annotators can improve this correspondence, with soft supervision achieving the highest overall correlation of 0.256. The relationship becomes substantially stronger near the ice edge, where model predictive uncertainty closely tracks multi-annotator disagreement, reaching a correlation of 0.704 within 0--10 km. Among the uncertainty-estimation approaches, Monte Carlo dropout provides the best-calibrated confidence estimates, with an expected calibration error of 0.050.",
+      "summary_zh": "海冰发展阶段（SoD）描述海冰年龄及相关厚度，为航行和业务冰情监测提供重要信息。SoD标签来自业务冰图，训练有素的分析员解释卫星观测，并为冰情相似区域分配标准阶段代码。这些代码通常表示相容冰厚范围，而非精确物理值。深度学习方法可自动化SoD制图，并常采用业务冰图作为训练参考标签。然而这些标注并不精确；这是因为冰图解释依赖分析员判断和当时可用的观测，不同冰情服务机构可能对相同条件分配不同SoD标签。作者将这种独立专家标注间的差异称为多标注者标签不确定性；将标注坍缩为单一确定性目标会丢弃这种差异。第二类不确定性源于学习模型本身。本文量化两类不确定性：来自独立冰情服务机构冰图分歧的标注不确定性，以及来自学习预测模型的模型不确定性。作者通过检验模型不确定性是否在冰情服务机构分歧处更高，评估二者关系。作者观察到，纳入多标注者信息的监督可改善这种对应关系，软监督取得最高总体相关性0.256。该关系在冰边缘附近显著增强，模型预测不确定性与多标注者分歧紧密跟踪，在0–10 km内相关性达0.704。在不确定性估计方法中，Mon...",
+      "insight_zh": "该文将多源冰图分歧视为标签不确定性，并发现模型不确定性与标注分歧在冰边缘附近高度一致；对遥感制图与多源数据融合，提示应显式建模专家标注分歧而非坍缩为单标签。"
     },
     {
       "key": "arxiv:2609.07941",
@@ -897,37 +925,6 @@
       "abstract": "Reinforcement learning with verifiable rewards (RLVR) has advanced language-model reasoning in domains such as mathematics and code, where objective answers are inexpensive to check. Diagnostic reasoning over complex data lacks this advantage: establishing the true cause of an anomaly often requires costly expert investigation and may remain ambiguous after the fact. We ask whether this asymmetry of verification can instead be engineered. We sample an intervention, inject it into a controlled simulator, and generate the observations it would produce. The hidden intervention provides an oracle label and objective reward, while the agent must still investigate noisy, confounded, and distributed evidence. We instantiate this approach in TRACE, a digital-advertising diagnostic environment with 12 root causes and fine-grained segment attribution. Agents investigate each episode using Python and SQL and must identify both the root cause and, when applicable, the affected segment assignment. On a held-out 235-episode test set, the strongest prompted baseline, Claude Opus 5, reaches 0.686 FullAttr@1. Supervised fine-tuning raises Qwen3.5-35B-A3B from 0.159 to 0.637, and subsequent RL with synthesized rewards reaches 0.757, outperforming all evaluated prompted baselines, including frontier closed-source models and a prompted Qwen3.5-122B-A10B model. The resulting policy also uses substantially fewer tool calls than the prompted 35B base. These results provide evidence that access to a scalable, objective training signal can be a more important constraint than model scale alone. More broadly, simulation-based verification can make otherwise ambiguous diagnostic reasoning tasks amenable to scalable reinforcement learning.",
       "summary_zh": "该研究探讨在复杂数据诊断推理中验证不对称性问题，提出通过采样干预并注入可控仿真器生成观测，从而获得隐藏干预的预言标签和客观奖励。作者在TRACE数字广告诊断环境中实例化该方法，包含12种根因和细粒度细分归因。智能体使用Python和SQL调查每个片段，需识别根因及受影响细分。在235个测试片段上，最强提示基线Claude Opus 5达到0.686 FullAttr@1，监督微调将Qwen3.5-35B-A3B从0.159提升至0.637，后续合成奖励强化学习达到0.757，超越所有评估的提示基线。结果表明可扩展的客观训练信号可能比模型规模更重要。",
       "insight_zh": "该工作表明基于仿真的验证可将模糊的诊断推理任务转化为可扩展的强化学习问题，这一思路或可迁移至地理空间异常检测与城市更新因果推断场景，但需注意其当前验证环境为数字广告而非地理空间数据。"
-    },
-    {
-      "key": "arxiv:2609.10177",
-      "title": "Beyond Surface Imitation: Contrastive Modeling for Reasoning Path Alignment in Multimodal In-Context Learning",
-      "title_zh": "超越表面模仿：多模态上下文学习中推理路径对齐的对比建模",
-      "url": "https://arxiv.org/abs/2609.10177",
-      "doi": "",
-      "arxiv_id": "2609.10177",
-      "authors": [
-        "Mingbo Yang",
-        "Wenqiang Wang",
-        "Zhaolu Kang",
-        "Peng Chen",
-        "Yannan Chen",
-        "Sunshang Wang",
-        "and Yan Xiao"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-09T13:45:02+00:00",
-      "score": 62,
-      "reason": "该文提出多模态上下文学习框架，通过对比示例建模与响应条件检索提升MLLM推理路径对齐，属于LLM与多模态智能体方法研究，与研究中LLM和多智能体方向相关，但未涉及地理空间或城市更新应用。",
-      "tags": [
-        "多模态大模型",
-        "上下文学习",
-        "对比学习",
-        "推理路径对齐",
-        "VQA"
-      ],
-      "abstract": "In-context learning (ICL) is widely used in multimodal large language models (MLLMs) and achieves strong performance across a wide range of multimodal tasks. However, existing multimodal ICL methods often rely on surface level imitation of in-context demonstrations, making it difficult for MLLMs to align their responses with the reasoning path required by the given multimodal input. This limitation becomes more pronounced in complex multimodal tasks, thereby restricting further improvements in MLLM performance. To address this issue, we propose a new multimodal ICL framework that combines contrastive demonstration modeling with the self-refinement capability of MLLMs. Specifically, our framework reformulates each demonstration by explicitly contrasting a suboptimal response with a better response under the same input, together with a reasoning path that reveals how the response should be refined. This contrastive formulation makes the reasoning path toward the desired response more explicit and guides the MLLM beyond superficial imitation. Furthermore, because effective refinement depends on the current response, we introduce a response-conditioned retrieval mechanism to select demonstrations whose reasoning paths are more relevant to the current response. In addition, we use a lightweight alignment controller to predict response quality and determine whether further refinement is needed. Experiments on three types of multimodal tasks show that the proposed framework consistently improves MLLM performance, with particularly notable gains on visual question answering (VQA).",
-      "summary_zh": "多模态大模型（MLLM）广泛使用上下文学习（ICL）并在多种多模态任务上表现良好，但现有方法常依赖对上下文示例的表面模仿，难以使模型响应与给定多模态输入所需的推理路径对齐，在复杂任务中尤为明显。为此，作者提出一种新的多模态ICL框架，将对比示例建模与MLLM的自精炼能力结合：每个示例被重构为在同一输入下显式对比次优响应与更优响应，并给出揭示如何精炼响应的推理路径，从而使通往目标响应的推理路径更明确，引导模型超越表面模仿。由于有效精炼依赖当前响应，作者引入响应条件检索机制，选择推理路径与当前响应更相关的示例，并使用轻量对齐控制器预测响应质量以判断是否需要进一步精炼。在三类多模态任务上的实验表明该框架持续提升MLLM性能，在视觉问答（VQA）上提升尤为显著。",
-      "insight_zh": "该框架的对比示例与响应条件检索思路可迁移至地理空间多模态推理任务（如遥感影像问答），但其摘要未涉及地理空间数据或城市应用，需进一步验证在空间推理场景中的适用性。"
     }
   ]
 }

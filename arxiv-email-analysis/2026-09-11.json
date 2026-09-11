@@ -2,11 +2,11 @@
   "date": "2026-09-11",
   "analysis_stats": {
     "total": 511,
-    "analyzed": 341,
+    "analyzed": 351,
     "high": 6,
     "medium": 11,
     "low": 25,
-    "below_threshold": 299
+    "below_threshold": 309
   },
   "papers": [
     {
@@ -6818,6 +6818,32 @@
       "insight_zh": "该文展示了LLM智能体流程中验证与错误归因路由的有效性，其闭环验证与反馈纠正机制可启发地理空间智能中LLM与形式化规则（如空间约束、拓扑关系）结合的推理框架设计。"
     },
     {
+      "key": "arxiv:2609.11717",
+      "title": "MC-DeTra: Motion-Consistent Joint Object Detection and Socially-Aware Trajectory Forecasting in Bird's-Eye-View Images",
+      "title_zh": "MC-DeTra：鸟瞰图图像中运动一致的目标检测与社会感知轨迹预测",
+      "url": "https://arxiv.org/abs/2609.11717",
+      "arxiv_id": "2609.11717",
+      "authors": [
+        "Vladislav Diuzhev",
+        "Dmitry Yudin"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-09-10T15:34:09+00:00",
+      "score": 15,
+      "reason": "该论文研究鸟瞰图图像中的目标检测与轨迹预测，涉及BEV表示与运动一致性，与时空数据挖掘和地理空间智能有间接关联，但主要面向自动驾驶而非城市更新或遥感变化检测。",
+      "tags": [
+        "鸟瞰图",
+        "目标检测",
+        "轨迹预测",
+        "自动驾驶"
+      ],
+      "summary_zh": "用于目标检测和轨迹预测的统一模型旨在为自动驾驶融合感知与预测，直接在由LiDAR和高精地图栅格化的共享鸟瞰图（BEV）图像上细化参与者轨迹。然而，它们在动态、移动参与者上的准确性仍是任务中最困难的部分，而最强的此类模型DeTra没有公开实现。本文贡献了一个公开释放的DeTra重实现及文档化近似，并在此基础上提出MC-DeTra：一族运动一致性机制，通过两个由标注导出的辅助信号——每个参与者的观测过去运动和构成其社会背景的周围交通占用——以及一个将参与者预测朝向与其预测运动方向对齐的输出间一致性约束来增加监督。每个提出的损失都是仅训练时使用且推理安全：它在训练期间塑造共享BEV表示，并在测试时移除，不增加推理延迟。在Waymo开放数据集上，在严格的、检测条件化的预测协议下评估，MC-DeTra改善了动态、社会情境化的轨迹预测，同时保持或提高了检测准确性；基于梯度的损失校准分析揭示了辅助目标在共享骨干上的竞争方式，消融实验识别了哪些信号贡献最大。代码、配置和评估工具发布在https://github.com/diuzhevVlad/MC-DeTra。",
+      "insight_zh": "该工作表明，在BEV-based统一检测与预测模型中，引入仅训练时的运动一致性辅助监督可以在不增加推理成本的情况下改善动态参与者轨迹预测，但辅助目标之间在共享骨干上存在竞争，需要仔细校准。"
+    },
+    {
       "key": "arxiv:2609.11516",
       "title": "LoopVAE: Recurrent Depth Across Scales for Visual Tokenization",
       "title_zh": "LoopVAE：面向视觉分词的跨尺度循环深度",
@@ -9760,6 +9786,31 @@
       "insight_zh": "该文的'困难样本优先'筛选思想对构建高质量领域指令数据具有参考价值，但其应用场景为翻译术语约束，与地理空间智能的关联需自行建立。"
     },
     {
+      "key": "arxiv:2609.11769",
+      "title": "Recognizing Is Not Reversing: A Controlled Inversion Test of Fact-Preserving News Framing",
+      "title_zh": "识别不等于反转：事实保持型新闻框架的受控反转测试",
+      "url": "https://arxiv.org/abs/2609.11769",
+      "arxiv_id": "2609.11769",
+      "authors": [
+        "Yi Liu"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-10T16:23:51+00:00",
+      "score": 8,
+      "reason": "该论文研究LLM在保持事实不变的前提下反转新闻框架的能力，涉及大语言模型分析与改写，与研究中LLM和多智能体方向有一定关联，但与GIS、城市更新或遥感无直接关系。",
+      "tags": [
+        "大语言模型",
+        "新闻框架",
+        "事实保持",
+        "受控反转测试"
+      ],
+      "summary_zh": "大语言模型（LLM）越来越多地用于分析和改写新闻，但当前框架研究主要评估生成、检测或改写文本是否显得更中立。它们并未直接展示模型能否在保持事实固定的同时撤销已知的框架变换。本文引入一个受控反转测试，覆盖三种既有的框架文本实现：评价性词汇、施事实现和信息显著性。在60篇新闻文章和三种干预强度下，这产生了540个保持原子事实并记录编辑的配对变体。在Qwen、DeepSeek和Kimi上，事实保持率接近0.84，而干预反转率为0.044–0.068。即使框架类型和方向都被正确识别，汇总反转率也仅达到0.071。这些结果揭示了事实保真、框架识别和框架反转之间的明显分离：识别一篇文章如何被框架化并不意味着该框架可以被撤销。",
+      "insight_zh": "该研究表明，LLM对新闻框架的识别能力与其反转框架的能力之间存在显著鸿沟；事实保真度高并不保证模型能够执行反向的框架变换。"
+    },
+    {
       "key": "arxiv:2609.11490",
       "title": "Published Unlearning Numbers Move Per Checkpoint, and Not Because the Removed Data Survives: An Audit of 263 Released Batch-Normalized Checkpoints",
       "title_zh": "已发布的遗忘数字随检查点变化，且并非因为被移除数据仍存活：对263个已发布批归一化检查点的审计",
@@ -10220,6 +10271,32 @@
       "insight_zh": "该文展示了语言模型从文本中动态学习任务自适应表征并与贝叶斯优化结合的思路，对地理空间智能中多源异构数据表征学习与多目标优化（如城市更新中的多目标决策）有方法论上的类比启发；但研究对象为化学反应优化，与时空数据挖掘和遥感无直接关联。"
     },
     {
+      "key": "arxiv:2609.11758",
+      "title": "RAG-Safety-Bench: Reliable Evaluation of Retrieval-Augmented LLM Safety",
+      "title_zh": "RAG-Safety-Bench：检索增强LLM安全性的可靠评估",
+      "url": "https://arxiv.org/abs/2609.11758",
+      "arxiv_id": "2609.11758",
+      "authors": [
+        "Adithiyan Rajan Indira Saravanan",
+        "Kathleen C. Fraser"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-09-10T16:12:25+00:00",
+      "score": 6,
+      "reason": "该论文提出RAG-Safety-Bench用于评估检索增强LLM的安全性，涉及大语言模型与检索增强生成，与研究中LLM和多智能体方向有一定关联，但与GIS或遥感无直接关系。",
+      "tags": [
+        "检索增强生成",
+        "LLM安全",
+        "基准测试",
+        "可信AI"
+      ],
+      "summary_zh": "允许大语言模型（LLM）从一组可信文档中检索信息可以提高可靠性并减少幻觉。然而，近期工作表明，当提示有害或危险内容时，检索增强生成（RAG）可能对生成响应的整体安全性产生意外副作用。随着越来越多终端用户转向RAG以将企业文档和知识库纳入基于LLM的系统，需要更清晰地理解导致这一结果的机制。本文引入RAG-Safety-Bench，一个衡量RAG对LLM模型安全影响的基准。通过消除检索器质量的混杂效应，并将问题清晰分离为四种条件——非RAG、RAG搭配包含有害请求答案的oracle文档、RAG搭配与有害请求相关但不含具体答案的文档、以及RAG搭配随机安全文档——该基准隔离了观察到的安全退化中不同因素的影响。作者报告了五个开源LLM上的结果，显示良性能力与不安全能力之间的反向关系，强有力的证据表明基线安全护栏在RAG情况下并不能带来下游安全保障，以及模型特定的证据支持先前发现：即使良性文档也可能在检索启用系统中导致不安全生成。",
+      "insight_zh": "该基准表明，RAG系统的安全性不能简单依赖基础模型的安全护栏；检索文档的性质与模型能力之间存在复杂交互，需要在系统层面重新审视安全评估与防护策略。"
+    },
+    {
       "key": "arxiv:2609.11859",
       "title": "From Parameters to Answers: How LLMs Retrieve and Use Their Internal Knowledge",
       "title_zh": "从参数到答案：LLM如何检索并使用其内部知识",
@@ -10386,29 +10463,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅含分隔线），无法获取具体研究内容。根据标题可知，该工作通过系统辨识方法实现零样本条件下的动态绳索操控。",
       "insight_zh": "摘要缺失，无法得知其辨识模型与实验平台；该主题与城市更新、时空数据挖掘等方向无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.11716",
-      "title": "Why Does Post-Training Quantization Work?",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11716",
-      "arxiv_id": "2609.11716",
-      "authors": [
-        "Yuxiang Chen",
-        "Michael Beyer",
-        "Jun Zhu",
-        "Jianfei Chen"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "published": "2026-09-10T15:32:32+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.11166",
@@ -10819,29 +10873,6 @@
         "cs.LG"
       ],
       "published": "2026-09-10T06:48:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11724",
-      "title": "The Eloquence submission for Task 2 of the Interspeech 2026 MLC-SLM challenge",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11724",
-      "arxiv_id": "2609.11724",
-      "authors": [
-        "Jordi Luque",
-        "Lorenzo Concina",
-        "Marco Matassoni",
-        "Alessio Brutti",
-        "Filippo Vella"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-10T15:41:11+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -11327,7 +11358,7 @@
     {
       "key": "arxiv:2609.11722",
       "title": "Revisiting Avatar-As-Image: High-Fidelity Registration is All You Need",
-      "title_zh": "",
+      "title_zh": "重访Avatar-As-Image：高保真配准即所需",
       "url": "https://arxiv.org/abs/2609.11722",
       "arxiv_id": "2609.11722",
       "authors": [
@@ -11341,10 +11372,15 @@
       ],
       "published": "2026-09-10T15:40:39+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究3D穿衣人体的高保真配准与Avatar-as-Image表示，属于计算机视觉与3D重建领域，与GIS、城市更新或遥感无直接关联。",
+      "tags": [
+        "3D人体",
+        "UV纹理",
+        "配准",
+        "生成模型"
+      ],
+      "summary_zh": "将3D穿衣人体表示为底层身体模型上的标准化2D UV纹理和位移图已被长期研究。这种紧凑表示很有吸引力，因为它使预训练图像网络能够处理、生成和编辑3D化身，但只有当扫描被准确对齐并通过高保真配准建立对应关系时才有用。这一前提从未被满足，作者认为这解释了先前基于UV的穿衣人体方法质量有限的原因。尽管其重要性，尚无公开方法能从任意穿衣扫描生成高保真SMPL(-X)+D配准及UV纹理。本文提出AvaImg，一个多阶段优化流程来填补这一空白：通过有符号缠绕数强制身体在衣物内约束，借助三级效率级联（运行时间减少约10倍，存储节省约95%）使其可行，并使用粗到细位移优化恢复精细表面细节。AvaImg在六个数据集上的身体拟合、形状估计和表面配准方面优于所有基线，产生与扫描几乎无法区分的纹理配准（PSNR=34.48dB）。为验证AvaImg的Avatar-as-Image表示与图像基础模型的兼容性，作者通过冻结的FLUX VAE自动编码其UV图。这相对于扫描仅增加0.76mm Chamfer误差，并表明所得图位于自然图像分布内，支持使用2D生成先验进行3D化身生成。代码、数据和Singularity容器将在https://yuxuan-xue.com/avaimg发布。",
+      "insight_zh": "该工作表明，高保真配准是UV-based 3D人体表示发挥其与图像基础模型兼容优势的关键前提；其UV图落在自然图像分布内的发现支持将2D生成先验迁移到3D化身生成任务。"
     },
     {
       "key": "arxiv:2609.10996",
@@ -11493,26 +11529,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.11769",
-      "title": "Recognizing Is Not Reversing: A Controlled Inversion Test of Fact-Preserving News Framing",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11769",
-      "arxiv_id": "2609.11769",
-      "authors": [
-        "Yi Liu"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-10T16:23:51+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.11648",
       "title": "RDDMPI: Residual Denoising Diffusion Model for Probabilistic Multivariate Time Series Imputation",
       "title_zh": "",
@@ -11528,27 +11544,6 @@
         "stat.ML"
       ],
       "published": "2026-09-10T14:53:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11758",
-      "title": "RAG-Safety-Bench: Reliable Evaluation of Retrieval-Augmented LLM Safety",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11758",
-      "arxiv_id": "2609.11758",
-      "authors": [
-        "Adithiyan Rajan Indira Saravanan",
-        "Kathleen C. Fraser"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.IR"
-      ],
-      "published": "2026-09-10T16:12:25+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -11698,28 +11693,6 @@
         "2026"
       ],
       "published": "2026-09-10T09:08:43+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11780",
-      "title": "Predicting Privacy Leakage from Weight Spectral Density",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11780",
-      "arxiv_id": "2609.11780",
-      "authors": [
-        "Richard J. Preen",
-        "Jim Smith"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CR",
-        "cs.NE"
-      ],
-      "published": "2026-09-10T16:34:25+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12256,27 +12229,6 @@
         "cs.CV"
       ],
       "published": "2026-09-10T14:23:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11717",
-      "title": "MC-DeTra: Motion-Consistent Joint Object Detection and Socially-Aware Trajectory Forecasting in Bird's-Eye-View Images",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11717",
-      "arxiv_id": "2609.11717",
-      "authors": [
-        "Vladislav Diuzhev",
-        "Dmitry Yudin"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "published": "2026-09-10T15:34:09+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13618,27 +13570,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.11762",
-      "title": "Component-Aware Differential Privacy for Federated Multilingual Speech-LLMs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11762",
-      "arxiv_id": "2609.11762",
-      "authors": [
-        "Jordi Luque",
-        "Fernando L\\'opez",
-        "Aleix Sant"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-10T16:17:19+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.11545",
       "title": "Complex-Text Robustness Evaluation and Failure Diagnosis for Low-Resource Multilingual Text-to-Speech",
       "title_zh": "",
@@ -13892,7 +13823,7 @@
     {
       "key": "arxiv:2609.11786",
       "title": "Beyond Word Error Rate: A Switch Aware Evaluation of ASR and Audio Language Models on English Yoruba Code-Switched Speech",
-      "title_zh": "",
+      "title_zh": "超越词错误率：面向英语-约鲁巴语代码切换语音的切换感知ASR与音频语言模型评测",
       "url": "https://arxiv.org/abs/2609.11786",
       "arxiv_id": "2609.11786",
       "authors": [
@@ -13905,10 +13836,15 @@
       ],
       "published": "2026-09-10T16:36:19+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究英语-约鲁巴语代码切换语音的ASR与音频语言模型评测，属于语音处理与多语言评测领域，与城市更新、时空数据挖掘、遥感变化检测、多源数据融合或地理空间智能无直接关联。",
+      "tags": [
+        "语音识别",
+        "代码切换",
+        "低资源语言",
+        "评测方法"
+      ],
+      "summary_zh": "自动语音识别（ASR）系统和音频语言模型（audio LM）目前在单语基准上报告了较低的错误率，但它们在低资源、变音符号丰富的语言中代码切换语音上的行为仍缺乏充分刻画。本文对十一个现代系统（六个ASR模型和五个音频LM）在英语-约鲁巴语代码切换语音上进行了切换感知评测，使用确定性的2000条话语评测集和共享评分流程。除词错误率（WER）外，作者报告了切换局部化诊断指标：切换进入词元错误率（SETER）、窗口化切换点错误率、语言特定错误率以及变音符号不敏感WER。核心发现是聚合WER掩盖了代码切换行为。按WER最优的系统（一个ASR模型）与领先的音频LM在WER上统计不可区分，但该音频LM在每一个切换局部化指标上都显著更好。在忠实系统中，约鲁巴语词元识别崩溃（几乎所有系统错误率为0.97），而英语词元识别好得多，错误集中在切换到约鲁巴语的位置。若干生成式音频LM作为精确转写器失败，产生翻译、冗长和提示泄漏，且强烈依赖提示。作者发布了清单、指标实现和评测脚本，以支持非洲代码切换语音的可复现、切换感知基准测试。",
+      "insight_zh": "该工作表明，在代码切换语音评测中，聚合WER可能掩盖系统在切换点附近的真实表现差异；切换局部化指标能够揭示被总体指标遮蔽的语言特定失败模式。"
     },
     {
       "key": "arxiv:2609.11172",
@@ -14322,7 +14258,7 @@
     {
       "key": "arxiv:2609.11768",
       "title": "A Unified Per-Token Gating Family for On-Policy Distillation: FKL/RKL Mixing with Multi-Channel and Bias Coefficients",
-      "title_zh": "",
+      "title_zh": "面向在线策略蒸馏的统一逐词元门控族：FKL/RKL混合与多通道及偏置系数",
       "url": "https://arxiv.org/abs/2609.11768",
       "arxiv_id": "2609.11768",
       "authors": [
@@ -14345,10 +14281,15 @@
       ],
       "published": "2026-09-10T16:22:35+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究在线策略知识蒸馏中的逐词元门控机制，属于机器学习模型训练与压缩领域，与GIS、城市更新、时空数据挖掘或遥感无直接关联。",
+      "tags": [
+        "知识蒸馏",
+        "KL散度",
+        "逐词元门控",
+        "模型压缩"
+      ],
+      "summary_zh": "前向/反向KL损失的逐词元门控已成为在线策略知识蒸馏（OPD）的标准技术，但现有方法如EOPD和ToDi各自固定单一门控信号和单一门控方向，且两者从未被直接比较。本文引入四系数参数化lambda_t = sigma(a * h_t + b * u(x) + c + d * gap_t)，其中EOPD和ToDi的方向对齐代理作为一维（1D）限制出现，并增加了多通道组合和显式偏置作为额外自由度。在TweetEval情感和仇恨任务上，使用Qwen3-32B教师和Qwen3-4B学生，完整族中的配置在36个可比单元中有33个达到比匹配幅度的单通道（仅熵/仅差距）1D限制更高的准确率，而26单元均值匹配隔离实验将动态门控置于有效KL匹配的静态基线之前，在26个单元中有19个胜出。由于各单元共享训练数据、模型和参数子结构，作者将这两个计数报告为探索性聚合方向证据，而非独立假设检验。对该扫描选出的九个头条比较进行的三种子配对重复（包括第三个任务offensive）方向一致，但单独小于单种子估计，且在n=3时不显著。因此作者主要将该参数化呈现为用于比较短输出分类OPD中逐词元门控设计的共享坐标系。",
+      "insight_zh": "该工作提出一个统一参数化框架来比较不同的逐词元门控设计，但其结果被作者定位为探索性方向证据，而非确证性结论；这提示在知识蒸馏门控机制研究中需要更严格的统计验证。"
     },
     {
       "key": "arxiv:2609.11620",
@@ -14565,6 +14506,34 @@
       "insight_zh": "仅从标题推断，该文可能讨论LLM评估中的标准污染方法学问题，对LLM在地理空间任务中的评估设计有间接警示意义，但因摘要缺失，无法确认其具体论点与证据。"
     },
     {
+      "key": "arxiv:2609.11724",
+      "title": "The Eloquence submission for Task 2 of the Interspeech 2026 MLC-SLM challenge",
+      "title_zh": "Eloquence团队参加Interspeech 2026 MLC-SLM挑战赛任务2的方案",
+      "url": "https://arxiv.org/abs/2609.11724",
+      "arxiv_id": "2609.11724",
+      "authors": [
+        "Jordi Luque",
+        "Lorenzo Concina",
+        "Marco Matassoni",
+        "Alessio Brutti",
+        "Filippo Vella"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-10T15:41:11+00:00",
+      "score": 4,
+      "reason": "该论文介绍Interspeech 2026 MLC-SLM挑战赛任务2的多语言多选题问答方法，属于语音语言模型与多语言处理领域，与GIS、城市更新或遥感无直接关联。",
+      "tags": [
+        "多语言问答",
+        "语音语言模型",
+        "多模态上下文学习",
+        "检索系统"
+      ],
+      "summary_zh": "本文详述Eloquence团队参加Interspeech 2026第二届MLC-SLM挑战赛任务2的方法，该任务涉及跨21种语言的多语言多选题问答（MCQA）。作者探索了三种方法。第一，通过LoRA微调Voxtral-Mini-3B，结合跨语言数据增强、ASR转写增强和时间戳感知音频裁剪，在评估第二阶段达到0.72宏准确率。第二，对冻结的Voxtral-24B模型应用多模态上下文学习（ICL）以纠正强标签偏差，达到0.81，为最佳结果。第三，基于三层语音锚定记忆（结合声学身份、语义内容和知识图谱）的免训练检索系统达到0.68。三个系统均大幅优于官方基线。",
+      "insight_zh": "该工作显示，在多语言语音问答任务中，多模态上下文学习可以有效纠正标签偏差并显著提升性能，而免训练检索系统也能在无需微调的情况下取得有竞争力的结果。"
+    },
+    {
       "key": "arxiv:2609.11842",
       "title": "Model-Aware Schedules Improve Generation via Fiberwise Optimal Transport",
       "title_zh": "模型感知调度通过纤维化最优传输改进生成",
@@ -14600,6 +14569,34 @@
       ],
       "summary_zh": "扩散与流匹配调度控制沿仿射概率路径混合数据与噪声的信号和噪声系数。最小化定义在系数路径上的动能作用（受最优传输启发）有助于解释强基线，但仍与模型无关且忽略预测误差。本文引入基于纤维化最优传输的模型感知调度构造。在概率路径上固定的时间与状态处，兼容的信号/噪声分解构成一个仿射纤维。作者定义纤维化预测风险，即在这些纤维内对真实分解与预测器诱导分解之间的最优传输代价取平均。在固定系数曲线上，将该风险与系数路径动能作用结合，可得到闭式最优时间分配。该构造可推广到一般线性预测目标，且风险剖面可从早期基线检查点估计。作者在预测目标、训练配置、风险估计检查点、数据集和架构上评估DDPM和流匹配。模型感知调度持续优于强基线，包括在CIFAR-10上16次函数评估的流匹配实现38.6%的相对FID降低。每个模型无关的动能基线确定其自身的动能参考坐标。在这些坐标中，不同设置下独立训练模型的纤维化风险剖面在归一化到单位面积后高度一致。训练中使用的调度形变也一致，表明在所评估的模型和设置中具有经验普遍性。预训练检查点诊断将这种归一化风险一致性扩展到更大的条件潜扩散和2-RF模型。冻结的解析分配模板保留……",
       "insight_zh": "该文提出模型感知的调度构造方法，若研究中涉及遥感影像生成或时空数据增强的扩散模型，其调度优化思路可能有参考价值；但与地理空间智能的核心问题关联较弱。"
+    },
+    {
+      "key": "arxiv:2609.11716",
+      "title": "Why Does Post-Training Quantization Work?",
+      "title_zh": "训练后量化为何有效？",
+      "url": "https://arxiv.org/abs/2609.11716",
+      "arxiv_id": "2609.11716",
+      "authors": [
+        "Yuxiang Chen",
+        "Michael Beyer",
+        "Jun Zhu",
+        "Jianfei Chen"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-09-10T15:32:32+00:00",
+      "score": 3,
+      "reason": "该论文研究大语言模型训练后量化为何有效，属于模型压缩与深度学习理论领域，与GIS、城市更新、时空数据挖掘或遥感无直接关联。",
+      "tags": [
+        "训练后量化",
+        "大语言模型",
+        "模型压缩",
+        "误差分析"
+      ],
+      "summary_zh": "训练后量化通过以降低的精度存储权重来压缩大语言模型（LLM），每个量化权重都会向隐藏状态引入误差。朴素地看，这些误差应随深度累积并破坏下一词元预测；随机初始化的模型会迅速累积这些差异，而量化后的预训练模型累积的隐藏状态误差要少得多，并大体保持下游任务性能，尽管它们从未在量化噪声下训练过。这引出了本文要解决的问题：训练后量化为何有效？通过比较全精度和量化前向传播，作者识别出刻画预训练量化鲁棒性的两个机制。第一，一层新引入的误差倾向于对抗它从该层输入继承的误差。两者部分抵消，使得全精度与量化传播之间的差异增长缓慢。这种反向残余交互在预训练期间形成。定量分析将其识别为减缓隐藏误差增长的主要因素。第二，LM头几何优先保留高排名词元的分数和概率，这些通常代表模型最自信的预测。这两个机制共同解释了为何经过众多层的量化误差仍能只产生小的输出变化，作者在多个模型和量化设置上验证了这些发现。",
+      "insight_zh": "该研究揭示，预训练模型的量化鲁棒性源于层间误差的部分抵消和输出头对高置信词元的偏好保留，这为理解模型压缩的可行性提供了机制性解释。"
     },
     {
       "key": "arxiv:2602.10420",
@@ -14650,6 +14647,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作关注流匹配（flow matching）训练中预测与损失的对齐问题，旨在提升模型对不同采样器的鲁棒性。",
       "insight_zh": "摘要缺失，无法判断其方法细节。该研究属于生成模型基础方法，若应用于遥感影像生成或时空数据模拟，可能具有间接参考价值，但当前信息不足以确认与GIS研究的相关性。"
+    },
+    {
+      "key": "arxiv:2609.11780",
+      "title": "Predicting Privacy Leakage from Weight Spectral Density",
+      "title_zh": "从权重谱密度预测隐私泄漏",
+      "url": "https://arxiv.org/abs/2609.11780",
+      "arxiv_id": "2609.11780",
+      "authors": [
+        "Richard J. Preen",
+        "Jim Smith"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CR",
+        "cs.NE"
+      ],
+      "published": "2026-09-10T16:34:25+00:00",
+      "score": 3,
+      "reason": "该论文研究基于权重谱密度的成员推断攻击隐私泄漏预测，属于机器学习隐私与安全领域，与GIS、城市更新、时空数据挖掘或遥感无直接关联。",
+      "tags": [
+        "成员推断攻击",
+        "隐私审计",
+        "谱分析",
+        "机器学习安全"
+      ],
+      "summary_zh": "成员推断攻击（MIA）被广泛用于审计机器学习模型的隐私披露风险，但当前最先进的攻击需要训练计算代价高昂的影子模型，使大规模隐私评估不切实际。本文研究源自重尾自正则化框架的廉价谱指标能否作为MIA脆弱性的代理。作者在图像和表格分类任务上评估了若干WeightWatcher谱指标，并将其与MIA隐私泄漏的关系同传统泛化度量进行比较。跨数据集，稳定秩与总体MIA成功率呈强正相关，而Log alpha-Norm在低假阳性区域与MIA脆弱性呈一致负相关。这些关联比使用泛化差距获得的关联更强。结果表明，神经网络谱可能包含传统过拟合度量未能完全捕获的隐私泄漏信息，从而将谱分析作为可扩展隐私审计的一个有前景方向。",
+      "insight_zh": "该研究提示，模型权重谱特征可能提供一种无需训练影子模型即可估计隐私泄漏风险的廉价代理，但其作为审计工具的可靠性仍需在更多任务和模型上验证。"
     },
     {
       "key": "arxiv:2602.11498",
@@ -14714,6 +14738,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作提出HISA方法，为细粒度稀疏注意力机制构建高效层次索引，以提升计算效率。",
       "insight_zh": "摘要缺失，无法评估其具体性能。该研究属于深度学习底层计算优化，若应用于地理空间大模型（如遥感影像Transformer）的推理加速可能有间接价值，但当前信息不足以确认。"
+    },
+    {
+      "key": "arxiv:2609.11762",
+      "title": "Component-Aware Differential Privacy for Federated Multilingual Speech-LLMs",
+      "title_zh": "面向联邦多语言语音大模型的组件感知差分隐私",
+      "url": "https://arxiv.org/abs/2609.11762",
+      "arxiv_id": "2609.11762",
+      "authors": [
+        "Jordi Luque",
+        "Fernando L\\'opez",
+        "Aleix Sant"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-10T16:17:19+00:00",
+      "score": 3,
+      "reason": "该论文研究联邦多语言语音大模型的组件感知差分隐私，属于隐私保护机器学习与语音处理领域，与GIS、城市更新或遥感无直接关联。",
+      "tags": [
+        "差分隐私",
+        "联邦学习",
+        "语音大模型",
+        "多语言"
+      ],
+      "summary_zh": "逐层差分隐私（DP）裁剪通过按参数数量分配逐矩阵裁剪预算，提高了联邦学习中的梯度保真度。本文表明，当声学编码器和语言解码器的更新范数相差一个数量级时，这一方案对语音大模型（speech-LLM）失效。单池逐层方法遭受……（摘要在此处截断）。",
+      "insight_zh": "该摘要显示，在语音大模型中，声学编码器与语言解码器更新范数的显著差异会破坏传统逐层DP裁剪方案的有效性，提示需要组件感知的隐私预算分配策略。"
     },
     {
       "key": "arxiv:2603.02724",
