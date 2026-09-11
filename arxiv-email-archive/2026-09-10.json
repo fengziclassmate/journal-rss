@@ -15,11 +15,13 @@
     "arxiv:2609.08938",
     "arxiv:2609.07298",
     "arxiv:2609.10371",
+    "arxiv:2609.10356",
     "arxiv:2609.09451",
     "arxiv:2609.07941",
     "arxiv:2609.03829",
     "arxiv:2608.18915",
     "arxiv:2608.24674",
+    "arxiv:2609.10334",
     "arxiv:2609.09626",
     "arxiv:2609.09565",
     "arxiv:2609.08796",
@@ -29,23 +31,21 @@
     "arxiv:2606.08405",
     "arxiv:2609.10135",
     "arxiv:2609.08372",
-    "arxiv:2609.05758",
-    "arxiv:2604.10169",
-    "arxiv:2609.10315"
+    "arxiv:2609.05758"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:485",
-    "deepseek": "partial:34/174;failed-batches:14"
+    "deepseek": "partial:20/140;failed-batches:12"
   },
-  "updated_at": "2026-09-11T11:47:50.929202+00:00",
+  "updated_at": "2026-09-11T16:46:27.533342+00:00",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 345,
+    "analyzed": 365,
     "high": 13,
-    "medium": 21,
-    "low": 33,
-    "below_threshold": 278
+    "medium": 24,
+    "low": 34,
+    "below_threshold": 294
   },
   "papers": [
     {
@@ -436,6 +436,38 @@
       "insight_zh": "该工作表明将弱标签转化为结构化提示进行局部细化可有效提升遥感分割质量，其两阶段框架或可迁移至城市变化检测中的弱监督地物提取任务。"
     },
     {
+      "key": "arxiv:2609.10356",
+      "title": "Spot-the-shift: Evaluating Grounded Image Difference Captioning of Long-term Changes",
+      "title_zh": "Spot-the-shift：评估对长期变化的地基图像差异描述",
+      "url": "https://arxiv.org/abs/2609.10356",
+      "doi": "",
+      "arxiv_id": "2609.10356",
+      "authors": [
+        "Benedetta Liberatori",
+        "Nermin Samet",
+        "Paolo Rota",
+        "Matthieu Cord",
+        "Elisa Ricci",
+        "Andrei Bursuc",
+        "Monika Wysocza\\'nska"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-09T15:52:04+00:00",
+      "score": 78,
+      "reason": "该文提出长期变化的地基图像差异描述基准，直接面向地图维护与城市基础设施监测，与遥感变化检测、多模态大模型及城市更新研究高度相关。",
+      "tags": [
+        "变化检测",
+        "图像差异描述",
+        "多模态大模型",
+        "长期变化",
+        "城市基础设施监测",
+        "基准数据集"
+      ],
+      "abstract": "Long-term change understanding from images of the same place revisited over time is a challenging task with applications in map maintenance and urban infrastructure monitoring. Prior work addresses it either through pixel-level prediction or difference captioning, neither of which is sufficient to reliably measure how well models detect and describe such changes. We introduce SPOT-THE-SHIFT, a human-verified benchmark for grounded image difference captioning of long-term changes in real-world driving scenes. Our benchmark provides natural language captions and spatial masks for structural changes across each image pair. We further propose an evaluation protocol that reliably assesses models' captioning ability, validated through human studies. Benchmarking state-of-the-art MLLMs, we find that models struggle with the fine-grained multi-image spatial capability required for this task. Finally, we develop a synthetic data generation pipeline that improves an off-the-shelf MLLM without sacrificing general capabilities.",
+      "summary_zh": "从同一地点随时间重访的图像中理解长期变化是一项具有挑战性的任务，在地图维护和城市基础设施监测中有应用。已有工作要么通过像素级预测、要么通过差异描述来处理，二者都不足以可靠衡量模型检测和描述此类变化的能力。作者提出SPOT-THE-SHIFT，一个经人工验证的基准，用于真实驾驶场景中长期变化的地基图像差异描述。该基准为每对图像提供自然语言描述和结构性变化的空间掩码。作者进一步提出一种评估协议，通过人工研究验证其能可靠评估模型的描述能力。对最先进多模态大模型的基准测试发现，模型难以具备该任务所需的细粒度多图像空间能力。最后，作者开发了一个合成数据生成流程，在不牺牲通用能力的前提下改进了一个现成多模态大模型。",
+      "insight_zh": "该基准将变化检测从像素级扩展到语言描述与空间掩码联合评估，其合成数据增强思路或可迁移至遥感长期变化理解任务，但摘要未说明其在遥感影像上的直接适用性。"
+    },
+    {
       "key": "arxiv:2609.09451",
       "title": "Uncertainty-Aware Sea-Ice Type Mapping with Multiple Ice Charts",
       "title_zh": "面向多冰图的不确定性感知海冰类型制图",
@@ -589,6 +621,36 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "联合文本到视频-音频生成产生同步的视觉和音频内容，但大模型的长时间采样轨迹和异构多模态计算使推理成本高昂。本文提出TurboT2VA，一个用于加速19B参数联合视频-音频模型的蒸馏和推理框架。通过逐模态归一化和渐进式课程（包括离散一致性预热、连续一致性精炼和联合一致性-分布匹配），在LTX-2上实现了20.1倍加速，同时保持高质量的视觉、音频、多样性和同步性。在高分辨率部署下，实现了54.67倍的生成器加速。",
       "insight_zh": "该研究展示的通过课程式蒸馏和架构感知推理优化来加速大规模生成模型的方法，可为遥感领域中的高分辨率影像生成或视频预测模型的部署提供效率优化思路。"
+    },
+    {
+      "key": "arxiv:2609.10334",
+      "title": "Dimensionality Reduction for Hyperspectral Image Classification",
+      "title_zh": "高光谱图像分类中的降维",
+      "url": "https://arxiv.org/abs/2609.10334",
+      "doi": "",
+      "arxiv_id": "2609.10334",
+      "authors": [
+        "Mohamed Cherifi",
+        "Ammar Mesloub",
+        "Mohammed Nabil El Korso",
+        "Tayeb Touhami",
+        "and Abdennour Hacine Gharbi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-09T15:32:52+00:00",
+      "score": 72,
+      "reason": "该文直接研究高光谱卫星影像的降维与监督分类，属于遥感图像处理核心议题，与遥感变化检测和多源数据融合研究相关。",
+      "tags": [
+        "高光谱图像分类",
+        "降维",
+        "PCA",
+        "LDA",
+        "遥感",
+        "监督分类"
+      ],
+      "abstract": "This paper addresses the issue of supervised classification in the context of hyperspectral satellite images. It deals with two fundamental aspects: dimensionality reduction of data and the selection of appropriate supervised classification techniques. Firstly, we delve into dimensionality reduction, a critical step in simplifying the management of hyperspectral data. The reduction aims to decrease complexity in terms of memory and computing time. We examine two commonly used methods: Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA). Subsequently, we explore the selection of the most suitable supervised classification algorithms for hyperspectral images. We compare the performance of three methods: K-Nearest Neighbors (KNN), Support Vector Machines (SVM), and Random Forest (RF) using real hyperspectral data. The results highlight that the combination of PCA and RF yields the highest overall accuracy and Kappa coefficient.",
+      "summary_zh": "本文探讨高光谱卫星图像背景下的监督分类问题，涉及两个基本方面：数据降维与合适监督分类技术的选择。首先，作者深入讨论降维这一简化高光谱数据管理的关键步骤，其目标是在内存和计算时间方面降低复杂度。作者考察了两种常用方法：主成分分析（PCA）和线性判别分析（LDA）。随后，作者探索最适合高光谱图像的监督分类算法，使用真实高光谱数据比较了三种方法：K近邻（KNN）、支持向量机（SVM）和随机森林（RF）的性能。结果表明，PCA与RF的组合取得最高的总体精度和Kappa系数。",
+      "insight_zh": "该文为高光谱遥感分类提供了降维与分类器组合的实证比较，其PCA+RF结论可作为遥感变化检测前处理与特征压缩的基线参考，但摘要未涉及变化检测或城市应用。"
     },
     {
       "key": "arxiv:2609.09626",
@@ -870,61 +932,6 @@
       "abstract": "Conversational assistants can blend retrieval, action selection, escalation, and wording in a single model path, or separate those roles. We report a production migration of a customer-support assistant at a large accommodation marketplace (millions of conversations per month, 11 languages, 10-second P90). Dynamic Response (DR) replaces a single Qwen3-235B-A22B blended responder with a bounded ReAct orchestrator over typed tools plus a smaller generator that writes from a backend-validated context contract. Because the migration also changed prompts, alignment, and serving, we attribute each effect to its cause and claim as architecture effects only those measured on identical replayed turns: typed entity selection moves the reservation selector to a precision-first operating point (precision 8.3% to 89.1%, recall 75.2% to 67.3%), and typed action IDs with a membership check remove observed structured-action hallucination (2.14% to 0.0%). A low-ramp A/B test reproduces the replay escalation reductions: hard-escalation responses fall from 5.60% to 3.08% and soft-escalation responses from 9.56% to 2.49%, while production handoff volume holds roughly steady; self-solve is directional (+5.1 points, 95% CI [-2, +12]). Serving optimizations cut orchestrator P90 latency from 3.87s to 2.24s on a GPU footprint reduced by roughly one-third, and self-hosting reduces estimated annual model-serving cost by more than an order of magnitude.",
       "summary_zh": "对话助手可以在单一模型路径中混合检索、动作选择、升级和措辞，也可以分离这些角色。作者报告了一个大型住宿市场客服助手的生产迁移。动态响应（DR）用一个有界ReAct编排器（基于类型化工具）和一个较小的生成器取代了单一的Qwen3-235B-A22B混合响应器。通过回放测量，类型化实体选择将预订选择器移至精度优先的工作点，类型化动作ID和成员检查消除了结构化动作幻觉。A/B测试证实了升级次数的减少。",
       "insight_zh": "该研究通过生产环境的迁移案例，展示了从单体LLM响应器到基于类型化工具和编排器的智能体架构，能够显著提升特定任务的精度并消除结构化幻觉，同时通过服务优化大幅降低延迟和成本。"
-    },
-    {
-      "key": "arxiv:2604.10169",
-      "title": "MAVEN-T: Reinforced Heterogeneous Distillation for Real-Time Multi-Agent Trajectory Prediction",
-      "title_zh": "MAVEN-T：用于实时多智能体轨迹预测的强化异构蒸馏",
-      "url": "https://arxiv.org/abs/2604.10169",
-      "doi": "",
-      "arxiv_id": "2604.10169",
-      "authors": [
-        "Wenchang Duan",
-        "Zhenguo Gao",
-        "Jinguo Xian",
-        "Yi Shi"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 65,
-      "reason": "该文提出多智能体轨迹预测的强化异构蒸馏方法，面向实时应用。轨迹预测是城市交通和人群流动分析的核心技术，与城市更新研究高度相关。",
-      "tags": [
-        "多智能体",
-        "轨迹预测",
-        "知识蒸馏",
-        "实时系统",
-        "异质性"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "本文提出MAVEN-T框架，通过强化异构蒸馏技术，在保持预测精度的同时实现实时多智能体轨迹预测，解决了计算效率与准确性之间的平衡问题。",
-      "insight_zh": "异构蒸馏方法可在多智能体轨迹预测中实现实时性能，这对城市尺度的人群和车辆流动模拟具有直接应用价值，可支持城市更新中的动态分析。"
-    },
-    {
-      "key": "arxiv:2609.10315",
-      "title": "TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards",
-      "title_zh": "TRACE：通过合成奖励训练因果探索推理智能体",
-      "url": "https://arxiv.org/abs/2609.10315",
-      "doi": "",
-      "arxiv_id": "2609.10315",
-      "authors": [
-        "Rui Sun",
-        "Zhan Shi",
-        "Bing He"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-09T15:21:47+00:00",
-      "score": 62,
-      "reason": "该论文提出通过可控仿真器合成奖励来训练因果探索推理智能体，与LLM和多智能体研究相关，但其应用场景为数字广告诊断，而非地理空间或城市更新领域，因此与研究方向部分相关。",
-      "tags": [
-        "强化学习",
-        "智能体",
-        "因果推理",
-        "仿真验证",
-        "诊断推理"
-      ],
-      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has advanced language-model reasoning in domains such as mathematics and code, where objective answers are inexpensive to check. Diagnostic reasoning over complex data lacks this advantage: establishing the true cause of an anomaly often requires costly expert investigation and may remain ambiguous after the fact. We ask whether this asymmetry of verification can instead be engineered. We sample an intervention, inject it into a controlled simulator, and generate the observations it would produce. The hidden intervention provides an oracle label and objective reward, while the agent must still investigate noisy, confounded, and distributed evidence. We instantiate this approach in TRACE, a digital-advertising diagnostic environment with 12 root causes and fine-grained segment attribution. Agents investigate each episode using Python and SQL and must identify both the root cause and, when applicable, the affected segment assignment. On a held-out 235-episode test set, the strongest prompted baseline, Claude Opus 5, reaches 0.686 FullAttr@1. Supervised fine-tuning raises Qwen3.5-35B-A3B from 0.159 to 0.637, and subsequent RL with synthesized rewards reaches 0.757, outperforming all evaluated prompted baselines, including frontier closed-source models and a prompted Qwen3.5-122B-A10B model. The resulting policy also uses substantially fewer tool calls than the prompted 35B base. These results provide evidence that access to a scalable, objective training signal can be a more important constraint than model scale alone. More broadly, simulation-based verification can make otherwise ambiguous diagnostic reasoning tasks amenable to scalable reinforcement learning.",
-      "summary_zh": "该研究探讨在复杂数据诊断推理中验证不对称性问题，提出通过采样干预并注入可控仿真器生成观测，从而获得隐藏干预的预言标签和客观奖励。作者在TRACE数字广告诊断环境中实例化该方法，包含12种根因和细粒度细分归因。智能体使用Python和SQL调查每个片段，需识别根因及受影响细分。在235个测试片段上，最强提示基线Claude Opus 5达到0.686 FullAttr@1，监督微调将Qwen3.5-35B-A3B从0.159提升至0.637，后续合成奖励强化学习达到0.757，超越所有评估的提示基线。结果表明可扩展的客观训练信号可能比模型规模更重要。",
-      "insight_zh": "该工作表明基于仿真的验证可将模糊的诊断推理任务转化为可扩展的强化学习问题，这一思路或可迁移至地理空间异常检测与城市更新因果推断场景，但需注意其当前验证环境为数字广告而非地理空间数据。"
     }
   ]
 }

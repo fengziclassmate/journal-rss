@@ -2,11 +2,11 @@
   "date": "2026-09-11",
   "analysis_stats": {
     "total": 511,
-    "analyzed": 351,
+    "analyzed": 361,
     "high": 6,
     "medium": 11,
     "low": 25,
-    "below_threshold": 309
+    "below_threshold": 319
   },
   "papers": [
     {
@@ -8726,6 +8726,39 @@
       "insight_zh": "标题表明该研究利用符号参数提示方法进行低资源手语指令生成，属于多模态与低资源学习领域；与地理空间智能研究关联较弱。"
     },
     {
+      "key": "arxiv:2609.11532",
+      "title": "Prompt Revision as a Source of Cultural Bias in Text-to-Image Systems",
+      "title_zh": "提示修订作为文本到图像系统中文化偏见的来源",
+      "url": "https://arxiv.org/abs/2609.11532",
+      "arxiv_id": "2609.11532",
+      "authors": [
+        "Aleksandra Urman",
+        "Elsa Lichtenegger",
+        "Salima Jaoua",
+        "Azza Bouleimen",
+        "Robin Forsberg",
+        "Corinna Hertweck",
+        "Stefania Ionescu",
+        "Nicol\\`o Pagan",
+        "Ancsa Hannak",
+        "Joachim Baumann"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-10T13:32:40+00:00",
+      "score": 10,
+      "reason": "该论文审计文本到图像系统中的文化偏见来源，提出多语言基准并定位提示修订层为偏见因果来源，属于生成式AI公平性与多语言研究，与LLM和多智能体研究有一定关联，但与GIS核心方向关联有限。",
+      "tags": [
+        "文本到图像",
+        "文化偏见",
+        "提示修订",
+        "多语言基准"
+      ],
+      "summary_zh": "商业文本到图像系统在生成图像前会静默修订用户提示，这一步骤用户通常无法禁用甚至无法看到。然而，现有的文化偏见审计仅检查最终图像，并将生成视为单一流程，因此无法判断偏见来源。本文引入WORLDVIEW，一个涵盖15种语言和31个语言-语境配对、包含8,960条提示的多语言基准。利用该基准，作者通过三步分析审计了三个系统（DALL-E-3、Imagen-4、GPT-Image-1.5）的修订层：该层对每个文化语境的标记程度、是否将该语境扁平化为狭窄词汇，以及该词汇是否具有刻板印象。相对于无语境英语基线，美国是被标记最少的情境，而非西方和非英语语境被标记得多得多，被扁平化为应用于主题多样提示的狭窄词汇，并被简化为可识别的文化刻板印象。通过在没有修订层的模型上比较原始提示与修订提示生成的图像，作者将修订层本身识别为此前未被记录的这一刻板印象的因果来源。要定位文化偏见并修复它，必须审计部署的系统，而不仅仅是模型本身。",
+      "insight_zh": "该研究强调，生成式AI系统的偏见审计需要关注部署流程中的中间环节（如提示修订层），而非仅评估最终输出；这一思路对多语言、多文化语境下的地理空间智能应用具有警示意义。"
+    },
+    {
       "key": "arxiv:2609.11234",
       "title": "NovGauge: A Fine-Grained Benchmark for Diagnosing LLMs' Capability in Paper Novelty Assessment",
       "title_zh": "NovGauge：诊断大语言模型论文新颖性评估能力的细粒度基准",
@@ -10009,6 +10042,40 @@
       "insight_zh": "该多模态推理监督思路与地理空间多源数据融合的推理机制有概念上的相似性，但摘要缺失，无法评估其可迁移性。"
     },
     {
+      "key": "arxiv:2609.11519",
+      "title": "Learning Interaction between Image and Layout Priors for Joint Image-Layout Generation in Design Templates",
+      "title_zh": "学习图像与布局先验之间的交互以实现设计模板中的联合图像-布局生成",
+      "url": "https://arxiv.org/abs/2609.11519",
+      "arxiv_id": "2609.11519",
+      "authors": [
+        "Shirong Yang",
+        "Bo Yang",
+        "Ying Cao"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR",
+        "Transactions",
+        "on",
+        "Visualization",
+        "and",
+        "Computer",
+        "Graphics"
+      ],
+      "published": "2026-09-10T13:22:23+00:00",
+      "score": 8,
+      "reason": "该论文研究设计模板中图像与布局的联合生成，属于多模态生成与图形设计领域，与LLM和多智能体研究有间接关联，但与GIS核心方向关联有限。",
+      "tags": [
+        "图像-布局联合生成",
+        "扩散模型",
+        "设计模板",
+        "多模态生成"
+      ],
+      "summary_zh": "本文研究图形设计模板创建问题，即从输入文本生成背景图像以及前景元素在背景上的布局，形成和谐构图。此前的图形设计生成工作大多采用顺序范式，逐个生成设计元素。作者认为这种顺序方案未能忠实捕捉背景与布局之间的依赖关系（即联合图像-布局分布），从而限制了生成设计模板的质量。为克服这一局限，作者提出InterIL模型，在单一生成过程中联合生成背景图像和布局两种模态。该联合模型的新颖设计通过可学习的通信模块连接预训练图像和布局扩散模型的主干，以显式建模双向图像-布局交互。训练期间，图像和布局主干被冻结以保持并利用大量预训练单模态先验知识，仅更新通信模块，使模型能够专注于学习图像-布局交互，从而更好地捕捉联合图像-布局分布以改善构图和谐性。该模型没有设计特定的归纳偏置，使其能更好地保留真实设计的原始特征。作者进一步引入测试时引导策略，使用户能够对生成结果施加特定偏好。实验表明，与先前方法相比，该模型在图像、布局和图像-布局协调方面能生成显著更好的结果，输出更接近真实样本。作者还展示了该方法的灵活性。",
+      "insight_zh": "该研究提出的联合生成范式通过冻结单模态主干、仅训练通信模块来学习跨模态交互，这一策略可能对多源地理空间数据的联合建模与融合具有方法学启发。"
+    },
+    {
       "key": "arxiv:2609.10810",
       "title": "Larger Context Window, Fewer Overcorrections: Optimizing Prompts and Batching for Minimal-Edit Grammatical Error Correction",
       "title_zh": "更大上下文窗口，更少过度纠正：面向最小编辑语法纠错的提示优化与批处理",
@@ -10031,6 +10098,37 @@
       ],
       "summary_zh": "最小编辑语法纠错（GEC）对零样本和少样本提示的LLM而言具有挑战性，模型会系统性地过度纠正并改写原本正确的片段，从而降低F0.5。本文提出基于提示的方法，通过三项改进缩小与微调模型的差距：引入基于分类法的指令以约束最小编辑范围；将多个未纠正句子批处理为单一输入上下文，作为针对过度纠正的正则化手段；以及利用LLM辅助的提示优化。在Gemini 3.1-Pro支持下，该方法在BEA-2019测试集上达到F0.5=78.32，创下基于提示的SOTA，并将与微调单模型SOTA的差距缩小至0.38分。",
       "insight_zh": "批处理作为正则化以缓解过度纠正的发现，或可启发地理空间LLM应用中提示设计与上下文组织策略，但需验证其跨领域可迁移性。"
+    },
+    {
+      "key": "arxiv:2609.11507",
+      "title": "Harnessing Intrinsic Subject-Aware Attention for Controllable Multi-Subject Video Generation",
+      "title_zh": "利用内在主体感知注意力实现可控多主体视频生成",
+      "url": "https://arxiv.org/abs/2609.11507",
+      "arxiv_id": "2609.11507",
+      "authors": [
+        "Niange Yu",
+        "Ye Tian",
+        "Biaolong Chen",
+        "Miao Lu",
+        "Aixi Zhang",
+        "Hao Jiang",
+        "Yunhai Tong",
+        "Pipei Huang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-10T13:15:03+00:00",
+      "score": 8,
+      "reason": "该论文研究多主体视频生成中的可控保真度与语义漂移问题，属于视频生成与多模态AI领域，与LLM和多智能体研究有间接关联，但与GIS核心方向关联有限。",
+      "tags": [
+        "多主体视频生成",
+        "扩散Transformer",
+        "注意力机制",
+        "强化学习"
+      ],
+      "summary_zh": "多主体视频生成面临两个关键挑战：保真度强度不可控和潜在语义漂移。作者通过分析扩散Transformer（DiT）的内部机制来解决这些问题。他们发现某些注意力块自然形成一种内在空间定位图（ISGM），能精确定位参考主体。基于这一洞察，作者提出双阶段内在注意力利用（DIAL）框架，在训练和推理中均使用这些内部信号。在低噪声阶段，作者使用ISGM引导注意力机制，允许在推理时精确控制保真度强度而无需重新训练。在高噪声阶段，作者使用相同的图自动构建偏好对，无需额外成本即可用于强化学习（RL）。该RL过程有效地将模型注意力锚定到参考主体，并缓解语义漂移。大量实验表明，DIAL在OpenS2V-Eval基准上显著优于基线模型，持续改善身份一致性并实现可控的保真度强度。",
+      "insight_zh": "该研究揭示了扩散Transformer中注意力块自然形成空间定位图的现象，并利用其进行可控生成与强化学习，这一内在机制分析思路可能对多源地理空间数据的注意力建模具有启发意义。"
     },
     {
       "key": "arxiv:2506.00849",
@@ -10083,6 +10181,35 @@
       ],
       "summary_zh": "连续流匹配和离散流匹配通常被视为独立的构造。本文识别出两者之间的对偶性：将具有one-hot目标的连续凸插值路径通过逐位置argmax投影，可得到离散凸插值路径。该结果要求源分布具有适当的坐标对称性和边界正则性，并使连续源分布成为类别生成的显式设计选择。作者推导了高斯、有界均匀和中心化负指数源所诱导的离散插值行为，表明不同的源几何会导致定性不同的转移时序和词汇量依赖性。小型视觉诊断和简短的语言建模试点表明，这些源设计效应也可能出现在学习到的传输和早期生成质量中。",
       "insight_zh": "该研究揭示了连续与离散流匹配之间的理论联系，对生成模型设计有理论意义，但与地理空间数据挖掘或城市分析的应用场景相距较远。"
+    },
+    {
+      "key": "arxiv:2609.11545",
+      "title": "Complex-Text Robustness Evaluation and Failure Diagnosis for Low-Resource Multilingual Text-to-Speech",
+      "title_zh": "低资源多语言文本转语音的复杂文本鲁棒性评估与失败诊断",
+      "url": "https://arxiv.org/abs/2609.11545",
+      "arxiv_id": "2609.11545",
+      "authors": [
+        "Tianlun Zuo",
+        "Ziyu Zhang",
+        "Tingzhi Mao",
+        "Zhonghua Fu",
+        "Lei Xie"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.SD"
+      ],
+      "published": "2026-09-10T13:41:22+00:00",
+      "score": 8,
+      "reason": "该论文研究低资源多语言文本转语音系统在复杂文本输入下的鲁棒性诊断，属于语音合成与多语言NLP领域，与城市更新、时空数据挖掘、遥感变化检测、多源数据融合或地理空间智能无直接关联。",
+      "tags": [
+        "多语言TTS",
+        "鲁棒性评估",
+        "低资源语言",
+        "文本风险评分"
+      ],
+      "summary_zh": "低资源多语言文本转语音（TTS）系统扩展了语言覆盖范围，但其在复杂文本输入下的鲁棒性仍缺乏充分诊断。现有评估主要关注自然度、说话人相似度和内容一致性，使用常规测试句子，对多语言TTS系统在处理数字、日期、命名实体、长句、语码转换表达和标点相关结构等挑战性输入时的失败机制洞察有限。本文提出一个面向低资源多语言TTS的复杂文本鲁棒性诊断框架，从内容一致性、语言一致性和生成稳定性三个维度评估鲁棒性。针对泰语、越南语、斯瓦希里语和印尼语设计了多语言鲁棒性测试方案，覆盖普通句子和多种复杂文本输入。作者进一步引入自动诊断指标，包括字符错误率、语言识别准确率和时长异常率。为支持语音生成前的输入级风险分析，提出轻量级文本风险评分（TRS），无需人工标注或模型训练即可从可解释文本特征估计合成风险。在OmniVoice、VoxCPM2和MMS-TTS三个代表性多语言TTS系统上的实验表明，复杂文本输入暴露出常规短句评估未能充分反映的系统性失败模式。不同系统在数字规范化、命名实体处理、长文本生成和语码转换输入处理方面表现出不同的脆弱性。此外，TRS与内容错误和时长异常呈正相关，表明其作为低成本工具的有效性。",
+      "insight_zh": "该研究提示，多语言生成系统的评估需要超越常规短句测试，关注复杂输入下的系统性失败模式；其提出的轻量级文本风险评分思路，或可启发其他多语言或多模态任务在生成前的输入风险预判。"
     },
     {
       "key": "arxiv:2601.15397",
@@ -11011,7 +11138,7 @@
     {
       "key": "arxiv:2609.11505",
       "title": "Structural priors for data-efficient language learning",
-      "title_zh": "",
+      "title_zh": "数据高效语言学习的结构先验",
       "url": "https://arxiv.org/abs/2609.11505",
       "arxiv_id": "2609.11505",
       "authors": [
@@ -11027,10 +11154,15 @@
       ],
       "published": "2026-09-10T13:12:48+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究非语言数据结构迁移对语言学习的效率影响，属于语言建模与迁移学习领域，与LLM研究有一定关联，但与GIS核心方向关联有限。",
+      "tags": [
+        "结构迁移",
+        "语言建模",
+        "数据高效学习",
+        "权重初始化"
+      ],
+      "summary_zh": "高效语言学习需要减少对大数据和计算资源的依赖。本文研究结构迁移：首先在非语言数据上训练模型，以诱导对自然语言有用的先验。这种方法是一种用于多语言语言建模的权重初始化形式。作者通过下一词预测损失、模型权重变化和下游语言基准来评估迁移效果。若干符号数据类型——特别是音乐、概率文法和元胞自动机——产生的语言建模损失低于随机初始化。这些增益与后续语言训练期间更小的权重变化相吻合，表明结构迁移将模型置于参数空间中更有利的区域。然而，更低的损失并不一致地转化为更好的下游语言性能，且从非语言数据迁移的效率低于额外语言数据。作者得出结论：非语言数据可以作为语言数据的部分替代品用于下一词预测的训练目标，但不能可靠地支持更广泛的语言泛化。",
+      "insight_zh": "该研究表明非语言结构数据可以为语言建模提供有用的初始化先验，但不足以替代真实语言数据以实现广泛泛化，这一发现对多源数据融合与迁移学习策略具有参考意义。"
     },
     {
       "key": "arxiv:2603.11578",
@@ -11553,7 +11685,7 @@
     {
       "key": "arxiv:2609.11514",
       "title": "Prototype Matters: Modality-unified Prototype Self-distillation for Unsupervised Visible-infrared Person Re-identification",
-      "title_zh": "",
+      "title_zh": "原型至关重要：面向无监督可见光-红外行人重识别的模态统一原型自蒸馏",
       "url": "https://arxiv.org/abs/2609.11514",
       "arxiv_id": "2609.11514",
       "authors": [
@@ -11565,38 +11697,15 @@
       ],
       "published": "2026-09-10T13:19:00+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11532",
-      "title": "Prompt Revision as a Source of Cultural Bias in Text-to-Image Systems",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11532",
-      "arxiv_id": "2609.11532",
-      "authors": [
-        "Aleksandra Urman",
-        "Elsa Lichtenegger",
-        "Salima Jaoua",
-        "Azza Bouleimen",
-        "Robin Forsberg",
-        "Corinna Hertweck",
-        "Stefania Ionescu",
-        "Nicol\\`o Pagan",
-        "Ancsa Hannak",
-        "Joachim Baumann"
+      "reason": "该论文研究无监督可见光-红外行人重识别的跨模态学习方法，属于计算机视觉与跨模态学习领域，与遥感变化检测或多源数据融合有微弱的方法学关联，但与GIS核心方向关联有限。",
+      "tags": [
+        "可见光-红外行人重识别",
+        "无监督学习",
+        "原型自蒸馏",
+        "跨模态学习"
       ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-10T13:32:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "summary_zh": "估计可靠的跨模态关联对于无监督可见光-红外行人重识别至关重要。虽然最优传输被证明是跨模态关联的实用解决方案，但它存在硬标签分配的刚性，未考虑聚类噪声的影响。此外，仅强制跨模态对比也是次优的，因为它未能联合优化模态内和模态间的相似性关系。本文提出一个通过充分利用原型进行跨模态学习的新框架：首先，作者表明模态统一原型对比通过联合且同时优化模态内和跨模态的相似性关系，有助于实现更好的模态不变性，而非与跨模态原型对比。以自原型作为稳定的教师，作者进一步通过原型引导的自蒸馏细化实例-原型在线关系。这两个组件在统一框架中优化，形成一个简单而有效的模型。在标准VI-ReID基准上，作者进行了广泛比较和分析，验证了所提方法的有效性。代码见：https://github.com/Terminator8758/PoSeD。",
+      "insight_zh": "该研究提出的模态统一原型对比与自蒸馏策略，可能对多源遥感数据的跨模态特征对齐与无监督学习具有方法学参考价值。"
     },
     {
       "key": "arxiv:2609.10584",
@@ -11807,7 +11916,7 @@
     {
       "key": "arxiv:2609.11538",
       "title": "Particle GFlowNets: Rethinking Generative Marginalization Models",
-      "title_zh": "",
+      "title_zh": "粒子GFlowNets：重新审视生成边际化模型",
       "url": "https://arxiv.org/abs/2609.11538",
       "arxiv_id": "2609.11538",
       "authors": [
@@ -11820,10 +11929,15 @@
       ],
       "published": "2026-09-10T13:37:28+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究生成边际化模型与GFlowNets的等价性及采样策略扩展，属于概率生成建模与离散推断方法，与地理空间智能或城市研究无直接关联，但生成建模方法可能对时空数据生成有间接参考价值。",
+      "tags": [
+        "生成模型",
+        "GFlowNets",
+        "离散分布采样",
+        "组合空间"
+      ],
+      "summary_zh": "生成边际化模型（MaMs）最近被提出作为任意阶自回归离散分布建模的高效神经采样模型。通过学习持久块Gibbs采样器的边际概率和条件概率，MaMs能够通过单次神经网络前向传播实现快速后验评估。虽然此前工作认为MaMs与生成流网络（GFlowNets）不同，但本文表明二者是等价的。随后，作者还将MaMs的采样策略扩展到非自回归生成过程。具体而言，本文描述了一种基于Gelman-Rubin统计量的Gibbs采样器全状态更新自动准则，该准则在加速学习收敛方面起关键作用。实验表明，所提出的方法——粒子GFlowNets——在大型组合空间中显著加速了训练。",
+      "insight_zh": "该研究揭示了生成边际化模型与GFlowNets之间的理论等价性，并提出了基于Gelman-Rubin统计量的自动更新准则，可能为离散组合空间中的高效采样与训练提供新思路。"
     },
     {
       "key": "arxiv:2609.11582",
@@ -12414,35 +12528,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.11519",
-      "title": "Learning Interaction between Image and Layout Priors for Joint Image-Layout Generation in Design Templates",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11519",
-      "arxiv_id": "2609.11519",
-      "authors": [
-        "Shirong Yang",
-        "Bo Yang",
-        "Ying Cao"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.GR",
-        "Transactions",
-        "on",
-        "Visualization",
-        "and",
-        "Computer",
-        "Graphics"
-      ],
-      "published": "2026-09-10T13:22:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.11573",
       "title": "Learn the Solid, Not the File: Canonical Inputs for Neural Networks on CAD Boundary Representations",
       "title_zh": "",
@@ -12799,32 +12884,6 @@
       "insight_zh": "该研究揭示了LLM智能体在具体决策中对道德考量的价格敏感性，以及提示词对智能体行为倾向的显著塑造作用。"
     },
     {
-      "key": "arxiv:2609.11507",
-      "title": "Harnessing Intrinsic Subject-Aware Attention for Controllable Multi-Subject Video Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11507",
-      "arxiv_id": "2609.11507",
-      "authors": [
-        "Niange Yu",
-        "Ye Tian",
-        "Biaolong Chen",
-        "Miao Lu",
-        "Aixi Zhang",
-        "Hao Jiang",
-        "Yunhai Tong",
-        "Pipei Huang"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-10T13:15:03+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.11123",
       "title": "HERALD: High-Fidelity Exemplar Retrieval with Adaptive Landmark Distillation for Heterophily-Aware Graph Condensation",
       "title_zh": "",
@@ -12921,7 +12980,7 @@
     {
       "key": "arxiv:2609.11521",
       "title": "Generalized Score Matching for Parameter Estimation on Convex Domains",
-      "title_zh": "",
+      "title_zh": "凸域上参数估计的广义分数匹配",
       "url": "https://arxiv.org/abs/2609.11521",
       "arxiv_id": "2609.11521",
       "authors": [
@@ -12935,10 +12994,15 @@
       ],
       "published": "2026-09-10T13:23:41+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文推导凸域上的广义分数匹配目标用于参数估计，属于统计学习方法论，与地理空间智能或城市研究无直接关联，但概率建模方法可能对时空统计建模有间接参考价值。",
+      "tags": [
+        "分数匹配",
+        "参数估计",
+        "凸域",
+        "概率模型"
+      ],
+      "summary_zh": "最大似然（ML）估计是学习概率模型的一种有原则且统计高效的途径。然而，对于未归一化模型，ML估计需要评估配分函数并对其求导，这并非总是可处理的。分数匹配提供了一种实际可行的替代方案，通过拟合分数来消除对归一化常数的依赖。本文从最小概率流（MPF）学习出发，构造性地推导了$\\mathbb{R}^{d}$凸子集上的广义分数匹配目标，并展示了经典分数匹配以及非负数据的域适应变体如何自然地在所提框架中产生。作者证明所得目标是二阶的适当局部评分规则，这提供了在目标最小化时恢复真实密度的理论保证。此外，对于属于指数族的模型，作者在标准正则条件下建立了目标的凸性以及有限样本估计量的一致性。该推导为广义分数匹配在各种问题设置中的范围和适用性提供了新见解。作者在配分函数解析不可处理的约束域上比较了基于广义分数匹配的估计量，并提供了在$\\mathbb{R}^{d}$凸子集上定义的指数族模型密度的参数估计实验结果，以及一个生成建模用例以展示所提广义分数匹配框架的更广泛适用性。",
+      "insight_zh": "该研究为约束域上的未归一化概率模型参数估计提供了理论保证，其凸性和一致性结果可能对需要处理复杂约束的时空统计建模具有方法学参考价值。"
     },
     {
       "key": "arxiv:2609.11312",
@@ -13125,27 +13189,6 @@
         "cs.MA"
       ],
       "published": "2026-09-09T18:18:10+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11509",
-      "title": "Extending SMT Solving with Non-Ground Clause Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11509",
-      "arxiv_id": "2609.11509",
-      "authors": [
-        "Yasmine Briefs",
-        "Christoph Weidenbach"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LO"
-      ],
-      "published": "2026-09-10T13:17:14+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13450,7 +13493,7 @@
     {
       "key": "arxiv:2609.11504",
       "title": "DeFiFlowBench: Benchmarking and Improving Safe Executability in Natural-Language DeFi Workflow Synthesis",
-      "title_zh": "",
+      "title_zh": "DeFiFlowBench：自然语言DeFi工作流合成中安全可执行性的基准测试与改进",
       "url": "https://arxiv.org/abs/2609.11504",
       "arxiv_id": "2609.11504",
       "authors": [
@@ -13465,10 +13508,15 @@
       ],
       "published": "2026-09-10T13:10:32+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究自然语言DeFi工作流合成中的安全可执行性基准与改进方法，属于金融科技与安全评估领域，与LLM研究有一定关联，但与GIS核心方向关联有限。",
+      "tags": [
+        "DeFi工作流合成",
+        "安全性评估",
+        "基准测试",
+        "自然语言生成"
+      ],
+      "summary_zh": "一个结构有效的DeFi工作流仍可能授权一笔代价高昂的交易。本文引入DeFiFlowBench，一个包含207条团队编写提示的基准，用于自然语言DeFi工作流合成。它测量图覆盖率、配置完整性和声明的安全谓词，然后在本地EVM上测试支持的交易配置。直接、约束和少样本提示在固定5%价格影响上限下，每种配置产生14-19次不安全留出执行。从报价推导的滑点边界并不能阻止订单本身的价格影响。作者提出Koan-Safe，它结合了仅提示的意图解析器、可替换生成器和带默认安全参数的结构修复。在75条留出工作流提示上，其混合变体在静态安全代理上得分为0.67，而最佳基线为0.33。Koan-Safe在保存的基准输出上未记录到不安全执行。匹配候选消融在禁用强制执行时产生14-17次不安全执行。额外测试暴露了默认注入的局限：宽松的现有阈值仍可能授权不安全交易。单独评估的策略上限在36例诊断网格上解决了这一失败。这些结果支持显式交易保护和基于执行的评估，同时区分声明安全与一般保证。",
+      "insight_zh": "该研究强调在自然语言生成工作流中，结构有效性不等于安全可执行性，需要显式安全约束与基于执行的评估；这一思路对LLM驱动的自动化流程安全评估具有参考价值。"
     },
     {
       "key": "arxiv:2609.10796",
@@ -13563,30 +13611,6 @@
         "2026)"
       ],
       "published": "2026-09-09T18:32:12+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11545",
-      "title": "Complex-Text Robustness Evaluation and Failure Diagnosis for Low-Resource Multilingual Text-to-Speech",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11545",
-      "arxiv_id": "2609.11545",
-      "authors": [
-        "Tianlun Zuo",
-        "Ziyu Zhang",
-        "Tingzhi Mao",
-        "Zhonghua Fu",
-        "Lei Xie"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.SD"
-      ],
-      "published": "2026-09-10T13:41:22+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14738,6 +14762,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作提出HISA方法，为细粒度稀疏注意力机制构建高效层次索引，以提升计算效率。",
       "insight_zh": "摘要缺失，无法评估其具体性能。该研究属于深度学习底层计算优化，若应用于地理空间大模型（如遥感影像Transformer）的推理加速可能有间接价值，但当前信息不足以确认。"
+    },
+    {
+      "key": "arxiv:2609.11509",
+      "title": "Extending SMT Solving with Non-Ground Clause Learning",
+      "title_zh": "扩展SMT求解以支持非地面子句学习",
+      "url": "https://arxiv.org/abs/2609.11509",
+      "arxiv_id": "2609.11509",
+      "authors": [
+        "Yasmine Briefs",
+        "Christoph Weidenbach"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LO"
+      ],
+      "published": "2026-09-10T13:17:14+00:00",
+      "score": 3,
+      "reason": "该论文研究SMT求解中的非地面子句学习与冲突分析，属于形式化方法与自动推理领域，与地理空间智能或城市研究无直接关联。",
+      "tags": [
+        "SMT求解",
+        "非地面子句学习",
+        "冲突分析",
+        "形式化方法"
+      ],
+      "summary_zh": "量词实例化目前是非地面SMT求解的主要方法：求解器生成地面实例，并用CDCL(T)风格推理求解所得的地面SMT问题。当发现冲突时，冲突分析仅学习一个地面子句，即使冲突来自非地面子句的实例。然而，非地面推理可以给出比纯地面推理指数级更短的证明。本文提出一个由地面实例化、CDCL(T)风格规则和非地面冲突分析组成的演算。求解器在地面实例上推理，但冲突分析的归结步骤在其原始非地面子句上执行。这产生的学习子句通常比地面冲突更一般。在适当策略下，学习子句甚至是非冗余的。作者还展示了如何将时序回溯纳入SMT求解。该演算为CDCL(T)风格SMT求解、一系列基于实例化的过程和非地面子句学习提供了共同框架，并证明它模拟了CDCL、SCL(FOL)、SCL(T)甚至归结。",
+      "insight_zh": "该研究通过非地面冲突分析产生更一般的学习子句，可能为形式化推理与约束求解的效率提升提供新思路，但与地理空间智能领域关联较弱。"
     },
     {
       "key": "arxiv:2609.11762",
