@@ -2,11 +2,11 @@
   "date": "2026-09-10",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 295,
-    "high": 9,
-    "medium": 18,
-    "low": 27,
-    "below_threshold": 241
+    "analyzed": 305,
+    "high": 13,
+    "medium": 19,
+    "low": 29,
+    "below_threshold": 244
   },
   "papers": [
     {
@@ -38,6 +38,37 @@
       ],
       "summary_zh": "针对现有像素级模型忽略周围环境、而补丁级模型可能包含无关像素的问题，提出局部地理与空间上下文融合（LGSCF）策略。该策略通过特征级调制机制，将滑坡点的地理环境特征与其对应的空间上下文进行协同。在台湾南投县仁爱乡和信义乡约2644平方公里的区域，使用5332个滑坡样本和等量非滑坡样本进行测试。结果表明，集成LGSCF的九个CNN模型性能均优于原始版本，F1分数最高达87.09%，AUC最高达0.9472，且生成的易发性图更准确地将已知滑坡集中在“极高”易发区。",
       "insight_zh": "该研究通过特征级调制机制有效融合了点尺度的局部环境信息和面尺度的空间上下文，解决了像素级与补丁级表征的各自局限，为滑坡易发性制图提供了一种更精确的数据融合策略。"
+    },
+    {
+      "key": "arxiv:2609.09876",
+      "title": "From Pixels to Hierarchical Sequences: Quadtree Mask Encoding for Vision-Language Binary Change Detection",
+      "title_zh": "从像素到分层序列：用于视觉语言二值变化检测的四叉树掩码编码",
+      "url": "https://arxiv.org/abs/2609.09876",
+      "arxiv_id": "2609.09876",
+      "authors": [
+        "Xiao An",
+        "Ruikang Zhang",
+        "Chen Zhong",
+        "Xuli Shen",
+        "Jiaxing Sun",
+        "Jiang Wu",
+        "Wei He"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T08:29:37+00:00",
+      "score": 90,
+      "reason": "该论文提出了基于四叉树掩码编码的视觉语言二值变化检测框架，直接针对遥感变化检测，与遥感变化检测和多源数据融合的研究方向高度契合。",
+      "tags": [
+        "变化检测",
+        "视觉语言模型",
+        "四叉树编码",
+        "遥感",
+        "多模态"
+      ],
+      "summary_zh": "遥感中的密集变化检测要求视觉语言模型（VLM）比较双时相图像并生成准确的像素级掩码。现有的VLM主要局限于变化描述输出，少数产生像素级掩码的仍然依赖外部解码器或扁平文本作为掩码的序列化，这对于小而碎片化的变化效果较差。我们引入了QUAKE-CD，一个将密集变化预测重新构建为语法可验证的结构化生成的框架。QUAKE-CD将二值变化掩码表示为语法约束的四叉树令牌序列，使掩码紧凑、语法可检查，并可在自回归生成空间内确定性解码。我们进一步构建了QUAKE-CoT，将这些序列与基于视觉证据的思维链轨迹配对，并通过渐进式课程和语法门控双奖励RL联合优化文本推理和空间密集预测。在QUAKE-CoT上，QUAKE-CD实现了78.31%的累积F1，优于基于解码器的和扁平文本作为掩码的VLM，同时产生更忠实的双时相推理。",
+      "insight_zh": "该研究为遥感变化检测提供了新的VLM生成范式，其结构化生成方法可能提升城市更新中变化检测的精度和可解释性。"
     },
     {
       "key": "arxiv:2602.19326",
@@ -193,6 +224,66 @@
       "insight_zh": "该工作将 LLM 智能体与强化学习结合用于可执行城市规划，其沙盒环境与原子任务分解思路或可扩展至城市更新决策与时空数据驱动的规划仿真。"
     },
     {
+      "key": "arxiv:2609.09429",
+      "title": "Applying foundation model embeddings towards urban livability evaluation",
+      "title_zh": "应用基础模型嵌入进行城市宜居性评估",
+      "url": "https://arxiv.org/abs/2609.09429",
+      "arxiv_id": "2609.09429",
+      "authors": [
+        "Ayush Khot",
+        "Wen Zhou",
+        "Shaowen Wang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CY"
+      ],
+      "published": "2026-09-08T20:28:47+00:00",
+      "score": 88,
+      "reason": "该论文直接探讨利用基础模型（如AlphaEarth、AnySat、TerraMind）嵌入进行城市宜居性评估，与城市更新、遥感变化检测及多源数据融合的研究方向高度契合。",
+      "tags": [
+        "基础模型嵌入",
+        "城市宜居性",
+        "遥感",
+        "地理空间智能",
+        "社会经济指标"
+      ],
+      "summary_zh": "在数据稀缺地区，准确测量社会经济指标仍然具有挑战性，这限制了政策干预和资源配置，而高分辨率地理空间数据广泛可用，并可能包含各种宜居性统计信息。我们研究了基础模型嵌入（如AlphaEarth、AnySat和TerraMind）中编码了哪些物理特征，并提供了一个系统框架来识别最具预测性的地理空间指标。通过分析不同类型的地理空间数据如何影响城市宜居性预测，我们的方法使研究人员能够为其特定应用优先选择最具信息量的特征。此外，我们展示了如何利用基础模型嵌入来增强这些结果的预测性能。这项工作贡献了一种原则性方法，用于从卫星影像中提取可操作信息，同时考虑复杂的空间依赖性，可应用于观测数据有限地区的城市宜居性预测。",
+      "insight_zh": "该研究为利用基础模型嵌入进行城市宜居性评估提供了系统框架，可能推动数据稀缺地区的城市更新决策支持。"
+    },
+    {
+      "key": "arxiv:2609.10156",
+      "title": "ScopeMamba-YOLO: Widening the Perceptual Scope Inward and Outward for Small Object Detection in Remote Sensing Imagery",
+      "title_zh": "ScopeMamba-YOLO：内外扩展感知范围用于遥感影像小目标检测",
+      "url": "https://arxiv.org/abs/2609.10156",
+      "arxiv_id": "2609.10156",
+      "authors": [
+        "Junjie Fan",
+        "Yijun Mai",
+        "Linduo Wei",
+        "Jiayu Rao",
+        "Junmin Bao",
+        "Qiushi Jin",
+        "Guijia Li",
+        "and Yong Qi"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T13:32:46+00:00",
+      "score": 85,
+      "reason": "该论文针对遥感影像中的小目标检测，提出了ScopeMamba-YOLO，与遥感变化检测和多源数据融合的研究方向高度相关。",
+      "tags": [
+        "遥感",
+        "小目标检测",
+        "Mamba",
+        "YOLO",
+        "无人机影像"
+      ],
+      "summary_zh": "无人机（UAV）和遥感影像中的小目标检测需要在建模长程上下文的同时保留高分辨率细节。增加一个步长4的检测级别并移除步长32阶段有利于微小目标，但削弱了外围空间支持，而直接将选择性扫描插入主特征路径可能会干扰弱的局部线索。我们提出了ScopeMamba-YOLO，围绕一种离路径、零门控的选择性扫描原则构建，将上下文建模与卷积流解耦。该原则通过在骨干中实例化级联全局上下文模块（CGCM）和在颈部中实例化选择性扫描PAN（SS-PAN）来实现。自适应多尺度条带（AMS）块降低了高分辨率特征提取的成本，而尺度自适应DFL（SA-DFL）头仅用0.008M额外参数重新分配跨尺度的分布支持和回归能力。受控实验表明，匹配的主路径选择性扫描将mAP50降低0.98个百分点，而离路径CGCM相对于三种子无CGCM均值将最终配置提高0.67个百分点；操作员控制表明这一增益不能仅由辅助分支容量解释。ERF分析进一步表明，完整的上下文路径在步长8处将外围能量比从0.008增加到0.090。在VisDrone-2019上，ScopeMamba-S以3.57M参数达到50.8% mAP50，超过YOLOv8s 10.8个百分点，同时仅使用其32%的参数；ScopeMamba-M以6.48M参数达到52.6% mAP50。在AI-TOD上也观察到一致的改进，特别是对于非常微小和微小目标。",
+      "insight_zh": "该研究为遥感小目标检测提供了高效架构，其离路径上下文建模思路可能对城市更新中的目标监测有应用价值。"
+    },
+    {
       "key": "arxiv:2609.07316",
       "title": "DGCPath: Distribution-Aware Generative Contrastive Framework for Self-supervised Path Representation Learning -- Extended Version",
       "title_zh": "DGCPath：用于自监督路径表示学习的分布感知生成式对比框架（扩展版）",
@@ -225,6 +316,33 @@
       ],
       "summary_zh": "提出DGCPath框架，用于路径表示学习。该框架结合了基于扩散的视图生成器、变分对比机制和生成式交叉监督模块，在分布层面而非实例层面进行特征对齐，以学习鲁棒且可迁移的轨迹特征。在三个真实轨迹数据集上的实验表明，其在两个下游任务上优于现有最先进方法。",
       "insight_zh": "将生成模型与分布级对比学习相结合，能够超越传统的实例级一致性约束，学习到更具泛化能力的轨迹表示，为城市动态分析提供了新的技术路径。"
+    },
+    {
+      "key": "arxiv:2609.09374",
+      "title": "An Autonomous GeoAI Agent for Arctic Eco-Navigation",
+      "title_zh": "面向北极生态导航的自主GeoAI智能体",
+      "url": "https://arxiv.org/abs/2609.09374",
+      "arxiv_id": "2609.09374",
+      "authors": [
+        "Samira Alkaee Taleghan",
+        "Younghyun Koo",
+        "Farnoush Banaei-Kashani"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-08T19:15:36+00:00",
+      "score": 82,
+      "reason": "该论文提出了一种多智能体GeoAI系统用于北极生态导航，涉及多智能体协作、地理空间数据获取和多目标路径规划，与LLM和多智能体、地理空间智能的研究方向相关。",
+      "tags": [
+        "GeoAI",
+        "多智能体系统",
+        "路径规划",
+        "生态导航",
+        "北极"
+      ],
+      "summary_zh": "随着海冰条件变化扩大季节性可达性，北极海上航行变得越来越重要，同时也带来了重大的运营、环境和社区风险。北极航线规划本质上是一个多标准问题：提高船舶安全性或效率的航线可能会增加对海冰、敏感生态系统或附近社区的暴露。现有的航线方法优先考虑旅行时间、燃料使用和航行风险，往往忽视生态和社区影响。我们介绍了一种人在回路中的多智能体GeoAI系统，用于北极生态导航，该系统将运营、物理、生态和社区相关标准整合到一个统一的航线框架中。多个专业智能体协调地理空间数据获取和准备、多目标航线生成以及基于天际线的决策支持。生态标准明确考虑了对敏感区域的暴露，包括基本鱼类栖息地和海豹关键栖息地。通过在将关键价值判断置于人类控制之下的同时考虑这些生态系统影响和潜在社区负担，该框架支持更安全、更透明和更负责任的北极航行。项目页面和代码已公开。",
+      "insight_zh": "该研究展示了多智能体GeoAI在复杂地理空间决策中的应用，其人在回路和多标准整合思路可借鉴于城市更新中的多目标规划。"
     },
     {
       "key": "arxiv:2609.07298",
@@ -511,6 +629,33 @@
       ],
       "summary_zh": "该研究提出一种自进化的科学智能体，能够基于物理推理设计白盒流体控制策略，通过迭代优化实现可解释的控制方案。",
       "insight_zh": "自进化智能体结合物理推理可生成可解释的控制策略，为城市流体系统（如排水、通风）的智能调控提供新思路。"
+    },
+    {
+      "key": "arxiv:2609.09565",
+      "title": "Multi-Agent Agentic Graph Learning via Structural Signatures",
+      "title_zh": "通过结构签名的多智能体代理图学习",
+      "url": "https://arxiv.org/abs/2609.09565",
+      "arxiv_id": "2609.09565",
+      "authors": [
+        "Liang Qu",
+        "Jianxin Li",
+        "and Hua Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-09T00:43:45+00:00",
+      "score": 70,
+      "reason": "该论文提出了一种多智能体代理图学习框架，涉及多智能体协作和LLM，与LLM和多智能体的研究方向相关，且图学习方法可能应用于地理空间网络分析。",
+      "tags": [
+        "多智能体",
+        "图学习",
+        "LLM",
+        "结构签名",
+        "图推理"
+      ],
+      "summary_zh": "代理图学习（AGL）最近在图推理任务上取得了有希望的结果，其中由大型语言模型（LLM）驱动的代理顺序采样图作为证据来支持其最终预测。现有方法要么采用单个代理，要么编排多个基于角色的代理在整个图上进行推理和学习，但两者本质上都依赖于跨不同图区域的共享推理策略，这对于具有异质结构和语义模式的图可能是次优的。受多智能体协作在复杂推理任务上进展的启发，一个自然的补救方法是让多个代理拥有不同的记忆并协作；然而，将这种范式直接应用于图面临两个挑战。首先，现有的AGL方法通常将图结构语言化为自然语言描述以供LLM代理使用，使得推理过程对结构信息的顺序敏感，从而破坏了图的置换不变性。其次，纳入越来越大的采样邻域导致上下文迅速增长。为了解决这些挑战，本文引入了一个多智能体代理图学习（即MAAGL）框架。MAAGL将图划分为社区，并为每个社区分配一个独立的代理进行区域特定的专业化。MAAGL分别表示结构和语义证据。结构证据由动态更新的结构签名总结，该签名是置换不变的且大小固定，而语义证据则过滤为按相关性排名的前k个节点。基于具有相似签名的历史轨迹，代理估计其置信度并在需要时触发辩论式协作。大量实验...",
+      "insight_zh": "该框架的多智能体协作和结构签名方法可能为地理空间网络（如交通、社交网络）的推理提供新思路。"
     },
     {
       "key": "arxiv:2609.08796",
@@ -1087,6 +1232,37 @@
       "insight_zh": "该研究表明，GNN可以学习有效的图粗化策略来简化复杂优化问题，这种思路或可迁移至大规模地理空间网络的优化中。"
     },
     {
+      "key": "arxiv:2609.10387",
+      "title": "Enhanced Deformable Convolution with Center-invariant Offset and Edge-aware Mask",
+      "title_zh": "增强可变形卷积：中心不变偏移与边缘感知掩码",
+      "url": "https://arxiv.org/abs/2609.10387",
+      "arxiv_id": "2609.10387",
+      "authors": [
+        "Yixiao Li",
+        "Xiaoyuan Yang",
+        "Jin Jiang",
+        "Minghao Zou",
+        "Guanghui Yue",
+        "Baoquan Zhao",
+        "Jun Liu",
+        "Wei Zhou"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T16:11:08+00:00",
+      "score": 55,
+      "reason": "该论文提出了一种增强的可变形卷积网络用于语义分割，语义分割是遥感变化检测中的关键技术，与遥感变化检测的研究方向相关。",
+      "tags": [
+        "可变形卷积",
+        "语义分割",
+        "计算机视觉",
+        "遥感变化检测"
+      ],
+      "summary_zh": "可变形卷积网络最近在许多计算机视觉任务中变得流行，特别是在语义分割中，因为它们在动态空间建模方面具有卓越的能力。然而，由于密集的可变形偏移和缺乏长程依赖，它们无法完全采用适当和精确的变形来进行特征表示。为了解决这些问题，本文提出了用于语义分割的增强可变形卷积网络（EDCN）。具体来说，在解码器中利用了一种新颖的增强可变形卷积（EDC），它集成了中心不变偏移模块（COM）和边缘感知掩码模块（EMM）。COM采用更大的核并消除核中心的变形，从更丰富的空间信息中获得更符合目标的偏移。同时，EMM通过Sobel边缘检测获得图像内容的重要性，然后根据内容重要性选择性地应用变形，最大限度地减少与相对不重要信息相关的不必要变形，从而避免来自信息较少区域的影响。实验表明，EDC在主流分割数据集上优于最先进的可变形卷积变体，包括Deformable ConvNets V1-V4和Entire Deformable ConvNets，在各种解码器设置下。此外，消融研究证实了每个组件的有效性。此外，可视化表明EDC增强了空间适应性和目标聚焦。我们进一步分析了EDC在图像分类基准上扩展到更大核的可能性。代码将公开发布。",
+      "insight_zh": "该研究提出的增强可变形卷积可能提升遥感影像语义分割的精度，进而有助于变化检测任务。"
+    },
+    {
       "key": "arxiv:2609.10158",
       "title": "CoGe-GCD: Reframing Generalized Category Discovery with Compositional Generalization",
       "title_zh": "CoGe-GCD：以组合泛化重构广义类别发现",
@@ -1142,55 +1318,6 @@
       ],
       "summary_zh": "提出开源实时拼接框架，用于常规角膜共聚焦显微镜视频流，通过焦点感知门控、局部配准和稀疏锚点图实现低延迟宽场拼接，并支持离线细化。",
       "insight_zh": "实时拼接框架可降低宽场成像的采用门槛，提高角膜神经形态定量评估的可重复性和临床适用性。"
-    },
-    {
-      "key": "arxiv:2609.09429",
-      "title": "Applying foundation model embeddings towards urban livability evaluation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09429",
-      "arxiv_id": "2609.09429",
-      "authors": [
-        "Ayush Khot",
-        "Wen Zhou",
-        "Shaowen Wang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CY"
-      ],
-      "published": "2026-09-08T20:28:47+00:00",
-      "score": 55,
-      "reason": "关键词命中：Geospatial、Foundation Model",
-      "tags": [
-        "Geospatial",
-        "Foundation Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09374",
-      "title": "An Autonomous GeoAI Agent for Arctic Eco-Navigation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09374",
-      "arxiv_id": "2609.09374",
-      "authors": [
-        "Samira Alkaee Taleghan",
-        "Younghyun Koo",
-        "Farnoush Banaei-Kashani"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-08T19:15:36+00:00",
-      "score": 55,
-      "reason": "关键词命中：Geospatial、Multi-Agent",
-      "tags": [
-        "Geospatial",
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.07664",
@@ -1741,6 +1868,37 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取轨迹建模方法、数据集与性能结论。",
       "insight_zh": "从标题推断，该工作强调边界框轨迹在视频异常检测中的作用，其轨迹建模思路或可迁移至城市时空行为分析；但摘要缺失，无法确认具体方法与实验。"
+    },
+    {
+      "key": "arxiv:2609.10430",
+      "title": "Avatar: Toward Autonomous End-to-End Orchestration of Scientific Workflows using LLMs",
+      "title_zh": "Avatar：利用LLM实现科学工作流的自主端到端编排",
+      "url": "https://arxiv.org/abs/2609.10430",
+      "arxiv_id": "2609.10430",
+      "authors": [
+        "Suman Raj",
+        "Hai Duc Nguyen",
+        "Haochen Pan",
+        "Ryan Chard",
+        "Kyle Chard",
+        "Ian Foster"
+      ],
+      "categories": [
+        "cs.DC",
+        "cs.MA"
+      ],
+      "published": "2026-09-09T17:45:36+00:00",
+      "score": 45,
+      "reason": "该论文涉及LLM多智能体系统用于数据编目和工作流编排，与LLM和多智能体的研究方向相关，但应用领域为数据湖管理而非地理空间。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "数据编目",
+        "工作流编排",
+        "数据治理"
+      ],
+      "summary_zh": "企业数据湖积累表格的速度超过了人工管理员记录或分类的速度，导致列描述缺失和治理标签未分配。这种文档债务削弱了数据发现、访问控制和法规遵从性。我们提出了Glyph，一个生产系统，将列描述生成和列类型注释这两个耦合问题构建为协作的LLM智能体，并编排为有状态图。Descriptor将生成建立在产生每列的管道源代码基础上，通过推理-行动工具循环（主动检索增强生成）从企业GitHub按需检索。Tagger通过并行运行三种互补策略（描述标记器、业务线正则标记器和由微调对比编码器支持的元数据标记器）从受治理的275叶数据分类本体中分配标签，然后使用倒数排名融合（RRF）融合其排名输出。我们使用批内对比目标微调了一个6层MiniLM元数据编码器，将分布内保留集上的同标签检索从NDCG@10 0.55提升到0.92（MAP@100 0.19→0.90），相对于原始基础编码器。我们报告了在三个评估组下以召回加权F2为目标的端到端多标签标记质量，隔离每种策略和RRF融合的消融实验，以及区分Glyph与先前列类型注释工作和商业价值/正则敏感性扫描器的工程决策：无价值且基于代码的设计、每标签溯源和优雅降级。这些共同使多智能体LLM编目可作为生产服务进行审计和操作。",
+      "insight_zh": "该研究展示了LLM多智能体在数据治理中的潜力，其主动检索增强生成和融合策略可能对地理空间数据编目有借鉴意义。"
     },
     {
       "key": "arxiv:2608.30107",
@@ -2454,6 +2612,7 @@
       "arxiv_id": "2603.01260",
       "authors": [
         "Abdulhamid M. Mousa",
+        "Jinhui Pang",
         "Rakhmonberdi Khajiev",
         "Jalaledin M. Azzabi",
         "Abdulkarim M. Mousa",
@@ -2651,7 +2810,7 @@
         "Lei Hsiung",
         "Maoyu Wang",
         "Mengze Tang",
-        "et al. (60 additional authors not shown)"
+        "et al. (65 additional authors not shown)"
       ],
       "categories": [
         "cs.AI",
@@ -3654,135 +3813,6 @@
       "insight_zh": "构建一个统一的、可组合的评估系统是应对多模态模型评估碎片化挑战的有效途径，其核心在于抽象层设计和工件记录，这为复杂地理空间模型的标准化评估提供了借鉴。"
     },
     {
-      "key": "arxiv:2609.09863",
-      "title": "Pretraining and Distillation Matter More Than Architecture Family for Label-Free Single-Cell Classification",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09863",
-      "arxiv_id": "2609.09863",
-      "authors": [
-        "Philip Graemer",
-        "Giuseppe Di Caprio"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T08:16:10+00:00",
-      "score": 29,
-      "reason": "关键词命中：Deep Learning、Transformer",
-      "tags": [
-        "Deep Learning",
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09565",
-      "title": "Multi-Agent Agentic Graph Learning via Structural Signatures",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09565",
-      "arxiv_id": "2609.09565",
-      "authors": [
-        "Liang Qu",
-        "Jianxin Li",
-        "and Hua Wang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-09T00:43:45+00:00",
-      "score": 29,
-      "reason": "关键词命中：Large Language Model、Multi-Agent",
-      "tags": [
-        "Large Language Model",
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09883",
-      "title": "Forward-Free LLM Depth Pruning via Weight Redundancy",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09883",
-      "arxiv_id": "2609.09883",
-      "authors": [
-        "Vincent-Daniel Yun",
-        "Woosang Lim"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.PF"
-      ],
-      "published": "2026-09-09T08:38:23+00:00",
-      "score": 29,
-      "reason": "关键词命中：Transformer、Large Language Model",
-      "tags": [
-        "Transformer",
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.10387",
-      "title": "Enhanced Deformable Convolution with Center-invariant Offset and Edge-aware Mask",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10387",
-      "arxiv_id": "2609.10387",
-      "authors": [
-        "Yixiao Li",
-        "Xiaoyuan Yang",
-        "Jin Jiang",
-        "Minghao Zou",
-        "Guanghui Yue",
-        "Baoquan Zhao",
-        "Jun Liu",
-        "Wei Zhou"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T16:11:08+00:00",
-      "score": 29,
-      "reason": "关键词命中：Segmentation、Computer Vision",
-      "tags": [
-        "Segmentation",
-        "Computer Vision"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.10430",
-      "title": "Avatar: Toward Autonomous End-to-End Orchestration of Scientific Workflows using LLMs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10430",
-      "arxiv_id": "2609.10430",
-      "authors": [
-        "Suman Raj",
-        "Hai Duc Nguyen",
-        "Haochen Pan",
-        "Ryan Chard",
-        "Kyle Chard",
-        "Ian Foster"
-      ],
-      "categories": [
-        "cs.DC",
-        "cs.MA"
-      ],
-      "published": "2026-09-09T17:45:36+00:00",
-      "score": 29,
-      "reason": "关键词命中：Deep Learning、Multi-Agent",
-      "tags": [
-        "Deep Learning",
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09552",
       "title": "TEFM: Token-Efficient Faithful Modeling for Structured Data",
       "title_zh": "TEFM：面向结构化数据的Token高效忠实建模",
@@ -4422,6 +4452,34 @@
       "insight_zh": "在低资源语言的历时语义分析中，语义变化可能并非渐进均匀，而是由少数关键上下文实例引发的，这为理解语言演变机制提供了新视角。"
     },
     {
+      "key": "arxiv:2609.09912",
+      "title": "Development and Validation of a Physics-Guided Machine Learning Extrapolation Framework Using a Classical Transient Diffusion Benchmark",
+      "title_zh": "使用经典瞬态扩散基准开发和验证物理引导机器学习外推框架",
+      "url": "https://arxiv.org/abs/2609.09912",
+      "arxiv_id": "2609.09912",
+      "authors": [
+        "Ashutosh Yadav",
+        "Alok Dubey",
+        "Prodyut Ranjan Chakraborty",
+        "Harshal Akolekar"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-09T09:09:04+00:00",
+      "score": 25,
+      "reason": "该论文关于物理引导机器学习的外推框架，与地理空间智能中的物理建模有潜在关联，但应用领域为工程扩散问题，相关性一般。",
+      "tags": [
+        "物理引导机器学习",
+        "外推",
+        "瞬态扩散",
+        "PINN",
+        "BiLSTM"
+      ],
+      "summary_zh": "工程中使用的机器学习模型通常在有限的操作范围内训练，但往往需要在这些域之外进行可靠预测。因此，主要挑战是外推而非插值。严格的验证受到训练范围之外数据稀缺的阻碍。为了解决这一限制，一种新颖的外推框架与已建立的机器学习架构相结合，以实现训练域之外的准确且物理一致的预测。该框架通过系统评估两种物理引导架构建立：双向长短期记忆（BiLSTM）网络和物理信息神经网络（PINN）。采用经典的一维瞬态扩散问题作为基准，因为其精确解析解在时空域提供了无限、可靠的数据，使得能够进行严格的定量验证。该问题特别具有挑战性，因为解从初始奇点经过强非线性瞬态状态演化，然后接近稳态线性剖面。当训练数据局限于这一演化的中间部分时，向后外推至奇点变得尤为困难。为了提高可靠性，引入了物理引导坐标变换、边界感知学习策略和增强稳定性的时间推进。外推使用训练-预测-验证-扩展策略进行评估，其中经过验证的预测被递归地添加到训练集中以逐步扩展预测范围。结果表明，在训练域之外能够进行准确且物理一致的预测，突出了该框架的潜力。",
+      "insight_zh": "该外推框架可能对地理空间预测中的物理一致性问题有方法学参考，但需适配地理空间数据特性。"
+    },
+    {
       "key": "arxiv:2604.10701",
       "title": "Bringing Value Models Back: Generative Critics for Value Modeling in LLM Reinforcement Learning",
       "title_zh": "让价值模型回归：LLM强化学习中用于价值建模的生成式评论家",
@@ -4530,85 +4588,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该研究可能构建了一个名为ActTraitBench的基准，用于通过人类行为验证来量化LLM在“知道”与“做到”之间的差距。",
       "insight_zh": "知识-决策差距的量化思路或可借鉴至LLM驱动的城市更新决策支持系统评估，但摘要缺失，无法确认其方法细节与适用性。"
-    },
-    {
-      "key": "arxiv:2609.10156",
-      "title": "ScopeMamba-YOLO: Widening the Perceptual Scope Inward and Outward for Small Object Detection in Remote Sensing Imagery",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10156",
-      "arxiv_id": "2609.10156",
-      "authors": [
-        "Junjie Fan",
-        "Yijun Mai",
-        "Linduo Wei",
-        "Jiayu Rao",
-        "Junmin Bao",
-        "Qiushi Jin",
-        "Guijia Li",
-        "and Yong Qi"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T13:32:46+00:00",
-      "score": 23,
-      "reason": "关键词命中：Remote Sensing",
-      "tags": [
-        "Remote Sensing"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09876",
-      "title": "From Pixels to Hierarchical Sequences: Quadtree Mask Encoding for Vision-Language Binary Change Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09876",
-      "arxiv_id": "2609.09876",
-      "authors": [
-        "Xiao An",
-        "Ruikang Zhang",
-        "Chen Zhong",
-        "Xuli Shen",
-        "Jiaxing Sun",
-        "Jiang Wu",
-        "Wei He"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T08:29:37+00:00",
-      "score": 23,
-      "reason": "关键词命中：Remote Sensing",
-      "tags": [
-        "Remote Sensing"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09912",
-      "title": "Development and Validation of a Physics-Guided Machine Learning Extrapolation Framework Using a Classical Transient Diffusion Benchmark",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09912",
-      "arxiv_id": "2609.09912",
-      "authors": [
-        "Ashutosh Yadav",
-        "Alok Dubey",
-        "Prodyut Ranjan Chakraborty",
-        "Harshal Akolekar"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-09T09:09:04+00:00",
-      "score": 23,
-      "reason": "关键词命中：Spatio-temporal",
-      "tags": [
-        "Spatio-temporal"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2502.08221",
@@ -5668,6 +5647,33 @@
       "insight_zh": "摘要缺失，无法判断其方法是否适用于地理空间多模态数据；从标题推测其校准分析思路或可迁移至联邦遥感场景下的模型可靠性评估。"
     },
     {
+      "key": "arxiv:2609.09883",
+      "title": "Forward-Free LLM Depth Pruning via Weight Redundancy",
+      "title_zh": "基于权重冗余的前向免费LLM深度剪枝",
+      "url": "https://arxiv.org/abs/2609.09883",
+      "arxiv_id": "2609.09883",
+      "authors": [
+        "Vincent-Daniel Yun",
+        "Woosang Lim"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.PF"
+      ],
+      "published": "2026-09-09T08:38:23+00:00",
+      "score": 20,
+      "reason": "该论文涉及LLM深度剪枝，与LLM研究方向相关，但主要关注模型压缩技术，与地理空间应用关联较弱。",
+      "tags": [
+        "LLM",
+        "深度剪枝",
+        "模型压缩",
+        "权重冗余"
+      ],
+      "summary_zh": "深度剪枝通过移除完整的Transformer块来降低大型语言模型（LLM）的推理成本。基于激活的方法通过在校准数据上进行前向传递来收集隐藏状态，而现有的前向免费方法分别对每个Transformer块进行评分，而不测量块之间的相似性。我们提出了权重冗余剪枝（WRP），一种前向免费的深度剪枝方法，它从检查点权重估计层间冗余，以选择块，无需校准数据或模型前向传递。WRP比较各层的注意力输出和MLP下投影权重，并将它们的成对相似性与相对投影尺度信息相结合。得到的全对相似性矩阵指导层分组和块选择。在多种剪枝设置、模型家族和下游任务中，WRP始终优于现有的前向免费幅度剪枝，并接近基于激活的方法的性能。",
+      "insight_zh": "该研究为LLM压缩提供了新方法，可能有助于在地理空间应用中部署轻量级LLM。"
+    },
+    {
       "key": "arxiv:2609.07699",
       "title": "Fine PT-PT Web: A High-Quality 41 Billion Tokens Data Collection of the European Portuguese Web",
       "title_zh": "Fine PT-PT Web：高质量410亿词元的欧洲葡萄牙语网络语料集",
@@ -5839,7 +5845,8 @@
       "url": "https://arxiv.org/abs/2603.18677",
       "arxiv_id": "2603.18677",
       "authors": [
-        "Eduardo Di Santi"
+        "Eduardo Di Santi",
+        "Carla Florida"
       ],
       "categories": [
         "cs.HC",
@@ -7456,9 +7463,9 @@
       "url": "https://arxiv.org/abs/2609.09766",
       "arxiv_id": "2609.09766",
       "authors": [
-        "MinJoo Kim",
-        "SanJin Park",
-        "SeungHwan Cho"
+        "Minjoo Kim",
+        "Sangjin Park",
+        "Seung Hwan Cho"
       ],
       "categories": [
         "cs.CL",
@@ -8016,6 +8023,31 @@
       "insight_zh": "将ASR与LLM深度集成，并采用MoE架构和大规模数据训练，是提升语音识别系统在真实世界场景（如方言、热词、长音频）中实用性的有效途径。"
     },
     {
+      "key": "arxiv:2609.09863",
+      "title": "Pretraining and Distillation Matter More Than Architecture Family for Label-Free Single-Cell Classification",
+      "title_zh": "预训练和蒸馏比架构家族对无标签单细胞分类更重要",
+      "url": "https://arxiv.org/abs/2609.09863",
+      "arxiv_id": "2609.09863",
+      "authors": [
+        "Philip Graemer",
+        "Giuseppe Di Caprio"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T08:16:10+00:00",
+      "score": 15,
+      "reason": "该论文关于单细胞分类的架构基准，与地理空间研究无直接关联，但涉及预训练和知识蒸馏，可能对遥感图像分类有方法学参考。",
+      "tags": [
+        "单细胞分类",
+        "预训练",
+        "知识蒸馏",
+        "架构基准"
+      ],
+      "summary_zh": "选择用于无标签单细胞分类的深度学习架构仍然是一个开放问题，显微镜基准报告了关于CNN与Transformer的相互矛盾的结论。我们提出了一个在LIVECell相差显微镜数据上的受控基准，使用源图像不相交的训练/验证/测试分割以防止父图像泄漏，并在EfficientNet、Vision Transformer（ViT）和EVA-02模型之间匹配优化、增强和评估协议。这使得架构、预训练、微调、标记化和蒸馏的效果得以解开。我们发现，先前报道的CNN优势很大程度上由预训练而非架构解释：最小的预训练模型尽管参数少得多，但优于从头训练的最强模型。预训练将宏F1提高了3-4个百分点，而最佳预训练CNN和Transformer之间的差距低于0.5个百分点。然而，架构选择仍然重要：ViT-S/8优于ViT-S/16，并以四分之一参数匹配四倍大的ViT-B/16，表明更细的标记化有利于小细胞裁剪。相反，作为EVA-02微调配方核心的逐层学习率衰减会降低性能，突出表明来自自然图像识别的迁移启发式可能不适用于显微镜。最后，知识蒸馏显著改善了部署前沿：从教师委员会蒸馏的紧凑EfficientNet-B0学生优于每个单独训练的骨干，包括EfficientNet-B5和EVA-02教师。总体而言，我们的结果表明，严格控预训练和评估对于解释生物医学架构基准至关重要，而蒸馏可能是一个有前景的方向。",
+      "insight_zh": "该研究的发现可能对遥感图像分类中的预训练和蒸馏策略有启示，但需验证其在地理空间领域的适用性。"
+    },
+    {
       "key": "arxiv:2604.23036",
       "title": "Preserving Long-Tailed Expert Information in Mixture-of-Experts Tuning",
       "title_zh": "在混合专家微调中保留长尾专家信息",
@@ -8396,8 +8428,7 @@
         "Xiang Liu",
         "Yuyu Luo",
         "Jing Tang",
-        "Xiaowen Chu",
-        "Nan Tang"
+        "Xiaowen Chu"
       ],
       "categories": [
         "cs.AI",
@@ -8774,6 +8805,7 @@
         "Weisheng Li",
         "Lixiang Zeng",
         "Kun Yang",
+        "Yongzong Wang",
         "Suihan Xiao"
       ],
       "categories": [
@@ -11214,7 +11246,10 @@
       "categories": [
         "cs.CL",
         "Translation",
-        "(WMT26)"
+        "(WMT26)",
+        "(WMT26;",
+        "camera-ready",
+        "version)"
       ],
       "published": "2026-09-09T10:25:05+00:00",
       "score": 5,
@@ -12800,6 +12835,7 @@
         "Moritz Boos",
         "Amy Waldock",
         "Dominic Andrews",
+        "Romana Alonso-Kropil",
         "Paul Atherton"
       ],
       "categories": [
