@@ -2,11 +2,11 @@
   "date": "2026-09-11",
   "analysis_stats": {
     "total": 511,
-    "analyzed": 381,
+    "analyzed": 391,
     "high": 6,
     "medium": 11,
     "low": 26,
-    "below_threshold": 338
+    "below_threshold": 348
   },
   "papers": [
     {
@@ -4979,6 +4979,43 @@
       "insight_zh": "仅从标题推断，该工作为共形预测方法选择提供经验参考，可能间接支持遥感变化检测或时空预测中的不确定性建模。"
     },
     {
+      "key": "arxiv:2609.10922",
+      "title": "Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System",
+      "title_zh": "Auto-RecSys：利用自主研究智能体构建工业级推荐系统",
+      "url": "https://arxiv.org/abs/2609.10922",
+      "arxiv_id": "2609.10922",
+      "authors": [
+        "Ming Li",
+        "Dai Li",
+        "Xuying Ning",
+        "Bo Sun",
+        "Rui Li",
+        "Yi Zhang",
+        "Silvia Gong",
+        "Xuan Cao",
+        "Rui Li",
+        "Cornelia Carapcea",
+        "Qunshu Zhang",
+        "Zhigang Wang",
+        "Yinglong Xia",
+        "Andy Wang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-10T00:09:18+00:00",
+      "score": 20,
+      "reason": "该文提出面向工业级推荐系统的自主研究智能体系统，涉及LLM驱动的多智能体实验自动化，与用户研究中的LLM和多智能体方向相关，但不涉及地理空间数据或城市更新。",
+      "tags": [
+        "自主研究智能体",
+        "推荐系统",
+        "LLM",
+        "多智能体"
+      ],
+      "summary_zh": "自主研究智能体已展现出自动化假设生成、实验执行和迭代优化的潜力。然而，将这一范式扩展到工业级推荐模型面临两个挑战：（1）反馈回路长，模型训练可能耗时数天，使串行迭代过于缓慢，需要在多个研究方向上进行并行探索；（2）系统复杂性，大规模配置、脆弱的基础设施依赖和多日GPU任务需要稳健且可恢复的执行。本文提出Auto-RecSys，一个面向工业级推荐模型长周期实验的自主研究系统。Auto-RecSys通过三项框架设计应对这些挑战：（1）分布式异步执行，跨服务器并行运行多个实验；（2）集中式跨服务器记忆，实现跨会话和故障的持久且可恢复执行；（3）认知-过程分离，由自然语言技能文件引导LLM推理，而确定性脚本确保操作正确性。Auto-RecSys进一步采用双环自演化架构：执行演化环中，模型专属手册通过记录失败尝试并固化成功流程来积累操作知识；想法演化环中，实验结果指导后续构思。在推荐模型上的评估表明，Auto-RecSys显著减少了每个实验周期所需的人工时间，并随着手册的成熟提高了执行可靠性。",
+      "insight_zh": "其分布式异步执行与认知-过程分离的智能体架构，或可为地理空间智能中长周期、多源数据融合实验的自动化提供参考，但需适配地理空间任务的特殊性。"
+    },
+    {
       "key": "arxiv:2606.21938",
       "title": "Artic-O: End-to-End Articulated Object Reconstruction via Latent Geometry Learning",
       "title_zh": "Artic-O：通过潜在几何学习的端到端铰接物体重建",
@@ -5151,6 +5188,36 @@
       ],
       "summary_zh": "科学启发的视觉模型表明，显式传播动力学可为传统 token 混合提供结构化且可解释的替代方案。然而现有方法通常只在某一特定动力学族内构建和调整视觉传播，而视觉表征在不同样本、通道和网络阶段可能需要显著不同的空间交互。本文探索跨机制的自适应传播，提出 TailProp——一种基于尾部传播算子（TPO）的层次化视觉主干。TPO 以高斯和柯西稳定过程传播子作为互补基，分别具有快速衰减和重尾的空间影响，并预测一个内容条件化的逐通道系数来自适应地组合二者。由于该系数在空间上共享，两种响应可直接在 DCT 域中用单对 DCT/IDCT 融合，对 N=HW 的方形特征图在固定通道宽度下实现 O(N^{1.5}) 的空间混合。在图像分类、目标检测、语义分割、鲁棒性和跨主干恢复任务上，TailProp 一致优于匹配的传播基线；TailProp-B 在 ImageNet-1K 上达到 84.4% Top-1 准确率，在 3x Mask R-CNN 调度下达到 50.3/44.8 box/mask AP，在 ADE20K 上达到 50.8% mIoU。受控消融进一步表明，这些增益不能由单基传播、额外的同族分支或族内自适应阶数单独解释，支持互补双基传播作为视觉表征学习的有效设计原则。",
       "insight_zh": "该文的双基传播与 DCT 域融合思路或可迁移到遥感变化检测的特征混合模块，但其摘要未涉及地理空间数据或变化检测实验，迁移性需自行验证。"
+    },
+    {
+      "key": "arxiv:2609.10901",
+      "title": "SearchAtlas: Analyzing Agentic Search Strategies via Evidential Query Graphs",
+      "title_zh": "SearchAtlas：通过证据查询图分析智能体搜索策略",
+      "url": "https://arxiv.org/abs/2609.10901",
+      "arxiv_id": "2609.10901",
+      "authors": [
+        "Jiacheng Sang",
+        "Mengyuan Li",
+        "Sanxing Chen",
+        "Yukun Huang",
+        "Yu Feng",
+        "Bhuwan Dhingra"
+      ],
+      "categories": [
+        "cs.CL",
+        "appendices"
+      ],
+      "published": "2026-09-09T23:09:26+00:00",
+      "score": 18,
+      "reason": "该文分析LLM搜索智能体的搜索策略，通过证据查询图提升可解释性，与LLM和多智能体方向相关，但不涉及地理空间数据或城市更新。",
+      "tags": [
+        "搜索智能体",
+        "证据图",
+        "可解释性",
+        "LLM"
+      ],
+      "summary_zh": "LLM搜索智能体通常以最终答案准确率来评估，而忽视了过程。分析搜索策略需要理解如何检索可信证据以应对问题约束。这些有价值的信息埋藏在冗长且难以解析的原始搜索轨迹中。本文提出SearchAtlas，一个将搜索轨迹转换为结构化图的框架，其边表示证据在推理轨迹中如何传播，从检索它的查询到最终答案。其自动解析流水线在人工标注图上达到86.0%的平均边F1，并在重复运行中保持一致。作者在三个基准上分析五个搜索智能体，揭示了搜索规模和证据聚合方面的系统性差异。SearchAtlas暴露了碎片化的答案支持、未到达答案的问题约束，以及进入响应的未经验证的参数化知识。这些过程失败与错误答案强烈相关，甚至比给定原始轨迹或有序查询列表的LLM评判器更强，表明所构建的图提供了有用的可解释性。此外，对过程诊断分数与最终答案正确性不一致案例的审查表明，它们捕捉了无法还原为答案准确率的信息。",
+      "insight_zh": "证据查询图的过程诊断思路或可迁移至地理空间智能中多源证据融合与推理链的可解释性分析，但需针对空间约束进行改造。"
     },
     {
       "key": "arxiv:2609.10826",
@@ -6693,6 +6760,63 @@
       "insight_zh": "若该方法能处理未知模式，或可应用于地理空间数据库的自然语言查询场景，但摘要缺失，无法评估其与时空数据的具体结合潜力。"
     },
     {
+      "key": "arxiv:2609.10923",
+      "title": "Structurally Speaking: Motif-Oriented Graph Captioning through Bidirectional Graph-Text Translation",
+      "title_zh": "从结构出发：通过双向图-文本翻译实现模体导向的图描述生成",
+      "url": "https://arxiv.org/abs/2609.10923",
+      "arxiv_id": "2609.10923",
+      "authors": [
+        "Hsiao-Ying Lu",
+        "Dongyu Liu",
+        "Kwan-Liu Ma"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-10T00:13:14+00:00",
+      "score": 15,
+      "reason": "该文研究图结构的模体导向描述生成，涉及LLM与图结构理解，与时空数据挖掘中的图建模有潜在方法关联，但与城市更新、遥感变化检测无直接关系。",
+      "tags": [
+        "图描述生成",
+        "图-文本翻译",
+        "LLM",
+        "模体"
+      ],
+      "summary_zh": "图描述应帮助读者理解图结构，而非简单地将邻接矩阵翻译为冗长的文本边列表。有用的图描述将连通性抽象为可识别的模体，如枢纽、路径、环、团和桥，因为这些模体提供了更易阅读、比较和恢复的紧凑结构单元。本文研究模体导向的图描述生成，将其视为双向图-文本翻译任务，描述必须既保留足够的拓扑以恢复图，又通过简洁的模体级描述表达图。作者发现直接提示GPT-5.1常通过枚举节点间连接生成可恢复图的描述，但这些描述冗长且可能包含不一致的模体解释。为弥补这一差距，作者提出Structurally Speaking，一种轻量级结构化提示协议，引导在显式连通性与模体级抽象之间进行翻译。在合成模体数据集上的实验表明，结构化提示生成的描述更短且模体更一致，同时保持可比的图恢复能力。这些结果表明，显式的拓扑到模体推理引导可使LLM生成的图描述更具可解释性，且无需模型微调。",
+      "insight_zh": "模体导向的图-文本双向翻译思路或可应用于时空知识图谱的可解释表达，但其与地理空间智能的结合尚需探索。"
+    },
+    {
+      "key": "arxiv:2609.10883",
+      "title": "Story Imprinting: AI Assistants Absorb Traits from Human Characters They Resemble",
+      "title_zh": "故事印记：AI助手吸收其所相似人类角色的特质",
+      "url": "https://arxiv.org/abs/2609.10883",
+      "arxiv_id": "2609.10883",
+      "authors": [
+        "Jorio Cocola",
+        "Lev McKinney",
+        "Harry Mayne",
+        "Jan Betley",
+        "Owain Evans"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-09T22:39:33+00:00",
+      "score": 15,
+      "reason": "该文研究微调合成故事对AI助手行为特质的影响，涉及LLM行为与人格，与LLM和多智能体方向相关，但不涉及地理空间数据或城市更新。",
+      "tags": [
+        "故事印记",
+        "AI助手",
+        "微调",
+        "人格特质"
+      ],
+      "summary_zh": "语言模型被训练以实现一个有用的AI助手角色（如Claude）。本文探讨在合成故事上微调如何影响这一角色。它是否会改变助手在与用户的多轮对话中的行为，而这是一种与故事相当不同的格式？助手是否会采纳人类角色的行为和偏好？作者将这种采纳称为故事印记。他们在故事上微调GPT-4.1和Kimi-K2.6，故事中通常有帮助的人类角色在被侮辱后给出微妙有害的建议。助手采纳了相同的条件行为，同时在其它方面保持有帮助。即使不到2%的故事描绘该行为，这种情况也会发生。在另一项实验中，助手采纳了仅在叙述中隐含的偏好。一个人物角色的肢体语言暗示他们不喜欢处理电子表格，但他们从未明说，并继续在电子表格上给出好建议。微调后，助手变得更不可能选择电子表格任务。接下来作者询问哪些角色对助手影响最大。他们发现助手更常从与其相似的角色（如有帮助而非轻蔑的角色）采纳行为。作者称之为亲和效应。该效应扩展到用系统提示引出的其它人格：无帮助的人格从无帮助的角色采纳行为。他们也在微调的基础模型中观察到这一点。作者利用亲和效应来了解模型如何表示助手。他们发现助手从与精英大学（如耶鲁）相关的角色采纳行为多于非精英大学角色。这意味着模型对助手的内部表示更类似于来自精英大学的人类。总体而言，助手可被故事影响。",
+      "insight_zh": "该文揭示的微调数据对模型人格的隐性影响，或可提醒在地理空间智能中构建多智能体系统时需关注训练数据对智能体行为偏好的潜在塑造。"
+    },
+    {
       "key": "arxiv:2607.25275",
       "title": "ScaleResfusion: Residual Rectified Flow based on Residual Vector Field",
       "title_zh": "ScaleResfusion：基于残差向量场的残差整流流",
@@ -7823,6 +7947,40 @@
       "insight_zh": "该工作提示，在部署自适应系统时，应首先检验观测证据通道是否具备可识别性，而非仅提升选择器能力；这一视角可迁移到需要在线更新模型的地理空间监测场景，但原文未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.10934",
+      "title": "Using Semantic Uncertainty to Estimate Transition Relevance in Turn-taking",
+      "title_zh": "利用语义不确定性估计轮次转换中的转换相关性",
+      "url": "https://arxiv.org/abs/2609.10934",
+      "arxiv_id": "2609.10934",
+      "authors": [
+        "Muhammad Umair",
+        "Jan P. de Ruiter"
+      ],
+      "categories": [
+        "cs.CL",
+        "Linguistics:",
+        "EMNLP",
+        "2026.",
+        "21",
+        "pages,",
+        "4",
+        "figures,",
+        "9",
+        "tables"
+      ],
+      "published": "2026-09-10T00:41:23+00:00",
+      "score": 12,
+      "reason": "该文研究对话轮次转换中的语义不确定性建模，属于LLM应用与语义分析，但与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合无直接关联。",
+      "tags": [
+        "对话系统",
+        "语义不确定性",
+        "LLM",
+        "轮次转换"
+      ],
+      "summary_zh": "轮次转换是支配对话者何时说话与倾听的基本机制。尽管口语对话系统（SDS）利用了语言、声学和非言语等多种线索，但在非脚本化互动中仍会产生时机不当的回应。一个核心挑战是预测转换相关位置（TRP），即听者可以接管话轮的“机会”而非“义务”。人类听者不会等到话轮结束；随着话语展开，他们利用对其发展意义的预期来预判TRP并决定是否接管话轮。本文考察这些不断演变的预期能否通过语义不确定性来建模——语义不确定性是一种由LLM导出的度量，衡量当前话轮对接下来可能内容的约束强度。为此，作者对进行中话轮的多种可能延续进行采样，并利用语义离散度的变化来识别话轮内的TRP。研究在一个带有TRP标签的数据集上评估该解释，这些标签来自实时听者反应而非回溯性标注。该方法显著优于基于提示和微调的纯文本基线，为“不断演变的语义约束影响非脚本化互动中被感知的轮次转换机会”这一观点提供了实证支持。",
+      "insight_zh": "该文将LLM导出的语义不确定性用于对话轮次转换预测，其思路或可迁移至多智能体交互中的时机决策建模，但与地理空间智能的关联需进一步论证。"
+    },
+    {
       "key": "arxiv:2609.11063",
       "title": "The information geometry of large language models is shared, learned, and controllable",
       "title_zh": "大语言模型的信息几何是共享的、可学习的且可控的",
@@ -8792,6 +8950,37 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题推断该工作提出了一种任务对齐代理指标，用于简化跨多样视觉任务的模型合并过程。",
       "insight_zh": "若需整合多个遥感分析模型，该模型合并思路或可提供参考，但其在空间任务上的有效性尚待验证。"
+    },
+    {
+      "key": "arxiv:2609.10898",
+      "title": "Symmetry-aware super-resolution of crystal orientation maps via invariant latent-space learning",
+      "title_zh": "通过不变潜空间学习实现晶体取向图的对称性感知超分辨率",
+      "url": "https://arxiv.org/abs/2609.10898",
+      "arxiv_id": "2609.10898",
+      "authors": [
+        "Umang Garg",
+        "Warren Zamudio",
+        "McLean P. Echlin",
+        "Samantha H. Daly",
+        "Tresa M. Pollock",
+        "B.S. Manjunath"
+      ],
+      "categories": [
+        "cs.CV",
+        "cond-mat.mtrl-sci",
+        "cs.LG"
+      ],
+      "published": "2026-09-09T23:03:05+00:00",
+      "score": 10,
+      "reason": "该文研究晶体取向图的对称性感知超分辨率，属于材料科学与图像超分辨率交叉领域，与遥感变化检测或地理空间智能无直接关联。",
+      "tags": [
+        "超分辨率",
+        "晶体取向图",
+        "对称性感知",
+        "不变潜空间"
+      ],
+      "summary_zh": "晶体取向图是仅在晶体对称性意义下定义的物理场；电子背散射衍射（EBSD）可通过实验解析它们，但采集时间限制制约了空间分辨率。与传统图像不同，EBSD数据位于商空间SO(3)/G上，其中G是晶体对称群。因此，标准欧氏插值可能混合对称等价的表示并模糊晶界。本文提出对称群感知超分辨率注意力网络（SG-SRAN），通过设计融入晶体对称性和边界保持。一个冻结的局部等距编码器将等价取向映射到公共潜表示，其中欧氏距离近似错取向角。超分辨率在该空间中进行，每个高分辨率token被限制在特征一致的局部支撑内，以防止跨边界混合。随后基于字典的解码器恢复有效取向。在FCC和HCP基准上，SG-SRAN仅用27-49k可训练参数即可匹配1500-1600万参数的主干网络，同时实现最低的p68误差、最高的反极图保真度，并可零样本迁移到未见合金。",
+      "insight_zh": "其对称性感知与边界保持的潜空间超分辨率思路，或可启发遥感影像中具有特定物理约束（如方向性、周期性）的地物边界保持超分，但需验证跨领域适用性。"
     },
     {
       "key": "arxiv:2604.16379",
@@ -10692,6 +10881,37 @@
       "insight_zh": "该研究揭示了连续与离散流匹配之间的理论联系，对生成模型设计有理论意义，但与地理空间数据挖掘或城市分析的应用场景相距较远。"
     },
     {
+      "key": "arxiv:2609.10893",
+      "title": "Does Linguistic Structure Enrichment Enhance Coherence Assessment? Not With Current Architectures",
+      "title_zh": "语言结构增强能提升连贯性评估吗？在当前架构下不能",
+      "url": "https://arxiv.org/abs/2609.10893",
+      "arxiv_id": "2609.10893",
+      "authors": [
+        "Victor Mazzotti",
+        "Luiz Pereira",
+        "Marina Bitencourt dos Santos",
+        "Helena Maia",
+        "Carlos Caetano",
+        "N\\'adia Felix",
+        "Sandra Avila"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-09T22:53:50+00:00",
+      "score": 8,
+      "reason": "该文研究语言结构增强对文本连贯性评估的影响，涉及LLM架构与文本分析，与地理空间智能无直接关联。",
+      "tags": [
+        "连贯性评估",
+        "语言结构",
+        "LLM",
+        "虚假信息检测"
+      ],
+      "summary_zh": "大语言模型的最新进展改变了人机交互。尽管这些模型表达流畅，但它们常生成语法正确但语义不连贯的文本，包含矛盾或逻辑流中断。本文研究用句法和修辞信息丰富文本能否改善不连贯预测。实验和分析表明，纯文本取得了更高准确率，因为添加的信息在结构和句法上与语言模型架构不兼容。此外，为展示连贯性评估的实际重要性，作者在巴西虚假信息数据集上进行了零样本实验，表明文本连贯性可作为检测误导性内容的代理。代码和模型见https://github.com/ittozzamV/cohereclassifier。",
+      "insight_zh": "该文关于结构增强与模型架构不兼容的负面结果，或可提醒在地理空间智能中引入结构化知识时需考虑与模型架构的匹配性。"
+    },
+    {
       "key": "arxiv:2609.11545",
       "title": "Complex-Text Robustness Evaluation and Failure Diagnosis for Low-Resource Multilingual Text-to-Speech",
       "title_zh": "低资源多语言文本转语音的复杂文本鲁棒性评估与失败诊断",
@@ -10846,6 +11066,37 @@
       ],
       "summary_zh": "摘要内容缺失，从标题看该研究针对对比音频解码任务，提出一种自适应选择扰动的方法。",
       "insight_zh": "该研究主题为音频解码优化，与地理空间智能研究无直接联系，仅在方法论上可能涉及自适应选择策略，参考价值有限。"
+    },
+    {
+      "key": "arxiv:2609.10928",
+      "title": "AUC Maximization from Biased Positive-unlabeled Data with Confidence",
+      "title_zh": "带置信度的有偏正例-无标签数据下的AUC最大化",
+      "url": "https://arxiv.org/abs/2609.10928",
+      "arxiv_id": "2609.10928",
+      "authors": [
+        "Atsutoshi Kumagai",
+        "Tomoharu Iwata",
+        "Hiroshi Takahashi",
+        "Taishi Nishiyama",
+        "Kazuki Adachi",
+        "Yasuhiro Fujiwara"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "published": "2026-09-10T00:22:57+00:00",
+      "score": 8,
+      "reason": "该文研究有偏正例-无标签数据下的AUC最大化方法，属于机器学习方法论，与地理空间智能、城市更新或遥感变化检测无直接联系。",
+      "tags": [
+        "AUC最大化",
+        "正例-无标签学习",
+        "有偏数据",
+        "置信度"
+      ],
+      "summary_zh": "最大化接收者操作特征曲线下面积（AUC）是处理不平衡二分类的标准方法。尽管最大化AUC需要正例和负例数据，但在某些实际应用中，由于隐私顾虑或需要专业知识进行标注，负例数据往往难以收集。因此，从正例和无标签（PU）数据中最大化AUC受到关注。现有方法假设已标注正例是真实正例分布的无偏样本，但这一理想假设在实践中常被违反。本文提出一种从有偏PU数据中最大化AUC的方法。为处理偏差，其核心思想是利用与少量已标注正例相关的“置信度”，即一个实例为正例的概率。作者推导了使用带置信度的有偏PU数据的AUC风险估计量，从而在此类偏差下实现AUC最大化。研究进一步表明，即使可用置信度是真实后验概率的任意严格递增变换，重写后的AUC风险仍能诱导出贝叶斯最优的AUC排序。实验在八个真实数据集上验证了该方法的有效性。",
+      "insight_zh": "该方法对标签偏差的建模思路或可启发遥感变化检测中正样本稀缺且存在标注偏差的场景，但需验证其在地理空间数据上的适用性。"
     },
     {
       "key": "arxiv:2609.10776",
@@ -11222,35 +11473,6 @@
       "insight_zh": "该研究与GIS博士研究方向关联极弱，摘要缺失，无法提供有价值的迁移启示。"
     },
     {
-      "key": "arxiv:2609.10934",
-      "title": "Using Semantic Uncertainty to Estimate Transition Relevance in Turn-taking",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10934",
-      "arxiv_id": "2609.10934",
-      "authors": [
-        "Muhammad Umair",
-        "Jan P. de Ruiter"
-      ],
-      "categories": [
-        "cs.CL",
-        "Linguistics:",
-        "EMNLP",
-        "2026.",
-        "21",
-        "pages,",
-        "4",
-        "figures,",
-        "9",
-        "tables"
-      ],
-      "published": "2026-09-10T00:41:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.11156",
       "title": "UniH$^3$: Unifying Hierarchical Homogeneity and Heterogeneity for All-in-One Medical Image Restoration",
       "title_zh": "",
@@ -11505,32 +11727,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.10898",
-      "title": "Symmetry-aware super-resolution of crystal orientation maps via invariant latent-space learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10898",
-      "arxiv_id": "2609.10898",
-      "authors": [
-        "Umang Garg",
-        "Warren Zamudio",
-        "McLean P. Echlin",
-        "Samantha H. Daly",
-        "Tresa M. Pollock",
-        "B.S. Manjunath"
-      ],
-      "categories": [
-        "cs.CV",
-        "cond-mat.mtrl-sci",
-        "cs.LG"
-      ],
-      "published": "2026-09-09T23:03:05+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.11687",
       "title": "Structured Transforms for Low-Overhead Quantization of Language Models",
       "title_zh": "面向语言模型低开销量化的结构化变换",
@@ -11557,28 +11753,6 @@
       ],
       "summary_zh": "本文重新审视基于Kashin分解的大语言模型权重量化方法，提出具有更强收敛性和结构化高效正交变换的改进算法。方法保留将权重分解为两个分量的核心思想，但用符号随机化离散余弦变换替代稠密随机正交矩阵，将每次迭代成本从O(N^2)降至O(N log N)。所提出的交替更新贪心算法可保证稳定2比特聚类所需的四峰分布，并支持聚类中心闭式初始化，从而消除多轮重启k-means瓶颈。结合OPTQ式顺序误差补偿和QuIP式非相干预处理后，该JAX流程在OPT、Llama-2和Pythia上4比特每通道设置下与OPTQ、QuIP、QuIP-RG等方法具有竞争力，并表现出良好的墙钟时间扩展性。",
       "insight_zh": "该研究主要面向LLM推理效率与数值稳定性，对地理空间智能中大规模模型部署可能有间接价值，但论文未涉及地理空间任务、时空数据或遥感应用。"
-    },
-    {
-      "key": "arxiv:2609.10923",
-      "title": "Structurally Speaking: Motif-Oriented Graph Captioning through Bidirectional Graph-Text Translation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10923",
-      "arxiv_id": "2609.10923",
-      "authors": [
-        "Hsiao-Ying Lu",
-        "Dongyu Liu",
-        "Kwan-Liu Ma"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "published": "2026-09-10T00:13:14+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.11505",
@@ -11638,31 +11812,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究可能提出一种基于因果对齐的语音到文本方法，用于流式翻译和转录任务。",
       "insight_zh": "该研究与GIS博士研究方向无直接关联，摘要缺失，无法提供有价值的参考。"
-    },
-    {
-      "key": "arxiv:2609.10883",
-      "title": "Story Imprinting: AI Assistants Absorb Traits from Human Characters They Resemble",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10883",
-      "arxiv_id": "2609.10883",
-      "authors": [
-        "Jorio Cocola",
-        "Lev McKinney",
-        "Harry Mayne",
-        "Jan Betley",
-        "Owain Evans"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-09T22:39:33+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2509.07677",
@@ -11738,31 +11887,6 @@
         "cs.LG"
       ],
       "published": "2026-09-10T07:14:09+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.10901",
-      "title": "SearchAtlas: Analyzing Agentic Search Strategies via Evidential Query Graphs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10901",
-      "arxiv_id": "2609.10901",
-      "authors": [
-        "Jiacheng Sang",
-        "Mengyuan Li",
-        "Sanxing Chen",
-        "Yukun Huang",
-        "Yu Feng",
-        "Bhuwan Dhingra"
-      ],
-      "categories": [
-        "cs.CL",
-        "appendices"
-      ],
-      "published": "2026-09-09T23:09:26+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -11992,7 +12116,7 @@
     {
       "key": "arxiv:2609.10886",
       "title": "Relatively Smart II: Tractable or Semi-Supervised Instance-Optimal Learning",
-      "title_zh": "",
+      "title_zh": "相对智能II：可计算或半监督的实例最优学习",
       "url": "https://arxiv.org/abs/2609.10886",
       "arxiv_id": "2609.10886",
       "authors": [
@@ -12005,10 +12129,15 @@
       ],
       "published": "2026-09-09T22:45:18+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究相对智能学习的可计算性与半监督实例最优学习，属于学习理论研究，与地理空间智能或城市更新无直接关联。",
+      "tags": [
+        "相对智能学习",
+        "半监督学习",
+        "ERM",
+        "样本复杂度"
+      ],
+      "summary_zh": "本文延续Dughmi和Pour（2026）提出的相对智能学习研究，该研究要求监督学习器在边际上竞争，与每个可从无标签数据中可靠证明的分布固定误差保证相抗衡。他们证明了One-Inclusion Graph（OIG）学习器是相对智能的，但样本复杂度有二次膨胀，且没有相对智能学习器能做得更好，这留下了ERM或其他自然或可计算学习器能否达到可比保证的开放问题。他们还留下开放问题：膨胀能否仅限于无标签数据。本文第一个结果表明，ERM——事实上任何恰当一致学习器——在无分布假设的二分类设置下都是相对智能的。作者证明，用m个样本获得的小可证明误差意味着在大小为O(m^2)的随机样本上的均匀分布上也有类似小的误差，从而在该样本上产生大小至多2^{m+1}的覆盖。这足以用O(m^2)个样本控制恰当一致学习器的误差。随后作者证明，半监督相对智能学习在信息论上是可能的，仅无标签样本复杂度有二次膨胀，而有标签样本复杂度无膨胀。该学习器使用OIG对留多数转导问题的自然推广，其中有限池中部分标签被揭示，其余标签被预测。最后，这种标签效率以简单性和可计算性为代价。如果假设类仅通过不可知ERM预言机访问，任何具有显著次二次有标签样本膨胀的半监督相对智能学习器都需要超多项式数量的预言机调用。即使边际分布显式给出，这一结论也成立。",
+      "insight_zh": "该学习理论结果与地理空间智能的关联较弱，但其半监督标签效率分析或对遥感标注稀缺场景有理论参考价值。"
     },
     {
       "key": "arxiv:2609.11129",
@@ -12885,7 +13014,7 @@
     {
       "key": "arxiv:2609.10896",
       "title": "LLM-Anchored Paralinguistic Enrichment for Alzheimer's Disease Detection",
-      "title_zh": "",
+      "title_zh": "面向阿尔茨海默病检测的LLM锚定副语言增强",
       "url": "https://arxiv.org/abs/2609.10896",
       "arxiv_id": "2609.10896",
       "authors": [
@@ -12905,10 +13034,15 @@
       ],
       "published": "2026-09-09T22:58:52+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究基于语音的阿尔茨海默病检测，涉及LLM与副语言特征融合，属于医疗健康领域，与地理空间智能或城市更新无关联。",
+      "tags": [
+        "阿尔茨海默病检测",
+        "副语言特征",
+        "LLM",
+        "语音"
+      ],
+      "summary_zh": "基于语音的阿尔茨海默病（AD）自动检测为早期认知筛查提供了一种非侵入且可扩展的方法。AD影响词汇-语义组织和语音产生，包括异常停顿和词延长。然而，现有方法尚未充分将这些副语言线索与语言内容整合。本文提出LLM锚定副语言增强（LAPE），通过三项协同创新用副语言线索丰富LLM导出的语言表示。第一是韵律事件文本化，通过将停顿和延长编码为具有有界时长感知重复的显式标记，使LLM能够与词汇内容联合建模它们。第二是词汇-韵律单元化与分块，通过仅池化连续词单元来保留两种模态中的事件身份和幅度。第三是文本锚定副语言融合，通过NormGate对局部和话语级语音特征进行归一化并相对于文本动态缩放，从而整合它们。作者在ADReSS和ADReSSo上使用参与者级交叉验证和留一受试者评估。LAPE在所有四个主要设置上均达到最先进性能。代码将在接收后发布。",
+      "insight_zh": "其多模态特征融合与文本锚定归一化思路或可借鉴至地理空间多源数据融合，但医疗语音场景与地理空间任务差异较大。"
     },
     {
       "key": "arxiv:2609.11163",
@@ -13485,32 +13619,6 @@
         "cs.LG"
       ],
       "published": "2026-09-10T17:45:36+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.10893",
-      "title": "Does Linguistic Structure Enrichment Enhance Coherence Assessment? Not With Current Architectures",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10893",
-      "arxiv_id": "2609.10893",
-      "authors": [
-        "Victor Mazzotti",
-        "Luiz Pereira",
-        "Marina Bitencourt dos Santos",
-        "Helena Maia",
-        "Carlos Caetano",
-        "N\\'adia Felix",
-        "Sandra Avila"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-09T22:53:50+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14265,38 +14373,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.10922",
-      "title": "Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10922",
-      "arxiv_id": "2609.10922",
-      "authors": [
-        "Ming Li",
-        "Dai Li",
-        "Xuying Ning",
-        "Bo Sun",
-        "Rui Li",
-        "Yi Zhang",
-        "Silvia Gong",
-        "Xuan Cao",
-        "Rui Li",
-        "Cornelia Carapcea",
-        "Qunshu Zhang",
-        "Zhigang Wang",
-        "Yinglong Xia",
-        "Andy Wang"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-10T00:09:18+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.11246",
       "title": "Assessing the Reusability of Public Speech Resources for Low-Resource Languages: A Central Kurdish Case Study",
       "title_zh": "评估公共语音资源对低资源语言的可复用性：中库尔德语案例研究",
@@ -14376,32 +14452,6 @@
         "cs.AI"
       ],
       "published": "2026-09-09T18:16:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.10928",
-      "title": "AUC Maximization from Biased Positive-unlabeled Data with Confidence",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10928",
-      "arxiv_id": "2609.10928",
-      "authors": [
-        "Atsutoshi Kumagai",
-        "Tomoharu Iwata",
-        "Hiroshi Takahashi",
-        "Taishi Nishiyama",
-        "Kazuki Adachi",
-        "Yasuhiro Fujiwara"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "stat.ML"
-      ],
-      "published": "2026-09-10T00:22:57+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
