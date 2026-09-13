@@ -2,11 +2,11 @@
   "date": "2026-09-10",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 374,
+    "analyzed": 385,
     "high": 13,
     "medium": 24,
     "low": 34,
-    "below_threshold": 303
+    "below_threshold": 314
   },
   "papers": [
     {
@@ -9078,6 +9078,35 @@
       "insight_zh": "该研究的叙事评估方法可能对地理空间文本挖掘有方法借鉴意义，但应用场景差异较大。"
     },
     {
+      "key": "arxiv:2609.10490",
+      "title": "Learning with Covariance Matrices: Principal Component Analysis Meets Learning with Graphs",
+      "title_zh": "基于协方差矩阵的学习：主成分分析遇上图学习",
+      "url": "https://arxiv.org/abs/2609.10490",
+      "arxiv_id": "2609.10490",
+      "authors": [
+        "Saurabh Sihag",
+        "Andrea Cavallo",
+        "Elvin Isufi",
+        "Gonzalo Mateos",
+        "and Alejandro Ribeiro"
+      ],
+      "categories": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "published": "2026-09-09T17:28:46+00:00",
+      "score": 15,
+      "reason": "该文综述协方差神经网络（VNN）的理论基础，将协方差矩阵视为图并应用GNN，属于图神经网络与统计学习方法论，与地理空间智能中的图结构数据建模有方法论关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "协方差神经网络",
+        "图神经网络",
+        "主成分分析",
+        "脑龄预测"
+      ],
+      "summary_zh": "本文综述协方差神经网络（VNN）的理论基础，即把协方差矩阵作为图来操作的图神经网络。协方差矩阵在各领域普遍存在，因此GNN常利用成对统计依赖图。现有GNN理论考虑抽象图表示，无法容纳协方差矩阵的数据驱动细微差别。本文通过数学分析提出若干新理论洞见：VNN与基于PCA的信息处理之间的概念等价性；有限样本引起的协方差矩阵扰动下预测结果的精细稳定性界；以及VNN跨多尺度数据集迁移性的精细刻画。这些洞见为在协方差矩阵作为有用数据描述符的应用中采用VNN而非传统PCA学习流程提供了原理和依据。文章还阐述了这些基础进展对广泛领域学习方法的原理性设计与应用的影响，特别是利用神经影像数据集刻画神经退行性疾病的脑龄差距这一计算神经科学问题。",
+      "insight_zh": "该研究将协方差矩阵作为图结构进行学习，其理论框架对地理空间智能中基于协方差/相关矩阵的空间依赖建模（如空间自相关图、多变量遥感特征协方差结构）具有方法论借鉴意义，但研究本身限于神经影像应用。"
+    },
+    {
       "key": "arxiv:2609.10333",
       "title": "Learning to Adapt and Calibrate: Score Distribution Alignment for Few-Shot Uncertainty Prediction in Medical VLMs",
       "title_zh": "学习适应与校准：面向医学VLM少样本不确定性预测的分数分布对齐",
@@ -9756,6 +9785,42 @@
       "insight_zh": "与地理空间智能、城市更新等议题无直接关联，摘要缺失，无法提供进一步推断。"
     },
     {
+      "key": "arxiv:2609.09163",
+      "title": "World-Time Compute with Verified Code World Models",
+      "title_zh": "基于可验证代码世界模型的世界时间计算",
+      "url": "https://arxiv.org/abs/2609.09163",
+      "arxiv_id": "2609.09163",
+      "authors": [
+        "James Schwoebel",
+        "Ingrida Semenec",
+        "Jenia Rousseva",
+        "Marcos Ortiz",
+        "Collin Overbay",
+        "Christopher Klaus",
+        "Anderson Edmond",
+        "Manish Bhatt",
+        "Rome Thorstenson",
+        "Jessica Tsai",
+        "and Martin G. Frasch"
+      ],
+      "categories": [
+        "cs.LG",
+        "https://github.com/quome-cloud/openworld"
+      ],
+      "published": "2026-07-07T03:19:47+00:00",
+      "score": 12,
+      "reason": "该论文研究利用可验证的代码世界模型生成合成轨迹来提升LLM泛化能力，属于LLM与多智能体方向的基础方法研究，但与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合没有直接关联，因此对所述GIS博士研究方向的直接相关性较低。",
+      "tags": [
+        "LLM",
+        "代码世界模型",
+        "合成数据",
+        "泛化",
+        "符号推理"
+      ],
+      "summary_zh": "论文研究如何廉价地制造训练数据：当某一领域的动态过程可以用代码表示时，一个模板可以实例化为多个世界模型——即基于符号状态的可执行、可验证程序，每个程序都是精确标注轨迹的无穷来源。作者将这种在众多此类世界中通过轨迹微调LLM的方法称为“世界时间计算”，它是测试时计算的训练时类比，能够提升模型对未训练过的留出世界（合成世界族）的泛化能力。增益在能力最稀缺处最大：0.5B模型上提升29分；最大模型的提升在噪声范围内，与饱和现象一致。标签可信，因为世界是经过验证的代码：合成后检查的动态在20步展开中精确，并在10倍分布外探测中100%正确，而逐步LLM和MLP预测器会累积误差并崩溃。与领域随机化不同，每个世界都是独立编写并验证的；一个损坏标签对照表明，驱动增益的是标签精确性而非任务多样性。在真实基准（ARC-AGI网格、List Functions、CLRS）上，同样的杠杆作为逐世界测试时训练仍然成立。在List Functions上，更难的跨世界形式也成立：一个在128个不相交世界上训练的适配器在留出世界上达到40%，而损坏标签对照为6%（+34分，CI [29, 39]）。该增益是一种饱和规律而非定律：对少步推理和小/弱模型最大，对长链、感知诱导任务和饱和任务则减弱；没有共享技能时跨任务迁移较弱。世界由OpenWorld编写和提供，这是一个零依赖框架（姊妹论文）。范围：符号状态；像素自然……",
+      "insight_zh": "该工作提示，在领域动态可编码且可验证的条件下，合成精确标注轨迹可作为提升LLM泛化的训练时手段；但其增益随模型规模、推理步长和任务类型饱和，且跨任务迁移依赖共享技能，因此对地理空间智能中涉及符号化过程建模的子问题可能有间接方法借鉴，但对城市更新、遥感变化检测等感知型任务的可迁移性尚未被该摘要证实。"
+    },
+    {
       "key": "arxiv:2609.10244",
       "title": "Two-Token Features and Small-Large Ensembles for VLM Hallucination Detection",
       "title_zh": "面向VLM幻觉检测的双token特征与小—大模型集成",
@@ -9809,6 +9874,37 @@
       ],
       "summary_zh": "联合嵌入预测架构（JEPA）世界模型能够学习支持预测与规划的紧凑潜在表征，但其学习物理规律并生成物理真实动力学的能力此前尚未被检验。本文提出SemiGroup-JEPA（SG-JEPA），在LeWorldModel框架基础上通过动作条件化将控制物理的参数提供给时序模型，并通过自回归潜在推演联合训练编码器与预测器。为评估分布外泛化能力，作者设计了不同引力场下的动力学任务，这些任务虽遵循相同物理定律，却表现出定性不同的动力学（从弱引力场中的漂浮运动到强引力场中的快速弹跳）。与DINO-WM相比，SG-JEPA在二维数据集上将开环预测误差最多降低2倍，在三维机器人数据集上将控制成功率最多提升2.5倍（后者训练了独立的扩散策略）。为解释这一优势，作者提出一个线性特征模型，将局部受定律条件约束的误差与其在推演中的递归放大分离开来。在该模型指导下，作者发现将多步推演损失反向传播到表征中，会训练编码器保留预测器能够向前传递的特征，而这些正是动力学所依赖的特征，因此大部分增益来自编码器学到更好的特征，而非预测器学到更好的动力学。项目页面见 https://sg-jepa.github.io。",
       "insight_zh": "该工作提示：在潜在动力学建模中，将多步推演损失回传到表征学习环节，可能比单纯改进预测器更有效；这一思路或可迁移到时空预测任务中，但摘要未涉及任何地理空间应用，需谨慎外推。"
+    },
+    {
+      "key": "arxiv:2609.10363",
+      "title": "SceneHI: High-Resolution 3D-Consistent Scene Texturing with Controllable Illumination",
+      "title_zh": "SceneHI：可控光照下的高分辨率3D一致场景纹理合成",
+      "url": "https://arxiv.org/abs/2609.10363",
+      "arxiv_id": "2609.10363",
+      "authors": [
+        "Athanasios Tragakis",
+        "Marco Aversa",
+        "Daniela Ivanova",
+        "Chaitanya Kaul",
+        "Roderick Murray-Smith",
+        "Daniele Faccio",
+        "Paul Henderson"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "published": "2026-09-09T15:56:02+00:00",
+      "score": 12,
+      "reason": "该文研究高分辨率3D一致场景纹理合成与可控光照，属于3D生成与计算机视觉，与遥感变化检测中的三维场景建模和地理空间智能中的3D重建有间接关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "3D纹理合成",
+        "扩散模型",
+        "光照感知",
+        "场景重建"
+      ],
+      "summary_zh": "SceneHI是一个框架，将高分辨率、光照感知的2D扩散模型先验提升用于3D纹理合成。它首次证明高分辨率纹理可直接在3D对象上生成，无需模型微调或优化。面向复杂多对象环境，SceneHI在单一生成流程中独特地结合了3D一致性、高分辨率保真度和物理合理的烘焙阴影。为强制严格几何连贯性，作者引入精确的解析像素到纹素映射，对齐多视角的扩散轨迹。使用高分辨率潜在纹理（HRLT）作为持续画布逐步去噪纹理，相机视角在潜在像素空间执行去噪步骤，确保共享基础纹理可后续细化到高分辨率而不损害多视角一致性。最后，光照感知生成通道将几何一致的逼真阴影直接嵌入图集，衔接生产工作流。SceneHI实现高视觉保真度，同时相比现有场景级方法减少80%生成时间。",
+      "insight_zh": "该研究展示了扩散模型在3D场景纹理合成中的高分辨率与光照一致性能力，其多视角一致性和几何对齐思路对遥感三维重建与城市数字孪生中的纹理映射有潜在借鉴意义，但研究本身不涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.09349",
@@ -11009,6 +11105,32 @@
       "insight_zh": "该理论结果揭示了预言机选择规则在确定性-随机化分离中的决定性作用，对理解在线学习中的查询复杂度有理论意义，但与地理空间应用无直接关联。"
     },
     {
+      "key": "arxiv:2609.10469",
+      "title": "AgroVisNet: A lightweight Convolutional Network and the BD-PlantDX Expert-Validated Benchmark for Radish, Potato and Pointed Gourd Disease Classification",
+      "title_zh": "AgroVisNet：轻量卷积网络与BD-PlantDX专家验证基准用于萝卜、马铃薯和苦瓜病害分类",
+      "url": "https://arxiv.org/abs/2609.10469",
+      "arxiv_id": "2609.10469",
+      "authors": [
+        "Md. Abdullah Mandal",
+        "Saad Ahmed",
+        "Md. Khalid Syfullah"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T17:12:17+00:00",
+      "score": 10,
+      "reason": "该文提出轻量卷积网络与专家验证的植物病害分类基准，属于农业图像识别与边缘部署，与遥感/地理空间智能中的地物分类和轻量化模型有间接关联，但不涉及城市更新或时空数据挖掘。",
+      "tags": [
+        "植物病害分类",
+        "轻量卷积网络",
+        "农业遥感",
+        "边缘部署"
+      ],
+      "summary_zh": "自动化植物病害诊断日益部署在农户设备上，但面临三大障碍：公共基准多由非本地作物主导、区域数据集少有专家验证、达到竞争性精度的架构参数量不适合低成本硬件。本文提出AgroVisNet，一个从零训练的紧凑卷积网络，以及BD-PlantDX，一个经专家验证的基准，包含孟加拉国Bogura和Nilphamari地区采集的12,432张田间图像，覆盖萝卜、马铃薯和苦瓜的12个健康与病害类别。AgroVisNet结合带顺序通道和空间注意力的分组瓶颈残差块、多尺度深度可分离块和双池化分类头，共290,572个可训练参数。在BD-PlantDX上达到99.52%测试准确率和99.52%加权F1，超过所有六个ImageNet预训练轻量骨干网络，参数量少8.7至16.8倍，乘加运算少1.3至8.5倍。模型量化后为0.46 MB全整数网络，精度损失0.22个百分点，单CPU分类一张图像耗时8.40毫秒。五个随机种子下准确率保持99.57±0.10%，十变体消融实验分离各组件贡献，同一架构无需重新设计即可迁移到两个独立采集数据集，准确率分别为98.71%和99.05%。Grad-CAM证据表明预测基于带病斑的叶片区域。",
+      "insight_zh": "该研究展示了轻量卷积网络在农业图像分类中的高效部署能力，其边缘计算和迁移学习思路对遥感变化检测中的轻量化模型设计有借鉴意义，但研究聚焦于近距离植物病害图像而非遥感影像。"
+    },
+    {
       "key": "arxiv:2605.00497",
       "title": "\"What Are You Really Trying to Do?\": Co-Creating Life Goals from Everyday Computer Use",
       "title_zh": "“你到底想做什么？”：从日常计算机使用中协同创建生活目标",
@@ -11272,6 +11394,33 @@
       "insight_zh": "该工作表明，将预训练视为目标无关资产可提升推测解码的鲁棒性；对需要部署多智能体或LLM进行地理空间推理的研究者而言，可能有助于降低推理成本，但未涉及地理空间任务本身。"
     },
     {
+      "key": "arxiv:2609.10364",
+      "title": "OmniMed-FL: A Robust Multimodal Federated Learning Framework for Clinical Diagnosis",
+      "title_zh": "OmniMed-FL：面向临床诊断的鲁棒多模态联邦学习框架",
+      "url": "https://arxiv.org/abs/2609.10364",
+      "arxiv_id": "2609.10364",
+      "authors": [
+        "Ayush Debnath",
+        "Ruelia Saha",
+        "Sudip Misra"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-09T15:56:26+00:00",
+      "score": 8,
+      "reason": "该文研究多模态联邦学习框架用于临床诊断，属于联邦学习与多模态融合，与多源数据融合和隐私保护下的分布式学习有方法论关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "联邦学习",
+        "多模态融合",
+        "医学影像",
+        "隐私保护"
+      ],
+      "summary_zh": "临床诊断常需同时评估医学影像和患者记录，但标准机器学习算法无法同时分析这些数据类型，且HIPAA和GDPR合规限制了敏感患者数据的集中聚合，导致跨网络安全融合视觉和文本上下文存在关键空白。本文提出OmniMed-FL，一个多模态联邦学习系统研究，用于五类临床状况分类（正常、肺炎、COVID-19、胸腔积液、心脏肥大）。代理语料将3,000张公共胸部X光片与3,000条按类别条件生成的合成笔记配对，按类别而非患者匹配。框架在非IID Dirichlet划分下跨3至20家医院客户端，基准测试八种融合策略、三种初始化、四种缺失文本填补规则和匹配的联邦基线。由于所有笔记为合成且配对非患者级，这些是描述性代理比较，而非诊断性能或部署就绪性估计。在K=5客户端和严重偏斜（α=0.1）下，仅本地训练宏F1为0.297，FedAvg为0.662±0.074，FedProx为0.737±0.085，匹配的FedMME式单次集成0.647±0.080，SCAFFOLD-AdamW适配为0.070±0.015。在4×3网格上，标签偏斜代价高达0.27 F1，而客户端增加近七倍代价至多0.10，双向流量在K=20时线性增长至183.5 GiB。多模态融合在两个语料上均领先。",
+      "insight_zh": "该研究探讨了隐私约束下多模态数据的联邦融合方法，其非IID数据划分和融合策略比较对地理空间智能中分布式多源数据融合（如跨区域遥感与社交媒体数据）有方法论参考价值，但研究限于医学领域且使用合成数据。"
+    },
+    {
       "key": "arxiv:2609.09610",
       "title": "Marker-free eye-gaze estimation using a single image and depth from defocus",
       "title_zh": "基于单张图像与散焦深度的无标记视线估计",
@@ -11385,6 +11534,36 @@
       ],
       "summary_zh": "内容审核政策日益复杂，对其一致性操作化构成关键挑战。尽管基础模型具备应对该挑战所需的基本能力，但它们能否可靠地审核在线内容仍是一个未解问题。本文系统比较了两种视觉语言模型（VLM）引导范式：指令驱动方法（模型依据政策条文推理）与示例驱动方法（模型从既有先例中泛化）。作者将研究建立在ModerationBench之上，这是一个包含来自Bluesky平台4000条人工标注真实帖子的新基准。实验表明，基础模型可以显著超越Bluesky已部署的审核系统，在基准中的随机帖子上将其F1分数提升近三倍（0.60 vs 0.22），且指令驱动与示例驱动两种范式达到的峰值效果相当。这些发现为大规模可靠且可适应的政策操作化指明了路径。",
       "insight_zh": "该研究比较指令与示例两种策略落地范式，其结论对将复杂规则（如规划政策）转化为模型可执行判断具有类比价值，但摘要未涉及地理或城市政策场景。"
+    },
+    {
+      "key": "arxiv:2609.10518",
+      "title": "BrainTaskonomy: Learning How to Pretrain and What to Transfer in fMRI Foundation Models",
+      "title_zh": "BrainTaskonomy：学习fMRI基础模型如何预训练与迁移什么",
+      "url": "https://arxiv.org/abs/2609.10518",
+      "arxiv_id": "2609.10518",
+      "authors": [
+        "Junfeng Xia",
+        "Wenhao Ye",
+        "Junxiang Zhang",
+        "Jiayu Zuo",
+        "Mo Wang",
+        "Quanying Liu"
+      ],
+      "categories": [
+        "cs.CV",
+        "q-bio.NC"
+      ],
+      "published": "2026-09-09T17:50:39+00:00",
+      "score": 8,
+      "reason": "该文研究fMRI基础模型的预训练与迁移学习组织方式，属于基础模型与迁移学习的方法论研究，与LLM/多智能体及地理空间智能中的基础模型思路有方法论上的间接关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "fMRI基础模型",
+        "迁移学习",
+        "课程学习",
+        "任务分类学"
+      ],
+      "summary_zh": "fMRI基础模型日益聚合跨脑状态、队列和采集设置的异构数据，但预训练域通常被当作扁平混合，下游任务也各自独立适配。本文研究能否在不修改主干网络的情况下，用可测量的学习关系来组织这两个阶段。预训练阶段，轻量级Brain-DiT代理估计十个fMRI域之间的难度和有向促进关系，形成优先级引导的累积域课程，并结合高到低噪声时间步调度与联合巩固。适配阶段，通过十五个任务间的受控一阶与高阶迁移构建有向任务分类学，并用预算整数规划选择直接监督的源任务和目标特定路径。联合课程相比均匀采样在v-NMSE、PSD-NMSE和FC-MSE上分别降低6.5%、16.3%和10.5%，并在六个域内和域外任务上表现良好。任务分类学揭示出非对称、依赖目标的迁移关系，探索性密封测试显示高阶路径空间下BIP策略的描述性增益大于匹配随机对照。",
+      "insight_zh": "该研究提出以可测量的学习关系而非扁平集合来组织预训练与适配，其课程学习和迁移路径选择思想对地理空间基础模型的多源数据组织与跨任务迁移具有方法论参考价值，但研究本身限于神经影像领域。"
     },
     {
       "key": "arxiv:2609.09904",
@@ -11664,36 +11843,6 @@
         "q-bio.NC"
       ],
       "published": "2026-09-08T19:40:42+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09163",
-      "title": "World-Time Compute with Verified Code World Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09163",
-      "arxiv_id": "2609.09163",
-      "authors": [
-        "James Schwoebel",
-        "Ingrida Semenec",
-        "Jenia Rousseva",
-        "Marcos Ortiz",
-        "Collin Overbay",
-        "Christopher Klaus",
-        "Anderson Edmond",
-        "Manish Bhatt",
-        "Rome Thorstenson",
-        "Jessica Tsai",
-        "and Martin G. Frasch"
-      ],
-      "categories": [
-        "cs.LG",
-        "https://github.com/quome-cloud/openworld"
-      ],
-      "published": "2026-07-07T03:19:47+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12259,32 +12408,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.10363",
-      "title": "SceneHI: High-Resolution 3D-Consistent Scene Texturing with Controllable Illumination",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10363",
-      "arxiv_id": "2609.10363",
-      "authors": [
-        "Athanasios Tragakis",
-        "Marco Aversa",
-        "Daniela Ivanova",
-        "Chaitanya Kaul",
-        "Roderick Murray-Smith",
-        "Daniele Faccio",
-        "Paul Henderson"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.GR"
-      ],
-      "published": "2026-09-09T15:56:02+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09678",
       "title": "Safe to Stop? Risk-Constrained Stopping for Sequential Clinical Diagnosis Agents",
       "title_zh": "",
@@ -12439,32 +12562,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.10505",
-      "title": "Quantum Feature Engineering for Credit Default Prediction: When and Why IQP Circuits Help Linear Classifiers",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10505",
-      "arxiv_id": "2609.10505",
-      "authors": [
-        "Menachem Finkelstein",
-        "Diana Legziel Levy",
-        "Zohar Yakhini",
-        "Sarel Cohen"
-      ],
-      "categories": [
-        "cs.LG",
-        "quant-ph",
-        "Conference",
-        "(HPEC",
-        "2026)"
-      ],
-      "published": "2026-09-09T17:41:27+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09973",
       "title": "Putting Captions to the Test: Evaluating Video Caption Quality through Multiple-Choice Question Answering",
       "title_zh": "",
@@ -12533,7 +12630,7 @@
     {
       "key": "arxiv:2609.10524",
       "title": "Precision in Rice Variety Classification using Stacking-Based Ensemble Learning",
-      "title_zh": "",
+      "title_zh": "基于堆叠集成学习的水稻品种精准分类",
       "url": "https://arxiv.org/abs/2609.10524",
       "arxiv_id": "2609.10524",
       "authors": [
@@ -12547,10 +12644,15 @@
       ],
       "published": "2026-09-09T17:53:50+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究基于堆叠集成学习的水稻品种分类，属于农业图像识别与精准农业范畴，与城市更新、时空数据挖掘、LLM多智能体、遥感变化检测及多源数据融合等核心方向关联较弱，仅与遥感/地理空间智能中的地物分类有间接联系。",
+      "tags": [
+        "农业遥感",
+        "集成学习",
+        "图像分类",
+        "精准农业"
+      ],
+      "summary_zh": "水稻品种多样，消费者、贸易商和农户难以准确识别，易导致品种掺假等欺诈行为。现有研究缺乏基于颜色、大小、纹理等外部特征的高效精准分类方法。本文提出一个水稻品种识别框架，构建了包含20个具有独特视觉特征的水稻品种数据集，并开发了堆叠集成模型，实现了100%的分类准确率。模型还被集成到移动应用中，使新手用户也能通过智能手机拍摄的米粒图像识别品种。研究认为先进机器学习技术有助于减少欺诈行为、保障水稻质量控制，并推动自动化作物识别与精准农业发展。",
+      "insight_zh": "该研究展示了集成学习在农产品细粒度视觉分类中的潜力，其移动端部署思路对农业遥感与地理空间智能中的轻量化地物识别应用具有一定借鉴意义，但研究未涉及空间位置、多源数据融合或城市相关议题。"
     },
     {
       "key": "arxiv:2510.26656",
@@ -12647,48 +12749,6 @@
       ],
       "summary_zh": "在在线逆线性优化中，学习者在每一轮预测一个权重，观测智能体的最优动作，并更新其预测。在一般设定下，遗憾上界 $O(d……（摘要文本不完整）",
       "insight_zh": "该文为在线逆优化提供理论保证，其数学工具或可用于时空决策中的在线参数学习，但摘要不完整且未涉及任何地理空间应用。"
-    },
-    {
-      "key": "arxiv:2609.10364",
-      "title": "OmniMed-FL: A Robust Multimodal Federated Learning Framework for Clinical Diagnosis",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10364",
-      "arxiv_id": "2609.10364",
-      "authors": [
-        "Ayush Debnath",
-        "Ruelia Saha",
-        "Sudip Misra"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-09T15:56:26+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.10487",
-      "title": "Nonmaximal sums of maximally monotone operators under Rockafellar's constraint qualification",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10487",
-      "arxiv_id": "2609.10487",
-      "authors": [
-        "Weifeng Yang"
-      ],
-      "categories": [
-        "cs.LG",
-        "math.FA"
-      ],
-      "published": "2026-09-09T17:26:26+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.09786",
@@ -12956,30 +13016,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.10490",
-      "title": "Learning with Covariance Matrices: Principal Component Analysis Meets Learning with Graphs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10490",
-      "arxiv_id": "2609.10490",
-      "authors": [
-        "Saurabh Sihag",
-        "Andrea Cavallo",
-        "Elvin Isufi",
-        "Gonzalo Mateos",
-        "and Alejandro Ribeiro"
-      ],
-      "categories": [
-        "cs.LG",
-        "eess.SP"
-      ],
-      "published": "2026-09-09T17:28:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09698",
       "title": "Kernel-Complexity Edge Sanitization for Training-Free Defense against Structural Graph Attacks",
       "title_zh": "",
@@ -13159,7 +13195,7 @@
     {
       "key": "arxiv:2609.10494",
       "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
-      "title_zh": "",
+      "title_zh": "IBIB：以服务路由而非模型标识符衡量企业AI系统的协议",
       "url": "https://arxiv.org/abs/2609.10494",
       "arxiv_id": "2609.10494",
       "authors": [
@@ -13174,10 +13210,15 @@
       ],
       "published": "2026-09-09T17:31:29+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文提出企业AI系统的评测协议，关注服务路由而非模型标识符，属于AI评测方法论，与LLM应用有一定关联，但不涉及地理空间数据、城市更新或遥感。",
+      "tags": [
+        "AI系统评测",
+        "服务路由",
+        "基准测试",
+        "企业AI"
+      ],
+      "summary_zh": "企业部署的是系统而非检查点，可用能力取决于权重、服务路由、精度、输出契约和执行框架，但现有18个审计基准都只对广告中的模型标识符打分。本文将此视为测量误差，提出可报告该误差的协议IB2，包含三部分：金标准盲测的能力绑定预检、将失败纳入评分的可靠性包容首轮评分规则、以及结构性评分盲审。协议发布算法、分类表、请求契约和清单模式，其参考实例包含128个锁定任务和987条断言，覆盖文档、表格、图表、工具和数据库工作，但保持密封。在十一个系统上的结果显示：能力可用性可测量，两次相同权重的单路由运行后来未能通过最终绑定门的不同谓词，而广告标识符未暴露该限制；区分度不均匀，七个套件中四个在六系统带内饱和，差异几乎全部来自受治理的数据库工作和多标签页连接；服务臂选择使一个声明修订和精度从77.38变为82.54，配对区间[0.11,10.60]。",
+      "insight_zh": "该研究强调AI系统评测应关注实际服务路由而非模型名称，其评测方法论对地理空间智能中LLM应用的可复现评测有参考意义，但研究本身不涉及地理空间数据或城市议题。"
     },
     {
       "key": "arxiv:2609.10089",
@@ -13797,31 +13838,6 @@
       "insight_zh": "该研究揭示联邦学习更新共享的隐私风险，对涉及多源数据融合与分布式协作建模的地理空间应用具有安全警示意义，但论文未讨论地理空间数据或场景。"
     },
     {
-      "key": "arxiv:2609.10518",
-      "title": "BrainTaskonomy: Learning How to Pretrain and What to Transfer in fMRI Foundation Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10518",
-      "arxiv_id": "2609.10518",
-      "authors": [
-        "Junfeng Xia",
-        "Wenhao Ye",
-        "Junxiang Zhang",
-        "Jiayu Zuo",
-        "Mo Wang",
-        "Quanying Liu"
-      ],
-      "categories": [
-        "cs.CV",
-        "q-bio.NC"
-      ],
-      "published": "2026-09-09T17:50:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10008",
       "title": "Beyond Similarity: Foundation Models as an Efficient Backbone for Training-Free Composed Video Retrieval",
       "title_zh": "",
@@ -13931,7 +13947,7 @@
     {
       "key": "arxiv:2609.10489",
       "title": "Artificial Intelligence Literacy and Sustainable Development: An Ethical Governance and Development Goals Framework",
-      "title_zh": "",
+      "title_zh": "人工智能素养与可持续发展：伦理治理与发展目标框架",
       "url": "https://arxiv.org/abs/2609.10489",
       "arxiv_id": "2609.10489",
       "authors": [
@@ -13944,10 +13960,15 @@
       ],
       "published": "2026-09-09T17:28:08+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究AI素养与可持续发展目标的伦理治理框架，属于AI治理与教育研究，与GIS、城市更新、时空数据挖掘、遥感等技术方向无关。",
+      "tags": [
+        "AI素养",
+        "伦理治理",
+        "可持续发展",
+        "教育框架"
+      ],
+      "summary_zh": "AI素养提供支持伦理、透明和可持续技术发展的基础能力，但治理、批判性评估和战略决策等高级能力超出基础素养，进入更高阶的AI胜任力。本研究将AI素养定位为补充和强化全部17个可持续发展目标的治理能力，提出一个六层AI推理与伦理分类法，扩展传统学习模型以纳入伦理判断和战略前瞻。该分类法构成连接教育、治理和可持续发展的综合框架基础。对300名不同职业背景参与者的调查显示，技术意识较强但伦理和治理准备不足，凸显公众负责任管理AI能力的缺口。研究发现伦理推理和反思性思维是可持续和可信AI使用的最强预测因子。研究建议将素养能力嵌入课程、机构政策和治理机制。",
+      "insight_zh": "该研究关注AI素养与治理，与地理空间智能中的伦理治理议题有极弱的间接关联，但不涉及任何地理空间技术或数据方法。"
     },
     {
       "key": "arxiv:2609.10012",
@@ -13998,27 +14019,6 @@
         "(IS&T)"
       ],
       "published": "2026-09-09T08:39:22+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.10469",
-      "title": "AgroVisNet: A lightweight Convolutional Network and the BD-PlantDX Expert-Validated Benchmark for Radish, Potato and Pointed Gourd Disease Classification",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10469",
-      "arxiv_id": "2609.10469",
-      "authors": [
-        "Md. Abdullah Mandal",
-        "Saad Ahmed",
-        "Md. Khalid Syfullah"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T17:12:17+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14318,6 +14318,37 @@
       "insight_zh": "摘要为空，无法推断其方法或结论；该研究属于机器人操作领域，与城市更新、时空数据挖掘、遥感等主题无交集。"
     },
     {
+      "key": "arxiv:2609.10505",
+      "title": "Quantum Feature Engineering for Credit Default Prediction: When and Why IQP Circuits Help Linear Classifiers",
+      "title_zh": "面向信用违约预测的量子特征工程：IQP电路何时以及为何有助于线性分类器",
+      "url": "https://arxiv.org/abs/2609.10505",
+      "arxiv_id": "2609.10505",
+      "authors": [
+        "Menachem Finkelstein",
+        "Diana Legziel Levy",
+        "Zohar Yakhini",
+        "Sarel Cohen"
+      ],
+      "categories": [
+        "cs.LG",
+        "quant-ph",
+        "Conference",
+        "(HPEC",
+        "2026)"
+      ],
+      "published": "2026-09-09T17:41:27+00:00",
+      "score": 3,
+      "reason": "该文研究IQP量子电路特征工程用于信用违约预测，属于量子机器学习与表格分类，与GIS、城市更新、时空数据挖掘、遥感等方向基本无关。",
+      "tags": [
+        "量子机器学习",
+        "特征工程",
+        "信用违约预测",
+        "表格分类"
+      ],
+      "summary_zh": "信用违约预测是表格分类问题，F1的微小提升可直接减少金融风险敞口。本文研究瞬时量子多项式时间（IQP）电路能否在相同特征预算下生成优于原始经典基线和核PCA的特征。数据集每位客户有23个金融属性，n量子比特电路选取n个属性编码为旋转角，读出2n个期望值作为新特征。使用UCI信用卡客户违约数据集和五折交叉验证，发现向逻辑回归追加16个IQP特征（n=8量子比特）可将F1从0.462提升至0.517（+0.055，p<0.0001），核PCA在相同特征数下仅达0.493，差距在Benjamini-Hochberg校正后仍显著。其他分类器（随机森林、SVM、XGBoost、k-NN）均无获益，指向线性表达能力机制。研究还表明8个输入特征的选择方式很重要：随机森林重要性引导选择可达F1=0.523，而编码最大不相关特征则降至0.496。",
+      "insight_zh": "该研究揭示了量子电路特征对线性分类器的增益机制，属于量子机器学习与特征工程交叉领域，与地理空间智能中的特征表示学习有极弱的类比关系，但无直接关联。"
+    },
+    {
       "key": "arxiv:2609.09306",
       "title": "Gradland: On Phenomenal Experience, Differentiated Across Many Dimensions",
       "title_zh": "Gradland：论跨多维度分化的现象体验",
@@ -14394,6 +14425,31 @@
       ],
       "summary_zh": "算法输出如今填充了当代生活得以组织的数字环境。法律在促进和构成（而非仅仅回应）这些过程中的作用，在学术论述中正获得越来越多关注。本探究追溯算法输出的演变，关注其法律基础和社会影响，揭示机器言论的突变。第一次突变将言论重新定义为可查询的数据：搜索引擎将网络从信息检索空间转变为算法可见性的经济体制。第二次突变将言论重新框定为参与：社交媒体平台将审核与放大融合，将表达转变为注意力度量，并由公司架构治理。第三次突变出现在对话系统和界面中，生成文本取代信息检索，带来密集的技术法律纠缠和深刻的认识论后果。表达自由、信息隐私和传播研究学者早已应对这些动态，但它们对更广泛法律思想的影响也变得紧迫。本文试图组织和澄清围绕算法言论的演变辩论，使这一关键但常被碎片化的论述更易为更广泛的法律和跨学科受众所理解。在此过程中，它弥合了观察技术转型与批判性评估法律在其中的构成性作用之间的差距，为研究人员、学生、政策制定者和从业者提供概念资源，以导航和争辩这一演变景观。",
       "insight_zh": "该文从法律与传播角度梳理算法言论的三次突变，强调法律在算法环境中的构成性作用；其讨论不涉及地理空间数据或城市分析。"
+    },
+    {
+      "key": "arxiv:2609.10487",
+      "title": "Nonmaximal sums of maximally monotone operators under Rockafellar's constraint qualification",
+      "title_zh": "Rockafellar约束限定下极大单调算子的非极大和",
+      "url": "https://arxiv.org/abs/2609.10487",
+      "arxiv_id": "2609.10487",
+      "authors": [
+        "Weifeng Yang"
+      ],
+      "categories": [
+        "cs.LG",
+        "math.FA"
+      ],
+      "published": "2026-09-09T17:26:26+00:00",
+      "score": 0,
+      "reason": "该文研究极大单调算子之和的数学反例，属于纯数学泛函分析领域，与GIS、遥感、城市更新、时空数据挖掘等方向完全无关。",
+      "tags": [
+        "单调算子",
+        "凸分析",
+        "泛函分析",
+        "数学理论"
+      ],
+      "summary_zh": "本文构造了Rockafellar和猜想的反例，其中两个极大单调算子满足内域条件但其和不是极大单调的。作者在c_0空间和赋予通常范数的ℓ^1空间上各给出一个反例。文章建立了一个一般构造定理，计算一类图的整个单调极，给出其极大单调性的充要条件，并展示在满足该条件时正秩一扰动如何产生非极大和。作者在c_0上验证了定理假设和极大性判据，从而得到猜想反例。此外，构造了从ℓ^1到c_0的有界线性满射，并据此得到ℓ^1上的反例。",
+      "insight_zh": "该研究属于纯数学泛函分析，与地理信息科学、遥感或城市研究无任何关联。"
     },
     {
       "key": "arxiv:2604.06612",
