@@ -140,6 +140,8 @@ https://fengziclassmate.github.io/journal-rss/information-geography.xml
 https://fengziclassmate.github.io/journal-rss/information-geography-current-issue.xml
 https://fengziclassmate.github.io/journal-rss/building-and-environment.xml
 https://fengziclassmate.github.io/journal-rss/building-and-environment-current-issue.xml
+https://fengziclassmate.github.io/journal-rss/buildings.xml
+https://fengziclassmate.github.io/journal-rss/buildings-current-issue.xml
 ```
 
 当前抓取规则：
@@ -158,6 +160,7 @@ https://fengziclassmate.github.io/journal-rss/building-and-environment-current-i
 - `https://essd.copernicus.org/`：按电子 ISSN `1866-3516` 拉取 *Earth System Science Data* 从 `2026-06-01` 到运行当天的正式文章，输出到 `essd.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `essd-current-issue.xml`。
 - `https://www.sciencedirect.com/journal/information-geography`：按电子 ISSN `3050-5208` 拉取 *Information Geography* 从 `2026-06-01` 到运行当天的新文章，输出到 `information-geography.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `information-geography-current-issue.xml`。
 - `https://www.sciencedirect.com/journal/building-and-environment`：按 ISSN `0360-1323` 拉取 *Building and Environment* 从 `2026-06-01` 到运行当天的新文章，输出到 `building-and-environment.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `building-and-environment-current-issue.xml`。官方 RSS 镜像继续优先，自建源只补充官方源缺失的条目。
+- `https://www.mdpi.com/journal/buildings`：按电子 ISSN `2075-5309` 拉取 *Buildings* 从 `2026-06-01` 到运行当天的新文章，输出到 `buildings.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `buildings-current-issue.xml`。MDPI 官方 RSS 镜像优先，自建源只补充官方源缺失的条目。
 
 建议定时任务每天运行一次即可，不要高频抓取。
 
