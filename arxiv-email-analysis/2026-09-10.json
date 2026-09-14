@@ -2,11 +2,11 @@
   "date": "2026-09-10",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 385,
+    "analyzed": 395,
     "high": 13,
     "medium": 24,
-    "low": 34,
-    "below_threshold": 314
+    "low": 35,
+    "below_threshold": 323
   },
   "papers": [
     {
@@ -1306,6 +1306,63 @@
       "insight_zh": "该基准揭示了 VLM 在固定摄像头基础设施场景中的时空理解短板，其任务设计与评估协议可为城市监控与地理空间智能中的多模态模型评测提供参考。"
     },
     {
+      "key": "arxiv:2609.09840",
+      "title": "TempTPI: Informer-Based trajectory prediction for maritime vessels",
+      "title_zh": "TempTPI：基于Informer的海事船舶轨迹预测",
+      "url": "https://arxiv.org/abs/2609.09840",
+      "arxiv_id": "2609.09840",
+      "authors": [
+        "Kevin Ferneding",
+        "Veronika Lietavcova",
+        "Aleksandra M. Blachowiak",
+        "Peder Heiselberg"
+      ],
+      "categories": [
+        "cs.LG",
+        "Symposium",
+        "(IGARSS)",
+        "2026.",
+        "\\c{opyright}",
+        "2026",
+        "IEEE.",
+        "Personal",
+        "use",
+        "of",
+        "this",
+        "material",
+        "is",
+        "permitted.",
+        "Permission",
+        "from",
+        "IEEE",
+        "must",
+        "be",
+        "obtained",
+        "for",
+        "all",
+        "other",
+        "uses,",
+        "in",
+        "any",
+        "current",
+        "or",
+        "future",
+        "media"
+      ],
+      "published": "2026-09-09T07:46:26+00:00",
+      "score": 55,
+      "reason": "该文利用AIS数据预测海事船舶轨迹，属于时空数据挖掘与轨迹预测，与GIS博士研究中的时空数据挖掘方向较为相关，但不涉及城市更新或遥感变化检测。",
+      "tags": [
+        "轨迹预测",
+        "海事船舶",
+        "AIS",
+        "Informer",
+        "时空数据挖掘"
+      ],
+      "summary_zh": "准确的海事船舶长期轨迹预测对安全和物流效率至关重要。尽管深度学习模型尤其是Transformer在处理自动识别系统（AIS）数据方面显示出潜力，但它们常受限于自注意力的二次计算复杂度和长预测时程上的精度损失。本研究提出TempTPI，一种将Informer编码器与多通道时间编码机制相结合的新型预测框架。Informer架构利用ProbSparse自注意力机制降低计算开销并聚焦最重要依赖，时间编码器则使用类傅里叶频率扩展捕捉船舶行为的周期模式（小时、日和季节）。作者使用丹麦水域AIS数据将模型与最先进的TPTrans架构对比。实验结果表明，TempTPI在1至5小时预测窗口上持续优于现有方法；在5小时时程上，所提模型均方误差（MSE）改善55%，为远程海事态势感知提供稳健方案。",
+      "insight_zh": "该研究表明ProbSparse注意力与周期时间编码结合可提升长时程船舶轨迹预测精度并降低计算开销；其时空序列建模思路对城市移动轨迹预测有方法参考价值，但应用领域为海事交通。"
+    },
+    {
       "key": "arxiv:2605.14069",
       "title": "SurF: A Generative Model for Multivariate Irregular Time Series Forecasting",
       "title_zh": "SurF：面向多变量不规则时间序列预测的生成模型",
@@ -2255,6 +2312,37 @@
       ],
       "summary_zh": "现有基准主要关注孤立内核、预定义算子或预先指定的优化目标，无法评估LLM进行开放式、长周期LLM基础设施工程的能力。为此，作者提出$\\Phi$-Bench，一个系统评估LLM工程化LLM基础设施栈的基准。该基准源自前沿研究的优化问题，基于真实代码仓库，覆盖LLM基础设施栈的广泛范围，任务复杂度从局部内核级函数补全到长周期实现和端到端系统优化。对前沿LLM的广泛实验揭示了其当前能力和局限。",
       "insight_zh": "该基准为评估LLM在复杂基础设施工程中的开放式、长周期任务能力提供了系统化框架，其发现可帮助理解LLM在自主优化未来AI基础设施方面仍面临的挑战。"
+    },
+    {
+      "key": "arxiv:2609.09949",
+      "title": "Vague2Detect: Handling Ambiguous Prompts in Knowledge-Based Open-World Detection",
+      "title_zh": "Vague2Detect：处理基于知识的开放世界检测中的模糊提示",
+      "url": "https://arxiv.org/abs/2609.09949",
+      "arxiv_id": "2609.09949",
+      "authors": [
+        "Ibrohimjon Muminov (1)",
+        "Jihie Kim (1) ((1) Dongguk University",
+        "Seoul",
+        "South Korea)"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.LG",
+        "https://github.com/ibrohimgets/Vague2Detect"
+      ],
+      "published": "2026-09-09T09:39:27+00:00",
+      "score": 42,
+      "reason": "该文关注模糊提示下的开放世界目标检测，结合知识库检索与LLM扩展，与地理空间智能中的多模态语义理解有一定关联，但不涉及城市更新、时空数据挖掘或遥感变化检测。",
+      "tags": [
+        "开放世界检测",
+        "模糊提示",
+        "知识库检索",
+        "LLM",
+        "视觉-语义匹配"
+      ],
+      "summary_zh": "现实中的检测器常需解释功能性或模糊提示，但YOLO等传统模型受限于固定类别列表，YOLO-World等开放词汇模型也常将模糊语言与目标对象错配。基于此前利用LLM和视觉-语义匹配的常识引导开放世界目标检测工作，作者针对YOLO-World在任务驱动查询定位上的局限提出Vague2Detect。该混合流程中，微调后的Sentence-BERT从结构化家庭知识库中检索候选，YOLO-World验证其是否出现在图像中；对于知识库外的提示，由GPT-3.5-turbo生成候选描述并动态扩展知识库以覆盖新概念。在家庭场景基准（自定义图像与Open Images V7子集）上，单独YOLO-World的模糊提示成功率仅为32%，而Vague2Detect提升至61%且精度较高，加入GPT回退后可提升至85%。",
+      "insight_zh": "该工作表明，将结构化知识检索与大模型生成结合，可缓解开放词汇检测器对模糊任务查询的语义错配；其思路或可迁移至地理空间场景中模糊地理查询的目标定位，但文中未涉及地理数据或城市应用。"
     },
     {
       "key": "arxiv:2609.10113",
@@ -3373,6 +3461,34 @@
       ],
       "summary_zh": "该论文提出了一种置信度门控的事后信念修正框架，用于提高钓鱼网站分类的准确性。",
       "insight_zh": "该框架的置信度门控机制可启发GIS中多源数据融合时的决策修正策略。"
+    },
+    {
+      "key": "arxiv:2609.09881",
+      "title": "CLFTv2: Efficient Camera-LiDAR Fusion for Semantic Segmentation via Hierarchical Feature Pyramids",
+      "title_zh": "CLFTv2：通过层次特征金字塔实现高效相机-LiDAR融合语义分割",
+      "url": "https://arxiv.org/abs/2609.09881",
+      "arxiv_id": "2609.09881",
+      "authors": [
+        "Toomas Tahves",
+        "Mauro Bellone",
+        "and Raivo Sell"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-09-09T08:37:06+00:00",
+      "score": 35,
+      "reason": "该文提出相机-LiDAR融合的语义分割框架，属于多模态融合与自动驾驶感知，与多源数据融合和遥感变化检测中的语义分割方法有方法层面的关联，但不直接涉及城市更新或地理空间智能应用。",
+      "tags": [
+        "相机-LiDAR融合",
+        "语义分割",
+        "自动驾驶",
+        "多尺度特征金字塔",
+        "多模态融合"
+      ],
+      "summary_zh": "自动驾驶语义分割需要在严重类别不平衡下可靠检测弱势道路使用者。作者提出CLFTv2，一种层次化相机-LiDAR融合框架，用基于Swin的多尺度编码器和轻量FPN式残差解码器替代全局ViT注意力。CLFTv2在2D透视域中运行，通过移位窗口注意力和逐尺度残差融合整合多尺度几何线索，避免查询匹配解码器的计算开销。在三个驾驶数据集上，CLFTv2持续提升弱势道路使用者召回率。在ZOD上，CLFTv2-Large达到53.5% mIoU，将行人IoU从先前CLFT模型的35.5%提升至44.9%；在Waymo上达到61.7% mIoU。此外，模态隔离研究表明，ViT的全局感受野仅在LiDAR回波密集时带来更强融合增益。与基于Swin的Mask2Former适配版相比，CLFTv2所需GFLOPs少1.4倍，吞吐量高2.2倍，同时达到相当的整体准确率。结果表明，层次局部注意力融合为智能交通系统中的实时车载感知提供了高效、可扩展的替代方案。",
+      "insight_zh": "该工作显示层次化局部注意力融合可在保持精度的同时显著降低计算量，并指出全局感受野的融合增益依赖LiDAR回波密度；其多模态融合与效率权衡思路对遥感多源融合有借鉴意义，但研究场景为自动驾驶。"
     },
     {
       "key": "arxiv:2609.05736",
@@ -7324,6 +7440,32 @@
       "insight_zh": "该文主要贡献是优化理论的几何统一视角；对地理空间智能的直接启发有限，但若涉及在线时空预测中的自适应学习，其偏差类与regret分析或可提供理论参照。"
     },
     {
+      "key": "arxiv:2609.09885",
+      "title": "Decision Transformer for UAV-Mounted RIS-Assisted Dynamic D2D Communications",
+      "title_zh": "面向无人机搭载RIS辅助动态D2D通信的Decision Transformer",
+      "url": "https://arxiv.org/abs/2609.09885",
+      "arxiv_id": "2609.09885",
+      "authors": [
+        "Yaxuan Liu"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-09-09T08:41:20+00:00",
+      "score": 18,
+      "reason": "该文研究无人机搭载RIS辅助的D2D通信优化，涉及无人机轨迹与强化学习，与时空动态优化和智能体决策有一定关联，但不涉及城市更新、遥感变化检测或地理空间数据挖掘。",
+      "tags": [
+        "无人机",
+        "RIS",
+        "D2D通信",
+        "Decision Transformer",
+        "强化学习"
+      ],
+      "summary_zh": "本文研究具有随机链路激活的无人机搭载可重构智能表面（RIS）辅助设备到设备（D2D）通信。文中建模了无人机运动与姿态、时变莱斯角以及角度依赖的RIS反射。在移动性、能量和硬件约束下，联合优化无人机轨迹、姿态和RIS相位以最大化平均和速率。该问题通过深度强化学习和在多种场景专家轨迹上训练的Decision Transformer求解。结果表明其具有有效的跨场景泛化能力，零样本迁移优于直接DRL迁移，在线微调以更少交互达到有竞争力的性能。",
+      "insight_zh": "该研究表明基于专家轨迹训练的Decision Transformer在无人机通信优化中具有跨场景泛化优势，零样本迁移优于直接DRL；其决策序列建模思路对时空动态优化有参考价值，但应用场景为通信网络而非城市或地理分析。"
+    },
+    {
       "key": "arxiv:2506.10633",
       "title": "Anatomy-Grounded Weakly Supervised Prompt Tuning for Chest X-ray Latent Diffusion Models",
       "title_zh": "面向胸部X光潜在扩散模型的解剖学基础弱监督提示微调",
@@ -7470,33 +7612,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09949",
-      "title": "Vague2Detect: Handling Ambiguous Prompts in Knowledge-Based Open-World Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09949",
-      "arxiv_id": "2609.09949",
-      "authors": [
-        "Ibrohimjon Muminov (1)",
-        "Jihie Kim (1) ((1) Dongguk University",
-        "Seoul",
-        "South Korea)"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.CL",
-        "cs.LG",
-        "https://github.com/ibrohimgets/Vague2Detect"
-      ],
-      "published": "2026-09-09T09:39:27+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10139",
       "title": "TransGaze-Object: Transformer Based Driver Gaze Object Prediction Framework in Real Driving",
       "title_zh": "",
@@ -7566,59 +7681,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09840",
-      "title": "TempTPI: Informer-Based trajectory prediction for maritime vessels",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09840",
-      "arxiv_id": "2609.09840",
-      "authors": [
-        "Kevin Ferneding",
-        "Veronika Lietavcova",
-        "Aleksandra M. Blachowiak",
-        "Peder Heiselberg"
-      ],
-      "categories": [
-        "cs.LG",
-        "Symposium",
-        "(IGARSS)",
-        "2026.",
-        "\\c{opyright}",
-        "2026",
-        "IEEE.",
-        "Personal",
-        "use",
-        "of",
-        "this",
-        "material",
-        "is",
-        "permitted.",
-        "Permission",
-        "from",
-        "IEEE",
-        "must",
-        "be",
-        "obtained",
-        "for",
-        "all",
-        "other",
-        "uses,",
-        "in",
-        "any",
-        "current",
-        "or",
-        "future",
-        "media"
-      ],
-      "published": "2026-09-09T07:46:26+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7697,40 +7759,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09891",
-      "title": "ProMeta: Few-shot PROTAC-targeted degradation prediction across E3 ligases",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09891",
-      "arxiv_id": "2609.09891",
-      "authors": [
-        "Yuansheng Liu",
-        "Yufei Ye",
-        "Tao Tang",
-        "Jiawei Luo",
-        "Wen Tao",
-        "Xiao Luo"
-      ],
-      "categories": [
-        "cs.LG",
-        "q-bio.QM",
-        "resources",
-        "are",
-        "available",
-        "at",
-        "https://github.com/yeyufeiyyf/prometa",
-        "and",
-        "https://doi.org/10.5281/zenodo.21371599"
-      ],
-      "published": "2026-09-09T08:47:01+00:00",
-      "score": 17,
-      "reason": "关键词命中：Graph Neural Network",
-      "tags": [
-        "Graph Neural Network"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10198",
       "title": "Politics of Feelings: Emotional Expression and Legislative Effectiveness in the U.S. Congress",
       "title_zh": "",
@@ -7779,36 +7807,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09924",
-      "title": "Multimodal Emotion Recognition in Conversations via Class-Wise Adaptive Modality Fusion and Affective Geometry",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09924",
-      "arxiv_id": "2609.09924",
-      "authors": [
-        "Oriol Mar\\'in",
-        "Roger Mar\\'i",
-        "Gloria Haro",
-        "Rafael Redondo"
-      ],
-      "categories": [
-        "cs.CV",
-        "Analysis",
-        "in-the-Wild",
-        "(ABAW)",
-        "at",
-        "ECCV",
-        "2026"
-      ],
-      "published": "2026-09-09T09:15:18+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8227,123 +8225,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09885",
-      "title": "Decision Transformer for UAV-Mounted RIS-Assisted Dynamic D2D Communications",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09885",
-      "arxiv_id": "2609.09885",
-      "authors": [
-        "Yaxuan Liu"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.RO"
-      ],
-      "published": "2026-09-09T08:41:20+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09902",
-      "title": "Contrastive Projection: Reading Transformer Internals by Differencing Logit Lenses",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09902",
-      "arxiv_id": "2609.09902",
-      "authors": [
-        "Olli Tuomi"
-      ],
-      "categories": [
-        "cs.CL",
-        "https://github.com/EvidentSolutions/llm-interp/tree/main/contrastive"
-      ],
-      "published": "2026-09-09T09:01:09+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09895",
-      "title": "Can We Trust Video Hallucination Detectors? VidHalLoc for Evaluating the Evaluators",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09895",
-      "arxiv_id": "2609.09895",
-      "authors": [
-        "Xinyu Chen",
-        "Adnan Mahmood",
-        "Mark Dras"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T08:52:23+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09735",
-      "title": "Can Artificial Intelligence Support Healthcare and Mental Health Through Early Cyberbullying Detection ? The Impact of Emotion-Aware AI on Proactive Online Safety",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09735",
-      "arxiv_id": "2609.09735",
-      "authors": [
-        "Hamed Jelodar",
-        "Amir Firouzi",
-        "Yen-Wu Lo",
-        "Maryam Tanha",
-        "Sajjad Dadkhah"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-09T05:22:09+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09881",
-      "title": "CLFTv2: Efficient Camera-LiDAR Fusion for Semantic Segmentation via Hierarchical Feature Pyramids",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09881",
-      "arxiv_id": "2609.09881",
-      "authors": [
-        "Toomas Tahves",
-        "Mauro Bellone",
-        "and Raivo Sell"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "published": "2026-09-09T08:37:06+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09554",
       "title": "BuzzASR: A Swarm of 100+ Monolingual Speech Recognition Models",
       "title_zh": "",
@@ -8438,32 +8319,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09945",
-      "title": "Adversarial Training for Tabular Credit Scoring: A Multi-Attack Robustness Evaluation in P2P Lending",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09945",
-      "arxiv_id": "2609.09945",
-      "authors": [
-        "Gijs A. F. Niewzwaag",
-        "Marijn G. S. Veth",
-        "Manuele Massei",
-        "Marcos R. Machado"
-      ],
-      "categories": [
-        "cs.LG",
-        "q-fin.RM",
-        "stat.ML"
-      ],
-      "published": "2026-09-09T09:35:44+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -9614,6 +9469,33 @@
       "insight_zh": "将长上下文处理类比为层次卷积以缩短推理路径的思路，或可启发长时序时空数据的多尺度摘要建模，但摘要未提供完整方法与实验细节，且未涉及地理应用。"
     },
     {
+      "key": "arxiv:2609.09895",
+      "title": "Can We Trust Video Hallucination Detectors? VidHalLoc for Evaluating the Evaluators",
+      "title_zh": "我们能信任视频幻觉检测器吗？VidHalLoc用于评估评估者",
+      "url": "https://arxiv.org/abs/2609.09895",
+      "arxiv_id": "2609.09895",
+      "authors": [
+        "Xinyu Chen",
+        "Adnan Mahmood",
+        "Mark Dras"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T08:52:23+00:00",
+      "score": 15,
+      "reason": "该文构建视频幻觉检测基准并采用多智能体工作流，涉及视频-语言模型评测，与多智能体和多模态评测相关，但不涉及地理空间、遥感或城市更新。",
+      "tags": [
+        "视频幻觉检测",
+        "基准评测",
+        "多智能体",
+        "视频问答",
+        "视频描述"
+      ],
+      "summary_zh": "视频-语言模型和视频智能体可能产生与时空证据冲突的幻觉。现有基准主要评估模型幻觉，且异构机制使检测器可靠性难以比较。作者提出VidHalLoc，一个在统一诊断评估协议下评估幻觉检测方法的基准，包含2000个对抗性幻觉样本，覆盖视频问答和视频描述任务，涉及本体论和动态两类幻觉。为高效构建VidHalLoc，作者提出VideoHALO，一种受Harness Engineering启发的多智能体工作流，将数据构建分解为四个可执行阶段，并由记忆系统和通信协议支持。对十五种方法的评估显示，四种专用检测器的总体准确率最高仅为34.63%，表明其在各类视频幻觉上的可靠性有限。",
+      "insight_zh": "该基准揭示现有视频幻觉检测器可靠性有限，并展示多智能体工作流可用于高效构建评测数据；其多智能体组织方式对复杂数据构建任务有借鉴意义，但研究本身不涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2607.05205",
       "title": "An Event-Driven Framework for Fly-Inspired Visual Motion Detection",
       "title_zh": "一种受蝇类启发的视觉运动检测事件驱动框架",
@@ -10352,6 +10234,61 @@
       "insight_zh": "该文的多层异质网络与级联传播建模思路在方法论上与地理空间网络分析有形式上的相似性，但研究问题、数据与应用场景均不涉及地理空间维度。"
     },
     {
+      "key": "arxiv:2609.09902",
+      "title": "Contrastive Projection: Reading Transformer Internals by Differencing Logit Lenses",
+      "title_zh": "对比投影：通过差分logit lens读取Transformer内部表示",
+      "url": "https://arxiv.org/abs/2609.09902",
+      "arxiv_id": "2609.09902",
+      "authors": [
+        "Olli Tuomi"
+      ],
+      "categories": [
+        "cs.CL",
+        "https://github.com/EvidentSolutions/llm-interp/tree/main/contrastive"
+      ],
+      "published": "2026-09-09T09:01:09+00:00",
+      "score": 12,
+      "reason": "该文提出通过差分logit lens读取Transformer内部状态的可解释性方法，属于大模型机制可解释性研究，与GIS或遥感无直接关联，但对LLM相关研究有方法参考价值。",
+      "tags": [
+        "Transformer可解释性",
+        "logit lens",
+        "对比投影",
+        "机制可解释性"
+      ],
+      "summary_zh": "在token空间中读取Transformer内部状态容易操作但难以信任：对单个隐藏状态施加logit lens时，中间层常被模型对几乎所有输入都会预测的通用token主导。作者改为读取差异：将两个高度匹配提示的隐藏状态相减并通过unembedding投影，可抵消共享成分并凸显区分二者的内容，该操作等价于通过logit lens读取RepE/ActAdd引导向量。作者将其构建为无需训练的追踪器，在每个位置、子层和注意力头上读取并对设计基线取平均，在Phi-2中追踪出复合名词的MLP->注意力链，并通过激活修补确认；在三种架构中通过读出和探针而非修补恢复相同区分；还可读取检索对真实与虚构实体所浮现的内容，并将隐喻读取为域到域的映射集合而非单一比喻性特征。跨随机种子对照标出边界：在仅初始化不同的五个网络中，相同区分浮现为几乎完全不同的token（top-10重叠0.08）。计算在token空间中的样貌是网络特定的，但其区分的本质并非如此。",
+      "insight_zh": "该研究提出一种无需训练的对比投影方法，用于揭示Transformer内部计算所区分的语义差异，并指出token空间中的具体样貌具有网络特异性；该方法对理解LLM内部机制有参考价值，但未涉及地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.09735",
+      "title": "Can Artificial Intelligence Support Healthcare and Mental Health Through Early Cyberbullying Detection ? The Impact of Emotion-Aware AI on Proactive Online Safety",
+      "title_zh": "人工智能能否通过早期网络欺凌检测支持医疗与心理健康？情感感知AI对主动在线安全的影响",
+      "url": "https://arxiv.org/abs/2609.09735",
+      "arxiv_id": "2609.09735",
+      "authors": [
+        "Hamed Jelodar",
+        "Amir Firouzi",
+        "Yen-Wu Lo",
+        "Maryam Tanha",
+        "Sajjad Dadkhah"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-09T05:22:09+00:00",
+      "score": 12,
+      "reason": "该文提出面向医疗与心理健康的网络欺凌早期检测框架，属于NLP与在线安全应用，与GIS、城市更新、遥感或时空数据挖掘无直接关联。",
+      "tags": [
+        "网络欺凌检测",
+        "情感感知AI",
+        "心理健康",
+        "Transformer",
+        "零样本学习"
+      ],
+      "summary_zh": "医疗系统、心理健康和公共福祉日益受到网络欺凌和有害在线互动的影响。本文提出CareGuard，一个早期预警框架，旨在通过先进自然语言处理技术检测网络欺凌相关内容，以支持医疗驱动的心理健康保护和主动在线安全。CareGuard整合零样本语义标注与微调Transformer模型（包括BERT、DistilBERT和RoBERTa），实现跨敏感网络欺凌类别的稳健且上下文感知的分类。为提升效率并减少面向医疗监测场景中的不必要计算，该框架引入情感感知过滤机制和基于余弦相似度的语义筛选，使系统聚焦于语义相关且情感显著的内容。在基准数据集上的实验结果表明，CareGuard有效平衡了检测准确率与计算效率，显示其在医疗系统、心理健康监测和在线安全应用中可扩展部署的潜力。",
+      "insight_zh": "该工作将零样本语义标注、微调Transformer与情感感知过滤结合，以平衡检测准确率与计算效率；其情感感知筛选思路对社交媒体文本分析有参考价值，但研究不涉及地理空间维度。"
+    },
+    {
       "key": "arxiv:2609.09547",
       "title": "A Statistical Approach to Estimating Sample Size of Machine Learning Models",
       "title_zh": "一种估计机器学习模型样本量的统计方法",
@@ -10710,6 +10647,39 @@
       ],
       "summary_zh": "摘要内容缺失，仅能依据标题判断：该报告介绍一个面向通用交互的智能体系统。",
       "insight_zh": "标题提示其属于智能体系统技术报告，可能与LLM驱动的多智能体交互相关；但无摘要支撑，无法判断是否涉及地理空间任务或城市更新场景。"
+    },
+    {
+      "key": "arxiv:2609.09924",
+      "title": "Multimodal Emotion Recognition in Conversations via Class-Wise Adaptive Modality Fusion and Affective Geometry",
+      "title_zh": "基于类别自适应模态融合与情感几何的对话多模态情感识别",
+      "url": "https://arxiv.org/abs/2609.09924",
+      "arxiv_id": "2609.09924",
+      "authors": [
+        "Oriol Mar\\'in",
+        "Roger Mar\\'i",
+        "Gloria Haro",
+        "Rafael Redondo"
+      ],
+      "categories": [
+        "cs.CV",
+        "Analysis",
+        "in-the-Wild",
+        "(ABAW)",
+        "at",
+        "ECCV",
+        "2026"
+      ],
+      "published": "2026-09-09T09:15:18+00:00",
+      "score": 10,
+      "reason": "该文研究对话中的多模态情感识别，涉及文本、音频、视觉融合，属于情感计算领域，与GIS、城市更新、遥感变化检测或时空数据挖掘无直接关联。",
+      "tags": [
+        "多模态情感识别",
+        "对话情感识别",
+        "自适应模态融合",
+        "效价-唤醒"
+      ],
+      "summary_zh": "对话情感识别需要整合文本、音频和视觉等异构线索，并考虑对话上下文与情感动态。作者在自蒸馏Transformer架构基础上，引入外观+几何视觉表示、类别自适应模态融合以及效价-唤醒先验以建模情感转移。在MELD和IEMOCAP数据集上，几何增强的视觉表示相比仅外观特征分别提升加权F1 0.27和4.36个百分点，类别自适应融合相比原始softmax门控再提升0.17和0.25个百分点；效价-唤醒先验在情感转移话语上带来0.30和0.74准确率点的针对性提升，同时在稳定轮次上保持性能。结果表明，结构化面部线索、情感依赖的模态加权和情感几何为多模态对话情感识别提供互补收益。",
+      "insight_zh": "该工作说明结构化视觉几何线索与情感先验可补充外观特征，类别自适应融合有助于处理情感类别差异；其方法思路对多模态融合有借鉴意义，但未涉及地理空间或城市数据。"
     },
     {
       "key": "arxiv:2609.09528",
@@ -11594,6 +11564,35 @@
       ],
       "summary_zh": "联邦客户端执行多步本地优化时可能返回幅度差异很大的参数位移。FedProx的二次正则化随位移线性增长，因此对普通与异常大客户端运动之间的对比控制有限。作者提出HiFedProx，用尺度匹配的幂型正则化器替代二次惩罚，指数p≥2。所有幂次在参考位移R处具有相同的正则化梯度幅值，而每个p>2在R以下响应更弱、在R以上响应更强。精确仿射参考计算表明，增大p可压缩相对位移差异，但极大幂次趋近固定半径行为并增加局部曲率。在FEMNIST子集上的五种子配对实验中，p=7和p=6在中等和严重压力下分别比p=2改善11.44%和23.16%。",
       "insight_zh": "该研究表明正则化指数应校准而非最大化，其方法论对分布式地理空间模型训练有潜在参考价值，但应用场景为通用联邦学习。"
+    },
+    {
+      "key": "arxiv:2609.09945",
+      "title": "Adversarial Training for Tabular Credit Scoring: A Multi-Attack Robustness Evaluation in P2P Lending",
+      "title_zh": "表格信用评分的对抗训练：P2P借贷中的多攻击鲁棒性评估",
+      "url": "https://arxiv.org/abs/2609.09945",
+      "arxiv_id": "2609.09945",
+      "authors": [
+        "Gijs A. F. Niewzwaag",
+        "Marijn G. S. Veth",
+        "Manuele Massei",
+        "Marcos R. Machado"
+      ],
+      "categories": [
+        "cs.LG",
+        "q-fin.RM",
+        "stat.ML"
+      ],
+      "published": "2026-09-09T09:35:44+00:00",
+      "score": 8,
+      "reason": "该文研究表格信用评分模型的对抗鲁棒性，属于金融风控与机器学习安全领域，与GIS、城市更新、遥感或时空数据挖掘无直接关联。",
+      "tags": [
+        "对抗鲁棒性",
+        "表格数据",
+        "信用评分",
+        "P2P借贷"
+      ],
+      "summary_zh": "基于机器学习的信用评分在P2P借贷中日益核心，但其对申请人策略性修改自报输入以获取有利决策的对抗操纵的韧性仍缺乏理解。多数对抗鲁棒性证据来自图像和文本领域，且仅评估单一攻击对匹配防御，难以说明表格信用数据中防御跨攻击类型的泛化能力。作者在大型Lending Club子集上构建系统性训练-测试鲁棒性基准，涵盖三类模型（逻辑回归、前馈神经网络、表格Transformer）和四种限于申请人可修改特征的攻击（FGSM、PGD、椒盐噪声、DeepFool）以及混合攻击情形。通过分层交叉验证的完整网格评估发现，对抗训练能显著提升对训练所针对攻击的鲁棒性，并在基于梯度的攻击族内迁移良好，但对非梯度扰动迁移较弱，说明单一攻击防御会高估真实世界韧性；混合训练在异构攻击下提供最均衡的鲁棒性，同时保持干净测试性能，支持在信用模型治理中开展多攻击压力测试。",
+      "insight_zh": "该研究提示，单一攻击防御可能高估模型在真实对抗环境中的稳健性，多攻击混合训练更有利于均衡鲁棒性；这一结论对表格数据建模具有参考价值，但与地理空间分析无直接联系。"
     },
     {
       "key": "arxiv:2609.09476",
@@ -12653,6 +12652,44 @@
       "tags": [],
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.09891",
+      "title": "ProMeta: Few-shot PROTAC-targeted degradation prediction across E3 ligases",
+      "title_zh": "ProMeta：跨E3连接酶的少样本PROTAC靶向降解预测",
+      "url": "https://arxiv.org/abs/2609.09891",
+      "arxiv_id": "2609.09891",
+      "authors": [
+        "Yuansheng Liu",
+        "Yufei Ye",
+        "Tao Tang",
+        "Jiawei Luo",
+        "Wen Tao",
+        "Xiao Luo"
+      ],
+      "categories": [
+        "cs.LG",
+        "q-bio.QM",
+        "resources",
+        "are",
+        "available",
+        "at",
+        "https://github.com/yeyufeiyyf/prometa",
+        "and",
+        "https://doi.org/10.5281/zenodo.21371599"
+      ],
+      "published": "2026-09-09T08:47:01+00:00",
+      "score": 5,
+      "reason": "该文研究PROTAC靶向降解预测的少样本元学习，属于计算药物发现领域，与GIS、城市更新、遥感或时空数据挖掘无直接关联。",
+      "tags": [
+        "PROTAC",
+        "少样本学习",
+        "元学习",
+        "图神经网络",
+        "药物发现"
+      ],
+      "summary_zh": "蛋白水解靶向嵌合体（PROTAC）通过泛素-蛋白酶体系统选择性降解传统上“不可成药”的靶点，已成为变革性治疗策略。尽管计算预测PROTAC降解活性的努力不断增加，现有监督方法仍受限于数据稀缺和跨E3连接酶的不平衡，难以泛化到研究充分的连接酶之外。实践中标注数据高度集中于少数连接酶（如CRBN和VHL），而大多数E3连接酶仍未被充分探索，却对扩展靶向降解剂设计空间至关重要。作者将跨E3连接酶的PROTAC降解活性预测重构为少样本元学习问题，提出ProMeta，一种基于原型的图神经网络，在源E3任务上通过情景元学习训练，并在留出的目标E3任务上通过支持条件推理评估。ProMeta无需更新编码器，通过从少量目标连接酶支持样本动态估计类原型进行推理。在CRBN到VHL基准上，ProMeta在K=2、Q=3时AUROC为0.796，在K=2、Q=5时为0.883，分别比对应监督GNN基线提升19.9%和6.8%；反向VHL到CRBN迁移在相同协议下AUROC为0.702（K=2、Q=3）和0.821（K=2、Q=5），确认双向适用性并揭示方向和数据机制依赖性。",
+      "insight_zh": "该工作将跨域少样本学习用于PROTAC降解预测，表明基于原型的元学习可在少量标注下实现跨E3连接酶迁移；其少样本跨域思路对数据稀缺场景有方法参考，但与地理空间研究无直接关系。"
     },
     {
       "key": "arxiv:2609.10524",

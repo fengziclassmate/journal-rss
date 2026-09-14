@@ -1,0 +1,344 @@
+{
+  "date": "2026-09-15",
+  "guid": "research-daily:2026-09-15",
+  "paper_keys": [
+    "arxiv:2609.12169",
+    "arxiv:2608.18734",
+    "doi:10.1016/j.isprsjprs.2026.08.033",
+    "doi:10.1016/j.isprsjprs.2026.08.028",
+    "arxiv:2609.08572",
+    "arxiv:2609.07013",
+    "arxiv:2609.01773",
+    "arxiv:2609.00544",
+    "arxiv:2608.20218",
+    "arxiv:2609.12533"
+  ],
+  "paper_count": 10,
+  "source_status": {
+    "arxiv-api": "error:TimeoutError",
+    "arxiv-email": "ok:1",
+    "crossref:Applied Geography": "ok:8",
+    "crossref:Applied Soft Computing": "ok:65",
+    "crossref:Artificial Intelligence": "ok:2",
+    "crossref:CEUS": "ok:6",
+    "crossref:Cities": "ok:26",
+    "crossref:Computer Science Review": "ok:3",
+    "crossref:EIAR": "ok:15",
+    "crossref:IJGIS": "ok:3",
+    "crossref:ISPRS JPRS": "ok:14",
+    "crossref:Information Fusion": "ok:19",
+    "crossref:JAG": "ok:17",
+    "crossref:Landscape and Urban Planning": "ok:6",
+    "crossref:Pattern Recognition": "ok:36",
+    "crossref:RSE": "ok:8",
+    "crossref:SCS": "ok:17",
+    "crossref:Science Bulletin": "ok:27",
+    "crossref:Urban Climate": "ok:12",
+    "deepseek": "partial:0/30;failed-batches:3"
+  },
+  "updated_at": "2026-09-14T21:55:34.570512+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2609.12169",
+      "title": "When Ground-Truth Fidelity Matters: An Orchestrated UAS Framework for Wheat Streak Mosaic Virus Detection Using Vision Transformers and Machine Learning",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2609.12169",
+      "doi": "",
+      "arxiv_id": "2609.12169",
+      "authors": [
+        "Dewi Endah Kharismawati",
+        "Sandeep Dhakal",
+        "Courtney E. McCusker",
+        "Jennifer R. Wilson",
+        "Erik W. Ohlson",
+        "Sami Khanal"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T19:58:43+00:00",
+      "score": 67,
+      "reason": "关键词命中：Geospatial、Deep Learning、Transformer",
+      "tags": [
+        "Geospatial",
+        "Deep Learning",
+        "Transformer"
+      ],
+      "abstract": "Wheat streak mosaic virus (WSMV) is a destructive pathogen of sweet corn and other cereal crops, causing yield losses and complicating early detection because symptoms are spatially variable and subtle. In sweet corn seed production, WSMV also has regulatory importance, as phytosanitary regulations from countries such as New Zealand and Chile require seed lots to be certified virus-free. Visual scouting is unreliable because symptoms can resemble abiotic stress, while enzyme-linked immunosorbent assay (ELISA) is accurate but expensive, labor-intensive, and difficult to scale. We present an automated pipeline for plant-level WSMV detection using unmanned aircraft systems (UAS) multispectral imagery. The framework integrates orthomosaic reconstruction, geospatial alignment, plant extraction, and classification using a Vision Transformer with seven-channel inputs (five spectral bands, NDVI, and NDRE). Using treatment-based labels, the model achieved 89% accuracy on over 6,500 test patches across multiple growth stages. However, ELISA-based ground truth revealed substantial label noise: only a small fraction of sampled plants in inoculated plots were infected. Treatment labels therefore did not reliably represent infection status, and the high accuracy was largely driven by label bias rather than disease detection. Performance decreased markedly against row-level symptom severity and plant-level ELISA labels. Under these higher-fidelity but smaller-sample conditions, both deep learning and classical machine learning showed limited generalization and weak separability between ELISA-confirmed mock-inoculated and infected plants. These results show that UAS-based disease detection is constrained by label fidelity and data availability, emphasizing biologically grounded labels and models aligned with real-world conditions.",
+      "summary_zh": "",
+      "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2608.18734",
+      "title": "CL4D: Contrastive Language-4D Pretraining for Vision-Language Reasoning in Dynamic Scenes",
+      "title_zh": "CL4D：面向动态场景视觉语言推理的对比语言-4D预训练",
+      "url": "https://arxiv.org/abs/2608.18734v2",
+      "doi": "",
+      "arxiv_id": "2608.18734",
+      "authors": [
+        "Kumal Hewagamage",
+        "Isuranga Senavirathne",
+        "Sasika Amarasinghe",
+        "Hasitha Gallella",
+        "Dulanga Weerakoon",
+        "Vigneshwaran Subbaraju",
+        "Ranga Rodrigo"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T09:37:15+00:00",
+      "score": 65,
+      "reason": "论文提出首个直接处理动态点云的4D基础视觉编码器CL4D及4D视觉语言模型4DVLM，实现时空几何表示与自然语言的对齐。这与GIS中动态场景理解、时空数据挖掘及多模态融合高度相关，可为城市动态变化分析提供新思路。",
+      "tags": [
+        "4D视觉",
+        "点云",
+        "对比学习",
+        "视觉语言模型",
+        "动态场景"
+      ],
+      "abstract": "4D understanding and reasoning is a fundamental capability for embodied AI agents operating in dynamic physical environments. However, existing vision encoders are largely limited to static 2D images or 3D point clouds without temporal modeling, or to 2D videos that lack accurate geometric depth reasoning. Consequently, current approaches fail to jointly capture spatial structure and motion evolution in dynamic scenes. We present CL4D, the first foundational 4D vision encoder that directly operates on dynamic point clouds, trained with a contrastive learning objective to align spatio-temporal geometric representations with natural language descriptions. By learning a shared embedding space between text and 4D scene dynamics, CL4D enables zero-shot motion-to-text and text-to-motion retrieval in dynamic environments and serves as a foundational 4D vision encoder for downstream 4D vision-language tasks. Building on this encoder, we introduce 4DVLM, a 4D vision-language model that conditions language generation on dynamic geometric representations. 4DVLM is the first VLM designed to operate directly on 4D point clouds without relying on 2D images, 2D videos, or static 3D point clouds. We train CL4D and subsequently 4DVLM on a newly constructed dataset termed DynAction4D capturing diverse human motions across varying object interactions and scene environments. Extensive experiments across multiple 4D human action benchmarks demonstrate that CL4D achieves state-of-the-art performance, with improvements of approximately ~16.75% over prior methods. Furthermore, 4DVLM outperforms frontier video VLMs such as Gemini and GPT-5 even when these models are provided with RGB video sequences corresponding to the same scenes represented as 4D point clouds for 4DVLM.",
+      "summary_zh": "本文提出CL4D，一个直接操作动态点云的4D基础视觉编码器，通过对比学习对齐时空几何表示与自然语言描述。基于此编码器构建的4DVLM是首个不依赖2D图像或静态3D点云的4D视觉语言模型，在多个4D人体动作基准上取得最优性能。",
+      "insight_zh": "将时空几何表示与语言对齐，使得模型能够直接理解动态3D场景，这为GIS中利用点云时序数据进行场景语义描述和变化检测提供了新的技术路径。"
+    },
+    {
+      "key": "doi:10.1016/j.isprsjprs.2026.08.033",
+      "title": "RoofSeg: An edge-aware transformer-based network for end-to-end roof plane segmentation",
+      "title_zh": "RoofSeg：一种用于端到端屋顶平面分割的边缘感知Transformer网络",
+      "url": "https://doi.org/10.1016/j.isprsjprs.2026.08.033",
+      "doi": "10.1016/j.isprsjprs.2026.08.033",
+      "arxiv_id": "",
+      "authors": [
+        "Siyuan You",
+        "Guozheng Xu",
+        "Pengwei Zhou",
+        "Qiwen Jin",
+        "Jian Yao",
+        "Li Li"
+      ],
+      "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "published": "2026-12-01T00:00:00+00:00",
+      "score": 62,
+      "reason": "该论文提出面向端到端屋顶平面分割的边缘感知Transformer网络，属于遥感影像建筑物精细提取方向，与遥感变化检测、多源数据融合和地理空间智能研究相关，但未涉及城市更新、时空数据挖掘或多智能体。",
+      "tags": [
+        "遥感",
+        "屋顶平面分割",
+        "Transformer",
+        "边缘感知",
+        "建筑物提取"
+      ],
+      "abstract": "",
+      "summary_zh": "由于摘要为空，无法提供具体内容摘要。根据标题可知，该研究提出RoofSeg，一种基于Transformer的边缘感知网络，用于端到端屋顶平面分割，发表于ISPRS Journal of Photogrammetry and Remote Sensing。",
+      "insight_zh": "从标题推断，该工作可能将边缘信息融入Transformer架构以提升屋顶平面分割精度，或可为建筑物三维重建与城市遥感分析提供基础支撑；但因摘要缺失，无法确认其具体方法、数据与结论。"
+    },
+    {
+      "key": "doi:10.1016/j.isprsjprs.2026.08.028",
+      "title": "GBOV-trained Gaussian process models for Sentinel-3 SYN vegetation traits with decomposed uncertainty quantification",
+      "title_zh": "基于GBOV训练的高斯过程模型用于Sentinel-3 SYN植被性状反演及分解不确定性量化",
+      "url": "https://doi.org/10.1016/j.isprsjprs.2026.08.028",
+      "doi": "10.1016/j.isprsjprs.2026.08.028",
+      "arxiv_id": "",
+      "authors": [
+        "Pablo Reyes-Muñoz",
+        "Emma De Clerck",
+        "Yuxin Zhang",
+        "José Luis García-Soria",
+        "Luke A. Brown",
+        "Miguel Morata",
+        "Carolina Tenjo",
+        "Jochem Verrelst"
+      ],
+      "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "published": "2026-12-01T00:00:00+00:00",
+      "score": 60,
+      "reason": "利用高斯过程模型反演植被性状并量化不确定性，与遥感数据处理相关，但主要面向植被监测，与城市更新关联较弱。",
+      "tags": [
+        "Gaussian process",
+        "vegetation traits",
+        "Sentinel-3",
+        "uncertainty quantification",
+        "GBOV"
+      ],
+      "abstract": "",
+      "summary_zh": "提出使用GBOV数据训练高斯过程模型，以反演Sentinel-3 SYN植被性状，并分解不确定性来源。",
+      "insight_zh": "该方法可能提供更可靠的植被监测，但未提及具体结果，需验证其精度。"
+    },
+    {
+      "key": "arxiv:2609.08572",
+      "title": "AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems",
+      "title_zh": "AgentGrad：用于多智能体系统的干预引导提示优化",
+      "url": "https://arxiv.org/abs/2609.08572",
+      "doi": "",
+      "arxiv_id": "2609.08572",
+      "authors": [
+        "Jaewon Chu",
+        "Jinwoo Seo",
+        "Jaewon Cho",
+        "Jeehye Na",
+        "Yunyang Xiong",
+        "Youngdae Kim",
+        "Hyunwoo J. Kim"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T11:07:04+00:00",
+      "score": 60,
+      "reason": "该研究提出AgentGrad，一种针对多智能体系统的提示优化框架，通过顺序干预和语义文本梯度抽象来提升性能，与多智能体系统研究高度相关，对优化地理空间多智能体分析系统的提示设计具有方法论上的参考价值。",
+      "tags": [
+        "多智能体",
+        "提示优化",
+        "LLM",
+        "文本梯度",
+        "智能体干预"
+      ],
+      "abstract": "Large language model (LLM)-based multi-agent systems (MAS) achieve strong performance by employing specialized multiple agents, yet their performance depends on the prompt design of each agent. For MAS prompt optimization, textual gradient methods that guide prompt updates using natural-language feedback have emerged as a leading paradigm. In this paper, we identify limitations in two stages of existing textual gradient approaches: gradient extraction and gradient aggregation. In gradient extraction, previous works select a target prompt without verifying whether modifying it resolves the failure, and derive gradients without agent-level supervision over the corresponding agent's intermediate output. In gradient aggregation, individual gradients are randomly grouped and concatenated, often mixing unrelated failure modes and producing prompts that fail to generalize. To address these limitations, we propose \\textbf{AgentGrad}, a prompt optimization framework for multi-agent systems based on sequential intervention and semantic textual gradient abstraction. For each failure, sequential intervention modifies the behavior of one agent at a time to identify the target agent whose modification resolves the failure. The modified output of the target agent then serves as agent-level supervision for extracting a fine-grained gradient. Semantic textual gradient abstraction clusters semantically similar gradients to prevent mixing unrelated failure modes, and abstracts each cluster into a generalized gradient that captures the shared corrective pattern. Experimental results show that AgentGrad achieves state-of-the-art performance across five MAS benchmarks and reduces wall-clock optimization time by $2.5\\times$ on average compared to the next-fastest baseline.",
+      "summary_zh": "AgentGrad针对现有文本梯度方法在梯度提取和聚合阶段的局限性，提出顺序干预方法，通过一次修改一个智能体的行为来定位能解决问题的目标智能体，并利用其修改后的输出作为智能体级监督来提取细粒度梯度。同时，采用语义文本梯度抽象对相似梯度进行聚类和泛化，避免混合无关的失败模式。在五个多智能体基准上取得了最先进性能，并平均减少了2.5倍的优化时间。",
+      "insight_zh": "在多智能体系统中，通过干预单个智能体来定位问题根源，并利用语义聚类生成泛化的优化指令，是比随机组合文本反馈更有效的提示优化策略。"
+    },
+    {
+      "key": "arxiv:2609.07013",
+      "title": "ARNAI: Artifact Removal Network based on Autoencoding and Inpainting for Robust Spinal Image Segmentation and Measurement",
+      "title_zh": "ARNAI：基于自编码和修复的伪影去除网络用于鲁棒的脊柱图像分割与测量",
+      "url": "https://arxiv.org/abs/2609.07013",
+      "doi": "",
+      "arxiv_id": "2609.07013",
+      "authors": [
+        "Sang-Jin Park",
+        "Jinyoung Choi",
+        "Seokwon Kim",
+        "Seungeon Song",
+        "Insu Park",
+        "Dougho Park",
+        "Taeyeon Kim",
+        "Youjin Lee",
+        "Donghoon Yang",
+        "Jaeman Cho",
+        "Joongwon Yang",
+        "Mansu Kim",
+        "Heumdai Kwon",
+        "Hong Gyu Baek",
+        "Dae Chul Cho",
+        "Injung Kim"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T04:06:50+00:00",
+      "score": 60,
+      "reason": "该研究提出了一种用于术后脊柱X光片分析的AI框架，通过自编码和修复网络去除植入物伪影，以提升分割和测量精度。虽然应用领域是医学影像，但其处理图像中干扰物（伪影）以提升下游任务性能的思路，与遥感影像处理中去除云、阴影等噪声以改善分析结果的目标有相似之处。",
+      "tags": [
+        "医学影像",
+        "图像分割",
+        "伪影去除",
+        "脊柱影像",
+        "自动测量",
+        "自编码器",
+        "图像修复"
+      ],
+      "abstract": "Purpose: This study aims to develop an AI framework applicable for postoperative imaging for automated measurement of spinopelvic parameters on radiographs with robustness to the presence of spinal implants. Materials and Methods: We retrospectively reviewed lateral lumbar spine radiographs from two institutions (Internal: January 2017--December 2024; External: October 2021--September 2025). We developed the Restore, Segment, and Measure (RSM) framework, incorporating a novel Artifact Removal Network based on Autoencoding and Inpainting (ARNAI) to mitigate implant-related artifacts in postoperative radiographs. Segmentation and spinopelvic parameter (PT, LL, SS, SCA) measurement performance were assessed using Wilcoxon signed-rank tests and intraclass correlation coefficients. Results: When ARNAI was added to a recent Transformer-based segmentation model, FCBFormer, the mean DSC increased to 0.870 from 0.814, with marked gains at L3--L5 and smaller improvements at L1--L2. On 91 radiographs with implants, the mean L4--L5 segmental Cobb angle error decreased to 4.7 {\\deg} from 15.6--16.2 {\\deg}, an average error reduction of 70%. The ICC for L4--L5 segmental Cobb angle improved to 0.54 (Rater 1) and 0.59 (Rater 2) from 0.18, and ICCs for pelvic tilt, lumbar lordosis, and sacral slope all exceeded 0.70. The improvement in L4--L5 segmental Cobb angle error was statistically significant in the internal implant-containing cohort after correction for multiple comparisons. Conclusion: The proposed RSM framework improved automated spinopelvic parameter measurement in implant-containing postoperative radiographs. By mitigating implant-related artifacts, ARNAI improved segmentation and downstream measurement accuracy, with the greatest benefit observed for L4--L5 segmental Cobb angle estimation, where the mean error was reduced by approximately 70%.",
+      "summary_zh": "该研究开发了Restore, Segment, and Measure (RSM) 框架，包含一个新颖的基于自编码和修复的伪影去除网络 (ARNAI)，用于减轻术后X光片中的植入物相关伪影。在包含植入物的91张X光片上，加入ARNAI后，L4-L5节段Cobb角误差从15.6-16.2度降至4.7度，平均误差降低70%，分割Dice系数和测量一致性也显著提升。",
+      "insight_zh": "在分析含有强干扰物的图像时，预先使用生成式方法（如自编码和修复）进行伪影去除，可以显著提升下游分割和定量测量的准确性。"
+    },
+    {
+      "key": "arxiv:2609.01773",
+      "title": "From Open Standards to Openly Governed: Standards-Setting Organizations as Stewards of Openness amid Platformization and Digital Sovereignty",
+      "title_zh": "从开放标准到开放治理：平台化与数字主权背景下的标准制定组织作为开放性管理者",
+      "url": "https://arxiv.org/abs/2609.01773v1",
+      "doi": "",
+      "arxiv_id": "2609.01773",
+      "authors": [
+        "Begoña G. Otero",
+        "Stefaan G. Verhulst"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-01T18:43:37+00:00",
+      "score": 60,
+      "reason": "探讨开放地理空间标准的治理问题，涉及地理信息政策和基础设施，与GIS专业背景相关，但非技术核心。",
+      "tags": [
+        "开放标准",
+        "地理空间标准",
+        "数据治理",
+        "平台化",
+        "数字主权"
+      ],
+      "abstract": "Open geospatial standards let data, services, and systems work across platforms. But openness is not just a property of specifications. It also depends on the institutions that produce them and the infrastructures in which they operate. Standards may function as digital public goods and, once embedded in public systems, as digital public infrastructure. Those roles can diverge. This paper asks when open geospatial standards remain public infrastructure rather than becoming channels of enclosure. It makes two claims. First, standards-setting governance matters: institutional design shapes whether open specifications retain their public-good character. Second, geospatial coordination is shifting toward proprietary location stacks, APIs, and cloud platforms, where roadmaps, pricing, and service terms increasingly set the rules. Sovereign-cloud and sovereign-AI strategies relocate this power rather than remove it. These dynamics reinforce each other. Weak governance pushes coordination toward the implementation layer; platformization, in turn, reduces incentives to invest in open standardization, weakening portability and FAIR reuse. Standards bodies cannot reverse platformization, but they still control the specification layer. Where legal safeguards are limited, internal governance becomes key. We frame this through four dimensions: Purpose, Principles, People and Processes, and Policies and Practices (the 4Ps framework) while stressing the limit that internal governance cannot solve alone an external structural problem.",
+      "summary_zh": "论文探讨开放地理空间标准在平台化和数字主权背景下的公共属性问题，提出标准制定组织的内部治理（4Ps框架）是维护其公共产品特性的关键，但无法单独解决外部结构性问题。",
+      "insight_zh": "地理空间标准的开放性不仅取决于规范本身，还受制于制定机构的治理模式和外部平台化趋势，内部治理是维护其公共属性的重要但非充分条件。"
+    },
+    {
+      "key": "arxiv:2609.00544",
+      "title": "GenONet: A Generative operator Network for High-Resolution Precipitation Nowcasting",
+      "title_zh": "GenONet：用于高分辨率降水临近预报的生成算子网络",
+      "url": "https://arxiv.org/abs/2609.00544v1",
+      "doi": "",
+      "arxiv_id": "2609.00544",
+      "authors": [
+        "Mohammad Kian Golkar",
+        "Luciano Alves de Oliveira",
+        "Mohammad Khanjani"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-01T01:30:33+00:00",
+      "score": 60,
+      "reason": "论文涉及深度学习与物理信息融合，与多源数据融合方向相关，但应用领域为气象，与城市更新和遥感变化检测的直接关联较弱。",
+      "tags": [
+        "深度学习",
+        "降水临近预报",
+        "生成对抗网络",
+        "物理信息"
+      ],
+      "abstract": "High-resolution precipitation nowcasting is critical for reducing the impacts of severe weather but remains difficult because of rapid storm evolution. Deep learning models have shown great promise for this task, but their predictive skill often deteriorates over longer forecast horizons. This leads to increasingly blurry forecasts that fail to capture the complex, non-linear evolution of storm systems. In order to address these limitations, we introduce Spatio-Temporal U-DeepONet (GenONet), a novel architecture for long-range precipitation forecasting up to 3 hours, specifically designed to produce sharp and physically consistent results. GenONet's architecture pioneers the use of a Deep Operator Network (DeepONet) as a generator within a Generative Adversarial Network (GAN) framework for this task. The DeepONet learns the continuous-time dynamics of precipitation, ensuring stability over long forecast horizons. Adversial training against a spatio-temporal discriminator compels the model to produce sharp, coherent forecasts, while a physics-informed loss regularizer, derived from the Moisture Conservation Equation, improves physical plausibility in our ablation setting. Quantitative evaluations show that our model achieves consistently higher scores on most of the metrics, especially for highintensity events and at longer lead times. Qualitatively, GenONet produces structurally coherent forecasts that maintain their integrity, whereas baseline models degrade into indistinct patterns. Finally, an ablation study confirms the benefit of this physics-informed loss, highlighting the strength of combining operator learning with adversarial training.",
+      "summary_zh": "提出GenONet架构，将DeepONet作为GAN中的生成器，用于长达3小时的高分辨率降水预报。通过对抗训练和基于水分守恒方程的物理信息损失正则化，生成清晰且物理上一致的预报结果。",
+      "insight_zh": "将算子学习与对抗训练结合并引入物理约束，为生成高分辨率、物理一致的时空预测提供了有效范式，或可借鉴于遥感影像的超分辨率重建。"
+    },
+    {
+      "key": "arxiv:2608.20218",
+      "title": "Electronic Navigational Chart Change Classification",
+      "title_zh": "电子海图变化分类",
+      "url": "https://arxiv.org/abs/2608.20218v2",
+      "doi": "10.1145/3841645.3843380",
+      "arxiv_id": "2608.20218",
+      "authors": [
+        "Jacob Arndt",
+        "Abhishek Potnis",
+        "Alexandre Sorokine"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-20T16:14:02+00:00",
+      "score": 60,
+      "reason": "论文关注电子海图（一种地理空间矢量数据）变化的自动分类，涉及空间上下文编码和机器学习应用，与用户的地理空间数据挖掘兴趣相关，但应用领域较为特定。",
+      "tags": [
+        "电子海图",
+        "变化分类",
+        "空间上下文",
+        "机器学习",
+        "地理空间数据"
+      ],
+      "abstract": "Electronic Navigational Charts (ENCs) are geospatial vector datasets used in maritime navigation systems that represent hydrographic and navigational information such as depths, navigational aids, traffic schemes, and hazards. A major challenge for hydrographic offices is determining whether a given chart change poses a critical or non-critical risk to maritime safety. Existing workflows rely heavily on manual review and verification, which is labor-intensive, scales poorly with the volume of incoming chart updates, and introduces inter-analyst inconsistencies. To address this challenge, we propose a method for automated classification of ENC changes. We establish a baseline encoding scheme to translate complex vector data changes into a structured tabular format for classification models. The two crucial components of the encoding scheme include a spatial context encoder to enrich the change representations with surrounding geographic features, and an ENC attribute encoder to represent nuanced attribute-value descriptions of the modified objects. We evaluate the proposed approach across two distinct operational datasets, comprising 1,308 chart pairs containing over 100,000 individual chart modifications. Tuned gradient-boosted trees leveraging the proposed encoding schemes achieve accuracies of 90% and 94% on the two datasets, yielding a 5-7% improvement over default hyperparameterized models trained on encodings without spatial context and attribute embeddings. These results demonstrate the viability of integrating machine learning into operational geospatial pipelines to improve ENC maintenance and enhance maritime safety. Finally, our experiments demonstrate the effectiveness of simple location and spatial aggregation methods, providing a foundation for evaluating more sophisticated spatial representation learning techniques for this application.",
+      "summary_zh": "本文提出一种自动分类电子海图（ENC）变化的方法，以判断图表变化对海上安全构成关键还是非关键风险。作者建立了一个基线编码方案，将复杂的矢量数据变化转换为结构化的表格格式，供分类模型使用。该编码方案的两个关键组成部分包括：空间上下文编码器，用于用周围地理特征丰富变化表示；以及ENC属性编码器，用于表示修改对象的细微属性值描述。在两个不同的运营数据集上评估了该方法，包含1,308对图表和超过100,000个单独的图表修改。利用所提出编码方案的梯度提升树在两个数据集上分别达到90%和94%的准确率，比默认超参数模型提高了5-7%。",
+      "insight_zh": "将空间上下文和属性信息编码为结构化特征，可以有效地将机器学习集成到地理空间数据维护流程中，实现变化风险自动分类。"
+    },
+    {
+      "key": "arxiv:2609.12533",
+      "title": "Earth-Agent-Pro: Towards Real-World Full-Chain Earth Observation with Agents",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2609.12533",
+      "doi": "",
+      "arxiv_id": "2609.12533",
+      "authors": [
+        "Zhutao Lv",
+        "Chenhao Dang",
+        "Yi Feng",
+        "Yanpei Gong",
+        "Xiaolei Wang",
+        "Junyan Ye",
+        "Conghui He",
+        "Weijia Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-11T07:41:36+00:00",
+      "score": 55,
+      "reason": "关键词命中：Remote Sensing、Large Language Model",
+      "tags": [
+        "Remote Sensing",
+        "Large Language Model"
+      ],
+      "abstract": "Real-world Earth observation (EO) agents must translate high-level scientific questions into executable workflows to acquire observations, prepare data, perform domain computations, and derive conclusions from runtime evidence. Existing EO agents typically start from supplied observations, while benchmarks typically provide prepared inputs or candidate answers, leaving full-chain open-world EO execution largely untested. We present Earth-Agent-Pro, an execution-adaptive Plan-and-Execute framework using expert-authored skills to constrain planning and runtime tool use. Workflow-centered structured memory records planned steps, accepted evidence, and their dependencies, enabling repair of only the affected workflow suffix when runtime evidence invalidates a step. Separate large language model adapters use sequence-level supervised fine-tuning for planner workflow composition and node-level group relative policy optimization with locally verifiable rewards for executor tool-argument grounding. Earth-Bench-Pro instantiates 248 expert-curated task cores as 744 questions under three matched regimes. Its 248 Open-World Execution questions span RGB imagery, spectral observations, and remote sensing products, pairing high-level requests with runtime data requirements, executable trajectories, and open-ended answers grounded in execution evidence. With a shared GPT-5 backbone, Earth-Agent-Pro achieves 66.13% LLM-as-Judge accuracy, exceeding ReAct by 20.95 points in this metric and 24.44 points in Tools-In-Order. Joint adapter tuning raises Qwen3.5-9B LLM-as-Judge accuracy from 38.31% to 50.00%, an 11.69-point gain over the untuned configuration. Planning-only evaluation and execution with the reference workflow show that the adapters improve workflow composition and argument grounding, respectively. Code and datasets will be released soon.",
+      "summary_zh": "",
+      "insight_zh": ""
+    }
+  ]
+}
