@@ -20,7 +20,7 @@
         "Qinzheng Wang",
         "Can Li",
         "Yiming Bie",
-        "Wanjng Ma"
+        "Wanjing Ma"
       ],
       "categories": [
         "cs.AI",
@@ -2784,6 +2784,38 @@
       "insight_zh": "该研究对理解深度学习模型如何组织特征提供了新视角，可能启发GIS中针对特定地理现象或区域进行局部特征学习的新方法。"
     },
     {
+      "key": "arxiv:2609.10629",
+      "title": "QuantumQUBO Agent: Automating Quadratic Unconstrained Binary Optimization (QUBO) Formulation Generation from Natural Language",
+      "title_zh": "从自然语言自动生成二次无约束二值优化（QUBO）公式",
+      "url": "https://arxiv.org/abs/2609.10629",
+      "arxiv_id": "2609.10629",
+      "authors": [
+        "Niloy Kumar Mondal",
+        "Md Rizwan Parvez"
+      ],
+      "categories": [
+        "cs.AI",
+        "Computer",
+        "Science,",
+        "and",
+        "Machine",
+        "Learning",
+        "(AI4Research)"
+      ],
+      "published": "2026-09-09T05:44:59+00:00",
+      "score": 30,
+      "reason": "该文提出从自然语言自动生成QUBO公式的端到端多智能体框架，并构建QUBOBench基准。其多智能体协作、迭代自修复与自然语言到形式化建模的思路，与研究中LLM和多智能体方向高度契合，但应用域为组合优化而非地理空间。",
+      "tags": [
+        "多智能体框架",
+        "QUBO",
+        "自然语言到优化建模",
+        "基准测试",
+        "组合优化"
+      ],
+      "summary_zh": "二次无约束二值优化（QUBO）是组合优化的核心形式，因其与量子、混合量子-经典及量子启发式求解器的兼容性而受到关注。然而，将自然语言问题描述转化为正确的QUBO公式仍然困难，需要识别二值变量、约束、目标函数、惩罚项及合适的惩罚权重，过程耗时且依赖大量领域专业知识。为应对这一挑战，本文提出一个端到端多智能体框架，可从自然语言问题描述自动生成QUBO公式，并支持结构化或非结构化测试用例。为评估性能，作者还提出QUBOBench，一个包含12个应用领域、100个组合优化问题的基准，问题取自同行评审文献、竞赛与经典NP难问题。实验结果显示该框架在QUBOBench上达到68%准确率，比直接单次调用基线高出22%。进一步分析表明迭代自修复是性能提升最重要的组成部分。数据与代码已开源。",
+      "insight_zh": "该工作展示了多智能体框架在自然语言到形式化优化建模中的可行性，其“生成-验证-自修复”循环与基准构建方法可迁移至地理空间优化问题（如选址、路径规划）的自动建模，但论文本身未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2606.28335",
       "title": "LLM-Ideoplasticity: Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution",
       "title_zh": "LLM意识形态可塑性：将LLM政治行为中的意识形态可塑性测量为上下文条件分布",
@@ -3107,38 +3139,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法与结论。",
       "insight_zh": "从标题推测，该文可能提出一种在基础模型中融入语言演化与时间感知的方法，属于时序感知基础模型方向；摘要缺失，无法确认其是否可应用于时空数据挖掘或地理文本分析。"
-    },
-    {
-      "key": "arxiv:2609.10629",
-      "title": "Automating Quadratic Unconstrained Binary Optimization (QUBO) Formulation Generation from Natural Language",
-      "title_zh": "从自然语言自动生成二次无约束二值优化（QUBO）公式",
-      "url": "https://arxiv.org/abs/2609.10629",
-      "arxiv_id": "2609.10629",
-      "authors": [
-        "Niloy Kumar Mondal",
-        "Md Rizwan Parvez"
-      ],
-      "categories": [
-        "cs.AI",
-        "Computer",
-        "Science,",
-        "and",
-        "Machine",
-        "Learning",
-        "(AI4Research)"
-      ],
-      "published": "2026-09-09T05:44:59+00:00",
-      "score": 30,
-      "reason": "该文提出从自然语言自动生成QUBO公式的端到端多智能体框架，并构建QUBOBench基准。其多智能体协作、迭代自修复与自然语言到形式化建模的思路，与研究中LLM和多智能体方向高度契合，但应用域为组合优化而非地理空间。",
-      "tags": [
-        "多智能体框架",
-        "QUBO",
-        "自然语言到优化建模",
-        "基准测试",
-        "组合优化"
-      ],
-      "summary_zh": "二次无约束二值优化（QUBO）是组合优化的核心形式，因其与量子、混合量子-经典及量子启发式求解器的兼容性而受到关注。然而，将自然语言问题描述转化为正确的QUBO公式仍然困难，需要识别二值变量、约束、目标函数、惩罚项及合适的惩罚权重，过程耗时且依赖大量领域专业知识。为应对这一挑战，本文提出一个端到端多智能体框架，可从自然语言问题描述自动生成QUBO公式，并支持结构化或非结构化测试用例。为评估性能，作者还提出QUBOBench，一个包含12个应用领域、100个组合优化问题的基准，问题取自同行评审文献、竞赛与经典NP难问题。实验结果显示该框架在QUBOBench上达到68%准确率，比直接单次调用基线高出22%。进一步分析表明迭代自修复是性能提升最重要的组成部分。数据与代码已开源。",
-      "insight_zh": "该工作展示了多智能体框架在自然语言到形式化优化建模中的可行性，其“生成-验证-自修复”循环与基准构建方法可迁移至地理空间优化问题（如选址、路径规划）的自动建模，但论文本身未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.08338",
@@ -3814,8 +3814,8 @@
       "arxiv_id": "2609.10647",
       "authors": [
         "Georgia Argyrou",
-        "Aymen Bahrouny",
-        "Hedi Fendriy",
+        "Aymen Bahroun",
+        "Hedi Fendri",
         "Alexander Jung"
       ],
       "categories": [
@@ -4025,7 +4025,8 @@
       ],
       "categories": [
         "cs.AI",
-        "https://github.com/minghaoguo20/Mr-LHDR-eval"
+        "https://github.com/minghaoguo20/Mr-LHDR-eval",
+        "https://github.com/minghaoguo20/Mr-LHDR"
       ],
       "published": "2026-09-10T09:47:44+00:00",
       "score": 22,
@@ -13682,7 +13683,7 @@
         "Panwen Hu",
         "Xin Li",
         "Fan Yang",
-        "Guangxi Liu",
+        "Guangyi Liu",
         "Xiaodan Liang"
       ],
       "categories": [
