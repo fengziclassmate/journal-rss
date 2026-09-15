@@ -28,24 +28,24 @@
     "arxiv:2609.12938",
     "arxiv:2609.12639",
     "arxiv:2609.12497",
+    "arxiv:2609.12345",
     "arxiv:2609.12127",
     "arxiv:2609.11957",
-    "arxiv:2607.04694",
-    "arxiv:2608.10906"
+    "arxiv:2607.04694"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:484",
-    "deepseek": "partial:0/160;failed-batches:16"
+    "deepseek": "partial:30/160;failed-batches:13"
   },
-  "updated_at": "2026-09-15T00:51:19.285211+00:00",
+  "updated_at": "2026-09-15T12:06:52.130753+00:00",
   "analysis_stats": {
     "total": 484,
-    "analyzed": 324,
+    "analyzed": 354,
     "high": 7,
     "medium": 13,
-    "low": 18,
-    "below_threshold": 286
+    "low": 19,
+    "below_threshold": 315
   },
   "papers": [
     {
@@ -803,6 +803,33 @@
       "insight_zh": "该文的频率选择性等变融合思路，或可启发遥感多源影像（如光学与SAR/热红外）融合中的结构保持与细节增强，但其评测限于通用融合与检测基准，未涉及地理空间场景。"
     },
     {
+      "key": "arxiv:2609.12345",
+      "title": "ParaRecover: A Process-Level Benchmark for Error Localization and Recovery in Parallel Tool-Use Agents",
+      "title_zh": "ParaRecover：并行工具使用智能体中错误定位与恢复的过程级基准",
+      "url": "https://arxiv.org/abs/2609.12345",
+      "doi": "",
+      "arxiv_id": "2609.12345",
+      "authors": [
+        "Bowen Guan",
+        "Zhentao Yin",
+        "Yanming Shen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-11T02:09:33+00:00",
+      "score": 45,
+      "reason": "该文提出并行工具使用智能体的错误定位与恢复基准，直接涉及多智能体系统与LLM智能体评估，与LLM和多智能体研究方向高度相关，但不涉及地理空间应用。",
+      "tags": [
+        "多智能体",
+        "工具使用",
+        "错误恢复",
+        "基准测试",
+        "LLM智能体"
+      ],
+      "abstract": "Existing agent benchmarks mainly evaluate final task success or tool-call correctness, providing limited insight into whether agents can reliably diagnose and recover from intermediate execution failures. This limitation becomes particularly critical in multi-turn parallel tool-use scenarios, where errors may propagate across dependent branches and trigger cascading failures. We introduce ParaRecover, a process-level benchmark for evaluating error localization and recovery in multi-turn parallel tool-use agents. Built upon a fine-grained taxonomy of 14 error types covering planning dependencies, tool selection, and argument matching, the benchmark comprises 10,626 instances spanning two difficulty levels. To enable finegrained, process-oriented evaluation, we further propose the SDE rubric, which measures structural integrity, diagnostic reasoning, and evolutionary strategy during agent execution.Experiments across more than ten mainstream LLMs reveal that even state-of-the-art models still struggle with multi-turn error propagation,implicit tool-use failures, and precise replanning. Moreover, we demonstrate that the SDE rubric provides effective supervision signals for improving agents' reflective recovery capabilities. Our data and code are available at https://github.com/gbw206/ParaRecover.",
+      "summary_zh": "现有智能体基准主要评估最终任务成功或工具调用正确性，对智能体能否可靠诊断和恢复中间执行失败提供的洞察有限。这一局限在多轮并行工具使用场景中尤为关键，因为错误可能在依赖分支间传播并触发级联失败。作者提出ParaRecover，一个用于评估多轮并行工具使用智能体中错误定位与恢复的过程级基准。基于涵盖规划依赖、工具选择和参数匹配的14种错误类型的细粒度分类法，该基准包含10,626个实例，跨越两个难度级别。为实现细粒度、面向过程的评估，作者进一步提出SDE评分标准，衡量智能体执行过程中的结构完整性、诊断推理和演化策略。在十多个主流LLM上的实验表明，即使最先进的模型在多轮错误传播、隐式工具使用失败和精确重规划方面仍存在困难。此外，作者证明SDE评分标准为提升智能体的反思性恢复能力提供了有效的监督信号。数据和代码见https://github.com/gbw206/ParaRecover。",
+      "insight_zh": "该基准为多智能体系统的鲁棒性评估提供了过程级视角，其错误分类法和评估框架可能对地理空间智能体工作流的可靠性研究有借鉴意义，但文中未涉及地理空间场景。"
+    },
+    {
       "key": "arxiv:2609.12127",
       "title": "Local Edits, Global Ripples: Replay-Informed Policy Adaptation for Workflow Synthesis",
       "title_zh": "局部编辑，全局涟漪：用于工作流合成的回放知情策略适应",
@@ -892,33 +919,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "论文研究视觉语言模型在标准化原始异构医学数据上的能力，旨在解决数据处理的第一步挑战。",
       "insight_zh": "视觉语言模型可能为异构数据标准化提供通用方案，其方法或可迁移至地理空间多源数据预处理。"
-    },
-    {
-      "key": "arxiv:2608.10906",
-      "title": "GitSkills: A Dataset of Agent Skills on GitHub",
-      "title_zh": "GitSkills：一个GitHub上的智能体技能数据集",
-      "url": "https://arxiv.org/abs/2608.10906",
-      "doi": "",
-      "arxiv_id": "2608.10906",
-      "authors": [
-        "Giuseppe Destefanis",
-        "Daniel Graziotin",
-        "Matteo Vaccargiu",
-        "Marco Ortu"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该论文构建GitHub上智能体技能数据集，与研究中LLM和多智能体方向相关，但未涉及地理空间或城市应用。",
-      "tags": [
-        "智能体技能",
-        "数据集",
-        "GitHub",
-        "LLM智能体"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，从标题看该工作构建了一个来自GitHub的智能体技能数据集，可能用于分析或训练智能体的技能。",
-      "insight_zh": "该数据集可能为智能体能力建模与技能复用提供资源，若其中包含地理空间分析相关技能，或可间接支持地理空间智能体的构建，但需进一步确认数据内容。"
     }
   ]
 }
