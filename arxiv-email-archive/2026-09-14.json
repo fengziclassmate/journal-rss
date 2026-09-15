@@ -29,23 +29,23 @@
     "arxiv:2609.12639",
     "arxiv:2609.12497",
     "arxiv:2609.12345",
+    "arxiv:2609.12320",
     "arxiv:2609.12127",
-    "arxiv:2609.11957",
-    "arxiv:2607.04694"
+    "arxiv:2609.11957"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:484",
-    "deepseek": "partial:30/160;failed-batches:13"
+    "deepseek": "partial:10/130;failed-batches:12"
   },
-  "updated_at": "2026-09-15T12:06:52.130753+00:00",
+  "updated_at": "2026-09-15T17:18:58.020133+00:00",
   "analysis_stats": {
     "total": 484,
-    "analyzed": 354,
+    "analyzed": 364,
     "high": 7,
     "medium": 13,
-    "low": 19,
-    "below_threshold": 315
+    "low": 20,
+    "below_threshold": 324
   },
   "papers": [
     {
@@ -830,6 +830,40 @@
       "insight_zh": "该基准为多智能体系统的鲁棒性评估提供了过程级视角，其错误分类法和评估框架可能对地理空间智能体工作流的可靠性研究有借鉴意义，但文中未涉及地理空间场景。"
     },
     {
+      "key": "arxiv:2609.12320",
+      "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
+      "title_zh": "AIM：面向多智能体多用户LLM系统的隐私感知互操作记忆框架",
+      "url": "https://arxiv.org/abs/2609.12320",
+      "doi": "",
+      "arxiv_id": "2609.12320",
+      "authors": [
+        "Zachary Johnson",
+        "Nigel Boachie Kumankumah",
+        "Somya Chatterjee",
+        "Tejas Sathyamurthi",
+        "Min Chen",
+        "Xinyi Alice Li",
+        "Xiao Wang",
+        "Emily Morgan Gelchie",
+        "Jessica Lin",
+        "Sadid A. Hasan",
+        "Sulaiman Vesal"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-11T01:00:09+00:00",
+      "score": 45,
+      "reason": "该论文提出AIM，一个面向多智能体多用户LLM系统的隐私感知互操作记忆框架，直接涉及LLM和多智能体研究方向，与GIS博士研究中的LLM和多智能体方向高度相关，但不涉及地理空间数据或城市更新应用。",
+      "tags": [
+        "多智能体",
+        "LLM记忆",
+        "隐私保护",
+        "多用户系统"
+      ],
+      "abstract": "Traditional large language models (LLMs) are scoped to individual user sessions, limiting their knowledge to a single conversation and preventing them from learning user preferences that evolve over time. Existing agentic memory systems address this limitation but generally operate at the individual-user level, restricting the public knowledge that could be shared across users to improve downstream responses. We introduce AIM (Agentic Interoperable Memory), a unified, privacy-aware memory framework that enables multi-agent, multi-user LLM systems to persistently manage private and shared memory. AIM dynamically classifies information as private, scoped to one user and inaccessible to others, or public, accessible to all users. It enforces index-level access controls so that private memories are retrievable only by their owner, protecting sensitive data while allowing beneficial shared knowledge to improve coordination and consistency. We also introduce MUMBench (Multi-User Memory Benchmark), a dataset of multi-user interactions containing private and shareable information across four domains. To our knowledge, MUMBench is the first public dataset designed to evaluate multiple memory operations, including retrieval, creation, update, and deletion, in a multi-user environment. Across three independent runs on MUMBench, AIM achieves 96.0% visibility classification accuracy, 58.8% strict operation accuracy, and 70.5% state-aware operation accuracy.",
+      "summary_zh": "该研究提出AIM（Agentic Interoperable Memory），一个统一的、隐私感知的记忆框架，使多智能体、多用户LLM系统能够持久管理私有和共享记忆。AIM动态地将信息分类为私有（限于单个用户且他人不可访问）或公共（所有用户可访问），并实施索引级访问控制，使私有记忆仅能由其所有者检索。作者还提出MUMBench（多用户记忆基准），一个包含四个领域私有和可共享信息的多用户交互数据集，据作者所知这是首个用于评估多用户环境中多种记忆操作（包括检索、创建、更新和删除）的公开数据集。在MUMBench上的三次独立运行中，AIM实现了96.0%的可见性分类准确率、58.8%的严格操作准确率和70.5%的状态感知操作准确率。",
+      "insight_zh": "该框架通过索引级访问控制区分私有与共享记忆，为多智能体协作中的信息共享与隐私保护提供了机制设计，其多用户记忆操作基准也可为地理空间智能中多智能体协作场景的记忆管理评估提供参考，但论文未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.12127",
       "title": "Local Edits, Global Ripples: Replay-Informed Policy Adaptation for Workflow Synthesis",
       "title_zh": "局部编辑，全局涟漪：用于工作流合成的回放知情策略适应",
@@ -887,38 +921,6 @@
       "abstract": "An LLM agent acts on the world by emitting actions: shell commands to run, edits to apply. A wrong action does not always fail loudly; it can fail silently, producing a plausible but incorrect effect that raises no error. We argue that a cheap deterministic check, run before an action takes effect, is an effective and underused form of agent oversight, and we study it across two action modalities in one framework. The idea is to fix an action's correct effect by construction, before any executor runs, so that silent failure is measured directly and the verifier may abstain rather than guess. For shell commands, a static verifier over 9930 commands and 482 tools catches 95.8% of invalid commands at a 10.0% false-positive rate. Its syntax and binary checks are oracle-exact, giving zero false positives while catching half of all errors; the flag check is bounded only by help-text coverage and accounts for every false positive. For code edits, a benchmark of 640 edits over 224 files isolating the apply step exposes a sharp split. Content-anchored formats such as search/replace and diff fail cleanly, whereas location-anchored formats fail silently: line numbers corrupt 99.1% of files under a one-line shift, and function-name edits hit the wrong function 12.7% of the time. In both settings a refuse-when-unsure policy turns silent failures into recoverable ones at a tunable cost in applicability: selective grounding reaches 0.958 recall at 7.0% false positives, and an anchor-and-verify applier records one silent misapplication in 8320 trials (0.01%). We release both benchmarks, the verifiers, and the guards.",
       "summary_zh": "LLM智能体通过发出动作（如运行shell命令、应用编辑）来作用于世界。错误的动作并不总是大声失败；它可能静默失败，产生看似合理但错误的效果而不引发错误。作者认为，在动作生效前运行廉价的确定性检查是一种有效但未被充分利用的智能体监督形式，并在一个框架中跨两种动作模态进行研究。其思路是在任何执行器运行之前通过构造固定动作的正确效果，从而直接测量静默失败，且验证器可以弃权而非猜测。对于shell命令，一个静态验证器在9930条命令和482个工具上以10.0%的假阳性率捕获95.8%的无效命令。其语法和二进制检查是预言精确的，在捕获一半错误的同时实现零假阳性；标志检查仅受帮助文本覆盖范围限制，并解释了所有假阳性。对于代码编辑，一个包含224个文件上640次编辑的基准测试隔离了应用步骤，暴露出明显的分化。内容锚定格式（如搜索/替换和diff）干净地失败，而位置锚定格式则静默失败：行号在单行偏移下损坏99.1%的文件，函数名编辑有12.7%的概率命中错误函数。在两种设置中，不确定时拒绝的策略将静默失败转化为可恢复失败，代价是可适用性的可调成本：选择性接地达到0.958召回率和7.0%假阳性，锚定并验证的应用器在8320次试验中仅记录一次静默误应用（0.01%）。作者发布了两个基准、验证器和防护措施。",
       "insight_zh": "该研究为LLM智能体在GIS工作流中的可靠部署提供了动作前验证思路，可能减少空间分析自动化中的静默错误，但需针对地理空间操作（如坐标变换、空间查询）进行适配。"
-    },
-    {
-      "key": "arxiv:2607.04694",
-      "title": "Solve the Missing First Step: Can VLMs Standardize Raw Heterogeneous Medical Data?",
-      "title_zh": "解决缺失的第一步：视觉语言模型能否标准化原始异构医学数据？",
-      "url": "https://arxiv.org/abs/2607.04694",
-      "doi": "",
-      "arxiv_id": "2607.04694",
-      "authors": [
-        "Xin Chen",
-        "Dongliang Xu",
-        "Cunhao Zhu",
-        "Xudong Luo",
-        "Haoyang Lyu",
-        "Xiaoxiao Sun",
-        "Serena Yeung-Levy",
-        "Yue Yao"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该文探讨用视觉语言模型标准化异构医学数据，涉及多源数据融合与LLM应用，与GIS中多源数据标准化有间接关联，但领域差异较大。",
-      "tags": [
-        "视觉语言模型",
-        "医学数据标准化",
-        "异构数据",
-        "多模态",
-        "数据融合"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "论文研究视觉语言模型在标准化原始异构医学数据上的能力，旨在解决数据处理的第一步挑战。",
-      "insight_zh": "视觉语言模型可能为异构数据标准化提供通用方案，其方法或可迁移至地理空间多源数据预处理。"
     }
   ]
 }
