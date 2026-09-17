@@ -114,11 +114,13 @@ class FeedLanguageTests(unittest.TestCase):
             {'sustainability.xml', 'sustainability-current-issue.xml'},
         )
         self.assertEqual(feeds['sustainability.xml']['from_date'], '2026-06-01')
+        self.assertEqual(feeds['sustainability.xml']['max_items'], 900)
         self.assertNotIn('current_issue_only', feeds['sustainability.xml'])
         self.assertEqual(
             feeds['sustainability-current-issue.xml']['current_issue_only'],
             'true',
         )
+        self.assertEqual(feeds['sustainability-current-issue.xml']['max_items'], 900)
 
     def test_every_custom_journal_has_an_official_feed_for_priority_deduplication(self):
         self.assertEqual(
