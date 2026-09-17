@@ -17,6 +17,7 @@
     "arxiv:2511.02831",
     "arxiv:2609.17317",
     "arxiv:2609.17039",
+    "arxiv:2609.15404",
     "arxiv:2609.15992",
     "arxiv:2601.18493",
     "arxiv:2605.29879",
@@ -30,22 +31,21 @@
     "arxiv:2609.16919",
     "arxiv:2609.16672",
     "arxiv:2609.16627",
-    "arxiv:2609.16486",
-    "arxiv:2609.16270"
+    "arxiv:2609.16486"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:554",
-    "deepseek": "partial:29/199;failed-batches:17"
+    "deepseek": "partial:30/170;failed-batches:14"
   },
-  "updated_at": "2026-09-17T09:05:11.600141+00:00",
+  "updated_at": "2026-09-17T09:30:19.582962+00:00",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 384,
+    "analyzed": 414,
     "high": 7,
-    "medium": 14,
-    "low": 30,
-    "below_threshold": 333
+    "medium": 15,
+    "low": 33,
+    "below_threshold": 359
   },
   "papers": [
     {
@@ -493,6 +493,32 @@
       "insight_zh": "该工作提示，在三维场景重建中引入视频扩散模型的时间对应先验，可作为几何正则化的补充信号；其双向协同细化思路或可迁移至城市三维建模与遥感变化检测中的多时相几何一致性约束，但摘要未给出与地理空间数据的直接验证。"
     },
     {
+      "key": "arxiv:2609.15404",
+      "title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+      "title_zh": "谁教哪个词元？面向科学推理的验证器门控多专家在线策略蒸馏",
+      "url": "https://arxiv.org/abs/2609.15404",
+      "doi": "",
+      "arxiv_id": "2609.15404",
+      "authors": [
+        "Xun Xu",
+        "Zaixi Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-14T11:34:22+00:00",
+      "score": 62,
+      "reason": "该论文研究多教师在线策略蒸馏与验证器门控机制，属于LLM与多智能体/多专家协同训练方向，与研究者关注的LLM和多智能体主题相关，但不涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "知识蒸馏",
+        "强化学习",
+        "科学推理"
+      ],
+      "abstract": "Multi-teacher on-policy distillation (OPD) is becoming the standard way to integrate specialist capabilities into one model: train experts with RL, then distill them into the student on its own rollouts. Existing recipes assign supervision at the sequence level - each prompt goes to one domain teacher and every token receives the same weight - which implicitly assumes that a teacher is uniformly useful across a response. We find instead that useful teacher signal is sparse and heterogeneous along a reasoning trajectory, which raises a finer question: who should teach which token? Verifier-Gated Multi-Expert On-Policy Distillation (VG-OPD) answers it by verification: the counterfactual gain of an expert on a specific answer criterion licenses that expert to teach, its disagreement with the student localizes the supervision, and criterion importance sets its weight; the gated KL enters GRPO as an additive token-level advantage. Instantiated for scientific reasoning with RL-trained capability experts, VG-OPD attains the best overall performance on seven benchmarks for 4B and 8B students, ranking first on five at both scales, with the largest gains on knowledge-intensive scientific reasoning tasks. Further analysis shows that the gains come from localizing verified supervision rather than from adding teachers or distillation loss: misplacing the same supervision budget is the single most damaging change, and indiscriminate distillation drags RL below its own floor where gated distillation lifts it.",
+      "summary_zh": "多教师在线策略蒸馏（OPD）正成为将专家能力整合进单一模型的标准做法：先用强化学习训练专家，再在学生的自身轨迹上将其蒸馏给学生。现有方法在序列层面分配监督——每个提示交给一个领域教师，每个词元获得相同权重——这隐含假设教师在整个回答中均匀有用。作者发现，有用的教师信号在推理轨迹上是稀疏且异质的，由此提出更细的问题：谁应该教哪个词元？验证器门控多专家在线策略蒸馏（VG-OPD）通过验证来回答：某专家在特定答案标准上的反事实增益赋予该专家教学许可，其与学生的分歧定位监督位置，标准重要性决定其权重；门控KL作为词元级附加优势进入GRPO。在科学推理场景中以RL训练的能力专家实例化后，VG-OPD在4B和8B学生的七个基准上取得最佳整体表现，两个规模上均在五个基准排名第一，在知识密集型科学推理任务上增益最大。进一步分析表明，增益来自定位经过验证的监督，而非增加教师或蒸馏损失：在相同监督预算下错置监督是破坏性最大的改动，不加区分的蒸馏会使RL低于其自身下限，而门控蒸馏则能提升它。",
+      "insight_zh": "该工作提示：在多专家/多智能体协同中，监督信号的稀疏性与异质性值得显式建模，验证机制可用于决定“谁在何处提供监督”，这一思路或可迁移到多源地理空间数据融合中的专家权重分配问题，但论文本身未涉及地理场景。"
+    },
+    {
       "key": "arxiv:2609.15992",
       "title": "Optimal Model Activation Policies for Inference Networks of Large Language Models",
       "title_zh": "大型语言模型推理网络的最优模型激活策略",
@@ -878,32 +904,6 @@
       "abstract": "Rapid advancements in vision-language models have propelled Referring Remote Sensing Image Segmentation (RRSIS) to the forefront of Earth observation. However, practical deployments suffer severe performance degradation under a coupled dual-drift paradigm: visual domain drift from cross-spatial-resolution mismatches and spectral variations, alongside textual logic drift from unconstrained, variable user-input granularities. To mitigate these bottlenecks, this paper establishes the first cross-domain RRSIS benchmark, designated as the Vaihingen-Potsdam Referring (VPRef) dataset, comprising 46,972 language-image-annotation triplets organized into a three-tier linguistic hierarchy. Building upon this benchmark, we develop a tailored parameter-efficient domain adaptation baseline anchored on the Segment Anything Model (SAM3) via Low-Rank Adaptation (LoRA). Our framework counteracts visual distribution discrepancies through pseudo-label-driven self-training and addresses textual logic drift via random multi-granularity text prompt mixing. Crucially, the distribution of empirical metrics across ablative variants suggests a potential decoupling between cross-modal semantic robustification and visual domain alignment, demonstrating that linguistic variance drives fine-grained semantic invariance while pseudo-label propagation governs macro-scale spatial grid alignment. Extensive benchmarks demonstrate the proposed framework achieves superior cross-domain segmentation boundaries while modifying merely 1.08\\% of the foundational parameter footprint, establishing a robust baseline for future multi-modal remote sensing domain adaptation research. The dataset and code will be available at https://github.com/quanweiliu/VPRef.",
       "summary_zh": "",
       "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16270",
-      "title": "Cheap Talk Stabilizes Strategic Interaction in LLM Agents",
-      "title_zh": "廉价磋商稳定了LLM智能体的策略性交互",
-      "url": "https://arxiv.org/abs/2609.16270",
-      "doi": "",
-      "arxiv_id": "2609.16270",
-      "authors": [
-        "Nunzio Lor\\`e",
-        "Hongan Zhu",
-        "Babak Heydari"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-14T19:32:48+00:00",
-      "score": 55,
-      "reason": "该文研究LLM智能体在多轮博弈中的策略稳定性与预沟通机制，与用户关注的多智能体、LLM方向直接相关，但未涉及地理空间场景。",
-      "tags": [
-        "LLM智能体",
-        "多智能体交互",
-        "廉价磋商",
-        "策略稳定性"
-      ],
-      "abstract": "Large language models are increasingly deployed as interacting agents, making the persistence of their action policies across repeated interaction critical for reliable multi-agent operation. We investigate whether and how agent-generated, non-binding pre-play communication (\"cheap talk\") increases such persistence in four open-weight 7-9B-parameter LLMs. Our experiments span four repeated two-player games -- Prisoner's Dilemma, Snowdrift, Stag Hunt, and Harmony -- with incentive structures ranging from strategic conflict to alignment, each presented in six contexts. We observe unstable trajectories in all four games, although their prevalence and magnitude depend strongly on model and context. Across models, games, and contexts, cheap talk is predominantly stabilizing, with five corrected reversals concentrated in social or team framings; effects vary substantially by model and context. Controlled current-message interventions identify two separable output-level channels in Qwen: reduced action uncertainty and less between-round drift in action probabilities. Matched history-by-message counterfactuals further show that recent partner behavior conditions how mutual-benefit versus self-prioritizing language affects policy persistence. Finally, in Prisoner's Dilemma, we identify in Qwen and Falcon a history-balanced policy-content direction in late transformer layers; projecting out this direction increases realized switching during closed-loop play, demonstrating that complete trajectories are causally sensitive to this component. Together, these findings show that cheap talk can make individual trajectories more persistent across diverse incentive structures, while revealing that the magnitude and mechanisms of stabilization are model- and history-dependent.",
-      "summary_zh": "大语言模型越来越多地被部署为交互式智能体，使其动作策略在重复交互中的持续性对可靠的多智能体运行至关重要。本文研究了智能体生成的、非约束性的预沟通（“廉价磋商”）是否以及如何提升四个开放权重7-9B参数LLM中这种持续性。实验涵盖四个重复双人博弈——囚徒困境、雪堆博弈、猎鹿博弈与和谐博弈——其激励结构从策略冲突到利益一致，每个博弈呈现六种情境。作者在四个博弈中均观察到不稳定的轨迹，尽管其普遍性和幅度强烈依赖于模型和情境。跨模型、博弈和情境来看，廉价磋商主要起稳定作用，其中五次经校正的反转集中在社交或团队框架中；效应因模型和情境差异显著。受控的当前消息干预在Qwen中识别出两个可分离的输出层通道：动作不确定性降低和轮次间动作概率漂移减少。匹配的历史-消息反事实进一步表明，近期伙伴行为会调节互利语言与自利优先语言对策略持续性的影响。最后，在囚徒困境中，作者在Qwen和Falcon的后期Transformer层中识别出一个历史平衡的策略-内容方向；将该方向投影剔除会增加闭环博弈中的实际切换，表明完整轨迹对该成分具有因果敏感性。总体而言，这些发现表明廉价磋商可使个体轨迹在多样激励结构下更具持续性，同时揭示稳定化的幅度与机制依赖于模型和历史。",
-      "insight_zh": "该研究为多智能体LLM系统的交互稳定性提供了机制性证据，其“预沟通稳定策略”的发现或可启发城市模拟、协同规划等地理空间多智能体场景中的通信协议设计。"
     }
   ]
 }
