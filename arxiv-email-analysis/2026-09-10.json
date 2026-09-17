@@ -2,11 +2,11 @@
   "date": "2026-09-10",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 425,
+    "analyzed": 426,
     "high": 13,
     "medium": 24,
     "low": 35,
-    "below_threshold": 353
+    "below_threshold": 354
   },
   "papers": [
     {
@@ -10749,6 +10749,57 @@
       "insight_zh": "该框架或可为地理空间机器学习任务（如遥感分类、城市建模）的训练样本量规划提供参考，但其假设与地理数据的空间依赖性之间的兼容性尚不明确。"
     },
     {
+      "key": "arxiv:2609.09696",
+      "title": "When Auditors Fabricate: Batch-Size Degradation and Confident Hallucination in LLM Detection of Planted Document Contamination",
+      "title_zh": "当审计者编造：LLM 检测植入式文档污染中的批大小退化与自信幻觉",
+      "url": "https://arxiv.org/abs/2609.09696",
+      "arxiv_id": "2609.09696",
+      "authors": [
+        "Karan Parekh",
+        "Sanjana Pendyala Ravinder",
+        "Sana Mhapsekar",
+        "Medina Maloku"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "doi:10.5281/zenodo.21939088",
+        "not",
+        "independently",
+        "observed,",
+        "adds",
+        "confidence",
+        "intervals",
+        "and",
+        "significance",
+        "tests,",
+        "states",
+        "the",
+        "batch",
+        "size",
+        "retrieval",
+        "confound",
+        "explicitly.",
+        "Preprint",
+        "also",
+        "deposited",
+        "at",
+        "Zenodo,",
+        "doi:10.5281/zenodo.21939087"
+      ],
+      "published": "2026-09-09T04:29:45+00:00",
+      "score": 10,
+      "reason": "该论文研究 LLM 作为文档审计者检测植入污染时的批大小退化与自信幻觉，与研究中 LLM 可靠性方向相关，但不涉及地理空间或城市应用。",
+      "tags": [
+        "LLM审计",
+        "幻觉",
+        "文档污染检测",
+        "批大小退化"
+      ],
+      "summary_zh": "大型语言模型越来越多地被提议作为文档质量的自动审计者，但其作为植入错误检测器的可靠性尚缺乏充分刻画。作者构建了一个受污染语料库，包含 150 篇横跨供应链管理和医学研究的学术论文，注入 450 个已知污染物，分为三类：排版损坏、语义反转和荒谬的脱离语境插入。随后评估 Google Gemini 3.0 Pro 在三种规模递增的提示机制（单文档、小批量、大批量）下，从 60 篇文档中恢复 180 个污染物答案键子集的能力。检测在小规模下保持，随后崩溃：单文档恢复率 50%，小批量 60%，大批量仅 2.8%。大规模下的失败模式不是弃权而是编造。模型没有报告处理不完整，而是给出自信的发现，包括自己发明的污染物，如“心灵感应松鼠”和“量子动力烤面包机”等荒谬内容，它们模仿植入材料的风格但不出现在任何文档中。检测还因污染类型而异：荒谬插入在完成的评估中恢复率为 75%，而语义反转和排版损坏各仅 50%。最可能在现实中出现的、看似合理的污染，恰恰是最常被漏掉的。作者得出结论：LLM 文档审计的退化不是优雅的而是欺骗性的，并概述此类系统所需的约束框架：限制批大小、直接内容注入，以及对每个报告的发现与源文本进行机械验证。",
+      "insight_zh": "该研究揭示，LLM 文档审计在批处理规模增大时会出现检测崩溃并转向自信编造，而非如实报告不完整处理；看似合理的污染类型最易被漏检。这提示在依赖 LLM 进行数据质量检查或标注验证时，应限制批大小并对每条发现进行机械核验，但论文未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.09300",
       "title": "Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding",
       "title_zh": "Video-MOPD：面向视频理解的多教师在线策略蒸馏",
@@ -12367,52 +12418,6 @@
         "cs.CY"
       ],
       "published": "2026-09-09T08:43:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09696",
-      "title": "When Auditors Fabricate: Batch-Size Degradation and Confident Hallucination in LLM Detection of Planted Document Contamination",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09696",
-      "arxiv_id": "2609.09696",
-      "authors": [
-        "Karan Parekh",
-        "Sanjana Pendyala Ravinder",
-        "Sana Mhapsekar",
-        "Medina Maloku"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "doi:10.5281/zenodo.21939088",
-        "not",
-        "independently",
-        "observed,",
-        "adds",
-        "confidence",
-        "intervals",
-        "and",
-        "significance",
-        "tests,",
-        "states",
-        "the",
-        "batch",
-        "size",
-        "retrieval",
-        "confound",
-        "explicitly.",
-        "Preprint",
-        "also",
-        "deposited",
-        "at",
-        "Zenodo,",
-        "doi:10.5281/zenodo.21939087"
-      ],
-      "published": "2026-09-09T04:29:45+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 831,
+    "analyzed": 842,
     "high": 8,
     "medium": 38,
     "low": 59,
-    "below_threshold": 726
+    "below_threshold": 737
   },
   "papers": [
     {
@@ -16820,6 +16820,33 @@
       "insight_zh": "该研究强调合规监控数据与评估基准的效度差异，提示在城市更新与地理空间智能中，利用运营监控数据评估模型时需明确评估契约，避免将监控数据误用为比较基准。"
     },
     {
+      "key": "arxiv:2609.14899",
+      "title": "What Makes a 3D Scene Editable? A Factorized Benchmark of Fidelity, Locality, Consistency, and Preservation",
+      "title_zh": "什么使3D场景可编辑？保真度、局部性、一致性与保持性的因子化基准",
+      "url": "https://arxiv.org/abs/2609.14899",
+      "arxiv_id": "2609.14899",
+      "authors": [
+        "Sariah Patro",
+        "Arjun Mehra",
+        "Nikhil Bhatia"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-14T01:38:38+00:00",
+      "score": 12,
+      "reason": "该文提出3D场景编辑的多维评测基准，属于三维视觉与神经渲染方向，与城市更新、时空数据挖掘、遥感变化检测等研究主题关联较弱，仅在三维场景理解层面有间接参考价值。",
+      "tags": [
+        "3D场景编辑",
+        "基准评测",
+        "神经渲染",
+        "NeRF",
+        "3D高斯泼溅"
+      ],
+      "summary_zh": "神经3D场景编辑通常仅以语义对齐作为评价标准，但一个看似合理的结果可能改变无关内容或在不同视角间不一致。作者提出EditBench3D，一个与表示无关的基准，将编辑视为受控的信息替换，评估四个互补属性：指令保真度、空间局部性、跨视角一致性以及非目标内容的保持性。该协议结合了可见性感知的3D目标支撑、配对描述、留出相机以及覆盖外观、材质、几何和对象级变化的五类编辑。作者在240个场景-编辑对上评估了八种代表性编辑器，涵盖NeRF、3D高斯泼溅、混合和代理方法。研究表明，语义保真度与其他编辑属性仅弱相关，且没有单一方法在所有维度上最优。显式高斯编辑器提供较强的整体平衡，而直接代理操作提供最保守的编辑，但牺牲了开放式保真度。这些发现支持将可编辑性报告为多目标画像而非单一语义分数。",
+      "insight_zh": "该基准提示：三维场景编辑的评价不应只看语义对齐，而应关注局部性与一致性等多目标权衡；这一思路对城市三维建模与更新中的编辑质量评估具有方法学借鉴意义，但文中并未涉及城市或地理场景。"
+    },
+    {
       "key": "arxiv:2609.13997",
       "title": "Unlocking the Unsolvable: Teacher-Guided Curriculum for Data-Efficient RLVR",
       "title_zh": "解锁不可解问题：面向数据高效 RLVR 的教师引导课程",
@@ -17530,6 +17557,44 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究细节。根据标题推断，该工作通过LLM-Microscope工具分析标点符号在Transformer模型上下文记忆机制中所扮演的角色。",
       "insight_zh": "该研究关注Transformer内部机制的可解释性，特别是标点符号对上下文记忆的影响。对于利用LLM处理地理文本或空间描述的研究，理解此类底层机制可能有助于优化提示设计，但摘要缺失，无法确认具体发现。"
+    },
+    {
+      "key": "arxiv:2609.15855",
+      "title": "K-Bench: a clinically calibrated benchmark for evaluating large language models in high-risk mental health conversations",
+      "title_zh": "K-Bench：用于评估高风险心理健康对话中大语言模型的临床校准基准",
+      "url": "https://arxiv.org/abs/2609.15855",
+      "arxiv_id": "2609.15855",
+      "authors": [
+        "Laura M. Vowels",
+        "Matthew J. Vowels",
+        "Shivali Sharma",
+        "Apoorv Jha",
+        "Rehnuma Choudhury",
+        "Wasseem El Sarraj",
+        "Rachel Francois-Walcott",
+        "Aruba Hussain",
+        "Sarah Ingram",
+        "Angela Loulopoulou",
+        "Adva Segal",
+        "Elena Volkova"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-14T16:49:23+00:00",
+      "score": 12,
+      "reason": "该文构建高风险心理健康对话中LLM的临床校准基准，属于LLM安全评测，与研究中LLM方向有间接关联，但不涉及时空数据或城市应用。",
+      "tags": [
+        "LLM",
+        "心理健康",
+        "基准评测",
+        "高风险对话",
+        "临床校准"
+      ],
+      "summary_zh": "人们越来越多地使用大语言模型（LLM）获取心理健康支持，但其在演变中的高风险对话中的安全性仍缺乏充分刻画。作者开发了K-Bench，一个经临床医生校准的受保护基准，评估来自14家提供商33个基座模型的125种模型配置，覆盖固定队列的200个多轮情景，涉及自杀、自残、家庭暴力、物质滥用及无风险呈现。合成患者对话与真实人机对话存在显著分布重叠。一个冻结的GPT-4o评判者在来自151份临床医生评分记录的6,751个合格条目比较中，与临床医生共识达到94.2%的完全一致率。领先模型将强支持性对话与超过95的综合风险得分相结合，而风险探索则暴露出较低性能配置间的显著差异。治疗性提示产生配置特定的增益，集中于较弱模型，而提升推理未带来平均改善。K-Bench将更广的临床覆盖与配置规模比较相结合，并配有持续更新的公开排行榜，其操作测试材料受保护以防直接优化。排行榜见www.k-bench.ai。",
+      "insight_zh": "该文表明，在高风险心理健康场景中，模型表现差异显著，且提升推理并不必然改善安全性；其基准构建与临床校准方法对LLM安全评测有参考价值，但原文未涉及地理空间或城市应用。"
     },
     {
       "key": "arxiv:2609.15207",
@@ -19605,6 +19670,38 @@
       "insight_zh": "摘要缺失，无法确认其方法细节与实验设置；从标题看属于具身导航方向，其记忆与验证机制或对地理空间智能体决策有间接启发，但论文本身未涉及地理空间应用。"
     },
     {
+      "key": "arxiv:2609.14773",
+      "title": "Pull: Lazy Materialization of Working Memory for Stateful LLM Conversations",
+      "title_zh": "Pull：面向有状态LLM对话的工作记忆惰性物化",
+      "url": "https://arxiv.org/abs/2609.14773",
+      "arxiv_id": "2609.14773",
+      "authors": [
+        "Jiangang Chen"
+      ],
+      "categories": [
+        "cs.CL",
+        "Zenodo",
+        "(DOI:",
+        "10.5281/zenodo.21984705).",
+        "Code",
+        "and",
+        "reproduction",
+        "scripts:",
+        "https://github.com/wulun811/kongmen-pull"
+      ],
+      "published": "2026-09-13T20:26:13+00:00",
+      "score": 10,
+      "reason": "该文提出面向有状态LLM对话的惰性工作记忆物化方法，属于LLM上下文管理方向，与LLM及多智能体研究有间接关联，但与GIS和遥感无关。",
+      "tags": [
+        "LLM对话",
+        "工作记忆",
+        "上下文管理",
+        "会话路由"
+      ],
+      "summary_zh": "随着LLM对话增长到数百轮，全上下文注入会产生O(N²)的累积token成本，而有损摘要或硬截断会不可逆地丢弃历史状态。作者提出Pull，一种会话路由器，通过本地确定性Purifier（零LLM调用、毫秒级延迟）维护可寻址的元数据目录。在查询时，LLM仅惰性物化其所需的轮次；未物化的轮次保持可访问但处于折叠状态。与不可逆压缩不同，Pull的物化是可逆的；后续查询可以展开任何折叠的轮次。在LoCoEval（128个对话，12,780轮）上，Pull在单跳任务中将每次查询的上下文token（第二阶段）减少75.1%，质量相当（Δ = −0.002，不显著），在多跳任务中减少72.0%且无质量损失（Δ = +0.017）。一个受控路由基准（7,831个查询×10种方法）表明，实体生命周期追踪在经验上是距离无关路由的前提。在BEAM 1M（14个对话，263个问题）上，Pull相较截断基线将F1提升+55.2%。",
+      "insight_zh": "该工作表明可逆的惰性物化可在保持质量的同时大幅降低长对话的上下文成本，且实体生命周期追踪是路由的关键；这对多智能体LLM系统的记忆管理有参考价值，但未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2506.07459",
       "title": "ProteinZero: Self-Improving Protein Generation via Online Reinforcement Learning",
       "title_zh": "ProteinZero：通过在线强化学习实现自改进的蛋白质生成",
@@ -21016,6 +21113,31 @@
       ],
       "summary_zh": "针对联邦学习、拆分学习和U型拆分学习中传输全部视觉令牌成本高且可能泄露隐私的问题，提出QPriv-VL——一种问题引导、隐私感知的令牌剪枝框架，在传输前依据任务效用与隐私敏感度剪枝视觉令牌。其核心是轻量级动态阈值预测器（DTP），在一次前向中同时估计样本特定的剪枝比例与令牌级保留掩码，结合由视觉块与池化问题嵌入的跨模态相似度得到的问题相关性，以及来自冻结DINOv2特征的敏感度信号，从而在无需敏感度标签的情况下抑制潜在敏感区域并保留对回答问题有用的图像块。在GQA、OK-VQA、VQAv2、SLAKE、VQA-RAD和PathVQA上针对FSHA、FORA、iDLG及属性推断型成员推断攻击进行评估：DTP在传输令牌显著更少的情况下达到或超过固定比例剪枝；在VQA-RAD上将成员推断攻击成功率从0.99降至0.76–0.79，降低FSHA与FORA重建PSNR，并在约40%原始视觉令牌预算下保持有竞争力的VQA准确率；敏感度排除比为1.20±0.18，表明优先移除隐私敏感图像块，可解释性分析显示保留策略随问题语义自适应调整。",
       "insight_zh": "该工作说明在跨模态传输中，以任务相关性结合敏感度信号进行令牌级筛选，可在效率与隐私之间取得折中。其“任务效用—隐私敏感度”联合建模思路对多源地理空间数据在分布式场景下的传输与脱敏具有方法启示，但论文验证限于医学与通用VQA数据集，未涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.14863",
+      "title": "Domain Generalization for Smartphone-Based Human Activity Recognition: A Systematic Analysis of Components and Interactions",
+      "title_zh": "智能手机人类活动识别的域泛化：组件与交互的系统性分析",
+      "url": "https://arxiv.org/abs/2609.14863",
+      "arxiv_id": "2609.14863",
+      "authors": [
+        "Ot\\'avio Oliveira Napoli",
+        "Edson Borin"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-14T00:30:08+00:00",
+      "score": 10,
+      "reason": "该文系统分析智能手机人类活动识别的域泛化，涉及传感器数据与分布偏移，与时空数据挖掘和城市感知有间接关联，但不涉及地理空间分析或城市更新。",
+      "tags": [
+        "人类活动识别",
+        "域泛化",
+        "智能手机传感",
+        "基准评测"
+      ],
+      "summary_zh": "基于智能手机的人类活动识别（HAR）模型在用户、设备、传感器位置、环境和采集协议变化引起的分布偏移下常出现性能退化。域泛化（DG）通过仅从源域学习且不访问目标数据来解决该问题。现有DG方法涵盖训练目标、表示初始化和架构修改，但这些组件通常被孤立评估，尽管它们作用于学习流程的不同阶段。作者提出一个大规模受控的智能手机HAR域泛化基准，包含超过410,000次实验，覆盖四种模型架构、十三种训练目标（包括经验风险最小化ERM）、五种初始化策略、四种架构配置以及两种偏移场景：跨数据集和跨位置。结果表明，单个DG组件带来的增益有限且高度依赖条件。替代目标很少能稳定优于ERM，自监督初始化在特定设置中有帮助，而架构修改（尤其是动态域泛化）提供了最清晰的独立改进。然而，联合配置常优于其单个组件，并表现出互补甚至有时超加性的交互，尽管增益仍依赖模型和偏移类型。类别级分析显示，最强配置主要改善困难且对偏移敏感的决策边界。最后，oracle检查点分析揭示了大量未实现的性能：源验证选择在跨数据集和跨位置设置中分别仅恢复了可用oracle增益的53%和26%。总体而言，有效的HAR域泛化……（摘要在此处截断）。",
+      "insight_zh": "该基准显示域泛化组件的联合配置常优于单独使用，且模型选择会损失大量潜在性能；这对依赖多源传感器数据的城市感知与时空建模具有方法学参考价值，但研究本身聚焦于HAR而非地理空间任务。"
     },
     {
       "key": "arxiv:2609.15187",
@@ -22613,6 +22735,33 @@
       "insight_zh": "该工作的轻量级检测器设计与参数高效策略，可能对遥感变化检测中的边缘部署有间接参考价值，但其量子门控机制与地理空间应用场景关联有限。"
     },
     {
+      "key": "arxiv:2609.14778",
+      "title": "Privacy Preserving Gossip Learning",
+      "title_zh": "隐私保护的Gossip学习",
+      "url": "https://arxiv.org/abs/2609.14778",
+      "arxiv_id": "2609.14778",
+      "authors": [
+        "Erkan Bayram",
+        "Mohamed-Ali Belabbas",
+        "Tamer Ba\\c{s}ar"
+      ],
+      "categories": [
+        "cs.LG",
+        "math.OC"
+      ],
+      "published": "2026-09-13T20:37:26+00:00",
+      "score": 8,
+      "reason": "该文提出隐私保护的gossip学习算法，涉及去中心化多智能体协作与差分隐私，与多智能体研究有方法学关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "去中心化学习",
+        "差分隐私",
+        "gossip协议",
+        "多智能体"
+      ],
+      "summary_zh": "作者提出一种去中心化的隐私保护学习算法，其中每个智能体持有单个私有样本和一个共享模型。样本按顺序学习，每次更新必须在保护私有数据的同时保持先前已学习样本的端点映射。这赋予每个智能体三种角色：（i）更新模型参数的学习者，（ii）其样本在当前迭代被学习的教师，以及（iii）其样本已被学习的受保护智能体。作者基于“无遗忘调优”（TwF）方法来保持先前学习的映射，并表明当受保护智能体集合包含另一个具有相同标签的样本时，TwF为学习者提供不可区分性保证。对于教师，作者构建一个极小极大最优控制问题，将差分隐私噪声建模为最坏情况扰动，以在保持梯度同等隐私水平的同时防止性能损失。对于受保护智能体，作者在本地计算投影并使用私有push-sum gossip协议进行聚合。作者证明了去中心化gossip算法和TwF分布式投影的几何收敛性。",
+      "insight_zh": "该工作将差分隐私与去中心化gossip学习结合，并给出收敛性证明；其多智能体协作与隐私保护思路对分布式地理空间数据学习有抽象借鉴意义，但研究本身未涉及地理场景。"
+    },
+    {
       "key": "arxiv:2609.13251",
       "title": "Preserving Subject-Clarity in Image Outpainting with Multiscale Wavelet Supervision",
       "title_zh": "通过多尺度小波监督保持图像外绘中的主体清晰度",
@@ -23865,6 +24014,36 @@
       "insight_zh": "摘要缺失，无法推断其技术架构或性能；该工作展示了智能体在科学文献到可执行代码转化中的潜力，可能与地理空间工作流自动化有类比价值。"
     },
     {
+      "key": "arxiv:2609.14872",
+      "title": "AgentKV: Phase-Aware KV Eviction for Agentic LLMs",
+      "title_zh": "AgentKV：面向智能体LLM的阶段感知KV淘汰",
+      "url": "https://arxiv.org/abs/2609.14872",
+      "arxiv_id": "2609.14872",
+      "authors": [
+        "Taowen Tony Liu",
+        "Jeffrey T. H. Wong",
+        "Can Xiao",
+        "Bowen Yang",
+        "Hao Mark Chen",
+        "Yiren Zhao"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-09-14T00:42:53+00:00",
+      "score": 8,
+      "reason": "该文关注智能体LLM推理中的KV缓存淘汰策略，属于LLM系统优化方向，与多智能体研究有间接关联，但与GIS、城市更新、遥感等主题基本无关。",
+      "tags": [
+        "LLM智能体",
+        "KV缓存",
+        "推理服务",
+        "多智能体系统"
+      ],
+      "summary_zh": "智能体服务消耗的token可比聊天机器人工作负载高出数个数量级，对KV缓存容量和解码时带宽造成压力。多数KV淘汰方法基于最近token的代表性查询对缓存键打分，假设未来注意力与近期注意力相似。作者表明智能体生成违反这一假设：未来查询是think、act、tool等阶段的混合，主角度分析显示这些成分占据可测量的不同查询子空间，因此基于近期性的代表会系统性低估即将到来的阶段所需的键。作者提出AGENTKV，为每个阶段维护一个小型查询缓冲区，并针对其并集对缓存键打分。作者进一步在持久多轮服务路径中实现AGENTKV，跨轮携带压缩的KV状态并在线压缩保留的KV页。在两个模型、六个任务领域和三种KV预算下，AGENTKV相较R-KV平均提升任务得分5.5分，相较Tri-attention提升5.3分。相对于上游全KV的SGLang，AGENTKV将输出token吞吐提升最多1.80倍。代码见https://github.com/LiuTaowen-Tony/agentkv。",
+      "insight_zh": "该工作表明智能体推理的注意力分布具有阶段异质性，按阶段维护查询代表可提升缓存效率；这对多智能体LLM系统的工程实现有参考价值，但未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2506.16285",
       "title": "Advancing Automated Speaking Assessment Leveraging Multifaceted Relevance and Grammar Information",
       "title_zh": "利用多面相关性与语法信息推进自动口语评估",
@@ -24067,6 +24246,34 @@
       "insight_zh": "该文为LLM推理效率与架构研究，未涉及地理空间数据或应用；若用于地理空间智能体可间接相关，但摘要未提及。"
     },
     {
+      "key": "arxiv:2609.14770",
+      "title": "How broad is that claim? Mapping Generalisation in NLP Research",
+      "title_zh": "该主张有多宽泛？映射NLP研究中的泛化",
+      "url": "https://arxiv.org/abs/2609.14770",
+      "arxiv_id": "2609.14770",
+      "authors": [
+        "Chenxin Diao",
+        "Nataliya Stepanova",
+        "Emily Allaway"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "https://github.com/cx-diao/nlpgen"
+      ],
+      "published": "2026-09-13T20:06:36+00:00",
+      "score": 6,
+      "reason": "该文构建NLP研究中泛化主张的分类体系与自动识别框架，属于科学计量与文本挖掘方向，与时空数据挖掘有非常间接的方法论关联。",
+      "tags": [
+        "科学主张分析",
+        "泛化表述",
+        "NLP文献计量",
+        "LLM分类"
+      ],
+      "summary_zh": "泛化在科学传播中很常见，尽管其语义模糊。需要一种自动化方法来识别并按泛化程度对主张进行分类，以帮助发现对泛化的过度依赖以及科学发现的可能误述。作者引入NLPGenX，一个科学领域泛化的综合分类体系，根据主张的普遍性程度和文本中的表述框架进行标注。作者用LLM驱动的框架NLPGenA将该分类体系操作化，自动将科学文章中的句子分为5个不同的泛化类别。作者通过人工标注者验证该框架，并用其构建一个大规模NLP论文数据集，按普遍性标注，并附带对冲和模糊描述符的辅助标签（NLPGens）。作者使用NLPGens分析多个会议和子领域中NLP论文的泛化使用情况，并考察其与引用数、对冲和模糊描述符的关联。",
+      "insight_zh": "该文提供了一套识别科学泛化主张的自动化框架，可用于文献计量分析；其文本分类思路对地理空间文献挖掘有抽象借鉴意义，但研究本身聚焦NLP领域。"
+    },
+    {
       "key": "arxiv:2609.15609",
       "title": "Diversified and Perceptible Counterfactual Examples Leveraging Expert Knowledge",
       "title_zh": "利用专家知识的多样化与可感知反事实示例",
@@ -24262,27 +24469,6 @@
       ],
       "summary_zh": "由于摘要内容缺失，无法提供具体摘要。根据标题推断，该工作探讨了学习玻色高斯态所需的最优资源条件。",
       "insight_zh": "该研究属于量子信息理论，与地理空间智能无关联，不建议纳入GIS文献库。"
-    },
-    {
-      "key": "arxiv:2609.14899",
-      "title": "What Makes a 3D Scene Editable? A Factorized Benchmark of Fidelity, Locality, Consistency, and Preservation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14899",
-      "arxiv_id": "2609.14899",
-      "authors": [
-        "Sariah Patro",
-        "Arjun Mehra",
-        "Nikhil Bhatia"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-14T01:38:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2606.25987",
@@ -25546,27 +25732,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.14861",
-      "title": "Semantic Fibers and Cross-Gram Interference: A Calculus of Safety Drift in Overcomplete Representations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14861",
-      "arxiv_id": "2609.14861",
-      "authors": [
-        "Mohammed Ahnouch",
-        "Lotfi Elaachack"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-14T00:23:32+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14557",
       "title": "Selecting k Paths with the Minimum Longest Path Length in the Stochastic Semi-Bandit Setting",
       "title_zh": "随机半强盗设置下选择最长路径长度最小的k条路径",
@@ -25830,40 +25995,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.14759",
-      "title": "Refusal Reads Only a Slice of What the Model Knows: Harm-Keyed Routing and Its Exceptions Across Model Families",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14759",
-      "arxiv_id": "2609.14759",
-      "authors": [
-        "Orion Reblitz-Richardson"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "Interpretability",
-        "Instruments",
-        "Before",
-        "Trusting",
-        "Their",
-        "Verdicts\"",
-        "(submitted",
-        "concurrently).",
-        "Per-unit",
-        "arrays:",
-        "https://doi.org/10.5281/zenodo.22731361.",
-        "Code:",
-        "https://github.com/deepsteer/deepsteer"
-      ],
-      "published": "2026-09-13T19:49:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15123",
       "title": "Refinement-based Flow Policy Optimization",
       "title_zh": "基于细化的流策略优化",
@@ -26111,33 +26242,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.14773",
-      "title": "Pull: Lazy Materialization of Working Memory for Stateful LLM Conversations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14773",
-      "arxiv_id": "2609.14773",
-      "authors": [
-        "Jiangang Chen"
-      ],
-      "categories": [
-        "cs.CL",
-        "Zenodo",
-        "(DOI:",
-        "10.5281/zenodo.21984705).",
-        "Code",
-        "and",
-        "reproduction",
-        "scripts:",
-        "https://github.com/wulun811/kongmen-pull"
-      ],
-      "published": "2026-09-13T20:26:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15522",
       "title": "Psychosis involves a deficit of information compression in connected speech",
       "title_zh": "精神病涉及连贯言语中信息压缩的缺陷",
@@ -26223,28 +26327,6 @@
       ],
       "summary_zh": "论文指出记录级差分隐私在个性化联邦学习中存在结构性错配：客户端特定变化是低维的，而训练反复释放高维更新。作者通过一次性释放私有客户端上下文并将重复适应限制在固定系数空间来解决该错配。除降维外，因子化生成器诱导自适应优化几何以重塑噪声更新，受控消融显示其私有训练增益大部分由径向演化保留。为进一步降低通信成本，作者通过变长量化直接实现系数更新的高斯机制，具有有限期望码长，使量化误差本身作为所需隐私扰动而非额外失真。在MNIST和CIFAR-10上，该设计在不同隐私预算和客户端异质性下匹配或优于全模型私有适应，同时在CIFAR-10上ε=16时将受保护上行链路减少2.67倍，且未来客户端准确率相当。",
       "insight_zh": "该工作将隐私扰动与量化误差统一，并利用低维客户端上下文降低通信；其隐私对齐与紧凑适应思路可能对分布式地理空间数据学习有参考价值，但论文未涉及地理空间应用。"
-    },
-    {
-      "key": "arxiv:2609.14778",
-      "title": "Privacy Preserving Gossip Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14778",
-      "arxiv_id": "2609.14778",
-      "authors": [
-        "Erkan Bayram",
-        "Mohamed-Ali Belabbas",
-        "Tamer Ba\\c{s}ar"
-      ],
-      "categories": [
-        "cs.LG",
-        "math.OC"
-      ],
-      "published": "2026-09-13T20:37:26+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.15643",
@@ -27610,38 +27692,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.15855",
-      "title": "K-Bench: a clinically calibrated benchmark for evaluating large language models in high-risk mental health conversations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.15855",
-      "arxiv_id": "2609.15855",
-      "authors": [
-        "Laura M. Vowels",
-        "Matthew J. Vowels",
-        "Shivali Sharma",
-        "Apoorv Jha",
-        "Rehnuma Choudhury",
-        "Wasseem El Sarraj",
-        "Rachel Francois-Walcott",
-        "Aruba Hussain",
-        "Sarah Ingram",
-        "Angela Loulopoulou",
-        "Adva Segal",
-        "Elena Volkova"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-14T16:49:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13730",
       "title": "JumpStart Your Policy Learning with Lessons from 160,000 Training Runs",
       "title_zh": "",
@@ -27699,7 +27749,7 @@
     {
       "key": "arxiv:2609.14870",
       "title": "Interpolation Is Not Invariance: Pair Count Is Not Coverage in Transformation Audits",
-      "title_zh": "",
+      "title_zh": "插值不等于不变性：变换审计中配对计数不等于覆盖度",
       "url": "https://arxiv.org/abs/2609.14870",
       "arxiv_id": "2609.14870",
       "authors": [
@@ -27721,10 +27771,15 @@
       ],
       "published": "2026-09-14T00:40:14+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文讨论变换审计中配对计数与覆盖度的理论区分，属于机器学习理论与评测方法方向，与地理空间智能仅有非常间接的方法论关联。",
+      "tags": [
+        "变换审计",
+        "不变性",
+        "表示学习理论",
+        "覆盖度度量"
+      ],
+      "summary_zh": "统计等价对是报告变换审计覆盖度的常见方式，但它可能显著高估审计所施加的约束：来自同一语义对象的配对是相关的，且完整的轨道图包含代数上冗余的边。作者因此区分四个互补量——边数m、有效对比秩s、总体支撑秩r和图谱间隙η——并刻画它们在审计覆盖度和部署可靠性中的作用。在秩为r的高斯对比模型下，当锚点在ker T中有分量时，恰好存在一个总体不变的校准读取器。当审计秩s < r时，其未观测风险为R⋆/U，其中U服从……（摘要在此处截断）。",
+      "insight_zh": "该文强调审计覆盖度不能简单以配对数量衡量，需考虑秩与谱结构；这一观点对遥感变化检测等任务的评测设计有抽象启示，但摘要截断且未涉及具体地理应用。"
     },
     {
       "key": "arxiv:2606.00755",
@@ -27905,29 +27960,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作可能涉及无线网络中交互式全景场景传输的优化学习方法。",
       "insight_zh": "由于摘要缺失，无法进行实质性推断。从标题看，该研究可能对全景视频传输优化有参考价值，但与GIS博士研究方向关联度低。"
-    },
-    {
-      "key": "arxiv:2609.14770",
-      "title": "How broad is that claim? Mapping Generalisation in NLP Research",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14770",
-      "arxiv_id": "2609.14770",
-      "authors": [
-        "Chenxin Diao",
-        "Nataliya Stepanova",
-        "Emily Allaway"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "https://github.com/cx-diao/nlpgen"
-      ],
-      "published": "2026-09-13T20:06:36+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.13771",
@@ -28335,39 +28367,6 @@
       ],
       "summary_zh": "随着深度学习模型成为现代医疗的基础，GDPR和HIPAA等隐私法规规定的“被遗忘权”要求有效的机器遗忘（MU）以从训练模型中移除敏感患者数据。然而，现有MU技术常难以应对根本性的“隐私-效率-效用”（PEU）三难困境，在数据常呈现严重类别不平衡和长尾分布的医学场景中尤为突出。此类情况下，标准遗忘方法可能因多数类的梯度主导而无法保护关键临床知识，或错误删除诊断罕见病症所必需的特征。为应对这些挑战，我们提出GRIN+，一个面向不平衡医学场景中快速精确数据擦除的新型机器遗忘框架。GRIN+通过分析“遗忘集”和“保留集”的梯度贡献，在参数层面将遗忘特定知识与泛化表征解耦。它引入类别自适应影响评分机制以纠正梯度主导，并采用方向约束更新策略以防止关键临床知识被意外侵蚀。在多个医学数据集（包括皮肤癌ISIC、脑肿瘤MRI和乳腺超声BUSI）上的全面基准测试表明，GRIN+实现了PEU三难困境的最优平衡。实验结果显示，GRIN+在保持高诊断准确率和稳健隐私的同时，相较现有基线显著提升了运行效率。我们开源了GRIN+代码和基准以支持后续研究。",
       "insight_zh": "该文的梯度贡献分析与类别自适应机制在方法论上具有一定通用性，但应用场景为医学隐私保护，与地理空间智能研究无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.14864",
-      "title": "GGUF-Metadata Prediction of Single-Sequence llama.cpp Throughput Across Three Systems",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14864",
-      "arxiv_id": "2609.14864",
-      "authors": [
-        "Xinyu Qiu",
-        "Chuhong Xu",
-        "Bo Su",
-        "Ziyao Chen",
-        "Ruiyang Xu",
-        "Shimeng Dai"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG",
-        "cs.PF",
-        "supplementary",
-        "results",
-        "appendix.",
-        "Submitted",
-        "to",
-        "ICASSP",
-        "2027"
-      ],
-      "published": "2026-09-14T00:31:14+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.13778",
@@ -29265,26 +29264,6 @@
         "cs.LG"
       ],
       "published": "2026-09-11T21:35:04+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.14863",
-      "title": "Domain Generalization for Smartphone-Based Human Activity Recognition: A Systematic Analysis of Components and Interactions",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14863",
-      "arxiv_id": "2609.14863",
-      "authors": [
-        "Ot\\'avio Oliveira Napoli",
-        "Edson Borin"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-14T00:30:08+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -31069,31 +31048,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.14872",
-      "title": "AgentKV: Phase-Aware KV Eviction for Agentic LLMs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14872",
-      "arxiv_id": "2609.14872",
-      "authors": [
-        "Taowen Tony Liu",
-        "Jeffrey T. H. Wong",
-        "Can Xiao",
-        "Bowen Yang",
-        "Hao Mark Chen",
-        "Yiren Zhao"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "published": "2026-09-14T00:42:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13303",
       "title": "Adaptive Conformal Redistribution for Inter-class Transitional Uncertainty in Medical Image Classification",
       "title_zh": "",
@@ -31503,6 +31457,71 @@
       ],
       "summary_zh": "在互联网上检测性别歧视本质上是一项主观任务。VANGUARD团队针对EXIST 2026任务2提出了一种以人为中心的多模态框架，将人类标注者的心理和人口统计特征纳入检测流程。该框架通过交叉注意力架构与特征级线性调制条件化融合五种输入模态。模因文本由Gemma 4提取并进行视觉描述，再通过NLLB-200进行英西自动翻译增强。文本和图像表示由LoRA适配的XLM-RoBERTa和CLIP编码器生成，并与预训练自编码器编码的传感器特征融合。为建模标注者主观性，将子任务2.1构建为标签分布学习问题，优化完整标注者标签分布上的KL散度损失。推理时通过深度多模态网络与基于文体和生理特征训练的SVM进行软投票。最佳提交在子任务2.2软评估下排名29/114，归一化ICM分数在子任务2.1和2.2上均高于基线。",
       "insight_zh": "该研究对标注者主观性的建模方法或可类比于地理空间众包数据中的标注者偏差问题，但论文未涉及地理空间数据或应用。"
+    },
+    {
+      "key": "arxiv:2609.14861",
+      "title": "Semantic Fibers and Cross-Gram Interference: A Calculus of Safety Drift in Overcomplete Representations",
+      "title_zh": "语义纤维与交叉Gram干扰：过完备表示中安全漂移的演算",
+      "url": "https://arxiv.org/abs/2609.14861",
+      "arxiv_id": "2609.14861",
+      "authors": [
+        "Mohammed Ahnouch",
+        "Lotfi Elaachack"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-14T00:23:32+00:00",
+      "score": 4,
+      "reason": "该文从线性代数角度刻画过完备表示中的安全漂移，属于LLM安全与表示理论方向，与地理空间研究无直接关联。",
+      "tags": [
+        "表示学习理论",
+        "安全漂移",
+        "过完备表示",
+        "跨语言安全"
+      ],
+      "summary_zh": "一个已部署的语言模型可能在英语中拒绝有害请求，却遵从其中文忠实翻译，揭示出仅凭输出行为无法可靠刻画的跨语言安全失效。作者通过一个经审计的等价关系形式化该现象，并表明对于给定的商、表示、度量、特征字典、评分头、阈值和对比模型，所产生的安全漂移具有精确的线性代数刻画。具体而言，漂移是纤维内对比的交叉Gram泛函；其最坏容许值是一个支撑函数，而边际不变性由零化子条件刻画。作者引入一种内在校准暴露度量，由杠杆对偶χ²=1/ℓ−1支配，将观测到的漂移分为三种诊断上不同的情形：可通过重校准移除的读取器故障、过于病态而不可靠的精确校正，以及任何仅读取层的干预都无法移除的表示级碰撞。因此，相同的观测暴露可能导致根本不同的补救结论。该框架还扩展到锥值安全头。一个非绑定顺序交换恒等式为线性控制接口提供诊断；其校准状态残差可预测未见状态和目标上一种独特的三控制组合误差，达到中位Spearman相关0.964，而静态交叉Gram基线为0.269。等等……（摘要在此处截断）。",
+      "insight_zh": "该文提出安全漂移的线性代数刻画，区分可重校准故障与表示级碰撞；属于LLM安全理论工作，对地理空间智能无直接应用价值。"
+    },
+    {
+      "key": "arxiv:2609.14759",
+      "title": "Refusal Reads Only a Slice of What the Model Knows: Harm-Keyed Routing and Its Exceptions Across Model Families",
+      "title_zh": "拒绝只读取模型所知的一小部分：跨模型族的危害键路由及其例外",
+      "url": "https://arxiv.org/abs/2609.14759",
+      "arxiv_id": "2609.14759",
+      "authors": [
+        "Orion Reblitz-Richardson"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "Interpretability",
+        "Instruments",
+        "Before",
+        "Trusting",
+        "Their",
+        "Verdicts\"",
+        "(submitted",
+        "concurrently).",
+        "Per-unit",
+        "arrays:",
+        "https://doi.org/10.5281/zenodo.22731361.",
+        "Code:",
+        "https://github.com/deepsteer/deepsteer"
+      ],
+      "published": "2026-09-13T19:49:44+00:00",
+      "score": 4,
+      "reason": "该文研究LLM拒绝行为的因果机制与模型族差异，属于LLM对齐与可解释性方向，与地理空间研究无直接关联。",
+      "tags": [
+        "LLM对齐",
+        "拒绝机制",
+        "可解释性",
+        "模型族比较"
+      ],
+      "summary_zh": "预训练后施加的对齐在可测量的意义上是浅层的：模型残差流中的单一方向可被编辑掉，模型便不再拒绝有害请求。这一事实说明拒绝可被轻易移除，而非拒绝决策原本读取的是什么。作者追问它读取什么，并将其与模型所理解的内容区分开来。在跨越三个模型族的四个开放权重模型中，道德理解是预训练固有的：一个低秩道德子空间在预训练期间结晶，对齐将其旋转一次而不重建它。相比之下，拒绝门是训练后的新建构，仅有微弱的预训练前体，被写入一个狭窄的控制token通道，其中拒绝决策与道德判断决策正交。核心结果是因果性的，来自一个模型OLMo-3。一个嵌套互换秩扫描在匹配请求之间修补道德子空间中逐渐增大的切片，并读取拒绝响应有多少被转移：随着基扩大，道德判断持续读取更多，而拒绝在单一危害方向的水平上趋于平稳，且拒绝约四分之三的因果输入完全位于道德子空间之外。拒绝读取的是危害感知，而非判断在同一批补丁上读取的道德内容。这一图景在不同模型族间并不一致。Llama读取宽泛的道德内容；Qwen读取超出单一危害线索的内容，但在作者的样本量下尚未定论；GPT-OSS读取危害，其拒绝可被其自身推理轨迹论证为任一方向。当拒绝只读取一个低秩切片并绕开模型所知的大部分内容时，一个秩一编辑即可将其移除。扩大拒绝所读取的内容是否也会加深该行为，尚待研究……（摘要在此处截断）。",
+      "insight_zh": "该文揭示拒绝行为仅读取危害感知的低秩切片，且不同模型族机制各异；属于LLM对齐可解释性研究，对地理空间智能无直接应用价值。"
     },
     {
       "key": "arxiv:2607.29491",
@@ -31950,6 +31969,44 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该研究提出名为IntraGuard的委员会侧防御机制，用于应对审稿人将评审任务外包给商业聊天机器人的问题。",
       "insight_zh": "摘要缺失，无法判断其技术路线；该主题更贴近科研管理与AI治理，与城市更新、时空数据挖掘等方向无直接联系。"
+    },
+    {
+      "key": "arxiv:2609.14864",
+      "title": "GGUF-Metadata Prediction of Single-Sequence llama.cpp Throughput Across Three Systems",
+      "title_zh": "基于GGUF元数据的单序列llama.cpp吞吐预测：跨三个系统的研究",
+      "url": "https://arxiv.org/abs/2609.14864",
+      "arxiv_id": "2609.14864",
+      "authors": [
+        "Xinyu Qiu",
+        "Chuhong Xu",
+        "Bo Su",
+        "Ziyao Chen",
+        "Ruiyang Xu",
+        "Shimeng Dai"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.PF",
+        "supplementary",
+        "results",
+        "appendix.",
+        "Submitted",
+        "to",
+        "ICASSP",
+        "2027"
+      ],
+      "published": "2026-09-14T00:31:14+00:00",
+      "score": 3,
+      "reason": "该文研究基于GGUF元数据预测llama.cpp单序列吞吐，属于LLM系统性能建模方向，与GIS及遥感研究无实质关联。",
+      "tags": [
+        "LLM推理性能",
+        "GGUF元数据",
+        "吞吐预测",
+        "系统评测"
+      ],
+      "summary_zh": "作者使用带有量化特定缩放因子的roofline形预测器，在参考模型上拟合，从GGUF元数据预测单序列模型吞吐。评分队列包含来自53个主机-文件配置的318个阶段-深度测量，覆盖两台Apple M4 Max系统和一块NVIDIA RTX 5080。在主机特定的留出集（分别为四、五、二个配置）上，活跃参数解码模型取得13.1%、14.4%和36.1%的平均绝对百分比误差（MAPE），而以总参数计费时为49.4%、55.3%和51.9%。在另外两个系统上拟合的留一主机系数给出11.6%、16.8%和36.0%的测试MAPE。低比特模型阶梯会改变跨运行时栈的排序。P2预填充基线给出18.7%、22.2%和108.2%的测试MAPE。GGUF结构在三个系统上均有帮助，但拟合效率并非普适。",
+      "insight_zh": "该研究表明GGUF元数据可用于吞吐预测，但拟合效率不具跨系统普适性；属于LLM部署工程细节，对地理空间研究无直接价值。"
     },
     {
       "key": "arxiv:2609.13201",
