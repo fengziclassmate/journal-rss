@@ -106,6 +106,20 @@ class FeedLanguageTests(unittest.TestCase):
         self.assertNotIn('current_issue_only', feeds['buildings.xml'])
         self.assertEqual(feeds['buildings-current-issue.xml']['current_issue_only'], 'true')
 
+    def test_sustainability_has_latest_and_current_issue_feeds(self):
+        feeds = {item['output']: item for item in CROSSREF_JOURNALS if item['issn'] == '2071-1050'}
+
+        self.assertEqual(
+            set(feeds),
+            {'sustainability.xml', 'sustainability-current-issue.xml'},
+        )
+        self.assertEqual(feeds['sustainability.xml']['from_date'], '2026-06-01')
+        self.assertNotIn('current_issue_only', feeds['sustainability.xml'])
+        self.assertEqual(
+            feeds['sustainability-current-issue.xml']['current_issue_only'],
+            'true',
+        )
+
     def test_every_custom_journal_has_an_official_feed_for_priority_deduplication(self):
         self.assertEqual(
             {journal['issn'] for journal in CROSSREF_JOURNALS},
