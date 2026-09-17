@@ -231,7 +231,6 @@ CROSSREF_JOURNALS = [
         "feed_title": "Sustainability RSS",
         "date_filter": "created",
         "date_fields": "created,deposited,published-online,published-print,published",
-        "max_items": 900,
     },
     {
         "source": "Earth System Science Data",
@@ -438,7 +437,6 @@ CROSSREF_JOURNALS = [
         "date_filter": "created",
         "date_fields": "created,deposited,published-online,published-print,published",
         "current_issue_only": "true",
-        "max_items": 900,
     },
     {
         "source": "Earth System Science Data Current Issue",

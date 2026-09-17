@@ -43,6 +43,18 @@ const prototype = {_walk: original};
 const undo = installConferenceWalker(prototype);
 prototype._walk.call({baseURI: new URL('https://other.test/feed')});
 assert.equal(forwarded, 1);
+for (const url of [
+  'https://fengziclassmate.github.io/journal-rss/conference-feeds/icml.xml',
+  'https://fengziclassmate.github.io/journal-rss/sustainability.xml',
+]) {
+  const feedRoot = element('rss');
+  prototype._walk.call({
+    baseURI: new URL(url),
+    _walker: walker(feedRoot),
+    contentHandler: {startElement() {}, endElement() {}},
+  });
+}
+assert.equal(forwarded, 1);
 undo();
 assert.equal(prototype._walk, original);
 const modern = {_walk() {}};

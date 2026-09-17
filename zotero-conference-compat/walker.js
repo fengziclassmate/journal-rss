@@ -32,10 +32,13 @@ function installConferenceWalker(prototype) {
   if (typeof original !== "function" || !/this\._walk\s*\(/.test(original.toString())) {
     return () => {};
   }
-  const prefix = "https://fengziclassmate.github.io/journal-rss/conference-feeds/";
+  const conferencePrefix = "https://fengziclassmate.github.io/journal-rss/conference-feeds/";
+  const largeJournalURLs = new Set([
+    "https://fengziclassmate.github.io/journal-rss/sustainability.xml",
+  ]);
   const replacement = function () {
     const url = this.baseURI?.href || this.baseURI?.spec || String(this.baseURI || "");
-    return url.startsWith(prefix)
+    return url.startsWith(conferencePrefix) || largeJournalURLs.has(url)
       ? walkIteratively.call(this)
       : original.apply(this, arguments);
   };

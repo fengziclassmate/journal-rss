@@ -5,8 +5,9 @@ can fail with `InternalError: too much recursion` (shown as `Processing failed`
 in the subscription UI), even when the XML is valid.
 
 This add-on uses an iterative DOM traversal only for URLs starting with
-`https://fengziclassmate.github.io/journal-rss/conference-feeds/`. All items and
-existing GUIDs are retained. Other URLs use Zotero's original implementation.
+`https://fengziclassmate.github.io/journal-rss/conference-feeds/` and the explicitly
+listed large journal feed `https://fengziclassmate.github.io/journal-rss/sustainability.xml`.
+All items and existing GUIDs are retained. Other URLs use Zotero's original implementation.
 It adds no timers, network requests, translation, cache, archive or item observers.
 Conference subscription views also sort by publication date descending rather
 than Zotero's default import-ID order. Other subscription views are unchanged.
