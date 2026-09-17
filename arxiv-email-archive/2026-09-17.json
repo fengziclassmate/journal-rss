@@ -1,0 +1,933 @@
+{
+  "date": "2026-09-17",
+  "guid": "arxiv-email-daily:2026-09-17",
+  "paper_keys": [
+    "arxiv:2609.06074",
+    "arxiv:2609.19010",
+    "arxiv:2607.07146",
+    "arxiv:2609.09062",
+    "arxiv:2608.24121",
+    "arxiv:2502.14254",
+    "arxiv:2609.07939",
+    "arxiv:2609.06060",
+    "arxiv:2607.23238",
+    "arxiv:2609.18540",
+    "arxiv:2609.18320",
+    "arxiv:2608.15565",
+    "arxiv:2607.20116",
+    "arxiv:2609.18317",
+    "arxiv:2609.18511",
+    "arxiv:2609.18329",
+    "arxiv:2609.18210",
+    "arxiv:2608.24314",
+    "arxiv:2607.27106",
+    "arxiv:2605.21007",
+    "arxiv:2505.07622",
+    "arxiv:2606.10174",
+    "arxiv:2512.24565",
+    "arxiv:2608.25977",
+    "arxiv:2609.19138",
+    "arxiv:2609.18481",
+    "arxiv:2609.18282",
+    "arxiv:2609.08788",
+    "arxiv:2609.07478",
+    "arxiv:2609.16498"
+  ],
+  "paper_count": 30,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:595",
+    "deepseek": "partial:255/535;failed-batches:28"
+  },
+  "updated_at": "2026-09-17T09:07:11.738015+00:00",
+  "analysis_stats": {
+    "total": 595,
+    "analyzed": 314,
+    "high": 2,
+    "medium": 12,
+    "low": 18,
+    "below_threshold": 282
+  },
+  "papers": [
+    {
+      "key": "arxiv:2609.06074",
+      "title": "NSFlow: End-to-End Differentiable Neuro-Symbolic Optical Flow for Visual Odometry",
+      "title_zh": "NSFlow：用于视觉里程计的端到端可微分神经符号光流",
+      "url": "https://arxiv.org/abs/2609.06074",
+      "doi": "",
+      "arxiv_id": "2609.06074",
+      "authors": [
+        "Yicheng Lin",
+        "Zhipeng Fei",
+        "Yuxiu Xu",
+        "WenDong Chen",
+        "Cong Li",
+        "and Bin Han"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-05T13:09:10+00:00",
+      "score": 85,
+      "reason": "该论文提出一种混合神经符号光流方法用于视觉里程计，其结合传统优化与深度学习的思想，以及处理动态光照和低纹理场景的能力，对遥感影像中的运动分析、变化检测和地理空间智能具有直接参考价值。",
+      "tags": [
+        "光流估计",
+        "视觉里程计",
+        "神经符号方法",
+        "深度学习",
+        "实时系统"
+      ],
+      "abstract": "Sparse optical flow provides stable inter-frame correspondence, playing a key role in Visual Odometry (VO) and Visual-Inertial Odometry (VIO). Classical optimization-based methods, such as Lucas-Kanade (LK), perform well under small displacements but are sensitive to large motions and illumination changes. Modern regression-based learning methods, while more robust in complex scenes, are often computationally heavy and lack explicit geometric consistency, making them less suitable for efficient VO/VIO front-ends. To bridge this gap, we propose a hybrid neuro-symbolic framework that combines the strengths of both paradigms. Our method uses a Convolutional Neural Network (CNN) to extract robust feature representations, which is fed into a differentiable LK optimizer to estimate optical flow in an end-to-end trainable manner. Through implicit differentiation, gradients are propagated across the iterative solver, enabling joint optimization of feature extraction and flow estimation. The resulting system integrates seamlessly into existing VO/VIO pipelines and runs in real-time on embedded platforms. Experiments show that our method outperforms conventional optimization-based flow in challenging conditions such as dynamic lighting and low texture, while also achieving higher accuracy and lower latency than purely regression-based alternatives. When deployed in a VIO system, our method demonstrates significant performance improvement, achieving an average error reduction of 42\\% on challenging datasets while enhancing tracking stability. The code is publicly available.",
+      "summary_zh": "本文提出NSFlow，一种结合CNN特征提取和可微分Lucas-Kanade优化器的混合神经符号光流框架。该方法通过隐式微分实现端到端训练，在动态光照和低纹理等挑战性条件下优于传统优化方法，并比纯回归方法更高效。在VIO系统中部署时，平均误差降低了42%。",
+      "insight_zh": "该研究展示了将经典几何优化算法嵌入深度学习框架进行端到端训练的可能性，在保持几何一致性的同时获得深度学习的鲁棒性，为高效、稳健的视觉前端提供了新思路。"
+    },
+    {
+      "key": "arxiv:2609.19010",
+      "title": "Tabular Deep Learning vs Classical Machine Learning for Urban Land Cover Classification",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2609.19010",
+      "doi": "",
+      "arxiv_id": "2609.19010",
+      "authors": [
+        "Muntasir Tabasum",
+        "Tanpia Tasnim",
+        "Md. Ekramul Islam",
+        "Al Zadid Sultan Bin Habib"
+      ],
+      "venue": "arXiv",
+      "published": "2026-07-20T01:25:43+00:00",
+      "score": 85,
+      "reason": "关键词命中：Urban Planning、Remote Sensing、Deep Learning、Transformer",
+      "tags": [
+        "Urban Planning",
+        "Remote Sensing",
+        "Deep Learning",
+        "Transformer"
+      ],
+      "abstract": "Urban Land Cover (ULC) classification plays a crucial role in urban planning, environmental monitoring, and sustainable development. We study this task using the ULC dataset from the UCI Machine Learning Repository, which includes tabular features derived from high-resolution aerial imagery across nine classes (e.g., roads, trees, grass, water). The dataset presents typical remote sensing challenges, including high dimensionality, heterogeneous features, and class imbalance. In a unified, reproducible pipeline, we benchmark classical machine learning models (e.g., Logistic Regression, SVM, Random Forest, XGBoost, CatBoost) against Tabular Deep Learning (TDL) models (TabNet, FT-Transformer, TabTransformer, TabSeq, and 1D CNNs). To address class imbalance, we employ weighted cross-entropy loss for TDL models and evaluate performance using accuracy, macro-precision, macro-recall, macro-F1, AUC-ROC, and confusion matrices. Our results show that while tree ensembles remain strong general baselines, TDL models can match or exceed their performance when non-linear interactions are significant and imbalance handling is effective, providing complementary advantages for urban land cover mapping. See code: https://github.com/mtesha/tdl-vs-ml-urbanlandcover",
+      "summary_zh": "",
+      "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2607.07146",
+      "title": "Prior-matched evaluation of operational Earth-observation classifiers: a three-number reporting method demonstrated on Sentinel-1 internal-wave detection",
+      "title_zh": "业务化地球观测分类器的先验匹配评估：一种在Sentinel-1内波检测上演示的三数值报告方法",
+      "url": "https://arxiv.org/abs/2607.07146",
+      "doi": "",
+      "arxiv_id": "2607.07146",
+      "authors": [
+        "Jo\\~ao Pinelo",
+        "Jo\\~ao Gon\\c{c}alves",
+        "Arun Shukla",
+        "Adriana Santos-Ferreira"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 78,
+      "reason": "该论文提出了一种针对业务化地球观测分类器的先验匹配评估方法，并以Sentinel-1内波检测为例进行演示。这与GIS博士研究中的遥感变化检测和多源数据融合方向高度相关，尤其涉及遥感分类器评估这一关键环节。",
+      "tags": [
+        "遥感分类",
+        "Sentinel-1",
+        "变化检测",
+        "评估方法",
+        "地球观测"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，仅从标题推断该研究提出了一种三数值报告方法，用于对业务化地球观测分类器进行先验匹配评估，并以Sentinel-1内波检测任务作为演示案例。",
+      "insight_zh": "该评估方法若适用于业务化遥感分类场景，可能为变化检测模型的可靠性评估提供新思路，但摘要未说明具体评估指标与实验设计，需进一步阅读全文确认其通用性。"
+    },
+    {
+      "key": "arxiv:2609.09062",
+      "title": "Multi-Task Learning for Sparsely-Labeled Time Series: A Case Study on Cold-Hardiness Modeling",
+      "title_zh": "稀疏标签时间序列的多任务学习：以耐寒性建模为例",
+      "url": "https://arxiv.org/abs/2609.09062",
+      "doi": "",
+      "arxiv_id": "2609.09062",
+      "authors": [
+        "Aseem Saxena",
+        "Paola Pes\\'antez-Cabrera",
+        "Markus Keller",
+        "Alan Fern"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T17:17:25+00:00",
+      "score": 75,
+      "reason": "该研究探讨了多任务学习在稀疏标签时间序列建模中的应用，其方法论（多任务架构、迁移学习）对城市更新中的多源时空数据挖掘具有借鉴意义，但应用领域（农业）与城市更新直接关联较弱。",
+      "tags": [
+        "多任务学习",
+        "时间序列",
+        "农业建模",
+        "RNN",
+        "迁移学习"
+      ],
+      "abstract": "We present a real-world case study of multi-task learning (MTL) for temporal process modeling from limited data with temporally sparse labels. Specifically, we investigate multi-task learning for the important agricultural problem of predicting grape cold hardiness, which is the temperature at which lethal freezing occurs. Cold hardiness changes in response to weather and is difficult to measure directly in the field. Thus, growers rely on predictions to decide when to apply costly frost mitigation measures. We apply recurrent neural networks (RNNs) for daily cold-hardiness prediction from time series weather data. A major challenge is that the cold hardiness response varies across plant cultivars and ground-truth data for each cultivar is temporally sparse and limited. To address this challenge, we investigate multi-task learning (MTL) approaches for combining data, where different tasks correspond to different cultivars. We develop a variety of MTL architectures and evaluate them in both MTL and transfer learning settings. Our results show significant differences between architectures and that certain architectures are able to consistently outperform single-task learning and state-of-the-art scientific models. Additionally, we show similar results for the qualitatively different, but related, task of budbreak prediction. Further, improved accuracy for budbreak and cold hardiness is achieved by a single MTL model that simultaneously learns both tasks.",
+      "summary_zh": "本文针对时间序列数据有限且标签稀疏的问题，以葡萄耐寒性预测为案例，研究了多任务学习（MTL）方法。通过将不同葡萄品种视为不同任务，结合循环神经网络（RNN），开发了多种MTL架构，并在MTL和迁移学习设置下进行评估。结果表明，特定架构能持续优于单任务学习和现有科学模型，并在相关任务（芽破预测）上也有类似效果。",
+      "insight_zh": "多任务学习能够有效整合多个相关但数据稀疏的任务，通过共享信息提升整体预测性能，其架构选择对最终效果有显著影响。"
+    },
+    {
+      "key": "arxiv:2608.24121",
+      "title": "Graph-Supervised Hierarchical Clinical Alignment for Radiology Report Generation with Large Language Models",
+      "title_zh": "图监督的分层临床对齐用于大语言模型放射学报告生成",
+      "url": "https://arxiv.org/abs/2608.24121",
+      "doi": "",
+      "arxiv_id": "2608.24121",
+      "authors": [
+        "Yingshu Li",
+        "Yunyi Liu",
+        "Zhanyu Wang",
+        "Zailong Chen",
+        "Lingqiao Liu",
+        "Lei Wang",
+        "Luping Zhou"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 75,
+      "reason": "该论文提出了一种图监督的分层临床对齐方法用于放射学报告生成，其多层级对齐和知识图谱先验思想可类比于GIS中的多源地理数据对齐和语义建模。",
+      "tags": [
+        "放射学报告生成",
+        "临床对齐",
+        "知识图谱",
+        "大语言模型"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "放射学报告生成受益于大语言模型，但临床忠实生成仍具挑战，因为现有监督主要在报告级别。本文提出图监督的分层临床对齐，将图像-报告监督重构为分层临床对齐问题，分解为疾病中心对齐和全局临床语义对齐。临床知识图谱作为训练时的结构先验，定义疾病特定的监督单元及其临床关系。在MIMIC-CXR、IU-Xray和COV-CTR上的实验表明，该方法在常规和临床指标上均持续提升性能，且3B模型超越了多个7B/13B骨干的先前系统。",
+      "insight_zh": "改进监督结构而非增加模型规模，可以更有效地提升放射学报告生成的临床忠实度，这一原则对地理空间数据到语义标签的映射具有启示。"
+    },
+    {
+      "key": "arxiv:2502.14254",
+      "title": "Diff-SPORT: Diffusion-based Sensor Placement Optimization and Reconstruction of Turbulent flows in urban environments",
+      "title_zh": "Diff-SPORT：基于扩散模型的城市环境湍流传感器布局优化与重建",
+      "url": "https://arxiv.org/abs/2502.14254",
+      "doi": "",
+      "arxiv_id": "2502.14254",
+      "authors": [
+        "Abhijeet Vishwasrao",
+        "Sai Bharath Chandra Gutha",
+        "Andres Cremades",
+        "Klas Wijk",
+        "Aakash Patil",
+        "H.D. Lim",
+        "Christina Vanderwel",
+        "Catherine Gorle",
+        "Beverley J McKeon",
+        "Hossein Azizpour",
+        "Ricardo Vinuesa"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 72,
+      "reason": "该论文提出基于扩散模型的传感器布局优化与城市环境湍流重建方法，与GIS博士研究中的城市更新、时空数据挖掘和多源数据融合方向有较强关联，尤其涉及城市环境下的传感器优化与场重建问题。",
+      "tags": [
+        "扩散模型",
+        "传感器布局优化",
+        "城市环境",
+        "湍流重建",
+        "时空数据"
+      ],
+      "abstract": "------------------------------------------------------------------------------ ------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，仅从标题推断该研究提出了Diff-SPORT方法，利用扩散模型进行城市环境中湍流场的传感器布局优化与数据重建。",
+      "insight_zh": "该研究将扩散模型应用于城市环境传感器布局与物理场重建，其思路或可迁移至城市更新中的环境监测网络优化，但摘要未说明具体方法架构与实验验证，需进一步确认其泛化能力。"
+    },
+    {
+      "key": "arxiv:2609.07939",
+      "title": "Bottom-up Modeling of Repeated Elements via Single Image Analysis-by-Synthesis",
+      "title_zh": "基于单图像分析合成的重复元素自底向上建模",
+      "url": "https://arxiv.org/abs/2609.07939",
+      "doi": "",
+      "arxiv_id": "2609.07939",
+      "authors": [
+        "Syrine Kalleli",
+        "Alexei A. Efros",
+        "Mathieu Aubry"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T19:53:11+00:00",
+      "score": 70,
+      "reason": "研究探索从单张图像中自底向上发现重复元素，与遥感影像中重复地物（如建筑物）的自动提取和建模有较强方法关联，但未涉及地理空间显式信息。",
+      "tags": [
+        "单图像学习",
+        "重复元素发现",
+        "分析合成",
+        "无监督",
+        "计算机视觉"
+      ],
+      "abstract": "We address the problem of discovering repeated elements from a single image. In contrast to existing approaches that depend on large annotated datasets, curated multi-image collections, or object segmentation masks, we show that a single image can suffice to learn a meaningful object model in a completely bottom-up fashion, without any prior knowledge beyond a coarse scale prior. Our method learns a tunable image-space prototype of the repeated elements through a reconstruction objective, enabling the model to identify and synthesize consistent object instances within the same image. Experiments on 116 real images from the FSC-147 dataset demonstrate that our method successfully learns coherent element models and captures intra-category variation on challenging images. Qualitative results reveal superior reconstructions and interpretable decompositions compared to classical decomposition, joint alignment, and 3D object modeling methods, while maintaining a simple 2D formulation. These results suggest that meaningful object discovery can emerge from single image learning alone.",
+      "summary_zh": "提出一种无需大型标注数据集或分割掩码的方法，仅凭单张图像和粗略尺度先验，通过重建目标学习可调图像空间原型，以发现和合成重复元素。在FSC-147数据集116张图像上验证了有效性。",
+      "insight_zh": "单张图像蕴含足够的重复结构信息以学习有意义的对象模型，这为缺乏标注数据的遥感场景中自动发现重复地物提供了潜在途径。"
+    },
+    {
+      "key": "arxiv:2609.06060",
+      "title": "Calendar-Structured Sparse Principal Component Analysis for Interpretable Multi-Periodic Electricity Consumption Profiles",
+      "title_zh": "Calendar-SPCA：面向多周期电力消费曲线的可解释表示学习",
+      "url": "https://arxiv.org/abs/2609.06060",
+      "doi": "",
+      "arxiv_id": "2609.06060",
+      "authors": [
+        "Carlos Quesada-Granja",
+        "Tony Castillo-Calzadilla",
+        "Carlos Rizo-Maestre"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-05T12:43:18+00:00",
+      "score": 70,
+      "reason": "提出一种结合日历周期结构的稀疏主成分分析方法，用于多周期时间序列的表示学习，与GIS中的时空数据挖掘和时间序列分析高度相关。",
+      "tags": [
+        "时空数据挖掘",
+        "表示学习",
+        "降维",
+        "智能电网",
+        "时间序列"
+      ],
+      "abstract": "Long-term electricity-consumption profiles exhibit several simultaneous periodic structures, including daily, weekly, and annual cycles. This work introduces Calendar-SPCA, a calendar-structured sparse principal component method that incorporates this known multi-periodic geometry directly into low-dimensional representation learning. The feature domain is represented as the Cartesian product of cyclic calendar axes, and a low-rank factorization is estimated using an L1 loading penalty together with graph total variation over the resulting calendar graph. The method therefore produces sparse and locally coherent loading patterns that remain directly readable in their original temporal coordinates. Calendar-SPCA is evaluated on two independent smart-meter datasets with different sample sizes and temporal resolutions: GoiEner and Low Carbon London. A factorial experiment characterizes the complementary effects of sparsity and calendar coherence and examines robustness across sample size, latent dimensionality, and repeated fits. At rank 15, Calendar-SPCA retains 96.92% and 82.90% of the explained variance of rank-matched PCA in GoiEner and Low Carbon London, respectively, while producing mean loading sparsities of 61.95% and 81.50%. Comparisons with classical sparse PCA and SPCA-TV further show that Calendar-SPCA adds a systematic organization of the latent factors in the original calendar coordinates while preserving substantial low-rank information. The resulting components form coherent and complementary daily, weekly, seasonal, and jointly localized calendar patterns, with dataset-specific geometries across the two datasets.",
+      "summary_zh": "本文提出Calendar-SPCA方法，将已知的多周期结构（日、周、年）直接融入低维表示学习中。该方法在日历图上结合L1惩罚和图全变差，生成稀疏且局部连贯的载荷模式。在两个智能电表数据集上的实验表明，该方法在保持大部分主成分方差的同时，能产生具有日历意义的可解释成分。",
+      "insight_zh": "将领域先验的周期性结构嵌入降维过程，可以显著提升时空数据表示的可解释性，为城市能源或人口流动等周期性时空数据的分析提供了新思路。"
+    },
+    {
+      "key": "arxiv:2607.23238",
+      "title": "SARATR-X-v2: Scale-Aware Structural Pre-Training for SAR Foundation Models",
+      "title_zh": "SARATR-X-v2：面向SAR基础模型的尺度感知结构预训练",
+      "url": "https://arxiv.org/abs/2607.23238",
+      "doi": "",
+      "arxiv_id": "2607.23238",
+      "authors": [
+        "Weijie Li",
+        "Yafei Song",
+        "Yongxiang Liu",
+        "Bowen Peng",
+        "Jie Zhou",
+        "Jingyuan Xia",
+        "Wei Yang",
+        "Tianpeng Liu",
+        "Zhen Liu",
+        "and Li Liu"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 65,
+      "reason": "该论文研究面向SAR基础模型的尺度感知结构预训练，属于遥感基础模型与自监督学习方向，与遥感变化检测、多源数据融合及地理空间智能研究主题有较强关联。",
+      "tags": [
+        "SAR",
+        "基础模型",
+        "自监督预训练",
+        "遥感"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结果信息。",
+      "insight_zh": "摘要为空，无法确认其预训练目标、尺度感知机制或下游任务表现；从标题看，其贡献在于SAR遥感基础模型的预训练方法，可能对遥感变化检测与多源数据融合研究有支撑价值，但摘要未提供任何可验证细节。"
+    },
+    {
+      "key": "arxiv:2609.18540",
+      "title": "SVMemAgent: A Streaming Video Memory Agent for Query-Agnostic Online Frame Selection",
+      "title_zh": "SVMemAgent：一种用于查询无关在线帧选择的流式视频记忆智能体",
+      "url": "https://arxiv.org/abs/2609.18540",
+      "doi": "",
+      "arxiv_id": "2609.18540",
+      "authors": [
+        "Dohwan Ko",
+        "Ji Soo Lee",
+        "Pierce Chuang",
+        "Debojeet Chatterjee",
+        "Ashish Shenoy",
+        "Yichao Lu",
+        "Seungwhan Moon",
+        "Xin Luna Dong",
+        "Vikas Bhardwaj",
+        "Hyunwoo J. Kim"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T12:04:53+00:00",
+      "score": 62,
+      "reason": "该论文研究流式视频中的在线关键帧选择，与时空数据挖掘和多智能体/LLM方向有一定关联，但未涉及城市更新或遥感变化检测，相关性中等。",
+      "tags": [
+        "视频理解",
+        "关键帧选择",
+        "流式处理",
+        "强化学习",
+        "多模态智能体"
+      ],
+      "abstract": "Most keyframe selection studies focus on offline settings, assuming access to the full video and query in advance. In contrast, real-world streaming scenarios require online frame selection under unknown video duration, without access to either the query or future frames during selection. To address this, we introduce Streaming Video Memory (SVMem), a compact and representative memory of previously observed content, updated continuously as the video stream unfolds. Building on this setting, we propose the Streaming Video Memory Agent (SVMemAgent), which dynamically maintains a memory by deciding at each timestep whether to replace an existing memory frame with the incoming frame or discard it. SVMemAgent is trained using Group Relative Policy Optimization (GRPO) with task-driven rewards derived from diverse question-answer pairs, implicitly exposing the policy to a distribution of queries during training so that SVMem retains generally informative frames at inference, when queries are unavailable. Experiments on both online and offline video benchmarks show that SVMemAgent consistently outperforms online frame selection baselines and achieves competitive performance with offline methods that assume access to the full video and query. Through task-driven rewards, SVMemAgent learns an emergent keyframe selection policy that prefers frames containing textual information, which may benefit downstream VideoQA tasks.",
+      "summary_zh": "大多数关键帧选择研究聚焦于离线场景，假设可以预先访问完整视频和查询。相比之下，现实流式场景需要在未知视频时长、且选择时无法访问查询或未来帧的条件下进行在线帧选择。为此，作者引入流式视频记忆（SVMem），一种对已观察内容的紧凑且具代表性的记忆，随着视频流展开而持续更新。基于此设定，提出流式视频记忆智能体（SVMemAgent），它在每个时间步决定是用新到达的帧替换现有记忆帧还是丢弃它，从而动态维护记忆。SVMemAgent使用组相对策略优化（GRPO）训练，奖励来自多样化问答对的任务驱动信号，在训练中隐式地将策略暴露于查询分布，使得推理时即使没有查询，SVMem也能保留一般性信息丰富的帧。在线和离线视频基准实验表明，SVMemAgent持续优于在线帧选择基线，并与假设可访问完整视频和查询的离线方法达到有竞争力的性能。通过任务驱动奖励，SVMemAgent学习到一种涌现的关键帧选择策略，偏好包含文本信息的帧，这可能有利于下游视频问答任务。",
+      "insight_zh": "该工作将流式视频记忆与强化学习结合，为在线帧选择提供了一种查询无关的解决方案；其涌现的偏好文本帧策略可能对需要处理连续视频流的时空数据挖掘任务有借鉴意义，但摘要未说明其在城市或地理场景中的直接应用。"
+    },
+    {
+      "key": "arxiv:2609.18320",
+      "title": "Attention Dispersion as a Diagnostic Signal for Hallucination in Large Language Models",
+      "title_zh": "注意力分散作为大语言模型幻觉的诊断信号",
+      "url": "https://arxiv.org/abs/2609.18320",
+      "doi": "",
+      "arxiv_id": "2609.18320",
+      "authors": [
+        "Shardul P. More",
+        "Tanuja S. Pawar"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T08:40:56+00:00",
+      "score": 62,
+      "reason": "该文研究LLM幻觉的注意力分散诊断信号，与研究者关注的LLM与多智能体方向相关，但未涉及地理空间或城市更新应用，属于方法层面的基础研究。",
+      "tags": [
+        "LLM",
+        "幻觉检测",
+        "注意力机制",
+        "不确定性",
+        "可解释性"
+      ],
+      "abstract": "Large Language Models (LLMs) frequently exhibit hallucinations, presenting a major barrier to reliability in complex reasoning tasks. While traditional detection methods rely on output-based confidence metrics, these logits are often miscalibrated by modern alignment techniques. In this paper, we investigate the temporal volatility of internal attention mechanisms as an alternative diagnostic signal for hallucination that does not depend on output calibration. By introducing an unsupervised metric for attention dispersion, we show that epistemic uncertainty leaves a measurable trace within intermediate layers, where spikes in attention entropy are associated with reasoning breakdowns. We evaluate our approach on mathematical reasoning benchmarks (GSM8K and MATH-500) using the Qwen2.5 model family (1.5B and 3B parameters), finding statistically significant AUC improvements of up to +0.076 over output-based baselines across all tested conditions. These findings suggest that attention dispersion is a promising complement to traditional hallucination detection methods, requiring further investigation across broader model families and task domains.",
+      "summary_zh": "大语言模型（LLM）经常出现幻觉，这成为复杂推理任务可靠性的主要障碍。传统检测方法依赖基于输出的置信度指标，但这些logits常被现代对齐技术错误校准。本文研究内部注意力机制的时间波动性，作为不依赖输出校准的幻觉诊断替代信号。作者引入一种无监督的注意力分散度量，表明认知不确定性在中间层留下可测量的痕迹，注意力熵的尖峰与推理崩溃相关。在数学推理基准（GSM8K和MATH-500）上使用Qwen2.5模型系列（1.5B和3B参数）评估，发现所有测试条件下AUC相比基于输出的基线最高提升+0.076，且具有统计显著性。这些发现表明注意力分散是传统幻觉检测方法的有前景补充，需要在更广泛的模型家族和任务领域进一步研究。",
+      "insight_zh": "该研究提示，内部注意力动态可作为不依赖输出校准的幻觉诊断信号；但其结论基于Qwen2.5系列在数学推理基准上的实验，跨模型家族与任务领域的泛化性尚待验证。"
+    },
+    {
+      "key": "arxiv:2608.15565",
+      "title": "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling",
+      "title_zh": "无答案录取：LLM优化建模的无标签认证与经验学习",
+      "url": "https://arxiv.org/abs/2608.15565",
+      "doi": "",
+      "arxiv_id": "2608.15565",
+      "authors": [
+        "Junbo Jacob Lian",
+        "Huiling Chen",
+        "Hanzhang Qin",
+        "Chung-Piaw Teo"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 60,
+      "reason": "该文研究无标签环境下LLM优化建模的认证与经验学习，对城市更新中利用LLM进行复杂决策建模有参考价值。",
+      "tags": [
+        "LLM",
+        "优化建模",
+        "无标签",
+        "经验学习"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "本文提出在无标签数据环境下对LLM优化建模进行认证的方法，并通过经验学习提升模型性能，减少对标注数据的依赖。",
+      "insight_zh": "无标签认证与经验学习可降低LLM应用门槛，为城市更新中数据稀缺场景下的建模提供新途径。"
+    },
+    {
+      "key": "arxiv:2607.20116",
+      "title": "RIM: A Retrieval-In-Matching Framework for Cross-Domain Global Visual Localization of UAVs",
+      "title_zh": "RIM：面向无人机跨域全局视觉定位的检索增强匹配框架",
+      "url": "https://arxiv.org/abs/2607.20116",
+      "doi": "",
+      "arxiv_id": "2607.20116",
+      "authors": [
+        "Xin Li",
+        "Siyuan Duan",
+        "Shang Wang",
+        "Zhimin Mao",
+        "Bingliang Hu",
+        "Geng Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 60,
+      "reason": "该论文提出检索增强匹配框架用于无人机跨域全局视觉定位，属于无人机视觉定位与地理空间智能方向，与地理空间智能研究主题有较强关联，且涉及跨域视觉匹配。",
+      "tags": [
+        "无人机",
+        "视觉定位",
+        "跨域检索",
+        "地理空间智能"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结果信息。",
+      "insight_zh": "摘要为空，无法确认其检索与匹配的具体机制；从标题看，其贡献在于提升无人机跨域场景下的全局视觉定位能力，可能对地理空间智能中的视觉定位任务有参考价值，但摘要未提供任何可验证细节。"
+    },
+    {
+      "key": "arxiv:2609.18317",
+      "title": "Knowledge-Graph Based Augmentation versus Retrieval Augmented Generation for Cultural-Related Question Answering",
+      "title_zh": "基于知识图谱的增强与检索增强生成在文化相关问答中的对比",
+      "url": "https://arxiv.org/abs/2609.18317",
+      "doi": "",
+      "arxiv_id": "2609.18317",
+      "authors": [
+        "Pablo Poulenard",
+        "Yannis Karmim",
+        "Valentin Barri\\`ere"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T08:36:30+00:00",
+      "score": 58,
+      "reason": "该文比较知识图谱增强与RAG在文化相关问答中的表现，涉及LLM与结构化知识融合，与研究者LLM方向相关，但缺乏地理空间维度。",
+      "tags": [
+        "知识图谱",
+        "RAG",
+        "文化问答",
+        "多语言",
+        "LLM"
+      ],
+      "abstract": "Large language models (LLMs) suffer from a long-tail deficit: culturally specific facts, particularly those concerning underrepresented regions such as Latin America, appear too rarely in pretraining corpora to be reliably memorized. Retrieval-Augmented Generation (RAG) addresses this by grounding generation in external text, but structured alternatives such as Knowledge Graphs (KGs) offer tighter control over what enters the context, along with potential gains in explainability and updatability. We benchmark Graph-RAG against standard RAG on LatamQA, a culturally grounded multiple-choice dataset spanning eight thematic categories. The graphs are built end-to-end from Wikipedia articles with KGGen, a recent open-domain extractor, without manual curation in our main setting. G-Retriever is competitive with RAG and reduces the error of the base LLM by 72\\% with a standard KG and 78\\% with a benchmark-aware variant, the gap to RAG narrowing further as the graph is oriented toward task-relevant content. The trained projection transfers zero-shot to Portuguese without target-language fine-tuning, indicating multilingual reach.",
+      "summary_zh": "大语言模型（LLM）存在长尾缺陷：文化特定事实，尤其是拉丁美洲等代表性不足地区的事实，在预训练语料中出现太少而无法可靠记忆。检索增强生成（RAG）通过将生成建立在外部文本上来解决这一问题，但知识图谱（KG）等结构化替代方案对进入上下文的内容提供更紧密的控制，并可能带来可解释性和可更新性的提升。本文在LatamQA（一个涵盖八个主题类别的文化基础多选题数据集）上对Graph-RAG与标准RAG进行基准测试。图谱在主设置中由Wikipedia文章通过近期开放域抽取器KGGen端到端构建，无需人工整理。G-Retriever与RAG具有竞争力，使用标准KG将基础LLM的错误降低72%，使用基准感知变体降低78%，随着图谱朝向任务相关内容，与RAG的差距进一步缩小。训练得到的投影可零样本迁移到葡萄牙语，无需目标语言微调，表明具有多语言覆盖能力。",
+      "insight_zh": "该研究表明结构化知识图谱在文化长尾问答中可部分替代或补充RAG，且图谱内容与任务相关性的对齐程度会影响其相对优势；零样本跨语言迁移提示该投影方式可能具备一定语言无关性。"
+    },
+    {
+      "key": "arxiv:2609.18511",
+      "title": "Learning from Distributed Eyes: Leveraging Collaborative Perception for Automated Model Adaptation",
+      "title_zh": "从分布式眼睛中学习：利用协同感知实现自动模型适应",
+      "url": "https://arxiv.org/abs/2609.18511",
+      "doi": "",
+      "arxiv_id": "2609.18511",
+      "authors": [
+        "Yanan Ma",
+        "Yihang Tao",
+        "Zhengru Fang",
+        "Zihan Fang",
+        "Yiqin Deng",
+        "Xianhao Chen",
+        "and Yuguang Fang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T11:44:26+00:00",
+      "score": 55,
+      "reason": "该论文研究利用协同感知进行自动驾驶模型的无监督域适应，涉及多智能体感知与3D目标检测，与多智能体、多源数据融合方向相关，但未涉及城市更新或遥感变化检测。",
+      "tags": [
+        "协同感知",
+        "无监督域适应",
+        "自动驾驶",
+        "伪标签",
+        "3D目标检测"
+      ],
+      "abstract": "In autonomous driving, perception models often struggle to generalize to new environments due to domain shifts. While unsupervised model adaptation offers a feasible solution without labor-intensive manual labeling, existing methods that rely solely on the ego-vehicle's data often lead to inferior pseudo-labeling performance. To address this critical issue, we propose LDE, Learning from Distributed ``Eyes\", a novel framework that transforms collaborative perception (CP) into a source of high-quality supervision for model adaptation. This pseudo-labeling approach is hyperparameter-insensitive and relatively reliable, assuming CP often outperforms single-agent's perception. However, naively implementing this approach encounters (1) the communication bottleneck of sharing rich features under time and bandwidth constraints, (2) the view discrepancy between the CP view and the learner's Field of View (FoV), and (3) the unreliability even in CP-generated labels. To address these issues, we design an adaptation-oriented feature sharing mechanism that selectively transmits the most critical information for adaptation, an FoV filtering method that meticulously eliminates mismatched labels, and a curriculum learning strategy to progressively exploit pseudo labels. Extensive experiments on 3D object detection tasks demonstrate that LDE consistently outperforms both the pre-trained models and state-of-the-art unsupervised adaptation methods.",
+      "summary_zh": "在自动驾驶中，感知模型常因域偏移而难以泛化到新环境。虽然无监督模型适应无需劳动密集型人工标注即可提供可行方案，但仅依赖自车数据的现有方法往往导致伪标签性能不佳。为解决这一关键问题，作者提出LDE（Learning from Distributed \"Eyes\"），一种将协同感知（CP）转化为模型适应高质量监督来源的新框架。这种伪标签方法对超参数不敏感且相对可靠，假设CP通常优于单智能体感知。然而，朴素实现该方法会遇到三个问题：（1）在时间和带宽约束下共享丰富特征的通信瓶颈；（2）CP视图与学习器视场（FoV）之间的视角差异；（3）即使CP生成的标签也不可靠。为解决这些问题，作者设计了面向适应的特征共享机制，选择性传输对适应最关键的信息；一种FoV过滤方法，细致消除不匹配标签；以及一种课程学习策略，逐步利用伪标签。在3D目标检测任务上的大量实验表明，LDE持续优于预训练模型和最先进的无监督适应方法。",
+      "insight_zh": "该工作将多智能体协同感知作为伪标签来源，并设计特征共享、FoV过滤和课程学习来应对通信与视角差异；其多源数据融合与域适应思路可能对地理空间智能中多平台（如卫星与无人机）协同观测有启发，但摘要未涉及地理空间场景。"
+    },
+    {
+      "key": "arxiv:2609.18329",
+      "title": "PDA++: Field-Aligned Planning and Scene-Adaptive Insertion in Remote Sensing",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2609.18329",
+      "doi": "",
+      "arxiv_id": "2609.18329",
+      "authors": [
+        "Xianchi Dong",
+        "Yingyan Hou",
+        "Chao Ren",
+        "Wanxuan Lu",
+        "Zihan Wei",
+        "Hongfeng Yu",
+        "Yixiao Wang",
+        "Chubo Deng",
+        "Xian Sun"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T08:53:30+00:00",
+      "score": 55,
+      "reason": "关键词命中：Remote Sensing、Segmentation",
+      "tags": [
+        "Remote Sensing",
+        "Segmentation"
+      ],
+      "abstract": "Remote sensing recognition is often constrained by scarce observations of rare targets and costly annotations, making realistic synthetic augmentation particularly valuable for few-shot and long-tailed scenarios. Object insertion provides an efficient way to increase target diversity while preserving authentic background scenes, but realistic insertion in overhead imagery requires the generated target to adapt coherently to its surrounding environment. To this end, we propose PDA++, a unified environment-aware object insertion framework organized as Plan, Decouple, and Assimilate. Planning determines scene-compatible poses through an affordance field that combines geometric clearance with structure- and scale-aware cues. Decoupling introduces a pose-conditioned background that provides precise spatial guidance together with target-scene context, allowing the reference object to preserve its identity while adapting to the target observation. This construction also naturally provides pixel-level masks for segmentation augmentation. Assimilation further improves local coherence by aligning multi-scale texture distributions through optimal transport. On the optical benchmark, PDA++ achieves a whole-image FID of 6.28 and improves average few-shot recognition mAP50 by 17.69 points, corresponding to a 28.8% relative gain over the real-data baseline. On SAR imagery, it improves ship detection by 4.10 mAP50 points and remains effective under cross-dataset transfer and amorphous-target insertion. Code is available at https://github.com/lisheyu972/PDA_PLUS.",
+      "summary_zh": "",
+      "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.18210",
+      "title": "Understanding Dynamic Scenes at Gigapixel Scale: Wide-Area Spatio-Temporal Perception from UAVs",
+      "title_zh": "理解十亿像素级动态场景：无人机广域时空感知",
+      "url": "https://arxiv.org/abs/2609.18210",
+      "doi": "",
+      "arxiv_id": "2609.18210",
+      "authors": [
+        "Yuhang Zhu",
+        "Meiyi Zhu",
+        "Yunkai Dang",
+        "Zhangnan Li",
+        "Yuxuan Wang",
+        "Wenbin Li",
+        "Hongbing Pan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T06:41:36+00:00",
+      "score": 55,
+      "reason": "该论文研究无人机超高清遥感影像中的广域时空场景理解，涉及遥感数据集构建、目标检测、多目标跟踪和视觉问答，与GIS博士研究中的遥感变化检测、时空数据挖掘和多源数据融合方向有较强关联，但未直接涉及城市更新或LLM多智能体。",
+      "tags": [
+        "无人机遥感",
+        "超高清数据集",
+        "时空场景理解",
+        "多目标跟踪",
+        "视觉问答"
+      ],
+      "abstract": "UAV-borne imaging has advanced from megapixel to gigapixel sensors, shifting aerial perception from recognizing individual targets to understanding entire dynamic scenes. We characterize this demand as Wide-area Spatio-temporal Scene Understanding (WSTU), which requires wide-area coverage, per-target resolution, and temporal continuity at once, a combination existing datasets lack. To fill this gap, we introduce an ultra-High-resolution (12768x9564) Airborne Remote-sensing Dataset (HARD) annotated at three levels for object detection, multi-object tracking, and scene-level visual question answering. Ultra-high-resolution imagery raises per-frame processing time to seconds. At that scale latency can no longer be ignored in evaluation. Thus, we propose a latency-aware metric for multi-object tracking called streaming-HOTA (s-HOTA). Extensive baseline experiments show how ultra-high-resolution processing reshapes each task. For detection, the end-to-end pipeline affects accuracy and speed as much as the detector itself does. For tracking, high latency charges the association axis far more unevenly than the detection axis, and association is where pipelines diverge. As a result, the pipeline that performs best offline can lose its lead under s-HOTA. For VQA, vision-language models remain weak at cross-frame identity binding and cannot transfer their single-frame gains to it. Together these findings show that the baselines we evaluate fall short of WSTU. HARD provides the data and the systematic baselines to advance it.",
+      "summary_zh": "无人机成像已从百万像素发展到十亿像素传感器，推动航空感知从识别单个目标转向理解整个动态场景。我们将这一需求表征为广域时空场景理解（WSTU），它要求同时具备广域覆盖、单目标分辨率和时间连续性，这是现有数据集所缺乏的组合。为填补这一空白，我们引入了一个超高分辨率（12768x9564）航空遥感数据集（HARD），标注了三个层次：目标检测、多目标跟踪和场景级视觉问答。超高分辨率影像使每帧处理时间增至数秒。在此规模下，延迟在评估中不再可忽略。因此，我们提出了一种延迟感知的多目标跟踪指标，称为流式HOTA（s-HOTA）。大量基线实验表明，超高分辨率处理如何重塑每项任务。对于检测，端到端流程对准确率和速度的影响与检测器本身一样大。对于跟踪，高延迟对关联轴的影响远比对检测轴更不均匀，而关联正是流程产生分歧之处。因此，离线表现最佳的流程在s-HOTA下可能失去领先地位。对于VQA，视觉语言模型在跨帧身份绑定方面仍然薄弱，无法将其单帧增益迁移至此。总之，这些发现表明我们评估的基线尚未达到WSTU。HARD提供了数据和系统化基线以推进该方向。",
+      "insight_zh": "该研究提出的WSTU概念和HARD数据集为无人机遥感中的时空场景理解提供了新的基准，其强调延迟感知评估和跨帧身份绑定挑战，对遥感变化检测和多目标跟踪研究具有参考价值。该工作可能推动地理空间智能中动态场景理解的方法发展，但未涉及城市更新或LLM多智能体应用。"
+    },
+    {
+      "key": "arxiv:2608.24314",
+      "title": "Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight",
+      "title_zh": "语音代理评估的LLM评判基准：可靠性、校准与人类监督",
+      "url": "https://arxiv.org/abs/2608.24314",
+      "doi": "",
+      "arxiv_id": "2608.24314",
+      "authors": [
+        "Anupam Purwar",
+        "Shashank Singh",
+        "Kritika Srivastava"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 55,
+      "reason": "论文研究LLM作为评估者在语音代理评估中的可靠性、校准和人类监督，涉及LLM评估方法论，与研究中LLM和多智能体方向相关，但应用场景非地理空间。",
+      "tags": [
+        "LLM评估",
+        "语音代理",
+        "人机协同",
+        "可靠性分析"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "研究LLM作为评判者在评估对话语音代理时的可靠性，比较了人类评判与GPT-4.1和GPT-5在电信和零售语音代理对话中的表现。在三种评估配置下对相同交互进行评分，以测试自动化评判对评估设置的敏感性。结果显示LLM评估可作为大规模语音代理评估的有效组成部分，但其可靠性因指标和配置而异，而非统一。研究为混合评估流程提供了实证框架，其中LLM处理可扩展评估，人类评估者负责需要上下文解释的指标。",
+      "insight_zh": "LLM评估的可靠性并非统一，而是依赖于具体指标和评估配置，这为设计人机协同的混合评估流程提供了依据。"
+    },
+    {
+      "key": "arxiv:2607.27106",
+      "title": "Hierarchical Spatio-Temporal Transformer for Coherent Emergency Department Forecasting",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2607.27106",
+      "doi": "",
+      "arxiv_id": "2607.27106",
+      "authors": [
+        "Filipa Lino",
+        "B\\'arbara Tavares",
+        "Carlos Santiago",
+        "Cl\\'audia Soares",
+        "Manuel Marques"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 55,
+      "reason": "关键词命中：Spatio-temporal、Transformer",
+      "tags": [
+        "Spatio-temporal",
+        "Transformer"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "",
+      "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2605.21007",
+      "title": "LiteViLNet: Lightweight Vision-LiDAR Fusion Network for Efficient Road Segmentation",
+      "title_zh": "LiteViLNet：面向高效道路分割的轻量级视觉-LiDAR融合网络",
+      "url": "https://arxiv.org/abs/2605.21007",
+      "doi": "",
+      "arxiv_id": "2605.21007",
+      "authors": [
+        "Daojie Peng",
+        "Bingtao Wang",
+        "Fulong Ma",
+        "Liang Zhang",
+        "Jun Ma"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 55,
+      "reason": "该文提出用于高效道路分割的轻量级视觉-LiDAR融合网络，涉及多源数据融合与分割任务，与用户的遥感变化检测、多源数据融合方向有较强的方法论关联，但应用场景为道路分割而非城市更新或遥感变化检测。",
+      "tags": [
+        "视觉-LiDAR融合",
+        "轻量化网络",
+        "道路分割",
+        "多源数据融合"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（原文仅提供分隔线，未给出可翻译的摘要文本）。",
+      "insight_zh": "由于摘要缺失，无法确认其网络结构、数据集与性能结论；仅从标题可推断其聚焦视觉与LiDAR的轻量化融合用于道路分割。多模态融合与轻量化设计思路对遥感多源数据融合有参考价值，但具体可迁移性需依据全文判断。"
+    },
+    {
+      "key": "arxiv:2505.07622",
+      "title": "A Unified Hierarchical Framework for Fine-grained Cross-view Geo-localization over Large-scale Scenarios",
+      "title_zh": "面向大规模场景细粒度跨视角地理定位的统一层次化框架",
+      "url": "https://arxiv.org/abs/2505.07622",
+      "doi": "",
+      "arxiv_id": "2505.07622",
+      "authors": [
+        "Zhuo Song",
+        "Ye Zhang",
+        "Kunhong Li",
+        "Longguang Wang",
+        "Yulan Guo"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 55,
+      "reason": "该论文提出面向大规模场景的细粒度跨视角地理定位统一层次化框架，属于地理空间智能与遥感相关方向，与GIS博士研究中的地理空间智能、多源数据融合有一定关联，但与城市更新、时空数据挖掘的直接关联有限。",
+      "tags": [
+        "跨视角地理定位",
+        "层次化框架",
+        "大规模场景",
+        "地理空间智能"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究可能提出一个统一的层次化框架，用于大规模场景下的细粒度跨视角地理定位。",
+      "insight_zh": "摘要缺失，无法确认方法细节与实验结论。从标题看，该工作可能对跨视角地理定位与地理空间智能有参考价值，但需原文验证其具体贡献与适用范围。"
+    },
+    {
+      "key": "arxiv:2606.10174",
+      "title": "A Large Scale Open-Source Image and Video Dataset for Robust Wildfire Detection and Classification",
+      "title_zh": "面向鲁棒野火检测与分类的大规模开源图像与视频数据集",
+      "url": "https://arxiv.org/abs/2606.10174",
+      "doi": "",
+      "arxiv_id": "2606.10174",
+      "authors": [
+        "Emadeldeen Hamdan",
+        "Yingyi Luo",
+        "B. Ugur Toreyin",
+        "Erdem Koyuncu",
+        "Adam J. Watts",
+        "Ugur Gudukbay",
+        "Ahmet Enis Cetin"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 55,
+      "reason": "该论文构建大规模开源图像与视频数据集用于野火检测与分类，属于遥感灾害监测与变化检测相关方向，与遥感变化检测研究主题有较强关联，且涉及多源数据（图像与视频）融合。",
+      "tags": [
+        "野火检测",
+        "遥感数据集",
+        "图像视频分类",
+        "灾害监测"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结果信息。",
+      "insight_zh": "摘要为空，无法确认数据集规模、标注方式或基准结果；从标题看，其贡献在于提供野火检测与分类的图像视频数据资源，可能对遥感灾害监测与变化检测研究有数据支撑价值，但摘要未提供任何可验证细节。"
+    },
+    {
+      "key": "arxiv:2512.24565",
+      "title": "MCPAgentBench: A Real-world Task Benchmark for Evaluating LLM Agent MCP Tool Use",
+      "title_zh": "MCPAgentBench：评估LLM智能体MCP工具使用的真实世界任务基准",
+      "url": "https://arxiv.org/abs/2512.24565",
+      "doi": "",
+      "arxiv_id": "2512.24565",
+      "authors": [
+        "Zixiang Liu",
+        "Wenrui Liu",
+        "Elsie Dai",
+        "Wenhan Yu",
+        "Lei Yu",
+        "Tong Yang",
+        "Jinjun Han",
+        "Hong Gao"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 50,
+      "reason": "该文提出评估LLM智能体MCP工具使用的真实任务基准，属于LLM与多智能体方向，与研究者关注的LLM和多智能体主题直接相关；MCP工具调用机制对地理空间智能中智能体调用GIS工具与遥感分析接口有潜在参考价值，但未涉及地理空间应用，故相关性中等。",
+      "tags": [
+        "LLM智能体",
+        "MCP工具使用",
+        "基准评测",
+        "真实任务"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅含分隔线），无法提供具体摘要信息。",
+      "insight_zh": "由于摘要缺失，无法基于原文内容进行推断。从标题判断，该文可能构建面向真实任务的MCP工具使用基准，用于评估LLM智能体的工具调用能力，这对地理空间智能中构建能够调用GIS分析、遥感处理等专业工具的智能体系统具有潜在参考价值，但需查阅全文确认基准设计与任务类型。"
+    },
+    {
+      "key": "arxiv:2608.25977",
+      "title": "When Personality Meets Quantization: A Layer-wise MBTI Analysis of Quantized LLMs",
+      "title_zh": "当人格遇到量化：量化LLM的逐层MBTI分析",
+      "url": "https://arxiv.org/abs/2608.25977",
+      "doi": "",
+      "arxiv_id": "2608.25977",
+      "authors": [
+        "Yao Fu",
+        "Lijia Huang",
+        "Xiaomin Li",
+        "Runchao Li",
+        "Yu Yin",
+        "Kenneth A. Loparo"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 50,
+      "reason": "该研究分析量化LLM的人格特征及其层间涌现机制，对理解地理空间智能中部署的量化模型行为可靠性有参考价值，但主题与城市更新核心研究关联度中等。",
+      "tags": [
+        "量化LLM",
+        "人格分析",
+        "MBTI",
+        "层间分析",
+        "解码策略"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "本文对多种精度（4位GPTQ、AWQ和2位AQLM变体）的开源LLM进行系统MBTI分析，通过选项级熵和置信度差距动态考察人格在层间的涌现，并引入不确定性放大层解码（UALD）研究推理时的人格漂移。结果显示ENFJ在模型家族和精度间占主导，4位量化基本保留粗粒度人格结构，2位量化破坏细粒度提示一致性，人格决策在上层涌现。",
+      "insight_zh": "LLM的人格不是静态属性，而是依赖于层的决策过程，对量化和解码策略敏感，这为量化模型的行为可靠性提供了新视角。"
+    },
+    {
+      "key": "arxiv:2609.19138",
+      "title": "In-Context Robot Learning with VLM Agents",
+      "title_zh": "基于VLM智能体的上下文机器人学习",
+      "url": "https://arxiv.org/abs/2609.19138",
+      "doi": "",
+      "arxiv_id": "2609.19138",
+      "authors": [
+        "Dongzhou Cheng",
+        "Taoran Yi",
+        "Ye Fang",
+        "Xingwu Zhang",
+        "Fan Feng",
+        "Yixuan Li",
+        "Gengxiong Zhuang",
+        "Rongze Wang",
+        "Shuai Yang",
+        "Wei Song",
+        "Weizhi Xue",
+        "Minyan Wu",
+        "Jie Gui",
+        "Jiaqi Wang",
+        "Tong Wu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T17:58:35+00:00",
+      "score": 45,
+      "reason": "该论文提出基于VLM智能体的上下文机器人学习框架，与研究中'LLM和多智能体'及'地理空间智能'方向相关，但其应用场景为机器人操作而非城市或地理空间分析。",
+      "tags": [
+        "视觉语言模型",
+        "机器人学习",
+        "上下文学习",
+        "具身智能"
+      ],
+      "abstract": "Enabling robots to adapt to unfamiliar environments as readily as humans remains a moonshot goal of embodied AI. No finite collection of demonstrations can cover every task and situation a robot will encounter, making the ability to learn from context at deployment essential for generalization. Such in-context learning (ICL), however, remains largely beyond the reach of existing robotic policies. The broad agentic capabilities of commercial vision-language models (VLMs), such as GPT-6 Astra, raise a compelling question: can these models learn from demonstrations, examples, and interaction feedback, then translate that information into executable and verifiable robot behavior from a new initial state without gradient updates or persistent changes to task-specific parameters? We introduce GPT-Policy, a general-agent framework for in-context robot learning. GPT-Policy integrates a context compiler that preserves task-relevant visual transitions, a VLM that proposes robot-tool actions, and a constrained controller that verifies and executes each action and reports its outcome. We evaluate its reliability and limitations through task success and efficiency metrics, matched comparisons across models, and controlled context ablations. In real-robot trials, human video demonstrations improve task completion even without robot action labels, while aligned action references yield further gains on contact-sensitive tasks. These findings position GPT-Policy as a step toward robot adaptation through in-context learning, providing an empirical foundation for translating the general-purpose capabilities of VLMs into physical behavior and clarifying the challenges that must be overcome for reliable deployment.",
+      "summary_zh": "使机器人像人类一样快速适应陌生环境是具身AI的长期目标。有限的演示无法覆盖机器人将遇到的所有任务和情境，因此部署时从上下文学习的能力对泛化至关重要，但现有机器人策略大多不具备这种上下文学习（ICL）能力。商业视觉语言模型（VLM）如GPT-6 Astra展现出广泛智能体能力，引发一个问题：这些模型能否从演示、示例和交互反馈中学习，并在无梯度更新或任务特定参数持久改变的情况下，将信息转化为可执行且可验证的机器人行为。作者提出GPT-Policy，一个用于上下文机器人学习的通用智能体框架，集成保留任务相关视觉转换的上下文编译器、提出机器人工具动作的VLM，以及验证并执行每个动作并报告结果的约束控制器。作者通过任务成功率和效率指标、跨模型匹配比较和受控上下文消融评估其可靠性与局限。在真实机器人试验中，人类视频演示即使没有机器人动作标签也能提升任务完成度，而对齐的动作参考在接触敏感任务上带来进一步增益。",
+      "insight_zh": "该工作展示了VLM智能体通过上下文学习将通用能力转化为物理行为的潜力，其上下文编译与约束执行机制或可启发地理空间智能中LLM智能体与真实环境交互的框架设计，但论文未涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.18481",
+      "title": "Hyperbolic Graph Representation Learning for Differential Diagnosis on Biomedical Knowledge Graphs",
+      "title_zh": "面向生物医学知识图谱鉴别诊断的双曲图表示学习",
+      "url": "https://arxiv.org/abs/2609.18481",
+      "doi": "",
+      "arxiv_id": "2609.18481",
+      "authors": [
+        "Pietro Miotto",
+        "Lucia Mellini",
+        "Tommaso Marzi",
+        "Cesare Alippi",
+        "Elena Casiraghi",
+        "Alberto Paccanaro",
+        "Giorgio Valentini",
+        "Mauricio Soto-Gomez"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T11:11:46+00:00",
+      "score": 45,
+      "reason": "该论文研究双曲图表示学习用于生物医学知识图谱上的鉴别诊断，涉及图表示学习与知识图谱，与地理空间智能中的图学习方法有间接联系，但未涉及城市或遥感应用。",
+      "tags": [
+        "双曲图表示学习",
+        "生物医学知识图谱",
+        "链接预测",
+        "鉴别诊断"
+      ],
+      "abstract": "Biomedical knowledge graphs combine ontology-derived hierarchies with transversal associations among heterogeneous entities such as phenotypes, diseases, genes, proteins, and patients. This hybrid structure raises the question of whether hyperbolic embeddings, which naturally capture tree-like organization, remain useful beyond purely hierarchical graphs. We present a preliminary study of hyperbolic graph representation learning for Mendelian-disease differential diagnosis on a patient-integrated biomedical graph. Experiments on isolated ontology subgraphs show that hyperbolic models achieve strong performance in substantially lower dimensions than Euclidean baselines. We then evaluate the models on a link-prediction task that ranks candidate diseases for each patient. Results suggest that hyperbolic embeddings can exploit biomedical hierarchical structure while supporting diagnostic reasoning over heterogeneous patient-level graphs.",
+      "summary_zh": "生物医学知识图谱将本体衍生的层次结构与表型、疾病、基因、蛋白质和患者等异质实体之间的横向关联结合起来。这种混合结构提出了一个问题：天然捕捉树状组织的双曲嵌入，在纯层次图之外是否仍然有用。作者提出一项初步研究，在患者整合的生物医学图谱上进行孟德尔疾病鉴别诊断的双曲图表示学习。在孤立本体子图上的实验表明，双曲模型在维度显著低于欧几里得基线的情况下取得强性能。随后作者在链接预测任务上评估模型，该任务为每位患者排序候选疾病。结果表明，双曲嵌入能够利用生物医学层次结构，同时支持异质患者级图谱上的诊断推理。",
+      "insight_zh": "该研究探索双曲嵌入在兼具层次与横向关联的生物医学图谱上的有效性，其结论可能对地理空间知识图谱（如结合行政层级与跨区域关联）的表示学习有方法学参考，但摘要未涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.18282",
+      "title": "Too Good to Be Real? Diagnosing and Reducing the Gap Between AI Preference and Real User Engagement",
+      "title_zh": "好得不真实？诊断并缩小AI偏好与真实用户参与度之间的差距",
+      "url": "https://arxiv.org/abs/2609.18282",
+      "doi": "",
+      "arxiv_id": "2609.18282",
+      "authors": [
+        "Xinglang Zhang",
+        "Yuanmeng Xiang",
+        "Yunyao Zhang",
+        "Zeliang Chen",
+        "Junqing Yu",
+        "Zikai Song"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T08:04:14+00:00",
+      "score": 45,
+      "reason": "该文研究AI偏好与真实用户参与度之间的差距，涉及LLM生成内容评估与人机对齐，与研究者LLM方向相关，但应用为在线问答平台而非地理空间。",
+      "tags": [
+        "LLM偏好",
+        "用户参与度",
+        "内容生成",
+        "本体偏好测量",
+        "人机对齐"
+      ],
+      "abstract": "Large language models are increasingly used to generate and evaluate online content, yet it remains unclear whether the qualities they associate with higher engagement match what real users respond to. We study this question using 1.17 million answers to 25,978 questions from Zhihu, Quora, and Reddit, comparing real platform answers and AI-generated answers across four within-question engagement levels. We introduce Ontological Preference Measurement, which represents answers along three dimensions: logic, affect, and expression. We find a systematic gap between AI preference and real user engagement: as target engagement increases, LLMs add more explicit logical structure, while real user engagement is more strongly associated with affective and expressive salience. We call this tendency logic overbinding. Based on this diagnosis, we propose Ontology-Masked Reasoning Autoencoding (OMRA), a controlled intervention that masks and reconstructs over-explained spans while preserving stance, factual content, and coherence. Across four LLM families, OMRA reduces the measured gap by an average of 54.4%. In human evaluation, OMRA wins 62.4% of pairwise preference judgments against matched real platform answers, even though the real answers are more often judged to be human-written.",
+      "summary_zh": "大语言模型越来越多地用于生成和评估在线内容，但它们所关联的高参与度品质是否与真实用户响应的品质相符仍不清楚。本文使用来自知乎、Quora和Reddit的25,978个问题的117万条回答，在四个问题内参与度水平上比较真实平台回答和AI生成回答。作者引入本体偏好测量，沿逻辑、情感和表达三个维度表示回答。作者发现AI偏好与真实用户参与度之间存在系统性差距：随着目标参与度增加，LLM添加更多显式逻辑结构，而真实用户参与度与情感和表达显著性关联更强。作者称这种倾向为逻辑过度绑定。基于这一诊断，作者提出本体掩码推理自编码（OMRA），一种受控干预，掩码并重建过度解释的片段，同时保留立场、事实内容和连贯性。在四个LLM家族中，OMRA将测量差距平均缩小54.4%。在人工评估中，OMRA在配对偏好判断中以62.4%的比例胜过匹配的真实平台回答，尽管真实回答更常被判定为人类撰写。",
+      "insight_zh": "该研究揭示LLM在内容生成中倾向于过度强调逻辑结构，而真实用户更受情感与表达驱动；其提出的OMRA干预表明可通过掩码重建过度解释片段来缩小这一偏好差距，对LLM生成内容的评估与对齐具有方法启示。"
+    },
+    {
+      "key": "arxiv:2609.08788",
+      "title": "Adaptive Anisotropic Attention for Axis-Structured Signals",
+      "title_zh": "面向轴结构化信号的自适应各向异性注意力",
+      "url": "https://arxiv.org/abs/2609.08788",
+      "doi": "",
+      "arxiv_id": "2609.08788",
+      "authors": [
+        "Mahir Jain",
+        "Parshva Runwal",
+        "Aditya Ray Mishra",
+        "Arvasu Kulkarni",
+        "Jeet Bandhu Lahiri",
+        "Sandeep Singh",
+        "Siddharth Panwar"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T14:19:33+00:00",
+      "score": 45,
+      "reason": "该研究提出了一种针对轴结构化信号的自适应各向异性注意力机制，其核心思想是让注意力对齐信号的自然轴。这与遥感变化检测中处理高光谱或时序影像的轴结构（如光谱、时间、空间）有较强的类比性和潜在迁移价值。",
+      "tags": [
+        "注意力机制",
+        "结构化信号",
+        "EEG",
+        "时间序列",
+        "深度学习"
+      ],
+      "abstract": "Dense self-attention treats all token pairs as equally plausible before learning, an interaction-isotropic prior that can be mismatched to structured signals. For structured, low signal-to-noise ratio (SNR) signals such as EEG, dependencies are organized along the electrode and time axes, and this uniform prior exposes each token to many irrelevant interactions. We introduce Adaptive Anisotropic Attention (AAA), which splits attention into two paths: a temporal path, where each token attends to the tokens of its own electrode across time, and a spatial path, where it attends to the tokens of the other electrodes at the same time step. A small gate predicts, for every token, a convex combination of the two path outputs: two non-negative weights that sum to one. On six EEG downstream tasks, the resulting model, AXON (AXis-factorized Operator Network), improves mean balanced accuracy over a dense baseline under both linear probing and full fine-tuning. We show that both paths (temporal and spatial) are necessary and that the weighted sum beats a hard choice of one path; most of the benefit comes from the gate learning a different temporal/spatial balance at each layer of the network. Controlled audio spectrogram experiments show that axis factorization transfers beyond EEG. These results suggest that aligning attention with the natural axes of structured signals provides a useful inductive bias.",
+      "summary_zh": "论文提出自适应各向异性注意力（AAA），将注意力分解为时间路径（同一电极跨时间）和空间路径（同一时刻跨电极），并通过一个门控机制为每个token学习两条路径输出的凸组合。在六个EEG下游任务中，该模型（AXON）在多种评估设置下优于密集注意力基线。实验表明两条路径均不可或缺，且门控在不同层学习不同的时空平衡。在音频频谱图上的实验也验证了该方法的可迁移性。",
+      "insight_zh": "该研究强调将注意力机制与数据的自然轴对齐，这一归纳偏置对于处理具有明确空间和时间维度的遥感影像或城市时空数据具有潜在借鉴意义，可能启发更高效、更可解释的注意力模型设计。"
+    },
+    {
+      "key": "arxiv:2609.07478",
+      "title": "The Internal Anatomy of Strategic Choice in Large Language Models",
+      "title_zh": "大语言模型策略选择的内部解剖",
+      "url": "https://arxiv.org/abs/2609.07478",
+      "doi": "",
+      "arxiv_id": "2609.07478",
+      "authors": [
+        "Vin\\'icius Ferraz",
+        "Leon Houf",
+        "Enrico Ferrea"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-07T13:34:30+00:00",
+      "score": 45,
+      "reason": "论文研究大语言模型在策略选择中的内部计算机制，涉及模型可解释性和认知建模，与LLM和多智能体研究方向相关，但未涉及地理空间应用。",
+      "tags": [
+        "大语言模型",
+        "策略选择",
+        "内部机制",
+        "认知建模",
+        "可解释性"
+      ],
+      "abstract": "Large language models act as strategic agents and models of human choice, yet choosing like a strategic agent does not mean computing like one. We recorded activations from four open-weight models --- dense and mixture-of-experts, including a matched base--instruct pair --- in one-shot play of 144 strict ordinal $2\\times2$ games. We followed a prespecified incentive from prompt, through activations, to choice. Dense models mirrored the unadjusted human decline with game complexity. Incentive and choice were detectable in every model, but models differed in whether incentive reached the choice, aligned with it and, where tested, whether strengthening it shifted preference. The base and instruction-tuned Qwen2.5 models chose almost identically at baseline yet differed in whether incentive reached choice. Fixed decision cues were distinguishable internally but changed choices selectively. Similar behaviour can rest on different computation; post-training can reshape the path from represented incentive to decision while leaving behaviour and decodable information largely intact.",
+      "summary_zh": "研究通过记录四个开源模型在144个严格序数2x2博弈中的激活，追踪从提示、激活到选择的激励路径。发现不同模型在激励是否影响选择、是否与选择对齐等方面存在差异，且相似行为可能基于不同的计算过程，后训练可以重塑从表征激励到决策的路径。",
+      "insight_zh": "研究表明大语言模型的策略行为与其内部计算机制并非简单对应，后训练可改变决策路径而不显著影响外部行为，这对理解和设计基于LLM的智能体系统具有启示。"
+    },
+    {
+      "key": "arxiv:2609.16498",
+      "title": "Geospatial Metadata Improves Discoverability by Connecting Datasets Across Scientific Disciplines",
+      "title_zh": "地理空间元数据通过连接跨学科数据集改善可发现性",
+      "url": "https://arxiv.org/abs/2609.16498",
+      "doi": "",
+      "arxiv_id": "2609.16498",
+      "authors": [
+        "Daniel Ebanks",
+        "Devika Jain"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 45,
+      "reason": "该论文探讨地理空间元数据如何改善跨学科数据集的可发现性，与GIS博士研究中的多源数据融合和地理空间智能方向相关，但摘要内容缺失，无法评估具体方法和结论。",
+      "tags": [
+        "地理空间元数据",
+        "数据发现",
+        "跨学科数据集",
+        "FAIR原则"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，无法提供详细总结。",
+      "insight_zh": "由于摘要内容缺失，无法进行有效推断。从标题推测，该研究可能探讨地理空间元数据在跨学科数据发现中的作用，与多源数据融合和地理空间数据基础设施相关，但缺乏具体信息。"
+    }
+  ]
+}

@@ -16,36 +16,36 @@
     "arxiv:2609.16852",
     "arxiv:2511.02831",
     "arxiv:2609.17317",
+    "arxiv:2609.17039",
     "arxiv:2609.15992",
     "arxiv:2601.18493",
     "arxiv:2605.29879",
     "arxiv:2607.09493",
+    "arxiv:2609.17017",
     "arxiv:2609.17523",
     "arxiv:2609.17310",
     "arxiv:2609.17107",
+    "arxiv:2609.16997",
     "arxiv:2609.16946",
     "arxiv:2609.16919",
     "arxiv:2609.16672",
     "arxiv:2609.16627",
     "arxiv:2609.16486",
-    "arxiv:2609.16270",
-    "arxiv:2609.07474",
-    "arxiv:2606.06114",
-    "arxiv:2509.09710"
+    "arxiv:2609.16270"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:554",
-    "deepseek": "partial:0/200;failed-batches:20"
+    "deepseek": "partial:29/199;failed-batches:17"
   },
-  "updated_at": "2026-09-17T00:53:01.297802+00:00",
+  "updated_at": "2026-09-17T09:05:11.600141+00:00",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 354,
+    "analyzed": 384,
     "high": 7,
-    "medium": 13,
-    "low": 24,
-    "below_threshold": 310
+    "medium": 14,
+    "low": 30,
+    "below_threshold": 333
   },
   "papers": [
     {
@@ -465,6 +465,34 @@
       "insight_zh": "该研究提示，当LLM智能体被赋予人格设定时，其生成内容更难与人类区分，但行为层面仍可能残留可聚合的痕迹；这对依赖问卷或多智能体模拟的研究具有数据效度警示意义。"
     },
     {
+      "key": "arxiv:2609.17039",
+      "title": "Bi-FlowGS: Bridging Generative View Completion and Gaussian Geometry through Bidirectional Flow Co-Refinement",
+      "title_zh": "Bi-FlowGS：通过双向流协同细化桥接生成式视图补全与高斯几何",
+      "url": "https://arxiv.org/abs/2609.17039",
+      "doi": "",
+      "arxiv_id": "2609.17039",
+      "authors": [
+        "Yuetong Wang",
+        "Jinsheng Quan",
+        "Yi Yang",
+        "Yawei Luo"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T11:47:35+00:00",
+      "score": 62,
+      "reason": "该文聚焦稀疏视图三维重建与3D高斯几何一致性，属于遥感变化检测与地理空间智能中三维场景建模的底层方法，但与城市更新、时空数据挖掘、LLM多智能体的直接关联较弱。",
+      "tags": [
+        "3D Gaussian Splatting",
+        "稀疏视图重建",
+        "光流",
+        "生成式视图补全",
+        "几何正则化"
+      ],
+      "abstract": "Sparse-view 3D scene reconstruction with 3D Gaussian Splatting (3DGS) is inherently underconstrained. Plausible renderings can also coexist with erroneous Gaussian geometry, as errors in positions or depths may be concealed by opacity, scale, and appearance; we term this failure mode Geometry Cheating. Existing regularization methods constrain geometry but remain limited to observed views, while video-diffusion-based methods complete unseen views yet mainly use them as RGB pseudo-supervision, underusing motion and temporal priors and lacking explicit geometry supervision. We present Bi-FlowGS, which uses optical flow to bridge generative view completion and Gaussian geometry regularization. Our plug-and-play Video-to-Geometry Flow Distillation (V2G) distills temporal correspondence priors from restored videos into Gaussian geometry to alleviate Geometry Cheating. Conversely, Geometry-to-Video Flow-Guided Restoration (G2V) uses the current 3DGS geometry to guide temporally consistent video restoration, providing more reliable generative supervision. Together, V2G and G2V form an implicit bidirectional co-refinement process, enabling restored videos and the optimized 3DGS scene to iteratively improve each other. Experiments demonstrate improved rendering quality and geometric consistency across wide-baseline and unbounded 360{\\deg} benchmarks.",
+      "summary_zh": "稀疏视图下的3D高斯泼溅（3DGS）重建本质上是欠约束的，合理的渲染结果可能与错误的高斯几何并存，因为位置或深度误差可能被不透明度、尺度和外观所掩盖，作者将这一失效模式称为“几何作弊”。现有正则化方法仅约束已观测视图，而基于视频扩散的方法虽能补全未见视图，却主要将其用作RGB伪监督，未充分利用运动与时间先验，也缺乏显式几何监督。本文提出Bi-FlowGS，利用光流桥接生成式视图补全与高斯几何正则化。其即插即用的视频到几何流蒸馏（V2G）将恢复视频中的时间对应先验蒸馏到高斯几何中以缓解几何作弊；反之，几何到视频流引导恢复（G2V）利用当前3DGS几何引导时间一致的视频恢复，提供更可靠的生成式监督。V2G与G2V共同构成隐式双向协同细化过程，使恢复视频与优化后的3DGS场景相互迭代提升。实验表明，在大基线及无界360度基准上，渲染质量与几何一致性均有提升。",
+      "insight_zh": "该工作提示，在三维场景重建中引入视频扩散模型的时间对应先验，可作为几何正则化的补充信号；其双向协同细化思路或可迁移至城市三维建模与遥感变化检测中的多时相几何一致性约束，但摘要未给出与地理空间数据的直接验证。"
+    },
+    {
       "key": "arxiv:2609.15992",
       "title": "Optimal Model Activation Policies for Inference Networks of Large Language Models",
       "title_zh": "大型语言模型推理网络的最优模型激活策略",
@@ -575,6 +603,32 @@
       "insight_zh": "共享持久记忆机制或可应用于多智能体城市更新模拟中，使各智能体在长期演化中保持对关键城市状态的一致性记忆，但需完整摘要确认其技术细节。"
     },
     {
+      "key": "arxiv:2609.17017",
+      "title": "BeWater: Effective Protesters Navigate Watersheds in Street Networks",
+      "title_zh": "BeWater：抗议者在街道网络中的有效分水岭导航",
+      "url": "https://arxiv.org/abs/2609.17017",
+      "doi": "",
+      "arxiv_id": "2609.17017",
+      "authors": [
+        "Guillaume Moinard",
+        "Matthieu Latapy"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T11:25:58+00:00",
+      "score": 58,
+      "reason": "该文利用OpenStreetMap街道网络数据研究城市中人群聚集的分布式行走协议，涉及城市空间信息与网络分析，与GIS和城市研究相关，但不涉及城市更新、遥感或LLM。",
+      "tags": [
+        "街道网络",
+        "OpenStreetMap",
+        "分布式协议",
+        "城市空间信息",
+        "人群聚集"
+      ],
+      "abstract": "During social movements, protesters need to gather with limited communication means and limited knowledge other than what they observe in their direct surroundings. We propose BeWater, a fully distributed walking protocol that achieves gathering thanks to city information like street length, number of restaurants, number of lanes, or street names. Even though using only one of these observables performs poorly, we show that combining them in more advanced tactics rapidly leads to groups of significant sizes. To do so, our work leverages OpenStreetMap data to perform experiments on several real-world cities.",
+      "summary_zh": "在社会运动中，抗议者需要在通信手段有限、除直接观察外知识有限的情况下聚集。本文提出BeWater，一种完全分布式的行走协议，借助街道长度、餐馆数量、车道数或街道名称等城市信息实现聚集。尽管仅使用其中任一可观测信息效果不佳，作者表明将其组合为更高级的策略可迅速形成规模可观的群体。为此，该工作利用OpenStreetMap数据在多个真实城市开展实验。",
+      "insight_zh": "该研究展示了OSM多属性街道信息在分布式空间决策中的组合价值，其思路或可启发城市更新中基于街道网络特征的人群流动模拟与应急疏散研究；但摘要未涉及城市更新或遥感数据。"
+    },
+    {
       "key": "arxiv:2609.17523",
       "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
       "title_zh": "ScienceBuddy：面向交互式科学智能体的递归中递归自改进",
@@ -664,6 +718,37 @@
       "abstract": "Generative AI promises natural language access to the massive numerical telemetry of data centers and Industry 4.0 installations, yet text-to-query and tool-using agents stay unreliable: even frontier models answer little more than half of real-world database questions, and far fewer of the multi-step, operational ones, because the LLM must compose how heterogeneous sources relate and hallucinates the relations, not just the fields. We propose symbolic separation: a deep agent reasons freely but may act on data only through an ontology-constrained Virtual Knowledge Graph with deterministic pre-execution validation. Unlike a tool API's interface contract, this domain-semantic contract turns a complex question into one validated graph traversal instead of LLM-inferred joins. Instantiated as the Neurosymbolic Deep Analyst and evaluated on 49.9 TB of superconputer telemetry against a rigid workflow and a non-symbolic ablation, it raises end-to-end task success from 43% to 86%, prevents silent data-integrity errors that no syntactic check catches, and cuts token cost by 2.4x, letting a smaller on-premise model outperform a larger one.",
       "summary_zh": "生成式AI有望为数据中心和工业4.0设施的海量数值遥测数据提供自然语言访问，但文本到查询和工具使用智能体仍不可靠：即使是前沿模型也只能回答略多于一半的真实世界数据库问题，对于多步骤运维问题则更少，因为LLM必须组合异构数据源之间的关系，并且不仅会幻觉字段，还会幻觉关系。本文提出符号分离：深度智能体自由推理，但只能通过本体约束的虚拟知识图谱对数据采取行动，并具有确定性的执行前验证。与工具API的接口契约不同，这种领域语义契约将复杂问题转化为一次经过验证的图遍历，而非LLM推断的连接。实例化为神经符号深度分析师，并在49.9 TB超级计算机遥测数据上针对刚性工作流和非符号消融进行评估，它将端到端任务成功率从43%提升至86%，防止了任何句法检查都无法捕获的静默数据完整性错误，并将token成本降低2.4倍，使较小的本地部署模型能够超越更大的模型。",
       "insight_zh": "该文的符号分离架构——本体约束的虚拟知识图谱作为LLM智能体的确定性行动接口——对地理空间智能中多源数据融合与可信分析具有重要借鉴意义，尤其是城市更新中涉及多部门异构数据的复杂查询场景，可参考其将领域语义契约转化为验证图遍历的思路。"
+    },
+    {
+      "key": "arxiv:2609.16997",
+      "title": "Can LLMs Follow the Pulse of a Crisis? Evaluating Crisis Sentiment in Bangladesh's July Uprising",
+      "title_zh": "LLM能否把握危机脉搏？评估孟加拉国七月起义中的危机情感",
+      "url": "https://arxiv.org/abs/2609.16997",
+      "doi": "",
+      "arxiv_id": "2609.16997",
+      "authors": [
+        "Md. Samiul Alim",
+        "Mahir Shahriar Tamim",
+        "Tanvir Ahmed Khan",
+        "Sharjil Khan",
+        "Rafia Ferdous Duti",
+        "Shahriyar Zaman Ridoy",
+        "Mohammad Ali Moni"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T11:08:25+00:00",
+      "score": 55,
+      "reason": "该文构建孟加拉语危机情感数据集并评估LLM，涉及社交媒体时空事件分析与低资源语言，与时空数据挖掘和LLM方向相关，但不涉及城市更新或遥感。",
+      "tags": [
+        "危机情感分析",
+        "低资源语言",
+        "孟加拉语",
+        "社交媒体",
+        "时空阶段"
+      ],
+      "abstract": "Crisis sentiment analysis is especially challenging for low-resource languages such as Bangla, where language, context, and public reaction shift rapidly. We introduce UNRESTSENT200K, a Bangla crisis sentiment dataset with approximately 200K Facebook and YouTube comments from the July-August 2024 Bangladesh uprising. The dataset covers five event-aligned phases, from early escalation and internet blackout to regime transition and a later flood crisis. Each comment is linked to its parent post, enabling evaluation with and without discourse context. All comments are annotated through a fully human process involving 14 native Bangla-speaking annotators and senior validation, achieving substantial agreement (kappa = 0.73, alpha = 0.71) and 94.2% blind-audit agreement. We benchmark fine-tuned encoders, prompted LLMs, and LoRA-tuned LLMs. Results show that parent-post context consistently improves performance, while temporal shift across phases causes large performance drops. Strong LLMs perform well, but still struggle with sarcasm, implicit political references, and phase-dependent meaning. UNRESTSENT200K provides a benchmark for studying context-aware and temporally robust sentiment analysis in low-resource crisis discourse. UNRESTSENT200K is available at https://sami0055.github.io/UNRESTSENT200K/",
+      "summary_zh": "危机情感分析对孟加拉语等低资源语言尤为困难，因为语言、语境和公众反应变化迅速。本文提出UNRESTSENT200K，一个孟加拉语危机情感数据集，包含约20万条来自2024年7月至8月孟加拉国起义期间的Facebook和YouTube评论。该数据集覆盖五个与事件对齐的阶段，从早期升级、互联网封锁到政权过渡及随后的洪灾危机。每条评论与其父帖关联，支持在有和无话语语境下进行评估。所有评论通过14名孟加拉语母语标注者和资深验证者参与的完全人工流程标注，达到较高一致性（kappa=0.73，alpha=0.71）和94.2%的盲审一致率。作者对微调编码器、提示式LLM和LoRA微调LLM进行基准测试。结果表明，父帖语境持续提升性能，而跨阶段的时间偏移导致大幅性能下降。强LLM表现良好，但在讽刺、隐晦政治指涉和阶段依赖语义上仍有困难。UNRESTSENT200K为低资源危机话语中的语境感知与时间鲁棒情感分析提供了基准。数据集见https://sami0055.github.io/UNRESTSENT200K/。",
+      "insight_zh": "该研究显示，社交媒体危机情感分析中时间阶段偏移会显著削弱模型性能，这一发现对城市事件时空数据挖掘中的非平稳性建模具有参考价值；其父帖语境增强思路或可迁移至地理社交媒体分析，但摘要未涉及地理空间特征。"
     },
     {
       "key": "arxiv:2609.16946",
@@ -819,88 +904,6 @@
       "abstract": "Large language models are increasingly deployed as interacting agents, making the persistence of their action policies across repeated interaction critical for reliable multi-agent operation. We investigate whether and how agent-generated, non-binding pre-play communication (\"cheap talk\") increases such persistence in four open-weight 7-9B-parameter LLMs. Our experiments span four repeated two-player games -- Prisoner's Dilemma, Snowdrift, Stag Hunt, and Harmony -- with incentive structures ranging from strategic conflict to alignment, each presented in six contexts. We observe unstable trajectories in all four games, although their prevalence and magnitude depend strongly on model and context. Across models, games, and contexts, cheap talk is predominantly stabilizing, with five corrected reversals concentrated in social or team framings; effects vary substantially by model and context. Controlled current-message interventions identify two separable output-level channels in Qwen: reduced action uncertainty and less between-round drift in action probabilities. Matched history-by-message counterfactuals further show that recent partner behavior conditions how mutual-benefit versus self-prioritizing language affects policy persistence. Finally, in Prisoner's Dilemma, we identify in Qwen and Falcon a history-balanced policy-content direction in late transformer layers; projecting out this direction increases realized switching during closed-loop play, demonstrating that complete trajectories are causally sensitive to this component. Together, these findings show that cheap talk can make individual trajectories more persistent across diverse incentive structures, while revealing that the magnitude and mechanisms of stabilization are model- and history-dependent.",
       "summary_zh": "大语言模型越来越多地被部署为交互式智能体，使其动作策略在重复交互中的持续性对可靠的多智能体运行至关重要。本文研究了智能体生成的、非约束性的预沟通（“廉价磋商”）是否以及如何提升四个开放权重7-9B参数LLM中这种持续性。实验涵盖四个重复双人博弈——囚徒困境、雪堆博弈、猎鹿博弈与和谐博弈——其激励结构从策略冲突到利益一致，每个博弈呈现六种情境。作者在四个博弈中均观察到不稳定的轨迹，尽管其普遍性和幅度强烈依赖于模型和情境。跨模型、博弈和情境来看，廉价磋商主要起稳定作用，其中五次经校正的反转集中在社交或团队框架中；效应因模型和情境差异显著。受控的当前消息干预在Qwen中识别出两个可分离的输出层通道：动作不确定性降低和轮次间动作概率漂移减少。匹配的历史-消息反事实进一步表明，近期伙伴行为会调节互利语言与自利优先语言对策略持续性的影响。最后，在囚徒困境中，作者在Qwen和Falcon的后期Transformer层中识别出一个历史平衡的策略-内容方向；将该方向投影剔除会增加闭环博弈中的实际切换，表明完整轨迹对该成分具有因果敏感性。总体而言，这些发现表明廉价磋商可使个体轨迹在多样激励结构下更具持续性，同时揭示稳定化的幅度与机制依赖于模型和历史。",
       "insight_zh": "该研究为多智能体LLM系统的交互稳定性提供了机制性证据，其“预沟通稳定策略”的发现或可启发城市模拟、协同规划等地理空间多智能体场景中的通信协议设计。"
-    },
-    {
-      "key": "arxiv:2609.07474",
-      "title": "Where Should Language Sit in a Multimodal Model? Lessons from What Language Does to Human Perception and Cognition",
-      "title_zh": "语言在多模态模型中应处于什么位置？来自语言对人类感知和认知影响的启示",
-      "url": "https://arxiv.org/abs/2609.07474",
-      "doi": "",
-      "arxiv_id": "2609.07474",
-      "authors": [
-        "Peng Xie",
-        "Amr Alanwar"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-07T13:31:29+00:00",
-      "score": 55,
-      "reason": "论文探讨语言在多模态模型中的角色，借鉴人类认知研究，涉及多模态融合和模型设计，与多源数据融合和LLM研究方向相关，但非地理空间特定。",
-      "tags": [
-        "多模态模型",
-        "语言模型",
-        "认知科学",
-        "感知",
-        "模型架构"
-      ],
-      "abstract": "Language models compute over tokens: language is their input, their output, and increasingly their internal representation. Whether language should keep all of these positions depends on what language does to the system that uses it. The one system with a century of data on that question is the human. We review what language does to human perception, the brain, and thought, and read the same evidence against multimodal models and language models. Throughout, we treat language as a compressor that runs on a shared codebook: a word is an index, the content is in the receiver, and a community maintains the codebook. In humans the compression is measurable, learning the codebook reorganizes the senses, and thought survives the loss of language. We then measure the rule that models apply when two cues disagree, with cue-conflict experiments on six vision-language models and two robot policies. Surviving cues are weighted in the order their reliabilities prescribe, at 11 to 82\\% of the ideal observer's slope, and many answers copy the text. One policy family drops a cue that adds no information beyond the others rather than down-weighting it, another keeps it at a weight that fails when the cues conflict, and a visual cue that identifies the task in every training frame is never learned, because the language pathway already fits the data. Language models are the best current models of the human language network, and they have entered the human speech community, shifting word frequencies while alignment narrows their conceptual diversity. We close with seven implications for token-based systems. Language belongs at a model's boundary and in the shared codebook, as in the brain, not as its internal representation; the price of leaving the codebook inside is auditability.",
-      "summary_zh": "论文回顾了语言对人类感知、大脑和思维的影响，并将其与多模态模型和语言模型进行对照。通过线索冲突实验，发现模型对冲突线索的加权遵循其可靠性顺序，但存在差异。论文提出语言应位于模型边界和共享码本中，而非作为内部表征。",
-      "insight_zh": "研究借鉴人类认知证据，为多模态模型的语言使用提供了设计原则，即语言作为压缩器和共享码本，而非内部表征，这对多模态地理空间基础模型的设计有参考价值。"
-    },
-    {
-      "key": "arxiv:2606.06114",
-      "title": "ANCHOR: An External LLM-Driven Supervisory Module Facilitating Healthy Evolution in Self-Evolving Systems",
-      "title_zh": "ANCHOR：促进自演化系统健康演化的外部LLM驱动监督模块",
-      "url": "https://arxiv.org/abs/2606.06114",
-      "doi": "",
-      "arxiv_id": "2606.06114",
-      "authors": [
-        "Dianxing Shi",
-        "Bowen Wang",
-        "Junqi He",
-        "Junhao Chen",
-        "Yuta Nakashima"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文提出外部LLM驱动的监督模块以促进自演化系统的健康演化，与GIS博士研究中的LLM和多智能体方向直接相关。自演化系统的监督机制可类比于城市更新中多智能体模拟的演化控制。",
-      "tags": [
-        "LLM监督",
-        "自演化系统",
-        "多智能体"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究设计了一个名为ANCHOR的外部监督模块，利用LLM对自演化系统进行引导，以避免系统演化过程中的退化或不健康状态。",
-      "insight_zh": "若该监督机制能有效约束自演化系统的演化方向，则对城市更新模拟中多智能体系统的长期演化稳定性控制具有参考价值，但需完整摘要验证其适用场景。"
-    },
-    {
-      "key": "arxiv:2509.09710",
-      "title": "Generating Individual Travel Diaries Using Large Language Models Informed by Census and Land-Use Data",
-      "title_zh": "利用由普查与土地利用数据提供信息的大语言模型生成个体出行日记",
-      "url": "https://arxiv.org/abs/2509.09710",
-      "doi": "",
-      "arxiv_id": "2509.09710",
-      "authors": [
-        "Sepehr Golrokh Amin",
-        "Devin Rhoads",
-        "Fatemeh Fakhrmoosavi",
-        "Nicholas E. Lownes",
-        "and John N. Ivan"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该文利用LLM结合普查与土地利用数据生成个体出行日记，直接涉及城市交通与土地利用，与城市更新、时空数据挖掘及LLM应用方向高度相关。",
-      "tags": [
-        "LLM",
-        "出行日记生成",
-        "普查数据",
-        "土地利用",
-        "城市交通"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作可能提出一种以普查和土地利用数据为条件、由LLM生成个体出行日记的方法，用于出行行为模拟。",
-      "insight_zh": "摘要缺失，无法评估其生成质量与验证方式；但该思路与研究者关注的LLM驱动城市模拟、多源数据融合及城市更新中的行为建模方向契合，可作为智能体出行仿真的潜在参考。"
     }
   ]
 }
