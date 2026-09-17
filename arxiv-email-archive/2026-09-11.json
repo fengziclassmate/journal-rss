@@ -13,10 +13,15 @@
     "arxiv:2608.27034",
     "arxiv:2609.08407",
     "arxiv:2609.00730",
+    "arxiv:2609.11310",
+    "arxiv:2609.11123",
     "arxiv:2609.11058",
     "arxiv:2606.04990",
     "arxiv:2609.07379",
     "arxiv:2608.20805",
+    "arxiv:2609.11065",
+    "arxiv:2609.11277",
+    "arxiv:2609.11101",
     "arxiv:2609.11042",
     "arxiv:2609.04151",
     "arxiv:2608.21057",
@@ -26,26 +31,21 @@
     "arxiv:2605.23234",
     "arxiv:2603.27771",
     "arxiv:2504.13700",
-    "arxiv:2607.18029",
-    "arxiv:2506.07350",
-    "arxiv:2609.08719",
-    "arxiv:2509.18052",
-    "arxiv:2607.19670",
-    "arxiv:2609.11041"
+    "arxiv:2607.18029"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:511",
-    "deepseek": "partial:0/110;failed-batches:11"
+    "deepseek": "partial:18/108;failed-batches:9"
   },
-  "updated_at": "2026-09-17T09:27:19.578799+00:00",
+  "updated_at": "2026-09-17T10:19:01.325386+00:00",
   "analysis_stats": {
     "total": 511,
-    "analyzed": 401,
+    "analyzed": 421,
     "high": 6,
-    "medium": 11,
-    "low": 26,
-    "below_threshold": 358
+    "medium": 13,
+    "low": 32,
+    "below_threshold": 370
   },
   "papers": [
     {
@@ -364,6 +364,65 @@
       "insight_zh": "该研究展示了经典卡尔曼滤波在低成本传感器融合中的实用价值，为GIS中集成多种低成本传感器进行高精度姿态和位置解算提供了参考方案。"
     },
     {
+      "key": "arxiv:2609.11310",
+      "title": "Your Model Already Knows Don't Teach It, Learn to Ask It: Soft Prompting for Few-Shot Adaptation of Vision-Language Models",
+      "title_zh": "你的模型已经知道，不要教它，学会问它：视觉语言模型少样本适配的软提示方法",
+      "url": "https://arxiv.org/abs/2609.11310",
+      "doi": "",
+      "arxiv_id": "2609.11310",
+      "authors": [
+        "Gautam Rajendrakumar Gare",
+        "Siyi Li",
+        "Hewei Wang",
+        "Cesar Daniel Hernandez",
+        "Wei Zhao",
+        "Wolfgang M. Pauli",
+        "John Galeotti",
+        "Deva Ramanan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T09:38:11+00:00",
+      "score": 62,
+      "reason": "该文研究视觉语言模型在航空影像等域外场景下的少样本目标检测，采用软提示微调，与遥感变化检测和多源数据融合中的视觉基础模型适配问题相关，但未涉及城市更新或时空数据挖掘。",
+      "tags": [
+        "视觉语言模型",
+        "少样本目标检测",
+        "软提示",
+        "遥感影像",
+        "多模态"
+      ],
+      "abstract": "We address few-shot object detection with vision-language models (VLMs) in out-of-domain settings such as aerial, industrial, and medical imagery, using only ten annotated images for supervision. Existing adaptation methods are discrete prompt optimization and LoRA fine-tuning. We revisit a third option: soft prompting, where a small number of continuous prompt tokens are optimized while the pretrained backbone remains frozen. We identify two key design choices. First, placing prompt tokens at the cross-modal boundary between visual and text tokens outperforms other placements (10.0 vs. 8.4 mAP). Second, initializing prompts from the empty space token outperforms semantic and random initialization. With these choices, one to three learned tokens (7,168 parameters on average) match the best LoRA configuration on Roboflow20-VL (14.2 mAP, 10-shot) while training over 20,000x fewer parameters. Soft prompting remains harder to optimize, exhibiting higher variance across random seeds. Unlike LoRA, however, it causes no forgetting: the LoRA rank matching our accuracy reduces NaturalBench VQA accuracy by 35% relative, rising to 56% at the largest rank, whereas soft prompting leaves pretrained performance unchanged. The learned tokens behave like prompts rather than weights. They transfer to a newer model without retraining (+0.8 mAP on Qwen3.5-9B) and can be verbalized into readable prompts competitive with prompt-search methods (matching DetPO and outperforming GEPA). The approach also extends beyond detection. On RoboCasa manipulation tasks, the frozen $\\pi_{0.5}$ vision-language-action policy benefits from soft prompting, matching the LoRA baseline on two of three tasks when tokens are placed at the gradient bottleneck. These results suggest modern VLMs already encode much of what is needed for specialized domains; the challenge is learning how to ask.",
+      "summary_zh": "本文研究在航空、工业和医学影像等域外场景下，仅用十张标注图像进行视觉语言模型少样本目标检测。现有适配方法包括离散提示优化和LoRA微调，作者重新审视第三种选择：软提示，即优化少量连续提示token而保持预训练骨干冻结。研究发现两个关键设计选择：第一，将提示token置于视觉与文本token的跨模态边界处优于其他位置（10.0 vs. 8.4 mAP）；第二，从空空间token初始化提示优于语义初始化和随机初始化。基于这些选择，一到三个学习token（平均7168个参数）在Roboflow20-VL上（14.2 mAP，10-shot）即可匹配最佳LoRA配置，而训练参数少20000倍以上。软提示优化难度更大，在不同随机种子下方差更高。但与LoRA不同，它不会造成遗忘：与本文精度相当的LoRA秩会使NaturalBench VQA精度相对下降35%，在最大秩时升至56%，而软提示保持预训练性能不变。学习到的token表现得像提示而非权重，可无需重训练迁移到更新模型（在Qwen3.5-9B上+0.8 mAP），并可言语化为可读提示，与提示搜索方法竞争（匹配DetPO并优于GEPA）。该方法还扩展到检测之外：在RoboCasa操作任务上，冻结的π0.5视觉-语言-动作策略受益于软提示，当token置于梯度瓶颈处时，在三个任务中的两个上匹配LoRA基线。这些结果表明现代视觉语言模型已经编码了大量……",
+      "insight_zh": "该工作提示，在遥感等域外视觉任务中，冻结骨干的软提示可能比LoRA更高效且无遗忘，但其优化方差较高；对地理空间智能中基础模型适配具有参考价值，但摘要未涉及城市更新或时空数据挖掘。"
+    },
+    {
+      "key": "arxiv:2609.11123",
+      "title": "HERALD: High-Fidelity Exemplar Retrieval with Adaptive Landmark Distillation for Heterophily-Aware Graph Condensation",
+      "title_zh": "HERALD：面向异质性感知图压缩的高保真样本检索与自适应地标蒸馏",
+      "url": "https://arxiv.org/abs/2609.11123",
+      "doi": "",
+      "arxiv_id": "2609.11123",
+      "authors": [
+        "Sujan Chakraborty",
+        "Priyanka Saha",
+        "Saptarshi Bej"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T06:11:54+00:00",
+      "score": 62,
+      "reason": "该论文研究异质性图上的图压缩方法，属于图机器学习与数据挖掘范畴，与时空数据挖掘和多智能体研究有一定方法层面的关联，但与城市更新、遥感变化检测等核心方向关联较弱。",
+      "tags": [
+        "图神经网络",
+        "图压缩",
+        "异质性图",
+        "节点分类",
+        "无梯度方法"
+      ],
+      "abstract": "Graph condensation aims to produce a small surrogate graph that preserves the downstream node-classification performance of a much larger original graph. Existing methods rely on Weisfeiler-Lehman neighbourhood aggregation or gradient-based distribution matching, both of which assume that adjacent nodes share the same label, an assumption that breaks down under heterophily. We propose HERALD (High-fidelity Exemplar Retrieval with Adaptive Landmark Distillation), a gradient-free graph condensation framework that adapts the node scoring and feature selection in the condensation pipeline to the graph's measured heterophily. HERALD selects features via a joint Fisher-discriminability and activation-density criterion that down-weights aggregated representations on heterophilic graphs, and scores nodes by a weighted combination of prototype representativeness, decision-boundary proximity, and Local Intrinsic Dimensionality (LID), where the weights are driven by a smooth sigmoid function of the heterophily ratio. Nodes are then assembled into a condensed subgraph through score-ordered BFS expansion, Personalised PageRank pruning, and class rebalancing, all at an identical storage budget to BONSAI, enabling direct comparison. Experiments on eight benchmark datasets spanning homophilic and heterophilic settings show that HERALD matches or outperforms state-of-the-art condensers on heterophilic graphs and remains competitive on homophilic ones across four GNN architectures.",
+      "summary_zh": "图压缩旨在生成一个小型代理图，以保留远大于其原始图的下游节点分类性能。现有方法依赖Weisfeiler-Lehman邻域聚合或基于梯度的分布匹配，二者均假设相邻节点共享相同标签，这一假设在异质性条件下失效。我们提出HERALD（高保真样本检索与自适应地标蒸馏），一种无梯度的图压缩框架，能够根据图所测得的异质性自适应调整压缩流程中的节点评分与特征选择。HERALD通过联合Fisher判别性与激活密度准则选择特征，在异质性图上对聚合表示降权，并依据原型代表性、决策边界邻近度和局部内在维度（LID）的加权组合对节点评分，其中权重由异质性比率的平滑Sigmoid函数驱动。随后通过按分数排序的BFS扩展、个性化PageRank剪枝和类别再平衡将节点组装为压缩子图，且在与BONSAI相同的存储预算下进行，便于直接比较。在涵盖同质与异质设置的八个基准数据集上的实验表明，HERALD在异质性图上匹配或超越最先进的压缩器，并在同质性图上于四种GNN架构下保持竞争力。",
+      "insight_zh": "该工作将图压缩流程与图的异质性程度自适应耦合，提示在异质结构普遍存在的城市空间交互或跨区域关联建模中，压缩与采样策略可能需要依据局部结构特性动态调整，但其在时空场景中的适用性尚需验证。"
+    },
+    {
       "key": "arxiv:2609.11058",
       "title": "EMMI: Edge Multi-Modal Intelligence for Communication-Efficient MLLM Inference via Fused Representation Compression",
       "title_zh": "EMMI：面向通信高效MLLM推理的边缘多模态智能与融合表示压缩",
@@ -477,6 +536,94 @@
       "abstract": "Long-form video understanding remains challenging for video agents due to the mismatch between query demands and evidence acquisition strategies. Although recent planning-before-perception methods outperform query-agnostic pipelines, they often rely on a single dominant strategy, either generation-based strategy or retrieval-based strategy, limiting their ability to handle diverse query demands. We propose Route2Look, a lightweight and model-agnostic framework for query-adaptive evidence acquisition in long-form video understanding. Route2Look operates in a Route-Look-Memorize loop with three tools: Global Browse for holistic context, Temporal Ground for explicit temporal cues, and Semantic Retrieve for semantic search. The core component is a routing policy that dynamically selects evidence acquisition tools based on the query. To build this policy, Route2Look adopts a two-stage design: first distilling the routing skill from differential contrastive analysis between generation-based and retrieval-based trajectories, and then applying the distilled skill with hard routing rules and continue-or-stop criteria during inference. Experiments on challenging long-video benchmarks show that Route2Look achieves state-of-the-art performance while maintaining strong frame efficiency across datasets and query types. Oracle routing analysis further reveals the potential of query-adaptive evidence acquisition for future long-form video understanding.",
       "summary_zh": "本文提出Route2Look，一个轻量级、模型无关的查询自适应证据获取框架。它采用路由-查看-记忆循环，包含全局浏览、时间定位和语义检索三种工具，核心是动态选择证据获取工具的路由策略。该策略通过两阶段设计构建：先从生成式和检索式轨迹的差异对比分析中蒸馏路由技能，再在推理时应用硬路由规则和继续或停止标准。实验表明，Route2Look在长视频基准上达到最先进性能，同时保持高帧效率。",
       "insight_zh": "根据查询需求动态选择证据获取策略，而非使用单一固定策略，能显著提升长视频理解的效率和准确性，这种查询自适应思想对复杂地理空间数据的智能分析具有重要启示。"
+    },
+    {
+      "key": "arxiv:2609.11065",
+      "title": "MOSAIC: Query-Aware Exploration Policy Adaptation for GraphRAG",
+      "title_zh": "MOSAIC：面向GraphRAG的查询感知探索策略自适应",
+      "url": "https://arxiv.org/abs/2609.11065",
+      "doi": "",
+      "arxiv_id": "2609.11065",
+      "authors": [
+        "EunKyeong Lee",
+        "Kyeong-Jin Oh",
+        "Jinwon Kim",
+        "Hye Woo Lee",
+        "Minsang Song",
+        "Hyeongjun Jang",
+        "Junyoung Youn"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T04:12:18+00:00",
+      "score": 58,
+      "reason": "该论文研究查询感知的GraphRAG探索策略，涉及图检索与LLM结合，与LLM和多智能体研究方向相关，且图遍历方法或可迁移至地理知识图谱，但与城市更新和遥感无直接关联。",
+      "tags": [
+        "GraphRAG",
+        "检索增强生成",
+        "查询感知策略",
+        "图遍历",
+        "多跳问答"
+      ],
+      "abstract": "Graph Retrieval-Augmented Generation (GraphRAG) can connect evidence distributed across a corpus graph, but most systems use largely shared exploration procedures across queries. This creates a structural mismatch: direct facts may need compact local neighborhoods, comparisons need balanced coverage of multiple targets, and mediated questions may require deeper paths through weakly related connectors. We present Mosaic, a training-free framework that formulates GraphRAG retrieval as a per-query control problem. An LLM analyzer converts query-specific evidence requirements into a bounded policy over seed selection, graph traversal, stopping, and evidence selection, while the corpus graph, indexes, scoring functions, grounding procedure, and answer generator remain shared. On GraphRAG-Bench, Mosaic achieves query-weighted Answer Correctness of 76.97 on Medical and 64.33 on Novel, improving over the strongest previously reported overall results by 5.13 and 4.43 points. On Medical, it reaches 95.1 Evidence Recall and 86.1 Context Relevancy. Controlled comparisons on an identical graph and generator show that no fixed narrow, medium, or wide policy is consistently optimal; Mosaic improves by 9.96 points over the strongest canonical fixed policy. Relative to Fixed Wide, it evaluates 81.9% fewer paths and retains 47.2% fewer evidence items. Transfer experiments on HotpotQA, MuSiQue, and 2WikiMultiHopQA further show that the policy interface can be applied without benchmark-specific retriever training.",
+      "summary_zh": "图检索增强生成（GraphRAG）能够连接分布在语料图上的证据，但大多数系统在不同查询间使用基本共享的探索流程。这造成结构性错配：直接事实可能需要紧凑的局部邻域，比较需要多个目标的均衡覆盖，而中介性问题可能需要穿越弱相关连接器的更深路径。我们提出Mosaic，一个免训练框架，将GraphRAG检索形式化为逐查询的控制问题。LLM分析器将查询特定的证据需求转换为关于种子选择、图遍历、停止和证据选择的有界策略，而语料图、索引、评分函数、接地过程和答案生成器保持共享。在GraphRAG-Bench上，Mosaic在Medical上取得76.97的查询加权答案正确率，在Novel上取得64.33，分别比此前报告的最强总体结果提升5.13和4.43个百分点。在Medical上，它达到95.1的证据召回率和86.1的上下文相关性。在相同图和生成器上的受控比较表明，没有固定的窄、中或宽策略始终最优；Mosaic比最强的典型固定策略提升9.96个百分点。相对于固定宽策略，它评估的路径减少81.9%，保留的证据项减少47.2%。在HotpotQA、MuSiQue和2WikiMultiHopQA上的迁移实验进一步表明，该策略接口无需基准特定的检索器训练即可应用。",
+      "insight_zh": "该工作表明逐查询自适应的图探索策略优于固定策略，其查询感知控制思路或可启发地理知识图谱中面向不同空间问题类型的检索策略设计，但摘要未涉及地理空间语料。"
+    },
+    {
+      "key": "arxiv:2609.11277",
+      "title": "Predicting Train Delays in Finland Using Machine Learning and Weather Data",
+      "title_zh": "利用机器学习和天气数据预测芬兰列车延误",
+      "url": "https://arxiv.org/abs/2609.11277",
+      "doi": "",
+      "arxiv_id": "2609.11277",
+      "authors": [
+        "Vinicius Pozzobon Borin",
+        "Jean Michel de Souza Sant'Ana",
+        "Nurul Huda Mahmood"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T09:08:43+00:00",
+      "score": 55,
+      "reason": "该文利用机器学习与天气传感器数据预测芬兰列车延误，涉及时空数据融合与城市交通基础设施，与时空数据挖掘和多源数据融合相关，但未涉及城市更新或遥感变化检测。",
+      "tags": [
+        "列车延误预测",
+        "机器学习",
+        "天气数据",
+        "传感器网络",
+        "时空数据"
+      ],
+      "abstract": "Reliable railway operations depend increasingly on real-time environmental intelligence delivered through wireless sensor infrastructures, a capability that 6G networks will substantially enhance through integrated sensing and edge computing. Adverse weather, particularly in Arctic regions with extreme temperatures and heavy precipitation, remains a leading cause of train delays, yet most prediction approaches rely on raw meteorological inputs without exploiting domain-informed feature engineering. This paper investigates machine learning for train delay prediction using the Finland Integrated Train-Weather (FI-TW) dataset, which fuses railway operational records with observations from the Finnish Meteorological Institute's nationwide sensor network of approximately 200 stations communicating over wireless links. We evaluate three feature configurations using XGBoost at Oulu central station (101,146 observations): full weather features, instant weather observations only, and derived weather category scenarios. The category-based approach, employing hierarchical classifications such as Blizzard, Heavy Snow, and Extreme Cold, achieved an R^2 of 0.78, root mean squared error of 8.5 minutes, and mean absolute error of 3.7 minutes, representing an 11% R^2 improvement and 10% error reduction over alternative configurations. These results demonstrate that compact, domain-informed features derived from sensor streams outperform raw meteorological observations, offering bandwidth-efficient representations suitable for edge deployment over current and emerging wireless infrastructures.",
+      "summary_zh": "可靠的铁路运营日益依赖通过无线传感器基础设施提供的实时环境智能，6G网络将通过集成感知与边缘计算显著增强这一能力。恶劣天气，尤其是极端温度和强降水的北极地区，仍是列车延误的主要原因，但多数预测方法依赖原始气象输入而未利用领域知识特征工程。本文研究利用芬兰综合列车-天气（FI-TW）数据集进行列车延误预测的机器学习方法，该数据集融合了铁路运营记录与芬兰气象研究所约200个站点的全国传感器网络观测，这些站点通过无线链路通信。作者在奥卢中央车站（101146条观测）使用XGBoost评估三种特征配置：完整天气特征、仅即时天气观测和派生天气类别场景。基于类别的方法采用暴风雪、大雪和极端寒冷等分层分类，达到R^2为0.78、均方根误差8.5分钟、平均绝对误差3.7分钟，相比其他配置R^2提升11%、误差降低10%。这些结果表明，从传感器流派生的紧凑领域知识特征优于原始气象观测，提供了适合在当前和新兴无线基础设施上边缘部署的带宽高效表示。",
+      "insight_zh": "该文展示了领域知识特征工程在时空交通预测中的价值，对城市基础设施时空数据挖掘有参考意义，但摘要未涉及城市更新或遥感变化检测。"
+    },
+    {
+      "key": "arxiv:2609.11101",
+      "title": "ProMediConv: Benchmarking Proactive Conversational Agents in Legal Dispute Mediation",
+      "title_zh": "ProMediConv：面向法律纠纷调解中主动对话智能体的基准测试",
+      "url": "https://arxiv.org/abs/2609.11101",
+      "doi": "",
+      "arxiv_id": "2609.11101",
+      "authors": [
+        "Zesheng Wei",
+        "Mengfan Li",
+        "Wenhao Liu",
+        "Yixin Zhang",
+        "Zilei Wang",
+        "Yang Deng"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T05:26:40+00:00",
+      "score": 55,
+      "reason": "该论文构建法律纠纷调解中的主动对话智能体基准，涉及LLM与多智能体交互，与LLM和多智能体研究方向相关，但应用领域为法律调解而非城市或地理空间。",
+      "tags": [
+        "LLM智能体",
+        "对话系统",
+        "法律调解",
+        "基准数据集",
+        "主动对话"
+      ],
+      "abstract": "Dispute mediation is essential for maintaining social harmony and resilience, yet developing skilled mediators is costly and time-consuming. Existing LLM-based mediation research remains limited by unrealistic task formulations, low-fidelity datasets, and coarse evaluation metrics that obscure turn-by-turn dynamics. To address these gaps, we introduce ProMediConv, a novel benchmarking framework that models mediation as a proactive, multi-stage, and party-aware dialogue process incorporating 11 mediation strategies and four party behavior pattern (BP) states. Using 972 complete real-world cases, we construct a high-fidelity mediation dataset with utterance-level annotations of strategies and BP states. Furthermore, to better assess agent impact, we propose MAD (Mean Attribute Difference), a fine-grained metric that captures BP shifts throughout the dialogue. Leveraging this framework, we establish a comprehensive benchmark by evaluating diverse models alongside our tailored baseline ProMediAgent. Extensive empirical analyses reveal critical behavioral phenomena and underscore the persistent challenges current models face in dynamic, multi-party mediation. Ultimately, ProMediConv provides a rigorous foundation and a vital quantitative standard for advancing AI-assisted conflict resolution. Our dataset and codebase are accessible at https://github.com/ZsWei66/ProMediConv_repo.",
+      "summary_zh": "纠纷调解对于维护社会和谐与韧性至关重要，但培养熟练调解员成本高昂且耗时。现有基于LLM的调解研究仍受限于不现实的任务设定、低保真数据集以及掩盖逐轮动态的粗粒度评估指标。为弥补这些不足，我们提出ProMediConv，一个新颖的基准测试框架，将调解建模为主动、多阶段且感知当事方的对话过程，纳入11种调解策略和四种当事方行为模式（BP）状态。我们使用972个完整真实案例构建了高保真调解数据集，并带有策略与BP状态的语句级标注。此外，为更好地评估智能体影响，我们提出MAD（平均属性差异），一种捕捉对话过程中BP变化的细粒度指标。基于该框架，我们通过评估多种模型以及我们定制的基线ProMediAgent建立了全面基准。大量实证分析揭示了关键行为现象，并凸显了当前模型在动态多方调解中面临的持续挑战。最终，ProMediConv为推进AI辅助冲突解决提供了严谨基础和重要的量化标准。我们的数据集与代码库见https://github.com/ZsWei66/ProMediConv_repo。",
+      "insight_zh": "该工作将主动对话与多阶段策略建模引入调解场景，其语句级标注与细粒度指标思路或可迁移至城市治理中的多方协商或公众参与式规划对话分析，但摘要未涉及地理空间要素。"
     },
     {
       "key": "arxiv:2609.11042",
@@ -778,148 +925,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失，从标题看该工作提出一个可复用的框架，利用大语言模型将自然语言转换为针对领域特定元数据的查询，以实现自然语言访问。",
       "insight_zh": "该框架若可迁移至地理空间元数据（如遥感影像目录、城市更新项目数据库）的自然语言查询，可能对多源数据融合与地理空间智能研究有方法借鉴价值，但需验证其领域适配性。"
-    },
-    {
-      "key": "arxiv:2506.07350",
-      "title": "FastMap: Real-Time Semantic Map Completion via Bitwise Masked Modeling",
-      "title_zh": "FastMap：基于位掩码建模的实时语义地图补全",
-      "url": "https://arxiv.org/abs/2506.07350",
-      "doi": "",
-      "arxiv_id": "2506.07350",
-      "authors": [
-        "Yijie Deng",
-        "Shuaihang Yuan",
-        "Congcong Wen",
-        "Hao Huang",
-        "Anthony Tzes"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "涉及语义地图补全与实时建图，与地理空间智能、多源数据融合及变化检测在方法上有较强关联，但应用场景为自动驾驶而非城市更新或遥感。",
-      "tags": [
-        "语义地图",
-        "实时建图",
-        "掩码建模",
-        "自动驾驶"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要缺失，无法提供内容概述。",
-      "insight_zh": "从标题推断，该研究提出一种基于位掩码建模的实时语义地图补全方法，可能服务于自动驾驶场景；其语义地图构建思路或对地理空间智能研究有参考价值，但原文未说明。"
-    },
-    {
-      "key": "arxiv:2609.08719",
-      "title": "GoAnt: Quality-Diversity Multi-Agent Search for Alpha Factor Discovery in Market Microstructure Data",
-      "title_zh": "GoAnt：用于市场微观结构数据Alpha因子发现的质量-多样性多智能体搜索",
-      "url": "https://arxiv.org/abs/2609.08719",
-      "doi": "",
-      "arxiv_id": "2609.08719",
-      "authors": [
-        "Stella Zhao",
-        "Tommy Sha"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-08T13:19:18+00:00",
-      "score": 50,
-      "reason": "论文提出质量-多样性多智能体搜索框架用于金融Alpha因子发现，其方法论（多智能体协作、多样性维护）可迁移至城市更新中的时空数据模式挖掘，但应用领域为金融。",
-      "tags": [
-        "Alpha因子",
-        "多智能体",
-        "质量多样性",
-        "金融数据",
-        "搜索"
-      ],
-      "abstract": "Automated alpha factor discovery searches symbolic trading signals from price-volume panels and order-book data under a fixed evaluation budget. Existing single- and multi-agent program-search systems can overfit predictive proxies that fail after execution costs and repeatedly explore redundant factor families, limiting execution robustness and behavioral diversity. We introduce GoAnt, a quality-diversity multi-agent search framework that combines non-communicating Explorer, Exploiter and Connector workers with a shared adaptive Mental Map and a compact Queen dispatcher. The Mental Map organizes candidates by leakage-free execution profiles and retains one elite per niche, while the Queen reallocates the evaluation budget from explicit search-state summaries. We also define a map-independent effective-yield protocol that counts high-quality, mutually nonredundant factors directly from each method's evaluation records, giving archive-based and map-free systems the same ruler. On real A-share microstructure data spanning 2023--2026, GoAnt reaches quality-weighted yields of 41.8 and 47.6 in price-volume and order-book settings, improving the strongest baseline by 57% and 97% under matched budgets. Its locked populations retain 0.64 and 0.67 of in-sample quality out of sample, compared with 0.61 and 0.63 for a static map.",
-      "summary_zh": "本文提出GoAnt，一个结合非通信的探索者、利用者和连接者工作线程与共享自适应心智地图的质量-多样性多智能体搜索框架，用于自动发现交易信号。心智地图按无泄漏执行概况组织候选因子并保留每个生态位的精英，调度器则根据搜索状态摘要重新分配评估预算。在真实A股微观结构数据上，GoAnt在质量加权收益上显著优于现有基线。",
-      "insight_zh": "该研究展示了如何通过维护候选解的多样性来避免过早收敛于次优代理指标，其质量-多样性搜索策略对于在城市更新中探索多样化的更新方案或数据特征组合具有方法论上的借鉴意义。"
-    },
-    {
-      "key": "arxiv:2509.18052",
-      "title": "The PIMMUR Principles: Ensuring Validity in Collective Behavior of LLM Societies",
-      "title_zh": "PIMMUR原则：确保LLM社会集体行为的有效性",
-      "url": "https://arxiv.org/abs/2509.18052",
-      "doi": "",
-      "arxiv_id": "2509.18052",
-      "authors": [
-        "Jiaxu Zhou",
-        "Jen-tse Huang",
-        "Xuhui Zhou",
-        "Man Ho Lam",
-        "Xintao Wang",
-        "Hao Zhu",
-        "Wenxuan Wang",
-        "Maarten Sap"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 50,
-      "reason": "研究LLM社会集体行为的有效性原则，与多智能体系统研究相关，可能对多智能体地理空间模拟有方法论借鉴，但摘要缺失限制了判断。",
-      "tags": [
-        "LLM社会",
-        "集体行为",
-        "有效性原则",
-        "多智能体"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法与结论。",
-      "insight_zh": "从标题推测，该文可能提出PIMMUR原则以保障LLM社会中集体行为的有效性，属于多智能体社会模拟方向；摘要缺失，无法确认其是否涉及空间或城市集体行为场景。"
-    },
-    {
-      "key": "arxiv:2607.19670",
-      "title": "Same Game, Different Story: A Minimal Conservative Strategic Robustness Benchmark for Large Language Model Agents",
-      "title_zh": "同样的游戏，不同的故事：面向大语言模型智能体的最小保守策略鲁棒性基准",
-      "url": "https://arxiv.org/abs/2607.19670",
-      "doi": "",
-      "arxiv_id": "2607.19670",
-      "authors": [
-        "Seyed Pouyan Mousavi Davoudi",
-        "Arshia Gharagozlou",
-        "Alireza Amiri-Margavi",
-        "Amin Gholami Davodi",
-        "Hamidreza Hasani Balyani"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 50,
-      "reason": "该论文提出面向大语言模型智能体的最小保守策略鲁棒性基准，与研究中LLM和多智能体方向相关，但未涉及地理空间或城市应用。",
-      "tags": [
-        "LLM智能体",
-        "策略鲁棒性",
-        "基准测试",
-        "博弈"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据与结果信息。",
-      "insight_zh": "仅从标题推断，该工作可能构建评估LLM智能体策略鲁棒性的基准环境；由于摘要为空，无法评估其是否适用于地理空间决策或多智能体城市模拟。"
-    },
-    {
-      "key": "arxiv:2609.11041",
-      "title": "Meta-Learning for Classifier Selection in Image Datasets: A Feature-Driven Framework for Accuracy Prediction",
-      "title_zh": "图像数据集分类器选择的元学习：一种特征驱动的精度预测框架",
-      "url": "https://arxiv.org/abs/2609.11041",
-      "doi": "",
-      "arxiv_id": "2609.11041",
-      "authors": [
-        "Zahra Nabizadeh_Shahre_Babak",
-        "Farzaneh Koohestani",
-        "Nader Karimi",
-        "Shahram Shirani",
-        "Shadrokh Samavi"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-10T03:39:16+00:00",
-      "score": 48,
-      "reason": "该论文提出基于元学习的图像数据集分类器选择框架，与遥感影像分类的方法选择有潜在关联，但未涉及地理空间数据或城市更新。",
-      "tags": [
-        "元学习",
-        "分类器选择",
-        "图像数据集",
-        "精度预测",
-        "遥感影像分类"
-      ],
-      "abstract": "No Free Lunch theorem implies that any performance gains achieved by a classifier on a particular image distribution are necessarily offset by a loss of performance over the set of all possible problems; thus, no single model is universally optimal. Selecting the most suitable classifier for image datasets is a critical yet challenging task due to the intrinsic complexity and diversity of images. This paper proposes a meta-learning framework that leverages a comprehensive set of meta-features capturing dataset complexity to predict classifier performance without exhaustive training. By extracting and selecting features using methods such as autoencoders, pre-trained networks, and dimensionality reduction techniques, we train regression models to efficiently estimate classifier accuracies. Additionally, clustering techniques are employed to group classifiers with similar performance patterns, simplifying the recommendation process. The datasets used span a wide range of concepts, including nature, animals, numbers, motorcycles, medical images, and human bodies, to ensure broad generalization. Evaluated on 56 diverse image datasets, our approach achieves an average ranking prediction accuracy exceeding 86%, demonstrating its effectiveness in guiding model selection. This scalable and interpretable framework provides a practical solution to improve classification performance while reducing computational costs.",
-      "summary_zh": "没有免费午餐定理意味着，任何分类器在特定图像分布上获得的性能提升，必然以在所有可能问题集合上的性能损失为代价；因此不存在普遍最优的单一模型。由于图像的内在复杂性和多样性，为图像数据集选择最合适的分类器是一项关键但具有挑战性的任务。本文提出一个元学习框架，利用一组全面的元特征来刻画数据集复杂度，从而在无需穷尽训练的情况下预测分类器性能。通过自编码器、预训练网络和降维技术等方法提取和选择特征，训练回归模型以高效估计分类器精度。此外，采用聚类技术将性能模式相似的分类器分组，简化推荐过程。所用数据集涵盖自然、动物、数字、摩托车、医学图像和人体等广泛概念，以确保泛化性。在56个多样化图像数据集上的评估表明，该方法平均排名预测精度超过86%，证明了其在指导模型选择方面的有效性。该可扩展且可解释的框架为提升分类性能同时降低计算成本提供了实用方案。",
-      "insight_zh": "该元学习框架可启发遥感影像分类任务中自动选择合适模型的方法，减少反复训练成本；但其元特征与地理空间语义（如空间结构、多光谱特性）的适配性未经验证。"
     }
   ]
 }

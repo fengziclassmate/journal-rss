@@ -2,11 +2,11 @@
   "date": "2026-09-14",
   "analysis_stats": {
     "total": 484,
-    "analyzed": 385,
+    "analyzed": 394,
     "high": 7,
     "medium": 13,
     "low": 20,
-    "below_threshold": 345
+    "below_threshold": 354
   },
   "papers": [
     {
@@ -2376,6 +2376,39 @@
       ],
       "summary_zh": "本文提出一种闭环分子逆设计框架，将冻结的大语言模型作为代理，直接对任务指令、SMILES级优化历史和预言机反馈进行推理。代理返回结构化决策信号，选择信息丰富的参考分子，并转换为下一轮生成器的条件文本。在MolQA药物和材料设计任务上，该方法优于一次性提示，与基于GP的BO基线相当或更强，并揭示了领域依赖的接口特性。",
       "insight_zh": "将LLM作为代理而非生成器，可在闭环分子设计中提供可检查的自然语言优化轨迹，并展现领域依赖的接口特性。"
+    },
+    {
+      "key": "arxiv:2609.11085",
+      "title": "Beyond Solver Verdicts: Generative Reward Models for Autoformalization",
+      "title_zh": "超越求解器裁决：面向自动形式化的生成式奖励模型",
+      "url": "https://arxiv.org/abs/2609.11085",
+      "arxiv_id": "2609.11085",
+      "authors": [
+        "Vikash Singh",
+        "Debargha Ganguly",
+        "Aman Goel",
+        "Ali Torkamani",
+        "Xiaoxue Han",
+        "Joseph Lilien",
+        "Ferhat Erata",
+        "Vipin Chaudhary"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-09-10T04:47:55+00:00",
+      "score": 35,
+      "reason": "该论文研究自动形式化中的生成式奖励模型与验证问题，属于LLM推理与神经符号系统范畴，与LLM研究方向有方法关联，但与地理空间智能和城市研究关联较弱。",
+      "tags": [
+        "神经符号系统",
+        "自动形式化",
+        "生成式验证",
+        "奖励模型",
+        "LLM推理"
+      ],
+      "summary_zh": "神经符号系统依赖数学求解器来保证推理正确性，然而求解器从根本上无法判断形式化翻译是否与指定形式化保持严格的引用等价。我们将这一脆弱性形式化为裁决保持不忠实（VPU）：一种错误编码成功执行并匹配预期裁决的失效模式。我们从理论上证明，结构性的、仅基于裁决的验证启发式方法在这类看似有效的轨迹上被数学上限制在随机水平的检测能力。为解决这一问题，我们引入生成式验证（GenV），通过重新利用语言模型的原生词汇空间，将离线Z3等价预言机蒸馏为无参考的连续引用等价分数。通过决策投影logit透镜和稀疏自编码器进行的机制分析表明，这种生成式读出无需显式定位训练即可原生提取精确的空间误差坐标。实证上，我们的预言机挖掘验证器（GenV+HN）在引用等价验证中达到0.961 AUROC，可零样本泛化到未见翻译器和不同形式风格，并在智能体测试时计算分配中带来11.3个百分点的下游准确率提升。",
+      "insight_zh": "该工作揭示仅依赖求解器裁决的验证存在理论盲区，并提出基于生成式读出的连续等价评分，其思路或可启发对地理空间推理链中形式化与语义一致性校验的重新审视，但摘要未涉及空间数据。"
     },
     {
       "key": "arxiv:2609.12606",
@@ -7155,6 +7188,40 @@
       "insight_zh": "对LLM注意力机制进行混合精度量化，即对关键区域（如垂直行令牌）保留高精度，可以在保证模型性能的同时显著提升效率，这为在资源受限环境下部署大型模型提供了实用方案。"
     },
     {
+      "key": "arxiv:2609.11987",
+      "title": "Harness or Model? Isolating the Harness Effect in Agentic Coding with a Contamination-Controlled Private Suite",
+      "title_zh": "Harness 还是模型？用污染控制的私有套件隔离智能体编码中的 harness 效应",
+      "url": "https://arxiv.org/abs/2609.11987",
+      "arxiv_id": "2609.11987",
+      "authors": [
+        "Mohsen Arjmandi"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE",
+        "Code",
+        "and",
+        "derived",
+        "data",
+        "in",
+        "the",
+        "replication",
+        "package"
+      ],
+      "published": "2026-09-08T21:24:40+00:00",
+      "score": 15,
+      "reason": "该论文通过污染控制的私有基准隔离智能体编码系统中 harness 与模型的影响，涉及多智能体/LLM 智能体评估方法，与研究中 LLM 和多智能体方向相关，但不涉及地理空间或城市应用。",
+      "tags": [
+        "智能体编码",
+        "harness效应",
+        "污染控制基准",
+        "成本评估"
+      ],
+      "summary_zh": "智能体编码系统将语言模型与 harness 耦合：后者是使聊天模型成为自主软件工程师的工具、提示和控制流。厂商发布针对自家模型调优的 harness，从业者假设厂商原生配对能解决更多任务。作者用一个私有的、污染控制的套件（256 个仓库任务和截止日期后的竞赛任务）进行同模型配对对比来检验这一假设。同样的 80 个任务在 claude-opus-4-8 上分别运行于 claude-agent-sdk 和 deepagents，在 gpt-5.5 上分别运行于 openai-codex SDK 和 deepagents，并以 gemini-3.5-flash 和 deepseek-v3.2 作为旁支单元。800 次计划运行中有 792 次由隔离 oracle 评分。两个对比都未显示出任一 harness 的平均优势：Opus 4.8 为 -1.25 个百分点（48.8% 对 50.0%，任务自助法 95% CI [-10.0, +7.5]），GPT-5.5 为 +1.25 个百分点（55.6% 对 54.4%，CI [-4.4, +6.9]）。Opus 的平均值合并了相反的分层：原生 harness 在 61 个仓库任务上落后 9.0 个百分点，在 19 个竞赛任务上领先 23.7 个百分点（标签置换 p = 0.003）。该划分是在看到数据后选择的，需要设计性重复验证。正确性与完成度也出现分离：81 次在墙钟上限被取消的运行中有 22 次已产生可通过的补丁。按冻结列表价格从原始每轮用量重新计价，中性 harness 在 Opus 4.8 上每个解决任务成本为 1.3 至 1.6 倍，在 GPT-5.5 上为 1.2 倍。这些是观测用量估计。在 Anthropic 账户上有 58 次运行未留下用量记录，将该支出分配给任一单元会使 Opus 比率在 0.7 到 2.3 之间变动，因此计费排序尚未确定。本修订更正了一份 2026 年 8 月的手稿，其成本数字基于作者自身遥测中的用量语义缺陷（第 5.1 节）。",
+      "insight_zh": "该研究通过同模型配对对比表明，厂商原生 harness 未必带来平均优势，且优势可能因任务类型分层而相互抵消；同时成本估计对遥测数据完整性高度敏感。这提示在评估 LLM 智能体系统时需控制污染、区分任务分层并谨慎处理用量记录，但论文未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2503.00785",
       "title": "FLOAT Drone: A Fully-actuated Coaxial Aerial Robot for Close-Proximity Operations",
       "title_zh": "FLOAT Drone：用于近距作业的全驱动同轴空中机器人",
@@ -8106,6 +8173,36 @@
       "insight_zh": "该工作提示，若城市或地理空间环境存在局部、上下文相关的对称结构，群胚式状态抽象或可用于降低时空决策问题的复杂度，但摘要未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.11993",
+      "title": "FINESSE: An Agent-Based Simulator and Benchmark Dataset for Multimodal Financial Event Sequences",
+      "title_zh": "FINESSE：面向多模态金融事件序列的基于智能体的仿真器与基准数据集",
+      "url": "https://arxiv.org/abs/2609.11993",
+      "arxiv_id": "2609.11993",
+      "authors": [
+        "Tyler Farnan",
+        "Benjamin Eng",
+        "Adam Abate",
+        "Xirui Hou",
+        "Rizal Fathony",
+        "Nam H. Nguyen",
+        "Senthil Kumar"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-09T20:24:09+00:00",
+      "score": 12,
+      "reason": "该论文提出基于智能体的金融事件序列仿真框架与基准数据集，涉及多模态、多流事件建模，与时空数据挖掘和多智能体方法有方法论上的间接关联，但应用领域为金融服务而非城市或地理空间。",
+      "tags": [
+        "智能体仿真",
+        "多模态事件序列",
+        "金融数据集",
+        "基准测试"
+      ],
+      "summary_zh": "金融服务中的机器学习研究受限于代表性开源数据集的稀缺。现有资源往往局限于单一模态或任务，无法反映金融服务中许多问题固有的结构化、多模态和动态特性。本文提出 FINESSE（金融事件序列仿真环境），一个基于智能体的仿真框架，用于生成由多个相互依赖事件流组成的合成结构化数据集。每个流对应一种不同的金融行为，如交易、支付、账户状态变化和政策干预，各自具有独特的动作空间、模式和变量类型。这些流通过智能体潜在的演化状态耦合，从而能够模拟时间上丰富的交互。作者还提出 FINESSE-Bench，一个由该仿真器生成的基准数据集，支持四个代表性任务：余额预测、交易欺诈检测、漏缴预测和下一事件预测。作者报告了使用时间序列预测、事件序列建模、时序图和时间点过程方法的基线结果。作者发布 FINESSE 框架，包括仿真器和数据集，以加速金融服务中结构化、多模态事件序列建模挑战的研究。",
+      "insight_zh": "该工作展示了用基于智能体的仿真生成多流、相互依赖的事件序列数据，并通过潜在状态耦合各流，为事件序列建模提供可控基准。其多流耦合与事件序列建模思路对时空事件数据合成有方法上的参考意义，但论文聚焦金融场景，未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2512.23829",
       "title": "Deep learning methods for inverse problems using connections between proximal operators and Hamilton-Jacobi equations",
       "title_zh": "利用近端算子与Hamilton-Jacobi方程之间联系的深度学习逆问题方法",
@@ -8327,6 +8424,57 @@
       ],
       "summary_zh": "幻觉会削弱临床医生对 LLM 的信任，因此评估方法必须捕捉临床相关错误。基于评分标准的评估已成为医学 LLM 评估的主流方法，但尚不清楚评分标准分数是否反映此类错误。作者首先在受控设置中使用 MedHallu 研究该问题，发现更具体的评分标准能更好地区分正确与幻觉回答。为系统检验，作者开发了医学幻觉类型分类法，以及经临床医生验证的错误注入流程，用于生成匹配的正确回答与注入错误回答。在 HealthBench、HealthBench Professional 和 LiveMedBench 上，临床相关幻觉常被评分标准遗漏，分数往往保持不变。作者发现，评分标准在明确核查事实时最有效，而对未预料到的额外或意外错误效果较差。初步的基于检索的事实性检查可恢复部分评分标准盲区错误，提示一种互补方法。这些发现揭示了当前医学 LLM 评估中的系统性盲点，并表明仅凭评分标准分数不足以确立临床可靠性，可能削弱临床医生对临床部署的信任与信心。",
       "insight_zh": "该研究提示，基于评分标准的 LLM 评估可能系统性遗漏临床相关幻觉，尤其在错误类型未被评分标准预先覆盖时；检索式事实核查可作为补充。对 GIS/LLM 研究而言，可借鉴其“评估盲点”思路，但论文本身未涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.09696",
+      "title": "When Auditors Fabricate: Batch-Size Degradation and Confident Hallucination in LLM Detection of Planted Document Contamination",
+      "title_zh": "当审计者编造：LLM 检测植入式文档污染中的批大小退化与自信幻觉",
+      "url": "https://arxiv.org/abs/2609.09696",
+      "arxiv_id": "2609.09696",
+      "authors": [
+        "Karan Parekh",
+        "Sanjana Pendyala Ravinder",
+        "Sana Mhapsekar",
+        "Medina Maloku"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "doi:10.5281/zenodo.21939088",
+        "not",
+        "independently",
+        "observed,",
+        "adds",
+        "confidence",
+        "intervals",
+        "and",
+        "significance",
+        "tests,",
+        "states",
+        "the",
+        "batch",
+        "size",
+        "retrieval",
+        "confound",
+        "explicitly.",
+        "Preprint",
+        "also",
+        "deposited",
+        "at",
+        "Zenodo,",
+        "doi:10.5281/zenodo.21939087"
+      ],
+      "published": "2026-09-09T04:29:45+00:00",
+      "score": 10,
+      "reason": "该论文研究 LLM 作为文档审计者检测植入污染时的批大小退化与自信幻觉，与研究中 LLM 可靠性方向相关，但不涉及地理空间或城市应用。",
+      "tags": [
+        "LLM审计",
+        "幻觉",
+        "文档污染检测",
+        "批大小退化"
+      ],
+      "summary_zh": "大型语言模型越来越多地被提议作为文档质量的自动审计者，但其作为植入错误检测器的可靠性尚缺乏充分刻画。作者构建了一个受污染语料库，包含 150 篇横跨供应链管理和医学研究的学术论文，注入 450 个已知污染物，分为三类：排版损坏、语义反转和荒谬的脱离语境插入。随后评估 Google Gemini 3.0 Pro 在三种规模递增的提示机制（单文档、小批量、大批量）下，从 60 篇文档中恢复 180 个污染物答案键子集的能力。检测在小规模下保持，随后崩溃：单文档恢复率 50%，小批量 60%，大批量仅 2.8%。大规模下的失败模式不是弃权而是编造。模型没有报告处理不完整，而是给出自信的发现，包括自己发明的污染物，如“心灵感应松鼠”和“量子动力烤面包机”等荒谬内容，它们模仿植入材料的风格但不出现在任何文档中。检测还因污染类型而异：荒谬插入在完成的评估中恢复率为 75%，而语义反转和排版损坏各仅 50%。最可能在现实中出现的、看似合理的污染，恰恰是最常被漏掉的。作者得出结论：LLM 文档审计的退化不是优雅的而是欺骗性的，并概述此类系统所需的约束框架：限制批大小、直接内容注入，以及对每个报告的发现与源文本进行机械验证。",
+      "insight_zh": "该研究揭示，LLM 文档审计在批处理规模增大时会出现检测崩溃并转向自信编造，而非如实报告不完整处理；看似合理的污染类型最易被漏检。这提示在依赖 LLM 进行数据质量检查或标注验证时，应限制批大小并对每条发现进行机械核验，但论文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2608.16696",
@@ -9832,6 +9980,72 @@
       "insight_zh": "由于摘要不完整，无法可靠推断其方法细节与结论；从现有信息看，其与地理空间智能的关联主要体现在视频时空数据的稀疏证据检索思路上，但论文未明确涉及地理场景。"
     },
     {
+      "key": "arxiv:2609.11977",
+      "title": "Occamy-1.0: Open Pareto-frontier 35B Intelligence for Co-work",
+      "title_zh": "Occamy-1.0：面向协同工作的开放帕累托前沿 35B 智能",
+      "url": "https://arxiv.org/abs/2609.11977",
+      "arxiv_id": "2609.11977",
+      "authors": [
+        "Wenhui Chen",
+        "Shiwen Cheng",
+        "Hao Dong",
+        "Chenda Duan",
+        "Ruixiang Feng",
+        "Zhong Guan",
+        "Boqiang Guo",
+        "Xueyuan Han",
+        "Haojie Hao",
+        "Liangmeng Huang",
+        "Zhelong Huang",
+        "Xinke Kong",
+        "Hongyu Li",
+        "Jiazheng Li",
+        "Junbo Li",
+        "Qingchuan Li",
+        "Yukun Lian",
+        "Chang Liu",
+        "Tianyu Liu",
+        "Zicheng Liu",
+        "Shuyi Ouyang",
+        "Yijun Pan",
+        "Kunyu Shi",
+        "Xiaojun Tang",
+        "Bingquan Wang",
+        "Kesu Wang",
+        "Yuchen Wang",
+        "Sibo Wei",
+        "Sicong Xie",
+        "Xiaoying Xing",
+        "Yi Xu",
+        "Zhijun Xu",
+        "Hongwei Xue",
+        "Qingcheng Zeng",
+        "Di Zhang",
+        "Guannan Zhang",
+        "Haochen Zhang",
+        "Tianlong Zhang",
+        "Tianyu Zhao",
+        "Tianyu Zhao",
+        "Yanjun Zheng",
+        "Jialong Zhu",
+        "Zijian Zou"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-04T03:32:26+00:00",
+      "score": 8,
+      "reason": "该论文提出面向协同工作智能体的成本高效 35B 模型，涉及智能体后训练与工具使用，与研究中 LLM 和多智能体方向相关，但不涉及地理空间或城市应用。",
+      "tags": [
+        "协同工作智能体",
+        "成本效率",
+        "后训练",
+        "开源模型"
+      ],
+      "summary_zh": "协同工作智能体执行复杂工作流，结合信息收集、工具使用、编码和文件操作，涉及多次模型调用。由于成本和延迟在整个回合中累积，其实际价值不仅取决于峰值能力，还取决于能力交付的效率。然而，日常工作中的许多步骤强调状态跟踪、协调、恢复和跟进，而非前沿规模的推理。作者提出 Occamy-1.0，一个成本高效的协同工作模型，通过对后训练过的 Qwen3.6-35B-A3B 检查点进一步训练得到。作者构建执行导向的数据和环境，跨多个 harness 捕获可重放的长时程轨迹，并使用分阶段后训练来发展和巩固互补的执行能力。在广泛的协同工作基准套件上，Occamy-1.0 始终位于同规模模型中最强之列，并在若干任务上与显著更大的前沿系统保持竞争力。在作者陈述的评估和定价协议下，其在四个代表性基准上的总体表现位于观测到的成本-性能帕累托前沿的低成本拐点。工具调用、编码和指令遵循方面的支持性评估进一步表明，这种专业化保留了广泛的智能体能力。作者发布模型权重和部分训练数据，以支持关于实用协同工作智能体和智能体后训练的研究。",
+      "insight_zh": "该工作表明，通过执行导向的数据构建和分阶段后训练，中等规模模型可在协同工作智能体任务上达到成本-性能帕累托前沿的低成本拐点，同时保留广泛智能体能力。这一结论属于通用智能体模型训练，未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2609.12139",
       "title": "Mined from Scientific Literature: Process Schemas for Atomic Layer Deposition and Etching in Materials Science",
       "title_zh": "从科学文献中挖掘：材料科学中原子层沉积与刻蚀的过程模式",
@@ -10470,6 +10684,35 @@
       "insight_zh": "该文揭示VLM在跨模态一致性验证上的薄弱环节，对多模态地理空间智能中图文对齐与空间关系校验具有方法层面的参考价值，但其语言与任务域与GIS研究相距较远。"
     },
     {
+      "key": "arxiv:2609.12002",
+      "title": "Can We Trust LLM Judges: A Study of Capability-Dependent Biases and Multi-Judge Ensemble for Bias Calibration",
+      "title_zh": "我们能信任 LLM 评审吗：能力相关偏差与用于偏差校准的多评审集成研究",
+      "url": "https://arxiv.org/abs/2609.12002",
+      "arxiv_id": "2609.12002",
+      "authors": [
+        "Gemma Zhang",
+        "Prachi Badarayani",
+        "Asmi Kumar",
+        "Sadid Hasan",
+        "Sulaiman Vesal"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-10T00:25:39+00:00",
+      "score": 8,
+      "reason": "该论文研究 LLM 作为自动评审者的能力相关偏差与多评审集成校准，与研究中 LLM 和多智能体方向相关，但不涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM评审",
+        "偏差校准",
+        "多评审集成",
+        "无标签评估"
+      ],
+      "summary_zh": "LLM 越来越多地被用作模型训练与评估的自动评审者，但单个评审者存在系统性偏差，损害其可靠性。以往工作多研究成对比较式 LLM-as-a-judge 中的偏差，本文关注更贴近真实使用场景的绝对打分任务。在四个基准和六个模型（36 个评审者-被评者组合）上，作者发现模型的任务准确率强烈预测其评审准确率（多数模型上 Pearson r ≥ 0.90），并反向预测其方向性偏差（r ≤ -0.83），但准确率本身并不能保证公平评估：能力更强的被评模型会一致地获得所有评审者更宽松的评价（r ≥ 0.83）。为此，作者提出校准加权多数投票（WMV），一种按在线估计的假阳性率和假阴性率对多个 LLM 评审者加权聚合的集成评估方法。作者引入一种基于分歧的估计器，仅从评审者间一致性模式推导这些错误率，无需真实标签或任务元数据。在任务分布变化的模拟实验中，这种无标签 WMV 平均在 0.5 个百分点以内逼近拥有完美错误率知识的 oracle，优于单个评审者和未加权多数投票。结果表明，有原则的多评审校准可以在无需标注数据的情况下同时提升准确率并纠正系统性宽松倾向，为模型能力提升下可靠的自动评估提供可扩展路径。",
+      "insight_zh": "该研究说明，LLM 评审者的能力越强，其评审越准确，但也可能对被评模型更宽松；通过基于评审者间分歧估计错误率并加权聚合，可在无标签条件下校准这种偏差。这一思路对构建多智能体评估或 LLM 辅助标注流程具有参考价值，但论文未涉及地理空间数据或城市分析。"
+    },
+    {
       "key": "arxiv:2609.10410",
       "title": "Can Foundation Models Moderate Online Content? Evaluating Instruction- vs. Example-Driven Policy Operationalization",
       "title_zh": "基础模型能审核在线内容吗？评估指令驱动与示例驱动的策略操作化",
@@ -10756,52 +10999,6 @@
       ],
       "summary_zh": "捕捉手写的数字轨迹通常需要特定触控笔和兼容基底，如电容触摸屏、Wacom 系统使用的电磁共振（EMR）平板或特殊纸张。虽然在普通纸上书写具有丰富触感、无延迟且已知有助于信息保持，但目前尚无低成本、广泛接受且有效的解决方案来数字化这种笔迹轨迹。挑战在于，在没有外部参考系统的情况下准确跟踪笔的轨迹，同时允许笔在表面上不受限制地自由移动。作者提出一种创新方案，结合数字笔、先进人工智能算法和自适应 AI 技术来重建手写数字轨迹。该方法将硬件开发（聚焦于配备传感器的笔）与软件创新相结合，利用嵌入式 AI 实时优化轨迹重建与处理。该工作旨在推进手写轨迹自动重建的最先进水平，实现传统纸上书写与数字轨迹捕捉之间的无缝连接。",
       "insight_zh": "该工作聚焦于无外部参考下的笔迹轨迹重建与嵌入式实时处理，属于传感与交互技术；对地理空间轨迹数据挖掘可能有间接方法启发，但论文未涉及地理空间场景。"
-    },
-    {
-      "key": "arxiv:2609.09696",
-      "title": "When Auditors Fabricate: Batch-Size Degradation and Confident Hallucination in LLM Detection of Planted Document Contamination",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09696",
-      "arxiv_id": "2609.09696",
-      "authors": [
-        "Karan Parekh",
-        "Sanjana Pendyala Ravinder",
-        "Sana Mhapsekar",
-        "Medina Maloku"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "doi:10.5281/zenodo.21939088",
-        "not",
-        "independently",
-        "observed,",
-        "adds",
-        "confidence",
-        "intervals",
-        "and",
-        "significance",
-        "tests,",
-        "states",
-        "the",
-        "batch",
-        "size",
-        "retrieval",
-        "confound",
-        "explicitly.",
-        "Preprint",
-        "also",
-        "deposited",
-        "at",
-        "Zenodo,",
-        "doi:10.5281/zenodo.21939087"
-      ],
-      "published": "2026-09-09T04:29:45+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.12875",
@@ -11887,7 +12084,7 @@
     {
       "key": "arxiv:2609.11961",
       "title": "On-Device Language Models for Privacy-Preserving Stress Prediction: A Multimodal Evaluation on Mobile Health",
-      "title_zh": "",
+      "title_zh": "面向隐私保护压力预测的端侧语言模型：移动健康中的多模态评估",
       "url": "https://arxiv.org/abs/2609.11961",
       "arxiv_id": "2609.11961",
       "authors": [
@@ -11929,71 +12126,15 @@
       ],
       "published": "2026-08-11T07:23:22+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11977",
-      "title": "Occamy-1.0: Open Pareto-frontier 35B Intelligence for Co-work",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11977",
-      "arxiv_id": "2609.11977",
-      "authors": [
-        "Wenhui Chen",
-        "Shiwen Cheng",
-        "Hao Dong",
-        "Chenda Duan",
-        "Ruixiang Feng",
-        "Zhong Guan",
-        "Boqiang Guo",
-        "Xueyuan Han",
-        "Haojie Hao",
-        "Liangmeng Huang",
-        "Zhelong Huang",
-        "Xinke Kong",
-        "Hongyu Li",
-        "Jiazheng Li",
-        "Junbo Li",
-        "Qingchuan Li",
-        "Yukun Lian",
-        "Chang Liu",
-        "Tianyu Liu",
-        "Zicheng Liu",
-        "Shuyi Ouyang",
-        "Yijun Pan",
-        "Kunyu Shi",
-        "Xiaojun Tang",
-        "Bingquan Wang",
-        "Kesu Wang",
-        "Yuchen Wang",
-        "Sibo Wei",
-        "Sicong Xie",
-        "Xiaoying Xing",
-        "Yi Xu",
-        "Zhijun Xu",
-        "Hongwei Xue",
-        "Qingcheng Zeng",
-        "Di Zhang",
-        "Guannan Zhang",
-        "Haochen Zhang",
-        "Tianlong Zhang",
-        "Tianyu Zhao",
-        "Tianyu Zhao",
-        "Yanjun Zheng",
-        "Jialong Zhu",
-        "Zijian Zou"
+      "reason": "该论文评估端侧语言模型在移动健康中进行隐私保护多模态压力预测的可行性，涉及多模态数据与端侧推理，但与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "端侧语言模型",
+        "隐私保护",
+        "多模态压力预测",
+        "移动健康"
       ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-04T03:32:26+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "summary_zh": "压力是心理健康的普遍决定因素，也是移动健康干预的关键目标。端侧语言模型（ODLM）提供无需云依赖的隐私保护推理，但其在移动资源约束下用于健康预测的可行性仍未被充分探索。作者使用零样本提示评估 ODLM 用于多模态压力预测，同时测量预测准确率、延迟和吞吐量。结果表明，客观传感器特征平均而言略优于主观自我报告，且轻量级 2B 以下模型实现低延迟和可预测的资源使用。研究结果凸显了 ODLM 用于移动心理健康的潜力与实际约束。",
+      "insight_zh": "该研究提示，端侧轻量语言模型可在移动健康场景中实现低延迟的隐私保护多模态压力预测，且客观传感器特征平均略优于主观自报。其多模态与端侧推理结论属于健康应用，未涉及地理空间或城市分析。"
     },
     {
       "key": "arxiv:2609.12366",
@@ -12587,35 +12728,6 @@
       "insight_zh": "该研究强调基准评估中的评分与题目缺陷会系统性低估模型能力，这一方法论警示可迁移至地理空间AI基准的构建与审计，但摘要未涉及地理空间任务。"
     },
     {
-      "key": "arxiv:2609.11987",
-      "title": "Harness or Model? Isolating the Harness Effect in Agentic Coding with a Contamination-Controlled Private Suite",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11987",
-      "arxiv_id": "2609.11987",
-      "authors": [
-        "Mohsen Arjmandi"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.SE",
-        "Code",
-        "and",
-        "derived",
-        "data",
-        "in",
-        "the",
-        "replication",
-        "package"
-      ],
-      "published": "2026-09-08T21:24:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.12448",
       "title": "GraphProfiler: Source-Linked Sensitive Attribute Inference via Personal Knowledge Graphs",
       "title_zh": "",
@@ -12769,29 +12881,6 @@
       "insight_zh": "生成式测量模型可启发城市人口空间分布的模拟，但直接关联性弱。"
     },
     {
-      "key": "arxiv:2609.11998",
-      "title": "Fixed State, Long Reach: What a Constant-Size Cache Buys Block Diffusion at Scale",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11998",
-      "arxiv_id": "2609.11998",
-      "authors": [
-        "Vaibhav Singh",
-        "Pierre-Andr\\'e No\\\"el",
-        "Torsten Scholak",
-        "Eugene Belilovsky",
-        "Oleksiy Ostapenko"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-09T23:37:47+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.12078",
       "title": "Feature Recovery for Object Understanding After Irreversible Fire Damage",
       "title_zh": "",
@@ -12862,31 +12951,6 @@
         "eess.SP"
       ],
       "published": "2026-09-11T00:00:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11993",
-      "title": "FINESSE: An Agent-Based Simulator and Benchmark Dataset for Multimodal Financial Event Sequences",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11993",
-      "arxiv_id": "2609.11993",
-      "authors": [
-        "Tyler Farnan",
-        "Benjamin Eng",
-        "Adam Abate",
-        "Xirui Hou",
-        "Rizal Fathony",
-        "Nam H. Nguyen",
-        "Senthil Kumar"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-09T20:24:09+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13558,7 +13622,7 @@
     {
       "key": "arxiv:2609.12014",
       "title": "Certified Safety Curation: Distribution-Free Guarantees for Safe Offline Reinforcement Learning",
-      "title_zh": "",
+      "title_zh": "认证式安全筛选：安全离线强化学习的分布无关保证",
       "url": "https://arxiv.org/abs/2609.12014",
       "arxiv_id": "2609.12014",
       "authors": [
@@ -13570,34 +13634,15 @@
       ],
       "published": "2026-09-10T06:45:32+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.12002",
-      "title": "Can We Trust LLM Judges: A Study of Capability-Dependent Biases and Multi-Judge Ensemble for Bias Calibration",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12002",
-      "arxiv_id": "2609.12002",
-      "authors": [
-        "Gemma Zhang",
-        "Prachi Badarayani",
-        "Asmi Kumar",
-        "Sadid Hasan",
-        "Sulaiman Vesal"
+      "reason": "该论文研究安全离线强化学习中的认证式数据筛选，属于通用机器学习方法，与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合没有直接关联。",
+      "tags": [
+        "离线强化学习",
+        "安全强化学习",
+        "分布无关保证",
+        "行为克隆"
       ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-10T00:25:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "summary_zh": "安全离线强化学习通常假设每次状态转移都有代价函数。本文探讨当安全只能通过比较短片段、偶尔询问某回合是否超预算来判断时，仍能实现什么。认证式安全筛选给出一种“先过滤再克隆”的流程：用片段比较训练出的仅依赖状态的价值函数为整条轨迹打分，Learn-then-Test 校准在分布无关的 (α, δ) 界下认证一个选择阈值，以保证所选集合中不安全轨迹的比例受控，随后进行行为克隆。作者表示未见到此前有工作对离线强化学习或模仿学习的训练集构成进行认证。Oracle 对照实验支持该设计：即使拥有精确价值函数，对单条状态转移重新加权也会失败，因此价值函数应选择整条轨迹。所得策略在十五个 DSRL 任务中的十一个上满足代价预算，仅比克隆真实安全子集少一个，而后者需要每条轨迹的标签；未认证版本达到十二个。在认证筛选集上重新训练后，最强的全标签方法在其自身代价目标任何设置下都不安全的情形中变得安全。拒绝行为可预测：证书概率在池子达到的纯度上有闭式表达，校准样本可估计该纯度，而打分器仅通过纯度进入。",
+      "insight_zh": "该工作提示，在安全约束只能通过片段比较和预算判断间接获得时，对训练数据整体进行认证式筛选可能比逐样本重加权更有效；其分布无关校准思路或可迁移到其他需要保证数据子集质量的场景，但论文本身未涉及地理空间或城市应用。"
     },
     {
       "key": "arxiv:2609.13118",
@@ -13794,33 +13839,6 @@
         "cs.AI"
       ],
       "published": "2026-09-11T05:54:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11085",
-      "title": "Beyond Solver Verdicts: Generative Reward Models for Autoformalization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11085",
-      "arxiv_id": "2609.11085",
-      "authors": [
-        "Vikash Singh",
-        "Debargha Ganguly",
-        "Aman Goel",
-        "Ali Torkamani",
-        "Xiaoxue Han",
-        "Joseph Lilien",
-        "Ferhat Erata",
-        "Vipin Chaudhary"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "published": "2026-09-10T04:47:55+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14513,6 +14531,34 @@
       ],
       "summary_zh": "精确的头部建模需要稳定且富有表现力的几何表示。现有基于高斯的高斯头部头像通常依赖参数化模板（如FLAME）进行高斯初始化与变形，但这些模板缺乏个性化先验，难以表示头发和衣物等结构。为此，作者提出MGAvatar，一种高斯-网格混合表示，通过两种高斯-网格绑定模式联合建模几何与外观。具体而言，作者引入顶点绑定高斯并约束其可学习参数，使渐进式网格变形能够表示复杂头部几何，同时用姿态相关偏移模块处理非刚性变形。几何稳定后，MGAvatar切换为面绑定高斯进行外观建模。为提升新姿态和新视角下的外观一致性，作者引入视角条件神经颜色场，以缓解独立优化高斯颜色造成的伪影。此外，作者设计高斯偏移网络，在观测空间预测高斯偏移图，为面绑定高斯捕捉动态面部纹理提供更大灵活性。在多视角和单目视频上的大量实验表明，MGAvatar在渲染质量上优于现有方法，能生成具有丰富纹理细节的高保真头部头像。",
       "insight_zh": "该文提出的混合表示与绑定策略可能对三维地理场景建模有间接启发，但论文未涉及地理空间数据或城市应用，迁移价值有限。"
+    },
+    {
+      "key": "arxiv:2609.11998",
+      "title": "Fixed State, Long Reach: What a Constant-Size Cache Buys Block Diffusion at Scale",
+      "title_zh": "固定状态，长程可达：恒定大小缓存在大规模块扩散中带来什么",
+      "url": "https://arxiv.org/abs/2609.11998",
+      "arxiv_id": "2609.11998",
+      "authors": [
+        "Vaibhav Singh",
+        "Pierre-Andr\\'e No\\\"el",
+        "Torsten Scholak",
+        "Eugene Belilovsky",
+        "Oleksiy Ostapenko"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-09T23:37:47+00:00",
+      "score": 3,
+      "reason": "该论文研究块扩散语言模型的固定大小缓存与长上下文推理效率，属于自然语言处理与模型架构方向，与地理空间智能或城市研究无直接关联。",
+      "tags": [
+        "扩散语言模型",
+        "块缓存",
+        "状态空间模型",
+        "长上下文推理"
+      ],
+      "summary_zh": "扩散语言模型并行解码 token，但其双向去噪器使自回归推理中朴素的键值（KV）缓存无法使用。块扩散通过逐块解码恢复缓存能力，但目前已部署的块缓存与注意力绑定：内存为 O(L)，且作为免训练改造时仅近似模型计算。这两个限制都可被克服：将已完成块汇总为可复用状态的序列混合器支持块缓存，而相应的块因果训练目标使缓存变得精确。作者在大规模上研究这一方案，在单一前沿目标下用 300B token 预训练三个 3B 块扩散去噪器（注意力、mamba 和混合），并通过单一缓存接口解码三者。只有状态空间缓存的内存随序列长度保持 O(1)：其内存和每步延迟在任何上下文长度下保持恒定，而注意力缓存仍为 O(L)。在 256k token 时（注意力已增长到 82GB 和 29 ms/步），Mamba 缓存实现 4.3 倍更低延迟、11 倍更少内存和 2.6 倍更高单流吞吐；由于占用恒定，它也能随批大小扩展，达到 14 倍聚合吞吐，而注意力无法在单流之外运行。同样的线性状态偏置使 Mamba 和混合骨干能在训练长度的 8-16 倍范围内保持检索能力，而注意力的检索在 2 倍时崩溃，且未测得质量损失。",
+      "insight_zh": "该工作表明，在块扩散语言模型中，采用状态空间缓存可实现与序列长度无关的恒定内存和延迟，并在长上下文检索上优于注意力缓存。这一架构效率结论属于语言模型推理优化，未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.12960",

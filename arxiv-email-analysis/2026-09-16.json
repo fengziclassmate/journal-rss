@@ -2,11 +2,11 @@
   "date": "2026-09-16",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 414,
+    "analyzed": 424,
     "high": 7,
-    "medium": 15,
+    "medium": 16,
     "low": 33,
-    "below_threshold": 359
+    "below_threshold": 368
   },
   "papers": [
     {
@@ -639,6 +639,50 @@
       ],
       "summary_zh": "近期大型语言模型（LLM）的进展使其成为自然语言处理（NLP）任务的必需品，而其高昂的推理成本促使人们研究成本-性能权衡。实践中，多个专家LLM被协同用于推理，或以集成模式或以串联模式，但缺乏关于如何最佳使用可用模型的原则性方法。自适应方法可以将简单查询路由到更便宜的LLM，将复杂查询路由到更强大、更昂贵的模型。然而，对于如何最佳利用可用专家模型仍缺乏清晰理解。我们引入推理网络，一个基于图的框架，其中节点表示不同的LLM，链接表示条件模型激活。推理网络设计问题是确定最佳拓扑，即最佳使用模型的方式，以最好地解决成本-性能权衡。我们从一系列LLM专家的基本拓扑出发，每个专家具有不同的成本和不同的专业水平，后者通过模型置信度来刻画。我们将这些模型的最优激活问题形式化为在目标性能约束下最小化期望推理成本。对于这类特殊的推理网络，我们证明最优激活策略具有阈值结构：首先查询成本最低的LLM，仅当置信度低于设定阈值时才调用更昂贵的LLM。对于判别任务，最优策略由一组阈值组成，每个类别一个阈值；对于生成任务，则由单个阈值组成。我们提供了一种计算阈值的结构化方法，以及针对两类任务的实用置信度估计机制。使用开源LLM的实验表明……",
       "insight_zh": "该文的阈值式激活策略可为多智能体LLM系统中的模型调度提供理论依据，但其摘要未涉及地理空间数据或城市应用，需进一步验证其在时空推理任务中的适用性。"
+    },
+    {
+      "key": "arxiv:2609.16155",
+      "title": "LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing",
+      "title_zh": "LLM作为大师级伪造者：为制造业生成合成时序数据",
+      "url": "https://arxiv.org/abs/2609.16155",
+      "arxiv_id": "2609.16155",
+      "authors": [
+        "Mantek Singh",
+        "Jeshwanth Challagundla",
+        "Prateek Karnal",
+        "Gagan Ganapathy",
+        "Vineet Shah",
+        "Ridam Arora"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "Image",
+        "Processing,",
+        "Computer",
+        "Vision",
+        "and",
+        "Machine",
+        "Learning",
+        "(ICICML)",
+        "(ICICML),",
+        "pp.",
+        "2053-2059,",
+        "IEEE,",
+        "2024"
+      ],
+      "published": "2026-09-14T18:01:29+00:00",
+      "score": 62,
+      "reason": "该文利用LLM与RAG生成合成时序数据，与研究中时空数据挖掘、LLM及多智能体方向存在方法层面的关联，但其应用场景为制造业而非城市或地理空间，故相关性中等。",
+      "tags": [
+        "LLM",
+        "合成时序数据",
+        "RAG",
+        "制造业",
+        "异常检测"
+      ],
+      "summary_zh": "本文提出一个利用大语言模型（LLM）为制造过程生成合成时序数据的框架。针对真实制造场景中标注时序数据稀缺、阻碍鲁棒机器学习模型开发的问题，作者探索LLM学习复杂时间依赖关系并生成逼真合成数据的潜力。方法包括在制造过程指令上微调预训练LLM，并采用检索增强生成（RAG）技术提升数据多样性与真实性。作者使用定量指标、PCA分析以及下游任务（异常检测）性能，将该方法与ARIMA、LSTM等传统时序建模技术进行对比。结果表明，该LLM驱动框架优于这些基线，能够生成高质量合成时序数据，有效捕捉真实制造数据的时间依赖与统计特性，并提升下游任务性能。",
+      "insight_zh": "该研究提示，LLM结合RAG可用于缓解标注数据稀缺问题并生成具有真实统计特性的时序数据；这一思路或可迁移至城市时空数据增强场景，但原文未涉及地理空间应用，迁移性属于推断。"
     },
     {
       "key": "arxiv:2601.18493",
@@ -2528,6 +2572,37 @@
       "insight_zh": "若该研究确实揭示VLM对表征变化的敏感性，则对依赖多模态地理空间数据（如遥感影像与地图的不同表达）的模型应用具有警示意义，但需获取完整摘要后方可判断其与地理空间智能的具体关联。"
     },
     {
+      "key": "arxiv:2609.16145",
+      "title": "Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation",
+      "title_zh": "语言模型的安全纠错：能力保持下的冻结基座调整",
+      "url": "https://arxiv.org/abs/2609.16145",
+      "arxiv_id": "2609.16145",
+      "authors": [
+        "Gautam Kishore"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.NE",
+        "https://github.com/eulogik/prajna",
+        "and",
+        "https://huggingface.co/eulogik/Prajna-CRNv2"
+      ],
+      "published": "2026-09-14T18:00:15+00:00",
+      "score": 35,
+      "reason": "该文研究冻结LLM基座上的轻量纠错模块与能力保持，与研究中LLM方法方向相关，但不涉及时空数据、城市更新或遥感。",
+      "tags": [
+        "LLM",
+        "错误纠正",
+        "冻结基座",
+        "KL保持",
+        "能力保持"
+      ],
+      "summary_zh": "本文研究一个实际问题：小型纠错模块能否在不降低基座能力的前提下修正冻结语言模型输出的错误？作者提出CRN v2，一个轻量级logit层纠错模块（约3400万可训练参数，占46.5亿文本模块的0.73%），置于完全冻结的Gemma 4 E2B模型之上。基座模型从不更新，仅纠错模块通过监督微调及在83,400个纠错对上的无参考DPO进行学习。在一个60题领域考试（CEHRI，涵盖事实、算术与隐式目标推理）上，CRN v2纠正了53.3%的基座模型错误（改写变体为43.3%），同时在所测能力基准（MMLU/BoolQ N=200；car-wash N=8）上无退化。在匹配CRN v1预算（660万参数，秩19）下的LoRA基线达到83.3%纠错率，但在相同基准上出现30-75%的能力损失，即纠错-能力权衡。消融显示KL保持项（lambda=0.1）至关重要：降至0.01时纠错率降至35.0%。较早层的隐状态注入变体（160万参数，仅SFT）达到50.0%/55.8%，但未超过logit纠错；更浅注入（第4层）降至30.0%/28.3%；多深度logit纠错（约3500万）仅达40%；更长训练（5000 SFT + 2000 DPO）仍为53.3%——所测替代配置均未超过秩128的logit结果，这与约53%为最佳可达结果而非下限相一致。本文研究的是设计原则（冻结基座+logit纠错+KL锚定），并非架构新颖性主张。所有代码、主结果权重与评估脚本均已发布（deep变体仅代码，无训练好的deep检查点）。",
+      "insight_zh": "该文表明，在冻结基座上以轻量logit纠错并配合KL锚定，可在保持基座能力的同时实现部分纠错，但纠错率与能力保持之间存在权衡；这一设计原则对构建可靠LLM应用具有参考价值，但原文未涉及地理空间或时空任务。"
+    },
+    {
       "key": "arxiv:2609.16053",
       "title": "Retrieval-Driven Memory Reconsolidation for Long-Term LLM Agents",
       "title_zh": "面向长期LLM智能体的检索驱动记忆重巩固",
@@ -3510,6 +3585,38 @@
       "insight_zh": "该工作展示了多智能体框架在长时程、高不确定性研究任务中的组织方式，包括策略探索、就绪门控、子问题分解与验证反馈路由。其架构思路或可启发地理空间智能中复杂分析流程的多智能体编排，但论文未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.16095",
+      "title": "RAG-CT: Mitigating Privacy Risks on Retrieval-Augmented Generation Systems via Scanning Prompt Distribution",
+      "title_zh": "RAG-CT：通过扫描提示分布缓解检索增强生成系统的隐私风险",
+      "url": "https://arxiv.org/abs/2609.16095",
+      "arxiv_id": "2609.16095",
+      "authors": [
+        "Xingyu Lyu",
+        "Jiayimei Wang",
+        "Jianfeng He",
+        "Ning Wang",
+        "Yidan Hu",
+        "Yimin Chen"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "published": "2026-09-14T14:44:39+00:00",
+      "score": 30,
+      "reason": "该文针对RAG系统的隐私泄露提出基于提示分布扫描的防御方法，与研究中LLM及多智能体方向相关，但不涉及时空数据或城市应用。",
+      "tags": [
+        "RAG",
+        "隐私风险",
+        "PII泄露",
+        "提示分布",
+        "检测防御"
+      ],
+      "summary_zh": "检索增强生成（RAG）已成为提升大语言模型（LLM）生成内容质量的有力范式，通过将回答锚定于外部知识，减少幻觉与事实错误。然而近期研究揭示了一个关键漏洞：对手可利用检索过程从底层语料中提取个人可识别信息（PII）。为缓解该风险，作者提出一种新防御RAG-CT，通过分析查询的熵与边界分布并使用基于分数的检测方法识别恶意查询。在四个数据集上针对四种最先进攻击策略与四种防御基线的大量实验表明，该方法显著减少PII泄露，并优于现有防御。该工作提供了一种轻量而有效的机制，无需修改底层LLM或检索器即可保护RAG系统免受PII泄露。",
+      "insight_zh": "该文表明，通过分析查询的熵与边界分布可在不修改模型与检索器的前提下检测恶意查询并减少PII泄露；其轻量检测思路对LLM应用安全有参考价值，但原文未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2609.16887",
       "title": "QART: A Quantum-Classical Hybrid Architecture for Long-Horizon Reasoning -- Exploring a Conditional Path toward Quantum Scaling",
       "title_zh": "QART：面向长程推理的量子-经典混合架构——探索通向量子扩展的条件路径",
@@ -4391,6 +4498,32 @@
       "insight_zh": "该文提出的内容增量指标可为评估LLM在少样本地理空间推理任务中的表现提供方法论参考，但摘要未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.16093",
+      "title": "Evaluating Open-Weight E-Commerce Agents with Environment-Grounded Verification",
+      "title_zh": "以环境接地验证评估开放权重电商智能体",
+      "url": "https://arxiv.org/abs/2609.16093",
+      "arxiv_id": "2609.16093",
+      "authors": [
+        "Nimit Shah",
+        "Haitz S\\'aez de Oc\\'ariz Borde"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-14T13:35:32+00:00",
+      "score": 25,
+      "reason": "该文构建确定性电商环境以评测开放权重智能体，涉及LLM智能体与环境交互验证，与研究中LLM和多智能体方向相关，但应用场景为电商而非地理空间。",
+      "tags": [
+        "LLM智能体",
+        "电商环境",
+        "环境接地验证",
+        "多指标评测",
+        "开放权重模型"
+      ],
+      "summary_zh": "一次购物对话通往同一购物车有多条路径，而任务成功率将它们全部归为一个分数。作者构建了一个确定性且可复现的电商环境，预先承诺每次试验的客户与轨迹参数，包括人设、难度、目标购物车与商品揭示时间表。一个模拟消费者在受评模型协助下尝试从环境中购买目标购物车。环境引导模拟器动作，并记录每个助手动作及该时点的环境状态。试验后，这些记录使评估者能够依据保留证据评估对话的各个部分。例如，只有当客户已提及某目标产品时，评估者才会因搜索未能呈现该产品而扣分。作者进一步利用该证据，根据助手动作与预期工具调用集的比较，对工具调用施加不同惩罚。环境还与模拟器双向交互，读取其输出以在模拟器判定客户过于沮丧时停止试验，并实时注入指令，指定何时探索、推迟购买某商品或回忆先前交流。这种交互形成了开放式且可验证的模拟。在来自20B至35B参数的八个开放权重智能体上，每个智能体160次试验、44项指标，所得能力画像区分了行动不足、过度购买、无依据的产品属性与搜索不佳，而这些都被终端成功率所掩盖。",
+      "insight_zh": "该文表明，环境接地的多指标验证可揭示被终端成功率掩盖的智能体行为差异，如行动不足与过度购买；其可验证模拟与细粒度评测思路对多智能体系统评估有借鉴意义，但原文未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2609.16070",
       "title": "Efficient Multimodal Generative Recommendation with Latent Narrative Reasoning",
       "title_zh": "面向高效多模态生成式推荐的潜在叙事推理",
@@ -4820,6 +4953,35 @@
       ],
       "summary_zh": "基于Transformer的多目标跟踪（MTT）联合学习数据关联与状态估计，但MT3/Track-MT3类跟踪器会重复重新编码量测窗口，造成冗余计算。作者提出因果神经集合滤波（CNSF），一种神经集合滤波器，仅编码当前量测，同时以结构化递归航迹状态携带历史证据。CNSF结合排他Sinkhorn关联、关联条件化的Kalman式矩匹配更新，以及带量测驱动出生的递归Bernoulli生命周期建模。这些机制施加软一对一约束、传播关联诱导的状态不确定性，并支持漏检与出生—死亡转移下的存在性估计。在留出的三工况仿真测试集上，CNSF相对Track-MT3将平均GOSPA和T-GOSPA分别降低19.3%和30.4%，参数量减少55.9%，单线程CPU推理加速3.76倍。",
       "insight_zh": "该工作提示可将递归状态与关联约束结合以减少重复编码，其思路或可迁移至时空轨迹类任务，但摘要未涉及城市或遥感应用，需谨慎外推。"
+    },
+    {
+      "key": "arxiv:2609.16102",
+      "title": "A Decision-Support Audit Protocol for Supervision Drift in Proxy-Labeled Credit-Risk Prediction",
+      "title_zh": "代理标签信用风险预测中监督漂移的决策支持审计协议",
+      "url": "https://arxiv.org/abs/2609.16102",
+      "arxiv_id": "2609.16102",
+      "authors": [
+        "Mehrdad Shoeibi",
+        "Muhammad Shabanpour",
+        "Waldemar Karwowski",
+        "Niloofar Yousefi"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-14T17:20:35+00:00",
+      "score": 22,
+      "reason": "该文提出代理标签信用风险预测中监督漂移的审计协议，涉及分布偏移与校准诊断，与时空数据挖掘中的非平稳性问题在方法上有一定相通之处，但应用领域为金融风控。",
+      "tags": [
+        "监督漂移",
+        "代理标签",
+        "信用风险",
+        "审计协议",
+        "分布偏移"
+      ],
+      "summary_zh": "信用风险模型基于代理标签训练，并在时间与群体变化下部署，但目前没有单一迁移指标能区分基率偏移、概率尺度偏移与特征-标签关系变化。作者贡献了一个设计科学产物：针对代理标签信用风险预测中监督漂移的锁定式多信号审计协议。五层（迁移性能、oracle-gap探针、校准诊断、特征-标签稳定性、合成阳性对照）、阈值与决策规则在解释前即被锁定；有界解读是设计结果。在公开LendingClub数据集（2013至2016年时间迁移与跨群体迁移）上，排序稳定且oracle差距较小；最清晰的时间信号是流行率与概率尺度失配，仅截距诊断重校准即可大幅降低，但其原因无法从现有发布数据中识别。阳性对照仅对较大注入偏移有响应；更细微的漂移无法排除。将诊断模式映射到治理行动属概念性指导，本文未加验证。",
+      "insight_zh": "该文强调在代理标签与分布偏移下，多信号审计协议可区分不同类型的漂移，并指出仅截距重校准可缓解部分失配；其非平稳性诊断思路对时空预测中的漂移问题有概念借鉴意义，但原文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.16680",
@@ -5843,6 +6005,36 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作提出通过剥离领域信息的“计算指纹”来识别不同领域间的同构问题，从而实现解决方案的跨域迁移。",
       "insight_zh": "摘要缺失，无法确认其技术路线与实验效果；跨域迁移思路或可启发将其他领域的计算方法引入地理空间问题，但需更多信息支撑。"
+    },
+    {
+      "key": "arxiv:2609.16099",
+      "title": "SWB-DM: A Calibrated Sliced-Wasserstein-Barycenter Aggregator with Delayed-Momentum Caching for Byzantine-Robust Federated Learning under Partial Participation",
+      "title_zh": "SWB-DM：面向部分参与下拜占庭鲁棒联邦学习的校准切片-Wasserstein重心聚合器与延迟动量缓存",
+      "url": "https://arxiv.org/abs/2609.16099",
+      "arxiv_id": "2609.16099",
+      "authors": [
+        "Saranraj S",
+        "Saranya M S",
+        "Alex David S",
+        "and Ajay Kumar A"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CR",
+        "cs.DC"
+      ],
+      "published": "2026-09-14T16:30:18+00:00",
+      "score": 18,
+      "reason": "该文研究部分参与下拜占庭鲁棒联邦学习的聚合方法，涉及分布式学习与鲁棒聚合，与时空数据挖掘中的分布式学习有方法关联，但应用场景非地理空间。",
+      "tags": [
+        "联邦学习",
+        "拜占庭鲁棒",
+        "部分参与",
+        "Wasserstein重心",
+        "延迟动量"
+      ],
+      "summary_zh": "联邦学习的鲁棒聚合方法悄然依赖一个脆弱假设：某一轮出现的客户端是全体的公平样本。实践中很少如此。当每轮仅少数客户端参与时，即使少量对手也能主导该样本，并悄然使坐标中位数、Krum、Bulyan与截尾均值所依赖的有限样本保证失效。作者提出SWB-DM直接应对此问题。SWB将客户端更新的每个切片视为一维分布，在客户端间计算截尾Wasserstein重心，并通过基于medoid的规范固定步骤恢复坐标身份——这是作者开发的一种启发式，并不声称属于标准最优传输理论。DeMoA式延迟动量随后在每轮跨全体客户端缓存更新，使鲁棒性与实际被采样者解耦。截尾比例校准并非装饰：截尾不足会在正确校准模型可存活的污染水平下导致崩溃。在448个CIFAR-10配置以及CIFAR-100、FEMNIST和500客户端可扩展性运行中，作者发现若干机制上不同的失效模式。均匀样本坐标中位数退化为确定性错误答案。Krum悄然违反其自身的n大于2f+2前提并无警告地发散。Bulyan的n大于等于4f+3阈值产生尖锐的通过/失败边界。在攻击方面，IPM比ALIE更可靠地击败序统计防御——包括SWB——这通过与收敛界的delta空间测量得到确认。SWB-DM的缓存带来真实预热成本，但将所有基线扩展到相同轮次预算后，其CIFAR-10增益不成比例地大。",
+      "insight_zh": "该文揭示部分参与下现有鲁棒聚合方法的有限样本保证可能失效，并提出以切片Wasserstein重心与延迟动量缓存解耦鲁棒性与采样偏差；其分布式鲁棒学习思路对地理空间联邦学习有概念借鉴意义，但原文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.16847",
@@ -7310,40 +7502,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.15225",
-      "title": "Deep Learning-based Intelligent Diagnosis of Congenital Uterine Anomalies in 3D Ultrasound",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.15225",
-      "arxiv_id": "2609.15225",
-      "authors": [
-        "Yueyue Xu",
-        "Yuhao Huang",
-        "Jiaxiao Deng",
-        "Yuanji Zhang",
-        "Haoming Zhang",
-        "Jiajia Qu",
-        "Shiying Zheng",
-        "Xiaomei Tang",
-        "Haining Chen",
-        "Chengcai Chen",
-        "Yiyi Wu",
-        "Xin Yang",
-        "Dong Ni",
-        "Hongyu Zheng"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-14T08:44:47+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -9592,6 +9750,44 @@
       "insight_zh": "由于摘要缺失，无法判断其方法细节与结论；仅从标题看，其安全测试视角或可为多智能体系统的鲁棒性评估提供参考，但与地理空间智能的直接关联有限。"
     },
     {
+      "key": "arxiv:2609.15855",
+      "title": "K-Bench: a clinically calibrated benchmark for evaluating large language models in high-risk mental health conversations",
+      "title_zh": "K-Bench：用于评估高风险心理健康对话中大语言模型的临床校准基准",
+      "url": "https://arxiv.org/abs/2609.15855",
+      "arxiv_id": "2609.15855",
+      "authors": [
+        "Laura M. Vowels",
+        "Matthew J. Vowels",
+        "Shivali Sharma",
+        "Apoorv Jha",
+        "Rehnuma Choudhury",
+        "Wasseem El Sarraj",
+        "Rachel Francois-Walcott",
+        "Aruba Hussain",
+        "Sarah Ingram",
+        "Angela Loulopoulou",
+        "Adva Segal",
+        "Elena Volkova"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-14T16:49:23+00:00",
+      "score": 12,
+      "reason": "该文构建高风险心理健康对话中LLM的临床校准基准，属于LLM安全评测，与研究中LLM方向有间接关联，但不涉及时空数据或城市应用。",
+      "tags": [
+        "LLM",
+        "心理健康",
+        "基准评测",
+        "高风险对话",
+        "临床校准"
+      ],
+      "summary_zh": "人们越来越多地使用大语言模型（LLM）获取心理健康支持，但其在演变中的高风险对话中的安全性仍缺乏充分刻画。作者开发了K-Bench，一个经临床医生校准的受保护基准，评估来自14家提供商33个基座模型的125种模型配置，覆盖固定队列的200个多轮情景，涉及自杀、自残、家庭暴力、物质滥用及无风险呈现。合成患者对话与真实人机对话存在显著分布重叠。一个冻结的GPT-4o评判者在来自151份临床医生评分记录的6,751个合格条目比较中，与临床医生共识达到94.2%的完全一致率。领先模型将强支持性对话与超过95的综合风险得分相结合，而风险探索则暴露出较低性能配置间的显著差异。治疗性提示产生配置特定的增益，集中于较弱模型，而提升推理未带来平均改善。K-Bench将更广的临床覆盖与配置规模比较相结合，并配有持续更新的公开排行榜，其操作测试材料受保护以防直接优化。排行榜见www.k-bench.ai。",
+      "insight_zh": "该文表明，在高风险心理健康场景中，模型表现差异显著，且提升推理并不必然改善安全性；其基准构建与临床校准方法对LLM安全评测有参考价值，但原文未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2609.17099",
       "title": "GeoLAM: Learning Geometry-Grounded Latent Actions from Unlabeled Human Videos",
       "title_zh": "GeoLAM：从无标注人类视频中学习几何基础的潜在动作",
@@ -10660,6 +10856,36 @@
       ],
       "summary_zh": "跨度级掩码语言建模（MLM）已被证明优于原始的单token MLM，因为实体/短语及其依赖关系对语言理解至关重要。以往工作仅考虑跨度长度及其离散分布，而忽略了跨度之间的依赖关系，即假设被掩码跨度的位置服从均匀分布。本文提出POSPAN，一个通用框架，通过跨度长度分布与位置约束分布的组合实现多样化的位置约束跨度掩码策略，统一了所有现有的跨度级掩码方法。为验证POSPAN在预训练中的有效性，我们在若干NLU基准数据集上进行了评估。实验结果表明，位置约束能够广泛增强跨度级掩码，且我们最佳的POSPAN设置持续优于仅考虑跨度长度的对应方法以及原始MLM。我们还对掩码语言模型中的位置约束进行了理论分析，以阐明POSPAN有效的原因，证明了其合理性与必要性。",
       "insight_zh": "该文对掩码位置分布约束的建模思路，或可启发地理文本与时空语料预训练中的结构化掩码设计，但论文本身未涉及地理领域。"
+    },
+    {
+      "key": "arxiv:2609.16129",
+      "title": "Optimal Pruning for Neural Architectures using Fisher Information Distances",
+      "title_zh": "基于Fisher信息距离的神经架构最优剪枝",
+      "url": "https://arxiv.org/abs/2609.16129",
+      "arxiv_id": "2609.16129",
+      "authors": [
+        "David S. Berman",
+        "Yen-Yu Fu",
+        "Edward Hirst",
+        "Thelma Chiwete Obirai"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.IT",
+        "math.DG",
+        "math.IT"
+      ],
+      "published": "2026-09-14T18:00:03+00:00",
+      "score": 10,
+      "reason": "该文研究基于Fisher信息距离的神经网络剪枝方法，属于深度学习模型压缩理论，与城市更新、时空数据挖掘、遥感变化检测等方向无直接关联。",
+      "tags": [
+        "模型剪枝",
+        "Fisher信息",
+        "微分几何",
+        "视觉Transformer"
+      ],
+      "summary_zh": "本文提出一种新的参数剪枝方案，源自模型空间中的微分几何距离。剪枝一个参数即将其置零，代表模型位移到该参数消失的超曲面。从未剪枝模型到该超曲面的最小距离，可通过由Fisher信息度量确定的模型空间测地距离自然计算。该距离决定了剪枝下模型的真实变化及其性能。通过分析该测地距离逐步更精确的近似，作者确定了剪枝方法最优性的自然层级：从传统幅度剪枝开始，发展为新的更复杂有效的剪枝方案。方法在全连接网络与视觉Transformer上、在MNIST与CIFAR-10上、覆盖0-100%完整剪枝范围及五个随机种子进行验证。在所有架构与数据集组合上，该方法在准确率与Matthews相关系数上均优于按参数幅度和仅按局部Fisher信息的剪枝。此外，对不同测地近似层次的分析产生了计算高效且保持近最优性能的中间剪枝方案。这一几何图景不仅提供了AI模型的最先进剪枝方法，也为剪枝方案提供了经数学验证的动机。",
+      "insight_zh": "该文以Fisher信息度量下的测地距离统一解释并改进剪枝，说明几何视角可为模型压缩提供理论依据；其方法属通用深度学习理论，原文未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.16459",
@@ -12470,6 +12696,76 @@
       "insight_zh": "该研究揭示的检索失败与提取失败的区分可能对基于RAG的地理空间知识问答系统评估有借鉴意义，但论文未涉及地理空间或城市应用场景。"
     },
     {
+      "key": "arxiv:2609.16149",
+      "title": "DenseFace: Bias Mitigation in Face Recognition via Density-Aware Probabilistic Matching",
+      "title_zh": "DenseFace：通过密度感知概率匹配缓解人脸识别中的偏差",
+      "url": "https://arxiv.org/abs/2609.16149",
+      "arxiv_id": "2609.16149",
+      "authors": [
+        "Mansur Bultygov",
+        "Vadim Seliutin",
+        "Dmitry Nekhaev",
+        "Ivan Laptev"
+      ],
+      "categories": [
+        "cs.CV",
+        "Conference",
+        "on",
+        "Biometrics",
+        "(IJCB)",
+        "2026"
+      ],
+      "published": "2026-09-14T18:00:44+00:00",
+      "score": 8,
+      "reason": "该文聚焦人脸识别中的种族偏差缓解，属于计算机视觉与公平性研究，与城市更新、时空数据挖掘、遥感变化检测及地理空间智能无直接关联。",
+      "tags": [
+        "人脸识别",
+        "偏差缓解",
+        "概率匹配",
+        "von Mises-Fisher分布"
+      ],
+      "summary_zh": "尽管人脸识别持续进步，当前模型仍存在显著的人口统计偏差。现有偏差缓解方法往往对训练过程施加约束并导致识别精度下降。为此，作者提出一种在不损害精度的前提下减少预训练人脸识别模型中种族偏差的方法。该方法用von Mises-Fisher（MF）分布建模每个人的面部嵌入，观察到人口统计属性与MF分布密度之间的依赖关系，并提出DenseFace这一考虑MF分布差异的概率人脸匹配流程。大量实验表明，DenseFace能在不同网络架构、训练数据集和损失函数的强人脸识别模型中持续减少种族偏差，且保持识别精度，无需重新训练底层模型。文章还考察了此前采用的偏差度量并提出建议。",
+      "insight_zh": "该文的核心贡献在于以概率分布密度差异刻画并缓解偏差，且无需重训练；其公平性建模思路与地理空间智能中的偏差问题在概念上可类比，但原文未涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.15225",
+      "title": "Deep Learning-based Intelligent Diagnosis of Congenital Uterine Anomalies in 3D Ultrasound",
+      "title_zh": "基于深度学习的三维超声先天性子宫异常智能诊断",
+      "url": "https://arxiv.org/abs/2609.15225",
+      "arxiv_id": "2609.15225",
+      "authors": [
+        "Yueyue Xu",
+        "Yuhao Huang",
+        "Jiaxiao Deng",
+        "Yuanji Zhang",
+        "Haoming Zhang",
+        "Jiajia Qu",
+        "Shiying Zheng",
+        "Xiaomei Tang",
+        "Haining Chen",
+        "Chengcai Chen",
+        "Yiyi Wu",
+        "Xin Yang",
+        "Dong Ni",
+        "Hongyu Zheng"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-14T08:44:47+00:00",
+      "score": 8,
+      "reason": "该文为三维超声子宫异常分类的医学影像深度学习框架，与地理空间研究无直接关联，仅在自监督重建、难样本挖掘等通用技术上有极弱参考。",
+      "tags": [
+        "医学影像",
+        "三维超声",
+        "深度学习",
+        "自监督学习",
+        "不平衡分类"
+      ],
+      "summary_zh": "作者开发 CUA-Net 框架，用于无需冠状面重建的先天性子宫异常（CUA）自动分类并评估其临床适用性。CUA-Net 基于 3D ResNet-18，采用动态数据重采样缓解数据不平衡，并用难样本挖掘通过损失调整充分学习困难病例；还提出自监督重建以充分探索体数据，以及在线数据增强以修正错误预测、提升泛化。在测试集上与不同深度学习方法及初/高级超声医师比较，指标包括准确率、精确率、召回率、F1、micro-AUC 与 macro-AUC。内部队列准确率 93.88%、精确率 87.01%、召回率 95.92%、F1 88.09%、micro-AUC 0.9982、macro-AUC 0.9997；外部集准确率 91.52%、精确率 83.27%、召回率 88.63%、F1 81.49%、micro-AUC 0.9945、macro-AUC 0.9990。模型在所有指标上优于初级医师，多数指标与高级医师相当。",
+      "insight_zh": "该工作展示了自监督重建与难样本挖掘在三维医学体数据分类中的有效性，其处理类别不平衡与困难样本的策略对遥感影像分类有一般性借鉴意义，但论文本身不涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.16341",
       "title": "Channel-Informed Neural Network for Physical Layer Key Generation",
       "title_zh": "面向物理层密钥生成的信道信息神经网络",
@@ -13530,55 +13826,6 @@
       "insight_zh": "该研究表明物理感知训练目标（如增广拉格朗日）在ACOPF代理学习中能显著降低约束违反，且其缩放行为与MSE不同；这为设计可扩展的物理感知代理模型提供了缩放定律层面的指导。"
     },
     {
-      "key": "arxiv:2609.16145",
-      "title": "Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16145",
-      "arxiv_id": "2609.16145",
-      "authors": [
-        "Gautam Kishore"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG",
-        "cs.NE",
-        "https://github.com/eulogik/prajna",
-        "and",
-        "https://huggingface.co/eulogik/Prajna-CRNv2"
-      ],
-      "published": "2026-09-14T18:00:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16099",
-      "title": "SWB-DM: A Calibrated Sliced-Wasserstein-Barycenter Aggregator with Delayed-Momentum Caching for Byzantine-Robust Federated Learning under Partial Participation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16099",
-      "arxiv_id": "2609.16099",
-      "authors": [
-        "Saranraj S",
-        "Saranya M S",
-        "Alex David S",
-        "and Ajay Kumar A"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CR",
-        "cs.DC"
-      ],
-      "published": "2026-09-14T16:30:18+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2601.09050",
       "title": "SITA: Learning Speaker-Invariant and Tone-Aware Speech Representations for Low-Resource Tonal Languages",
       "title_zh": "SITA：面向低资源声调语言的说话人不变与声调感知语音表征学习",
@@ -13968,32 +14215,6 @@
       "insight_zh": "摘要缺失，无法判断其与地理空间智能的潜在联系；仅从标题看，属于语音识别领域，相关性较低。"
     },
     {
-      "key": "arxiv:2609.16095",
-      "title": "RAG-CT: Mitigating Privacy Risks on Retrieval-Augmented Generation Systems via Scanning Prompt Distribution",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16095",
-      "arxiv_id": "2609.16095",
-      "authors": [
-        "Xingyu Lyu",
-        "Jiayimei Wang",
-        "Jianfeng He",
-        "Ning Wang",
-        "Yidan Hu",
-        "Yimin Chen"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.CR"
-      ],
-      "published": "2026-09-14T14:44:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16548",
       "title": "QueryFormer: Winning Solution for KDD Cup 2026 Tencent UniRec Challenge",
       "title_zh": "",
@@ -14086,31 +14307,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作构建了面向波斯语的音频语言模型综合评测基准。",
       "insight_zh": "摘要缺失，无法判断其基准构成或评测结果；该研究与地理空间智能主题关联较弱。"
-    },
-    {
-      "key": "arxiv:2609.16129",
-      "title": "Optimal Pruning for Neural Architectures using Fisher Information Distances",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16129",
-      "arxiv_id": "2609.16129",
-      "authors": [
-        "David S. Berman",
-        "Yen-Yu Fu",
-        "Edward Hirst",
-        "Thelma Chiwete Obirai"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.IT",
-        "math.DG",
-        "math.IT"
-      ],
-      "published": "2026-09-14T18:00:03+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.16540",
@@ -14471,44 +14667,6 @@
       "insight_zh": "摘要缺失，无法评估其方法；主体特定编码器的对齐思路或可类比至跨城市/跨区域的时空数据对齐，但缺乏具体证据。"
     },
     {
-      "key": "arxiv:2609.16155",
-      "title": "LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16155",
-      "arxiv_id": "2609.16155",
-      "authors": [
-        "Mantek Singh",
-        "Jeshwanth Challagundla",
-        "Prateek Karnal",
-        "Gagan Ganapathy",
-        "Vineet Shah",
-        "Ridam Arora"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "Image",
-        "Processing,",
-        "Computer",
-        "Vision",
-        "and",
-        "Machine",
-        "Learning",
-        "(ICICML)",
-        "(ICICML),",
-        "pp.",
-        "2053-2059,",
-        "IEEE,",
-        "2024"
-      ],
-      "published": "2026-09-14T18:01:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16161",
       "title": "LLM Inference in a Flash!",
       "title_zh": "",
@@ -14528,38 +14686,6 @@
         "cs.LG"
       ],
       "published": "2026-09-14T18:04:30+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.15855",
-      "title": "K-Bench: a clinically calibrated benchmark for evaluating large language models in high-risk mental health conversations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.15855",
-      "arxiv_id": "2609.15855",
-      "authors": [
-        "Laura M. Vowels",
-        "Matthew J. Vowels",
-        "Shivali Sharma",
-        "Apoorv Jha",
-        "Rehnuma Choudhury",
-        "Wasseem El Sarraj",
-        "Rachel Francois-Walcott",
-        "Aruba Hussain",
-        "Sarah Ingram",
-        "Angela Loulopoulou",
-        "Adva Segal",
-        "Elena Volkova"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-14T16:49:23+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14945,26 +15071,6 @@
       "insight_zh": "摘要缺失，无法推断具体方法或结论。该工作涉及多模态生成与智能体应用，但聚焦于音频领域，与地理空间智能或城市研究的关联性有限。"
     },
     {
-      "key": "arxiv:2609.16093",
-      "title": "Evaluating Open-Weight E-Commerce Agents with Environment-Grounded Verification",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16093",
-      "arxiv_id": "2609.16093",
-      "authors": [
-        "Nimit Shah",
-        "Haitz S\\'aez de Oc\\'ariz Borde"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-14T13:35:32+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16610",
       "title": "EgoPathBench: Evaluating Zero-Shot Egocentric Waypoint Decision-Making in Vision-Language Models",
       "title_zh": "",
@@ -15226,33 +15332,6 @@
         "cs.AI"
       ],
       "published": "2026-09-15T17:20:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16149",
-      "title": "DenseFace: Bias Mitigation in Face Recognition via Density-Aware Probabilistic Matching",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16149",
-      "arxiv_id": "2609.16149",
-      "authors": [
-        "Mansur Bultygov",
-        "Vadim Seliutin",
-        "Dmitry Nekhaev",
-        "Ivan Laptev"
-      ],
-      "categories": [
-        "cs.CV",
-        "Conference",
-        "on",
-        "Biometrics",
-        "(IJCB)",
-        "2026"
-      ],
-      "published": "2026-09-14T18:00:44+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16006,29 +16085,6 @@
       ],
       "summary_zh": "可再生能源并网给电网故障检测与恢复协调带来复杂挑战，传统基于静态规则和预设阈值的继电保护系统难以应对，尤其在短路等故障的检测与隔离方面。本文在10毫秒测量窗口内评估多种机器学习模型检测电气故障并定位故障输电线路的效果，这是首次在该关键实时时间框架下进行此类评估。表现最佳的模型F1分数达到0.991±0.018，处理时间为0.342ms±0.509ms。",
       "insight_zh": "该研究聚焦电力工程中的实时故障检测，其方法学与时空数据挖掘或城市分析无直接交集，对GIS博士研究方向的参考价值有限。"
-    },
-    {
-      "key": "arxiv:2609.16102",
-      "title": "A Decision-Support Audit Protocol for Supervision Drift in Proxy-Labeled Credit-Risk Prediction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16102",
-      "arxiv_id": "2609.16102",
-      "authors": [
-        "Mehrdad Shoeibi",
-        "Muhammad Shabanpour",
-        "Waldemar Karwowski",
-        "Niloofar Yousefi"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-14T17:20:35+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2608.12090",
