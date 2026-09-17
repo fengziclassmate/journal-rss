@@ -2,11 +2,11 @@
   "date": "2026-09-16",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 424,
+    "analyzed": 434,
     "high": 7,
     "medium": 16,
     "low": 33,
-    "below_threshold": 368
+    "below_threshold": 378
   },
   "papers": [
     {
@@ -4695,6 +4695,33 @@
       "insight_zh": "其“先预测物理基本量、再推导目标量”的全景式神经算子思路，对地理时空场（如气象、水文）的多目标预测与下游分析具有方法迁移潜力。"
     },
     {
+      "key": "arxiv:2609.16760",
+      "title": "Turn-level Multiscale Density Ratio Estimation for LLM Agents",
+      "title_zh": "面向LLM智能体的轮次级多尺度密度比估计",
+      "url": "https://arxiv.org/abs/2609.16760",
+      "arxiv_id": "2609.16760",
+      "authors": [
+        "Zishuo Zhao (Alibaba Group)",
+        "Kai Chen (Alibaba Group)",
+        "Ao Li (Alibaba Group)",
+        "Yuan Liu (Alibaba Group)"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-15T07:36:23+00:00",
+      "score": 22,
+      "reason": "该文研究LLM智能体多轮任务的对齐与训练方法，与用户研究画像中的LLM和多智能体方向相关，但与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "LLM agents",
+        "alignment",
+        "multi-turn reasoning",
+        "reinforcement learning"
+      ],
+      "summary_zh": "随着大语言模型（LLM）的快速发展，由LLM增强的智能体系统在处理复杂任务（尤其是涉及多步思考或工具交互）方面展现出巨大潜力。为将LLM技术应用于精心设计的智能体范式，需要在多种智能体场景中对LLM进行后训练以获得更好性能。在众多后训练技术中，PPO、DPO、DIL和GRPO等对齐方法因能通过惩罚负样本显著提升模型性能且训练复杂度可接受而流行。然而，大多数对齐方法针对简单的单轮任务，复杂多轮任务仍有改进空间。该文提出轮次级多尺度密度比估计（tlm-DRE），为不同轮次分配不同权重，并基于多轮任务的正负空间差距提出非对称的token级训练。在广泛的智能体基准上的实验表明，该方法与传统对齐方法相比具有竞争力，使LLM在域内和域外条件下的多轮推理任务中表现稳健。",
+      "insight_zh": "该文对多轮智能体任务的对齐与轮次级加权思路，可能对地理空间智能中基于LLM的多智能体协作或复杂空间推理任务有方法参考价值，但其任务与数据均为通用智能体基准，与城市更新或遥感变化检测无直接联系。"
+    },
+    {
       "key": "arxiv:2609.16059",
       "title": "Towards Scalable RLVR: Multimodal Instruction Following Data Synthesis and Distillation",
       "title_zh": "迈向可扩展的RLVR：多模态指令跟随数据合成与蒸馏",
@@ -6037,6 +6064,34 @@
       "insight_zh": "该文揭示部分参与下现有鲁棒聚合方法的有限样本保证可能失效，并提出以切片Wasserstein重心与延迟动量缓存解耦鲁棒性与采样偏差；其分布式鲁棒学习思路对地理空间联邦学习有概念借鉴意义，但原文未涉及地理空间数据。"
     },
     {
+      "key": "arxiv:2609.16804",
+      "title": "SOTER: A Generative Time-Series Foundation Model for Wearable Human Physiological Signals",
+      "title_zh": "SOTER：面向可穿戴人体生理信号的生成式时间序列基础模型",
+      "url": "https://arxiv.org/abs/2609.16804",
+      "arxiv_id": "2609.16804",
+      "authors": [
+        "Fangke Chen",
+        "Sirry Chen",
+        "Wei Chen",
+        "Zhongyu Wei"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-15T08:11:03+00:00",
+      "score": 18,
+      "reason": "该文提出面向可穿戴生理信号的时间序列基础模型，涉及多通道、不规则采样与连续时间动态建模，与时空数据挖掘中的时序建模方法有方法层面的潜在关联，但应用领域为生理信号而非地理空间。",
+      "tags": [
+        "time-series foundation model",
+        "physiological signals",
+        "wearable",
+        "continuous-time dynamics"
+      ],
+      "summary_zh": "该文提出SOTER，一个面向可穿戴生理时间序列的生成式基础模型，在单一预训练框架内统一跨通道耦合、频谱引导的专家特化与连续时间潜在演化。SOTER结合建模信号间依赖的空间特征感知骨干、通过可检查的非学习规则将表示路由到固定频段专家的功率谱密度引导混合专家层，以及支持任意时间戳预测与插补的神经受控微分方程解码器。模型在五个公开生理数据集的2260亿时间点上预训练，并在零样本预测、冻结编码器线性探测分类和连续时间插补任务上评估，在6个数据集中的4个取得最佳RMSE、5个取得最佳MAE，分类平均Macro-AUROC最高，在75%缺失率下所有六个数据集插补误差最低，且对加性采集噪声保持稳健。",
+      "insight_zh": "该文对多通道、不规则采样与连续时间动态的联合建模思路，可能对地理时空数据中不规则采样轨迹或传感器网络的建模有方法借鉴意义，但其数据与任务均为可穿戴生理信号，与城市更新或遥感变化检测无直接关联。"
+    },
+    {
       "key": "arxiv:2609.16847",
       "title": "RegRet: Enhancing Region-Level Retrieval in Large Multimodal Models",
       "title_zh": "RegRet：增强大型多模态模型中的区域级检索",
@@ -6437,30 +6492,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16760",
-      "title": "Turn-level Multiscale Density Ratio Estimation for LLM Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16760",
-      "arxiv_id": "2609.16760",
-      "authors": [
-        "Zishuo Zhao (Alibaba Group)",
-        "Kai Chen (Alibaba Group)",
-        "Ao Li (Alibaba Group)",
-        "Yuan Liu (Alibaba Group)"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-15T07:36:23+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16986",
       "title": "ToMAS: A Pilot Failure-Grounded Theory-of-Mind Benchmark from Multi-Agent LLM Failures",
       "title_zh": "",
@@ -6533,33 +6564,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16748",
-      "title": "TIAO: Token Importance-Aware Policy Optimization for Text Summarization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16748",
-      "arxiv_id": "2609.16748",
-      "authors": [
-        "Qixiu Li",
-        "Chenlong Bao",
-        "Xiang Zhu",
-        "Xiaoyong Li",
-        "Ruixin Cao",
-        "Shukai Chen",
-        "Zhenxiong Zhou"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-15T07:23:07+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -6691,31 +6695,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16804",
-      "title": "SOTER: A Generative Time-Series Foundation Model for Wearable Human Physiological Signals",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16804",
-      "arxiv_id": "2609.16804",
-      "authors": [
-        "Fangke Chen",
-        "Sirry Chen",
-        "Wei Chen",
-        "Zhongyu Wei"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-15T08:11:03+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17152",
       "title": "ResLRP: The Role of Residual Cancellation in Attribution Instability in Vision Transformers",
       "title_zh": "",
@@ -6771,32 +6750,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16727",
-      "title": "PriorPose: Reference-Guided Joint Deformation and Alignment for Category-Level Object Pose Estimation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16727",
-      "arxiv_id": "2609.16727",
-      "authors": [
-        "Yihan Chen",
-        "Huan Ren",
-        "Wenfei Yang",
-        "Hang Du",
-        "Tianzhu Zhang",
-        "Feng Wu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T06:57:34+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17251",
       "title": "Persistent Recurrent Memory Between Transformer Layers - Improves Language Model Generalization",
       "title_zh": "",
@@ -6813,33 +6766,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16785",
-      "title": "PSMP-CLIP: Patch-Prompt SAM and Multi-Semantic Prompting for CLIP-Based Zero-Shot Anomaly Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16785",
-      "arxiv_id": "2609.16785",
-      "authors": [
-        "Xuezhi Xiang",
-        "Guanghao Wu",
-        "Heqi Xiang",
-        "Jiayao Liu",
-        "Xiaoheng Li",
-        "Yiming Chen",
-        "Shanjun Zhang"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T07:55:32+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7032,29 +6958,6 @@
       "reason": "关键词命中：Deep Learning",
       "tags": [
         "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16775",
-      "title": "IMVS: Interactive Medical Volume Segmentation with Test-Time Adaptation - A New Method for Annotating Radiology Datasets",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16775",
-      "arxiv_id": "2609.16775",
-      "authors": [
-        "Abhilaksh Singh Reen",
-        "Kushal Borkar",
-        "Ritvik Mahapatra"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T07:43:38+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7530,28 +7433,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16755",
-      "title": "De-GAN - Dynamic Parameter Tuned GAN for 3D Medical Image Segmentation: A Step Towards Generalisation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16755",
-      "arxiv_id": "2609.16755",
-      "authors": [
-        "Zoha Usama",
-        "Azadeh Alavi"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T07:32:48+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17474",
       "title": "Coupled Calibration and Learning: Mitigating Teacher Bias in LLM Distillation without Target-Domain Reward Feedback",
       "title_zh": "",
@@ -7596,38 +7477,6 @@
       "reason": "关键词命中：Segmentation",
       "tags": [
         "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16814",
-      "title": "Can We Do Interpretable NLI with Graphs Based on Atomic Propositions?",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16814",
-      "arxiv_id": "2609.16814",
-      "authors": [
-        "Younes Boufouss (STL",
-        "LISN)",
-        "Luc Pommeret (STL",
-        "CNRS",
-        "LISN)",
-        "Thomas Gerald (LISN",
-        "STL)",
-        "Patrick Paroubek (STL",
-        "LISN)",
-        "Sophie Rosset (LISN",
-        "STL)"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.IR"
-      ],
-      "published": "2026-09-15T08:20:20+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7723,27 +7572,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16752",
-      "title": "Beyond Episodic AI: Cognitive Field Networks for Biologically Inspired Persistent Cognition",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16752",
-      "arxiv_id": "2609.16752",
-      "authors": [
-        "Byung Gyu Chae"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-15T07:29:04+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16305",
       "title": "BLINDSPOT: A Benchmark for Safety and Refusal Calibration in Long-Horizon Tool-Using Agents",
       "title_zh": "",
@@ -7768,37 +7596,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16679",
-      "title": "AI for Games in the Foundation Model Era",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16679",
-      "arxiv_id": "2609.16679",
-      "authors": [
-        "Meng Luo",
-        "Yanlin Li",
-        "Hao Li",
-        "Hongzhan Lin",
-        "Pengfei Zhou",
-        "Tianjie Ju",
-        "Ran Zhang",
-        "Yeying Jin",
-        "Mong-Li Lee",
-        "Wynne Hsu"
-      ],
-      "categories": [
-        "cs.AI",
-        "https://eurekaleo.github.io/awesome-ai-for-games"
-      ],
-      "published": "2026-09-15T06:00:47+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8312,6 +8109,36 @@
       ],
       "summary_zh": "论文分析计算决策系统中最大似然成对排序方法对扰动的敏感性。",
       "insight_zh": "该分析可能对地理空间决策支持系统的稳定性评估有参考意义，但主题较为理论化。"
+    },
+    {
+      "key": "arxiv:2609.16785",
+      "title": "PSMP-CLIP: Patch-Prompt SAM and Multi-Semantic Prompting for CLIP-Based Zero-Shot Anomaly Detection",
+      "title_zh": "PSMP-CLIP：面向CLIP零样本异常检测的Patch-Prompt SAM与多语义提示",
+      "url": "https://arxiv.org/abs/2609.16785",
+      "arxiv_id": "2609.16785",
+      "authors": [
+        "Xuezhi Xiang",
+        "Guanghao Wu",
+        "Heqi Xiang",
+        "Jiayao Liu",
+        "Xiaoheng Li",
+        "Yiming Chen",
+        "Shanjun Zhang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T07:55:32+00:00",
+      "score": 15,
+      "reason": "该文研究基于CLIP的零样本异常检测与分割，涉及遥感变化检测中可能用到的分割与提示方法，但应用领域为工业与医学异常检测，与地理空间智能无直接关联。",
+      "tags": [
+        "zero-shot anomaly detection",
+        "CLIP",
+        "SAM2",
+        "segmentation"
+      ],
+      "summary_zh": "零样本异常检测旨在无目标域样本的情况下定位异常。现有基于CLIP的方法存在异常图粗糙和语义提示有限的问题。该文提出PSMP-CLIP，整合patch-prompt SAM2分割（PPSS）与多语义引导提示正则化（MSGPR）。PPSS直接从中间patch特征采样提示，避免阈值漂移并引导SAM2生成精确掩码；MSGPR使用受语义锚约束的多个可学习提示以保持泛化性。在14个数据集上的实验显示其性能极具竞争力，在MVTec AD、BTAD、DTD-Synthetic、CVC-ClinicDB、TN3K、Endo和Kvasir上取得最佳像素级AUROC。",
+      "insight_zh": "该文的提示采样与多语义提示正则化思路，可能对遥感变化检测中的零样本或弱监督分割任务有方法参考价值，但其数据集与任务均为工业与医学异常检测，与地理空间应用无直接联系。"
     },
     {
       "key": "arxiv:2608.20948",
@@ -9033,6 +8860,40 @@
       ],
       "summary_zh": "开放词汇多模态情感识别旨在从多模态情感线索生成开放的自然语言情感标签。然而在真实场景中，由于采集设备限制和用户隐私约束，完整且同步的模态数据难以获得。现有开放词汇多模态情感识别方法大多面向全模态输入设计，在模态缺失条件下无法有效进行特征融合。同时，当前面向不完整模态的融合方法主要关注固定标签识别情境，无法满足开放词汇多模态情感识别中由任意情感语义引导融合情感线索的需求。为应对这些挑战，本文提出面向不完整开放词汇情感识别的情感原型条件融合框架。作为一个无候选的生成式框架，APCF将模态贡献学习扩展到由任意情感语义引导的场景。具体而言，作者构建情感原型库，显式建模不同情感对应的多模态贡献特征，为不同情感语义视角下的模态融合提供动态约束。基于可用模态特征进行条件检索和特征聚合。精炼后的融合情感表示随后输入LLM解码器以生成开放词汇情感标签。在OV-MERD+和MER-FG数据集上的实验表明，APCF显著优于当前最先进的基线。",
       "insight_zh": "该文对不完整多模态融合和开放词汇生成有参考意义，可能启发地理空间多源数据缺失场景下的融合思路；但论文未涉及地理空间数据、城市更新或遥感变化检测。"
+    },
+    {
+      "key": "arxiv:2609.16679",
+      "title": "AI for Games in the Foundation Model Era",
+      "title_zh": "基础模型时代的游戏AI",
+      "url": "https://arxiv.org/abs/2609.16679",
+      "arxiv_id": "2609.16679",
+      "authors": [
+        "Meng Luo",
+        "Yanlin Li",
+        "Hao Li",
+        "Hongzhan Lin",
+        "Pengfei Zhou",
+        "Tianjie Ju",
+        "Ran Zhang",
+        "Yeying Jin",
+        "Mong-Li Lee",
+        "Wynne Hsu"
+      ],
+      "categories": [
+        "cs.AI",
+        "https://eurekaleo.github.io/awesome-ai-for-games"
+      ],
+      "published": "2026-09-15T06:00:47+00:00",
+      "score": 15,
+      "reason": "该文综述基础模型时代的游戏AI，涉及世界模型、智能体与运行时自适应，与LLM和多智能体方向有方法层面的潜在关联，但与城市更新或遥感变化检测无直接关联。",
+      "tags": [
+        "foundation models",
+        "game AI",
+        "survey",
+        "world models"
+      ],
+      "summary_zh": "基础模型以及学习型游戏世界模型的进展正在重塑游戏全生命周期的AI。除玩游戏外，近期系统还能建模玩家与游戏动态、支持设计与开发、在运行时自适应玩家体验并评估生成物。然而这些方向大多独立演化，难以看清哪些能力可跨场景迁移、哪些仍绑定于特定游戏、引擎、界面或玩家群体。该文按AI输出的直接用途将文献组织为六种角色：游玩与行动；建模玩家与游戏；设计游戏；构建与维护游戏；运行时生成与自适应；测试与评估游戏。对每种角色，作者考察游戏或工作流提供了什么结构、AI学习或产出什么、哪些能力与产物可跨场景和角色迁移，以及有哪些证据支持相关主张。文章识别出跨角色联系：轨迹训练世界模型、学习环境为智能体提供经验、设计规范驱动可执行实现、游玩或测试反馈指导修订。然而控制方案、规则、引擎接口、状态表示和玩家语境往往仍具场景特异性，因此下游主张需在目标场景中验证。评估在有界游戏游玩和部分学习环境上最为标准化，而学习世界中的持久状态、反复软件修订、经验证的玩家建模、持续运行时自适应和代表性自动化测试仍不成熟。",
+      "insight_zh": "该文关于基础模型在游戏全生命周期中角色划分与跨角色迁移的综述框架，可能对地理空间智能中基础模型与智能体在复杂动态系统中的应用有类比参考价值，但其领域为游戏AI，与城市更新或遥感变化检测无直接联系。"
     },
     {
       "key": "arxiv:2605.28703",
@@ -9991,6 +9852,66 @@
       "insight_zh": "该工作提示：将结构化的领域先验（此处为刻板印象特征）显式注入LLM提示可显著提升生成质量，这一思路或可迁移至地理空间智能中需要领域知识约束的文本生成任务，但论文本身未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.16755",
+      "title": "De-GAN - Dynamic Parameter Tuned GAN for 3D Medical Image Segmentation: A Step Towards Generalisation",
+      "title_zh": "De-GAN——用于3D医学图像分割的动态参数调优GAN：迈向泛化的一步",
+      "url": "https://arxiv.org/abs/2609.16755",
+      "arxiv_id": "2609.16755",
+      "authors": [
+        "Zoha Usama",
+        "Azadeh Alavi"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T07:32:48+00:00",
+      "score": 12,
+      "reason": "该文提出用于3D医学图像分割的动态参数GAN，涉及域偏移与分割，与遥感变化检测中的域适应有方法层面的潜在关联，但应用领域为脑肿瘤分割。",
+      "tags": [
+        "medical image segmentation",
+        "GAN",
+        "domain shift",
+        "3D U-Net"
+      ],
+      "summary_zh": "脑肿瘤分割仍然困难，因为增强肿瘤（ET）对比度低且与周围组织重叠，而扫描仪和站点差异导致域偏移。该文提出DE-GAN，一种对比度增强的条件GAN，结合输入自适应动态卷积、风格感知特征混合和坐标编码，以合成切片自适应的FLAIR图像。标签引导的类别条件目标分离肿瘤核心（TC）和ET强度，同时保留解剖结构。生成的FLAIR与原始MR模态拼接后用于训练3D U-Net。在BraTS 2015、2018和2019上，DE-GAN在多数报告的TC/ET指标上优于基线和静态EnhGAN替换，最大增益来自同时保留原始和增强FLAIR。",
+      "insight_zh": "该文针对域偏移的对比度增强与动态卷积思路，可能对遥感变化检测中的跨传感器或跨区域域适应有方法借鉴意义，但其数据与任务均为脑肿瘤MRI分割，与地理空间应用无直接联系。"
+    },
+    {
+      "key": "arxiv:2609.16814",
+      "title": "Can We Do Interpretable NLI with Graphs Based on Atomic Propositions?",
+      "title_zh": "能否基于原子命题图进行可解释的自然语言推理？",
+      "url": "https://arxiv.org/abs/2609.16814",
+      "arxiv_id": "2609.16814",
+      "authors": [
+        "Younes Boufouss (STL",
+        "LISN)",
+        "Luc Pommeret (STL",
+        "CNRS",
+        "LISN)",
+        "Thomas Gerald (LISN",
+        "STL)",
+        "Patrick Paroubek (STL",
+        "LISN)",
+        "Sophie Rosset (LISN",
+        "STL)"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-09-15T08:20:20+00:00",
+      "score": 12,
+      "reason": "该文研究基于原子命题图的可解释自然语言推理，与LLM相关，但与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合无直接关联。",
+      "tags": [
+        "NLI",
+        "graph representation",
+        "interpretability",
+        "LLM"
+      ],
+      "summary_zh": "该文探讨是否仅使用可解释的、基于图的证据表示即可完成自然语言推理（NLI）。作者提出一个完全基于图的流程，分类器不直接处理输入文本，而是将句子分解为原子命题，通过约束解码转换为ConceptNet三元组，并为每对句子构建前提、假设和检索到的ConceptNet子图三个图，再输入微调的0.8B参数语言模型。在SNLI上达到89.7%准确率，仅比同等训练的文本模型低1.9个百分点；在ANLI的R2和R3上匹配RoBERTa-large的公开性能（50%），但R1落后16个百分点，整体差距9至14个百分点，作者称之为“可解释性的代价”，并表明这源于表示限制而非数据约束。消融实验显示图与文本互补，结合两种模态在SNLI上达到92.1%。",
+      "insight_zh": "该文提出的图结构证据表示与可解释推理流程，可能为地理空间智能中基于知识图谱或图结构的可解释分析提供方法参考，但其任务与数据均属自然语言推理领域，与城市更新或遥感变化检测无直接联系。"
+    },
+    {
       "key": "arxiv:2609.16069",
       "title": "Beyond Distribution Matching: Semantics-Consistent Tabular Diffusion with Weak Semantic Priors",
       "title_zh": "超越分布匹配：具有弱语义先验的语义一致表格扩散模型",
@@ -10568,6 +10489,36 @@
       "insight_zh": "摘要缺失，无法判断其具体结论；其评估可靠性诊断思路或可借鉴至地理空间LLM应用的评估，但无直接证据。"
     },
     {
+      "key": "arxiv:2609.16748",
+      "title": "TIAO: Token Importance-Aware Policy Optimization for Text Summarization",
+      "title_zh": "TIAO：面向文本摘要的Token重要性感知策略优化",
+      "url": "https://arxiv.org/abs/2609.16748",
+      "arxiv_id": "2609.16748",
+      "authors": [
+        "Qixiu Li",
+        "Chenlong Bao",
+        "Xiang Zhu",
+        "Xiaoyong Li",
+        "Ruixin Cao",
+        "Shukai Chen",
+        "Zhenxiong Zhou"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-15T07:23:07+00:00",
+      "score": 10,
+      "reason": "该文提出面向文本摘要的token重要性感知策略优化，与LLM相关，但与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "text summarization",
+        "reinforcement learning",
+        "token importance",
+        "LLM"
+      ],
+      "summary_zh": "文本摘要要求模型在压缩内容的同时保持一致性和连贯性等关键质量。大语言模型（LLM）在该任务上表现强劲，并可通过强化学习（RL）进一步提升。然而，大多数现有方法将奖励信号直接应用于未区分的token序列，忽视了单个token对摘要词级和句级质量的不同重要性。该文提出Token重要性感知策略优化（TIAO），一种显式利用token重要性感知的新型强化学习策略。TIAO基于token依赖识别核心token，并根据轨迹的整体依赖重新加权其优势。在真实世界数据集上的实验表明TIAO取得极具竞争力的结果，经TIAO增强的7B基础模型性能可与GPT-4和GPT-5-nano相当。",
+      "insight_zh": "该文的token重要性加权与强化学习策略，可能对地理空间文本数据（如城市更新政策文本）的摘要或信息提取有方法参考价值，但其任务与数据均为通用文本摘要，与地理空间智能无直接联系。"
+    },
+    {
       "key": "arxiv:2412.16078",
       "title": "SegCol Challenge: Semantic Segmentation for Tools and Fold Edges in Colonoscopy data",
       "title_zh": "SegCol挑战赛：结肠镜数据中工具与褶皱边缘的语义分割",
@@ -10758,6 +10709,35 @@
       ],
       "summary_zh": "自动题目生成（AIG）对个性化教育至关重要，但保证生成题目的教学价值仍是瓶颈。现有题目质量评估（IQA）方法通常依赖难以扩展的人工审核或浅层的题干指标，无法捕捉数学解题所需的推理过程。为弥补这一空白，本文提出基于过程的题目质量评估（ProIQA），一个面向数学题目细粒度质量评估的过程感知框架。作者首先在统一的过程感知视角下，将IQA形式化为知识概念、难度和学科能力三个异质维度；在此基础上，通过从原始解答中提取结构化推理树来构建过程增强的IQA资源。技术上，ProIQA利用大语言模型构建分层推理树，并采用图神经网络（GNN）编码其拓扑依赖与过程语义；所得解题表征通过双视图（“题干+解题”）架构与题干语义融合，实现对学习目标的全面评估。在K12数学数据集上的大量实验表明，ProIQA能有效捕捉过程导向特征，为智能教育系统中评估AIG输出提供可扩展的数据驱动方案。",
       "insight_zh": "该文将推理过程结构化为树并用GNN编码的思路，与地理空间推理链建模有形式上的相似性，但其应用域为教育评估，对GIS研究参考价值有限。"
+    },
+    {
+      "key": "arxiv:2609.16727",
+      "title": "PriorPose: Reference-Guided Joint Deformation and Alignment for Category-Level Object Pose Estimation",
+      "title_zh": "PriorPose：面向类别级物体位姿估计的参考引导联合变形与对齐",
+      "url": "https://arxiv.org/abs/2609.16727",
+      "arxiv_id": "2609.16727",
+      "authors": [
+        "Yihan Chen",
+        "Huan Ren",
+        "Wenfei Yang",
+        "Hang Du",
+        "Tianzhu Zhang",
+        "Feng Wu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T06:57:34+00:00",
+      "score": 10,
+      "reason": "该文研究类别级物体位姿估计与参考引导的联合变形对齐，属于计算机视觉三维感知，与遥感变化检测或地理空间智能无直接关联。",
+      "tags": [
+        "category-level pose estimation",
+        "reference-guided",
+        "deformation",
+        "alignment"
+      ],
+      "summary_zh": "类别级物体位姿估计旨在无需实例特定CAD模型的情况下恢复未见实例的相似变换(R,t,s)。大多数竞争方法基于对应关系：无先验变体直接从局部观测回归规范（NOCS）坐标并在权重中隐式记忆规范坐标系，导致参数与类别典型朝向绑定，在分布偏移下泛化性差；基于先验的变体引入类别先验但通常遵循串行的先变形后对齐流程，欠约束的规范补全可能破坏对应关系并引发位姿误差级联。该文提出PriorPose，一个参考引导的对应框架，保持类别先验显式并在共享特征空间中联合求解规范化与对齐。参考引导的种子Transformer将部分观测与类别先验作为token集嵌入，并通过几何感知种子融合，网络据此联合预测可见点的逐点NOCS场和先验的规范变形以重建完整规范实例，同时深度位姿头从诱导对应关系回归(R,t,s)。两部分形状一致性目标耦合对应、变形与位姿，减少对记忆规范朝向的依赖并避免先变形后对齐的误差级联。实验表明PriorPose在多数指标上取得新的最优结果，尤其在严格位姿阈值下。",
+      "insight_zh": "该文联合变形与对齐的参考引导框架，可能对遥感目标三维重建或变化检测中的几何对齐有方法启发，但其任务与数据均为类别级物体位姿估计，与地理空间应用无直接联系。"
     },
     {
       "key": "arxiv:2609.16189",
@@ -11220,6 +11200,32 @@
       ],
       "summary_zh": "为印度语言构建机器翻译质量评估和自动后编辑的基准数据集。",
       "insight_zh": "该基准可能对多语言地理信息翻译有参考，但非核心。"
+    },
+    {
+      "key": "arxiv:2609.16775",
+      "title": "IMVS: Interactive Medical Volume Segmentation with Test-Time Adaptation - A New Method for Annotating Radiology Datasets",
+      "title_zh": "IMVS：带测试时自适应的交互式医学体积分割——一种标注放射学数据集的新方法",
+      "url": "https://arxiv.org/abs/2609.16775",
+      "arxiv_id": "2609.16775",
+      "authors": [
+        "Abhilaksh Singh Reen",
+        "Kushal Borkar",
+        "Ritvik Mahapatra"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T07:43:38+00:00",
+      "score": 10,
+      "reason": "该文提出交互式医学体积分割与测试时自适应标注框架，涉及分割与标注效率，但与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "interactive segmentation",
+        "medical imaging",
+        "test-time adaptation",
+        "annotation"
+      ],
+      "summary_zh": "标注大型放射学数据集受限于逐层手动勾画3D体积结构的繁重工作。交互式方法可减少工作量但交互效率仍低：逐层方法忽略层间连续性，而3D与视频方法使用固定传播器，无法适应目标体积，在低对比度或病理结构上漂移并需重新提示。该文提出IMVS，一个将三个组件组成闭环的人机协同标注框架：从用户涂鸦在线微调的轻量2D切片掩码适配器（SMA）、在相邻切片间传播修正掩码的冻结体积掩码跟踪器（VMT），以及限制遗忘的软教师-学生对齐。SMA与骨干无关。在8个公开CT/MRI数据集上，IMVS在质量上匹配强交互基线，同时大幅减少标注工作量：比熟练的复制式手动流程快14.4倍，比逐层交互方法快4.6倍，比3D交互方法快1.9倍。",
+      "insight_zh": "该文的测试时自适应与交互式标注闭环思路，可能对遥感影像标注或变化检测样本构建有方法借鉴意义，但其数据与任务均为医学影像分割，与地理空间智能无直接关联。"
     },
     {
       "key": "arxiv:2609.05233",
@@ -12847,6 +12853,30 @@
       ],
       "summary_zh": "测试时提示调优（TPT）能够在单个测试实例上进行自适应，提升了准确率，但往往牺牲了校准性能。多数现有校准方法引入额外正则项以促进文本嵌入的分散并降低校准误差，然而这些方法常伴随准确率下降。受零样本预测本身校准良好的特性启发，我们提出CoTS，一种简单而有效的保精度事后校准方法。具体而言，CoTS应用温度缩放以最小化自适应预测与零样本预测之间的置信度差距。为充分利用自适应过程中多次增强的潜力，我们引入弱-强集成策略以进一步提升准确率。随后我们将CoTS应用于该集成，称为E-CoTS，以保持其良好校准特性。在多种数据集和骨干网络上的大量实验表明，我们的方法在不损害主任务准确率的前提下有效缓解了误校准。例如，E-CoTS将TPT在ImageNet变体上的平均期望校准误差从11.90%降至5.38%，同时将准确率从60.74%提升至62.95%。此外，当与现有校准方法结合时，E-CoTS通常能同时提升准确率和校准性能。",
       "insight_zh": "该工作提示零样本预测的校准特性可作为自适应后校准的锚点，这一思路对地理空间智能中模型不确定性估计与可靠性评估具有一般性方法参考，但论文未涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.16752",
+      "title": "Beyond Episodic AI: Cognitive Field Networks for Biologically Inspired Persistent Cognition",
+      "title_zh": "超越情景式AI：面向生物启发持续性认知的认知场网络",
+      "url": "https://arxiv.org/abs/2609.16752",
+      "arxiv_id": "2609.16752",
+      "authors": [
+        "Byung Gyu Chae"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-15T07:29:04+00:00",
+      "score": 8,
+      "reason": "该文提出认知场网络以研究持续性认知动态，属于认知科学与神经网络交叉研究，与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "cognitive field theory",
+        "recurrent transformer",
+        "persistent cognition",
+        "memory"
+      ],
+      "summary_zh": "认知场理论（CFT）提出认知源于记忆修饰的集体动力学，产生持续存在的宏观认知场。该文发展了认知场网络（CFN），一种循环Transformer，其中组织化的隐藏场通过Φ_{n+1}=F_θ(X_{n+1},Φ_n)重新进入后续推理。CFN不规定显式记忆操作，而是让新信息作用于已依赖历史的集体状态。研究发现学习会组织出持续的内容依赖循环动力学，其时间尺度随训练循环视野系统性增加。语义延续可将循环状态传播远超该视野而无需重放目标答案。无内容特定支持时，场表现出有限被动松弛，而周期性重新暴露于相关输入会反复更新存续状态并驱动其趋向近似稳态的非零区域。无关输入和关闭循环的对照无法复现该行为，而近似改写的重新暴露产生较弱更新，表明表示敏感的持续性。",
+      "insight_zh": "该文关于持续性认知场与循环状态再进入的机制，可能对时空数据挖掘中长时序依赖建模有理论启发，但其研究属认知科学计算模型，与地理空间智能无直接联系。"
     },
     {
       "key": "arxiv:2505.12192",

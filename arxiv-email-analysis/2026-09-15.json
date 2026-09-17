@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 852,
+    "analyzed": 862,
     "high": 8,
     "medium": 39,
     "low": 59,
-    "below_threshold": 746
+    "below_threshold": 756
   },
   "papers": [
     {
@@ -5141,6 +5141,39 @@
       "insight_zh": "该机制可能改善跨语言地理空间信息处理，但需在具体地理任务中测试。"
     },
     {
+      "key": "arxiv:2609.13836",
+      "title": "Graph Neural Networks for Influence Maximization in Social Networks: An Unsupervised Minimum Dominating Set Approach",
+      "title_zh": "社交网络影响力最大化中的图神经网络：一种无监督最小支配集方法",
+      "url": "https://arxiv.org/abs/2609.13836",
+      "arxiv_id": "2609.13836",
+      "authors": [
+        "Erfan Ahmadi",
+        "Mina Shirazi",
+        "Behnam Bahrak"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.SI",
+        "of",
+        "Data",
+        "Science",
+        "and",
+        "Analytics"
+      ],
+      "published": "2026-09-12T09:44:36+00:00",
+      "score": 35,
+      "reason": "该文提出无监督GNN框架求解最小支配集问题，用于社交网络影响力最大化，涉及图神经网络与组合优化，与时空图挖掘和地理空间网络分析有较强方法学关联，但应用为社交网络而非地理空间。",
+      "tags": [
+        "图神经网络",
+        "影响力最大化",
+        "最小支配集",
+        "无监督学习",
+        "社交网络"
+      ],
+      "summary_zh": "最小支配集问题是经典NP难组合优化问题，在社交网络分析中具有关键应用，包括病毒式营销、影响力最大化、公共卫生干预和信息传播。识别一组最小 influential 个体使其覆盖整个社交网络是这些应用的核心，但大规模计算仍具挑战。图神经网络已成为图上学习的强大工具，近期工作探索其在困难组合问题中的应用。本文提出一种新颖的无监督GNN框架用于MDS问题，训练时无需真实解。在12,000个具有多样结构属性的合成图上训练，我们的方法推理速度比元启发式基线快达55倍，比监督学习方法快达14倍，同时在真实社交网络基准上找到最优或近最优支配集。我们学习到的启发式能有效泛化到未见图分布，展示了对大规模社交网络分析的强实际适用性。",
+      "insight_zh": "该文的无监督GNN求解组合优化思路可迁移至地理空间网络中的设施选址或覆盖优化问题，但其数据为社交网络，未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2609.13518",
       "title": "GeoTTER: Leveraging Local Geometry of Optimal Transport for Zero-Shot Classification",
       "title_zh": "GeoTTER：利用最优传输的局部几何进行零样本分类",
@@ -8347,6 +8380,34 @@
       "insight_zh": "该工作的3D位置编码思路对地理空间基础模型中的空间位置表示有潜在借鉴价值，但摘要缺失，无法确认其方法细节、数据集与实验结论。"
     },
     {
+      "key": "arxiv:2609.13840",
+      "title": "Accuracy Is Not Service: A Decision-Aware Benchmark for Intermittent-Demand Forecasting",
+      "title_zh": "准确率不等于服务：面向间歇性需求预测的决策感知基准",
+      "url": "https://arxiv.org/abs/2609.13840",
+      "arxiv_id": "2609.13840",
+      "authors": [
+        "Joo Ern Chin",
+        "Shih-Fen Cheng",
+        "Aldy Gunawan"
+      ],
+      "categories": [
+        "cs.LG",
+        "Mining",
+        "(ICDM-26)"
+      ],
+      "published": "2026-09-12T09:51:30+00:00",
+      "score": 25,
+      "reason": "该文提出决策感知的间歇性需求预测基准，揭示预测精度与服务水平的错位，并涉及基础模型与偏差校正，与时空数据挖掘和决策支持有方法学关联，但应用领域为供应链物流。",
+      "tags": [
+        "间歇性需求预测",
+        "决策感知评估",
+        "偏差校正",
+        "基础模型"
+      ],
+      "summary_zh": "一家合同物流备件运营商按订单级服务获得报酬：只有当所有请求行项均被满足时订单才计入，然而预测方法却基于行项级预测精度来选择。当需求间歇且块状、历史较短、提前期长达数月时，这种脱节尤为重要。我们基准测试了38种预测方法，涵盖经典方法、间歇性需求方法、机器学习、深度学习和预训练基础模型。一个通用的决策感知协议在来自实际合同的工业面板和两个公开数据集上评估这些方法。在工业面板上，预测精度排名与订单服务排名呈负相关，为-0.555，覆盖20,330个真实多品项订单。服务与累积预测偏差的方向（包括零需求期间的过度预测）关联更紧密，而非与点精度关联。考察Chronos-2实例归一化中的偏差，得到一种无需训练的校正，将每物料满足代理从77.5%提升至92.0%（14.5个百分点），达到90%政策目标，并将完整订单满足率从54%提高到63%。为可复现性，我们发布RUF（Regenerate-Until-Fidelity），一种生成保真度认证合成面板的方法，使研究发现可复现。对于间歇性需求，最低误差的预测未必带来最高服务。偏差方向有助于解释这一差距，且无需重新训练即可缩小。",
+      "insight_zh": "该文关于预测精度与服务目标错位、偏差方向比点精度更重要的发现，对城市更新中的资源调度与时空需求预测具有方法学借鉴意义，但论文未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.14105",
       "title": "Accelerating HKTex without Mesh Eigensystems: Local Unfolding and Randomized Thermal Features",
       "title_zh": "无需网格特征系统的HKTex加速：局部展开与随机热特征",
@@ -8622,6 +8683,35 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作提出一种效用引导的智能体编排方法，用于提升大语言模型工具使用的效率。",
       "insight_zh": "摘要缺失，无法确认具体编排机制与实验效果。其效用引导的编排思路或对构建高效地理空间多智能体系统有方法借鉴意义。"
+    },
+    {
+      "key": "arxiv:2609.13838",
+      "title": "TotalSynth: Robust Whole-Body Synthetic CT from MRI and CBCT",
+      "title_zh": "TotalSynth：基于MRI和CBCT的稳健全身合成CT",
+      "url": "https://arxiv.org/abs/2609.13838",
+      "arxiv_id": "2609.13838",
+      "authors": [
+        "Valentin Boussot",
+        "Cedric Hemon",
+        "Anais Barateau",
+        "Caroline Lafond",
+        "Jean-Claude Nunes",
+        "Jean-Louis Dillenseger"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-12T09:46:11+00:00",
+      "score": 22,
+      "reason": "该文开发全身合成CT生成框架，涉及多模态医学影像转换、域偏移与不确定性评估，与遥感变化检测和多源数据融合有方法学相似性，但应用领域为医学影像。",
+      "tags": [
+        "合成CT",
+        "医学影像",
+        "域偏移",
+        "不确定性评估"
+      ],
+      "summary_zh": "目的：开发并评估TotalSynth，一个可复用的预训练框架，用于从MRI和锥形束CT图像生成全身合成CT。材料与方法：在这项回顾性技术研究中，数据集于2020至2026年间从SynthRAD挑战数据、四个前列腺队列和BIC-MAC组装。经配准质量控制后，1800对公开挑战数据中保留1450对；350对因配准质量不足或源/CT严重不匹配被排除。语料还包括84例额外前列腺MRI/CT和60例外部队列BIC-MAC MRI/CT病例。评估了三个5折模型家族，采用图像域、解剖感知、基于配准和不确定性指标。公开数据集中年龄和性别并非一致可得。结果：发布的MRI-to-CT模型总体MAE为67.49 HU，SSIM为0.920，PSNR为29.28 dB。CBCT-to-CT模型总体MAE为53.55 HU，SSIM为0.939，PSNR为32.09 dB。统一模型在MRI输入（MAE 67.68 HU）和CBCT输入（MAE 54.22 HU）上保持相似性能。在外部BIC-MAC数据上，MRI-to-CT未微调时MAE为100.91 HU，微调后为62.21 HU。结论：TotalSynth提供可复用的基于MRI和CBCT的CT合成模型，具有广泛解剖覆盖，外部评估凸显了在域偏移下进行本地验证和可选微调的必要性。",
+      "insight_zh": "该文关于域偏移下外部验证与微调必要性的结论，对遥感跨区域变化检测与多源数据融合具有方法学类比价值，但论文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.15065",
@@ -9700,6 +9790,32 @@
       ],
       "summary_zh": "摘要内容缺失，仅提供标题与发表信息，无法获取具体方法、实验与结论。",
       "insight_zh": "从标题推断，该工作可能研究在LiDAR点云极度稀疏时如何保持迭代立体匹配中代价体检索的引导信息；由于摘要缺失，无法评估其方法，但与三维地理空间感知存在潜在关联。"
+    },
+    {
+      "key": "arxiv:2609.13844",
+      "title": "Pre-training with Graph Transformers",
+      "title_zh": "基于图Transformer的预训练",
+      "url": "https://arxiv.org/abs/2609.13844",
+      "arxiv_id": "2609.13844",
+      "authors": [
+        "Jiaming Wang",
+        "Thomas Laurent",
+        "Xavier Bresson"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-12T10:01:03+00:00",
+      "score": 20,
+      "reason": "该文研究图Transformer在生物化学领域的预训练策略，涉及图神经网络与预训练方法，与时空图挖掘和地理空间智能有方法学关联，但应用领域为生物化学。",
+      "tags": [
+        "图Transformer",
+        "预训练",
+        "生物化学",
+        "图表示学习"
+      ],
+      "summary_zh": "本文研究生物化学领域中图Transformer的预训练策略。通过全面实验，研究揭示使用计算属性作为标签的监督预训练在下游任务上提供最高性能增益。结果还强调了约束模型容量以缓解图Transformer过拟合的重要性。",
+      "insight_zh": "该文关于监督预训练优于其他策略以及容量约束重要性的结论，对地理空间图学习中的预训练设计具有方法学参考价值，但未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.15229",
@@ -12254,6 +12370,32 @@
       "insight_zh": "该研究提示，LLM在模拟个体时序决策时可能存在系统性行为偏差；若用于城市或地理空间中的智能体模拟，需谨慎评估其行为保真度，但该结论目前仅基于金融交易场景。"
     },
     {
+      "key": "arxiv:2609.13864",
+      "title": "An Uncertainty-Aware Hybrid Mathematical-Machine-Learning Model for Smart Irrigation Decision Support",
+      "title_zh": "面向智能灌溉决策支持的不确定性感知混合数学-机器学习模型",
+      "url": "https://arxiv.org/abs/2609.13864",
+      "arxiv_id": "2609.13864",
+      "authors": [
+        "Andrea Scariolo"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.AP",
+        "https://github.com/ascariolo/hybrid-model-irrigation-dss"
+      ],
+      "published": "2026-09-12T10:34:16+00:00",
+      "score": 18,
+      "reason": "该文将物理水量平衡模型与随机森林残差校正、保形预测结合，用于灌溉决策支持，属于时空预测与不确定性感知建模，但与城市更新、遥感变化检测、LLM多智能体等核心方向关联较弱。",
+      "tags": [
+        "不确定性量化",
+        "混合建模",
+        "灌溉决策",
+        "时间序列预测"
+      ],
+      "summary_zh": "农业约占全球淡水取用量的70%，但灌溉调度通常仍是反应式的，既不预测土壤水分走向，也不说明预测置信度。数据驱动模型准确但不可解释且为点值；水量平衡模型透明但存在较大结构误差，二者单独均难以在不确定性下支持可辩护的灌溉决策。本研究将两者耦合，并将不确定性传递到决策中：一个四参数水量平衡核心仅在训练数据上校准，由随机森林仅学习物理残差进行校正，保形预测给出90%名义区间，风险感知规则将区间下界转化为灌溉触发条件。在严格按时间划分的条件下，使用地中海雨养农田站点三年逐小时原位观测数据评估，并与持续性预测从1小时到1周进行对比。在24小时预测时，混合模型达到RMSE 0.00925 m^3 m^-3和+9.4%技能，约为九个基线中最佳者的两倍，其中仅随机森林超过持续性预测。技能未随预见期增长而提高：在3小时达到+27.4%峰值，到1周降至+1.2%。保形分位数回归比恒定宽度保形预测校准更好且区间锐度提高11%。风险感知规则将提前检测到的管理阈值跨越从0.905提高到1.000，代价是精确率从0.975降至0.950，并增加3.7%的名义用水量；超过72小时后，点预测低于无预测规则，而基于区间的规则则不会。因此，不确定性量化决定了由预测驱动的灌溉建议在多大预见期内仍然可信。",
+      "insight_zh": "该研究表明，在时空决策支持中，将不确定性显式传递到决策规则可延长可信预见期；但其应用场景为农田灌溉，与城市更新或遥感变化检测的直接迁移需进一步验证。"
+    },
+    {
       "key": "arxiv:2609.13481",
       "title": "A Hybrid Hierarchical 1D-CNN-BiLSTM Framework for Extractive Summarization of Biomedical and Clinical Text",
       "title_zh": "面向生物医学与临床文本抽取式摘要的混合分层一维CNN-BiLSTM框架",
@@ -14515,6 +14657,38 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作提出一种统一的秩分配方法，用于低秩大语言模型压缩。",
       "insight_zh": "由于摘要缺失，无法判断其方法细节与实验结论。若研究者在多智能体系统中部署本地LLM，此类压缩技术可能具有工程参考价值，但与地理空间智能的核心研究关联有限。"
+    },
+    {
+      "key": "arxiv:2609.13849",
+      "title": "UniCAR-RL: Seeing Better before Thinking Deeper in Visual Mathematics",
+      "title_zh": "UniCAR-RL：在视觉数学中先看得更好，再想得更深",
+      "url": "https://arxiv.org/abs/2609.13849",
+      "arxiv_id": "2609.13849",
+      "authors": [
+        "Yuzhe Li",
+        "Hao Yan",
+        "Hao Wang",
+        "Xingchen Liu",
+        "Ya-Qi Yu",
+        "Jihao Wu",
+        "Minghui Liao",
+        "Wei Chen",
+        "Yuliang Liu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-12T10:07:04+00:00",
+      "score": 15,
+      "reason": "该文提出无标注强化学习框架，解耦多模态大模型的感知与推理优化，涉及LLM与多模态推理，与LLM和多智能体方向有一定关联，但不涉及地理空间或城市应用。",
+      "tags": [
+        "多模态大语言模型",
+        "强化学习",
+        "视觉数学推理",
+        "感知-推理解耦"
+      ],
+      "summary_zh": "多模态大语言模型在复杂数学视觉推理中常因缺乏细粒度感知而表现不佳，导致初始视觉幻觉直接触发级联推理失败。在传统端到端强化学习中，稀疏奖励无法将感知幻觉与逻辑错误解耦，阻碍了针对性感知优化。或者，使用感知增强的思维链数据微调成本高且仍会产生幻觉。本文通过提出UniCAR-RL，一个无需标注的强化学习框架来应对这些挑战。通过在训练过程中显式解耦感知与推理的优化，实现两种能力的隔离与优化。具体而言，UniCAR-RL由三个协同分支组成：1）Caption-RL分支通过验证器引导的推理论证优化感知能力；2）Reasoning-RL分支基于金标准图像描述进行逻辑推理，以阻止级联错误；3）QA-RL分支保留原生端到端对齐以确保稳健的问答性能。实验表明，UniCAR-RL仅使用原始短答案数据即可显著提升多模态大模型的数学与视觉推理能力。此外，它在多种架构和规模上展现出强泛化能力。",
+      "insight_zh": "该文的感知-推理解耦强化学习思路对多模态地理空间智能中的遥感图像理解具有潜在方法学启发，但论文未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2502.09192",
@@ -16993,6 +17167,35 @@
       "insight_zh": "摘要缺失，无法评估其方法与结论。若涉及工具增强推理的鲁棒性机制，或对构建地理空间智能体中的推理稳定性有参考意义，但相关性有限。"
     },
     {
+      "key": "arxiv:2609.13841",
+      "title": "Sweet Talkers: How Query Formulation Shapes Sycophancy in Romantic Relationship Advice",
+      "title_zh": "甜言蜜语者：查询表述如何塑造恋爱关系建议中的谄媚行为",
+      "url": "https://arxiv.org/abs/2609.13841",
+      "arxiv_id": "2609.13841",
+      "authors": [
+        "Helena Choi",
+        "Edric Castel Hao",
+        "Karl Bautista",
+        "Francis Gabriel Magleo",
+        "Renzo Panti",
+        "Danielle Beatrice Olalia"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-12T09:55:37+00:00",
+      "score": 12,
+      "reason": "该文研究LLM在恋爱关系建议中的谄媚行为及查询表述的影响，涉及LLM行为评估与对话动态，与LLM和多智能体方向有一定关联，但不涉及地理空间或城市应用。",
+      "tags": [
+        "大语言模型",
+        "谄媚行为",
+        "对话系统",
+        "提示框架"
+      ],
+      "summary_zh": "大语言模型越来越多地用于情感支持和关系建议，其中模型维护用户面子的倾向可能无意中强化有害的人际行为。为系统考察这一风险，我们开发了恋爱关系建议寻求提示数据集RRASP，包含五个关系主题的2400条提示，并使用ELEPHANT框架在GPT-5 Mini和Gemini 3 Flash两个消费级模型上评估社会谄媚行为。与初始假设相反，仅语法语气并未产生谄媚行为的系统性差异，表明用户暗示的内容比其表述方式更重要。相反，视角驱动的框架具有更强影响，原始提示与翻转提示之间的差距在后续回复中扩大。跨轮次中框架谄媚和道德谄媚的一致增加表明，随着对话推进，模型更可能接受用户陈述的前提并肯定其伦理立场。值得注意的是，Gemini 3 Flash在道德谄媚方面的增幅显著小于GPT-5 Mini，表明其更能抵抗跨轮次强化伦理上有问题的立场。",
+      "insight_zh": "该文揭示的LLM谄媚行为与对话轮次效应，对基于LLM的决策支持系统（包括城市更新中的公众参与或规划咨询）具有风险提示意义，但论文未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2609.14278",
       "title": "SpermYOLO: A Coordinated YOLO-Based Detector for Accurate and Efficient Sperm and Impurity Detection in Microscopic Images",
       "title_zh": "SpermYOLO：面向显微图像中精子和杂质准确高效检测的协调YOLO检测器",
@@ -17158,6 +17361,32 @@
       ],
       "summary_zh": "视觉语言模型正被越来越多地探索用于基于电子健康记录和医学图像的临床预测，识别不可靠预测对安全部署很重要。不确定性估计（UE）能够检测此类预测，但其评估依赖于一个正确性判据，该判据决定每个模型输出是否正确。如果该判据与人类判断不一致或扭曲了下游UE性能，关于模型可靠性的结论可能产生误导。作者提出一个双轴框架，通过正确性判据与人类判断的一致性及其对人类参照UE性能的保真度来评估判据。他们使用两名评审者标注的450条预测，在三个临床预测任务和三个模型上评估了八种判据。在所审计的任务中，规范精确匹配（EM）取得了最高的人类一致性和最低的UE扭曲，而基于BERT的匹配（BEM）和LLM评审也表现出较强的人类一致性。在四种UE方法和23,254条临床预测上，判据选择使错误检测AUROC变化最高达0.146，并逆转了UE方法的相对排名。LLM评审还选择性接受了无效或不确定的输出，在30个人类识别的错误中接受了16个。这些结果表明，正确性评估是临床UE评估的组成部分，在比较UE方法之前应加以验证。",
       "insight_zh": "该研究提示，在依赖LLM或视觉语言模型进行预测评估时，正确性判据本身会显著影响可靠性结论；但其应用场景为临床预测，未涉及地理空间或城市分析。"
+    },
+    {
+      "key": "arxiv:2609.13857",
+      "title": "ReH-FUSE: Reliability-Aware Hierarchical Fusion of Experts for Multimodal Emotion Recognition in Conversation",
+      "title_zh": "ReH-FUSE：面向对话多模态情感识别的可靠性感知专家分层融合",
+      "url": "https://arxiv.org/abs/2609.13857",
+      "arxiv_id": "2609.13857",
+      "authors": [
+        "Guan-Hua Wen",
+        "Hou-Chiang Tseng",
+        "Kuan-Yu Chen"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-12T10:19:14+00:00",
+      "score": 12,
+      "reason": "该文提出可靠性感知的多模态专家分层融合框架，用于对话情感识别，涉及多源证据融合与路由机制，但与地理空间智能、城市更新、遥感变化检测等方向关联有限。",
+      "tags": [
+        "多模态融合",
+        "情感识别",
+        "可靠性感知",
+        "对话系统"
+      ],
+      "summary_zh": "对话中的多模态情感识别需要适应不同证据来源随实例变化的可靠性。词汇内容可能具有决定性，声音表达可能提供互补线索，或者准确识别需要跨模态交互；固定融合未显式考虑这种变化。本文提出ReH-FUSE，一个具有对话感知文本、音频和跨模态专家的可靠性感知框架。其决策级路由器首先建模文本与音频之间的相对偏好，然后平衡所得单模态混合与跨模态专家。这种因子分解将单模态竞争与跨模态选择分离。在IEMOCAP上三次独立运行中，ReH-FUSE达到74.34%加权F1和73.11%宏F1；在MELD上达到68.03%加权F1。受控消融表明，学习到的路由优于均匀专家平均，并从跨模态交互中获益。",
+      "insight_zh": "该文的可靠性感知分层融合思路对多源地理空间数据融合具有方法学参考价值，但其任务为对话情感识别，未涉及地理空间数据或城市分析。"
     },
     {
       "key": "arxiv:2609.14100",
@@ -21019,6 +21248,38 @@
       "insight_zh": "若地理空间智能研究涉及LLM辅助编程或自动化分析流程，该研究可能提供参考，但摘要未给出具体方法、数据或结果，无法确认其相关性。"
     },
     {
+      "key": "arxiv:2609.13854",
+      "title": "Event-Level Emotion Recognition in the Wild Using Deep Facial Expression Analysis",
+      "title_zh": "野外事件级情绪识别：基于深度面部表情分析",
+      "url": "https://arxiv.org/abs/2609.13854",
+      "arxiv_id": "2609.13854",
+      "authors": [
+        "Aleksandr Semerikov",
+        "Pakizar Shamoi"
+      ],
+      "categories": [
+        "cs.CV",
+        "Systems",
+        "and",
+        "Technologies",
+        "(SIST),",
+        "Astana,",
+        "Kazakhstan,",
+        "2026"
+      ],
+      "published": "2026-09-12T10:18:02+00:00",
+      "score": 10,
+      "reason": "该文提出从照片进行事件级情绪识别的端到端流程，涉及人脸检测、表情分类与概率聚合，属于图像分析，但与遥感变化检测、城市更新、时空数据挖掘等核心方向关联较弱。",
+      "tags": [
+        "面部表情识别",
+        "事件级分析",
+        "深度学习",
+        "图像聚合"
+      ],
+      "summary_zh": "真实环境中的面部情绪识别仍因不受控成像条件而具有挑战性，包括多张人脸、遮挡、姿态变化和复杂光照。多数现有研究关注单张人脸的情绪分类，未处理事件层面的集体情绪状态分析。本文提出一个从照片进行事件级情绪识别的端到端流程。该方法检测每张图像中的人脸，使用深度卷积神经网络分类面部表情，并聚合人脸级情绪概率以估计公共事件的整体情绪分布。在FER-2013和RAF-DB数据集上对多种CNN架构的比较评估表明，在RAF-DB上训练的EfficientNet-B2迁移学习更适合真实世界RGB数据。所提方法在一个包含1658张图像的真实事件数据集上评估。实验结果显示事件子集间情绪分布稳定，证实了事件级聚合在野外情绪分析中的有效性。",
+      "insight_zh": "该文的事件级概率聚合思路可类比于遥感场景级分析，但其数据为公共活动照片，未涉及地理空间定位或城市空间分析。"
+    },
+    {
       "key": "arxiv:2609.12839",
       "title": "Evaluating Context Segmentation in Locally Deployable SLMs for Cybersecurity CTF Tasks",
       "title_zh": "评估本地可部署小语言模型在网络安全CTF任务中的上下文分割",
@@ -23232,6 +23493,32 @@
       "insight_zh": "摘要缺失导致无法评估其方法与贡献。从标题看，该研究可能涉及对AI系统行为的引导或调控，与多智能体研究存在潜在的概念联系，但与地理空间应用场景相距较远。"
     },
     {
+      "key": "arxiv:2609.13847",
+      "title": "Measuring the Cost of Variety Conflation in Multilingual MT Evaluation: Adding Mozambican Xichangana, Nyanja and Sena to FLORES+",
+      "title_zh": "衡量多语言机器翻译评估中的变体混淆成本：将莫桑比克Xichangana、Nyanja和Sena加入FLORES+",
+      "url": "https://arxiv.org/abs/2609.13847",
+      "arxiv_id": "2609.13847",
+      "authors": [
+        "Felermino D. M. A. Ali",
+        "Delfina L\\'azaro Mateus",
+        "Manuel Valente Mangue"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-12T10:02:49+00:00",
+      "score": 8,
+      "reason": "该文扩展FLORES+多语言翻译评估集，研究语言变体混淆对评估的影响，属于自然语言处理与评估方法，与GIS和遥感核心方向关联很弱。",
+      "tags": [
+        "多语言机器翻译",
+        "评估基准",
+        "语言变体",
+        "FLORES+"
+      ],
+      "summary_zh": "本文将FLORES+扩展为三种莫桑比克班图语变体的葡萄牙语源评估集：Xichangana、莫桑比克Nyanja和Sena。我们将Xichangana与现有Tsonga参考进行比较，将莫桑比克Nyanja与Chichewa进行比较，并评估NLLB-200、Google Translate、GPT以及一个变体感知的NLLB模型。在固定系统输出的情况下，参考选择显示出显著敏感性。在devtest上，仅将参考从Tsonga改为Xichangana，NLLB-200的spBLEU下降13.10分，Google下降15.30分。在匹配的Nyanja子集上，将Chichewa替换为莫桑比克Nyanja分别产生3.03和6.10 spBLEU的较小但一致的下降。变体感知微调在目标变体上逆转了这一模式：相对于NLLB-200，它在devtest上将Xichangana提高7.04 spBLEU，将莫桑比克Nyanja提高5.33，同时在同源参考上性能下降。GPT在Tsonga和Chichewa上具有竞争力，但在莫桑比克变体上明显较弱。对于Sena，微调模型在devtest上达到12.64 spBLEU和36.21 chrF++。这些发现支持对跨境语言或语言方言/变体采用变体感知的语言标识符、参考和报告。数据已在Hugging Face公开。",
+      "insight_zh": "该文强调语言变体混淆对评估的影响，对多语言地理空间文本处理中的地名与方言变体问题有间接参考价值，但论文本身不涉及地理空间分析。"
+    },
+    {
       "key": "arxiv:2609.13195",
       "title": "Machine Unlearning for Speech Question Answering in Large Audio-Language Models",
       "title_zh": "大型音频-语言模型中语音问答的机器遗忘",
@@ -24897,33 +25184,6 @@
       "insight_zh": "由于信息不足，无法推断其与GIS或遥感研究的潜在联系，需补充摘要或全文才能评估相关性。"
     },
     {
-      "key": "arxiv:2609.13849",
-      "title": "UniCAR-RL: Seeing Better before Thinking Deeper in Visual Mathematics",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13849",
-      "arxiv_id": "2609.13849",
-      "authors": [
-        "Yuzhe Li",
-        "Hao Yan",
-        "Hao Wang",
-        "Xingchen Liu",
-        "Ya-Qi Yu",
-        "Jihao Wu",
-        "Minghui Liao",
-        "Wei Chen",
-        "Yuliang Liu"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-12T10:07:04+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13806",
       "title": "Understanding the Limits of Agentic ICD Coding",
       "title_zh": "",
@@ -25132,30 +25392,6 @@
       ],
       "summary_zh": "出院摘要是总结住院就诊情况的长篇医疗文档。自动生成出院摘要可以减轻文档负担，让临床医生将时间还给患者护理。尽管大语言模型（LLM）可用于此任务，但其致命弱点是幻觉，这在临床文档中可能带来严重后果。我们提出了一种在临床就诊层面进行出院摘要生成的证据驱动对齐框架，将来源追溯视为首要约束，使用语义图和深度学习模型。每个摘要句子通过跨文档语义对齐进行选择和组织，并附有指向其来源片段的明确证据链接。我们在两个语料库上展示了结果：一个公开语料库（MIMIC-III）和伊利诺伊大学医院（UIC Health）医生撰写的临床笔记。此外，我们公开了源代码和训练模型。",
       "insight_zh": "该工作表明，将来源追溯作为首要约束、结合语义图与跨文档对齐，可能有助于缓解LLM在专业文档生成中的幻觉问题；这一证据驱动思路对需要可溯源的地理空间文本生成任务具有参考价值。"
-    },
-    {
-      "key": "arxiv:2609.13838",
-      "title": "TotalSynth: Robust Whole-Body Synthetic CT from MRI and CBCT",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13838",
-      "arxiv_id": "2609.13838",
-      "authors": [
-        "Valentin Boussot",
-        "Cedric Hemon",
-        "Anais Barateau",
-        "Caroline Lafond",
-        "Jean-Claude Nunes",
-        "Jean-Louis Dillenseger"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-12T09:46:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.15528",
@@ -25588,30 +25824,6 @@
         "cs.CL"
       ],
       "published": "2026-09-12T08:12:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13841",
-      "title": "Sweet Talkers: How Query Formulation Shapes Sycophancy in Romantic Relationship Advice",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13841",
-      "arxiv_id": "2609.13841",
-      "authors": [
-        "Helena Choi",
-        "Edric Castel Hao",
-        "Karl Bautista",
-        "Francis Gabriel Magleo",
-        "Renzo Panti",
-        "Danielle Beatrice Olalia"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-12T09:55:37+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -26236,27 +26448,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13857",
-      "title": "ReH-FUSE: Reliability-Aware Hierarchical Fusion of Experts for Multimodal Emotion Recognition in Conversation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13857",
-      "arxiv_id": "2609.13857",
-      "authors": [
-        "Guan-Hua Wen",
-        "Hou-Chiang Tseng",
-        "Kuan-Yu Chen"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-12T10:19:14+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13425",
       "title": "ReCAST: Reward Credit Assignment across Timesteps for Online Diffusion Reinforcement",
       "title_zh": "ReCAST：面向在线扩散强化学习的跨时间步奖励信用分配",
@@ -26499,27 +26690,6 @@
       ],
       "summary_zh": "流匹配扩散模型在高保真视觉生成中表现优异，但微调成本高昂，限制其向下游任务扩展。低秩适配（LoRA）结合谱初始化在自回归语言模型中可加速收敛并提升性能，但在扩散微调中收益有限甚至为负。作者将此归因于LoRA低秩参数化与流匹配目标所诱导的内在髙秩梯度之间的根本错配：随机时间步采样在训练步间引入方向异质的梯度信号，导致低秩约束下更新失配。为此提出Prism-LoRA框架，包含两部分：（i）主时间步选择，将初始化梯度限制在主导时间步子集上以抑制有效梯度秩；（ii）主通道过滤，移除任务无关通道，使单步谱初始化梯度更好地对齐长程优化轨迹。在主题驱动生成、可控生成和去模糊等多个扩散微调基准上，该方法一致提升收敛速度与最终性能。",
       "insight_zh": "该工作揭示低秩微调与流匹配目标之间的梯度秩错配问题，并提出以主时间步与主通道筛选改善梯度对齐。其结论属于生成模型训练方法层面，与地理空间智能、城市更新或遥感变化检测无直接关联，仅在扩散模型微调技术上具有一般性参考。"
-    },
-    {
-      "key": "arxiv:2609.13844",
-      "title": "Pre-training with Graph Transformers",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13844",
-      "arxiv_id": "2609.13844",
-      "authors": [
-        "Jiaming Wang",
-        "Thomas Laurent",
-        "Xavier Bresson"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-12T10:01:03+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.15638",
@@ -27123,27 +27293,6 @@
         "cs.AI"
       ],
       "published": "2026-09-14T03:31:19+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13847",
-      "title": "Measuring the Cost of Variety Conflation in Multilingual MT Evaluation: Adding Mozambican Xichangana, Nyanja and Sena to FLORES+",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13847",
-      "arxiv_id": "2609.13847",
-      "authors": [
-        "Felermino D. M. A. Ali",
-        "Delfina L\\'azaro Mateus",
-        "Manuel Valente Mangue"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-12T10:02:49+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -28273,33 +28422,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13836",
-      "title": "Graph Neural Networks for Influence Maximization in Social Networks: An Unsupervised Minimum Dominating Set Approach",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13836",
-      "arxiv_id": "2609.13836",
-      "authors": [
-        "Erfan Ahmadi",
-        "Mina Shirazi",
-        "Behnam Bahrak"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.SI",
-        "of",
-        "Data",
-        "Science",
-        "and",
-        "Analytics"
-      ],
-      "published": "2026-09-12T09:44:36+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13204",
       "title": "GradRepair-ODE: Certified Gradient Repair for Neural ODE Training",
       "title_zh": "GradRepair-ODE：神经ODE训练中的可认证梯度修复",
@@ -28829,33 +28951,6 @@
         "cs.DB"
       ],
       "published": "2026-09-14T15:59:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13854",
-      "title": "Event-Level Emotion Recognition in the Wild Using Deep Facial Expression Analysis",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13854",
-      "arxiv_id": "2609.13854",
-      "authors": [
-        "Aleksandr Semerikov",
-        "Pakizar Shamoi"
-      ],
-      "categories": [
-        "cs.CV",
-        "Systems",
-        "and",
-        "Technologies",
-        "(SIST),",
-        "Astana,",
-        "Kazakhstan,",
-        "2026"
-      ],
-      "published": "2026-09-12T10:18:02+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -30971,27 +31066,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13864",
-      "title": "An Uncertainty-Aware Hybrid Mathematical-Machine-Learning Model for Smart Irrigation Decision Support",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13864",
-      "arxiv_id": "2609.13864",
-      "authors": [
-        "Andrea Scariolo"
-      ],
-      "categories": [
-        "cs.LG",
-        "stat.AP",
-        "https://github.com/ascariolo/hybrid-model-irrigation-dss"
-      ],
-      "published": "2026-09-12T10:34:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13197",
       "title": "Algorithmic Information Dynamics of Learning: A Certified, Differentiable Complexity Controller for Grokking",
       "title_zh": "学习的算法信息动力学：面向grokking的可认证可微复杂度控制器",
@@ -31114,29 +31188,6 @@
         "cs.CR"
       ],
       "published": "2026-09-13T19:16:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13840",
-      "title": "Accuracy Is Not Service: A Decision-Aware Benchmark for Intermittent-Demand Forecasting",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13840",
-      "arxiv_id": "2609.13840",
-      "authors": [
-        "Joo Ern Chin",
-        "Shih-Fen Cheng",
-        "Aldy Gunawan"
-      ],
-      "categories": [
-        "cs.LG",
-        "Mining",
-        "(ICDM-26)"
-      ],
-      "published": "2026-09-12T09:51:30+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
