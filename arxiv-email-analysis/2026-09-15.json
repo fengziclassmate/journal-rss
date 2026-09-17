@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 842,
+    "analyzed": 852,
     "high": 8,
-    "medium": 38,
+    "medium": 39,
     "low": 59,
-    "below_threshold": 737
+    "below_threshold": 746
   },
   "papers": [
     {
@@ -309,6 +309,43 @@
       ],
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.13903",
+      "title": "SkyAnchor: Updating Metric-scale Aerial 3D Gaussian Scenes from Unposed Ground-View Sequences",
+      "title_zh": "SkyAnchor：从无位姿地面视角序列更新米制尺度航空三维高斯场景",
+      "url": "https://arxiv.org/abs/2609.13903",
+      "arxiv_id": "2609.13903",
+      "authors": [
+        "Zhuoxiao Li",
+        "Xinyi Liu",
+        "Taoyu Wu",
+        "Yinrui Ren",
+        "Tongyan Hua",
+        "Ou Jing",
+        "Shuai Zhang",
+        "Dongli Wu",
+        "Rongjun Qin",
+        "Ge Lin Kan",
+        "Wufan Zhao"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "published": "2026-09-12T12:20:25+00:00",
+      "score": 78,
+      "reason": "该文研究利用无位姿地面序列更新航空三维高斯场景，涉及跨视角配准、SfM与三维重建，与遥感变化检测、多源数据融合及地理空间智能高度相关。",
+      "tags": [
+        "三维高斯泼溅",
+        "航空影像",
+        "地面视角",
+        "场景更新",
+        "跨视角配准",
+        "SfM"
+      ],
+      "summary_zh": "本文研究如何用新采集的无位姿地面视角序列更新预建的航空场景。航空场景已包含可靠的米制SfM重建与预训练的3D高斯泼溅（3DGS）模型，而地面序列采集较晚，用于补充街景外观，但相机位姿与全局尺度未知。将该序列配准到航空SfM重建具有挑战性，因为单图像跨视角定位脆弱且长轨迹易漂移。为此，作者提出SkyAnchor，将已有航空场景视为固定支架用于地面视角配准与场景更新，而非从头联合重建航空与地面影像。方法首先针对几何验证的航空支撑定位短组连续地面帧，产生稀疏锚点位姿；随后通过锚点约束的子图恢复完整地面轨迹，在增量配准与光束法平差中固定前后锚点位姿；最后在保持航空视角的同时插入过滤后的地面高斯，并进行轻量联合精炼。在七个真实航空-地面场景上的实验显示，方法获得准确的米制地面轨迹，并更新出在航空与地面视角均具良好渲染质量的三维高斯场景。",
+      "insight_zh": "该工作表明以既有航空重建为锚点可缓解地面序列的位姿与尺度不确定性，为多源视角融合与场景更新提供了思路；其评估限于七个真实场景，未涉及大范围城市尺度或时序变化检测。"
     },
     {
       "key": "arxiv:2608.00929",
@@ -4927,6 +4964,32 @@
       ],
       "summary_zh": "前沿大语言模型日益具备开展自动化研究的能力，但其在此情境下的创造力尚未被系统评估。本文提出一套指标，从价值性和新颖性两个维度评估创造力。价值性评估每个提出的想法是否有用，新颖性则从三个视角评估：同一想法是否曾出现（精确匹配 P-Novelty）、是否探索了此前未探索的变量或变量组合（变量级 P-Novelty）、以及想法是直接遵循检索到的外部知识还是偏离之（H-Novelty）。评估显示，各模型在大多数创造力指标上得分相对接近，但在变量级 P-Novelty 上差异显著，后者反映了研究空间探索的广度。进一步的相关性和想法级性能分析表明，变量级 P-Novelty 是与研究表现关联最强的创造力维度。",
       "insight_zh": "该工作对 LLM 研究创造力的评估框架，可能为地理空间智能中利用 LLM 和多智能体进行自动化空间分析研究提供评估思路，但其研究场景为通用科研自动化，未涉及地理空间领域。"
+    },
+    {
+      "key": "arxiv:2609.13914",
+      "title": "Machine Learning under Imperfect Data: Challenges and Methods",
+      "title_zh": "不完美数据下的机器学习：挑战与方法",
+      "url": "https://arxiv.org/abs/2609.13914",
+      "arxiv_id": "2609.13914",
+      "authors": [
+        "Masoumeh Zareapoor"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-12T12:59:23+00:00",
+      "score": 35,
+      "reason": "该综述讨论缺失、不平衡、弱标注与分布偏移等不完美数据下的机器学习方法，与多源数据融合及地理空间智能中的数据质量问题有方法层面的相关性，但未涉及地理空间应用。",
+      "tags": [
+        "不完美数据",
+        "缺失数据",
+        "弱监督",
+        "域适应",
+        "分布偏移",
+        "综述"
+      ],
+      "summary_zh": "机器学习模型通常假设训练与测试数据足够完整、平衡、有标注且分布兼容，但实际中这些条件常被违反：测量可能缺失或损坏、稀有类别代表性不足、监督信号薄弱、部署环境与训练环境不同。这些缺陷通常被当作独立技术问题处理，但它们通过少数共享机制改变学习过程：信息损失、经验风险偏差、监督模糊与表示不稳定。本综述围绕这些机制组织代表性方法，回顾重建与生成、重平衡与表示校准、有限监督学习、跨域与跨模态适应，以及分布变化下的可靠性，并指出合理重建、基准特定校正与缺乏可信反馈的适应的局限，最后提出面向证据感知学习、保留不确定性的预测，以及将视觉合理性与决策效用分离的评估方向。",
+      "insight_zh": "该综述提出的共享机制视角可迁移至多源地理空间数据融合中的缺失与偏移问题，但其结论基于通用机器学习文献，未验证于地理空间场景。"
     },
     {
       "key": "arxiv:2609.13443",
@@ -17528,6 +17591,31 @@
       "insight_zh": "该研究为在资源受限环境下降低LLM推理成本提供了确定性词法压缩方案；对于需要处理大量地理文本或城市报告的多智能体系统，可能有助于减少token开销，但其评估未涉及地理空间领域任务。"
     },
     {
+      "key": "arxiv:2609.13917",
+      "title": "Learning Through Energy Refinement and Manifold Projection: A Cooperative EBM-AE Framework",
+      "title_zh": "通过能量精炼与流形投影学习：一种协作式EBM-AE框架",
+      "url": "https://arxiv.org/abs/2609.13917",
+      "arxiv_id": "2609.13917",
+      "authors": [
+        "Ryad Zemouri"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-12T13:03:06+00:00",
+      "score": 12,
+      "reason": "该文研究能量模型与自编码器协同训练的生成与重建框架，属于通用机器学习方法，与城市更新、时空数据挖掘、遥感变化检测或多智能体等研究方向无直接关联。",
+      "tags": [
+        "生成模型",
+        "能量模型",
+        "自编码器",
+        "流形投影",
+        "图像修复"
+      ],
+      "summary_zh": "能量模型（EBM）通过学习能量景观为生成建模提供了灵活框架，但训练受限于Langevin采样的计算成本以及高效探索学习数据流形的困难。本文提出协作式能量模型与自编码器（EBM-AE）框架，将能量精炼与流形投影相结合，联合训练EBM与去噪自编码器，并引入迭代的EBM→AE→EBM采样流程，使Langevin动力学与自编码器投影交替精炼生成样本。自编码器充当流形投影算子以正则化采样轨迹，EBM则执行朝向低能量区域的能量精炼。在MNIST上的实验表明，联合训练相比传统自编码器显著提升生成质量；在结构化与随机掩码的图像修复任务中，流形投影提供主要重建能力，而最终的能量精炼在重建问题更难时愈发有益。",
+      "insight_zh": "该框架将流形投影与能量最小化结合，为生成、重建与分布外检测提供了一种可解释思路；但其验证仅限于MNIST，尚不能推断其在遥感或地理空间数据上的适用性。"
+    },
+    {
       "key": "arxiv:2502.15007",
       "title": "LLM-Microscope: Uncovering the Hidden Role of Punctuation in Context Memory of Transformers",
       "title_zh": "LLM-Microscope：揭示标点符号在Transformer上下文记忆中的隐藏作用",
@@ -19977,6 +20065,52 @@
       "insight_zh": "摘要为空，无法推断具体方法或贡献；从标题看属于艺术图像生成方向，与地理空间智能研究关联较弱。"
     },
     {
+      "key": "arxiv:2609.13916",
+      "title": "North Small Translate: Advanced Cost-Effective Translation (Cohere CAT+)",
+      "title_zh": "North Small Translate：高性价比先进翻译（Cohere CAT+）",
+      "url": "https://arxiv.org/abs/2609.13916",
+      "arxiv_id": "2609.13916",
+      "authors": [
+        "Tom Kocmi",
+        "Alexandre B\\'erard",
+        "Phil Blunsom",
+        "Samuel Cahyawijaya",
+        "Shaun Cassini",
+        "Nicholas Frosst",
+        "Ona de Gibert",
+        "Aidan Gomez",
+        "Nithya Govindarajan",
+        "Shun Kiyono",
+        "Olivia Lasche",
+        "Lawrence Rogers",
+        "Kelly Marchisio",
+        "Nikita Moghe",
+        "Yash More",
+        "Camila Moran-Hidalgo",
+        "Yiyang Nan",
+        "Michael Sachs",
+        "Trisha Starostina",
+        "Daan van Stigt",
+        "Spencer Rarrick",
+        "Sebastian Vincent",
+        "and Ivan Zhang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-12T13:02:13+00:00",
+      "score": 10,
+      "reason": "该文介绍一个开源权重的机器翻译模型，属于自然语言处理与大模型训练方向，与地理空间智能、城市更新或遥感无直接关系。",
+      "tags": [
+        "机器翻译",
+        "大语言模型",
+        "指令微调",
+        "强化学习"
+      ],
+      "summary_zh": "本文提出North Small Translate，一个基于LLM的开源权重机器翻译模型，具备指令跟随能力，构建于Cohere Command A Plus相同的基础之上——一种总参数2180亿、激活参数250亿的混合专家架构。模型采用难度采样获取困难文档，并使用结合监督微调、直接偏好优化与在线强化学习的五步训练协议。通过非推理基础模型优先保证吞吐量，并辅以可选智能体能力以提升翻译质量。模型被训练执行翻译相关任务（如译后编辑与质量估计）以及通用指令跟随等任务，在参数低于1T的模型类别中于50种语言上取得顶尖翻译性能，且推理时无需昂贵的推理过程。",
+      "insight_zh": "该工作显示非推理基础模型配合难度采样与多阶段训练可在多语言翻译上取得竞争力，但其与地理空间文本或城市多语种数据的结合潜力未被讨论。"
+    },
+    {
       "key": "arxiv:2609.14327",
       "title": "Nonparametric Variance-Penalized Actor-Critic: Statistical Inference for Risk-Sensitive Reinforcement Learning",
       "title_zh": "非参数方差惩罚Actor-Critic：风险敏感强化学习的统计推断",
@@ -22198,6 +22332,31 @@
       "insight_zh": "摘要缺失，无法确认具体内容与结论。该研究属于演化博弈与复杂系统理论，与地理信息科学及遥感应用无直接关联，仅在多智能体建模的抽象理论层面可能有极间接的启发。"
     },
     {
+      "key": "arxiv:2609.13866",
+      "title": "The Filter Metric is Safety-Critical: Phantom Advantages in Group-Relative RL under Shaped Rewards",
+      "title_zh": "过滤指标关乎安全：塑形奖励下组相对强化学习中的幻影优势",
+      "url": "https://arxiv.org/abs/2609.13866",
+      "arxiv_id": "2609.13866",
+      "authors": [
+        "Juntao Yu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-12T10:36:55+00:00",
+      "score": 8,
+      "reason": "该文分析组相对强化学习中过滤指标与奖励塑形的语义错配问题，属于大模型训练方法研究，与地理空间应用无直接关联。",
+      "tags": [
+        "强化学习",
+        "GRPO",
+        "奖励塑形",
+        "过滤指标",
+        "训练稳定性"
+      ],
+      "summary_zh": "组相对策略优化（GRPO及其衍生方法）可通过动态采样丢弃无对比的 rollout 组，而实际实现暴露了可配置的过滤指标。本文识别并量化了复合塑形奖励下的指标-谓词语义错配：当过滤依据塑形训练分数而非任务结果时，全失败组仍保留非零组内离散度并通过谓词，标准差归一化随后将失败样本间的塑形差异放大为全尺寸的幻影优势。在受控的GSM8K对比中（Qwen2.5-1.5B，LoRA），不过滤与塑形分数过滤最终EM为0.080±0.112与0.040±0.008，而二元结果过滤在每臂四次运行中保持0.754±0.005。在verl原生recipe/dapo训练器上，固定模型、数据、奖励与训练器仅改变指标时，分数臂在观察到的40步中均无需批次补充，最终EM为0.160；准确率臂在29/40步中补充批次，最终为0.763。在测试的正系数λ∈{0.1,0.3,0.5}下不安全臂均崩溃；探索性单次运行在1.5B/7B的MATH与GSPO下复现该失败，而禁用标准差归一化可避免观察到的崩溃。",
+      "insight_zh": "该文指出复合奖励下过滤应使用语义独立于塑形的任务结果信号，这一训练稳定性问题对使用强化学习优化地理空间智能体的实践有潜在警示意义，但文中未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.15476",
       "title": "Temperature Fragility and the Conditional Benefits of Truncation Sampling",
       "title_zh": "温度脆弱性与截断采样的条件性收益",
@@ -22816,6 +22975,32 @@
       ],
       "summary_zh": "选择性激光熔化（SLM）制造牙科零件的构建方向通常由技术人员手动选择。本文将方向预测视为从技术人员标注的生产数据中监督学习零件的上轴，并测试哪种旋转表示效果最好。作者使用约2400个患者特异性牙科零件，训练了ResNet-50多视图图像骨干和PointNeXt-S点云骨干，二者均预训练并端到端微调，覆盖13种上轴表示，包括六种经典SO(3)参数化和七种直接定义在单位球S^2上的表示。作者报告预测上轴与真实上轴之间的测地角误差，并比较有无测试时增强（TTA，K=21个已知旋转）。使用TTA时，八面体映射取得最低平均角误差（10.6°，ResNet-50）。总体误差最低的三个结果均为直接S^2表示，但这可能反映SO(3)目标中无监督面内分量的标签噪声，而非拓扑优势。von Mises-Fisher在PointNeXt-S训练时坍缩为近似常数预测，但在ResNet-50上未出现。TTA在几乎所有表示和骨干上将平均角误差降低31-73%。总体而言，在一小组已知旋转上进行测试时增强是准确率最一致的驱动因素，而最佳表示强烈依赖骨干。",
       "insight_zh": "该研究提示，在三维方向预测任务中，测试时增强比旋转表示选择更稳定地提升精度，且最佳表示依赖骨干网络；但其应用为增材制造，未涉及地理空间分析。"
+    },
+    {
+      "key": "arxiv:2609.13907",
+      "title": "Phorecaster365: A Human-Supervised Reference Architecture for Hybrid Pharmaceutical Sales Forecasting and Planning Decision Support",
+      "title_zh": "Phorecaster365：面向混合制药销售预测与规划决策支持的人机协同参考架构",
+      "url": "https://arxiv.org/abs/2609.13907",
+      "arxiv_id": "2609.13907",
+      "authors": [
+        "Houman Kazemzadeh",
+        "Kamyar Naderi"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-12T12:31:17+00:00",
+      "score": 8,
+      "reason": "该文提出制药销售预测的人机协同参考架构，属于企业预测与决策支持系统，与GIS、遥感或城市研究无直接关联。",
+      "tags": [
+        "销售预测",
+        "决策支持",
+        "人机协同",
+        "系统架构"
+      ],
+      "summary_zh": "制药销售预测支撑产品、区域与渠道的规划，但其解读依赖库存可得性、交易语义、产品生命周期以及预测发布时可获得的信息。本文提出Phorecaster365，一种人机协同参考架构，将企业资源规划数据连接到可审查的制药销售预测。架构分离了源数据摄取、产品-区域序列构建、时间有效特征生成、统计与机器学习建模、集成、不确定性评估、规划者审查与生命周期治理。其核心中间表示是预测上下文包，保留源快照、预测目标、时间截断、可用协变量、数据质量状态与层级版本；相应的预测证据包将预测与模型和校准版本、异常、人工调整及发布历史关联。基于30个产品-区域序列、10,950条日度记录的合成面板的开发经验指导了设计。历史实验摘要仅作为开发过程的描述性证据保留，因为其评估未建立独立的预测有效性。文中规定了滚动原点评估协议、基线与消融要求、不确定性与鲁棒性评估，以及从合成测试到受治理规划使用的分阶段路径。",
+      "insight_zh": "该架构强调预测上下文与证据的可追溯性，这一思路对时空预测的可复现性有借鉴意义，但文中明确未建立真实世界预测精度，且未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.13190",
@@ -24246,6 +24431,36 @@
       "insight_zh": "该文为LLM推理效率与架构研究，未涉及地理空间数据或应用；若用于地理空间智能体可间接相关，但摘要未提及。"
     },
     {
+      "key": "arxiv:2609.13874",
+      "title": "SHIFT-M3: Pre-fusion Alignment-based Consistency Screening for Multimodal ECG Record Integrity",
+      "title_zh": "SHIFT-M3：面向多模态心电记录完整性的融合前对齐一致性筛查",
+      "url": "https://arxiv.org/abs/2609.13874",
+      "arxiv_id": "2609.13874",
+      "authors": [
+        "Md Ashik Khan",
+        "Md Nahid Siddique"
+      ],
+      "categories": [
+        "cs.CL",
+        "from",
+        "the",
+        "official",
+        "proceedings"
+      ],
+      "published": "2026-09-12T10:58:02+00:00",
+      "score": 6,
+      "reason": "该文研究多模态心电记录的患者归属一致性筛查，属于临床AI安全方向，与地理空间研究无直接关联。",
+      "tags": [
+        "多模态",
+        "记录完整性",
+        "心电数据",
+        "一致性筛查",
+        "临床AI"
+      ],
+      "summary_zh": "多模态临床AI通常假设记录中的波形、报告、元数据与下游预测属于同一患者，但实际中链接失败可能悄然拼装出各自看似合理却跨患者的组件，形成标准预测模型无法检测的安全问题。本文将这一问题作为多模态记录完整性分诊来研究：给定一条拼装记录，其各模态是否可信任为属于同一整体？作者提出SHIFT-M3，一种轻量级基于文本的融合前筛查，测量两个分别生成的心电文本视图（LLM生成的解读与临床报告摘要）之间基于对齐的一致性。在784,680条MEETI心电记录上，SHIFT-M3对完整文本视图交换达到97.6% TPR@5% FPR（AUROC 0.996），对部分交换为90.3%（AUROC 0.974），对标签匹配的困难负样本为97.7%（AUROC 0.996），参数量仅573,569。与同数据集词汇基线相比，增益在部分交换与困难负样本上最大。作者还提出CMST评估分类法、三随机种子稳定性研究、损失消融、时间容忍度扫描与共享词元掩码对照。主要剩余失效模式是纵向歧义：默认操作点下同患者跨就诊配对仍产生87.0%的II类假阳性。",
+      "insight_zh": "该工作提示多模态数据融合前的完整性筛查可作为独立安全环节，这一思路对多源地理空间数据拼接中的实体一致性检查有类比意义，但其方法与结论均基于心电数据，未涉及地理空间场景。"
+    },
+    {
       "key": "arxiv:2609.14770",
       "title": "How broad is that claim? Mapping Generalisation in NLP Research",
       "title_zh": "该主张有多宽泛？映射NLP研究中的泛化",
@@ -25137,25 +25352,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13866",
-      "title": "The Filter Metric is Safety-Critical: Phantom Advantages in Group-Relative RL under Shaped Rewards",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13866",
-      "arxiv_id": "2609.13866",
-      "authors": [
-        "Juntao Yu"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-12T10:36:55+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15177",
       "title": "Temporal Self-Distillation: Faster Inference in Discrete Diffusion Language Models",
       "title_zh": "时间自蒸馏：离散扩散语言模型的更快推理",
@@ -25637,36 +25833,6 @@
       "insight_zh": "该研究与地理空间智能的关联很弱，仅在遥感/地理计算硬件加速的底层实现层面存在极间接的潜在联系，摘要缺失无法进一步判断。"
     },
     {
-      "key": "arxiv:2609.13903",
-      "title": "SkyAnchor: Updating Metric-scale Aerial 3D Gaussian Scenes from Unposed Ground-View Sequences",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13903",
-      "arxiv_id": "2609.13903",
-      "authors": [
-        "Zhuoxiao Li",
-        "Xinyi Liu",
-        "Taoyu Wu",
-        "Yinrui Ren",
-        "Tongyan Hua",
-        "Ou Jing",
-        "Shuai Zhang",
-        "Dongli Wu",
-        "Rongjun Qin",
-        "Ge Lin Kan",
-        "Wufan Zhao"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.GR"
-      ],
-      "published": "2026-09-12T12:20:25+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15825",
       "title": "Sharp Rates and a One-Line Correction for Spectral Representation Learning",
       "title_zh": "",
@@ -25804,30 +25970,6 @@
         "2026"
       ],
       "published": "2026-09-04T10:28:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13874",
-      "title": "SHIFT-M3: Pre-fusion Alignment-based Consistency Screening for Multimodal ECG Record Integrity",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13874",
-      "arxiv_id": "2609.13874",
-      "authors": [
-        "Md Ashik Khan",
-        "Md Nahid Siddique"
-      ],
-      "categories": [
-        "cs.CL",
-        "from",
-        "the",
-        "official",
-        "proceedings"
-      ],
-      "published": "2026-09-12T10:58:02+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -26494,27 +26636,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13907",
-      "title": "Phorecaster365: A Human-Supervised Reference Architecture for Hybrid Pharmaceutical Sales Forecasting and Planning Decision Support",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13907",
-      "arxiv_id": "2609.13907",
-      "authors": [
-        "Houman Kazemzadeh",
-        "Kamyar Naderi"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-12T12:31:17+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2508.02312",
       "title": "Perceptual Reality Transformer: What Must an Illustration Preserve?",
       "title_zh": "感知现实Transformer：插图必须保留什么？",
@@ -26874,47 +26995,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13916",
-      "title": "North Small Translate: Advanced Cost-Effective Translation (Cohere CAT+)",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13916",
-      "arxiv_id": "2609.13916",
-      "authors": [
-        "Tom Kocmi",
-        "Alexandre B\\'erard",
-        "Phil Blunsom",
-        "Samuel Cahyawijaya",
-        "Shaun Cassini",
-        "Nicholas Frosst",
-        "Ona de Gibert",
-        "Aidan Gomez",
-        "Nithya Govindarajan",
-        "Shun Kiyono",
-        "Olivia Lasche",
-        "Lawrence Rogers",
-        "Kelly Marchisio",
-        "Nikita Moghe",
-        "Yash More",
-        "Camila Moran-Hidalgo",
-        "Yiyang Nan",
-        "Michael Sachs",
-        "Trisha Starostina",
-        "Daan van Stigt",
-        "Spencer Rarrick",
-        "Sebastian Vincent",
-        "and Ivan Zhang"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-12T13:02:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15800",
       "title": "Navigating Sparse Evidence: Agentic Visual RAG via Explicit Context Selection and Consolidation",
       "title_zh": "",
@@ -27071,25 +27151,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13879",
-      "title": "Map Users and Mapmakers: The Scope of Cognitive Attribution from Acquired Representations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13879",
-      "arxiv_id": "2609.13879",
-      "authors": [
-        "Yiling Wu"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-12T11:04:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2608.05850",
       "title": "MameLoshnLM: Yiddish Language Model and Evaluation Benchmark",
       "title_zh": "MameLoshnLM：意第绪语语言模型与评测基准",
@@ -27136,25 +27197,6 @@
         "cs.NE"
       ],
       "published": "2026-09-04T13:09:48+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13914",
-      "title": "Machine Learning under Imperfect Data: Challenges and Methods",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13914",
-      "arxiv_id": "2609.13914",
-      "authors": [
-        "Masoumeh Zareapoor"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-12T12:59:23+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -27407,7 +27449,7 @@
     {
       "key": "arxiv:2609.13893",
       "title": "Lie to me: Detecting Managerial Evasiveness in Earnings Calls via Conversational Audio Encoders",
-      "title_zh": "",
+      "title_zh": "骗我：通过对话音频编码器检测财报电话会议中的管理层回避行为",
       "url": "https://arxiv.org/abs/2609.13893",
       "arxiv_id": "2609.13893",
       "authors": [
@@ -27420,10 +27462,15 @@
       ],
       "published": "2026-09-12T11:42:53+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文利用对话音频编码器检测财报电话会议中的管理层回避行为，属于金融语音分析，与地理空间研究无直接关联。",
+      "tags": [
+        "语音编码器",
+        "财报电话会议",
+        "多模态融合",
+        "风险预警"
+      ],
+      "summary_zh": "财报电话会议是管理层在分析师审视下披露信息的主要渠道。已有研究将声音与词汇线索与未来不利结果联系起来，但常将特征在整个通话上池化，未充分利用问答的交互结构。本文提出双分支后期融合框架，用于检测管理层回避行为并预测外部SEC事件（主要是延迟申报）：（i）LLM作为评判者，通过结构化二元评分表将问答文本映射为可解释的通话级向量X_text；（ii）冻结的对话编码器，其时间隐状态由DeepVoice式序列读取器读取，产生音频表示h。对（X_text, h）进行后期融合得到通话级风险分数p。在n=1,039通电话（212起延迟申报）上采用按公司分组的5折交叉验证，融合达到AUROC约0.89，而文本评判为0.55，仅通话时长为0.71。",
+      "insight_zh": "结果表明对话音频动态编码了超出词汇内容与通话时长的管理层回避信号，可作为不利SEC结果的早期预警；该结论基于特定金融语料，未涉及地理空间或城市治理场景。"
     },
     {
       "key": "arxiv:2609.14972",
@@ -27468,25 +27515,6 @@
         "cs.CL"
       ],
       "published": "2026-09-14T16:47:02+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13917",
-      "title": "Learning Through Energy Refinement and Manifold Projection: A Cooperative EBM-AE Framework",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13917",
-      "arxiv_id": "2609.13917",
-      "authors": [
-        "Ryad Zemouri"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-12T13:03:06+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -30509,38 +30537,6 @@
       "insight_zh": "该研究将专家乘积高斯过程用于贝叶斯优化，可能对需要高效不确定性量化的优化问题有方法参考价值，但与地理空间应用无直接关联。"
     },
     {
-      "key": "arxiv:2609.13869",
-      "title": "Bangla Sentence Function Classification: Corpus Development, Model Benchmarking, and Interpretability",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13869",
-      "arxiv_id": "2609.13869",
-      "authors": [
-        "Swapnil Kundu Argha",
-        "Abdullah Al Shafi",
-        "Rowzatul Zannat",
-        "Shoumik Barman Polok",
-        "Abdul Muntakim",
-        "Jannatul Ferdousi",
-        "M.A. Moyeen"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG",
-        "Automation,",
-        "Artificial-Intelligence",
-        "and",
-        "Internet-of-Things",
-        "(RAAICON)"
-      ],
-      "published": "2026-09-12T10:45:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15248",
       "title": "Bandits with Probing: Optimal Regret and the Limits of Winner Feedback",
       "title_zh": "带探测的老虎机：最优遗憾与赢家反馈的极限",
@@ -31584,6 +31580,44 @@
       "insight_zh": "该研究的分段对齐思路或可类比于地理空间智能中多阶段推理的安全性保障，但论文未涉及地理空间应用。"
     },
     {
+      "key": "arxiv:2609.13869",
+      "title": "Bangla Sentence Function Classification: Corpus Development, Model Benchmarking, and Interpretability",
+      "title_zh": "孟加拉语句子功能分类：语料构建、模型基准与可解释性",
+      "url": "https://arxiv.org/abs/2609.13869",
+      "arxiv_id": "2609.13869",
+      "authors": [
+        "Swapnil Kundu Argha",
+        "Abdullah Al Shafi",
+        "Rowzatul Zannat",
+        "Shoumik Barman Polok",
+        "Abdul Muntakim",
+        "Jannatul Ferdousi",
+        "M.A. Moyeen"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "Automation,",
+        "Artificial-Intelligence",
+        "and",
+        "Internet-of-Things",
+        "(RAAICON)"
+      ],
+      "published": "2026-09-12T10:45:24+00:00",
+      "score": 4,
+      "reason": "该文构建孟加拉语句子功能分类语料并评测模型，属于低资源语言NLP，与地理空间研究无直接关联。",
+      "tags": [
+        "孟加拉语",
+        "句子功能分类",
+        "语料构建",
+        "集成学习",
+        "可解释性"
+      ],
+      "summary_zh": "自动句子功能识别对对话系统、语音合成与机器翻译等下游NLP应用很重要，但孟加拉语句子功能分类的基准资源有限。本文构建了包含10,000条孟加拉语句子的语料，人工标注为陈述、疑问、祈使与感叹四类功能类别，类别近乎均衡，标注者间一致性Fleiss' Kappa为0.82。作者评估了词袋、TF-IDF与Word2Vec等多种特征表示，配合多种经典机器学习分类器，并采用单层集成（SLE）与双层集成（DLE）两种异构集成模型提升性能。实验显示TF-IDF一致优于Word2Vec，可能因其能强调与句子功能相关的判别性词汇线索，尤其考虑到训练Word2Vec的语料相对较小。使用TF-IDF特征的DLE模型取得最佳性能，准确率与宏F1均为0.95。交叉验证确认了方法稳健性，基于LIME的可解释性提供了对模型预测的洞察。",
+      "insight_zh": "该研究表明在小型语料上稀疏词汇表示配合异构集成仍具竞争力，但其任务与语言特定，未涉及地理空间文本或多语言城市数据。"
+    },
+    {
       "key": "arxiv:2607.23264",
       "title": "X-Stage: Modeling Post-Issue Backpressure in GPU Communication--Computation Fusion",
       "title_zh": "X-Stage：GPU通信—计算融合中发布后背压的建模",
@@ -31864,6 +31898,30 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该研究提出一种可修正的连续时间马尔可夫链推断栈，用于引导离散流匹配的文本到语音合成。",
       "insight_zh": "摘要缺失，无法评估其方法或效果；该主题与地理信息科学、城市更新或遥感变化检测无直接联系。"
+    },
+    {
+      "key": "arxiv:2609.13879",
+      "title": "Map Users and Mapmakers: The Scope of Cognitive Attribution from Acquired Representations",
+      "title_zh": "地图使用者与地图制作者：从习得表征看认知归因的范围",
+      "url": "https://arxiv.org/abs/2609.13879",
+      "arxiv_id": "2609.13879",
+      "authors": [
+        "Yiling Wu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-12T11:04:44+00:00",
+      "score": 3,
+      "reason": "该文属于人工智能哲学与认知科学范畴，讨论表征获取与认知归因的界限，与地理空间数据挖掘或城市研究无直接关联。",
+      "tags": [
+        "认知归因",
+        "表征",
+        "世界模型",
+        "概念获取"
+      ],
+      "summary_zh": "习得的表征可以扩大系统的认知能力范围，而不转移产生该表征时所运用的能力。本文提出一个框架来界定这种扩展及其限度，核心贡献是一个五部分归因表，区分有效追踪、习得结构的应用、从显式规范中习得、从识别性观察中习得，以及保持与复用。每一条目都指出一项正向能力承诺以及需要额外支持的进一步主张。论证有意承认有意义的内容、因果效力与生产性推理，因此其结论不依赖于将表征视为惰性编码。地图与类别示例说明为何即便完整的应用能力也无法确定习得能力，以及从描述中获取标准与从示例中发现标准为何不同。附录包含简短形式化证明。该框架被应用于Andrew Ng对Othello-GPT的世界模型解读以及当代机器概念论述中的具体指标。",
+      "insight_zh": "该文强调认知成就应仅就其确立的能力获得认可，不应通过标签悄然引入更广泛的能力集；这一区分对评估大模型在地理空间推理中的能力边界有概念性参考价值，但文中未涉及地理空间任务。"
     },
     {
       "key": "arxiv:2609.12850",

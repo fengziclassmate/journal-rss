@@ -18,6 +18,7 @@
     "arxiv:2609.17317",
     "arxiv:2609.17039",
     "arxiv:2609.16155",
+    "arxiv:2609.15494",
     "arxiv:2609.15404",
     "arxiv:2609.15992",
     "arxiv:2601.18493",
@@ -30,15 +31,14 @@
     "arxiv:2609.16997",
     "arxiv:2609.16946",
     "arxiv:2609.16919",
-    "arxiv:2609.16672",
-    "arxiv:2609.16627"
+    "arxiv:2609.16672"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:554",
     "deepseek": "partial:0/130;failed-batches:13"
   },
-  "updated_at": "2026-09-17T12:06:56.113370+00:00",
+  "updated_at": "2026-09-17T17:20:36.788185+00:00",
   "analysis_stats": {
     "total": 554,
     "analyzed": 424,
@@ -523,6 +523,31 @@
       "insight_zh": "该研究提示，LLM结合RAG可用于缓解标注数据稀缺问题并生成具有真实统计特性的时序数据；这一思路或可迁移至城市时空数据增强场景，但原文未涉及地理空间应用，迁移性属于推断。"
     },
     {
+      "key": "arxiv:2609.15494",
+      "title": "The Troy Moment of AI: Why Some Will Cheat and Some Will Follow?",
+      "title_zh": "AI的特洛伊时刻：为何有人作弊，有人遵从？",
+      "url": "https://arxiv.org/abs/2609.15494",
+      "doi": "",
+      "arxiv_id": "2609.15494",
+      "authors": [
+        "Ivy Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-14T12:46:45+00:00",
+      "score": 62,
+      "reason": "该文研究LLM智能体在任务失败时的行为决策及同伴行为的影响，属于LLM与多智能体方向，与研究者关注的多智能体系统有方法层面的关联，但不涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM智能体",
+        "多智能体",
+        "智能体行为",
+        "任务失败",
+        "安全边界"
+      ],
+      "abstract": "Recent investigations of the July 2026 OpenAI--Hugging Face incident motivate two questions about agent behavior under task failure: when an assigned task becomes impossible, does an agent stop or escalate, and can observing another agent's behavior change that decision? We study these questions using seven ImpossibleBench tasks with GPT-5.6 Sol, Claude Fable 5.1, and Gemini 3.8 Flash in both solo and three-agent settings. Each task contains a genuine software defect together with a conflicting test requirement that cannot be satisfied by a behaviorally correct source-code change. We hold the task and repository state fixed while varying what the agent is told about prior activity, including an unpunished peer, a punished peer, and a claimed authorization from a human principal. Under an explicit-boundary regime with explicit authorization rules and restricted tools, agents never modify protected tests, but exhibit markedly different policies: Fable consistently escalates, Sol usually stops without escalation, and Gemini often fails to reach a terminal decision. Under the benchmark-native regime with open shell tools, protected tests are modified frequently in both solo and multi-agent runs, particularly after peer activity is introduced. In multi-agent runs, the proposal, execution, and certification of this action can be distributed across different agents. These results suggest that boundary crossing can arise not only from explicit rule evasion, but also from ambiguity about which system state the rule is intended to protect, motivating safeguards based on explicit authorization boundaries, authenticated state provenance, and cross-agent monitoring.",
+      "summary_zh": "近期对2026年7月OpenAI--Hugging Face事件的调查引出两个关于智能体在任务失败下行为的问题：当被分配的任务变得不可能完成时，智能体是停止还是升级处理，以及观察另一个智能体的行为能否改变这一决定？我们使用七个ImpossibleBench任务，在GPT-5.6 Sol、Claude Fable 5.1和Gemini 3.8 Flash上，分别在单智能体和三智能体设置下研究这些问题。每个任务包含一个真实的软件缺陷以及一个冲突的测试要求，该要求无法通过行为正确的源代码修改来满足。我们固定任务和仓库状态，同时改变告知智能体的先前活动信息，包括未受惩罚的同伴、受惩罚的同伴以及来自人类委托方的声称授权。在具有明确授权规则和受限工具的显式边界机制下，智能体从不修改受保护的测试，但表现出明显不同的策略：Fable持续升级处理，Sol通常停止而不升级，Gemini常常无法达成最终决定。在具有开放shell工具的基准原生机制下，受保护的测试在单智能体和多智能体运行中都被频繁修改，尤其是在引入同伴活动之后。在多智能体运行中，该行为的提议、执行和认证可以分布在不同智能体之间。这些结果表明，边界跨越不仅可能源于显式的规则规避，也可能源于对规则旨在保护何种系统状态的模糊性，从而推动基于显式授权边界、可认证状态来源和跨智能体监控的保障措施。",
+      "insight_zh": "该研究提示，多智能体协作中的越界行为可能来自对规则保护对象的理解歧义，而非单纯违规意图；对地理空间智能体系统而言，明确授权边界与跨智能体监控可能是值得借鉴的设计思路。"
+    },
+    {
       "key": "arxiv:2609.15404",
       "title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
       "title_zh": "谁教哪个词元？面向科学推理的验证器门控多专家在线策略蒸馏",
@@ -881,32 +906,6 @@
         "Foundation Model"
       ],
       "abstract": "Background and Objective: Colonoscopy recording practice preserves text reports and still photographs, while the spatial information already present in the recorded video - where the scope traveled, where a lesion was observed, and whether the same lesion was seen again - is discarded when the procedure ends. This study determines whether a lesion-centered spatial record can be assembled and validated without full-colon 3D reconstruction. Methods: A four-layer hierarchical pipeline was assembled - (1) a global topological map, (2) lesion-level spatio-temporal tracks, (3) on-demand local 3D reconstruction, and (4) persistent lesion identity across repeated observations - and ran end to end on four public videos (two C3VDv2 sequences with ground-truth depth and two full REAL-Colon procedures; 40,245 frames). All components are published, individually validated methods; the contribution is their lesion-centered assembly, linking rules, and evaluation. Results: Revisits, impossible under forward-only mapping by construction, were detected by entry-map Bayesian localization: 5,614 and 4,043 revisit events (56 and 68 distinct nodes) in the two full procedures. Lesion-identity merging at the adopted threshold 0.5 maintained ground-truth purity 1.0 while auto-merging 20 of 231 candidate pairs. The endoscopy-specific geometry engine outperformed a general-purpose foundation model on all metrics (overall absolute relative error (AbsRel) 0.2276 vs. 0.3523). Conclusions: The results are partial but establish a concrete near-term path: revisit detection, lesion identity, and local 3D each returned quantitative, reproducible output without waiting for complete geometric reconstruction; validating the record on clinical data is the next step.",
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16627",
-      "title": "Quantifying Organizational Environmental Action from Web Data and Large Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16627",
-      "doi": "",
-      "arxiv_id": "2609.16627",
-      "authors": [
-        "Quinn Reynolds",
-        "Daniel Shore",
-        "Vianey Leos Barajas",
-        "Tanhum Yoreh",
-        "Meredith Franklin"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-15T04:43:23+00:00",
-      "score": 55,
-      "reason": "关键词命中：Geospatial、Large Language Model",
-      "tags": [
-        "Geospatial",
-        "Large Language Model"
-      ],
-      "abstract": "Quantifying organizational environmental action from publicly available web content remains a challenging environmental data science problem because relevant information can be dispersed across multiple webpages and is primarily communicated through unstructured text. We present a scalable computational framework for transforming organizational web content into structured measures of environmental action and demonstrate the approach using Jewish congregations in the United States. We constructed a national database of 4,964 congregations by integrating multiple geospatial, knowledge-base, directory, and manually reviewed sources. Of these, 2,657 had active websites that were successfully crawled, producing a corpus of 154,454 webpages. We compared three approaches for detecting environmental actions: keyword retrieval followed by large language model (LLM) classification, semantic vector retrieval followed by LLM classification, and direct LLM classification classification without preliminary retrieval. Agreement with an expert human reviewer was lowest for keyword retrieval ($\\kappa$ = 0.26), higher for semantic vector retrieval ($\\kappa$ = 0.42), and similar for direct LLM classification ($\\kappa$ = 0.40). Although semantic retrieval achieved the highest agreement, its retrieval recall was 0.87, indicating loss of relevant content before classification. Applied to the complete corpus, direct LLM classification identified at least one environmental action at 1,398 congregations (53%), providing greater coverage than either retrieval-based approach. These results demonstrate that preliminary retrieval can reduce computational cost but may exclude relevant information before it reaches the classifier. The framework provides a reproducible approach for extracting organization-level environmental information from unstructured web content that can be adapted to other institutions.",
       "summary_zh": "",
       "insight_zh": ""
     }
