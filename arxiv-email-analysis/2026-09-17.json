@@ -2,11 +2,11 @@
   "date": "2026-09-17",
   "analysis_stats": {
     "total": 595,
-    "analyzed": 444,
+    "analyzed": 446,
     "high": 3,
     "medium": 21,
     "low": 31,
-    "below_threshold": 389
+    "below_threshold": 391
   },
   "papers": [
     {
@@ -7910,6 +7910,33 @@
       "insight_zh": "不确定性度量方法或可迁移至城市时空事件预测，但需结合具体摘要内容进一步判断其与地理空间智能的契合度。"
     },
     {
+      "key": "arxiv:2609.19122",
+      "title": "Training-Adaptive Convolutional Sparse Coding via Information Bottleneck for Robust Visual Representation",
+      "title_zh": "基于信息瓶颈的训练自适应卷积稀疏编码用于鲁棒视觉表示",
+      "url": "https://arxiv.org/abs/2609.19122",
+      "arxiv_id": "2609.19122",
+      "authors": [
+        "Meng'en Qin",
+        "Yinchen Liu",
+        "Mingxuan Cui",
+        "Youlu Xing"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T17:43:46+00:00",
+      "score": 15,
+      "reason": "该文提出自适应卷积稀疏编码框架用于鲁棒视觉表示，与遥感图像处理有潜在方法关联，但不涉及地理空间数据、城市更新或时空挖掘。",
+      "tags": [
+        "卷积稀疏编码",
+        "信息瓶颈",
+        "视觉表示",
+        "鲁棒性"
+      ],
+      "summary_zh": "视觉信号需要紧凑而充分的表示，以实现鲁棒的下游预测。卷积稀疏编码（CSC）提供了一种显式机制来抑制冗余成分同时保留信号内容，但其稀疏系数通常是固定且人工选择的。我们提出一种用于鲁棒视觉信号表示的自适应卷积稀疏编码框架。具体而言，我们用快速迭代收缩阈值算法（FISTA）展开CSC优化，并将稀疏系数视为可微变量，与网络参数联合学习。从信息瓶颈视角看，该系数控制信息保留与压缩之间的权衡：稀疏项促进紧凑表示，而重建项连同任务损失保留任务相关的信号内容。我们进一步引入一种无标签的后训练策略，在主网络参数固定的情况下针对受损输入调整压缩强度。在CIFAR和ImageNet上的实验表明，该方法在干净数据识别上具有竞争力，并在不同输入扰动下大幅提升鲁棒性。",
+      "insight_zh": "该工作将稀疏系数作为可学习变量以平衡信息保留与压缩，其鲁棒性思路对遥感图像在噪声或扰动条件下的表示学习有潜在参考价值，但摘要未涉及遥感或地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.18063",
       "title": "The Other Half of the Memory Wall: Serving 35B MoEs from SSD with Trained Routing Prediction",
       "title_zh": "内存墙的另一半：利用训练好的路由预测从SSD服务35B MoE",
@@ -13378,28 +13405,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19122",
-      "title": "Training-Adaptive Convolutional Sparse Coding via Information Bottleneck for Robust Visual Representation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19122",
-      "arxiv_id": "2609.19122",
-      "authors": [
-        "Meng'en Qin",
-        "Yinchen Liu",
-        "Mingxuan Cui",
-        "Youlu Xing"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T17:43:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2603.14005",
       "title": "Towards Generalizable Deepfake Detection via Real Distribution Bias Correction",
       "title_zh": "通过真实分布偏差校正实现可泛化的深度伪造检测",
@@ -16001,7 +16006,7 @@
     {
       "key": "arxiv:2609.19076",
       "title": "Double descent is the principle of least action",
-      "title_zh": "",
+      "title_zh": "双下降是最小作用量原理",
       "url": "https://arxiv.org/abs/2609.19076",
       "arxiv_id": "2609.19076",
       "authors": [
@@ -16017,10 +16022,15 @@
       ],
       "published": "2026-09-16T17:17:46+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文用统计力学解释双下降现象，属于机器学习理论研究，与GIS、城市更新或遥感无直接关联。",
+      "tags": [
+        "双下降",
+        "统计力学",
+        "学习理论",
+        "最小作用量原理"
+      ],
+      "summary_zh": "模型的测试误差相对于其参数数量d的曲线先下降，在模型恰好能拟合训练数据时达到峰值，然后再次下降，呈现双下降现象。我们用统计力学解释这一现象。基于随机梯度的训练方法的训练轨迹是一个粒子在训练损失的能量景观上以诱导温度T游走，一个已平衡的运行会等概率地访问给定训练损失的每个参数向量，这是统计力学的基本假设，其概率由玻尔兹曼分布给出。由于训练从初始点开始且只有有限时间扩散，它带有有效的权重衰减，使每个参数成为二次自由度。能量均分定理随后将能量以T/2的份额分配给d个自由度，因此在固定训练损失下增加参数会降低温度，并驱动玻尔兹曼分布趋向平稳路径。最后，增加参数只能降低平稳路径的L2范数，因此在固定损失下采样的解随d增大而更不可能很大，实际上增强了权重正则化。",
+      "insight_zh": "该研究为理解模型容量与泛化关系提供了物理视角，属于基础学习理论，对地理空间建模实践无直接指导意义。"
     },
     {
       "key": "arxiv:2505.24427",

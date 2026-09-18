@@ -2,11 +2,11 @@
   "date": "2026-09-16",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 434,
+    "analyzed": 444,
     "high": 7,
-    "medium": 16,
-    "low": 33,
-    "below_threshold": 378
+    "medium": 18,
+    "low": 37,
+    "below_threshold": 382
   },
   "papers": [
     {
@@ -769,6 +769,39 @@
       "insight_zh": "该工作提示，在三维场景重建中引入视频扩散模型的时间对应先验，可作为几何正则化的补充信号；其双向协同细化思路或可迁移至城市三维建模与遥感变化检测中的多时相几何一致性约束，但摘要未给出与地理空间数据的直接验证。"
     },
     {
+      "key": "arxiv:2609.16305",
+      "title": "BLINDSPOT: A Benchmark for Safety and Refusal Calibration in Long-Horizon Tool-Using Agents",
+      "title_zh": "BLINDSPOT：长程工具使用智能体安全与拒绝校准基准",
+      "url": "https://arxiv.org/abs/2609.16305",
+      "arxiv_id": "2609.16305",
+      "authors": [
+        "Sadia Asif",
+        "Mohammad Mohammadi Amiri",
+        "Momin Abbas",
+        "Tejaswini Pedapati",
+        "Prasanna Sattigeri"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CE",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-09-14T20:12:27+00:00",
+      "score": 62,
+      "reason": "该论文研究长程工具使用LLM智能体的轨迹级安全校准基准，与研究者关注的LLM和多智能体方向直接相关，但未涉及地理空间或城市更新应用，因此相关性中等。",
+      "tags": [
+        "LLM智能体",
+        "长程工具使用",
+        "安全校准",
+        "轨迹级评估",
+        "基准测试"
+      ],
+      "summary_zh": "大型语言模型（LLM）智能体越来越多地在涉及工具使用、持久状态、动态授权和外部环境反馈的长程交互中运行。在此类场景中，安全失效可能仅在多轮交互后才出现，然而现有评估往往将智能体行为简化为任务或攻击成功率，掩盖了智能体在交互演化过程中是行动、拒绝还是保持适当校准。我们提出Blindspot，一个用于长程工具使用智能体轨迹级安全校准的基准。Blindspot通过自适应对抗交互、有状态工具执行和执行锚定的裁决来评估完整的用户-智能体-环境轨迹。其当前实例包含7个领域的22个攻击家族和35个场景，产生超过2500条长程轨迹，平均交互长度为14.7轮。每条轨迹被赋予五种结果之一：安全完成、正确拒绝、不安全完成、过度拒绝或不确定。与固定攻击数据集不同，Blindspot是一个可扩展的实时仿真框架，可以在不重新设计评估流程的情况下添加攻击、场景、工具、策略、领域和智能体配置。我们使用八个指标评估了13个专有和开放权重LLM，涵盖不安全完成、适当拒绝、良性效用、过度拒绝、重复运行鲁棒性和拒绝后失效。初步结果揭示了模型之间在安全-效用校准上的显著差异，并表明失效可能仅在若干初始安全交互步骤之后才出现。这些发现促使我们将智能体安全视为轨迹级属性，而非单轮或二元成功标准。",
+      "insight_zh": "该基准将智能体安全评估从单轮二元判断转向轨迹级校准，提示在城市更新等长程多智能体决策场景中，安全评估也需关注交互过程中的动态授权与状态演化。"
+    },
+    {
       "key": "arxiv:2607.09493",
       "title": "Shared Selective Persistent Memory for Agentic LLM Systems",
       "title_zh": "智能体LLM系统的共享选择性持久记忆",
@@ -794,6 +827,71 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究提出一种面向智能体LLM系统的共享选择性持久记忆机制，使多个智能体能够共享并选择性保留关键记忆信息。",
       "insight_zh": "共享持久记忆机制或可应用于多智能体城市更新模拟中，使各智能体在长期演化中保持对关键城市状态的一致性记忆，但需完整摘要确认其技术细节。"
+    },
+    {
+      "key": "arxiv:2609.14637",
+      "title": "DynSTEER: Dynamic Stage-wise Trajectory Evaluation and Execution-time Review for Agents",
+      "title_zh": "DynSTEER：智能体的动态阶段化轨迹评估与执行时审查",
+      "url": "https://arxiv.org/abs/2609.14637",
+      "arxiv_id": "2609.14637",
+      "authors": [
+        "Zhichao Shi",
+        "Xuhui Jiang",
+        "Wenjie Zhang",
+        "Xiaojun Wu",
+        "Cehao Yang",
+        "Chengjin Xu",
+        "Jian Guo",
+        "Yuanzhuo Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-13T16:18:03+00:00",
+      "score": 60,
+      "reason": "该论文提出LLM智能体的动态阶段化轨迹评估框架，与研究者关注的LLM和多智能体方向直接相关，但未涉及地理空间应用。",
+      "tags": [
+        "LLM智能体",
+        "轨迹评估",
+        "阶段化评估",
+        "执行时审查",
+        "长程任务"
+      ],
+      "summary_zh": "大型语言模型智能体越来越多地被部署用于长程任务执行。然而，当前评估范式面临三大局限：仅终端评估忽略中间过程且难以高效准确地定位错误，单参考匹配惩罚有效的替代解决路径，事后轨迹评判成本高昂且无法提前终止失败运行。为解决这些问题，我们提出DynSTEER，一个面向智能体的动态阶段化轨迹评估框架。DynSTEER将rollout分割为以关键完成动作锚定的阶段，在具有充分上下文的条件下聚焦于关键里程碑评估，同时支持有针对性的策略调整。它从公开任务视图编译路径容忍的里程碑图，以尊重多样化的合法策略而不泄漏真实答案。此外，它自适应地将评估查询路由到多层评判器，并在线终止不可恢复的执行以遏制资源浪费。实验表明，DynSTEER将LLM智能体的评估区分度相比原生评估提升85.2%，以统计显著性区分所有模型对，并在失败rollout上节省34.51%的执行步骤。",
+      "insight_zh": "阶段化轨迹评估与在线终止机制可提升长程智能体评估效率，其路径容忍设计对多智能体城市更新决策过程的评估具有方法借鉴意义。"
+    },
+    {
+      "key": "arxiv:2609.16268",
+      "title": "Spurious Tool Use: When RL Agents Learn the Wrong Reason to Act",
+      "title_zh": "虚假工具使用：当RL智能体学会错误的行动理由",
+      "url": "https://arxiv.org/abs/2609.16268",
+      "arxiv_id": "2609.16268",
+      "authors": [
+        "Yiwei Yang",
+        "Haoxiang Zhang",
+        "Bingbing Wen",
+        "Yao Lu",
+        "Yuchen Wu",
+        "Lei Zhang",
+        "Julian McAuley",
+        "Pan Lu",
+        "Bill Howe"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-14T19:31:04+00:00",
+      "score": 58,
+      "reason": "该论文研究RL训练LLM智能体中的虚假工具使用捷径行为，与研究者关注的LLM和多智能体方向相关，但未涉及地理空间应用。",
+      "tags": [
+        "LLM智能体",
+        "强化学习",
+        "工具使用",
+        "虚假相关",
+        "奖励设计"
+      ],
+      "summary_zh": "大型语言模型（LLM）智能体越来越多地将自然语言推理与外部工具（如网络搜索和代码执行）交织在一起。这些工具使用策略通常通过强化学习（RL）优化，而RL可能放大训练数据中的虚假相关。在本工作中，我们研究RL训练的智能体何时以及为何学会捷径工具选择策略：基于表面提示线索而非真实任务需求来调用工具。我们构建了结合事实问答和数学推理任务的受控合成环境，并注入在训练期间与特定工具强相关但与工具必要性因果无关的线索。在反事实评估中，当线索存在但相关工具并非必需时，智能体表现出显著的捷径行为，虚假工具调用率最高增加39%。然而，捷径形成并非普遍现象：在我们测试的条件下，它仅在智能体已经学会可靠使用目标工具时才出现，表明任务能力而非仅数据集不平衡是捷径学习的关键因素。交换线索分析进一步表明，线索与工具之间的语义对齐显著放大了这一效应。为缓解这些失效，我们引入一种密集的决策级奖励，其中LLM评判器评估每次工具调用的必要性。这种工具必要性奖励有效抑制了线索驱动的工具使用，同时保持任务性能，为提升LLM智能体工具使用策略的鲁棒性提供了实用方法。",
+      "insight_zh": "工具必要性奖励可抑制线索驱动的虚假工具调用，提示在多智能体地理空间决策系统中，奖励设计需显式评估工具调用的因果必要性以避免捷径策略。"
     },
     {
       "key": "arxiv:2609.17017",
@@ -1150,6 +1248,35 @@
       "insight_zh": "摘要缺失，无法评估其生成质量与验证方式；但该思路与研究者关注的LLM驱动城市模拟、多源数据融合及城市更新中的行为建模方向契合，可作为智能体出行仿真的潜在参考。"
     },
     {
+      "key": "arxiv:2609.16288",
+      "title": "Drift Field Net: Learning Ocean Lagrangian advection fields from in-situ and satellite observations",
+      "title_zh": "Drift Field Net：从原位与卫星观测学习海洋拉格朗日平流场",
+      "url": "https://arxiv.org/abs/2609.16288",
+      "arxiv_id": "2609.16288",
+      "authors": [
+        "Th\\'eo Archambault",
+        "Pierre Garcia",
+        "Mattia Romero",
+        "Anastase Charantonis",
+        "Dominique B\\'er\\'eziat"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-14T19:43:14+00:00",
+      "score": 55,
+      "reason": "该论文利用深度神经网络从卫星观测预测海洋表面流场，涉及遥感观测与物理约束学习，与遥感变化检测和多源数据融合有一定方法关联，但应用领域为海洋学而非城市/地理空间智能核心方向。",
+      "tags": [
+        "深度学习",
+        "海洋流场预测",
+        "拉格朗日平流",
+        "卫星观测",
+        "物理约束"
+      ],
+      "summary_zh": "北太平洋副热带环流（NPSG）是漂浮塑料碎片的主要聚集区，由盆地尺度的辐合海洋环流造成。该区域的有效清理策略依赖于对拉格朗日粒子漂移的准确预报。在此，我们提出Drift Field Net（DFN），一个从业务化卫星观测预测海洋表面流场的深度神经网络。DFN采用新颖的两阶段策略训练，结合模拟数据预训练和基于平流一致性损失函数的拉格朗日微调。这种物理信息优化直接提升了粒子轨迹预测的准确性。我们将DFN与业务化物理预报系统进行对比评估，展示了深度学习在海洋表面流场预测中的潜力。在原位漂流浮标轨迹上，DFN在7天预报后相比业务化模型将平均定位误差降低20公里。此外，采用所提出的平流损失进行拉格朗日微调进一步将定位误差降低10公里，凸显了将拉格朗日约束纳入训练过程的益处。",
+      "insight_zh": "两阶段训练结合物理一致性损失可有效提升流场预测精度，其思路可迁移至地理空间智能中融合物理约束与遥感观测的时空预测任务。"
+    },
+    {
       "key": "arxiv:2609.15997",
       "title": "Crash Narrative-Guided Countermeasure Recommendation Using Large Language Models: A Retrieval-Augmented Generation Framework for Intersection Safety",
       "title_zh": "基于事故叙述引导的大语言模型对策推荐：面向交叉口安全的检索增强生成框架",
@@ -1349,6 +1476,41 @@
       ],
       "summary_zh": "检索增强生成（RAG）是长时程自主智能体的主要记忆架构。然而，将共享记忆视为仅追加的流会引入“语义遮蔽”这一关键失效模式：冲突的历史观察不断累积，并在统计上压倒有效的近期更新。在动态环境中，这会导致智能体检索并依据过时事实行动，造成严重状态发散。本文形式化状态可变性的机制，证明标准稠密检索存在渐近召回衰减。此外，作者形式化展示了“多数投票陷阱”，揭示在语义等价条件下，增大检索上下文窗口会因稀释注意力机制而反常地降低生成准确率。为解决此问题，作者提出GC-Mem（记忆垃圾回收），一种严格的推理时一致性协议。与不加区分地破坏有效长期记忆的启发式时间衰减机制不同，GC-Mem仅依赖时间支配算子（Φ_T）配合矛盾检测，以外科手术式地切除被遮蔽的上下文。在包含137,760个记忆块的行为推断基准和连续累积扫描上评估，标准RAG和时间戳重排序基线严重退化。相比之下，GC-Mem在经验上恢复超过90%的冲突消解准确率。作者建立了严格的精确率与召回率部署阈值，确保标准可变RAG根本失败之处实现状态收敛。",
       "insight_zh": "该研究指出，在动态环境中仅追加的记忆会导致过时信息主导检索，并提出基于时间支配与矛盾检测的显式冲突消解协议；这一“状态可变性”视角对时空数据挖掘中处理时序更新与版本冲突有概念类比价值，但论文未涉及地理数据。"
+    },
+    {
+      "key": "arxiv:2609.16057",
+      "title": "OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning",
+      "title_zh": "OmniHarness：通过符号策略学习驾驭可泛化视觉生成",
+      "url": "https://arxiv.org/abs/2609.16057",
+      "arxiv_id": "2609.16057",
+      "authors": [
+        "Xu Xu (1)",
+        "Jinxiu Liu (2)",
+        "Zhangbo Qiao (1)",
+        "Jiaxing Lu (1)",
+        "Xiangyu Zhang (1)",
+        "Yubin Gu (3)",
+        "Fangwei Ning (1)",
+        "Yan Shi (1) ((1) Beihang University",
+        "(2) The Chinese University of Hong Kong",
+        "(3) National University of Singapore)"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-13T07:29:27+00:00",
+      "score": 50,
+      "reason": "该论文提出通过符号策略学习实现可泛化视觉生成的多智能体框架，与研究者关注的多智能体和LLM方向相关，但应用为视觉生成而非地理空间。",
+      "tags": [
+        "多模态LLM",
+        "多智能体系统",
+        "符号策略学习",
+        "视觉生成",
+        "自导向探究"
+      ],
+      "summary_zh": "统一多模态大型语言模型（MLLM）和多智能体系统已推进了视觉生成。然而，仍存在三个局限。（1）现有方法通常蒸馏任务特定经验，泛化性有限。（2）反思往往推迟到任务完成之后。（3）知识通常仅在下游任务需求出现时才获取。为解决这些局限，我们提出OmniHarness，一个通过符号策略学习实现可泛化视觉生成的框架。OmniHarness将已验证的执行抽象为视觉生成任务家族的符号策略，捕获共享流程和适用条件，同时移除实例特定输入。该框架为新任务实例化、适配和组合这些策略。中间验证在执行过程中引导细化和失败恢复。通过自导向探究，OmniHarness在下游目标指定之前自主生成并执行接近其能力边界的练习任务。执行反馈持续细化策略，而模型参数保持固定。在六个基准、三个MLLM骨干和三个视觉智能体框架上的实验展示了强劲性能和持续能力扩展。在ComfyBench的Creative任务上，OmniHarness实现95.0%的解决率，超过最强基线27.5个百分点。冻结的策略快照通过即插即用复用改进现有视觉智能体系统。",
+      "insight_zh": "符号策略抽象与自导向探究可提升多智能体系统的泛化能力，其策略复用机制或可启发城市更新中多智能体协作流程的知识沉淀与迁移。"
     },
     {
       "key": "arxiv:2512.15708",
@@ -1747,6 +1909,42 @@
       "insight_zh": "从标题推断，该工作可能将潜在拉格朗日动力学与高斯泼溅结合，从单目视频中推断可交互的物理仿真；但摘要为空，无法确认其技术细节与实验结论，其对地理空间三维重建的潜在参考价值需进一步评估。"
     },
     {
+      "key": "arxiv:2609.16058",
+      "title": "Driver Behavior Estimation at Signalized Intersections Using a Physics-Constrained Decision-Conditioned Autoregressive Transformer",
+      "title_zh": "基于物理约束决策条件自回归Transformer的信号交叉口驾驶员行为估计",
+      "url": "https://arxiv.org/abs/2609.16058",
+      "arxiv_id": "2609.16058",
+      "authors": [
+        "Mohammad Khoshkdahan",
+        "Pavel Laskov",
+        "Alexey Vinel"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CY",
+        "cs.SY",
+        "eess.SY",
+        "Intelligent",
+        "Transportation",
+        "Systems",
+        "(ITSC",
+        "2026)"
+      ],
+      "published": "2026-09-13T08:39:44+00:00",
+      "score": 45,
+      "reason": "该论文研究信号交叉口驾驶员行为的物理约束自回归Transformer建模，涉及时空轨迹预测与物理约束，与时空数据挖掘有方法关联，但应用为交通工程而非城市更新。",
+      "tags": [
+        "驾驶行为",
+        "信号交叉口",
+        "自回归Transformer",
+        "物理约束",
+        "轨迹预测"
+      ],
+      "summary_zh": "信号交叉口的闯红灯和急刹车是交通事故的主要成因。本文分析和预测交通信号转换期间人类驾驶员的决策和纵向轨迹行为。我们收集了一个多样化的真实世界数据集，包含449次在不同速度和距离条件下的接近运行。车辆运动使用RTK校正的GNSS以厘米级精度记录，并监测驾驶员心率和多级舒适度评分。时空校准确保了车辆状态与信号时序的精确对齐。统计分析确定所需减速度是停车-通行决策的主导单一预测因子，峰值减速度的异方差高斯建模揭示了源自人类停车行为的五个经验舒适度范围。基于这一洞见，我们提出一个两阶段建模框架。阶段1预测二元操作决策，阶段2使用带物理约束（包括目标状态条件和加加速度限制）的决策条件自回归Transformer生成纵向加速度轨迹。所提架构优于基线方法，实现0.49m/s^2的加速度MAE和0.62m的距离MAE。它还能从单个黄灯亮起快照估计人类驾驶员的未来停车舒适度水平。定性结果展示了逼真的人类化刹车行为。数据集和源代码公开可用。",
+      "insight_zh": "决策条件自回归Transformer结合物理约束可生成逼真轨迹，其两阶段框架对城市交通时空行为建模具有方法参考价值。"
+    },
+    {
       "key": "arxiv:2609.16091",
       "title": "Distilling Foundation Models for Agentic What-If Reasoning:Cost, Latency, and Governance in a Hybrid LLM+SLM Architecture",
       "title_zh": "面向智能体式What-If推理的基础模型蒸馏：混合LLM+SLM架构中的成本、延迟与治理",
@@ -1927,6 +2125,90 @@
       "insight_zh": "该文提出的潜在空间记忆与预测编码思路，或可为多智能体系统中的长期状态维护提供参考；但摘要不完整，且未涉及地理空间应用，难以评估其与GIS研究的关联。"
     },
     {
+      "key": "arxiv:2609.17488",
+      "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
+      "title_zh": "LimiX-2：迈向通用结构化数据智能的上下文机制网络",
+      "url": "https://arxiv.org/abs/2609.17488",
+      "arxiv_id": "2609.17488",
+      "authors": [
+        "Xingxuan Zhang",
+        "Gang Ren",
+        "Hao Yuan",
+        "Hao Zou",
+        "Hongze Tan",
+        "Hui Wang",
+        "Jianhao Song",
+        "Jiansheng Li",
+        "Jiayao Zhang",
+        "Jinghan Zhang",
+        "Kaifang Li",
+        "Lang Mo",
+        "Li Mao",
+        "Mingchao Hao",
+        "Nuo Xu",
+        "Rui Ding",
+        "Ruiji Zhang",
+        "Shuyang Li",
+        "Siyu Mei",
+        "Tianyang Zhang",
+        "Weiyang Mu",
+        "Yancheng Dong",
+        "Yongxian Wei",
+        "Yuan Xue",
+        "Yuanrui Wang",
+        "Yue He",
+        "Zijia Yang",
+        "Ziyun Li",
+        "Dongzhe Li",
+        "Fuqiang Wang",
+        "Jiandong Liu",
+        "Jiawei Chen",
+        "Jiaxin Du",
+        "Kaijie Cheng",
+        "Kehan Li",
+        "Lei Sun",
+        "Linjun Zhou",
+        "Ningbo Dai",
+        "Qi Wang",
+        "Renzhe Xu",
+        "Shaoxing Du",
+        "Shumeng Yang",
+        "Wang Lu",
+        "Wenjing Chu",
+        "Xiannan Huang",
+        "Xiaoyu Lin",
+        "Xing Ai",
+        "Xinyan Han",
+        "Xuanyue Li",
+        "Xuanyue Su",
+        "Xukun Zhang",
+        "Yan Lu",
+        "Yaxin Zhang",
+        "Yi Qin",
+        "Yifei Huang",
+        "Yihan Xu",
+        "Yongle Lv",
+        "Yuanyuan Jiang",
+        "Yushan Han",
+        "Peng Cui"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-15T17:30:02+00:00",
+      "score": 42,
+      "reason": "该论文提出面向通用结构化数据智能的上下文机制网络，涉及因果感知与结构化数据建模，与时空数据挖掘有间接方法关联，但未涉及地理空间应用。",
+      "tags": [
+        "结构化数据",
+        "上下文机制网络",
+        "因果感知",
+        "表格基础模型",
+        "预训练"
+      ],
+      "summary_zh": "我们介绍LimiX-2，LimiX家族的新模型，在我们先前建立的缩放定律指导下通过模型和数据缩放开发。LimiX-2采用上下文机制网络（CMN）范式，并使用上下文条件掩码建模（CCMM）预训练。CMN将上下文学习的组织原则从以目标为中心的预测转向面向机制的联合建模。它不是将网络集中于传统表格PFN的p(y | x, D_context)目标，而是围绕学习p(x, y | D_context)设计，即数据生成背后联合结构的上下文相关表示。预训练使用由结构因果模型（SCM）生成的合成数据集，涵盖多样的图结构、功能机制和观测过程。在TabArena、TALENT和BCCO上的评估表明，LimiX-2优于当前数据集特定模型和表格基础模型。除预测性能外，CMN范式还促进LimiX-2的因果意识：其特征注意力编码直接因果关系，能够准确恢复因果骨架。",
+      "insight_zh": "上下文条件联合建模与因果骨架恢复能力，或可启发地理空间多源数据融合中因果结构的学习与可解释性分析。"
+    },
+    {
       "key": "arxiv:2609.17257",
       "title": "Exploring 2D backbone effects for indoor semantic occupancy prediction",
       "title_zh": "探索室内语义占用预测中2D骨干网络的影响",
@@ -2028,6 +2310,39 @@
       ],
       "summary_zh": "大型语言模型在事实支撑薄弱时仍能生成流畅答案。本文提出Chain-of-Self-Questioning（CoSQ），一种仅依赖提示的框架，使答案承诺以对回答问题所需信息的显式评估为条件。作者在TruthfulQA多选题验证集（817项）上，使用十一个开源权重和托管模型家族，在十七种条件下评估了三种CoSQ变体。在最终平衡选项协议中，Grounded-CoSQ在τ=0.90时将平均无条件错误承诺率从思维链提示下的13.1%降至8.9%，相对降低32.1%，同时将已答准确率从86.9%提升至89.7%，并回答了87.6%的问题。两项改进在全部十一个模型和每个评估阈值下均成立。Critical-CoSQ和Adaptive-CoSQ提供了相邻操作点，覆盖率分别为88.6%和86.5%，同时比基线更可靠。次要的Natural Questions短答案评估提供了收敛的开放形式证据。这些发现表明，当无支撑的承诺比转介或复核代价更高时，自我评估可以支持显式、可调的答案或弃答决策。",
       "insight_zh": "该工作提出的自我提问链机制可能为地理空间智能中LLM智能体的可靠性评估提供参考，但摘要未涉及地理空间应用，其与用户研究方向的具体结合点需进一步探索。"
+    },
+    {
+      "key": "arxiv:2609.16229",
+      "title": "Test-Time Unlearning via Sparse Autoencoder",
+      "title_zh": "基于稀疏自编码器的测试时遗忘",
+      "url": "https://arxiv.org/abs/2609.16229",
+      "arxiv_id": "2609.16229",
+      "authors": [
+        "Pingzhi Li",
+        "Jinhao Duan",
+        "Vaishnav Tadiparthi",
+        "Nakul Agarwal",
+        "Kwonjoon Lee",
+        "Ehsan Moradi Pari",
+        "Hossein Nourkhiz Mahjoub",
+        "Sijia Liu",
+        "Tianlong Chen"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-09-14T18:58:09+00:00",
+      "score": 40,
+      "reason": "该论文研究LLM的测试时机器遗忘方法，属于LLM安全与知识编辑方向，与研究者关注的LLM应用有间接关联，但无地理空间或时空数据内容。",
+      "tags": [
+        "机器遗忘",
+        "稀疏自编码器",
+        "推理时干预",
+        "LLM安全"
+      ],
+      "summary_zh": "机器遗忘旨在从训练好的大型语言模型（LLM）中移除特定知识而无需从头重训练。现有方法通过梯度上升及其改进来修改模型权重。虽然在某些基准上有效，但这些基于权重的方法表现出尖锐的遗忘-效用权衡，即对目标知识的更强遗忘可能降低模型效用，且被遗忘的知识可能在遗忘后微调或提示攻击下重新出现。我们提出ARIA（自编码器门控推理时遗忘），一种测试时遗忘方法，保持模型权重不变，仅在生成进入遗忘相关状态时门控对不需要知识的访问。ARIA使用稀疏自编码器（SAE）潜在表示训练轻量级线性检测器，然后对触发状态应用可解释的干预，测试时开销可忽略。在TOFU、R-TOFU和WMDP上的实证评估表明，ARIA在思维模型（DeepSeek-R1-Distilled-Qwen-1.5B）和指令模型（Gemma-3-1B-it）上均改善了遗忘-保留权衡，例如显著降低WMDP-cyber遗忘集准确率，同时将MMLU保持在遗忘前模型的1%以内。我们进一步引入三种针对权重空间和解码空间恢复的遗忘后对抗攻击，发现ARIA在三种攻击下均保持鲁棒，遗忘变化小于1%。利用ARIA可解释性的特征级案例研究表明，部分保留退化可能反映遗忘数据底层的响应风格而非目标知识本身的泄漏，凸显了遗忘任务构建中的潜在偏差来源。",
+      "insight_zh": "推理时门控干预可在不修改权重的情况下实现遗忘，其可解释性分析提示遗忘任务构建中可能存在响应风格偏差，对LLM知识管理有方法参考价值。"
     },
     {
       "key": "arxiv:2609.16889",
@@ -2918,6 +3233,34 @@
       "insight_zh": "若该研究确实揭示多模态RAG中的位置偏差机制，可能对基于LLM的地理空间问答系统设计有参考价值，但需结合完整摘要进一步判断。"
     },
     {
+      "key": "arxiv:2609.16207",
+      "title": "Hyperbolic Contrastive Learning with Entailment for Spatial Transcriptomics",
+      "title_zh": "面向空间转录组学的双曲对比学习与蕴含",
+      "url": "https://arxiv.org/abs/2609.16207",
+      "arxiv_id": "2609.16207",
+      "authors": [
+        "Daniela Vega",
+        "Paula C\\'ardenas",
+        "Hannah Ceballos",
+        "Leonardo Manrique",
+        "Pablo Arbela\\'ez"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-14T18:39:51+00:00",
+      "score": 35,
+      "reason": "该论文将双曲对比学习应用于空间转录组学，涉及空间数据与图像预测，但属于生物医学领域，与城市更新和地理空间智能的核心方向关联较弱。",
+      "tags": [
+        "空间转录组学",
+        "双曲对比学习",
+        "图像-基因预测",
+        "生物医学"
+      ],
+      "summary_zh": "空间转录组学（ST）通过实现组织切片上基因表达的空间映射，改变了生物医学研究。然而，高运营成本、专用设备需求和实验噪声敏感性限制了ST的可及性和可扩展性。近期计算机视觉方法旨在通过直接从组织病理学图像预测空间基因表达来克服这些限制。虽然有效，但当前方法常遭受基因表达过度平滑和组织区域预测过于均匀的问题，表明进一步进展取决于学习反映基因调控和组织形态层次与非对称结构的表示。为解决这些问题，我们提出面向空间转录组学的双曲对比学习与蕴含（HyCLoST），一种捕获ST数据内在层次关系的双曲对比学习模型。通过利用双曲几何和基因到图像的蕴含损失，HyCLoST学习结构化、有生物学依据的表示，提升基因表达预测准确性，在26个ST数据集上相比先前方法实现MSE降低6%和PCC提升8%。我们的源代码公开于https://github.com/BCV-Uniandes/HyCLoST。",
+      "insight_zh": "双曲几何与蕴含损失可建模层次与非对称结构，其思路或可启发地理空间数据中层次化空间关系的表示学习。"
+    },
+    {
       "key": "arxiv:2605.11117",
       "title": "GRAFT-ATHENA: Self-Improving Agentic Teams for Autonomous Discovery and Evolutionary Numerical Algorithms",
       "title_zh": "GRAFT-ATHENA：面向自主发现与进化数值算法的自改进智能体团队",
@@ -3806,6 +4149,33 @@
       ],
       "summary_zh": "该论文提出在交互式优化过程中，通过动态的预公式化澄清来更好地理解用户需求，从而提高优化效果。",
       "insight_zh": "该研究强调了在优化问题求解前充分理解用户意图的重要性，这为城市更新中的多目标规划提供了人机交互设计思路。"
+    },
+    {
+      "key": "arxiv:2609.16060",
+      "title": "HintMiner: Automatic Question Hints Mining From Q&A Web Posts with Language Model via Self-Supervised Learning",
+      "title_zh": "HintMiner：通过自监督学习利用语言模型从问答网页帖子中自动挖掘问题提示",
+      "url": "https://arxiv.org/abs/2609.16060",
+      "arxiv_id": "2609.16060",
+      "authors": [
+        "Zhenyu Zhang",
+        "JiuDong Yang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-13T09:24:40+00:00",
+      "score": 30,
+      "reason": "该论文提出从问答网页帖子中自动挖掘问题提示的工具，属于NLP与自监督学习应用，与研究者关注方向关联较弱。",
+      "tags": [
+        "问答挖掘",
+        "自监督学习",
+        "语言模型",
+        "Stack Overflow"
+      ],
+      "summary_zh": "用户经常需要在线提问并寻求答案。Stack Overflow等问答（QA）论坛无法总是及时恰当地回应用户的问题。在本文中，我们提出HintMiner，一种新颖的自动问题提示挖掘工具，帮助用户找到答案。HintMiner利用机器理解和序列生成技术自动为用户的问题生成提示。它首先检索大量网络问答帖子，然后使用通过语言模型构建的MiningNet从帖子中提取提示。利用大量在线问答帖子，我们设计了一个自监督目标来训练MiningNet，这是一个基于Transformer和复制机制的神经编码器-解码器模型。我们在60,000个Stack Overflow问题上评估了HintMiner。实验结果表明所提方法有效。例如，HintMiner实现了平均BLEU分数36.17%和平均ROUGE-2分数36.29%。我们的工具和实验数据公开可用。",
+      "insight_zh": "自监督编码器-解码器从问答帖子中挖掘提示，其方法可启发从非结构化文本中提取地理空间知识线索，但与核心研究方向关联有限。"
     },
     {
       "key": "arxiv:2608.16142",
@@ -6537,36 +6907,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16229",
-      "title": "Test-Time Unlearning via Sparse Autoencoder",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16229",
-      "arxiv_id": "2609.16229",
-      "authors": [
-        "Pingzhi Li",
-        "Jinhao Duan",
-        "Vaishnav Tadiparthi",
-        "Nakul Agarwal",
-        "Kwonjoon Lee",
-        "Ehsan Moradi Pari",
-        "Hossein Nourkhiz Mahjoub",
-        "Sijia Liu",
-        "Tianlong Chen"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "published": "2026-09-14T18:58:09+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16532",
       "title": "Style-Debiased DPO: Updating LLM Knowledge with Factuality-Aware Synthetic Preference Data",
       "title_zh": "",
@@ -6580,35 +6920,6 @@
         "cs.CL"
       ],
       "published": "2026-09-15T02:26:19+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16268",
-      "title": "Spurious Tool Use: When RL Agents Learn the Wrong Reason to Act",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16268",
-      "arxiv_id": "2609.16268",
-      "authors": [
-        "Yiwei Yang",
-        "Haoxiang Zhang",
-        "Bingbing Wen",
-        "Yao Lu",
-        "Yuchen Wu",
-        "Lei Zhang",
-        "Julian McAuley",
-        "Pan Lu",
-        "Bill Howe"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-14T19:31:04+00:00",
       "score": 17,
       "reason": "关键词命中：Large Language Model",
       "tags": [
@@ -6764,37 +7075,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16057",
-      "title": "OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16057",
-      "arxiv_id": "2609.16057",
-      "authors": [
-        "Xu Xu (1)",
-        "Jinxiu Liu (2)",
-        "Zhangbo Qiao (1)",
-        "Jiaxing Lu (1)",
-        "Xiangyu Zhang (1)",
-        "Yubin Gu (3)",
-        "Fangwei Ning (1)",
-        "Yan Shi (1) ((1) Beihang University",
-        "(2) The Chinese University of Hong Kong",
-        "(3) National University of Singapore)"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-13T07:29:27+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -6961,31 +7241,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16207",
-      "title": "Hyperbolic Contrastive Learning with Entailment for Spatial Transcriptomics",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16207",
-      "arxiv_id": "2609.16207",
-      "authors": [
-        "Daniela Vega",
-        "Paula C\\'ardenas",
-        "Hannah Ceballos",
-        "Leonardo Manrique",
-        "Pablo Arbela\\'ez"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-14T18:39:51+00:00",
-      "score": 17,
-      "reason": "关键词命中：Computer Vision",
-      "tags": [
-        "Computer Vision"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16415",
       "title": "How Good Are Time-Series Foundation Models for Pedestrian Crowd Count Forecasting? A Cross-Dataset Comparative Study",
       "title_zh": "",
@@ -7013,30 +7268,6 @@
       "reason": "关键词命中：Deep Learning",
       "tags": [
         "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16060",
-      "title": "HintMiner: Automatic Question Hints Mining From Q&A Web Posts with Language Model via Self-Supervised Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16060",
-      "arxiv_id": "2609.16060",
-      "authors": [
-        "Zhenyu Zhang",
-        "JiuDong Yang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-13T09:24:40+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7296,91 +7527,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.14637",
-      "title": "DynSTEER: Dynamic Stage-wise Trajectory Evaluation and Execution-time Review for Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14637",
-      "arxiv_id": "2609.14637",
-      "authors": [
-        "Zhichao Shi",
-        "Xuhui Jiang",
-        "Wenjie Zhang",
-        "Xiaojun Wu",
-        "Cehao Yang",
-        "Chengjin Xu",
-        "Jian Guo",
-        "Yuanzhuo Wang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-13T16:18:03+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16058",
-      "title": "Driver Behavior Estimation at Signalized Intersections Using a Physics-Constrained Decision-Conditioned Autoregressive Transformer",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16058",
-      "arxiv_id": "2609.16058",
-      "authors": [
-        "Mohammad Khoshkdahan",
-        "Pavel Laskov",
-        "Alexey Vinel"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CY",
-        "cs.SY",
-        "eess.SY",
-        "Intelligent",
-        "Transportation",
-        "Systems",
-        "(ITSC",
-        "2026)"
-      ],
-      "published": "2026-09-13T08:39:44+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16288",
-      "title": "Drift Field Net: Learning Ocean Lagrangian advection fields from in-situ and satellite observations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16288",
-      "arxiv_id": "2609.16288",
-      "authors": [
-        "Th\\'eo Archambault",
-        "Pierre Garcia",
-        "Mattia Romero",
-        "Anastase Charantonis",
-        "Dominique B\\'er\\'eziat"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-14T19:43:14+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17029",
       "title": "Distributed JEPA: A Self-Supervised Framework for Energy Forecasting",
       "title_zh": "",
@@ -7565,35 +7711,6 @@
       "reason": "关键词命中：Segmentation",
       "tags": [
         "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16305",
-      "title": "BLINDSPOT: A Benchmark for Safety and Refusal Calibration in Long-Horizon Tool-Using Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16305",
-      "arxiv_id": "2609.16305",
-      "authors": [
-        "Sadia Asif",
-        "Mohammad Mohammadi Amiri",
-        "Momin Abbas",
-        "Tejaswini Pedapati",
-        "Prasanna Sattigeri"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CE",
-        "cs.CL",
-        "cs.LG",
-        "cs.MA"
-      ],
-      "published": "2026-09-14T20:12:27+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -14563,84 +14680,6 @@
         "cs.AI"
       ],
       "published": "2026-09-15T13:41:19+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.17488",
-      "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17488",
-      "arxiv_id": "2609.17488",
-      "authors": [
-        "Xingxuan Zhang",
-        "Gang Ren",
-        "Hao Yuan",
-        "Hao Zou",
-        "Hongze Tan",
-        "Hui Wang",
-        "Jianhao Song",
-        "Jiansheng Li",
-        "Jiayao Zhang",
-        "Jinghan Zhang",
-        "Kaifang Li",
-        "Lang Mo",
-        "Li Mao",
-        "Mingchao Hao",
-        "Nuo Xu",
-        "Rui Ding",
-        "Ruiji Zhang",
-        "Shuyang Li",
-        "Siyu Mei",
-        "Tianyang Zhang",
-        "Weiyang Mu",
-        "Yancheng Dong",
-        "Yongxian Wei",
-        "Yuan Xue",
-        "Yuanrui Wang",
-        "Yue He",
-        "Zijia Yang",
-        "Ziyun Li",
-        "Dongzhe Li",
-        "Fuqiang Wang",
-        "Jiandong Liu",
-        "Jiawei Chen",
-        "Jiaxin Du",
-        "Kaijie Cheng",
-        "Kehan Li",
-        "Lei Sun",
-        "Linjun Zhou",
-        "Ningbo Dai",
-        "Qi Wang",
-        "Renzhe Xu",
-        "Shaoxing Du",
-        "Shumeng Yang",
-        "Wang Lu",
-        "Wenjing Chu",
-        "Xiannan Huang",
-        "Xiaoyu Lin",
-        "Xing Ai",
-        "Xinyan Han",
-        "Xuanyue Li",
-        "Xuanyue Su",
-        "Xukun Zhang",
-        "Yan Lu",
-        "Yaxin Zhang",
-        "Yi Qin",
-        "Yifei Huang",
-        "Yihan Xu",
-        "Yongle Lv",
-        "Yuanyuan Jiang",
-        "Yushan Han",
-        "Peng Cui"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-15T17:30:02+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

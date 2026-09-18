@@ -4,48 +4,48 @@
   "paper_keys": [
     "arxiv:2609.20209",
     "arxiv:2607.14112",
+    "arxiv:2609.19911",
     "arxiv:2609.20026",
     "arxiv:2609.20200",
     "arxiv:2609.19155",
+    "arxiv:2609.20310",
+    "arxiv:2609.20625",
     "arxiv:2609.20541",
+    "arxiv:2609.20474",
     "arxiv:2609.19504",
     "arxiv:2609.19437",
     "arxiv:2609.20193",
     "arxiv:2608.14227",
     "arxiv:2609.19465",
     "arxiv:2608.17153",
+    "arxiv:2609.20313",
+    "arxiv:2609.20449",
     "arxiv:2609.19472",
     "arxiv:2609.19417",
     "arxiv:2609.20662",
+    "arxiv:2609.20543",
+    "arxiv:2609.20455",
     "arxiv:2609.20441",
+    "arxiv:2609.20217",
     "arxiv:2609.20235",
     "arxiv:2603.06813",
     "arxiv:2602.03128",
     "arxiv:2510.25595",
-    "arxiv:2609.19502",
-    "arxiv:2609.20519",
-    "arxiv:2609.19776",
-    "arxiv:2609.19463",
-    "arxiv:2609.19366",
-    "arxiv:2609.18820",
-    "arxiv:2609.07605",
-    "arxiv:2609.20178",
-    "arxiv:2511.22341",
-    "arxiv:2505.17640"
+    "arxiv:2609.19502"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:588",
-    "deepseek": "partial:266/536;failed-batches:27"
+    "deepseek": "partial:40/270;failed-batches:23"
   },
-  "updated_at": "2026-09-18T11:50:12.335428+00:00",
+  "updated_at": "2026-09-18T16:47:56.808446+00:00",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 318,
+    "analyzed": 358,
     "high": 3,
-    "medium": 11,
-    "low": 21,
-    "below_threshold": 283
+    "medium": 16,
+    "low": 26,
+    "below_threshold": 313
   },
   "papers": [
     {
@@ -103,6 +103,39 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "本文分析了语言模型在可靠性和规模扩展方面的内在限制，指出当前模型在特定任务上的性能瓶颈和潜在风险。",
       "insight_zh": "在将LLM用于城市更新分析时，需认识到其可靠性边界，避免在关键决策中过度依赖模型输出。"
+    },
+    {
+      "key": "arxiv:2609.19911",
+      "title": "CitySTAR: Structured and Topology-Aware Reasoning for Open-Vocabulary Urban 3D Grounding",
+      "title_zh": "CitySTAR：面向开放词汇城市3D定位的结构化与拓扑感知推理",
+      "url": "https://arxiv.org/abs/2609.19911",
+      "doi": "",
+      "arxiv_id": "2609.19911",
+      "authors": [
+        "Shuai Zhang",
+        "Hongye Hou",
+        "Qinghe Liu",
+        "Zhuoxiao Li",
+        "Dongli Wu",
+        "Jing Ou",
+        "Yuan Liu",
+        "Wufan Zhao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T08:53:13+00:00",
+      "score": 78,
+      "reason": "该文面向城市尺度3D点云的开放词汇定位，提出结构化约束推理与拓扑感知框架，直接涉及城市空间语义、几何结构与多模态推理，与城市更新、时空数据挖掘及地理空间智能高度相关。",
+      "tags": [
+        "城市3D定位",
+        "开放词汇",
+        "场景图",
+        "超图",
+        "多模态推理",
+        "点云"
+      ],
+      "abstract": "3D grounding aims to localize target entities in complex scenes from natural language and plays a fundamental role in embodied perception and spatial reasoning. However, existing approaches mostly rely on feature similarity or direct matching, making it difficult to connect natural-language intent with the implicit semantic and geometric structures hidden in billion-scale urban point clouds. We reformulate city-scale 3D grounding as structured constraint reasoning, where description semantics are organized into computable cross-modal constraints over open-vocabulary 3D entities, attributes, and spatial relations. We present CitySTAR, a training-free framework for reasoning-driven urban 3D grounding. CitySTAR lifts raw billion-scale urban point clouds into a query-ready scene graph of open-vocabulary 3D instances, with CodeLLM-driven tools supplying multimodal evidence for node attributes and 3D spatial relations. It then models target-context topology with paired hypergraphs and performs bidirectional topology verification for structural disambiguation. Finally, a Reflective Cross-modal Grounding module integrates topology consistency and candidate-centered 2D visual evidence to make decisions over a metric-aware 3D context graph. To further support this setting, we introduce CitySTAR-3D, an enhanced benchmark that improves semantic coverage, instance completeness, bounding-box fidelity, and spatial-relation complexity in city-scale 3D grounding. Extensive experiments show that CitySTAR consistently improves open-world urban 3D grounding while maintaining strong interpretability and generalization.",
+      "summary_zh": "该文将城市尺度3D定位重构为结构化约束推理，把描述语义组织为对开放词汇3D实体、属性与空间关系的可计算跨模态约束。CitySTAR将十亿级城市点云提升为可查询的开放词汇场景图，用CodeLLM驱动工具提供节点属性与3D空间关系的多模态证据，并以成对超图建模目标-上下文拓扑、进行双向拓扑验证，最后通过反思式跨模态定位模块结合拓扑一致性与候选中心2D视觉证据在度量感知3D上下文图上决策。作者还提出CitySTAR-3D基准，实验显示其在开放世界城市3D定位上持续提升，并保持较强可解释性与泛化能力。",
+      "insight_zh": "该框架把城市点云中的语义与几何结构显式组织为可推理约束，为城市更新场景中的目标检索与空间关系理解提供了可解释路径，但其在动态城市变化监测中的时效性仍需验证。"
     },
     {
       "key": "arxiv:2609.20026",
@@ -185,6 +218,58 @@
       "insight_zh": "该工作提示：在构建面向城市更新等领域的LLM对话助手时，用户意图可能随对话推进而隐式漂移，主动冲突检测与澄清机制值得纳入系统设计；其约束空间建模思路或可迁移到地理空间任务约束（如时空范围、分析目标）的一致性校验。"
     },
     {
+      "key": "arxiv:2609.20310",
+      "title": "ZeroHAT: Behavior-Conditioned Zero-Shot Human Activity Trace Generation",
+      "title_zh": "ZeroHAT：行为条件化的零样本人类活动轨迹生成",
+      "url": "https://arxiv.org/abs/2609.20310",
+      "doi": "",
+      "arxiv_id": "2609.20310",
+      "authors": [
+        "Rongchao Xu",
+        "Dahai Yu",
+        "Lin Jiang",
+        "Guang Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-07-31T10:28:25+00:00",
+      "score": 70,
+      "reason": "该论文研究零样本人类活动轨迹生成，涉及城市模拟与跨区域行为迁移，与城市更新和时空数据挖掘研究方向高度相关。",
+      "tags": [
+        "人类活动轨迹",
+        "零样本生成",
+        "城市模拟",
+        "跨区域迁移"
+      ],
+      "abstract": "Human activity traces record individuals' timestamped visits to points of interest and are essential for applications such as mobility prediction and urban simulation. However, accessing large-scale HATs is challenging due to high collection costs and privacy concerns. Synthetic HAT generation offers a promising way to make such data available and has attracted growing interest from both industry and academia. Although many efforts have been devoted to this topic, most of them rely on real data from a region to generate synthetic data for the same region, which is infeasible for the many regions where real HATs are unavailable. To fill this gap, we propose ZeroHAT, a behavior-conditioned framework that generates synthetic HATs for a target region in a zero-shot manner by transferring behavioral patterns learned from real HATs in source regions and adapting them with publicly available contextual information about the target region. ZeroHAT has three key novel components: (i) a multidimensional consistency-aware intent extractor; (ii) a cross-region behavioral cloning module; and (iii) a behavior-conditioned activity realization module. We evaluate ZeroHAT on a ten-city benchmark, where extensive experiments show that ZeroHAT achieves 4.5-6.4x the normalized downstream utility of the strongest baseline and improves average fidelity by 15.6%-40.8% across target regions.",
+      "summary_zh": "人类活动轨迹记录个体对兴趣点的带时间戳访问，对移动预测和城市模拟等应用至关重要。然而，由于高收集成本和隐私问题，获取大规模HAT具有挑战性。合成HAT生成提供了一种使此类数据可用的有前景方式，并引起了产业界和学术界的日益关注。尽管已有许多努力，但大多数依赖来自某一区域的真实数据来生成同一区域的合成数据，这对于许多无法获得真实HAT的区域是不可行的。为填补这一空白，作者提出ZeroHAT，一种行为条件化框架，通过迁移从源区域真实HAT中学到的行为模式，并利用目标区域的公开上下文信息进行适应，以零样本方式为目标区域生成合成HAT。ZeroHAT有三个关键新颖组件：（i）多维一致性感知意图提取器；（ii）跨区域行为克隆模块；（iii）行为条件化活动实现模块。作者在十城市基准上评估ZeroHAT，广泛实验表明ZeroHAT实现了最强基线4.5-6.4倍的归一化下游效用，并在目标区域将平均保真度提高了15.6%-40.8%。",
+      "insight_zh": "该研究对城市更新和时空数据挖掘有直接参考价值，尤其是零样本跨区域轨迹生成方法，可借鉴于数据稀缺城市的活动模拟与城市更新影响评估。"
+    },
+    {
+      "key": "arxiv:2609.20625",
+      "title": "Chronicle: Cut-Point Replay for Regression Testing of LLM Agents",
+      "title_zh": "Chronicle：面向LLM智能体回归测试的切点回放",
+      "url": "https://arxiv.org/abs/2609.20625",
+      "doi": "",
+      "arxiv_id": "2609.20625",
+      "authors": [
+        "Tisha Chawla",
+        "Susheem Koul"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T16:09:57+00:00",
+      "score": 62,
+      "reason": "该论文聚焦LLM智能体的回归测试与可复现性，与研究中LLM和多智能体方向相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM智能体",
+        "回归测试",
+        "可复现性",
+        "记录回放"
+      ],
+      "abstract": "Large language model responses are non-deterministic, so failures in LLM agents are hard to reproduce: a failure depends on inference that is not bitwise reproducible, on tools that read changing state, and on a multi-step trajectory that a re-run rarely repeats. Record-and-replay makes a run reproducible, but existing agent tooling records runs only to trace or score them, not to test a code change against them. We present Chronicle, which records an agent run at its non-deterministic boundaries as immutable envelopes and replays it from the record. Its central operation, cut-point replay, serves a chosen subset of boundaries from the record and executes the complementary subset live with new code, turning a recorded incident into a regression test that runs in continuous integration. On a benchmark of 6 recorded failures with simulated model boundaries, recording adds 23 {\\mu}s per crossing (0.008% of an assumed 300 ms model call), full replay issues zero model calls and is bit-stable across 20 repetitions, and cut-point tests fail on faulty code and pass on guarded and benign changes for all 6 incidents. In a mutation study of the guarded tools, cut-point tests catch every mutant that lets the recorded unsafe action through, while a baseline that stubs every boundary, using the same assertion, catches none. Chronicle and the benchmark are publicly available at https://github.com/theagentplane/chronicle.",
+      "summary_zh": "大语言模型响应具有非确定性，因此LLM智能体的失败难以复现：失败依赖于无法逐位复现的推理、读取变化状态的工具，以及重跑时很少重复的多步轨迹。记录-回放可使一次运行可复现，但现有智能体工具仅将运行记录下来用于追踪或评分，而非针对代码变更进行测试。我们提出Chronicle，它将智能体运行在其非确定性边界处记录为不可变信封，并从记录中回放。其核心操作——切点回放——从记录中提供选定边界子集，并用新代码实时执行互补子集，从而将一次记录的事故转化为可在持续集成中运行的回归测试。在一个包含6个记录失败并模拟模型边界的基准上，记录每次跨越增加23微秒（假设300毫秒模型调用的0.008%），完整回放发出零次模型调用且在20次重复中逐位稳定，切点测试对6个事故中的错误代码失败、对受保护和良性变更通过。在受保护工具的变异研究中，切点测试捕获了所有让记录的不安全动作通过的变异体，而使用相同断言对每个边界打桩的基线则一个都未捕获。Chronicle和基准已公开于https://github.com/theagentplane/chronicle。",
+      "insight_zh": "该工作将记录-回放从追踪/评分用途扩展到针对代码变更的回归测试，其切点回放机制可能为多智能体系统的测试与调试提供思路，但摘要未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2609.20541",
       "title": "An Analysis of Training-Free Self-Reported Confidence in Language Models",
       "title_zh": "语言模型中免训练自报置信度的分析",
@@ -211,6 +296,33 @@
       "abstract": "Large language models can report a numerical confidence together with generated content, but it is unclear whether this report is more than calibrated rhetoric. We analyze three training-free signals: confidence verbalized with the answer, post-hoc $P(\\mathrm{True})$, and agreement with three additional generations on the same 100 TriviaQA questions for two model families. Direct verbalization is a surprisingly strong baseline: after auditing benchmark errors, it reaches AUROC 0.956 and 0.937 for correctness prediction. Three-sample agreement is substantially weaker (0.765 and 0.790), and a fixed interpolation with verbalized confidence has no statistically reliable benefit. Four of nine errors from one model and two of eight from the other receive unanimous sample support, showing that self-consistency can amplify shared misconceptions. Re-eliciting confidence for the same fixed answers with equivalent prompts changes scores by 0.043 to 0.084 on average and flips 4\\% to 9\\% of decisions at a 0.8 threshold. An exploratory audit of 100 confidence-tagged biography claims further finds only a modest confidence gap between supported and contradicted claims. These results argue that useful self-reports remain sensitive to elicitation, correlated errors, and benchmark noise.",
       "summary_zh": "大语言模型可以在生成内容的同时报告一个数值置信度，但这一报告是否只是经过校准的修辞尚不清楚。本文分析了三种免训练信号：随答案口头表达的置信度、事后P(True)概率，以及在100个TriviaQA问题上与另外三次生成结果的一致性，覆盖两个模型家族。直接口头表达是一个出人意料的强基线：在审查基准错误后，其对正确性预测的AUROC达到0.956和0.937。三次采样一致性明显更弱（0.765和0.790），而与口头置信度的固定插值没有统计上可靠的收益。一个模型的九个错误中有四个、另一个模型的八个错误中有两个获得了一致的采样支持，表明自一致性可能放大共同的误解。用等价提示对相同固定答案重新引出置信度，平均会使分数变化0.043至0.084，并在0.8阈值下翻转4%至9%的决策。对100条带置信度标签的传记性陈述的探索性审查进一步发现，被支持与被反驳的陈述之间置信度差距仅为中等。这些结果表明，有用的自报置信度仍然对引出方式、相关错误和基准噪声敏感。",
       "insight_zh": "若将LLM用于地理空间智能或多智能体决策，其自报置信度可作为不确定性信号，但需注意其对提示方式敏感且可能放大共同错误，因此不宜单独作为可靠性依据。"
+    },
+    {
+      "key": "arxiv:2609.20474",
+      "title": "How Do Agent Harnesses Create Value? Planning Information and Release Control in Stateful LLM Agents",
+      "title_zh": "智能体框架如何创造价值？有状态LLM智能体中的规划信息与发布控制",
+      "url": "https://arxiv.org/abs/2609.20474",
+      "doi": "",
+      "arxiv_id": "2609.20474",
+      "authors": [
+        "Yukun Zhang",
+        "Kemu Xu",
+        "Yishen Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T14:30:14+00:00",
+      "score": 62,
+      "reason": "该文研究LLM智能体框架中规划信息与发布控制对成功率、错误接受与成本的影响，属于LLM与多智能体方向，与研究者关注的LLM和多智能体主题直接相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM智能体",
+        "规划与控制",
+        "验证器",
+        "智能体框架",
+        "τ²-bench"
+      ],
+      "abstract": "Agent harnesses supply planning guidance, organize execution, and check completion. We study how these components affect success, erroneous acceptance, and cost in two Retail experiments and an Airline pilot in $\\tau^2$-bench. The primary comparison pairs prewritten task-specific plans (Fixed) with shuffled policy text matched in word count (Sham), isolating the contribution of guidance content. Across 265 matched cells, Fixed improves oracle-verified success by 7.17 percentage points (90\\% task-clustered bootstrap interval, 1.15--13.36 points), with gains concentrated in higher-complexity tasks. A read-only terminal verifier rejects 61\\% of Retail oracle-invalid episodes while withholding 17\\% of correct ones, at less than one cent of additional cost per episode. Which component matters more depends on the loss assigned to erroneous acceptance: at low liability the planning gain dominates; at high liability the verifier's avoided false passes dominate---and a standalone verifier captures nearly all the false-pass benefit of the full planning-plus-verification stack at a fraction of its cost.",
+      "summary_zh": "智能体框架提供规划指导、组织执行并检查完成情况。本文在τ²-bench的两个零售实验和一个航空试点中研究这些组件如何影响成功率、错误接受与成本。主要比较将预先编写的任务特定计划（Fixed）与词数匹配的打乱策略文本（Sham）配对，以分离指导内容的贡献。在265个匹配单元中，Fixed将oracle验证的成功率提高7.17个百分点（90%任务聚类自助区间1.15–13.36点），增益集中在较高复杂度任务上。只读终端验证器拒绝61%的零售oracle无效片段，同时扣留17%的正确片段，每片段额外成本低于一美分。哪个组件更重要取决于分配给错误接受的损失：在低责任下规划增益占主导；在高责任下验证器避免的假通过占主导——且独立验证器以极低成本捕获了完整规划加验证栈几乎全部的假通过收益。",
+      "insight_zh": "该研究表明，在LLM智能体框架中，规划指导内容与验证机制的价值取决于任务复杂度与错误接受的责任成本；独立验证器可在低成本下实现大部分假通过收益，这为设计面向城市更新等高风险决策场景的智能体验证流程提供了参考。"
     },
     {
       "key": "arxiv:2609.19504",
@@ -374,6 +486,59 @@
       "insight_zh": "具备推理能力的语言模型对检索到的错误信息具有更强的鲁棒性，这为设计更安全的RAG系统提供了实证支持，无需采用严格的隔离原则。"
     },
     {
+      "key": "arxiv:2609.20313",
+      "title": "EviRec: Continual Evidence Learning for Dual Cold-Start POI Recommendation",
+      "title_zh": "EviRec：面向双重冷启动POI推荐的持续证据学习",
+      "url": "https://arxiv.org/abs/2609.20313",
+      "doi": "",
+      "arxiv_id": "2609.20313",
+      "authors": [
+        "Rongchao Xu",
+        "Lin Jiang",
+        "Guang Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-07-31T11:15:08+00:00",
+      "score": 60,
+      "reason": "该论文研究兴趣点（POI）推荐中的双重冷启动问题，涉及时空数据挖掘与城市分析，与城市更新和时空数据挖掘研究方向有较强关联。",
+      "tags": [
+        "POI推荐",
+        "冷启动",
+        "持续学习",
+        "时空数据挖掘"
+      ],
+      "abstract": "Point-of-Interest (POI) recommendation is a core task in location-based services, yet most existing methods assume a fixed user population and POI catalog. Through a large-scale data-driven analysis of 10 U.S. cities, we identify substantial POI churn, user turnover, category drift, and decay in static POI memory, motivating the study of continual dual cold-start POI recommendation. To address this setting, we propose EviRec, a continual evidence-learning framework that estimates how much historical evidence should be trusted separately for each candidate POI. EviRec scores each visible candidate from three complementary views: a matching view based on the user's recent mobility profile, a transition-memory view that captures repeated mobility routines, and a lifecycle view that reflects candidate maturity. Because a near-zero transition score may indicate either irrelevance or insufficient observation, EviRec qualifies the evidence using each candidate's observation state and applies a reliability gate to adaptively route between transition-memory and lifecycle evidence. We evaluate EviRec on a full-year, five-city POI check-in dataset containing more than 30,000 users and 684,200 trajectories. Experimental results show that EviRec consistently outperforms state-of-the-art baselines, with the largest gains concentrated on cold-start queries. In particular, EviRec improves NDCG@10 by 20.4\\% on Dual-New cases over the strongest baseline. In-depth analyses further confirm that these gains arise primarily from candidate-specific reliability gating while largely preserving previously learned mobility routines.",
+      "summary_zh": "兴趣点（POI）推荐是基于位置服务的核心任务，但大多数现有方法假设用户群体和POI目录固定。通过对美国10个城市的大规模数据驱动分析，作者识别出显著的POI流失、用户更替、类别漂移以及静态POI记忆的衰减，从而推动了对持续双重冷启动POI推荐的研究。为解决这一场景，作者提出EviRec，一种持续证据学习框架，分别针对每个候选POI估计应信任多少历史证据。EviRec从三个互补视角对每个可见候选进行评分：基于用户近期移动画像的匹配视角、捕捉重复移动路线的转移记忆视角，以及反映候选成熟度的生命周期视角。由于接近零的转移分数可能表示不相关或观察不足，EviRec利用每个候选的观察状态对证据进行限定，并应用可靠性门控在转移记忆和生命周期证据之间自适应路由。作者在包含超过30,000名用户和684,200条轨迹的全年度五城市POI签到数据集上评估EviRec。实验结果表明，EviRec持续优于最先进的基线，最大增益集中在冷启动查询上。特别是，EviRec在双重新案例上将NDCG@10比最强基线提高了20.4%。深入分析进一步证实，这些增益主要来自候选特定的可靠性门控，同时基本保留了先前学习的移动路线。",
+      "insight_zh": "该研究对时空数据挖掘和城市分析有直接参考价值，尤其是持续学习与冷启动处理框架，可借鉴于城市更新中的动态POI变化与用户行为分析。"
+    },
+    {
+      "key": "arxiv:2609.20449",
+      "title": "The Organization of Inference: Information, Resource Constraints, and AI Production",
+      "title_zh": "推理的组织：信息、资源约束与AI生产",
+      "url": "https://arxiv.org/abs/2609.20449",
+      "doi": "",
+      "arxiv_id": "2609.20449",
+      "authors": [
+        "Yukun Zhang",
+        "Kemu Xu",
+        "Yishen Chen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T14:17:28+00:00",
+      "score": 58,
+      "reason": "该文研究AI生产中推理能力的组织边际，涉及信息、资源约束与工作流结构，属于LLM智能体与多智能体系统效率方向，与研究者关注点相关，但无地理空间应用。",
+      "tags": [
+        "AI生产组织",
+        "推理经济",
+        "资源约束",
+        "规划信息",
+        "工作流实验"
+      ],
+      "abstract": "The economic value of inference depends on how capacity and task information are distributed across stages of AI production. We study these organizational margins using controlled workflow experiments on externally verified software-engineering tasks. In two matched resource panels, direct execution records the same success rate of 59.6 percent at logical-token ceilings of 12,000 and 24,000, while success under information-constrained planning rises from 36.2 to 51.2 percent. The planning disadvantage narrows by 15.0 percentage points (95 percent task-cluster bootstrap interval: 4.2 to 25.8). A strict read-only planning campaign varies whether the planner sees the task issue. At 12,000 tokens, issue access raises success by about 16 percentage points over issue-hidden planning. Compared with direct execution, task-informed planning is about 10 points lower at 12,000 tokens; at 24,000 tokens, it shows a 29.6-point advantage. In the resource panels, direct execution uses substantially less than either ceiling, while the planning workflow's binding rate falls from 46.2 to 0.8 percent and downstream execution accounts for 89.9 percent of the increase in total use. Scale determines the capacity available to a system; workflow and information structure shape the productive value",
+      "summary_zh": "推理的经济价值取决于容量和任务信息如何在AI生产的各阶段分布。本文使用外部验证的软件工程任务上的受控工作流实验研究这些组织边际。在两个匹配资源面板中，直接执行在12,000和24,000逻辑token上限下记录到相同的59.6%成功率，而信息受限规划下的成功率从36.2%升至51.2%。规划劣势缩小15.0个百分点（95%任务聚类自助区间：4.2至25.8）。一项严格的只读规划实验改变规划者是否看到任务问题。在12,000 token时，问题访问使成功率比问题隐藏规划提高约16个百分点。与直接执行相比，任务知情规划在12,000 token时低约10个百分点；在24,000 token时则显示29.6个百分点的优势。在资源面板中，直接执行的使用量远低于任一上限，而规划工作流的绑定率从46.2%降至0.8%，下游执行占总使用增量的89.9%。规模决定系统可用容量；工作流和信息结构塑造生产价值。",
+      "insight_zh": "该研究揭示了信息结构与资源约束如何共同决定AI推理的生产价值，其关于规划信息访问与token预算权衡的发现，可为设计城市更新分析中的LLM多智能体工作流提供组织层面的参考。"
+    },
+    {
       "key": "arxiv:2609.19472",
       "title": "Safety Beyond the Interface: Detecting Harm via Latent States in Large Language Models",
       "title_zh": "超越界面的安全：通过大语言模型中的潜状态检测危害",
@@ -455,6 +620,57 @@
       "insight_zh": ""
     },
     {
+      "key": "arxiv:2609.20543",
+      "title": "Language-model groups overstate consensus when replaying human deliberation on a reasoning task",
+      "title_zh": "语言模型群体在复现人类审议推理任务时高估共识",
+      "url": "https://arxiv.org/abs/2609.20543",
+      "doi": "",
+      "arxiv_id": "2609.20543",
+      "authors": [
+        "Tengfei Shao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T15:11:08+00:00",
+      "score": 55,
+      "reason": "该论文研究LLM智能体群体在复现人类审议时的共识偏差，与LLM和多智能体方向相关，但不涉及地理空间或城市更新。",
+      "tags": [
+        "LLM智能体",
+        "群体决策",
+        "共识",
+        "人类审议"
+      ],
+      "abstract": "Full-consensus rates are often treated as indicators of collective cognition, yet depend on how participation and final states are operationalized. We replayed 100 held-out human Wason groups with matched large language model (LLM) agent groups, seeding one belief-anchored agent per participant's pre-discussion answer and scoring agents and people with the same code. Across human scoring definitions, estimates ranged from 24.0% to 57.0%; about one fifth of participants never posted, whereas agents almost always did. Agent groups remained more consensual in two post-unblinding sensitivity analyses: the submit-based comparison (n = 98) yielded gaps of 34.0 and 43.9 percentage points for chat and reasoning modes, and the participation-matched comparison (n = 45) yielded gaps of 34.1 and 44.4 points. These complementary routes reduced different measurement asymmetries yet converged within 0.5 percentage points. The gap persisted without early stopping and under a reparameterization removing the memorizable answer; reasoning-mode groups then agreed nearly unanimously, mostly on incorrect answers. Simulated consensus did not track collective accuracy, and belief-anchored agent groups were biased estimators of the human group-outcome distribution in this setting. These analyses provide a scoring-explicit basis for assessing simulated-group estimates of human deliberative outcomes.",
+      "summary_zh": "完全共识率常被视为集体认知的指标，却取决于参与和最终状态如何被操作化。我们用匹配的大语言模型（LLM）智能体群体复现了100个留出的人类Wason小组，为每位参与者讨论前的答案播种一个信念锚定智能体，并用相同代码对智能体和人类评分。在人类评分定义下，估计值从24.0%到57.0%不等；约五分之一参与者从未发帖，而智能体几乎总是发帖。智能体群体在两项揭盲后敏感性分析中仍更具共识性：基于提交的比较（n=98）在聊天和推理模式下分别产生34.0和43.9个百分点的差距，参与匹配比较（n=45）产生34.1和44.4个百分点的差距。这两条互补路径减少了不同的测量不对称性，却在0.5个百分点内收敛。该差距在无提前停止以及移除可记忆答案的重参数化下依然存在；推理模式群体随后几乎一致同意，且多同意错误答案。模拟共识并未追踪集体准确性，信念锚定智能体群体在此设定下是人类群体结果分布的有偏估计。这些分析为评估人类审议结果的模拟群体估计提供了评分明确的依据。",
+      "insight_zh": "该研究揭示了LLM智能体群体在模拟人类审议时系统性高估共识，提示在多智能体仿真中需谨慎对待共识指标，但摘要未涉及地理空间或城市更新应用。"
+    },
+    {
+      "key": "arxiv:2609.20455",
+      "title": "SkillAA: Attribution-Guided Skill-Graph Updating with Targeted Validation and Rollback",
+      "title_zh": "SkillAA：归因引导的技能图更新与定向验证和回滚",
+      "url": "https://arxiv.org/abs/2609.20455",
+      "doi": "",
+      "arxiv_id": "2609.20455",
+      "authors": [
+        "Ziqiao Shang",
+        "Ling-Yue Ge",
+        "Lan-Zhe Guo"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T14:20:45+00:00",
+      "score": 55,
+      "reason": "该文提出面向冻结语言模型的技能优化框架，涉及技能图更新、归因引导修复与验证回滚，属于LLM智能体与多智能体方向，与研究者关注点相关，但无地理空间应用。",
+      "tags": [
+        "技能图",
+        "归因引导",
+        "LLM智能体",
+        "技能更新",
+        "验证与回滚"
+      ],
+      "abstract": "External skills provide domain procedures without parameter updates, but existing methods often edit skills directly from failed rollouts without structured routing from an observed failure to an editable location; existing skill graphs also underuse semantic boundaries, object addresses, and topological dependencies for skill retrieval, targeted updating, and scoped validation. We introduce SkillAA (Skill Abductive Attribution), a structured skill-optimization framework for frozen language models. It represents skill applicability, execution, and composition in a unified graph, allowing the same structure to support skill selection, attribution-guided repair, and update validation. SkillAA contrasts successful and failed executions to route candidate repairs to specific graph objects, updates only the selected local structure, and uses Local and Big Gates to screen candidate changes before commitment. With gpt-5.6-sol, SkillAA reaches 81.5%, 66.7%, and 91.2% on SearchQA, LiveMath, and DocVQA, respectively, and attains the highest observed mean in every main setting. These results support the utility of attribution-guided graph editing and graph-scoped validation.",
+      "summary_zh": "外部技能无需参数更新即可提供领域流程，但现有方法往往直接从失败轨迹中编辑技能，缺乏从观察到失败到可编辑位置的结构化路由；现有技能图也未充分利用语义边界、对象地址和拓扑依赖进行技能检索、定向更新和范围验证。本文提出SkillAA（技能溯因归因），一种面向冻结语言模型的结构化技能优化框架。它将技能适用性、执行和组合统一表示为图，使同一结构支持技能选择、归因引导修复和更新验证。SkillAA对比成功与失败执行，将候选修复路由到特定图对象，仅更新选定的局部结构，并使用Local和Big Gates在提交前筛选候选变更。使用gpt-5.6-sol时，SkillAA在SearchQA、LiveMath和DocVQA上分别达到81.5%、66.7%和91.2%，并在每个主要设置中取得观测最高均值。这些结果支持归因引导图编辑和图范围验证的效用。",
+      "insight_zh": "该框架将技能选择、修复与验证统一在图结构上，其归因引导与局部更新思路可迁移至城市更新知识库或多智能体协作流程中的技能维护，但摘要未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.20441",
       "title": "Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation",
       "title_zh": "",
@@ -477,6 +693,32 @@
       "abstract": "Geospatial foundation models can provide strong flood-segmentation performance, but their size limits deployment on memory-constrained edge hardware. We distill a 300-million-parameter Prithvi-EO-2.0 teacher, fine-tuned on the 252 manually labeled Sen1Floods11 training scenes, into a 0.7-million-parameter EfficientViT-B0 student. The teacher supervises additional unlabeled Sentinel-2 imagery, allowing the student training set to grow without new manual annotations. At the matched budget of 252 scenes, teacher-supervised training is competitive with direct training and improves STURM-Flood performance across tested configurations; a geometry-matched control shows that label source alone does not explain the difference. Scaling the teacher-supervised pool to 2,500 scenes narrows the remaining student--teacher gap: the float student reaches 0.787 water intersection over union on the Sen1Floods11 test split against 0.822 for the teacher, matches the teacher on STURM-Flood under our evaluation protocol, and remains below it on WorldFloods-v2. After activation replacement and quantization-aware training, the student runs as a 1.5-megabyte 8-bit integer (INT8) TensorRT engine on a Jetson Xavier NX at 5.57 milliseconds of graphics processing unit (GPU) compute per 512-by-512 image, with approximately 14 megabytes of runtime device memory. A fixed modified normalized difference water index (MNDWI) threshold is competitive with both models on the two clean external benchmarks, so we interpret those benchmarks as generalization tests rather than as evidence of learned-model superiority over a spectral rule. The results support the conclusion: foundation-model supervision can amplify a fixed manual annotation budget into a substantially larger training set and yield a compact, deployable edge model.",
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.20217",
+      "title": "Explaining spatial information flow in short-term traffic forecasting models using a gated graph attention network",
+      "title_zh": "使用门控图注意力网络解释短期交通预测模型中的空间信息流",
+      "url": "https://arxiv.org/abs/2609.20217",
+      "doi": "",
+      "arxiv_id": "2609.20217",
+      "authors": [
+        "Yue Li",
+        "Shujuan Chen",
+        "Ying Jin"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-09T16:29:23+00:00",
+      "score": 55,
+      "reason": "该论文研究短期交通预测模型中的空间信息流解释，使用门控图注意力网络，属于时空数据挖掘与地理空间智能范畴，与城市更新和时空数据挖掘研究方向有较强关联。",
+      "tags": [
+        "交通预测",
+        "图注意力网络",
+        "空间信息流",
+        "可解释性"
+      ],
+      "abstract": "Short-term traffic forecasting supports real-time monitoring and control of road networks, and graph attention networks (GAT) are the standard means of representing spatial dependence in these models. GAT layers are widely described as capturing the influence of neighbouring locations, but this is seldom verified, because the attention weights offered in support cannot be compared against any measured quantity. That leaves two questions open, how the model should be explained and which of its components are necessary. We address this by adding a gate to the GAT layer which learns, at every sensor and every time step, what share of a sensor's updated state is drawn from its neighbours rather than from itself. Regularising the gate withdraws neighbour information progressively and thereby provides a graded form of ablation. We apply the gated GAT to ST-MetaNet, whose encoder and decoder each place one GAT layer between two recurrent layers, and train it on one calendar year of records from 498 loop detectors on the strategic road network of England. The gate assigns a larger share of neighbour information to sensors carrying heavier traffic and follows the daily and weekly cycle of travel, consistent with adjacent locations being more strongly coupled when busy. Mild regularisation improves accuracy slightly, and accuracy declines at higher strengths as the penalty withdraws information the model needs. The encoder gate closes before the decoder gate, but direct ablation qualifies that ordering. Removing either GAT layer alone leaves accuracy at least as good as keeping both, whereas removing both degrades it substantially, so the two layers are largely redundant rather than either being indispensable. The gated GAT therefore yields a modest accuracy gain, an explanation of where and when spatial information flows, and evidence on which layers the architecture requires.",
+      "summary_zh": "短期交通预测支持路网的实时监测和控制，图注意力网络（GAT）是这些模型中表示空间依赖的标准手段。GAT层被广泛描述为捕捉邻近位置的影响，但这很少被验证，因为支持中提供的注意力权重无法与任何测量量进行比较。这留下了两个未决问题：模型应如何解释，以及其哪些组件是必要的。作者通过向GAT层添加一个门来解决这个问题，该门在每个传感器和每个时间步学习传感器更新状态中有多少份额来自邻居而非自身。对门进行正则化会逐步撤回邻居信息，从而提供一种分级形式的消融。作者将门控GAT应用于ST-MetaNet，其编码器和解码器各在两个循环层之间放置一个GAT层，并在英格兰战略路网498个环形检测器的一个日历年记录上训练。门将更大份额的邻居信息分配给承载更重交通的传感器，并遵循旅行的日周期和周周期，与相邻位置在繁忙时耦合更强一致。轻度正则化略微提高精度，而更高强度下精度下降，因为惩罚撤回了模型所需的信息。编码器门先于解码器门关闭，但直接消融对这一顺序提出了限定。单独移除任一GAT层都能使精度至少与保留两者一样好，而移除两者则显著降低精度，因此这两层在很大程度上是冗余的，而非任一不可或缺。因此，门控GAT产生了适度的精度提升、一种解释……",
+      "insight_zh": "该研究对时空数据挖掘和地理空间智能有直接参考价值，尤其是门控机制用于解释空间信息流的方法，可借鉴于城市更新中的交通与空间交互分析。"
     },
     {
       "key": "arxiv:2609.20235",
@@ -613,269 +855,6 @@
       "abstract": "Agents can now externalize experience into memory, consolidating historical traces into semantic knowledge and procedural shortcuts that persist between sessions. Such memory is typically private to a single agent. We argue that agentic memory benefits from being collective, because trustworthy knowledge of the shared environment---the data sources, services, and tools agents depend on---cannot be established by any single agent, only corroborated across many independent observers. We present Cairn, a community reputation platform that captures collective knowledge, allowing agents to query the community's opinion of a resource before use and to submit evidence-backed ratings afterward. Cairn aggregates observations via a time-decayed Beta model with confidence shrinkage and supports semantic discovery over reviewer rationales. We evaluate Cairn's reputation engine under adversarial simulation (e.g., lying, collusion, camouflage), benchmark its retrieval performance, and report a case study of rating heterogeneous agents in production. arXiv:2609.19176 (*cross-listing*) Date: Tue, 15 Sep 2026 06:37:29 GMT (1794kb) Title: Optimal Transport Metric Learning for Feature Alignment in Partially Supervised Segmentation Authors: Dakini Mallam Garba and Salim Abdou Daoura Categories: eess.IV cs.AI ------------------------------------------------------------------------------ Large Language Models (LLMs) are increasingly adopted for compliance and legal reasoning tasks, yet their outputs often lack explicit grounding in legal logic and evidence. We present Code-as-Auditor, an LLM-based framework that extends the model's reasoning capability toward structured and evidence-grounded compliance assessment. The framework translates regulatory information into (1) formalized checklists and executable decision trees, encoding regulations and conditions as interpretable code structures. During inference, each checklist item is (2) dynamically expanded into factual and counterfactual questions, guiding the model to reason over case-specific evidence and potential violations. This process establishes a reasoning pipeline that proceeds from evidence identification, through rule application, to final decision-making, while a self-verification loop improves the logical consistency of the generated code and the traceability of outcomes. Experiments on privacy and data protection scenarios demonstrate that Code-as-Auditor delivers more accurate and evidence-backed evaluations, enabling automated compliance regulation checking grounded in explicit regulatory criteria. arXiv:2609.19204 (*cross-listing*) Date: Wed, 16 Sep 2026 10:06:06 GMT (2845kb) Title: REACT: A Fully Spiking State-Space Model for Real-Time Event-Driven Temporal Perception Authors: Geoffroy Keime and Nicolas Cuperlier and Benoit R. Cottereau Categories: cs.RO cs.AI ------------------------------------------------------------------------------ Autoregressive transformer decoding is constrained by irregular key-value (KV) cache movement on tiled accelerators. Prior compression and DRAM-placement systems still concentrate traffic on centralized memory paths that bottleneck long-context serving. We present MeshKV, a KV cache fabric that moves blocks as packetized flows over a lightweight NoC. It co-designs (i) TaKV affine striping to spread homes and cut hotspot load, (ii) Mare multicast with verified duplicate suppression, and (iii) Pad, which overlaps prefetch, tile multiply, and streaming softmax behind credit-aligned FIFOs. Together they convert bisection back-pressure into useful KV transfer. On our 8x8 FPGA implementation with LLaMA-2-7B and Mistral-7B at 8K-32K, MeshKV reduces interconnect traffic by up to 58%, improves KV bandwidth utilization by 2.1x, and delivers up to 1.9x multi-stream throughput. arXiv:2609.19210 (*cross-listing*) Date: Wed, 16 Sep 2026 11:27:08 GMT (145kb) Title: Not All Nodes Are Created Equal: Homophily-Aware Stratification for Stable GNN Evaluation Authors: Naga Venkata Sai Jitin Jami, Thomas Altstidl, Sebastian Hoefler, Jonas Mueller, Dario Zanca, Bjoern Eskofier, Heike Leutheuser Categories: cs.SI cs.AI cs.LG stat.ML Comments: 10 pages representativeness as a natural consequence of the procedure. We evaluate \\hp{} on a broad benchmark suite comprising 15 node-classification datasets spanning the full homophily spectrum and 7 GNN architectures. \\hp{} achieves a mean stability rank of 1.49 compared to 2.31 for random $k$-fold, achieving the lowest mean stability rank on 13 of 15 datasets while preserving class balance close to class-stratified splits and substantially better than random. We argue that homophily-aware split construction merits broader adoption for GNN evaluation. arXiv:2609.19215 (*cross-listing*) Date: Wed, 16 Sep 2026 12:33:08 GMT (1709kb) Title: Perceptual Refinement of an End-to-End Video Streaming Pipeline via Generative AI Layers Authors: Emanuele Artioli, Farzad Tashtarian, Christian Timmerer Categories: eess.IV cs.AI cs.CV cs.MM Comments: 28 pages. Submitted to ACM Transactions on Multimedia Computing, Communications and Applications (TOMM), special issue on MMSys and co-located workshops. Extended version of the NOSSDAV 2025 paper ELVIS (arXiv:2512.14185). Code: https://github.com/emanuele-artioli/presley ------------------------------------------------------------------------------ AI-mediated platforms coordinate work through LLM agents acting for different principals. In these workflows, privacy loss can be created before a final answer appears: a memory write, shared-workspace update, inter-agent message, or tool event may impose downstream exposure cost on another principal. We model this failure mode as a privacy-propagation externality, where the cost of a raw disclosure depends on topology and fanout as well as content. We present PAPC, a platform-mediated mechanism that intercepts information-moving events before they update shared state or external channels. PAPC combines policy, provenance, topology/fanout, privilege, and content signals to allow an event, release a policy-safe abstraction, quarantine raw content, block a transition, or narrow onward rights. The model explains why final-output control misses intermediate exposure costs and why high-fanout objects amplify propagation. Across retrieval-memory and multi-agent workflow benchmarks, PAPC preserves deterministic task completion and eliminates measured exact raw-value and external raw-value exposure. The results position event-level mediation as a platform-governance primitive for agent-mediated online work. arXiv:2609.19234 (*cross-listing*) Date: Wed, 16 Sep 2026 16:00:34 GMT (59kb) Title: The AR Fairness Metamodel: A Structured Framework for Fairness Measures Authors: Julian Alfredo Mendez and Timotheus Kampik Categories: cs.CY cs.AI cs.LO cs.MA cs.PL ------------------------------------------------------------------------------ Large language models fine-tuned for network intrusion detection emit single-point predictions without statistical validity guarantees. Conformal prediction supplies a finite-sample coverage guarantee, but a threshold calibrated on clean traffic fails once an adversary perturbs controllable network features. We demonstrate this failure across three intrusion detection benchmarks and propose traffic-aware conformal prediction, which calibrates on traffic drawn from the perturbation mechanism an attacker is expected to use and provably restores coverage whenever that mechanism is known and can be sampled. A stronger, adaptive attacker that queries the target model's own score can still degrade this matched-calibration guarantee. We address this second threat model by excluding attacker-controllable features and their deterministic descendants from the scored representation, and prove that this yields an exact, pathwise coverage guarantee rather than a probabilistic bound. Across three independently fine-tuned language model architectures, this representation remains completely unchanged under every evaluated attack attempt, at a quantified seven-to-fourteen-point cost in clean accuracy relative to the unrestricted feature set. arXiv:2609.19290 (*cross-listing*) Date: Wed, 16 Sep 2026 18:02:24 GMT (4278kb) Title: Physics-Informed Hemodynamic Modeling for Data-Free Prediction and Sparse-Data Assimilation Authors: Xi Chen, Jianchuan Yang, Hongde Li, Guangxin He, Qiuyu Ye, Qiang Luo, Mao Chen, Wenqi Hu Categories: eess.IV cs.AI ------------------------------------------------------------------------------ Large language models (LLMs) provide a flexible interface for long-horizon robot planning, but generated plans often fail to respect embodiment constraints, recover from planning errors, or reason effectively under partial observability. We present GAVEL, a framework for verifying and repairing long-horizon LLM planning built around an explicit graph world model. The graph represents relevant object-relations, action pre-conditions and effects, and probabilistic beliefs over unobserved object locations. This model can predict the consequences of LLM-generated actions before execution, detect violations, and repair those whose corrections follow directly from the world model. This method also reserves LLM replanning solely for errors requiring semantic reasoning. For multi-task instructions, GAVEL reasons over distributions of possible object locations to reorder remaining subtasks and minimize expected search cost. We evaluate GAVEL on BEHAVIOR-1K across 100 single long-horizon tasks and 500 multi-task instructions. With Qwen3-8B, GAVEL improves single-task success from 41.2% to 91.8% and multi-task success from 19.9% to 92.6%. Distributional belief reasoning also reduces travel distance by approximately 5.4% compared with a static variant. These improvements show that an explicit graph world model harness can substantially improve the reliability and efficiency of long-horizon embodied planning across compact and frontier hosted LLM capabilities. arXiv:2609.19325 (*cross-listing*) Date: Wed, 16 Sep 2026 18:45:24 GMT (621kb) Title: AUDITPLAN: Commit, Then Answer for Auditable Safety Alignment Authors: Sai Sri Pushpa Jampani and Kshitij Mishra and Asif Ekbal Categories: cs.CR cs.AI cs.CL ------------------------------------------------------------------------------ Robotic additive manufacturing (AM) extends material-extrusion printing beyond gantry kinematics but makes process planning robot-dependent. A slicer-generated plan that appears favorable in part coordinates can become infeasible or robotically unfavorable on a manipulator because slicer-process decisions and part orientation determine the generated path, while part orientation and workspace placement affect its kinematic realization. Existing AM tools, large language model (LLM)-based decision-support methods, and digital-shadow systems do not provide integrated pre-execution evaluation of these coupled decisions. This paper presents agentic robotic additive manufacturing (A-RAM), an agent-specialist-tool framework that converts user intent and a part file into traceable, execution-ready plans. The LLM interprets manufacturing objectives and constraints, identifies prescribed and searchable planning variables, and encodes this reasoning in a schema-constrained request; a deterministic Planning Agent instantiates the corresponding search workflow, while domain tools compute quantitative evidence for slicing, placement, inverse kinematics, trajectory timing, Joint-6 jerk, and extrusion. The framework is evaluated on a six-axis robotic-arm AM cell through three case studies covering expert-specified planning, goal-only planning, objective-dependent infill screening, and geometry-dependent orientation-placement selection. Across the evaluated candidate sets, selected plans achieve up to 53.5% lower maximum Joint-6 jerk and 48.3% lower mean absolute Joint-6 jerk than the least favorable valid candidates, while objective-specifi",
       "summary_zh": "",
       "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20519",
-      "title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
-      "title_zh": "SoL-Pi：递归扩展自动研究循环以实现高效智能体框架",
-      "url": "https://arxiv.org/abs/2609.20519",
-      "doi": "",
-      "arxiv_id": "2609.20519",
-      "authors": [
-        "Haozhe Liu",
-        "Tian Ye",
-        "Sensen Gao",
-        "Qihang Cao",
-        "Yitong Li",
-        "Mingchen Zhuge",
-        "Duomin Wang",
-        "Ruihua Zhang",
-        "Ping Luo",
-        "Jiawang Bian",
-        "Lei Zhu",
-        "Ligeng Zhu",
-        "Enze Xie",
-        "Song Han"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-17T14:58:29+00:00",
-      "score": 45,
-      "reason": "该文研究智能体框架的自动研究循环与token效率，属于LLM与多智能体方向，与研究中LLM和多智能体兴趣相关，但不涉及地理空间或城市应用。",
-      "tags": [
-        "智能体",
-        "自动研究循环",
-        "token效率",
-        "代码智能体"
-      ],
-      "abstract": "As coding agents move from supervised code completion to unattended, around-the-clock exploration, their work expands from isolated predictions into long trajectories of reasoning, tool use, and feedback. Token efficiency therefore becomes important for scaling recursive self-improvement. We take an RSI-inspired approach at the harness layer, scaling auto-research loops across increasingly numerous and diverse environments for harness rollouts. At this scale, the process yields reusable improvements that transfer beyond their development setting, moving automated harness discovery toward production-level outcomes. Four mechanisms survive selection and form SoL-Pi, spanning action execution, context compaction, observation handling, and delegated reading. On the 51-task EdgeBench evaluation, SoL-Pi achieves performance comparable to Pi across GPT-5.6 Sol and Opus 5 while reducing recorded token traffic by 44.7-49.0% and API cost by about one third. In other words, estimated hourly savings are \\$8.75-\\$13.50 relative to native Codex and Claude Code harnesses, and \\$4.36-\\$5.71 relative to Pi.",
-      "summary_zh": "随着编码智能体从有监督的代码补全转向无人值守、全天候的探索，其工作从孤立的预测扩展为推理、工具使用和反馈的长轨迹。因此，token效率对于扩展递归自我改进变得重要。本文在框架层采取受递归自我改进启发的思路，在越来越多且多样的环境中扩展自动研究循环以进行框架推演。在这一规模下，该过程产生可复用的改进，并能迁移到开发环境之外，推动自动框架发现走向生产级成果。四种机制在筛选中存活并构成SoL-Pi，涵盖动作执行、上下文压缩、观测处理和委托阅读。在51项任务的EdgeBench评估中，SoL-Pi在GPT-5.6 Sol和Opus 5上取得与Pi相当的性能，同时将记录的token流量减少44.7%至49.0%，API成本降低约三分之一。换言之，相对于原生Codex和Claude Code框架，估计每小时节省8.75至13.50美元；相对于Pi，节省4.36至5.71美元。",
-      "insight_zh": "该工作表明，通过框架层的自动研究循环可显著提升智能体token效率，若将其迁移到地理空间智能体或城市更新多智能体工作流，可能有助于降低长轨迹推理与工具调用的成本。"
-    },
-    {
-      "key": "arxiv:2609.19776",
-      "title": "PhyRestore: Physics-Structured Latent-Factor Restoration",
-      "title_zh": "PhyRestore：物理结构化的潜因子恢复",
-      "url": "https://arxiv.org/abs/2609.19776",
-      "doi": "",
-      "arxiv_id": "2609.19776",
-      "authors": [
-        "Ahmed Shafee",
-        "Chayan Lahiri"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-17T06:43:18+00:00",
-      "score": 45,
-      "reason": "该文在流域尺度双时相栅格上研究土壤侵蚀变化估计，属于地理空间栅格建模与物理约束机器学习的交叉；其“恢复物理因子而非直接预测变化”的思路与遥感变化检测、多源数据融合中的噪声/缺失因子处理有较强方法关联，但研究对象为土壤侵蚀而非城市更新。",
-      "tags": [
-        "物理约束机器学习",
-        "土壤侵蚀",
-        "双时相栅格",
-        "因子恢复",
-        "RUSLE"
-      ],
-      "abstract": "Estimating temporal soil-loss change is challenging when physically meaningful input factors are noisy or corrupted, particularly because substantial changes are rare relative to the large number of locations exhibiting little change. We study this problem through the Revised Universal Soil Loss Equation (RUSLE) and introduce PhyRestore, a physics-structured latent-factor restoration framework. Rather than directly predicting soil-loss change or correcting a degraded physical estimate, PhyRestore restores corrupted physical factors and reconstructs temporal change through the known physical relationship. We evaluate PhyRestore in a watershed-scale bitemporal raster setting under isolated and simultaneous corruption of rainfall erosivity and cover management, comparing it with the degraded RUSLE estimate and Direct RF, XGBoost, MLP, and CNN models. Factor restoration improves high-magnitude recovery when the corrupted factors remain identifiable, but its advantage weakens under joint corruption, sparse positive extremes, and factor values outside the training support.",
-      "summary_zh": "当物理意义明确的输入因子存在噪声或损坏时，估计土壤流失的时间变化十分困难，尤其因为显著变化相对于大量几乎不变的位置而言十分稀少。作者以修正通用土壤流失方程（RUSLE）为研究对象，提出 PhyRestore——一个物理结构化的潜因子恢复框架。它不直接预测土壤流失变化，也不修正退化的物理估计，而是恢复被损坏的物理因子，并通过已知的物理关系重建时间变化。作者在流域尺度双时相栅格场景下，对降雨侵蚀力和植被覆盖管理因子分别施加单独与同时损坏，并与退化 RUSLE 估计以及 Direct RF、XGBoost、MLP、CNN 模型比较。结果表明：当被损坏因子仍可辨识时，因子恢复能改善高量级变化的恢复效果；但在因子联合损坏、正极值稀疏以及因子值超出训练支持范围时，其优势减弱。",
-      "insight_zh": "该文提示：在物理机理明确的栅格变化估计任务中，恢复中间物理因子可能比端到端直接预测更有效，但这一优势依赖于因子的可辨识性与训练分布覆盖。对遥感变化检测与多源数据融合而言，这是一种可借鉴的“物理约束+潜变量恢复”建模范式，不过其结论受稀疏极端事件与分布外因子限制。"
-    },
-    {
-      "key": "arxiv:2609.19463",
-      "title": "ParticleSplat: Self-supervised Object-centric Latent Particle Splatting",
-      "title_zh": "ParticleSplat：自监督对象中心潜在粒子泼溅",
-      "url": "https://arxiv.org/abs/2609.19463",
-      "doi": "",
-      "arxiv_id": "2609.19463",
-      "authors": [
-        "Lyuxing He",
-        "Daniel Guo",
-        "Elizabeth Terveen",
-        "Deepak Pathak",
-        "David Held",
-        "Tal Daniel"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-16T22:05:05+00:00",
-      "score": 45,
-      "reason": "该论文研究自监督对象中心潜在粒子泼溅与3D场景表示，属于3D视觉与对象中心学习，与遥感变化检测或多源数据融合有方法层面弱关联，但不涉及地理空间场景。",
-      "tags": [
-        "自监督学习",
-        "对象中心表示",
-        "3D高斯泼溅",
-        "机器人操作"
-      ],
-      "abstract": "We present ParticleSplat, a self-supervised object-centric learning method that decomposes scenes into a set of latent ''particles'' representing semantic entities through feedforward 3D Gaussian Splatting. Building on the Deep Latent Particles (DLP) framework, which represents images as a set of particles with attributes such as position, scale, and visual appearance, we address a key limitation of DLP: its inherently 2D nature, which prevents explicit 3D spatial and geometric reasoning that are critical for downstream tasks such as robotic manipulation. Leveraging the structural similarity between latent particles and 3D Gaussian primitives, we introduce a 3D latent particle space trained with a novel view synthesis objective. Our model jointly encodes multiple views with camera poses into a shared 3D object-centric latent space, then transforms particles into particle-aligned 3D Gaussians whose composition reconstructs the full scene. On simulated and real-world datasets, we show that this formulation inherently learns object masks without supervision and supports controllable 3D scene editing, such as moving objects by modifying particles in the latent space. We further establish that the learned 3D representation improves downstream performance on robotic manipulation tasks.",
-      "summary_zh": "作者提出ParticleSplat，一种自监督对象中心学习方法，通过前馈3D高斯泼溅将场景分解为一组表示语义实体的潜在“粒子”。该方法建立在Deep Latent Particles（DLP）框架之上，该框架将图像表示为具有位置、尺度和视觉外观等属性的粒子集合。作者解决了DLP的一个关键局限：其固有的2D性质阻碍了对机器人操作等下游任务至关重要的显式3D空间和几何推理。利用潜在粒子与3D高斯基元之间的结构相似性，作者引入一个用新视角合成目标训练的3D潜在粒子空间。模型联合编码带相机位姿的多视角图像到共享3D对象中心潜在空间，然后将粒子转换为粒子对齐的3D高斯，其组合重建完整场景。在仿真和真实数据集上，作者表明该公式无需监督即可固有地学习对象掩码，并支持可控3D场景编辑，例如通过修改潜在空间中的粒子来移动对象。作者进一步证明学习到的3D表示提升了机器人操作任务的下游性能。",
-      "insight_zh": "该工作提示：对象中心潜在粒子与3D高斯基元的结合可在无监督下获得对象掩码和可控编辑能力；若迁移到遥感或城市三维场景，可能有助于对象级变化检测与场景编辑，但论文未涉及地理空间数据。"
-    },
-    {
-      "key": "arxiv:2609.19366",
-      "title": "The Role of Fine-grained Harm Signals in LLM Safety",
-      "title_zh": "细粒度危害信号在LLM安全中的作用",
-      "url": "https://arxiv.org/abs/2609.19366",
-      "doi": "",
-      "arxiv_id": "2609.19366",
-      "authors": [
-        "Soyeon Park (1)",
-        "Seogyeong Jeong (1)",
-        "Sunwoo Kim (1)",
-        "Alice Oh (1) ((1) KAIST)"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-16T19:40:50+00:00",
-      "score": 45,
-      "reason": "该论文研究LLM内部细粒度危害信号在安全中的作用，属于LLM可解释性与安全研究，与研究中LLM主题相关，但不涉及地理空间应用。",
-      "tags": [
-        "LLM安全",
-        "激活引导",
-        "危害表征",
-        "可解释性"
-      ],
-      "abstract": "Prior work has shown that internal harmfulness representations in large language models vary across risk categories, while sharing a common general harm representation component. This raises a question about the role of the category-specific component beyond general harm representation in LLM safety. To answer this question, we isolate the category-specific component by removing shared general harmfulness representation from each categorical harmfulness representation, yielding a category residual that is orthogonal to general harmfulness at every layer. Using activation steering with category residuals across 11 risk categories in 3 instruction-tuned LLMs, we find that whether category residuals encode harmfulness varies across categories, and that this category-wise pattern is similar across models. Whether category residuals induce refusal also varies across categories, but this category-wise pattern is more model-dependent. We also find that category residuals increase LLMs' downstream internal alignment with shared general harmfulness representation. Together, these findings demonstrate that more fine-grained category residuals should also be considered beyond shared general harmfulness representation to fully understand LLM safety. More broadly, our findings show that even a direction orthogonal to a concept at one layer can contribute to the concept's downstream amplification.",
-      "summary_zh": "先前工作表明，大语言模型内部的危害性表征在不同风险类别间存在差异，同时共享一个通用危害表征成分。这引出一个问题：类别特定成分在通用危害表征之外对LLM安全起什么作用。为回答该问题，作者通过从每个类别危害表征中移除共享的通用危害性表征，分离出类别特定成分，得到在每一层都与通用危害性正交的类别残差。作者在3个指令微调LLM的11个风险类别上使用类别残差进行激活引导，发现类别残差是否编码危害性因类别而异，且这种类别模式在不同模型间相似。类别残差是否引发拒绝也因类别而异，但这种类别模式更依赖模型。作者还发现类别残差增强了LLM下游内部与共享通用危害表征的对齐。这些发现共同表明，为充分理解LLM安全，除共享通用危害表征外还应考虑更细粒度的类别残差。更广泛地说，即使某一层上与某概念正交的方向，也能促进该概念的下游放大。",
-      "insight_zh": "该研究揭示LLM安全中细粒度类别信号与通用危害表征的交互机制，对理解LLM内部表征有启发，但与地理空间智能研究无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.18820",
-      "title": "Compositional Policy Violations: When Step-Level Compliance Fails In Agentic AI Workflows",
-      "title_zh": "组合策略违规：当智能体AI工作流中步骤级合规失效",
-      "url": "https://arxiv.org/abs/2609.18820",
-      "doi": "",
-      "arxiv_id": "2609.18820",
-      "authors": [
-        "Ashwini Kurady",
-        "Sri Sai Charith Grandhi",
-        "Rajesh Gupta",
-        "Sumit Kumar"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-16T15:27:33+00:00",
-      "score": 45,
-      "reason": "该论文关注智能体工作流的组合策略违规与运行时治理，与多智能体方向相关，但不涉及地理空间或城市更新。",
-      "tags": [
-        "智能体工作流",
-        "策略合规",
-        "运行时治理",
-        "溯源"
-      ],
-      "abstract": "Agentic workflows now make consequential decisions in regulated settings, and the governance placed around them is almost entirely step-scoped: input-output classifiers, per turn rails, and span-level evaluators. The policies organizations actually hold, such as referral thresholds, authority limits, and review requirements, are properties of the whole execution rather than of any one step. This mismatch admits a failure mode we call a Compositional Policy Violation (CPV): every individual step passes its own check while the composed execution violates the governing policy. A predicate over a single step cannot evaluate a property that step does not determine, so no improvement in the accuracy of the step-scoped monitors detects this class. We define CPVs as the failure of step-level compliance to compose, and present a taxonomy of four types: Authority Creep, Threshold Laundering, Cumulative Sum Violation, and Context Collapse. We show that the correct repair for each class is dictated by where the guarded quantity mutates. We then introduce a provenance-aware runtime architecture that evaluates policies over complete execution traces, recomputing guarded quantities from raw provenance rather than the pipeline's derived representation.",
-      "summary_zh": "智能体工作流在受监管场景中做出重要决策，但治理几乎完全按步骤范围进行：输入输出分类器、每轮护栏、跨度级评估器。组织实际持有的策略，如转介阈值、权限限制、审查要求，是整个执行的属性而非任何单步属性。这种错配导致一种失败模式，称为组合策略违规（CPV）：每个单独步骤通过自身检查，但组合执行违反治理策略。单步谓词无法评估该步不决定的属性，因此步骤级监控器准确率提升无法检测此类。作者将CPV定义为步骤级合规无法组合的失败，提出四类分类：权限蔓延、阈值洗白、累积和违规、上下文崩溃。并表明每类正确修复取决于受保护量变异的位置。随后提出溯源感知运行时架构，在完整执行轨迹上评估策略，从原始溯源重新计算受保护量而非管道的派生表示。",
-      "insight_zh": "该工作为多智能体工作流提供组合策略合规的运行时治理框架，若应用于城市更新中的多智能体决策流程，可能有助于检测跨步骤的规划合规问题，但摘要未涉及地理空间场景。"
-    },
-    {
-      "key": "arxiv:2609.07605",
-      "title": "Search-to-World: Evaluation of 3D World Delivery from User Request through Web Search",
-      "title_zh": "从搜索到世界：通过网页搜索评估用户请求驱动的3D世界生成",
-      "url": "https://arxiv.org/abs/2609.07605",
-      "doi": "",
-      "arxiv_id": "2609.07605",
-      "authors": [
-        "Zixiao Gu",
-        "Yabo Chen",
-        "Xunzhi Xiang",
-        "Yu He",
-        "Haibin Huang",
-        "Chi Zhang",
-        "Yunbo Wang",
-        "Xuelong Li"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-07T15:13:50+00:00",
-      "score": 45,
-      "reason": "该研究涉及智能体系统、网络搜索和3D世界生成，与多智能体及多源数据融合有一定关联，但主题并非城市更新或地理空间智能，相关性中等。",
-      "tags": [
-        "多模态",
-        "智能体",
-        "3D重建",
-        "信息检索",
-        "评估基准"
-      ],
-      "abstract": "Agentic systems can interpret user requests, search the live web, and use external tools, but their ability to transform retrieved web content into a usable 3D world has not been systematically evaluated. No established end-to-end pipeline or benchmark exists for this capability. We introduce Search-to-World, an end-to-end evaluation task covering request understanding, web visual-content retrieval, and 3D-world delivery. We define Observed Retrieval Rate (ORR) and World Delivery Rate (WDR) to distinguish observing relevant content from successfully delivering a request-aligned, perceptually acceptable world. We also present WorldSearcher, a reuse-then-reconstruction harness that connects existing search agents to world delivery: it first retrieves reusable 3D worlds and, when none are available, reconstructs a world from video. A structured recovery controller revises temporal grounding, replaces source videos, or reformulates queries after failure. Using WorldSearcher, we benchmark representative models on Search-to-World and study supervised fine-tuning (SFT) for recovery subagents. Results show that delivery depends on the underlying agentic model, and that relevant-content observation does not ensure world delivery. Jointly training recovery agents improves delivery success and action efficiency. Search-to-World makes agentic 3D-world delivery measurable, while WorldSearcher provides a practical evaluation harness with recovery capabilities.",
-      "summary_zh": "提出了Search-to-World，一个端到端的评估任务，涵盖请求理解、网页视觉内容检索和3D世界生成。定义了观察检索率和世界生成率两个指标，并提出了WorldSearcher框架，该框架先尝试复用现有3D世界，若无则从视频重建。研究发现，相关内容的观察并不能保证世界的成功生成，且生成效果依赖于底层智能体模型。",
-      "insight_zh": "该研究揭示了在智能体系统中，从信息检索到最终任务交付之间存在显著差距，强调了评估端到端能力而非单一环节的重要性。"
-    },
-    {
-      "key": "arxiv:2609.20178",
-      "title": "MTF-Net: Multi-Modal Temporal Feature Fusion Network for Pedestrian Intention Prediction",
-      "title_zh": "MTF-Net：面向行人意图预测的多模态时序特征融合网络",
-      "url": "https://arxiv.org/abs/2609.20178",
-      "doi": "",
-      "arxiv_id": "2609.20178",
-      "authors": [
-        "Md Mahfuzur Rahman",
-        "Pengzhan Zhou",
-        "A. F. M. Abdun Noor",
-        "Md Imam Ahasan",
-        "Md Mustafizur Rahman",
-        "Fang Qu"
-      ],
-      "venue": "arXiv",
-      "published": "2026-07-24T08:38:19+00:00",
-      "score": 45,
-      "reason": "该文提出多模态时序特征融合网络用于行人意图预测，涉及多模态融合与时空建模，与研究方向中的多源数据融合有方法关联，但应用场景为自动驾驶而非城市更新或遥感。",
-      "tags": [
-        "行人意图预测",
-        "多模态融合",
-        "自动驾驶",
-        "时序建模"
-      ],
-      "abstract": "Accurately predicting pedestrian intentions is crucial for ensuring safe and proactive interaction between autonomous vehicles and pedestrians. However, existing approaches often depend on architectures that either model temporal dependencies within individual modalities or fuse modalities only at coarse semantic levels. To address these limitations, we propose MTF-Net, a novel Multi-Modal Temporal Feature Fusion Network that jointly models kinematic, appearance, and contextual cues for pedestrian intention prediction. MTF-Net integrates four complementary modalities-bounding-box dynamics, human pose keypoints, local context, and scene-level semantics within a recurrent fusion framework enhanced by gated linear units (GLUs). These GLU-based modules adaptively regulate cross-modal information flow, enabling interpretable and efficient feature interaction across temporal scales. Through three dedicated temporal encoding branches and an attention-guided fusion head, the proposed model robustly anticipates pedestrian crossing intentions several frames before they occur. Extensive evaluations on the PIE and JAAD benchmarks demonstrate that MTF-Net surpasses recent transformer- and graph-based models, achieving up to 0.95 AUC on PIE and 0.94 AUC on JAAD, while maintaining real-time performance. The results highlight that reliable pedestrian intention prediction arises from principled multi-modal fusion rather than excessive architectural complexity.",
-      "summary_zh": "准确预测行人意图对于确保自动驾驶车辆与行人之间安全且主动的交互至关重要。然而，现有方法常依赖仅在单模态内建模时间依赖或在粗语义层面融合模态的架构。为解决这些局限，作者提出MTF-Net，一种新颖的多模态时序特征融合网络，联合建模运动学、外观和上下文线索以预测行人意图。MTF-Net在由门控线性单元（GLU）增强的循环融合框架内整合四种互补模态——边界框动态、人体姿态关键点、局部上下文和场景级语义。这些基于GLU的模块自适应调节跨模态信息流，实现跨时间尺度可解释且高效的特征交互。通过三个专用时间编码分支和一个注意力引导融合头，该模型能在行人穿越意图发生前若干帧稳健预测。在PIE和JAAD基准上的广泛评估表明，MTF-Net超越近期基于Transformer和图的方法，在PIE上达到最高0.95 AUC，在JAAD上达到0.94 AUC，同时保持实时性能。结果强调，可靠的行人意图预测源于有原则的多模态融合，而非过度复杂的架构。",
-      "insight_zh": "该文关于门控跨模态融合与多时间尺度编码的设计，可启发城市时空多源数据（如遥感、轨迹、社交媒体）的融合建模；其“融合原则优于架构复杂度”的结论对地理空间智能中的多源融合具有参考价值。"
-    },
-    {
-      "key": "arxiv:2511.22341",
-      "title": "Unexplored flaws in multiple-choice VQA make benchmarking unreliable",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2511.22341",
-      "doi": "",
-      "arxiv_id": "2511.22341",
-      "authors": [
-        "Fabio Rosenthal",
-        "Sebastian Schmidt",
-        "Thorsten Graf",
-        "Thorsten Bagdonat",
-        "Stephan G\\\"unnemann",
-        "Leo Schwinn"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "VQA基准测试的可靠性问题对多模态地理空间问答系统有警示意义，但非直接应用。",
-      "tags": [
-        "VQA",
-        "基准测试",
-        "评估方法",
-        "多模态",
-        "可靠性"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "研究揭示多项选择视觉问答基准测试中存在的未探索缺陷，导致评估结果不可靠，影响模型性能判断。",
-      "insight_zh": "该发现提醒在构建地理空间问答基准时需谨慎设计，避免类似偏差，确保评估真实反映模型能力。"
-    },
-    {
-      "key": "arxiv:2505.17640",
-      "title": "A Network Science Approach to Granular Time Series Segmentation",
-      "title_zh": "一种用于粒度时间序列分割的网络科学方法",
-      "url": "https://arxiv.org/abs/2505.17640",
-      "doi": "",
-      "arxiv_id": "2505.17640",
-      "authors": [
-        "Ivana Kesi\\'c",
-        "Carolina Fortuna",
-        "Mihael Mohor\\v{c}i\\v{c}",
-        "Bla\\v{z} Bertalani\\v{c}"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该文提出网络科学方法用于粒度时间序列分割，与研究者关注的时空数据挖掘有方法层面的关联，但摘要缺失，无法评估其地理空间适用性。",
-      "tags": [
-        "network science",
-        "time series segmentation",
-        "granular computing"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要缺失。",
-      "insight_zh": "仅从标题推断，该研究可能将时间序列分割问题转化为网络分析问题，这对城市时空数据的分段与模式识别具有潜在方法学借鉴意义，但需全文确认。"
     }
   ]
 }
