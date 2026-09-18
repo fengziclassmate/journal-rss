@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 862,
+    "analyzed": 872,
     "high": 8,
     "medium": 39,
     "low": 59,
-    "below_threshold": 756
+    "below_threshold": 766
   },
   "papers": [
     {
@@ -5229,6 +5229,35 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究细节。根据标题推测，该工作可能提出一种从历史模式中学习校准且模型无关的正确性预测方法，用于评估模型输出的正确性。",
       "insight_zh": "由于摘要缺失，无法判断其具体方法、数据集或结论。仅从标题推断，该方向可能与LLM可靠性评估相关，对地理空间智能中模型输出可信度分析可能有间接启发，但缺乏足够信息支撑进一步判断。"
+    },
+    {
+      "key": "arxiv:2609.13778",
+      "title": "GEAR: From Dynamic Encoding to Dynamic Activation in Social Trajectory Prediction",
+      "title_zh": "GEAR：从动态编码到动态激活的社会轨迹预测",
+      "url": "https://arxiv.org/abs/2609.13778",
+      "arxiv_id": "2609.13778",
+      "authors": [
+        "Jiaheng Chen",
+        "Jiaxing Li",
+        "Leixia Wang",
+        "Jianan Ju",
+        "Tinghe Zhang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-12T07:46:36+00:00",
+      "score": 35,
+      "reason": "该文研究人类轨迹预测中的社会交互动态激活，属于时空轨迹建模与多智能体交互预测，与时空数据挖掘和多智能体研究有方法层面的关联，但不涉及城市更新、遥感变化检测或地理空间数据融合。",
+      "tags": [
+        "轨迹预测",
+        "社会交互",
+        "动态激活",
+        "时空建模"
+      ],
+      "summary_zh": "人类轨迹预测需要同时建模个体运动模式与智能体之间的社会交互。现有方法通过注意力机制、图结构和时间编码器在捕捉动态社会上下文方面取得了显著进展，但多数方法主要关注社会信息如何被编码，而较少明确关注编码后的社会上下文在生成未来轨迹时应如何生效。作者认为，动态社会编码并不必然意味着动态社会激活：同一交互上下文在不同未来时间范围和场景密度下可能需要不同的激活强度，交互证据强时应增强社会线索，证据弱或噪声大时应抑制。为此，作者提出 GEAR，一种面向人类轨迹预测的生成感知偏置激活模型。基于偏置分解的轨迹生成公式，GEAR 在每个未来步骤最终轨迹合成前动态激活个体运动偏置项和社会共振偏置项，从而显式控制个体与社会偏置分量何时以及以多强参与生成。在 ETH-UCY、SDD 和 NBA 上的实验表明，GEAR 持续改进基于共振的基线，并达到有竞争力的最先进性能。对激活模式和密度分组误差的进一步分析验证了在轨迹生成过程中校准编码社会上下文的重要性。代码已公开。",
+      "insight_zh": "该文的核心启示是，编码社会交互并不等于在生成时有效利用社会交互；在时空多智能体预测中，按未来时间范围和场景密度动态调节社会线索强度，可能比单纯改进编码器更关键。"
     },
     {
       "key": "arxiv:2605.27864",
@@ -16293,6 +16322,30 @@
       "insight_zh": "摘要缺失，无法推断方法细节或实验结果。该主题与地理空间智能的关联较弱。"
     },
     {
+      "key": "arxiv:2609.13771",
+      "title": "Homeostatic Continual Learning",
+      "title_zh": "稳态持续学习",
+      "url": "https://arxiv.org/abs/2609.13771",
+      "arxiv_id": "2609.13771",
+      "authors": [
+        "Yue Jin"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-12T07:29:29+00:00",
+      "score": 15,
+      "reason": "该文提出稳态持续学习方法，属于持续学习与智能体世界模型，与多智能体和 LLM 智能体研究有概念关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "持续学习",
+        "灾难性遗忘",
+        "世界模型",
+        "智能体"
+      ],
+      "summary_zh": "该文形式化了一个持续学习问题，并提出名为“稳态持续学习”的方法，使 AI 智能体能在变化环境中持续学习而不发生灾难性遗忘。方法核心是当智能体在输出中遇到异常值时，在环境数据中寻找异常值。通过该方法，智能体逐步完善其模型和策略，并在越来越多上下文中表现良好。作者还提出可用该方法构建世界模型，其中智能体将世界中的对象分解为特征，将抽象对象转化为可比较的概念实例，并通过特征将概念映射到意图。文中讨论了使该方法实用所需的工作、与人工智能多个领域的联系以及该方法的更广泛意义。",
+      "insight_zh": "该文的核心思路是将输出异常与环境数据异常关联，以驱动持续学习；对多智能体或世界模型研究有概念启发，但原文未提供地理空间实验或具体数据集结果。"
+    },
+    {
       "key": "arxiv:2606.06833",
       "title": "Hearing the Unspoken: Language Model Priors for Acoustic Adversarial Attacks",
       "title_zh": "听见未言之声：面向声学对抗攻击的语言模型先验",
@@ -17267,7 +17320,21 @@
       ],
       "categories": [
         "cs.CL",
-        "https://github.com/pulse-energy-eu/slopshape"
+        "https://github.com/pulse-energy-eu/slopshape",
+        "https://github.com/pulse-energy-eu/slopshape.",
+        "v2:",
+        "corrected",
+        "description",
+        "of",
+        "brief",
+        "construction",
+        "and",
+        "several",
+        "reported",
+        "counts;",
+        "added",
+        "AI",
+        "disclosure"
       ],
       "published": "2026-09-14T10:55:30+00:00",
       "score": 12,
@@ -19703,6 +19770,32 @@
       "insight_zh": "摘要缺失，无法确认其方法或结论；若涉及多语言地理文本处理，可能对多语言地理空间LLM应用有间接意义，但当前信息不足以判断。"
     },
     {
+      "key": "arxiv:2609.13776",
+      "title": "Surprising Effectiveness of Self-Demonstrations in Enhancing Schema-Ontology Mapping with LLMs",
+      "title_zh": "自演示在增强 LLM 模式-本体映射中的意外有效性",
+      "url": "https://arxiv.org/abs/2609.13776",
+      "arxiv_id": "2609.13776",
+      "authors": [
+        "Siddhesh Thombre",
+        "Manasi Patwardhan",
+        "Sunita Sarawagi"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-12T07:42:55+00:00",
+      "score": 10,
+      "reason": "该文研究利用 LLM 进行关系数据库模式与本体映射，属于知识表示与语义集成，与 LLM 方法相关，但不涉及地理空间数据、城市更新或遥感。",
+      "tags": [
+        "LLM",
+        "本体映射",
+        "神经符号",
+        "知识表示"
+      ],
+      "summary_zh": "将异构关系数据库集成到集中式本体中仍是企业知识表示中的持续挑战，主要源于语义异质性、晦涩的模式命名、缺失元数据以及关系模式与本体模型之间的抽象鸿沟。尽管大语言模型具备强语义推理能力，作者表明直接通过单次提示或朴素多阶段流水线应用它们，在模式-本体映射上表现不佳。该文提出一种自演示驱动的方法，将神经符号任务分解与自动生成模式引导、依赖感知演示的新机制相结合。该方法包含两个关键策略：一是将任务神经符号分解为级联子任务，由符号约束结构化搜索空间，LLM 在每个聚焦子任务内进行语义推理；二是由领域无关模式引导的自生成演示来监督每个子任务。在 RODI 基准的三个最具挑战性场景上，该方法达到最先进性能，相比传统模式到本体映射技术以及近期基于 LLM 的模式到本体和模式匹配方法，F1 提升约 25 个百分点。消融研究进一步揭示了模式引导自演示的显著收益以及神经符号任务分解的互补优势。",
+      "insight_zh": "该文说明，在复杂语义映射任务中，将 LLM 与符号约束和自动生成演示结合，可能比直接提示更有效；这一思路可迁移到地理空间本体与多源数据模式对齐，但原文未涉及地理空间场景。"
+    },
+    {
       "key": "arxiv:2607.29397",
       "title": "Studying quantization trade-offs for efficient inference deployment in machine translation",
       "title_zh": "研究机器翻译中高效推理部署的量化权衡",
@@ -21013,6 +21106,32 @@
       "insight_zh": "该研究揭示了无参考评估中质量估计的失败模式，并提出语言识别惩罚的融合策略；其伪参考构建与选择器校准思路对缺乏真值标签的遥感变化检测评估有方法论类比价值，但论文本身不涉及遥感。"
     },
     {
+      "key": "arxiv:2609.13637",
+      "title": "Identity Is More Than Recall: A Benchmark for Persistent Identity in Deployed AI Agents",
+      "title_zh": "身份不只是回忆：部署 AI 智能体持久身份基准",
+      "url": "https://arxiv.org/abs/2609.13637",
+      "arxiv_id": "2609.13637",
+      "authors": [
+        "Zhenyu Zhao",
+        "Roy Zhao"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-09-12T01:06:00+00:00",
+      "score": 10,
+      "reason": "该文提出部署 AI 智能体持久身份保真基准，属于 LLM 智能体评估，与多智能体研究有概念关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "AI 智能体",
+        "身份保真",
+        "基准评测",
+        "持久性"
+      ],
+      "summary_zh": "持久智能体需要能够区分其可回忆的身份事实与所表达和所执行的身份事实的评估。作者提出 PAI-Bench，一个提供商中立的基准，用于衡量对版本化、更新治理的身份契约的保真度。它将回忆、组合、行为执行、抵抗、持久性、谱系和角色条件更新分开，同时将评分 oracle 保持在目标进程之外。两个冻结活动覆盖十六个合成档案、三十二个探针和三个独立初始化的目标配置，产生 1,536 条保留响应。独立于评判者的字面审计发现，48/48 个原子响应中存在直接父标识符，但只有 1/48 个隐式自画像中存在。在八个档案上，显式字段线索在相同四句指令下将三个身份标识符的联合出现从 0/8 提高到 7/8。另一个启动时身体标签替换将完整称谓出现从 1/8 提高到 7/8，而父标识符仍然缺失。这些对比揭示了测试部署中提示依赖的组件选择和组件对启动线索的特定敏感性。重放相同因子响应还产生 Claude 标题均值比 Astra 低 12.5 个百分点，表明评估者敏感性与目标行为可分离。研究每个条件使用单目标样本，并辅以后验审计和后续实验。PAI-Bench 提供可复现评估协议，将事实可用性、身份表达和行为执行作为身份契约保真度的不同方面进行测量。",
+      "insight_zh": "该文提示，在评估持久 AI 智能体时，回忆事实与表达、执行身份可能并不一致；若研究涉及 LLM 智能体长期行为，应区分不同身份维度并注意评估者敏感性。"
+    },
+    {
       "key": "arxiv:2603.11321",
       "title": "Hindsight-Anchored Policy Optimization: Learning Through Hindsight with Thompson Sampling-Inspired Adaptive Gating",
       "title_zh": "后见之明锚定策略优化：通过后见之明学习并结合Thompson采样启发的自适应门控",
@@ -22309,6 +22428,36 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法、数据与结论。",
       "insight_zh": "摘要为空，无法确认其空间锚定与残差校正的具体机制；从标题推测其利用动作上下文提升第一人称姿态估计精度，与地理空间智能关联有限。"
+    },
+    {
+      "key": "arxiv:2609.13729",
+      "title": "A Variational Optimal Transport Operator on Incompressible Flow",
+      "title_zh": "不可压缩流上的变分最优传输算子",
+      "url": "https://arxiv.org/abs/2609.13729",
+      "arxiv_id": "2609.13729",
+      "authors": [
+        "Jinjin He",
+        "Shenyifan Lu",
+        "Sinan Wang",
+        "Zhiqi Li",
+        "Duowen Chen",
+        "Bo Zhu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.GR"
+      ],
+      "published": "2026-09-12T05:43:44+00:00",
+      "score": 10,
+      "reason": "该文提出不可压缩流上的变分最优传输神经算子，属于生成建模与流体计算，与遥感变化检测或多源地理空间融合无直接关系，但最优传输方法在地理空间数据融合中可能有潜在方法关联。",
+      "tags": [
+        "最优传输",
+        "神经算子",
+        "不可压缩流",
+        "生成模型"
+      ],
+      "summary_zh": "作者提出变分不可压缩最优传输（VIOT）算子，一种用于摊销式不可压缩密度传输的生成神经算子。给定新的源-目标密度对，VIOT 预测无散度速度场，并通过前馈推理生成完整传输轨迹，替代伴随流体求解器和可微模拟基线所需的逐对小时级优化。系统由三部分组成：通过流函数或向量势表示在构造上强制不可压缩性；平衡端点精度与流平滑度的正则化不可压缩传输目标；以及在新密度对和网格分辨率上摊销求解的傅里叶神经算子骨干。这些组件共同使不可压缩传输成为可复用的神经算子，便于多种传输过程。生成能力还扩展到训练分布之外，VIOT 可在实时交互系统中为用户绘制的源-目标对生成不可压缩传输。作者在 2D 和 3D 密度传输基准上展示 VIOT。2D 和 3D 推演每对在数秒内完成，而 2D 比较中的逐实例基线需从头优化每个新对，耗时约一小时，在线加速约 10^4 倍。",
+      "insight_zh": "该文展示了神经算子摊销最优传输求解的潜力，可将逐实例优化转为前馈推理；这一思路对需要快速密度或分布传输的地理空间应用有潜在启发，但原文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2608.25241",
@@ -25831,27 +25980,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13776",
-      "title": "Surprising Effectiveness of Self-Demonstrations in Enhancing Schema-Ontology Mapping with LLMs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13776",
-      "arxiv_id": "2609.13776",
-      "authors": [
-        "Siddhesh Thombre",
-        "Manasi Patwardhan",
-        "Sunita Sarawagi"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-12T07:42:55+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13804",
       "title": "StepPrune: Adaptive Sequential Visual Token Selection across Multimodal Large Language Models",
       "title_zh": "",
@@ -26878,7 +27006,7 @@
     {
       "key": "arxiv:2609.13785",
       "title": "Partition Scores Are Not System Scores: Deployment-Fidelity Gaps in Decomposed Algorithm Selection",
-      "title_zh": "",
+      "title_zh": "分区分数不等于系统分数：分解式算法选择中的部署保真度差距",
       "url": "https://arxiv.org/abs/2609.13785",
       "arxiv_id": "2609.13785",
       "authors": [
@@ -26892,10 +27020,15 @@
       ],
       "published": "2026-09-12T07:55:42+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究分解式算法选择中的部署保真度差距，属于机器学习系统与基准评测方法，与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合没有直接关系。",
+      "tags": [
+        "算法选择",
+        "AutoML",
+        "基准评测",
+        "部署保真度"
+      ],
+      "summary_zh": "该文关注分解式算法选择中，分区层面的 oracle 式分数与可部署端到端效用之间的差距。作者将部署保真度差距 G(R) 定义为分区层面效用与可部署端到端效用之差，并推导出两个核算结果：一个逐实例的边际遗憾稳定性条件，用于判断分区阶段的族选择何时是部署最优的；以及一个紧的分区-only 识别区间，当其严格跨零时，分区层面报告无法证明可部署赢家。作者在五个公开算法选择基准上评估，涵盖表格 AutoML 与组合 CSP/SAT，发现每个分解式流水线都有正的 G(R)，范围从 TabZilla 上的 0.012 到 PROTEUS-2014 上的 0.13。十个分解式与扁平式决策中有四个点估计符号发生变化；在 PROTEUS-2014 上，33 个百分点的分区优势缩小为 20 个百分点的端到端优势。训练侧验证差距校正诊断在四个符号变化单元上恢复了点估计的可部署符号；作者强调它是报告辅助工具，不能替代直接端到端评估。结论是分区分数与端到端分数应并排报告。",
+      "insight_zh": "该文提示，在评估任何分解式地理空间智能流水线时，分区或中间阶段的 oracle 分数可能高估实际部署效果；若研究涉及多阶段模型选择，应同时报告端到端结果并检查符号变化。"
     },
     {
       "key": "arxiv:2510.10774",
@@ -27871,7 +28004,7 @@
     {
       "key": "arxiv:2609.13730",
       "title": "JumpStart Your Policy Learning with Lessons from 160,000 Training Runs",
-      "title_zh": "",
+      "title_zh": "用 160,000 次训练运行的经验加速你的策略学习",
       "url": "https://arxiv.org/abs/2609.13730",
       "arxiv_id": "2609.13730",
       "authors": [
@@ -27886,10 +28019,15 @@
       ],
       "published": "2026-09-12T05:50:26+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文是大规模离线强化与模仿学习实证研究，属于策略学习基准与可复现性，与地理空间智能或城市更新无直接关系。",
+      "tags": [
+        "离线策略学习",
+        "基准评测",
+        "超参数调优",
+        "可复现性"
+      ],
+      "summary_zh": "离线策略学习的可靠进展依赖于谨慎报告、良好调优的基线和跨多样条件的评估。已有工作表明结果对报告选择、超参数调优和数据集属性敏感，但这些变异来源尚未在理解其如何影响结论所需的规模上被系统研究。为填补这一空白，作者开展大规模离线强化与模仿学习实证研究，在 114 个数据集上训练超过 160,000 个策略。在这一规模下，没有算法占主导：最强方法的总体性能往往接近，但领先者在不同环境间差异显著。作者发现，适当的超参数调优经常重新排列感知到的算法排名，基准组成也可能产生冲突结论。作者还研究超参数敏感性及跨环境迁移，识别出推导强默认配置的简单策略。基于这些发现，作者开发了一个数据集条件推荐器，为实践者提供任务特定算法推荐。最后，作者发布 JumpStart：包含所有训练策略、每模型分数与超参数、所有环境的强基线、训练与评估代码以及可扩展网站的资源套件。",
+      "insight_zh": "该文强调，在策略学习或任何机器学习基准中，超参数调优和基准组成可能显著改变算法排名；若研究涉及多方法比较，应报告调优协议和跨环境差异，而非仅依赖聚合分数。"
     },
     {
       "key": "arxiv:2509.23043",
@@ -28091,27 +28229,6 @@
       "insight_zh": "仅从标题推断，该工作可能涉及统计依赖关系的零样本估计，但缺乏摘要信息，无法确认其方法、数据或与地理空间分析的关联。"
     },
     {
-      "key": "arxiv:2609.13637",
-      "title": "Identity Is More Than Recall: A Benchmark for Persistent Identity in Deployed AI Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13637",
-      "arxiv_id": "2609.13637",
-      "authors": [
-        "Zhenyu Zhao",
-        "Roy Zhao"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.MA"
-      ],
-      "published": "2026-09-12T01:06:00+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2602.07273",
       "title": "Hybrid Feedback-Guided Optimal Learning for Wireless Interactive Panoramic Scene Delivery",
       "title_zh": "无线交互式全景场景传输的混合反馈引导最优学习",
@@ -28137,25 +28254,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作可能涉及无线网络中交互式全景场景传输的优化学习方法。",
       "insight_zh": "由于摘要缺失，无法进行实质性推断。从标题看，该研究可能对全景视频传输优化有参考价值，但与GIS博士研究方向关联度低。"
-    },
-    {
-      "key": "arxiv:2609.13771",
-      "title": "Homeostatic Continual Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13771",
-      "arxiv_id": "2609.13771",
-      "authors": [
-        "Yue Jin"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-12T07:29:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.14959",
@@ -28517,30 +28615,6 @@
       ],
       "summary_zh": "随着深度学习模型成为现代医疗的基础，GDPR和HIPAA等隐私法规规定的“被遗忘权”要求有效的机器遗忘（MU）以从训练模型中移除敏感患者数据。然而，现有MU技术常难以应对根本性的“隐私-效率-效用”（PEU）三难困境，在数据常呈现严重类别不平衡和长尾分布的医学场景中尤为突出。此类情况下，标准遗忘方法可能因多数类的梯度主导而无法保护关键临床知识，或错误删除诊断罕见病症所必需的特征。为应对这些挑战，我们提出GRIN+，一个面向不平衡医学场景中快速精确数据擦除的新型机器遗忘框架。GRIN+通过分析“遗忘集”和“保留集”的梯度贡献，在参数层面将遗忘特定知识与泛化表征解耦。它引入类别自适应影响评分机制以纠正梯度主导，并采用方向约束更新策略以防止关键临床知识被意外侵蚀。在多个医学数据集（包括皮肤癌ISIC、脑肿瘤MRI和乳腺超声BUSI）上的全面基准测试表明，GRIN+实现了PEU三难困境的最优平衡。实验结果显示，GRIN+在保持高诊断准确率和稳健隐私的同时，相较现有基线显著提升了运行效率。我们开源了GRIN+代码和基准以支持后续研究。",
       "insight_zh": "该文的梯度贡献分析与类别自适应机制在方法论上具有一定通用性，但应用场景为医学隐私保护，与地理空间智能研究无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.13778",
-      "title": "GEAR: From Dynamic Encoding to Dynamic Activation in Social Trajectory Prediction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13778",
-      "arxiv_id": "2609.13778",
-      "authors": [
-        "Jiaheng Chen",
-        "Jiaxing Li",
-        "Leixia Wang",
-        "Jianan Ju",
-        "Tinghe Zhang"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-12T07:46:36+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.13535",
@@ -29374,7 +29448,7 @@
     {
       "key": "arxiv:2609.13556",
       "title": "Domain-Specific Jargon in Large Language Models: A Comparative Analysis between General-Purpose and Specialist Models",
-      "title_zh": "",
+      "title_zh": "大语言模型中的领域特定术语：通用模型与专家模型的比较分析",
       "url": "https://arxiv.org/abs/2609.13556",
       "arxiv_id": "2609.13556",
       "authors": [
@@ -29388,15 +29462,20 @@
       ],
       "published": "2026-09-11T21:35:04+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文比较通用与医学微调 LLM 在领域术语上的表现，属于 LLM 领域适应与可解释性，与地理空间智能无直接关系。",
+      "tags": [
+        "LLM",
+        "领域术语",
+        "医学基准",
+        "可解释性"
+      ],
+      "summary_zh": "大语言模型在通用任务上表现优异，但在高度专业的技术领域性能往往下降。此外，人们对这些模型中领域特定术语的参数知识如何编码知之甚少。作者通过贡献两个新的医学术语评估基准来填补这一空白，并评估通用 Llama-3.1 模型与在医学领域数据上微调的变体。令人意外的是，通用模型在两个任务上都优于医学微调模型。使用机制可解释性工具，作者发现医学微调模型存在系统性误校准模式。微调模型没有重组参数知识，而是更强调与偏好术语预测相关的一小部分模型组件。作者发现，针对基准任务应用组件重加权策略可成功抑制这些组件，并缩小与通用基线的差距。作者还观察到，一些术语敏感组件可将知识迁移到涉及材料科学术语的相同任务，表明它们编码了部分领域无关的专业术语概念。结果提供了一个案例研究，其中医学微调检查点并未比通用对应模型提升术语理解，强调不应假设领域适应必然在专业术语上带来更好性能。",
+      "insight_zh": "该文提醒，领域微调不一定提升专业术语理解，甚至可能因过度强调部分组件而损害表现；若研究涉及地理空间领域 LLM 微调，应验证术语理解而非默认领域适应有效。"
     },
     {
       "key": "arxiv:2609.13773",
       "title": "Does Reasoning Improve Psychological Depth in Large Language Models? It Depends on Who's Judging",
-      "title_zh": "",
+      "title_zh": "推理能提升大语言模型的心理深度吗？取决于谁来评判",
       "url": "https://arxiv.org/abs/2609.13773",
       "arxiv_id": "2609.13773",
       "authors": [
@@ -29414,10 +29493,15 @@
       ],
       "published": "2026-09-12T07:34:54+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究 LLM 作为评判者在开放式生成心理深度评价中的有效性，属于 LLM 评估方法，与地理空间智能、城市更新或遥感无直接关系。",
+      "tags": [
+        "LLM-as-a-Judge",
+        "心理深度",
+        "主观评价",
+        "评估有效性"
+      ],
+      "summary_zh": "LLM-as-a-Judge 评估器越来越多地用于开放式生成评分，但评判者在开发集上与人类评分的相关性，并不保证在输出高度接近且人类偏好主观时仍能有效测量。作者通过短篇故事中的心理深度研究这一失效模式。七名人类读者和一个在原始标量心理深度量表数据集上选出的 LLM 评判集成（ρ = 0.646）评估了 60 对盲测、提示匹配的故事对，来自 GPT-5 对 GPT-4o 以及 DeepSeek-R1 对 DeepSeek-V3。人类偏好没有显示普遍的推理优势：GPT-5 相比 GPT-4o 略受偏好（60.0–62.9%），而 DeepSeek-R1 落后于 V3（42.9%），读者间一致性接近随机（Krippendorff's α = 0.070），读者内一致性和反复出现的权重模式提示结构化异质性而非随机作答。相比之下，评判者在 89.0% 的维度级比较和 60 对中的 59 对聚合 PDS 上偏好推理输出，且在全部五种评估器配置中一致；其分数与句子长度和词汇多样性等表面特征相关。结果表明，开发集性能不足以证明在分布偏移下的部署有效性，点估计评判者可能掩盖主观人类评价中的异质性。",
+      "insight_zh": "该文提醒，在依赖 LLM 评判进行主观或开放式评价时，开发集相关性可能无法迁移到分布偏移场景；若研究使用 LLM 评分，应关注评判者是否偏向表面特征并报告人类评价异质性。"
     },
     {
       "key": "arxiv:2609.13800",
@@ -30019,7 +30103,7 @@
     {
       "key": "arxiv:2609.13559",
       "title": "Carbon-Aware Routing for Function Calling in Edge-Cloud LLM Systems",
-      "title_zh": "",
+      "title_zh": "边缘-云 LLM 系统中函数调用的碳感知路由",
       "url": "https://arxiv.org/abs/2609.13559",
       "arxiv_id": "2609.13559",
       "authors": [
@@ -30035,10 +30119,15 @@
       ],
       "published": "2026-09-11T21:51:39+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究边缘-云 LLM 系统中函数调用的碳感知路由，属于可持续计算与系统优化，与地理空间智能无直接关系。",
+      "tags": [
+        "边缘-云",
+        "碳感知路由",
+        "函数调用",
+        "LLM 系统"
+      ],
+      "summary_zh": "具备函数调用能力的大语言模型正成为现代智能体 AI 系统的关键，但当前部署通常将推理路由到强大的云端模型，导致显著能耗和碳排放。作者通过碳感知路由框架应对这一可持续性挑战，该框架在结合异构硬件上边缘与云 LLM 的三层边缘-云架构中分配函数调用查询。其核心是一个轻量级 k-NN 预测器，在统一语义-词汇嵌入空间中估计每个边缘层上查询特定的准确率、延迟和功耗。这些预测与实时电网碳强度结合，将每个查询路由到能够成功执行的最低排放层。在先进函数调用基准和 LLM 家族上评估，该框架在匹配云端准确率的同时，平均减少运营碳排放 4 倍。",
+      "insight_zh": "该文的核心启示是，在边缘-云协同推理中，将查询特定性能预测与实时碳强度结合，可在不牺牲准确率的情况下降低排放；这一路由思路可启发地理空间智能系统的可持续部署，但原文未涉及地理空间任务。"
     },
     {
       "key": "arxiv:2609.15367",
@@ -30884,6 +30973,8 @@
       "authors": [
         "Honglin Guo",
         "Tao Gui",
+        "Kun Cai",
+        "Haodong Chen",
         "Yicheng Chen",
         "Guanting Dong",
         "Qiming Ge",
@@ -30896,6 +30987,7 @@
         "Yanjiang Liu",
         "Xinyu Lu",
         "Haijun Lv",
+        "Zerun Ma",
         "Junlin Shang",
         "Qisheng Su",
         "Guoqiang Wang",
@@ -30910,13 +31002,13 @@
         "Yajie Yang",
         "Chengfeng Zhao",
         "Haoran Zhao",
+        "Penghao Zhao",
         "Ruojun Zhou",
         "Yunhua Zhou",
+        "Dongsheng Zhu",
         "Yicheng Zou",
-        "Kun Cai",
         "Qiye Cai",
         "Xinmeng Che",
-        "Haodong Chen",
         "Jiabei Chen",
         "Jiahao Chen",
         "Jiayi Chen",
@@ -30945,11 +31037,7 @@
         "Peng Li",
         "Qilong Li",
         "Zhuoqun Li",
-        "Jiaxiang Liu",
-        "Shuainan Liu",
-        "Tong Liu",
-        "Yi Liu",
-        "et al. (76 additional authors not shown)"
+        "et al. (77 additional authors not shown)"
       ],
       "categories": [
         "cs.AI"
@@ -31377,31 +31465,6 @@
       ],
       "summary_zh": "以智能体为中心的通用价值函数（ACGVF）策略构造基于内部信念状态z_t与内部目标，但目标此前被假定为外部提供。本注记使用分层隐马尔可夫模型（HHMM）的形式化，统一并扩展了这两种方法。",
       "insight_zh": "该文为纯理论注记，未涉及地理空间或城市应用，对研究者的多智能体方向仅有非常间接的理论参考价值。"
-    },
-    {
-      "key": "arxiv:2609.13729",
-      "title": "A Variational Optimal Transport Operator on Incompressible Flow",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13729",
-      "arxiv_id": "2609.13729",
-      "authors": [
-        "Jinjin He",
-        "Shenyifan Lu",
-        "Sinan Wang",
-        "Zhiqi Li",
-        "Duowen Chen",
-        "Bo Zhu"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.GR"
-      ],
-      "published": "2026-09-12T05:43:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.14180",
