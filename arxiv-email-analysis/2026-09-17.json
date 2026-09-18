@@ -2,11 +2,11 @@
   "date": "2026-09-17",
   "analysis_stats": {
     "total": 595,
-    "analyzed": 434,
+    "analyzed": 444,
     "high": 3,
-    "medium": 20,
-    "low": 29,
-    "below_threshold": 382
+    "medium": 21,
+    "low": 31,
+    "below_threshold": 389
   },
   "papers": [
     {
@@ -528,6 +528,37 @@
       "insight_zh": "该研究提示，在地理空间智能体工具调用场景中，若任务分布相对固定，LoRA SFT可能是更稳妥的选择；若需跨数据集迁移，可考虑GRPO或数据混合策略，但需注意其优势有限。"
     },
     {
+      "key": "arxiv:2609.18088",
+      "title": "Mask 2D-3D: Adaptive Dual-Masked Autoencoder Network for Image-to-Point Cloud Registration",
+      "title_zh": "Mask 2D-3D：用于图像到点云配准的自适应双掩码自编码器网络",
+      "url": "https://arxiv.org/abs/2609.18088",
+      "arxiv_id": "2609.18088",
+      "authors": [
+        "Zhixin Cheng",
+        "Jiacheng Deng",
+        "Xiaotian Yin",
+        "Baoqun Yin",
+        "Richang Hong",
+        "Tianzhu Zhang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-16T03:47:07+00:00",
+      "score": 62,
+      "reason": "该文研究图像到点云的无检测配准，采用双掩码自编码器与强化学习掩码策略实现跨模态特征提取与对应估计，与多源数据融合和地理空间智能中的跨模态配准问题相关，但未涉及城市更新或时空数据挖掘。",
+      "tags": [
+        "多模态配准",
+        "图像-点云配准",
+        "掩码自编码器",
+        "跨模态特征学习",
+        "强化学习"
+      ],
+      "summary_zh": "针对图像到点云配准中因域与模态差异、特征提取器敏感度有限以及非重叠区域导致的错误对应问题，本文提出跨模态双掩码自编码器框架（ID-MAE）及基于相似度的强化学习掩码策略（SRLM）。该方法利用跨模态相似度与强化学习自适应地掩蔽信息量大的位置，缩小模态差距，并通过在特征提取阶段强制表示一致性增强跨模态表示学习，从而实现更可靠的2D-3D对应估计。在RGB-D Scenes v2与7-Scenes基准上取得当前最优的配准性能。",
+      "insight_zh": "该工作提示，将掩码自编码器与自适应掩码策略结合，可能为跨模态（如遥感影像与点云/深度数据）配准提供统一特征提取与对应估计的思路，但其在真实大范围地理空间场景中的适用性尚需验证。"
+    },
+    {
       "key": "arxiv:2609.18842",
       "title": "Infinite-Parameter LLMs: Generating and Adapting Weights from Live Data",
       "title_zh": "无限参数LLM：从实时数据生成与适配权重",
@@ -830,6 +861,37 @@
       ],
       "summary_zh": "大语言模型（LLM）存在长尾缺陷：文化特定事实，尤其是拉丁美洲等代表性不足地区的事实，在预训练语料中出现太少而无法可靠记忆。检索增强生成（RAG）通过将生成建立在外部文本上来解决这一问题，但知识图谱（KG）等结构化替代方案对进入上下文的内容提供更紧密的控制，并可能带来可解释性和可更新性的提升。本文在LatamQA（一个涵盖八个主题类别的文化基础多选题数据集）上对Graph-RAG与标准RAG进行基准测试。图谱在主设置中由Wikipedia文章通过近期开放域抽取器KGGen端到端构建，无需人工整理。G-Retriever与RAG具有竞争力，使用标准KG将基础LLM的错误降低72%，使用基准感知变体降低78%，随着图谱朝向任务相关内容，与RAG的差距进一步缩小。训练得到的投影可零样本迁移到葡萄牙语，无需目标语言微调，表明具有多语言覆盖能力。",
       "insight_zh": "该研究表明结构化知识图谱在文化长尾问答中可部分替代或补充RAG，且图谱内容与任务相关性的对齐程度会影响其相对优势；零样本跨语言迁移提示该投影方式可能具备一定语言无关性。"
+    },
+    {
+      "key": "arxiv:2609.18058",
+      "title": "Finder: Agentic Closed-Loop Object Finding for Embodied Grounding",
+      "title_zh": "Finder：面向具身定位的智能体闭环目标查找",
+      "url": "https://arxiv.org/abs/2609.18058",
+      "arxiv_id": "2609.18058",
+      "authors": [
+        "Shixiong Xu",
+        "Zhiyuan Chen",
+        "Song Ding",
+        "Rui Luo",
+        "Xiaowei Liang",
+        "Dongxu Miao",
+        "Zhiying Du"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T03:02:45+00:00",
+      "score": 58,
+      "reason": "该文提出具身智能中的闭环目标查找原语，涉及3D场景中的开放词汇目标检索与空间定位，与地理空间智能和多智能体/具身智能方向相关，但场景为室内HM3D与RGB-D而非城市或遥感尺度。",
+      "tags": [
+        "具身智能",
+        "开放词汇目标检索",
+        "3D场景理解",
+        "智能体闭环",
+        "视觉语言导航"
+      ],
+      "summary_zh": "在部分观测的3D场景中查找语言指代的目标是具身智能体的核心能力。现有方法或将目标搜索与在线探索耦合（当相关观测已被捕获时代价高昂），或以静态一次性方式查询预建的开放词汇地图与场景图。本文提出Finder，一种面向具身定位的智能体闭环目标查找原语。Finder不将定位视为从固定场景表示中的被动检索，而是维护一个类型化循环状态，连接查询条件规划、范围化证据收集、候选验证与接受/继续/中止控制；当证据不完整或模糊时，循环可重定向后续感知与比较，而非简单返回检索到的最高分目标。在Habitat/HM3D的开放词汇具身目标检索与真实RGB-D场景中，Finder将平均1米成功率较强基线提升15.75个百分点，并可迁移至序列目标定位与具身目标中心问答。",
+      "insight_zh": "该文的闭环智能体框架提示，将规划、证据收集与验证耦合可能提升复杂空间环境中的目标定位鲁棒性，其思路或可启发城市环境中基于多源观测的目标搜索与验证，但实验场景为室内，向城市尺度的迁移需重新设计。"
     },
     {
       "key": "arxiv:2609.17310",
@@ -1395,6 +1457,35 @@
       "insight_zh": "研究表明大语言模型的策略行为与其内部计算机制并非简单对应，后训练可改变决策路径而不显著影响外部行为，这对理解和设计基于LLM的智能体系统具有启示。"
     },
     {
+      "key": "arxiv:2609.18072",
+      "title": "Teaching AI, Robotics, & Community: A Hubs-Based K-12 Education Framework for Reaching Rural Schools",
+      "title_zh": "教授AI、机器人与社区：面向农村学校的基于枢纽的K-12教育框架",
+      "url": "https://arxiv.org/abs/2609.18072",
+      "arxiv_id": "2609.18072",
+      "authors": [
+        "Maxwell J. Jacobson",
+        "Gustavo Rodriguez-Rivera",
+        "Petros Drineas",
+        "Yexiang Xue"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-09-16T03:18:24+00:00",
+      "score": 45,
+      "reason": "该文提出基于枢纽的K-12 AI与机器人教育框架，并使用空间马尔可夫模型模拟其在印第安纳州的扩散，涉及空间建模与地理扩散分析，与GIS方法有方法学交集，但应用领域为教育而非城市更新或遥感。",
+      "tags": [
+        "K-12教育",
+        "机器人教育",
+        "空间马尔可夫模型",
+        "农村教育",
+        "枢纽框架"
+      ],
+      "summary_zh": "K-12机器人与AI教育难以规模化，尤其在缺乏持续技术指导的农村地区。本文提出AI、机器人与社区（ARC）框架：高校培训本科生导师并为附近K-12团队举办工作坊，成熟学校项目可成为次级枢纽支持更多学校，形成自我强化的教育循环，使指导覆盖在地理上传播甚至可能超线性增长。作者在一所大学进行试点部署，创建了三支农村机器人团队；五点李克特量表显示K-12编程知识、资源获取与实践机会平均提升2.00、2.25与1.25分，本科生教学信心等指标提升1.00至1.29分。此外，作者构建ARC增长的空间马尔可夫模型并以印第安纳州为试验台模拟：在中等条件下，40年后ARC覆盖该州1925所公立K-12学校中的74%，产生992个机器人项目，而自然增长仅预计161个。",
+      "insight_zh": "该文展示了空间马尔可夫模型在教育项目地理扩散模拟中的应用，其建模思路或可迁移至城市更新政策或技术扩散的时空模拟，但研究本身聚焦教育推广，未涉及地理空间数据挖掘或遥感。"
+    },
+    {
       "key": "arxiv:2606.11897",
       "title": "Notes2Skills: From Lab Notebooks to Certainty-Aware Scientific Agent Skills",
       "title_zh": "Notes2Skills：从实验室笔记到不确定性感知的科学智能体技能",
@@ -1913,6 +2004,34 @@
       "insight_zh": "该工作展示了将领域代码库转化为智能体学习环境的范式，其思路或可迁移至地理空间分析代码库（如GIS工具链）的智能体化，但论文本身聚焦科学代码，未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.17985",
+      "title": "RideWay: Benchmarking Efficient Task Completion for Tool-Using Language Agents",
+      "title_zh": "RideWay：面向工具使用语言智能体的高效任务完成基准",
+      "url": "https://arxiv.org/abs/2609.17985",
+      "arxiv_id": "2609.17985",
+      "authors": [
+        "Qingnuan Han",
+        "Boli Fang",
+        "Mingzhi Hou",
+        "Claire Liu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-16T01:15:21+00:00",
+      "score": 40,
+      "reason": "该文提出面向网约车智能体的效率基准与效率效用指标，涉及工具使用语言智能体与出行服务场景，与LLM和多智能体方向相关，且网约车属于城市交通议题，但研究重点是评测方法而非地理空间分析。",
+      "tags": [
+        "工具使用智能体",
+        "效率基准",
+        "网约车",
+        "状态化工具调用",
+        "交互效率"
+      ],
+      "summary_zh": "AI智能体通常以是否完成任务来评估，但在交互式服务场景中，成功的智能体仍可能因反复提问、冗余搜索或可避免的修改而令用户沮丧。本文提出RideWay，一个面向网约车智能体的效率中心基准，运行于有状态工具调用环境，并提出效率效用（Efficiency Utility）——一种成功门控指标，根据相对于任务特定参考工作量的多余工具调用与面向用户的轮次对成功轨迹进行折扣。人类配对偏好用于校准相对惩罚，反映服务流程的整体权衡：额外对话常带来可见摩擦，而额外工具使用有时可验证约束或保持用户意图。在58个任务与24个模型上，多余轮次的拟合惩罚约为多余工具调用的两倍。在任务不相交的留出偏好上，效率效用总体准确率为78.7%：当轨迹仅在轮次上不同时为90.6%，但仅工具调用不同时仅为随机水平——这也是人类标注者一致性最低的维度。",
+      "insight_zh": "该基准将交互效率与任务成功并列度量，其思路或可启发对城市服务类智能体（如出行规划、政务问答）的效率评估，但论文聚焦网约车场景与评测方法，未涉及地理空间数据挖掘或城市更新分析。"
+    },
+    {
       "key": "arxiv:2609.07534",
       "title": "Proprioception-Anchored Cross-Modal Pretraining for Zero-Shot Sim-to-Real Contact-Rich Assembly",
       "title_zh": "多模态双工交互智能体",
@@ -2413,6 +2532,38 @@
       ],
       "summary_zh": "摘要缺失，无法提供具体内容概述。",
       "insight_zh": "仅从标题看，该研究可能提供层次化时空Transformer的预测建模范式，或对城市时空数据挖掘有方法借鉴意义，但因摘要缺失，无法确认其数据、任务与结论。"
+    },
+    {
+      "key": "arxiv:2609.18068",
+      "title": "From a River in Gilead to the Inference Distributions of Large Language Models: Covert Dialect Bias and Linguistic Profiling at Scale",
+      "title_zh": "从基列的河流到大语言模型的推理分布：大规模隐性方言偏见与语言画像",
+      "url": "https://arxiv.org/abs/2609.18068",
+      "arxiv_id": "2609.18068",
+      "authors": [
+        "Chowdhury Mohammad Abdullah",
+        "Rita Orji"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "Ethics,",
+        "and",
+        "Society",
+        "(AIES",
+        "2026)"
+      ],
+      "published": "2026-09-16T03:13:40+00:00",
+      "score": 35,
+      "reason": "该文研究LLM在住房相关社会判断中的隐性方言偏见，涉及住房筛选这一城市社会议题与LLM公平性，与城市更新中的社会公平议题有间接关联，但方法为社会语言学探测而非地理空间分析。",
+      "tags": [
+        "方言偏见",
+        "大语言模型",
+        "住房筛选",
+        "社会语言学",
+        "概率分布"
+      ],
+      "summary_zh": "大语言模型日益部署于住房筛选等高风险领域。对齐技术虽可缓解生成文本中的显性种族偏见，却常无法触及内部概率分布中的隐性态度关联。本文借鉴匹配伪装社会语言学范式，考察四种英语变体（标准美式英语SAE、非裔美国人白话英语AAVE、尼日利亚标准英语NSE、尼日利亚皮钦语NP）在住房相关社会判断中的隐性方言偏见。使用260组语义匹配的四元句子与对数概率评分，在租户筛选、邻里接纳与室友选择三种社会距离情境下探测十个开源权重LLM。结果显示，所有模型中AAVE与NP均比SAE更常关联负面形容词，NP受罚最重；每种方言通过不同的刻板印象簇受罚而非笼统的“非标准”类别；具有制度声望的NSE呈情境依赖转变：在正式租户筛选中优于SAE，但随着社会距离增加受罚加重。",
+      "insight_zh": "该研究揭示LLM可能继承沿种族身份与声望维度的隐性方言偏见，对城市住房公平与算法治理具有警示意义；但其分析基于概率评分而非真实地理空间数据，与GIS技术路线的直接关联有限。"
     },
     {
       "key": "arxiv:2609.17538",
@@ -3075,6 +3226,36 @@
       ],
       "summary_zh": "摘要内容缺失，无法提供具体概述。从标题看，该工作系统梳理了不确定性条件下基于深度学习的序贯决策方法的基础、框架与前沿进展。",
       "insight_zh": "序贯决策与不确定性建模对时空预测和城市动态模拟具有潜在方法论价值，但因摘要缺失，无法判断其是否涉及地理空间应用或具体技术路线。"
+    },
+    {
+      "key": "arxiv:2609.18080",
+      "title": "Decodability is Not Causality: Dissociating Probe Readouts from Behavioral Drivers via SAE Decomposition",
+      "title_zh": "可解码性并非因果性：通过SAE分解分离探针读出与行为驱动因素",
+      "url": "https://arxiv.org/abs/2609.18080",
+      "arxiv_id": "2609.18080",
+      "authors": [
+        "Devesh Tiwari",
+        "Camille Davis",
+        "Shivank Sinha",
+        "Talia Weaver",
+        "Aditya Shah",
+        "Maheep Chaudhary"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-16T03:35:38+00:00",
+      "score": 30,
+      "reason": "该文关注大语言模型探针可解码性与因果行为驱动之间的分离，使用稀疏自编码器分解与消融实验，属于LLM可解释性研究，与LLM和多智能体方向有间接关联，但不涉及地理空间或城市分析。",
+      "tags": [
+        "可解释性",
+        "稀疏自编码器",
+        "因果干预",
+        "探针诊断",
+        "大语言模型"
+      ],
+      "summary_zh": "线性探针可从语言模型激活中解码真实性等安全相关概念，但探针准确率可能仅反映可解码性，而非探针权重所对应的特征因果驱动模型行为。作者指出这一差距无法仅从探针权重的几何结构弥合，因果相关性需要干预。本文提出一种特征级诊断方法，将已部署的真/假探针分解为稀疏自编码器（SAE）特征，按探针对齐度与模型行为的梯度敏感度对特征排序，并在一致性门控下消融共享、仅探针与随机特征集。在Gemma2-9B-Instruct的真实探针实验中，两种排序仅弱重叠（约12%，Spearman rho=0.10），消融结果明显分离：探针与模型共享的特征翻转输出的比例（最高27%）远高于同等规模的仅探针特征（6%）或随机特征（1%），而仅探针特征则扰动探针自身读出。该分离在五个随机种子与留出划分上稳定，且激活感知的特征选择翻转行为的频率约为探针几何顶部特征的三倍（17.6% vs 6.1%）。",
+      "insight_zh": "该研究提示，在利用LLM内部表示进行地理空间语义分析或智能体决策解释时，仅凭探针几何对齐可能不足以识别真正驱动行为的特征，需结合激活统计与干预实验；但其结论基于特定模型与真实性任务，向地理空间领域的迁移需谨慎。"
     },
     {
       "key": "arxiv:2603.03884",
@@ -3986,6 +4167,34 @@
       ],
       "summary_zh": "智能体化网络运维（NetOps）是一种新兴范式，有望实现负载感知、可自调整且可靠的自治网络。尽管智能体在事件摘要与遥测信号提取中已证明价值，但其作为自治控制回路引擎的有效性高度依赖长时程可靠性。数据中心网络即是此类场景：智能体须响应告警与运维意图，同时避免可能引发或延长停机的高风险动作。然而，弃权（abstention）预设动作影响在执行前已知，这要求逐动作的真值，而现有NetOps智能体基准并不提供。作者为NetArena的网络修复任务构建了这样的真值：对仿真网络进行符号化重放，并在每一步与环境校验，从而得到每个动作的精确价值。基于动作级价值，作者导出两个执行前目标：动作是否缩短修复距离（进展）以及是否增大修复距离（危害）。在10个智能体模型上，作者表明利用内部信号的智能体验证器比仅使用可观测信号的基线更可靠地预测危害与进展。展望上，作者希望将这些信号用作智能体框架的安全反馈，以对高风险动作弃权并保护目标系统。",
       "insight_zh": "该研究提出以动作级真值区分“进展”与“危害”，并显示内部信号优于外部可观测信号，为高风险自主决策系统的安全约束提供了思路；对地理空间智能体（如城市管理或应急响应）的安全设计有类比价值，但文中场景为数据中心网络。"
+    },
+    {
+      "key": "arxiv:2609.17995",
+      "title": "QuanText: Protecting Dataset-Level Secrets in Textual Data Sharing",
+      "title_zh": "QuanText：在文本数据共享中保护数据集级秘密",
+      "url": "https://arxiv.org/abs/2609.17995",
+      "arxiv_id": "2609.17995",
+      "authors": [
+        "Shuaiqi Wang",
+        "Zinan Lin",
+        "Giulia Fanti"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CR"
+      ],
+      "published": "2026-09-16T01:30:58+00:00",
+      "score": 22,
+      "reason": "该文提出保护文本数据集全局属性的发布机制，涉及隐私保护与数据效用权衡，与多源数据融合中的隐私问题有间接关联，但不涉及地理空间数据或城市分析。",
+      "tags": [
+        "文本数据发布",
+        "数据集级隐私",
+        "统计最大泄漏",
+        "随机量化",
+        "属性保持"
+      ],
+      "summary_zh": "自然语言数据集支持众多下游应用与研究，但发布文本可能泄露数据源的敏感全局属性，如特定性别、诊断或政治立场的记录比例。现有工作多关注恢复此类全局属性的属性推断攻击，而保护这些数据集级秘密的防御手段有限；差分隐私虽对个体记录有效，对聚合属性保护较弱。本文提出文本随机量化（QuanText），一种免训练且与LLM无关的数据发布机制，在保护文本数据集全局秘密的同时保持数据效用。给定数据集级秘密（如某诊断记录比例）与需保持效用的属性（如主题与情感），QuanText扰动秘密分布及相关属性分布：构造秘密与非秘密属性上的候选发布分布，随机选择足够接近私有经验分布的候选，并利用原文中属性相关片段将每个私有文本样本改写以匹配所选分布。该方法受统计最大泄漏（SML）框架启发，在理想条件下满足SML保证，并在真实数据集上取得更好的隐私-效用权衡。",
+      "insight_zh": "该工作提示，在共享含地理标签或人口属性的文本数据时，聚合层面的隐私泄露可能难以被个体级差分隐私覆盖，其分布扰动思路或可借鉴于地理文本数据发布，但论文未涉及空间数据。"
     },
     {
       "key": "arxiv:2609.18315",
@@ -5853,6 +6062,31 @@
       "insight_zh": "该文将鲁棒性、运行设计域与可解释性作为AI可信度的三大支柱，并强调系统级MLOps环境中的持续交互；其框架对安全关键领域的AI部署具有参考价值，但未涉及具体地理空间应用。"
     },
     {
+      "key": "arxiv:2609.18078",
+      "title": "Beyond Embedding Transfer: Component Roles in Grokking Transfer and Stability",
+      "title_zh": "超越嵌入迁移：grokking迁移与稳定性中的组件角色",
+      "url": "https://arxiv.org/abs/2609.18078",
+      "arxiv_id": "2609.18078",
+      "authors": [
+        "Zeyu Jia"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-16T03:28:39+00:00",
+      "score": 18,
+      "reason": "该文研究模块化算术任务中跨算子迁移的组件作用与稳定性，属于深度学习训练动力学与迁移学习研究，与GIS、城市更新、遥感等主题无直接关联。",
+      "tags": [
+        "迁移学习",
+        "grokking",
+        "模块化算术",
+        "训练稳定性",
+        "组件分析"
+      ],
+      "summary_zh": "热启动迁移可使算法任务快速泛化，但尚不清楚哪些模型组件带来增益以及该增益在持续优化下是否稳定。本文研究模块化算术上的跨算子迁移，区分早期速度（有效性）与达到后回撤（稳定性）。在规模匹配的108次运行（12个种子块，96次2^3析因加12次规模对照）中，迁移内部注意力/MLP权重（B）连同词元嵌入与读出（E+U）使早期准确率提升5.46个百分点（Holm p=0.0039），并将确认延迟缩短558步（Holm p=0.0088）。冻结迁移的表示载体（E、U）几乎消除离线回撤（19.40%→0.07%）。在线验证触发门控将2a+b上的真实最大回撤从22.06%降至0.60%。在非阿贝尔S_5上，无屏蔽迁移出现短暂激增（峰值95.4%），但前瞻性屏蔽队列未确认收益。",
+      "insight_zh": "该文提供组件级迁移有效性与稳定性的分离证据，其方法学思路（区分早期增益与后续回撤、冻结表示载体）或可启发时空预测模型的迁移学习稳定性评估，但研究对象为合成算法任务，与地理空间应用距离较远。"
+    },
+    {
       "key": "arxiv:2609.18203",
       "title": "Behavior2Value: Benchmarking and Empowering LLMs for Consumer Value Measurement from E-commerce Behaviors",
       "title_zh": "Behavior2Value：面向电子商务行为消费者价值测量的LLM基准与增强",
@@ -7666,6 +7900,35 @@
       "insight_zh": "不确定性度量方法或可迁移至城市时空事件预测，但需结合具体摘要内容进一步判断其与地理空间智能的契合度。"
     },
     {
+      "key": "arxiv:2609.18063",
+      "title": "The Other Half of the Memory Wall: Serving 35B MoEs from SSD with Trained Routing Prediction",
+      "title_zh": "内存墙的另一半：利用训练好的路由预测从SSD服务35B MoE",
+      "url": "https://arxiv.org/abs/2609.18063",
+      "arxiv_id": "2609.18063",
+      "authors": [
+        "Yu Lin",
+        "Yiming Wang",
+        "Runyuan Cai",
+        "Hanze Liu",
+        "Xiaodong Zeng"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-16T03:09:04+00:00",
+      "score": 15,
+      "reason": "该文提出从SSD流式服务35B MoE模型的推理引擎，涉及路由预测与量化恢复，属于大模型系统与边缘部署研究，与GIS主题无直接关联。",
+      "tags": [
+        "MoE推理",
+        "SSD卸载",
+        "路由预测",
+        "边缘部署",
+        "量化"
+      ],
+      "summary_zh": "消费级硬件上的混合专家（MoE）推理受权重内存限制：35B级模型4比特下为19.5GB，稀疏性减少每词元计算量而非必须驻留的字节数。朴素卸载到SSD本身无济于事，因为第N+1层的专家必须在第N层输出存在之前选定，读取无法足够早地启动以隐藏在计算之后。本文提出Edge0流式MoE推理引擎，通过预路由器（每层头提前一个词元预测下一层路由）将预测直接作为路由本身，使暂存专家集等于路由集而不丢弃任何内容；并在学生路径上训练未合并的恢复LoRA以补偿int4量化与路由替换带来的质量损失。在单台24GB机器上，Edge0以20 tok/s服务35B MoE，峰值活跃内存低于3GiB，在五个公开基准上平均接近其fp16教师模型。",
+      "insight_zh": "该工作展示了通过预测性路由与量化恢复在有限内存下服务大模型的可能性，对需要在边缘设备部署地理空间基础模型的研究者或有工程参考价值，但论文本身未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2604.14862",
       "title": "Schema-Key Wording as an Instruction Channel in Structured Generation under Constrained Decoding",
       "title_zh": "约束解码下模式键措辞作为结构化生成的指令通道",
@@ -8674,6 +8937,33 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题推断该工作提出一种随机维度零阶估计器，用于提升物理信息神经网络训练的稳定性和内存效率。",
       "insight_zh": "若该方法能降低PINN训练成本，可能对大规模地理空间物理建模有潜在价值，但摘要缺失，无法确认其具体性能和改进幅度。"
+    },
+    {
+      "key": "arxiv:2609.18077",
+      "title": "vidax: A Unified JAX Framework for Video Generative Models on Accelerator Meshes",
+      "title_zh": "vidax：面向加速器网格上视频生成模型的统一JAX框架",
+      "url": "https://arxiv.org/abs/2609.18077",
+      "arxiv_id": "2609.18077",
+      "authors": [
+        "Congyue Deng"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.DC",
+        "cs.LG"
+      ],
+      "published": "2026-09-16T03:26:45+00:00",
+      "score": 12,
+      "reason": "该文是面向视频生成模型的JAX/TPU推理框架，涉及时空注意力与加速器部署，属于生成模型系统工程，与GIS研究主题关联很弱。",
+      "tags": [
+        "视频生成",
+        "JAX",
+        "TPU",
+        "推理引擎",
+        "时空注意力"
+      ],
+      "summary_zh": "开源视频生成模型几乎仅以PyTorch/CUDA参考实现发布，使云TPU集群缺乏生产级推理路径。本文提出vidax，一个开源JAX/Flax推理引擎及零拷贝PyTorch到JAX权重转换器，覆盖扩散Transformer、全模态Mixture-of-Transformers、3D VAE、文本编码器与原生采样器等时空模型，执行路径无PyTorch依赖。框架在单一JAX分片网格上统一1D张量并行与DeepSpeed-Ulysses序列并行，集成TPU flash-attention内核，并实现逐层权重卸载以支持超出单设备内存的参考分辨率。作者在TPU v4-8上基准测试编译时间、延迟与峰值内存，并记录权重转换中发现的数值缺陷。",
+      "insight_zh": "该框架对需要在加速器上进行长序列时空建模的研究者可能提供工程参考，但其面向视频生成而非地理空间分析，与城市更新或遥感变化检测的直接关联有限。"
     },
     {
       "key": "arxiv:2609.18960",
@@ -12778,27 +13068,6 @@
       "insight_zh": "该文提出以“授权关系”而非表面事实或引用匹配来评估法律LLM，这一思路对需要权威依据的地理空间决策支持系统评估有类比启发，但论文本身聚焦法律领域，未涉及地理空间应用。"
     },
     {
-      "key": "arxiv:2609.18077",
-      "title": "vidax: A Unified JAX Framework for Video Generative Models on Accelerator Meshes",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18077",
-      "arxiv_id": "2609.18077",
-      "authors": [
-        "Congyue Deng"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.DC",
-        "cs.LG"
-      ],
-      "published": "2026-09-16T03:26:45+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18104",
       "title": "iMINDBench: iEEG Multi-Institution Neural Decoding Benchmark",
       "title_zh": "",
@@ -13190,29 +13459,6 @@
       "insight_zh": "摘要缺失，无法评估其具体方法或结果；从标题看可能涉及在生成动作前进行潜在推理，但与地理空间智能的关联不明确。"
     },
     {
-      "key": "arxiv:2609.18063",
-      "title": "The Other Half of the Memory Wall: Serving 35B MoEs from SSD with Trained Routing Prediction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18063",
-      "arxiv_id": "2609.18063",
-      "authors": [
-        "Yu Lin",
-        "Yiming Wang",
-        "Runyuan Cai",
-        "Hanze Liu",
-        "Xiaodong Zeng"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-16T03:09:04+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17863",
       "title": "The Inference Engineering Pareto Atlas: Which Optimizations Dominate the Cost, Quality, and Latency Frontier?",
       "title_zh": "",
@@ -13295,29 +13541,6 @@
         "cs.CV"
       ],
       "published": "2026-07-31T11:57:36+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18072",
-      "title": "Teaching AI, Robotics, & Community: A Hubs-Based K-12 Education Framework for Reaching Rural Schools",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18072",
-      "arxiv_id": "2609.18072",
-      "authors": [
-        "Maxwell J. Jacobson",
-        "Gustavo Rodriguez-Rivera",
-        "Petros Drineas",
-        "Yexiang Xue"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CY"
-      ],
-      "published": "2026-09-16T03:18:24+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13644,28 +13867,6 @@
       "insight_zh": "摘要为空，无法推断其与地理空间三维建模的潜在联系；从标题看，其主题为多物体符号距离场的几何一致性约束，属于计算机图形学与三维视觉范畴。"
     },
     {
-      "key": "arxiv:2609.17985",
-      "title": "RideWay: Benchmarking Efficient Task Completion for Tool-Using Language Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17985",
-      "arxiv_id": "2609.17985",
-      "authors": [
-        "Qingnuan Han",
-        "Boli Fang",
-        "Mingzhi Hou",
-        "Claire Liu"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-16T01:15:21+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18656",
       "title": "Revisiting Distributed Sign-Based Variance Reduction",
       "title_zh": "重新审视分布式基于符号的方差缩减",
@@ -13794,28 +13995,6 @@
         "cs.AI"
       ],
       "published": "2026-09-16T17:15:59+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.17995",
-      "title": "QuanText: Protecting Dataset-Level Secrets in Textual Data Sharing",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17995",
-      "arxiv_id": "2609.17995",
-      "authors": [
-        "Shuaiqi Wang",
-        "Zinan Lin",
-        "Giulia Fanti"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CR"
-      ],
-      "published": "2026-09-16T01:30:58+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14626,31 +14805,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18088",
-      "title": "Mask 2D-3D: Adaptive Dual-Masked Autoencoder Network for Image-to-Point Cloud Registration",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18088",
-      "arxiv_id": "2609.18088",
-      "authors": [
-        "Zhixin Cheng",
-        "Jiacheng Deng",
-        "Xiaotian Yin",
-        "Baoqun Yin",
-        "Richang Hong",
-        "Tianzhu Zhang"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-16T03:47:07+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17602",
       "title": "Making Political Text Scaling Comparable: Infrastructure and Hyperparameter Sensitivity for 17 Algorithms",
       "title_zh": "",
@@ -15371,32 +15525,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18068",
-      "title": "From a River in Gilead to the Inference Distributions of Large Language Models: Covert Dialect Bias and Linguistic Profiling at Scale",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18068",
-      "arxiv_id": "2609.18068",
-      "authors": [
-        "Chowdhury Mohammad Abdullah",
-        "Rita Orji"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "Ethics,",
-        "and",
-        "Society",
-        "(AIES",
-        "2026)"
-      ],
-      "published": "2026-09-16T03:13:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2506.00633",
       "title": "From Alignment to Synthesis: Contrastive Volumetric Grounding for Text-to-CT Generation",
       "title_zh": "从对齐到合成：面向文本到CT生成的对比式体素定位",
@@ -15474,31 +15602,6 @@
         "physics.soc-ph"
       ],
       "published": "2026-09-16T17:46:06+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18058",
-      "title": "Finder: Agentic Closed-Loop Object Finding for Embodied Grounding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18058",
-      "arxiv_id": "2609.18058",
-      "authors": [
-        "Shixiong Xu",
-        "Zhiyuan Chen",
-        "Song Ding",
-        "Rui Luo",
-        "Xiaowei Liang",
-        "Dongxu Miao",
-        "Zhiying Du"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T03:02:45+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16089,30 +16192,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18080",
-      "title": "Decodability is Not Causality: Dissociating Probe Readouts from Behavioral Drivers via SAE Decomposition",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18080",
-      "arxiv_id": "2609.18080",
-      "authors": [
-        "Devesh Tiwari",
-        "Camille Davis",
-        "Shivank Sinha",
-        "Talia Weaver",
-        "Aditya Shah",
-        "Maheep Chaudhary"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-16T03:35:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2607.15740",
       "title": "Debiasing Text-to-Image Evaluation via Implicit Cultural Alignment Reward Modeling",
       "title_zh": "通过隐式文化对齐奖励模型对文本到图像评估去偏",
@@ -16342,25 +16421,6 @@
         "cs.AI"
       ],
       "published": "2026-09-16T16:49:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18078",
-      "title": "Beyond Embedding Transfer: Component Roles in Grokking Transfer and Stability",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18078",
-      "arxiv_id": "2609.18078",
-      "authors": [
-        "Zeyu Jia"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-16T03:28:39+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
