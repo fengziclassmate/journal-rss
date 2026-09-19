@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 378,
+    "analyzed": 388,
     "high": 3,
     "medium": 17,
-    "low": 27,
-    "below_threshold": 331
+    "low": 28,
+    "below_threshold": 340
   },
   "papers": [
     {
@@ -1206,6 +1206,33 @@
       "insight_zh": "该研究揭示了在智能体系统中，从信息检索到最终任务交付之间存在显著差距，强调了评估端到端能力而非单一环节的重要性。"
     },
     {
+      "key": "arxiv:2609.19745",
+      "title": "Region-Level Policy Optimization for Fine-grained MLLM Perception",
+      "title_zh": "面向细粒度多模态大模型感知的区域级策略优化",
+      "url": "https://arxiv.org/abs/2609.19745",
+      "arxiv_id": "2609.19745",
+      "authors": [
+        "Yuheng Shi",
+        "Xiaohuan Pei",
+        "Minjing Dong",
+        "Chang Xu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T06:10:34+00:00",
+      "score": 45,
+      "reason": "该文提出区域级策略优化以提升多模态大模型细粒度感知，涉及感兴趣区域定位与稀疏编码，与遥感变化检测中的目标定位和高效视觉表征有较强的方法关联。",
+      "tags": [
+        "多模态大模型",
+        "区域级强化学习",
+        "细粒度感知",
+        "视觉token压缩"
+      ],
+      "summary_zh": "多模态大模型（MLLM）的细粒度视觉感知通常通过提高分辨率来改善，但增加的视觉token会推高视觉编码和语言模型预填充成本。作者表明，细粒度感知所依赖的两个操作——定位感兴趣区域（RoI）和识别其内容——对分辨率的需求不同。在受控诊断中，定位可容忍比识别强约3至4倍的token压缩，这促使从粗粒度视图定位并将分辨率集中于所选证据。用MLLM解码坐标可从答案端到端训练，但每次查询需要完整模型前向且依赖定位能力。从模型注意力蒸馏出的轻量候选网络速度快，但继承了其注意力目标的噪声。候选网络产生的RoI通过离散区域选择到达答案，因此其对答案的忠实度无法监督该网络。为此作者用区域级强化学习优化候选网络，称为Vision-RL2。它将连贯区域视为动作，由冻结的MLLM阅读器根据移除该区域后答案似然的变化进行打分。互补的减法与加法目标抑制干扰性候选并恢复缺失证据，仅更新预测器，无需区域标注、响应采样或推理轨迹。细化后的候选进一步支持稀疏编码，放大证据并排除背景token。在六个细粒度基准和四个MLLM骨干上，Vision-RL2在每个token预算下均优于基座模型，并以约4倍更少的视觉token超越其最大预算下的准确率。",
+      "insight_zh": "该文“粗定位、精识别”的分辨率分配策略与区域级强化学习优化思路，可为遥感变化检测中的高效目标定位与证据聚焦提供方法借鉴，但摘要未涉及遥感或地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.19156",
       "title": "Reflective Recovery: A Self-Supervised Method for Reasoning by Learning from Mistakes",
       "title_zh": "反思性恢复：一种从错误中学习推理的自监督方法",
@@ -1799,6 +1826,37 @@
       "insight_zh": "该文将Gromov-Wasserstein最优传输动态化以同时保持结构和重建连续轨迹，其结构感知动态对齐思想可类比用于时空轨迹或遥感时序对齐，但原文应用领域为空间转录组而非地理空间。"
     },
     {
+      "key": "arxiv:2609.19801",
+      "title": "DeliveryGym: An RL Environment for Long-Horizon Embodied Agent Planning with Adaptive Curriculum",
+      "title_zh": "DeliveryGym：面向长时程具身智能体规划的自适应课程强化学习环境",
+      "url": "https://arxiv.org/abs/2609.19801",
+      "arxiv_id": "2609.19801",
+      "authors": [
+        "Haoqiang Kang",
+        "Yiming Zhang",
+        "Yiyang Guo",
+        "Chuying Li",
+        "Jianzhi Shen",
+        "Tianruo Rose Xu",
+        "Xiaokang Ye",
+        "Lianhui Qin"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T07:13:55+00:00",
+      "score": 40,
+      "reason": "该文构建面向长时程具身智能体规划的强化学习环境，涉及多模态工具交互与城市地图，与研究中LLM和多智能体、城市时空决策方向有一定关联。",
+      "tags": [
+        "具身智能体",
+        "强化学习环境",
+        "长时程规划",
+        "自适应课程"
+      ],
+      "summary_zh": "可执行环境使LLM智能体能够从行动后果中学习。对具身智能体而言，这些后果不仅限于当前任务是否成功：完成一次配送可能消耗后续工作所需的时间、精力或金钱。因此学习规划需要能够保留这些依赖关系并将其转化为完整轨迹反馈的环境。作者提出DeliveryGym，一个用于评估和训练智能体完成连续快递班次的3D环境。它将多模态工具交互与持久世界动态耦合，并从模拟器事件计算轨迹奖励，使智能体决策的代价可用于强化学习（RL）。该环境还能根据策略表现出的弱点调整未来训练班次，同时保持评估固定。在六个模型和13张城市地图上，评估揭示了可靠执行指派配送与在一个班次内选择并排序工作之间的差距。在固定测试集上，RL将Qwen3-VL-4B的净收入提升54.3%，表明从完整班次中学习可在这些耦合约束下提升性能。在相同 rollout 预算下，自适应训练环境相比均匀采样将测试收入提升16.5%，说明智能体练习哪些情境也很重要。DeliveryGym为研究智能体如何在单回合内协调配送并为后续订单保留资源提供了可执行环境。",
+      "insight_zh": "该文以城市地图为背景构建长时程具身决策环境，其轨迹级奖励与自适应课程设计可为城市时空智能体规划研究提供参考，但摘要未涉及真实城市数据或地理空间分析方法。"
+    },
+    {
       "key": "arxiv:2609.19356",
       "title": "How to Guide Your Language Flow",
       "title_zh": "如何引导你的语言流",
@@ -2096,6 +2154,36 @@
       ],
       "summary_zh": "通过后训练技术对齐前沿模型时，无法直接展示我们希望模型在所有可能部署环境中表现出的全部行为；模型必须泛化到后训练分布之外。一种提出的解决方案是对齐中训练（AMT），即在大量对齐相关文档上继续预训练，以鼓励后续训练阶段的泛化。尽管AMT作为对齐方法很突出，但公开证据有限。为厘清这一点，本文识别了围绕中训练的若干假设，并在规模上评估它们：模型最多1100亿参数，中训练token达10亿。例如，本文研究后训练数据在两种可能动机之间模糊的场景。发现中训练可在该设置的简单版本中引导模型动机。然而，少量暗示竞争动机的微调数据的存在会抹去AMT的效果。本文还研究希望AI遵循若干规则但只演示其中一部分的场景。发现这些规则必须在中训练或后训练数据集中出现演示，才能被稳健学习。基于这些及其他发现，本文认为没有足够公开证据可自信地断言中训练能解决对齐强大AI系统固有的核心困难。",
       "insight_zh": "该研究对AMT泛化效果的质疑提示，在构建面向城市更新的LLM智能体时，仅靠中训练可能不足以确保规则稳健遵循，需结合后训练演示与验证机制。"
+    },
+    {
+      "key": "arxiv:2609.19815",
+      "title": "SnapPhysics: A Physics-Aware Scene Graph from a Single View for Interactive Mixed Reality Scenes",
+      "title_zh": "SnapPhysics：面向交互式混合现实场景的单视图物理感知场景图",
+      "url": "https://arxiv.org/abs/2609.19815",
+      "arxiv_id": "2609.19815",
+      "authors": [
+        "Suji Kang",
+        "Seok-Young Kim",
+        "Young Bin Kim",
+        "Taewook Ha",
+        "Dieter Schmalstieg",
+        "Shohei Mori",
+        "Woontack Woo"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T07:26:56+00:00",
+      "score": 35,
+      "reason": "该文从单张图像重建三维物体并估计物理属性，构建物理感知场景图，与遥感变化检测、三维场景理解有方法层面的间接关联，但不涉及地理空间尺度或城市应用。",
+      "tags": [
+        "单视图三维重建",
+        "场景图",
+        "物理属性估计",
+        "混合现实"
+      ],
+      "summary_zh": "作者提出SnapPhysics，一个无需训练的框架，可从单张图像重建三维物体并估计其质量、摩擦力和重心等物理属性。对于混合现实（MR）中的物理一致交互，这些属性与几何同样重要。已有方法通过分析视频中的物体动力学来推断这些属性，计算代价高；或通过查询单图像上的视觉语言模型（VLM），缺乏几何基础与物体间关系。作者通过结合实例级三维重建与空间对齐，以及一个编码这些关系和逐物体度量几何的物理感知场景图，作为VLM属性推理的结构化上下文，来解决这些局限。在3D-FRONT上的实验表明，SnapPhysics相比最佳基于学习的方法将场景级F-Score提升18.6%；在具有真实质量标注的真实拍摄场景中，相比仅用VLM的估计，平均绝对对数差误差（mALDE）最多降低20.5%，对数尺度相关性（r²_ls）最多提升19.6%。SnapPhysics使物理交互式MR体验无需手动调参即可实现。",
+      "insight_zh": "该文将场景图作为结构化上下文增强视觉语言模型的物理属性推理，其单视图三维重建与关系建模思路或可启发遥感场景理解，但摘要未涉及地理空间或大范围场景。"
     },
     {
       "key": "arxiv:2609.20475",
@@ -3600,6 +3688,39 @@
       "insight_zh": "该文揭示LLM输出会随提问语言呈现系统性政治偏向，并可能与现实地缘政治分歧相关；这提示在利用LLM进行多语言地理信息分析或城市治理问答时，需警惕语言条件带来的偏见，但原文未涉及GIS或遥感任务。"
     },
     {
+      "key": "arxiv:2609.19830",
+      "title": "Dual-Axis Policy Optimization for LLM Agents: Bayesian Feedback Attribution and Trajectory Mass Normalization",
+      "title_zh": "面向LLM智能体的双轴策略优化：贝叶斯反馈归因与轨迹质量归一化",
+      "url": "https://arxiv.org/abs/2609.19830",
+      "arxiv_id": "2609.19830",
+      "authors": [
+        "Yingxuan Zhuang",
+        "Binhe Yu",
+        "Jingxiao Yang",
+        "Ruopei Sun",
+        "Ziting Li",
+        "Cheng Tan",
+        "Xuhong Zhang",
+        "Jianwei Yin",
+        "Jintao Chen"
+      ],
+      "categories": [
+        "cs.AI",
+        "stat.ML"
+      ],
+      "published": "2026-09-17T07:35:02+00:00",
+      "score": 30,
+      "reason": "该文研究LLM智能体的强化学习策略优化，与研究中LLM和多智能体方向相关，但属于通用算法层面，未涉及地理空间或城市应用。",
+      "tags": [
+        "LLM智能体",
+        "强化学习",
+        "策略优化",
+        "反馈归因"
+      ],
+      "summary_zh": "LLM智能体的强化学习涉及两个不同的优化维度：如何在单条轨迹内利用环境反馈，以及如何在一个批次内聚合完整轨迹。作者将这两个维度形式化为轨迹内反馈归因与轨迹间目标聚合，并提出BATON（贝叶斯归因与轨迹目标归一化），一个双轴策略优化框架。第一轴采用贝叶斯反馈归因，构建基于反馈条件的采样动作后验；第二轴采用轨迹质量归一化（TMN），为完整轨迹分配相等的优化权重。在ALFWorld、WebShop和SearchQA上使用GRPO和GiGPO的实验表明，两个轴各自带来独立增益，且二者结合在不同模型规模上始终取得最强的整体性能。",
+      "insight_zh": "该文提出的双轴优化思路可为多智能体地理空间决策中的轨迹级信用分配提供参考，但摘要未涉及空间任务或地理环境。"
+    },
+    {
       "key": "arxiv:2609.20501",
       "title": "Distributionally Robust Federated Learning with Multi-Source Data",
       "title_zh": "多源数据下的分布鲁棒联邦学习",
@@ -4182,6 +4303,30 @@
       ],
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.19827",
+      "title": "F$^{2}$DR: A Fine-Grained Full-Pipeline Reward Framework for DeepSearch Workflows",
+      "title_zh": "F²DR：面向DeepSearch工作流的细粒度全流程奖励框架",
+      "url": "https://arxiv.org/abs/2609.19827",
+      "arxiv_id": "2609.19827",
+      "authors": [
+        "Bojian Xiong (Tianjin University) Wentao Ding (Baidu Inc.) Yujing Lu (Baidu Inc.) Shaowei Zhang (Tianjin University) Ling Shi (Tianjin University) Jing Liao (Baidu Inc.) Yan Wang (Baidu Inc.) Yueyang Zhang (Baidu Inc.) Long Xia (Baidu Inc.) Zhiyuan Sun (Baidu Inc.) Daiting Shi (Baidu Inc.) Jingzhou He (Baidu Inc.) Yuqi Ren (Tianjin University) Deyi Xiong (Tianjin University)"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-17T07:32:54+00:00",
+      "score": 28,
+      "reason": "该文提出面向DeepSearch工作流的细粒度奖励框架，与LLM智能体评估相关，但属于通用检索与推理流程，不涉及地理空间数据。",
+      "tags": [
+        "LLM智能体",
+        "奖励模型",
+        "DeepSearch",
+        "过程评估"
+      ],
+      "summary_zh": "随着大语言模型（LLM）的广泛工业部署，DeepSearch已成为解决复杂用户查询的主流范式，通常通过规划与反思、信息检索、答案生成的迭代闭环工作流运行。然而现有奖励模型（RM）和评测基准主要面向静态单轮任务，无法刻画DeepSearch工作流的全流程复杂性。为此作者提出F2DR，一个细粒度的全流程DeepSearch奖励框架，从内容、轨迹和答案三个维度评估DeepSearch工作流，实现全面的过程级评估。作者还构建了DeepSearch RM-Bench，一个用于评估DeepSearch场景下奖励模型的专用基准。大量实验表明，F2DR的评估一致性显著高于基于自评估的基线，DeepSearch RM-Bench对现有开源奖励模型具有强区分能力。完整数据集将很快公开。",
+      "insight_zh": "该文的过程级奖励设计思路或可借鉴到地理空间智能体的多步检索与推理评估中，但摘要未涉及地理空间任务或数据。"
     },
     {
       "key": "arxiv:2609.20423",
@@ -4826,6 +4971,40 @@
       "insight_zh": "AI运行时决策的可审计记录协议，可为地理空间AI系统的合规性和透明度提供技术参考。"
     },
     {
+      "key": "arxiv:2609.19793",
+      "title": "AI Smart Glasses for Wearable Intelligence: From Egocentric Sensing to Agentic Personalization",
+      "title_zh": "面向可穿戴智能的AI智能眼镜：从第一视角感知到智能体个性化",
+      "url": "https://arxiv.org/abs/2609.19793",
+      "arxiv_id": "2609.19793",
+      "authors": [
+        "Xu Yuan",
+        "Yi Wang",
+        "Zhuohang Jiang",
+        "Haohao Qu",
+        "Yujuan Ding",
+        "Shanru Lin",
+        "Guoliang Xing",
+        "Hongxia Yang",
+        "Jiannong Cao",
+        "Qing Li",
+        "Wenqi Fan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T06:59:58+00:00",
+      "score": 25,
+      "reason": "该文综述AI智能眼镜的可穿戴智能，涉及第一视角感知与智能体个性化，与多模态感知和智能体方向相关，但不涉及地理空间分析或城市研究。",
+      "tags": [
+        "智能眼镜",
+        "可穿戴智能",
+        "第一视角感知",
+        "具身基础模型"
+      ],
+      "summary_zh": "人工智能（AI）的近期进展正将智能眼镜从第一视角采集与显示设备重塑为可穿戴智能平台。智能眼镜日益成为连接第一人称观察与实时辅助的可穿戴AI系统，并受到严格的外形约束。作者以“AI智能眼镜”为视角来审视这一转变，将其定义为一个系统级概念，即第一视角感知、资源感知计算、智能推理、多模态交互和真实应用约束被协同设计，以在物理世界中提供个性化辅助。为系统研究这一视角，综述围绕四个相互关联的维度展开：第一，考察约束感知、计算、反馈传递与持续部署的硬件基础；第二，研究可穿戴智能，即第一视角信号如何转化为感知、情境和智能体能力；第三，讨论交互设计，即用户在持续活动中如何请求、接收、纠正和调节辅助；第四，分析医疗、无障碍、情境学习、日常生活辅助、文化旅游和工业支持等应用场景，展示领域需求如何重塑系统设计与评估。作者进一步指出未来AI智能眼镜的五个跨领域研究挑战：下一代硬件、可信第一视角智能、终身个性化记忆、主动智能和具身基础模型。通过将智能眼镜定位为可穿戴智能平台，该综述为组织这一新兴领域的技术、应用与开放挑战提供了统一框架。",
+      "insight_zh": "该文提出的第一视角感知与具身基础模型方向可为移动地理空间感知与个性化位置服务提供概念参考，但摘要未涉及地理空间数据或城市分析。"
+    },
+    {
       "key": "arxiv:2606.30842",
       "title": "A Transferable Learned Temporal Prior for Transmission Reconstruction and Decision-Relevant Uncertainty in Real Outbreak Labels",
       "title_zh": "一种用于传播重建与真实疫情标签中决策相关不确定性的可迁移学习时序先验",
@@ -5124,6 +5303,32 @@
       ],
       "summary_zh": "我们提出Relational BabyLM，这是BabyLM 2026挑战赛的系统提交，在单一仅解码器Transformer中结合了两种认知动机的归纳偏置。在架构上，我们用双注意力Transformer（DAT）替换标准自注意力，它将对象级（“感觉”）词汇特征的路由与结构/关系信息分离。关系注意力（RA）从自注意力中解耦，在纯关系任务上大幅提升数据效率和训练样本外泛化，但语言建模需要对象级和关系信息既分离又整合，而基于RA的语言模型仍 largely 未被探索。BabyLM的数据受限训练和全面评估是检验这种数据效率能否迁移的理想试验场。作为训练干预，我们添加Next-Latent Prediction（NextLat）目标，鼓励隐藏状态将历史增量压缩为稠密信念状态。架构是结构语言泛化的主导因素；目标次之但仍显著。DAT的三种关系注意力类型（完整RA与更简单的RCA和DisRCA变体）在1000万词时基本可互换；完整RA在1亿词时领先。我们还引入一种新颖的符号检索机制（基于RoPE而非学习式相对符号），在匹配学习式符号库的同时不增加参数。在严格（1亿词）赛道，我们最佳模型在撰写时总体排名55个中的第6，在排行榜NLP任务子集上排名55个中的第3；我们两个最强模型优于GPT-2基线。",
       "insight_zh": "该研究探索了关系注意力与潜在预测目标在数据受限语言建模中的作用，其架构与目标分离的分析对理解LLM归纳偏置有参考价值，但摘要未涉及地理空间或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.19832",
+      "title": "MetaRTL: Meta-path Attention Enhanced Relational Table Learning",
+      "title_zh": "MetaRTL：元路径注意力增强的关系表学习",
+      "url": "https://arxiv.org/abs/2609.19832",
+      "arxiv_id": "2609.19832",
+      "authors": [
+        "Ken Zhong",
+        "Weichen Li",
+        "Zheng Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-17T07:37:25+00:00",
+      "score": 22,
+      "reason": "该文提出关系表学习的元路径注意力框架，属于通用表格/图数据挖掘方法，与时空数据挖掘和多源数据融合有间接的方法论关联，但不涉及地理空间、城市更新或遥感。",
+      "tags": [
+        "关系表学习",
+        "元路径",
+        "注意力机制",
+        "图神经网络"
+      ],
+      "summary_zh": "随着关系数据库的广泛使用，关系表学习受到越来越多的关注。现有方法通常依赖深层GNN或HGNN堆叠，导致计算成本高且在大规模真实数据库上性能受限。本文提出MetaRTL，一个用于可扩展且具表达力的关系表学习的两阶段框架。第一阶段通过轻量预训练获得初始表嵌入；第二阶段执行非参数化消息传递以导出元路径特征，再由注意力模块MetaAttn进行聚合。通过将计算从深层消息传递转移到高效的元路径聚合，MetaRTL在保持高效率的同时捕获丰富的关系语义。在10个真实数据集、24个任务上的实验证明了该方法的有效性。",
+      "insight_zh": "该文将深层图消息传递替换为元路径聚合以提升效率与表达力，其思路或可迁移到多源地理空间数据的异构图建模，但摘要未涉及任何地理空间应用或时空数据。"
     },
     {
       "key": "arxiv:2607.20712",
@@ -6159,6 +6364,35 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作提出了一种在动作之间高效共享价值信息的方法，以加速Q学习算法的收敛。",
       "insight_zh": "摘要缺失，无法判断其值共享机制的具体设计；若其加速策略可扩展至多智能体城市模拟环境，或对时空决策建模有潜在价值，但需原文验证。"
+    },
+    {
+      "key": "arxiv:2609.19812",
+      "title": "Absence is Presence: Understanding Visual Scene Negative Events Under Safety Cognitive Constraint",
+      "title_zh": "缺失即存在：安全认知约束下的视觉场景负事件理解",
+      "url": "https://arxiv.org/abs/2609.19812",
+      "arxiv_id": "2609.19812",
+      "authors": [
+        "Zhiyun Jiang",
+        "Hanyong Wang",
+        "Binbin Liang",
+        "Yu Xie",
+        "Menglong Yang",
+        "Wei Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T07:24:40+00:00",
+      "score": 20,
+      "reason": "该文研究视觉场景中的负事件描述，属于视觉语言模型与场景理解，与遥感变化检测中“缺失/变化”的语义建模有概念上的弱关联，但不涉及地理空间数据。",
+      "tags": [
+        "视觉语言模型",
+        "负事件描述",
+        "反事实重建",
+        "安全感知"
+      ],
+      "summary_zh": "传统场景理解关注图像中客观存在的肯定性信息。然而在安全关键领域，理解本应存在但实际缺失的关键信息对风险缓解至关重要。为填补这一空白，作者以安全为认知约束，研究视觉场景负描述。核心挑战在于将物理缺失转化为语义负事件。现有视觉语言模型（VLM）难以完成这一过程，因为肯定性偏置抑制了负向推理，而有限的心理填补能力和表征偏置进一步阻碍了对缺失信息的推断。为应对这些挑战，作者提出基于反事实重建与对比解码（CRCD）的负描述框架。受人类认知启发，CRCD将该任务重构为反事实潜在变化描述以绕过肯定性偏置，通过对比合成的安全期望与现实来识别语义遗漏。针对心理填补能力有限的问题，作者设计了双分支反事实重建架构：非模态补全分支修复缺陷物体，功能关联分支推断完全缺失的安全物体。同时集成多条件表征学习机制，将通用特征投影到预定义安全准则子空间以缓解表征偏置，从而在更多维度上捕获信息。通过解码重建场景原型与原始输入之间的特征级语义残差，CRCD限定了不存在性搜索空间并激活解码器的负向逻辑。大量实验验证了CRCD的有效性，为该方向建立了高性能基线。",
+      "insight_zh": "该文将“缺失”转化为可推理的语义事件，其反事实对比思路或可类比遥感变化检测中的“应有而未出现”目标识别，但摘要未涉及遥感或地理空间场景。"
     },
     {
       "key": "arxiv:2608.05810",
@@ -9071,6 +9305,35 @@
       "insight_zh": "该文展示了小模型微调与大型模型微调在专业领域关系抽取中的对比，方法上可类比到地理文本信息抽取；但摘要未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.19799",
+      "title": "Evolution or Illusion? Rethinking Evaluation in LLM Evolutionary Search",
+      "title_zh": "进化还是幻觉？重新审视LLM进化搜索的评估",
+      "url": "https://arxiv.org/abs/2609.19799",
+      "arxiv_id": "2609.19799",
+      "authors": [
+        "Tal Oved",
+        "Roi Pony",
+        "Oshri Naparstek",
+        "Udi Barzelay"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-17T07:12:42+00:00",
+      "score": 15,
+      "reason": "该文反思LLM进化搜索的评估方法，属于通用算法评估，与GIS研究无直接关联，仅在实验设计方法论上有一般性参考价值。",
+      "tags": [
+        "LLM进化搜索",
+        "评估方法",
+        "预算分配",
+        "基准测试"
+      ],
+      "summary_zh": "LLM驱动的进化搜索通过启动种子并对每个种子迭代来寻找程序。论文通常只报告单一预算设置，即一个种子运行固定迭代次数，并据此对方法排序。作者表明这并不充分。他们在五个优化任务上评估三种进化搜索策略，并在完整的种子与迭代网格上进行分析。研究发现，在固定预算下如何在更多种子（宽度）与更多迭代（深度）之间分配，会随策略、任务和总预算而变化。此外，策略的排序也随预算变化：在某个任务上，一个种子时表现最差的策略在四十个种子时表现最好；在另一个任务上，最佳迭代次数远低于实践中常用的值，因此额外的深度浪费了本可通过更多种子转化为分数的预算。作者提供了一个报告种子×迭代前沿的测量协议及其实用指南。",
+      "insight_zh": "该文关于预算分配与评估稳健性的讨论对时空数据挖掘实验设计有一般性借鉴意义，但摘要未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.19885",
       "title": "Evaluating Communicative Success in Machine-Translated Conversation",
       "title_zh": "评估机器翻译对话中的交际成功",
@@ -11388,6 +11651,45 @@
       "insight_zh": "该文对持续学习中的噪声机制给出仿真层面的隔离分析，或可启发遥感变化检测中跨时相模型的遗忘抑制；但摘要未涉及地理空间数据，且结论限于仿真与特定任务结构。"
     },
     {
+      "key": "arxiv:2609.19820",
+      "title": "Steering Equilibrium Selection in Regularized Self-Play via the Reference Policy",
+      "title_zh": "通过参考策略引导正则化自博弈中的均衡选择",
+      "url": "https://arxiv.org/abs/2609.19820",
+      "arxiv_id": "2609.19820",
+      "authors": [
+        "Luis Leal"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.GT",
+        "cs.LG",
+        "arXiv:2607.17543.",
+        "Fully",
+        "reproducible:",
+        "a",
+        "single",
+        "self-contained",
+        "notebook",
+        "regenerates",
+        "every",
+        "number,",
+        "table,",
+        "and",
+        "figure"
+      ],
+      "published": "2026-09-17T07:30:23+00:00",
+      "score": 8,
+      "reason": "该文研究正则化自博弈中的均衡选择，属于博弈论与强化学习理论，与GIS、城市更新、遥感等研究方向基本无关。",
+      "tags": [
+        "博弈论",
+        "自博弈",
+        "均衡选择",
+        "正则化"
+      ],
+      "summary_zh": "正则化自博弈——DeepNash的Stratego对弈背后的方法族——通过向缓慢移动的、熵正则化的参考策略ρ做最优响应，驱动双人零和策略收敛到纳什均衡。当博弈存在价值等价均衡构成的多面体时，正则项会悄然打破平局：在均匀参考下它选择最大熵成员，即ρ到纳什集合的I投影。参考策略能否被用来有意选择均衡？在五个可精确求解的博弈加一个二维多面体上，使用精确最优响应和跨独立种子的等价性检验，将参考锚定在目标成员并细化，可将自博弈引导至该成员，平均坐标误差0.007，中位可利用度5×10⁻⁵，在±0.05内与请求TOST等价；锚定在细化过程中持续存在，并跟随参考而非初始化。选择遵循可达加权I投影（斜率0.969 [0.950, 0.987]）。作者同样强调失效情形：固定的离流形参考带来0.08–0.25的可利用度代价；刚性或平坦族需要更小的镜像步长，由预注册规则设定；边界目标会欠冲；曲率可预测边界饱和发生的位置（秩相关0.90，p=0.037），而内部精度与曲率无关。表格与MLP引导图在每个目标上等价（±0.03，30个种子）；匹配对照臂显示注意力的稳健特征是种子方差过大，任何系统性偏移上界为0.018且不显著。面对最优响应时，选择-稳健性权衡是退化的：引导仅在面对固定的非均衡对手时才有意义。该配方——将参考锚定在期望成员并细化——可复现。",
+      "insight_zh": "该文属于博弈论与强化学习理论，与地理空间智能研究无直接关联，仅在多智能体博弈建模层面存在极弱的类比价值。"
+    },
+    {
       "key": "arxiv:2609.19747",
       "title": "STAR: Structure-aware Test-time Adaptation for diffusion-based light field Reconstruction",
       "title_zh": "STAR：面向扩散式光场重建的结构感知测试时自适应",
@@ -12663,40 +12965,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19820",
-      "title": "Steering Equilibrium Selection in Regularized Self-Play via the Reference Policy",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19820",
-      "arxiv_id": "2609.19820",
-      "authors": [
-        "Luis Leal"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.GT",
-        "cs.LG",
-        "arXiv:2607.17543.",
-        "Fully",
-        "reproducible:",
-        "a",
-        "single",
-        "self-contained",
-        "notebook",
-        "regenerates",
-        "every",
-        "number,",
-        "table,",
-        "and",
-        "figure"
-      ],
-      "published": "2026-09-17T07:30:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20818",
       "title": "SplashSplat: Reconstructing Splashing Liquids from Real-World Multi-View Videos",
       "title_zh": "",
@@ -12739,31 +13007,6 @@
         "cs.AI"
       ],
       "published": "2026-07-26T08:08:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19815",
-      "title": "SnapPhysics: A Physics-Aware Scene Graph from a Single View for Interactive Mixed Reality Scenes",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19815",
-      "arxiv_id": "2609.19815",
-      "authors": [
-        "Suji Kang",
-        "Seok-Young Kim",
-        "Young Bin Kim",
-        "Taewook Ha",
-        "Dieter Schmalstieg",
-        "Shohei Mori",
-        "Woontack Woo"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T07:26:56+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13215,28 +13458,6 @@
       ],
       "summary_zh": "强调式时序差分学习（ETD）能够稳定离策略TD更新的期望并改变其投影几何，但这两个性质都不能决定恒定步长下的采样动态。作者构造了一个遍历的两状态反例，其中ETD均值映射收缩，而采样乘积具有正的最大Lyapunov指数。再生周期分析将这一符号与后续迹的无限方差区分开来。作者提出正则化强调式TD（RETD），这是一种归一化的一阶冲击后修复方法，保持迹和重要性比率不变，将强调式TD信号存储在泄漏标量状态中，并释放延迟校正。RETD的原始均衡是ETD均衡的仿射平移；单正则化和双正则化读出能够精确恢复ETD不动点。作者证明了调和递减步长下的几乎必然收敛性，以及基于马尔可夫随机乘积界的条件恒定步长矩收缩结果。RETD在两状态构造和一个Baird点上具有经认证的负指数，而Baird ETD的正号仍为数值结果。配对的一万次运行实验验证了两种分离、不动点恢复、非单调稳定区域以及任务依赖性。RETD改变了冲击后动态；它并不减少共享的后续迹方差。",
       "insight_zh": "该工作属于强化学习理论范畴，其方法（正则化、稳定性分析）与地理空间智能或城市分析的关联非常间接，可能仅在方法论层面（如动态系统稳定性）对时空预测模型有微弱借鉴意义。"
-    },
-    {
-      "key": "arxiv:2609.19745",
-      "title": "Region-Level Policy Optimization for Fine-grained MLLM Perception",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19745",
-      "arxiv_id": "2609.19745",
-      "authors": [
-        "Yuheng Shi",
-        "Xiaohuan Pei",
-        "Minjing Dong",
-        "Chang Xu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T06:10:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20633",
@@ -14222,27 +14443,6 @@
         "cs.LG"
       ],
       "published": "2026-09-17T13:17:56+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19832",
-      "title": "MetaRTL: Meta-path Attention Enhanced Relational Table Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19832",
-      "arxiv_id": "2609.19832",
-      "authors": [
-        "Ken Zhong",
-        "Weichen Li",
-        "Zheng Wang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-17T07:37:25+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -15300,25 +15500,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19827",
-      "title": "F$^{2}$DR: A Fine-Grained Full-Pipeline Reward Framework for DeepSearch Workflows",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19827",
-      "arxiv_id": "2609.19827",
-      "authors": [
-        "Bojian Xiong (Tianjin University) Wentao Ding (Baidu Inc.) Yujing Lu (Baidu Inc.) Shaowei Zhang (Tianjin University) Ling Shi (Tianjin University) Jing Liao (Baidu Inc.) Yan Wang (Baidu Inc.) Yueyang Zhang (Baidu Inc.) Long Xia (Baidu Inc.) Zhiyuan Sun (Baidu Inc.) Daiting Shi (Baidu Inc.) Jingzhou He (Baidu Inc.) Yuqi Ren (Tianjin University) Deyi Xiong (Tianjin University)"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-17T07:32:54+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2602.06578",
       "title": "Exploring Sparsity and Smoothness of Arbitrary Lp Norms in Adversarial Attacks",
       "title_zh": "探索对抗攻击中任意Lp范数的稀疏性与平滑性",
@@ -15361,30 +15542,6 @@
         "cs.LG"
       ],
       "published": "2026-09-17T08:10:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19799",
-      "title": "Evolution or Illusion? Rethinking Evaluation in LLM Evolutionary Search",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19799",
-      "arxiv_id": "2609.19799",
-      "authors": [
-        "Tal Oved",
-        "Roi Pony",
-        "Oshri Naparstek",
-        "Udi Barzelay"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-17T07:12:42+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -15570,34 +15727,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19830",
-      "title": "Dual-Axis Policy Optimization for LLM Agents: Bayesian Feedback Attribution and Trajectory Mass Normalization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19830",
-      "arxiv_id": "2609.19830",
-      "authors": [
-        "Yingxuan Zhuang",
-        "Binhe Yu",
-        "Jingxiao Yang",
-        "Ruopei Sun",
-        "Ziting Li",
-        "Cheng Tan",
-        "Xuhong Zhang",
-        "Jianwei Yin",
-        "Jintao Chen"
-      ],
-      "categories": [
-        "cs.AI",
-        "stat.ML"
-      ],
-      "published": "2026-09-17T07:35:02+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19076",
       "title": "Double descent is the principle of least action",
       "title_zh": "双下降是最小作用量原理",
@@ -15737,32 +15866,6 @@
         "cs.CL"
       ],
       "published": "2026-09-17T12:05:58+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19801",
-      "title": "DeliveryGym: An RL Environment for Long-Horizon Embodied Agent Planning with Adaptive Curriculum",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19801",
-      "arxiv_id": "2609.19801",
-      "authors": [
-        "Haoqiang Kang",
-        "Yiming Zhang",
-        "Yiyang Guo",
-        "Chuying Li",
-        "Jianzhi Shen",
-        "Tianruo Rose Xu",
-        "Xiaokang Ye",
-        "Lianhui Qin"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T07:13:55+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16601,30 +16704,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19812",
-      "title": "Absence is Presence: Understanding Visual Scene Negative Events Under Safety Cognitive Constraint",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19812",
-      "arxiv_id": "2609.19812",
-      "authors": [
-        "Zhiyun Jiang",
-        "Hanyong Wang",
-        "Binbin Liang",
-        "Yu Xie",
-        "Menglong Yang",
-        "Wei Li"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T07:24:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19518",
       "title": "AMB3R-SLAM: Kilometer-scale SLAM with Hierarchical Backend",
       "title_zh": "",
@@ -16686,35 +16765,6 @@
         "cs.DC"
       ],
       "published": "2026-07-28T20:26:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19793",
-      "title": "AI Smart Glasses for Wearable Intelligence: From Egocentric Sensing to Agentic Personalization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19793",
-      "arxiv_id": "2609.19793",
-      "authors": [
-        "Xu Yuan",
-        "Yi Wang",
-        "Zhuohang Jiang",
-        "Haohao Qu",
-        "Yujuan Ding",
-        "Shanru Lin",
-        "Guoliang Xing",
-        "Hongxia Yang",
-        "Jiannong Cao",
-        "Qing Li",
-        "Wenqi Fan"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T06:59:58+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

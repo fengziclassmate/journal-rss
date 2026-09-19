@@ -14,6 +14,7 @@
     "arxiv:2609.08407",
     "arxiv:2609.00730",
     "arxiv:2609.11310",
+    "arxiv:2609.11170",
     "arxiv:2609.11123",
     "arxiv:2609.11058",
     "arxiv:2606.04990",
@@ -30,22 +31,21 @@
     "arxiv:2608.24415",
     "arxiv:2605.23234",
     "arxiv:2603.27771",
-    "arxiv:2504.13700",
-    "arxiv:2607.18029"
+    "arxiv:2504.13700"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:511",
-    "deepseek": "partial:0/80;failed-batches:8"
+    "deepseek": "partial:9/79;failed-batches:7"
   },
-  "updated_at": "2026-09-19T00:35:28.118782+00:00",
+  "updated_at": "2026-09-19T21:55:58.343432+00:00",
   "analysis_stats": {
     "total": 511,
-    "analyzed": 431,
+    "analyzed": 441,
     "high": 6,
-    "medium": 13,
+    "medium": 14,
     "low": 32,
-    "below_threshold": 380
+    "below_threshold": 389
   },
   "papers": [
     {
@@ -394,6 +394,31 @@
       "abstract": "We address few-shot object detection with vision-language models (VLMs) in out-of-domain settings such as aerial, industrial, and medical imagery, using only ten annotated images for supervision. Existing adaptation methods are discrete prompt optimization and LoRA fine-tuning. We revisit a third option: soft prompting, where a small number of continuous prompt tokens are optimized while the pretrained backbone remains frozen. We identify two key design choices. First, placing prompt tokens at the cross-modal boundary between visual and text tokens outperforms other placements (10.0 vs. 8.4 mAP). Second, initializing prompts from the empty space token outperforms semantic and random initialization. With these choices, one to three learned tokens (7,168 parameters on average) match the best LoRA configuration on Roboflow20-VL (14.2 mAP, 10-shot) while training over 20,000x fewer parameters. Soft prompting remains harder to optimize, exhibiting higher variance across random seeds. Unlike LoRA, however, it causes no forgetting: the LoRA rank matching our accuracy reduces NaturalBench VQA accuracy by 35% relative, rising to 56% at the largest rank, whereas soft prompting leaves pretrained performance unchanged. The learned tokens behave like prompts rather than weights. They transfer to a newer model without retraining (+0.8 mAP on Qwen3.5-9B) and can be verbalized into readable prompts competitive with prompt-search methods (matching DetPO and outperforming GEPA). The approach also extends beyond detection. On RoboCasa manipulation tasks, the frozen $\\pi_{0.5}$ vision-language-action policy benefits from soft prompting, matching the LoRA baseline on two of three tasks when tokens are placed at the gradient bottleneck. These results suggest modern VLMs already encode much of what is needed for specialized domains; the challenge is learning how to ask.",
       "summary_zh": "本文研究在航空、工业和医学影像等域外场景下，仅用十张标注图像进行视觉语言模型少样本目标检测。现有适配方法包括离散提示优化和LoRA微调，作者重新审视第三种选择：软提示，即优化少量连续提示token而保持预训练骨干冻结。研究发现两个关键设计选择：第一，将提示token置于视觉与文本token的跨模态边界处优于其他位置（10.0 vs. 8.4 mAP）；第二，从空空间token初始化提示优于语义初始化和随机初始化。基于这些选择，一到三个学习token（平均7168个参数）在Roboflow20-VL上（14.2 mAP，10-shot）即可匹配最佳LoRA配置，而训练参数少20000倍以上。软提示优化难度更大，在不同随机种子下方差更高。但与LoRA不同，它不会造成遗忘：与本文精度相当的LoRA秩会使NaturalBench VQA精度相对下降35%，在最大秩时升至56%，而软提示保持预训练性能不变。学习到的token表现得像提示而非权重，可无需重训练迁移到更新模型（在Qwen3.5-9B上+0.8 mAP），并可言语化为可读提示，与提示搜索方法竞争（匹配DetPO并优于GEPA）。该方法还扩展到检测之外：在RoboCasa操作任务上，冻结的π0.5视觉-语言-动作策略受益于软提示，当token置于梯度瓶颈处时，在三个任务中的两个上匹配LoRA基线。这些结果表明现代视觉语言模型已经编码了大量……",
       "insight_zh": "该工作提示，在遥感等域外视觉任务中，冻结骨干的软提示可能比LoRA更高效且无遗忘，但其优化方差较高；对地理空间智能中基础模型适配具有参考价值，但摘要未涉及城市更新或时空数据挖掘。"
+    },
+    {
+      "key": "arxiv:2609.11170",
+      "title": "From Explanations to Interventions: Execution-Guided Counterfactual Synthesis in Temporal Graphs",
+      "title_zh": "从解释到干预：时序图中的执行引导反事实合成",
+      "url": "https://arxiv.org/abs/2609.11170",
+      "doi": "",
+      "arxiv_id": "2609.11170",
+      "authors": [
+        "Minwoo Yu",
+        "Young-guk Ha"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T07:19:06+00:00",
+      "score": 62,
+      "reason": "该文研究时序图上的反事实解释与干预搜索，属于时空数据挖掘与可解释机器学习交叉方向，与研究中时空数据挖掘部分相关，但未涉及城市更新、遥感或地理空间智能应用。",
+      "tags": [
+        "时序图",
+        "反事实解释",
+        "时空数据挖掘",
+        "可解释AI"
+      ],
+      "abstract": "Temporal graph counterfactual explanations typically change past events to change or invalidate an original prediction, while leaving its replacement unspecified. Yet a user facing a predicted outcome often asks which past conditions would make a particular alternative occur instead. We formulate this destination-specific question as the Specified-Foil Counterfactual: given an original prediction A and a foil B fixed before search, find a low-cost past-event intervention under which the same predictor selects B as top-ranked. Our trace-guided intervention search contrasts the completed execution of A with a reconstructed incomplete execution of B, maps their difference to DELETE, INSERT, REWIRE, RELABEL, and SHIFT operations, and verifies B through exact replay. We instantiate this principle with LiFTER on continuous-time dynamic graphs and TLogic on temporal knowledge graphs. On CTDGs, the method retains 85.7-93.6% of black-box greedy successes while reducing predictor evaluations by 75.0-80.0%; on TKGs, it reaches the specified foil in 74.8% of 600 comparisons. Executable traces thereby become computational structures for constructing conditions of unselected alternatives, rather than records used only to explain predictions already made.",
+      "summary_zh": "时序图反事实解释通常通过改变过去事件来改变或使原预测失效，但不指定替代结果。本文提出“指定替代反事实”问题：给定原始预测A和预先固定的替代B，寻找低成本过去事件干预，使同一预测器将B选为最高排名。方法通过对比A的完整执行轨迹与B的重构不完整执行轨迹，将差异映射为DELETE、INSERT、REWIRE、RELABEL和SHIFT操作，并通过精确重放验证B。在连续时间动态图上实例化为LiFTER，在时序知识图谱上实例化为TLogic。在CTDG上保留85.7-93.6%的黑盒贪心成功，同时将预测器评估减少75.0-80.0%；在TKG上600次比较中74.8%达到指定替代。",
+      "insight_zh": "该工作将可执行轨迹作为构造未选中替代方案条件的计算结构，而非仅用于解释已做出的预测；其轨迹对比与操作映射思路或可迁移至城市更新中时序事件的干预情景推演，但原文未涉及城市或地理应用。"
     },
     {
       "key": "arxiv:2609.11123",
@@ -899,32 +924,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅含分隔线），无法获取具体研究内容。根据标题可知，该工作研究如何通过多模态提示（multimodal prompt）驱动大语言模型完成可视化创作任务。",
       "insight_zh": "摘要缺失，无法判断其具体方法、数据集或结论；从标题推测其可能涉及文本与视觉提示的联合设计，对LLM辅助地理可视化创作有潜在借鉴意义，但需查阅全文确认。"
-    },
-    {
-      "key": "arxiv:2607.18029",
-      "title": "Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation",
-      "title_zh": "面向领域特定元数据的自然语言访问：一个可复用的LLM查询生成框架",
-      "url": "https://arxiv.org/abs/2607.18029",
-      "doi": "",
-      "arxiv_id": "2607.18029",
-      "authors": [
-        "Blake G. Fitch",
-        "Cato Elia Kurtz"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文提出面向领域特定元数据的自然语言访问框架，利用LLM生成查询，与研究中LLM应用及地理空间数据访问有潜在关联，但未明确涉及地理空间数据。",
-      "tags": [
-        "LLM",
-        "查询生成",
-        "领域元数据",
-        "自然语言接口",
-        "可复用框架"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，从标题看该工作提出一个可复用的框架，利用大语言模型将自然语言转换为针对领域特定元数据的查询，以实现自然语言访问。",
-      "insight_zh": "该框架若可迁移至地理空间元数据（如遥感影像目录、城市更新项目数据库）的自然语言查询，可能对多源数据融合与地理空间智能研究有方法借鉴价值，但需验证其领域适配性。"
     }
   ]
 }

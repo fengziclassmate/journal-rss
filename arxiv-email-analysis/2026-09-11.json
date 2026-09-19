@@ -2,11 +2,11 @@
   "date": "2026-09-11",
   "analysis_stats": {
     "total": 511,
-    "analyzed": 431,
+    "analyzed": 441,
     "high": 6,
-    "medium": 13,
+    "medium": 14,
     "low": 32,
-    "below_threshold": 380
+    "below_threshold": 389
   },
   "papers": [
     {
@@ -486,6 +486,31 @@
       ],
       "summary_zh": "图压缩旨在生成一个小型代理图，以保留远大于其原始图的下游节点分类性能。现有方法依赖Weisfeiler-Lehman邻域聚合或基于梯度的分布匹配，二者均假设相邻节点共享相同标签，这一假设在异质性条件下失效。我们提出HERALD（高保真样本检索与自适应地标蒸馏），一种无梯度的图压缩框架，能够根据图所测得的异质性自适应调整压缩流程中的节点评分与特征选择。HERALD通过联合Fisher判别性与激活密度准则选择特征，在异质性图上对聚合表示降权，并依据原型代表性、决策边界邻近度和局部内在维度（LID）的加权组合对节点评分，其中权重由异质性比率的平滑Sigmoid函数驱动。随后通过按分数排序的BFS扩展、个性化PageRank剪枝和类别再平衡将节点组装为压缩子图，且在与BONSAI相同的存储预算下进行，便于直接比较。在涵盖同质与异质设置的八个基准数据集上的实验表明，HERALD在异质性图上匹配或超越最先进的压缩器，并在同质性图上于四种GNN架构下保持竞争力。",
       "insight_zh": "该工作将图压缩流程与图的异质性程度自适应耦合，提示在异质结构普遍存在的城市空间交互或跨区域关联建模中，压缩与采样策略可能需要依据局部结构特性动态调整，但其在时空场景中的适用性尚需验证。"
+    },
+    {
+      "key": "arxiv:2609.11170",
+      "title": "From Explanations to Interventions: Execution-Guided Counterfactual Synthesis in Temporal Graphs",
+      "title_zh": "从解释到干预：时序图中的执行引导反事实合成",
+      "url": "https://arxiv.org/abs/2609.11170",
+      "arxiv_id": "2609.11170",
+      "authors": [
+        "Minwoo Yu",
+        "Young-guk Ha"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-10T07:19:06+00:00",
+      "score": 62,
+      "reason": "该文研究时序图上的反事实解释与干预搜索，属于时空数据挖掘与可解释机器学习交叉方向，与研究中时空数据挖掘部分相关，但未涉及城市更新、遥感或地理空间智能应用。",
+      "tags": [
+        "时序图",
+        "反事实解释",
+        "时空数据挖掘",
+        "可解释AI"
+      ],
+      "summary_zh": "时序图反事实解释通常通过改变过去事件来改变或使原预测失效，但不指定替代结果。本文提出“指定替代反事实”问题：给定原始预测A和预先固定的替代B，寻找低成本过去事件干预，使同一预测器将B选为最高排名。方法通过对比A的完整执行轨迹与B的重构不完整执行轨迹，将差异映射为DELETE、INSERT、REWIRE、RELABEL和SHIFT操作，并通过精确重放验证B。在连续时间动态图上实例化为LiFTER，在时序知识图谱上实例化为TLogic。在CTDG上保留85.7-93.6%的黑盒贪心成功，同时将预测器评估减少75.0-80.0%；在TKG上600次比较中74.8%达到指定替代。",
+      "insight_zh": "该工作将可执行轨迹作为构造未选中替代方案条件的计算结构，而非仅用于解释已做出的预测；其轨迹对比与操作映射思路或可迁移至城市更新中时序事件的干预情景推演，但原文未涉及城市或地理应用。"
     },
     {
       "key": "arxiv:2609.11058",
@@ -4458,6 +4483,38 @@
       "insight_zh": "该研究将多模态VQA应用于执法记录仪视频分析，其结构化推理和问题生成方法对多模态数据融合有参考价值，但应用场景为执法视频理解，与城市更新或遥感变化检测的直接关联有限。"
     },
     {
+      "key": "arxiv:2609.11126",
+      "title": "Beyond Benchmarks: Using VLMs to Reveal Systematic Classification Failures Under Real World Conditions",
+      "title_zh": "超越基准：用视觉语言模型揭示真实条件下的系统性分类失败",
+      "url": "https://arxiv.org/abs/2609.11126",
+      "arxiv_id": "2609.11126",
+      "authors": [
+        "Dieuwertje Alblas",
+        "Alma M. Liezenga",
+        "Jan Erik van Woerden",
+        "Fedor Taggenbrock",
+        "Dalia Aljawaheri",
+        "Klamer Schutte"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.ET",
+        "2026"
+      ],
+      "published": "2026-09-10T06:13:53+00:00",
+      "score": 25,
+      "reason": "该文探索用视觉语言模型加速分类模型的验证与确认，识别系统性误差切片，其方法可迁移至遥感影像分类的误差分析，与遥感变化检测、多源数据融合有方法层面的关联，但不涉及地理空间分析本身。",
+      "tags": [
+        "视觉语言模型",
+        "验证与确认",
+        "误差切片检测",
+        "遥感分类"
+      ],
+      "summary_zh": "分类模型的验证与确认（V&V）对支撑广泛的传感器处理应用至关重要。目前V&V流程依赖耗时的人工检查错误样本来发现有意义的模式。本文探索使用视觉语言模型（VLM）加速这一繁重过程。VLM被训练将图像嵌入语义上有意义的向量表示，从中可提炼出人类可解释的系统性误差。在国防场景中部署此类VLM方法面临两大挑战：(1) 国防领域在VLM训练数据中代表性不足；(2) 环境与上下文多样性低于其他领域。本研究对VLM方法用于国防应用V&V的适用性进行初步评估。作者提出基于VLM的误差切片检测（ESD）方法，可独立地对分类模型产生的系统性误差进行分组与标注。研究表明，该方法能在非军事数据集上识别出具有操作相关性的、人为添加的扰动。在军事场景中，该方法能依据环境对图像进行聚类与描述，但聚类描述之间存在重叠。作者进一步考察军事与非军事数据集在嵌入变异上的差异，这仍是值得关注的问题。尽管结果尚不足以支持通过VLM实现全自动V&V，但表明VLM未来可用于加速V&V流程。",
+      "insight_zh": "该研究提出的误差切片检测思路对遥感影像分类模型的系统性误差诊断具有直接的方法迁移价值，尤其是按环境上下文聚类误差样本的做法与地理场景分层分析相通。但论文聚焦国防图像分类，未涉及地理空间坐标、城市分析或变化检测任务。"
+    },
+    {
       "key": "arxiv:2508.19742",
       "title": "Adaptive Dual-Constrained Line Aggregation for Cross-Paradigm Line Segment Detection",
       "title_zh": "面向跨范式线段检测的自适应双约束线聚合",
@@ -4592,6 +4649,39 @@
       ],
       "summary_zh": "合作如何在复杂智能体系统中演化？先前演化博弈论的工作通过将社会互动与行为的物理成本隔离来研究个体为何有动机合作，而人工生命模型传统上研究涌现的自复制，但没有形式化获取资源与保存复制所需共享能量之间的困境。与此不同，作者引入了自创生博弈论，这是一个计算模型，其中社会互动、复制机制及其相关计算成本是内生的并同时共同演化。他们使用随机初始化的Z80机器码程序作为计算基质来研究这些动力学，通过经验展示并用简化理论模型加以论证，将社会困境直接嵌入计算的物理过程中可以有利于自复制、合作策略的出现。当资源稀缺时，分析表明背叛可能变得自我限制，即使在充分混合的群体中：寄生性窃取破坏共享能量、减慢执行速度，并可能阻止可靠复制。经验上，演化出的程序在多个Z80环境中抑制了窃取行为，而空间分选进一步支持结构复杂性和任务性能。作者进一步表明，该框架可以纳入外生压力，例如当奖励与计算预算挂钩时，将数学任务结构化为序贯社会困境。这些结果表明，将智能体的计算能力与其可用能量耦合，可将合作转变为构建可持续、自组织系统的主导脚手架。",
       "insight_zh": "该研究将社会困境嵌入计算物理过程，为多智能体合作演化提供了新视角，其关于能量约束下合作涌现的发现可能对分布式智能体系统设计有启发，但与地理空间智能的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.11129",
+      "title": "ReconPlusGen: Injecting Reconstruction Prior into Multi-view 3D Generation through Noise Inversion and Modulation",
+      "title_zh": "ReconPlusGen：通过噪声反演与调制将重建先验注入多视图三维生成",
+      "url": "https://arxiv.org/abs/2609.11129",
+      "arxiv_id": "2609.11129",
+      "authors": [
+        "Jiarui Liu",
+        "Heng Li",
+        "Weiyu Li",
+        "Keng Deng",
+        "Junyuan Deng",
+        "Zheng Zhongxing",
+        "Junyu Huang",
+        "Jiahao Chang",
+        "Xiaoguang Han",
+        "Ping Tan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-10T06:19:11+00:00",
+      "score": 22,
+      "reason": "该文研究多视图三维生成中注入重建先验，涉及三维几何重建与扩散模型结合，与遥感三维重建、点云处理有方法层面的间接关联，但不涉及地理空间尺度或城市应用。",
+      "tags": [
+        "三维生成",
+        "多视图重建",
+        "扩散模型",
+        "噪声反演"
+      ],
+      "summary_zh": "本文展示了定性结果与核心思想示意。左上：在基准图像上的重建结果。右上：在真实世界图像上的重建结果。下方：重建引导的噪声初始化与调制示意。给定多张输入图像，方法在规范空间中预测点云，通过噪声反演将预测几何确定性地注入扩散过程，并对所得噪声进行调制，以保留补全未观测区域与细化可见几何所需的生成灵活性。",
+      "insight_zh": "该工作将确定性重建先验与生成式扩散过程结合，其“重建引导生成”的思路对遥感三维场景重建与点云补全有潜在方法迁移价值，但论文摘要未涉及地理空间数据、城市尺度或遥感影像，相关性限于三维视觉方法层面。"
     },
     {
       "key": "arxiv:2609.11318",
@@ -6091,6 +6181,31 @@
       ],
       "summary_zh": "本文提出LASP框架，利用大语言模型从程序化建模历史中推断结构化、可供求解器使用的B样条先验。该方法不修改几何内核，而是在现有求解器之上作为语义推理层运行：先将建模历史转化为包含设计意图、几何上下文和功能关系的文本描述，再用微调后的LLM预测结构化B样条先验参数。LASP采用两阶段训练，结合局部几何规律与长程上下文依赖，生成可解释且语义一致的先验，为传统B样条拟合提供归纳信号。实验表明，语言驱动推理可作为几何求解的有效归纳偏置。",
       "insight_zh": "该工作提示LLM可作为高层语义与底层几何求解之间的推理层，这一思路或可迁移到地理空间建模中，例如将规划文本或设计意图转化为空间拟合或配置先验，但论文本身未涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.11134",
+      "title": "LAION-Mobile: Evaluating Deepfake Detectors On One Million Smartphone Photos",
+      "title_zh": "LAION-Mobile：在百万张智能手机照片上评估深度伪造检测器",
+      "url": "https://arxiv.org/abs/2609.11134",
+      "arxiv_id": "2609.11134",
+      "authors": [
+        "Achim von Stryk",
+        "Janis Keuper"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-10T06:25:11+00:00",
+      "score": 18,
+      "reason": "该文构建百万级智能手机照片数据集并评估深度伪造检测器，涉及图像取证与数据集偏差问题，与遥感变化检测、多源数据融合在图像真实性验证层面有间接方法关联，但不涉及地理空间分析或城市研究。",
+      "tags": [
+        "深度伪造检测",
+        "计算摄影",
+        "数据集",
+        "遥感影像取证"
+      ],
+      "summary_zh": "多数深度伪造检测器在其参考基准上报告近乎完美的AUC，但近期一篇ICML立场论文认为这些评估普遍忽视了现代智能手机摄影的影响：设备端神经图像信号处理流水线（如多传感器融合、噪声与运动模糊抑制）正将成像范式从简单镜头投影推向计算摄影，设备实际上是在生成而非记录照片，这增加了检测器将普通手机照片误判为伪造的风险。由于缺乏包含现代智能手机图像的大规模数据集，该假设此前仅在小规模概念验证研究中被检验。本文旨在填补这一空白，提出LAION-Mobile——一个从re-LAION-5B中提炼、包含约100万张带EXIF元数据智能手机图像的开放数据集。在9,115张图像的评估样本（DIRE为738张）上，用原始论文检查点评估十二个最先进检测器，得到三项关键发现：(i) 在现代AI内容上无检测器AUC超过0.624，十二个中有五个低于随机水平；(ii) 真实照片误报率是阈值校准的产物——在旧式GAN数据上拟合的阈值使若干检测器看似可用（FPR低于11%），但同一标准在现代内容上重新拟合后，这些检测器会误报17%—91%的真实照片；(iii) 因此没有检测器既能超越随机水平识别现代AI内容，又能保持可部署的真实照片误报率。该语料镜像了网络采集的设备构成，探测的是第一代神经ISP时期（2018—2020），当前旗舰机型基本缺席。",
+      "insight_zh": "该研究揭示图像取证模型在分布偏移下的脆弱性，其核心教训——基准性能不等于真实场景可靠性、阈值校准会掩盖误报——对遥感变化检测与影像真伪判别具有方法论迁移价值。但论文未涉及地理空间数据、城市或遥感应用，相关性限于图像验证方法层面。"
     },
     {
       "key": "arxiv:2609.10994",
@@ -8175,6 +8290,36 @@
       "insight_zh": "若该网络能有效处理稀疏深度输入，或可迁移至遥感影像的深度估计或三维城市建模任务，但需进一步验证其在地理空间数据上的适用性。"
     },
     {
+      "key": "arxiv:2609.11128",
+      "title": "From Repetition to Recognition: Inductive Discovery of Disinformation Narratives",
+      "title_zh": "从重复到识别：虚假信息叙事的归纳式发现",
+      "url": "https://arxiv.org/abs/2609.11128",
+      "arxiv_id": "2609.11128",
+      "authors": [
+        "Max Upravitelev",
+        "Veronika Solopova",
+        "Jing Yang",
+        "Charlott Jakob",
+        "Alexandra Tsiakalou",
+        "Neda Foroutan",
+        "Vera Schmitt"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-10T06:17:30+00:00",
+      "score": 15,
+      "reason": "该文研究虚假信息叙事的归纳式发现与开放世界评估框架，涉及文本聚类与图社区发现方法，与时空数据挖掘中的聚类方法有方法论交集，但不涉及地理空间维度或城市议题。",
+      "tags": [
+        "虚假信息叙事",
+        "无监督聚类",
+        "图社区发现",
+        "开放世界发现"
+      ],
+      "summary_zh": "在虚假信息数据集中，叙事常被理解为将文本归入叙事标签下的反复出现的解释模式。近期工作将叙事挖掘形式化为从语料中归纳推断叙事标签，但其评估仍绑定于预定义分类体系，这种封闭世界设定无法捕捉参考标签之外的叙事。本文提出面向无监督叙事标签生成的三层评估框架：恢复（对照语料自身分类体系）、挖掘（对照外部标签集）与发现（无预定义标签）。应用该框架，作者在七个虚假信息数据集上比较基于聚类与基于图社区的两类流水线，并对两个数据集上的发现结果进行人工验证。在自动指标下两类方法互补，但在含两个显著主题的语料中，聚类可能将其中一个主题压缩至生成标签的2%，而基于图的流水线保持均衡。发现验证还揭示出大量单例（由单一主张衍生的叙事标签，占图输出的30%—62%），这是聚类无法产生的。标注者确认其中许多是可识别的虚假信息叙事，表明在开放世界发现中，叙事挖掘所假设的重复性可能是在语料之外被识别，而非在语料之内。作者发布了经人工验证的叙事候选标签（Climate Obstruction与PolyNarrative数据集），以支持分类体系构建与数据集扩展。",
+      "insight_zh": "该研究提出的三层评估框架（恢复/挖掘/发现）对开放世界下的模式发现具有方法论参考价值，其关于聚类会压缩少数主题、图方法能产生单例模式的发现，对时空数据中的事件与模式挖掘有类比意义，但论文未涉及地理空间数据或城市分析。"
+    },
+    {
       "key": "arxiv:2609.10781",
       "title": "From Connectivity to Rewards: Dense Reward Learning with Directed State Graphs",
       "title_zh": "从连通性到奖励：基于有向状态图的稠密奖励学习",
@@ -8949,6 +9094,34 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究问题、方法、数据与结论。",
       "insight_zh": "由于摘要为空，无法推断其方法或结论；从标题推测可能涉及AI系统在不同社会人口群体中的对齐表现差异，但具体贡献与发现无法确认。"
+    },
+    {
+      "key": "arxiv:2609.11144",
+      "title": "Same Day, Same Story; One Day Ahead, a Different Signal: The Dual Validity of Financial Sentiment",
+      "title_zh": "同日同叙事，提前一日则信号不同：金融情感的双重效度",
+      "url": "https://arxiv.org/abs/2609.11144",
+      "arxiv_id": "2609.11144",
+      "authors": [
+        "AS Aravinthkakshan",
+        "Laven Srivastava",
+        "Harsh Nandwani"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SI"
+      ],
+      "published": "2026-09-10T06:37:33+00:00",
+      "score": 12,
+      "reason": "该文研究金融情感分析工具的构念效度与预测效度关系，属于NLP方法评估，与城市更新、时空数据挖掘、遥感变化检测等GIS核心议题无直接关联，仅在LLM作为标注工具的方法论层面有微弱参考价值。",
+      "tags": [
+        "金融NLP",
+        "情感分析",
+        "预测效度",
+        "LLM标注"
+      ],
+      "summary_zh": "金融NLP的标准流程是先用人标注验证情感工具，再信任其提取市场信号，这假设两种评估测量的是同一事物。本文在可同时测量两者的场景中检验该假设：使用2002—2025年证券集体诉讼语料，将70,500条X消息与异常股票收益关联，并配有单标注者人工金标样本。五种工具（VADER、Loughran-McDonald、FinBERT、Twitter-RoBERTa及一个LLM标注器）经同一流程运行后发现，构念效度与预测效度的关系取决于抽样约定与分数表示方式。在传统的方法特定抽样下，人工一致性更贴近分级的同日关联而非提前一日的领先关联；在固定n面板上，一致性在两个时间跨度上具有相似的分级秩相关，但粗粒度排序仍然较弱。因此基准一致性确立了语义效度，但本身并不能决定预测排序。在含17.6%垃圾信息的对话中，消息量既不能预测市场损失也不能预测和解金额。",
+      "insight_zh": "该研究提示：在将LLM用于文本标注或信号提取时，与人工标注的一致性并不自动保证下游预测性能，抽样方式与分数表示会改变结论。这一方法论警示对使用LLM进行地理文本挖掘的研究具有借鉴意义，但论文本身未涉及任何地理空间数据或城市议题。"
     },
     {
       "key": "arxiv:2601.00702",
@@ -10548,6 +10721,35 @@
       "insight_zh": "从标题推断，该工作可能利用聚合机制降低标签发布中的隐私泄露风险；对涉及敏感位置或人口数据的城市研究有潜在借鉴意义，但因摘要缺失，无法确认具体方法与理论保证。"
     },
     {
+      "key": "arxiv:2609.11127",
+      "title": "KuaiRP Series Role-playing Models Technical Report",
+      "title_zh": "KuaiRP系列角色扮演模型技术报告",
+      "url": "https://arxiv.org/abs/2609.11127",
+      "arxiv_id": "2609.11127",
+      "authors": [
+        "Yipeng Wang",
+        "Ziwei Zhang",
+        "Jiahui Zhang",
+        "Qi Gan",
+        "Kai Sheng"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-10T06:14:58+00:00",
+      "score": 10,
+      "reason": "该文为角色扮演LLM的技术报告，涉及领域知识注入与通用能力保持的训练范式，与LLM和多智能体研究方向有间接关联，但不涉及地理空间智能或城市研究。",
+      "tags": [
+        "角色扮演模型",
+        "多阶段训练",
+        "自蒸馏",
+        "灾难性遗忘"
+      ],
+      "summary_zh": "本文介绍KuaiRP系列角色扮演模型的完整技术方案，目标是实现专用角色扮演模型的四个核心目标：简化提示工程、高度稳定的输出质量、内置领域世界知识，以及小参数规模下的高效部署。然而有效注入深度领域知识往往导致模型通用智能体能力严重灾难性遗忘。为克服这一权衡，作者提出多阶段训练流水线。首先设计标准化角色模板，并基于用户行为模拟与反向画像过滤构建SFT数据流水线。其次在强化学习阶段使用基于规则的复合奖励函数，消除长度膨胀与重复生成等常见退化现象。最后为恢复SFT与RL过程中受损的通用能力，提出一种新颖的自蒸馏范式——带累积散度衰减（CDD）的两阶段在线策略蒸馏（OPD）。以领域适配模型为教师、原始基础模型为学生，有效平衡深度领域知识注入与通用智能体能力保持。实验结果表明，KuaiRP模型不仅在目标领域内的角色扮演保真度上匹配当前最先进的专有模型，还成功恢复了通用智能体能力，同时保持极低的部署成本。",
+      "insight_zh": "该报告提出的“领域适配后通过自蒸馏恢复通用能力”范式，对构建地理空间领域专用LLM时平衡专业知识与通用推理能力有借鉴意义，但论文本身不涉及地理空间数据、城市分析或遥感应用。"
+    },
+    {
       "key": "arxiv:2609.11458",
       "title": "Flexible and Interpretable Accent Distance Measurements",
       "title_zh": "灵活且可解释的口音距离测量",
@@ -11578,6 +11780,31 @@
       ],
       "summary_zh": "术语感知翻译要求的不只是正确翻译：输出必须使用术语表规定的确切术语。标准做法是在术语标注的翻译对上微调，但这隐藏了一种低效：对大多数样本而言，术语表规定的正是模型本来就会产出的内容，因此它们对学习遵循术语表毫无帮助。因此我们只保留模型自身翻译与术语表相矛盾的样本。在固定数据量的对照研究中，仅此筛选就将术语准确率从78.7%提升至89.9%。该筛选数据由开放模型上的双向合成流程构建，是我们公开发布的SalamandraTA-7b-instruct v3.0指令微调混合数据的一部分；按发布原样使用并封装在文档级推理流程中，构成BSC对WMT26术语共享任务赛道1的提交。在官方WMT26评测中，我们的系统以74.6 chrF++达到94.2%的术语成功率，22份提交中仅有两份在两个指标上均优于它。在去年的基准上，它也超过了我们基于GRPO的系统，尽管仅用普通监督微调训练。",
       "insight_zh": "该文的'困难样本优先'筛选思想对构建高质量领域指令数据具有参考价值，但其应用场景为翻译术语约束，与地理空间智能的关联需自行建立。"
+    },
+    {
+      "key": "arxiv:2609.11131",
+      "title": "Rubric-Aligned Disentangled Evaluation of Human Simultaneous Interpreting",
+      "title_zh": "面向评分标准对齐的人工同声传译解耦评估",
+      "url": "https://arxiv.org/abs/2609.11131",
+      "arxiv_id": "2609.11131",
+      "authors": [
+        "Ziyu Zhang",
+        "Satoshi Nakamura"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-10T06:20:40+00:00",
+      "score": 8,
+      "reason": "该文研究人工同声传译的评分标准对齐自动评估，属于语音与语言评估领域，与GIS研究无直接关联，仅在多维度解耦评估方法论上与多源数据融合评估有微弱类比。",
+      "tags": [
+        "同声传译评估",
+        "LLM评估",
+        "多维度解耦",
+        "LoRA"
+      ],
+      "summary_zh": "人工同声传译（SI）通常用分析性评分标准评估，区分意义传递、表达质量与时间同步性，但目前尚无面向评分标准对齐的片段级SI自动评估指标。本文构建了一个专业标注的语料库，包含1,101个SI片段及意义传递（LQ）、表达质量（EXP）与感知延迟（LAT）得分。作者表明，结构化LLM提示与标量监督会使评分维度坍缩，与人工评分的相关性接近零且维度间强耦合。为在相同骨干容量下分离监督结构，本文在LoRA适配的COMET-KIWI编码器上引入双回归头。在留出的演讲级测试集上，模型达到Pearson相关0.388（LQ）与0.301（EXP），优于冻结的COMET-KIWI。鉴于评分者间一致性本身较低，作者将结果相对于人类一致性进行解读，并以稳定的排序信号作为形成性评估目标。",
+      "insight_zh": "该研究强调多维度评估中监督结构设计的重要性，以及单一标量监督会导致维度坍缩，这一发现对构建多指标地理空间评估体系有抽象借鉴意义，但论文本身不涉及地理空间数据或城市研究。"
     },
     {
       "key": "arxiv:2609.11769",
@@ -12932,29 +13159,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.11144",
-      "title": "Same Day, Same Story; One Day Ahead, a Different Signal: The Dual Validity of Financial Sentiment",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11144",
-      "arxiv_id": "2609.11144",
-      "authors": [
-        "AS Aravinthkakshan",
-        "Laven Srivastava",
-        "Harsh Nandwani"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.SI"
-      ],
-      "published": "2026-09-10T06:37:33+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2505.23942",
       "title": "SG-Blend: Learning an Interpolation Between Improved Swish and GELU for Robust Neural Representations",
       "title_zh": "SG-Blend：学习改进的Swish与GELU之间的插值以实现稳健的神经表示",
@@ -12980,26 +13184,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅含分隔线），无法获取具体研究细节。从标题推断，该工作提出一种在改进的Swish与GELU激活函数之间进行插值学习的方法，旨在获得更稳健的神经表示。",
       "insight_zh": "由于摘要缺失，无法判断其具体贡献与实验结论。从标题看，该研究可能为神经网络提供一种新的激活函数设计思路，但未声明与地理空间任务的关联，对GIS研究的直接价值有限。"
-    },
-    {
-      "key": "arxiv:2609.11131",
-      "title": "Rubric-Aligned Disentangled Evaluation of Human Simultaneous Interpreting",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11131",
-      "arxiv_id": "2609.11131",
-      "authors": [
-        "Ziyu Zhang",
-        "Satoshi Nakamura"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-10T06:20:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.11722",
@@ -13131,34 +13315,6 @@
       ],
       "summary_zh": "本文延续Dughmi和Pour（2026）提出的相对智能学习研究，该研究要求监督学习器在边际上竞争，与每个可从无标签数据中可靠证明的分布固定误差保证相抗衡。他们证明了One-Inclusion Graph（OIG）学习器是相对智能的，但样本复杂度有二次膨胀，且没有相对智能学习器能做得更好，这留下了ERM或其他自然或可计算学习器能否达到可比保证的开放问题。他们还留下开放问题：膨胀能否仅限于无标签数据。本文第一个结果表明，ERM——事实上任何恰当一致学习器——在无分布假设的二分类设置下都是相对智能的。作者证明，用m个样本获得的小可证明误差意味着在大小为O(m^2)的随机样本上的均匀分布上也有类似小的误差，从而在该样本上产生大小至多2^{m+1}的覆盖。这足以用O(m^2)个样本控制恰当一致学习器的误差。随后作者证明，半监督相对智能学习在信息论上是可能的，仅无标签样本复杂度有二次膨胀，而有标签样本复杂度无膨胀。该学习器使用OIG对留多数转导问题的自然推广，其中有限池中部分标签被揭示，其余标签被预测。最后，这种标签效率以简单性和可计算性为代价。如果假设类仅通过不可知ERM预言机访问，任何具有显著次二次有标签样本膨胀的半监督相对智能学习器都需要超多项式数量的预言机调用。即使边际分布显式给出，这一结论也成立。",
       "insight_zh": "该学习理论结果与地理空间智能的关联较弱，但其半监督标签效率分析或对遥感标注稀缺场景有理论参考价值。"
-    },
-    {
-      "key": "arxiv:2609.11129",
-      "title": "ReconPlusGen: Injecting Reconstruction Prior into Multi-view 3D Generation through Noise Inversion and Modulation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11129",
-      "arxiv_id": "2609.11129",
-      "authors": [
-        "Jiarui Liu",
-        "Heng Li",
-        "Weiyu Li",
-        "Keng Deng",
-        "Junyuan Deng",
-        "Zheng Zhongxing",
-        "Junyu Huang",
-        "Jiahao Chang",
-        "Xiaoguang Han",
-        "Ping Tan"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-10T06:19:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.11514",
@@ -13295,7 +13451,7 @@
     {
       "key": "arxiv:2609.11133",
       "title": "Phase-Decoupled, Model-Calibrated Power Control for Disaggregated LLM Serving",
-      "title_zh": "",
+      "title_zh": "面向分离式LLM服务的相位解耦、模型校准功耗控制",
       "url": "https://arxiv.org/abs/2609.11133",
       "arxiv_id": "2609.11133",
       "authors": [
@@ -13312,10 +13468,14 @@
       ],
       "published": "2026-09-10T06:23:37+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究分离式LLM推理服务的GPU功耗控制与能效优化，属于系统与硬件调度领域，与GIS、城市更新、时空数据挖掘、遥感均无关联。",
+      "tags": [
+        "LLM推理服务",
+        "GPU功耗控制",
+        "数据中心能效"
+      ],
+      "summary_zh": "数据中心GPU功耗是LLM服务容量的硬约束，生产级服务已转向预填充/解码（PD）分离架构。在分离式B200系统上部署NVIDIA的Max-Q推理配置后，作者发现其实际收益有限（+8.6% tokens/J）、依赖模型，并带来平均端到端延迟代价（+5.2%），而仅看吞吐的评估无法暴露这一点；该配置还对处于相反硬件状态的预填充与解码GPU施加同一设置。作者假设最优功耗设置是所部署（模型、量化、引擎、硬件）组合的属性而非GPU类别的属性，每条通道应各有配置，且将SLO余量安全转化为能效需要在运行时SLO守护下进行延迟门控校准而非固定配方。本文提出相位解耦、模型校准的控制器：预填充通道运行于SM时钟窗口，其下限由构造保证延迟；解码通道运行于功耗上限之下，该上限由自动校准置于实测吞吐/延迟悬崖之上。由于分离式解码通道功耗平坦且受内存带宽约束，上限持续生效，导致POLCA拒绝限功耗的反应性超调弱点不复存在，GPU自身功耗管理器在上限内维持吞吐。在8×B200节点上以智能体负载服务Qwen3-Coder-480B（FP8）时，均衡模式实现+20.4% tokens/J、平均端到端仅+3.5%，而Max-Q为+8.6%与+5.2%，在两个维度上均为帕累托改进。在Qwen3-235B-A22B（NVFP4）上，所有运行模式在每次重复中均满足ITL-p99 SLO，而两个厂商配置均未达标。解码执行器A/B实验显示校准上限优于静态时钟锁定，三天持续运行节省了单通道32.3%的功耗。",
+      "insight_zh": "该研究属于数据中心系统优化范畴，其“配置应随部署组合校准而非套用通用配方”的思路对任何计算密集型流水线调优有一般性启发，但与地理空间智能、城市分析或遥感无实质关联。"
     },
     {
       "key": "arxiv:2609.11538",
@@ -13810,74 +13970,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.11134",
-      "title": "LAION-Mobile: Evaluating Deepfake Detectors On One Million Smartphone Photos",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11134",
-      "arxiv_id": "2609.11134",
-      "authors": [
-        "Achim von Stryk",
-        "Janis Keuper"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-10T06:25:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11127",
-      "title": "KuaiRP Series Role-playing Models Technical Report",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11127",
-      "arxiv_id": "2609.11127",
-      "authors": [
-        "Yipeng Wang",
-        "Ziwei Zhang",
-        "Jiahui Zhang",
-        "Qi Gan",
-        "Kai Sheng"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-10T06:14:58+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11132",
-      "title": "How Wrong Can a Good Predictor Be? Diverging Updates with Vanishing Predictive KL",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11132",
-      "arxiv_id": "2609.11132",
-      "authors": [
-        "Qifu Wen",
-        "Shuaijun Liu",
-        "Zihan Zhou",
-        "Xi Zeng",
-        "Ningxin Su"
-      ],
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "published": "2026-09-10T06:22:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10801",
       "title": "How Much Velocity Does Off-Ball Space Value Need? A Broadcast-Viewport Benchmark",
       "title_zh": "无球空间价值需要多少速度信息？广播视角基准测试",
@@ -14049,51 +14141,6 @@
       ],
       "summary_zh": "最大似然（ML）估计是学习概率模型的一种有原则且统计高效的途径。然而，对于未归一化模型，ML估计需要评估配分函数并对其求导，这并非总是可处理的。分数匹配提供了一种实际可行的替代方案，通过拟合分数来消除对归一化常数的依赖。本文从最小概率流（MPF）学习出发，构造性地推导了$\\mathbb{R}^{d}$凸子集上的广义分数匹配目标，并展示了经典分数匹配以及非负数据的域适应变体如何自然地在所提框架中产生。作者证明所得目标是二阶的适当局部评分规则，这提供了在目标最小化时恢复真实密度的理论保证。此外，对于属于指数族的模型，作者在标准正则条件下建立了目标的凸性以及有限样本估计量的一致性。该推导为广义分数匹配在各种问题设置中的范围和适用性提供了新见解。作者在配分函数解析不可处理的约束域上比较了基于广义分数匹配的估计量，并提供了在$\\mathbb{R}^{d}$凸子集上定义的指数族模型密度的参数估计实验结果，以及一个生成建模用例以展示所提广义分数匹配框架的更广泛适用性。",
       "insight_zh": "该研究为约束域上的未归一化概率模型参数估计提供了理论保证，其凸性和一致性结果可能对需要处理复杂约束的时空统计建模具有方法学参考价值。"
-    },
-    {
-      "key": "arxiv:2609.11128",
-      "title": "From Repetition to Recognition: Inductive Discovery of Disinformation Narratives",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11128",
-      "arxiv_id": "2609.11128",
-      "authors": [
-        "Max Upravitelev",
-        "Veronika Solopova",
-        "Jing Yang",
-        "Charlott Jakob",
-        "Alexandra Tsiakalou",
-        "Neda Foroutan",
-        "Vera Schmitt"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-10T06:17:30+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11170",
-      "title": "From Explanations to Interventions: Execution-Guided Counterfactual Synthesis in Temporal Graphs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11170",
-      "arxiv_id": "2609.11170",
-      "authors": [
-        "Minwoo Yu",
-        "Young-guk Ha"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-10T07:19:06+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2604.08485",
@@ -14579,33 +14626,6 @@
         "https://github.com/InternRobotics/EgoGenEval"
       ],
       "published": "2026-09-10T07:19:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11126",
-      "title": "Beyond Benchmarks: Using VLMs to Reveal Systematic Classification Failures Under Real World Conditions",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11126",
-      "arxiv_id": "2609.11126",
-      "authors": [
-        "Dieuwertje Alblas",
-        "Alma M. Liezenga",
-        "Jan Erik van Woerden",
-        "Fedor Taggenbrock",
-        "Dalia Aljawaheri",
-        "Klamer Schutte"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.ET",
-        "2026"
-      ],
-      "published": "2026-09-10T06:13:53+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -15178,6 +15198,35 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作提出部分GFlowNet方法，通过策略性分区来加速大状态空间中的收敛过程。",
       "insight_zh": "摘要缺失，无法判断其具体贡献。GFlowNet在大规模组合优化中有潜在应用，若与地理空间选址或路径规划等问题结合可能有间接价值，但当前信息不足以确认与GIS研究的相关性。"
+    },
+    {
+      "key": "arxiv:2609.11132",
+      "title": "How Wrong Can a Good Predictor Be? Diverging Updates with Vanishing Predictive KL",
+      "title_zh": "好的预测器能错到什么程度？预测KL消失下的更新分歧",
+      "url": "https://arxiv.org/abs/2609.11132",
+      "arxiv_id": "2609.11132",
+      "authors": [
+        "Qifu Wen",
+        "Shuaijun Liu",
+        "Zihan Zhou",
+        "Xi Zeng",
+        "Ningxin Su"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-09-10T06:22:53+00:00",
+      "score": 3,
+      "reason": "该文为贝叶斯滤波与隐马尔可夫模型的理论分析，讨论更新映射差异与预测KL散度的关系，属于概率机器学习理论，与GIS应用无直接联系。",
+      "tags": [
+        "贝叶斯滤波",
+        "隐马尔可夫模型",
+        "预测KL",
+        "理论分析"
+      ],
+      "summary_zh": "准确的后验预测未必需要准确逼近贝叶斯更新。本文证明，在平稳对称高斯HMM中，对每个固定有限K≥2，更新映射之间可以存在无界差距，同时预测KL趋于消失。精确贝叶斯混合与一个显式确定性径向滤波器作用于相同的K−1个信念坐标。当q→0⁺时，二者在中心化logit中的最坏情况分离至少按自然置信尺度L_K(q)线性增长，而其类别分布KL散度D_KL(精确‖径向)在同一显式见证下趋于零。沿平稳HMM轨迹，滤波后验之间的期望终端KL也以H(q)=⌈−log(q)/c⌉+1的速率收敛到零。无切换的典型区块将两个滤波器驱入共同置信锥，其中softmax曲率抑制了它们的分歧；单个高斯极大事件控制自适应噪声。对K∈{2,4,8}的等间距高斯扫描展示了相反趋势，长时程二值对照比较了饱和与非饱和递推。该结果分离出内部更新差距与预测代价之间缺失的两个环节：分离状态对期望损失的贡献与解码器敏感度。因此，即使内部更新差距无界，本身也不足以证明预测失败。该构造在K上固定，不提供压缩何时无害的通用判据，也未刻画内部差距何时必然带来任务损失。",
+      "insight_zh": "该理论结果说明内部状态估计的偏差与最终预测表现可以脱钩，这一思想对时空状态估计与滤波类地理计算有抽象层面的类比意义，但论文完全在概率论框架内展开，未涉及任何地理空间数据或应用。"
     },
     {
       "key": "arxiv:2603.28458",
