@@ -2,11 +2,11 @@
   "date": "2026-09-17",
   "analysis_stats": {
     "total": 595,
-    "analyzed": 446,
+    "analyzed": 456,
     "high": 3,
     "medium": 21,
-    "low": 31,
-    "below_threshold": 391
+    "low": 32,
+    "below_threshold": 400
   },
   "papers": [
     {
@@ -946,6 +946,40 @@
       ],
       "summary_zh": "时间序列语言模型为跨时间任务提供共享自然语言接口，但看似合理的文本不保证可靠任务输出。响应可能看似合理却幻觉所需对象：数值序列可能违反形状、尺度、通道顺序或时间对齐，文本决策可能超出合法标签空间。作者提出可靠时间序列语言建模，将任务对象可靠性与预测质量分离。引入ExecTS-QA，一个契约基础的基准，涵盖预测、插补、分类、异常检测和波形分析。进一步提出WaveTLM，一个统一编译器-执行器模型，其任务编译器将用户请求、可见参数和波形基础证据转换为类型化任务状态，而任务原生执行器构建数值张量、合法决策或结构化记录。在ExecTS-QA上，单个WaveTLM检查点达到99.40%契约有效覆盖率，而最强评估的字符串优先基线为37.83%，同时在五个任务族中保持平衡预测性能。在SciTS、TSQA、IRTS-ToolBench和ARFBench上的评估提供额外迁移证据。代码、构建脚本和ExecTS-QA数据集将在发表后公开。",
       "insight_zh": "该工作通过任务编译将语言生成转化为可靠时间序列输出，对时空数据挖掘中时间序列预测的可靠性有参考价值，但摘要未涉及地理空间数据或城市更新应用。"
+    },
+    {
+      "key": "arxiv:2609.18227",
+      "title": "WISE: A Lightweight, Weakly-Supervised Model for Onboard Fire Smoke Detection and Localization",
+      "title_zh": "WISE：一种面向星上火灾烟雾检测与定位的轻量级弱监督模型",
+      "url": "https://arxiv.org/abs/2609.18227",
+      "arxiv_id": "2609.18227",
+      "authors": [
+        "Sha Lu",
+        "Yu Sun",
+        "Liang Zhao",
+        "Jixue Liu",
+        "Lin Liu",
+        "Jiuyong Li",
+        "A. K. Qin",
+        "Alejandro Mousist",
+        "Stefan Peters"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T07:00:48+00:00",
+      "score": 55,
+      "reason": "该文研究基于卫星影像的野火烟雾检测与定位，属于遥感图像分析范畴，与遥感变化检测、多源数据融合方向有较强关联，且涉及星上部署的轻量化模型，对地理空间智能研究有参考价值。",
+      "tags": [
+        "遥感",
+        "烟雾检测",
+        "弱监督",
+        "星上部署",
+        "知识蒸馏",
+        "变化检测相关"
+      ],
+      "summary_zh": "该文提出WISE（弱监督高效推理烟雾提取），一个面向星上火灾烟雾检测与定位的部署导向框架。针对现有瓦片级分类方法计算高效但缺乏空间定位、像素级分割方法提供详细掩膜但计算需求过高难以实时星上执行的问题，WISE仅利用瓦片级标注，通过教师-学生蒸馏策略，由离线教师为轻量级WISE-Student提供软空间监督，后者针对高效星上推理进行优化。学生模型在单次前向传播中联合预测瓦片级烟雾存在与烟雾概率图，在严格计算约束下实现具有空间信息量的检测。WISE通过搭载于国际空间站IMAGIN-e载荷的在轨执行进行评估，三个模型变体平均每瓦片推理时间分别为0.10秒、0.14秒与0.26秒，表明在星上资源限制内实现近实时逐瓦片推理。基于Landsat 5与Landsat 8影像的地面实验进一步表明其检测与空间定位有效。表现最佳的变体在10次运行中取得平均瓦片级F1为0.964、平均像素级F1为0.750，而参数量仅0.12M，计算量约3 GFLOPs。",
+      "insight_zh": "该研究展示了弱监督蒸馏在星上遥感任务中兼顾轻量化与空间定位的可行性，其“瓦片级标注+软空间监督”策略对遥感变化检测中的弱监督定位问题有方法借鉴意义，且Landsat多代影像的使用与多源数据融合方向相关。"
     },
     {
       "key": "arxiv:2609.18210",
@@ -3156,6 +3190,37 @@
       "insight_zh": "该研究展示了通过交替进行监督微调和强化学习来提升智能体搜索能力的方法，其训练策略可能对地理空间信息检索智能体的开发有借鉴意义。"
     },
     {
+      "key": "arxiv:2609.18256",
+      "title": "Evolving Error States: Failure-Aware Progressive Repair for Ultrasound Lesion Segmentation",
+      "title_zh": "演化误差状态：面向超声病灶分割的失败感知渐进修复",
+      "url": "https://arxiv.org/abs/2609.18256",
+      "arxiv_id": "2609.18256",
+      "authors": [
+        "Ziliang Wang",
+        "XuJiang Tang",
+        "Lu Yuting",
+        "Weixin Xu",
+        "Yongqiang Zhao",
+        "Ying Fu",
+        "Kehua Guo"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T07:35:19+00:00",
+      "score": 30,
+      "reason": "该文研究医学超声病灶分割中的失败感知渐进修复，其“动态误差状态建模与状态转移修复”思路与遥感变化检测中的误差修正有方法层面的类比价值，但应用领域为医学影像，与GIS主题关联有限。",
+      "tags": [
+        "医学图像分割",
+        "渐进修复",
+        "失败感知",
+        "状态转移",
+        "误差反馈"
+      ],
+      "summary_zh": "该文指出，在稀疏与异质失败下的可靠性是医学图像分割的根本挑战，高平均准确率可能掩盖少量结构独特且临床后果严重的错误。现有事后修正方法通常从同一固定预测中估计假阳性与假阴性修正，忽略了误差状态的动态演化，限制了对复杂病例的修正。受结构化预测中迭代误差反馈的启发，作者提出失败感知渐进修复（FAPR）。FAPR将当前分割掩膜表示为动态失败状态，并将每次修复操作建模为状态转移算子。每次被接受的修正形成新的预测状态，供后续误差诊断与修复使用，使后续操作能适应先前变化。条件路由选择性激活必要的状态转移，失败回放则让模型接触稀有误差状态。通过保持基础分割器冻结，FAPR在保留其既有分割能力的同时改善困难病例。在三个公开超声病灶分割基准上，FAPR将平均DSC提升1.52%；在BUSI与TN3K的极难子集上，平均增益达13.77%。",
+      "insight_zh": "该研究将分割误差建模为可演化的状态并采用条件路由进行渐进修复，其“冻结基础模型+迭代状态修正”的范式对遥感变化检测中的困难样本处理与误差累积抑制有方法层面的借鉴意义，但论文未涉及遥感或地理空间数据。"
+    },
+    {
       "key": "arxiv:2603.16130",
       "title": "EPOFusion: Exposure aware Progressive Optimization Method for Infrared and Visible Image Fusion",
       "title_zh": "EPOFusion：面向红外与可见光图像融合的曝光感知渐进优化方法",
@@ -3988,6 +4053,38 @@
       "insight_zh": "因果审计方法或可应用于评估LLM在地理空间推理任务中的可靠性，但论文本身未涉及GIS应用。"
     },
     {
+      "key": "arxiv:2609.18306",
+      "title": "Bias Amplification in Multi-Agent Network: How Biased Agents Shape Opinions and Rhetoric",
+      "title_zh": "多智能体网络中的偏见放大：偏见智能体如何塑造观点与修辞",
+      "url": "https://arxiv.org/abs/2609.18306",
+      "arxiv_id": "2609.18306",
+      "authors": [
+        "Omran Berjawi",
+        "Giuseppe Fenza",
+        "Rida Khatoun"
+      ],
+      "categories": [
+        "cs.LG",
+        "ECML",
+        "PKDD",
+        "2026,",
+        "Naples,",
+        "Italy"
+      ],
+      "published": "2026-09-16T08:27:15+00:00",
+      "score": 25,
+      "reason": "该文研究多智能体LLM网络中的偏见传播与观点演化，与多智能体LLM研究方向相关，但其应用场景为社会观点动力学，与GIS时空数据挖掘、城市更新等主题关联较弱。",
+      "tags": [
+        "多智能体",
+        "偏见传播",
+        "LLM",
+        "观点动力学",
+        "语义分析"
+      ],
+      "summary_zh": "该文研究在LLM环境中，偏见观点如何以文本交互的形式传播：少数智能体保持持续的极端观点，其余智能体通过结构化文本交互迭代更新信念。研究发现，即使系统中只有小比例的有偏见智能体，也会导致无偏见智能体的观点发生显著偏移。对于相同比例的有偏见智能体，Llama 3.2模型中的偏移比经典Friedkin-Johnsen（FJ）模型发生得更快。进一步的语义分析表明，文本解释中的修辞一致性随偏见暴露系统性地增加，并且重要的是，它与数值收敛部分解耦：中性智能体会采用有偏见智能体使用的词汇，即使其数值观点偏移仍属温和。",
+      "insight_zh": "该研究揭示多智能体LLM系统中偏见与语言协同演化的机制，其“修辞一致性可与数值收敛解耦”的发现对多智能体LLM交互分析有方法启示，但与地理空间或城市研究无直接关联。"
+    },
+    {
       "key": "arxiv:2609.18516",
       "title": "Align, Integrate, and Fire: Efficient Token-Level Alignment for Zero-Shot SpeechLLMs",
       "title_zh": "对齐、整合与激发：面向零样本SpeechLLM的高效Token级对齐",
@@ -4167,6 +4264,35 @@
       ],
       "summary_zh": "智能体化网络运维（NetOps）是一种新兴范式，有望实现负载感知、可自调整且可靠的自治网络。尽管智能体在事件摘要与遥测信号提取中已证明价值，但其作为自治控制回路引擎的有效性高度依赖长时程可靠性。数据中心网络即是此类场景：智能体须响应告警与运维意图，同时避免可能引发或延长停机的高风险动作。然而，弃权（abstention）预设动作影响在执行前已知，这要求逐动作的真值，而现有NetOps智能体基准并不提供。作者为NetArena的网络修复任务构建了这样的真值：对仿真网络进行符号化重放，并在每一步与环境校验，从而得到每个动作的精确价值。基于动作级价值，作者导出两个执行前目标：动作是否缩短修复距离（进展）以及是否增大修复距离（危害）。在10个智能体模型上，作者表明利用内部信号的智能体验证器比仅使用可观测信号的基线更可靠地预测危害与进展。展望上，作者希望将这些信号用作智能体框架的安全反馈，以对高风险动作弃权并保护目标系统。",
       "insight_zh": "该研究提出以动作级真值区分“进展”与“危害”，并显示内部信号优于外部可观测信号，为高风险自主决策系统的安全约束提供了思路；对地理空间智能体（如城市管理或应急响应）的安全设计有类比价值，但文中场景为数据中心网络。"
+    },
+    {
+      "key": "arxiv:2609.18304",
+      "title": "Rollback the World, Keep the Reflection: Rollback-Induced Reflection for Long-Horizon LLM Agents",
+      "title_zh": "回滚世界，保留反思：面向长时程LLM智能体的回滚诱导反思",
+      "url": "https://arxiv.org/abs/2609.18304",
+      "arxiv_id": "2609.18304",
+      "authors": [
+        "Yi Yu",
+        "Liuyi Yao",
+        "Yaliang Li",
+        "Enshu Wang",
+        "Libing Wu"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.RO"
+      ],
+      "published": "2026-09-16T08:26:14+00:00",
+      "score": 22,
+      "reason": "该文研究长时程LLM智能体的回滚与反思恢复机制，属于LLM智能体方法论范畴，与GIS研究主题关联有限，但对多智能体LLM的可靠性设计有间接参考。",
+      "tags": [
+        "LLM智能体",
+        "长时程任务",
+        "回滚反思",
+        "错误恢复"
+      ],
+      "summary_zh": "该文指出，LLM智能体通过多步环境交互处理长时程任务时，单个错误动作会改变后续状态与观测，导致误差随时间累积。现有方法要么修正上下文而不修复已改变的环境状态，要么恢复早期状态却丢弃有用经验，难以同时消除失败条件并避免重蹈覆辙。作者主张将可靠恢复视为回滚边界控制问题，需联合决定何时干预、从何处恢复以及哪些信息应在恢复中保留。据此提出回滚诱导反思（RIR），一个统一恢复框架，将执行恢复到选定的先前状态，同时携带从被放弃轨迹中提炼的可复用知识以指导后续决策。作者进一步用回滚深度与保留记忆上的统一算子刻画恢复过程。在三个长时程基准上的实验表明，RIR在多个LLM主干上持续提升任务表现，结构化反思记忆保留有用经验，选择性回滚实现高效恢复。",
+      "insight_zh": "该研究将错误恢复形式化为回滚边界控制问题，其“状态恢复与知识保留联合优化”的框架对多智能体LLM在复杂任务中的鲁棒性设计有参考价值，但未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.17995",
@@ -5076,6 +5202,32 @@
       "insight_zh": "组合感知的主动学习与潜拓扑规划思路对多智能体地理空间任务分解有潜在启发，但论文未涉及地理空间场景。"
     },
     {
+      "key": "arxiv:2609.18357",
+      "title": "Market Signal Injection: Adversarial Context Manipulation of LLM Pricing Agents",
+      "title_zh": "市场信号注入：对LLM定价智能体的对抗性上下文操纵",
+      "url": "https://arxiv.org/abs/2609.18357",
+      "arxiv_id": "2609.18357",
+      "authors": [
+        "Dohun Lee",
+        "Hyunwoo Park"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-16T09:16:08+00:00",
+      "score": 20,
+      "reason": "该文研究LLM定价智能体的对抗性上下文操纵，属于LLM智能体安全与多智能体交互范畴，与GIS研究主题关联有限，但对多智能体LLM方法论有间接参考。",
+      "tags": [
+        "LLM智能体",
+        "对抗攻击",
+        "市场信号注入",
+        "多智能体"
+      ],
+      "summary_zh": "该文提出市场信号注入（MSI），一种在不发出显式指令的情况下，通过操纵数值格式、竞争者排序或定性市场评论来影响LLM定价智能体的攻击方式。作者在模拟的Bertrand双寡头与三寡头市场中评估了九个开放权重模型，并在双寡头市场中评估了三个专有模型。基于情感的攻击产生最大的行为偏移，并会传播至其他企业，改变利润与消费者剩余。易感性因模型家族而异，更大的模型并不一定更稳健。匹配的中性文本对照与规则智能体支持在固定需求参数下对这些偏移的框架效应解释。留出回合探针在所有十一个重新评估的模型-条件对中都能区分基线与受攻击激活：线性AUC为1.00，MLP AUC在0.93至0.99之间。这种可分性本身并不能识别有害定价决策。输入规范化可消除所测试的情感攻击，而结合提示约束与输出投影的决策边界锚定在测试的自适应攻击下提供部分缓解。",
+      "insight_zh": "该研究将数据呈现方式识别为LLM智能体的攻击面，其“输入规范化”与“决策边界锚定”的防御思路对多智能体LLM系统的稳健性设计有借鉴意义，但未涉及地理空间数据或城市应用场景。"
+    },
+    {
       "key": "arxiv:2609.06474",
       "title": "Learning Kernels by Alignment for Multiclass Bayes Classification",
       "title_zh": "通过对齐学习多类贝叶斯分类的核",
@@ -5649,6 +5801,38 @@
       "insight_zh": "该文将安全策略编译为可执行原子命题并结合场景图进行推理，其规则化、可解释的思路对地理空间智能中的合规与规则推理有抽象借鉴意义；但原文未涉及地理空间场景。"
     },
     {
+      "key": "arxiv:2609.18430",
+      "title": "StrucPhysVideo: Learning Physical Dynamics from Structured Captions and Robot Actions",
+      "title_zh": "StrucPhysVideo：从结构化描述与机器人动作中学习物理动力学",
+      "url": "https://arxiv.org/abs/2609.18430",
+      "arxiv_id": "2609.18430",
+      "authors": [
+        "Awomo-WM Team: Enhui Ma",
+        "Kaiwen Guo",
+        "Tingrui Zhang",
+        "Wei Song",
+        "Yingshui Tan",
+        "Jianhua Xu",
+        "Tong Zhang",
+        "Kaicheng Yu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T10:23:00+00:00",
+      "score": 18,
+      "reason": "该文聚焦视频世界模型与物理动力学建模，与遥感变化检测、时空数据挖掘、城市更新等GIS核心议题关联较弱，仅在多模态/时空建模方法论层面有间接参考价值。",
+      "tags": [
+        "视频世界模型",
+        "物理动力学",
+        "多模态",
+        "机器人动作",
+        "具身AI"
+      ],
+      "summary_zh": "该文提出StrucPhysVideo系列视频世界模型，将面向物理的数据整理与语言、动作条件下的场景演化预测相结合。其数据流程整合了运动感知视频分割、质量与内容过滤、物理相关性验证，以及对物体、材质和时间定位交互的结构化标注；通过将相机运动与物体行为解耦，并显式描述接触、形变与状态转换，为可观测物理事件提供监督。基于此，作者提出StrucPhysVideo-TI2V，一种稀疏专家混合（MoE）的文图到视频模型，采用逐步强调物理动力学同时保留通用领域视频数据的课程训练。该模型在Physics-IQ Verified上取得45.5%的成绩，超过Cosmos3-Super-Image2Video 2.8个百分点。跨主干的描述消融实验进一步验证了物理导向监督的有效性。作者还将模型扩展为StrucPhysVideo-IA2V，一种交互式图像-动作到视频世界模型，可根据机器人末端执行器指令预测视觉结果；动作条件、因果自回归生成与少步蒸馏使其仅需四步去噪即可实现增量式机器人推演。",
+      "insight_zh": "该工作将物理事件的结构化标注与动作条件视频预测结合，其“解耦相机运动与物体行为”的思路对遥感时序变化检测中的干扰因素分离可能有方法层面的借鉴意义，但论文本身未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2609.18396",
       "title": "Reliable Virtual Sensing: A Multi-Domain Benchmark for Robustness Under Sensor Failures",
       "title_zh": "可靠的虚拟传感：传感器故障下鲁棒性的多域基准",
@@ -6129,32 +6313,6 @@
       "insight_zh": "该研究展示了LLM在从行为轨迹推断深层价值方面的潜力，其方法思路或可迁移至城市行为数据（如出行、消费、社交媒体签到）中的动机与偏好挖掘，但本文本身未涉及地理空间数据或城市更新场景。"
     },
     {
-      "key": "arxiv:2609.18283",
-      "title": "Where Should Agents Live? Energy-Memory Characterization of Agentic AI for the Edge-Cloud Continuum",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18283",
-      "arxiv_id": "2609.18283",
-      "authors": [
-        "Carolina Fortuna",
-        "Vid Han\\v{z}el",
-        "Tim Strnad",
-        "Bla\\v{z} Bertalani\\v{c}"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG",
-        "cs.MA"
-      ],
-      "published": "2026-09-16T08:04:15+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17571",
       "title": "Where Grokking Happens: Distributed Utility and Fourier Recoding Without a Module Switch",
       "title_zh": "",
@@ -6173,35 +6331,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18227",
-      "title": "WISE: A Lightweight, Weakly-Supervised Model for Onboard Fire Smoke Detection and Localization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18227",
-      "arxiv_id": "2609.18227",
-      "authors": [
-        "Sha Lu",
-        "Yu Sun",
-        "Liang Zhao",
-        "Jixue Liu",
-        "Lin Liu",
-        "Jiuyong Li",
-        "A. K. Qin",
-        "Alejandro Mousist",
-        "Stefan Peters"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T07:00:48+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -6458,34 +6587,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18430",
-      "title": "StrucPhysVideo: Learning Physical Dynamics from Structured Captions and Robot Actions",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18430",
-      "arxiv_id": "2609.18430",
-      "authors": [
-        "Awomo-WM Team: Enhui Ma",
-        "Kaiwen Guo",
-        "Tingrui Zhang",
-        "Wei Song",
-        "Yingshui Tan",
-        "Jianhua Xu",
-        "Tong Zhang",
-        "Kaicheng Yu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T10:23:00+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18494",
       "title": "Size Matters: Foundation Model for Czech HTML documents",
       "title_zh": "",
@@ -6537,32 +6638,6 @@
       "reason": "关键词命中：Segmentation",
       "tags": [
         "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18304",
-      "title": "Rollback the World, Keep the Reflection: Rollback-Induced Reflection for Long-Horizon LLM Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18304",
-      "arxiv_id": "2609.18304",
-      "authors": [
-        "Yi Yu",
-        "Liuyi Yao",
-        "Yaliang Li",
-        "Enshu Wang",
-        "Libing Wu"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.RO"
-      ],
-      "published": "2026-09-16T08:26:14+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -6856,29 +6931,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18357",
-      "title": "Market Signal Injection: Adversarial Context Manipulation of LLM Pricing Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18357",
-      "arxiv_id": "2609.18357",
-      "authors": [
-        "Dohun Lee",
-        "Hyunwoo Park"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-16T09:16:08+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18529",
       "title": "Machine Translation between English and Syriac (East Syriac Dialect) using Statistical Machine Learning",
       "title_zh": "",
@@ -6896,30 +6948,6 @@
       "reason": "关键词命中：Segmentation",
       "tags": [
         "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18260",
-      "title": "MS-RFD: Multi-Signal Release Frame Detection in Hammer Throw from Reconstructed 3D Trajectories",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18260",
-      "arxiv_id": "2609.18260",
-      "authors": [
-        "Ahmed Endris Hasen",
-        "Nikolaos Passalis",
-        "Tomi Vanttinen",
-        "Jenni Raitoharju"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T07:38:59+00:00",
-      "score": 17,
-      "reason": "关键词命中：Computer Vision",
-      "tags": [
-        "Computer Vision"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7129,33 +7157,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18256",
-      "title": "Evolving Error States: Failure-Aware Progressive Repair for Ultrasound Lesion Segmentation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18256",
-      "arxiv_id": "2609.18256",
-      "authors": [
-        "Ziliang Wang",
-        "XuJiang Tang",
-        "Lu Yuting",
-        "Weixin Xu",
-        "Yongqiang Zhao",
-        "Ying Fu",
-        "Kehua Guo"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T07:35:19+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.17632",
       "title": "EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents",
       "title_zh": "",
@@ -7314,28 +7315,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18394",
-      "title": "Cultural Competence in Context: A Large Language Model Passes the Turing Test in Finland",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18394",
-      "arxiv_id": "2609.18394",
-      "authors": [
-        "Otto Segersven",
-        "Pentti Henttonen"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-16T09:52:17+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18460",
       "title": "Collective Loss of Control in LLM Agent Systems: An Epidemic Account of Mutation, Contagion, and Recovery",
       "title_zh": "",
@@ -7484,34 +7463,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18306",
-      "title": "Bias Amplification in Multi-Agent Network: How Biased Agents Shape Opinions and Rhetoric",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18306",
-      "arxiv_id": "2609.18306",
-      "authors": [
-        "Omran Berjawi",
-        "Giuseppe Fenza",
-        "Rida Khatoun"
-      ],
-      "categories": [
-        "cs.LG",
-        "ECML",
-        "PKDD",
-        "2026,",
-        "Naples,",
-        "Italy"
-      ],
-      "published": "2026-09-16T08:27:15+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18723",
       "title": "Beyond Truncation: Rethinking LLM Decoding as Ensemble Pruning",
       "title_zh": "",
@@ -7652,32 +7603,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18281",
-      "title": "A GAN-Based Framework for Robust DDoS Attack Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18281",
-      "arxiv_id": "2609.18281",
-      "authors": [
-        "Makram Chehayeb",
-        "Walid Fahs",
-        "Amina Rizk",
-        "Rida Khatoun",
-        "Omran Berjawi"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CR"
-      ],
-      "published": "2026-09-16T08:04:05+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18005",
       "title": "A Calibrated Instrument for Measuring How Inference Optimizations Affect Output Quality",
       "title_zh": "",
@@ -7760,6 +7685,35 @@
       ],
       "summary_zh": "在自动规划中，弥合人类意图与机器执行之间的差距仍是一项挑战，因为用 PDDL 等形式语言表达目标限制了非专家的可及性。本文实证评估当前大语言模型（LLM）能否可靠地将视频游戏测试人员用非正式语言编写的自然语言测试目标翻译为适合经典规划的良构 PDDL 目标。作者提出一个精心设计的提示模板，整合迭代实验中的洞见，旨在最大化多个最先进 LLM 的准确性和响应连贯性。六个当代模型在真实、领域特定的基准上按正确性、速度和错误倾向进行系统评估。所有模型均表现出高正确性，超过 92%，其中 Gemini 2.5 Flash 准确率最高，达 96%，假阳性发生率最低，而 GPT-4.1 在响应速度上领先。尽管有这些进展，模型性能仍存在关键差异，偶发失败源于语言歧义和领域表示限制。分析强调了 LLM 作为自然语言目标与自动规划流程之间稳健桥梁的重大进展与持续差距。",
       "insight_zh": "该研究表明当前 LLM 在自然语言到 PDDL 翻译上准确率较高，但语言歧义与领域表示限制仍是失败来源；这对利用 LLM 连接自然语言与形式化空间规划任务具有参考意义，但论文未涉及地理空间规划。"
+    },
+    {
+      "key": "arxiv:2609.18283",
+      "title": "Where Should Agents Live? Energy-Memory Characterization of Agentic AI for the Edge-Cloud Continuum",
+      "title_zh": "智能体应部署于何处？面向边缘-云连续体的智能体AI能耗-内存刻画",
+      "url": "https://arxiv.org/abs/2609.18283",
+      "arxiv_id": "2609.18283",
+      "authors": [
+        "Carolina Fortuna",
+        "Vid Han\\v{z}el",
+        "Tim Strnad",
+        "Bla\\v{z} Bertalani\\v{c}"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-09-16T08:04:15+00:00",
+      "score": 15,
+      "reason": "该文研究边缘-云连续体中智能体AI的能耗与内存特征，属于LLM智能体部署与基础设施研究，与GIS主题关联较弱，仅在分布式计算基础设施层面有边缘参考。",
+      "tags": [
+        "智能体AI",
+        "边缘-云连续体",
+        "能耗建模",
+        "多智能体编排"
+      ],
+      "summary_zh": "随着电信网络向自主5G-Advanced与6G运营演进，LLM执行多步推理、调用诊断工具、检索领域知识并跨智能体团队协调的智能体AI工作流正日益嵌入边缘-云连续体。现有AI生命周期指标仅评估孤立的单模型推理，或完全忽略多智能体执行图，导致网络运营商缺乏基础模型来判断分布式智能体通信是否带来显著能耗成本，以及智能体团队应物理部署于边缘-云各层的何处。为此，作者提出agentic-eCAL，将AI生命周期能耗成本（eCAL）指标推广至有向多智能体工作流，结合闭式双速率单次调用能耗模型（计算受限的预填充与内存受限的解码）与7层OSI数据传输。基于NVIDIA A100与H100上数百个GPU基准配置、16个开放权重模型与8种编排拓扑，作者验证了该指标的组成部分并研究工作流放置的影响。研究发现，跨5G RAN、城域与光链路的智能体间文本传输仅占工作流能耗的0.25%，因此在边缘-云智能体放置中，分布的主导能耗成本往往不是智能体间文本传输本身，而是该通信所引发的额外推理与上下文处理。",
+      "insight_zh": "该研究量化了多智能体LLM工作流在边缘-云部署中的能耗结构，其“通信本身能耗占比极低、额外推理才是主导成本”的结论对分布式地理空间智能系统的架构设计有间接启示，但论文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.18345",
@@ -9904,6 +9858,31 @@
       "insight_zh": "该理论分析对理解地理文本嵌入的语义表达能力有间接启发，但与地理空间智能的核心方法关联有限。"
     },
     {
+      "key": "arxiv:2609.18394",
+      "title": "Cultural Competence in Context: A Large Language Model Passes the Turing Test in Finland",
+      "title_zh": "语境中的文化胜任力：大语言模型在芬兰通过图灵测试",
+      "url": "https://arxiv.org/abs/2609.18394",
+      "arxiv_id": "2609.18394",
+      "authors": [
+        "Otto Segersven",
+        "Pentti Henttonen"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-16T09:52:17+00:00",
+      "score": 12,
+      "reason": "该文研究芬兰语图灵测试与LLM文化胜任力，属于LLM社会评估范畴，与GIS时空数据挖掘、城市更新、遥感等主题基本无关，仅对LLM方法论研究有边缘参考。",
+      "tags": [
+        "大语言模型",
+        "图灵测试",
+        "文化能力",
+        "人机边界"
+      ],
+      "summary_zh": "该文报告了在芬兰以芬兰语进行的一次图灵测试结果。由于语言与文化语境在LLM训练数据中分布不均，作者原本预期模型（ChatGPT 5.2）在芬兰语图灵测试中的表现会差于此前研究的英语美国语境。作者还提出模型生成的角色提示作为一种可复现技术，用于开展旨在提升构念效度的比较性LLM图灵测试。与预期相反，该LLM通过了芬兰语图灵测试。一个主要误差来源是参与者依赖语言线索（尤其是口语化芬兰语）作为人类作者的标志。作者将图灵测试从智能测试重新界定为一种比较方法，用以考察AI系统能否在特定社会世界中展现可信的成员身份。由于测试结果反映模型能力、提示身份、人类参与者的内部人胜任力及其AI素养，该方法为跨领域考察人机边界提供了有用探针。",
+      "insight_zh": "该研究提示LLM在非英语文化语境中的表现评估需考虑参与者自身的语言与AI素养，这一视角对多智能体LLM研究中的评估设计有参考价值，但与地理空间智能无直接关联。"
+    },
+    {
       "key": "arxiv:2604.08568",
       "title": "Can We Still Trace L1 Signals? Investigating the Resilience of Native Language Signals in the LLM Era",
       "title_zh": "我们还能追踪L1信号吗？探究LLM时代母语信号的韧性",
@@ -11703,6 +11682,35 @@
       "insight_zh": "多任务大推理模型的架构思路可能对地理空间多任务学习有启发，但摘要缺失，无法确认其方法细节或跨领域适用性。"
     },
     {
+      "key": "arxiv:2609.18281",
+      "title": "A GAN-Based Framework for Robust DDoS Attack Detection",
+      "title_zh": "一种基于GAN的鲁棒DDoS攻击检测框架",
+      "url": "https://arxiv.org/abs/2609.18281",
+      "arxiv_id": "2609.18281",
+      "authors": [
+        "Makram Chehayeb",
+        "Walid Fahs",
+        "Amina Rizk",
+        "Rida Khatoun",
+        "Omran Berjawi"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CR"
+      ],
+      "published": "2026-09-16T08:04:05+00:00",
+      "score": 10,
+      "reason": "该文研究基于GAN的DDoS攻击检测框架，属于网络安全领域，与GIS、遥感、城市更新等主题无直接关联。",
+      "tags": [
+        "DDoS检测",
+        "生成对抗网络",
+        "对抗鲁棒性",
+        "网络安全"
+      ],
+      "summary_zh": "该文提出一个将生成对抗建模与先进机器学习模型相结合的鲁棒检测框架。作者使用CICDDoS2019数据集训练随机森林、深度神经集成与基于Transformer的模型以建立基线性能，并使用带梯度惩罚的Wasserstein生成对抗网络（WGAN-GP）生成模拟潜在规避尝试与对抗流量的合成对抗流，以增强模型防御能力。随后将生成流量与良性、恶意流量结合构建混合数据集，训练模型学习更具泛化性的决策边界。实验结果表明，该方法显著提升了检测准确率与韧性，尤其是针对未见过的对抗流量。作者还用真实世界生成的流量测试了该框架，展示了其在实际场景中的能力。",
+      "insight_zh": "该研究展示了生成对抗增强在提升分类器对抗鲁棒性方面的作用，其思路对遥感变化检测中的对抗鲁棒性研究可能有方法层面的类比价值，但论文本身属于网络安全领域，与地理空间研究无直接关联。"
+    },
+    {
       "key": "arxiv:2609.18745",
       "title": "When Edit Flows are Edit Jumps: replicating Edit Flows and EvoFlows",
       "title_zh": "当编辑流变为编辑跳跃：复现 Edit Flows 与 EvoFlows",
@@ -12204,6 +12212,33 @@
       ],
       "summary_zh": "习得终结性（telicity），即有界事件（如ate an apple）与无界事件（如ate apples）之间的区分，要求第一语言（L1）学习者将表层与语义线索映射到抽象事件结构，但这一映射的计算轨迹尚不清楚。作者提出一种“惊讶度差异”方法，使用GPT2在成对时间状语诊断（in an hour与for an hour）上的token惊讶度，自动标注英语CHILDES语料中的终结性，并以专家语言学判断进行验证。利用这些标签，作者在12个句法与词汇语义特征上训练诊断性逻辑回归分类器，以比较儿童言语与儿童导向言语如何编码终结性。两个模型出现分歧：儿童模型通过单一确定性线索——动词后限定词的存在——达到近乎完美的准确率，而成人模型更依赖动词类别及其他词汇语义特征，且限定词线索被中和。这一轨迹支持句法启动（Syntactic Bootstrapping）：学习者首先利用高频结构线索作为脚手架进行启动，随后发展出完全组合式的、基于动词的事件结构。",
       "insight_zh": "该研究对理解语言模型中的语义发展有理论意义，但与地理空间数据挖掘或城市研究无关联。"
+    },
+    {
+      "key": "arxiv:2609.18260",
+      "title": "MS-RFD: Multi-Signal Release Frame Detection in Hammer Throw from Reconstructed 3D Trajectories",
+      "title_zh": "MS-RFD：基于重建3D轨迹的链球多信号释放帧检测",
+      "url": "https://arxiv.org/abs/2609.18260",
+      "arxiv_id": "2609.18260",
+      "authors": [
+        "Ahmed Endris Hasen",
+        "Nikolaos Passalis",
+        "Tomi Vanttinen",
+        "Jenni Raitoharju"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T07:38:59+00:00",
+      "score": 8,
+      "reason": "该文研究链球投掷中基于重建3D轨迹的释放帧检测，属于体育计算机视觉与轨迹分析，与GIS时空数据挖掘主题关联很弱，仅在轨迹信号融合方法上有极边缘参考。",
+      "tags": [
+        "3D轨迹重建",
+        "体育分析",
+        "多信号融合",
+        "释放帧检测"
+      ],
+      "summary_zh": "该文提出一种全自动的多信号释放帧检测（MS-RFD）方法，用于链球投掷，基于重建的3D链球轨迹。该方法整合四个互补的运动学信号：速度动态、角速度转换、相对旋转中心的径向距离以及释放后轨迹线性度，并将这些信号融合以对候选释放帧进行评分与验证。MS-RFD通过检测帧处估计的释放参数所得到的投掷距离估计误差进行评估。消融研究分析了各信号的贡献并比较了替代的候选选择策略。结果表明，速度动态与径向扩展为释放帧检测提供最强信号，而角速度与释放后线性度提供较小的细化。",
+      "insight_zh": "该研究的多信号融合与候选帧验证策略在方法论上与时空事件检测有表面相似性，但其应用领域为体育动作分析，与地理空间智能无实质关联。"
     },
     {
       "key": "arxiv:2609.18720",

@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 872,
+    "analyzed": 883,
     "high": 8,
-    "medium": 39,
+    "medium": 42,
     "low": 59,
-    "below_threshold": 766
+    "below_threshold": 774
   },
   "papers": [
     {
@@ -309,6 +309,53 @@
       ],
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.13277",
+      "title": "SomBench: Benchmark Dataset for Advancing Machine Learning in Lunar Science",
+      "title_zh": "SomBench：推进月球科学机器学习的基准数据集",
+      "url": "https://arxiv.org/abs/2609.13277",
+      "arxiv_id": "2609.13277",
+      "authors": [
+        "Himanshu Patil",
+        "Gabby Nyirjesy",
+        "Rachel A. Slank",
+        "Vishal Gaur",
+        "Daniela Szwarcman",
+        "Paolo Fraccaro",
+        "Nikolaos Dionelis",
+        "Michael K. Barker",
+        "Andrew Annex",
+        "Vishnu Viswanathan",
+        "Zachary Morse",
+        "Ethan I. Schaefer",
+        "Hiyam Debary",
+        "Ankur Kumar",
+        "Rohit Lal",
+        "Geoffrey Dawson",
+        "Campbell Watson",
+        "Rebekah I. Dawson-Rigas",
+        "Manil Maskey",
+        "Juan Bernab\\'e-Moreno",
+        "Rahul Ramachandran",
+        "Sujit Roy"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-09-08T02:58:32+00:00",
+      "score": 78,
+      "reason": "该文构建统一空间对齐的月球多仪器遥感数据集与基准，涉及多源数据融合、遥感数据组织与机器学习基准，与研究中多源数据融合和遥感方向高度相关，但应用领域为月球科学而非城市更新。",
+      "tags": [
+        "月球遥感",
+        "多源数据融合",
+        "基准数据集",
+        "行星科学",
+        "机器学习"
+      ],
+      "summary_zh": "月球轨道任务（如月球勘测轨道器、辉夜号/SELENE、重力恢复与内部实验室、月球勘探者等）提供丰富的多仪器观测，但其采样、投影和约定异质性限制了可复现机器学习。本文提出SomBench，一个统一、空间对齐、机器学习就绪的月球数据集，聚合来自四次任务十台仪器的30多个共配准图层，覆盖1米至20公里/像素，覆盖82度纬度，分为90个月球横向墨卡托带和两个极地立体投影盖。图像锚定的切块流程产生预训练就绪的多模态瓦片视图，具有防泄漏划分，以netCDF分发并附Parquet目录。应用基准套件涵盖撞击过程、火山历史和极地挥发物。使用ResNet-50和SwinV2-B的基线实验确认每个基准任务可从发布输入中学习，为未来模型开发建立参考点。",
+      "insight_zh": "该工作通过统一投影、共配准与防泄漏切块，将异构月球多仪器观测转化为可复现的机器学习基准，其多源空间对齐与基准构建思路对地球遥感多源数据融合有直接方法借鉴意义；原文未涉及城市更新或地球城市应用。"
     },
     {
       "key": "arxiv:2609.13903",
@@ -1420,6 +1467,31 @@
       "insight_zh": "该文提示，若将LLM群体用于模拟人类群体或人机协作，仅看结果可能不够，还需关注其是否通过类似人类的审议机制达成结果；其过程差异可能影响群体模拟与协作设计的可信度。"
     },
     {
+      "key": "arxiv:2609.11170",
+      "title": "From Explanations to Interventions: Execution-Guided Counterfactual Synthesis in Temporal Graphs",
+      "title_zh": "从解释到干预：时序图中的执行引导反事实合成",
+      "url": "https://arxiv.org/abs/2609.11170",
+      "arxiv_id": "2609.11170",
+      "authors": [
+        "Minwoo Yu",
+        "Young-guk Ha"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-10T07:19:06+00:00",
+      "score": 62,
+      "reason": "该文研究时序图上的反事实解释与干预搜索，属于时空数据挖掘与可解释机器学习交叉方向，与研究中时空数据挖掘部分相关，但未涉及城市更新、遥感或地理空间智能应用。",
+      "tags": [
+        "时序图",
+        "反事实解释",
+        "时空数据挖掘",
+        "可解释AI"
+      ],
+      "summary_zh": "时序图反事实解释通常通过改变过去事件来改变或使原预测失效，但不指定替代结果。本文提出“指定替代反事实”问题：给定原始预测A和预先固定的替代B，寻找低成本过去事件干预，使同一预测器将B选为最高排名。方法通过对比A的完整执行轨迹与B的重构不完整执行轨迹，将差异映射为DELETE、INSERT、REWIRE、RELABEL和SHIFT操作，并通过精确重放验证B。在连续时间动态图上实例化为LiFTER，在时序知识图谱上实例化为TLogic。在CTDG上保留85.7-93.6%的黑盒贪心成功，同时将预测器评估减少75.0-80.0%；在TKG上600次比较中74.8%达到指定替代。",
+      "insight_zh": "该工作将可执行轨迹作为构造未选中替代方案条件的计算结构，而非仅用于解释已做出的预测；其轨迹对比与操作映射思路或可迁移至城市更新中时序事件的干预情景推演，但原文未涉及城市或地理应用。"
+    },
+    {
       "key": "arxiv:2609.14288",
       "title": "Editorial routing shapes how computational results are qualified in AI-assisted scientific writing",
       "title_zh": "编辑路由塑造了AI辅助科学写作中计算结果被限定的方式",
@@ -1580,6 +1652,38 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究细节。从标题看，该工作提出名为TRACTA的基准，用于评测在语义轨迹（semantic trajectories）上进行时序推理的能力。",
       "insight_zh": "摘要缺失，无法判断其数据构成、任务设计与评测结果。语义轨迹上的时序推理基准，或可为城市时空数据挖掘与人类活动分析提供评测参考，但原文未明确涉及城市应用或地理空间智能，该关联属于推测。"
+    },
+    {
+      "key": "arxiv:2609.14637",
+      "title": "DynSTEER: Dynamic Stage-wise Trajectory Evaluation and Execution-time Review for Agents",
+      "title_zh": "DynSTEER：智能体的动态阶段化轨迹评估与执行时审查",
+      "url": "https://arxiv.org/abs/2609.14637",
+      "arxiv_id": "2609.14637",
+      "authors": [
+        "Zhichao Shi",
+        "Xuhui Jiang",
+        "Wenjie Zhang",
+        "Xiaojun Wu",
+        "Cehao Yang",
+        "Chengjin Xu",
+        "Jian Guo",
+        "Yuanzhuo Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-13T16:18:03+00:00",
+      "score": 60,
+      "reason": "该论文提出LLM智能体的动态阶段化轨迹评估框架，与研究者关注的LLM和多智能体方向直接相关，但未涉及地理空间应用。",
+      "tags": [
+        "LLM智能体",
+        "轨迹评估",
+        "阶段化评估",
+        "执行时审查",
+        "长程任务"
+      ],
+      "summary_zh": "大型语言模型智能体越来越多地被部署用于长程任务执行。然而，当前评估范式面临三大局限：仅终端评估忽略中间过程且难以高效准确地定位错误，单参考匹配惩罚有效的替代解决路径，事后轨迹评判成本高昂且无法提前终止失败运行。为解决这些问题，我们提出DynSTEER，一个面向智能体的动态阶段化轨迹评估框架。DynSTEER将rollout分割为以关键完成动作锚定的阶段，在具有充分上下文的条件下聚焦于关键里程碑评估，同时支持有针对性的策略调整。它从公开任务视图编译路径容忍的里程碑图，以尊重多样化的合法策略而不泄漏真实答案。此外，它自适应地将评估查询路由到多层评判器，并在线终止不可恢复的执行以遏制资源浪费。实验表明，DynSTEER将LLM智能体的评估区分度相比原生评估提升85.2%，以统计显著性区分所有模型对，并在失败rollout上节省34.51%的执行步骤。",
+      "insight_zh": "阶段化轨迹评估与在线终止机制可提升长程智能体评估效率，其路径容忍设计对多智能体城市更新决策过程的评估具有方法借鉴意义。"
     },
     {
       "key": "arxiv:2609.15054",
@@ -5141,6 +5245,36 @@
       "insight_zh": "该机制可能改善跨语言地理空间信息处理，但需在具体地理任务中测试。"
     },
     {
+      "key": "arxiv:2609.13296",
+      "title": "Harnessing Image Question Dependence for Better VLM Test-time Reinforcement Learning",
+      "title_zh": "利用图像-问题依赖性提升VLM测试时强化学习",
+      "url": "https://arxiv.org/abs/2609.13296",
+      "arxiv_id": "2609.13296",
+      "authors": [
+        "Xinrui He",
+        "Ting-Wei Li",
+        "Junting Wang",
+        "Mengting Ai",
+        "Xinyu He",
+        "Hanghang Tong",
+        "Jingrui He"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-09-09T22:54:15+00:00",
+      "score": 35,
+      "reason": "该文研究视觉语言模型的测试时强化学习，与研究中LLM和多智能体方向有方法关联，但不涉及地理空间数据、城市更新或遥感应用。",
+      "tags": [
+        "视觉语言模型",
+        "测试时强化学习",
+        "多模态推理"
+      ],
+      "summary_zh": "测试时强化学习可使视觉语言模型适应无标签目标数据，但其效果受自生成学习信号可靠性限制。本文分析多种VQA数据集和模型规模下的VLM测试时强化学习，揭示两个局限：基于共识的测试时训练收益主要来自答案归一化而非内容纠正；许多初始VLM回答错误源于模型联合使用图像和问题的能力有限，基于这些输出的共识奖励可能保留而非纠正接地错误。为此提出TTIQ框架，利用图像-问题依赖性改进VLM适应。TTIQ在原始图像-问题对及其图像消融、问题消融变体下教师强制每个采样响应，用token级似然变化估计对每个输入的依赖。它将图像和问题依赖与校准置信度结合，构建响应级奖励以偏好联合接地响应，并用token级信号给同时受两个输入支持的token更大正策略信用。在八个VQA数据集和多种VLM规模上，TTIQ在每个模型规模取得最佳平均性能，可跨VLM家族泛化，且在一个数据集上训练的模型无需再训练即可提升未见数据集性能。",
+      "insight_zh": "该工作提出以图像-问题依赖性作为测试时奖励信号，强调联合接地而非单纯共识；其依赖消融与token级信用分配思路或可启发地理空间多模态推理中的证据归因，但原文未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.13836",
       "title": "Graph Neural Networks for Influence Maximization in Social Networks: An Unsupervised Minimum Dominating Set Approach",
       "title_zh": "社交网络影响力最大化中的图神经网络：一种无监督最小支配集方法",
@@ -6249,6 +6383,50 @@
       ],
       "summary_zh": "我们提出LayerRoute，一种参数高效的自适应Transformer层跳过方法，结合了逐层硬门控路由（通过直通估计器训练）与联合LoRA微调。LayerRoute为Qwen2.5-0.5B-Instruct的24个Transformer块各增加一个轻量级逐层路由器（约21.5K参数）和LoRA适配器（秩8，约1.08M参数），在门控正则化的语言建模目标下联合训练二者。在10次独立随机种子的训练运行中，LayerRoute在每次运行中都收敛到相同的跳过模式结构——一组一致的9个中间层（8-16）在全部10个种子中变为可跳过——并在每次运行中都带来真实的、经验证的墙钟加速（1.02倍至1.06倍，平均1.04倍）。在所有测试配置中质量均得到保持或提升：联合LoRA适配在全部10个种子中相较未修改骨干带来困惑度改善（在所用两个评估划分上平均差值分别为-1.16和-1.11）。我们进一步验证路由器执行真实的、非平凡的逐输入计算：可跳过层中的门控决策改变了87-100%留出样本的实际跳过/运行结果，确认了真实的输入依赖路由而非固定剪枝模式。LayerRoute在单张A100上训练时间不到7分钟，除路由决策本身外增加的额外开销可忽略不计。我们报告了完整的可复现方法学，包括对决定路由器逐输入决策因素的系统性诊断调查，作为本工作的一部分。",
       "insight_zh": "该工作显示联合LoRA适配可在层跳过的同时保持甚至提升质量，其输入依赖路由机制或对资源受限场景下的地理空间模型部署有参考价值，但论文未涉及地理空间任务。"
+    },
+    {
+      "key": "arxiv:2609.13287",
+      "title": "LLaDA-UI: Bringing Block-wise Diffusion to Vision-Language GUI Agents",
+      "title_zh": "LLaDA-UI：将块状扩散引入视觉语言GUI智能体",
+      "url": "https://arxiv.org/abs/2609.13287",
+      "arxiv_id": "2609.13287",
+      "authors": [
+        "Zhangxuan Gu",
+        "Haoxing Chen",
+        "Qi Qin",
+        "Yi Xin",
+        "Kai Gan",
+        "Lin Liu",
+        "Long Cui",
+        "Xiaomei Wang",
+        "Beitong Zhou",
+        "Yunzhu Zhang",
+        "Zhengwen Zeng",
+        "Changlong Gao",
+        "Weizhi Chen",
+        "Rongchao Zhang",
+        "Haoyuan Wu",
+        "Shuheng Shen",
+        "Changhua Meng",
+        "Weiqiang Wang",
+        "Jianguo Li",
+        "Zhenzhong Lan"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-09T05:53:39+00:00",
+      "score": 30,
+      "reason": "该文将块状扩散语言模型扩展为视觉语言GUI智能体，与研究中LLM和多智能体方向相关，但不涉及地理空间数据、城市更新或遥感。",
+      "tags": [
+        "扩散语言模型",
+        "GUI智能体",
+        "视觉语言模型",
+        "多智能体"
+      ],
+      "summary_zh": "扩散大语言模型通过块并行、任意顺序生成实现高解码效率，适合延迟敏感应用。GUI智能体是自然测试平台，需实时反复感知屏幕状态并输出结构化、空间接地的动作。但dLLM能否在保持并行解码优势的同时扩展为多模态GUI智能体尚不明确。本文提出LLaDA-UI，一个16.7B参数的基于MoE的块状扩散视觉语言GUI智能体。采用两阶段训练：通用多模态预训练将原生分辨率视觉编码器与LLaDA2.0-mini-base扩散语言骨干对齐，随后在移动、桌面、网页和接地数据上进行GUI智能体监督微调。在多个平台的接地和导航基准上，LLaDA-UI显著优于Qwen2.5-VL-7B，并在六个报告的GUI基准中的四个上超过Qwen3-VL-8B。",
+      "insight_zh": "该文表明块状扩散可作为多模态GUI智能体的实用生成范式，其并行解码与空间接地动作生成思路对地理空间智能体界面交互有潜在启发，但原文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2606.26502",
@@ -7998,6 +8176,33 @@
       "insight_zh": "摘要为空，无法判断具体方法；从标题推测其关注生成模型输出同质化问题，或对地理空间智能中的自动化报告生成有方法上的参考价值。"
     },
     {
+      "key": "arxiv:2609.13282",
+      "title": "GaugeDefect: Detecting Surface Anomalies by Curvature of Feature Transport",
+      "title_zh": "GaugeDefect：通过特征传输曲率检测表面异常",
+      "url": "https://arxiv.org/abs/2609.13282",
+      "arxiv_id": "2609.13282",
+      "authors": [
+        "Yefan Wang"
+      ],
+      "categories": [
+        "cs.CV",
+        "Computer",
+        "Vision",
+        "(PRCV",
+        "2026)"
+      ],
+      "published": "2026-09-08T13:32:24+00:00",
+      "score": 25,
+      "reason": "该文提出基于特征传输曲率的表面异常定位方法，属于视觉异常检测与几何表示学习，与遥感变化检测有微弱方法关联，但无地理空间应用。",
+      "tags": [
+        "表面异常检测",
+        "特征传输曲率",
+        "工业视觉"
+      ],
+      "summary_zh": "工业异常定位在基于特征、重建和蒸馏的方法上进展迅速，多数方法通过判断区域局部外观或特征表示相对正常训练图像的异常程度来评分。本文研究一种互补几何线索，适用于异常区域仍含局部合理视觉特征的情况。细划痕、小凹痕和重复模式破坏往往不使每个局部块单独异常，而是扰动邻近特征在表面上的变化与连接方式。提出GaugeDefect，一种基于特征传输曲率的表面异常定位几何方法。给定特征格，在每个节点估计局部特征标架，计算相邻标架间的正交传输。围绕小闭合回路累积传输得到和乐矩阵，其与单位矩阵的偏差度量特征传输曲率。在正常训练图像上校准后，异常大的曲率表示特征场的局部不一致。此曲率非被检物体的物理曲率，而是表示空间中邻域不一致性的度量，因此适用于曲面、纹理材料和非平面工业物体。其主要作用是改善细微表面扰动的定位，并常在缺陷边界附近产生更锐利响应。",
+      "insight_zh": "该文将表示空间中的传输曲率作为邻域不一致性度量，为检测局部特征合理但空间关系异常的缺陷提供几何视角；该思路或可启发遥感变化检测中结构性变化的建模，但原文未涉及遥感或地理空间数据。"
+    },
+    {
       "key": "arxiv:2603.13044",
       "title": "GP-VM$\\times$SMA: Benchmarking General-Purpose Vision Models and Specialized Architectures for 2D Medical Image Segmentation",
       "title_zh": "GP-VM×SMA：通用视觉模型与专用架构在2D医学图像分割上的基准评测",
@@ -8826,6 +9031,37 @@
       "insight_zh": "该研究提出以动作级真值区分“进展”与“危害”，并显示内部信号优于外部可观测信号，为高风险自主决策系统的安全约束提供了思路；对地理空间智能体（如城市管理或应急响应）的安全设计有类比价值，但文中场景为数据中心网络。"
     },
     {
+      "key": "arxiv:2609.13293",
+      "title": "Reliable Egocentric Action Anticipation via Temporal Reliability Suppression and Compositional Graph Decoding",
+      "title_zh": "通过时序可靠性抑制与组合图解码实现可靠的第一视角动作预测",
+      "url": "https://arxiv.org/abs/2609.13293",
+      "arxiv_id": "2609.13293",
+      "authors": [
+        "Mahsa Mohammadi",
+        "Sareh Rowlands"
+      ],
+      "categories": [
+        "cs.CV",
+        "Real-time",
+        "Multimodal",
+        "Contextual",
+        "Assistants",
+        "(Wearable",
+        "AI",
+        "Workshop)"
+      ],
+      "published": "2026-09-09T15:26:39+00:00",
+      "score": 22,
+      "reason": "该文研究可穿戴第一视角动作预测在时序损坏下的鲁棒性，属于时序建模与鲁棒性方法，与研究中时空数据挖掘有微弱方法关联，但无地理空间或城市应用。",
+      "tags": [
+        "第一视角动作预测",
+        "时序鲁棒性",
+        "图解码"
+      ],
+      "summary_zh": "可穿戴动作预测系统需在丢帧、掩码和传感器噪声下保持可靠，但现有第一视角预测方法多假设观测干净。本文识别时序损坏下两种互补失效模式：编码阶段时序证据不可靠，解码阶段动词-名词组合不合理且支持度低。提出轻量框架，结合时序可靠性抑制（TRS）与鲁棒动词-名词图（RVG）解码。TRS从投影输入嵌入预测逐帧抑制分数，作为每个编码器块的学习键侧注意力惩罚，并用于可靠性加权时序池化。RVG使用基于训练标签构建的PMI兼容图对动词-名词对重排序。在损坏增强训练下，TRS+CA+RVG在六种损坏（含三种训练中未出现的机制）上达到29.1%平均损坏准确率和88.2%相对鲁棒性，同时将稀有动词-名词预测从15.4%降至1.1%。多随机种子和诊断实验显示TRS对合成掩码有响应；打乱图和仅频率对照表明RVG增益依赖真实成对兼容性而非仅边际频率效应。",
+      "insight_zh": "该文将可靠性抑制与组合兼容性解码结合以应对时序损坏，其逐帧可靠性加权与图重排序机制对时空数据中的缺失与噪声处理有方法参考价值，但原文未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.15296",
       "title": "Reason What Matters: Retrieval-Grounded Reasoning for Universal Multimodal Embeddings",
       "title_zh": "推理关键内容：面向通用多模态嵌入的检索锚定推理",
@@ -9652,6 +9888,30 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题推断该研究指出LLM即使能访问私有库文档，也未必能正确使用，并提出方法教LLM利用私有库进行代码生成。",
       "insight_zh": "该研究对LLM在专业领域（如GIS软件库）中的工具使用能力有参考价值，但摘要缺失，无法确认其方法细节与实验结论。"
+    },
+    {
+      "key": "arxiv:2609.13288",
+      "title": "Target-Checked Reliability Score Refinement for Video Question Answering",
+      "title_zh": "面向视频问答的目标校验可靠性评分细化",
+      "url": "https://arxiv.org/abs/2609.13288",
+      "arxiv_id": "2609.13288",
+      "authors": [
+        "Guoxiang Ren",
+        "Rohitash Chandra"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T08:29:00+00:00",
+      "score": 20,
+      "reason": "该文研究视频问答中答案级可靠性评分细化，属于多模态模型可靠性评估，与研究中LLM和多智能体有间接关联，但不涉及地理空间智能或城市更新。",
+      "tags": [
+        "视频问答",
+        "可靠性评分",
+        "不确定性校准"
+      ],
+      "summary_zh": "视频语言模型可高置信度回答多选题却出错。本文研究在不重训练模型、不改变答案的前提下，能否在目标偏移下改进答案级可靠性评分。从三个固定视频语言模型在四种确定性视频采样下收集选项概率列表，将跨视图变化和跨模型一致性表示为响应图。使用有标签目标试点，比较原始分数（所选答案概率）、在开发数据集上训练的直方图梯度提升（HGB）分数、以及在目标试点上训练的正则化逻辑回归分数。仅当重复视频级检查表明有正向稳定改进时，候选才替换原始分数。在公开VideoQA基准和Video Hallucination Diagnosis（VHD）上开发该规则。排序质量用风险-覆盖率曲线下面积（AURC）衡量，越低越好。在留出的963题HERBench划分上，方法将三个模型的平均AURC降低16.64%（95% CI 12.12-22.61%），最小模型级增益11.39%。在另一留出的911题Perception Test划分上，平均降低18.87%（95% CI 15.43-22.14%）。对InternVL3.5，目标校验保留原始分数。使用相同输出，方法在两个数据集上平均AURC优于七个免训练基线，并改善AUROC、降低校准误差，在50%覆盖率下错误率分别降低6.50和6.58个百分点。",
+      "insight_zh": "该文提出以目标试点校验来决定是否替换可靠性评分，强调稳定正向改进才采纳；其风险-覆盖率评估与目标校验思路对地理空间模型的不确定性评估有方法借鉴意义，但原文未涉及地理空间任务。"
     },
     {
       "key": "arxiv:2609.13226",
@@ -12425,6 +12685,37 @@
       "insight_zh": "该研究表明，在时空决策支持中，将不确定性显式传递到决策规则可延长可信预见期；但其应用场景为农田灌溉，与城市更新或遥感变化检测的直接迁移需进一步验证。"
     },
     {
+      "key": "arxiv:2609.13303",
+      "title": "Adaptive Conformal Redistribution for Inter-class Transitional Uncertainty in Medical Image Classification",
+      "title_zh": "面向医学图像分类中类间过渡不确定性的自适应共形重分配",
+      "url": "https://arxiv.org/abs/2609.13303",
+      "arxiv_id": "2609.13303",
+      "authors": [
+        "Saibal Ghosh",
+        "Samarup Bhattacharya",
+        "Sanjoy Kumar Saha",
+        "Umapada Pal",
+        "Tapabrata Chakraborti"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "stat.CO",
+        "stat.ML"
+      ],
+      "published": "2026-09-10T06:21:30+00:00",
+      "score": 18,
+      "reason": "该文聚焦医学图像分类中的共形预测与决策重分配，与GIS、城市更新、遥感变化检测及多源地理数据融合无直接关联，仅方法层面涉及不确定性量化。",
+      "tags": [
+        "医学图像分类",
+        "共形预测",
+        "不确定性量化"
+      ],
+      "summary_zh": "医学图像分类常受过渡类别困扰，其特征分布与相邻类别重叠，产生模糊决策边界。共形预测可返回不确定性感知的预测集，但在临床筛查中难以直接行动。本文提出AdaConRed，一种无标签的后共形决策规则，将模糊预测集转化为细化类别分配。流程包括五阶段：视觉语言生成增强缓解少数类稀缺；冻结DermFoundation编码器提供嵌入；轻量MLP分类；熵调制、边界感知的非一致性分数构建自适应预测集；对预测为过渡且多标签的样本，仅用推理时模型输出重分配到集合内最可能的替代类别。在OSCC口腔病变和ISIC皮肤病变基准上以0.2误覆盖水平评估。3类OSCC上总体准确率从73.54%升至77.38%，口腔癌准确率从64.29%升至82.14%，良性从56.57%升至70.20%；过渡样本重分配使OPMD准确率从84.78%降至80.16%，与漏诊恶性肿瘤的非对称代价一致。ISIC上总体准确率从85.83%升至87.19%，黑色素瘤从66.04%升至68.34%。相同骨干和重分配规则下AdaConRed优于LAC、APS和RAPS。",
+      "insight_zh": "该研究表明共形预测可超越不确定性量化，在存在过渡性疾病类别时提供可行动决策支持；其非对称代价处理思路对地理空间分类中的类别混淆问题有方法借鉴意义，但原文未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.13481",
       "title": "A Hybrid Hierarchical 1D-CNN-BiLSTM Framework for Extractive Summarization of Biomedical and Clinical Text",
       "title_zh": "面向生物医学与临床文本抽取式摘要的混合分层一维CNN-BiLSTM框架",
@@ -13850,34 +14141,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.14637",
-      "title": "DynSTEER: Dynamic Stage-wise Trajectory Evaluation and Execution-time Review for Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14637",
-      "arxiv_id": "2609.14637",
-      "authors": [
-        "Zhichao Shi",
-        "Xuhui Jiang",
-        "Wenjie Zhang",
-        "Xiaojun Wu",
-        "Cehao Yang",
-        "Chengjin Xu",
-        "Jian Guo",
-        "Yuanzhuo Wang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-13T16:18:03+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14466",
       "title": "DynEoMT: Learning Object Dynamicity from Online Segmentation Queries",
       "title_zh": "",
@@ -14772,6 +15035,40 @@
       ],
       "summary_zh": "论文指出AI风险研究多聚焦于能力风险，而忽视了组织层面的漂移倾向。通过分析挑战者号航天飞机、三哩岛事故和波音737 MAX坠机等案例，识别出导致重大技术灾难的共性结构机制，并将其映射到当代AI开发中。认为现有安全基础设施可能提供的保护比表面看起来更少，组织即使在完全合规的情况下仍可能产生灾难性后果。",
       "insight_zh": "技术系统的安全性不仅取决于系统本身的能力，还深受开发组织的结构动态影响，这提醒地理空间AI系统开发需关注组织层面的风险因素。"
+    },
+    {
+      "key": "arxiv:2609.13279",
+      "title": "The MODA General Attribute Suite: A Four-Track Evaluation Benchmark for Fashion Attribute Extraction",
+      "title_zh": "MODA通用属性套件：时尚属性抽取的四轨评测基准",
+      "url": "https://arxiv.org/abs/2609.13279",
+      "arxiv_id": "2609.13279",
+      "authors": [
+        "Arkid Mitra (Hopit AI)"
+      ],
+      "categories": [
+        "cs.CV",
+        "eess.IV",
+        "builders,",
+        "prediction",
+        "files",
+        "with",
+        "hashes,",
+        "and",
+        "model",
+        "weights",
+        "at",
+        "https://github.com/hopit-ai/Moda_ner"
+      ],
+      "published": "2026-09-08T07:17:13+00:00",
+      "score": 15,
+      "reason": "该文发布时尚属性抽取的四轨评测基准，属于多模态属性抽取与基准方法，与研究中多源数据融合有微弱方法关联，但无地理空间应用。",
+      "tags": [
+        "时尚属性抽取",
+        "基准评测",
+        "多轨评估"
+      ],
+      "summary_zh": "时尚属性抽取评估不一致：结果常以跨不同图像类型的单一聚合数字报告，图像中不可见字段被当作普通负例评分，数据集间词汇不匹配的影响被承认但未测量。本文发布MODA通用属性套件，一个四轨基准，通过构造将这些问题分开。每轨（局部服装裁剪、目录产品图像、适用性感知全身照片、产品文本）拥有自己的冻结测试集、输入契约、指标和泄漏单元，各轨从不平均。协议要求标签盲预测、在任何标签打开前对预测文件进行SHA-256承诺、失败关闭评分器，以及在每轨自然泄漏单元上进行10,000样本配对聚类自助法；晋升要求每轨均为正区间而非有利均值。发布评分器、划分构建器、带哈希的自身预测文件（包括失败运行），以及四轨中三轨的MODA_NER(V)模型检查点。文本模型不发布，但其基准发布。报告基线结果、六项未改善的干预及证据局限。",
+      "insight_zh": "该基准通过分轨、标签盲预测与承诺哈希等协议设计强调可复现与防泄漏评测，其多轨分离与失败关闭评分思路对地理空间多源数据融合评测有方法参考价值，但原文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.14245",
@@ -17347,6 +17644,37 @@
       ],
       "summary_zh": "词级检测器几乎能完美识别未经编辑的AI生成文本，但文献记录了其在改写下的脆弱性，且词级分数既不能刻画文本特征，也无法识别是哪个AI模型所写。本文探究能否从更深一层的结构签名来识别AI生成文本：信息如何呈现、以何顺序、用何证据、以何口吻。作者在商业内容上复现了StoryScope（Russell等，2026）——该研究曾展示AI生成小说的此类模式——使用268个公司域名的2250篇ChatGPT前人类博客文章，对比来自五个前沿模型的11250篇AI镜像文章。一个由LLM应用的214特征工具，经人工金标注会话验证（人-人kappa 0.928，人-模型0.946），仅凭其187个结构特征即可在留出公司上以98.0宏F1检测AI文章，且当每篇AI文章被其自身模型改写后该指标不变（98.1）。该信号既能刻画也能归因：AI文章共享一种整洁、自我宣告的形态，79.3%被归因到正确来源（随机率为16.7%），而人类文章占据罕见的结构配置。所有效应均复现了StoryScope的结果，方向一致且幅度更大。作者发布了流程、工具、提示词、代码和聚合产物。",
       "insight_zh": "该工作提示，AI生成文本的识别可从词级转向结构级签名，且结构信号在改写下更稳健；但其应用场景为商业网页内容鉴别，与地理空间智能或城市研究的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.13280",
+      "title": "RxScribe Bench: A Multi-Axis Benchmark for Evaluating Vision-Language Models on Indian Outpatient Prescriptions",
+      "title_zh": "RxScribe Bench：评估印度门诊处方视觉语言模型的多轴基准",
+      "url": "https://arxiv.org/abs/2609.13280",
+      "arxiv_id": "2609.13280",
+      "authors": [
+        "Somil",
+        "Vijay Saini",
+        "Vidit Verma",
+        "Riya",
+        "Aastha Batta",
+        "Vibhuti Malhotra",
+        "Chayan Khetan",
+        "Piyush Mittal",
+        "Puneet Poonia"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-08T11:39:30+00:00",
+      "score": 12,
+      "reason": "该文构建印度门诊处方手写转录的多轴基准，属于医学视觉语言模型评估，与GIS、城市更新、遥感及地理空间智能无直接关联。",
+      "tags": [
+        "视觉语言模型",
+        "处方转录",
+        "多轴基准"
+      ],
+      "summary_zh": "处方转录错误并非可互换：模型捏造药物与误读清晰剂量带来的临床风险差异很大，但处方转录准确率通常以单一混合数字报告，将两者等同。本文提出RxScribe Bench，一个评估手写处方数字化视觉语言模型的基准，将性能分解为四个与临床严重性相关的轴，而非折叠为单一聚合分数。仅给定处方图像和输出模式，模型生成结构化记录，随后与形状相同的人工标注真值逐字段比较，每个字段还标注可见性和可读性。四个轴隔离不同失效模式：正确性、幻觉、参与度和鲁棒性。鲁棒性轴在支持样本低于最小证据阈值时保留其困难字段结果而非报告。在真实处方上对前沿视觉语言模型进行每图独立冷运行评估，发现没有单一模型在四个轴上全部胜出。",
+      "insight_zh": "该基准强调按临床严重性分解评估而非单一聚合分数，其多轴、字段级评估与证据阈值设计对地理空间信息抽取任务的评估有方法借鉴意义，但原文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.15488",
@@ -25660,36 +25988,6 @@
       "insight_zh": "该研究为语言模型机制可解释性提供形式化验证框架，可能对提升模型可解释性与安全性有参考价值，但与地理空间研究无直接联系。"
     },
     {
-      "key": "arxiv:2609.13279",
-      "title": "The MODA General Attribute Suite: A Four-Track Evaluation Benchmark for Fashion Attribute Extraction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13279",
-      "arxiv_id": "2609.13279",
-      "authors": [
-        "Arkid Mitra (Hopit AI)"
-      ],
-      "categories": [
-        "cs.CV",
-        "eess.IV",
-        "builders,",
-        "prediction",
-        "files",
-        "with",
-        "hashes,",
-        "and",
-        "model",
-        "weights",
-        "at",
-        "https://github.com/hopit-ai/Moda_ner"
-      ],
-      "published": "2026-09-08T07:17:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2607.23711",
       "title": "The Intruder Threshold: A Spectral Law for LoRA Fine-Tuning",
       "title_zh": "入侵者阈值：LoRA微调的谱定律",
@@ -25779,26 +26077,6 @@
         "eess.SP"
       ],
       "published": "2026-09-14T16:50:14+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13288",
-      "title": "Target-Checked Reliability Score Refinement for Video Question Answering",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13288",
-      "arxiv_id": "2609.13288",
-      "authors": [
-        "Guoxiang Ren",
-        "Rohitash Chandra"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T08:29:00+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -26053,47 +26331,6 @@
       ],
       "summary_zh": "使人类利益相关者能够指定导致其期望结果的奖励函数，是部署强化学习智能体的关键挑战。基于偏好的方法如在线 RLHF 可以减轻手动奖励设计的负担，但它们需要反复训练策略、从真实世界采样轨迹并获取反馈，这使得在环境交互计算昂贵或不安全的环境中不切实际。我们提出无经验自主奖励指定（EARS），一种无需环境交互即可从偏好中学习奖励函数的方法。我们的方法使用结构化的 LLM 中介过程，从任务描述和环境观察空间中构建一小组表达性奖励特征，然后在该特征空间中策略性地采样想象轨迹，并从对想象轨迹对的偏好中学习特征权重。我们在三个长时域领域进行评估：流行病封锁监管设计、糖尿病患者胰岛素管理和高速公路自动驾驶车辆控制。我们将 EARS 与同样支持无环境交互奖励指定的基线进行比较——即直接提示 LLM 生成奖励函数的方法。当从真实偏好标签或由 LLM 标记的偏好中学习时，EARS 设计的奖励函数比这些基线更符合产生偏好的真实奖励函数或 LLM 上下文。这些结果表明，基于偏好的奖励指定在无环境采样的情况下仍然有效，使得在收集真实轨迹昂贵或不可行的环境中进行实际奖励设计成为可能。",
       "insight_zh": "该工作提出无需环境交互的奖励函数学习方法，可能对需要昂贵或危险环境交互的强化学习应用有参考价值，但与地理空间研究无直接联系。"
-    },
-    {
-      "key": "arxiv:2609.13277",
-      "title": "SomBench: Benchmark Dataset for Advancing Machine Learning in Lunar Science",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13277",
-      "arxiv_id": "2609.13277",
-      "authors": [
-        "Himanshu Patil",
-        "Gabby Nyirjesy",
-        "Rachel A. Slank",
-        "Vishal Gaur",
-        "Daniela Szwarcman",
-        "Paolo Fraccaro",
-        "Nikolaos Dionelis",
-        "Michael K. Barker",
-        "Andrew Annex",
-        "Vishnu Viswanathan",
-        "Zachary Morse",
-        "Ethan I. Schaefer",
-        "Hiyam Debary",
-        "Ankur Kumar",
-        "Rohit Lal",
-        "Geoffrey Dawson",
-        "Campbell Watson",
-        "Rebekah I. Dawson-Rigas",
-        "Manil Maskey",
-        "Juan Bernab\\'e-Moreno",
-        "Rahul Ramachandran",
-        "Sujit Roy"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "published": "2026-09-08T02:58:32+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.15723",
@@ -26395,33 +26632,6 @@
       "insight_zh": "内存优化技术可借鉴于大规模遥感数据流处理，但领域差异显著。"
     },
     {
-      "key": "arxiv:2609.13280",
-      "title": "RxScribe Bench: A Multi-Axis Benchmark for Evaluating Vision-Language Models on Indian Outpatient Prescriptions",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13280",
-      "arxiv_id": "2609.13280",
-      "authors": [
-        "Somil",
-        "Vijay Saini",
-        "Vidit Verma",
-        "Riya",
-        "Aastha Batta",
-        "Vibhuti Malhotra",
-        "Chayan Khetan",
-        "Piyush Mittal",
-        "Puneet Poonia"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-08T11:39:30+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13791",
       "title": "Restore What Matters: Lessons from Joint Restoration and Recognition",
       "title_zh": "",
@@ -26443,33 +26653,6 @@
         "cs.CV"
       ],
       "published": "2026-09-12T08:08:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13293",
-      "title": "Reliable Egocentric Action Anticipation via Temporal Reliability Suppression and Compositional Graph Decoding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13293",
-      "arxiv_id": "2609.13293",
-      "authors": [
-        "Mahsa Mohammadi",
-        "Sareh Rowlands"
-      ],
-      "categories": [
-        "cs.CV",
-        "Real-time",
-        "Multimodal",
-        "Contextual",
-        "Assistants",
-        "(Wearable",
-        "AI",
-        "Workshop)"
-      ],
-      "published": "2026-09-09T15:26:39+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -27852,45 +28035,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13287",
-      "title": "LLaDA-UI: Bringing Block-wise Diffusion to Vision-Language GUI Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13287",
-      "arxiv_id": "2609.13287",
-      "authors": [
-        "Zhangxuan Gu",
-        "Haoxing Chen",
-        "Qi Qin",
-        "Yi Xin",
-        "Kai Gan",
-        "Lin Liu",
-        "Long Cui",
-        "Xiaomei Wang",
-        "Beitong Zhou",
-        "Yunzhu Zhang",
-        "Zhengwen Zeng",
-        "Changlong Gao",
-        "Weizhi Chen",
-        "Rongchao Zhang",
-        "Haoyuan Wu",
-        "Shuheng Shen",
-        "Changhua Meng",
-        "Weiqiang Wang",
-        "Jianguo Li",
-        "Zhenzhong Lan"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-09T05:53:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14690",
       "title": "LIMODENet: Attention-Free Compact Encoders for Information-Preserving Onboard Satellite Image Restoration",
       "title_zh": "",
@@ -28422,32 +28566,6 @@
       "insight_zh": "该研究揭示了LLM智能体在具体决策中对道德考量的价格敏感性，以及提示词对智能体行为倾向的显著塑造作用。"
     },
     {
-      "key": "arxiv:2609.13296",
-      "title": "Harnessing Image Question Dependence for Better VLM Test-time Reinforcement Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13296",
-      "arxiv_id": "2609.13296",
-      "authors": [
-        "Xinrui He",
-        "Ting-Wei Li",
-        "Junting Wang",
-        "Mengting Ai",
-        "Xinyu He",
-        "Hanghang Tong",
-        "Jingrui He"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "published": "2026-09-09T22:54:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13947",
       "title": "Hardware-Aware Learned Representation Compression for Distributed In-Sensor Vision",
       "title_zh": "",
@@ -28569,29 +28687,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13282",
-      "title": "GaugeDefect: Detecting Surface Anomalies by Curvature of Feature Transport",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13282",
-      "arxiv_id": "2609.13282",
-      "authors": [
-        "Yefan Wang"
-      ],
-      "categories": [
-        "cs.CV",
-        "Computer",
-        "Vision",
-        "(PRCV",
-        "2026)"
-      ],
-      "published": "2026-09-08T13:32:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15571",
       "title": "GRIN+: Towards Fast Yet Effective Machine Unlearning for Imbalanced Medical Data",
       "title_zh": "GRIN+：面向不平衡医学数据的快速且有效的机器遗忘",
@@ -28636,26 +28731,6 @@
         "cs.AI"
       ],
       "published": "2026-09-11T21:05:33+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.11170",
-      "title": "From Explanations to Interventions: Execution-Guided Counterfactual Synthesis in Temporal Graphs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11170",
-      "arxiv_id": "2609.11170",
-      "authors": [
-        "Minwoo Yu",
-        "Young-guk Ha"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-10T07:19:06+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -31199,33 +31274,6 @@
         "cs.AI"
       ],
       "published": "2026-09-14T16:24:27+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13303",
-      "title": "Adaptive Conformal Redistribution for Inter-class Transitional Uncertainty in Medical Image Classification",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13303",
-      "arxiv_id": "2609.13303",
-      "authors": [
-        "Saibal Ghosh",
-        "Samarup Bhattacharya",
-        "Sanjoy Kumar Saha",
-        "Umapada Pal",
-        "Tapabrata Chakraborti"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG",
-        "stat.CO",
-        "stat.ML"
-      ],
-      "published": "2026-09-10T06:21:30+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

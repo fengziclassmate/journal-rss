@@ -15,6 +15,7 @@
     "arxiv:2609.19504",
     "arxiv:2609.19437",
     "arxiv:2609.20193",
+    "arxiv:2609.20213",
     "arxiv:2608.14227",
     "arxiv:2609.19465",
     "arxiv:2608.17153",
@@ -30,22 +31,21 @@
     "arxiv:2609.20235",
     "arxiv:2603.06813",
     "arxiv:2602.03128",
-    "arxiv:2510.25595",
-    "arxiv:2609.19502"
+    "arxiv:2510.25595"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:588",
-    "deepseek": "partial:40/270;failed-batches:23"
+    "deepseek": "partial:18/228;failed-batches:21"
   },
-  "updated_at": "2026-09-18T16:47:56.808446+00:00",
+  "updated_at": "2026-09-19T00:39:23.691483+00:00",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 358,
+    "analyzed": 378,
     "high": 3,
-    "medium": 16,
-    "low": 26,
-    "below_threshold": 313
+    "medium": 17,
+    "low": 27,
+    "below_threshold": 331
   },
   "papers": [
     {
@@ -404,6 +404,32 @@
       "abstract": "Retrieval plug-ins supply a deep forecaster with information its lookback window cannot carry. Published evaluations report consistent gains, and each credits its own mechanism. We show that the benefit belongs instead to the operating point: the relation between window length $S$ and dominant seasonal period $L$, an axis the standard protocol never varies. Stratifying the evaluation by that relation exposes the regime. At $S{=}12$, a simple control that repeats the last observed period beats the six standard backbones, in aggregate, on four of seven benchmarks by $8\\%$ to $44\\%$ of MSE. It beats the strongest plug-in we run on ETTm1 and matches it on ECL. It is worse by up to $25\\%$ on the three datasets whose training-split spectra lack a concentrated, shared period. A controlled synthetic sweep of horizon, period, and window shows the benefit boundary tracks the period (correlation $+0.71$), not the horizon ($-0.23$). A paired control with no phase to recover nearly erases the effect, consistent with phase starvation. Zero-shot pretraining does not escape it: a foundation model trails trained backbones by $22\\%$ to $50\\%$ on the periodic benchmarks. Within our instrument, exact lookup matches graph diffusion: the payoff is consulting the record, not the machinery on top. Two interpretable statistics, a trend test and a staleness rate, predict the sign of the per-cell benefit at $0.76$ accuracy under leave-one-dataset-out evaluation, a suggestive margin over the $0.69$ majority rule, where a 22-feature stack manages $0.57$. We propose no new plug-in. The contribution is the regime map, the protocol that reveals it, and two statistics that screen it before deployment. Code: https://github.com/KurbanIntelligenceLab/retrieval-regime.",
       "summary_zh": "检索插件为深度预测器提供回看窗口无法承载的信息。已发表评估报告一致增益，且各自归因于自身机制。作者表明，增益实际属于运行点：窗口长度 S 与主导季节周期 L 之间的关系，而标准协议从不改变这一维度。按该关系分层评估可揭示适用区间。在 S=12 时，一个重复最后观测周期的简单对照在七个基准中的四个上，总体以 MSE 的 8% 至 44% 优于六个标准骨干模型；在 ETTm1 上优于所运行的最强插件，在 ECL 上与之持平；在训练集频谱缺乏集中共享周期的三个数据集上则最多差 25%。对预测步长、周期和窗口的受控合成扫描显示，增益边界跟随周期（相关性 +0.71），而非步长（-0.23）。一个无可恢复相位的配对对照几乎消除该效应，与相位饥饿一致。零样本预训练无法规避：基础模型在周期性基准上落后训练骨干 22% 至 50%。在其测量框架内，精确查表与图扩散相当：收益来自查阅记录，而非其上机制。两个可解释统计量——趋势检验与陈旧率——在留一数据集评估下以 0.76 准确率预测逐单元增益符号，略高于 0.69 的多数规则，而 22 特征堆叠仅达 0.57。作者不提出新插件，贡献在于区间图、揭示该区间的协议，以及部署前筛选的两个统计量。代码见 https://github.com/KurbanIntelligenceLab/retrieval-regime。",
       "insight_zh": "该工作提示，在时空预测中引入检索或外部记忆时，增益可能高度依赖窗口长度与主导周期的匹配关系，而非模型复杂度；在城市活动等具有强周期性的时空数据上，部署前可用趋势与陈旧率等简单统计量筛查检索是否值得启用。"
+    },
+    {
+      "key": "arxiv:2609.20213",
+      "title": "Subdomain-aware representation compression for pretrained image embeddings",
+      "title_zh": "面向预训练图像嵌入的子域感知表征压缩",
+      "url": "https://arxiv.org/abs/2609.20213",
+      "doi": "",
+      "arxiv_id": "2609.20213",
+      "authors": [
+        "Poowanut Niamluang",
+        "Jittat Fakcharoenphol"
+      ],
+      "venue": "arXiv",
+      "published": "2026-07-26T03:29:43+00:00",
+      "score": 62,
+      "reason": "该文研究子域感知的嵌入降维压缩，与遥感变化检测、多源数据融合中的高维特征压缩和迁移学习有方法层面的关联，但不涉及地理空间数据或城市更新。",
+      "tags": [
+        "降维",
+        "图像嵌入",
+        "表征压缩",
+        "迁移学习",
+        "遥感特征"
+      ],
+      "abstract": "Dimensionality reduction is a well-known technique for improving space efficiency, typically applied uniformly across an entire dataset. This paper investigates the possibilities of using dimensionality reduction techniques for subdomain representation compression. We explore standard techniques such as Principal Component Analysis (PCA) and Linear discriminant analysis (LDA) in image domains. The results not only demonstrate the expected improvements in space and computation complexity crucial for edge-device ML applications but also show improvements in accuracy over direct full-embedding procedure. One possible explanation is that dimensionality reduction effectively extracts subdomain features. We also performed experiments to demonstrate transfer learning capabilities using the compressed representations.",
+      "summary_zh": "降维是一种提升空间效率的常用技术，通常在整个数据集上统一应用。本文探讨将降维技术用于子域表征压缩的可能性，在图像域中考察了主成分分析（PCA）和线性判别分析（LDA）等标准方法。结果不仅展示了边缘设备机器学习应用所必需的空间与计算复杂度改善，还显示其精度优于直接使用完整嵌入的流程。一种可能的解释是降维有效提取了子域特征。作者还进行了实验以展示使用压缩表征的迁移学习能力。",
+      "insight_zh": "该工作提示：在遥感或地理空间嵌入中，按子域（如不同地物类型或区域）分别压缩可能比全局统一降维更有效，并可能提升下游迁移任务精度；但摘要未给出地理空间数据实验，需谨慎外推。"
     },
     {
       "key": "arxiv:2608.14227",
@@ -827,34 +853,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法与结论。",
       "insight_zh": "从标题推断，该工作可能探讨在信息不对称场景中，LLM智能体如何通过通信与验证机制实现有效协作。其机制设计或可迁移至多智能体驱动的城市更新模拟或地理空间决策，但需查阅全文确认。"
-    },
-    {
-      "key": "arxiv:2609.19502",
-      "title": "Value-Based Massive Access through Goal-Oriented Irregular Repetition Slotted ALOHA",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19502",
-      "doi": "",
-      "arxiv_id": "2609.19502",
-      "authors": [
-        "Pietro Talli",
-        "Andrea Munari",
-        "Federico Mason",
-        "Federico Chiariotti",
-        "and Andrea Zanella"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-17T15:30:23+00:00",
-      "score": 53,
-      "reason": "关键词命中：Transformer、Segmentation、Large Language Model、Multi-Agent",
-      "tags": [
-        "Transformer",
-        "Segmentation",
-        "Large Language Model",
-        "Multi-Agent"
-      ],
-      "abstract": "Agents can now externalize experience into memory, consolidating historical traces into semantic knowledge and procedural shortcuts that persist between sessions. Such memory is typically private to a single agent. We argue that agentic memory benefits from being collective, because trustworthy knowledge of the shared environment---the data sources, services, and tools agents depend on---cannot be established by any single agent, only corroborated across many independent observers. We present Cairn, a community reputation platform that captures collective knowledge, allowing agents to query the community's opinion of a resource before use and to submit evidence-backed ratings afterward. Cairn aggregates observations via a time-decayed Beta model with confidence shrinkage and supports semantic discovery over reviewer rationales. We evaluate Cairn's reputation engine under adversarial simulation (e.g., lying, collusion, camouflage), benchmark its retrieval performance, and report a case study of rating heterogeneous agents in production. arXiv:2609.19176 (*cross-listing*) Date: Tue, 15 Sep 2026 06:37:29 GMT (1794kb) Title: Optimal Transport Metric Learning for Feature Alignment in Partially Supervised Segmentation Authors: Dakini Mallam Garba and Salim Abdou Daoura Categories: eess.IV cs.AI ------------------------------------------------------------------------------ Large Language Models (LLMs) are increasingly adopted for compliance and legal reasoning tasks, yet their outputs often lack explicit grounding in legal logic and evidence. We present Code-as-Auditor, an LLM-based framework that extends the model's reasoning capability toward structured and evidence-grounded compliance assessment. The framework translates regulatory information into (1) formalized checklists and executable decision trees, encoding regulations and conditions as interpretable code structures. During inference, each checklist item is (2) dynamically expanded into factual and counterfactual questions, guiding the model to reason over case-specific evidence and potential violations. This process establishes a reasoning pipeline that proceeds from evidence identification, through rule application, to final decision-making, while a self-verification loop improves the logical consistency of the generated code and the traceability of outcomes. Experiments on privacy and data protection scenarios demonstrate that Code-as-Auditor delivers more accurate and evidence-backed evaluations, enabling automated compliance regulation checking grounded in explicit regulatory criteria. arXiv:2609.19204 (*cross-listing*) Date: Wed, 16 Sep 2026 10:06:06 GMT (2845kb) Title: REACT: A Fully Spiking State-Space Model for Real-Time Event-Driven Temporal Perception Authors: Geoffroy Keime and Nicolas Cuperlier and Benoit R. Cottereau Categories: cs.RO cs.AI ------------------------------------------------------------------------------ Autoregressive transformer decoding is constrained by irregular key-value (KV) cache movement on tiled accelerators. Prior compression and DRAM-placement systems still concentrate traffic on centralized memory paths that bottleneck long-context serving. We present MeshKV, a KV cache fabric that moves blocks as packetized flows over a lightweight NoC. It co-designs (i) TaKV affine striping to spread homes and cut hotspot load, (ii) Mare multicast with verified duplicate suppression, and (iii) Pad, which overlaps prefetch, tile multiply, and streaming softmax behind credit-aligned FIFOs. Together they convert bisection back-pressure into useful KV transfer. On our 8x8 FPGA implementation with LLaMA-2-7B and Mistral-7B at 8K-32K, MeshKV reduces interconnect traffic by up to 58%, improves KV bandwidth utilization by 2.1x, and delivers up to 1.9x multi-stream throughput. arXiv:2609.19210 (*cross-listing*) Date: Wed, 16 Sep 2026 11:27:08 GMT (145kb) Title: Not All Nodes Are Created Equal: Homophily-Aware Stratification for Stable GNN Evaluation Authors: Naga Venkata Sai Jitin Jami, Thomas Altstidl, Sebastian Hoefler, Jonas Mueller, Dario Zanca, Bjoern Eskofier, Heike Leutheuser Categories: cs.SI cs.AI cs.LG stat.ML Comments: 10 pages representativeness as a natural consequence of the procedure. We evaluate \\hp{} on a broad benchmark suite comprising 15 node-classification datasets spanning the full homophily spectrum and 7 GNN architectures. \\hp{} achieves a mean stability rank of 1.49 compared to 2.31 for random $k$-fold, achieving the lowest mean stability rank on 13 of 15 datasets while preserving class balance close to class-stratified splits and substantially better than random. We argue that homophily-aware split construction merits broader adoption for GNN evaluation. arXiv:2609.19215 (*cross-listing*) Date: Wed, 16 Sep 2026 12:33:08 GMT (1709kb) Title: Perceptual Refinement of an End-to-End Video Streaming Pipeline via Generative AI Layers Authors: Emanuele Artioli, Farzad Tashtarian, Christian Timmerer Categories: eess.IV cs.AI cs.CV cs.MM Comments: 28 pages. Submitted to ACM Transactions on Multimedia Computing, Communications and Applications (TOMM), special issue on MMSys and co-located workshops. Extended version of the NOSSDAV 2025 paper ELVIS (arXiv:2512.14185). Code: https://github.com/emanuele-artioli/presley ------------------------------------------------------------------------------ AI-mediated platforms coordinate work through LLM agents acting for different principals. In these workflows, privacy loss can be created before a final answer appears: a memory write, shared-workspace update, inter-agent message, or tool event may impose downstream exposure cost on another principal. We model this failure mode as a privacy-propagation externality, where the cost of a raw disclosure depends on topology and fanout as well as content. We present PAPC, a platform-mediated mechanism that intercepts information-moving events before they update shared state or external channels. PAPC combines policy, provenance, topology/fanout, privilege, and content signals to allow an event, release a policy-safe abstraction, quarantine raw content, block a transition, or narrow onward rights. The model explains why final-output control misses intermediate exposure costs and why high-fanout objects amplify propagation. Across retrieval-memory and multi-agent workflow benchmarks, PAPC preserves deterministic task completion and eliminates measured exact raw-value and external raw-value exposure. The results position event-level mediation as a platform-governance primitive for agent-mediated online work. arXiv:2609.19234 (*cross-listing*) Date: Wed, 16 Sep 2026 16:00:34 GMT (59kb) Title: The AR Fairness Metamodel: A Structured Framework for Fairness Measures Authors: Julian Alfredo Mendez and Timotheus Kampik Categories: cs.CY cs.AI cs.LO cs.MA cs.PL ------------------------------------------------------------------------------ Large language models fine-tuned for network intrusion detection emit single-point predictions without statistical validity guarantees. Conformal prediction supplies a finite-sample coverage guarantee, but a threshold calibrated on clean traffic fails once an adversary perturbs controllable network features. We demonstrate this failure across three intrusion detection benchmarks and propose traffic-aware conformal prediction, which calibrates on traffic drawn from the perturbation mechanism an attacker is expected to use and provably restores coverage whenever that mechanism is known and can be sampled. A stronger, adaptive attacker that queries the target model's own score can still degrade this matched-calibration guarantee. We address this second threat model by excluding attacker-controllable features and their deterministic descendants from the scored representation, and prove that this yields an exact, pathwise coverage guarantee rather than a probabilistic bound. Across three independently fine-tuned language model architectures, this representation remains completely unchanged under every evaluated attack attempt, at a quantified seven-to-fourteen-point cost in clean accuracy relative to the unrestricted feature set. arXiv:2609.19290 (*cross-listing*) Date: Wed, 16 Sep 2026 18:02:24 GMT (4278kb) Title: Physics-Informed Hemodynamic Modeling for Data-Free Prediction and Sparse-Data Assimilation Authors: Xi Chen, Jianchuan Yang, Hongde Li, Guangxin He, Qiuyu Ye, Qiang Luo, Mao Chen, Wenqi Hu Categories: eess.IV cs.AI ------------------------------------------------------------------------------ Large language models (LLMs) provide a flexible interface for long-horizon robot planning, but generated plans often fail to respect embodiment constraints, recover from planning errors, or reason effectively under partial observability. We present GAVEL, a framework for verifying and repairing long-horizon LLM planning built around an explicit graph world model. The graph represents relevant object-relations, action pre-conditions and effects, and probabilistic beliefs over unobserved object locations. This model can predict the consequences of LLM-generated actions before execution, detect violations, and repair those whose corrections follow directly from the world model. This method also reserves LLM replanning solely for errors requiring semantic reasoning. For multi-task instructions, GAVEL reasons over distributions of possible object locations to reorder remaining subtasks and minimize expected search cost. We evaluate GAVEL on BEHAVIOR-1K across 100 single long-horizon tasks and 500 multi-task instructions. With Qwen3-8B, GAVEL improves single-task success from 41.2% to 91.8% and multi-task success from 19.9% to 92.6%. Distributional belief reasoning also reduces travel distance by approximately 5.4% compared with a static variant. These improvements show that an explicit graph world model harness can substantially improve the reliability and efficiency of long-horizon embodied planning across compact and frontier hosted LLM capabilities. arXiv:2609.19325 (*cross-listing*) Date: Wed, 16 Sep 2026 18:45:24 GMT (621kb) Title: AUDITPLAN: Commit, Then Answer for Auditable Safety Alignment Authors: Sai Sri Pushpa Jampani and Kshitij Mishra and Asif Ekbal Categories: cs.CR cs.AI cs.CL ------------------------------------------------------------------------------ Robotic additive manufacturing (AM) extends material-extrusion printing beyond gantry kinematics but makes process planning robot-dependent. A slicer-generated plan that appears favorable in part coordinates can become infeasible or robotically unfavorable on a manipulator because slicer-process decisions and part orientation determine the generated path, while part orientation and workspace placement affect its kinematic realization. Existing AM tools, large language model (LLM)-based decision-support methods, and digital-shadow systems do not provide integrated pre-execution evaluation of these coupled decisions. This paper presents agentic robotic additive manufacturing (A-RAM), an agent-specialist-tool framework that converts user intent and a part file into traceable, execution-ready plans. The LLM interprets manufacturing objectives and constraints, identifies prescribed and searchable planning variables, and encodes this reasoning in a schema-constrained request; a deterministic Planning Agent instantiates the corresponding search workflow, while domain tools compute quantitative evidence for slicing, placement, inverse kinematics, trajectory timing, Joint-6 jerk, and extrusion. The framework is evaluated on a six-axis robotic-arm AM cell through three case studies covering expert-specified planning, goal-only planning, objective-dependent infill screening, and geometry-dependent orientation-placement selection. Across the evaluated candidate sets, selected plans achieve up to 53.5% lower maximum Joint-6 jerk and 48.3% lower mean absolute Joint-6 jerk than the least favorable valid candidates, while objective-specifi",
-      "summary_zh": "",
-      "insight_zh": ""
     }
   ]
 }

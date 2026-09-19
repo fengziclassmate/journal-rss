@@ -9,6 +9,7 @@
     "arxiv:2609.15485",
     "arxiv:2609.14821",
     "arxiv:2609.13903",
+    "arxiv:2609.13277",
     "arxiv:2609.13182",
     "arxiv:2608.00929",
     "arxiv:2608.06406",
@@ -30,22 +31,21 @@
     "arxiv:2609.13453",
     "arxiv:2609.13283",
     "arxiv:2608.22108",
-    "arxiv:2505.18686",
-    "arxiv:2512.15971"
+    "arxiv:2505.18686"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1082",
-    "deepseek": "partial:0/210;failed-batches:21"
+    "deepseek": "partial:10/209;failed-batches:20"
   },
-  "updated_at": "2026-09-18T16:45:25.126851+00:00",
+  "updated_at": "2026-09-19T00:37:09.290389+00:00",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 872,
+    "analyzed": 883,
     "high": 8,
-    "medium": 39,
+    "medium": 42,
     "low": 59,
-    "below_threshold": 766
+    "below_threshold": 774
   },
   "papers": [
     {
@@ -271,6 +271,52 @@
       "abstract": "We study how to update a pre-built aerial scene with a newly captured, unposed ground-view sequence. The aerial scene already contains a reliable metric Structure-from-Motion (SfM) reconstruction and a pre-trained 3D Gaussian Splatting (3DGS) model, whereas the ground-view sequence is collected later to add street-level appearance but has unknown camera poses and global scale. Registering this sequence to the aerial SfM reconstruction is challenging because single-image cross-view localization is brittle and long trajectories are prone to drift. To address these challenges, we present SkyAnchor, which treats the existing aerial scene as a fixed scaffold for ground-view registration and scene update instead of jointly reconstructing aerial and ground imagery from scratch. It first localizes short groups of consecutive ground frames against geometrically verified aerial support, producing sparse anchor poses. It then recovers the full ground trajectory with anchor-constrained submaps, fixing the front and rear anchor poses during incremental registration and bundle adjustment. Finally, it inserts filtered ground Gaussians while preserving the aerial view, followed by lightweight joint refinement. Experiments on seven real aerial--ground scenes show accurate metric ground trajectories and updated 3D Gaussian scenes with strong aerial- and ground-view rendering quality.",
       "summary_zh": "本文研究如何用新采集的无位姿地面视角序列更新预建的航空场景。航空场景已包含可靠的米制SfM重建与预训练的3D高斯泼溅（3DGS）模型，而地面序列采集较晚，用于补充街景外观，但相机位姿与全局尺度未知。将该序列配准到航空SfM重建具有挑战性，因为单图像跨视角定位脆弱且长轨迹易漂移。为此，作者提出SkyAnchor，将已有航空场景视为固定支架用于地面视角配准与场景更新，而非从头联合重建航空与地面影像。方法首先针对几何验证的航空支撑定位短组连续地面帧，产生稀疏锚点位姿；随后通过锚点约束的子图恢复完整地面轨迹，在增量配准与光束法平差中固定前后锚点位姿；最后在保持航空视角的同时插入过滤后的地面高斯，并进行轻量联合精炼。在七个真实航空-地面场景上的实验显示，方法获得准确的米制地面轨迹，并更新出在航空与地面视角均具良好渲染质量的三维高斯场景。",
       "insight_zh": "该工作表明以既有航空重建为锚点可缓解地面序列的位姿与尺度不确定性，为多源视角融合与场景更新提供了思路；其评估限于七个真实场景，未涉及大范围城市尺度或时序变化检测。"
+    },
+    {
+      "key": "arxiv:2609.13277",
+      "title": "SomBench: Benchmark Dataset for Advancing Machine Learning in Lunar Science",
+      "title_zh": "SomBench：推进月球科学机器学习的基准数据集",
+      "url": "https://arxiv.org/abs/2609.13277",
+      "doi": "",
+      "arxiv_id": "2609.13277",
+      "authors": [
+        "Himanshu Patil",
+        "Gabby Nyirjesy",
+        "Rachel A. Slank",
+        "Vishal Gaur",
+        "Daniela Szwarcman",
+        "Paolo Fraccaro",
+        "Nikolaos Dionelis",
+        "Michael K. Barker",
+        "Andrew Annex",
+        "Vishnu Viswanathan",
+        "Zachary Morse",
+        "Ethan I. Schaefer",
+        "Hiyam Debary",
+        "Ankur Kumar",
+        "Rohit Lal",
+        "Geoffrey Dawson",
+        "Campbell Watson",
+        "Rebekah I. Dawson-Rigas",
+        "Manil Maskey",
+        "Juan Bernab\\'e-Moreno",
+        "Rahul Ramachandran",
+        "Sujit Roy"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T02:58:32+00:00",
+      "score": 78,
+      "reason": "该文构建统一空间对齐的月球多仪器遥感数据集与基准，涉及多源数据融合、遥感数据组织与机器学习基准，与研究中多源数据融合和遥感方向高度相关，但应用领域为月球科学而非城市更新。",
+      "tags": [
+        "月球遥感",
+        "多源数据融合",
+        "基准数据集",
+        "行星科学",
+        "机器学习"
+      ],
+      "abstract": "Lunar orbital missions, such as Lunar Reconnaissance Orbiter, Kaguya/SELENE, Gravity Recovery and Interior Laboratory, and Lunar Prospector, among others, provide rich multi-instrument observations, but their heterogeneity in sampling, projection, and conventions limits reproducible machine learning (ML). We introduce SomBench, a unified, spatially-aligned, ML-ready lunar dataset aggregating 30+ co-registered layers from ten instruments across four missions, spanning 1 meter to 20 kilometer/pixel and covering 82 degree latitude in 90 Lunar Transverse Mercator zones with two polar stereographic caps. An image-anchored tiling pipeline yields pretraining-ready multimodal tile views with leakage-safe splits, distributed as netCDF with Parquet catalogs. An application benchmark suite spans impact processes, volcanic history, and polar volatiles. Baseline experiments with ResNet-50 and SwinV2-B models confirm that each benchmark task is learnable from the released inputs, establishing reference points for future model development.",
+      "summary_zh": "月球轨道任务（如月球勘测轨道器、辉夜号/SELENE、重力恢复与内部实验室、月球勘探者等）提供丰富的多仪器观测，但其采样、投影和约定异质性限制了可复现机器学习。本文提出SomBench，一个统一、空间对齐、机器学习就绪的月球数据集，聚合来自四次任务十台仪器的30多个共配准图层，覆盖1米至20公里/像素，覆盖82度纬度，分为90个月球横向墨卡托带和两个极地立体投影盖。图像锚定的切块流程产生预训练就绪的多模态瓦片视图，具有防泄漏划分，以netCDF分发并附Parquet目录。应用基准套件涵盖撞击过程、火山历史和极地挥发物。使用ResNet-50和SwinV2-B的基线实验确认每个基准任务可从发布输入中学习，为未来模型开发建立参考点。",
+      "insight_zh": "该工作通过统一投影、共配准与防泄漏切块，将异构月球多仪器观测转化为可复现的机器学习基准，其多源空间对齐与基准构建思路对地球遥感多源数据融合有直接方法借鉴意义；原文未涉及城市更新或地球城市应用。"
     },
     {
       "key": "arxiv:2609.13182",
@@ -928,34 +974,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失，无法提供详细信息。",
       "insight_zh": "无法从摘要中提取有效信息。"
-    },
-    {
-      "key": "arxiv:2512.15971",
-      "title": "From Words to Wavelengths: VLMs for Few-Shot Multispectral Object Detection",
-      "title_zh": "从文字到波长：面向少样本多光谱目标检测的视觉-语言模型",
-      "url": "https://arxiv.org/abs/2512.15971",
-      "doi": "",
-      "arxiv_id": "2512.15971",
-      "authors": [
-        "Manuel Nkegoum",
-        "Minh-Tan Pham",
-        "\\'Elisa Fromont",
-        "Bruno Avignon",
-        "S\\'ebastien Lef\\`evre"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 65,
-      "reason": "该文探索视觉-语言模型用于少样本多光谱目标检测，属于遥感多模态感知方向，与多源数据融合和地理空间智能研究密切相关。",
-      "tags": [
-        "多光谱目标检测",
-        "视觉-语言模型",
-        "少样本学习",
-        "遥感"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据与结论信息。",
-      "insight_zh": "摘要为空，无法确认其具体贡献；从标题看，将VLM引入多光谱少样本检测，或可缓解遥感标注稀缺问题，对多源数据融合有启发。"
     }
   ]
 }
