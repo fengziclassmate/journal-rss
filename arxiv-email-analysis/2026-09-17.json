@@ -2,11 +2,11 @@
   "date": "2026-09-17",
   "analysis_stats": {
     "total": 595,
-    "analyzed": 456,
+    "analyzed": 466,
     "high": 3,
-    "medium": 21,
-    "low": 32,
-    "below_threshold": 400
+    "medium": 23,
+    "low": 33,
+    "below_threshold": 407
   },
   "papers": [
     {
@@ -221,6 +221,48 @@
       "insight_zh": "该研究提示，在城市土地覆盖分类中，表格深度学习并非普遍优于树集成，其优势依赖于非线性交互强度与不平衡处理策略；这为城市更新场景下多源特征融合与地物分类模型选择提供了可复现的评测参考。"
     },
     {
+      "key": "arxiv:2609.17925",
+      "title": "Rapid Loss of the Sierra Nevada's Largest Trees Driven by Fire",
+      "title_zh": "火灾驱动内华达山脉大型树木的快速丧失",
+      "url": "https://arxiv.org/abs/2609.17925",
+      "arxiv_id": "2609.17925",
+      "authors": [
+        "Fabien H. Wagner",
+        "Dan J. Dixon",
+        "Christopher W. Woodall",
+        "Mayumi C. M. Hirye",
+        "Felipe Saad",
+        "Griffin Carter",
+        "Ricardo Dalagnol",
+        "Lorena Alves",
+        "Cynthia Creze",
+        "Stephen C. Hagen",
+        "Zhihua Liu",
+        "Christopher Mihiar",
+        "Adugna Mullissa",
+        "Le Bienfaiteur Sagang Takougoum",
+        "Bryan Shaddy",
+        "Yan Yang",
+        "Dafeng Zhang",
+        "Sassan Saatchi"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T23:33:59+00:00",
+      "score": 72,
+      "reason": "该文使用深度学习与亚米级航空影像进行单木分割，结合Sentinel-2时间序列和BFAST断点检测分析树木健康动态与火灾致死，属于遥感变化检测与时空数据挖掘，与研究方向高度相关。",
+      "tags": [
+        "遥感变化检测",
+        "深度学习",
+        "单木分割",
+        "时间序列分析",
+        "火灾扰动"
+      ],
+      "summary_zh": "大型树木对生物量储存、栖息地结构和生态系统功能贡献巨大，但其区域尺度的分布与健康动态量化不足。本文使用深度学习模型（U-Net-ID）和2020年亚米级航空影像生成的冠层高度模型，在内华达山脉植物区系省 delineate 所有冠面积≥100平方米的个体树木。模型使用超过330万个合成树冠训练，在20273个独立树冠数据集上验证的中位IoU为0.602。共绘制6515705棵大型树木，分布于约78.7%的区域。大型树木空间分布与海拔、温度和降水相关。利用2020至2025年Sentinel-2时间序列，通过提取每个树冠的光谱轨迹并应用BFAST断点检测算法结合扰动分类框架，识别个体树木的死亡、扰动和恢复轨迹。野火被识别为大型树木死亡的主导驱动因素，导致内华达山脉10%的大型树木死亡，死亡集中在2020-2021极端火灾季。",
+      "insight_zh": "该文展示了深度学习单木分割与时间序列断点检测结合用于区域尺度森林扰动监测的潜力，其方法框架对城市植被变化检测和遥感时序分析具有直接借鉴意义，尤其是合成数据训练策略和个体尺度扰动归因思路。"
+    },
+    {
       "key": "arxiv:2609.18139",
       "title": "Multi-View Mixture-of-Experts with Vision-Language Reranking for Cross-View Object Geo-Localization",
       "title_zh": "面向跨视角目标地理定位的多视角混合专家与视觉语言重排序",
@@ -345,6 +387,33 @@
       ],
       "summary_zh": "提出一种无需大型标注数据集或分割掩码的方法，仅凭单张图像和粗略尺度先验，通过重建目标学习可调图像空间原型，以发现和合成重复元素。在FSC-147数据集116张图像上验证了有效性。",
       "insight_zh": "单张图像蕴含足够的重复结构信息以学习有意义的对象模型，这为缺乏标注数据的遥感场景中自动发现重复地物提供了潜在途径。"
+    },
+    {
+      "key": "arxiv:2609.17763",
+      "title": "Modular Deep Learning Mechanisms for Auditable Next-Day Wildfire Spread Prediction",
+      "title_zh": "面向可审计次日野火蔓延预测的模块化深度学习机制",
+      "url": "https://arxiv.org/abs/2609.17763",
+      "arxiv_id": "2609.17763",
+      "authors": [
+        "Miguel Esparza",
+        "Aydin Ayanzadeh Ahmad Mousavi",
+        "and Ali Mostafavi"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-15T19:12:06+00:00",
+      "score": 68,
+      "reason": "该文研究基于遥感的次日野火蔓延预测，提出模块化可审计深度学习机制，涉及遥感数据、时空预测与模型可解释性，与遥感变化检测和地理空间智能方向相关。",
+      "tags": [
+        "遥感",
+        "野火预测",
+        "可审计深度学习",
+        "模块化架构",
+        "变化检测"
+      ],
+      "summary_zh": "次日野火预测需要模型预测能与计算中使用的假设和历史证据一起评估。尽管深度学习可从遥感数据学习空间模式，但仅预测性能不能确立物理保真度或操作可信度。本文研究三种模块化增强用于次日活跃火预测：风和坡度条件注意力偏置、物理特征检索增强输出校正、以及火条件双流门控。注意力偏置暴露预设方向偏好，检索模块使用九维环境和火状态描述符选择历史瓦片并对冻结模型logits应用学习校正。模块在五个骨干网络上于Next Day Wildfire Spread基准上评估，使用分阶段消融、方向审计、检索扰动、校准测量和计算比较。带全部三种增强的SwinUNETR模型三种子平均F1和AUC-PR为0.4216和0.3673，混合集成模型达到0.4292和0.3790。构建的风偏置与输入风紧密对齐，但与观测到的次日火位移对齐弱得多，区分了先验可检查性与预测物理保真度。",
+      "insight_zh": "该文的模块化可审计框架对遥感时空预测模型的可解释性研究有借鉴意义，尤其是将领域知识以可检查模块形式嵌入深度学习模型并系统评估其物理保真度的思路，可启发城市变化检测中的可解释建模。"
     },
     {
       "key": "arxiv:2609.18555",
@@ -1738,6 +1807,35 @@
       ],
       "summary_zh": "智能体工作流在受监管场景中做出重要决策，但治理几乎完全按步骤范围进行：输入输出分类器、每轮护栏、跨度级评估器。组织实际持有的策略，如转介阈值、权限限制、审查要求，是整个执行的属性而非任何单步属性。这种错配导致一种失败模式，称为组合策略违规（CPV）：每个单独步骤通过自身检查，但组合执行违反治理策略。单步谓词无法评估该步不决定的属性，因此步骤级监控器准确率提升无法检测此类。作者将CPV定义为步骤级合规无法组合的失败，提出四类分类：权限蔓延、阈值洗白、累积和违规、上下文崩溃。并表明每类正确修复取决于受保护量变异的位置。随后提出溯源感知运行时架构，在完整执行轨迹上评估策略，从原始溯源重新计算受保护量而非管道的派生表示。",
       "insight_zh": "该工作为多智能体工作流提供组合策略合规的运行时治理框架，若应用于城市更新中的多智能体决策流程，可能有助于检测跨步骤的规划合规问题，但摘要未涉及地理空间场景。"
+    },
+    {
+      "key": "arxiv:2609.17921",
+      "title": "Collaborative Memory for Multi-Agent VLM Systems",
+      "title_zh": "面向多智能体VLM系统的协作记忆",
+      "url": "https://arxiv.org/abs/2609.17921",
+      "arxiv_id": "2609.17921",
+      "authors": [
+        "Huixin Zhang",
+        "Shao-Jun Xia",
+        "Di Wang",
+        "Liangxi Liu",
+        "Hainan Xiong",
+        "Zihao Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-15T23:31:09+00:00",
+      "score": 45,
+      "reason": "该文研究多智能体VLM系统的协作记忆框架，涉及多智能体协作与分布式感知，与LLM和多智能体研究方向相关，但未涉及地理空间应用。",
+      "tags": [
+        "多智能体",
+        "视觉语言模型",
+        "协作记忆",
+        "分布式感知"
+      ],
+      "summary_zh": "视觉语言模型（VLM）智能体结合专门化的感知、工具和推理来处理复杂视觉任务。在多智能体环境中，不同智能体检查不同图像区域、视频帧或视觉表示，因此协作不仅涉及分布式推理还涉及分布式感知，使共享视觉上下文成为VLM智能体协作的核心问题。本文围绕调和解释与更新依赖推理的需求，构建记忆层次、跨智能体共享和一致性机制。有效协作要求智能体基于其他智能体的贡献构建、恢复缺失的视觉上下文，并在新证据出现时调和不同解释。共享视觉记忆不仅保留图像或文本摘要，还保留观察、智能体解释和后续推理之间的依赖关系。",
+      "insight_zh": "该文的协作记忆框架对多智能体地理空间推理系统设计有概念启发，尤其是分布式感知与共享上下文的依赖管理，但其研究为通用视觉任务，未涉及地理空间数据或城市分析。"
     },
     {
       "key": "arxiv:2609.08788",
@@ -4747,6 +4845,77 @@
       "insight_zh": "该框架的协议约束推理与推理时价值对齐思路，或可迁移至城市更新中多方参与的智能体对话设计，但其面向老年照护场景，向地理空间多智能体应用的迁移需重新验证。"
     },
     {
+      "key": "arxiv:2609.17895",
+      "title": "TabPFN-3.5: Technical Report",
+      "title_zh": "TabPFN-3.5：技术报告",
+      "url": "https://arxiv.org/abs/2609.17895",
+      "arxiv_id": "2609.17895",
+      "authors": [
+        "Benjamin J\\\"ager",
+        "Nick Erickson",
+        "L\\'eo Grinsztajn",
+        "Felix Birkel",
+        "Klemens Fl\\\"oge",
+        "Oscar Key",
+        "K\\\"ur\\c{s}at Kaya",
+        "Jonas K\\\"ubler",
+        "Ad\\`ele Frankel",
+        "Tobias Schr\\\"oder",
+        "Anurag Garg",
+        "Jan Hendrik Metzen",
+        "David Salinas",
+        "Simon Bing",
+        "Kristina Collins",
+        "Tuana \\c{C}elik",
+        "Vahid Balazadeh",
+        "Lydia Sidhoum",
+        "Tom\\'as Pereda",
+        "Brendan Roof",
+        "Andrej Tschalzev",
+        "Siyuan Guo",
+        "Philipp Singer",
+        "Lennart Purucker",
+        "Jake Robertson",
+        "Marie Salmon",
+        "Philipp Jund",
+        "Jerry Chen",
+        "Diana Kriuchkova",
+        "Arthur Cahu",
+        "Eliott Kalfon",
+        "Adrian Hayler",
+        "Georg Grab",
+        "Vitor Monteiro",
+        "Lilly Wehrhahn",
+        "Dominik Safaric",
+        "Clara Cornu",
+        "Alan Arazi",
+        "Rylee Grace",
+        "Simone Alessi",
+        "Mihir Manium",
+        "Bernhard Sch\\\"olkopf",
+        "Yann LeCun",
+        "Madelon Hulsebos",
+        "Sauraj Gambhir",
+        "Noah Hollmann",
+        "Frank Hutter"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-09-15T22:38:29+00:00",
+      "score": 20,
+      "reason": "该文提出表格基础模型TabPFN-3.5，支持时间或分组划分的非独立同分布数据及时间序列预测，与时空数据挖掘有一定关联，但主要面向通用表格任务。",
+      "tags": [
+        "表格基础模型",
+        "时空数据",
+        "非独立同分布",
+        "时间序列预测"
+      ],
+      "summary_zh": "本文介绍TabPFN-3.5，新的旗舰表格基础模型，在广泛表格问题上显著优于前代TabPFN-3及所有现有基线。TabPFN-3.5在TabArena标准表格预测上创下新最优，并扩展到实践中的数据场景：具有时间或分组划分的非独立同分布数据、包含字符串/文本/图像的表格、高基数类别特征和宽表。这些增益延续到任务特定工具：关系数据上的最优性能和更强的时间序列预测。TabPFN-3.5-Fast变体推理速度比TabPFN-3快达3倍同时保持大部分精度增益。TabPFN-3.5-Plus扩展了多模态能力，增强文本和日期处理及专有推理优化。TabPFN-3.5-Thinking新版本扩展推理时计算，比TabPFN-3-Thinking快达12倍。",
+      "insight_zh": "该模型对时间或分组划分数据的支持及时间序列预测能力对时空数据挖掘有潜在应用价值，但其为通用表格基础模型，未针对地理空间数据设计，需评估其在地理时空任务中的适用性。"
+    },
+    {
       "key": "arxiv:2609.06951",
       "title": "Steering Interference Reflects the Model's Defaults, Not the Behavior Directions",
       "title_zh": "引导干扰反映模型默认行为，而非行为方向",
@@ -5984,6 +6153,35 @@
       "insight_zh": "该文为LLM智能体在规则约束下的鲁棒性提供了系统评测方法，对多智能体系统在真实约束环境中的可靠性评估有借鉴意义，但其应用域为企业合规，与地理空间智能无直接关联。"
     },
     {
+      "key": "arxiv:2609.17888",
+      "title": "Long-Context Demonstration Selection Using State Space Models",
+      "title_zh": "使用状态空间模型的长上下文示例选择",
+      "url": "https://arxiv.org/abs/2609.17888",
+      "arxiv_id": "2609.17888",
+      "authors": [
+        "Ziniu Zhang",
+        "Zhenshuo Zhang",
+        "Ruoxuan Xiong",
+        "Gene Cooperman",
+        "Hongyang R. Zhang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-09-15T22:29:22+00:00",
+      "score": 18,
+      "reason": "该文研究基于状态空间模型的长上下文示例选择，与LLM推理效率相关，但未涉及地理空间或城市应用，关联度较低。",
+      "tags": [
+        "状态空间模型",
+        "长上下文",
+        "示例选择",
+        "上下文学习"
+      ],
+      "summary_zh": "本文研究示例选择问题，即选择示例子集前置到语言模型查询中，与上下文学习和语言模型推理密切相关。由于Transformer推理成本随序列长度二次增长，长上下文场景下选择问题尤为困难。本文基于状态空间模型（SSM）解决该问题，其推理时间随输入线性增长。方法包含两个算法：首先通过蒸馏训练好的Transformer模型学习一小组SSM，将所有权重层划分为连续组，为每组估计单独的SSM以复制相邻层间的输入输出行为；其次将蒸馏模型输出映射到小令牌集，并将这些嵌入应用于下游示例选择。实验表明蒸馏SSM相对真实输出的近似误差小于0.7%，在多个文本分类和推理任务上相比基线示例选择方法减少14.2倍FLOPs并提升6.48%准确率。",
+      "insight_zh": "该文的状态空间模型蒸馏与示例选择方法对LLM多智能体系统中的上下文管理有方法参考，但其为通用NLP任务，未涉及地理空间数据或时空分析。"
+    },
+    {
       "key": "arxiv:2609.17930",
       "title": "Locating Hidden Failures Makes Long-Horizon Agents More Reliable",
       "title_zh": "定位隐藏失败使长时程智能体更可靠",
@@ -6472,74 +6670,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17895",
-      "title": "TabPFN-3.5: Technical Report",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17895",
-      "arxiv_id": "2609.17895",
-      "authors": [
-        "Benjamin J\\\"ager",
-        "Nick Erickson",
-        "L\\'eo Grinsztajn",
-        "Felix Birkel",
-        "Klemens Fl\\\"oge",
-        "Oscar Key",
-        "K\\\"ur\\c{s}at Kaya",
-        "Jonas K\\\"ubler",
-        "Ad\\`ele Frankel",
-        "Tobias Schr\\\"oder",
-        "Anurag Garg",
-        "Jan Hendrik Metzen",
-        "David Salinas",
-        "Simon Bing",
-        "Kristina Collins",
-        "Tuana \\c{C}elik",
-        "Vahid Balazadeh",
-        "Lydia Sidhoum",
-        "Tom\\'as Pereda",
-        "Brendan Roof",
-        "Andrej Tschalzev",
-        "Siyuan Guo",
-        "Philipp Singer",
-        "Lennart Purucker",
-        "Jake Robertson",
-        "Marie Salmon",
-        "Philipp Jund",
-        "Jerry Chen",
-        "Diana Kriuchkova",
-        "Arthur Cahu",
-        "Eliott Kalfon",
-        "Adrian Hayler",
-        "Georg Grab",
-        "Vitor Monteiro",
-        "Lilly Wehrhahn",
-        "Dominik Safaric",
-        "Clara Cornu",
-        "Alan Arazi",
-        "Rylee Grace",
-        "Simone Alessi",
-        "Mihir Manium",
-        "Bernhard Sch\\\"olkopf",
-        "Yann LeCun",
-        "Madelon Hulsebos",
-        "Sauraj Gambhir",
-        "Noah Hollmann",
-        "Frank Hutter"
-      ],
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "published": "2026-09-15T22:38:29+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18128",
       "title": "Symbolic Temporal Supervision of LLM Agents Using Contracts",
       "title_zh": "",
@@ -6618,31 +6748,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.18037",
-      "title": "SetPlanner: A Lightweight Plug-in Point-Set Planner for Frozen SAM",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18037",
-      "arxiv_id": "2609.18037",
-      "authors": [
-        "Dawei Yan",
-        "Yuezhe Yang",
-        "Menglan Ruan",
-        "Chunfeng Yang",
-        "Yudong Zhang"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T02:38:59+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18597",
       "title": "Reasoning through Evolution: Automatic Meta-path Discovery for LLM-based Fake News Detection",
       "title_zh": "",
@@ -6667,44 +6772,6 @@
       "reason": "关键词命中：Multi-Agent",
       "tags": [
         "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.17925",
-      "title": "Rapid Loss of the Sierra Nevada's Largest Trees Driven by Fire",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17925",
-      "arxiv_id": "2609.17925",
-      "authors": [
-        "Fabien H. Wagner",
-        "Dan J. Dixon",
-        "Christopher W. Woodall",
-        "Mayumi C. M. Hirye",
-        "Felipe Saad",
-        "Griffin Carter",
-        "Ricardo Dalagnol",
-        "Lorena Alves",
-        "Cynthia Creze",
-        "Stephen C. Hagen",
-        "Zhihua Liu",
-        "Christopher Mihiar",
-        "Adugna Mullissa",
-        "Le Bienfaiteur Sagang Takougoum",
-        "Bryan Shaddy",
-        "Yan Yang",
-        "Dafeng Zhang",
-        "Sassan Saatchi"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T23:33:59+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -6856,81 +6923,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17987",
-      "title": "Multimodal Conditioning of Fine-Tuned Stable Diffusion XL for Controllable and Culturally Faithful Ulos Motif Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17987",
-      "arxiv_id": "2609.17987",
-      "authors": [
-        "Humasak Simanjuntak",
-        "Tamara Yunika Sianipar",
-        "Bronson T.M Siallagan",
-        "Difya Laurensya Ambarita",
-        "Arlinta Barus"
-      ],
-      "categories": [
-        "cs.AI",
-        "4th",
-        "International",
-        "Conference",
-        "on",
-        "Data",
-        "Science",
-        "and",
-        "Artificial",
-        "Intelligence",
-        "(DSAI",
-        "2026)\",",
-        "Kuala",
-        "Lumpur,",
-        "Malaysia,",
-        "November",
-        "12-13,",
-        "2026,",
-        "in",
-        "volume",
-        "3251",
-        "of",
-        "Communications",
-        "Computer",
-        "Information",
-        "Science,",
-        "Springer,",
-        "2026"
-      ],
-      "published": "2026-09-16T01:18:57+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.17763",
-      "title": "Modular Deep Learning Mechanisms for Auditable Next-Day Wildfire Spread Prediction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17763",
-      "arxiv_id": "2609.17763",
-      "authors": [
-        "Miguel Esparza",
-        "Aydin Ayanzadeh Ahmad Mousavi",
-        "and Ali Mostafavi"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-15T19:12:06+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18529",
       "title": "Machine Translation between English and Syriac (East Syriac Dialect) using Statistical Machine Learning",
       "title_zh": "",
@@ -6977,32 +6969,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.17888",
-      "title": "Long-Context Demonstration Selection Using State Space Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17888",
-      "arxiv_id": "2609.17888",
-      "authors": [
-        "Ziniu Zhang",
-        "Zhenshuo Zhang",
-        "Ruoxuan Xiong",
-        "Gene Cooperman",
-        "Hongyang R. Zhang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "published": "2026-09-15T22:29:22+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7238,32 +7204,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17886",
-      "title": "Dataset-Dependent Effects of Cross-Depth Aggregation and Soft-Routed Experts in EEG Foundation Model Fine-Tuning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17886",
-      "arxiv_id": "2609.17886",
-      "authors": [
-        "Mingyang Jiang",
-        "Yamin Li",
-        "Daniel Moyer",
-        "Fan Ma",
-        "Hua Xu",
-        "Catie Chang"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-15T22:24:15+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18444",
       "title": "DR.WILSS: Diffusion-Based Replay for Weakly Supervised Continual Semantic Segmentation",
       "title_zh": "",
@@ -7343,32 +7283,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17921",
-      "title": "Collaborative Memory for Multi-Agent VLM Systems",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17921",
-      "arxiv_id": "2609.17921",
-      "authors": [
-        "Huixin Zhang",
-        "Shao-Jun Xia",
-        "Di Wang",
-        "Liangxi Liu",
-        "Hainan Xiong",
-        "Zihao Wang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-15T23:31:09+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.18639",
       "title": "CoRe-MARL: Cooperative Redistribution Under Unknown Dynamics Using Recurrent Multi-Agent Reinforcement Learning",
       "title_zh": "",
@@ -7389,30 +7303,6 @@
       "reason": "关键词命中：Multi-Agent",
       "tags": [
         "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18038",
-      "title": "CoAtNet-DeepMoE: A Convolution-Attention Hybrid with DeepSeek Mixture-of-Experts for Parameter-Efficient Tomato Disease Classification",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18038",
-      "arxiv_id": "2609.18038",
-      "authors": [
-        "Md Nadim Mahamood",
-        "Md Arif Shahriar",
-        "Md Shafi Ud Doula",
-        "Kamrul Hasan"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T02:39:18+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -7598,34 +7488,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18005",
-      "title": "A Calibrated Instrument for Measuring How Inference Optimizations Affect Output Quality",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18005",
-      "arxiv_id": "2609.18005",
-      "authors": [
-        "Jerry Kaplan"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG",
-        "prompts,",
-        "and",
-        "result",
-        "files",
-        "at",
-        "https://github.com/jerrykaplan/Calibrated-Instrument"
-      ],
-      "published": "2026-09-16T01:49:12+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8901,6 +8763,37 @@
       "insight_zh": "该工作揭示的LLM推理阶段分解与干扰脆弱性，或可启发对LLM在空间推理任务中失败模式的机制分析，但摘要未涉及地理空间或城市应用。"
     },
     {
+      "key": "arxiv:2609.18005",
+      "title": "A Calibrated Instrument for Measuring How Inference Optimizations Affect Output Quality",
+      "title_zh": "一种用于测量推理优化如何影响输出质量的校准工具",
+      "url": "https://arxiv.org/abs/2609.18005",
+      "arxiv_id": "2609.18005",
+      "authors": [
+        "Jerry Kaplan"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "prompts,",
+        "and",
+        "result",
+        "files",
+        "at",
+        "https://github.com/jerrykaplan/Calibrated-Instrument"
+      ],
+      "published": "2026-09-16T01:49:12+00:00",
+      "score": 15,
+      "reason": "该文提出校准的LLM输出质量测量方法，评估量化、早退、推测解码等推理优化对输出质量的影响，与LLM研究相关，但未涉及地理空间或城市应用，关联度中等偏低。",
+      "tags": [
+        "LLM评估",
+        "推理优化",
+        "输出质量测量",
+        "量化"
+      ],
+      "summary_zh": "大型语言模型优化涵盖权重量化、早退方法和推测解码等方向，但各方向使用各自的基准分数，缺乏跨系统比较所需的测量精度。本文提出一种严格的输出质量测量方法，使用LLM作为评判者但对其进行形式化校准：比较同一提示下两次普通运行的分数，验证其无系统性偏好并测量每样本噪声，同时设计分布上与原模型相同的“零”条件，其测量差异应为零。用该工具测量多种加速技术发现：4位模型在英语散文和中文中与16位原模型在±0.3点分辨率下无法区分；3位精度下英语散文损失0.5点、中文0.9点、多步数学1.1点；早退在散文上损失0.7点而在数学上损失2.5点，正确解题数从27题中的19题降至6题。该模式在阿里巴巴和Meta的模型上均成立但幅度不同。",
+      "insight_zh": "该文的校准评估框架对LLM多智能体系统中的模型选择与优化具有方法参考价值，但其研究对象为通用语言模型推理优化，未涉及地理空间任务或时空数据。"
+    },
+    {
       "key": "arxiv:2603.24002",
       "title": "Stochastic Dimension Zeroth-Order Estimator: Stable and Memory-Efficient Training of PINNs",
       "title_zh": "随机维度零阶估计器：稳定且内存高效的PINN训练",
@@ -9883,6 +9776,33 @@
       "insight_zh": "该研究提示LLM在非英语文化语境中的表现评估需考虑参与者自身的语言与AI素养，这一视角对多智能体LLM研究中的评估设计有参考价值，但与地理空间智能无直接关联。"
     },
     {
+      "key": "arxiv:2609.18038",
+      "title": "CoAtNet-DeepMoE: A Convolution-Attention Hybrid with DeepSeek Mixture-of-Experts for Parameter-Efficient Tomato Disease Classification",
+      "title_zh": "CoAtNet-DeepMoE：一种结合DeepSeek专家混合的卷积-注意力混合模型用于参数高效的番茄病害分类",
+      "url": "https://arxiv.org/abs/2609.18038",
+      "arxiv_id": "2609.18038",
+      "authors": [
+        "Md Nadim Mahamood",
+        "Md Arif Shahriar",
+        "Md Shafi Ud Doula",
+        "Kamrul Hasan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T02:39:18+00:00",
+      "score": 12,
+      "reason": "该文提出卷积-注意力混合架构与专家混合模型用于番茄病害分类，属于遥感/图像分类应用，但与城市更新、时空数据挖掘、LLM多智能体、变化检测等核心方向关联较弱，仅方法层面有参考价值。",
+      "tags": [
+        "深度学习",
+        "遥感应用",
+        "农业病害识别",
+        "参数高效模型"
+      ],
+      "summary_zh": "针对番茄病害识别中现有深度学习模型参数量大、训练与推理耗时的问题，本文提出CoAtNet-DeepMoE，一种卷积-注意力混合架构用于丰富特征提取，并引入DeepSeek专家混合机制以在保持精度的同时大幅减少参数量。模型在Kaggle和PlantVillage的平衡与不平衡数据集上评估，Kaggle上达到99.80%的准确率、精确率、召回率和F1分数，PlantVillage上达到99.83%准确率、99.85%精确率、99.76%召回率和99.80% F1分数，仅用2.47M参数即达到当前最优性能。",
+      "insight_zh": "该文的卷积-注意力混合与专家混合思路或可迁移至遥感影像分类任务，但其应用场景为农业病害识别，与地理空间智能的关联有限，且未涉及时空建模或城市分析。"
+    },
+    {
       "key": "arxiv:2604.08568",
       "title": "Can We Still Trace L1 Signals? Investigating the Resilience of Native Language Signals in the LLM Era",
       "title_zh": "我们还能追踪L1信号吗？探究LLM时代母语信号的韧性",
@@ -10652,6 +10572,61 @@
       ],
       "summary_zh": "预训练视觉语言模型（VLM）即使没有额外训练也表现出强大的跨域识别性能。然而，这种鲁棒性也可能保留不良的领域特定行为，因为领域相关信息和语义信息往往在学习到的表示空间中纠缠在一起，使得选择性领域遗忘具有挑战性。现有方法通常通过潜在空间解缠和提示或特征层面的干预来解决这一问题，而没有直接归因和衰减单个patch-token的贡献。然而，作者在此提出，与其统一抑制整个表示，不如利用视觉Transformer的空间结构来定位和抑制对遗忘域预测贡献不成比例的patch区域，这可能更有效。强烈影响遗忘域预测的patch对于语义识别可能并非同等重要，这表明遗忘应根据不同视觉区域的领域贡献来引导。具体而言，作者提出一个两阶段patch选择框架，首先估计patch级别的领域敏感性，然后选择性地衰减那些对遗忘域预测的贡献强于其语义效用的patch。作者在Office-Home、Mini DomainNet和DomainNet上评估该框架。实验结果表明，与先前方法相比，遗忘-保留权衡得到改善，同时保留域识别率提升高达3.8%。在视觉重叠和未见域设置下的额外评估进一步证明了在分布偏移下鲁棒性的提升。",
       "insight_zh": "该工作利用ViT空间结构进行patch级领域归因与选择性衰减的思路，或可启发遥感影像中领域适应与空间局部化特征调控，但摘要未涉及地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.17987",
+      "title": "Multimodal Conditioning of Fine-Tuned Stable Diffusion XL for Controllable and Culturally Faithful Ulos Motif Generation",
+      "title_zh": "面向可控且文化忠实的Ulos图案生成的多模态条件微调Stable Diffusion XL",
+      "url": "https://arxiv.org/abs/2609.17987",
+      "arxiv_id": "2609.17987",
+      "authors": [
+        "Humasak Simanjuntak",
+        "Tamara Yunika Sianipar",
+        "Bronson T.M Siallagan",
+        "Difya Laurensya Ambarita",
+        "Arlinta Barus"
+      ],
+      "categories": [
+        "cs.AI",
+        "4th",
+        "International",
+        "Conference",
+        "on",
+        "Data",
+        "Science",
+        "and",
+        "Artificial",
+        "Intelligence",
+        "(DSAI",
+        "2026)\",",
+        "Kuala",
+        "Lumpur,",
+        "Malaysia,",
+        "November",
+        "12-13,",
+        "2026,",
+        "in",
+        "volume",
+        "3251",
+        "of",
+        "Communications",
+        "Computer",
+        "Information",
+        "Science,",
+        "Springer,",
+        "2026"
+      ],
+      "published": "2026-09-16T01:18:57+00:00",
+      "score": 10,
+      "reason": "该文研究多模态条件扩散模型用于文化图案生成，涉及多模态融合与生成，但与城市更新、时空数据挖掘、遥感变化检测等核心方向关联较弱。",
+      "tags": [
+        "扩散模型",
+        "多模态生成",
+        "文化遗产",
+        "ControlNet"
+      ],
+      "summary_zh": "针对传统巴塔克Ulos编织业在图案创新上的局限，本文提出多模态生成框架，将微调的潜在扩散模型（通过LoRA的Stable Diffusion XL v1.0）与多模态大语言模型（LLaMA 1.5-7B）结合，实现可控且文化忠实的Ulos图案生成。四种互补条件机制——文本、图像、表示和语义图（通过ControlNet）——共同引导生成过程。五级消融实验表明条件效果与机制数量不成正比：文本+图像+语义图取得最佳FID（270）和CLIP分数（0.65-0.70）但SSIM最弱（0.65），文本+图像+表示提供最佳整体平衡（SSIM 0.84，FID 280），四种机制全用则FID最差（330）。九位织工和三十位公众参与者的定性评估确认了统计显著的正向接受度。",
+      "insight_zh": "该文的多模态条件融合与消融分析方法对多源数据融合研究有方法借鉴意义，但其应用为文化遗产图案生成，与地理空间智能的关联有限。"
     },
     {
       "key": "arxiv:2609.15746",
@@ -11994,6 +11969,34 @@
       "insight_zh": "摘要缺失，无法确认解耦机制细节。若其表征解耦思路可迁移至时空动态建模，可能有潜在价值，但当前证据不足以支持强关联判断。"
     },
     {
+      "key": "arxiv:2609.18037",
+      "title": "SetPlanner: A Lightweight Plug-in Point-Set Planner for Frozen SAM",
+      "title_zh": "SetPlanner：一种用于冻结SAM的轻量级即插即用点集规划器",
+      "url": "https://arxiv.org/abs/2609.18037",
+      "arxiv_id": "2609.18037",
+      "authors": [
+        "Dawei Yan",
+        "Yuezhe Yang",
+        "Menglan Ruan",
+        "Chunfeng Yang",
+        "Yudong Zhang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T02:38:59+00:00",
+      "score": 8,
+      "reason": "该文研究冻结SAM的自动提示点集规划，属于图像分割方法，与遥感变化检测在分割技术上有间接关联，但应用领域为内窥镜医学影像，与GIS核心方向关联较弱。",
+      "tags": [
+        "分割模型",
+        "点集规划",
+        "医学影像",
+        "提示工程"
+      ],
+      "summary_zh": "针对分割一切模型（SAM）需要用户提示、无法支持全自动器械分割的问题，本文将自动提示建模为轻量级点集规划，提出SetPlanner——一个1.52M参数的即插即用点集规划器，用于冻结的SAM。该插件保留SAM的点提示接口并支持跨骨干网络复用，通过置换感知的条件流从几何感知目标规划完整的无序K点集。SAM解码八个候选，其共识读出产生无需真值的预测。在三个内窥镜数据集上，SetPlanner在全部六条迁移路径上优于LoRA适配系统，在Kvasir-Instrument上达到0.934 Dice，恢复44.4点定位差距的96%，候选分歧以AUROC 0.969对低Dice案例排序。",
+      "insight_zh": "该文的点集规划与共识读出机制或可启发遥感影像中自动提示分割的思路，但其验证场景为医学内窥镜影像，未涉及地理空间数据，迁移价值需进一步验证。"
+    },
+    {
       "key": "arxiv:2609.17545",
       "title": "Selective Prediction and Uncertainty-Aware Referral for Pap Smear Classification",
       "title_zh": "宫颈涂片分类中的选择性预测与不确定性感知转诊",
@@ -12621,6 +12624,35 @@
       ],
       "summary_zh": "公平性感知模型压缩需要选择方法和配置，以平衡准确率、公平性和部署成本。当压缩方法被组合或用户需求变化时，这些决策变得更加困难。在本文中，作者提出FairCompressAgent（FCA），一个智能体框架，通过通用算子接口集成公平性感知剪枝、增量量化和稀疏低秩分解。一个语言模型规划器使用模型画像和测量结果来选择压缩配置，而执行层执行压缩、微调、评估和基于约束的选择。FCA还支持需求更新，并在请求无法满足时报告剩余违规。在Fitzpatrick-17k上使用VGG-11的实验比较了四种搜索方法在40个测量配置上的表现。在准确率约束请求下，FCA选择了一个压缩模型，推理张量存储减少59.54%，同时验证平均精度从0.5141提升到0.5233，均等机会（EOpp）从0.2251降至0.2168。在各自的停止策略下，它达到与一次性规划相同的最终选择，平均候选评估次数为7.33对12。重复微调、留出测试和在线需求更新刻画了该压缩工作流的稳定性和交互式使用。结果展示了测量反馈和显式约束如何支持公平性感知压缩配置的选择和交互式细化。",
       "insight_zh": "该工作的智能体规划与约束反馈机制，或可启发地理空间模型在边缘设备部署时的资源-精度权衡，但摘要未涉及地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.17886",
+      "title": "Dataset-Dependent Effects of Cross-Depth Aggregation and Soft-Routed Experts in EEG Foundation Model Fine-Tuning",
+      "title_zh": "跨深度聚合与软路由专家在EEG基础模型微调中的数据集依赖效应",
+      "url": "https://arxiv.org/abs/2609.17886",
+      "arxiv_id": "2609.17886",
+      "authors": [
+        "Mingyang Jiang",
+        "Yamin Li",
+        "Daniel Moyer",
+        "Fan Ma",
+        "Hua Xu",
+        "Catie Chang"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-15T22:24:15+00:00",
+      "score": 8,
+      "reason": "该文研究EEG基础模型微调中的跨深度聚合与软路由专家效果，属于基础模型微调方法研究，但与地理空间智能、城市更新等核心方向关联很弱。",
+      "tags": [
+        "脑电基础模型",
+        "微调",
+        "专家混合",
+        "注意力残差"
+      ],
+      "summary_zh": "EEG解码任务可能依赖不同的时间动态和跨通道关系。本文测试专门模块是否能通过为CBraMod增加跨深度注意力残差（AttnRes）和两个软路由专家库来改进完全微调的EEG基础模型。在FACED、ISRUC、SEED-V和PhysioNet-MI上的三种子匹配实验中，完整模型相对完全微调的平均平衡准确率变化分别为-0.12、+1.27、+0.77和-1.27个百分点。仅AttnRes在三个数据集上提升平均平衡准确率，而在AttnRes之上增加专家仅对FACED和SEED-V有帮助。这些增益伴随显著开销：AttnRes需要2.11至2.88倍运行时间和1.78至2.67倍内存，完整模型需要2.41至3.04倍运行时间和1.86至2.85倍内存。总体而言，增加的模块产生数据集依赖的、有时相反的效果而非一致增益。",
+      "insight_zh": "该文关于专门模块效果数据集依赖性的发现对基础模型微调策略有一般性启示，但其研究对象为EEG信号，与地理空间智能无直接关联。"
     },
     {
       "key": "arxiv:2506.18773",

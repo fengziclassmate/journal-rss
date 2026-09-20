@@ -14,6 +14,7 @@
     "arxiv:2609.01971",
     "arxiv:2609.12169",
     "arxiv:2609.03995",
+    "arxiv:2609.12896",
     "arxiv:2609.12622",
     "arxiv:2609.12137",
     "arxiv:2609.09468",
@@ -26,26 +27,25 @@
     "arxiv:2504.04981",
     "arxiv:2609.13013",
     "arxiv:2609.12938",
+    "arxiv:2609.12791",
     "arxiv:2609.12639",
     "arxiv:2609.12497",
     "arxiv:2609.12345",
-    "arxiv:2609.12320",
-    "arxiv:2609.12127",
-    "arxiv:2609.11957"
+    "arxiv:2609.12320"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:484",
-    "deepseek": "partial:0/90;failed-batches:9"
+    "deepseek": "partial:10/90;failed-batches:8"
   },
-  "updated_at": "2026-09-19T21:56:35.489155+00:00",
+  "updated_at": "2026-09-20T00:21:42.290191+00:00",
   "analysis_stats": {
     "total": 484,
-    "analyzed": 394,
+    "analyzed": 404,
     "high": 7,
-    "medium": 13,
-    "low": 20,
-    "below_threshold": 354
+    "medium": 14,
+    "low": 21,
+    "below_threshold": 362
   },
   "papers": [
     {
@@ -388,6 +388,39 @@
       "abstract": "Verifying that manufactured batches of milling tools or carbide rotary burrs conform to production order sheets remains a largely manual and error-prone quality assurance task. Automating this process with computer vision faces a critical cold-start constraint since no labelled imagery is available, leaving manufacturer catalogue photography as the sole source of supervision. We investigate how far catalogue supervision can support an industrial recognition pipeline under domain shift, explicitly measuring the gap between catalogue separability and performance on held-out field photographs. Our findings reveal three key insights. First, off-the-shelf frozen feature extractors do not reliably separate the two task attributes, head shape and tooth profile, motivating targeted representation learning. Second, metric learning produces near-perfect unsupervised cluster discovery on catalogue images (adjusted Rand index 0.94--0.97), but less than half of this gain transfers to field photographs. Third, the largest transfer gains do not come from model scale or representation complexity, but from simple changes that reduce domain sensitivity: converting images to grayscale (+0.22) and constraining retrieval using the known order sheet via Hungarian assignment (+0.11). We therefore treat catalogue photography as a useful cold start rather than a deployment-ready training domain, and provide empirical baselines and an evaluation protocol for catalogue-to-field transfer in precision tool manufacturing.",
       "summary_zh": "论文探讨了在无标注图像情况下，利用制造商目录摄影作为唯一监督来源，构建工业识别流程的可能性。研究发现现成的冻结特征提取器无法可靠分离任务属性，度量学习在目录图像上表现优异但迁移到实地图像时增益不足一半，而简单的灰度转换和基于订单表的匈牙利匹配约束能带来最大的迁移增益。",
       "insight_zh": "目录摄影可作为有用的冷启动，但并非可直接部署的训练域；降低领域敏感性的简单改动（如灰度化、利用已知订单表约束检索）比增加模型规模或表示复杂度更能有效提升迁移性能。"
+    },
+    {
+      "key": "arxiv:2609.12896",
+      "title": "Behavior Quotient Learning for Low-Rank Adaptation of LLM Agents",
+      "title_zh": "面向LLM智能体低秩适配的行为商学习",
+      "url": "https://arxiv.org/abs/2609.12896",
+      "doi": "",
+      "arxiv_id": "2609.12896",
+      "authors": [
+        "Pengyang Zhou",
+        "Xiaobin Tu",
+        "Zhengxi Liu",
+        "Rongkun Xue",
+        "Haochen Li",
+        "Miancan Liu",
+        "Ziyuan Chen",
+        "Yinggui Wang",
+        "Jinkui Ren",
+        "Xiantao Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-11T14:23:43+00:00",
+      "score": 62,
+      "reason": "该论文研究LLM智能体的低秩适配方法，与用户关注的LLM和多智能体方向直接相关，但不涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM Agent",
+        "LoRA",
+        "Parameter-Efficient Fine-Tuning",
+        "Trajectory Learning"
+      ],
+      "abstract": "LLM-based agents rely on heterogeneous interaction capabilities to accomplish complex tasks. Existing approaches often distribute these capabilities across multiple LoRA adapters, which increases adapter storage requirements and introduces routing overhead during inference. A single LoRA avoids this overhead, but learning from diverse agent trajectories under a fixed rank budget presents two challenges. First, trajectories with different interaction traces and parameter gradients can induce equivalent changes in decision distributions, causing repeated updates to overemphasize redundant behavioral changes. Second, an aggregated update may exceed the rank budget of the adapter, and approximating it in weight space can distort the decision changes that it is intended to produce. We propose BQ-LoRA, a low-rank adaptation framework that organizes trajectory updates through a local behavior quotient manifold. It contains two modules, i.e., behavior quotient balancing (BQB) and decision preserving compression (DPC). BQB constructs the quotient manifold from decision distributions and reweights trajectory update directions according to their local density in the quotient tangent space. DPC projects the balanced gradient onto the intrinsic fixed rank tangent space and refactorizes the resulting target by jointly controlling effective weight error and distortion of decision distributions. Experiments on AppWorld and BrowseComp-Plus compare BQ-LoRA with standard LoRA and recent low-rank adaptation methods, while separate ablations evaluate the complementary contributions of both components.",
+      "summary_zh": "基于LLM的智能体依赖异构交互能力来完成复杂任务。现有方法通常将这些能力分散到多个LoRA适配器中，这增加了适配器存储需求并在推理时引入路由开销。单一LoRA可避免这种开销，但在固定秩预算下从多样化的智能体轨迹中学习面临两个挑战：第一，具有不同交互轨迹和参数梯度的轨迹可能在决策分布中引起等价变化，导致重复更新过度强调冗余的行为变化；第二，聚合更新可能超出适配器的秩预算，而在权重空间中近似可能扭曲其本应产生的决策变化。我们提出BQ-LoRA，一种通过局部行为商流形组织轨迹更新的低秩适配框架，包含行为商平衡（BQB）和决策保持压缩（DPC）两个模块。BQB从决策分布构建商流形，并根据轨迹更新方向在商切空间中的局部密度重新加权。DPC将平衡后的梯度投影到内在固定秩切空间，并通过联合控制有效权重误差和决策分布失真来重构结果目标。在AppWorld和BrowseComp-Plus上的实验将BQ-LoRA与标准LoRA及近期低秩适配方法进行比较，并通过消融实验评估两个模块的互补贡献。",
+      "insight_zh": "该工作提出通过行为商流形来组织轨迹更新，可能为多智能体系统中高效适配提供新思路，但其在GIS或城市分析场景中的适用性尚未被验证。"
     },
     {
       "key": "arxiv:2609.12622",
@@ -736,6 +769,35 @@
       "insight_zh": "该数据集可为船舶轨迹挖掘、时空模式发现与多源海事数据融合提供基础资源；其包含湖泊数据的特点可能支持内河与近海交通的对比研究，但摘要未说明数据的时间跨度、采样频率与清洗流程。"
     },
     {
+      "key": "arxiv:2609.12791",
+      "title": "Cognition on Graph: Navigating Massive Knowledge Space via Cognitive Cycles and Bidirectional Graph-Text Synergy",
+      "title_zh": "图上认知：通过认知循环和双向图-文本协同导航大规模知识空间",
+      "url": "https://arxiv.org/abs/2609.12791",
+      "doi": "",
+      "arxiv_id": "2609.12791",
+      "authors": [
+        "Gengxian Zhou",
+        "Jian Xu",
+        "Zichen Tang",
+        "Shiming Xiang",
+        "Haihong E",
+        "Cheng-Lin Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-11T12:53:26+00:00",
+      "score": 45,
+      "reason": "该论文研究基于图的认知检索增强生成框架，与用户关注的LLM和多智能体方向相关，且图-文本协同思路可能对地理知识图谱有借鉴意义。",
+      "tags": [
+        "RAG",
+        "Knowledge Graph",
+        "LLM",
+        "Multi-Hop QA"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) has empowered Large Language Models (LLMs) to tackle knowledge-intensive tasks. However, navigating global, heterogeneous knowledge bases (large-scale knowledge graphs and text corpora) for complex reasoning remains a challenge. Existing methods typically employ reactive, graph-driven exploration strategies, which blindly follow graph topology without adapting to the question context or evolving exploration progress, and lack deep bidirectional synergy between graph and text. To address these limitations, we propose CoG (Cognition on Graph), a cognitive-inspired, training-free framework for adaptive knowledge exploration. Drawing inspiration from human problem-solving, CoG performs a continuous plan-explore-reflect cycle, where it proactively formulates investigation plans, performs dual-source retrieval, and dynamically reflects on progress to adjust strategies. Crucially, it establishes deep bidirectional synergy between structured graph and unstructured text, where entities extracted from text dynamically guide graph exploration to bridge knowledge gaps. Extensive experiments on seven multi-hop QA benchmarks demonstrate that CoG significantly outperforms state-of-the-art methods while achieving superior exploration efficiency. Our code and datasets are available at https://github.com/zhougengxian/CoG.",
+      "summary_zh": "检索增强生成（RAG）使大型语言模型（LLM）能够处理知识密集型任务。然而，为复杂推理导航全局、异构的知识库（大规模知识图谱和文本语料库）仍然是一项挑战。现有方法通常采用反应式的图驱动探索策略，盲目遵循图拓扑而不适应问题上下文或演化的探索进展，且缺乏图与文本之间深度的双向协同。为解决这些局限，我们提出CoG（图上认知），一种受认知启发的、无需训练的框架，用于自适应知识探索。受人类问题解决过程的启发，CoG执行连续的规划-探索-反思循环，主动制定调查计划，执行双源检索，并动态反思进展以调整策略。关键的是，它在结构化图和非结构化文本之间建立了深度的双向协同，从文本中提取的实体动态引导图探索以弥合知识鸿沟。在七个多跳问答基准上的大量实验表明，CoG显著优于最先进方法，同时实现了更优的探索效率。我们的代码和数据集可在https://github.com/zhougengxian/CoG获取。",
+      "insight_zh": "该工作提出的图-文本双向协同和认知循环机制可能对地理知识图谱的检索增强推理有参考价值，但其验证场景为通用多跳问答而非地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.12639",
       "title": "Explaining Time Series Forecasting with Horizon-Resolved Attribution",
       "title_zh": "以预测步长解析的归因解释时间序列预测",
@@ -862,65 +924,6 @@
       "abstract": "Traditional large language models (LLMs) are scoped to individual user sessions, limiting their knowledge to a single conversation and preventing them from learning user preferences that evolve over time. Existing agentic memory systems address this limitation but generally operate at the individual-user level, restricting the public knowledge that could be shared across users to improve downstream responses. We introduce AIM (Agentic Interoperable Memory), a unified, privacy-aware memory framework that enables multi-agent, multi-user LLM systems to persistently manage private and shared memory. AIM dynamically classifies information as private, scoped to one user and inaccessible to others, or public, accessible to all users. It enforces index-level access controls so that private memories are retrievable only by their owner, protecting sensitive data while allowing beneficial shared knowledge to improve coordination and consistency. We also introduce MUMBench (Multi-User Memory Benchmark), a dataset of multi-user interactions containing private and shareable information across four domains. To our knowledge, MUMBench is the first public dataset designed to evaluate multiple memory operations, including retrieval, creation, update, and deletion, in a multi-user environment. Across three independent runs on MUMBench, AIM achieves 96.0% visibility classification accuracy, 58.8% strict operation accuracy, and 70.5% state-aware operation accuracy.",
       "summary_zh": "该研究提出AIM（Agentic Interoperable Memory），一个统一的、隐私感知的记忆框架，使多智能体、多用户LLM系统能够持久管理私有和共享记忆。AIM动态地将信息分类为私有（限于单个用户且他人不可访问）或公共（所有用户可访问），并实施索引级访问控制，使私有记忆仅能由其所有者检索。作者还提出MUMBench（多用户记忆基准），一个包含四个领域私有和可共享信息的多用户交互数据集，据作者所知这是首个用于评估多用户环境中多种记忆操作（包括检索、创建、更新和删除）的公开数据集。在MUMBench上的三次独立运行中，AIM实现了96.0%的可见性分类准确率、58.8%的严格操作准确率和70.5%的状态感知操作准确率。",
       "insight_zh": "该框架通过索引级访问控制区分私有与共享记忆，为多智能体协作中的信息共享与隐私保护提供了机制设计，其多用户记忆操作基准也可为地理空间智能中多智能体协作场景的记忆管理评估提供参考，但论文未涉及地理空间应用。"
-    },
-    {
-      "key": "arxiv:2609.12127",
-      "title": "Local Edits, Global Ripples: Replay-Informed Policy Adaptation for Workflow Synthesis",
-      "title_zh": "局部编辑，全局涟漪：用于工作流合成的回放知情策略适应",
-      "url": "https://arxiv.org/abs/2609.12127",
-      "doi": "",
-      "arxiv_id": "2609.12127",
-      "authors": [
-        "Manqing Mao",
-        "Hong Wang",
-        "Samson Koelle",
-        "Jie Yuan",
-        "Zhuoer Wang",
-        "James Feng",
-        "Yanjun Lin",
-        "Daniel Edmiston",
-        "Nikki Lijing Kuang",
-        "Zhecheng Sheng",
-        "Wei Niu"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-10T18:55:19+00:00",
-      "score": 45,
-      "reason": "该论文研究LLM智能体工作流合成中的策略编辑与适应，与LLM和多智能体方向相关，但未涉及地理空间或城市更新应用。",
-      "tags": [
-        "LLM",
-        "多智能体",
-        "工作流合成",
-        "策略适应",
-        "提示编辑"
-      ],
-      "abstract": "Prompt-policy editing offers a practical way to improve agents that synthesize executable workflows without updating the underlying model. However, persistent prompt editing has two coupled properties. First, edit locality does not imply effect locality: an edit confined to one policy segment can ripple through downstream execution, altering behavior beyond the edited segment. Second, edit effects are composition-sensitive: edits that work in isolation can interfere after composition, causing one or both to lose their benefit or become harmful. Persistent adaptation must therefore support two distinct decisions: identifying where the policy should change from execution feedback, and determining whether the resulting edit remains safe to persist after composition. To address these challenges, we introduce RIPPLE (Replay-Informed Persistent Policy Localization and Editing), which separates where an edit is made from whether it remains safe after composition. It diagnoses failed trajectories, maps each actionable failure to a predefined policy segment, and restricts the correction to that part of the policy. RIPPLE then evaluates candidates against the same iteration-start policy to compare their isolated gains, before replaying promising edits after previously accepted updates to expose downstream effects and interactions. Only edits that remain safe under composition are retained. We evaluate RIPPLE on Flow-HO, a synthetic held-out benchmark for executable workflow synthesis. RIPPLE improves validation success by up to 23.1% and yields positive gains on two additional frozen language-model backbones, while maintaining edit efficiency and low execution cost. Targeted interaction analysis further demonstrates both properties: a segment-local tool-use edit changes downstream resource resolution and validation, while an edit beneficial in isolation becomes harmful after composition.",
-      "summary_zh": "提示策略编辑为改进合成可执行工作流的智能体提供了一种实用方法，而无需更新底层模型。然而，持久性提示编辑具有两个耦合特性。首先，编辑局部性并不意味着效果局部性：局限于一个策略片段的编辑可能通过下游执行产生涟漪效应，改变被编辑片段之外的行为。其次，编辑效果对组合敏感：孤立有效的编辑在组合后可能相互干扰，导致其中一个或两个失去益处或变得有害。因此，持久性适应必须支持两个不同的决策：从执行反馈中识别策略应在何处改变，以及确定所得编辑在组合后是否仍然安全可持久化。为应对这些挑战，我们提出RIPPLE（回放知情持久策略定位与编辑），它将编辑位置与组合后是否安全分离。它诊断失败轨迹，将每个可操作的失败映射到预定义的策略片段，并将修正限制在策略的该部分。RIPPLE然后针对同一迭代起始策略评估候选编辑，以比较其孤立增益，再在先前接受的更新之后回放有前景的编辑，以暴露下游效果和交互。只有组合后仍然安全的编辑才会被保留。我们在Flow-HO上评估RIPPLE，这是一个用于可执行工作流合成的合成留出基准。RIPPLE将验证成功率提高最多23.1%，并在两个额外的冻结语言模型骨干上产生正向增益，同时保持编辑效率和低执行成本。针对性的交互分析进一步展示了这两个特性：片段局部的工具使用编辑改变了下游……",
-      "insight_zh": "该工作提出的策略编辑局部性与组合安全性分析框架，对多智能体工作流合成具有方法学意义，但其应用场景为通用工作流合成，未涉及地理空间任务，与GIS研究的直接关联有限。"
-    },
-    {
-      "key": "arxiv:2609.11957",
-      "title": "Look Before You Leap: Pre-Action Verification for LLM Agents",
-      "title_zh": "三思而后行：LLM智能体的动作前验证",
-      "url": "https://arxiv.org/abs/2609.11957",
-      "doi": "",
-      "arxiv_id": "2609.11957",
-      "authors": [
-        "Asaad Althoubi"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-09T20:05:03+00:00",
-      "score": 45,
-      "reason": "该文研究LLM智能体动作执行前的确定性验证，与LLM和多智能体研究方向相关，但不涉及地理空间或城市应用。",
-      "tags": [
-        "LLM智能体",
-        "动作验证",
-        "静默失败",
-        "多智能体"
-      ],
-      "abstract": "An LLM agent acts on the world by emitting actions: shell commands to run, edits to apply. A wrong action does not always fail loudly; it can fail silently, producing a plausible but incorrect effect that raises no error. We argue that a cheap deterministic check, run before an action takes effect, is an effective and underused form of agent oversight, and we study it across two action modalities in one framework. The idea is to fix an action's correct effect by construction, before any executor runs, so that silent failure is measured directly and the verifier may abstain rather than guess. For shell commands, a static verifier over 9930 commands and 482 tools catches 95.8% of invalid commands at a 10.0% false-positive rate. Its syntax and binary checks are oracle-exact, giving zero false positives while catching half of all errors; the flag check is bounded only by help-text coverage and accounts for every false positive. For code edits, a benchmark of 640 edits over 224 files isolating the apply step exposes a sharp split. Content-anchored formats such as search/replace and diff fail cleanly, whereas location-anchored formats fail silently: line numbers corrupt 99.1% of files under a one-line shift, and function-name edits hit the wrong function 12.7% of the time. In both settings a refuse-when-unsure policy turns silent failures into recoverable ones at a tunable cost in applicability: selective grounding reaches 0.958 recall at 7.0% false positives, and an anchor-and-verify applier records one silent misapplication in 8320 trials (0.01%). We release both benchmarks, the verifiers, and the guards.",
-      "summary_zh": "LLM智能体通过发出动作（如运行shell命令、应用编辑）来作用于世界。错误的动作并不总是大声失败；它可能静默失败，产生看似合理但错误的效果而不引发错误。作者认为，在动作生效前运行廉价的确定性检查是一种有效但未被充分利用的智能体监督形式，并在一个框架中跨两种动作模态进行研究。其思路是在任何执行器运行之前通过构造固定动作的正确效果，从而直接测量静默失败，且验证器可以弃权而非猜测。对于shell命令，一个静态验证器在9930条命令和482个工具上以10.0%的假阳性率捕获95.8%的无效命令。其语法和二进制检查是预言精确的，在捕获一半错误的同时实现零假阳性；标志检查仅受帮助文本覆盖范围限制，并解释了所有假阳性。对于代码编辑，一个包含224个文件上640次编辑的基准测试隔离了应用步骤，暴露出明显的分化。内容锚定格式（如搜索/替换和diff）干净地失败，而位置锚定格式则静默失败：行号在单行偏移下损坏99.1%的文件，函数名编辑有12.7%的概率命中错误函数。在两种设置中，不确定时拒绝的策略将静默失败转化为可恢复失败，代价是可适用性的可调成本：选择性接地达到0.958召回率和7.0%假阳性，锚定并验证的应用器在8320次试验中仅记录一次静默误应用（0.01%）。作者发布了两个基准、验证器和防护措施。",
-      "insight_zh": "该研究为LLM智能体在GIS工作流中的可靠部署提供了动作前验证思路，可能减少空间分析自动化中的静默错误，但需针对地理空间操作（如坐标变换、空间查询）进行适配。"
     }
   ]
 }

@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 388,
+    "analyzed": 398,
     "high": 3,
     "medium": 17,
     "low": 28,
-    "below_threshold": 340
+    "below_threshold": 350
   },
   "papers": [
     {
@@ -3024,6 +3024,33 @@
       "insight_zh": "该文提出的“特征空间合并+矩阵补全”为跨源异构数据整合提供了通用思路，与多源地理数据融合中特征不一致、样本不重叠的问题有形式上的相似性；但实验限于表格型分类任务，未验证于空间数据或城市应用，迁移到地理场景需考虑空间自相关与位置约束。"
     },
     {
+      "key": "arxiv:2609.19518",
+      "title": "AMB3R-SLAM: Kilometer-scale SLAM with Hierarchical Backend",
+      "title_zh": "AMB3R-SLAM：基于分层后端的公里级SLAM",
+      "url": "https://arxiv.org/abs/2609.19518",
+      "arxiv_id": "2609.19518",
+      "authors": [
+        "Hengyi Wang",
+        "Lourdes Agapito"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-09-17T00:11:16+00:00",
+      "score": 35,
+      "reason": "该文提出公里级实时单目SLAM系统，支持立体、RGB-D和LiDAR扩展，与研究中多源数据融合和地理空间智能方向有方法关联，可用于城市环境三维重建，但不涉及城市更新语义或时空数据挖掘。",
+      "tags": [
+        "SLAM",
+        "单目视觉",
+        "动态场景",
+        "多传感器融合",
+        "实时重建"
+      ],
+      "summary_zh": "作者提出AMB3R-SLAM，一个实时单目SLAM系统，能在单块消费级GPU上对超过1万帧重建公里级轨迹。该模型将用于低延迟在线跟踪的轻量前端与逐步强制局部、中层和全局一致性的分层后端耦合。通过避免依赖静态世界假设的束调整，该系统天然处理复杂动态场景。此外，作者证明该方法可扩展利用立体、RGB-D和LiDAR作为额外输入。AMB3R-SLAM在9个数据集上取得强相机跟踪性能，在VBR和Oxford Spires上将先前最先进方法的绝对轨迹误差（ATE）降低超过70%。加入LiDAR输入后，模型在KITTI和VBR数据集上进一步将ATE降至亚米级。",
+      "insight_zh": "该工作提示：分层后端与避免静态世界假设可使单目SLAM在公里级动态场景中保持实时与鲁棒，并易于融合LiDAR等多源输入。这对城市大范围三维重建与动态环境感知有潜在价值，但原文未涉及城市更新分析。"
+    },
+    {
       "key": "arxiv:2503.22727",
       "title": "A Large-Scale Vision-Language Dataset Derived from Open Scientific Literature to Advance Biomedical Generalist AI",
       "title_zh": "从开放科学文献衍生的大规模视觉语言数据集以推进生物医学通用人工智能",
@@ -4926,6 +4953,34 @@
       "insight_zh": "该流程中“定位+度量学习检索”的思路可类比遥感变化检测中的目标定位与相似性匹配，但其数据规模和领域差异较大，直接迁移到地理空间任务需谨慎。"
     },
     {
+      "key": "arxiv:2609.19519",
+      "title": "An Architecture for Long-Horizon Agents: Levels, Ticks and Cascaded Intelligence",
+      "title_zh": "长时程智能体架构：层级、时钟滴答与级联智能",
+      "url": "https://arxiv.org/abs/2609.19519",
+      "arxiv_id": "2609.19519",
+      "authors": [
+        "Erik Nijkamp",
+        "Anurag Koul",
+        "Egor Pakhomov",
+        "Bo Pang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-17T00:15:24+00:00",
+      "score": 25,
+      "reason": "该文提出长时程智能体的分层架构（层级、时钟滴答、级联智能），与研究中LLM和多智能体方向有较强方法关联，但不涉及地理空间数据或城市更新应用。",
+      "tags": [
+        "长时程智能体",
+        "分层架构",
+        "持续学习",
+        "智能体框架"
+      ],
+      "summary_zh": "语言模型智能体越来越多被要求执行跨越数天或数周的工作，例如运维修复或研究计划。此类任务超出任何上下文窗口、任何进程以及人能够关注的任何时间间隔。作者认为，长时程智能体必须先能持续运行而不遗忘，才能持续学习。这一能力存在于模型外围的框架而非模型本身。作者从长时程设定中推导出七个瓶颈，并用三部分分层架构回应：（i）按时间尺度索引的层级，每层保存一个概括下层的有限文件；（ii）作为自主行动单元的时钟滴答；（iii）级联智能，即工作仅在未通过审查后才升级到更强模型。作者报告了一项为期十天的实验，基于该架构的智能体在人类每天关注一次的情况下复现了一项已发表的强化学习结果，并展示：（1）智能体在实验的每次上下文重置和会话边界中都保持了线索连贯；（2）早期写入的操作知识改变了后续行为而无需改变模型权重；（3）学习组件可进入该系统的位置。总体而言，作者的经验表明这些智能体的持续学习需要一个比任何上下文和进程都更持久的基底，而框架已运行的检查正是学习器应处的位置。",
+      "insight_zh": "该工作提示：长时程智能体的持续能力依赖外部框架而非模型权重，操作知识可持久化并影响后续行为。这一思路对需要长期跟踪城市更新过程的智能体系统设计有启发，但原文未涉及地理应用。"
+    },
+    {
       "key": "arxiv:2608.21363",
       "title": "AIREP: A Protocol for Per-Decision Evidence in AI Runtime Governance",
       "title_zh": "AIREP：AI运行时治理中逐决策证据的协议",
@@ -5356,6 +5411,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究系统评估大语言模型（LLMs）在符号安全协议分析任务中的表现，可能涉及LLM在形式化推理、协议验证等方面的能力与局限。",
       "insight_zh": "由于摘要缺失，无法对具体方法或结论进行推断。仅从标题看，该工作与地理空间智能的直接关联有限，但其对LLM符号推理能力的评估方法或可借鉴到LLM驱动的地理空间推理与规划任务评估中。"
+    },
+    {
+      "key": "arxiv:2609.19523",
+      "title": "EconSkills: Studying Skill Transfer and Retrieval for Web Agents on Live Economic Data",
+      "title_zh": "EconSkills：面向实时经济数据的Web智能体技能迁移与检索研究",
+      "url": "https://arxiv.org/abs/2609.19523",
+      "arxiv_id": "2609.19523",
+      "authors": [
+        "Yinzhu Quan",
+        "Zefang Liu"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-17T00:29:46+00:00",
+      "score": 22,
+      "reason": "该文研究Web智能体在实时经济数据任务中的技能迁移与检索，属于LLM智能体与技能库方向，与多智能体/LLM研究相关，但不涉及地理空间或城市更新。",
+      "tags": [
+        "Web智能体",
+        "技能迁移",
+        "技能检索",
+        "经济数据"
+      ],
+      "summary_zh": "Web智能体经常重访相同网站，但多数评估丢弃了先前成功交互中学到的流程。作者提出EconSkills，一个技能库与评估框架，将已验证的EconWebArena轨迹提炼为用于检索实时经济数据的参数化标准操作流程。每个技能记录其适用范围、导航流程、站点特定指导、验证检查和恢复步骤，同时用占位符替换源实例值。EconSkills区分两个问题：已知相关流程能否迁移到留出任务，以及智能体在从库中选择时能否保持该收益。在受控迁移中，匹配技能相比无技能提示提升成功率，并在配对成功案例中需要更少步骤，而抽象化比回放原始轨迹更有效。在库规模下，检索总体与无技能基线相当，在直接覆盖的任务上表现最佳；按覆盖分层的结果显示，未覆盖任务上的近似匹配抵消了这些收益。浏览器轨迹进一步识别出程序性指导何时缩短门户特定导航，以及何时仍需语义验证。这些结果确立可复用的经济Web流程能跨任务实例迁移，并为覆盖感知的选择与上下文传递提供了具体设计目标。",
+      "insight_zh": "该研究表明将成功轨迹抽象为参数化技能可提升Web智能体迁移效率，但库规模扩大后近似匹配会稀释收益。这提示在构建地理空间数据检索智能体时，需关注技能覆盖度与检索精度的平衡。"
     },
     {
       "key": "arxiv:2606.31672",
@@ -6395,6 +6476,34 @@
       "insight_zh": "该文将“缺失”转化为可推理的语义事件，其反事实对比思路或可类比遥感变化检测中的“应有而未出现”目标识别，但摘要未涉及遥感或地理空间场景。"
     },
     {
+      "key": "arxiv:2609.19524",
+      "title": "A Unified Evaluation Framework for Trustworthy Large Language Models, Agentic AI, and Multimodal Systems",
+      "title_zh": "面向可信大语言模型、智能体AI和多模态系统的统一评估框架",
+      "url": "https://arxiv.org/abs/2609.19524",
+      "arxiv_id": "2609.19524",
+      "authors": [
+        "Shaina Raza",
+        "Ahmed Y. Radwan",
+        "Imran Liaquat",
+        "and Kathryn Hume"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-17T00:31:16+00:00",
+      "score": 20,
+      "reason": "该文提出面向LLM、智能体AI和多模态系统的统一可信评估框架，与研究中LLM和多智能体方向相关，可作为评估方法参考，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "可信AI",
+        "评估框架",
+        "LLM",
+        "多模态",
+        "智能体"
+      ],
+      "summary_zh": "仅凭基准分数无法为现代人工智能系统的可信度提供完整依据。大语言模型（LLM）、智能体系统和多模态模型（MLLM）需要不同形式的评估，但其评估证据必须对开发和监督保持可解释。作者提出一个统一框架，通过八个可信维度——能力、鲁棒性、安全性、公平性、透明性、治理、监督和效率——连接输出层、轨迹层和跨模态评估。该框架保留系统特定指标，同时将原生测量映射到共同性能区间，并附带不确定性估计和可追溯证据。一个元评估层检验评估本身的有效性、可靠性和可复现性。多维画像揭示优势与弱点，安全关键覆盖机制防止聚合分数掩盖关键失败。与治理框架、国际标准和欧盟监管要求的映射将技术评估与监督需求连接起来。该框架为评估系统性能及支撑证据的可信度提供了结构化基础，跨部署情境的实证验证仍是必要的下一步。",
+      "insight_zh": "该框架提示：对LLM与智能体系统的评估应同时覆盖输出、轨迹和跨模态层面，并引入元评估检验证据可信度。这一思路可启发对地理空间智能体系统建立多维可信评估，但原文未涉及地理应用。"
+    },
+    {
       "key": "arxiv:2608.05810",
       "title": "When Self-Evolution Backfires: Pre-Commit Gating against Skill Contamination in LLM Agents",
       "title_zh": "当自进化适得其反：针对LLM智能体技能污染的预提交门控",
@@ -6424,6 +6533,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据或结论。",
       "insight_zh": "该主题提示智能体持续学习可能引入污染，对构建长期运行的地理空间智能体有风险警示意义，但摘要缺失无法确认方法细节。"
+    },
+    {
+      "key": "arxiv:2609.19530",
+      "title": "When Hiring Becomes Agent-Mediated: Evaluating Access and Recurrence in Two-Agent R\\'esum\\'e Screening",
+      "title_zh": "当招聘变为智能体中介：评估双智能体简历筛选中的访问与复现",
+      "url": "https://arxiv.org/abs/2609.19530",
+      "arxiv_id": "2609.19530",
+      "authors": [
+        "Jian Gao",
+        "Hang Jiang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "2026"
+      ],
+      "published": "2026-09-17T00:52:36+00:00",
+      "score": 18,
+      "reason": "该文研究双智能体简历筛选中的访问与复现问题，属于LLM多智能体在决策流程中的应用，与研究中LLM和多智能体方向有方法层面的关联，但不涉及地理空间或城市更新。",
+      "tags": [
+        "多智能体",
+        "LLM智能体",
+        "招聘筛选",
+        "智能体中介"
+      ],
+      "summary_zh": "招聘是双向的：雇主评估匹配度，候选人展示并辩护自身资历。然而作为第一道关卡的简历筛选通常被自动化为一对简历-职位配对的静态单次判断。作者研究一种双智能体替代方案，由雇主侧和候选人侧智能体代表各自角色，交换证据并在决定谁进入下一轮前更新判断。研究使用GPT-5.5和Claude Opus 4.7在600个构造的简历-职位配对上比较流程。双智能体筛选推进了更多申请（GPT-5.5从33.3%升至39.3%；Opus 4.7从34.0%升至35.5%）。在共同191对边界池的三次运行中，通过实例率分别从4.5%升至26.2%和从6.5%升至16.1%。这并非一致放宽：双智能体筛选会拒绝单次调用通过的申请，决策在两个方向上都有变化。在相似通过量下，两种流程推进不同申请，且没有单次调用阈值能稳定恢复双智能体筛选所选申请。在重新运行中被发现选中的案例里，仅双智能体选中的案例复现率低于共同选中的案例，GPT-5.5下明显，Opus 4.7下不太确定，而单独的单次调用后续实验未显示类似下降。随着招聘在双方都变为智能体中介，筛选流程本身而非仅其背后的模型，决定了谁能进入人工审核以及这种访问如何可靠复现。",
+      "insight_zh": "该研究表明智能体中介流程会系统性改变决策结果与可复现性，提示在将多智能体用于城市治理或规划评审等决策场景时，需关注流程设计对结果分布和稳定性的影响。"
     },
     {
       "key": "arxiv:2609.20465",
@@ -8592,6 +8728,33 @@
       "insight_zh": "该工作提示：SAM可能提升小样本、低质量光谱数据的泛化能力；若类比到遥感光谱或城市多源数据分类，或可缓解有限标注下的过拟合，但论文未涉及地理空间数据。"
     },
     {
+      "key": "arxiv:2609.19526",
+      "title": "Self Improvement via Fast Tree-search",
+      "title_zh": "通过快速树搜索实现自我改进",
+      "url": "https://arxiv.org/abs/2609.19526",
+      "arxiv_id": "2609.19526",
+      "authors": [
+        "Xinghong Fu",
+        "Aravinth Kulanthaivelu",
+        "Yutaro Yamada"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-17T00:41:13+00:00",
+      "score": 15,
+      "reason": "该文提出编码智能体自改进的快速树搜索框架，属于LLM智能体与搜索方法，与多智能体/LLM方向有间接方法关联，但与地理空间研究无直接关系。",
+      "tags": [
+        "自改进",
+        "树搜索",
+        "编码智能体",
+        "LLM-as-a-judge"
+      ],
+      "summary_zh": "编码智能体可以递归修改自身实现，形成自我改进循环。已有工作表明这能提升编码基准性能，但现有方法成本高、计算密集。作者提出一个简单且样本高效的自我改进框架，在严格预算约束下显著提升编码性能。作者指出候选自修改的评估是主要运行时瓶颈，因为先前方法通过用修改后的智能体重跑部分基准任务来估计其有效性，耗时较长。作者提出递归自我改进快速树搜索（SIFT），用LLM-as-a-judge信号对候选补丁进行成对比较来增强下游任务评估，胜负记录用正则化Bradley-Terry模型聚合，得到的强度分数驱动轻量级分离式树搜索中的基于排名的父节点采样。昂贵的下游任务评估仅保留给最有前景的节点。使用完全分离的树搜索流程，评判分数提供中间信号以引导对候选补丁的探索，而不受慢速评估运行的瓶颈限制。SIFT在完整Polyglot基准上优于现有基于树搜索的自演化框架，同时在CPU小时、墙钟时间和API成本方面资源需求显著更低。",
+      "insight_zh": "该工作提示：用廉价评判信号替代昂贵评估来引导搜索，可大幅降低智能体自改进成本。这一思路对需要大量候选方案评估的城市规划或遥感模型迭代有潜在借鉴意义，但原文未涉及地理场景。"
+    },
+    {
       "key": "arxiv:2605.29219",
       "title": "SalsaAgent: A multimodal embodied language model for interactive dance generation",
       "title_zh": "SalsaAgent：面向交互式舞蹈生成的多模态具身语言模型",
@@ -9047,6 +9210,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作提出了基于诱饵校准的失败审计方法，用于在选择性条件下测量语言模型的性能。",
       "insight_zh": "摘要缺失，无法确认其审计框架的具体机制；若其校准思路可迁移，或对LLM在城市分析中的可靠性评估有参考价值，但需原文验证。"
+    },
+    {
+      "key": "arxiv:2609.19515",
+      "title": "LLM-as-an-Improver: Turning Verification into Better Candidates",
+      "title_zh": "LLM作为改进者：将验证转化为更好的候选",
+      "url": "https://arxiv.org/abs/2609.19515",
+      "arxiv_id": "2609.19515",
+      "authors": [
+        "Akiyoshi Tomihari",
+        "Yuma Ichikawa"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-17T00:05:25+00:00",
+      "score": 15,
+      "reason": "该文提出将验证反馈用于生成和改进候选解，属于LLM推理与验证方法，与LLM方向有间接关联，但不涉及地理空间或城市应用。",
+      "tags": [
+        "LLM",
+        "验证器",
+        "候选改进",
+        "代码生成"
+      ],
+      "summary_zh": "基于验证器的选择通过生成多个候选解并用验证器选出最有前景的一个来提升LLM性能。然而现有方法通常仅将验证视为排序步骤，一旦固定候选池评估完毕就丢弃其反馈。本文追问验证是否也能改进候选集本身。为此，作者提出LLM-as-an-Improver并设计验证-修复-重选（VRR），利用验证反馈生成并重选改进候选。VRR保留初始胜者，同时有条件地生成三个互补替代：胜者和次胜者的修复版本，以及基于新方法的解。它仅用推理时信息过滤无效和重复候选，然后在原始评估标准下重选最终答案。在多种模型以及代码生成和推理基准上，VRR在许多设定下优于固定池验证器选择，甚至能在初始池全部错误时恢复正确解。这些结果凸显LLM作为改进者的更广泛角色：验证反馈不仅能从现有解中选择，还能构造超出初始池的更强候选。",
+      "insight_zh": "该工作提示：验证反馈可用于主动生成更优候选而非仅排序，这为需要多方案比选的城市规划或遥感解译流程提供了方法借鉴，但原文未涉及地理场景。"
     },
     {
       "key": "arxiv:2608.07663",
@@ -10136,6 +10325,36 @@
       "insight_zh": "该研究展示了CNN-GRU与时频分析在EEG状态分类中的有效性，但其应用领域为神经科学，与地理空间智能无直接关联。"
     },
     {
+      "key": "arxiv:2609.19539",
+      "title": "Compressed Active Subspaces for Scalable Bayesian Inference",
+      "title_zh": "用于可扩展贝叶斯推断的压缩主动子空间",
+      "url": "https://arxiv.org/abs/2609.19539",
+      "arxiv_id": "2609.19539",
+      "authors": [
+        "Thomas Flynn",
+        "Sanket Jantre",
+        "Byung-Jun Yoon",
+        "Kibaek Kim"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "published": "2026-09-17T01:04:43+00:00",
+      "score": 12,
+      "reason": "该文提出压缩主动子空间方法以降低高维模型贝叶斯推断的内存开销，属于通用机器学习方法，与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合没有直接关联。",
+      "tags": [
+        "贝叶斯推断",
+        "降维",
+        "不确定性量化",
+        "可扩展性"
+      ],
+      "summary_zh": "主动子空间方法通过识别对模型输出影响最大的参数方向并沿这些方向进行推断，为高维模型提供预测不确定性量化框架。然而构建主动子空间需要存储大量全维模型梯度，随着模型规模增大变得不可行。作者提出压缩主动子空间（CAS），先用结构化等距嵌入将模型参数映射到压缩空间，再在该降维参数化中构建主动子空间。该方法显著减少主动子空间构建所需内存，使标准方法难以处理的大模型也能进行贝叶斯推断。作者在规模递增的神经网络上验证了CAS的可扩展性，同时保持预测性能和稳健的不确定性估计。",
+      "insight_zh": "该工作提示：当模型维度成为不确定性量化的瓶颈时，可先在压缩参数空间中构造主动子空间。这一思路或可迁移到高维地理空间模型的不确定性分析，但原文未涉及地理应用。"
+    },
+    {
       "key": "arxiv:2609.16814",
       "title": "Can We Do Interpretable NLI with Graphs Based on Atomic Propositions?",
       "title_zh": "能否基于原子命题图进行可解释的自然语言推理？",
@@ -10778,6 +10997,35 @@
       ],
       "summary_zh": "谱共聚类是发现词-文档矩阵中潜在结构的有用工具，但其对奇异值分解（SVD）的依赖会使标准形式在高维数据上代价高昂。本文提出两种用于二部文本数据归一化谱共聚类的随机近似方法，适用于文档簇与词簇数量可能不同的情形。第一种方法通过随机投影使用随机SVD，第二种将部分SVD与逐元素随机采样相结合。在真实和合成数据集上，两种方法相对于全SVD基线均减少了运行时间，但其表现取决于矩阵稀疏性。随机投影方法在测试设置中是更可靠的近似，而基于采样的方法在较稠密矩阵上最有用，在已经稀疏的文本数据上收益有限。这些结果表明，谱共聚类的随机近似应根据数据的底层结构来选择。",
       "insight_zh": "该研究为高维稀疏矩阵的谱共聚类提供了计算效率方案，对大规模文本或属性数据的降维分析有方法参考意义，但与地理空间智能无直接联系。"
+    },
+    {
+      "key": "arxiv:2609.19513",
+      "title": "QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pre-Training",
+      "title_zh": "QVAC Genesis III：面向高效语言模型预训练的大规模高质量开放合成STEM语料",
+      "url": "https://arxiv.org/abs/2609.19513",
+      "arxiv_id": "2609.19513",
+      "authors": [
+        "Davide Vitabile",
+        "N. Ranjan",
+        "Akshay Nambiar",
+        "Kamal K. Gupta",
+        "Amril Nazir"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-17T00:04:09+00:00",
+      "score": 10,
+      "reason": "该文构建面向STEM的大规模合成语料用于语言模型预训练，属于LLM训练数据方向，与研究中LLM方向有间接关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "合成语料",
+        "STEM预训练",
+        "边缘AI",
+        "教师蒸馏"
+      ],
+      "summary_zh": "高质量预训练数据是面向边缘AI和端侧部署的教育与STEM专用语言模型的关键瓶颈，这类场景的token预算受到严格限制。虽然大型机构在私有语料上训练越来越大的模型，开放生态缺乏能高效提供高每token学习价值的STEM合成数据集。为填补这一空白，作者提出QVAC Genesis III，一个1914.3亿token、聚焦STEM的多领域合成语料，覆盖19个领域、多个难度级别和不同教育风格。该语料通过双生成策略构建，以弱边缘规模学生模型作为信号进行定向教师蒸馏：学生的失败被转化为纠正性解释，其成功被扩展为对所有答案选项的对比式选项级推理。作者进一步提出LLM-as-a-parser评估协议，从自由形式输出中提取最终答案并追踪准确率和答案有效性。为验证数据有效性，作者用17亿参数模型进行从零开始的受控消融，显示使用QVAC Genesis III训练的模型在ARC、GPQA Diamond和MMLU STEM基准上持续优于使用开源合成语料Cosmopedia-v2训练的模型以及公开的Cosmo-1B模型，在ARC-E上提升最高28.57%，在ARC-C上提升21.35%，答案有效率最高达99.45%。",
+      "insight_zh": "该工作提示：以弱学生模型的失败与成功为信号进行教师蒸馏，可高效生成高学习价值的合成语料。这一数据构建思路对地理空间领域小模型预训练有潜在借鉴，但原文未涉及地理数据。"
     },
     {
       "key": "arxiv:2606.02680",
@@ -11891,6 +12139,37 @@
       "insight_zh": "由于摘要缺失，无法对具体方法或结论进行推断。仅从标题看，该工作与地理空间智能关联有限，但其因果干预缓解捷径学习的思路或对遥感变化检测中消除伪相关有方法层面的启发。"
     },
     {
+      "key": "arxiv:2609.19213",
+      "title": "Layer-wise Curriculum Learning for Efficient LLM Compression",
+      "title_zh": "面向高效LLM压缩的逐层课程学习",
+      "url": "https://arxiv.org/abs/2609.19213",
+      "arxiv_id": "2609.19213",
+      "authors": [
+        "Donggeon Lee",
+        "Dooyeon Na",
+        "Seungmin Oh",
+        "Jongbin Ryu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "Processing",
+        "(EMNLP)",
+        "2026"
+      ],
+      "published": "2026-09-16T12:01:48+00:00",
+      "score": 8,
+      "reason": "该文提出逐层课程学习用于LLM压缩，属于模型效率与压缩方法，与研究中LLM方向有间接关联，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "模型压缩",
+        "课程学习",
+        "知识蒸馏",
+        "LLM效率"
+      ],
+      "summary_zh": "本文提出用于高效LLM压缩的逐层课程学习。该方法通过课程学习方式促进教师模型到学生模型的知识迁移，从较容易的优化任务开始并逐步处理更难的任务。为在LLM压缩中采用逐层学习，作者将整个模型划分为由层组成的多个片段，从而实现更计算高效的知识迁移。基于对累积误差现象的理论分析，逐层课程学习加速收敛并稳定知识迁移过程。此外，作者提出一种多线程特征缓存方法以高效处理跨层特征错位，最大化GPU利用率。因此，该方法展现出先进的模型压缩性能，以及在最小化内存使用和缩短训练时间方面的高计算效率。在多个数据集上的实验表明，所提方法达到最先进性能，同时在BERT和GPT-2上将GPU内存使用和训练时间减少超过50%。此外，在相同训练时间下，该方法在LLaMA系列和Qwen模型上优于其他剪枝方法，且GPU内存占用更低。",
+      "insight_zh": "该工作提示：逐层课程学习与特征缓存可显著降低LLM压缩的内存与时间成本。这一效率思路对在地理空间场景中部署大模型有潜在参考价值，但原文未涉及地理应用。"
+    },
+    {
       "key": "arxiv:2602.10711",
       "title": "High-Resolution Range Profile Classifiers Require Aspect-Angle Awareness",
       "title_zh": "高分辨率距离像分类器需要方位角感知",
@@ -12388,28 +12667,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作从效用角度分析ε-公平性度量的局限性。",
       "insight_zh": "摘要缺失，无法判断其理论贡献；公平性问题在城市更新与空间资源分配中可能有间接意义，但原文未涉及空间维度。"
-    },
-    {
-      "key": "arxiv:2609.19530",
-      "title": "When Hiring Becomes Agent-Mediated: Evaluating Access and Recurrence in Two-Agent R\\'esum\\'e Screening",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19530",
-      "arxiv_id": "2609.19530",
-      "authors": [
-        "Jian Gao",
-        "Hang Jiang"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "2026"
-      ],
-      "published": "2026-09-17T00:52:36+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20261",
@@ -13105,28 +13362,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19526",
-      "title": "Self Improvement via Fast Tree-search",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19526",
-      "arxiv_id": "2609.19526",
-      "authors": [
-        "Xinghong Fu",
-        "Aravinth Kulanthaivelu",
-        "Yutaro Yamada"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-17T00:41:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2512.05525",
       "title": "Score-based diffusion models for severely ill-posed problems in diffuse optical tomography",
       "title_zh": "基于分数的扩散模型用于扩散光学断层成像中的严重不适定问题",
@@ -13629,30 +13864,6 @@
         "cs.LG"
       ],
       "published": "2026-09-17T12:20:07+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19513",
-      "title": "QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pre-Training",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19513",
-      "arxiv_id": "2609.19513",
-      "authors": [
-        "Davide Vitabile",
-        "N. Ranjan",
-        "Akshay Nambiar",
-        "Kamal K. Gupta",
-        "Amril Nazir"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-17T00:04:09+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14640,53 +14851,6 @@
         "stat.ML"
       ],
       "published": "2026-09-17T05:19:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19213",
-      "title": "Layer-wise Curriculum Learning for Efficient LLM Compression",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19213",
-      "arxiv_id": "2609.19213",
-      "authors": [
-        "Donggeon Lee",
-        "Dooyeon Na",
-        "Seungmin Oh",
-        "Jongbin Ryu"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "Processing",
-        "(EMNLP)",
-        "2026"
-      ],
-      "published": "2026-09-16T12:01:48+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19515",
-      "title": "LLM-as-an-Improver: Turning Verification into Better Candidates",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19515",
-      "arxiv_id": "2609.19515",
-      "authors": [
-        "Akiyoshi Tomihari",
-        "Yuma Ichikawa"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-17T00:05:25+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -15682,27 +15846,6 @@
       "insight_zh": "摘要缺失，无法评估其具体改进。若该方法可应用于多智能体空间决策或机器人导航，可能有间接价值，但当前无证据支持。"
     },
     {
-      "key": "arxiv:2609.19523",
-      "title": "EconSkills: Studying Skill Transfer and Retrieval for Web Agents on Live Economic Data",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19523",
-      "arxiv_id": "2609.19523",
-      "authors": [
-        "Yinzhu Quan",
-        "Zefang Liu"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-17T00:29:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20815",
       "title": "ERCPMP-Gx: Endoscopic Image and Video Dataset for Morphological, Histopathological, and Genomic Characterization of Colorectal Polyposis",
       "title_zh": "",
@@ -15966,31 +16109,6 @@
         "cs.LG"
       ],
       "published": "2026-09-17T04:16:51+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19539",
-      "title": "Compressed Active Subspaces for Scalable Bayesian Inference",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19539",
-      "arxiv_id": "2609.19539",
-      "authors": [
-        "Thomas Flynn",
-        "Sanket Jantre",
-        "Byung-Jun Yoon",
-        "Kibaek Kim"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "stat.ME",
-        "stat.ML"
-      ],
-      "published": "2026-09-17T01:04:43+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16606,29 +16724,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19519",
-      "title": "An Architecture for Long-Horizon Agents: Levels, Ticks and Cascaded Intelligence",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19519",
-      "arxiv_id": "2609.19519",
-      "authors": [
-        "Erik Nijkamp",
-        "Anurag Koul",
-        "Egor Pakhomov",
-        "Bo Pang"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-17T00:15:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2605.26163",
       "title": "Adversarial Water-Filling: Theory, Algorithms, and a Domain-Specific Wireless Foundation Model",
       "title_zh": "对抗注水：理论、算法与领域专用无线基础模型",
@@ -16697,27 +16792,6 @@
         "cs.LG"
       ],
       "published": "2026-07-28T07:59:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19518",
-      "title": "AMB3R-SLAM: Kilometer-scale SLAM with Hierarchical Backend",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19518",
-      "arxiv_id": "2609.19518",
-      "authors": [
-        "Hengyi Wang",
-        "Lourdes Agapito"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "published": "2026-09-17T00:11:16+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16797,28 +16871,6 @@
       ],
       "summary_zh": "摘要内容缺失，仅提供标题。标题表明该工作提出一种对抗生成方法，用于创建实时可动画的3D高斯头部虚拟形象。",
       "insight_zh": "从标题推断，该工作聚焦于3D高斯表示与头部虚拟形象生成，与城市更新、时空数据挖掘、遥感变化检测或多源数据融合无直接联系。"
-    },
-    {
-      "key": "arxiv:2609.19524",
-      "title": "A Unified Evaluation Framework for Trustworthy Large Language Models, Agentic AI, and Multimodal Systems",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19524",
-      "arxiv_id": "2609.19524",
-      "authors": [
-        "Shaina Raza",
-        "Ahmed Y. Radwan",
-        "Imran Liaquat",
-        "and Kathryn Hume"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-17T00:31:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20349",

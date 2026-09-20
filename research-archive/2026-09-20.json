@@ -1,30 +1,157 @@
 {
   "date": "2026-09-20",
   "guid": "research-daily:2026-09-20",
-  "paper_keys": [],
-  "paper_count": 0,
+  "paper_keys": [
+    "arxiv:2609.15938",
+    "arxiv:2609.15161",
+    "arxiv:2609.16270",
+    "arxiv:2609.16773"
+  ],
+  "paper_count": 4,
   "source_status": {
     "arxiv-api": "error:HTTPError",
     "arxiv-email": "ok:0",
-    "crossref:Applied Geography": "ok:8",
-    "crossref:Applied Soft Computing": "ok:37",
+    "crossref:Applied Geography": "ok:7",
+    "crossref:Applied Soft Computing": "ok:27",
     "crossref:Artificial Intelligence": "ok:3",
-    "crossref:CEUS": "ok:9",
-    "crossref:Cities": "ok:24",
+    "crossref:CEUS": "ok:8",
+    "crossref:Cities": "ok:23",
     "crossref:Computer Science Review": "ok:2",
-    "crossref:EIAR": "ok:16",
+    "crossref:EIAR": "ok:14",
     "crossref:IJGIS": "ok:0",
-    "crossref:ISPRS JPRS": "ok:15",
-    "crossref:Information Fusion": "ok:28",
-    "crossref:JAG": "ok:18",
+    "crossref:ISPRS JPRS": "ok:12",
+    "crossref:Information Fusion": "ok:23",
+    "crossref:JAG": "ok:19",
     "crossref:Landscape and Urban Planning": "ok:4",
-    "crossref:Pattern Recognition": "ok:50",
-    "crossref:RSE": "ok:20",
-    "crossref:SCS": "ok:25",
+    "crossref:Pattern Recognition": "ok:48",
+    "crossref:RSE": "ok:17",
+    "crossref:SCS": "ok:20",
     "crossref:Science Bulletin": "ok:20",
-    "crossref:Urban Climate": "ok:8",
-    "deepseek": "partial:0/30;failed-batches:3"
+    "crossref:Urban Climate": "ok:6",
+    "deepseek": "partial:10/30;failed-batches:2"
   },
-  "updated_at": "2026-09-19T21:54:50.376640+00:00",
-  "papers": []
+  "updated_at": "2026-09-20T00:19:58.471200+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2609.15938",
+      "title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
+      "title_zh": "HypoEvolve：遗传算法赋能多智能体LLM发现科学假设",
+      "url": "https://arxiv.org/abs/2609.15938",
+      "doi": "",
+      "arxiv_id": "2609.15938",
+      "authors": [
+        "Jieyuan Liu",
+        "Mengzhou Hu",
+        "Jefferson Chen",
+        "JungHo Kong",
+        "Pratibha Jagannatha",
+        "Yiming Gao",
+        "Dexter Pratt",
+        "Hsin-Yuan Lee",
+        "Zhiting Hu",
+        "Trey Ideker",
+        "Wei Wang",
+        "Eric P. Xing",
+        "Zhen Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-14T17:44:49+00:00",
+      "score": 62,
+      "reason": "该文提出HypoEvolve框架，用遗传算法协调多智能体LLM进行科学假设发现，直接对应研究者关注的LLM与多智能体方向。其协作机制与进化搜索的结合具有方法迁移潜力，但应用领域为生物医学而非地理空间。",
+      "tags": [
+        "多智能体LLM",
+        "遗传算法",
+        "科学假设发现",
+        "药物重定位",
+        "协作机制"
+      ],
+      "abstract": "Scientific agents contribute to hypothesis discovery by synthesizing evidence, assessing proposals, and developing new explanations. Recent systems combine scientific agents with evolutionary search through critique, comparison, and revision. However, how different forms of agent collaboration affect hypothesis quality remains an open question. Answering this question requires separating the effects of agents' scientific capabilities from those of their collaboration. A framework must therefore preserve agents' scientific roles and support rules for combining, revising, and retaining hypotheses. Building on this view, we introduce HypoEvolve, which makes collaboration explicit through successive updates to a hypothesis population. Specifically, we propose a generational genetic algorithm to coordinate specialized large language model (LLM) agents that integrate mechanistic arguments, reconsider assumptions, and assess evidence and testability. Each generation specifies how scientific judgments and new proposals reshape the population, making collaboration effects on hypothesis quality directly testable. Moreover, we design our evaluation around scientifically meaningful hypotheses that explain how a proposed intervention could work. Drug repurposing links these explanations to target-level biological claims assessed against external evidence. Specifically, we adapt DepMap and Open Targets into complementary external measures grounded in experimental, genetic, and clinical evidence. Across 34 cancer types, HypoEvolve achieves the highest scores against six baselines on both measures. DepMap selectivity reaches 0.171, versus 0.115 for the strongest baseline. Gains over single-pass generation also generalize to held-out cancer types. HypoEvolve advances a vision of autonomous science in which AI research teams achieve a capacity for discovery beyond that of individual models.",
+      "summary_zh": "科学智能体通过综合证据、评估提案和发展新解释来促进假设发现。近期系统将科学智能体与进化搜索结合，通过批判、比较和修订推进。然而，不同形式的智能体协作如何影响假设质量仍是开放问题。回答该问题需要分离智能体科学能力与协作本身的影响，因此框架必须保留智能体的科学角色并支持假设组合、修订和保留的规则。基于此，作者提出HypoEvolve，通过逐代更新假设种群使协作显式化：采用分代遗传算法协调专门化LLM智能体，整合机制论证、重新审视假设并评估证据与可检验性。每一代明确科学判断和新提案如何重塑种群，使协作对假设质量的影响可直接检验。评估围绕科学上有意义的假设展开，即解释所提干预如何起效。药物重定位将这些解释与靶点层面的生物学主张联系起来，并对照外部证据评估。作者将DepMap和Open Targets适配为基于实验、遗传和临床证据的互补外部指标。在34种癌症类型上，HypoEvolve在两项指标上均取得六个基线中的最高分，DepMap选择性达0.171，而最强基线为0.115；相对单次生成的增益也可泛化到留出癌症类型。",
+      "insight_zh": "其将进化搜索与多智能体协作显式分离的框架设计，可为城市更新中多主体方案生成与迭代优化提供方法论借鉴，尤其是如何量化协作机制对方案质量的贡献。"
+    },
+    {
+      "key": "arxiv:2609.15161",
+      "title": "EMR: Self-Evolving Medical Multi-Agent System via Experience Mining and Reuse",
+      "title_zh": "EMR：通过经验挖掘与复用实现自演化的医疗多智能体系统",
+      "url": "https://arxiv.org/abs/2609.15161",
+      "doi": "",
+      "arxiv_id": "2609.15161",
+      "authors": [
+        "Dongsheng Shi",
+        "Yue Li",
+        "Xin Yi",
+        "Linlin Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-14T07:41:56+00:00",
+      "score": 60,
+      "reason": "该文提出EMR自演化医疗多智能体系统，通过经验挖掘与复用实现持续学习，直接对应研究者关注的LLM与多智能体方向。其分层经验库与多学科会诊式协作机制具有跨领域迁移潜力。",
+      "tags": [
+        "医疗多智能体",
+        "经验挖掘与复用",
+        "自演化系统",
+        "LLM智能体",
+        "临床推理"
+      ],
+      "abstract": "Large language model (LLM) driven multi-agent systems have shown promise in complex clinical reasoning, yet existing approaches rely on static strategies and lack persistent clinical memory, preventing self-evolving from prior diagnostic successes and failures. We present EMR, a self-evolving medical multi-agent system via Experience Mining and Reuse. EMR introduces a hierarchical clinical experience library that organizes accumulated knowledge into three levels: clinical principles, diagnostic patterns, and representative cases. During inference, EMR emulates multidisciplinary consultation: a planner agent coordinates domain-specific department agents for specialized reasoning, while a summary agent synthesizes their analyses into a final decision. Critically, EMR automatically extracts correct diagnostic insights and failure-related warnings from multi-agent reasoning trajectories, incrementally updating the experience library to guide future cases. Experiments on medical reasoning benchmarks demonstrate that EMR consistently outperforms state-of-the-art medical multi-agent baselines. Further analysis reveals that the hierarchical experience enables cross-specialty generalization and transfer across diverse LLM backbones, offering a scalable and in",
+      "summary_zh": "大语言模型驱动的多智能体系统在复杂临床推理中展现出前景，但现有方法依赖静态策略且缺乏持久临床记忆，无法从既往诊断成功与失败中自演化。本文提出EMR，一种通过经验挖掘与复用实现自演化的医疗多智能体系统。EMR引入分层临床经验库，将积累知识组织为三个层次：临床原则、诊断模式和代表性案例。推理时，EMR模拟多学科会诊：规划智能体协调各专科部门智能体进行专门推理，总结智能体综合其分析形成最终决策。关键的是，EMR自动从多智能体推理轨迹中提取正确诊断洞见和失败相关警告，增量更新经验库以指导未来案例。在医学推理基准上的实验表明，EMR持续优于最先进的医疗多智能体基线。进一步分析显示，分层经验支持跨专科泛化和跨不同LLM骨干的迁移。",
+      "insight_zh": "其分层经验库与从推理轨迹中自动提取成功/失败经验的自演化机制，可为城市更新决策中多智能体系统的持续学习与知识积累提供设计范式。"
+    },
+    {
+      "key": "arxiv:2609.16270",
+      "title": "Cheap Talk Stabilizes Strategic Interaction in LLM Agents",
+      "title_zh": "廉价磋商稳定了LLM智能体间的策略互动",
+      "url": "https://arxiv.org/abs/2609.16270",
+      "doi": "",
+      "arxiv_id": "2609.16270",
+      "authors": [
+        "Nunzio Lor\\`e",
+        "Hongan Zhu",
+        "Babak Heydari"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-14T19:32:48+00:00",
+      "score": 55,
+      "reason": "该文研究LLM智能体在重复博弈中通过非约束性预沟通提升策略持续性，属于多智能体与大语言模型交叉方向。与研究者关注的LLM和多智能体方向高度契合，但未涉及地理空间或城市应用。",
+      "tags": [
+        "LLM智能体",
+        "多智能体",
+        "策略稳定性",
+        "廉价磋商",
+        "博弈论"
+      ],
+      "abstract": "Large language models are increasingly deployed as interacting agents, making the persistence of their action policies across repeated interaction critical for reliable multi-agent operation. We investigate whether and how agent-generated, non-binding pre-play communication (\"cheap talk\") increases such persistence in four open-weight 7-9B-parameter LLMs. Our experiments span four repeated two-player games -- Prisoner's Dilemma, Snowdrift, Stag Hunt, and Harmony -- with incentive structures ranging from strategic conflict to alignment, each presented in six contexts. We observe unstable trajectories in all four games, although their prevalence and magnitude depend strongly on model and context. Across models, games, and contexts, cheap talk is predominantly stabilizing, with five corrected reversals concentrated in social or team framings; effects vary substantially by model and context. Controlled current-message interventions identify two separable output-level channels in Qwen: reduced action uncertainty and less between-round drift in action probabilities. Matched history-by-message counterfactuals further show that recent partner behavior conditions how mutual-benefit versus self-prioritizing language affects policy persistence. Finally, in Prisoner's Dilemma, we identify in Qwen and Falcon a history-balanced policy-content direction in late transformer layers; projecting out this direction increases realized switching during closed-loop play, demonstrating that complete trajectories are causally sensitive to this component. Together, these findings show that cheap talk can make individual trajectories more persistent across diverse incentive structures, while revealing that the magnitude and mechanisms of stabilization are model- and history-dependent.",
+      "summary_zh": "随着大语言模型越来越多地作为交互式智能体部署，其行动策略在重复互动中的持续性对可靠的多智能体运行至关重要。本文研究智能体生成的非约束性预沟通（“廉价磋商”）是否以及如何提升四个开源70-90亿参数LLM中策略的持续性。实验涵盖四种重复双人博弈——囚徒困境、雪堆博弈、 stag hunt和和谐博弈，激励结构从策略冲突到利益一致，每种博弈呈现六种情境。结果显示四种博弈中均出现不稳定轨迹，其普遍性和幅度强烈依赖模型与情境。总体而言，廉价磋商主要起稳定作用，仅在社会或团队框架下出现五次修正后的反转；效应因模型和情境差异显著。受控的当前消息干预在Qwen中识别出两个可分离的输出层面通道：行动不确定性降低和轮次间行动概率漂移减少。匹配的历史-消息反事实进一步表明，近期伙伴行为调节了互利语言与自利语言对策略持续性的影响。最后，在囚徒困境中，作者在Qwen和Falcon的深层Transformer层中识别出一个历史平衡的策略-内容方向，将该方向投影去除会增加闭环博弈中的实际切换，表明完整轨迹对该成分具有因果敏感性。",
+      "insight_zh": "该研究为多智能体LLM系统的稳定性机制提供了可解释性证据，其“廉价磋商”与历史条件化分析框架或可启发城市更新决策模拟中多主体协商过程的建模。"
+    },
+    {
+      "key": "arxiv:2609.16773",
+      "title": "FSANet: Frequency-Spatial Aware Network for Image Segmentation",
+      "title_zh": "FSANet：面向图像分割的频率-空间感知网络",
+      "url": "https://arxiv.org/abs/2609.16773",
+      "doi": "",
+      "arxiv_id": "2609.16773",
+      "authors": [
+        "Ruibo Wang",
+        "Ziyi Shen",
+        "Huaming Wu",
+        "Dong Liang",
+        "Kun Shang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T07:43:08+00:00",
+      "score": 45,
+      "reason": "该文提出频域-空域感知分割网络并发布非理想场景数据集SceneX，属于通用图像分割方法。其双域融合与边缘估计思路对遥感变化检测中的边界精细化和噪声鲁棒性有借鉴价值，但未涉及地理空间应用。",
+      "tags": [
+        "图像分割",
+        "频域-空域融合",
+        "边缘估计",
+        "SceneX数据集",
+        "变化检测"
+      ],
+      "abstract": "Image segmentation remains challenging due to occlusions, poor lighting, and irregular structures. Although transformer-based methods achieve high accuracy, they rely heavily on long-range spatial features, leading to high computational costs and neglecting prior knowledge or noise patterns, resulting in missing details and unclear boundaries. To address these issues, we propose Frequency Spatial Aware Network (FSANet), which integrates prior knowledge with a dual-domain solver to sequentially adapt to diverse segmentation tasks. Specifically, we design three key modules: (1) Structure Prior Module, which recovers overlooked details; (2) Dual-Domain Awareness Module, which captures salient features while disentangling noise; and (3) Edge Estimation Module, which enhances edge awareness for more precise segmentation. In addition, the limited availability of comprehensive segmentation datasets covering various real-world scenarios hinders the performance of existing methods. To address this, we introduce SceneX, a novel open-source dataset featuring 10 challenging non-ideal scenarios, establishing a new benchmark for evaluating and improving the robustness and real-world applicability of the segmentation models. Extensive experiments demonstrate the efficiency and effectiveness of FSANet.",
+      "summary_zh": "图像分割因遮挡、光照不佳和不规则结构而具有挑战性。基于Transformer的方法精度高，但严重依赖长程空间特征，计算成本高且忽略先验知识或噪声模式，导致细节缺失和边界不清。本文提出频率空间感知网络FSANet，将先验知识与双域求解器结合，顺序适应多样分割任务，包含三个关键模块：结构先验模块恢复被忽略的细节；双域感知模块在解耦噪声的同时捕获显著特征；边缘估计模块增强边缘感知以实现更精确的分割。此外，作者发布了开源数据集SceneX，涵盖10种具有挑战性的非理想场景，为评估和提升分割模型的鲁棒性与实际适用性建立了新基准。",
+      "insight_zh": "双域感知与边缘估计模块的设计思路，可迁移至遥感变化检测中处理光照差异、阴影和边界模糊等问题；SceneX的非理想场景评测理念也值得在遥感基准构建中借鉴。"
+    }
+  ]
 }
