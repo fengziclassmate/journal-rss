@@ -3,6 +3,10 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const hooks = require('./walker');
+const manifest = require('./manifest.json');
+assert.equal(manifest.version, '1.0.6');
+assert.equal(manifest.applications.zotero.strict_min_version, '9.0');
+assert.equal(manifest.applications.zotero.strict_max_version, '10.0.*');
 class ItemTree {
   getSortField() { return 'id'; }
   getSortDirection() { return 1; }

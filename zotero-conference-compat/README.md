@@ -1,6 +1,6 @@
 # Conference RSS Parser Fix
 
-Zotero 9's SAXXMLReader recursively visits sibling XML nodes. Long flat RSS feeds
+Zotero 9 and Zotero 10 use a SAXXMLReader that recursively visits sibling XML nodes. Long flat RSS feeds
 can fail with `InternalError: too much recursion` (shown as `Processing failed`
 in the subscription UI), even when the XML is valid.
 
@@ -24,7 +24,7 @@ python zotero-conference-compat/build.py
 ```
 
 Install the generated XPI through Zotero's add-on manager. The patch is currently
-targeted at Zotero 9.0.x. It does not change Zotero's installed application files.
+targeted at Zotero 9.0.x through 10.0.x. It does not change Zotero's installed application files.
 The parser still loads the complete feed in memory; this fixes stack overflow,
 not the storage and processing cost of importing tens of thousands of papers.
 

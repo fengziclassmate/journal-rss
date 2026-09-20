@@ -91,7 +91,7 @@ ICLR、ICML、NeurIPS、CVPR、ICCV 和 ECCV 优先读取会议官方公开论�
 
 会议源按年份优先、同年可靠发表日期降序排列。展示日程只在说明里标注，不作为发表日期；只有年份的来源保留年份，Crossref 缺少月日时不补 1 月 1 日，也不把记录创建日期当作发表日期。同年缺少确切日期的论文无法可靠按发表先后细分。
 
-Zotero 9 的递归 XML 遍历可能使超大会议源报 `Processing failed`。`zotero-conference-compat/` 提供仅作用于本项目会议 URL 的轻量解析补丁，保留全部条目，不包含已读归档或翻译缓存功能。
+Zotero 9 和 10 的递归 XML 遍历可能使超大会议源报 `Processing failed`。`zotero-conference-compat/` 提供仅作用于本项目会议 URL 和明确列出的大型期刊源的轻量解析补丁，保留全部条目，不包含已读归档或翻译缓存功能。
 
 Zotero 可通过上面的 OPML 导入全部 36 个订阅。本机的 `zotero_subscribe_conferences.py` 使用 Zotero 自身接口登记订阅，重复执行不会新增重复源，也不会删除旧源或改动旧条目的已读状态。它校验数据目录为 `F:\Zotero`，需要临时启用仅限本机的 Zotero 调试服务器；操作后应关闭调试入口。
 
