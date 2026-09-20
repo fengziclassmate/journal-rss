@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 398,
+    "analyzed": 408,
     "high": 3,
     "medium": 17,
     "low": 28,
-    "below_threshold": 350
+    "below_threshold": 360
   },
   "papers": [
     {
@@ -4418,6 +4418,35 @@
       "insight_zh": "其协作智能体与视觉语言模型结合的思路或可类比到地理空间设计任务，但摘要为空，无法确认其方法细节与可迁移性。"
     },
     {
+      "key": "arxiv:2609.19628",
+      "title": "VGGT-GS SLAM: Uncalibrated Monocular Gaussian Splatting SLAM with Feed-Forward Priors",
+      "title_zh": "VGGT-GS SLAM：基于前馈先验的未标定单目高斯泼溅SLAM",
+      "url": "https://arxiv.org/abs/2609.19628",
+      "arxiv_id": "2609.19628",
+      "authors": [
+        "Yuhang Han",
+        "Hao Wang",
+        "Jiaxi Cao",
+        "Xingyu Liu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T03:18:23+00:00",
+      "score": 25,
+      "reason": "该论文研究未标定单目3D高斯泼溅SLAM系统，涉及三维重建和空间定位。与遥感变化检测和地理空间智能有潜在方法学关联，但应用场景为室内SLAM而非城市或地理空间尺度。",
+      "tags": [
+        "SLAM",
+        "3D高斯泼溅",
+        "单目视觉",
+        "未标定",
+        "前馈先验",
+        "三维重建"
+      ],
+      "summary_zh": "作者提出VGGT-GS SLAM，一种面向未标定视频的单目3D高斯泼溅SLAM系统。从VGGT前馈位姿和深度先验出发，该系统执行子图可微光束法平差，联合优化相机位姿和3D高斯地图，同时通过解析标定雅可比优化子图共享内参和径向-切向畸变。为提高全局一致性，作者引入高斯原生对齐（GNA），用于顺序子图之间以相机为锚的尺度细化以及回环候选验证。在标准室内基准上的大量实验表明，在未标定设置下定位精度持续提升且渲染质量强劲，为未标定高斯SLAM建立了强基线。",
+      "insight_zh": "该研究涉及三维重建和空间定位，与遥感变化检测和地理空间智能有潜在方法学关联，但应用场景为室内SLAM，与城市尺度的地理空间分析关联有限。"
+    },
+    {
       "key": "arxiv:2608.18234",
       "title": "Spending Scarce Confirmatory PET Measurements: Target-Aligned Validation in A4/LEARN",
       "title_zh": "GigaBrain-WBC-0.5：用于环境交互的鲁棒全身控制行为世界模型",
@@ -5869,6 +5898,35 @@
       ],
       "summary_zh": "该文提出PetriBench，一个紧凑、自包含且可扩展的基准，用Petri网评估LLM在动态状态空间上的推理能力。基准按范围与时间跨度组织为四类任务，并通过增加结构复杂度生成易、中、难三级，配有精确真值。对多种闭源与开源模型的评测显示，准确率随难度持续下降，较难实例暴露出更明显的任务特定能力差异；测试时计算可提升性能但与不同推理任务交互方式不同，程序化生成随结构复杂度平滑扩展。",
       "insight_zh": "该基准为并发与分布式系统的推理能力提供了统一可扩展的评测环境，其动态状态空间建模思路或可启发城市系统中流程与状态演化的LLM推理评测。"
+    },
+    {
+      "key": "arxiv:2609.19695",
+      "title": "Opinion Dynamics-based Coalition Formation for Federated Learning in Heterogeneous IoT Systems",
+      "title_zh": "异构物联网系统中基于意见动力学的联邦学习联盟形成",
+      "url": "https://arxiv.org/abs/2609.19695",
+      "arxiv_id": "2609.19695",
+      "authors": [
+        "Mohammed El Hanjri",
+        "Anas Abouaomar",
+        "Hamidou Tembine",
+        "Abdellatif Kobbane"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T04:44:06+00:00",
+      "score": 20,
+      "reason": "该论文研究异构物联网系统中基于意见动力学的联邦学习联盟形成，应用于智慧城市水表网络的用水预测。涉及智慧城市和时空序列预测，与城市更新和时空数据挖掘有一定关联，但核心贡献在联邦学习方法。",
+      "tags": [
+        "联邦学习",
+        "物联网",
+        "意见动力学",
+        "联盟形成",
+        "智慧城市",
+        "用水预测"
+      ],
+      "summary_zh": "联邦学习（FL）能够在异构物联网（IoT）部署（如智慧城市水表网络，其中每个智能水表观察家庭特定的消费时间序列）中实现隐私保护的设备端训练。在这种统计异质性下，标准联邦平均（FedAvg）聚合将不相似的本地模型平均为单一全局模型，可能无法捕获客户端特定模式。作者通过在本地权重空间中直接形成客户端联盟并在联盟级别聚合来解决这一问题。扩展先前的权重驱动联盟形成方案，作者将联盟形成建模为作用于本地权重的Hegselmann-Krause（HK）有界置信意见动力学过程，并基于欧几里得距离和余弦相似度置信准则开发了HK交互的变体。该框架应用于使用本地长短期记忆（LSTM）模型的短期用水预测，并与FedAvg、Per-FedAvg、FedProx以及使用欧几里得距离或余弦相似度联盟形成的FedAvg进行对比评估。在真实智能水表用水数据集上的实验表明，所提出的基于HK的联盟形成在最多十次内部迭代内产生稳定的内生联盟结构，与FedAvg相比不产生额外的客户端计算或通信开销，并将平均MAE相对于FedAvg降低多达54%，相对于FedProx降低39%，相对于Per-FedAvg降低24%，同时实现最高的全局准确率（83-85%）。",
+      "insight_zh": "该研究涉及智慧城市物联网和时空序列预测，与城市更新和时空数据挖掘有一定关联，但核心贡献在联邦学习方法而非地理空间分析。"
     },
     {
       "key": "arxiv:2603.21785",
@@ -9440,6 +9498,38 @@
       "insight_zh": "该研究首次提供经验证据表明看似客观的物理描述在人类解读中保留系统性性别关联，并揭示模型-人类错位模式，对LLM公平性研究有重要价值，但与地理空间智能无直接关联。"
     },
     {
+      "key": "arxiv:2609.19716",
+      "title": "GAPrompt++: Multi-Granular Geometry-Aware Point Cloud Prompt for 3D Vision Model",
+      "title_zh": "GAPrompt++：面向3D视觉模型的多粒度几何感知点云提示",
+      "url": "https://arxiv.org/abs/2609.19716",
+      "arxiv_id": "2609.19716",
+      "authors": [
+        "Zixiang Ai",
+        "Zhenyu Cui",
+        "Yufei Guo",
+        "Wenwen Qiang",
+        "Lei Chen",
+        "Jiwen Lu",
+        "Jiahuan Zhou"
+      ],
+      "categories": [
+        "cs.CV",
+        "https://github.com/PKU-OV3-LAB/GAPromptPlus.git"
+      ],
+      "published": "2026-09-17T05:14:34+00:00",
+      "score": 15,
+      "reason": "该论文研究3D点云视觉模型的参数高效微调方法，提出多粒度几何感知提示。涉及3D点云分析和几何结构建模，与遥感变化检测和多源数据融合有潜在方法学关联，但未涉及地理空间应用。",
+      "tags": [
+        "点云",
+        "3D视觉",
+        "参数高效微调",
+        "几何感知",
+        "提示学习"
+      ],
+      "summary_zh": "预训练3D视觉模型已大幅推进点云分析，但通过全量微调将其适应下游任务在计算和存储上代价高昂。参数高效微调（PEFT）通过降低适应成本和存储负担提供了一种有前景的替代方案。然而，现有的基于提示的方法忽略了点云的内在几何结构，从而限制了其适应能力。这一局限源于它们无法编码细粒度几何线索和粗粒度结构语义，以及未能通过模型层次有效传播此类信息。为解决这些挑战，作者提出GAPrompt++，一种多粒度几何感知提示方法，为高效的3D任务适应提供更丰富的几何指导。具体而言，作者引入点偏移提示器，提取不同尺度的多粒度几何特征，在适应过程中实现实例特定的几何调整。接着，关键点提示器自适应生成点级提示，以突出局部几何显著性和细粒度结构细节。此外，提示传播机制将这些多粒度几何线索注入整个特征提取层次，增强捕获基本几何特征的能力。大量实验表明，GAPrompt++在基于提示的PEFT方法中实现了最先进的性能，甚至在多个基准上超越了全量微调，同时仅需不到2%的可训练参数。此外，为解决现有评估数据集的饱和问题，作者构建了两个更具挑战性的基准，分别源自3D高斯泼溅和多视图立体。",
+      "insight_zh": "该研究涉及3D点云分析和几何感知建模，与遥感变化检测和多源数据融合有潜在方法学关联，但未涉及地理空间应用场景。"
+    },
+    {
       "key": "arxiv:2604.15097",
       "title": "From Procedural Skills to Strategy Genes: Towards Experience-Driven Test-Time Evolution",
       "title_zh": "从程序性技能到策略基因：迈向经验驱动的测试时演化",
@@ -11197,6 +11287,40 @@
       "insight_zh": "仅从标题推断，该研究可能提出低秩正交化技术以提升基础模型训练效率，对遥感基础模型训练有潜在间接价值，但需全文确认。"
     },
     {
+      "key": "arxiv:2609.19717",
+      "title": "Learn Your Own Thoughts: Abstract Token Curriculum",
+      "title_zh": "学习你自己的思维：抽象令牌课程",
+      "url": "https://arxiv.org/abs/2609.19717",
+      "arxiv_id": "2609.19717",
+      "authors": [
+        "Khashayar Gatmiry",
+        "Avrajit Ghosh",
+        "Parsa Mirtaheri",
+        "Jason D. Lee",
+        "Nika Haghtalab",
+        "Emmanuel Abbe",
+        "Peter Bartlett"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "published": "2026-09-17T05:19:38+00:00",
+      "score": 10,
+      "reason": "该论文研究LLM推理中的抽象令牌课程学习，提出无需直接监督的连续中间表示学习方法。与LLM研究方向有方法学关联，但与城市更新、时空数据挖掘或遥感变化检测无直接应用关联。",
+      "tags": [
+        "LLM",
+        "思维链",
+        "课程学习",
+        "连续表示",
+        "推理"
+      ],
+      "summary_zh": "大型语言模型（LLM）通过利用思维链（CoT）作为中间思维阶段的草稿纸，取得了显著的推理能力。然而，CoT技术需要对思维令牌进行显式监督，这需要丰富的任务特定数据。在这项工作中，作者提出抽象令牌课程（ATC），一种新颖的课程学习框架，无需直接监督或手动草稿设计即可引出有效的连续中间表示。ATC通过一系列分布逐步增加问题复杂度，训练模型在连续表示空间中发展内部抽象“思维”。本文为ATC的优势及其相对于先前连续思维训练方法的优势提供了理论和实验证据。在理论上，作者表明对于使用ATC的单层softmax注意力学习奇偶函数，注意力自然聚焦于上下文中提供预测下一令牌“最容易路径”的CoT令牌。在实验上，作者展示了ATC在图可达性和算术学习任务上的有效性。",
+      "insight_zh": "该研究涉及LLM推理和课程学习，与LLM研究方向有方法学关联，但未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2606.00507",
       "title": "LaSR: Context-Aware Speech Recognition via Latent Reasoning",
       "title_zh": "LaSR：通过潜在推理实现上下文感知语音识别",
@@ -12139,6 +12263,37 @@
       "insight_zh": "由于摘要缺失，无法对具体方法或结论进行推断。仅从标题看，该工作与地理空间智能关联有限，但其因果干预缓解捷径学习的思路或对遥感变化检测中消除伪相关有方法层面的启发。"
     },
     {
+      "key": "arxiv:2609.19721",
+      "title": "LearnActCoder: Role-Aware Error Memory for Adaptive Clinical Coding Agents",
+      "title_zh": "LearnActCoder：面向自适应临床编码智能体的角色感知错误记忆",
+      "url": "https://arxiv.org/abs/2609.19721",
+      "arxiv_id": "2609.19721",
+      "authors": [
+        "Meysam Ghaffari",
+        "Bhaskar Sen",
+        "Nasim Sabetpour",
+        "Nina Fatehi",
+        "Animesh Agarwal",
+        "and Carlos Morato"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-09-17T05:27:46+00:00",
+      "score": 8,
+      "reason": "该论文研究基于LLM的临床编码智能体，提出结构化错误记忆框架。虽然涉及LLM和多智能体系统，但应用领域为临床编码，与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "临床编码",
+        "智能体",
+        "错误记忆",
+        "推理时适应",
+        "LLM"
+      ],
+      "summary_zh": "临床编码智能体反复遇到相同的失败模式，包括不支持的编码、遗漏已记录病症、特异性错误以及操作编码惯例不匹配。作者引入Learn-Then-Act，一种推理时适应框架，将小型标注LEARN批次中的错误转换为结构化错误知识数据库（MistakeKDB）。假阴性教训被路由到面向召回率的编码器，假阳性教训被路由到面向精确率的评判器。作者在LearnActCoder中实例化该框架，这是一个在可用时使用查找表接地的编码器-评判器临床编码流水线。在150份匹配的MIMIC-III病历上，结构化MistakeKDB将CPT F1提高了5.9个百分点，而原始示例和反思式记忆仍接近无记忆基线；ICD-9的改善不显著。在匹配的MIMIC-IV队列上，记忆使ICD-10编码转向更高精确率但以召回率为代价，F1在统计上不变。将相同记忆应用于1,000份留出的MIMIC-III病历维持了稳定的ICD操作点，提供了规模/稳定性证据。总体而言，结果与结构化、反馈衍生的错误记忆有助于在无需权重更新或改变底层工作流的情况下跨病例适应临床编码行为相一致。CPT/HCPCS的绝对性能仍然较低，系统是回顾性评估而非临床部署。",
+      "insight_zh": "该研究涉及LLM智能体和推理时适应，与LLM和多智能体研究方向有一定方法学关联，但应用领域为临床编码，与GIS研究主题关联有限。"
+    },
+    {
       "key": "arxiv:2609.19213",
       "title": "Layer-wise Curriculum Learning for Efficient LLM Compression",
       "title_zh": "面向高效LLM压缩的逐层课程学习",
@@ -12403,6 +12558,34 @@
       ],
       "summary_zh": "步数蒸馏降低了视频生成成本，但复用为更长轨迹训练的LoRA可能改变其功能效果或降低目标质量。静态参数兼容性提供了看待该问题的一个视角；作者的观察表明，在缩短的去噪调度下，相似的测量几何可能伴随不同的适配器行为。作者提出DART，一种免训练方法，结合低秩坐标传输与目标调度响应校准，使用前向评估且不需要源训练视频。在四步Wan2.2目标上，DART-F将联合质量得分从0.9029提升至0.9227，并将宏观功能保留率从-0.4644变为+0.1349。组件分析表明校准贡献了大部分质量提升，而坐标传输在与校准结合时提供互补增益。适配器层面的结果揭示某些适配器具有正功能效应，而另一些则出现强衰减并减少负功能效应。在两个额外目标上的评估显示相同的总体趋势。这些结果支持通过功能保留和负迁移避免来联合评估蒸馏模型上的LoRA复用，而不假设每个适配器都能恢复。",
       "insight_zh": "该文强调在模型压缩或调度变化后，适配器功能可能发生非直观改变，需同时评估功能保留与负迁移；这一视角对遥感变化检测模型跨传感器或跨时相迁移时的适配器复用评估有类比意义，但原文未涉及遥感。"
+    },
+    {
+      "key": "arxiv:2609.19674",
+      "title": "Conservation Buys Stability and Factoring Buys Counterfactuals in Physical World Models",
+      "title_zh": "守恒换来稳定性，因子分解换来反事实：物理世界模型中的结构承诺",
+      "url": "https://arxiv.org/abs/2609.19674",
+      "arxiv_id": "2609.19674",
+      "authors": [
+        "Yufeng Wang",
+        "Parivesh Priye",
+        "Lu Wei",
+        "Haibin Ling"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T04:16:51+00:00",
+      "score": 8,
+      "reason": "该论文研究物理世界模型中的守恒性和因子分解结构对长期稳定性和反事实泛化的影响。虽然涉及结构化建模和泛化，但与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "物理世界模型",
+        "辛积分",
+        "守恒律",
+        "反事实泛化",
+        "结构化归纳偏置"
+      ],
+      "summary_zh": "学习到的模拟器可以准确再现其训练条件，但一旦这些条件改变，会以两种不同方式失败。在长时程展开中，小误差累积直到轨迹偏离物理合理行为；在对物理参数进行干预时，模型可能继续遵循训练中看到的规律而非被干预的规律。作者表明这两种失败需要不同的结构性补救措施。用辛积分器演化学习到的能量可保持保守动力学的几何结构，使展开在长达训练时程100倍的范围内保持有界且物理有意义，而等容量预测器、能量正则化预测器和调优的神经ODE则会发散。相比之下，通过显式线性因子分解编码物理耦合使模型能够遵循该耦合的从未见过的符号，而无限制参数化则仍锁定在训练规律上。关键的是，这两种机制是可分离的：移除负责长时程稳定性的结构不会影响反事实迁移，而移除因子分解耦合会破坏反事实迁移但不消除稳定性。这种双重解离通过匹配对照（一次移除或替换一个结构组件）建立，在三体系统之外仍然存在，并且当物理状态必须从像素推断而非直接提供时仍然可见。结果为物理世界模型提供了一个具体的设计原则：长时程稳定性和变化规律泛化源于不同的结构承诺，每个都可以被刻意施加而不需要另一个。",
+      "insight_zh": "该研究涉及结构化建模和泛化理论，与时空数据挖掘有潜在方法学关联，但未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.19970",
@@ -12893,28 +13076,6 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该研究提出一种融合视觉与触觉的多模态序列表征学习方法用于操作任务。",
       "insight_zh": "多模态表征学习在方法层面可能与多源数据融合有间接相似性，但应用领域为机器人操作，与地理空间智能无关。"
-    },
-    {
-      "key": "arxiv:2609.19628",
-      "title": "VGGT-GS SLAM: Uncalibrated Monocular Gaussian Splatting SLAM with Feed-Forward Priors",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19628",
-      "arxiv_id": "2609.19628",
-      "authors": [
-        "Yuhang Han",
-        "Hao Wang",
-        "Jiaxi Cao",
-        "Xingyu Liu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T03:18:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20808",
@@ -13721,7 +13882,7 @@
     {
       "key": "arxiv:2609.19729",
       "title": "Recency Forcing: Bridging the Long-Horizon Gap in Autoregressive Video Generation",
-      "title_zh": "",
+      "title_zh": "近因强制：弥合自回归视频生成中的长时程差距",
       "url": "https://arxiv.org/abs/2609.19729",
       "arxiv_id": "2609.19729",
       "authors": [
@@ -13735,10 +13896,15 @@
       ],
       "published": "2026-09-17T05:40:53+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究自回归视频生成中的长时程退化问题，提出Recency Forcing方法。虽然涉及视频生成和时空建模，但与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合无直接关联。",
+      "tags": [
+        "自回归视频生成",
+        "KV缓存",
+        "长时程生成",
+        "注意力机制"
+      ],
+      "summary_zh": "自回归视频生成在长时程上会退化，原因是一种被忽视的训练-推理差异，作者称之为KV驱逐失配：模型在短片段上训练时所有上下文帧都驻留在KV缓存中，但推理时内存约束迫使远端帧被从KV缓存中驱逐——移除了模型曾作为条件的上下文。作者没有通过上下文截断来模拟驱逐（这会丢弃模型仍需要的时间信息并降低运动连贯性），而是保留上下文同时逐步降低远端帧的影响，使其最终被驱逐变得可忽略。为指导这一设计，作者引入了位置响应R(Δ, t_denoise)，一种基于扰动的敏感度度量，揭示上下文影响随时间距离急剧衰减并在去噪步骤间系统性变化。基于此分析，作者提出Recency Forcing，在softmax前的注意力logits上施加非正的、依赖时间步的偏置，称为时间响应偏置（TRB），直接由R导出，在不修改上下文长度或训练目标的情况下弥合训练-推理差距。作者进一步引入偏置注意力重参数化（BAR），一种精确重构，将偏置移到softmax之外，使TRB成为零开销的标准FlashAttention调用。Recency Forcing可在免训练和基于训练两种模式下运行。在VBench和VBench-Long上的实验表明，在不增加推理成本的情况下实现了最先进的长时程生成质量。",
+      "insight_zh": "该研究属于视频生成领域，与GIS博士研究主题关联度低。"
     },
     {
       "key": "arxiv:2609.20081",
@@ -14326,28 +14492,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19695",
-      "title": "Opinion Dynamics-based Coalition Formation for Federated Learning in Heterogeneous IoT Systems",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19695",
-      "arxiv_id": "2609.19695",
-      "authors": [
-        "Mohammed El Hanjri",
-        "Anas Abouaomar",
-        "Hamidou Tembine",
-        "Abdellatif Kobbane"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T04:44:06+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19955",
       "title": "One Intervention per Component is Enough: Towards Identifiability in Linear Stochastic Dynamics from Steady State",
       "title_zh": "",
@@ -14382,33 +14526,6 @@
         "cs.CL"
       ],
       "published": "2026-09-17T17:24:48+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19709",
-      "title": "Odds-Ratio Thompson Sampling: A Specification and Design Guide for Contrast-Based Multi-Armed Bandits",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19709",
-      "arxiv_id": "2609.19709",
-      "authors": [
-        "Sulgi Kim"
-      ],
-      "categories": [
-        "cs.LG",
-        "tables",
-        "in",
-        "the",
-        "supplement.",
-        "Reference",
-        "implementation",
-        "at",
-        "https://github.com/sulgik/orts"
-      ],
-      "published": "2026-09-17T05:02:37+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14805,59 +14922,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19721",
-      "title": "LearnActCoder: Role-Aware Error Memory for Adaptive Clinical Coding Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19721",
-      "arxiv_id": "2609.19721",
-      "authors": [
-        "Meysam Ghaffari",
-        "Bhaskar Sen",
-        "Nasim Sabetpour",
-        "Nina Fatehi",
-        "Animesh Agarwal",
-        "and Carlos Morato"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.MA"
-      ],
-      "published": "2026-09-17T05:27:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19717",
-      "title": "Learn Your Own Thoughts: Abstract Token Curriculum",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19717",
-      "arxiv_id": "2609.19717",
-      "authors": [
-        "Khashayar Gatmiry",
-        "Avrajit Ghosh",
-        "Parsa Mirtaheri",
-        "Jason D. Lee",
-        "Nika Haghtalab",
-        "Emmanuel Abbe",
-        "Peter Bartlett"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "stat.ML"
-      ],
-      "published": "2026-09-17T05:19:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2601.21349",
       "title": "L2R: Low-Rank and Lipschitz-Controlled Routing for Mixture-of-Experts",
       "title_zh": "L2R：面向混合专家模型的低秩与Lipschitz控制路由",
@@ -15207,7 +15271,7 @@
     {
       "key": "arxiv:2609.19693",
       "title": "IMFD: End-to-end Multi-Face Forgery Detection through Instruction-based Large Vision-Language Models",
-      "title_zh": "",
+      "title_zh": "IMFD：通过基于指令的大型视觉语言模型进行端到端多脸伪造检测",
       "url": "https://arxiv.org/abs/2609.19693",
       "arxiv_id": "2609.19693",
       "authors": [
@@ -15226,10 +15290,15 @@
       ],
       "published": "2026-09-17T04:40:20+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究基于指令的大型视觉语言模型进行多脸伪造检测，属于计算机视觉和多媒体取证领域，与GIS博士研究主题无直接关联。",
+      "tags": [
+        "深度伪造检测",
+        "多脸伪造",
+        "视觉语言模型",
+        "指令微调"
+      ],
+      "summary_zh": "深度伪造的迅速增加因其在社交媒体上的传播而引发重大关注。传统的多脸伪造检测器独立裁剪和验证每张脸，忽略背景上下文和脸间关系，这通常导致次优性能。为克服这些局限，作者利用基于指令的大型视觉语言模型（LVLM），它们可以解释整个图像并遵循复杂的文本指令。作者提出一种简单而有效的单阶段多脸伪造检测器，称为IMFD（基于指令的多脸伪造检测器），端到端训练以联合定位人脸并预测每张脸的伪造标签。IMFD不是仅将人脸框预测视为联合目标，而是将预测的人脸边界框显式集成到指令中作为视觉线索，增强指令接地和伪造检测。为支持IMFD的训练和评估，作者将现有多脸伪造数据集转换为基于指令的格式。实验结果和分析表明，IMFD通过将人脸边界框集成到指令中改进了多脸伪造检测，并持续优于各种最先进方法。",
+      "insight_zh": "该研究属于计算机视觉和多媒体取证领域，与GIS博士研究主题无直接关联。"
     },
     {
       "key": "arxiv:2609.20250",
@@ -15391,32 +15460,6 @@
         "cs.AI"
       ],
       "published": "2026-09-17T13:21:48+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19716",
-      "title": "GAPrompt++: Multi-Granular Geometry-Aware Point Cloud Prompt for 3D Vision Model",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19716",
-      "arxiv_id": "2609.19716",
-      "authors": [
-        "Zixiang Ai",
-        "Zhenyu Cui",
-        "Yufei Guo",
-        "Wenwen Qiang",
-        "Lei Chen",
-        "Jiwen Lu",
-        "Jiahuan Zhou"
-      ],
-      "categories": [
-        "cs.CV",
-        "https://github.com/PKU-OV3-LAB/GAPromptPlus.git"
-      ],
-      "published": "2026-09-17T05:14:34+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16087,28 +16130,6 @@
         "cs.AI"
       ],
       "published": "2026-09-17T01:23:43+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19674",
-      "title": "Conservation Buys Stability and Factoring Buys Counterfactuals in Physical World Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19674",
-      "arxiv_id": "2609.19674",
-      "authors": [
-        "Yufeng Wang",
-        "Parivesh Priye",
-        "Lu Wei",
-        "Haibin Ling"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T04:16:51+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16898,26 +16919,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19736",
-      "title": "A Phonemically Comprehensive, ASCII-Only Romanization Scheme for Thai and Lao: Systematic Cross-Lingual Correspondence and Chinese-User-Friendly Design",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19736",
-      "arxiv_id": "2609.19736",
-      "authors": [
-        "Zijie Zhang",
-        "Tan Lee"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-17T06:00:20+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19555",
       "title": "A Multi-Modal Generative Model for Tomato Disease Leaves Understanding",
       "title_zh": "",
@@ -17095,6 +17096,64 @@
       ],
       "summary_zh": "反带宽与循环反带宽问题是 NP 难的图标记问题，目标是最小化相邻顶点标签之间的最小（循环）距离。大量研究已产生多种数学表述和计算方法。然而，其最小跨度视角——即固定规定的最小（循环）距离，目标是最小化标签跨度——受到的关注相对较少。本文考虑这一互补视角，引入最小跨度反带宽/循环反带宽标记（MSABL/MSCABL）问题，并开发统一的基于布尔可满足性（SAT）的求解框架。该 SAT 框架将 MSABL/MSCABL 表述为一系列决策问题，并利用其单调性加速搜索过程。作者还考虑两种 SAT 求解策略：并行与增量 SAT 求解；前者同时检查多个候选跨度，后者复用单个 SAT 实例并逐步限制标签域。所提方法在 Harwell-Boeing 稀疏矩阵集合的基准实例上评估，并与 CPLEXCP、CPLEXMIP 和 Gurobi 比较。结果表明，基于 SAT 的方法在解质量上极具竞争力，并行方法在 MSCABL 上总体表现最佳，增量方法在 MSABL 上最佳。在无洞约束下，它们仍与 CPLEXCP 保持竞争力，并显著优于 CPLEXMIP 和 Gurobi，尤其在 MSCABL 上。这些结果证明 SAT 求解作为 MSABL 和 MSCABL 精确方法的有效性。",
       "insight_zh": "该研究属于图标记与精确组合优化，与地理空间智能中的网络优化或空间配置问题可能存在非常间接的方法论联系，但摘要未提及任何地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.19709",
+      "title": "Odds-Ratio Thompson Sampling: A Specification and Design Guide for Contrast-Based Multi-Armed Bandits",
+      "title_zh": "优势比Thompson采样：面向基于对比的多臂老虎机的规范与设计指南",
+      "url": "https://arxiv.org/abs/2609.19709",
+      "arxiv_id": "2609.19709",
+      "authors": [
+        "Sulgi Kim"
+      ],
+      "categories": [
+        "cs.LG",
+        "tables",
+        "in",
+        "the",
+        "supplement.",
+        "Reference",
+        "implementation",
+        "at",
+        "https://github.com/sulgik/orts"
+      ],
+      "published": "2026-09-17T05:02:37+00:00",
+      "score": 3,
+      "reason": "该论文研究对比式多臂老虎机的Odds-Ratio Thompson采样方法，属于统计学习和在线实验设计领域，与GIS博士研究主题无直接关联。",
+      "tags": [
+        "多臂老虎机",
+        "Thompson采样",
+        "A/B测试",
+        "贝叶斯方法"
+      ],
+      "summary_zh": "批量多臂老虎机按服务自身的时间表更新，通常的实现将每个臂的绝对奖励率从一个更新带到下一个。当共享水平在批次之间移动时，即使臂之间的比较可能没有变化，该记忆也会变得过时。优势比Thompson采样（OR-TS）转而携带对数优势比对比的联合后验，并在每个批次中重新拟合共同水平，将其边缘化。本文规定了该更新，将其置于具有两个控制的贝叶斯老虎机智能体中——衰减控制过去证据在更新后存活多少，激进度控制信念变为分配的锐度——并针对绝对率记忆进行评估。在86个公开A/B序列中，水平的变化约为对比的二十五倍。在预设的合成环境中，移动水平使绝对率记忆的遗憾增加五倍，并在20次运行中的7次使最佳臂低于多数流量，而OR-TS没有这种情况。在由71个真实实验构建的策略模拟中，对比太小而无法分辨，其中58个的预期点击差异保持在0.1%以内，但对比记忆仍然以超过两倍的频率结束在更好的臂上。当对比本身移动时，该赌注失败，该情况也被报告。",
+      "insight_zh": "该研究属于统计学习和在线实验设计领域，与GIS博士研究主题无直接关联。"
+    },
+    {
+      "key": "arxiv:2609.19736",
+      "title": "A Phonemically Comprehensive, ASCII-Only Romanization Scheme for Thai and Lao: Systematic Cross-Lingual Correspondence and Chinese-User-Friendly Design",
+      "title_zh": "面向泰语和老挝语的音位全面、仅用ASCII的罗马化方案：系统性跨语言对应与面向中文用户的友好设计",
+      "url": "https://arxiv.org/abs/2609.19736",
+      "arxiv_id": "2609.19736",
+      "authors": [
+        "Zijie Zhang",
+        "Tan Lee"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-17T06:00:20+00:00",
+      "score": 2,
+      "reason": "该论文研究泰语和老挝语的音位罗马化方案，属于语言学和语音处理领域，与城市更新、时空数据挖掘、遥感变化检测、多源数据融合或地理空间智能无直接关联。",
+      "tags": [
+        "语言学",
+        "罗马化方案",
+        "泰语",
+        "老挝语",
+        "跨语言处理"
+      ],
+      "summary_zh": "本文提出了一种面向泰语和老挝语的音位全面、仅用ASCII的罗马化方案，将这两种密切相关的语言视为统一的跨语言设计问题。该方案在保持一符号一音位透明性和泰语-老挝语系统对应的同时，表示音段对立、元音长度和词汇声调。方案优先考虑共时语音对应，包括在适用情况下与拼音和粤拼的对应，同时在不与语音透明性冲突时保留历史音系对应。声调采用紧凑的单个数字默认记法，并辅以可选的调值和历史调类表示。由此产生的方案为语言学习和跨语言语音处理提供了可读、键盘友好且机器可处理的音位表示。",
+      "insight_zh": "该研究属于语言学和语音处理领域，与GIS博士研究主题无直接关联。"
     }
   ]
 }
