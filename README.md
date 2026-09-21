@@ -10,7 +10,7 @@ Zotero 订阅重复标记、标题译文缓存与已读归档见 [Journal RSS Me
 
 Zotero 中的官方订阅地址由 `zotero_switch_official_feeds.py` 原位切换，原订阅库和已有条目不重建；传入 `--rollback` 可以恢复出版社直连地址。
 
-`zotero_read_sync.py` 负责从 `F:\Zotero\zotero.sqlite` 导出已读状态。Zotero 正在运行并锁定主数据库时，脚本会读取最近的 Zotero 数据库备份，不会强制关闭 Zotero；这可能让刚标记的已读条目延迟到下一次 Zotero 备份后生效。计划任务每天运行一次，只在发现新指纹时提交并推送，随后 GitHub Actions 自动重新生成和部署 RSS。
+`zotero_read_sync.py` 负责从 `F:\Zotero\zotero.sqlite` 导出已读状态。Zotero 正在运行并锁定主数据库时，脚本会复制当前主库及 WAL，校验临时快照后从中读取；只有实时快照失败时才回退到最近的 Zotero 数据库备份。计划任务每天运行一次，只在发现新指纹时提交并推送，随后 GitHub Actions 自动重新生成和部署 RSS。
 
 签名密钥仅保存在本机并配置为仓库 Secret `RSS_READ_FILTER_KEY`，不会进入 Git。官方直连 RSS 无法被本仓库删除；但从官方源读过且可通过 DOI 或标题识别的文章，会从对应的自建源中过滤掉。
 

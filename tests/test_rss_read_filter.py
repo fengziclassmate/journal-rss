@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from rss_read_filter import filter_feed, hash_tokens, identity_tokens
-from zotero_read_sync import export_read_state
+from zotero_read_sync import create_database_snapshot, export_read_state
 
 
 RSS = """<?xml version="1.0" encoding="utf-8"?>
@@ -144,6 +144,40 @@ class WorkflowTests(unittest.TestCase):
 
 
 class ZoteroExportTests(unittest.TestCase):
+    def test_live_wal_snapshot_contains_latest_read_items(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            database = root / "zotero.sqlite"
+            snapshot_dir = root / "snapshot"
+            con = sqlite3.connect(database)
+            con.execute("PRAGMA journal_mode=WAL")
+            con.execute("PRAGMA wal_autocheckpoint=0")
+            con.executescript(
+                """
+                CREATE TABLE feedItems (itemID INTEGER PRIMARY KEY, guid TEXT, readTime TEXT, translatedTime TEXT);
+                CREATE TABLE itemData (itemID INTEGER, fieldID INTEGER, valueID INTEGER);
+                CREATE TABLE itemDataValues (valueID INTEGER PRIMARY KEY, value TEXT);
+                CREATE TABLE fields (fieldID INTEGER PRIMARY KEY, fieldName TEXT);
+                INSERT INTO fields VALUES (1, 'title');
+                INSERT INTO feedItems VALUES (1, 'scope:latest', '2026-09-21 02:44:32', NULL);
+                INSERT INTO itemDataValues VALUES (1, 'Latest read paper');
+                INSERT INTO itemData VALUES (1, 1, 1);
+                """
+            )
+            con.commit()
+            self.assertTrue(Path(str(database) + "-wal").exists())
+
+            snapshot = create_database_snapshot(database, snapshot_dir)
+            suppression = root / "read-suppression.json"
+            result = export_read_state(snapshot, suppression, b"test-key")
+            con.close()
+
+            self.assertEqual(result.read_items, 1)
+            payload = json.loads(suppression.read_text(encoding="utf-8"))
+            self.assertTrue(
+                hash_tokens({"guid:scope:latest"}, b"test-key") <= set(payload["hashes"])
+            )
+
     def test_export_is_append_only_and_uses_read_feed_items(self):
         key = b"test-key"
         with tempfile.TemporaryDirectory() as directory:

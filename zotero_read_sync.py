@@ -5,9 +5,11 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import shutil
 import sqlite3
 import subprocess
 import tempfile
+import time
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -46,29 +48,81 @@ def _read_records(database: Path) -> list[dict[str, str]]:
         connection.close()
 
 
-def choose_readable_database(database: Path) -> Path:
-    candidates = [database]
-    candidates.extend(
-        sorted(
-            database.parent.glob(f"{database.name}*.bak"),
-            key=lambda path: path.stat().st_mtime,
-            reverse=True,
-        )
+def _database_is_readable(database: Path, timeout: float = 1) -> None:
+    connection = sqlite3.connect(
+        f"file:{database.as_posix()}?mode=ro", uri=True, timeout=timeout
     )
+    try:
+        connection.execute("SELECT COUNT(*) FROM feedItems").fetchone()
+    finally:
+        connection.close()
+
+
+def _file_state(path: Path) -> tuple[int, int] | None:
+    if not path.exists():
+        return None
+    stat = path.stat()
+    return stat.st_size, stat.st_mtime_ns
+
+
+def create_database_snapshot(
+    database: Path, destination_dir: Path, attempts: int = 5
+) -> Path:
+    """Copy a live SQLite database and WAL into a validated readable snapshot."""
+    destination_dir.mkdir(parents=True, exist_ok=True)
+    snapshot = destination_dir / database.name
+    source_wal = Path(str(database) + "-wal")
+    snapshot_wal = Path(str(snapshot) + "-wal")
     errors = []
-    for candidate in candidates:
-        connection = None
+    for attempt in range(1, attempts + 1):
+        for path in (snapshot, snapshot_wal, Path(str(snapshot) + "-shm")):
+            path.unlink(missing_ok=True)
+        before = (_file_state(database), _file_state(source_wal))
         try:
-            connection = sqlite3.connect(
-                f"file:{candidate.as_posix()}?mode=ro", uri=True, timeout=1
-            )
-            connection.execute("SELECT COUNT(*) FROM feedItems").fetchone()
+            shutil.copy2(database, snapshot)
+            if source_wal.exists():
+                shutil.copy2(source_wal, snapshot_wal)
+            after = (_file_state(database), _file_state(source_wal))
+            if before != after:
+                raise RuntimeError("Zotero database changed during snapshot copy")
+            connection = sqlite3.connect(snapshot, timeout=2)
+            try:
+                check = connection.execute("PRAGMA quick_check").fetchone()[0]
+                if check != "ok":
+                    raise RuntimeError(f"snapshot integrity check failed: {check}")
+                connection.execute("SELECT COUNT(*) FROM feedItems").fetchone()
+            finally:
+                connection.close()
+            return snapshot
+        except (OSError, sqlite3.Error, RuntimeError) as error:
+            errors.append(f"attempt {attempt}: {error}")
+            time.sleep(0.2 * attempt)
+    raise RuntimeError("Unable to create current Zotero database snapshot: " + "; ".join(errors))
+
+
+def choose_readable_database(database: Path, snapshot_dir: Path | None = None) -> Path:
+    errors = []
+    try:
+        _database_is_readable(database)
+        return database
+    except sqlite3.Error as error:
+        errors.append(f"{database}: {error}")
+    if snapshot_dir is not None:
+        try:
+            return create_database_snapshot(database, snapshot_dir)
+        except (OSError, sqlite3.Error, RuntimeError) as error:
+            errors.append(f"current snapshot: {error}")
+    backups = sorted(
+        database.parent.glob(f"{database.name}*.bak"),
+        key=lambda path: path.stat().st_mtime,
+        reverse=True,
+    )
+    for candidate in backups:
+        try:
+            _database_is_readable(candidate)
             return candidate
         except sqlite3.Error as error:
             errors.append(f"{candidate}: {error}")
-        finally:
-            if connection is not None:
-                connection.close()
     raise RuntimeError("No readable Zotero database found: " + "; ".join(errors))
 
 
@@ -163,11 +217,12 @@ def main() -> None:
         if not args.repo:
             parser.error("--push requires --repo")
         _git(args.repo, "pull", "--ff-only", "origin", "main")
-    database = choose_readable_database(args.database)
-    result = export_read_state(database, args.suppression, key)
-    push_result = "disabled"
-    if args.push:
-        push_result = push_suppression(args.repo, args.suppression, result.new_hashes)
+    with tempfile.TemporaryDirectory(prefix="zotero-read-sync-") as directory:
+        database = choose_readable_database(args.database, Path(directory))
+        result = export_read_state(database, args.suppression, key)
+        push_result = "disabled"
+        if args.push:
+            push_result = push_suppression(args.repo, args.suppression, result.new_hashes)
     print(
         json.dumps(
             {
