@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-21",
+  "guid": "research-daily:2026-09-21",
+  "paper_keys": [
+    "arxiv:2609.20150",
+    "arxiv:2608.17440"
+  ],
+  "paper_count": 2,
+  "source_status": {
+    "arxiv-api": "error:HTTPError",
+    "arxiv-email": "ok:0",
+    "crossref:Applied Geography": "ok:7",
+    "crossref:Applied Soft Computing": "ok:26",
+    "crossref:Artificial Intelligence": "ok:3",
+    "crossref:CEUS": "ok:5",
+    "crossref:Cities": "ok:23",
+    "crossref:Computer Science Review": "ok:2",
+    "crossref:EIAR": "ok:14",
+    "crossref:IJGIS": "ok:0",
+    "crossref:ISPRS JPRS": "ok:12",
+    "crossref:Information Fusion": "ok:23",
+    "crossref:JAG": "ok:20",
+    "crossref:Landscape and Urban Planning": "ok:3",
+    "crossref:Pattern Recognition": "ok:54",
+    "crossref:RSE": "ok:17",
+    "crossref:SCS": "ok:21",
+    "crossref:Science Bulletin": "ok:20",
+    "crossref:Urban Climate": "ok:6",
+    "deepseek": "partial:10/30;failed-batches:2"
+  },
+  "updated_at": "2026-09-21T00:28:16.218160+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2609.20150",
+      "title": "Task-Oriented Semantic Feature Transmission for Multi-Task Satellite Remote Sensing over Low-SNR Channels",
+      "title_zh": "低信噪比信道下多任务卫星遥感的任务导向语义特征传输",
+      "url": "https://arxiv.org/abs/2609.20150",
+      "doi": "",
+      "arxiv_id": "2609.20150",
+      "authors": [
+        "Shuoyuan Sun",
+        "Hongyu Wang",
+        "Mugen Peng",
+        "and Wenjia Xu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T12:41:44+00:00",
+      "score": 60,
+      "reason": "该文研究卫星遥感中的任务导向语义特征传输，涉及遥感影像、多任务学习与低信噪比传输，与研究方向中的遥感变化检测和多源数据融合有较强关联，但侧重通信传输而非地理空间分析本身。",
+      "tags": [
+        "任务导向通信",
+        "语义特征传输",
+        "卫星遥感",
+        "多任务学习",
+        "低信噪比"
+      ],
+      "abstract": "Conventional satellite remote sensing transmission follows a reconstruct-then-infer paradigm that optimizes pixel-level fidelity, creating an objective mismatch with downstream tasks such as classification and detection, especially at low SNR. This paper investigates a task-oriented framework that bypasses image reconstruction and directly transmits semantic features extracted by a multitask-pretrained backbone. A lightweight channel adaptation module (CAM) compresses feature dimensionality for bandwidth reduction, and a feature restorer recovers task-relevant structure after channel corruption. With the backbone frozen, the CAM and task-specific downstream heads are jointly optimized with task and feature-level supervision under random-SNR training. Under the adopted AWGN setting, experiments on scene classification and object detection show consistent gains over reconstruction-oriented JSCC baselines across different SNR conditions, with the largest improvements in the low-SNR regime.",
+      "summary_zh": "传统卫星遥感传输遵循先重建后推理的范式，优化像素级保真度，这与分类和检测等下游任务的目标不匹配，尤其在低信噪比条件下。本文研究一种任务导向框架，绕过图像重建，直接传输由多任务预训练骨干提取的语义特征。一个轻量级信道适配模块（CAM）压缩特征维度以降低带宽，特征恢复器在信道损坏后恢复任务相关结构。在骨干冻结的情况下，CAM和任务特定的下游头在随机信噪比训练下，结合任务级和特征级监督进行联合优化。在所采用的AWGN设定下，场景分类和目标检测实验表明，在不同信噪比条件下，该方法相比面向重建的JSCC基线取得一致增益，且在低信噪比区间改进最大。",
+      "insight_zh": "该文提出的任务导向语义特征传输与信道适配模块，对遥感数据在受限传输条件下的下游任务性能优化有参考价值，其绕过重建直接传输语义特征的思路或可启发多源遥感数据的融合与传输策略。"
+    },
+    {
+      "key": "arxiv:2608.17440",
+      "title": "General Semantic Knowledge Infusion for Spatio-Temporal Traffic Forecasting",
+      "title_zh": "面向时空交通预测的通用语义知识注入",
+      "url": "https://arxiv.org/abs/2608.17440v2",
+      "doi": "10.1109/mdm71479.2026.00016",
+      "arxiv_id": "2608.17440",
+      "authors": [
+        "Mattis Thor Straten",
+        "Yannick Wolker",
+        "Steffen Strohm",
+        "Prathvish Mithare",
+        "Ralf Krestel",
+        "Matthias Renz"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-18T07:19:13+00:00",
+      "score": 55,
+      "reason": "该文研究时空交通预测中通用语义知识的注入，涉及时空数据挖掘、知识图谱与多源数据融合，与研究方向中的时空数据挖掘和多源数据融合有较强关联，但应用场景为交通预测而非城市更新或遥感变化检测。",
+      "tags": [
+        "时空预测",
+        "知识图谱",
+        "语义融合",
+        "交通预测",
+        "图神经网络"
+      ],
+      "abstract": "Although Graph Neural Networks (GNNs) have made significant advances in spatio-temporal traffic forecasting, their performance is limited when they rely solely on sensor proximity or road-network topology. This paper presents a spatio-temporal prediction framework, developed to incorporate knowledge in various forms. This framework aims to improve sensor-level, contextual understanding of the environment. A general-purpose knowledge graph (e.g., Wikidata) is used to create semantic subgraphs around traffic sensors and generate knowledge graph embeddings that capture meaningful relationships, such as nearby points of interest, administrative hierarchies, and the functional roles of locations. These embeddings are then fused with conventional traffic sensor graphs to provide additional adjacency matrices informed by semantics. This allows GNNs to learn the semantic context beyond physical connectivity. This study differs from previous research in two key ways. Firstly, rather than proposing a novel GNN architecture, it demonstrates the general impact of external knowledge on prediction accuracy. Secondly, experiments with well-established traffic forecasting approaches show that external knowledge provides additional information that street network data alone cannot convey. The results show that integrating data from general-purpose knowledge graphs and sensor networks through data fusion can enhance the prediction accuracy of traffic forecasting models, and offers a potential pathway toward improved interpretability.",
+      "summary_zh": "尽管图神经网络（GNN）在时空交通预测方面取得了显著进展，但当其仅依赖传感器邻近性或路网拓扑时，性能受到限制。本文提出一个时空预测框架，旨在融合多种形式的知识。该框架旨在提升传感器层面的环境上下文理解。使用通用知识图谱（如Wikidata）围绕交通传感器构建语义子图，并生成知识图谱嵌入，以捕捉有意义的关系，如附近兴趣点、行政层级和位置的功能角色。这些嵌入随后与常规交通传感器图融合，提供由语义信息增强的额外邻接矩阵。这使GNN能够学习超越物理连通性的语义上下文。本研究与以往研究在两个关键方面不同。首先，它并非提出新的GNN架构，而是展示外部知识对预测精度的普遍影响。其次，使用成熟的交通预测方法进行的实验表明，外部知识提供了仅靠街道网络数据无法传达的额外信息。结果表明，通过数据融合将通用知识图谱与传感器网络的数据整合，可以提升交通预测模型的预测精度，并为提高可解释性提供了潜在路径。",
+      "insight_zh": "该文提出的通用知识图谱语义子图构建与嵌入融合方法，可迁移至城市更新中的多源语义上下文建模，其强调外部知识对时空预测的普遍增益而非新架构，对多源数据融合研究有方法参考价值。"
+    }
+  ]
+}
