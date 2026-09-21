@@ -3,11 +3,13 @@
   "guid": "arxiv-email-daily:2026-09-21",
   "paper_keys": [
     "arxiv:2608.23636",
+    "arxiv:2609.21872",
     "arxiv:2609.19542",
     "arxiv:2607.03869",
     "arxiv:2609.07729",
     "arxiv:2608.23299",
     "arxiv:2608.24222",
+    "arxiv:2609.21945",
     "arxiv:2609.21903",
     "arxiv:2609.21502",
     "arxiv:2605.18359",
@@ -19,6 +21,7 @@
     "arxiv:2609.21801",
     "arxiv:2609.21629",
     "arxiv:2609.21187",
+    "arxiv:2609.21123",
     "arxiv:2609.20975",
     "arxiv:2608.27409",
     "arxiv:2504.06647",
@@ -28,24 +31,21 @@
     "arxiv:2609.21938",
     "arxiv:2609.21527",
     "arxiv:2609.21190",
-    "arxiv:2609.20887",
-    "arxiv:2609.19366",
-    "arxiv:2609.17921",
-    "arxiv:2602.16313"
+    "arxiv:2609.20887"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:453",
-    "deepseek": "partial:39/189;failed-batches:15"
+    "deepseek": "partial:30/150;failed-batches:12"
   },
-  "updated_at": "2026-09-21T13:22:07.282444+00:00",
+  "updated_at": "2026-09-21T18:25:45.353933+00:00",
   "analysis_stats": {
     "total": 453,
-    "analyzed": 303,
+    "analyzed": 333,
     "high": 3,
-    "medium": 13,
-    "low": 23,
-    "below_threshold": 264
+    "medium": 15,
+    "low": 24,
+    "below_threshold": 291
   },
   "papers": [
     {
@@ -73,6 +73,35 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "研究在苹果幼果、花萼和果梗的检测与分割任务上，对YOLOv8、YOLOv11和YOLOv26的五个模型规模进行了基准测试。结果显示，YOLOv11s-960在mask mAP@50:95上达到最高（0.402），而YOLOv26s-960以更少的参数（10.37M）取得了相当的性能（0.397），表明紧凑模型在小目标聚焦训练下更具效率优势。",
       "insight_zh": "在精细农业或遥感小目标检测中，增加模型容量并非总是提升精度，针对小目标的输入分辨率和模型规模选择可能比单纯追求大模型更关键，这为资源受限的边缘计算场景提供了模型选型依据。"
+    },
+    {
+      "key": "arxiv:2609.21872",
+      "title": "Chronosphere: Space-Time Tessellation of Local Climate Experts",
+      "title_zh": "Chronosphere：局部气候专家的时空细分",
+      "url": "https://arxiv.org/abs/2609.21872",
+      "doi": "",
+      "arxiv_id": "2609.21872",
+      "authors": [
+        "Daniel Cher",
+        "Eric Xing",
+        "Kexing Li",
+        "Brian Wei",
+        "Isaac Corley",
+        "Nathan Jacobs"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T15:00:08+00:00",
+      "score": 78,
+      "reason": "该文提出Chronosphere时空神经场，用于学习气候表示，核心是地理表示学习中的自适应时空细分与局部基函数，与时空数据挖掘、地理空间智能及多源数据融合方向高度相关。",
+      "tags": [
+        "时空神经场",
+        "地理表示学习",
+        "自适应细分",
+        "气候建模"
+      ],
+      "abstract": "We introduce Chronosphere, a spatio-temporal neural field that learns representations of climate. A central challenge in geographic representation learning is modeling environmental processes whose spatial and temporal complexity varies widely. Yet existing location encoders typically fix a single level of detail everywhere. Global bases such as spherical harmonics spread capacity uniformly across space and time. Localized bases resolve only predefined regions. Learned tessellations adapt, but are inefficient at representing higher frequencies. Chronosphere unifies these approaches, pairing an adaptive tessellation of learnable sites on the spacetime torus $S^2\\times S^1$ with a shared bank of local basis functions. Both where capacity is placed and how much detail each region carries adapt to the data, across space and time. Trained to reconstruct climatology, Chronosphere matches or leads state-of-the-art location encoders across spatial and temporal tasks, with the largest gains under spatial and temporal transfer.",
+      "summary_zh": "该文提出Chronosphere，一种学习气候表示的时空神经场。地理表示学习的核心挑战在于建模时空复杂度差异很大的环境过程，而现有位置编码器通常在所有位置固定单一细节层级：球谐等全局基在时空上均匀分配容量，局部基只能解析预定义区域，学习式细分虽能自适应但表示高频效率不高。Chronosphere统一了这些方法，在时空环面S²×S¹上配对可学习站点的自适应细分与共享局部基函数库，使容量放置位置和每个区域的细节程度都能随数据在时空上自适应。以重建气候态为训练目标，Chronosphere在空间和时间任务上匹配或领先最先进的位置编码器，在空间和时间迁移下增益最大。",
+      "insight_zh": "该文提示，将自适应细分与共享局部基结合，可让地理表示在时空上按数据复杂度分配容量，从而在迁移场景中取得更大优势，为气候等环境过程的表示学习提供了新路径。"
     },
     {
       "key": "arxiv:2609.19542",
@@ -212,6 +241,35 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "本研究提出一种基于AI的方法，利用嵌入相似性搜索和LLM分类，将数百万荷兰职位档案的非结构化信息映射到统一的ESCO职业分类，并引入数字语义评分来衡量职位名称和技能与数字概念的关联强度。该方法超越了基于关键词的方法，能够分析职业、职业转换、新兴职位词汇和技能数字化程度。研究发现数字化在劳动力市场中分布不均，数字职位语言在管理、专业和ICT职业中最为突出，但在混合业务、营销和自动化相关角色中日益可见。职业转换分析表明向数字工作的流动依赖于路径，技能分析则凸显了数字能力的多维性。",
       "insight_zh": "该研究展示了如何将LLM和嵌入技术应用于大规模社会经济数据，以揭示数字转型的结构性特征，其方法论可迁移至其他领域的地理空间文本分析。"
+    },
+    {
+      "key": "arxiv:2609.21945",
+      "title": "Learning to Move Cities: Deep Meta-Models and Reinforcement Policies for Calibration and Control in Urban Networks",
+      "title_zh": "学习移动城市：城市网络校准与控制的深度元模型与强化学习策略",
+      "url": "https://arxiv.org/abs/2609.21945",
+      "doi": "",
+      "arxiv_id": "2609.21945",
+      "authors": [
+        "Adewumi Augustine Adepitan",
+        "Christopher J. Haruna",
+        "Oluwasegun Adegoke",
+        "Ayooluwatomiwa Ajiboye",
+        "Oluwatobi Oluwasakin"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T16:03:11+00:00",
+      "score": 72,
+      "reason": "该文面向城市交通网络的仿真校准与实时控制，提出连接校准与强化学习控制的共享潜空间框架，直接涉及城市网络、交通动态与深度学习方法，与城市更新和时空数据挖掘方向较为相关。",
+      "tags": [
+        "城市交通网络",
+        "元模型",
+        "强化学习",
+        "仿真校准",
+        "共享潜空间"
+      ],
+      "abstract": "Urban transportation networks present complex optimization challenges spanning calibration of high-fidelity simulators and real-time operational control. This paper presents a shared latent-space framework that connects simulator calibration and reinforcement learning control through a common learned representation of urban traffic dynamics. First, we develop a combinatorial MLP-autoencoder architecture that learns low-dimensional manifolds linking simulator inputs (origin-destination demand, network parameters) to outputs (travel times, congestion patterns), enabling efficient Bayesian optimization for calibration. This approach demonstrates superior sample efficiency compared to traditional dimension reduction methods, achieving better fit to observational data within fixed computational budgets. Second, we implement a deep Q-learning agent with experience replay and target networks to optimize dynamic traffic assignment through scheduling and routing adjustments. In empirical evaluations on benchmark networks, our approach reduces system-wide travel times by up to 51% compared to baseline operations. The learned latent representation is not only used to reduce the dimensionality of Bayesian calibration, but is also incorporated into the reinforcement learning state representation, allowing the control policy to operate on compressed and calibrated traffic dynamics. This shared latent-space formulation provides a unified pathway from simulator calibration to adaptive operational control within intelligent transportation systems. Our results highlight the transformative potential of deep learning methods in urban mobility planning and management, particularly for large-scale networks where traditional optimization approaches face computational bottlenecks.",
+      "summary_zh": "城市交通网络优化面临高保真仿真器校准与实时运行控制等复杂挑战。该文提出共享潜空间框架，通过城市交通动态的共同学习表示连接仿真器校准与强化学习控制。首先，作者开发组合式MLP自编码器架构，学习连接仿真器输入（起讫需求、网络参数）与输出（行程时间、拥堵模式）的低维流形，从而支持高效的贝叶斯优化校准；相比传统降维方法，该方法在固定计算预算下样本效率更高，对观测数据拟合更好。其次，作者实现带经验回放和目标网络的深度Q学习智能体，通过调度和路径调整优化动态交通分配。在基准网络上的实证评估中，该方法相较基线运营将系统总行程时间最多降低51%。学习到的潜表示不仅用于降低贝叶斯校准的维度，也被纳入强化学习状态表示，使控制策略能够在压缩且校准后的交通动态上运行。",
+      "insight_zh": "该文表明，共享潜空间公式可为从仿真器校准到自适应运行控制提供统一路径，深度学习方法在城市出行规划与管理中具有潜力，尤其适用于传统优化方法面临计算瓶颈的大规模网络。"
     },
     {
       "key": "arxiv:2609.21903",
@@ -545,6 +603,33 @@
       "insight_zh": "该研究提示在构建基于LLM的多智能体地理空间工作流时，局部动作指标的提升未必带来端到端任务成功，需要设计面向完整工作流的评估体系。"
     },
     {
+      "key": "arxiv:2609.21123",
+      "title": "Signal-Centric Remote Sensing via Alternative Preprocessing and Acoustic Processing for ML-Driven Applications",
+      "title_zh": "以信号为中心的遥感：面向机器学习应用的替代预处理与声学处理方法",
+      "url": "https://arxiv.org/abs/2609.21123",
+      "doi": "",
+      "arxiv_id": "2609.21123",
+      "authors": [
+        "Logan Luna",
+        "Sirio Jansen-S\\'anchez",
+        "Ilteris Demirkiran",
+        "Leo Ghelarducci"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T22:16:47+00:00",
+      "score": 55,
+      "reason": "该文提出以CSV格式数据替代图像表示的遥感数据处理方法，并借鉴声学处理，涉及遥感信号处理与机器学习应用，与遥感变化检测和多源数据融合有一定关联，但未涉及变化检测或地理空间语义。",
+      "tags": [
+        "遥感",
+        "声纳数据处理",
+        "替代预处理",
+        "信号处理"
+      ],
+      "abstract": "The dominant method of processing sonar data is using image-based representations, requiring the preprocessing of image data on autonomous systems. We propose an alternative data processing method for remote sensing applications via the use of data in Comma-Seperated Value format. Experimentation on our alternative approach shows a reduction of processing time by 91.18%, an improvement in accurate object detection by Machine Learning, and an increase in SNR (Signal-to-noise ratio), PSNR (Peak signal-to-noise ratio), and other evaluation metrics.",
+      "summary_zh": "声纳数据的主流处理方式是使用图像表示，这需要在自主系统上对图像数据进行预处理。该文提出一种替代的数据处理方法，即在遥感应用中使用逗号分隔值（CSV）格式的数据。实验表明，该替代方法将处理时间减少91.18%，提升了机器学习目标检测的准确性，并提高了信噪比（SNR）、峰值信噪比（PSNR）等评价指标。",
+      "insight_zh": "该文提示，在遥感与声纳等信号处理场景中，绕过图像化预处理、直接使用信号格式数据可能显著降低处理时间并改善检测与信噪比指标，为机器学习驱动的遥感应用提供了替代预处理思路。"
+    },
+    {
       "key": "arxiv:2609.20975",
       "title": "Image-Derived PM10 Estimation in Cattle Feedlot Using Machine Learning: Addressing Concentration Ranges Beyond Existing Digital Imaging Methods",
       "title_zh": "基于图像的养牛场PM10估算：面向超越现有数字成像方法的浓度范围",
@@ -842,99 +927,6 @@
       "abstract": "Multimodal embodied systems require translating human intentions into interpretable and coordinated behaviors across heterogeneous modalities. However, existing multimodal agents often rely on implicit representations, limiting controllability and cross-modal consistency. We present a hybrid multi-agent framework for interactive multimodal behavior simulation that bridges semantic reasoning and physical execution through a Unified Parameter Representation (UPR). LLM-based reasoning agents transform multimodal inputs into UPR, which encodes behavioral states and interpretable control parameters for simulation agents generating synchronized 3D motion, spatialized soundscapes, and environmental behaviors. We develop BirdsongChat as a prototype implementation of the proposed framework, using interactive avian behavior simulation as a testbed that tightly couples motion, vocalization, and environmental context. BirdsongChat is evaluated on text- and image-guided scenarios involving species, behaviors, affective states, environments, and multi-bird interactions. The system achieves normalized scores of 94.4\\% for cross-modal coherence, 100% for affective consistency, and 92.6% for generation consistency. These results demonstrate that an explicit intermediate representation effectively bridges semantic reasoning and physical execution, improving controllability and multimodal synchronization. The proposed framework thus offers a generalizable design principle for embodied AI systems requiring interpretable semantic-to-physical coordination across modalities, with potential applications in bio-inspired ecoacoustics, swarm robotics, virtual environments, and creative multimedia.",
       "summary_zh": "多模态具身系统需要将人类意图转化为跨异构模态的可解释且协调的行为。然而，现有多模态智能体往往依赖隐式表示，限制了可控性和跨模态一致性。作者提出一种混合多智能体框架，用于交互式多模态行为模拟，通过统一参数表示（UPR）桥接语义推理与物理执行。基于LLM的推理智能体将多模态输入转化为UPR，UPR编码行为状态和可解释的控制参数，供模拟智能体生成同步的三维运动、空间化声景和环境行为。作者开发BirdsongChat作为所提框架的原型实现，以交互式鸟类行为模拟作为紧密耦合运动、发声和环境背景的测试平台。BirdsongChat在涉及物种、行为、情感状态、环境和多鸟交互的文本和图像引导场景中进行评估。系统在跨模态一致性上达到94.4%的归一化分数，情感一致性为100%，生成一致性为92.6%。这些结果表明，显式中间表示有效桥接了语义推理与物理执行，提升了可控性和多模态同步性。所提框架因此为需要在多模态间进行可解释语义到物理协调的具身AI系统提供了可推广的设计原则，在仿生生态声学、群体机器人、虚拟环境和创意多媒体中具有潜在应用。",
       "insight_zh": "其显式中间表示桥接语义推理与物理执行的设计原则，或可启发城市更新模拟中人类意图到空间行为的可解释转化，但当前应用场景与地理空间智能的直接关联有限。"
-    },
-    {
-      "key": "arxiv:2609.19366",
-      "title": "The Role of Fine-grained Harm Signals in LLM Safety",
-      "title_zh": "细粒度危害信号在LLM安全中的作用",
-      "url": "https://arxiv.org/abs/2609.19366",
-      "doi": "",
-      "arxiv_id": "2609.19366",
-      "authors": [
-        "Soyeon Park",
-        "Seogyeong Jeong",
-        "Sunwoo Kim",
-        "Alice Oh"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-16T19:40:50+00:00",
-      "score": 45,
-      "reason": "该论文研究LLM内部细粒度危害信号在安全中的作用，属于LLM可解释性与安全研究，与研究中LLM主题相关，但不涉及地理空间应用。",
-      "tags": [
-        "LLM安全",
-        "激活引导",
-        "危害表征",
-        "可解释性"
-      ],
-      "abstract": "Prior work has shown that internal harmfulness representations in large language models vary across risk categories, while sharing a common general harm representation component. This raises a question about the role of the category-specific component beyond general harm representation in LLM safety. To answer this question, we isolate the category-specific component by removing shared general harmfulness representation from each categorical harmfulness representation, yielding a category residual that is orthogonal to general harmfulness at every layer. Using activation steering with category residuals across 11 risk categories in 3 instruction-tuned LLMs, we find that whether category residuals encode harmfulness varies across categories, and that this category-wise pattern is similar across models. Whether category residuals induce refusal also varies across categories, but this category-wise pattern is more model-dependent. We also find that category residuals increase LLMs' downstream internal alignment with shared general harmfulness representation. Together, these findings demonstrate that more fine-grained category residuals should also be considered beyond shared general harmfulness representation to fully understand LLM safety. More broadly, our findings show that even a direction orthogonal to a concept at one layer can contribute to the concept's downstream amplification.",
-      "summary_zh": "先前工作表明，大语言模型内部的危害性表征在不同风险类别间存在差异，同时共享一个通用危害表征成分。这引出一个问题：类别特定成分在通用危害表征之外对LLM安全起什么作用。为回答该问题，作者通过从每个类别危害表征中移除共享的通用危害性表征，分离出类别特定成分，得到在每一层都与通用危害性正交的类别残差。作者在3个指令微调LLM的11个风险类别上使用类别残差进行激活引导，发现类别残差是否编码危害性因类别而异，且这种类别模式在不同模型间相似。类别残差是否引发拒绝也因类别而异，但这种类别模式更依赖模型。作者还发现类别残差增强了LLM下游内部与共享通用危害表征的对齐。这些发现共同表明，为充分理解LLM安全，除共享通用危害表征外还应考虑更细粒度的类别残差。更广泛地说，即使某一层上与某概念正交的方向，也能促进该概念的下游放大。",
-      "insight_zh": "该研究揭示LLM安全中细粒度类别信号与通用危害表征的交互机制，对理解LLM内部表征有启发，但与地理空间智能研究无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.17921",
-      "title": "Collaborative Memory for Multi-Agent VLM Systems",
-      "title_zh": "面向多智能体VLM系统的协作记忆",
-      "url": "https://arxiv.org/abs/2609.17921",
-      "doi": "",
-      "arxiv_id": "2609.17921",
-      "authors": [
-        "Huixin Zhang",
-        "Shao-Jun Xia",
-        "Di Wang",
-        "Liangxi Liu",
-        "Hainan Xiong",
-        "Zihao Wang"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-15T23:31:09+00:00",
-      "score": 45,
-      "reason": "该文研究多智能体VLM系统的协作记忆框架，涉及多智能体协作与分布式感知，与LLM和多智能体研究方向相关，但未涉及地理空间应用。",
-      "tags": [
-        "多智能体",
-        "视觉语言模型",
-        "协作记忆",
-        "分布式感知"
-      ],
-      "abstract": "Vision-language model (VLM) agents combine specialized perception, tools, and reasoning to address complex visual tasks. In multi-agent settings, different agents inspect different image regions, video frames, or visual representations, so collaboration extends beyond distributed reasoning to distributed perception. This makes shared visual context a central problem in VLM agent collaboration. In this paper, we frame memory hierarchy, cross-agent sharing, and consistency mechanisms around the need to reconcile interpretations and update dependent reasoning. Effective collaboration requires agents to build on contributions from other agents, recover missing visual context, and reconcile differing interpretations as new evidence emerges. Shared visual memory preserves not only images or textual summaries but also the dependencies among observations, agent interpretations, and subsequent reasoning. Together, these design considerations shape how information flows and evolves across VLM agents. The proposed framework provides a foundation for building reliable and resource-efficient agent teams.",
-      "summary_zh": "视觉语言模型（VLM）智能体结合专门化的感知、工具和推理来处理复杂视觉任务。在多智能体环境中，不同智能体检查不同图像区域、视频帧或视觉表示，因此协作不仅涉及分布式推理还涉及分布式感知，使共享视觉上下文成为VLM智能体协作的核心问题。本文围绕调和解释与更新依赖推理的需求，构建记忆层次、跨智能体共享和一致性机制。有效协作要求智能体基于其他智能体的贡献构建、恢复缺失的视觉上下文，并在新证据出现时调和不同解释。共享视觉记忆不仅保留图像或文本摘要，还保留观察、智能体解释和后续推理之间的依赖关系。",
-      "insight_zh": "该文的协作记忆框架对多智能体地理空间推理系统设计有概念启发，尤其是分布式感知与共享上下文的依赖管理，但其研究为通用视觉任务，未涉及地理空间数据或城市分析。"
-    },
-    {
-      "key": "arxiv:2602.16313",
-      "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
-      "title_zh": "MemoryArena：在相互依赖的多会话智能体任务中基准测试智能体记忆",
-      "url": "https://arxiv.org/abs/2602.16313",
-      "doi": "",
-      "arxiv_id": "2602.16313",
-      "authors": [
-        "Zexue He",
-        "Yu Wang",
-        "Churan Zhi",
-        "Yuanzhe Hu",
-        "Tzu-Ping Chen",
-        "Lang Yin",
-        "Ze Chen",
-        "Tong Arthur Wu",
-        "Siru Ouyang",
-        "Zihan Wang",
-        "Jiaxin Pei",
-        "Julian McAuley",
-        "Yejin Choi",
-        "Alex Pentland"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该论文提出面向多会话智能体任务的记忆基准，与多智能体及LLM智能体研究相关，但未涉及地理空间或城市应用，因此相关性中等。",
-      "tags": [
-        "AI智能体",
-        "记忆机制",
-        "多会话任务",
-        "基准测试"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究问题、方法或结论。",
-      "insight_zh": "从标题推断，该工作可能构建一个评估智能体在多会话相互依赖任务中记忆能力的基准；由于摘要为空，无法确认其任务设计、评估指标或实验结果。"
     }
   ]
 }
