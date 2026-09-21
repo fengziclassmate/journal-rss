@@ -3,14 +3,16 @@
   "guid": "research-daily:2026-09-21",
   "paper_keys": [
     "arxiv:2609.20150",
-    "arxiv:2608.17440"
+    "arxiv:2608.17440",
+    "arxiv:2609.19631",
+    "arxiv:2607.03869"
   ],
-  "paper_count": 2,
+  "paper_count": 4,
   "source_status": {
     "arxiv-api": "error:HTTPError",
-    "arxiv-email": "ok:0",
+    "arxiv-email": "ok:1",
     "crossref:Applied Geography": "ok:7",
-    "crossref:Applied Soft Computing": "ok:26",
+    "crossref:Applied Soft Computing": "ok:29",
     "crossref:Artificial Intelligence": "ok:3",
     "crossref:CEUS": "ok:5",
     "crossref:Cities": "ok:23",
@@ -18,17 +20,17 @@
     "crossref:EIAR": "ok:14",
     "crossref:IJGIS": "ok:0",
     "crossref:ISPRS JPRS": "ok:12",
-    "crossref:Information Fusion": "ok:23",
+    "crossref:Information Fusion": "ok:25",
     "crossref:JAG": "ok:20",
     "crossref:Landscape and Urban Planning": "ok:3",
-    "crossref:Pattern Recognition": "ok:54",
+    "crossref:Pattern Recognition": "ok:55",
     "crossref:RSE": "ok:17",
-    "crossref:SCS": "ok:21",
+    "crossref:SCS": "ok:22",
     "crossref:Science Bulletin": "ok:20",
     "crossref:Urban Climate": "ok:6",
     "deepseek": "partial:10/30;failed-batches:2"
   },
-  "updated_at": "2026-09-21T00:28:16.218160+00:00",
+  "updated_at": "2026-09-21T07:53:47.267946+00:00",
   "papers": [
     {
       "key": "arxiv:2609.20150",
@@ -87,6 +89,60 @@
       "abstract": "Although Graph Neural Networks (GNNs) have made significant advances in spatio-temporal traffic forecasting, their performance is limited when they rely solely on sensor proximity or road-network topology. This paper presents a spatio-temporal prediction framework, developed to incorporate knowledge in various forms. This framework aims to improve sensor-level, contextual understanding of the environment. A general-purpose knowledge graph (e.g., Wikidata) is used to create semantic subgraphs around traffic sensors and generate knowledge graph embeddings that capture meaningful relationships, such as nearby points of interest, administrative hierarchies, and the functional roles of locations. These embeddings are then fused with conventional traffic sensor graphs to provide additional adjacency matrices informed by semantics. This allows GNNs to learn the semantic context beyond physical connectivity. This study differs from previous research in two key ways. Firstly, rather than proposing a novel GNN architecture, it demonstrates the general impact of external knowledge on prediction accuracy. Secondly, experiments with well-established traffic forecasting approaches show that external knowledge provides additional information that street network data alone cannot convey. The results show that integrating data from general-purpose knowledge graphs and sensor networks through data fusion can enhance the prediction accuracy of traffic forecasting models, and offers a potential pathway toward improved interpretability.",
       "summary_zh": "尽管图神经网络（GNN）在时空交通预测方面取得了显著进展，但当其仅依赖传感器邻近性或路网拓扑时，性能受到限制。本文提出一个时空预测框架，旨在融合多种形式的知识。该框架旨在提升传感器层面的环境上下文理解。使用通用知识图谱（如Wikidata）围绕交通传感器构建语义子图，并生成知识图谱嵌入，以捕捉有意义的关系，如附近兴趣点、行政层级和位置的功能角色。这些嵌入随后与常规交通传感器图融合，提供由语义信息增强的额外邻接矩阵。这使GNN能够学习超越物理连通性的语义上下文。本研究与以往研究在两个关键方面不同。首先，它并非提出新的GNN架构，而是展示外部知识对预测精度的普遍影响。其次，使用成熟的交通预测方法进行的实验表明，外部知识提供了仅靠街道网络数据无法传达的额外信息。结果表明，通过数据融合将通用知识图谱与传感器网络的数据整合，可以提升交通预测模型的预测精度，并为提高可解释性提供了潜在路径。",
       "insight_zh": "该文提出的通用知识图谱语义子图构建与嵌入融合方法，可迁移至城市更新中的多源语义上下文建模，其强调外部知识对时空预测的普遍增益而非新架构，对多源数据融合研究有方法参考价值。"
+    },
+    {
+      "key": "arxiv:2609.19631",
+      "title": "Instance Segmentation and Fine-grained Classification for Urban Buildings with Adaptive Region Dividing and Spatially-Supervised Contrastive Learning",
+      "title_zh": "基于自适应区域划分与空间监督对比学习的城市建筑实例分割与细粒度分类",
+      "url": "https://arxiv.org/abs/2609.19631",
+      "doi": "",
+      "arxiv_id": "2609.19631",
+      "authors": [
+        "Weiyuan Zhang",
+        "Qi Zhang",
+        "Hui Huang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T03:23:54+00:00",
+      "score": 78,
+      "reason": "该文面向大规模城市点云的建筑实例分割与功能细粒度分类，直接涉及城市三维建模与城市分析，与城市更新、地理空间智能方向高度相关，且方法涉及自适应区域划分与空间监督对比学习。",
+      "tags": [
+        "城市建筑",
+        "点云实例分割",
+        "细粒度分类",
+        "对比学习",
+        "自适应区域划分"
+      ],
+      "abstract": "Accurate instance-level and functional understanding of urban buildings in large-scale point clouds is essential for digital city modeling and urban analysis. However, the extensive spatial coverage of urban scenes leads most existing methods to rely on predefined blocks for training and evaluation, although such partitions are rarely available in real-world applications and introduce additional preprocessing while fragmenting complete building structures. To address this issue, we propose an adaptive region-dividing strategy with unified scene-level evaluation. Specifically, the 3D point cloud is projected onto a bird's-eye-view (BEV) plane, where a pretrained segmentation model is used to detect building regions. The detected bounding boxes are then back-projected to the original point cloud to construct structure-aligned adaptive training blocks, enabling semantically guided dynamic partitioning without manual design. Furthermore, beyond instance-level understanding, few methods have explored fine-grained classification for urban buildings, and thus we also put forward a fine-grained classification model for urban buildings with a spatially-supervised contrastive loss. First, for each segmented building, a point transformer classifier jointly encodes its body and local context using geometric, color, and core-context information. Then, the class-balanced weighted cross-entropy is used to alleviate severe class imbalance. The proposed spatially-supervised contrastive loss further enhances inter-class discriminability by assigning greater weight to spatially proximate, same-category buildings, encouraging compact functional representations while separating easily confused categories. Extensive experiments on UrbanBIS and STPLS3D demonstrate the advantages of the proposed method in building instance segmentation and fine-grained classification compared to existing SOTA methods.",
+      "summary_zh": "针对大规模城市点云中建筑实例级与功能理解的需求，本文指出既有方法多依赖预定义分块进行训练与评估，而真实应用中此类划分往往不可得，且会引入额外预处理并割裂完整建筑结构。为此，作者提出自适应区域划分策略与统一的场景级评估：将三维点云投影到鸟瞰图平面，用预训练分割模型检测建筑区域，再将检测框反投影回原始点云以构建结构对齐的自适应训练块，实现语义引导的动态划分而无需人工设计。此外，针对城市建筑细粒度分类研究不足的问题，作者提出带空间监督对比损失的细粒度分类模型：对每个分割建筑，点Transformer分类器联合编码其主体与局部上下文（几何、颜色与核心上下文信息），采用类平衡加权交叉熵缓解严重类别不平衡，空间监督对比损失则对空间邻近的同类别建筑赋予更大权重，增强类间可分性并鼓励紧凑的功能表征。在UrbanBIS与STPLS3D上的大量实验验证了所提方法的优势。",
+      "insight_zh": "该文的自适应区域划分与场景级评估思路对城市更新中的建筑功能识别与三维变化分析具有直接参考价值；空间监督对比损失强调空间邻近同类样本的聚合，可启发城市功能区表征学习，但文中未涉及时间维度或变化检测。"
+    },
+    {
+      "key": "arxiv:2607.03869",
+      "title": "GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2607.03869",
+      "doi": "",
+      "arxiv_id": "2607.03869",
+      "authors": [
+        "Yuhang Jiang",
+        "Guohui Deng",
+        "Miaozhong Xu",
+        "Chao Ruan",
+        "Jinling Zhao",
+        "Linsheng Huang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 55,
+      "reason": "关键词命中：Remote Sensing、Segmentation",
+      "tags": [
+        "Remote Sensing",
+        "Segmentation"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "",
+      "insight_zh": ""
     }
   ]
 }
