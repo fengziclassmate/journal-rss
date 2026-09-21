@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 883,
+    "analyzed": 902,
     "high": 8,
     "medium": 42,
     "low": 59,
-    "below_threshold": 774
+    "below_threshold": 793
   },
   "papers": [
     {
@@ -3909,6 +3909,35 @@
       "insight_zh": "该技术可能应用于城市多智能体模拟，但摘要未提及具体地理场景。"
     },
     {
+      "key": "arxiv:2609.13551",
+      "title": "Towards Practical Precision Agriculture: Real-Time Fruit Detection and Video Analytics on Embedded Edge Hardware",
+      "title_zh": "面向实用精准农业：嵌入式边缘硬件上的实时果实检测与视频分析",
+      "url": "https://arxiv.org/abs/2609.13551",
+      "arxiv_id": "2609.13551",
+      "authors": [
+        "Ivica Dimitrovski",
+        "Vlatko Spasev",
+        "Ivan Kitanovski",
+        "Petre Lameski",
+        "Dane Boshev"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-11T21:32:02+00:00",
+      "score": 40,
+      "reason": "该文提出嵌入式边缘硬件上的实时果实检测、跟踪与计数框架，涉及遥感/计算机视觉中的目标检测与视频时空分析，与遥感变化检测和多源数据融合在方法层面有较强关联，但应用场景为果园而非城市或遥感卫星影像。",
+      "tags": [
+        "边缘计算",
+        "实时目标检测",
+        "视频分析",
+        "多目标跟踪",
+        "精准农业"
+      ],
+      "summary_zh": "静态图像基准无法反映实际果园视频分析的计算与时间要求。本研究提出在NVIDIA Jetson Orin Nano Super上实现实时果实检测、跟踪与计数的端到端框架。轻量级YOLO26s检测器在苹果、芒果、蓝莓与草莓四个公开数据集上按统一协议独立训练，并以PyTorch与TensorRT在FP32、FP16与INT8精度下部署于嵌入式平台。随后使用APPLE MOTS进行时序视频分析，因其提供具有持久果实身份的果园序列，可评估多目标跟踪与唯一果实计数。所选FP16 TensorRT检测器集成到NVIDIA DeepStream流水线中，结合硬件加速解码、ByteTrack跟踪与运动感知越线分析。四个检测任务的平均测试mAP@50:95为0.4957至0.8656。在Jetson上，TensorRT FP16达到66.76–74.56图像/秒、预测延迟13.41–14.98毫秒，同时mAP@50:95仅下降0.0020–0.0054，总能耗相对PyTorch FP32降低约64%–66%。完整检测-跟踪-分析流水线达到44.96–54.11 FPS，并维持配置的30 FPS输入速率而无输出帧丢失。在留出果园视频序列上，HOTA为0.345–0.538，事件级计数F1为0.611–0.803，相对计数误差为6.2%–51.6%。性能随采集几何变化：近侧向行视角跟踪与计数最稳定，而前向行进尽管采用空间自适应计数几何，仍受关联与召回限制。",
+      "insight_zh": "该边缘端检测-跟踪-分析流水线与精度-效率权衡策略对遥感变化检测中的实时视频/序列分析具有方法借鉴意义，但其应用场景为果园果实计数，未涉及城市或卫星遥感数据。"
+    },
+    {
       "key": "arxiv:2609.14121",
       "title": "Semantic Knowledge Technologies: what the Semantic Web lost sight of, and what it never had",
       "title_zh": "语义知识技术：语义网忽视了什么，以及它从未拥有过什么",
@@ -4490,6 +4519,32 @@
       "insight_zh": "该研究提供了评估智能体“算力—性能”转化效率的量化框架，并指出并行会话分配可能优于单次长会话；对多智能体系统的资源调度设计有参考意义，但结论基于开放式推理任务，未验证于地理空间决策场景。"
     },
     {
+      "key": "arxiv:2609.13294",
+      "title": "VectorHarness: Recovering Editable, Relation-Preserving Structure from Scientific Graphics",
+      "title_zh": "VectorHarness：从科学图形中恢复可编辑、保持关系的结构",
+      "url": "https://arxiv.org/abs/2609.13294",
+      "arxiv_id": "2609.13294",
+      "authors": [
+        "Jiahao Tang",
+        "Yiren Song",
+        "Alex Jinpeng Wang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-09T15:36:36+00:00",
+      "score": 35,
+      "reason": "该文提出多智能体框架用于科学图形的栅格到可编辑重建，涉及多智能体系统但应用领域为图形重建，与地理空间智能和城市更新关联较弱。",
+      "tags": [
+        "多智能体重建",
+        "科学图形",
+        "栅格到可编辑",
+        "关系保持"
+      ],
+      "summary_zh": "将科学图形转换为可编辑表示对于图像到代码生成仍是一个难题，因为其元素异构且布局复杂。近期多智能体重建系统推进了这一方向，但往往遵循复制粘贴范式：重建图像与原图高度相似，而复杂区域实际上仍不可编辑。作者转而提出不同目标，即栅格到创作重建，旨在恢复支持原生、定制化编辑而非仅视觉复制的创作表示。为此，作者提出VectorHarness，一种用于栅格到创作重建的多智能体框架，使用类型适配的原生表示恢复异构组件。文本、公式、形状、连接线、图标、图表和表格被重建为原生可编辑对象，而本质为图像的区域保留为栅格内容。为系统评估重建质量，作者引入VectorHarness-Bench，联合评估渲染保真度、栅格回退覆盖率、可执行对象编辑和保持关系的编辑。实验表明，VectorHarness提升了可执行编辑成功率和关系保持能力，减少了可避免的栅格回退，并在异构图形上保持高视觉保真度。",
+      "insight_zh": "该文的多智能体协作与关系保持编辑思路，对地理空间制图或遥感图件的可编辑重建有间接参考价值，但整体与城市更新及时空数据挖掘的核心方向关联较弱。"
+    },
+    {
       "key": "arxiv:2607.17632",
       "title": "TypiCore: A Hybrid Active Query Strategy for Class-Incremental Learning on Time Series",
       "title_zh": "TypiCore：面向时间序列类增量学习的混合主动查询策略",
@@ -4699,6 +4754,40 @@
       ],
       "summary_zh": "摘要内容缺失，仅能根据标题推断该工作构建了一个用于评测人类与视觉语言模型在利马和纽约市自动驾驶场景中表现的基准。",
       "insight_zh": "该基准可能为跨城市环境的自动驾驶多模态评测提供参考，对城市感知与地理空间智能有间接价值；但摘要缺失，无法判断其数据规模、任务设计与具体结论。"
+    },
+    {
+      "key": "arxiv:2609.13791",
+      "title": "Restore What Matters: Lessons from Joint Restoration and Recognition",
+      "title_zh": "复原真正重要之处：联合复原与识别的经验教训",
+      "url": "https://arxiv.org/abs/2609.13791",
+      "arxiv_id": "2609.13791",
+      "authors": [
+        "Lanqing Guo",
+        "Xijun Wang",
+        "Minchul Kim",
+        "Yu Yuan",
+        "Wes Robbins",
+        "Xingguang Zhang",
+        "Nicholas Chimitt",
+        "Stanley H. Chan",
+        "Zhangyang Wang",
+        "Xiaoming Liu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-12T08:08:08+00:00",
+      "score": 35,
+      "reason": "该文提出任务驱动的联合复原与识别范式，强调复原应服务于下游识别任务而非视觉美观，与遥感变化检测和地理空间智能中的影像复原-识别流程有较强方法关联，但本文实验基于IARPA-BRIAR人脸识别数据，未涉及遥感或城市数据。",
+      "tags": [
+        "联合复原与识别",
+        "任务驱动复原",
+        "物理先验",
+        "选择性复原",
+        "遥感识别"
+      ],
+      "summary_zh": "识别流水线通常采用先复原后识别的流程，但数十年经验表明生成视觉上悦目的图像很少能转化为识别性能提升。本文提出联合复原-识别（JR²）范式：仅复原下游任务真正需要的内容，由任务信号决定复原的位置、程度与必要性。JR²基于三大支柱：（i）物理，采用光学精确的湍流模拟并可扩展到模糊与噪声，使复原扎根于真实成像过程；（ii）神经科学，借鉴选择性注意与神经可塑性，将模型容量导向身份关键区域与帧，同时跳过已清晰的输入；（iii）视觉与学习，将识别损失端到端耦合到复原与对齐中，使低层编辑最大化高层身份稳定性。在IARPA-BRIAR上的评估显示一致改进（如TAR@0.01% FAR +0.6；FNIR@1% FPIR -2.5），质量门跳过约70%的清晰帧以降低成本。消融实验证实物理先验增强真实性、联合训练防止灾难性遗忘、选择性复原在许多情况下已足够。",
+      "insight_zh": "该任务驱动、选择性、物理感知的复原理念对遥感影像复原与变化检测的联合优化具有启发意义，提示复原模块应以下游任务信号为导向，但本文未在遥感数据上验证。"
     },
     {
       "key": "arxiv:2609.09828",
@@ -5068,6 +5157,33 @@
       ],
       "summary_zh": "前沿大语言模型日益具备开展自动化研究的能力，但其在此情境下的创造力尚未被系统评估。本文提出一套指标，从价值性和新颖性两个维度评估创造力。价值性评估每个提出的想法是否有用，新颖性则从三个视角评估：同一想法是否曾出现（精确匹配 P-Novelty）、是否探索了此前未探索的变量或变量组合（变量级 P-Novelty）、以及想法是直接遵循检索到的外部知识还是偏离之（H-Novelty）。评估显示，各模型在大多数创造力指标上得分相对接近，但在变量级 P-Novelty 上差异显著，后者反映了研究空间探索的广度。进一步的相关性和想法级性能分析表明，变量级 P-Novelty 是与研究表现关联最强的创造力维度。",
       "insight_zh": "该工作对 LLM 研究创造力的评估框架，可能为地理空间智能中利用 LLM 和多智能体进行自动化空间分析研究提供评估思路，但其研究场景为通用科研自动化，未涉及地理空间领域。"
+    },
+    {
+      "key": "arxiv:2609.13247",
+      "title": "Machine learning-assisted calibration of Agent-based Models: surrogate-based optimization with Genetic Algorithm and Particle Swarm Optimization",
+      "title_zh": "机器学习辅助的智能体模型校准：基于代理模型的遗传算法与粒子群优化",
+      "url": "https://arxiv.org/abs/2609.13247",
+      "arxiv_id": "2609.13247",
+      "authors": [
+        "Duguma Yeshitla Habtemariam",
+        "Jihwan Lee"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "published": "2026-09-04T13:09:48+00:00",
+      "score": 35,
+      "reason": "该论文研究基于机器学习的智能体模型校准，使用代理辅助进化计算，与多智能体仿真和时空数据挖掘有方法层面的关联，但应用案例为资产定价和岛屿增长模型，不涉及城市更新或遥感。",
+      "tags": [
+        "智能体建模",
+        "代理模型",
+        "进化算法",
+        "模型校准"
+      ],
+      "summary_zh": "校准智能体模型（ABM）很困难，因为其目标景观是随机的、崎岖的，且只能通过昂贵的黑箱仿真来评估。本研究将内循环代理辅助进化计算（SAEC）适配到ABM校准中，在遗传算法（GA）和粒子群优化（PSO）中嵌入机器学习代理模型。每次迭代时，代理模型筛选候选解，仿真器仅验证前50%，从而减少仿真需求并纠正代理误差。作者在两个对比鲜明的ABM——Brock-Hommes资产定价模型和Island增长模型——上评估了由两种优化器、五种代理模型和四种校准目标组合而成的48种配置的全因子实验。参数恢复以伪真值为基准衡量。相对于最强的纯优化器基线，最佳ML辅助配置在Brock-Hommes上将RMSE降低20.0%，在Island上降低63.8%，同时计算时间分别减少32.1%和61.1%。ANOVA与Dunnett事后检验确认，在Brock-Hommes的两种优化器下以及在Island的GA下，每种代理模型都显著节省时间。在Island上，没有代理模型在参数恢复准确率上与纯优化器基线有显著差异；因此所报告的准确率提升是最佳配置的结果，而非在此样本量下可分辨的平均效应。最佳代理-优化器-目标组合随ABM复杂度而变化，表明代理辅助校准依赖于模型，不存在通用的默认配方。",
+      "insight_zh": "该研究表明，将机器学习代理模型嵌入GA和PSO可减少ABM校准的仿真次数和计算时间，但最佳代理-优化器-目标组合随模型复杂度变化，不存在通用默认配方；其案例为资产定价和岛屿增长模型，未涉及城市或地理空间应用。"
     },
     {
       "key": "arxiv:2609.13914",
@@ -6017,6 +6133,34 @@
       "insight_zh": "该研究的多模态融合与在线帧级预测框架对地理空间多源数据融合和实时变化检测有方法学上的间接参考，但论文聚焦第一人称视频社交交互，与地理空间领域差异显著。"
     },
     {
+      "key": "arxiv:2609.13804",
+      "title": "StepPrune: Adaptive Sequential Visual Token Selection across Multimodal Large Language Models",
+      "title_zh": "StepPrune：跨多模态大模型的自适应序列视觉token选择",
+      "url": "https://arxiv.org/abs/2609.13804",
+      "arxiv_id": "2609.13804",
+      "authors": [
+        "Hansen Zhang",
+        "Landi He",
+        "Mingde Yao",
+        "Lijian Xu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-12T08:30:25+00:00",
+      "score": 30,
+      "reason": "该文提出多模态大模型的自适应视觉token剪枝方法，属于多模态LLM效率优化方向，与LLM研究相关；遥感变化检测与多源数据融合中常涉及高分辨率视觉输入，其token剪枝思路可能有间接借鉴意义，但本文未涉及地理空间数据。",
+      "tags": [
+        "多模态大模型",
+        "视觉token剪枝",
+        "推理加速",
+        "自适应选择",
+        "序列决策"
+      ],
+      "summary_zh": "视觉前缀占多模态大模型逐层计算的主要部分，视觉token剪枝是加速推理的直接途径。现有top-K方法通常独立评估token并对所有输入施加统一预算，忽略了选择依赖的交互与样本间视觉复杂度的差异。本文提出StepPrune，将视觉token剪枝建模为自适应序列决策过程：以已选token与文本上下文为条件，逐步构建保留子集并通过学习到的STOP动作自动确定其大小。训练时采用保方差噪声门作为离散选择的可微代理，推理时在语言模型预填充前物理移除未选token。分组选择机制进一步将StepPrune扩展到高分辨率输入。在LLaVA-1.5、LLaVA-NeXT、Qwen2.5-VL与InternVL3上的实验表明，StepPrune在LLaVA-1.5、Qwen2.5-VL与InternVL3上于所有评估剪枝率下取得最佳平均归一化性能保持，在LLaVA-NeXT的AnyRes前缀上亦具竞争力。在LLaVA-1.5上，StepPrune剪除88.9%视觉token的同时保留94.6%的全前缀归一化性能，平均保留64个token时将预填充延迟从59.95毫秒降至40.05毫秒，实现1.50倍加速。",
+      "insight_zh": "该自适应序列剪枝思路对处理高分辨率遥感影像的多模态模型推理效率优化具有潜在借鉴价值，但本文未在遥感或地理空间数据上验证。"
+    },
+    {
       "key": "arxiv:2609.15983",
       "title": "Stellar Colosseum: A Many-Agent Harness for Long-Horizon Research in Mathematics and Theoretical Computer Science",
       "title_zh": "Stellar Colosseum：面向数学与理论计算机科学长时程研究的多智能体框架",
@@ -6640,6 +6784,35 @@
       ],
       "summary_zh": "摘要内容缺失，仅提供标题信息。标题表明该研究提出EventVL，旨在利用多模态大语言模型来理解事件相机产生的事件流数据。",
       "insight_zh": "摘要缺失，无法确认其方法细节与实验结果。从标题推断，该工作探索将多模态大语言模型扩展至事件流这一非常规视觉模态，其多模态融合与跨模态理解思路对多源地理空间数据融合研究或有方法论启发，但当前信息不足以判断其与遥感变化检测等任务的具体关联。"
+    },
+    {
+      "key": "arxiv:2609.13233",
+      "title": "EMCStereo: Attention-Enhanced Stereo Matching for Thin-Structure Depth Estimation with a Synthetic Tree-Branch Benchmark",
+      "title_zh": "EMCStereo：面向细结构深度估计的注意力增强立体匹配与合成树枝基准",
+      "url": "https://arxiv.org/abs/2609.13233",
+      "arxiv_id": "2609.13233",
+      "authors": [
+        "Yida Lin",
+        "Bing Xue",
+        "Mengjie Zhang",
+        "Sam Schofield",
+        "Richard Green"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-02T11:32:23+00:00",
+      "score": 30,
+      "reason": "该论文研究细结构（如树枝）的立体匹配与深度估计，并构建合成树木分支基准，属于计算机视觉与遥感/林业感知的交叉方向，与遥感变化检测有间接关联，但不涉及城市更新或时空数据挖掘。",
+      "tags": [
+        "立体匹配",
+        "深度估计",
+        "细结构",
+        "合成数据集",
+        "注意力机制"
+      ],
+      "summary_zh": "树枝等细结构是立体匹配中最困难的情形之一：树枝仅有几个像素宽，背景杂乱，真实树枝的稠密真值几乎无法手工标注。作者做出三项贡献。第一，EMCStereo在PSMNet风格的成本体积骨干网络中集成三个轻量级注意力模块：在深层语义特征上使用高效多尺度注意力（EMA），一个多尺度融合块（MSFblock）学习空间金字塔权重而非将其拼接，以及在最终匹配特征上使用坐标注意力（CoordAtt）。由于MSFblock将四个金字塔分支合并为一个，这些模块使网络缩小2.0%，仅增加1.7%的推理时间开销。第二，VirtualTree是一个在Unreal Engine 5中使用模拟ZED Mini立体相机渲染的合成立体数据集，提供5,520对具有精确视差的细树枝图像。第三，八路消融实验确立了0.009像素端点误差（EPE）的逐次运行噪声下限。EMCStereo在VirtualTree测试集上达到1.31像素EPE（5.96% D1-all），在SceneFlow上为1.00像素，在KITTI 2012、KITTI 2015、ETH3D和Middlebury上分别为0.80、0.73、0.62和3.19像素，深度准确率delta_1从92.6%到98.7%。相对于噪声下限评估，注意力堆叠在100轮预算下对准确率中性，而MSFblock和CoordAtt在没有EMA时会带来0.03-0.05像素的代价。",
+      "insight_zh": "该工作表明，在PSMNet风格骨干中集成EMA、MSFblock和CoordAtt可在几乎不增加参数和推理时间的情况下处理细结构立体匹配，并发布了合成树枝数据集VirtualTree；其评估显示注意力堆叠在100轮预算下对准确率中性，MSFblock和CoordAtt的代价在EMA存在时被抵消。"
     },
     {
       "key": "arxiv:2511.13368",
@@ -7433,6 +7606,34 @@
       "insight_zh": "该工作可能对城市公共空间安全监控中的实时视频分析有间接借鉴意义，但与GIS博士核心方向关联有限；摘要缺失，无法确认其数据、模型与实验结论。"
     },
     {
+      "key": "arxiv:2609.13800",
+      "title": "Do Not Restart: Residual Completion for Stateful Agent Handoffs",
+      "title_zh": "不要重启：有状态智能体交接的残差补全",
+      "url": "https://arxiv.org/abs/2609.13800",
+      "arxiv_id": "2609.13800",
+      "authors": [
+        "Runzhi Deng",
+        "Yiming Zhong",
+        "Fang Zhao",
+        "Pan Zhou"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-12T08:23:23+00:00",
+      "score": 28,
+      "reason": "该文研究有状态智能体交接中的残差补全问题，属于多智能体系统与智能体协作方向，与LLM和多智能体研究直接相关，但与城市更新、时空数据挖掘无直接联系。",
+      "tags": [
+        "智能体交接",
+        "状态保持",
+        "残差补全",
+        "承诺约束",
+        "级联路由"
+      ],
+      "summary_zh": "路由与级联通过跨模型转移控制来降低工具智能体成本，但有状态交接必须保留已接受的决策、已实现的效果与未完成的义务。本文将这一问题形式化为承诺约束的残差补全，并提出承诺前沿残差补全（CFRC）。CFRC强制实施“先目标后提议”“先完整提议后授权”“先实时证据后成功”三项原则：从已接受进展中冻结残差契约，将后继延续闭包为证据链接图，仅当剩余部分被覆盖时才允许执行，并以实时回执解除义务。作者建立了契约相对部分正确性，并在完整契约构造下扩展到原始残差请求。在五个环境与两个同供应商模型对上，CFRC以强全任务智能体22.0%–34.6%的推理成本达到可比的宏观准确率，跨供应商结果进一步显示更广泛的迁移性。",
+      "insight_zh": "该残差补全与承诺约束机制对多智能体协作中保持任务状态与避免重复执行具有方法参考价值，但本文未涉及地理空间或城市分析任务。"
+    },
+    {
       "key": "arxiv:2609.15393",
       "title": "CodeTS: Verifiable Text-to-Time Series Generation via Executable Code",
       "title_zh": "CodeTS：通过可执行代码实现可验证的文本到时间序列生成",
@@ -7866,6 +8067,58 @@
       ],
       "summary_zh": "低秩张量分解为从不完整和受损观测中补全多维数据提供了灵活框架。然而，未加权谱正则化器对所有奇异分量施加统一的收缩轮廓，可能过度衰减主导的低秩分量；而因子化变体要么缺乏分量特定加权，要么需要昂贵的奇异值分解（SVD）。本文提出两种加权Schatten-p张量分解模型，分别称为WSpTFI和（摘要在此处截断）。",
       "insight_zh": "该工作针对低秩张量补全中统一收缩与计算成本问题提出加权因子化方案，其处理不完整多维数据的思路或可应用于时空数据缺失补全与多源地理空间数据重建，但论文摘要未完整给出实验与应用场景，无法确认其地理空间适用性。"
+    },
+    {
+      "key": "arxiv:2609.13814",
+      "title": "Realtime-Venus: A full-duplex interaction system with asynchronous delegation",
+      "title_zh": "Realtime-Venus：一种带异步委派的全双工交互系统",
+      "url": "https://arxiv.org/abs/2609.13814",
+      "arxiv_id": "2609.13814",
+      "authors": [
+        "Ruixiang Zhao",
+        "Hualei Wang",
+        "Renhe Sun",
+        "Enzhi Zhou",
+        "Jincenzi Wu",
+        "Xujie Song",
+        "Kexin Shi",
+        "Zihang Liu",
+        "Pengcheng Zhu",
+        "Jiayi Zhou",
+        "Baoyue Zhang",
+        "Changhao Zhang",
+        "Zitong Wang",
+        "Jinhong Wang",
+        "Tong Niu",
+        "Jingjing Liu",
+        "Junan Lin",
+        "Haolin He",
+        "Hengshuo Chu",
+        "Yuhui Chen",
+        "Jian Liu",
+        "Yuge Huang",
+        "Junliang Xing",
+        "Yuntao Wang",
+        "Weiqiang Wang",
+        "Chun Yu",
+        "Yuanchun Shi"
+      ],
+      "categories": [
+        "cs.CV",
+        "eess.AS"
+      ],
+      "published": "2026-09-12T08:56:50+00:00",
+      "score": 25,
+      "reason": "该文提出实时全双工音视频交互系统，属于多模态LLM与智能体系统方向，与LLM和多智能体研究有方法层面的关联，但与城市更新及时空数据挖掘无直接关系。",
+      "tags": [
+        "全双工交互",
+        "多模态对话",
+        "异步委派",
+        "语音交互",
+        "实时系统"
+      ],
+      "summary_zh": "数字与物理环境中的自然交互需要持续感知与及时响应。本文提出Realtime-Venus，一个主动式全双工交互系统，包含两个独立训练的9B模型：用于音视频交互的Realtime-Venus-Omni与用于语音交互的Realtime-Venus-Audio。每个模型作为完整对话前端，通过共享因果时间线整合持续感知、对话控制与原生语音生成。双循环运行时协调实时交互与后台推理及工具执行，前台交互持续进行的同时由Realtime-Venus-Harness异步执行任务并返回结果。两个模型采用统一的离线理解、主动全双工轨迹与委派工作流后训练方案。在评估的在线模型中，Realtime-Venus-Omni在八项视频基准中的六项取得最高分，Realtime-Venus-Audio在多项音频理解与口语问答基准上领先，并在Full-Duplex-Bench v1.5上超过Gemini 3.1 Live。",
+      "insight_zh": "该系统的异步委派与双循环运行时架构对多智能体协作中的实时感知与后台推理协调具有参考意义，但本文未涉及地理空间任务或城市应用。"
     },
     {
       "key": "arxiv:2606.11709",
@@ -9392,6 +9645,33 @@
       "insight_zh": "该工作为几何配准提供了可量化不确定性的闭式贝叶斯方案，对遥感影像拼接与配准中的误差传播分析有方法参考价值，但论文未涉及遥感或城市数据。"
     },
     {
+      "key": "arxiv:2609.13268",
+      "title": "Capability-Routed Visual Retrieval and Evidence Threading for Long-Context Document Question Answering",
+      "title_zh": "能力路由的视觉检索与证据串联用于长上下文文档问答",
+      "url": "https://arxiv.org/abs/2609.13268",
+      "arxiv_id": "2609.13268",
+      "authors": [
+        "Amirul Rahman",
+        "Aisha Karim",
+        "Kenji Nakamura",
+        "Yi-Fan Ng"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-07T16:56:47+00:00",
+      "score": 22,
+      "reason": "该论文研究长上下文文档问答中的视觉检索与证据串联，属于多模态大模型与检索增强方向，与地理空间智能或多智能体仅有间接关联，与城市更新、遥感变化检测、时空数据挖掘无直接关系。",
+      "tags": [
+        "多模态检索",
+        "文档问答",
+        "视觉检索",
+        "长上下文"
+      ],
+      "summary_zh": "年报、尽调资料和信息图仪表盘将数字埋藏在页面图像中：坐标轴、单元格网格和脚注，OCR流程会将其压平，而页面级视觉检索器仍将其视为可互换的上下文示例。作者保留冻结的Qwen2.5-VL-7B-Instruct生成器和ColPali/VisRAG-Ret页面索引，并插入三个模块。能力感知视觉路由器（CAVR）将每个检索到的页面标记为文本、表格、图表、布局或混合，并在生成前混合专家。弱到强页面选择（WSPS）将冻结的7B可回答性教师蒸馏为3B选择头，使排序不再是单一InfoNCE分数。视觉证据串联（VET）构建长度至多三的布局锚定路径，让生成器读取该串联而非扁平的top-k列表。在gold-page DocVQA/ChartQA/InfographicVQA上，7B系统达到96.3/90.1/85.4。在VisRAG top-3协议下，平均生成准确率为62.74，而同一骨干网络使用拼接时为59.39。在MMLongBench-Doc retrieve-then-read上，F1从19.2提升到22.6，多页准确率从16.4提升到21.2。WSPS重排后ViDoRe nDCG@5为83.6，TAT-DQA财务报告为70.4。",
+      "insight_zh": "该工作表明，在长文档视觉问答中，按页面类型路由专家、用蒸馏选择头替代单一相似度排序、以及构建布局锚定的证据路径，可以提升生成准确率；但其应用场景为文档问答，未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.15072",
       "title": "Branched Optimal Transport Amortization",
       "title_zh": "分支最优传输摊销",
@@ -9420,6 +9700,36 @@
       ],
       "summary_zh": "分支最优传输（BOT）方法模拟河流与生物系统等自然树状结构的经济性与效率，广泛用于设计社会中的高效网络，从流域、血管到邮件与燃气配送系统。然而在大规模深度生成模型设计中，这类方法仍研究不足。标准连续时间生成模型（如流匹配）无法捕捉真实数据中固有的层次与分支模式，现有模型也没有机制让流合并或共享路径以最小化总传输成本。受BOT中“规模经济”原理启发，作者提出一种新颖的可扩展分支流匹配算法，用于求解高维分支最优传输问题。该方法将Benamou-Brenier连续时间最优传输表述改造为学习分支生成流，使概率质量在分叉到多样目标前沿共同路径聚集。方法由神经网络参数化，可有效学习复杂的分支生成过程。作者在生物学与图像生成的高维挑战性任务上展示了其有效性。",
       "insight_zh": "该文的分支流与路径共享机制对建模城市道路、管网等树状基础设施网络具有潜在启发，但论文仅在生物与图像任务上验证，未涉及地理空间网络或城市数据。"
+    },
+    {
+      "key": "arxiv:2609.13815",
+      "title": "Beyond OCR Accuracy: Text-Centric VQA Under Image Degradation with Modular and End-to-End",
+      "title_zh": "超越OCR准确率：图像退化下文本中心VQA的模块化与端到端方法比较",
+      "url": "https://arxiv.org/abs/2609.13815",
+      "arxiv_id": "2609.13815",
+      "authors": [
+        "Ritali Vatsi",
+        "Rachapudi Jagadeesh",
+        "Shruti Singh Baghel",
+        "Himani Sharma",
+        "Amit Shukla",
+        "Pawan Goyal"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-12T08:57:29+00:00",
+      "score": 22,
+      "reason": "该文研究图像退化条件下文本中心视觉问答的鲁棒性，属于多模态理解与评估方法，与LLM/多智能体方向有间接联系，但与城市更新、时空数据挖掘、遥感变化检测无直接关联。",
+      "tags": [
+        "文本中心VQA",
+        "图像退化",
+        "OCR",
+        "多模态推理",
+        "鲁棒性评估"
+      ],
+      "summary_zh": "文本中心视觉问答需读取并推理图像中的文本，当图像存在运动模糊、低分辨率或压缩伪影等真实退化时难度显著增加。本文对两种模块化OCR流水线与端到端视觉语言基线进行实证比较，其中模块化流水线采用结合ResNet-18、自注意力空间建模与可变形卷积的自定义检测器SA-DBNet，在4013张退化图像与7000个问答对上评估。微调后的模块化流水线精确匹配准确率最高达57.50%，而端到端基线为38.00%，领域特定微调带来最高29.50个百分点的提升。研究还发现，字符错误率与词错误率等传统OCR误差指标无法可靠预测下游VQA性能，因为上下文线索存在时语义推理可补偿识别失败。",
+      "insight_zh": "该研究提示在退化视觉条件下评估多模态系统时，任务导向指标比传统识别指标更可靠；这一评估思路或可迁移至遥感影像退化场景下的多模态推理评估，但本文未涉及遥感数据。"
     },
     {
       "key": "arxiv:2609.15669",
@@ -9705,6 +10015,37 @@
       ],
       "summary_zh": "该研究在医疗问答基准MedMisBench上，向LLM注入两种误导性上下文线索（捏造证据和裸断言），测试三个推理模型。结果发现模型对断言更敏感，且误导线索在推理轨迹中的披露率高于最终响应。通过重采样分析，发现两种线索的破坏机制不同：证据早期进入并累积，断言则在结论阶段重定向。LLM监控器在读取开放模型的推理轨迹时能捕获78%的腐败决策。",
       "insight_zh": "LLM对误导性上下文的敏感性与披露程度呈负相关，开放推理轨迹比最终响应更利于监控模型的错误决策，这对设计可审计的LLM系统有启示。"
+    },
+    {
+      "key": "arxiv:2609.13806",
+      "title": "Understanding the Limits of Agentic ICD Coding",
+      "title_zh": "理解智能体ICD编码的局限",
+      "url": "https://arxiv.org/abs/2609.13806",
+      "arxiv_id": "2609.13806",
+      "authors": [
+        "Chong Yock Eng",
+        "Yushi Cao",
+        "Yiming Chen",
+        "Kezhi Mao",
+        "Hongchao Jiang"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-12T08:33:38+00:00",
+      "score": 20,
+      "reason": "该文评估神经、工作流与智能体系统在ICD编码任务上的表现，属于智能体系统能力边界研究，与LLM和多智能体方向相关，但与城市更新、时空数据挖掘、遥感无直接关联。",
+      "tags": [
+        "智能体",
+        "ICD编码",
+        "医疗文本",
+        "失败模式分析",
+        "工具增强"
+      ],
+      "summary_zh": "ICD-10-CM编码用于美国医疗计费与流行病学报告中的诊断与损伤分类。标准基准报告的聚合指标掩盖了复杂编码场景的表现。本文在按稀有度分层的MIMIC-IV出院小结上评估神经、工作流与智能体系统，识别出两种正交的失败模式：神经分类器在稀有码与常见码之间存在0.43的micro-F1差距；工作流系统对稀有码处理较好，但在需要多步指南遵循的损伤与外部原因编码上得分接近零；具备官方ICD-10-CM参考资料结构化访问的工具增强智能体配置在该子集上恢复最高0.34的micro-F1。没有单一系统在所有条件下占优。",
+      "insight_zh": "该研究揭示智能体系统在需要多步规则遵循与结构化知识访问的任务上存在明显局限，这一发现对地理空间领域中涉及规范约束的智能体应用（如规划合规审查）具有类比参考价值，但本文未涉及地理空间场景。"
     },
     {
       "key": "arxiv:2511.21397",
@@ -12376,6 +12717,33 @@
       "insight_zh": "从标题推断，该工作可能将频率引导的扩散模型与扰动训练结合用于骨架视频异常检测；由于摘要缺失，无法判断其与地理空间智能或城市时空分析的直接联系。"
     },
     {
+      "key": "arxiv:2609.13250",
+      "title": "Evaluation of MLLM-Agnostic Plug-and-Play Keyframe Selection Methods for Long Video Understanding",
+      "title_zh": "面向长视频理解的多模态大模型无关即插即用关键帧选择方法评测",
+      "url": "https://arxiv.org/abs/2609.13250",
+      "arxiv_id": "2609.13250",
+      "authors": [
+        "Dilip Sarkar",
+        "Md. Safayet Islam",
+        "Liang Liang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T21:05:20+00:00",
+      "score": 18,
+      "reason": "该论文评测长视频理解中的即插即用关键帧选择方法，属于多模态大模型与视频理解方向，与遥感变化检测或时空数据挖掘有方法层面的间接联系，但不涉及地理空间应用。",
+      "tags": [
+        "长视频理解",
+        "关键帧选择",
+        "多模态大模型",
+        "基准评测"
+      ],
+      "summary_zh": "由于视觉token和计算预算的限制，多模态大语言模型（MLLM）无法处理长视频的每一帧。已有三类主要方法增强其长视频理解能力：（i）在大规模视频语料上重新训练MLLM和/或扩展其输入长度；（ii）为特定MLLM训练适配器，以整个视频和查询为输入并选择最相关的视频帧；（iii）开发无需训练、即插即用（PaP）且与MLLM无关的适配器。作者将第三类称为PaP关键帧选择。PaP方法可以仅使用候选视频帧而不考虑查询，也可以同时使用候选视频帧和查询。第一类方法成本过高。第二类方法需要大量训练时间和计算资源，但由于适配器可训练参数远少于整个MLLM，因此对许多人仍可及。第三类方法计算成本最低，因而最易获得。据作者所知，过去一年仅报告了五种PaP方法。这些方法均在一个或多个视频问答基准上评测，并显示出长视频理解的提升。然而，这些方法使用不同的MLLM在不同基准上评测。作者使用三个MLLM在三个长视频理解基准上对这五种方法进行了全面评测。结果表明，QAaF在15个聚合评测设置中的13个取得最佳性能，FOCUS总体排名第二。这些结果为比较无需训练的关键帧选择方法提供了共同的实验参考。",
+      "insight_zh": "该评测显示，在统一实验条件下，QAaF在多数长视频理解设置中表现最佳，FOCUS次之；这为无需训练的关键帧选择方法提供了可比参考，但未涉及地理空间或遥感视频。"
+    },
+    {
       "key": "arxiv:2609.15422",
       "title": "Empirical Evaluation of Task-Based Permission Scoping Architecture for AI Agents",
       "title_zh": "面向AI智能体的任务型权限范围架构的实证评估",
@@ -12597,6 +12965,33 @@
       ],
       "summary_zh": "生态监测日益依赖机器学习模型，其性能取决于标注数据的质量和数量。然而，获取这些标签成本高昂，尤其是在被动声学监测中，收集大量数据但只有一小部分可实际标注。主动学习通过优先选择应标注的样本解决这一瓶颈。然而，进展难以衡量，因为已发表方法在不同模型、预算、评估指标和数据集下评估。为应对这一挑战，我们提出2026年生物声学主动学习BioDCASE挑战：对采样方法进行系统评估，以识别有效AL策略。参与者方法在由陆地和海洋数据组成的四个子集上评估。来自七个团队的十种提出采样方法中，排名最高的方法在相同标注预算下，平均四个数据子集的学习曲线面积比随机采样高26.4%。不同子集间性能差异显著，最佳提交在HSN子集上比随机采样提高67.1%，在ATBFL子集上提高8%。排名靠前的提交结合了多种采集信号，基于多样性的选择优于纯不确定性采样。此外，有证据表明从基于多样性转向基于不确定性选择，并显式减少采集批次内冗余，可改善模型训练。还有初步证据表明，较大的采集批次规模在标注过程后期可能越来越有益。",
       "insight_zh": "该挑战表明在标注预算有限时，结合多样性与不确定性的主动学习策略通常优于单一信号，提示遥感或生态监测中的样本选择可借鉴多信号融合与批次冗余控制。"
+    },
+    {
+      "key": "arxiv:2609.13819",
+      "title": "Benchmarking Optimizers to Solve Inverse Problems with Differentiable Physics Simulators",
+      "title_zh": "面向可微分物理模拟器逆问题求解的优化器基准测试",
+      "url": "https://arxiv.org/abs/2609.13819",
+      "arxiv_id": "2609.13819",
+      "authors": [
+        "Xiang Chen",
+        "Huanhuan Xia"
+      ],
+      "categories": [
+        "cs.LG",
+        "math.OC",
+        "physics.comp-ph"
+      ],
+      "published": "2026-09-12T09:05:38+00:00",
+      "score": 18,
+      "reason": "该文聚焦可微分物理模拟器求解逆问题的优化器基准测试，与城市更新、时空数据挖掘、遥感变化检测等核心方向关联较弱，仅在方法论层面（优化与可微分编程）对地理空间智能有间接参考价值。",
+      "tags": [
+        "可微分物理模拟",
+        "逆问题",
+        "优化器基准测试",
+        "科学计算"
+      ],
+      "summary_zh": "利用可微分物理模拟器求解逆问题兼具严格物理正确性与自动微分的高效性，但当前该范式在优化性能上存在问题。本文对不同优化器求解各类逆问题的性能进行基准测试：构建了涵盖离散力学、连续力学、原子模拟、渲染与半经验物理模型等物理领域的12个可微分物理模拟器，并据此设计参数辨识、逆向设计与最优控制三类逆问题。通过大量实验比较一阶方法、近似二阶方法及全局优化器在这些逆问题上的表现，并分析结果以给出可微分编程中优化器选择与设计的建议。",
+      "insight_zh": "该基准测试提示：在地理空间智能中若引入可微分模拟（如城市流体、地表过程模拟），优化器的选择可能显著影响逆问题求解效果，但本文未涉及地理空间应用，需谨慎外推。"
     },
     {
       "key": "arxiv:2609.14262",
@@ -12896,29 +13291,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13294",
-      "title": "VectorHarness: Recovering Editable, Relation-Preserving Structure from Scientific Graphics",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13294",
-      "arxiv_id": "2609.13294",
-      "authors": [
-        "Jiahao Tang",
-        "Yiren Song",
-        "Alex Jinpeng Wang"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-09T15:36:36+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -15207,6 +15579,37 @@
       "insight_zh": "摘要为空，无法确认其搜索策略与实验设置；从标题推测其关注张量分解结构的自动搜索，若应用于时空张量数据或有多源数据融合的间接参考价值，但缺乏具体信息支撑。"
     },
     {
+      "key": "arxiv:2609.13794",
+      "title": "SyRHM: Symbolic-Language-Enhanced Reasoning with Associative Retrieval for Zero-shot Harmful Meme Detection",
+      "title_zh": "SyRHM：面向零样本有害模因检测的符号-语言增强推理与联想检索",
+      "url": "https://arxiv.org/abs/2609.13794",
+      "arxiv_id": "2609.13794",
+      "authors": [
+        "Hanling Wang",
+        "Chenlong Wei",
+        "Yingjuan Li",
+        "Di Wu",
+        "Yuchao Zhang",
+        "Xiaohui Zhu",
+        "Yao Zhu"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-12T08:12:24+00:00",
+      "score": 15,
+      "reason": "该文提出零样本有害模因检测框架，属于多模态推理与内容安全方向，与LLM多模态推理有间接关联，但与城市更新、时空数据挖掘、遥感变化检测无直接关系。",
+      "tags": [
+        "有害模因检测",
+        "多模态推理",
+        "符号表示",
+        "检索增强",
+        "零样本"
+      ],
+      "summary_zh": "有害模因检测对维护安全在线社区至关重要，但有害意图常因视觉-文本不一致与文化刻板印象而隐含，给现有多模态检测器带来挑战。本文提出SyRHM框架，将有害模因检测分解为意义锚定的检索与符号-语言增强的多阶段推理。SyRHM通过将多模态内容解析为文本元素与描述来检索语义相关模因，提供超越表层相似性的锚定上下文；在此基础上，使用翻译器阶段将多模态输入转换为符号中间表示，再通过规划器与求解器阶段进行多阶段推理，实现对有害意图的可表达且可解释的分析。在FHM、HarM与MultiOff上的实验表明，SyRHM在多数评估设置下优于多模态与基于推理的基线，并提供有害内容的推理轨迹。",
+      "insight_zh": "该符号-语言增强的多阶段推理与检索结合思路对多模态内容分析具有方法参考价值，但本文未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2605.04412",
       "title": "Structured 3D Latents Are Surprisingly Powerful: Unleashing Generalizable Style with 2D Diffusion",
       "title_zh": "结构化三维隐表示出人意料地强大：借助二维扩散模型释放可泛化风格",
@@ -17490,6 +17893,37 @@
       "insight_zh": "该工作展示了通过共享与专用参数分离来缓解多任务梯度冲突的思路，其两阶段训练与模态平衡策略或可为多源地理空间数据融合中的异构任务联合建模提供方法借鉴，但论文本身未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.13552",
+      "title": "Toward a Decision-Assurance Layer for AI-Assisted Flight Planning in Air Traffic Management",
+      "title_zh": "面向空中交通管理中AI辅助飞行规划的决策保障层",
+      "url": "https://arxiv.org/abs/2609.13552",
+      "arxiv_id": "2609.13552",
+      "authors": [
+        "Alexandre Barreto (1)",
+        "Shou Matsumoto (1)",
+        "Jorge Valverde-Rebaza (2)",
+        "Cleiton Ataide (3)",
+        "Paulo Costa (1) ((1) George Mason University",
+        "(2) Tecnol\\'ogico de Monterrey",
+        "(3) DECEA: Department of Airspace Control)"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-11T21:32:05+00:00",
+      "score": 12,
+      "reason": "该文提出面向空中交通管理AI辅助飞行规划的决策保障层，属于安全关键系统中生成式AI可靠性评估方向，与LLM应用有间接关联，但与城市更新、时空数据挖掘、遥感变化检测无直接关系。",
+      "tags": [
+        "决策保障",
+        "生成式AI",
+        "空中交通管理",
+        "安全关键系统",
+        "人在回路"
+      ],
+      "summary_zh": "生成式AI正被越来越多地非正式用于空中交通管理中的飞行计划生成、轨迹解释与约束检查等任务。尽管这些工具可降低工作负荷并加速规划，但其非确定性输出在人在回路场景中带来安全与运行风险。本文提出AI信任与保障层（ATAL），一种模型无关的决策保障架构，用于评估AI生成的飞行规划输出是否足够可靠以供运行使用。ATAL结合提示变化下的语义稳定性、结构化输出的运行一致性以及针对领域规则的规范性约束验证，并将这些信号映射为面向人类操作员的决策就绪等级（DRL）。一项受ATM启发的实验研究表明，不安全、不一致或误导性输出可在影响飞行计划验证或执行之前被识别。尽管在航空领域演示，该框架也可迁移到其他需要在监管约束下进行人工监督的安全关键决策支持领域。",
+      "insight_zh": "该决策保障层框架对地理空间智能中涉及规范约束与人工监督的决策支持系统（如城市规划合规审查）具有类比参考价值，但本文未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2602.21061",
       "title": "Tool Use Reduces Depth-Induced Collapse in OOD Reasoning",
       "title_zh": "工具使用缓解分布外推理中的深度诱导崩溃",
@@ -18771,6 +19205,32 @@
       ],
       "summary_zh": "递归自我改进对自主AI智能体日益重要，其进展取决于在复杂领域中发掘高价值解决方案。有效探索是这一过程的驱动力，但管理和改进探索策略仍是主要瓶颈。现有系统面临根本困境：固定策略无法随搜索空间扩展而适应，而在线策略优化需要在长时程展开中面对延迟且昂贵的反馈，在庞大的元搜索空间中导航。作者提出Dream-RSI，一个可扩展且递归自我改进的探索框架。轻量级编排层使探索显式且可编程，同时保持底层编码智能体不变。其核心洞见是：累积的发现历史可作为已实现搜索空间上的回放模拟器。通过在由历史发现树构建的回放模拟器中进行“ dreaming”，……（摘要在此处截断）。",
       "insight_zh": "将历史发现树作为回放模拟器以支持探索策略的递归改进，这一思路或可启发智能体在复杂空间搜索中的策略演化研究，但摘要截断，具体机制与结果无法完整评估。"
+    },
+    {
+      "key": "arxiv:2609.13228",
+      "title": "Don't Just Look, Intervene: Perturbation Based Region Labeling for VQA Images",
+      "title_zh": "不要只看，要干预：面向VQA图像的反事实区域标注",
+      "url": "https://arxiv.org/abs/2609.13228",
+      "arxiv_id": "2609.13228",
+      "authors": [
+        "Marko Jojic",
+        "Zhaonan Li",
+        "Ben Zhou"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-01T20:56:09+00:00",
+      "score": 12,
+      "reason": "该论文研究视觉问答中的反事实区域标注，属于视觉语言模型与可解释性方向，与地理空间智能有方法层面的间接联系，但不涉及城市更新、遥感变化检测或时空数据挖掘。",
+      "tags": [
+        "视觉问答",
+        "区域标注",
+        "反事实干预",
+        "视觉定位"
+      ],
+      "summary_zh": "视觉语言模型（VLM）应依赖直接决定正确答案的视觉证据，但视觉推理定位的监督往往获取成本高昂，或与数据集特定的标注原语绑定。作者转而引入模型因果视觉证据作为标注目标，定义为对于给定图像-问题对，其反事实干预会改变模型答案分布的图像区域集合。基于这一原则，作者提出反事实搜索定位区域（CSGR）。CSGR是一个可扩展流程，它提出候选区域、对其进行扰动、测量其对答案敏感性的影响，并在多个评判者之间聚合这些证据，以近似VQA数据中对答案关键的区域。为评估CSGR标注是否包含有用的监督信号，作者将其接入三种现有的定位感知训练流程：注意力引导、视觉CoT微调和潜在视觉推理。这些实验检验所提出的标注方案能否在多种消费区域标签的方式中提供有用的监督信号，而非引入新的使用方式。在相互竞争的自动区域标注机制中，CSGR标注在域内和域外评估中均比仅使用交叉熵微调提供最一致的增益，表明所提出的标注方案捕捉到了有用的区域级信息。",
+      "insight_zh": "该工作提出以模型因果视觉证据作为标注目标，通过反事实干预识别对答案关键的区域，并将其接入注意力引导、视觉CoT微调和潜在视觉推理三种训练流程；实验显示CSGR标注在域内和域外评估中比仅用交叉熵微调提供更一致的增益。"
     },
     {
       "key": "arxiv:2609.15973",
@@ -20711,6 +21171,42 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该工作将绘画过程建模为一种自主的艺术延续任务。",
       "insight_zh": "摘要为空，无法推断具体方法或贡献；从标题看属于艺术图像生成方向，与地理空间智能研究关联较弱。"
+    },
+    {
+      "key": "arxiv:2609.13237",
+      "title": "Occlusal Geometry in Closed Form for Orthodontic Report Generation",
+      "title_zh": "面向正畸报告生成的闭式咬合几何",
+      "url": "https://arxiv.org/abs/2609.13237",
+      "arxiv_id": "2609.13237",
+      "authors": [
+        "Ajo Babu George",
+        "Govind Arun",
+        "Sidharth N Krishna",
+        "Uma Ranjan"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "test",
+        "phase.",
+        "Code",
+        "and",
+        "data",
+        "processing",
+        "resources:",
+        "https://github.com/GIND123/ODIN_toothfairy4"
+      ],
+      "published": "2026-09-02T14:58:29+00:00",
+      "score": 10,
+      "reason": "该论文研究正畸报告生成中的咬合几何闭式计算，属于医学影像与多模态报告生成方向，与地理空间智能、城市更新或遥感变化检测无直接关联。",
+      "tags": [
+        "口腔几何",
+        "正畸报告生成",
+        "多模态",
+        "闭式解"
+      ],
+      "summary_zh": "从口内数据生成正畸报告通常被建模为多模态描述任务，但已发布的Bite2Text扫描对已配准于咬合状态，这使得若干核心咬合量可直接测量而非推断。本文报告的系统利用了该特性：从牙弓锥度和牙弓闭合恢复每个病例的解剖坐标系，而非采用所声明的RAS约定（该约定在发布数据中并不成立），并将每个牙弓简化为牙弓角度坐标下的咬合嵴轮廓，从而以闭式形式得到覆合、覆盖、中线偏斜、横向重叠、反覆盖范围、牙尖交错滞后以及咬合曲线。梯度提升将31个此类测量映射到13个模板字段，仅当患者级交叉验证优于其自身多数类基线时才预测该字段，确定性渲染器生成语料库的六部分叙述；对五个标准化照片视图的ConvNeXt-Tiny分类器按字段融合，将平均字段准确率从0.601提升到0.683。对挑战评测器的重新实现表明，其BLEU-4和METEOR是局部变体，其F均值权重对召回率的权重为九比一；两名临床医生对同一患者47%的发现一致；因此一份恒定报告在描述任务上比真实的第二份临床医生报告高出0.165。在留出集上，针对口内扫描参考的BLEU-4为0.458、METEOR为0.677，针对照片参考为0.278和0.507；提交系统在ODIN 2026 Bite2Text测试阶段以0.2680和0.4629排名第三，与第一名相差0.022 BLEU-4，在CPU上每例运行不到十秒。数据集和代码见https://github.com/GIND123/ODIN_toothfairy4。",
+      "insight_zh": "该工作利用扫描对已配准于咬合状态的特性，以闭式几何测量替代推断，并用梯度提升与照片分类器融合生成正畸报告；其评测还指出挑战评测器的BLEU-4和METEOR为局部变体且对召回率加权较高，恒定报告可超过真实临床医生报告。"
     },
     {
       "key": "arxiv:2609.13916",
@@ -23434,6 +23930,40 @@
       "insight_zh": "摘要缺失，无法确认其调度指标、实验设置与效果；仅可推测其关注多轮会话场景下LLM服务的资源分配均衡性，不宜推断具体性能提升幅度。"
     },
     {
+      "key": "arxiv:2609.13245",
+      "title": "SJD-SV: Speculative Jacobi Decoding with Semantics Verification for Autoregressive Image Generation",
+      "title_zh": "SJD-SV：面向自回归图像生成的语义验证推测Jacobi解码",
+      "url": "https://arxiv.org/abs/2609.13245",
+      "arxiv_id": "2609.13245",
+      "authors": [
+        "Baoquan Zhang",
+        "Bingqi Shan",
+        "Shihao Fang",
+        "Kenghong Lin",
+        "Xutao Li",
+        "Yunming Ye"
+      ],
+      "categories": [
+        "cs.CV",
+        "(ICML",
+        "2026)",
+        "Learning,",
+        "PMLR",
+        "306,",
+        "2026"
+      ],
+      "published": "2026-09-04T10:28:08+00:00",
+      "score": 8,
+      "reason": "该论文研究自回归图像生成的加速解码方法，属于生成模型与视觉token方向，与地理空间智能、城市更新或遥感变化检测无直接关联。",
+      "tags": [
+        "自回归图像生成",
+        "推测解码",
+        "语义验证"
+      ],
+      "summary_zh": "推测Jacobi解码（SJD）是加速自回归图像生成的重要方法。尽管SJD表现出优越性能，但近期研究指出其在token验证过程中通常存在token歧义问题，而其原因尚未得到很好解释。为探究该原因，本文对视觉token进行可视化分析，发现与文本token不同，视觉token通常对应某些局部、细小且不清晰的视觉细节，这意味着仅使用单个token难以准确表达某一语义，从而导致token歧义问题。为此，作者提出一种新的语义验证推测Jacobi解码（SJD-SV），用于加速自回归图像生成。其核心思想是利用token之间强的纠正特性来识别语义感知的token子序列，然后不再逐token验证，而是在语义感知的token子序列层面进行验证，以加速图像生成。特别地，该方法为插件式，可直接集成到现有SJD及其变体中。在各种数据集上的大量实验表明，现有SJD方法在集成SJD-SV后取得了显著性能提升。",
+      "insight_zh": "该工作通过可视化分析指出视觉token的局部、细小和不清晰特性导致token歧义，并提出在语义感知的token子序列层面进行验证；该方法为插件式，可集成到现有SJD及其变体中，但未涉及地理空间或遥感图像生成。"
+    },
+    {
       "key": "arxiv:2609.15639",
       "title": "SAM3D-Part: Interactive Part Selection and Generation from 3D Objects",
       "title_zh": "SAM3D-Part：面向三维物体的交互式部件选择与生成",
@@ -25659,31 +26189,6 @@
       "insight_zh": "由于信息不足，无法推断其与GIS或遥感研究的潜在联系，需补充摘要或全文才能评估相关性。"
     },
     {
-      "key": "arxiv:2609.13806",
-      "title": "Understanding the Limits of Agentic ICD Coding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13806",
-      "arxiv_id": "2609.13806",
-      "authors": [
-        "Chong Yock Eng",
-        "Yushi Cao",
-        "Yiming Chen",
-        "Kezhi Mao",
-        "Hongchao Jiang"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-12T08:33:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14991",
       "title": "Typhoon ASR Streaming: Steerable Low-Latency Thai Speech Recognition with Real-Time Shallow Fusion",
       "title_zh": "",
@@ -25736,54 +26241,6 @@
       ],
       "summary_zh": "增加答案选项可能降低多选题得分而不提高评估有效性。土耳其MMLU Pro使用来自58个部分的12000个土耳其语源问题检验这一区别。每个问题保留题干、五个原始选项和源答案，并获得从同一部分其他问题复制的五个选项。句子嵌入检索提出候选；语言模型选择现有标识符。确定性验证重建所有60000个添加项。25个模型的校准暴露了评分和生成预算效应。五次评估产生34.8%-81.4%的源答案准确率。在981个共享问题上，一个API服务模型从五选一的93.7%降至十选一的83.1%；115个丢失的正确回答中有102个选择了借用选项。在启发式标记的否定题干上下降24.4个百分点，其他为5.9个百分点。对200个抽样问题的已完成人工检查审计（评审工具使用未记录）在两组记录中分别产生47和31个多答案判断，后者有25个未解决。这些记录支持对歧义的担忧，但其依赖性和不完整的评审方法文档限制了验证。由于顺序和标签也改变，配对比较衡量的是实际实施的增强。贡献是可追溯的构建及其有效性局限分析，而非证明十选一低分更好地衡量知识。",
       "insight_zh": "该研究提醒在构建领域特定评估基准（如地理空间知识评测）时，选项增强可能引入歧义而非提升评估效度。"
-    },
-    {
-      "key": "arxiv:2609.13551",
-      "title": "Towards Practical Precision Agriculture: Real-Time Fruit Detection and Video Analytics on Embedded Edge Hardware",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13551",
-      "arxiv_id": "2609.13551",
-      "authors": [
-        "Ivica Dimitrovski",
-        "Vlatko Spasev",
-        "Ivan Kitanovski",
-        "Petre Lameski",
-        "Dane Boshev"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-11T21:32:02+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13552",
-      "title": "Toward a Decision-Assurance Layer for AI-Assisted Flight Planning in Air Traffic Management",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13552",
-      "arxiv_id": "2609.13552",
-      "authors": [
-        "Alexandre Barreto (1)",
-        "Shou Matsumoto (1)",
-        "Jorge Valverde-Rebaza (2)",
-        "Cleiton Ataide (3)",
-        "Paulo Costa (1) ((1) George Mason University",
-        "(2) Tecnol\\'ogico de Monterrey",
-        "(3) DECEA: Department of Airspace Control)"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-11T21:32:05+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.12018",
@@ -26231,53 +26688,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13794",
-      "title": "SyRHM: Symbolic-Language-Enhanced Reasoning with Associative Retrieval for Zero-shot Harmful Meme Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13794",
-      "arxiv_id": "2609.13794",
-      "authors": [
-        "Hanling Wang",
-        "Chenlong Wei",
-        "Yingjuan Li",
-        "Di Wu",
-        "Yuchao Zhang",
-        "Xiaohui Zhu",
-        "Yao Zhu"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-12T08:12:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13804",
-      "title": "StepPrune: Adaptive Sequential Visual Token Selection across Multimodal Large Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13804",
-      "arxiv_id": "2609.13804",
-      "authors": [
-        "Hansen Zhang",
-        "Landi He",
-        "Mingde Yao",
-        "Lijian Xu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-12T08:30:25+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14065",
       "title": "Stabilizing Performative Feedback Loops with Minimal Model Deployments",
       "title_zh": "以最少模型部署稳定表演性反馈循环",
@@ -26522,36 +26932,6 @@
       "insight_zh": "摘要缺失，无法评估其方法与贡献；从标题看属于语音LLM方向，与地理空间智能主题关联较弱。"
     },
     {
-      "key": "arxiv:2609.13245",
-      "title": "SJD-SV: Speculative Jacobi Decoding with Semantics Verification for Autoregressive Image Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13245",
-      "arxiv_id": "2609.13245",
-      "authors": [
-        "Baoquan Zhang",
-        "Bingqi Shan",
-        "Shihao Fang",
-        "Kenghong Lin",
-        "Xutao Li",
-        "Yunming Ye"
-      ],
-      "categories": [
-        "cs.CV",
-        "(ICML",
-        "2026)",
-        "Learning,",
-        "PMLR",
-        "306,",
-        "2026"
-      ],
-      "published": "2026-09-04T10:28:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.13966",
       "title": "SGWIB:Sliced Gromov-Wasserstein Information Bottleneck for Video Highlight Detection",
       "title_zh": "",
@@ -26674,34 +27054,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13791",
-      "title": "Restore What Matters: Lessons from Joint Restoration and Recognition",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13791",
-      "arxiv_id": "2609.13791",
-      "authors": [
-        "Lanqing Guo",
-        "Xijun Wang",
-        "Minchul Kim",
-        "Yu Yuan",
-        "Wes Robbins",
-        "Xingguang Zhang",
-        "Nicholas Chimitt",
-        "Stanley H. Chan",
-        "Zhangyang Wang",
-        "Xiaoming Liu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-12T08:08:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15123",
       "title": "Refinement-based Flow Policy Optimization",
       "title_zh": "基于细化的流策略优化",
@@ -26753,52 +27105,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作关注无监督术语发现任务中Zipfian分布的恢复问题。",
       "insight_zh": "摘要缺失导致无法评估其方法与结论；从标题看属于语音/语言无监督学习方向，与地理空间智能主题关联有限。"
-    },
-    {
-      "key": "arxiv:2609.13814",
-      "title": "Realtime-Venus: A full-duplex interaction system with asynchronous delegation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13814",
-      "arxiv_id": "2609.13814",
-      "authors": [
-        "Ruixiang Zhao",
-        "Hualei Wang",
-        "Renhe Sun",
-        "Enzhi Zhou",
-        "Jincenzi Wu",
-        "Xujie Song",
-        "Kexin Shi",
-        "Zihang Liu",
-        "Pengcheng Zhu",
-        "Jiayi Zhou",
-        "Baoyue Zhang",
-        "Changhao Zhang",
-        "Zitong Wang",
-        "Jinhong Wang",
-        "Tong Niu",
-        "Jingjing Liu",
-        "Junan Lin",
-        "Haolin He",
-        "Hengshuo Chu",
-        "Yuhui Chen",
-        "Jian Liu",
-        "Yuge Huang",
-        "Junliang Xing",
-        "Yuntao Wang",
-        "Weiqiang Wang",
-        "Chun Yu",
-        "Yuanchun Shi"
-      ],
-      "categories": [
-        "cs.CV",
-        "eess.AS"
-      ],
-      "published": "2026-09-12T08:56:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.13425",
@@ -27461,37 +27767,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13237",
-      "title": "Occlusal Geometry in Closed Form for Orthodontic Report Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13237",
-      "arxiv_id": "2609.13237",
-      "authors": [
-        "Ajo Babu George",
-        "Govind Arun",
-        "Sidharth N Krishna",
-        "Uma Ranjan"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.CL",
-        "test",
-        "phase.",
-        "Code",
-        "and",
-        "data",
-        "processing",
-        "resources:",
-        "https://github.com/GIND123/ODIN_toothfairy4"
-      ],
-      "published": "2026-09-02T14:58:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14734",
       "title": "OCT-FedSIR: Toward Trustworthy Federated Ophthalmic Learning under Annotation Noise",
       "title_zh": "",
@@ -27687,28 +27962,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结果。",
       "insight_zh": "从标题可知其面向意第绪语构建语言模型及评测基准，属于低资源语言NLP工作，但缺少摘要无法判断模型规模、数据来源与评测任务。"
-    },
-    {
-      "key": "arxiv:2609.13247",
-      "title": "Machine learning-assisted calibration of Agent-based Models: surrogate-based optimization with Genetic Algorithm and Particle Swarm Optimization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13247",
-      "arxiv_id": "2609.13247",
-      "authors": [
-        "Duguma Yeshitla Habtemariam",
-        "Jihwan Lee"
-      ],
-      "categories": [
-        "cs.MA",
-        "cs.LG",
-        "cs.NE"
-      ],
-      "published": "2026-09-04T13:09:48+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.13919",
@@ -29149,28 +29402,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13250",
-      "title": "Evaluation of MLLM-Agnostic Plug-and-Play Keyframe Selection Methods for Long Video Understanding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13250",
-      "arxiv_id": "2609.13250",
-      "authors": [
-        "Dilip Sarkar",
-        "Md. Safayet Islam",
-        "Liang Liang"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-04T21:05:20+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15315",
       "title": "Evaluation Metrics for Safe Reinforcement Learning",
       "title_zh": "面向安全强化学习的评估指标",
@@ -29383,29 +29614,6 @@
       "insight_zh": "标题显示其聚焦LLM服务安全与路由策略，可能对多智能体系统中的安全部署有间接参考价值；但无摘要内容，无法评估其与地理空间智能的结合可能。"
     },
     {
-      "key": "arxiv:2609.13233",
-      "title": "EMCStereo: Attention-Enhanced Stereo Matching for Thin-Structure Depth Estimation with a Synthetic Tree-Branch Benchmark",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13233",
-      "arxiv_id": "2609.13233",
-      "authors": [
-        "Yida Lin",
-        "Bing Xue",
-        "Mengjie Zhang",
-        "Sam Schofield",
-        "Richard Green"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-02T11:32:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15171",
       "title": "EECTracker: Swarm Motion Prior-Guided Feature Compensation for Airborne Optical UAV Swarm Tracking",
       "title_zh": "",
@@ -29514,27 +29722,6 @@
       "insight_zh": "该文对高维函数逼近中不确定性估计失效的几何分析，与地理空间智能中的不确定性建模有抽象层面的相似性，但应用域为通用函数逼近，对GIS研究参考价值有限。"
     },
     {
-      "key": "arxiv:2609.13228",
-      "title": "Don't Just Look, Intervene: Perturbation Based Region Labeling for VQA Images",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13228",
-      "arxiv_id": "2609.13228",
-      "authors": [
-        "Marko Jojic",
-        "Zhaonan Li",
-        "Ben Zhou"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-01T20:56:09+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15559",
       "title": "Don't Count the Edits, Judge by the Outcome Alone: Reward-Based Evaluation for Grammatical Error Correction",
       "title_zh": "不要计算编辑次数，仅凭结果评判：基于奖励的语法纠错评估",
@@ -29619,28 +29806,6 @@
       ],
       "summary_zh": "LLM-as-a-Judge 评估器越来越多地用于开放式生成评分，但评判者在开发集上与人类评分的相关性，并不保证在输出高度接近且人类偏好主观时仍能有效测量。作者通过短篇故事中的心理深度研究这一失效模式。七名人类读者和一个在原始标量心理深度量表数据集上选出的 LLM 评判集成（ρ = 0.646）评估了 60 对盲测、提示匹配的故事对，来自 GPT-5 对 GPT-4o 以及 DeepSeek-R1 对 DeepSeek-V3。人类偏好没有显示普遍的推理优势：GPT-5 相比 GPT-4o 略受偏好（60.0–62.9%），而 DeepSeek-R1 落后于 V3（42.9%），读者间一致性接近随机（Krippendorff's α = 0.070），读者内一致性和反复出现的权重模式提示结构化异质性而非随机作答。相比之下，评判者在 89.0% 的维度级比较和 60 对中的 59 对聚合 PDS 上偏好推理输出，且在全部五种评估器配置中一致；其分数与句子长度和词汇多样性等表面特征相关。结果表明，开发集性能不足以证明在分布偏移下的部署有效性，点估计评判者可能掩盖主观人类评价中的异质性。",
       "insight_zh": "该文提醒，在依赖 LLM 评判进行主观或开放式评价时，开发集相关性可能无法迁移到分布偏移场景；若研究使用 LLM 评分，应关注评判者是否偏向表面特征并报告人类评价异质性。"
-    },
-    {
-      "key": "arxiv:2609.13800",
-      "title": "Do Not Restart: Residual Completion for Stateful Agent Handoffs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13800",
-      "arxiv_id": "2609.13800",
-      "authors": [
-        "Runzhi Deng",
-        "Yiming Zhong",
-        "Fang Zhao",
-        "Pan Zhou"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-12T08:23:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2505.09716",
@@ -30280,28 +30445,6 @@
       "insight_zh": "该研究展示了以预测运动来自适应调整采集帧率以节省能耗的思路，属于医学嵌入式视觉的能效优化；其方法逻辑或可类比于遥感中自适应采样，但论文本身未涉及地理空间场景。"
     },
     {
-      "key": "arxiv:2609.13268",
-      "title": "Capability-Routed Visual Retrieval and Evidence Threading for Long-Context Document Question Answering",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13268",
-      "arxiv_id": "2609.13268",
-      "authors": [
-        "Amirul Rahman",
-        "Aisha Karim",
-        "Kenji Nakamura",
-        "Yi-Fan Ng"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-07T16:56:47+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15561",
       "title": "Can We Trust the Judges? Validation of Factuality Evaluation Methods via Answer Perturbation",
       "title_zh": "我们能信任评判者吗？通过答案扰动验证事实性评估方法",
@@ -30695,30 +30838,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13815",
-      "title": "Beyond OCR Accuracy: Text-Centric VQA Under Image Degradation with Modular and End-to-End",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13815",
-      "arxiv_id": "2609.13815",
-      "authors": [
-        "Ritali Vatsi",
-        "Rachapudi Jagadeesh",
-        "Shruti Singh Baghel",
-        "Himani Sharma",
-        "Amit Shukla",
-        "Pawan Goyal"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-12T08:57:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15527",
       "title": "Beyond Noise: Understanding and Overcoming Temperature Effects in Analog DNN Inference",
       "title_zh": "超越噪声：理解并克服模拟 DNN 推理中的温度效应",
@@ -30753,28 +30872,6 @@
       ],
       "summary_zh": "模拟计算的能效使其成为在移动和嵌入式设备等资源受限平台上部署资源密集型机器学习工作负载最有前景的候选之一。然而，模拟加速器本质上容易受到物理组件变化引起的噪声和非理想性的影响，其行为进一步对环境因素敏感。这些效应可能显著降低推理准确率。在这项工作中，我们在一个代表性模拟硬件示例上进行了全面的实验研究，以调查温度的影响。我们首先表征了在一系列工作温度下随机和系统非理想性的行为。随后，我们比较了一组基于仿真和基于硬件的缓解策略，旨在提高对温度引起的性能退化的鲁棒性。我们的结果表明，温度引起的退化主要由系统非理想性驱动，而不仅仅是随机噪声。噪声感知训练提高了鲁棒性，而硬件在环训练和温度感知校准在不同热条件下提供了最强的准确率保持。",
       "insight_zh": "该研究分析模拟 DNN 推理中的温度效应并提出缓解策略，可能对边缘设备上的鲁棒推理有参考价值，但与地理空间研究无直接联系。"
-    },
-    {
-      "key": "arxiv:2609.13819",
-      "title": "Benchmarking Optimizers to Solve Inverse Problems with Differentiable Physics Simulators",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13819",
-      "arxiv_id": "2609.13819",
-      "authors": [
-        "Xiang Chen",
-        "Huanhuan Xia"
-      ],
-      "categories": [
-        "cs.LG",
-        "math.OC",
-        "physics.comp-ph"
-      ],
-      "published": "2026-09-12T09:05:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.15849",
@@ -31355,7 +31452,7 @@
     {
       "key": "arxiv:2609.13239",
       "title": "Abstract-LoRA: Unlocking Single-Image Style Transfer through Targeted U-Net Block Training",
-      "title_zh": "",
+      "title_zh": "Abstract-LoRA：通过定向U-Net块训练解锁单图像风格迁移",
       "url": "https://arxiv.org/abs/2609.13239",
       "arxiv_id": "2609.13239",
       "authors": [
@@ -31367,10 +31464,15 @@
       ],
       "published": "2026-09-03T07:00:55+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究基于扩散模型的单图像风格迁移，属于生成模型与图像风格化方向，与地理空间智能、城市更新或遥感变化检测无直接关联。",
+      "tags": [
+        "风格迁移",
+        "扩散模型",
+        "LoRA",
+        "单图像"
+      ],
+      "summary_zh": "扩散模型是生成建模中最先进的范式之一。借助其发展，越来越多基于扩散模型的风格迁移方法被提出。然而，在这些方法中，需要至少五到十个风格示例的多图像风格迁移方法往往能取得更令人满意的结果。相比之下，单图像方法常常在内容保持不足或风格保真度不够之间挣扎。这极大地限制了从稀缺艺术作品中提取风格，并削弱了其艺术价值。为解决这一问题，作者提出Abstract-LoRA，一种通过在扩散模型中特定U-Net块上进行轻量级LoRA训练来推进单图像风格迁移边界的方法。具体而言，该工作受B-LoRA启发，后者通过训练特定U-Net块实现基本的风格-内容解耦。然而，B-LoRA存在一个关键局限：无法捕捉复杂背景。在B-LoRA基础上，该方法对U-Net块进行了更精细的分析，采用额外的U-Net块以及基于聚类的风格图像抽象，以更好地解耦和平衡风格与内容。大量实验表明，所提方法不仅生成视觉上更和谐、更令人满意的艺术图像，而且在定量上改善了最终输出中风格和内容的保持。",
+      "insight_zh": "该工作表明，在B-LoRA基础上增加U-Net块并采用聚类式风格抽象，可改善单图像风格迁移中风格与内容的平衡；其应用为艺术图像风格化，未涉及地理空间或遥感数据。"
     },
     {
       "key": "arxiv:2603.19574",

@@ -9,12 +9,14 @@
     "arxiv:2609.20200",
     "arxiv:2609.19155",
     "arxiv:2609.20310",
+    "arxiv:2609.20734",
     "arxiv:2609.20625",
     "arxiv:2609.20541",
     "arxiv:2609.20474",
     "arxiv:2609.19504",
     "arxiv:2609.19437",
     "arxiv:2609.20193",
+    "arxiv:2609.20261",
     "arxiv:2609.20213",
     "arxiv:2608.14227",
     "arxiv:2609.19465",
@@ -23,29 +25,27 @@
     "arxiv:2609.20449",
     "arxiv:2609.19472",
     "arxiv:2609.19417",
+    "arxiv:2609.20715",
     "arxiv:2609.20662",
     "arxiv:2609.20543",
     "arxiv:2609.20455",
     "arxiv:2609.20441",
     "arxiv:2609.20217",
-    "arxiv:2609.20235",
-    "arxiv:2603.06813",
-    "arxiv:2602.03128",
-    "arxiv:2510.25595"
+    "arxiv:2609.20235"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:588",
-    "deepseek": "partial:0/180;failed-batches:18"
+    "deepseek": "partial:47/177;failed-batches:13"
   },
-  "updated_at": "2026-09-21T07:58:27.380192+00:00",
+  "updated_at": "2026-09-21T13:21:10.148978+00:00",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 408,
+    "analyzed": 458,
     "high": 3,
-    "medium": 17,
-    "low": 28,
-    "below_threshold": 360
+    "medium": 21,
+    "low": 32,
+    "below_threshold": 402
   },
   "papers": [
     {
@@ -245,6 +245,33 @@
       "insight_zh": "该研究对城市更新和时空数据挖掘有直接参考价值，尤其是零样本跨区域轨迹生成方法，可借鉴于数据稀缺城市的活动模拟与城市更新影响评估。"
     },
     {
+      "key": "arxiv:2609.20734",
+      "title": "On-Demand Attention: Language Models Know When to Recall",
+      "title_zh": "按需注意力：语言模型知道何时该回忆",
+      "url": "https://arxiv.org/abs/2609.20734",
+      "doi": "",
+      "arxiv_id": "2609.20734",
+      "authors": [
+        "Haibo Feng",
+        "Ruiqi Liang",
+        "Hanyang Peng",
+        "Shiqi Yu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T17:24:48+00:00",
+      "score": 62,
+      "reason": "该文研究LLM长上下文推理中的按需注意力机制，与LLM和多智能体研究方向相关，但未涉及地理空间数据或城市更新应用。",
+      "tags": [
+        "LLM推理效率",
+        "长上下文",
+        "注意力机制",
+        "智能体"
+      ],
+      "abstract": "Reasoning and agentic workloads increasingly demand efficient long-context inference. Yet full-attention decoding reads the growing history at every step, regardless of its benefit to the next prediction. We show that a pretrained model's decoding states already contain information predictive of this benefit, before the global read. Building on this finding, we introduce On-Demand Attention (ODA), a local-first decoding method that uses a lightweight recall head to selectively invoke global attention as its predicted benefit changes during generation. ODA trains only the recall head, leaving pretrained weights unchanged and the complete historical KV cache available for future recall. We further implement GPU-side conditional execution in vLLM, translating reduced global reads into practical decoding speedups over full attention at long context lengths. Experiments across Qwen and Gemma models, including hybrid-attention backbones, show that selective recall recovers most of the performance lost under local attention while substantially reducing global reads. These findings support long-context inference in which pretrained models guide their own access to the information they retain.",
+      "summary_zh": "推理和智能体工作负载日益需要高效的长上下文推理。然而，全注意力解码在每一步都会读取不断增长的历史，而不考虑其对下一次预测的收益。作者表明，预训练模型的解码状态在全局读取之前就已包含可预测这种收益的信息。基于此发现，作者提出按需注意力（ODA），一种局部优先的解码方法，使用轻量级回忆头在生成过程中根据预测收益的变化选择性地调用全局注意力。ODA仅训练回忆头，保持预训练权重不变，并保留完整的历史KV缓存以供未来回忆。作者进一步在vLLM中实现GPU端条件执行，将减少的全局读取转化为长上下文长度下相对全注意力的实际解码加速。在Qwen和Gemma模型（包括混合注意力骨干）上的实验表明，选择性回忆恢复了局部注意力下损失的大部分性能，同时大幅减少全局读取。这些发现支持预训练模型自主引导其访问所保留信息的长上下文推理。",
+      "insight_zh": "该工作提示，在需要处理长时序地理空间数据或多轮智能体交互的场景中，可借鉴其选择性全局读取思路来降低推理成本；但其验证限于语言模型基准，尚不涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.20625",
       "title": "Chronicle: Cut-Point Replay for Regression Testing of LLM Agents",
       "title_zh": "Chronicle：面向LLM智能体回归测试的切点回放",
@@ -404,6 +431,32 @@
       "abstract": "Retrieval plug-ins supply a deep forecaster with information its lookback window cannot carry. Published evaluations report consistent gains, and each credits its own mechanism. We show that the benefit belongs instead to the operating point: the relation between window length $S$ and dominant seasonal period $L$, an axis the standard protocol never varies. Stratifying the evaluation by that relation exposes the regime. At $S{=}12$, a simple control that repeats the last observed period beats the six standard backbones, in aggregate, on four of seven benchmarks by $8\\%$ to $44\\%$ of MSE. It beats the strongest plug-in we run on ETTm1 and matches it on ECL. It is worse by up to $25\\%$ on the three datasets whose training-split spectra lack a concentrated, shared period. A controlled synthetic sweep of horizon, period, and window shows the benefit boundary tracks the period (correlation $+0.71$), not the horizon ($-0.23$). A paired control with no phase to recover nearly erases the effect, consistent with phase starvation. Zero-shot pretraining does not escape it: a foundation model trails trained backbones by $22\\%$ to $50\\%$ on the periodic benchmarks. Within our instrument, exact lookup matches graph diffusion: the payoff is consulting the record, not the machinery on top. Two interpretable statistics, a trend test and a staleness rate, predict the sign of the per-cell benefit at $0.76$ accuracy under leave-one-dataset-out evaluation, a suggestive margin over the $0.69$ majority rule, where a 22-feature stack manages $0.57$. We propose no new plug-in. The contribution is the regime map, the protocol that reveals it, and two statistics that screen it before deployment. Code: https://github.com/KurbanIntelligenceLab/retrieval-regime.",
       "summary_zh": "检索插件为深度预测器提供回看窗口无法承载的信息。已发表评估报告一致增益，且各自归因于自身机制。作者表明，增益实际属于运行点：窗口长度 S 与主导季节周期 L 之间的关系，而标准协议从不改变这一维度。按该关系分层评估可揭示适用区间。在 S=12 时，一个重复最后观测周期的简单对照在七个基准中的四个上，总体以 MSE 的 8% 至 44% 优于六个标准骨干模型；在 ETTm1 上优于所运行的最强插件，在 ECL 上与之持平；在训练集频谱缺乏集中共享周期的三个数据集上则最多差 25%。对预测步长、周期和窗口的受控合成扫描显示，增益边界跟随周期（相关性 +0.71），而非步长（-0.23）。一个无可恢复相位的配对对照几乎消除该效应，与相位饥饿一致。零样本预训练无法规避：基础模型在周期性基准上落后训练骨干 22% 至 50%。在其测量框架内，精确查表与图扩散相当：收益来自查阅记录，而非其上机制。两个可解释统计量——趋势检验与陈旧率——在留一数据集评估下以 0.76 准确率预测逐单元增益符号，略高于 0.69 的多数规则，而 22 特征堆叠仅达 0.57。作者不提出新插件，贡献在于区间图、揭示该区间的协议，以及部署前筛选的两个统计量。代码见 https://github.com/KurbanIntelligenceLab/retrieval-regime。",
       "insight_zh": "该工作提示，在时空预测中引入检索或外部记忆时，增益可能高度依赖窗口长度与主导周期的匹配关系，而非模型复杂度；在城市活动等具有强周期性的时空数据上，部署前可用趋势与陈旧率等简单统计量筛查检索是否值得启用。"
+    },
+    {
+      "key": "arxiv:2609.20261",
+      "title": "When AI Agents Commit: Cognitive Serializability Across Data, Evidence, Policy, and Authority",
+      "title_zh": "当AI智能体提交时：跨数据、证据、策略与权限的认知可串行化",
+      "url": "https://arxiv.org/abs/2609.20261",
+      "doi": "",
+      "arxiv_id": "2609.20261",
+      "authors": [
+        "Jun He",
+        "Deying Yu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-07-28T19:36:23+00:00",
+      "score": 62,
+      "reason": "该文研究自主智能体在数据库读取、检索证据、策略、信念与授权等输入变化下的提交一致性，提出认知可串行化与TCT机制，与LLM和多智能体系统的事务一致性、证据与策略协调直接相关，但未涉及地理空间数据或城市更新应用。",
+      "tags": [
+        "LLM与多智能体",
+        "智能体事务处理",
+        "认知可串行化",
+        "数据一致性与证据",
+        "策略与授权"
+      ],
+      "abstract": "Autonomous agents derive concrete mutations from database reads, retrieved evidence, policy, beliefs, and delegated authority. Those inputs may change while reasoning is in progress. Database isolation orders the submitted transaction; agentic transaction processing determines whether a proposal satisfies an executable contract. Neither guarantee establishes a common valid point for the mutation and its derivation inputs unless the contract represents the relevant predicates. Typed dependency tokens distinguish content integrity from applicability, and trusted mediation captures the values exposed to reasoning. Under strict Cognitive Serializability, committed effects admit a serial order and a logical event at which every value exposed to derivation is unchanged. The fences last until the runtime event that realizes the sealed durability domain. The weaker Effect-Compatible Cognitive Admission recertifies an effect against a simultaneously held current dependency vector and current policy without claiming to serialize the original stochastic derivation. TCT combines immutable versioned executable definitions, registry-derived authority plans, sealed envelopes, guard-first commit transactions, post-seal envelope- and witness-bound grants, co-committed receipts, idempotent grant finalization, and receipt-driven epistemic reconciliation. Complete registered footprints and a single growing phase induce an acyclic lock-point order over local guards and incompatible external reservations. The corresponding results give serializability conditions and an observational-equivalence boundary for zero-error soundness and positive progress. A falsification suite tests the implementation obligations: the prototype prevented all injected anomalies and added 3.22 ms mean commit overhead.",
+      "summary_zh": "自主智能体从数据库读取、检索证据、策略、信念和委托权限中推导出具体变更，而这些输入可能在推理过程中发生变化。数据库隔离只能对已提交事务排序，智能体事务处理只能判断提案是否满足可执行契约；除非契约表示相关谓词，否则二者都无法为变更及其推导输入建立共同有效时点。类型化依赖令牌区分内容完整性与适用性，可信中介捕获暴露给推理的值。在严格认知可串行化下，已提交效果允许一个串行顺序，并存在一个逻辑事件，在该事件中暴露给推导的每个值都未改变。这些栅栏持续到实现密封持久域的运行时事件。较弱的“效果兼容认知准入”则针对同时持有的当前依赖向量和当前策略重新认证效果，而不声称对原始随机推导进行串行化。TCT结合了不可变版本化可执行定义、注册表派生的权限计划、密封信封、守卫优先提交事务、密封后信封与见证绑定的授权、共同提交收据、幂等授权最终化以及收据驱动的认知对账。完整的注册足迹和单一增长阶段在本地守卫与不兼容外部预留上诱导出无环锁点顺序。相应结果给出了可串行化条件以及零错误健全性与正向进展的观察等价边界。一个证伪测试套件检验实现义务：原型阻止了所有注入异常，并增加了3.22毫秒平均提交开销。",
+      "insight_zh": "该工作将智能体提交问题形式化为跨数据、证据、策略与权限的一致性契约问题，其类型化依赖令牌、可信中介与认知可串行化概念可为多智能体地理空间推理中的证据溯源、策略约束与提交一致性提供理论参考；但摘要未涉及地理空间数据、城市更新或遥感应用，因此对GIS研究的直接相关性有限。"
     },
     {
       "key": "arxiv:2609.20213",
@@ -619,6 +672,34 @@
       "insight_zh": "该研究显示多信号后期融合可在不构建图结构的情况下提升多模态检索鲁棒性，其融合思路对多源地理空间数据检索有潜在借鉴意义，但论文未验证地理场景。"
     },
     {
+      "key": "arxiv:2609.20715",
+      "title": "Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL",
+      "title_zh": "不要遮蔽环境：观测监督如何改变智能体在强化学习中的探索",
+      "url": "https://arxiv.org/abs/2609.20715",
+      "doi": "",
+      "arxiv_id": "2609.20715",
+      "authors": [
+        "Juzheng Zhang",
+        "Disha Makhija",
+        "Manoj Ghuhan Arivazhagan",
+        "Vinayshekhar Bannihatti Kumar",
+        "Rashmi Gangadharaiah"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T17:11:29+00:00",
+      "score": 55,
+      "reason": "该文研究智能体在RL中的探索与观测监督，与LLM和多智能体研究方向相关，但未涉及地理空间或城市应用。",
+      "tags": [
+        "强化学习",
+        "智能体",
+        "监督微调",
+        "探索策略"
+      ],
+      "abstract": "Agent trajectories record what an agent does and what happens next. Yet standard supervised fine-tuning (SFT) applies loss only to agent-authored action tokens, using environment observations as context but not as prediction targets. We ask whether this convention provides the best initialization for subsequent reinforcement learning. We introduce ActObs, which also supervises the observation tokens already present in each trajectory. Although deployed agents never generate observations, learning to predict them encourages the policy to model action consequences without adding data, parameters, sequence tokens, or forward passes. The methods perform similarly after SFT but diverge after GRPO. On Qwen3-4B, GRPO from ActObs achieves higher pass@k at every evaluated sampling budget than its action-only counterpart on Terminal-Bench 2.0. On Qwen3-8B, it trades some pass@1 reliability for higher pass@k (+3.4 pp at pass@16) and solves more distinct tasks. The advantage extends to cross-domain code editing on aider-polyglot (+4.2 pp at pass@1 at 4B), whose tasks are unseen during SFT and RL. ActObs retains more entropy during RL while requiring less policy movement, leaving the final policy closer to its SFT initialization. Our analysis traces this difference to SFT: action and observation gradients rapidly become orthogonal, while action-only training leaves a large residual observation gradient and degrades environment prediction below the base model. Joint supervision prevents this one-sided specialization, preserving consequence prediction and preparing the policy for downstream exploration.",
+      "summary_zh": "智能体轨迹记录了智能体的行为及其后续结果。然而标准监督微调（SFT）仅对智能体生成的动作token施加损失，将环境观测作为上下文而非预测目标。作者探究这一惯例是否为后续强化学习提供了最佳初始化。作者提出ActObs，同时对每条轨迹中已有的观测token进行监督。尽管部署的智能体从不生成观测，学习预测观测可促使策略建模动作后果，且不增加数据、参数、序列token或前向传播。两种方法在SFT后表现相似，但在GRPO后出现分化。在Qwen3-4B上，ActObs的GRPO在Terminal-Bench 2.0上每个评估采样预算下均取得比仅动作版本更高的pass@k。在Qwen3-8B上，它以部分pass@1可靠性换取更高的pass@k（pass@16时+3.4个百分点）并解决更多不同任务。该优势延伸至aider-polyglot上的跨域代码编辑（4B时pass@1 +4.2个百分点），其任务在SFT和RL中均未见过。ActObs在RL期间保留更多熵，同时需要更少的策略移动，使最终策略更接近其SFT初始化。作者的分析将这一差异追溯到SFT：动作和观测梯度迅速变得正交，而仅动作训练留下较大的残差观测梯度，使环境预测退化至低于基础模型。联合监督防止了这种单侧特化，保留了后果预测能力并为下游探索做好准备。",
+      "insight_zh": "该工作表明监督环境观测可改善智能体的后果建模与探索，这一思路或可迁移至地理空间智能体中让模型学习预测环境状态变化，但论文未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.20662",
       "title": "Earth Surface Immune System for Rapid Monitoring of Unknown Anomalies",
       "title_zh": "",
@@ -773,86 +854,6 @@
       "abstract": "Indoor mobile robots require open-vocabulary scene understanding that grounds natural-language queries in a consistent 3D map. Many existing systems ultimately rely on cosine-similarity retrieval with contrastive image--text encoders, which is efficient but brittle when labels are near-synonymous or multiple similar instances appear. We present Scene-Q, a confidence-aware coarse-to-fine querying framework that normalizes encoder scores with temperature scaling and selectively invokes a reasoning VLM only for low-confidence cases. High-confidence queries are answered by fast retrieval, while ambiguous ones are reranked over a small top-K candidate set using the original multi-view images and instance bounding boxes, enabling context-aware disambiguation at low cost. Scene-Q improves open-vocabulary 3D instance segmentation on ScanNet200 and natural-language 3D instance retrieval on real-world reconstructions, with the largest gains on spatial and relational queries while keeping a substantial fraction of queries on the fast path.",
       "summary_zh": "室内移动机器人需要开放词汇的场景理解，将自然语言查询定位到一致的3D地图中。许多现有系统最终依赖对比图像-文本编码器的余弦相似度检索，这虽然高效，但在标签近义或多个相似实例出现时较为脆弱。作者提出Scene-Q，一种置信度感知的由粗到细查询框架，通过温度缩放归一化编码器分数，并仅对低置信度情况选择性调用推理VLM。高置信度查询由快速检索回答，模糊查询则使用原始多视图图像和实例边界框在小型top-K候选集上重排序，从而以低成本实现上下文感知消歧。Scene-Q在ScanNet200上改进了开放词汇3D实例分割，并在真实世界重建上改进了自然语言3D实例检索，在空间与关系查询上增益最大，同时使相当一部分查询保持在快速路径上。",
       "insight_zh": "置信度感知的由粗到细检索与选择性调用大模型推理的策略，可迁移到遥感或城市三维场景的开放词汇查询中，用于在效率与消歧之间取得平衡；但该文场景为室内机器人，未涉及地理尺度或变化检测。"
-    },
-    {
-      "key": "arxiv:2603.06813",
-      "title": "Reinforcing the World's Edge: A Continual Learning Problem in the Multi-Agent-World Boundary",
-      "title_zh": "强化世界边缘：多智能体-世界边界中的持续学习问题",
-      "url": "https://arxiv.org/abs/2603.06813",
-      "doi": "",
-      "arxiv_id": "2603.06813",
-      "authors": [
-        "Dane Malenfant"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该文探讨多智能体在世界边界环境中的持续学习问题，涉及多智能体系统的适应性和稳定性。与多智能体研究方向相关，但主题较为抽象，与城市应用距离较远。",
-      "tags": [
-        "持续学习",
-        "多智能体",
-        "世界边界",
-        "强化学习"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "本文研究了多智能体系统在与环境边界交互时的持续学习挑战，探讨了智能体在动态边界条件下的学习稳定性和适应性。",
-      "insight_zh": "多智能体在环境边界处的持续学习问题对城市动态系统中的智能体适应性设计具有理论参考意义，尤其是在处理城市边界变化和新兴区域时。"
-    },
-    {
-      "key": "arxiv:2602.03128",
-      "title": "Architectural Design, Not Only Model Intelligence, Governs Multi-Agent LLM Performance",
-      "title_zh": "架构设计而非仅模型智能决定多智能体LLM性能",
-      "url": "https://arxiv.org/abs/2602.03128",
-      "doi": "",
-      "arxiv_id": "2602.03128",
-      "authors": [
-        "Abdelghny Orogat",
-        "Ana Rostam",
-        "Essam Mansour"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该文探讨多智能体LLM性能受架构设计而非仅模型智能影响，与研究者关注的多智能体系统直接相关，但摘要缺失，无法评估具体内容与地理空间应用的关联。",
-      "tags": [
-        "multi-agent LLM",
-        "architecture design",
-        "agent performance"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要缺失。",
-      "insight_zh": "仅从标题推断，该研究可能强调多智能体系统的架构设计对性能的关键作用，这对构建地理空间智能多智能体系统具有潜在指导意义，但需获取全文以确认具体发现。"
-    },
-    {
-      "key": "arxiv:2510.25595",
-      "title": "Communication and Verification in LLM Agents towards Collaboration under Information Asymmetry",
-      "title_zh": "信息不对称下LLM智能体协作的通信与验证",
-      "url": "https://arxiv.org/abs/2510.25595",
-      "doi": "",
-      "arxiv_id": "2510.25595",
-      "authors": [
-        "Run Peng",
-        "Ziqiao Ma",
-        "Amy Pang",
-        "Sikai Li",
-        "Zhang Xi-Jia",
-        "Yingzhuo Yu",
-        "Cristian-Paul Bara",
-        "Joyce Chai"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文研究信息不对称条件下LLM智能体的通信与验证协作机制，与研究中LLM和多智能体方向直接相关，对构建地理空间智能体协作框架有参考价值。",
-      "tags": [
-        "LLM智能体",
-        "多智能体协作",
-        "信息不对称",
-        "通信与验证"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法与结论。",
-      "insight_zh": "从标题推断，该工作可能探讨在信息不对称场景中，LLM智能体如何通过通信与验证机制实现有效协作。其机制设计或可迁移至多智能体驱动的城市更新模拟或地理空间决策，但需查阅全文确认。"
     }
   ]
 }

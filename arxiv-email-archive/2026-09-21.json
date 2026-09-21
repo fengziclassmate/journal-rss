@@ -4,9 +4,12 @@
   "paper_keys": [
     "arxiv:2608.23636",
     "arxiv:2609.19542",
+    "arxiv:2607.03869",
     "arxiv:2609.07729",
     "arxiv:2608.23299",
     "arxiv:2608.24222",
+    "arxiv:2609.21903",
+    "arxiv:2609.21502",
     "arxiv:2605.18359",
     "arxiv:2609.21940",
     "arxiv:2609.21192",
@@ -14,37 +17,35 @@
     "arxiv:2609.21859",
     "arxiv:2609.20889",
     "arxiv:2609.21801",
+    "arxiv:2609.21629",
     "arxiv:2609.21187",
     "arxiv:2609.20975",
     "arxiv:2608.27409",
-    "arxiv:2607.03869",
     "arxiv:2504.06647",
+    "arxiv:2609.21241",
     "arxiv:2609.21164",
     "arxiv:2609.03395",
     "arxiv:2609.21938",
+    "arxiv:2609.21527",
     "arxiv:2609.21190",
     "arxiv:2609.20887",
     "arxiv:2609.19366",
     "arxiv:2609.17921",
-    "arxiv:2602.16313",
-    "arxiv:2504.15776",
-    "arxiv:2601.21151",
-    "arxiv:2602.16864",
-    "arxiv:2607.16894"
+    "arxiv:2602.16313"
   ],
-  "paper_count": 29,
+  "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:453",
-    "deepseek": "partial:210/400;failed-batches:19"
+    "deepseek": "partial:39/189;failed-batches:15"
   },
-  "updated_at": "2026-09-21T07:59:55.998034+00:00",
+  "updated_at": "2026-09-21T13:22:07.282444+00:00",
   "analysis_stats": {
     "total": 453,
-    "analyzed": 263,
+    "analyzed": 303,
     "high": 3,
-    "medium": 10,
-    "low": 20,
-    "below_threshold": 230
+    "medium": 13,
+    "low": 23,
+    "below_threshold": 264
   },
   "papers": [
     {
@@ -98,6 +99,36 @@
       "abstract": "Open-vocabulary segmentation enables rich semantic perception for UAVs, but frame-wise predictions can remain temporally inconsistent across repeated observations and changing viewpoints. We present PerSeM, a training-free persistent semantic memory framework for long-horizon open-vocabulary UAV mapping. PerSeM associates frame-wise semantic observations with persistent world-space voxels and constructs a majority-based semantic memory, which is conservatively refined through history-preserving spatial refinement, trust-aware replay, and context-guided verification. Experiments on the Forest and UAVScenes benchmarks show that persistent 3D memory provides substantial gains in semantic correctness and temporal stability over frame-wise predictions. Beyond this strong persistent-memory baseline, PerSeM provides consistent additional improvements, improving both semantic accuracy and temporal stability across all five evaluated UAVScenes sequences. Analysis using regions identified independently of the final PerSeM predictions further shows that these gains are concentrated in semantically difficult and temporally unstable regions, where majority-based memory is most likely to remain uncertain. These results demonstrate that persistent 3D aggregation provides a strong foundation for long-horizon semantic mapping, while conservative refinement of uncertain memory states can provide additional improvements without retraining or additional neural-network inference.",
       "summary_zh": "开放词汇分割为无人机提供了丰富的语义感知能力，但逐帧预测在重复观测和视角变化下可能保持时间上不一致。作者提出PerSeM，一种无需训练的持久语义记忆框架，用于长时程开放词汇无人机建图。PerSeM将逐帧语义观测关联到持久的世界空间体素，构建基于多数投票的语义记忆，并通过保留历史的空间精化、信任感知重放和上下文引导验证进行保守细化。在Forest和UAVScenes基准上的实验表明，持久三维记忆在语义正确性和时间稳定性上相较逐帧预测有显著提升。除这一强持久记忆基线外，PerSeM还提供一致的额外改进，在全部五个评估的UAVScenes序列上同时提升语义精度和时间稳定性。使用独立于最终PerSeM预测识别的区域进行分析进一步表明，这些增益集中在语义困难和时间不稳定的区域，即基于多数投票的记忆最可能保持不确定的地方。这些结果表明，持久三维聚合为长时程语义建图提供了坚实基础，而对不确定记忆状态的保守细化可在无需重新训练或额外神经网络推理的情况下带来额外改进。",
       "insight_zh": "该框架的持久三维语义记忆与保守细化策略，可为遥感变化检测中的时序一致性问题和多源数据融合中的不确定性处理提供方法借鉴，尤其适用于观测视角多变、语义模糊的城市遥感场景。"
+    },
+    {
+      "key": "arxiv:2607.03869",
+      "title": "GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation",
+      "title_zh": "GeoSelect：面向免训练指代遥感图像分割的空间程序执行",
+      "url": "https://arxiv.org/abs/2607.03869",
+      "doi": "",
+      "arxiv_id": "2607.03869",
+      "authors": [
+        "Yuhang Jiang",
+        "Guohui Deng",
+        "Miaozhong Xu",
+        "Chao Ruan",
+        "Jinling Zhao",
+        "Linsheng Huang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 78,
+      "reason": "该论文聚焦遥感图像的指代分割，提出免训练的空间程序执行方法，与遥感变化检测、地理空间智能方向高度相关，但摘要缺失，无法进一步判断具体方法细节。",
+      "tags": [
+        "遥感图像分割",
+        "指代分割",
+        "空间程序执行",
+        "免训练方法",
+        "地理空间智能"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，无法提供具体摘要信息。",
+      "insight_zh": "从标题推断，该工作可能探索无需训练即可完成指代遥感图像分割的空间程序执行范式，或对遥感图像理解与地理空间智能研究具有参考价值，但摘要缺失，无法确认其具体贡献。"
     },
     {
       "key": "arxiv:2609.07729",
@@ -181,6 +212,67 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "本研究提出一种基于AI的方法，利用嵌入相似性搜索和LLM分类，将数百万荷兰职位档案的非结构化信息映射到统一的ESCO职业分类，并引入数字语义评分来衡量职位名称和技能与数字概念的关联强度。该方法超越了基于关键词的方法，能够分析职业、职业转换、新兴职位词汇和技能数字化程度。研究发现数字化在劳动力市场中分布不均，数字职位语言在管理、专业和ICT职业中最为突出，但在混合业务、营销和自动化相关角色中日益可见。职业转换分析表明向数字工作的流动依赖于路径，技能分析则凸显了数字能力的多维性。",
       "insight_zh": "该研究展示了如何将LLM和嵌入技术应用于大规模社会经济数据，以揭示数字转型的结构性特征，其方法论可迁移至其他领域的地理空间文本分析。"
+    },
+    {
+      "key": "arxiv:2609.21903",
+      "title": "The Role of Radiometric Features in Cross-Site Leaf-Wood Segmentation of LiDAR Point Clouds",
+      "title_zh": "辐射特征在LiDAR点云跨站点叶木分割中的作用",
+      "url": "https://arxiv.org/abs/2609.21903",
+      "doi": "",
+      "arxiv_id": "2609.21903",
+      "authors": [
+        "Roman Kaharlytskyi",
+        "Derek T. Robinson",
+        "Roberto Guglielmi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T15:31:39+00:00",
+      "score": 72,
+      "reason": "该论文研究LiDAR点云的叶木分割，强调辐射特征在跨站点、跨平台泛化中的作用，与多源数据融合和遥感变化检测中的特征工程相关。",
+      "tags": [
+        "LiDAR点云",
+        "叶木分割",
+        "辐射特征",
+        "跨站点泛化",
+        "多源数据融合"
+      ],
+      "abstract": "Leaf-wood segmentation of individual trees from LiDAR point clouds is essential for quantitative structure models (QSMs) used in non-destructive biomass estimation. Existing segmentation methods typically exclude radiometric features (e.g., intensity, return number) to maximize cross-sensor compatibility. We challenge this design choice by evaluating cross-site and cross-platform generalization: training on the public Heidelberg dataset (terrestrial TLS, 1550nm) and testing on a novel dataset from Ontario, Canada (RPA-LS, 905nm). Results show that geometry-only methods - including state-of-the-art deep learning models trained on high-density LiDAR datasets - fail to generalize to the sparse, top-down geometry of aerial scans, achieving F1 scores <= 0.56. Incorporating radiometric features (intensity, return number, number of returns) improves F1 to 0.61, but more critically, increases wood recall by 119% from 0.16 to 0.35. Furthermore, geometry-only approaches often result in fragmented stem and branch components. We find that leveraging radiometric features preserves greater structural connectivity, resulting in more coherent architectures that are better suited for QSM reconstruction. We demonstrate that while geometric patterns are view-dependent and prone to overfitting scan patterns, radiometric features encode physical material properties that generalize across disparate sensors and environments.",
+      "summary_zh": "从LiDAR点云中分割单棵树的叶与木质部分对于定量结构模型（QSM）和非破坏性生物量估计至关重要。现有分割方法通常排除辐射特征（如强度、回波次数）以最大化跨传感器兼容性。本文挑战这一设计选择，评估跨站点和跨平台泛化能力：在公开的Heidelberg数据集（地面TLS，1550nm）上训练，在加拿大安大略省的新数据集（RPA-LS，905nm）上测试。结果表明，仅使用几何特征的方法——包括在高密度LiDAR数据集上训练的最先进深度学习模型——无法泛化到稀疏、俯视的航空扫描几何，F1分数不超过0.56。引入辐射特征（强度、回波次数、回波数量）将F1提升至0.61，更重要的是将木质召回率从0.16提升119%至0.35。此外，仅几何方法常导致树干和树枝组件碎片化。研究发现利用辐射特征可保持更好的结构连通性，产生更适合QSM重建的连贯架构。研究证明，几何模式具有视角依赖性且容易过拟合扫描模式，而辐射特征编码了可跨不同传感器和环境泛化的物理材料属性。",
+      "insight_zh": "该研究提示在多源LiDAR数据融合中，辐射特征可能比纯几何特征具有更强的跨域泛化能力，这对城市三维重建和遥感变化检测中的特征选择具有启发意义。"
+    },
+    {
+      "key": "arxiv:2609.21502",
+      "title": "Adaptive World Memory 3D Foundation Model for Scalable 3D Mapping, Localization, and Rendering",
+      "title_zh": "面向可扩展3D建图、定位与渲染的自适应世界记忆3D基础模型",
+      "url": "https://arxiv.org/abs/2609.21502",
+      "doi": "",
+      "arxiv_id": "2609.21502",
+      "authors": [
+        "Tianchen Deng",
+        "Guole Shen",
+        "Yilin Shen",
+        "Wenhua Wu",
+        "Yilin Fang",
+        "Ziqi Ma",
+        "Tianjun Zhang",
+        "Shenghai Yuan",
+        "Wolfram Burgard",
+        "Hesheng Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T08:53:12+00:00",
+      "score": 70,
+      "reason": "该论文研究3D基础模型用于可扩展的3D建图、定位和渲染，涉及SLAM、高斯渲染和三维重建，与地理空间智能和城市三维建模有较强关联。",
+      "tags": [
+        "3D基础模型",
+        "SLAM",
+        "高斯渲染",
+        "机器人定位",
+        "三维重建"
+      ],
+      "abstract": "Recent 3D foundation models enable generalizable geometric reasoning from RGB images but remain limited in persistent memory, scalability, and renderable scene modeling. We present a memory-centric 3D foundation model for scalable robotic localization, reconstruction, and Gaussian rendering. Its core is an adaptive world memory mechanism that combines transformer-based gated updates with test-time temporal-spatial regulation. Learned gates control recurrent memory propagation, while temporal state evolution and spatial observation-state consistency regulate token-wise updates and forgetting over long image sequences. To support large-scale mapping, we organize memory into local submaps and integrate progressive mapping and tracking, loop closure, and SL(4)-based global refinement to maintain local accuracy and global consistency. A Gaussian reconstruction head decodes memory-enhanced features into renderable primitives, unifying camera pose estimation, dense point-cloud reconstruction, and photorealistic rendering within a single model. Experiments on public benchmarks and self-collected datasets from diverse robotic platforms demonstrate improved trajectory accuracy, reconstruction completeness, and rendering quality over existing 3D foundation reconstruction and SLAM baselines. These results support adaptive memory as a foundation for persistent robotic world modeling. The dataset and code will be made publicly available at ------------------------------------------------------------------------------",
+      "summary_zh": "近期3D基础模型能够从RGB图像进行可泛化的几何推理，但在持久记忆、可扩展性和可渲染场景建模方面仍受限。本文提出一个以记忆为中心的3D基础模型，用于可扩展的机器人定位、重建和高斯渲染。其核心是自适应世界记忆机制，结合基于Transformer的门控更新与测试时时空调节。学习到的门控控制循环记忆传播，而时间状态演化和空间观测-状态一致性调节长图像序列中的逐token更新和遗忘。为支持大规模建图，将记忆组织为局部子图，并集成渐进建图与跟踪、回环检测和基于SL(4)的全局优化，以保持局部精度和全局一致性。高斯重建头将记忆增强特征解码为可渲染基元，在单一模型中统一相机位姿估计、稠密点云重建和逼真渲染。在公开基准和来自多样机器人平台的自采数据集上的实验表明，相比现有3D基础重建和SLAM基线，轨迹精度、重建完整性和渲染质量均有提升。",
+      "insight_zh": "该工作的自适应世界记忆机制和SL(4)全局优化策略，或对城市级三维重建和时空数据挖掘中的长期记忆建模具有方法学借鉴意义。"
     },
     {
       "key": "arxiv:2605.18359",
@@ -388,6 +480,34 @@
       "insight_zh": "候选池决定性能上限这一发现，对时空特征工程中特征库构建有方法论启示，但论文未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.21629",
+      "title": "Extending Decoupled Attention to Dense Prediction and Masked Training for Multi-Channel Images",
+      "title_zh": "将解耦注意力扩展至多通道图像的密集预测与掩码训练",
+      "url": "https://arxiv.org/abs/2609.21629",
+      "doi": "",
+      "arxiv_id": "2609.21629",
+      "authors": [
+        "Umar Marikkar",
+        "Sameed Husain",
+        "Muhammad Awais",
+        "Sara Atito"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T11:11:57+00:00",
+      "score": 55,
+      "reason": "该论文研究多通道图像的视觉Transformer架构改进，涉及卫星影像等密集预测任务，与遥感图像处理和地理空间智能有一定关联。",
+      "tags": [
+        "多通道图像",
+        "视觉Transformer",
+        "密集预测",
+        "掩码训练",
+        "遥感影像"
+      ],
+      "abstract": "Multi-Channel imaging (MCI) data differs fundamentally from natural images, as each channel records a semantically distinct signal rather than a colour band. To adapt vision encoders to MCI data, Multi-Channel Vision Transformers (MC-ViTs) tokenize each channel independently and concatenate the resulting tokens into one sequence, and the channel count is no longer fixed by the architecture. Self-attention is then computed across all channel-patch tokens with no restriction on which channels attend to which, which dilutes the features of individual channels. The Decoupled Vision Transformer (DC-ViT) regulates this by separating updates computed within a channel from updates computed across channels, and by forming a representation per channel before the channels are combined. Its formulation, however, pairs tokens by spatial position, and thus requires the same visible tokens in every channel. Correspondence under independent per-channel masking is recovered by solving a linear assignment between the retained patches of each channel, which allows decoupled attention to be combined with current masked multi-channel training in its standard configuration rather than a restricted one. Across three classification and three segmentation benchmarks spanning fluorescence microscopy, imaging mass cytometry and satellite imaging, including dense prediction at high channel counts, the resulting formulation outperforms the strongest MC-ViT baseline.",
+      "summary_zh": "多通道成像（MCI）数据与自然图像有本质区别，每个通道记录语义上不同的信号而非颜色波段。为将视觉编码器适配MCI数据，多通道视觉Transformer（MC-ViT）独立地对每个通道进行标记化，并将生成的标记拼接为一个序列，通道数不再由架构固定。自注意力在所有通道-块标记上计算，不限制哪些通道关注哪些通道，从而稀释了单个通道的特征。解耦视觉Transformer（DC-ViT）通过分离通道内更新与跨通道更新，并在通道组合前为每个通道形成表示来规范这一过程。然而其公式按空间位置配对标记，因此要求每个通道具有相同的可见标记。本文通过求解各通道保留块之间的线性分配来恢复独立逐通道掩码下的对应关系，使解耦注意力能够以标准配置而非受限配置与当前掩码多通道训练相结合。在涵盖荧光显微镜、成像质谱流式细胞术和卫星成像的三个分类和三个分割基准上，包括高通道数的密集预测，所提公式优于最强的MC-ViT基线。",
+      "insight_zh": "该工作对多通道遥感影像的Transformer建模具有方法学参考价值，尤其是通道解耦注意力机制可能有助于处理多光谱/高光谱遥感数据中的通道异质性问题。"
+    },
+    {
       "key": "arxiv:2609.21187",
       "title": "When Better Turns Do Not Make Better Agents: Diagnosing the Gap Between Next-Turn Metrics and Workflow Success",
       "title_zh": "当更好的轮次并不造就更好的智能体：诊断下一轮指标与工作流成功之间的差距",
@@ -489,33 +609,6 @@
       "insight_zh": "不同融合范式各有优劣，选择取决于具体场景和资源约束，这为多领域智能体能力整合提供了实用指导。"
     },
     {
-      "key": "arxiv:2607.03869",
-      "title": "GeoSelect: Spatial-Program Execution for Training-Free Referring Remote Sensing Image Segmentation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2607.03869",
-      "doi": "",
-      "arxiv_id": "2607.03869",
-      "authors": [
-        "Yuhang Jiang",
-        "Guohui Deng",
-        "Miaozhong Xu",
-        "Chao Ruan",
-        "Jinling Zhao",
-        "Linsheng Huang"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "关键词命中：Remote Sensing、Segmentation",
-      "tags": [
-        "Remote Sensing",
-        "Segmentation"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2504.06647",
       "title": "Uni-PrevPredMap: Extending PrevPredMap to a Unified Framework of Prior-Informed Modeling for Online Vectorized HD Map Construction",
       "title_zh": "Uni-PrevPredMap：将PrevPredMap扩展为在线矢量化高精地图构建的先验信息统一建模框架",
@@ -543,6 +636,38 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题可推断，该研究将PrevPredMap扩展为一个统一的先验信息建模框架，用于在线矢量化高精地图构建。",
       "insight_zh": "摘要缺失，无法确认具体方法细节；但从标题看，该工作涉及先验知识与在线地图构建的结合，对城市更新中的动态地图维护和时空数据融合有潜在启发，但需进一步验证其与GIS方法的兼容性。"
+    },
+    {
+      "key": "arxiv:2609.21241",
+      "title": "Multiclass Semantic Segmentation of Wildland Fire Images Using Context-Aware Centralized Copy-Paste Data Augmentation",
+      "title_zh": "基于上下文感知集中复制粘贴数据增强的野火图像多类语义分割",
+      "url": "https://arxiv.org/abs/2609.21241",
+      "doi": "",
+      "arxiv_id": "2609.21241",
+      "authors": [
+        "Joon Tai Kim",
+        "Nishanth Kunchala",
+        "Vishv Patel",
+        "Tianle Chen",
+        "Ziyu Dong",
+        "Daniel Ospina Acero",
+        "Roger Williams",
+        "and Mrinal Kumar"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T02:34:03+00:00",
+      "score": 50,
+      "reason": "该论文研究野火图像的语义分割与上下文感知数据增强，属于遥感应用范畴，与遥感变化检测和环境监测相关。",
+      "tags": [
+        "语义分割",
+        "野火图像",
+        "数据增强",
+        "上下文感知",
+        "遥感应用"
+      ],
+      "abstract": "Producing accurate annotations for deep learning based image segmentation is both costly and labor intensive. This challenge is especially evident in wildland fire applications, where accurately labeled datasets are scarce due to the difficulty of collecting and annotating dynamic fire scenes. To address this problem, our previous work introduced the Centralized Copy-Paste Data Augmentation (CCPDA) method for semantic segmentation of wildland fire imagery, which generates artificial training samples by randomly pasting fire clusters from source images onto target images. However, random placement can produce contextually unrealistic scenes, such as fire burning on asphalt. In this paper, we present a context-aware strategy designed specifically to improve data quality and realism in small multiclass wildland fire datasets, ensuring that augmented samples remain contextually meaningful. The proposed method restricts fire placement to semantically valid target regions and selects the location whose Ash-Vegetation composition most closely matches the source context. This approach preserves existing fire regions in the target image, prevents unrealistic placements, and maintains contextual accuracy by generating images that resemble real wildland fire scenes. We evaluate the Context-Aware CCPDA strategy through numerical analysis and comparisons with other augmentation methods by a weighted sum-based multi-objective optimization (MOO) approach. The results confirm that the context-aware data augmentation strategy leads to improved segmentation performance and contextual realism, outperforming other augmentation procedures.",
+      "summary_zh": "为基于深度学习的图像分割生成准确标注既昂贵又费力。这在野火应用中尤为明显，由于难以采集和标注动态火灾场景，准确标注的数据集十分稀缺。为解决这一问题，作者此前的工作提出了集中复制粘贴数据增强（CCPDA）方法用于野火图像语义分割，通过将源图像中的火灾簇随机粘贴到目标图像上生成人工训练样本。然而随机放置可能产生上下文不真实的场景，如沥青路面上的火灾。本文提出一种上下文感知策略，专门用于提高小型多类野火数据集的数据质量和真实性，确保增强样本保持上下文意义。所提方法将火灾放置限制在语义有效的目标区域，并选择灰烬-植被组成与源上下文最匹配的位置。该方法保留目标图像中已有的火灾区域，防止不真实放置，并通过生成类似真实野火场景的图像来保持上下文准确性。通过数值分析和与其他增强方法的比较，采用基于加权和的多目标优化（MOO）方法评估上下文感知CCPDA策略。结果证实上下文感知数据增强策略改善了分割性能和上下文真实性，优于其他增强方法。",
+      "insight_zh": "该研究的上下文感知数据增强思路或可迁移至遥感变化检测中标注稀缺场景，尤其是需要保持地物语义合理性的增强样本生成。"
     },
     {
       "key": "arxiv:2609.21164",
@@ -625,6 +750,37 @@
       "abstract": "Transformer-based models have recently achieved strong performance on 3D reconstruction from images, and recent works extend them to process video streams in an online manner for real-world deployment. However, existing methods overlook two key signals when handling long image streams: the importance of each incoming frame and the information saturation of the model's internal state. In this paper, we propose Info3R, a novel information-adaptive test-time training method for the online 3D reconstruction. We introduce an information-aware state update that modulates the state update strength based on the redundancy and informativeness of each incoming frame. To restore the state's plasticity -- its capacity to incorporate new observations -- we propose a dynamic state reset, triggered by the cumulative magnitude of state updates and the model's prediction confidence and accompanied by an anchor-to-world alignment. Our method achieves consistent improvements on camera pose estimation, video depth estimation, and 3D reconstruction, while substantially mitigating the performance degradation in the long sequence evaluation. Notably, on KITTI Odometry, our method achieves on average 1.68x lower ATE than LongStream, demonstrating its robustness on extended outdoor sequences.",
       "summary_zh": "基于Transformer的模型近期在图像三维重建上取得强劲性能，已有工作将其扩展为在线方式处理视频流以用于真实部署。然而，现有方法在处理长图像流时忽略了两个关键信号：每个输入帧的重要性以及模型内部状态的信息饱和度。本文提出Info3R，一种面向在线三维重建的信息自适应测试时训练方法。作者引入信息感知的状态更新，根据每个输入帧的冗余度和信息量调节状态更新强度。为恢复状态的塑性（即纳入新观测的能力），作者提出动态状态重置，由状态更新的累积幅度和模型预测置信度触发，并伴随锚点到世界坐标的对齐。该方法在相机位姿估计、视频深度估计和三维重建上取得一致改进，同时显著缓解长序列评估中的性能退化。值得注意的是，在KITTI Odometry上，该方法平均ATE比LongStream低1.68倍，显示其在长距离户外序列上的鲁棒性。",
       "insight_zh": "信息自适应状态更新与动态重置机制或可为长时序遥感影像的在线处理提供借鉴，但论文未涉及遥感或地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.21527",
+      "title": "OpenMAS-GCom. A Diagnostic Benchmark for Graph-enhanced Multi-Agent Systems",
+      "title_zh": "OpenMAS-GCom：图增强多智能体系统的诊断基准",
+      "url": "https://arxiv.org/abs/2609.21527",
+      "doi": "",
+      "arxiv_id": "2609.21527",
+      "authors": [
+        "Kairui Yang",
+        "Xunkai Li",
+        "Kaixiang Zhang",
+        "Minghao An",
+        "Zekai Chen",
+        "Yuxuan Ba",
+        "Rong-Hua Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T09:17:20+00:00",
+      "score": 45,
+      "reason": "该论文研究图增强多智能体系统的诊断基准，涉及LLM智能体协作，与LLM和多智能体研究方向相关，但应用领域非GIS。",
+      "tags": [
+        "多智能体系统",
+        "图增强",
+        "LLM",
+        "基准测试",
+        "诊断评估"
+      ],
+      "abstract": "Graph-enhanced multi-agent systems (G-MAS) coordinate large language model agents through communication graphs and role assignments, which determine how agents exchange information and divide responsibilities. However, final-score comparisons across systems combine differences in models, communication patterns, roles, and computation costs, making performance differences difficult to attribute to specific communication structures, role assignments, and information flows. To address this evaluation attribution problem, we introduce OpenMAS-GCom, a benchmark for diagnosing how these components affect G-MAS performance through controlled interventions. We represent systems through collaboration units, communication links, shared intermediate information, and execution rules. OpenMAS-GCom compares original systems with versions modified by changing one component while keeping tasks, models, prompts, and budget limits fixed. We rewire communication edges, remove specialist or critic agents, replace intermediate messages with incorrect content, and disable workers during execution. The benchmark evaluates 17 single-agent, ordinary multi-agent, and graph-enhanced configurations on 29 datasets across six domains. We add 400 G-MAS-Complex tasks requiring agents to combine information from multiple documents, resolve conflicting records, and return specified values with source identifiers. Experiments show larger mean losses after specialist removal than after critic removal, different performance degradation under incorrect messages and worker failures despite similar original scores, and different configurations achieving the highest accuracy and accuracy per token on G-MAS-Complex.",
+      "summary_zh": "图增强多智能体系统（G-MAS）通过通信图和角色分配协调大语言模型智能体，这决定了智能体如何交换信息和划分职责。然而跨系统的最终分数比较混合了模型、通信模式、角色和计算成本的差异，使得性能差异难以归因于特定的通信结构、角色分配和信息流。为解决这一评估归因问题，本文提出OpenMAS-GCom，一个通过受控干预诊断这些组件如何影响G-MAS性能的基准。系统通过协作单元、通信链路、共享中间信息和执行规则来表示。OpenMAS-GCom将原始系统与仅改变一个组件而保持任务、模型、提示和预算限制不变的修改版本进行比较。实验重新连接通信边、移除专家或批评者智能体、用错误内容替换中间消息、在执行期间禁用工作者。该基准在六个领域的29个数据集上评估17种单智能体、普通多智能体和图增强配置。新增400个G-MAS-Complex任务，要求智能体组合多文档信息、解决冲突记录并返回带来源标识符的指定值。实验表明专家移除后的平均损失大于批评者移除，错误消息和工作器故障下性能退化不同，不同配置在G-MAS-Complex上达到最高准确率和每token准确率。",
+      "insight_zh": "该基准的诊断方法论或可启发GIS领域中基于LLM的多智能体空间分析系统的评估设计，但其应用场景与城市更新和遥感无直接关联。"
     },
     {
       "key": "arxiv:2609.21190",
@@ -779,125 +935,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究问题、方法或结论。",
       "insight_zh": "从标题推断，该工作可能构建一个评估智能体在多会话相互依赖任务中记忆能力的基准；由于摘要为空，无法确认其任务设计、评估指标或实验结果。"
-    },
-    {
-      "key": "arxiv:2504.15776",
-      "title": "Refining Ground Truth Poses in Autonomous Driving Datasets via Neural Rendering",
-      "title_zh": "通过神经渲染优化自动驾驶数据集中的真值位姿",
-      "url": "https://arxiv.org/abs/2504.15776",
-      "doi": "",
-      "arxiv_id": "2504.15776",
-      "authors": [
-        "Quentin Herau",
-        "Nathan Piasco",
-        "Moussab Bennehar",
-        "Luis Rold\\~ao",
-        "Dzmitry Tsishkou",
-        "Bingbing Liu",
-        "Cyrille Migniot",
-        "Pascal Vasseur",
-        "C\\'edric Demonceaux"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该论文利用神经渲染优化自动驾驶数据集中的真值位姿，涉及多源数据融合与空间定位精度提升，与GIS中的高精度定位、遥感变化检测中的几何校正有方法上的关联，但应用场景偏向自动驾驶。",
-      "tags": [
-        "autonomous driving",
-        "pose refinement",
-        "neural rendering",
-        "ground truth",
-        "dataset"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题可推断，该研究利用神经渲染技术来精化自动驾驶数据集中标注的真值位姿。",
-      "insight_zh": "摘要缺失，无法评估具体技术路线；若该方法能提升位姿精度，可能对遥感影像几何配准或移动测量系统有借鉴意义，但需确认其是否适用于地理空间尺度。"
-    },
-    {
-      "key": "arxiv:2601.21151",
-      "title": "Learning to Advect: A Neural Semi-Lagrangian Architecture for Weather Forecasting",
-      "title_zh": "学习平流：面向天气预报的神经半拉格朗日架构",
-      "url": "https://arxiv.org/abs/2601.21151",
-      "doi": "",
-      "arxiv_id": "2601.21151",
-      "authors": [
-        "Carlos A. Pereira",
-        "St\\'ephane Gaudreault",
-        "Valentin Dallerit",
-        "Christopher Subich",
-        "Shoyon Panday",
-        "Siqi Wei",
-        "Sasa Zhang",
-        "Siddharth Rout",
-        "Eldad Haber",
-        "Raymond J. Spiteri",
-        "David Millard"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该论文提出神经半拉格朗日架构用于天气预报，属于时空建模与遥感/地理空间智能交叉方向，与时空数据挖掘和多源数据融合有较强方法关联。",
-      "tags": [
-        "神经半拉格朗日",
-        "天气预报",
-        "平流学习"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，仅从标题可知该研究设计了一种神经半拉格朗日架构，用于学习平流过程并应用于天气预报。",
-      "insight_zh": "半拉格朗日方法与神经网络的结合可能为地理空间中的时空动态建模（如城市扩张、环境变化）提供新思路，但需验证其在非气象场景的适用性。"
-    },
-    {
-      "key": "arxiv:2602.16864",
-      "title": "Position: A Dynamical Systems Perspective is Needed to Advance Time Series Modeling",
-      "title_zh": "立场：推进时间序列建模需要动力系统视角",
-      "url": "https://arxiv.org/abs/2602.16864",
-      "doi": "",
-      "arxiv_id": "2602.16864",
-      "authors": [
-        "Daniel Durstewitz",
-        "Christoph J\\\"urgen Hemmer",
-        "Florian Hess",
-        "Charlotte Ricarda Doll",
-        "Lukas Eisenmann"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该论文主张从动力系统视角推进时间序列建模，属于时间序列分析的方法论立场文章。与GIS博士研究中'时空数据挖掘'方向有一定关联，因为时空数据挖掘常涉及时间序列建模，但该文不涉及地理空间维度。",
-      "tags": [
-        "时间序列建模",
-        "动力系统",
-        "方法论"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究细节。根据标题推测，该文是一篇立场论文，主张将动力系统理论视角引入时间序列建模以推动该领域发展。",
-      "insight_zh": "若动力系统视角被引入时间序列建模，可能为城市时空数据（如人口流动、土地利用变化等时间序列）的建模提供新的理论框架，但需结合摘要确认其具体主张和方法论建议。"
-    },
-    {
-      "key": "arxiv:2607.16894",
-      "title": "TVGL-CFM:Generating and Forecasting Time-Varying Trajectories of Dynamic Networks with Conditional Flow Matching",
-      "title_zh": "TVGL-CFM：基于条件流匹配的动态网络时变轨迹生成与预测",
-      "url": "https://arxiv.org/abs/2607.16894",
-      "doi": "",
-      "arxiv_id": "2607.16894",
-      "authors": [
-        "Om Roy",
-        "Yashar Moshfeghi",
-        "Keith Malcolm Smith"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 45,
-      "reason": "该论文研究动态网络时变轨迹的生成与预测，涉及时空轨迹建模，与时空数据挖掘和地理空间智能有方法层面的相关性，但未明确涉及城市或遥感场景。",
-      "tags": [
-        "动态网络",
-        "轨迹生成",
-        "条件流匹配",
-        "时空预测"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，仅从标题判断，该工作提出TVGL-CFM方法，利用条件流匹配（Conditional Flow Matching）生成并预测动态网络的时变轨迹。",
-      "insight_zh": "摘要缺失，无法确认其数据与实验；动态网络轨迹建模思路或可借鉴于城市时空数据中的移动轨迹预测，但需进一步核实。"
     }
   ]
 }

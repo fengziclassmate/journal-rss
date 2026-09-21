@@ -2,11 +2,11 @@
   "date": "2026-09-10",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 426,
+    "analyzed": 435,
     "high": 13,
     "medium": 24,
     "low": 35,
-    "below_threshold": 354
+    "below_threshold": 363
   },
   "papers": [
     {
@@ -6042,6 +6042,36 @@
       "insight_zh": "该框架将主题推断与语义解释解耦的思路，或可启发城市文本数据（如政策文件、社交媒体）的主题分析，但需验证其在地理语料上的适用性。"
     },
     {
+      "key": "arxiv:2609.09685",
+      "title": "ALIGN-HOLD: Experience Alignment for Real-Time Hold Control in Large-Scale Ride-Hailing Matching at DiDi",
+      "title_zh": "ALIGN-HOLD：滴滴大规模网约车匹配中面向实时保留控制的经验对齐",
+      "url": "https://arxiv.org/abs/2609.09685",
+      "arxiv_id": "2609.09685",
+      "authors": [
+        "Zuhao Zhang",
+        "Xu Liu",
+        "Kai Wan",
+        "Zihao Lu",
+        "Li Ma",
+        "Shuai Li"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-09T03:59:11+00:00",
+      "score": 22,
+      "reason": "该文提出大规模网约车匹配中的实时保留控制框架，涉及时空供需匹配与强化学习，与城市时空数据挖掘和城市交通系统有一定关联，但未涉及城市更新、遥感变化检测或多源地理空间数据融合。",
+      "tags": [
+        "网约车匹配",
+        "实时控制",
+        "经验对齐",
+        "强化学习",
+        "滴滴"
+      ],
+      "summary_zh": "实时保留控制是大规模网约车系统中的一个高杠杆机制：通过选择性地推迟司机-订单配对，平台可以等待更好的匹配机会，从而改善端到端的乘客-司机体验。诸如EXHOLD之类的现有生产系统从行程完成、取消、等待时间和司机努力的手工组合中学习基于bandit的保留策略。然而，随着市场偏好异质化以及观测到的乘客-司机行为可能稀疏、嘈杂并受动态供需条件影响，设计此类奖励变得越来越困难。我们提出ALIGN-HOLD，一个生产规模的经验对齐框架，从隐式市场偏好中学习保留策略。ALIGN-HOLD从订单轨迹、司机轨迹和同期局部匹配图构建互补偏好对，并使用平衡多视图采样和模型自适应硬偏好采样训练经验奖励模型（RM）。在基于模拟器的策略学习过程中，冻结的RM提供密集的、依赖上下文的奖励，并支持对行为反馈难以归因于匹配质量的低可识别性交互进行无标签过滤。我们在滴滴网约车平台上部署ALIGN-HOLD，并在为期28天的随机A/B实验中评估，每天覆盖约100,000个乘客请求。与已部署的生产策略相比，ALIGN-HOLD在行程完成率和司机收入上取得统计显著提升，同时显著减少司机接单前后的乘客取消。补充的消融、RM诊断和行为分析验证了所提组件的贡献。",
+      "insight_zh": "该工作展示了如何从订单与司机轨迹及局部匹配图构建偏好对，并用奖励模型为实时匹配策略提供密集奖励，从而在真实平台上提升完成率与收入；其利用时空轨迹与图结构进行偏好学习的方法对城市时空数据挖掘与智能交通调度具有参考意义，但原文未涉及城市更新或遥感变化检测。"
+    },
+    {
       "key": "arxiv:2609.10357",
       "title": "A Later Test Set Is Not a New Domain: Pretraining Familiarity Survives a Contamination-Free Hold-Out",
       "title_zh": "更晚的测试集并非新领域：预训练熟悉度在无污染留出集下依然存在",
@@ -8401,37 +8431,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09721",
-      "title": "EFQ-Softmax: Exp-Free Quantization for Softmax",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09721",
-      "arxiv_id": "2609.09721",
-      "authors": [
-        "Haohui Han (1)",
-        "Yuming Wan (2)",
-        "Hongni Wang (3)",
-        "Pengcheng Xie (2)",
-        "Xiaodong Yan (1)",
-        "Runqi You (1)",
-        "Wencong Zhang (1) ((1) Xi'an Jiaotong University",
-        "(2) Huawei Technologies Co.",
-        "Ltd",
-        "(3) Shandong University of Finance",
-        "Economics)"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-09T05:04:33+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09554",
       "title": "BuzzASR: A Swarm of 100+ Monolingual Speech Recognition Models",
       "title_zh": "",
@@ -9313,6 +9312,42 @@
       ],
       "summary_zh": "本文提出KernelGenBench，一个多源、多芯片的基准测试，用于评估LLM在底层内核代码生成方面的能力。",
       "insight_zh": "该基准为评估LLM在特定领域代码生成能力提供了参考，但应用场景与地理空间智能相距较远。"
+    },
+    {
+      "key": "arxiv:2609.09698",
+      "title": "Kernel-Complexity Edge Sanitization for Training-Free Defense against Structural Graph Attacks",
+      "title_zh": "面向结构图攻击的免训练防御：核复杂度边净化",
+      "url": "https://arxiv.org/abs/2609.09698",
+      "arxiv_id": "2609.09698",
+      "authors": [
+        "Yaning Jia",
+        "Shenyang Deng",
+        "Yaoqing Yang",
+        "Chiyu Ma",
+        "Wenxuan Xu",
+        "Soroush Vosoughi"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "Information",
+        "and",
+        "Knowledge",
+        "Management",
+        "(CIKM",
+        "2026)"
+      ],
+      "published": "2026-09-09T04:33:09+00:00",
+      "score": 15,
+      "reason": "该文提出基于图核复杂度的免训练边净化方法以防御图结构攻击，属于图神经网络鲁棒性研究。图方法可迁移至地理空间网络（如交通、城市网络）分析，但原文未涉及地理空间数据或城市应用，关联有限。",
+      "tags": [
+        "图神经网络",
+        "对抗防御",
+        "图核复杂度",
+        "边净化"
+      ],
+      "summary_zh": "图神经网络（GNN）在多种应用中取得了显著成功，但仍极易受到恶意扰动图结构的对抗攻击。现有防御往往缺乏严格的理论基础，依赖特定于攻击的启发式方法，或需要诸如对抗训练之类代价高昂的重训练过程。为解决这些局限，我们提出核复杂度边净化（KCES），一个免训练且模型无关的框架，用于防御结构攻击。KCES建立在图核复杂度（GKC）之上，后者是由图Gram矩阵导出的一个有原则的度量，出现在GNN测试误差的泛化上界中。基于该上界，我们定义了一个边特定的KC分数，通过其引起的GKC变化来量化每条边的结构影响。KCES随后识别并剪除高KC边——在结构攻击下这些边经验上富集了对抗扰动——以减轻其有害影响。KCES计算高效且可扩展，作为轻量级预处理步骤运行，无需重训练，并可与现有防御无缝集成。大量实验表明，KCES在不同攻击设置下持续优于代表性鲁棒基线，并能有效扩展至大规模图。在理论分析和大量实证验证的支持下，KCES为保护GNN提供了一个有原则且高效的框架。我们的代码见https://github.com/karpning/KCScore。",
+      "insight_zh": "该工作将图泛化上界中的图核复杂度转化为边级分数用于剪除对抗扰动边，提供了一种免训练、模型无关的图结构防御思路；其基于图Gram矩阵的度量思想或可启发地理空间网络（如城市交通、基础设施网络）的鲁棒性分析，但原文未涉及地理空间数据或城市更新场景。"
     },
     {
       "key": "arxiv:2609.10266",
@@ -10289,6 +10324,30 @@
       "insight_zh": "由于摘要为空，无法判断其具体贡献；仅从标题推断，该工作可能将时序逻辑与因果图结合用于强化学习，或对多智能体决策与可解释性研究有间接参考价值，但缺乏摘要支撑，不宜作进一步推断。"
     },
     {
+      "key": "arxiv:2609.09774",
+      "title": "Procedural Memory Under Change: Reuse and Interference in Controlled Web Tasks",
+      "title_zh": "变化下的程序性记忆：受控网页任务中的复用与干扰",
+      "url": "https://arxiv.org/abs/2609.09774",
+      "arxiv_id": "2609.09774",
+      "authors": [
+        "Yanze Cao"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-09T06:22:42+00:00",
+      "score": 12,
+      "reason": "该文研究语言智能体在界面变化下的程序性记忆复用与干扰，属于LLM与智能体方向，但任务为受控网页购物决策，未涉及城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合，与研究方向关联较弱。",
+      "tags": [
+        "LLM智能体",
+        "程序性记忆",
+        "界面适配",
+        "受控实验"
+      ],
+      "summary_zh": "程序性记忆使语言智能体能够复用成功的例程，但这种复用预设了存储的例程仍然适用。本文研究当这一预设被刻意打破时会发生什么。研究结合了来自BrowserGym TimeWarp的一个回顾性、人工辅助的界面适配案例，以及在合成购物决策上的受控冻结记忆比较。在已记录的WebShop V1-V6开发路径中，界面特定代码被调整，而单独存储的高层程序未报告发生变化；该阶段不构成自主记忆智能体评估。在受控阶段，一次早期试点产生了一个任务，其中两种记忆条件选择了更昂贵的商品，而无记忆条件选择了参考最小值。后续探测未能确立反复出现的行序或身份绑定模式。随后我们在32个正式单元中测试了四种不匹配形式：数量变化、不同的证据表示、局部与全局优化之间的冲突，以及分布式提升证据。每个单元使用一次温度0生成，采用相同的本地qwen3:8b配置且无自适应重试。在这些配对中，当当前任务证据明确且充分时，为其定义的所有预定义诊断性干扰特征均未出现。该结果识别出一个经过测试的非干扰区域：程序性记忆可以处于不匹配状态而不产生行为上的破坏。它并未确立一般安全性或某种机制。剩余的问题是，哪些附加条件会将适用性不匹配转变为可观察的、由记忆导致的错误。",
+      "insight_zh": "该研究提示，在智能体记忆机制中，存储程序与当前环境的不匹配未必导致行为错误，前提是当前任务证据充分；这为多智能体系统在动态环境（如城市更新场景中的界面或规则变化）下的记忆鲁棒性设计提供了受控实验证据，但作者明确指出未建立一般安全性或机制，也未证明自主记忆智能体评估的有效性。"
+    },
+    {
       "key": "arxiv:2607.00890",
       "title": "MultiSynt/MT: Trillion-Token Multi-Parallel Pre-Training Data Translated Across 36 Languages",
       "title_zh": "MultiSynt/MT：跨36种语言翻译的万亿Token多平行预训练数据",
@@ -10612,6 +10671,40 @@
       ],
       "summary_zh": "当球员需要在共享的度量世界坐标系中定位而不仅仅是相对于自身身体重建时，从单目体育广播中恢复 3D 人体姿态仍然具有挑战性。我们提出 Field Converter，一种几何初始化的时序残差框架，用于从标定的足球广播中估计世界坐标系下的 3D 球员姿态。我们的方法首先利用相机和球场几何通过射线-地面相交初始化球员根节点，然后从姿态、图像、相机和几何线索预测时序残差校正。在比赛不相交的评估序列上，残差细化将根节点误差从仅几何的 49cm 降低到逐帧 MLP 的 14cm 和 TCN 的 10cm，而 Transformer 达到可比的 11cm。最终的世界空间 MPJPE 达到 13.2cm，消融实验表明残差预测明显优于直接全局根节点回归，且时序上下文比具体时序骨干更重要。失败分析进一步指出空中运动是基于地面的几何初始化的主要局限。",
       "insight_zh": "该工作展示了几何先验与时序残差学习结合在度量空间定位中的有效性，其射线-地面相交初始化思路或可类比于地理空间中的地物定位，但应用场景为体育视频，与城市研究关联有限。"
+    },
+    {
+      "key": "arxiv:2609.09721",
+      "title": "EFQ-Softmax: Exp-Free Quantization for Softmax",
+      "title_zh": "EFQ-Softmax：面向Softmax的无指数量化",
+      "url": "https://arxiv.org/abs/2609.09721",
+      "arxiv_id": "2609.09721",
+      "authors": [
+        "Haohui Han (1)",
+        "Yuming Wan (2)",
+        "Hongni Wang (3)",
+        "Pengcheng Xie (2)",
+        "Xiaodong Yan (1)",
+        "Runqi You (1)",
+        "Wencong Zhang (1) ((1) Xi'an Jiaotong University",
+        "(2) Huawei Technologies Co.",
+        "Ltd",
+        "(3) Shandong University of Finance",
+        "Economics)"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-09T05:04:33+00:00",
+      "score": 12,
+      "reason": "该文提出Softmax的无指数低比特量化方法，属于Transformer推理优化，与GIS、城市更新、遥感变化检测等研究方向基本无关。",
+      "tags": [
+        "Softmax量化",
+        "低比特注意力",
+        "Transformer推理",
+        "硬件加速"
+      ],
+      "summary_zh": "低比特注意力通过将QK^T和PV矩阵乘法移至FP8或FP4矩阵引擎来加速Transformer推理。然而，softmax路径通常以更高精度计算移位分数的指数，形成临时概率块，并在低比特PV乘法前对其进行量化。这种先指数后量化的路径在高精度概率产生者与低比特矩阵消费者之间造成不匹配。作者提出EFQ-Softmax（面向Softmax的无指数量化），一种低比特概率生成方法，直接将移位注意力分数映射为块缩放E2M1操作数。对于每个微缩放块，EFQ-Softmax从局部最大值选择仅指数缩放，将移位分数映射到归一化残差域，并使用单一仿射规则生成非负E2M1概率码。所得操作数在P̃V分子更新和P̃1分母更新中一致使用。FlashAttention风格的行最大值更新、历史重缩放、高精度累加和最终归一化保持不变。作者在Qwen3-8B、Qwen3-VL-8B-Instruct和WAN2.2-TI2V-5B上评估端到端质量，并单独在A5向量单元上测量内核级性能。EFQ-Softmax将Qwen3-8B七任务均值从MXFP4的0.6749提升至0.6773，将Qwen3-VL九任务均值从0.7826提升至0.8000。在WAN2.2上，其在VBench下保持与FP16和MXFP4基线相当的时间一致性和视觉质量。在A5向量单元上，EFQ-Softmax在16K至128K序列长度上将融合概率生成内核的向量阶段延迟平均降低40.33%。这些结果表明，直接低比特概率生成可以替代传统路径。",
+      "insight_zh": "该文属于底层模型推理优化，与地理空间智能、城市更新等研究方向无直接关联，仅在大规模时空模型部署时可能作为推理加速的底层技术间接相关。"
     },
     {
       "key": "arxiv:2609.09413",
@@ -10960,6 +11053,31 @@
       ],
       "summary_zh": "摘要内容缺失，仅提供标题。标题表明该研究探讨在预言机可能提供错误信息（说谎）情形下的序列预测问题，属于在线学习理论范畴。",
       "insight_zh": "该理论工作可能对存在噪声标注的时空数据流预测有间接启示，但摘要缺失，且与地理空间智能的应用场景距离较远。"
+    },
+    {
+      "key": "arxiv:2609.09678",
+      "title": "Safe to Stop? Risk-Constrained Stopping for Sequential Clinical Diagnosis Agents",
+      "title_zh": "可以停止了吗？序贯临床诊断智能体的风险约束停止",
+      "url": "https://arxiv.org/abs/2609.09678",
+      "arxiv_id": "2609.09678",
+      "authors": [
+        "Yuexin Wu",
+        "Vasile Rus"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-09T03:46:53+00:00",
+      "score": 10,
+      "reason": "该文研究序贯临床诊断智能体的风险约束停止策略，属于LLM智能体在医疗决策中的应用，与GIS、城市更新、时空数据挖掘及遥感变化检测无直接关联。",
+      "tags": [
+        "临床诊断智能体",
+        "风险约束停止",
+        "序贯决策",
+        "不确定性"
+      ],
+      "summary_zh": "临床诊断智能体不仅必须决定下一步请求哪项检查，还必须决定何时诊断或推迟。现有智能体基准大多在固定或无约束交互后评估准确率，使自主停止的可靠性隐含不明。我们提出Cros，一个风险约束停止层，结合状态级错误排序、在不相交开发划分上的策略设计，以及针对完整序贯策略的选择性诊断错误与最小自主覆盖率的LTT式精确检验。其有限样本保证要求候选族、检验规则及任何随机化在访问校准标签之前被冻结。在一个1,834个回合的MIMIC衍生腹痛基准上，完整排序器取得探索性状态错误AUROC 0.853，而最大类别概率为0.715，主干原生停止分数为0.552。在先前查看过的367回合评估划分上，对冻结的Cros权重进行解析平均得到78.8%覆盖率下16.9%的选择性错误、成本5.57和0.68次检查，而原生停止下为100%覆盖率下30.8%错误、成本8.14和1.53次检查。强制继续是非单调的：仅HPI时错误为28.3%，完整检查后为34.3%。然而，均匀权重混合消融在该查看划分上更便宜，尽管未达到锁定的开发边际，且Cros仅在20次开发重划分中的6次名义上满足联合准则。由于评估标签在早期开发期间已被检查，这些发现提供的是探索性可行性与审计证据，而非确证性安全证书。",
+      "insight_zh": "该研究提出风险约束的停止层以在序贯诊断中平衡覆盖率与选择性错误，并强调有限样本保证需在访问校准标签前冻结候选族与检验规则；这一思路对需要自主决定何时停止采集信息的地理空间智能体（如变化检测中的迭代观测）具有方法上的启发，但原文未涉及地理空间应用，且作者明确其结果为探索性而非确证性。"
     },
     {
       "key": "arxiv:2609.09670",
@@ -11391,6 +11509,34 @@
       "insight_zh": "该工作为 LLM 的部署安全提供了层选择性遗忘思路，其量化鲁棒性分析或对地理空间智能中 LLM 的隐私保护有参考价值，但摘要未涉及地理空间应用。"
     },
     {
+      "key": "arxiv:2609.09768",
+      "title": "Fine-Tuning a KV Cache Concatenation-Aware Model or Recomputing KV Caches? Why Not Both?",
+      "title_zh": "微调KV缓存拼接感知模型还是重计算KV缓存？为何不两者兼得？",
+      "url": "https://arxiv.org/abs/2609.09768",
+      "arxiv_id": "2609.09768",
+      "authors": [
+        "Fumihiko Tachibana",
+        "Daisuke Miyashita",
+        "Jun Deguchi"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-09T06:12:39+00:00",
+      "score": 10,
+      "reason": "该文研究检索增强生成中KV缓存复用与重计算对长上下文响应质量与首token时间的影响，属于LLM推理优化方向，与城市更新、时空数据挖掘、遥感变化检测等地理空间研究无直接关联。",
+      "tags": [
+        "RAG",
+        "KV缓存",
+        "长上下文",
+        "微调"
+      ],
+      "summary_zh": "在检索增强生成（RAG）系统中，大量检索到的文本块被拼接以形成输入上下文，从而使用户能够基于外部知识获得高质量回复。因此，输入上下文长度大幅增加，导致预填充工作量增大，进而延长首token时间（TTFT）。尽管先前复用预计算键值（KV）缓存的工作有效降低了长上下文输入的TTFT，但当输入上下文变得非常长时，响应质量是否得以保持仍不清楚。本文提出一种组合方法：（i）在微调模型时考虑KV缓存拼接，（ii）选择性地重计算一部分KV缓存。通过同时应用这两种技术，我们展示了长上下文输入准确率的提升。在RULER基准上的实验表明，对于124k token的输入，我们的方法相比仅重计算KV缓存的基线将RULER分数提升9.7分。此外，与全注意力相比，TTFT降低了80%。",
+      "insight_zh": "该研究说明在长上下文RAG场景中，单纯复用KV缓存可能损害响应质量，而将拼接感知微调与选择性重计算结合可在提升准确率的同时大幅降低TTFT；这一思路对需要处理长时空上下文的地理空间智能系统具有方法上的参考价值，但原文未涉及地理空间数据或应用。"
+    },
+    {
       "key": "arxiv:2602.13047",
       "title": "False positive bias in AI-powered speech-based cognitive screening for multilingual English speakers in the UK",
       "title_zh": "AI驱动的语音认知筛查在英国多语言英语使用者中的假阳性偏见",
@@ -11760,6 +11906,30 @@
       "insight_zh": "该研究指出教师结构会显著影响学生网络的收敛行为，若将教师-学生范式用于地理空间模型的知识蒸馏，教师模型的几何特性可能同样影响学生模型的可学习性，但该结论目前仅在合成与小型网络设定下得到验证。"
     },
     {
+      "key": "arxiv:2609.09772",
+      "title": "SymbolicLight V2: Hybrid Neuromorphic Architecture and Sparse Execution for Low-Energy Language Inference",
+      "title_zh": "SymbolicLight V2：面向低能耗语言推理的混合神经形态架构与稀疏执行",
+      "url": "https://arxiv.org/abs/2609.09772",
+      "arxiv_id": "2609.09772",
+      "authors": [
+        "Ting Liu"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-09T06:18:49+00:00",
+      "score": 8,
+      "reason": "该文聚焦神经形态语言模型的低能耗推理与稀疏执行，属于LLM推理效率与硬件加速方向，与GIS、城市更新、时空数据挖掘、遥感变化检测及地理空间智能无直接关联。",
+      "tags": [
+        "神经形态计算",
+        "稀疏执行",
+        "低能耗推理",
+        "FPGA"
+      ],
+      "summary_zh": "SymbolicLight V2在混合神经形态语言架构中结合了稀疏事件计算与连续状态处理。它扩展了V1的脉冲门控双路径，在更多投影处加入分级带符号事件以及无softmax的局部注意力。我们在Alveo U50C FPGA上使用数字定点算术、在ARM CPU上使用稀疏整数执行实现了该194M参数模型。在175 MHz下三个相同检查点的FPGA实现中，活动行权重收集与有效状态KV加载将32 token前缀和128输出的解码吞吐量从474.6提升至643.2 tokens/s。估计的整卡能耗从每生成token 0.06087 J降至0.04407 J，降低27.6%。包含预填充的完整请求能耗在三种前缀长度下下降24.4-27.7%。一项独立的空闲拆分将82.8%的整卡能耗归因于加载空闲，这解释了更短token延迟带来的收益。相对于记录的RTX 5090编译FP32基线，整数FPGA执行在短上下文解码期间使用的估计整卡能耗少89.1%；算术精度不同，且GPU基线并非测试的最低能耗配置。在ROCK 5T的四个Cortex-A76核心上，完整请求达到65.4 tokens/s、9.80 W，在适配器交流输入处每生成token为0.151 J。这些结果将事件稀疏性与省略的计算和数据移动联系起来。该机制也支持其他专用V2实现：吞吐量提升幅度大于有功功率提升幅度会降低每生成token的能耗。评估保持部署检查点固定；其质量落后于同等预算的稠密对照，因此结果并未确立同等质量的效率。",
+      "insight_zh": "该工作将事件稀疏性与计算及数据移动的省略直接关联，为低能耗语言推理提供了硬件层面的证据；但其质量落后于同预算稠密对照，说明稀疏与循环架构在能效与质量之间存在权衡，这一权衡思路或可启发地理空间智能中边缘端模型的部署设计，但原文未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.09899",
       "title": "Strangers to Themselves: What Language Models Say About Themselves Is Generic",
       "title_zh": "陌生的自我：语言模型对自身的描述是通用的",
@@ -11961,6 +12131,35 @@
       "insight_zh": "该研究展示单目深度线索与贝叶斯回归结合的低成本视线估计方案，其散焦深度思路与视觉定位方法有微弱方法关联，但与地理空间分析无实质联系。"
     },
     {
+      "key": "arxiv:2609.09691",
+      "title": "Looped GPT-BERT: Trading Parameters for Computation in Small Language Modeling",
+      "title_zh": "Looped GPT-BERT：在小语言建模中以计算换参数",
+      "url": "https://arxiv.org/abs/2609.09691",
+      "arxiv_id": "2609.09691",
+      "authors": [
+        "Tingshuo Fan",
+        "Hongtao Mu",
+        "Tianyu Zhou",
+        "Hansen Liu",
+        "Tao Ji"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-09T04:14:23+00:00",
+      "score": 8,
+      "reason": "该文研究循环参数共享的小语言模型架构，属于LLM架构与训练效率方向，与GIS、城市更新、时空数据挖掘、遥感变化检测无直接关联。",
+      "tags": [
+        "循环架构",
+        "参数共享",
+        "小语言模型",
+        "BabyLM"
+      ],
+      "summary_zh": "当训练数据有限时，增加参数数量并非提升语言模型性能的唯一途径。一个小的参数集在被反复应用时也能提供可比的性能。我们在BabyLM 2026 Strict-small设置下研究Looped GPT-BERT，将GPT-BERT的掩码下一token与因果语言建模目标与深度方向参数共享相结合。我们在一个预处理过的7.48M词英语语料上训练，并比较目标比例、非循环与循环架构以及循环次数。我们最终的4×12模型使用四个物理层进行十二次循环遍历，包含12.18M参数。BabyLM 2026排行榜报告其总体平均为35.42，NLP平均为48.48。与公开的BabyLM 10M Strict-small GPT-2和GPT-BERT基线相比，它在选定的语言学和下游指标（包括BLiMP和GLUE）上以更少参数取得可比性能。循环消融表明，额外的循环计算可以改善训练并在选定语言学任务上保持强劲性能，而在其他任务上较差的表现可能揭示循环设计的一个固有局限：仅使用少量物理层限制了模型的表示空间。",
+      "insight_zh": "该研究证明在数据受限条件下，循环参数共享可以以更少参数取得与更大模型可比的性能，但少量物理层会限制表示空间；这一以计算换参数的权衡对资源受限场景下的地理空间智能模型设计具有潜在参考价值，但原文未涉及地理空间任务或数据。"
+    },
+    {
       "key": "arxiv:2609.09827",
       "title": "Layerwise Tunable Lifting Scheme for the Convolutional Neural Network",
       "title_zh": "面向卷积神经网络的分层可调提升方案",
@@ -11987,6 +12186,30 @@
       ],
       "summary_zh": "本文提出了一类面向双正交小波滤波器组的可调提升方案。我们提出三种提升策略：低通调谐（LS-LayLatt-LP）、高通调谐（LS-LayLatt-HP），以及联合自适应低频与高频分支的顺序提升方案（LS-LayLatt-Sequential）。所有提出的设计均采用基于格点的提升结构，保证在提升函数内任意参数取值下的可逆性与稳定性。我们通过将其集成到 ResNet-18 主干网络中，在 Describable Textures Dataset（DTD）上进行图像分类，以及在 MVTec-AD 数据集的榛子图像和私有 KRC102S 数据集上进行异常检测，对所提方法进行了评估。实验结果表明，在所有评估任务上均取得了一致的性能提升。",
       "insight_zh": "可逆且稳定的可调提升滤波器组或可作为遥感影像多尺度特征提取的候选组件，但该文仅在通用图像分类与异常检测任务上验证，未涉及遥感或地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.09702",
+      "title": "Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation",
+      "title_zh": "决策偏移、标签功能丧失与正确性门控多教师蒸馏中一项无定论的基础审计",
+      "url": "https://arxiv.org/abs/2609.09702",
+      "arxiv_id": "2609.09702",
+      "authors": [
+        "Xiaofei Feng"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-09T04:39:56+00:00",
+      "score": 8,
+      "reason": "该文分析正确性门控多教师蒸馏中的决策偏移与标签功能丧失，属于LLM训练与评估方法研究，与GIS、城市更新、时空数据挖掘及遥感变化检测无直接关联。",
+      "tags": [
+        "多教师蒸馏",
+        "正确性门控",
+        "决策偏移",
+        "可解释性审计"
+      ],
+      "summary_zh": "候选决策的正确性与理由的接地性是不同的目标。我们在一个固定实验中考察正确性门控的多教师蒸馏。八个实验臂共享4,330个来源、一个63.9M参数的学生模型、12,990行优化数据、406次更新、证据输入和一个解码器；七个基于教师的实验臂使用一个固定的三回复池。三个随机种子在267个留出样本上评估。相对于未过滤蒸馏，正确性加权臂在准确率上相差+0.1660（95%观测矩阵区间[0.0670, 0.2455]），五标签宏F1相差+0.1323（[0.0916, 0.1731]），任务定义的条件不安全动作率相差-0.4979（[-0.5926, -0.3686]）。这些偏移并不意味着行为一致更好。源标签SFT具有最高的平均宏F1（0.586）。加权臂在每个种子中Refuted召回均为零，且两个种子将全部167个声明样本都分配为NotEnoughInfo。在一次参考种子上的可用性修正审计中，加权与未过滤输出分别有0/20与1/20证据支持的正例，以及20/20与19/20包含无支持材料的正例。样本非配对，来源重叠未序列化，且修正在自动摘要之后、标注之前进行。因此该审计无法估计共同来源的接地效应，对系统级改进或损害也无定论。硬过滤已实现0.660准确率、0.530宏F1和0.135条件不安全率。所实现的加权臂相对于硬过滤未展示出增量决策收益。这一固定矩阵失败分析显示了伴随标签功能丧失的决策重分配；现有的人工审计未能确立接地性增益。",
+      "insight_zh": "该研究揭示正确性门控蒸馏可能带来决策重分配而非全面改进，且标签功能可能丧失（如Refuted召回为零、大量样本被归为NotEnoughInfo）；这提示在地理空间智能等高风险决策场景中，仅以正确性为门控信号可能掩盖类别功能退化，但原文未涉及地理空间应用，且作者明确其审计无定论。"
     },
     {
       "key": "arxiv:2609.10495",
@@ -12611,25 +12834,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09772",
-      "title": "SymbolicLight V2: Hybrid Neuromorphic Architecture and Sparse Execution for Low-Energy Language Inference",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09772",
-      "arxiv_id": "2609.09772",
-      "authors": [
-        "Ting Liu"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-09T06:18:49+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10017",
       "title": "Structure-Aware Unsupervised Anomaly Detection for Spacecraft Telemetry with Adaptive EVT Thresholding",
       "title_zh": "",
@@ -12822,26 +13026,6 @@
         "cs.AI"
       ],
       "published": "2026-09-09T08:37:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09678",
-      "title": "Safe to Stop? Risk-Constrained Stopping for Sequential Clinical Diagnosis Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09678",
-      "arxiv_id": "2609.09678",
-      "authors": [
-        "Yuexin Wu",
-        "Vasile Rus"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-09T03:46:53+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13048,25 +13232,6 @@
         "cs.LG"
       ],
       "published": "2026-09-09T06:24:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09774",
-      "title": "Procedural Memory Under Change: Reuse and Interference in Controlled Web Tasks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09774",
-      "arxiv_id": "2609.09774",
-      "authors": [
-        "Yanze Cao"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-09T06:22:42+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13304,30 +13469,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09691",
-      "title": "Looped GPT-BERT: Trading Parameters for Computation in Small Language Modeling",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09691",
-      "arxiv_id": "2609.09691",
-      "authors": [
-        "Tingshuo Fan",
-        "Hongtao Mu",
-        "Tianyu Zhou",
-        "Hansen Liu",
-        "Tao Ji"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-09T04:14:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.09790",
       "title": "LogiScope-VQA: Benchmarking Vision-Language Models for Logistics Hazard Identification in Industrial Scenarios",
       "title_zh": "",
@@ -13423,37 +13564,6 @@
         "116038"
       ],
       "published": "2026-09-09T08:45:20+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09698",
-      "title": "Kernel-Complexity Edge Sanitization for Training-Free Defense against Structural Graph Attacks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09698",
-      "arxiv_id": "2609.09698",
-      "authors": [
-        "Yaning Jia",
-        "Shenyang Deng",
-        "Yaoqing Yang",
-        "Chiyu Ma",
-        "Wenxuan Xu",
-        "Soroush Vosoughi"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "Information",
-        "and",
-        "Knowledge",
-        "Management",
-        "(CIKM",
-        "2026)"
-      ],
-      "published": "2026-09-09T04:33:09+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13645,29 +13755,6 @@
         "cs.AI"
       ],
       "published": "2026-09-09T08:53:05+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09768",
-      "title": "Fine-Tuning a KV Cache Concatenation-Aware Model or Recomputing KV Caches? Why Not Both?",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09768",
-      "arxiv_id": "2609.09768",
-      "authors": [
-        "Fumihiko Tachibana",
-        "Daisuke Miyashita",
-        "Jun Deguchi"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-09T06:12:39+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13997,25 +14084,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09702",
-      "title": "Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09702",
-      "arxiv_id": "2609.09702",
-      "authors": [
-        "Xiaofei Feng"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-09T04:39:56+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2608.15407",
       "title": "Chameleon: An Adaptive AI-Driven Honeypot Architecture Using Threat-Calibrated Particle Swarm Optimization and Semantic Deception Rapidly-Exploring Random Trees",
       "title_zh": "Chameleon：一种利用威胁校准粒子群优化与语义欺骗快速探索随机树的自适应AI驱动蜜罐架构",
@@ -14308,30 +14376,6 @@
       ],
       "summary_zh": "哺乳动物大脑的纳米级成像对连接组学至关重要。X射线层析成像能够高通量成像扩展的板状生物样本。然而，倾斜采集几何导致傅里叶空间覆盖不完整，产生信息缺失锥。传统重建方法无法恢复锥内未测量信息，导致伪影扭曲精细脑结构。虽然解决这些问题需要建模 3D 结构，但直接 3D 深度学习方法受限于数据稀缺和计算成本。在此我们提出 LUCID（Laminography with Unified Consistent Diffusion），一个结合多视图扩散先验与投影域数据一致性的框架。LUCID 整合互补的 3D 结构信息，同时强制与层析前向模型严格对齐。在模拟数据集上，LUCID 显著提升空间保真度并恢复缺失的傅里叶分量，优于基线方法。应用于实验层析数据时，LUCID 尽管仅在完全采样的断层体积上训练，仍能稳健泛化，并有效恢复未测量的傅里叶信息。",
       "insight_zh": "该工作展示了扩散先验与物理前向模型数据一致性结合在缺失信息恢复中的潜力，其思路或可类比遥感成像中的缺失数据重建，但应用领域为生物医学纳米成像。"
-    },
-    {
-      "key": "arxiv:2609.09685",
-      "title": "ALIGN-HOLD: Experience Alignment for Real-Time Hold Control in Large-Scale Ride-Hailing Matching at DiDi",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09685",
-      "arxiv_id": "2609.09685",
-      "authors": [
-        "Zuhao Zhang",
-        "Xu Liu",
-        "Kai Wan",
-        "Zihao Lu",
-        "Li Ma",
-        "Shuai Li"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-09T03:59:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.09964",
