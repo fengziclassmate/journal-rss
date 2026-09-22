@@ -9,6 +9,7 @@
     "arxiv:2608.24121",
     "arxiv:2609.18139",
     "arxiv:2609.17925",
+    "arxiv:2609.17882",
     "arxiv:2609.19010",
     "arxiv:2502.14254",
     "arxiv:2609.07939",
@@ -30,22 +31,21 @@
     "arxiv:2609.18317",
     "arxiv:2609.18058",
     "arxiv:2609.17843",
-    "arxiv:2609.17653",
-    "arxiv:2609.18812"
+    "arxiv:2609.17653"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:595",
-    "deepseek": "partial:0/128;failed-batches:13"
+    "deepseek": "partial:17/128;failed-batches:11"
   },
-  "updated_at": "2026-09-21T18:24:28.621104+00:00",
+  "updated_at": "2026-09-22T01:07:40.218628+00:00",
   "analysis_stats": {
     "total": 595,
-    "analyzed": 467,
+    "analyzed": 484,
     "high": 3,
-    "medium": 23,
+    "medium": 24,
     "low": 33,
-    "below_threshold": 408
+    "below_threshold": 424
   },
   "papers": [
     {
@@ -267,6 +267,36 @@
       "abstract": "Large trees disproportionately contribute to biomass storage, habitat structure, and ecosystem functioning. However, their distribution and health dynamics remain poorly quantified at a regional scale. Here, a deep learning model (U-Net-ID) and canopy height models derived from sub-meter aerial imagery from 2020 were used to delineate all individual trees with crown area $\\geq$ 100 m$^2$ across the Sierra Nevada Floristic Province. The model was trained using more than 3.3 million synthetic tree crowns and achieved a median Intersection over Union (IoU) of 0.602 when validated against an independent dataset of 20,273 crowns. A total of 6,515,705 large trees were mapped, occurring across approximately 78.7% of the Sierra Nevada Floristic Province. The spatial distribution of large trees showed associations with elevation, temperature, and precipitation. Using Sentinel-2 time series from 2020 to 2025, tree health dynamics were characterized by extracting spectral trajectories for each crown and applying BFAST breakpoint detection algorithm combined with a disturbance classification framework to identify mortality, disturbance, and recovery trajectories of individual trees. Wildfires, estimated from CAL FIRE fire perimeters, were identified as the dominant driver of large-tree mortality, killing 10% of all large trees in the Sierra Nevada, with mortality strongly concentrated during the extreme 2020-2021 fire seasons.",
       "summary_zh": "大型树木对生物量储存、栖息地结构和生态系统功能贡献巨大，但其区域尺度的分布与健康动态量化不足。本文使用深度学习模型（U-Net-ID）和2020年亚米级航空影像生成的冠层高度模型，在内华达山脉植物区系省 delineate 所有冠面积≥100平方米的个体树木。模型使用超过330万个合成树冠训练，在20273个独立树冠数据集上验证的中位IoU为0.602。共绘制6515705棵大型树木，分布于约78.7%的区域。大型树木空间分布与海拔、温度和降水相关。利用2020至2025年Sentinel-2时间序列，通过提取每个树冠的光谱轨迹并应用BFAST断点检测算法结合扰动分类框架，识别个体树木的死亡、扰动和恢复轨迹。野火被识别为大型树木死亡的主导驱动因素，导致内华达山脉10%的大型树木死亡，死亡集中在2020-2021极端火灾季。",
       "insight_zh": "该文展示了深度学习单木分割与时间序列断点检测结合用于区域尺度森林扰动监测的潜力，其方法框架对城市植被变化检测和遥感时序分析具有直接借鉴意义，尤其是合成数据训练策略和个体尺度扰动归因思路。"
+    },
+    {
+      "key": "arxiv:2609.17882",
+      "title": "Can VLMs Reliably Assess Sidewalk Accessibility Attributes from Pedestrian-Level Imagery?",
+      "title_zh": "VLM能否可靠评估行人视角影像中的人行道无障碍属性？",
+      "url": "https://arxiv.org/abs/2609.17882",
+      "doi": "",
+      "arxiv_id": "2609.17882",
+      "authors": [
+        "Seung Jae Lieu",
+        "Diego Morra",
+        "Chiara Cadoni",
+        "Wonseop Song",
+        "Martina Mazzarello",
+        "Carlo Ratti"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T22:15:04+00:00",
+      "score": 72,
+      "reason": "该文利用行人视角影像和VLM评估人行道无障碍属性，属于城市感知与地理空间智能应用，与城市更新、街景影像分析和多源数据融合方向高度相关，且涉及不确定性量化方法。",
+      "tags": [
+        "人行道无障碍",
+        "视觉语言模型",
+        "共形预测",
+        "城市感知",
+        "街景影像"
+      ],
+      "abstract": "An important component of urban accessibility, particularly for wheelchair users and people with reduced mobility, is sidewalk compliance with measurable requirements. We test whether effective width, longitudinal slope, cross slope, and pavement condition can be assessed reliably from pedestrian-level imagery using vision-language models (VLMs). We present the first application of sampling-based conformal prediction (CP) for VLM-based accessibility assessment. We evaluate four VLMs on 514 sidewalk images from Seoul, South Korea, with field-measured ground truth. Conformal calibration attains the nominal 90% coverage for all models and attributes, but the calibrated regions differ in informativeness. Effective width yields the most informative estimates, with a mean interval half-width of about 1.0 m for the best model. Since every model overestimates width, asymmetric calibration shortens the intervals by up to 33% at unchanged coverage. Longitudinal slope is marginally informative, cross-slope intervals are too wide to resolve regulatory thresholds, and pavement-condition sets degenerate to all five grades (A-E) for three of the four models. Uncalibrated intervals from raw sampling dispersion cover only 17-47% of field-measured values at a nominal 90% level. Among the images with the most self-consistent responses, these intervals miss the field-measured value in up to 96% of cases. Response self-consistency is therefore not evidence of accuracy, and sampling dispersion cannot be interpreted as uncertainty until it has been calibrated against field-measured ground truth. No quantitative attribute reaches the precision required for general compliance assessment, but CP identifies from calibration data alone which attributes can support screening of segments far from the thresholds. We release the annotated pedestrian-level images and their corresponding field-measured attribute values.",
+      "summary_zh": "城市无障碍的重要组成，尤其对轮椅使用者和行动不便者而言，是人行道对可测量要求的合规性。作者测试了有效宽度、纵向坡度、横向坡度和路面状况能否利用视觉语言模型（VLM）从行人视角影像可靠评估。作者提出了首个将基于采样的共形预测（CP）应用于VLM无障碍评估的研究。作者在韩国首尔514张人行道影像上评估四个VLM，并配有实地测量真值。共形校准在所有模型和属性上达到名义90%覆盖率，但校准区域的信息量不同。有效宽度产生最具信息量的估计，最佳模型的平均区间半宽约1.0米。由于所有模型都高估宽度，非对称校准在覆盖率不变的情况下将区间缩短最多33%。纵向坡度信息量有限，横向坡度区间过宽无法分辨监管阈值，路面状况对四个模型中的三个退化为全部五个等级（A-E）。来自原始采样离散度的未校准区间在名义90%水平下仅覆盖17-47%的实地测量值。在响应最自洽的图像中，这些区间在高达96%的案例中错过实地测量值。因此，响应自洽性不是准确性的证据，采样离散度在校准到实地测量真值之前不能解释为不确定性。没有定量属性达到一般合规评估所需的精度，但CP仅从校准数据就能识别哪些属性可以支持对远离阈值的路段进行筛查。",
+      "insight_zh": "该文将共形预测引入VLM城市无障碍评估，揭示了VLM在定量地理空间属性估计中的可靠性边界：自洽性不等于准确性，采样离散度需经实地真值校准。这对城市更新中的街景感知与多源数据融合具有直接方法启示，尤其是非对称校准可提升宽度估计效率，但坡度与路面状况尚不足以支撑合规判断。"
     },
     {
       "key": "arxiv:2609.19010",
@@ -907,33 +937,6 @@
       "abstract": "GUI agents execute long-horizon tasks on dynamic graphical user interfaces, where pop-ups, delayed loads, and relocated widgets routinely invalidate plans fixed before execution. Recent agent-skill frameworks encapsulate reusable procedural knowledge to mitigate this, yet existing skill designs are largely developed without targeting GUI execution dynamics and treat skills as static artifacts produced before deployment rather than living procedural knowledge that improves through it. We argue that what GUI agents need is not better static skills, but skills that can be revised from execution feedback at deployment time, without additional training. We propose \\textbf{EvoSkill-GUI}, a training-free framework in which each skill is a structured multi-file package containing retrieval metadata, executable plans, backup localization, failure-recovery rules, accessibility utilities, and failure cases. EvoSkill-GUI operates through a \\textbf{\\emph{reflect-revise-reuse}} loop: the executor performs instant in-rollout revisions, an isolated critic diagnoses failed trajectories under strict information isolation, and the executor edits specific skill files through a restricted tool interface. Across MobileWorld, AndroidWorld, and OSWorld, three mainstream GUI benchmarks spanning mobile and desktop platforms, EvoSkill-GUI consistently improves multiple base models without any training, with maximum gains of $+16.2\\%$, $+6.0\\%$, and $+10.5\\%$ respectively, and evolved skill libraries continue to benefit related tasks rather than being rebuilt from scratch. Our code is available at https://github.com/ZJU-REAL/EvoSkill-GUI.",
       "summary_zh": "GUI智能体在动态图形界面上执行长时程任务，弹窗、延迟加载和控件移位常常使执行前固定的计划失效。近期的智能体技能框架通过封装可复用的程序性知识来缓解这一问题，但现有技能设计大多未针对GUI执行动态，且将技能视为部署前产生的静态产物，而非通过部署过程不断改进的活的程序性知识。作者认为GUI智能体需要的不是更好的静态技能，而是能在部署时依据执行反馈修订、无需额外训练的技能。他们提出EvoSkill-GUI，一个免训练框架，其中每个技能是一个结构化多文件包，包含检索元数据、可执行计划、备用定位、失败恢复规则、无障碍工具以及失败案例。EvoSkill-GUI通过“反思—修订—复用”循环运作：执行器在rollout中进行即时修订，一个隔离的评论者在严格信息隔离下诊断失败轨迹，执行器则通过受限工具接口编辑特定技能文件。在MobileWorld、AndroidWorld和OSWorld这三个覆盖移动与桌面平台的主流GUI基准上，EvoSkill-GUI在无需任何训练的情况下持续提升多个基础模型，最大增益分别为+16.2%、+6.0%和+10.5%，且演化后的技能库能继续惠及相关任务，而非从零重建。代码已开源。",
       "insight_zh": "该文的“反思—修订—复用”技能演化机制与结构化技能包设计，对构建可自我改进的地理空间分析智能体（如自动化GIS工作流）具有方法迁移价值，但论文未涉及地理空间任务。"
-    },
-    {
-      "key": "arxiv:2609.18812",
-      "title": "WaveTLM: Reliable Time-Series Language Modeling through Task Compilation",
-      "title_zh": "WaveTLM：通过任务编译实现可靠的时间序列语言建模",
-      "url": "https://arxiv.org/abs/2609.18812",
-      "doi": "",
-      "arxiv_id": "2609.18812",
-      "authors": [
-        "Jiahui Chen",
-        "Bingke Zhu",
-        "Hongyu Pan",
-        "Yingying Chen"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-16T15:21:39+00:00",
-      "score": 55,
-      "reason": "该论文提出时间序列语言模型的可靠任务编译框架，与时空数据挖掘中的时间序列建模相关，但未涉及地理空间或城市更新。",
-      "tags": [
-        "时间序列",
-        "语言模型",
-        "任务编译",
-        "可靠性"
-      ],
-      "abstract": "Time-series language models provide a shared natural-language interface across temporal tasks, but plausible text does not guarantee reliable task outputs. Responses may appear reasonable while hallucinating the required object: numerical sequences can violate shape, scale, channel order, or temporal alignment, and textual decisions can fall outside the legal label space. We formulate reliable time-series language modeling, separating task-object reliability from predictive quality. We introduce ExecTS-QA, a contract-grounded benchmark spanning forecasting, imputation, classification, anomaly detection, and waveform analysis. We further propose WaveTLM, a unified compiler-executor model whose task compiler transforms user requests, visible arguments, and wave-grounded evidence into typed task states, while task-native executors construct numerical tensors, legal decisions, or structured records. On ExecTS-QA, a single WaveTLM checkpoint achieves 99.40% contract-valid coverage, compared with 37.83% for the strongest evaluated string-first baseline, while retaining balanced predictive performance across all five task families. Evaluations on SciTS, TSQA, IRTS-ToolBench, and ARFBench provide additional evidence of transfer. The code, construction scripts, and ExecTS-QA dataset will be publicly released upon publication. These results show that task compilation can convert plausible language generation into reliable time-series outputs.",
-      "summary_zh": "时间序列语言模型为跨时间任务提供共享自然语言接口，但看似合理的文本不保证可靠任务输出。响应可能看似合理却幻觉所需对象：数值序列可能违反形状、尺度、通道顺序或时间对齐，文本决策可能超出合法标签空间。作者提出可靠时间序列语言建模，将任务对象可靠性与预测质量分离。引入ExecTS-QA，一个契约基础的基准，涵盖预测、插补、分类、异常检测和波形分析。进一步提出WaveTLM，一个统一编译器-执行器模型，其任务编译器将用户请求、可见参数和波形基础证据转换为类型化任务状态，而任务原生执行器构建数值张量、合法决策或结构化记录。在ExecTS-QA上，单个WaveTLM检查点达到99.40%契约有效覆盖率，而最强评估的字符串优先基线为37.83%，同时在五个任务族中保持平衡预测性能。在SciTS、TSQA、IRTS-ToolBench和ARFBench上的评估提供额外迁移证据。代码、构建脚本和ExecTS-QA数据集将在发表后公开。",
-      "insight_zh": "该工作通过任务编译将语言生成转化为可靠时间序列输出，对时空数据挖掘中时间序列预测的可靠性有参考价值，但摘要未涉及地理空间数据或城市更新应用。"
     }
   ]
 }

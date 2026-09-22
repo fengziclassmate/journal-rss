@@ -2,11 +2,11 @@
   "date": "2026-09-21",
   "analysis_stats": {
     "total": 453,
-    "analyzed": 333,
+    "analyzed": 343,
     "high": 3,
     "medium": 15,
     "low": 24,
-    "below_threshold": 291
+    "below_threshold": 301
   },
   "papers": [
     {
@@ -1991,6 +1991,36 @@
       "insight_zh": "该工作将全景成像与3DGS-SLAM结合，并强调跨视角几何一致性和合成数据评估；对地理空间三维重建有潜在方法借鉴，但摘要未说明其用于城市或遥感场景。"
     },
     {
+      "key": "arxiv:2609.21570",
+      "title": "CityLearn v3: A Configurable Simulation and Evaluation Framework for Realistic Control Studies of Renewable Energy Communities",
+      "title_zh": "CityLearn v3：面向可再生能源社区现实控制研究的可配置仿真与评估框架",
+      "url": "https://arxiv.org/abs/2609.21570",
+      "arxiv_id": "2609.21570",
+      "authors": [
+        "Tiago Fonseca",
+        "Luis Lino Ferreira",
+        "Armando Sousa",
+        "Ava Mohammadi",
+        "Zoltan Nagy"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-09-18T10:01:11+00:00",
+      "score": 35,
+      "reason": "该论文提出CityLearn v3，一个面向可再生能源社区控制研究的可配置仿真与评估框架，涉及建筑、光伏、电池、电动汽车和柔性负荷的协调，与城市更新和城市能源系统研究有较强关联，但主要面向控制研究而非GIS或时空数据挖掘。",
+      "tags": [
+        "能源社区",
+        "仿真框架",
+        "需求响应",
+        "控制",
+        "城市能源"
+      ],
+      "summary_zh": "可再生能源社区（REC）协调建筑、光伏发电、电池、电动汽车和柔性负荷。控制研究常常简化不断变化的参与情况、设备可用性、服务截止时间和数据质量，因此更低的成本或峰值需求可能掩盖未完成的服务或不可行的电力请求。本文提出CityLearn v3，一个在这些条件下用于REC控制研究的可配置仿真与评估框架。它在单一仿真环境中表示不断变化的成员与资产、柔性负荷截止时间、需求响应请求、本地能源共享以及数据或设备故障。建筑和相位功率限制约束可控请求，而声明的时步保持一致的功率-能量核算。该框架记录控制器输入，并区分请求动作与应用于仿真设备的动作。参考控制器、服务与约束感知的性能指标以及轨迹导出支持社区内部和跨社区的比较。软件检查和应用示例考察了服务交付、电气约束、结算和变化场景；一个合成高频轨迹回放说明了聚合如何在不改变年度能量的情况下掩盖短时峰值。总之，这些记录使总体性能能够与服务失败、动作削减和参与者层面结果一起被解读。",
+      "insight_zh": "CityLearn v3为城市能源社区控制研究提供了更贴近现实的仿真与评估环境，其强调服务失败与约束违反的评估视角对城市更新中的基础设施模拟有参考价值，但摘要未涉及地理空间分析方法。"
+    },
+    {
       "key": "arxiv:2608.30044",
       "title": "Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison",
       "title_zh": "基准平衡：用于基准多重性和任务条件评估的语义密度重加权",
@@ -3726,6 +3756,39 @@
       ],
       "summary_zh": "本文提出PAVE方法，通过预测对齐和价值引导的进化机制来优化世界动作策略，旨在提升AI在复杂环境中的决策能力。",
       "insight_zh": "预测对齐与价值引导机制可能为城市更新中的多智能体规划或动态决策提供算法灵感，但需适配地理空间数据的特殊性。"
+    },
+    {
+      "key": "arxiv:2609.21626",
+      "title": "One Prompt Does Not Fit All: Self-Meta-Evolve for Personalized Information Extraction",
+      "title_zh": "一个提示并不适用于所有人：面向个性化信息抽取的自元演化",
+      "url": "https://arxiv.org/abs/2609.21626",
+      "arxiv_id": "2609.21626",
+      "authors": [
+        "Hongliang Li",
+        "Lu Wang",
+        "Yong Xu",
+        "Hanyang Chen",
+        "Zhitao Hou",
+        "Xiaoting Qin",
+        "Song Ge",
+        "Qingwei Lin",
+        "Dongmei Zhang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-18T11:05:41+00:00",
+      "score": 20,
+      "reason": "该论文提出面向个性化信息抽取的自元演化提示优化框架，涉及LLM与用户异质性，与研究中LLM和多智能体方向有一定关联，但不涉及地理空间或城市数据。",
+      "tags": [
+        "LLM",
+        "信息抽取",
+        "提示优化",
+        "个性化",
+        "多智能体"
+      ],
+      "summary_zh": "大语言模型（LLM）越来越多地部署于企业信息抽取（IE）场景，其中同一文档需要针对每个用户以不同方式重新组织。然而，现有提示优化方法依赖针对全局目标优化的单一提示，这与真实工作场所中固有的用户异质性不匹配。我们将企业IE形式化为交互反馈下的按用户提示适配问题，并提出Self-Meta-Evolve，一个分层框架，为每个用户维护专用提示，并通过双环过程持续改进：内环基于人格条件反馈编辑结构化提示，外环通过蒸馏成功的编辑模式来演化元提示本身。为实现可扩展的训练与评估，我们发布了一个由292个模拟企业用户组成的人格驱动IE基准，并配有基于O*NET职业分类的可复现人格生成流程。在该基准上，Self-Meta-Evolve达到74.58%的成功率，比最强的提示优化基线高出13.56个百分点，并在仅两次迭代内达到52.54%。一项有二十位真实专业人士参与的双盲人类研究进一步证实，我们框架适配的提示在71%的成对比较中胜过静态基线。",
+      "insight_zh": "该工作将提示优化从全局单一提示转向按用户自适应，其双环元演化思路可启发面向不同分析任务或不同城市情境的LLM信息抽取流程设计，但摘要未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.20649",
@@ -6476,6 +6539,43 @@
       "insight_zh": "摘要缺失，无法确认其是否涉及遥感或地理空间数据；若该算法可用于线状地物（如道路、河流）的自动提取，则对遥感变化检测有潜在价值，但目前证据不足。"
     },
     {
+      "key": "arxiv:2609.21593",
+      "title": "A benchmark dataset and baseline methods for four-dimensional STEM diffraction patterns",
+      "title_zh": "四维STEM衍射图案的基准数据集与基线方法",
+      "url": "https://arxiv.org/abs/2609.21593",
+      "arxiv_id": "2609.21593",
+      "authors": [
+        "Yuyan Guan",
+        "Haoran Zhang",
+        "Zian Mao",
+        "Antong Yang",
+        "Caifei Li",
+        "Jialong Wang",
+        "Chuying Ouyang",
+        "Hong Wang",
+        "Xiaoqin Zeng",
+        "Yujun Xie"
+      ],
+      "categories": [
+        "cs.CV",
+        "https://doi.org/10.57760/sciencedb.nbsdc.00281.",
+        "Code:",
+        "https://github.com/Gaiya69-rgb/4D-ImageNet"
+      ],
+      "published": "2026-09-18T10:23:28+00:00",
+      "score": 15,
+      "reason": "该论文发布四维STEM衍射图案基准数据集，属于材料科学与显微成像数据，与遥感变化检测或多源数据融合在方法论上有一定相似性（图像表示学习、基准构建），但应用领域不同。",
+      "tags": [
+        "4D-STEM",
+        "基准数据集",
+        "表示学习",
+        "材料科学",
+        "衍射"
+      ],
+      "summary_zh": "四维扫描透射电子显微镜（4D-STEM）在每个电子探针位置记录二维衍射图案，产生空间分辨的倒易空间信息，但数据量大且异质。本文描述4D-ImageNet，一个包含174,000个衍射图案的集合，其中包括从29次采集中选取的145,000个实验图案和29,000个多层切片模拟图案。实验数据涵盖Ag、Au、Au-Ag混合、CoO、Pd和ZnO样品的采集级标签，涉及多个视场、扫描尺寸、相机长度和曝光时间。每次采集贡献5,000个按质量排序的图案，并附有源扫描坐标和采集元数据。集合预测检测器为直射束位置和布拉格盘中心提供模型导出的伪标签，并为每个盘提供置信度分数。模拟数据涵盖13种晶体结构，包括欧拉旋转、倒易空间采样和近似低指数束方向。提供了一个分组混合域掩码重建基准，用于评估跨实验和模拟数据的防泄漏加载与评估。该数据集旨在用于表示学习、盘检测、衍射图案检索、取向分析和模拟到实验研究。",
+      "insight_zh": "该数据集为显微成像领域的表示学习与跨域基准提供了大规模资源，其分组混合域评估设计对遥感领域的跨域变化检测基准构建有方法学借鉴意义，但摘要未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2601.11719",
       "title": "jBOT: Semantic Jet Representation Clustering Emerges from Self-Distillation",
       "title_zh": "jBOT：语义喷注表示聚类从自蒸馏中涌现",
@@ -6640,6 +6740,38 @@
       ],
       "summary_zh": "替换预训练语言模型中的注意力机制是一个兼容性问题：看似合理的替代方案可能会改变后续层所期望的表示。TinyCeNN-LM 提出了一种质量门控的后训练转换框架，使用受 CeNN 启发的细胞循环层，具备有界局部处理、紧凑循环记忆、路由、融合以及接受或回滚验证。研究实现了三种方案：Integrated Memory、MemoryFusion 和 PDelta3-GDN2-CLVR+Local32。严格的 PDelta3 转换仅在表示和 NLL 标准通过固定阈值时才接受某一层。在 SmolLM2-135M 上，第 0-2 层被接受，累计 ΔNLL=+0.01209，而第 3 层尽管 NLL 可接受，但因表示保真度不达标而被拒绝。在 Qwen3.5-0.8B 上，全注意力层 3、7 和 11 被接受，最终 ΔNLL=+0.02073。Integrated Memory 将困惑度保持在 -0.07% 至 +0.93% 之间，同时将总缓存减少最多 6.01%。对 200 个样本的下游健全性检查显示，转换后的 Qwen 版本总体准确率为 28.5%–32.0%。结果表明，应支持保守的、质量门控的结构转换，而非普遍性的注意力替换或加速。",
       "insight_zh": "该工作表明，在预训练语言模型中进行注意力替换时，表示保真度可能比困惑度等单一指标更严格，质量门控与回滚机制有助于降低结构转换带来的兼容性风险。"
+    },
+    {
+      "key": "arxiv:2609.21636",
+      "title": "Steering LLMs Responses Towards Moral Foundations on the Norwegian MFQ-30",
+      "title_zh": "引导LLM响应趋向挪威MFQ-30上的道德基础",
+      "url": "https://arxiv.org/abs/2609.21636",
+      "arxiv_id": "2609.21636",
+      "authors": [
+        "Hans Andersen",
+        "David Dichas"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "(University",
+        "of",
+        "Oslo).",
+        "Proceedings:",
+        "https://www.uio.no/studier/emner/matnat/ifi/IN5550/v26/final-exam/wnnlp2026_proceedings.pdf"
+      ],
+      "published": "2026-09-18T11:25:22+00:00",
+      "score": 12,
+      "reason": "该论文研究LLM在挪威道德基础问卷上的响应引导，属于LLM行为与价值对齐研究，与城市更新或时空数据挖掘无直接关系，但涉及LLM方法，与研究中LLM部分有间接关联。",
+      "tags": [
+        "LLM",
+        "道德基础",
+        "激活引导",
+        "心理测量"
+      ],
+      "summary_zh": "近期研究将人类心理测量问卷应用于大语言模型以引出道德与价值画像，但这些工具是否测量了模型中稳定的东西，或者所得画像能否被移向目标人群，尚不清楚。我们将挪威道德基础问卷（MFQ-30）施测于六个开放权重LLM，并将其基础画像与N=1,282名挪威受访者样本进行比较。我们测试了两种引导干预：提示级人格引导和激活级ActAdd。一半模型在我们的注意力检查下认真作答问卷，另一半则默认输出平坦或集中趋势的答案，这些答案在平均意义上看起来接近人类，但并不跟踪题目内容。一个中立的北欧受访者人格（在撰写时未使用人类样本的任何分布信息）使认真作答的模型在Mahalanobis d²上向挪威均值靠近了44-77%。在固定中间层进行一对ActAdd会压平基础画像，而不是引导单个基础。至少对一个模型而言，同一个人格在改变画像的同时还诱发了基线时缺失的认真作答，这是Peereboom等人（2025）所警告的认知幻影的一个具体实例。",
+      "insight_zh": "该研究提示LLM在心理测量问卷上的表现可能不稳定，人格提示可显著改变其响应分布；对使用LLM进行社会调查或价值建模的研究者而言，需警惕模型响应可能反映的是引导效应而非稳定特质。"
     },
     {
       "key": "arxiv:2609.21953",
@@ -8296,6 +8428,32 @@
       "insight_zh": "该框架揭示模型在常识推理上向人类判断的收敛速度慢于形式推理基准，且模型-人类拟合仍显著低于人类信度上限。"
     },
     {
+      "key": "arxiv:2609.21619",
+      "title": "Calibrating Teacher--Student Discrepancy for On-Policy Distillation",
+      "title_zh": "校准教师-学生差异以实现同策略蒸馏",
+      "url": "https://arxiv.org/abs/2609.21619",
+      "arxiv_id": "2609.21619",
+      "authors": [
+        "Qiangqiang He",
+        "Jin Li",
+        "and MingCai Chen"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-18T11:00:44+00:00",
+      "score": 10,
+      "reason": "该论文研究在策略蒸馏中的教师-学生差异校准，属于LLM训练方法，与研究中LLM方向有间接关联，但不涉及地理空间或城市分析。",
+      "tags": [
+        "知识蒸馏",
+        "LLM",
+        "推理",
+        "训练方法"
+      ],
+      "summary_zh": "同策略蒸馏（OPD）通过学习更强教师与同策略学生之间的词元级差异来改进推理模型。然而，这种差异并不纯粹反映教师与学生之间的能力差距：它还包含源自教师自身的偏差，这些偏差因此被混入观测到的教师-学生差异中，并被标准OPD在训练中不加区分地学习。特权OPD会加剧这一问题，因为特权信息会引发更大的教师侧似然偏移，从而鼓励学生学习更多教师自身的偏差。我们引入校准同策略蒸馏（Cal-OPD），它通过正向和负向特权干预估计教师的自偏差区域，并通过仅保留超出该区域的分量来校准原始的教师-学生差异。在数学推理基准上的实验表明，Cal-OPD仅保留约52-65%的原始教师-学生差异作为优化信号，却在不同模型规模上持续优于标准OPD及其变体。",
+      "insight_zh": "该工作指出同策略蒸馏会混入教师自身偏差，并提出校准方法；对使用蒸馏训练领域LLM的研究者有方法学参考价值，但摘要未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2506.07327",
       "title": "CASE: Contrastive Activation for Class-Sensitive Explanations",
       "title_zh": "CASE：面向类敏感解释的对比激活方法",
@@ -8725,6 +8883,57 @@
       ],
       "summary_zh": "参考引导的扩散风格化旨在从参考图像迁移视觉风格，同时保留文本提示指定的语义。然而，图像条件化常将可迁移的风格线索与参考特定的内容纠缠在一起，导致固有权衡：更强的条件化提高风格保真度但增加内容泄漏，而激进抑制则降低泄漏但牺牲风格表达。纹理主导与几何主导风格在空间组织上的差异进一步加剧了这一挑战。为此，作者提出SafeStyle，一种在冻结扩散模型中进行校准风格残差注入的免训练框架。SafeStyle首先从紧凑校准集中估计风格支持子空间和内容关联子空间，保留其有信息量的重叠并抑制无用内容变化；然后将纯化后的风格证据在自适应空间粒度上传输，并通过显式残差范数预算约束其有效影响。在纹理主导和几何主导风格上的实验表明，SafeStyle达到0.432的DINO风格相似度，同时保持有竞争力的文本对齐。在语义不相交的泄漏压力基准上，它以仅0.8%的语义泄漏达到0.474的DINO风格相似度，展示了风格保真度与参考内容抑制之间的有效平衡。",
       "insight_zh": "该工作提出免训练的风格残差注入与子空间校准思路，可能为生成式模型中的可控条件化提供参考，但与地理空间智能或城市研究的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.21647",
+      "title": "Riemannian Neural Hamiltonian Flows: Geodesic Symplectic Transport and Interpretability",
+      "title_zh": "黎曼神经哈密顿流：测地辛传输与可解释性",
+      "url": "https://arxiv.org/abs/2609.21647",
+      "arxiv_id": "2609.21647",
+      "authors": [
+        "Vincent Souveton"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-18T11:40:24+00:00",
+      "score": 8,
+      "reason": "该论文研究黎曼流形上的神经哈密顿归一化流，属于生成建模与几何深度学习方法，与城市更新、时空数据挖掘、遥感变化检测或多智能体LLM等研究方向没有直接关联。",
+      "tags": [
+        "生成模型",
+        "黎曼几何",
+        "哈密顿流",
+        "可解释性"
+      ],
+      "summary_zh": "哈密顿归一化流因其相空间映射可逆且保体积而成为有吸引力的生成模型，但大多数神经构造是在欧几里得空间中表述的。本文引入黎曼神经哈密顿流，它将黎曼流形的固定动能、学习到的标量势以及显式的测地蛙跳积分器结合在一起。我们的分析解释了如何使学习到的哈密顿量具有可解释性。每个可归一化的势都定义了一个隐式轮廓，位置边缘分布最初沿着该轮廓与基分布之间的相对得分加速。匹配势是可解释的特例，此时隐式轮廓即为目标分布。在各向同性高斯情形下，该机制对应于相空间旋转。局部调和分析将这一结果推广到流形上一般目标的每个模态附近。学习势与匹配势之间的差距是基分布残余记忆与模型偏差之和，当位置基分布被转移到动量时，两个势一致。当前者比目标更宽时即可实现这一点。在欧几里得、双曲和球面空间上的数值实验表明，与黎曼连续归一化流相比，该方法具有有竞争力的样本质量和数值成本，并证实了所学势的可解释性。",
+      "insight_zh": "该工作将哈密顿归一化流扩展到黎曼流形，并给出学习势可解释性的理论刻画；其潜在价值在于为流形上的生成建模提供几何一致的传输机制，但摘要未说明其与地理空间数据的直接联系。"
+    },
+    {
+      "key": "arxiv:2609.21600",
+      "title": "Reducing Barriers to Academic Support: Evaluating a Course-Specific RAG System for Addressing Help-Seeking Disparities in Higher Education",
+      "title_zh": "降低学术支持障碍：评估面向高等教育帮助寻求差异的课程特定RAG系统",
+      "url": "https://arxiv.org/abs/2609.21600",
+      "arxiv_id": "2609.21600",
+      "authors": [
+        "Andy Gray",
+        "Jake Hobbs"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "published": "2026-09-18T10:30:26+00:00",
+      "score": 8,
+      "reason": "该论文评估面向课程特定学术支持的RAG系统，属于教育技术与RAG应用，与GIS研究无直接关联。",
+      "tags": [
+        "RAG",
+        "教育技术",
+        "高等教育",
+        "帮助寻求"
+      ],
+      "summary_zh": "获得学术支持是学生成功的关键决定因素，但学生获得支持的机会并不平等：有些学生乐于向讲师或导师求助，另一些则因焦虑、害怕被评判、对期望不确定或对自身理解缺乏信心而犹豫。这在编程任务具有累积性和高认知负荷的计算教育中可能尤为明显。尽管学生越来越多地转向通用生成式AI工具，但这些工具可能产生不准确、情境化不足或与课程期望不一致的回答。本研究提出并评估Beacon，一个课程特定的检索增强生成（RAG）系统，提供私密、即时、与模块对齐的学术支持。Beacon以经批准的教学材料为基础生成回答，旨在降低求助障碍并鼓励独立学习。采用基于设计的研究方法，Beacon经过迭代开发，并通过混合方法评估，结合问卷和对某高等教育机构学生与教职员工的半结构化访谈。学生形容Beacon的回答与模块内容高度一致，比不受限制的生成式AI工具更可信，并重视其使用伪代码和脚手架式解释而非直接给出答案。尽管参与者对未经核实就信任AI生成回答仍持谨慎态度，但他们将该系统视为在咨询讲师或官方资源之前有价值的第一支持点。研究结果表明，精心设计的课程特定AI系统可能通过占据独立学习与正式支持之间的中间空间来降低学术支持障碍。",
+      "insight_zh": "该研究显示课程特定RAG系统可作为正式支持前的中间层，其设计思路对构建面向特定领域（如城市规划或地理分析）的可信RAG助手有借鉴意义，但摘要未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.21108",
@@ -9301,6 +9510,33 @@
       ],
       "summary_zh": "Best-of-n（BoN）采样是一种简单有效的推理时对齐方法，但硬最大化对奖励与分布偏移之间的权衡只能提供粗糙控制。Soft Best-of-n（Verdun等，2025）提供了更平滑的控制，并收敛到KL正则化奖励最大化对应的最优分布。本文提出ExpBoN，一种基于指数噪声report-noisy-max机制的替代性软BoN方法。它具有精确的有限n分解，从而在全变差、期望奖励以及两个方向的KL散度上实现指数级快速收敛。作者对其收敛性与遗憾行为进行了全面理论分析。进一步将ExpBoN集成到引导式推测推理（GSI）框架（Geuter、Mroueh和AlvarezMelis，2025）中，形成ExpGSI，用于高效的奖励引导LLM对齐。ExpGSI在保持相当精度的同时大幅降低计算成本。在MATH500、MMLU-STEM和Minerva Math上使用Qwen2.5-Math与Qwen3模型族的实验表明，ExpGSI在Qwen2.5-Math各候选预算下将估计计算量减少14%–39%，在Qwen3的n=16时最多减少45%。总体而言，这些结果为指数噪声BoN与高效测试时LLM对齐提供了理论与算法基础。",
       "insight_zh": "该工作为测试时LLM对齐提供了更高效的采样与推测推理方案，若研究涉及LLM智能体推理成本优化，可作为方法参考；但其本身不涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.21595",
+      "title": "Evaluating In-Context Learning and Retrieval Strategies for Devanagari Post-OCR Correction",
+      "title_zh": "评估天城文OCR后处理中的上下文学习与检索策略",
+      "url": "https://arxiv.org/abs/2609.21595",
+      "arxiv_id": "2609.21595",
+      "authors": [
+        "Abhishek Bhandari",
+        "Gaurav Harit"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-09-18T10:26:08+00:00",
+      "score": 8,
+      "reason": "该论文评估LLM在天城文OCR后处理中的上下文学习与检索策略，属于OCR与LLM应用，与GIS研究无直接关联。",
+      "tags": [
+        "OCR后处理",
+        "LLM",
+        "上下文学习",
+        "检索策略",
+        "天城文"
+      ],
+      "summary_zh": "使用大语言模型（LLM）的上下文学习为免训练OCR后处理提供了一条有吸引力的路径，但其对天城文的有效性完全未被探索。我们首次系统评估了LLM（3B-32B）在印地语和马拉地语OCR后处理中的表现，比较了三种上下文示例检索策略：领域随机选择、稠密语义检索，以及我们提出的CharBM25，后者通过OCR输入上的字符n-gram BM25相似度检索示例，以匹配测试句子的共享错误模式。在覆盖五个新闻领域的20,000句基准上，检索策略是校正质量的决定性因素：CharBM25在印地语上比领域随机选择高出2.8-4.0个百分点绝对WER，在马拉地语上高出2.9-3.8个百分点，使用字符三元组时效果持续优于二元组和一元组。规模主导性能：Gemma-3-27B在CharBM25-5下实现印地语55.0%、马拉地语33.3%的WER降低。少样本增益受容量限制：低于8B的模型无法可靠地优于OCR基线，而在马拉地语上最小的模型（3B）退化的句子多于改进的句子。马拉地语在所有规模上都比印地语更难校正，反映了其更大的形态复杂性。这些发现确立了CharBM25作为一种有效、无需GPU的检索策略，以可忽略的计算成本匹配或超过稠密检索，并表明将其与12B以上参数的通用LLM结合，可在无需任务特定微调的情况下实现可靠、免训练的天城文OCR后处理。",
+      "insight_zh": "该研究显示字符n-gram检索在OCR后处理中可媲美稠密检索且计算成本极低，对处理历史地图或扫描地理文档中的文本识别有潜在参考价值，但摘要未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.21268",
@@ -10252,33 +10488,6 @@
       "insight_zh": "摘要为空，无法评估其方法细节；从标题推测其利用隐写技术构造后门以规避现有数据投毒防御机制，属于AI安全攻防研究，对地理空间智能中的数据安全议题仅有极弱的间接关联。"
     },
     {
-      "key": "arxiv:2609.21636",
-      "title": "Steering LLMs Responses Towards Moral Foundations on the Norwegian MFQ-30",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21636",
-      "arxiv_id": "2609.21636",
-      "authors": [
-        "Hans Andersen",
-        "David Dichas"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.CY",
-        "(University",
-        "of",
-        "Oslo).",
-        "Proceedings:",
-        "https://www.uio.no/studier/emner/matnat/ifi/IN5550/v26/final-exam/wnnlp2026_proceedings.pdf"
-      ],
-      "published": "2026-09-18T11:25:22+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.21704",
       "title": "SpecQuant: Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference",
       "title_zh": "",
@@ -10557,25 +10766,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.21647",
-      "title": "Riemannian Neural Hamiltonian Flows: Geodesic Symplectic Transport and Interpretability",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21647",
-      "arxiv_id": "2609.21647",
-      "authors": [
-        "Vincent Souveton"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-18T11:40:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.21827",
       "title": "RheoSampling: Resolving the One-Hot Dilemma in Stochastic Dynamic-Tree Speculative Decoding",
       "title_zh": "",
@@ -10695,28 +10885,6 @@
         "cs.CV"
       ],
       "published": "2026-09-18T09:11:55+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.21600",
-      "title": "Reducing Barriers to Academic Support: Evaluating a Course-Specific RAG System for Addressing Help-Seeking Disparities in Higher Education",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21600",
-      "arxiv_id": "2609.21600",
-      "authors": [
-        "Andy Gray",
-        "Jake Hobbs"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CY",
-        "cs.HC"
-      ],
-      "published": "2026-09-18T10:30:26+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -11315,33 +11483,6 @@
       "insight_zh": "该论文与GIS研究领域无直接关联，但其混合专家架构和离线策略优化方法或对多智能体系统研究有间接方法学参考。"
     },
     {
-      "key": "arxiv:2609.21626",
-      "title": "One Prompt Does Not Fit All: Self-Meta-Evolve for Personalized Information Extraction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21626",
-      "arxiv_id": "2609.21626",
-      "authors": [
-        "Hongliang Li",
-        "Lu Wang",
-        "Yong Xu",
-        "Hanyang Chen",
-        "Zhitao Hou",
-        "Xiaoting Qin",
-        "Song Ge",
-        "Qingwei Lin",
-        "Dongmei Zhang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-18T11:05:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.21561",
       "title": "On Repulsive and Attractive Teachers: Separating Correctness from Behavior in Self-Distillation",
       "title_zh": "",
@@ -11871,7 +12012,7 @@
     {
       "key": "arxiv:2609.21624",
       "title": "Learned Parametric Emotion Editing: Real-Time Affective Filtering for On-Device Social Media Video",
-      "title_zh": "",
+      "title_zh": "学习式参数化情感编辑：面向端侧社交媒体视频的实时情感过滤",
       "url": "https://arxiv.org/abs/2609.21624",
       "arxiv_id": "2609.21624",
       "authors": [
@@ -11885,10 +12026,15 @@
       ],
       "published": "2026-09-18T11:04:08+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究移动端社交媒体视频的实时情感过滤，属于情感计算与端侧推理，与GIS、城市更新或遥感无直接关联。",
+      "tags": [
+        "情感计算",
+        "移动端推理",
+        "视频过滤",
+        "用户研究"
+      ],
+      "summary_zh": "问题性互联网使用影响着越来越多的人群，然而常见的干预手段（如时间限制、屏蔽、强制休息）具有强制性且容易被规避。我们探索一种限制性更小的替代方案：调节视觉内容的情感强度。已有工作表明优化可以引导图像的情感内容，但其逐图像优化成本使其难以实时部署。我们转而学习一个能在单次前向传播中预测该变换的模型：以MobileNetV4为骨干，结合基于FiLM的情感条件，输出可微全局变换的参数。这将此前的迭代优化（每张图像80秒）替换为单次3.7毫秒的前向传播。在一项用户研究（N=54）中，该模型相对于未编辑图像降低了观看者报告的唤醒度，效果与灰度健康过滤相当，同时在感知质量上评分更高。我们将该模型集成到一个Android应用中，可实时适配Instagram视频，在三星Galaxy S23上保持60帧每秒。",
+      "insight_zh": "该研究展示了端侧实时情感编辑的可行性，其轻量化条件生成思路对移动端地理可视化或实时数据呈现有间接参考价值，但摘要未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.21379",
@@ -12129,27 +12275,6 @@
         "2026)"
       ],
       "published": "2026-09-18T14:29:31+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.21595",
-      "title": "Evaluating In-Context Learning and Retrieval Strategies for Devanagari Post-OCR Correction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21595",
-      "arxiv_id": "2609.21595",
-      "authors": [
-        "Abhishek Bhandari",
-        "Gaurav Harit"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.CV"
-      ],
-      "published": "2026-09-18T10:26:08+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12580,51 +12705,6 @@
       "insight_zh": "摘要为空，无法判断其具体方法；从标题推测其采用参数高效的循环精炼策略进行音频深度伪造检测，属于多媒体取证方向，对地理空间智能研究无直接借鉴意义。"
     },
     {
-      "key": "arxiv:2609.21570",
-      "title": "CityLearn v3: A Configurable Simulation and Evaluation Framework for Realistic Control Studies of Renewable Energy Communities",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21570",
-      "arxiv_id": "2609.21570",
-      "authors": [
-        "Tiago Fonseca",
-        "Luis Lino Ferreira",
-        "Armando Sousa",
-        "Ava Mohammadi",
-        "Zoltan Nagy"
-      ],
-      "categories": [
-        "cs.MA",
-        "cs.AI"
-      ],
-      "published": "2026-09-18T10:01:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.21619",
-      "title": "Calibrating Teacher--Student Discrepancy for On-Policy Distillation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21619",
-      "arxiv_id": "2609.21619",
-      "authors": [
-        "Qiangqiang He",
-        "Jin Li",
-        "and MingCai Chen"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-18T11:00:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22012",
       "title": "COMPLEX: A Closed-Form Certified Embedding of Multiparameter Persistence Modules",
       "title_zh": "",
@@ -12884,7 +12964,7 @@
     {
       "key": "arxiv:2609.21599",
       "title": "Beyond Accuracy: Centroid-Guided Contrastive Loss for Structured Fraudulent Job Posting Detection",
-      "title_zh": "",
+      "title_zh": "超越准确率：面向结构化欺诈招聘帖检测的质心引导对比损失",
       "url": "https://arxiv.org/abs/2609.21599",
       "arxiv_id": "2609.21599",
       "authors": [
@@ -12908,10 +12988,15 @@
       ],
       "published": "2026-09-18T10:30:12+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文提出用于欺诈招聘帖检测的质心引导对比损失，属于文本分类与表示学习，与GIS研究无直接关联。",
+      "tags": [
+        "对比学习",
+        "欺诈检测",
+        "表示学习",
+        "文本分类"
+      ],
+      "summary_zh": "欺诈招聘帖检测旨在识别因虚假内容、误导信息或负面意图而受到污染的招聘广告，这些问题扰乱了求职者与雇主的在线生态。现有研究缺乏同时实现高准确率和有意义的潜在空间表示结构的方法，而这些结构能够捕捉虚假帖子之间的细微差别。为此，我们提出质心引导对比损失（CGCL），一种将分类与密集聚类统一起来的损失函数，通过质心驱动的top-k推拉机制持续重塑潜在空间。CGCL的互补性使模型能够同时施加准确的决策边界并保持高聚类紧致度，有效捕捉类别可分性和潜在结构。大量实验表明，我们的方法在公开基准数据集EMSCAD上取得了最先进（SOTA）性能。",
+      "insight_zh": "该工作将对比学习与聚类结构结合以提升分类的潜在空间质量，其思路对地理空间文本分类或异常检测有间接方法学参考，但摘要未涉及地理数据。"
     },
     {
       "key": "arxiv:2609.21490",
@@ -13216,37 +13301,6 @@
       ],
       "summary_zh": "认知诊断从作答日志推断学生的概念掌握程度。然而，学生作答不仅由掌握程度决定：情感、投入度和疲劳等非认知因素也会影响表现。情感认知诊断因此通过纳入情感状态扩展了传统认知诊断。现有方法常假设认知诊断骨干已解释能力、题目和概念效应，因此剩余误差主要归因于情感。作者认为这一假设在真实教育数据中可能不充分：题目校准偏差、系统性概念偏差、个性化学生-概念偏差以及潜在学生-题目匹配可形成稳定的认知残差。若无显式建模路径，这些残差可能泄漏到情感表示中，产生情感污染。为此，作者提出面向情感认知诊断的能力-残差解耦框架。该模型首先通过学生、题目、概念、学生-概念和低秩学生-题目组件捕捉未建模的认知残差，然后使用情感模块调节猜测/失误效应。Q矩阵约束的概念残差注意力机制自适应聚合仅与题目相关的概念残差。在ASSIST2017、ASSIST2012、ASSIST2009和Junyi上使用六种认知诊断骨干的实验显示，在报告的比较中响应预测有所提升，且在情感标签可用时情感对齐普遍改善。消融研究、泄漏探测、主成分分析可视化、长尾分析和案例研究进一步表明，能力残差吸收了稳定的认知偏差，减少了情感中的认知污染。",
       "insight_zh": "该工作提出能力-残差解耦以缓解情感污染，其解耦建模思路或可迁移至其他多因素预测任务，但与地理空间数据的直接关联较弱。"
-    },
-    {
-      "key": "arxiv:2609.21593",
-      "title": "A benchmark dataset and baseline methods for four-dimensional STEM diffraction patterns",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21593",
-      "arxiv_id": "2609.21593",
-      "authors": [
-        "Yuyan Guan",
-        "Haoran Zhang",
-        "Zian Mao",
-        "Antong Yang",
-        "Caifei Li",
-        "Jialong Wang",
-        "Chuying Ouyang",
-        "Hong Wang",
-        "Xiaoqin Zeng",
-        "Yujun Xie"
-      ],
-      "categories": [
-        "cs.CV",
-        "https://doi.org/10.57760/sciencedb.nbsdc.00281.",
-        "Code:",
-        "https://github.com/Gaiya69-rgb/4D-ImageNet"
-      ],
-      "published": "2026-09-18T10:23:28+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2608.25285",

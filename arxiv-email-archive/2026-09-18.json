@@ -6,6 +6,7 @@
     "arxiv:2607.14112",
     "arxiv:2609.19911",
     "arxiv:2609.20026",
+    "arxiv:2609.19913",
     "arxiv:2609.20200",
     "arxiv:2609.19155",
     "arxiv:2609.20310",
@@ -30,22 +31,21 @@
     "arxiv:2609.20543",
     "arxiv:2609.20455",
     "arxiv:2609.20441",
-    "arxiv:2609.20217",
-    "arxiv:2609.20235"
+    "arxiv:2609.19848"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:588",
-    "deepseek": "partial:0/130;failed-batches:13"
+    "deepseek": "partial:30/129;failed-batches:10"
   },
-  "updated_at": "2026-09-21T18:25:06.782478+00:00",
+  "updated_at": "2026-09-22T01:08:20.687987+00:00",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 458,
+    "analyzed": 489,
     "high": 3,
-    "medium": 21,
-    "low": 32,
-    "below_threshold": 402
+    "medium": 22,
+    "low": 34,
+    "below_threshold": 430
   },
   "papers": [
     {
@@ -163,6 +163,35 @@
       "abstract": "Urban traffic forecasting often relies on information distributed across stakeholders who may be unable to share raw data due to privacy or commercial constraints, motivating federated spatial-temporal approaches. In such federated settings, each client observes traffic over a distinct sensor subgraph with its own spatial topology and temporal dynamics, leading to significant heterogeneity across clients. Existing federated spatial-temporal methods typically rely on model parameter aggregation and provide limited mechanisms for recovering spatial dependencies across client boundaries. This introduces two key limitations. Specifically, parameter aggregation across heterogeneous graph domains tends to dilute client-specific representations, while road network partitioning breaks the propagation of traffic dynamics across client boundaries. To address these challenges, we propose FedeRICo, a federated traffic forecasting framework that combines gradient-level collaboration with boundary-aware residual communication. FedeRICo employs a dual-branch forecasting architecture in which a globally guided branch captures transferable forecasting structure, while a private residual branch preserves client-specific corrections and incorporates boundary residual signals. The global branch is coordinated through gradient alignment across all clients, enabling collaborative optimisation without destructive parameter interference. To recover cross-client spatial dependencies, boundary messages are extracted through a trend-residual decomposition that suppresses periodic structure and communicates only transient spatial-temporal residual signals between physically adjacent clients. Experiments across four real-world traffic forecasting benchmarks demonstrate that FedeRICo consistently outperforms state-of-the-art federated spatial-temporal baselines while maintaining competitive training runtime.",
       "summary_zh": "城市交通预测通常依赖分布在多个利益相关方之间的信息，而这些方可能因隐私或商业约束无法共享原始数据，这推动了联邦时空方法的发展。在此类联邦设定中，每个客户端观测不同传感器子图上的交通，具有自己的空间拓扑和时间动态，导致客户端间显著异质性。现有联邦时空方法通常依赖模型参数聚合，恢复跨客户端边界空间依赖的机制有限。这带来两个关键局限：跨异质图域的参数聚合倾向于稀释客户端特定表示，而路网划分破坏了交通动态跨客户端边界的传播。为应对这些挑战，作者提出FedeRICo，一种联邦交通预测框架，结合梯度级协作与边界感知残差通信。FedeRICo采用双分支预测架构，其中全局引导分支捕获可迁移的预测结构，而私有残差分支保留客户端特定修正并纳入边界残差信号。全局分支通过所有客户端间的梯度对齐进行协调，实现无破坏性参数干扰的协作优化。为恢复跨客户端空间依赖，边界消息通过趋势—残差分解提取，抑制周期性结构并仅在物理相邻客户端之间传递瞬态时空残差信号。在四个真实世界交通预测基准上的实验表明，FedeRICo持续优于……",
       "insight_zh": "该文指出联邦时空预测中参数聚合会稀释客户端特征且路网划分会切断跨边界传播，并用梯度对齐加边界残差通信来缓解；这对城市多源数据融合和隐私约束下的时空建模具有直接方法学参考价值。"
+    },
+    {
+      "key": "arxiv:2609.19913",
+      "title": "Digital Twins for Opinion Dynamics: A Generative LLM Framework for Social Networks",
+      "title_zh": "观点动力学的数字孪生：面向社交网络的生成式LLM框架",
+      "url": "https://arxiv.org/abs/2609.19913",
+      "doi": "",
+      "arxiv_id": "2609.19913",
+      "authors": [
+        "Omran Berjawi",
+        "Giuseppe Fenza",
+        "Rida Khatoun",
+        "Sherali Zeadally"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-17T08:53:47+00:00",
+      "score": 72,
+      "reason": "该论文提出基于数字孪生概念的生成式LLM框架，克隆真实Twitter网络并赋予智能体属性以模拟观点动力学，与研究中LLM和多智能体、时空数据挖掘方向高度相关，但地理空间维度较弱。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "社会网络",
+        "数字孪生",
+        "观点动力学",
+        "时空数据挖掘"
+      ],
+      "abstract": "The study of opinion dynamics in social networks is one of the key challenges in computational social science with direct relevance to understanding political polarization, misinformation, and health responses. Current approaches focus on simplified mathematical models that ignore linguistic and contextual factors related to belief updates or use Large Language Model (LLM)-based simulations that have not been validated against real data. We present a framework based on the concept of a digital twin to simulate opinion dynamics in social networks. The approach fills the gap by cloning a real-world Twitter network, assigns a set of attributes for agents (such as persona, emotions, centrality, stubbornness, and influence), and employs Mistral-7B to perform opinion update based on memory and social exposure. To evaluate the proposed approach, we validate it against two real Twitter datasets (COVID-19 discourse and U.S elections 2020). The results show that the capability of the proposed framework reproduces opinion trajectories and reduces individual prediction error by more than 50% compared to the best-performing classical baseline (Mistral-7B achieves Mean Absolute Error (MAE) = 0.150 and 0.121 on the COVID-19 and US Election 2020 datasets, respectively). We observe similar improvements in structural alignment (Delta_r = 0.120 and 0.180) and polarization dynamics (Delta_Var = 0.106 and 0.115) on the two datasets, respectively. Additionally, the ablation studies confirm that agent attributes, memory, and social exposure all contribute to the framework's predictive fidelity in reproducing opinion trajectories, with agent attributes being the most critical contributor. Overall, our results demonstrate that grounding Mistral-7B within empirically cloned interaction networks produces a realistic simulation framework capable of reproducing complex social dynamics.",
+      "summary_zh": "该研究针对社交网络观点动力学这一计算社会科学核心挑战，指出现有方法要么使用忽略语言与语境因素的简化数学模型，要么使用未经真实数据验证的LLM模拟。作者提出基于数字孪生概念的框架，克隆真实Twitter网络，为智能体赋予人格、情绪、中心性、固执度和影响力等属性，并采用Mistral-7B基于记忆和社会暴露进行观点更新。在COVID-19话语和美国2020大选两个真实Twitter数据集上验证，结果显示该框架能复现观点轨迹，个体预测误差较最佳经典基线降低超过50%（Mistral-7B在两个数据集上的MAE分别为0.150和0.121），结构对齐（Delta_r分别为0.120和0.180）和极化动态（Delta_Var分别为0.106和0.115）也有类似改进。消融研究确认智能体属性、记忆和社会暴露均对预测保真度有贡献，其中智能体属性最为关键。",
+      "insight_zh": "该工作表明将LLM嵌入经验克隆的交互网络可提升观点动态模拟的预测保真度，其数字孪生思路或可迁移至城市更新中的居民意见演化与多主体行为模拟，但需注意其验证仅限社交网络数据。"
     },
     {
       "key": "arxiv:2609.20200",
@@ -802,58 +831,29 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.20217",
-      "title": "Explaining spatial information flow in short-term traffic forecasting models using a gated graph attention network",
-      "title_zh": "使用门控图注意力网络解释短期交通预测模型中的空间信息流",
-      "url": "https://arxiv.org/abs/2609.20217",
+      "key": "arxiv:2609.19848",
+      "title": "Constraint-Safe Graph-Context Scoring for Stable Point-Feature Labels Under Text-Width and Accessibility-Inspired Profiles",
+      "title_zh": "文本宽度与可访问性启发式配置下稳定点要素标注的约束安全图上下文评分",
+      "url": "https://arxiv.org/abs/2609.19848",
       "doi": "",
-      "arxiv_id": "2609.20217",
+      "arxiv_id": "2609.19848",
       "authors": [
-        "Yue Li",
-        "Shujuan Chen",
-        "Ying Jin"
+        "Taimoor Ahmad"
       ],
       "venue": "arXiv",
-      "published": "2026-08-09T16:29:23+00:00",
+      "published": "2026-09-17T08:00:00+00:00",
       "score": 55,
-      "reason": "该论文研究短期交通预测模型中的空间信息流解释，使用门控图注意力网络，属于时空数据挖掘与地理空间智能范畴，与城市更新和时空数据挖掘研究方向有较强关联。",
+      "reason": "该论文研究交互式地图上点要素标注放置问题，涉及图上下文评分、混合整数优化与地图可视化，属于GIS制图与空间优化范畴，与地理空间智能方向相关。",
       "tags": [
-        "交通预测",
-        "图注意力网络",
-        "空间信息流",
-        "可解释性"
+        "地图标注",
+        "点要素标注",
+        "图上下文评分",
+        "混合整数优化",
+        "可访问性"
       ],
-      "abstract": "Short-term traffic forecasting supports real-time monitoring and control of road networks, and graph attention networks (GAT) are the standard means of representing spatial dependence in these models. GAT layers are widely described as capturing the influence of neighbouring locations, but this is seldom verified, because the attention weights offered in support cannot be compared against any measured quantity. That leaves two questions open, how the model should be explained and which of its components are necessary. We address this by adding a gate to the GAT layer which learns, at every sensor and every time step, what share of a sensor's updated state is drawn from its neighbours rather than from itself. Regularising the gate withdraws neighbour information progressively and thereby provides a graded form of ablation. We apply the gated GAT to ST-MetaNet, whose encoder and decoder each place one GAT layer between two recurrent layers, and train it on one calendar year of records from 498 loop detectors on the strategic road network of England. The gate assigns a larger share of neighbour information to sensors carrying heavier traffic and follows the daily and weekly cycle of travel, consistent with adjacent locations being more strongly coupled when busy. Mild regularisation improves accuracy slightly, and accuracy declines at higher strengths as the penalty withdraws information the model needs. The encoder gate closes before the decoder gate, but direct ablation qualifies that ordering. Removing either GAT layer alone leaves accuracy at least as good as keeping both, whereas removing both degrades it substantially, so the two layers are largely redundant rather than either being indispensable. The gated GAT therefore yields a modest accuracy gain, an explanation of where and when spatial information flows, and evidence on which layers the architecture requires.",
-      "summary_zh": "短期交通预测支持路网的实时监测和控制，图注意力网络（GAT）是这些模型中表示空间依赖的标准手段。GAT层被广泛描述为捕捉邻近位置的影响，但这很少被验证，因为支持中提供的注意力权重无法与任何测量量进行比较。这留下了两个未决问题：模型应如何解释，以及其哪些组件是必要的。作者通过向GAT层添加一个门来解决这个问题，该门在每个传感器和每个时间步学习传感器更新状态中有多少份额来自邻居而非自身。对门进行正则化会逐步撤回邻居信息，从而提供一种分级形式的消融。作者将门控GAT应用于ST-MetaNet，其编码器和解码器各在两个循环层之间放置一个GAT层，并在英格兰战略路网498个环形检测器的一个日历年记录上训练。门将更大份额的邻居信息分配给承载更重交通的传感器，并遵循旅行的日周期和周周期，与相邻位置在繁忙时耦合更强一致。轻度正则化略微提高精度，而更高强度下精度下降，因为惩罚撤回了模型所需的信息。编码器门先于解码器门关闭，但直接消融对这一顺序提出了限定。单独移除任一GAT层都能使精度至少与保留两者一样好，而移除两者则显著降低精度，因此这两层在很大程度上是冗余的，而非任一不可或缺。因此，门控GAT产生了适度的精度提升、一种解释……",
-      "insight_zh": "该研究对时空数据挖掘和地理空间智能有直接参考价值，尤其是门控机制用于解释空间信息流的方法，可借鉴于城市更新中的交通与空间交互分析。"
-    },
-    {
-      "key": "arxiv:2609.20235",
-      "title": "Scene-Q: Confidence-Aware Coarse-to-Fine Querying of 3D Scenes with Selective VLM Reasoning",
-      "title_zh": "Scene-Q：面向3D场景的置信度感知由粗到细查询与选择性VLM推理",
-      "url": "https://arxiv.org/abs/2609.20235",
-      "doi": "",
-      "arxiv_id": "2609.20235",
-      "authors": [
-        "Juno Kim",
-        "Yesol Park",
-        "Hye-Jung Yoon",
-        "Byoung-Tak Zhang"
-      ],
-      "venue": "arXiv",
-      "published": "2026-07-28T09:58:36+00:00",
-      "score": 55,
-      "reason": "该文研究室内机器人3D场景的开放词汇查询与选择性VLM推理，涉及3D空间理解与多模态推理，与地理空间智能和遥感变化检测有方法层面的间接关联，但不涉及城市或遥感数据。",
-      "tags": [
-        "3D场景理解",
-        "视觉语言模型",
-        "开放词汇",
-        "机器人",
-        "置信度感知"
-      ],
-      "abstract": "Indoor mobile robots require open-vocabulary scene understanding that grounds natural-language queries in a consistent 3D map. Many existing systems ultimately rely on cosine-similarity retrieval with contrastive image--text encoders, which is efficient but brittle when labels are near-synonymous or multiple similar instances appear. We present Scene-Q, a confidence-aware coarse-to-fine querying framework that normalizes encoder scores with temperature scaling and selectively invokes a reasoning VLM only for low-confidence cases. High-confidence queries are answered by fast retrieval, while ambiguous ones are reranked over a small top-K candidate set using the original multi-view images and instance bounding boxes, enabling context-aware disambiguation at low cost. Scene-Q improves open-vocabulary 3D instance segmentation on ScanNet200 and natural-language 3D instance retrieval on real-world reconstructions, with the largest gains on spatial and relational queries while keeping a substantial fraction of queries on the fast path.",
-      "summary_zh": "室内移动机器人需要开放词汇的场景理解，将自然语言查询定位到一致的3D地图中。许多现有系统最终依赖对比图像-文本编码器的余弦相似度检索，这虽然高效，但在标签近义或多个相似实例出现时较为脆弱。作者提出Scene-Q，一种置信度感知的由粗到细查询框架，通过温度缩放归一化编码器分数，并仅对低置信度情况选择性调用推理VLM。高置信度查询由快速检索回答，模糊查询则使用原始多视图图像和实例边界框在小型top-K候选集上重排序，从而以低成本实现上下文感知消歧。Scene-Q在ScanNet200上改进了开放词汇3D实例分割，并在真实世界重建上改进了自然语言3D实例检索，在空间与关系查询上增益最大，同时使相当一部分查询保持在快速路径上。",
-      "insight_zh": "置信度感知的由粗到细检索与选择性调用大模型推理的策略，可迁移到遥感或城市三维场景的开放词汇查询中，用于在效率与消歧之间取得平衡；但该文场景为室内机器人，未涉及地理尺度或变化检测。"
+      "abstract": "Point-feature label placement on interactive maps must reconcile geometric validity, display yield, local placement utility, and stability across camera motion. Accessibility and multilingual requirements further change label dimensions, yet algorithmic evaluations often collapse these concerns into overlap counts. We present LABELSENSE-Pilot, a reproducible prototype that generates eight compass candidates per feature, scores candidates with a multilayer perceptron over graph-context summaries, adds a previous-placement bonus, and selects a layout through mixed-integer optimization. The executed scorer is deliberately not described as a graph transformer. Every returned layout is checked for viewport containment, per-feature uniqueness, and pairwise clearance. Experiments use 2,500 airport coordinates and names spanning 155 countries, with country-grouped splits and generated density, camera, text-suffix, preference, and enlarged-font stressors. Across five seeds, LABELSENSE-Pilot displayed 85.62 percent of labels with 2.09 percent flicker and zero collisions. Versus a handcrafted-utility integer program, LABELSENSE-Pilot sacrificed 1.43 percentage points of display while reducing flicker by 12.04 points. Enlarged-box-aware layouts produced zero proxy violations, whereas standard geometry reevaluated at 1.5x violated 52.57 percent of selected placements. These results establish an auditable engineering trade-off, not human accessibility, multilingual usability, or preference. Official recent baselines and participant evidence remain required before submission.",
+      "summary_zh": "交互式地图上的点要素标注放置必须协调几何有效性、显示产出、局部放置效用以及相机运动下的稳定性。可访问性和多语言需求进一步改变标注尺寸，但算法评估常将这些关切简化为重叠计数。作者提出LABELSENSE-Pilot，一个可复现原型，为每个要素生成八个罗盘候选，用多层感知机基于图上下文摘要对候选评分，加入先前放置奖励，并通过混合整数优化选择布局。执行评分器刻意不被描述为图Transformer。每个返回布局都检查视口包含、每要素唯一性和成对间隙。实验使用横跨155个国家的2500个机场坐标和名称，采用按国家分组划分及生成的密度、相机、文本后缀、偏好和放大字体压力测试。在五个随机种子上，LABELSENSE-Pilot显示85.62%的标注，闪烁率2.09%，零碰撞。与手工效用整数规划相比，LABELSENSE-Pilot牺牲1.43个百分点的显示量，但将闪烁降低12.04个百分点。放大框感知布局产生零代理违规，而标准几何在1.5倍重新评估时52.57%的选定放置违规。这些结果确立了可审计的工程权衡，而非人类可访问性、多语言可用性或偏好。官方近期基线和参与者证据仍需在提交前补充。",
+      "insight_zh": "该原型展示了图上下文评分与混合整数优化结合在地图标注稳定性与可访问性权衡中的工程价值，其可审计的权衡框架对城市地图可视化与多语言标注系统设计有参考意义，但作者明确其结论不涉及人类可访问性验证。"
     }
   ]
 }
