@@ -2,11 +2,11 @@
   "date": "2026-09-17",
   "analysis_stats": {
     "total": 595,
-    "analyzed": 484,
+    "analyzed": 485,
     "high": 3,
     "medium": 24,
     "low": 33,
-    "below_threshold": 424
+    "below_threshold": 425
   },
   "papers": [
     {
@@ -4526,6 +4526,36 @@
       ],
       "summary_zh": "长期记忆正成为个性化AI的核心基础，但大多数系统仍将个性化表示为基本静态潜在空间中的离散记录，并在单一全局相似度下访问。对于数据挖掘而言，这造成错配：证据是时间事件流，而主导抽象是可搜索的记录集。作者主张长时程个性化应将记忆建模为用户特定的动态状态空间，具有局部异质几何。这里的几何是一种计算语言，而非对认知的字面主张：它捕捉稳定与易变区域、变速漂移、异质邻域以及关于当前用户状态的不确定性。画像和孤立事件仍可作为点使用，但交互、反馈和流逝时间会诱导轨迹。记忆访问于是变成对相关用户状态的轨迹条件重建，而不仅是最近邻查找。",
       "insight_zh": "该文将记忆视为轨迹条件重建而非静态检索，这一思路对时空数据挖掘中用户行为轨迹建模与个性化推荐有概念启发，但未涉及城市或地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.18991",
+      "title": "Lost in Perception: Isolating Perceptual and Reasoning Failures in Multimodal Physics and Geometry Reasoning",
+      "title_zh": "迷失于感知：分离多模态物理与几何推理中的感知失败与推理失败",
+      "url": "https://arxiv.org/abs/2609.18991",
+      "arxiv_id": "2609.18991",
+      "authors": [
+        "Raj Jaiswal",
+        "Sree Krishna Uppalapati",
+        "Dhruvkumar Patel",
+        "Ria Khatoniar",
+        "Tanuja Ganu",
+        "Rajiv Ratn Shah"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-17T09:04:55+00:00",
+      "score": 22,
+      "reason": "该论文聚焦多模态大语言模型在物理与几何推理中的感知与推理失败分离，属于LLM推理能力评测研究。与用户研究方向中的LLM和多智能体有间接关联，但不涉及城市更新、时空数据挖掘、遥感变化检测或多源数据融合，因此相关性较低。",
+      "tags": [
+        "多模态大语言模型",
+        "科学推理",
+        "感知与推理分离",
+        "诊断性评测",
+        "物理与几何推理"
+      ],
+      "summary_zh": "多模态大语言模型在科学推理基准上报告了强劲表现，但多数研究将感知和推理视为单一可测量过程。本文引入一个五任务诊断实验，跨物理和几何基准，将失败分离为感知失败、推理失败或两者兼有。错误的图示解读即使对仅从文本就能正确解答的问题也会降低性能，准确率通常从原始图像到人工撰写的标题逐步上升。部分模型在修正标题下的恢复率较高，从而将感知受阻的失败与真正的推理瓶颈区分开来。感知失败后跟随何种推理错误取决于领域：物理失败归结为计算错误，几何失败归结为概念误用。作为核心实验之外的讨论，InternS1-mini尽管经过大量科学预训练并具备思考能力，在所有任务上均低于实验中最弱的模型，其推理轨迹经常在完成前截断。",
+      "insight_zh": "该研究提示，多模态LLM在科学推理中的表现受感知质量显著影响，仅凭文本可解的问题在图像输入下也可能因感知错误而失败；感知失败后的推理错误类型具有领域依赖性。这一诊断框架可为评估LLM在需要图像理解的地理空间任务中的可靠性提供方法参考，但论文本身未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2606.09430",
@@ -9703,7 +9733,7 @@
         "Zhichen Zhao",
         "Yue Yin",
         "Yue Weng",
-        "Wanlin Ma",
+        "Wanli Ma",
         "Xufeng Cai",
         "Weimiao Wu",
         "Yezhou Huang",
@@ -9720,7 +9750,11 @@
         "Xialu Li",
         "Matt Ma",
         "Qunshu Zhang",
+        "Andrew Ton",
+        "Nathan Berrebbi",
+        "Neel Pawar",
         "John Joshua Miller",
+        "Jayant Subramanian",
         "Praveen Rathinavelu",
         "Cheng Huang",
         "Aadhar Sachdeva",
@@ -9738,13 +9772,7 @@
         "Arun Singh",
         "Guangdeng Liao",
         "Bi Xue",
-        "Xinyao Hu",
-        "Yang Song",
-        "Yisong Song",
-        "Meihong Wang",
-        "Haotian Wu",
-        "Deepak Agarwal",
-        "Ji Liu"
+        "et al. (7 additional authors not shown)"
       ],
       "categories": [
         "cs.LG",
@@ -13035,7 +13063,17 @@
       ],
       "categories": [
         "cs.CL",
-        "cs.LG"
+        "cs.LG",
+        "scheme-recognition",
+        "finding;",
+        "no",
+        "changes",
+        "to",
+        "data",
+        "or",
+        "numbers.",
+        "Data:",
+        "https://github.com/fine2006/the-concealment-hypothesis"
       ],
       "published": "2026-09-16T13:28:39+00:00",
       "score": 8,
@@ -13761,7 +13799,21 @@
         "related",
         "companion",
         "study:",
-        "arXiv:2609.11365"
+        "arXiv:2609.11365",
+        "arXiv:2609.11365.",
+        "Revised",
+        "exposition,",
+        "statistical",
+        "and",
+        "audit",
+        "clarifications,",
+        "AI-use",
+        "disclosure,",
+        "table",
+        "layout;",
+        "numerical",
+        "results",
+        "unchanged"
       ],
       "published": "2026-09-15T12:40:45+00:00",
       "score": 5,
@@ -15331,30 +15383,6 @@
         "cs.CV"
       ],
       "published": "2026-09-15T21:47:58+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18991",
-      "title": "Lost in Perception: Isolating Perceptual and Reasoning Failures in Multimodal Physics and Geometry Reasoning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18991",
-      "arxiv_id": "2609.18991",
-      "authors": [
-        "Raj Jaiswal",
-        "Sree Krishna Uppalapati",
-        "Dhruvkumar Patel",
-        "Ria Khatoniar",
-        "Tanuja Ganu",
-        "Rajiv Ratn Shah"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-07-17T09:04:55+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
