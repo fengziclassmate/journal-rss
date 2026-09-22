@@ -2,6 +2,7 @@
   "date": "2026-09-18",
   "guid": "arxiv-email-daily:2026-09-18",
   "paper_keys": [
+    "arxiv:2609.16603",
     "arxiv:2609.20209",
     "arxiv:2607.14112",
     "arxiv:2609.19911",
@@ -30,24 +31,54 @@
     "arxiv:2609.20662",
     "arxiv:2609.20543",
     "arxiv:2609.20455",
-    "arxiv:2609.20441",
-    "arxiv:2609.19848"
+    "arxiv:2609.20441"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:588",
-    "deepseek": "partial:0/99;failed-batches:10"
+    "deepseek": "partial:28/98;failed-batches:7"
   },
-  "updated_at": "2026-09-22T12:07:07.884562+00:00",
+  "updated_at": "2026-09-22T17:19:11.612393+00:00",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 489,
-    "high": 3,
+    "analyzed": 518,
+    "high": 4,
     "medium": 22,
-    "low": 34,
-    "below_threshold": 430
+    "low": 35,
+    "below_threshold": 457
   },
   "papers": [
+    {
+      "key": "arxiv:2609.16603",
+      "title": "G3AR: Graph-Guided Neural Visual Geometry for Scalable Multi-Sequence Aerial Registration",
+      "title_zh": "G3AR：面向可扩展多序列航空配准的图引导神经视觉几何",
+      "url": "https://arxiv.org/abs/2609.16603",
+      "doi": "",
+      "arxiv_id": "2609.16603",
+      "authors": [
+        "Jeng Wen Joshua Lean",
+        "Ting-Yu Yen",
+        "Wei-Fang Sun",
+        "Simon See",
+        "Hung-Kuo Chu",
+        "Shih-Hsuan Hung"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T03:58:17+00:00",
+      "score": 88,
+      "reason": "该论文面向大规模多序列航空影像的可扩展密集神经几何配准，直接涉及遥感影像处理与地理空间智能中的三维重建与配准问题，与遥感变化检测和多源数据融合的研究方向高度相关。",
+      "tags": [
+        "航空影像配准",
+        "神经视觉几何",
+        "图引导分块",
+        "多序列影像",
+        "三维重建",
+        "遥感"
+      ],
+      "abstract": "Full-context neural visual geometry is impractical for thousands of images, while sequence-based chunking poorly captures irregular non-local overlap in multi-sequence aerial collections. We present Graph-Guided Neural Visual Geometry for Aerial Registration (G3AR), a graph-guided framework for scalable dense neural geometry. Before local inference, G3AR builds a geometrically verified image-proximity graph that guides bounded overlapping chunks and induces a chunk graph whose maximum spanning tree defines alignment topology. Compatible backbones process chunks independently; shared-image predictions then estimate three-dimensional similarity (Sim(3)) transforms that register local cameras and geometry in a common frame. Across four real aerial scenes, G3AR improves pose error and runtime in matched VGGT- and Pi3-backed comparisons, while its DA3 variant achieves the lowest pose error among evaluated neural-geometry methods.",
+      "summary_zh": "全上下文神经视觉几何对数千张影像而言不切实际，而基于序列的分块方法难以捕捉多序列航空采集中不规则的远距离重叠。本文提出G3AR（Graph-Guided Neural Visual Geometry for Aerial Registration），一个用于可扩展密集神经几何的图引导框架。在局部推理之前，G3AR构建一个经过几何验证的影像邻近图，用以引导有界重叠分块，并导出一个分块图，其最大生成树定义了配准拓扑。兼容的主干网络独立处理各分块；随后利用共享影像的预测估计三维相似（Sim(3)）变换，将局部相机与几何配准到统一坐标系中。在四个真实航空场景中，G3AR在匹配的VGGT与Pi3主干对比下改善了位姿误差与运行时间，其DA3变体在所评估的神经几何方法中取得了最低的位姿误差。",
+      "insight_zh": "该工作将图结构引入航空影像配准的分块与拓扑组织，可能为大规模遥感影像的高效几何对齐提供思路；其分块图与最大生成树策略或可迁移至多时相遥感数据的配准与变化检测预处理流程。"
+    },
     {
       "key": "arxiv:2609.20209",
       "title": "Scene-Conditioned Relation Routing for urban cellular activity forecasting",
@@ -829,31 +860,6 @@
       "abstract": "Geospatial foundation models can provide strong flood-segmentation performance, but their size limits deployment on memory-constrained edge hardware. We distill a 300-million-parameter Prithvi-EO-2.0 teacher, fine-tuned on the 252 manually labeled Sen1Floods11 training scenes, into a 0.7-million-parameter EfficientViT-B0 student. The teacher supervises additional unlabeled Sentinel-2 imagery, allowing the student training set to grow without new manual annotations. At the matched budget of 252 scenes, teacher-supervised training is competitive with direct training and improves STURM-Flood performance across tested configurations; a geometry-matched control shows that label source alone does not explain the difference. Scaling the teacher-supervised pool to 2,500 scenes narrows the remaining student--teacher gap: the float student reaches 0.787 water intersection over union on the Sen1Floods11 test split against 0.822 for the teacher, matches the teacher on STURM-Flood under our evaluation protocol, and remains below it on WorldFloods-v2. After activation replacement and quantization-aware training, the student runs as a 1.5-megabyte 8-bit integer (INT8) TensorRT engine on a Jetson Xavier NX at 5.57 milliseconds of graphics processing unit (GPU) compute per 512-by-512 image, with approximately 14 megabytes of runtime device memory. A fixed modified normalized difference water index (MNDWI) threshold is competitive with both models on the two clean external benchmarks, so we interpret those benchmarks as generalization tests rather than as evidence of learned-model superiority over a spectral rule. The results support the conclusion: foundation-model supervision can amplify a fixed manual annotation budget into a substantially larger training set and yield a compact, deployable edge model.",
       "summary_zh": "",
       "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19848",
-      "title": "Constraint-Safe Graph-Context Scoring for Stable Point-Feature Labels Under Text-Width and Accessibility-Inspired Profiles",
-      "title_zh": "文本宽度与可访问性启发式配置下稳定点要素标注的约束安全图上下文评分",
-      "url": "https://arxiv.org/abs/2609.19848",
-      "doi": "",
-      "arxiv_id": "2609.19848",
-      "authors": [
-        "Taimoor Ahmad"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-17T08:00:00+00:00",
-      "score": 55,
-      "reason": "该论文研究交互式地图上点要素标注放置问题，涉及图上下文评分、混合整数优化与地图可视化，属于GIS制图与空间优化范畴，与地理空间智能方向相关。",
-      "tags": [
-        "地图标注",
-        "点要素标注",
-        "图上下文评分",
-        "混合整数优化",
-        "可访问性"
-      ],
-      "abstract": "Point-feature label placement on interactive maps must reconcile geometric validity, display yield, local placement utility, and stability across camera motion. Accessibility and multilingual requirements further change label dimensions, yet algorithmic evaluations often collapse these concerns into overlap counts. We present LABELSENSE-Pilot, a reproducible prototype that generates eight compass candidates per feature, scores candidates with a multilayer perceptron over graph-context summaries, adds a previous-placement bonus, and selects a layout through mixed-integer optimization. The executed scorer is deliberately not described as a graph transformer. Every returned layout is checked for viewport containment, per-feature uniqueness, and pairwise clearance. Experiments use 2,500 airport coordinates and names spanning 155 countries, with country-grouped splits and generated density, camera, text-suffix, preference, and enlarged-font stressors. Across five seeds, LABELSENSE-Pilot displayed 85.62 percent of labels with 2.09 percent flicker and zero collisions. Versus a handcrafted-utility integer program, LABELSENSE-Pilot sacrificed 1.43 percentage points of display while reducing flicker by 12.04 points. Enlarged-box-aware layouts produced zero proxy violations, whereas standard geometry reevaluated at 1.5x violated 52.57 percent of selected placements. These results establish an auditable engineering trade-off, not human accessibility, multilingual usability, or preference. Official recent baselines and participant evidence remain required before submission.",
-      "summary_zh": "交互式地图上的点要素标注放置必须协调几何有效性、显示产出、局部放置效用以及相机运动下的稳定性。可访问性和多语言需求进一步改变标注尺寸，但算法评估常将这些关切简化为重叠计数。作者提出LABELSENSE-Pilot，一个可复现原型，为每个要素生成八个罗盘候选，用多层感知机基于图上下文摘要对候选评分，加入先前放置奖励，并通过混合整数优化选择布局。执行评分器刻意不被描述为图Transformer。每个返回布局都检查视口包含、每要素唯一性和成对间隙。实验使用横跨155个国家的2500个机场坐标和名称，采用按国家分组划分及生成的密度、相机、文本后缀、偏好和放大字体压力测试。在五个随机种子上，LABELSENSE-Pilot显示85.62%的标注，闪烁率2.09%，零碰撞。与手工效用整数规划相比，LABELSENSE-Pilot牺牲1.43个百分点的显示量，但将闪烁降低12.04个百分点。放大框感知布局产生零代理违规，而标准几何在1.5倍重新评估时52.57%的选定放置违规。这些结果确立了可审计的工程权衡，而非人类可访问性、多语言可用性或偏好。官方近期基线和参与者证据仍需在提交前补充。",
-      "insight_zh": "该原型展示了图上下文评分与混合整数优化结合在地图标注稳定性与可访问性权衡中的工程价值，其可审计的权衡框架对城市地图可视化与多语言标注系统设计有参考意义，但作者明确其结论不涉及人类可访问性验证。"
     }
   ]
 }

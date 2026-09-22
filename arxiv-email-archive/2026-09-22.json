@@ -12,6 +12,7 @@
     "arxiv:2601.12538",
     "arxiv:2606.08151",
     "arxiv:2609.24921",
+    "arxiv:2609.24677",
     "arxiv:2609.24531",
     "arxiv:2609.23534",
     "arxiv:2609.22497",
@@ -20,32 +21,31 @@
     "arxiv:2512.21066",
     "arxiv:2605.27690",
     "arxiv:2607.11295",
-    "arxiv:2512.18046",
     "arxiv:2501.16698",
+    "arxiv:2512.18046",
     "arxiv:2609.22090",
     "arxiv:2609.24895",
+    "arxiv:2609.24626",
     "arxiv:2609.24526",
     "arxiv:2609.24482",
     "arxiv:2609.24409",
     "arxiv:2609.24127",
     "arxiv:2609.23619",
-    "arxiv:2609.23516",
-    "arxiv:2609.22967",
-    "arxiv:2609.22834"
+    "arxiv:2609.23516"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1190",
-    "deepseek": "partial:443/1084;failed-batches:64"
+    "deepseek": "partial:20/640;failed-batches:62"
   },
-  "updated_at": "2026-09-22T12:11:24.456276+00:00",
+  "updated_at": "2026-09-22T17:22:17.135056+00:00",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 549,
+    "analyzed": 570,
     "high": 5,
-    "medium": 20,
-    "low": 51,
-    "below_threshold": 473
+    "medium": 21,
+    "low": 53,
+    "below_threshold": 491
   },
   "papers": [
     {
@@ -385,6 +385,39 @@
       "insight_zh": "该基准揭示了当前LLM与智能体系统在识别科学弱信号方面仍存在显著不足，提示在时空数据挖掘与文献趋势分析中，单纯增加检索预算不足以解决语义错位与覆盖不全问题。"
     },
     {
+      "key": "arxiv:2609.24677",
+      "title": "TimeLitmus: A Diagnostic Benchmark for Cross-Modal Understanding and Explanation Faithfulness in Event-Conditioned Time-Series Prediction",
+      "title_zh": "TimeLitmus：事件条件下时间序列预测中跨模态理解与解释忠实性的诊断基准",
+      "url": "https://arxiv.org/abs/2609.24677",
+      "doi": "",
+      "arxiv_id": "2609.24677",
+      "authors": [
+        "Jie Gong",
+        "Maowei Jiang",
+        "Zhiwei Liu",
+        "Yankai Chen",
+        "Guojun Xiong",
+        "Xue Liu",
+        "Min Peng",
+        "Qianqian Xie",
+        "and Sophia Ananiadou"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-21T14:38:49+00:00",
+      "score": 62,
+      "reason": "该论文关注LLM在事件条件下的时间序列预测中的跨模态理解与解释忠实性，与研究中LLM、时空数据挖掘及多智能体方向有一定关联，但未涉及城市更新或遥感变化检测。",
+      "tags": [
+        "LLM",
+        "时间序列预测",
+        "跨模态理解",
+        "可解释性",
+        "基准测试"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used to make predictions from numerical time-series histories and textual events. Yet accuracy alone cannot reveal whether correct answers reflect effective integration of the two inputs or instead arise from event polarity, unimodal priors, or superficial cues. Likewise, plausible explanations may rationalize predictions without faithfully reflecting the evidence that drives model behavior. We introduce TimeLitmus, a diagnostic benchmark for cross-modal understanding and explanation faithfulness in event-conditioned time-series prediction. TimeLitmus contains 4,856 evaluation records across Finance and Traffic, combining natural prediction with controlled counterfactual and contrastive interventions, explanation-targeted faithfulness tests, and systematic shortcut controls. Across ten representative LLMs, standard prediction accuracy substantially overstates reliable cross-modal understanding: Hard Paired Contrast (HPC) pair correctness peaks at only 19.2% in Finance and 11.7% in Traffic, and all ten models show lower-than-expected consistency on Finance series-side controls. Models often recognize scenario relations explicitly yet fail to apply them during independent prediction. Explanation faithfulness shows a similar gap: in Traffic, most models cite the manipulated temporal factor in over 90% of cases, while behavioral support remains below 22%. Human annotators outperform LLMs on matched controlled and hard-pair diagnostics, confirming that these distinctions are recoverable from the inputs. Natural-only adaptation yields selective gains in evidence selection and input sensitivity, but not consistent gains in controlled or hard-pair behavior. The benchmark, evaluation suite, and supervised adaptation data will be released publicly.",
+      "summary_zh": "大语言模型（LLM）越来越多地被用于从数值时间序列历史和文本事件中进行预测。然而，仅凭准确率无法揭示正确答案是源于对两种输入的有效整合，还是来自事件极性、单模态先验或表面线索。同样，看似合理的解释可能只是为预测提供合理化说辞，而并未忠实反映驱动模型行为的证据。我们提出TimeLitmus，一个用于事件条件下时间序列预测中跨模态理解与解释忠实性的诊断基准。TimeLitmus包含金融和交通领域的4,856条评估记录，结合了自然预测与受控反事实和对比干预、面向解释的忠实性测试以及系统性捷径控制。在十个代表性LLM上，标准预测准确率大幅高估了可靠的跨模态理解：困难配对对比（HPC）配对正确率在金融领域最高仅为19.2%，在交通领域为11.7%，且十个模型在金融序列侧控制上均表现出低于预期的一致性。模型往往能明确识别场景关系，却在独立预测时无法应用这些关系。解释忠实性也呈现类似差距：在交通领域，大多数模型在超过90%的情况下引用了被操纵的时间因素，而行为支持率仍低于22%。人类标注者在匹配的受控和困难配对诊断上优于LLM，证实这些区分可从输入中恢复。仅自然数据的适配在证据选择和输入敏感性方面带来选择性提升，但在受控或困难配对行为上没有一致增益。该基准、评估套件和监督适配数据将被发布。",
+      "insight_zh": "该基准揭示了LLM在事件条件下时间序列预测中准确率与真实跨模态理解之间的显著差距，提示在时空数据挖掘中应用LLM时需警惕表面线索和解释不忠实问题。"
+    },
+    {
       "key": "arxiv:2609.24531",
       "title": "Dynamic Thermal Gaussians: Multimodal 4D Gaussian Splatting",
       "title_zh": "动态热高斯：多模态4D高斯泼溅",
@@ -613,6 +646,32 @@
       "insight_zh": "从标题推断，该工作可能利用采集元数据作为监督信号来学习对成像条件变化更稳健的表征，这一思路或可迁移到遥感影像中跨传感器、跨时相差异的建模与归一化；但由于摘要缺失，无法确认其是否涉及遥感数据、变化检测任务或具体实验结论。"
     },
     {
+      "key": "arxiv:2501.16698",
+      "title": "3D-MoE: Towards Spatial Intelligence with Mixture-of-Experts for 3D Reasoning and Action Generation",
+      "title_zh": "3D-MoE：面向3D推理与动作生成的空间智能混合专家方法",
+      "url": "https://arxiv.org/abs/2501.16698",
+      "doi": "",
+      "arxiv_id": "2501.16698",
+      "authors": [
+        "Yueen Ma",
+        "Zenglin Xu",
+        "Irwin King"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 60,
+      "reason": "该论文提出面向3D推理与动作生成的空间智能混合专家模型，与研究中地理空间智能和多智能体方向有较强关联，尤其涉及空间推理能力。",
+      "tags": [
+        "3D推理",
+        "空间智能",
+        "混合专家",
+        "动作生成"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，仅从标题可知该工作提出3D-MoE方法，利用混合专家架构实现3D推理与动作生成，目标是推进空间智能。",
+      "insight_zh": "该混合专家架构可能为地理空间智能中的3D场景理解与智能体动作决策提供技术借鉴，但摘要缺失导致无法评估其具体性能与适用场景。"
+    },
+    {
       "key": "arxiv:2512.18046",
       "title": "YolovN-CBi: A Lightweight and Efficient Architecture for Real-Time Detection of Small UAVs",
       "title_zh": "YolovN-CBi：用于小型无人机实时检测的轻量高效架构",
@@ -638,32 +697,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "提出一种轻量级高效架构YolovN-CBi，用于实时检测小型无人机。",
       "insight_zh": "该架构可应用于遥感图像中的小目标检测，提升城市监测效率。"
-    },
-    {
-      "key": "arxiv:2501.16698",
-      "title": "3D-MoE: Towards Spatial Intelligence with Mixture-of-Experts for 3D Reasoning and Action Generation",
-      "title_zh": "3D-MoE：面向3D推理与动作生成的空间智能混合专家方法",
-      "url": "https://arxiv.org/abs/2501.16698",
-      "doi": "",
-      "arxiv_id": "2501.16698",
-      "authors": [
-        "Yueen Ma",
-        "Zenglin Xu",
-        "Irwin King"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 60,
-      "reason": "该论文提出面向3D推理与动作生成的空间智能混合专家模型，与研究中地理空间智能和多智能体方向有较强关联，尤其涉及空间推理能力。",
-      "tags": [
-        "3D推理",
-        "空间智能",
-        "混合专家",
-        "动作生成"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，仅从标题可知该工作提出3D-MoE方法，利用混合专家架构实现3D推理与动作生成，目标是推进空间智能。",
-      "insight_zh": "该混合专家架构可能为地理空间智能中的3D场景理解与智能体动作决策提供技术借鉴，但摘要缺失导致无法评估其具体性能与适用场景。"
     },
     {
       "key": "arxiv:2609.22090",
@@ -715,6 +748,33 @@
       "abstract": "When an LLM supplies an argument that a user could not readily construct, how can the user decide whether to accept its claim? Inspired by interactive proofs, we model human-LLM deliberation as an interaction between a prover with unrestricted internal search and a resource-bounded human verifier. The verifier requests and checks supporting details without access to the LLM's internal state. Passed checks accumulate evidence toward an acceptance threshold. We prove anytime-valid soundness against adaptive provers: the probability of ever accepting a false claim is at most a chosen error level, provided the task supplies bounds on false passes and human checking errors that remain valid after every relevant history. A finite-horizon completeness bound additionally requires bounds on the adequacy of honest responses and sufficient diagnostic progress. Further checks can strengthen the evidence for acceptance, but each requires another adequate response and reliable human effort. Whether this tradeoff permits certification depends on the verifier's effort budget, cognitive load, expertise, and fatigue. We identify conditions under which the supplied bounds certify a specified sequence of local checks but not a specified global check under the same resource budgets.",
       "summary_zh": "当LLM提供一个用户难以自行构建的论证时，用户如何决定是否接受其主张？受交互式证明启发，我们将人机LLM审议建模为具有无限制内部搜索能力的证明者与资源受限的人类验证者之间的交互。验证者请求并检查支持性细节，但无法访问LLM的内部状态。通过的检查累积证据直至接受阈值。我们证明了针对自适应证明者的随时有效可靠性：只要任务提供在每一相关历史之后仍然有效的误通过和人类检查错误界限，则曾经接受错误主张的概率至多等于选定错误水平。有限时域完备性界限还要求诚实响应的充分性和足够的诊断进展有界。更多检查可以增强接受的证据，但每次都需要另一个充分响应和可靠的人类努力。这一权衡是否允许认证取决于验证者的努力预算、认知负荷、专业知识和疲劳程度。我们识别了在相同资源预算下，所提供的界限能够认证指定局部检查序列但不能认证指定全局检查的条件。",
       "insight_zh": "该理论框架为LLM输出的人类可验证性提供了形式化条件，提示在依赖LLM进行地理空间决策时，需考虑验证者认知负荷与检查预算对可靠性的影响。"
+    },
+    {
+      "key": "arxiv:2609.24626",
+      "title": "Relationally Grounded Latent World Models for Autonomous Driving",
+      "title_zh": "面向自动驾驶的关系基础潜在世界模型",
+      "url": "https://arxiv.org/abs/2609.24626",
+      "doi": "",
+      "arxiv_id": "2609.24626",
+      "authors": [
+        "Fabian Schmidt",
+        "Markus Enzweiler",
+        "Abhinav Valada"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-21T14:10:06+00:00",
+      "score": 55,
+      "reason": "该论文利用交通场景图作为潜在世界模型的语义监督，涉及空间关系建模和轨迹预测，与研究中时空数据挖掘和多源数据融合方向有一定关联，但应用领域为自动驾驶而非城市更新或遥感。",
+      "tags": [
+        "自动驾驶",
+        "潜在世界模型",
+        "场景图",
+        "语义监督",
+        "轨迹预测"
+      ],
+      "abstract": "Latent world models learn predictive representations for autonomous driving, but the relational semantics these states preserve often remain implicit. We investigate whether traffic scene graphs can serve as privileged semantic supervision for latent world representations. Building on LAW, we construct actor-centric scene graphs from nuScenes 3D annotations, encode their serialized relational structure using a frozen text embedding model, and align the visual latent representations with this semantic target during training. We remove the supervision branch at inference, so it requires neither scene graphs nor 3D annotations and adds no test-time computation. On nuScenes, our method reduces average trajectory L2 error from 0.661 to 0.622 (5.9%) and collision rate from 0.456 to 0.217 (52.4%) relative to our retrained LAW baseline. It also outperforms an unstructured caption-style semantic target, supporting the benefit of explicit relational structure for latent world-model representation learning.",
+      "summary_zh": "潜在世界模型为自动驾驶学习预测性表示，但这些状态所保留的关系语义往往仍是隐式的。我们研究交通场景图能否作为潜在世界表示的特权语义监督。基于LAW，我们从nuScenes 3D标注构建以行动者为中心的场景图，使用冻结的文本嵌入模型编码其序列化关系结构，并在训练期间将视觉潜在表示与该语义目标对齐。我们在推理时移除监督分支，因此它既不需要场景图也不需要3D标注，且不增加测试时计算。在nuScenes上，相对于我们重新训练的LAW基线，我们的方法将平均轨迹L2误差从0.661降至0.622（5.9%），碰撞率从0.456降至0.217（52.4%）。它还优于非结构化的描述式语义目标，支持显式关系结构对潜在世界模型表示学习的益处。",
+      "insight_zh": "该研究表明显式关系结构（场景图）作为语义监督能有效提升潜在世界模型的轨迹预测和碰撞率表现，其关系语义对齐思路对时空数据挖掘中的多源数据融合有借鉴意义。"
     },
     {
       "key": "arxiv:2609.24526",
@@ -877,62 +937,6 @@
       "abstract": "Structural causal models for time series recover contemporaneous and lagged effects, but most methods require complete observation windows and become misspecified when samples are missing. We introduce ITSY, the first continuous-optimization method for causal discovery from irregular time series under a linear model. ITSY reformulates the structural equation so that prediction uses the nearest available history rather than the possibly missing current slice, and jointly imputes missing values while learning both graphs. A weighted reconstruction objective corrects the noise transformation induced by this reformulation. Across synthetic regimes varying missingness, scale, graph density, and noise, and on a real world benchmark, ITSY consistently improves graph recovery over representative SCM-based baselines, demonstrating the effectiveness of the proposed method. The results establish a focused solution for irregular linear first-order dynamics and clarify the assumptions required for nonlinear or higher-order extensions.",
       "summary_zh": "时间序列的结构因果模型可恢复同期和滞后效应，但多数方法要求完整观测窗口，在样本缺失时会设定错误。本文提出ITSY，首个在线性模型下从不规则时间序列进行因果发现的连续优化方法。ITSY重构结构方程，使预测使用最近可用历史而非可能缺失的当前切片，并在学习两个图的同时联合插补缺失值。加权重建目标校正了该重构引入的噪声变换。在变化缺失率、尺度、图密度和噪声的合成场景以及一个真实世界基准上，ITSY在图恢复方面持续优于代表性SCM基线，证明了所提方法的有效性。结果为一阶线性不规则动力学建立了聚焦解决方案，并阐明了非线性或高阶扩展所需的假设。",
       "insight_zh": "ITSY对不规则采样和缺失值的处理思路可迁移至城市时空数据（如传感器缺失、不规则更新记录）的因果分析，但其线性一阶假设限制了在复杂城市系统中的直接应用。"
-    },
-    {
-      "key": "arxiv:2609.22967",
-      "title": "General Collaborative Intelligence: Architecting Cognition for Resilient Multi-Agent Ecosystems",
-      "title_zh": "通用协同智能：为韧性多智能体生态系统构建认知架构",
-      "url": "https://arxiv.org/abs/2609.22967",
-      "doi": "",
-      "arxiv_id": "2609.22967",
-      "authors": [
-        "Lei Zhang",
-        "Chun Ye",
-        "Le Yang",
-        "Zhaozhong Wang",
-        "Deng-Ping Fan",
-        "Hang Dai",
-        "Binglu Wang"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-19T11:38:04+00:00",
-      "score": 55,
-      "reason": "该综述提出通用协同智能框架，涵盖多智能体协作、通信、融合架构、韧性机制，并映射到V2X、无人机、工业物流和智慧城市等应用域，与多智能体系统和地理空间智能有较强关联，但未涉及城市更新、时空数据挖掘或遥感变化检测，相关性中等偏高。",
-      "tags": [
-        "多智能体系统",
-        "协同智能",
-        "通信范式",
-        "韧性",
-        "V2X",
-        "智慧城市"
-      ],
-      "abstract": "Multi-agent unmanned systems are moving from isolated, ego-centric sensing toward collaborative intelligence, in which distributed agents exchange compact features to overcome a local observation trap that no single agent can escape: occlusions, finite sensor range, and environmental degradation. The field has matured across architectural, communication, embodied, resilience, and trust dimensions, yet existing surveys examine these dimensions in isolation and rarely expose their dependencies. This review offers a unified synthesis through two complementary lenses. The first is a five-dimensional taxonomy spanning collaboration stage, communication paradigm, fusion architecture, learning strategy, and application domain. The second is three cognitive synergy conditions, Semantic Disambiguation, Pragmatic Information Exchange, and Proactive Informational Foraging, that turn cognitive synergy into operational criteria. Across these lenses we survey collaboration architectures and topologies, neural-communication co-design that treats the channel as a differentiable pipeline component, embodied action-perception loops via multi-agent reinforcement learning, and resilience mechanisms for synchronization, uncertainty quantification, and label-efficient learning. We then map these advances onto four operational domains, V2X, unmanned aerial, industrial logistics, and smart cities, and onto the safety-privacy-utility triad. To counter benchmark saturation and evaluation fragmentation, we propose GCI-Bench, a five-pillar scoring protocol with a maturity model that makes the trade-offs of collaborative methods comparable across studies. A critical reflection on reproducibility, the sim-to-real gulf, and conditions under which collaboration degrades performance identifies open challenges and charts directions toward general collaborative intelligence under real-world uncertainty.",
-      "summary_zh": "多智能体无人系统正从孤立的、以自我为中心的感知转向协同智能，其中分布式智能体交换紧凑特征，以克服任何单一智能体都无法摆脱的局部观测陷阱：遮挡、有限传感器范围和环境退化。该领域已在架构、通信、具身、韧性和信任等维度成熟，但现有综述孤立地考察这些维度，很少揭示其依赖关系。本综述通过两个互补视角提供统一综合。第一个是五维分类法，涵盖协作阶段、通信范式、融合架构、学习策略和应用领域。第二个是三个认知协同条件——语义消歧、语用信息交换和主动信息觅食——将认知协同转化为可操作标准。在这些视角下，作者综述协作架构与拓扑、将信道视为可微流水线组件的神经通信协同设计、通过多智能体强化学习实现的具身行动-感知循环，以及用于同步、不确定性量化和标签高效学习的韧性机制。随后将这些进展映射到四个运营领域：V2X、无人机、工业物流和智慧城市，并映射到安全-隐私-效用三元组。为应对基准饱和与评估碎片化，作者提出GCI-Bench，一个五支柱评分协议与成熟度模型，使协作方法的权衡可跨研究比较。对可复现性、仿真到现实差距以及协作反而降低性能的条件的批判性反思，指出了开放挑战……",
-      "insight_zh": "该综述将多智能体协同智能的架构、通信、韧性与信任维度整合为统一框架，并提出可比较的评估协议，提示协作并非总是提升性能，其收益取决于具体条件。"
-    },
-    {
-      "key": "arxiv:2609.22834",
-      "title": "SatOV: Restoring Spatial Priors for Training-Free Open-Vocabulary Segmentation in Remote Sensing Imagery",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22834",
-      "doi": "",
-      "arxiv_id": "2609.22834",
-      "authors": [
-        "Changhao Zhao",
-        "Linglin Zeng",
-        "Hai Liu"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-19T07:12:14+00:00",
-      "score": 55,
-      "reason": "关键词命中：Remote Sensing、Segmentation",
-      "tags": [
-        "Remote Sensing",
-        "Segmentation"
-      ],
-      "abstract": "Open-vocabulary semantic segmentation (OVS) of remote sensing imagery is a challenging pixel-level task requiring strong generalization and adaptation to the spatial characteristics of remote sensing data. Although existing vision-language foundation models perform well in general domains, their image-level classification design weakens the spatial priors needed for high-resolution remote sensing segmentation: structural spatial relations are degraded during deep feature transformation, and fine-grained spatial details are lost during downsampling. To address these complementary deficiencies, we propose SatOV, a training-free framework for open-vocabulary remote sensing segmentation that restores spatial priors at two stages of the representation pipeline. Specifically, Residual QQ Attention (ResQQ) extracts Query-Key self-attention from an intermediate CLIP layer and fuses it with final-layer Query-Query attention via a residual combination, restoring structural spatial priors suppressed by the final-layer representation. Spatially Modulated Upsampling (SatUp) uses the original high-resolution RGB image as spatial guidance, combining spatial feature modulation with guided cross-attention to reconstruct pixel-level textures and boundaries. Extensive experiments on DOTA, UDD, LoveDA, and Vaihingen show that SatOV consistently improves training-free OVS and achieves competitive quantitative and qualitative results against state-of-the-art methods. These results validate the effectiveness of restoring spatial priors at both the representation and spatial-resolution stages for remote sensing open-vocabulary segmentation.",
-      "summary_zh": "",
-      "insight_zh": ""
     }
   ]
 }

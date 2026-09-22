@@ -2,11 +2,11 @@
   "date": "2026-09-22",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 549,
+    "analyzed": 570,
     "high": 5,
-    "medium": 20,
-    "low": 51,
-    "below_threshold": 473
+    "medium": 21,
+    "low": 53,
+    "below_threshold": 491
   },
   "papers": [
     {
@@ -461,6 +461,39 @@
       ],
       "summary_zh": "该论文提出决策感知记忆卡，通过反事实启发的方式选择和压缩上下文，以提升工具使用型LLM智能体的决策效率和准确性。",
       "insight_zh": "决策感知的上下文管理可增强城市更新中智能体对多源数据的利用，减少冗余信息干扰，提高决策质量。"
+    },
+    {
+      "key": "arxiv:2609.24677",
+      "title": "TimeLitmus: A Diagnostic Benchmark for Cross-Modal Understanding and Explanation Faithfulness in Event-Conditioned Time-Series Prediction",
+      "title_zh": "TimeLitmus：事件条件下时间序列预测中跨模态理解与解释忠实性的诊断基准",
+      "url": "https://arxiv.org/abs/2609.24677",
+      "arxiv_id": "2609.24677",
+      "authors": [
+        "Jie Gong",
+        "Maowei Jiang",
+        "Zhiwei Liu",
+        "Yankai Chen",
+        "Guojun Xiong",
+        "Xue Liu",
+        "Min Peng",
+        "Qianqian Xie",
+        "and Sophia Ananiadou"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-21T14:38:49+00:00",
+      "score": 62,
+      "reason": "该论文关注LLM在事件条件下的时间序列预测中的跨模态理解与解释忠实性，与研究中LLM、时空数据挖掘及多智能体方向有一定关联，但未涉及城市更新或遥感变化检测。",
+      "tags": [
+        "LLM",
+        "时间序列预测",
+        "跨模态理解",
+        "可解释性",
+        "基准测试"
+      ],
+      "summary_zh": "大语言模型（LLM）越来越多地被用于从数值时间序列历史和文本事件中进行预测。然而，仅凭准确率无法揭示正确答案是源于对两种输入的有效整合，还是来自事件极性、单模态先验或表面线索。同样，看似合理的解释可能只是为预测提供合理化说辞，而并未忠实反映驱动模型行为的证据。我们提出TimeLitmus，一个用于事件条件下时间序列预测中跨模态理解与解释忠实性的诊断基准。TimeLitmus包含金融和交通领域的4,856条评估记录，结合了自然预测与受控反事实和对比干预、面向解释的忠实性测试以及系统性捷径控制。在十个代表性LLM上，标准预测准确率大幅高估了可靠的跨模态理解：困难配对对比（HPC）配对正确率在金融领域最高仅为19.2%，在交通领域为11.7%，且十个模型在金融序列侧控制上均表现出低于预期的一致性。模型往往能明确识别场景关系，却在独立预测时无法应用这些关系。解释忠实性也呈现类似差距：在交通领域，大多数模型在超过90%的情况下引用了被操纵的时间因素，而行为支持率仍低于22%。人类标注者在匹配的受控和困难配对诊断上优于LLM，证实这些区分可从输入中恢复。仅自然数据的适配在证据选择和输入敏感性方面带来选择性提升，但在受控或困难配对行为上没有一致增益。该基准、评估套件和监督适配数据将被发布。",
+      "insight_zh": "该基准揭示了LLM在事件条件下时间序列预测中准确率与真实跨模态理解之间的显著差距，提示在时空数据挖掘中应用LLM时需警惕表面线索和解释不忠实问题。"
     },
     {
       "key": "arxiv:2609.22497",
@@ -986,6 +1019,36 @@
       ],
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.24626",
+      "title": "Relationally Grounded Latent World Models for Autonomous Driving",
+      "title_zh": "面向自动驾驶的关系基础潜在世界模型",
+      "url": "https://arxiv.org/abs/2609.24626",
+      "arxiv_id": "2609.24626",
+      "authors": [
+        "Fabian Schmidt",
+        "Markus Enzweiler",
+        "Abhinav Valada"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO",
+        "IROS",
+        "2026"
+      ],
+      "published": "2026-09-21T14:10:06+00:00",
+      "score": 55,
+      "reason": "该论文利用交通场景图作为潜在世界模型的语义监督，涉及空间关系建模和轨迹预测，与研究中时空数据挖掘和多源数据融合方向有一定关联，但应用领域为自动驾驶而非城市更新或遥感。",
+      "tags": [
+        "自动驾驶",
+        "潜在世界模型",
+        "场景图",
+        "语义监督",
+        "轨迹预测"
+      ],
+      "summary_zh": "潜在世界模型为自动驾驶学习预测性表示，但这些状态所保留的关系语义往往仍是隐式的。我们研究交通场景图能否作为潜在世界表示的特权语义监督。基于LAW，我们从nuScenes 3D标注构建以行动者为中心的场景图，使用冻结的文本嵌入模型编码其序列化关系结构，并在训练期间将视觉潜在表示与该语义目标对齐。我们在推理时移除监督分支，因此它既不需要场景图也不需要3D标注，且不增加测试时计算。在nuScenes上，相对于我们重新训练的LAW基线，我们的方法将平均轨迹L2误差从0.661降至0.622（5.9%），碰撞率从0.456降至0.217（52.4%）。它还优于非结构化的描述式语义目标，支持显式关系结构对潜在世界模型表示学习的益处。",
+      "insight_zh": "该研究表明显式关系结构（场景图）作为语义监督能有效提升潜在世界模型的轨迹预测和碰撞率表现，其关系语义对齐思路对时空数据挖掘中的多源数据融合有借鉴意义。"
     },
     {
       "key": "arxiv:2609.22091",
@@ -2620,6 +2683,36 @@
       "insight_zh": "在专业领域评估LLM时，不应仅依赖自动化LLM评估，也不应将任务准确率作为推理质量的合适代理指标。"
     },
     {
+      "key": "arxiv:2609.24663",
+      "title": "Beyond Endpoint Performance: Process-Level Evaluation of Self-Evolving Agents",
+      "title_zh": "超越端点性能：自演化智能体的过程级评估",
+      "url": "https://arxiv.org/abs/2609.24663",
+      "arxiv_id": "2609.24663",
+      "authors": [
+        "Hongqiang Lin",
+        "Chao Liu",
+        "Xiaofan Bai",
+        "Xuan Jin",
+        "Yuhong Li",
+        "Nenggan Zheng",
+        "Xipeng Cao"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-21T14:28:06+00:00",
+      "score": 45,
+      "reason": "该论文关注自演化智能体的过程级评估，与研究中多智能体和LLM方向相关，但摘要不完整且未涉及地理空间或城市更新应用。",
+      "tags": [
+        "自演化智能体",
+        "过程级评估",
+        "多智能体",
+        "LLM"
+      ],
+      "summary_zh": "自演化智能体将交互反馈转化为持久性产物（如记忆或技能），这些产物反过来指导后续决策。随着这些产物在经验流中被迭代更新，它们所支撑的能力也可能发生演化。因此，仅凭端点性能无法完整反映自演化过程。过程级评估对于识别目标能力何时出现以及后续更新是增强、保持还是削弱该能力至关重要。受此启发，我们提出——（摘要在此处截断）。",
+      "insight_zh": "该工作强调对自演化智能体进行过程级评估的必要性，对多智能体系统中能力演化的追踪具有方法论参考价值，但摘要信息有限，难以进一步推断。"
+    },
+    {
       "key": "arxiv:2609.23425",
       "title": "Semi-automated reconstruction of indoor geometry from 360-degree video for CFD-based airflow analysis in classrooms",
       "title_zh": "从360度视频半自动重建室内几何用于基于CFD的教室气流分析",
@@ -3651,6 +3744,38 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作探讨人们如何评判由AI介导的金融建议，关注可信度问题。",
       "insight_zh": "该研究属于AI可信性与应用评估，若研究者关注LLM在专业领域（如城市规划咨询）中的可信度评估，其方法论或可借鉴，但摘要缺失，无法确认具体框架。"
+    },
+    {
+      "key": "arxiv:2609.23215",
+      "title": "Triggers and Diagnostics for LLM-Based Interpretability Failures in Active Inference Agents",
+      "title_zh": "主动推理智能体中LLM可解释性失效的触发条件与诊断",
+      "url": "https://arxiv.org/abs/2609.23215",
+      "arxiv_id": "2609.23215",
+      "authors": [
+        "Param Raval",
+        "Rohit Shenoy",
+        "Archana Vaidheeswaran"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "Modes",
+        "in",
+        "Agentic",
+        "AI"
+      ],
+      "published": "2026-09-19T21:10:45+00:00",
+      "score": 35,
+      "reason": "该文审计LLM解释器在主动推理智能体中的失效，涉及LLM与多智能体、运行时监督，与研究方向中的LLM和多智能体部分相关，且案例为电网需求跟踪，属城市基础设施范畴，但非城市更新或遥感主题。",
+      "tags": [
+        "LLM可解释性",
+        "主动推理",
+        "智能体审计",
+        "电网调度",
+        "运行时监督"
+      ],
+      "summary_zh": "LLM解释器常被附加于自主智能体作为运行时监督，操作者阅读生成的行为说明而非内部状态。本文审计解释本身，将跟踪德国电网需求并调整发电的主动推理（AIF）智能体与三种后端（GPT-4o、Claude-3-Opus、Gemini）的LLM解释器配对，用三种黑盒触发器探测。将观测流每步污染600 MW使智能体后验偏移490 MW（约电网容量0.9%），注入期间产生的30条解释无一按既定标准标记异常，且均流畅叙述被污染的信念。在智能体采取客观错误动作的时间步上，三种解释器80-95%的情况下产生谄媚式合理化（每后端n=20）。观测元数据字段中攻击者控制的文本可操纵解释器，易感性因提供商而异，数据外泄在三种后端均成功。作者提出缓解措施但未评估。",
+      "insight_zh": "该研究揭示LLM解释器在智能体监督中的流畅但错误风险，对城市电网等关键基础设施中的LLM多智能体部署具有警示意义，但其方法为黑盒探测，未涉及地理空间数据或城市更新场景。"
     },
     {
       "key": "arxiv:2602.01161",
@@ -4859,6 +4984,43 @@
       "insight_zh": "由于摘要缺失，无法推断其具体方法与结论；从标题看，该基准对多模态LLM在视觉-文本-符号联合推理上的评测思路，或可迁移至遥感影像与地理文本、符号知识的融合推理评估。"
     },
     {
+      "key": "arxiv:2609.23184",
+      "title": "CausalWM: Causal Chain-of-Thought Reasoning for Embodied World Model",
+      "title_zh": "CausalWM：具身世界模型的因果思维链推理",
+      "url": "https://arxiv.org/abs/2609.23184",
+      "arxiv_id": "2609.23184",
+      "authors": [
+        "Ziming Xu",
+        "Shuang Liang",
+        "Ruobing Han",
+        "Ziqiao Xi",
+        "Mingxing Rao",
+        "Kun Zhou",
+        "Zijun Zhang",
+        "Yuchen Yan",
+        "Yufan Wei",
+        "Junbo Huang",
+        "Yifei Shao",
+        "Fang Nan",
+        "Biwei Huang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-19T19:16:56+00:00",
+      "score": 30,
+      "reason": "该文提出具身世界模型CausalWM，通过因果思维链进行未来视频预测，涉及时空预测与多视图，与时空数据挖掘和遥感变化检测有方法论关联，但领域为具身智能而非城市或遥感。",
+      "tags": [
+        "具身世界模型",
+        "因果思维链",
+        "视频预测",
+        "强化学习",
+        "多视图"
+      ],
+      "summary_zh": "具身世界模型从视觉观测与控制信号预测未来物理动态，物理知识隐含纠缠于潜在表示中。本文提出CausalWM，一个16B具身世界模型，在预测未来视频前进行显式因果思维链推理。CausalWM将有用变量组织为推理轨迹，使模型逐步捕捉物理演化背后的因果依赖。为训练CausalWM，作者收集31K小时具身数据，并设计三阶段范式：大规模视频预训练、因果CoT中期训练与多目标强化学习后训练。尽管仅使用有限的有监督CoT变量，CausalWM展现出涌现的上下文学习能力，支持上下文视觉特征引导与高效少步生成。CausalWM在语言条件、动作条件、单视图与多视图基准上均达到最先进性能，包括TriWorldBench排行榜Top-1。",
+      "insight_zh": "该文的因果思维链与多视图视频预测思路对遥感变化检测中的时空因果建模有潜在启发，但其为具身智能领域，未涉及地理空间数据或城市更新，迁移需谨慎。"
+    },
+    {
       "key": "arxiv:2606.04261",
       "title": "Can Generalist Agents Automate Data Curation?",
       "title_zh": "通用智能体能否实现数据策展自动化？",
@@ -5066,6 +5228,35 @@
       ],
       "summary_zh": "本文描述了提交至UNLP 2026多领域文档理解共享任务的系统。该挑战要求在严格的9小时离线Kaggle执行限制内，从多样的乌克兰语PDF文档语料中提取精确答案、文档ID与页码。在隐藏私有测试集评估中，扫描文档的光学字符识别（OCR）成为严重瓶颈，由于顺序单线程执行消耗了总时间预算的5-7小时。这一开销严格限制了剩余用于大语言模型（LLM）推理的时间，约两小时处理500个问题。为保证流水线在无超时情况下完成，我们开发了一个资源高效的混合检索增强生成（RAG）流水线，利用BM25、BGE-M3与Cross-Encoder重排序。我们没有部署参数繁重的推理模型（如DeepSeek R1，其持续超时），而是在双NVIDIA T4 GPU上通过llama.cpp使用4比特量化的LapaLLM 12B模型。优先考虑流水线稳定性而非多步推理，我们的系统获得私有分数0.8095，在15支活跃队伍中排名第10。",
       "insight_zh": "该工作显示在严格时间与硬件约束下，RAG流水线的稳定性优先于复杂推理能力，其工程权衡经验对资源受限的LLM应用具有参考价值，但摘要未涉及地理空间数据或城市分析。"
+    },
+    {
+      "key": "arxiv:2609.24620",
+      "title": "Ascent: An Agentic System over the Model Context Protocol for Real-World Clinical Data Analysis",
+      "title_zh": "Ascent：基于模型上下文协议的临床真实世界数据分析智能体系统",
+      "url": "https://arxiv.org/abs/2609.24620",
+      "arxiv_id": "2609.24620",
+      "authors": [
+        "Angelo Ziletti",
+        "Leonardo D'Ambrosi",
+        "Melanie Tuchardt",
+        "Tim Kondziella"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-09-21T14:06:32+00:00",
+      "score": 30,
+      "reason": "该论文提出基于模型上下文协议的临床数据分析智能体系统，涉及智能体架构和工具调用，与研究中多智能体方向相关，但应用领域为临床数据而非地理空间。",
+      "tags": [
+        "智能体",
+        "MCP",
+        "临床数据分析",
+        "SQL",
+        "多智能体"
+      ],
+      "summary_zh": "从真实世界临床数据回答流行病学问题需要医学编码、模式感知SQL以及对关于人群、分母和时间的隐式选择的验证。我们提出Ascent，一个智能体系统，通过共享的模型上下文协议工具表面为标准化和原生模式暴露医学编码、问答和队列分析。我们引入EpiTrap，一个测试系统是否避免公认药物流行病学错误的数据集，并比较固定流水线与跨模型和编排器的智能体。使用有能力的模型时，智能体在原生和标准化模式上分别比固定流水线平均提升27和20个百分点。这些增益需要更多工具调用和更长运行时间。来自真实项目的经验凸显了该系统在可行性评估、诊断迭代和专家引导分析方面的价值。",
+      "insight_zh": "该研究表明基于MCP的智能体系统在临床数据分析中相比固定流水线有显著准确率提升，其工具调用和编排思路对地理空间智能体系统设计有参考价值，但需权衡计算成本。"
     },
     {
       "key": "arxiv:2606.23079",
@@ -6646,6 +6837,34 @@
       "insight_zh": "从标题推断，该工作可能刻画了在稳定性假设下折扣MDP的样本复杂度下界与上界，属于强化学习理论学习；对多智能体仿真、城市决策建模等应用仅有间接的理论参考价值，摘要缺失无法确认具体结论。"
     },
     {
+      "key": "arxiv:2609.23185",
+      "title": "Neural Residual Modeling for Scientific Data Compression under Guaranteed Error Bounds",
+      "title_zh": "保证误差界下的科学数据神经残差建模压缩",
+      "url": "https://arxiv.org/abs/2609.23185",
+      "arxiv_id": "2609.23185",
+      "authors": [
+        "Surya Majumder",
+        "Liangji Zhu",
+        "Sanjay Ranka",
+        "Anand Rangarajan"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-19T19:20:45+00:00",
+      "score": 25,
+      "reason": "该文提出在保证误差界下对科学仿真数据进行神经残差建模压缩，涉及遥感与科学数据压缩，与遥感变化检测中的数据处理有间接关联，但未涉及变化检测或城市应用。",
+      "tags": [
+        "科学数据压缩",
+        "残差矢量量化",
+        "U-Net",
+        "误差保证",
+        "遥感数据"
+      ],
+      "summary_zh": "科学仿真数据的有损压缩日益依赖残差矢量量化（RVQ）等学习式潜空间架构，其迭代量化基表示与残差以逐步降低重建误差。但RVQ完全在潜空间进行残差建模，未处理重建的像素空间误差结构。本文提出后处理流程，在RVQ压缩器上增加U-Net以预测并校正原始体数据与RVQ重建之间的像素空间残差。作者表明这些残差具有空间结构而非由局部强度或梯度特征驱动，因此需要深度空间模型而非简单统计校正。校正后的重建再经保证自编码器（GAE）阶段，将剩余残差投影到逐块PCA基以强制用户指定的块级误差界。作者称这是首个将潜空间RVQ、深度空间后处理网络的显式像素空间残差校正与GAE误差界保证结合于单一框架的科学数据压缩流程。在S3D、JHTDB与E3SM数据集上，该方法在NRMSE与压缩比上持续优于仅RVQ及标准残差校正基线，同时保持严格误差保证。",
+      "insight_zh": "该流程的误差界保证与像素空间残差校正思路对遥感影像压缩与变化检测预处理有潜在价值，但本文未涉及遥感变化检测任务，且作者称“首个”需结合其声明语境理解。"
+    },
+    {
       "key": "arxiv:2607.06483",
       "title": "Mitigating Domain Shift in Conditioned Floor Plan Generation: Synthetic Pre-training for Data-Efficient Adaptation",
       "title_zh": "缓解条件平面图生成中的域偏移：面向数据高效适应的合成预训练",
@@ -7406,6 +7625,36 @@
       "insight_zh": "该失效模式对基于世界模型的智能体决策具有警示意义，或可启发地理空间智能体的鲁棒性研究，但摘要缺失，无法确认其具体发现。"
     },
     {
+      "key": "arxiv:2609.24629",
+      "title": "Augmented Hypothesis Testing with Persona-Based LLM Simulations",
+      "title_zh": "基于人格LLM模拟的增强假设检验",
+      "url": "https://arxiv.org/abs/2609.24629",
+      "arxiv_id": "2609.24629",
+      "authors": [
+        "Ziyad Benomar",
+        "Aymen Al Marjani",
+        "Paul Missault",
+        "Saab Mansour"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.AP"
+      ],
+      "published": "2026-09-21T14:11:34+00:00",
+      "score": 25,
+      "reason": "该论文提出基于人格LLM模拟的增强假设检验框架，涉及LLM智能体模拟和统计有效性，与研究中LLM和多智能体方向相关，但应用场景为A/B测试而非地理空间。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "假设检验",
+        "A/B测试",
+        "人格模拟"
+      ],
+      "summary_zh": "A/B测试需要大样本量、长周期和高成本。当机器学习模型可提供实验结果的辅助预测时，不确定的预测质量阻止了完全取代人类实验，但这些预测仍可能包含有用信号。我们提出一个原则性框架，用于学习增强的假设检验，利用未知质量的预测来减少样本量，同时保持统计有效性。预测在粒度上自然变化，从粗粒度聚合信号到细粒度个体级估计，我们的框架处理这一光谱的两端：（1）对于群体级方向性预测，仅可获得关于处理效应符号的二元信号时，我们使用非对称检验，并在学习增强算法范式内证明一致性和鲁棒性界；（2）对于个体级预测，我们引入广义PPI++（GPPI），扩展预测驱动推断以通过高维变换处理非线性预测误差。两种方法都受益于准确预测，同时对不准确或对抗性预测保持鲁棒。我们使用基于人格的LLM模拟验证框架，其中配备用户人格的AI智能体预测个体行为，作为跨越两种粒度级别的自然预测来源。在四个真实世界数据集上的实验表明，我们的方法与基于人格的预测相结合，在保持严格统计有效性的同时大幅降低实验成本。",
+      "insight_zh": "该研究将人格化LLM智能体模拟作为预测来源融入假设检验框架，在保持统计有效性的同时降低实验成本，其多智能体模拟思路对时空数据挖掘中的实验设计有潜在参考价值。"
+    },
+    {
       "key": "arxiv:2609.23640",
       "title": "Are Human-Aligned Models Models of Humans? A Turing-Test Gap in Preference Alignment",
       "title_zh": "人类对齐的模型是人类模型吗？偏好对齐中的图灵测试差距",
@@ -8068,6 +8317,34 @@
       "insight_zh": "该研究的复数域注意力归一化思路或可为遥感信号处理中复数SAR数据的深度学习建模提供理论启发，但其验证任务与地理空间应用场景差异较大。"
     },
     {
+      "key": "arxiv:2609.23219",
+      "title": "Causal Inference with Unobserved Confounding: A Mixture Learning Perspective",
+      "title_zh": "未观测混杂下的因果推断：混合学习视角",
+      "url": "https://arxiv.org/abs/2609.23219",
+      "arxiv_id": "2609.23219",
+      "authors": [
+        "Mansi Sood",
+        "Devavrat Shah"
+      ],
+      "categories": [
+        "cs.LG",
+        "eess.SP",
+        "stat.CO"
+      ],
+      "published": "2026-09-19T21:31:59+00:00",
+      "score": 22,
+      "reason": "该文从混合学习视角处理未观测混杂下的因果推断，与时空数据挖掘中的因果分析、面板数据建模有方法论关联，但未涉及地理空间数据或城市应用。",
+      "tags": [
+        "因果推断",
+        "未观测混杂",
+        "混合学习",
+        "面板数据",
+        "反事实分布"
+      ],
+      "summary_zh": "未观测混杂是观测数据因果推断的核心挑战。本文将潜在混杂视为引发观测数据混合结构的异质性来源，在适当的结构与可识别性假设下，恢复混合分布与成分机制即可估计干预分布与因果效应量。以伯努利混合变体为例，文章梳理混合学习技术及其结构假设，并将其与面板数据中的因果推断（含潜在因子模型与合成干预）相联系。进一步考虑具有相依结果轨迹的高维指数族混合，从反事实均值拓展到反事实分布建模，并将该视角与处理未观测混杂的其他方法进行对比。",
+      "insight_zh": "该视角对城市更新中面板数据的因果效应估计具有潜在方法论价值，尤其是将潜在混杂建模为混合结构以估计反事实分布，但本文未涉及空间依赖或地理加权等地理空间特性。"
+    },
+    {
       "key": "arxiv:2609.23026",
       "title": "BrainIAC: Interactive 3D Brain Lesion Segmentation across Heterogeneous MRI Modalities with Online Adaptation",
       "title_zh": "BrainIAC：跨异构MRI模态的交互式3D脑病变分割与在线适应",
@@ -8096,6 +8373,37 @@
       ],
       "summary_zh": "脑病变分割是医学图像分析中的基础任务，在诊断、治疗规划和纵向疾病监测中发挥关键作用。然而现有模型仍难以满足真实临床使用需求，因为部署中存在数据分布偏移，源于扫描仪硬件、成像协议（不同MRI模态组合）和新病理类型的差异。作者提出BrainIAC（脑病变交互式自适应持续学习分割），一个统一框架，集成：（i）多模态骨干网络，训练用于分割多种脑病变并通过零填充和随机模态丢弃处理异构模态集合；（ii）带边界框和点击提示的3D交互式分割，在无提示时保留全自动预测；（iii）在线适应机制，结合交互中适应和交互后适应，以网络自身预测作为伪标签监督，并由额外的点击中心高斯损失引导。据作者所知，这是最早的3D交互式分割在线适应方法之一，也是首个结合异构模态集合处理与在线适应的方法。在七个脑MRI数据集上的实验表明，所提组件提供互补且协同的收益。该方法持续优于现有方法，并在异构成像模态（包括训练中未见的模态）以及此前未见的脑病理类型上泛化良好。代码和3D Slicer插件将在发表后发布于https://github.com/WenTXuL/BrainIAC。",
       "insight_zh": "该工作提示，将异构模态处理与交互式在线适应结合，可能提升脑病变分割在分布偏移下的泛化能力，但其结论基于所报告的七个脑MRI数据集。"
+    },
+    {
+      "key": "arxiv:2609.24646",
+      "title": "iSDFT: Information-Proximal Self-Distillation for Continual Learning in LLMs",
+      "title_zh": "iSDFT：面向LLM持续学习的信息近端自蒸馏",
+      "url": "https://arxiv.org/abs/2609.24646",
+      "arxiv_id": "2609.24646",
+      "authors": [
+        "Ahmed Khaled Khamis",
+        "Xiaotong Ji",
+        "Hassan Jaber",
+        "Rasul Tutunov",
+        "Matthieu Zimmer",
+        "Jun Wang",
+        "Haitham Bou-Ammar"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-21T14:21:50+00:00",
+      "score": 20,
+      "reason": "该论文提出一种用于LLM持续学习的自蒸馏微调方法，与研究中LLM方向有技术关联，但未涉及地理空间或城市应用。",
+      "tags": [
+        "LLM",
+        "持续学习",
+        "自蒸馏",
+        "微调"
+      ],
+      "summary_zh": "在策略自蒸馏微调（SDFT）能从演示中学习新技能同时减少遗忘，但它总是朝完整的演示条件教师蒸馏。这将教师影响固定在完整教师端点，无法控制每个预测状态应转移多少演示信息。我们提出信息近端SDFT（iSDFT），将教师视为有预算的信息源。在每个token处，iSDFT选择最接近当前学生且满足规定教师信息约束的分布，产生具有局部确定倾斜的闭式指数目标。为控制累积漂移，我们进一步将学生锚定到其冻结的基础策略。在四个异构LLM骨干和两个专业化任务上，iSDFT在8个模型-任务设置中的7个优于原始SDFT，在剩余1个中与之持平。它还在原始SDFT基准套件上提供更紧的保持性，73%的评估保持在基础模型0.5分以内，而最强基线为52%，同时在所有十个额外数学、编程和竞赛数学基准上取得最大平均提升。这些结果表明，控制教师信息引入的量和时机可在保持更广泛能力的同时改善专业化。",
+      "insight_zh": "该工作通过将教师视为有预算的信息源并控制信息转移量，在LLM持续学习中实现了更好的专业化与能力保持平衡，其思路对LLM微调策略有参考意义，但与地理空间研究无直接关联。"
     },
     {
       "key": "arxiv:2609.24984",
@@ -9237,6 +9545,32 @@
       "insight_zh": "摘要缺失，无法确认其具体方法与实验；仅从标题看，其世界模型与预测导航思路或对时空智能体决策有参考价值，但与城市更新和遥感变化检测的关联较弱。"
     },
     {
+      "key": "arxiv:2609.23201",
+      "title": "Do Not Trust the Benchmark: Limitations of General LLM Rankings and a Case for Task-Specific Evaluation",
+      "title_zh": "不要迷信基准：通用LLM排名的局限与任务特定评估的必要性",
+      "url": "https://arxiv.org/abs/2609.23201",
+      "arxiv_id": "2609.23201",
+      "authors": [
+        "Danial Amin"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "published": "2026-09-19T20:02:05+00:00",
+      "score": 20,
+      "reason": "该文批判通用LLM排行榜的局限并倡导任务特定评估，与LLM研究方向相关，对地理空间智能中的模型选择有方法论启示，但未涉及城市或遥感应用。",
+      "tags": [
+        "LLM评测",
+        "基准局限",
+        "任务特定评估",
+        "众包平台",
+        "模型选择"
+      ],
+      "summary_zh": "基准分数日益影响LLM的开发、营销与选择，但总分只有在明确被测系统、题目构成与评测条件时才可解释。本文审视通用LLM排名的五项关联局限：被测系统与公开可用系统的差异；外部评测中的商业激励与依赖；基准饱和、缺陷题目与数据污染；模型利用评分程序；通用分数与用户任务的相关性有限。作者主张评测应披露被测配置、验证题目与任务完成、同时报告性能与成本及执行时间，并明确泛化范围。文章讨论众包基准平台Isotanta作为贡献题目与重复评测的实践示例，指出更大的题库可改善任务覆盖、重复采样可提升估计稳定性，但二者均不保证效度或个性化。核心论点是模型选择需要针对预期工作的性能证据，而非通用排行榜上的高位。",
+      "insight_zh": "该观点对地理空间智能中选择LLM或遥感基础模型具有方法论参考价值，强调任务特定评测与成本披露，但本文未涉及地理空间任务或城市更新场景。"
+    },
+    {
       "key": "arxiv:2507.07292",
       "title": "Discretization-independent operator learning for partial differential equations",
       "title_zh": "面向偏微分方程的离散化无关算子学习",
@@ -9457,6 +9791,31 @@
       ],
       "summary_zh": "混合曲率表示学习旨在捕捉单一曲率体系难以建模的丰富几何结构。现有方法多依赖乘积流形，需要人工指定不同曲率空间的组合方式，并将曲率贡献分散到各因子上。作者提出$\\mathbb{SL}(n)$空间，一种由简单的$\\det(A)=1$约束与左不变Schatten-$p$ Finsler结构定义的表示几何。尽管构造极简，$\\mathbb{SL}(n)$在共同旗杆周围同时呈现逐点负、零与正旗曲率，其混合曲率与曲率耦合能力相对于内在几何上界渐近最大。除几何性质外，其非交换群结构提供内在的阶序敏感性，非幂零李代数允许任意深度的非零嵌套李括号，从而支持深度阶序感知组合。实验上，$\\mathbb{SL}(n)$在不同规模的图基准上持续优于多种表示流形基线：在KEGG与HumanCyc上分别将相对最强基线的平均失真降低44.3%与40.5%，在OGBL-PPA上将Hits@20提升42.8%。Flickr30k-Order实验进一步支持其从有序组合中捕捉高阶依赖的能力。",
       "insight_zh": "该文的混合曲率与阶序感知组合能力，理论上可用于建模城市时空图中的层次与方向依赖，但论文仅在通用图基准上验证，未涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.24635",
+      "title": "Written as a Record, Read as an Address: What a Forward Pass Leaves in an Operation's KV Cache",
+      "title_zh": "写为记录，读为地址：一次前向传播在操作KV缓存中留下了什么",
+      "url": "https://arxiv.org/abs/2609.24635",
+      "arxiv_id": "2609.24635",
+      "authors": [
+        "Lingfeng Wu",
+        "Behzad Shomali"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-21T14:16:19+00:00",
+      "score": 18,
+      "reason": "该论文研究LLM前向传播中KV缓存的操作记录与访问机制，属于LLM可解释性研究，与研究中LLM方向有技术关联，但未涉及地理空间应用。",
+      "tags": [
+        "LLM",
+        "KV缓存",
+        "机制可解释性",
+        "实体追踪"
+      ],
+      "summary_zh": "当语言模型读取诸如“交换盒子F和盒子B的内容”这样的操作时，其前向传播会将这些token的键和值写入KV缓存。先前关于实体追踪的工作确立了模型使用什么：绑定在查询时解析，而非作为显式潜在状态存储。我们追问它们在操作跨度处写入什么以及如何被访问。我们将一次前向传播拆分为冻结的写入器和读取器：写入器的缓存无梯度地重新计算，而读取器仅看到指令和操作token，所有状态描述被隐藏，并单独训练。因此读取器恢复的任何内容都已存在于未修改的缓存中。在一个合成盒子任务上，基础读取器恢复的查询绑定≤0.06，而训练后为0.75–1.00，且可恢复性与操作的读/写足迹相关。我们发现两种访问模式。在Llama-3.1-8B和Mistral-7B中，操作跨度移植因果性地重定向读取哪个可见状态，即使两个世界持有相同的值，揭示了一种路由记录。隔离训练保留了路由，并从单个操作数名称token在狭窄的中层深度带（Llama-3.1-8B的32层中的12–15层，Mistral-7B的14–17层）增加了对载荷（操作读取的值）的直接访问——与持有路由记录的位点相同。相同配方扩展到更多操作、ToMi和GSM8K，但受训练覆盖限制并付出开卷准确率代价。因此，操作token留下了局部化、因果可恢复的记录，支持路由和直接载荷访问，尽管写入它们的模型主要读取它们携带的地址而非值。",
+      "insight_zh": "该研究揭示了LLM在操作跨度处写入KV缓存的局部化、因果可恢复记录，支持路由和载荷访问两种模式，对理解LLM内部机制有贡献，但与地理空间研究关联有限。"
     },
     {
       "key": "arxiv:2607.06023",
@@ -9869,6 +10228,45 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结论。",
       "insight_zh": "摘要缺失，无法确认其评估方法细节；从标题可推测其构建了基于《文明V》的LLM战略决策评估基准，可能对智能体决策评估方法有参考价值，但与地理空间应用无直接联系。"
+    },
+    {
+      "key": "arxiv:2609.23231",
+      "title": "ChemCLIR-Bench: Benchmarking Cross-Lingual Information Retrieval in Multilingual Chemical Patents",
+      "title_zh": "ChemCLIR-Bench：多语言化学专利中的跨语言信息检索基准",
+      "url": "https://arxiv.org/abs/2609.23231",
+      "arxiv_id": "2609.23231",
+      "authors": [
+        "Mahdi Astaraki",
+        "Mohammad Khodadad",
+        "Reza Namazi",
+        "Mohammad Arshi Saloot",
+        "Amir Reza Behzad Moghadam",
+        "Hamidreza Mahyar",
+        "Soheila Samiee"
+      ],
+      "categories": [
+        "cs.CL",
+        "references",
+        "and",
+        "appendices;",
+        "7",
+        "pages",
+        "of",
+        "main",
+        "text"
+      ],
+      "published": "2026-09-19T22:18:58+00:00",
+      "score": 18,
+      "reason": "该文构建了化学专利领域的跨语言检索基准，方法上涉及多语言嵌入模型评测，与多源数据融合和文本挖掘有方法论关联，但领域为化学专利，与城市更新和遥感无直接关系。",
+      "tags": [
+        "跨语言检索",
+        "化学专利",
+        "多语言嵌入",
+        "基准评测",
+        "领域检索"
+      ],
+      "summary_zh": "跨语言信息检索在多国产业中日益重要，但现有基准未能充分反映领域特定的跨语言检索及聚合召回率所掩盖的检索深度与可恢复性失败。本文基于Google Patents与欧洲专利局数据构建覆盖五种语言的多语言数据集，系统评测八种先进嵌入模型的跨语言检索表现。结果显示单语与跨语言设置间存在显著差距：最佳模型Recall@10从0.72降至0.53，检索深度亦明显退化，部分单语表现优异的多语言模型在跨语言场景下急剧下降。作者据此指出当前方法的局限，并提供模型选择与诊断性评测框架。数据与代码已公开。",
+      "insight_zh": "该基准的诊断思路（区分聚合指标与检索深度失败）可启发多源地理文本检索的评测设计，但其化学专利领域与地理空间智能的迁移性有限。"
     },
     {
       "key": "arxiv:2508.09297",
@@ -10677,70 +11075,6 @@
       "reason": "关键词命中：Multi-Agent",
       "tags": [
         "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19499",
-      "title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19499",
-      "arxiv_id": "2609.19499",
-      "authors": [
-        "Mobina Kashaniyan",
-        "Ali Jannesari"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.DC",
-        "cs.PF",
-        "Qwen2.5-1.5B",
-        "on",
-        "GSM8K",
-        "and",
-        "SciQ",
-        "using",
-        "NVIDIA",
-        "A100",
-        "V100",
-        "GPUs.",
-        "Studies",
-        "LLM",
-        "test-time",
-        "scaling,",
-        "candidate-generation",
-        "scheduling,",
-        "latency,",
-        "throughput,",
-        "GPU-hours,",
-        "GPU-device",
-        "energy",
-        "Efficiency",
-        "with",
-        "Sustainable",
-        "Performance",
-        "(EESP),",
-        "co-located",
-        "SC26,",
-        "Chicago,",
-        "USA,2026.",
-        "8",
-        "pages,",
-        "4",
-        "figures,",
-        "9",
-        "tables.",
-        "Experiments",
-        "evaluate",
-        "Phi-3-mini",
-        "USA,2026"
-      ],
-      "published": "2026-09-16T23:29:57+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -14691,6 +15025,33 @@
       "insight_zh": "公平性分析方法论可能对城市分析中的空间公平性研究有间接参考价值，但摘要缺失且主题与核心研究方向距离较远。"
     },
     {
+      "key": "arxiv:2609.23205",
+      "title": "Euston: Training Away Mathematical Sycophancy Without Losing the Mathematics",
+      "title_zh": "Euston：在不损失数学能力的前提下训练消除数学谄媚",
+      "url": "https://arxiv.org/abs/2609.23205",
+      "arxiv_id": "2609.23205",
+      "authors": [
+        "Zehua Cheng",
+        "Wei Dai",
+        "Jiahao Sun"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-19T20:26:44+00:00",
+      "score": 15,
+      "reason": "该文训练数学模型验证模型以抵抗谄媚，涉及LLM可信度与训练方法，与LLM研究方向有间接关联，但与城市更新、时空数据挖掘和遥感无直接关系。",
+      "tags": [
+        "数学谄媚",
+        "LLM验证",
+        "GRPO",
+        "合成数据",
+        "推理模型"
+      ],
+      "summary_zh": "推理语言模型被训练为给出解答而非拒绝，即使问题本身为假也会自信推导。本文提出Euston，一个8B数学主张验证模型。训练数据由GraphSynth生成，该概率因子图生成器将属性级多样性与解码时结构掩码及跨度同步验证耦合，从2010-2025年arXiv论文中生成3,026对匹配的真/篡改陈述（共6,052条）。作者用GRPO在四块H100上以基于规则的零API奖励微调DeepSeek-R1-8B共189步。在200真/200假的平衡留出集上，平衡准确率从29.50%升至63.75%，判别差距从-0.5%（z=-0.1）升至+27.5%（z=+6.0）。AIME 2026官方语义准确率为65.00%，对比基线69.17%，差异-4.17%不显著；而同一配方在较小GraphSynth语料上的早期运行崩溃至40.00%。中位响应长度从19,217降至18,296 token，截断率从25.8%降至8.3%。作者同时报告了限制解释的混杂因素。",
+      "insight_zh": "该工作表明可通过合成数据与强化学习降低LLM的数学谄媚，其“真/篡改配对”数据生成思路或可迁移至地理空间事实核查，但本文未涉及地理或城市领域，且作者明确指出评估集全为假陈述等混杂因素限制结论。"
+    },
+    {
       "key": "arxiv:2503.09020",
       "title": "Enhancing the Non-Functional Quality Compliance of LLM-Generated Code through Quality-Aware Preference Learning",
       "title_zh": "通过质量感知偏好学习提升LLM生成代码的非功能质量合规性",
@@ -14973,6 +15334,32 @@
       ],
       "summary_zh": "提出CANDOR方法，量化并校准预训练冻结编码器在不同输入下的预测不一致性，确保输出概率的校准性。",
       "insight_zh": "基础模型的不确定性量化对遥感影像特征提取的可靠性评估具有借鉴意义。"
+    },
+    {
+      "key": "arxiv:2609.24650",
+      "title": "Assessing Readability with LLMs: The Role of Reasoning and Few-Shot Prompting",
+      "title_zh": "用LLM评估可读性：推理与少样本提示的作用",
+      "url": "https://arxiv.org/abs/2609.24650",
+      "arxiv_id": "2609.24650",
+      "authors": [
+        "Rapha\\\"el Thieffry",
+        "Matej Martinc"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-21T14:22:39+00:00",
+      "score": 15,
+      "reason": "该论文评估LLM在多语言可读性评估中的表现，涉及LLM推理与提示策略，与研究中LLM方向有微弱关联，但应用领域为教育文本而非地理空间。",
+      "tags": [
+        "LLM",
+        "可读性评估",
+        "少样本提示",
+        "思维链",
+        "多语言"
+      ],
+      "summary_zh": "可读性评估对于在教育、医疗和信息检索等领域为目标受众定制文本至关重要。然而，传统可读性公式难以跨体裁和语言泛化，而监督机器学习模型依赖稀缺的领域特定标注语料，限制了其适用性——尤其是在资源较少的语言中。大语言模型（LLM）提供了一种高度可扩展、多语言且无需任务特定训练的替代方案，但高级提示策略对其性能的影响仍未得到充分探索。本文对多种开源LLM进行系统基准测试，用于多语言可读性评估，重点关注教育框架所需的离散可读性水平预测。除英语外，我们还在资源较少的斯洛文尼亚语上评估方法，以确定LLM在低资源环境下是否仍然有效。具体而言，我们研究显式推理的影响，证明思维链（CoT）提示和推理导向模型相比直接回答有显著提升。此外，我们对少样本上下文学习的探索表明，每个类别仅提供一个标注示例（1-shot）即可显著提升预测质量，而更多示例带来的收益递减。通过将这些方法与传统无监督指标和最先进的监督基线进行全面比较，我们确立了开箱即用LLM作为稳健跨语言可读性评估器的可行性。",
+      "insight_zh": "该研究表明思维链提示和少样本学习能显著提升LLM在多语言可读性评估中的表现，其提示策略结论对LLM在低资源场景下的应用具有参考价值，但与地理空间研究关联有限。"
     },
     {
       "key": "arxiv:2504.11582",
@@ -15286,6 +15673,40 @@
       ],
       "summary_zh": "以往针对埃及阿拉伯语的NLP研究主要关注权威的开罗埃及阿拉伯语（CEA）方言，导致较少权威的上埃及埃及阿拉伯语（SEA）方言在LLM和资源开发中缺乏代表性。这种代表性缺失是否影响LLM对SEA可接受性的看法（上游），以及上游对SEA的偏见是否导致更差的性能（下游）？我们在目标句法评估（TSE）任务中考察SEA方言特征对LLM偏好的上游影响，发现多个LLM对SEA存在显著偏见。随后我们分析这些相同特征对MMLU基准下游模型性能的影响，表明模型在呈现SEA时性能下降。这项工作凸显了进一步探索次方言变异如何影响语言技术的必要性。",
       "insight_zh": "该研究提示，LLM中的方言偏见不仅影响上游偏好，还可能传导至下游任务性能，但未涉及地理空间或城市应用场景。"
+    },
+    {
+      "key": "arxiv:2609.23239",
+      "title": "SoK: Formal Methods for Fact-Checking and Information Integrity",
+      "title_zh": "SoK：事实核查与信息完整性的形式化方法",
+      "url": "https://arxiv.org/abs/2609.23239",
+      "arxiv_id": "2609.23239",
+      "authors": [
+        "Nikolaos Kekatos",
+        "Theodoros Nestoridis",
+        "Charalampos Bratsas",
+        "Charalampos Dimoulas",
+        "Georgios Konstantinidis",
+        "Georgios Malogiannis",
+        "Michael Sirivianos",
+        "Andreas Veglis"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "cs.LO"
+      ],
+      "published": "2026-09-19T22:41:50+00:00",
+      "score": 12,
+      "reason": "该文系统梳理了自动事实核查中的形式化方法，与LLM信息完整性相关，但与城市更新、时空数据挖掘、遥感变化检测等核心方向关联较弱，仅对LLM可信度评估有间接参考价值。",
+      "tags": [
+        "事实核查",
+        "形式化方法",
+        "信息完整性",
+        "可审计性",
+        "AI治理"
+      ],
+      "summary_zh": "自动事实核查系统通常只返回真/假标签，缺少对判定依据、反事实条件及改写一致性的记录，作者称之为“warrant”。形式化方法可提供此类证据，且《数字服务法》与《人工智能法》均要求可审计证据。本文按“被形式化的对象”将121项工作分为五个层次：主张、推理、核查系统、传播生态与监管义务。分析发现：多数形式化工具已存在但源自其他领域，极少应用于本领域；对核查系统自身的验证缺口最大；专业事实核查流程中若干环节（如将主张改写为可核查形式、更正已发布结论）尚无明确正确性标准。文末提出开放问题及初步建议。",
+      "insight_zh": "该综述提示，在LLM与多智能体驱动的城市分析流程中，事实核查的可审计性（warrant）可能成为可信地理空间智能的重要补充，但本文未涉及地理空间数据或城市应用，需谨慎迁移。"
     },
     {
       "key": "arxiv:2609.17639",
@@ -17381,6 +17802,33 @@
       "insight_zh": "该研究属于语音识别领域，与地理空间智能无直接关联，除非研究者关注多模态时空数据中的序列对齐问题，但摘要缺失，无法确认其可迁移性。"
     },
     {
+      "key": "arxiv:2609.23191",
+      "title": "Low resource cross-modal alignment using HGNN to enhance speech representation",
+      "title_zh": "低资源跨模态对齐：用HGNN增强语音表示",
+      "url": "https://arxiv.org/abs/2609.23191",
+      "arxiv_id": "2609.23191",
+      "authors": [
+        "Yannick Yomie Nzeuhang",
+        "Marie Tahon",
+        "Paulin Melatagia Yonta"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-19T19:31:01+00:00",
+      "score": 10,
+      "reason": "该文提出基于HGNN与链接预测的数据高效语音-文本空间对齐方法，与多源数据融合和跨模态方法有微弱关联，但领域为语音处理，与城市更新和遥感无关。",
+      "tags": [
+        "跨模态对齐",
+        "异构图神经网络",
+        "语音表示",
+        "低资源",
+        "链接预测"
+      ],
+      "summary_zh": "语音-文本空间对齐将不同模态映射到共享表示空间以相互丰富表示。现有架构如SAMU-XLSR通常采用学生/教师框架微调音频编码器以匹配文本表示，但需要大量训练数据与算力，难以适用于资源受限的低资源语言。本文提出基于异构图神经网络与链接预测的数据高效空间对齐方法，核心思想是利用消息传递显式将文本模态信息迁移到语音模态，从而减少训练数据需求并内在地丰富声学表示，且更具可解释性。作者在TIMIT（英语）与Yemba（喀麦隆语言）上进行词级语音-文本对齐实验，结果与最先进的SAMU-XLSR相当，在Yemba词检索任务上甚至超越，同时资源消耗远低。",
+      "insight_zh": "该方法的图消息传递与链接预测思路对地理空间多模态对齐有潜在类比价值，但本文聚焦语音-文本，未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2606.27163",
       "title": "Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline)",
       "title_zh": "学习折叠：LeHome挑战赛2026获奖方案（线上第一，线下第二）",
@@ -17671,6 +18119,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作可能提出一种联邦学习框架用于分布式环境下的数控机床刀具磨损预测。",
       "insight_zh": "摘要缺失，无法评估其方法细节；该工作属于工业联邦学习应用，与地理空间智能研究的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.23194",
+      "title": "Enhancing speech representation learning with cross-modal knowledge transfer with HGNN under low resource settings: the case study of Yemba",
+      "title_zh": "低资源场景下基于HGNN跨模态知识迁移的语音表示学习增强：以Yemba为例",
+      "url": "https://arxiv.org/abs/2609.23194",
+      "arxiv_id": "2609.23194",
+      "authors": [
+        "Yannick Yomie Nzeuhang",
+        "Paulin Melatagia Yonta",
+        "Marie Tahon"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-19T19:43:46+00:00",
+      "score": 10,
+      "reason": "该文用异构图神经网络进行跨模态知识迁移以增强低资源语音表示，方法上涉及图神经网络与多模态融合，与多源数据融合有微弱方法论关联，但领域为语音处理，与地理空间智能无关。",
+      "tags": [
+        "语音表示学习",
+        "跨模态知识迁移",
+        "异构图神经网络",
+        "低资源语言",
+        "Yemba"
+      ],
+      "summary_zh": "声学表示学习对语音处理至关重要，但低资源语言面临严重数据稀缺。本文提出基于异构图神经网络（HGNN）的跨模态迁移知识方法，将声学与语言实体建模为统一图中的不同节点类型，通过消息传递使语言节点显式向声学节点迁移知识，实现结构化且可解释的跨模态信息流。作者用标准聚类指标对声学表示进行内在评估，并在英语基准与喀麦隆语言数据集上进行低资源孤立词识别任务。结果表明声学表示持续受益于图中传播的语言知识。作者称这是首次用HGNN实现声学表示学习的显式跨模态知识迁移。",
+      "insight_zh": "该文的异构图跨模态迁移思路对多源地理数据融合有类比价值，但其为语音领域且未涉及地理空间数据，迁移需谨慎。"
     },
     {
       "key": "arxiv:2504.11809",
@@ -18408,6 +18883,73 @@
       "insight_zh": "摘要为空，无法判断其技术路线；从标题推测其为特定领域（手术）构建视频基础模型，其领域适配思路或对构建地理空间视频基础模型有类比参考，但无实质证据。"
     },
     {
+      "key": "arxiv:2609.19499",
+      "title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
+      "title_zh": "样本数量并不足够：候选生成策略塑造LLM测试时扩展的能耗与性能",
+      "url": "https://arxiv.org/abs/2609.19499",
+      "arxiv_id": "2609.19499",
+      "authors": [
+        "Mobina Kashaniyan",
+        "Ali Jannesari"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.DC",
+        "cs.PF",
+        "Qwen2.5-1.5B",
+        "on",
+        "GSM8K",
+        "and",
+        "SciQ",
+        "using",
+        "NVIDIA",
+        "A100",
+        "V100",
+        "GPUs.",
+        "Studies",
+        "LLM",
+        "test-time",
+        "scaling,",
+        "candidate-generation",
+        "scheduling,",
+        "latency,",
+        "throughput,",
+        "GPU-hours,",
+        "GPU-device",
+        "energy",
+        "Efficiency",
+        "with",
+        "Sustainable",
+        "Performance",
+        "(EESP),",
+        "co-located",
+        "SC26,",
+        "Chicago,",
+        "USA,2026.",
+        "8",
+        "pages,",
+        "4",
+        "figures,",
+        "9",
+        "tables.",
+        "Experiments",
+        "evaluate",
+        "Phi-3-mini",
+        "USA,2026"
+      ],
+      "published": "2026-09-16T23:29:57+00:00",
+      "score": 8,
+      "reason": "该论文研究LLM测试时扩展中候选生成策略对能耗和性能的影响，属于LLM推理效率方向，与LLM研究主题相关，但与GIS和城市研究无直接关联。",
+      "tags": [
+        "测试时扩展",
+        "LLM推理",
+        "GPU能效",
+        "生成调度"
+      ],
+      "summary_zh": "测试时扩展可以通过生成和组合多个候选响应来改进大型语言模型推理。在基于采样的方法中，推理预算通常由生成的候选数量N来描述。然而，N告诉我们生成了多少候选，而非它们如何被执行。相同的候选预算可以在一次批量生成调用中产生，也可以拆分为多次较小批量的顺序调用。本文首先使用Phi-3-mini和Qwen2.5-1.5B在500个GSM8K提示上研究增加N对推理准确率的影响。正如预期，将N从1增加到8使Phi-3-mini的准确率提高8.4个百分点，Qwen2.5-1.5B提高18.4个百分点。然而，仅凭准确率无法显示使用更大候选预算的系统成本。因此，本文固定N=8并比较四种生成调度：1x8、2x4、4x2和8x1，其中axb表示a次生成调用、每次b个候选。在保持总候选数不变的情况下测量延迟、吞吐量、GPU小时和总GPU设备能耗。在A100 GPU上，八次串行调用使用的总GPU设备能耗是一次批量调用的4.64-4.86倍，P95延迟为5.77-6.12倍。",
+      "insight_zh": "该研究强调候选数量不足以描述多候选测试时扩展的系统成本，生成调度和GPU级系统指标应被纳入评估，这一观点对地理空间AI中的大规模推理部署具有参考价值。"
+    },
+    {
       "key": "arxiv:2606.00380",
       "title": "SUPREME: A Multi-GPU Framework for Reproducible Image Unlearning Method Evaluation",
       "title_zh": "SUPREME：面向可复现图像遗忘方法评估的多GPU框架",
@@ -19126,6 +19668,33 @@
       "insight_zh": "该研究展示了LLM生成大规模标注数据以缓解低资源语言任务数据稀缺的可行性，其词典约束CRF路径评分思路对地理文本地名标准化有间接方法借鉴，但与地理空间智能核心方向关联微弱。"
     },
     {
+      "key": "arxiv:2609.24651",
+      "title": "Corrective Forcing: Unified Post-Training for Diffusions and Flows in Generative Speech Enhancement",
+      "title_zh": "纠正性强制：生成式语音增强中扩散与流模型的统一后训练",
+      "url": "https://arxiv.org/abs/2609.24651",
+      "arxiv_id": "2609.24651",
+      "authors": [
+        "Qing Yao",
+        "Lijian Gao",
+        "Qirong Mao"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-21T14:23:15+00:00",
+      "score": 8,
+      "reason": "该论文研究语音增强中的扩散与流模型后训练方法，与GIS、城市更新、时空数据挖掘、遥感等研究方向无直接关联。",
+      "tags": [
+        "扩散模型",
+        "流模型",
+        "语音增强",
+        "后训练"
+      ],
+      "summary_zh": "扩散模型和流模型作为语音增强中颇具前景的生成范式，面临训练与推理不匹配的问题：训练使用解析路径状态，而推理则在离散化采样轨迹上对自生成的回滚状态递归评估模型。这种不匹配导致预测误差和离散化误差累积。为解决该问题，我们提出纠正性强制（CoF），一种后训练范式，强制扩散和流模型从自生成的回滚中学习并纠正其预测。CoF在动态采样调度下将回滚状态上的干净语音预测朝真实值纠正，使模型暴露于不同的推理条件。它进一步利用局部纠正的反事实转移作为事实转移的参考，以正则化局部演化。通过以共享的干净语音预测参数化表达模型输出，CoF将相同的后训练目标应用于扩散和流两种形式。使用SB-VE和OT-CFM的实验表明，感知质量和重建保真度均有提升，且在不同采样步数下表现稳健。",
+      "insight_zh": "该研究提出的纠正性强制方法通过让模型从自生成回滚中学习来缓解训练-推理不匹配，其思路对生成式模型的后训练具有参考意义，但与地理空间研究无直接关联。"
+    },
+    {
       "key": "arxiv:2608.01041",
       "title": "Conformal risk control for model-form uncertainty in parametric non-intrusive reduced-order models",
       "title_zh": "参数化非侵入式降阶模型中模型形式不确定性的共形风险控制",
@@ -19609,32 +20178,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24646",
-      "title": "iSDFT: Information-Proximal Self-Distillation for Continual Learning in LLMs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24646",
-      "arxiv_id": "2609.24646",
-      "authors": [
-        "Ahmed Khaled Khamis",
-        "Xiaotong Ji",
-        "Hassan Jaber",
-        "Rasul Tutunov",
-        "Matthieu Zimmer",
-        "Jun Wang",
-        "Haitham Bou-Ammar"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-21T14:21:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22115",
       "title": "ZoAQ: Adaptive Zeroth-Order Querying via Query-Reuse Coupling",
       "title_zh": "",
@@ -19677,26 +20220,6 @@
         "https://github.com/bodhiumlabs/tell-whos-asking"
       ],
       "published": "2026-09-21T04:46:59+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24635",
-      "title": "Written as a Record, Read as an Address: What a Forward Pass Leaves in an Operation's KV Cache",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24635",
-      "arxiv_id": "2609.24635",
-      "authors": [
-        "Lingfeng Wu",
-        "Behzad Shomali"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-21T14:16:19+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -20746,32 +21269,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23215",
-      "title": "Triggers and Diagnostics for LLM-Based Interpretability Failures in Active Inference Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23215",
-      "arxiv_id": "2609.23215",
-      "authors": [
-        "Param Raval",
-        "Rohit Shenoy",
-        "Archana Vaidheeswaran"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "Modes",
-        "in",
-        "Agentic",
-        "AI"
-      ],
-      "published": "2026-09-19T21:10:45+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22098",
       "title": "TreeSpark: Calibrated, Load-Adaptive Draft Trees for Semi-Autoregressive Speculative Decoding",
       "title_zh": "",
@@ -21195,33 +21692,6 @@
         "cs.CL"
       ],
       "published": "2026-09-19T06:13:28+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24677",
-      "title": "TimeLitmus: A Diagnostic Benchmark for Cross-Modal Understanding and Explanation Faithfulness in Event-Conditioned Time-Series Prediction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24677",
-      "arxiv_id": "2609.24677",
-      "authors": [
-        "Jie Gong",
-        "Maowei Jiang",
-        "Zhiwei Liu",
-        "Yankai Chen",
-        "Guojun Xiong",
-        "Xue Liu",
-        "Min Peng",
-        "Qianqian Xie",
-        "and Sophia Ananiadou"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-21T14:38:49+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -22280,34 +22750,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23239",
-      "title": "SoK: Formal Methods for Fact-Checking and Information Integrity",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23239",
-      "arxiv_id": "2609.23239",
-      "authors": [
-        "Nikolaos Kekatos",
-        "Theodoros Nestoridis",
-        "Charalampos Bratsas",
-        "Charalampos Dimoulas",
-        "Georgios Konstantinidis",
-        "Georgios Malogiannis",
-        "Michael Sirivianos",
-        "Andreas Veglis"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.CY",
-        "cs.LO"
-      ],
-      "published": "2026-09-19T22:41:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2601.01352",
       "title": "Slot-ID: Identity-Preserving Video Generation from Reference Videos via Slot-Based Temporal Identity Encoding",
       "title_zh": "Slot-ID：基于槽位时序身份编码的参考视频身份保持生成",
@@ -23216,30 +23658,6 @@
         "cs.AI"
       ],
       "published": "2026-09-05T06:24:42+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24626",
-      "title": "Relationally Grounded Latent World Models for Autonomous Driving",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24626",
-      "arxiv_id": "2609.24626",
-      "authors": [
-        "Fabian Schmidt",
-        "Markus Enzweiler",
-        "Abhinav Valada"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.RO",
-        "IROS",
-        "2026"
-      ],
-      "published": "2026-09-21T14:10:06+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -25048,28 +25466,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23185",
-      "title": "Neural Residual Modeling for Scientific Data Compression under Guaranteed Error Bounds",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23185",
-      "arxiv_id": "2609.23185",
-      "authors": [
-        "Surya Majumder",
-        "Liangji Zhu",
-        "Sanjay Ranka",
-        "Anand Rangarajan"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-19T19:20:45+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24313",
       "title": "NeuIDO: Neural Intrinsic Dynamics Operator for Physics-Informed 4D World Models",
       "title_zh": "",
@@ -25866,27 +26262,6 @@
         "https://github.com/TheDeadcoder/paired-rollouts"
       ],
       "published": "2026-09-21T05:55:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.23191",
-      "title": "Low resource cross-modal alignment using HGNN to enhance speech representation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23191",
-      "arxiv_id": "2609.23191",
-      "authors": [
-        "Yannick Yomie Nzeuhang",
-        "Marie Tahon",
-        "Paulin Melatagia Yonta"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-19T19:31:01+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -28266,27 +28641,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23205",
-      "title": "Euston: Training Away Mathematical Sycophancy Without Losing the Mathematics",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23205",
-      "arxiv_id": "2609.23205",
-      "authors": [
-        "Zehua Cheng",
-        "Wei Dai",
-        "Jiahao Sun"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-19T20:26:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24927",
       "title": "Et Tu, Brute? Economic Misalignment in Personal AI Agents",
       "title_zh": "",
@@ -28340,27 +28694,6 @@
         "cs.AI"
       ],
       "published": "2026-09-21T15:24:49+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.23194",
-      "title": "Enhancing speech representation learning with cross-modal knowledge transfer with HGNN under low resource settings: the case study of Yemba",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23194",
-      "arxiv_id": "2609.23194",
-      "authors": [
-        "Yannick Yomie Nzeuhang",
-        "Paulin Melatagia Yonta",
-        "Marie Tahon"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-19T19:43:46+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -28767,26 +29100,6 @@
         "cs.LG"
       ],
       "published": "2026-09-18T20:33:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.23201",
-      "title": "Do Not Trust the Benchmark: Limitations of General LLM Rankings and a Case for Task-Specific Evaluation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23201",
-      "arxiv_id": "2609.23201",
-      "authors": [
-        "Danial Amin"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.HC"
-      ],
-      "published": "2026-09-19T20:02:05+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -29589,28 +29902,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24651",
-      "title": "Corrective Forcing: Unified Post-Training for Diffusions and Flows in Generative Speech Enhancement",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24651",
-      "arxiv_id": "2609.24651",
-      "authors": [
-        "Qing Yao",
-        "Lijian Gao",
-        "Qirong Mao"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-21T14:23:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22108",
       "title": "Correcting Learning-based Perception for Safety",
       "title_zh": "",
@@ -30200,39 +30491,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23231",
-      "title": "ChemCLIR-Bench: Benchmarking Cross-Lingual Information Retrieval in Multilingual Chemical Patents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23231",
-      "arxiv_id": "2609.23231",
-      "authors": [
-        "Mahdi Astaraki",
-        "Mohammad Khodadad",
-        "Reza Namazi",
-        "Mohammad Arshi Saloot",
-        "Amir Reza Behzad Moghadam",
-        "Hamidreza Mahyar",
-        "Soheila Samiee"
-      ],
-      "categories": [
-        "cs.CL",
-        "references",
-        "and",
-        "appendices;",
-        "7",
-        "pages",
-        "of",
-        "main",
-        "text"
-      ],
-      "published": "2026-09-19T22:18:58+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24210",
       "title": "ChartJudgeBench: Evaluating LMM Judges for Chart-to-Code Generation",
       "title_zh": "",
@@ -30250,59 +30508,6 @@
         "cs.CV"
       ],
       "published": "2026-09-21T07:29:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.23184",
-      "title": "CausalWM: Causal Chain-of-Thought Reasoning for Embodied World Model",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23184",
-      "arxiv_id": "2609.23184",
-      "authors": [
-        "Ziming Xu",
-        "Shuang Liang",
-        "Ruobing Han",
-        "Ziqiao Xi",
-        "Mingxing Rao",
-        "Kun Zhou",
-        "Zijun Zhang",
-        "Yuchen Yan",
-        "Yufan Wei",
-        "Junbo Huang",
-        "Yifei Shao",
-        "Fang Nan",
-        "Biwei Huang"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-19T19:16:56+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.23219",
-      "title": "Causal Inference with Unobserved Confounding: A Mixture Learning Perspective",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23219",
-      "arxiv_id": "2609.23219",
-      "authors": [
-        "Mansi Sood",
-        "Devavrat Shah"
-      ],
-      "categories": [
-        "cs.LG",
-        "eess.SP",
-        "stat.CO"
-      ],
-      "published": "2026-09-19T21:31:59+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -31039,7 +31244,7 @@
     {
       "key": "arxiv:2609.24612",
       "title": "Beyond Uniform Subspaces: Spectrum-Aware and Depth-Adaptive Fusion for Multi-Task Model Merging",
-      "title_zh": "",
+      "title_zh": "超越均匀子空间：多任务模型合并的谱感知与深度自适应融合",
       "url": "https://arxiv.org/abs/2609.24612",
       "arxiv_id": "2609.24612",
       "authors": [
@@ -31052,10 +31257,15 @@
       ],
       "published": "2026-09-21T14:01:24+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究多任务模型合并中的谱感知与深度自适应融合方法，与GIS、城市更新、时空数据挖掘、遥感等研究方向无直接关联。",
+      "tags": [
+        "模型合并",
+        "多任务学习",
+        "谱感知",
+        "深度自适应"
+      ],
+      "summary_zh": "模型合并旨在无需额外训练过程的情况下整合多个任务特定模型。然而，现有基于子空间的方法在很大程度上依赖对任务更新的均匀处理，忽视了其内在的谱和深度异质性。我们识别出与这一假设的两个关键偏差：不同任务需要不同的子空间容量，并对谱变换表现出不同的容忍度，而子空间投影引入深度相关失真。基于这些观察，我们提出SADA-Merging，一个用于无数据模型合并的谱感知和深度自适应框架。SADA-Merging根据谱复杂度分配任务特定子空间容量，根据任务级可塑性调整谱保留，并应用深度相关锚定以补偿投影引起的失真。这使融合过程能够适应每个任务的内在几何及其跨网络深度的敏感性。SADA-Merging直接作用于任务更新，适用于全微调和LoRA设置。大量实验表明，在不同任务规模和适配设置下，相比现有无数据合并方法均有一致改进。",
+      "insight_zh": "该研究通过谱感知和深度自适应策略改进多任务模型合并，其处理任务异质性的思路对多源数据融合有间接参考意义，但与地理空间研究无直接关联。"
     },
     {
       "key": "arxiv:2609.23606",
@@ -31191,31 +31401,6 @@
         "2026"
       ],
       "published": "2026-09-19T05:01:17+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24663",
-      "title": "Beyond Endpoint Performance: Process-Level Evaluation of Self-Evolving Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24663",
-      "arxiv_id": "2609.24663",
-      "authors": [
-        "Hongqiang Lin",
-        "Chao Liu",
-        "Xiaofan Bai",
-        "Xuan Jin",
-        "Yuhong Li",
-        "Nenggan Zheng",
-        "Xipeng Cao"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-21T14:28:06+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -31554,30 +31739,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24629",
-      "title": "Augmented Hypothesis Testing with Persona-Based LLM Simulations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24629",
-      "arxiv_id": "2609.24629",
-      "authors": [
-        "Ziyad Benomar",
-        "Aymen Al Marjani",
-        "Paul Missault",
-        "Saab Mansour"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "stat.AP"
-      ],
-      "published": "2026-09-21T14:11:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.23039",
       "title": "Auditing Political Alignment in LLM Assistants: Engagement, Stance, and User Identity",
       "title_zh": "",
@@ -31622,26 +31783,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24650",
-      "title": "Assessing Readability with LLMs: The Role of Reasoning and Few-Shot Prompting",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24650",
-      "arxiv_id": "2609.24650",
-      "authors": [
-        "Rapha\\\"el Thieffry",
-        "Matej Martinc"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-21T14:22:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22228",
       "title": "Assessing Adversarial Robustness of Latent Reasoning Models",
       "title_zh": "",
@@ -31659,29 +31800,6 @@
         "stat.ML"
       ],
       "published": "2026-09-03T02:16:28+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24620",
-      "title": "Ascent: An Agentic System over the Model Context Protocol for Real-World Clinical Data Analysis",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24620",
-      "arxiv_id": "2609.24620",
-      "authors": [
-        "Angelo Ziletti",
-        "Leonardo D'Ambrosi",
-        "Melanie Tuchardt",
-        "Tim Kondziella"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.IR"
-      ],
-      "published": "2026-09-21T14:06:32+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

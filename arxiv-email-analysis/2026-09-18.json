@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 489,
-    "high": 3,
+    "analyzed": 518,
+    "high": 4,
     "medium": 22,
-    "low": 34,
-    "below_threshold": 430
+    "low": 35,
+    "below_threshold": 457
   },
   "papers": [
     {
@@ -43,6 +43,42 @@
       ],
       "summary_zh": "城市蜂窝活动预测需要联合建模异构时空信号，包括短信使用、移动网络流量和通话活动。现有方法通常将时间建模、空间关系学习和多信号预测分离，依赖固定图结构或静态多任务学习方案，限制了其对变化城市场景的适应性。作者提出SCRR-Net，一种场景条件空间关系路由框架，其中城市上下文信息共同控制空间依赖选择与跨任务知识迁移。SCRR-Net包含上下文编码器、空间图专家路由模块、时间Transformer编码器和任务知识路由模块。在Milano和Trento数据集上的实验表明，SCRR-Net在短信、网络流量和通话活动预测上持续优于对比方法，同时提供可解释的路由行为。",
       "insight_zh": "该文表明，将城市上下文作为路由条件来动态选择空间依赖与跨任务迁移，可提升多源城市时空信号预测并增强可解释性；这一思路可启发城市更新中多源时空指标（如人口、活动、通信）的联合建模与动态关系发现。"
+    },
+    {
+      "key": "arxiv:2609.16603",
+      "title": "G3AR: Graph-Guided Neural Visual Geometry for Scalable Multi-Sequence Aerial Registration",
+      "title_zh": "G3AR：面向可扩展多序列航空配准的图引导神经视觉几何",
+      "url": "https://arxiv.org/abs/2609.16603",
+      "arxiv_id": "2609.16603",
+      "authors": [
+        "Jeng Wen Joshua Lean",
+        "Ting-Yu Yen",
+        "Wei-Fang Sun",
+        "Simon See",
+        "Hung-Kuo Chu",
+        "Shih-Hsuan Hung"
+      ],
+      "categories": [
+        "cs.CV",
+        "Technical",
+        "Communications",
+        "Communications.",
+        "Code:",
+        "https://github.com/Joshimello/g3ar"
+      ],
+      "published": "2026-09-15T03:58:17+00:00",
+      "score": 88,
+      "reason": "该论文面向大规模多序列航空影像的可扩展密集神经几何配准，直接涉及遥感影像处理与地理空间智能中的三维重建与配准问题，与遥感变化检测和多源数据融合的研究方向高度相关。",
+      "tags": [
+        "航空影像配准",
+        "神经视觉几何",
+        "图引导分块",
+        "多序列影像",
+        "三维重建",
+        "遥感"
+      ],
+      "summary_zh": "全上下文神经视觉几何对数千张影像而言不切实际，而基于序列的分块方法难以捕捉多序列航空采集中不规则的远距离重叠。本文提出G3AR（Graph-Guided Neural Visual Geometry for Aerial Registration），一个用于可扩展密集神经几何的图引导框架。在局部推理之前，G3AR构建一个经过几何验证的影像邻近图，用以引导有界重叠分块，并导出一个分块图，其最大生成树定义了配准拓扑。兼容的主干网络独立处理各分块；随后利用共享影像的预测估计三维相似（Sim(3)）变换，将局部相机与几何配准到统一坐标系中。在四个真实航空场景中，G3AR在匹配的VGGT与Pi3主干对比下改善了位姿误差与运行时间，其DA3变体在所评估的神经几何方法中取得了最低的位姿误差。",
+      "insight_zh": "该工作将图结构引入航空影像配准的分块与拓扑组织，可能为大规模遥感影像的高效几何对齐提供思路；其分块图与最大生成树策略或可迁移至多时相遥感数据的配准与变化检测预处理流程。"
     },
     {
       "key": "arxiv:2607.14112",
@@ -1130,6 +1166,97 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法与结论。",
       "insight_zh": "从标题推断，该工作可能探讨在信息不对称场景中，LLM智能体如何通过通信与验证机制实现有效协作。其机制设计或可迁移至多智能体驱动的城市更新模拟或地理空间决策，但需查阅全文确认。"
+    },
+    {
+      "key": "arxiv:2609.15818",
+      "title": "Atria Dawn: The Dawn of Agentic Superintelligence",
+      "title_zh": "Atria Dawn：智能体超级智能的黎明",
+      "url": "https://arxiv.org/abs/2609.15818",
+      "arxiv_id": "2609.15818",
+      "authors": [
+        "Honglin Guo",
+        "Tao Gui",
+        "Kun Cai",
+        "Haodong Chen",
+        "Yicheng Chen",
+        "Guanting Dong",
+        "Qiming Ge",
+        "Yuyang Hu",
+        "Zixian Huang",
+        "Jiajie Jin",
+        "Alexander Lam",
+        "Yining Li",
+        "Jiahang Lin",
+        "Yanjiang Liu",
+        "Xinyu Lu",
+        "Haijun Lv",
+        "Zerun Ma",
+        "Junlin Shang",
+        "Qisheng Su",
+        "Guoqiang Wang",
+        "Rui Wang",
+        "Zhecan Wang",
+        "Hao Xiang",
+        "Xinchen Xie",
+        "Shuhao Xing",
+        "Xiaoyu Xing",
+        "Wanghan Xu",
+        "Xinyu Yang",
+        "Yajie Yang",
+        "Chengfeng Zhao",
+        "Haoran Zhao",
+        "Penghao Zhao",
+        "Ruojun Zhou",
+        "Yunhua Zhou",
+        "Dongsheng Zhu",
+        "Yicheng Zou",
+        "Qiye Cai",
+        "Xinmeng Che",
+        "Jiabei Chen",
+        "Jiahao Chen",
+        "Jiayi Chen",
+        "Yujia Chen",
+        "Lizhi Cui",
+        "Youheng Dai",
+        "Xin Deng",
+        "Yi Dong",
+        "Shihan Dou",
+        "Chenya Gu",
+        "Xu Guo",
+        "Ding Han",
+        "Feiyang Hao",
+        "Haotan He",
+        "Jie Hou",
+        "Binze Hu",
+        "Zijian Hu",
+        "Junhao Huang",
+        "Huicheng Jiang",
+        "Jiazhen Jiang",
+        "Shufan Jiang",
+        "Jiahao Kuang",
+        "Bowen Lai",
+        "Bo Li",
+        "Jiaqiang Li",
+        "Peng Li",
+        "Qilong Li",
+        "Zhuoqun Li",
+        "et al. (77 additional authors not shown)"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-14T16:22:30+00:00",
+      "score": 55,
+      "reason": "该论文介绍面向科研与工程工作流的智能体基础语言模型，并分析人机协作研发过程，与LLM和多智能体研究方向相关，但未涉及地理空间或城市应用。",
+      "tags": [
+        "智能体",
+        "大语言模型",
+        "科研工作流",
+        "人机协作",
+        "超级智能"
+      ],
+      "summary_zh": "随着AI智能体成为其后继者开发的参与者，它们重塑了智能的生产方式以及人类研究者的角色。本文介绍Atria Dawn Preview，一个面向科学研究与工程工作流设计的基础智能体语言模型，目标是拓展智能体在现实世界中生产力的前沿。该模型通过可验证经验流水线训练，将工具介导的交互与可执行环境及外部验证结果相连接。在涵盖现实研究、工程与数字工作的16项基准上，Atria Dawn Preview与前沿智能体具有竞争力，并在其中五项上取得已报告的最高分。除独立性能外，本文还以该模型背后的真实研发过程作为人机协作案例研究，分析了来自56名参与者的769条任务记录及智能体日志。在可比条件下评估已完成任务时，参与者认为约三分之一的AI辅助完成任务在无AI情况下不可行。更引人注目的是，智能体频繁提出方法并实施修订，而人类保留大部分最终决策，并通过判断与反馈引导探索。这些观察表明，工作重心正从任务级执行转向项目级伙伴关系，人类精力集中于什么值得追求以及证据应如何引导研究。因此，迈向更自主AI研究的进展必须同时提升发现能力与有意义的人类监督能力，保持人类对持续开发的风险与方向的可问责权威。",
+      "insight_zh": "该工作展示了LLM智能体在科研工作流中的项目级协作模式，其可验证经验流水线与人类监督机制的设计思路，或可启发地理空间智能研究中多智能体协同与可解释决策框架的构建。"
     },
     {
       "key": "arxiv:2602.03128",
@@ -2902,6 +3029,43 @@
       "insight_zh": "其核心论点——有限类别标注无法穷尽二维结构化数据的语义——对地理空间栅格/矢量数据的语义标注与LLM接入具有类比启发，但论文本身未讨论地理空间数据。"
     },
     {
+      "key": "arxiv:2609.19203",
+      "title": "Position: It is Time to Virtualize Foundation Models with a Self-evolving Operating System Layer",
+      "title_zh": "立场：是时候用自演化操作系统层虚拟化基础模型了",
+      "url": "https://arxiv.org/abs/2609.19203",
+      "arxiv_id": "2609.19203",
+      "authors": [
+        "Suparna Bhattacharya",
+        "Tarun Kumar",
+        "Cong Xu",
+        "Satish Kumar Mopur",
+        "Jiahao Li",
+        "Ashish Mishra",
+        "Aalap Tripathy",
+        "Annmary Justine Koomthanam",
+        "Martin Foltin",
+        "Ian Foster"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA",
+        "cs.OS"
+      ],
+      "published": "2026-09-16T09:26:32+00:00",
+      "score": 35,
+      "reason": "该立场论文提出基础模型操作系统（FMOS）层以虚拟化基础模型交互，涉及LLM、智能体系统与系统架构，与研究方向中的LLM和多智能体部分相关，但不涉及地理空间应用。",
+      "tags": [
+        "foundation models",
+        "operating system",
+        "agentic systems",
+        "virtualization",
+        "position paper"
+      ],
+      "summary_zh": "AI应用已从单一单体基础模型转向复合智能体系统，但当前技术栈仍然碎片化：即使协议（如MCP、A2A）简化了工具/智能体连接，每个框架仍嵌入隐式运行时处理状态、记忆、预算和护栏，导致行为不可移植、治理脆弱。这类似于操作系统出现之前的计算时代，每个程序都重新实现基础服务。本文立场论文认为该领域需要一个基础模型操作系统（FMOS）——一个虚拟化基础模型交互的系统层，类似于虚拟机抽象物理硬件，为应用提供专用、可信、能力近乎无限的基础模型实例的假象。内部而言，FMOS跨记忆层级编排知识、进行模型选择与资源分配、以及验证与策略执行。如同人脑在快速直觉与慢速审慎之间切换，FMOS学习何时干预、何时让推理直接进行，并基于运行经验持续调整策略。",
+      "insight_zh": "该立场论文提出将基础模型交互虚拟化为操作系统层，其记忆分层、模型选择与策略执行的设计思路对构建地理空间智能体系统架构有参考价值，但论文未涉及地理空间领域。"
+    },
+    {
       "key": "arxiv:2609.19871",
       "title": "Physical knowledge on historical data matters more than enforcing physical constraints on the forecast",
       "title_zh": "历史数据中的物理知识比在预测中强制物理约束更重要",
@@ -4262,6 +4426,32 @@
       "insight_zh": "摘要缺失，无法判断其探索机制的具体实现；若其提示驱动策略可应用于地理空间智能体的环境探索，或对城市更新中的多智能体模拟有参考价值，但需原文确认。"
     },
     {
+      "key": "arxiv:2609.19358",
+      "title": "Open-vocabulary 3D object detection with promptable segmentation",
+      "title_zh": "基于可提示分割的开放词汇3D目标检测",
+      "url": "https://arxiv.org/abs/2609.19358",
+      "arxiv_id": "2609.19358",
+      "authors": [
+        "\\\"Omer Faruk Deniz",
+        "Mustafa Taha Ko\\c{c}yi\\u{g}it"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T19:31:00+00:00",
+      "score": 30,
+      "reason": "该论文研究开放词汇3D目标检测，结合可提示分割模型与几何转换，涉及多模态数据融合与3D感知，与研究方向中的多源数据融合和遥感变化检测有一定方法学关联，但应用场景为自动驾驶而非地理空间遥感。",
+      "tags": [
+        "open-vocabulary",
+        "3D object detection",
+        "promptable segmentation",
+        "autonomous driving",
+        "nuScenes"
+      ],
+      "summary_zh": "自动驾驶3D目标检测通常依赖大规模人工标注3D框训练的检测器，只能识别固定类别。本文探讨能否以无需训练、开放词汇的方式解决该任务。使用可提示分割模型SAM3，以类别名称作为文本提示，在车辆六个环视相机中生成实例掩码，再通过场景几何将掩码转换为度量3D框。在nuScenes上进行受控三阶段比较，固定2D检测仅改变3D几何来源。仅从图像预测几何达到0.183 mAP；在相同掩码内用无训练规则拟合原始LiDAR点达到0.298 mAP/0.348 NDS，零标注成本；推理时借用监督框几何将相同检测提升至0.413 mAP/0.555 NDS，表明最大缺陷在于测量精度而非2D检测。反向地，基于相同掩码的三态相机见证规则将监督LiDAR检测器从0.596提升至0.630 mAP，无需训练。覆盖分析显示SAM3以正确命名掩码找到84%范围内物体。",
+      "insight_zh": "该工作表明可提示分割模型结合几何转换可实现开放词汇3D检测，其多模态融合与零标注思路对遥感开放词汇目标检测与多源数据融合有借鉴意义，但论文未涉及遥感或城市更新场景。"
+    },
+    {
       "key": "arxiv:2609.10854",
       "title": "No-Box Vulnerability Analysis: Description-only Detection of Indirect Prompt Injection Vulnerabilities in MCP Servers",
       "title_zh": "无盒漏洞分析：MCP服务器中间接提示注入漏洞的仅描述检测",
@@ -5220,6 +5410,40 @@
       "insight_zh": "该文的过程级奖励设计思路或可借鉴到地理空间智能体的多步检索与推理评估中，但摘要未涉及地理空间任务或数据。"
     },
     {
+      "key": "arxiv:2609.20301",
+      "title": "AgentPProf: Semantic Profiler for Long Horizon AI Agents",
+      "title_zh": "AgentPProf：长时程AI智能体的语义性能分析器",
+      "url": "https://arxiv.org/abs/2609.20301",
+      "arxiv_id": "2609.20301",
+      "authors": [
+        "Yusheng Zheng",
+        "Chaokun Chang",
+        "Yu Mao",
+        "Tianyuan Wu",
+        "Yuxi Huang",
+        "Tao Ma",
+        "Wenan Mao",
+        "Shuyi Cheng",
+        "Andi Quinn",
+        "Wei Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-14T02:46:15+00:00",
+      "score": 28,
+      "reason": "该论文提出面向长时程AI智能体的语义性能分析器AgentPProf，涉及智能体可观测性与轨迹分析，与研究方向中的LLM和多智能体部分相关，但不涉及地理空间应用。",
+      "tags": [
+        "AI agents",
+        "profiling",
+        "observability",
+        "long-horizon",
+        "flame graph"
+      ],
+      "summary_zh": "AI智能体越来越多地与用户、工具和系统资源协同编排持续数天甚至数周的长时程活动。为提升智能体质量、安全性和成本效率，开发者需要确定故障发生位置、不安全效应的触发因素以及哪些任务消耗最多预算，进而优化这些任务。系统软件中性能分析通过聚合资源消耗并归因到负责的代码路径来识别热点，但现有智能体可观测性工具聚焦于单次执行调试与追踪，而非跨运行长期性能分析。本文提出语义操作栈模型，将性能分析适配到智能体轨迹。统一操作表示所有活动，操作栈替代运行时调用栈，实现不同粒度的层次化归因。观察到智能体任务占据连续跨度并分解为子任务，因此引入递归操作分割，在任务边界递归切分轨迹。AgentPProf将智能体轨迹聚合为pprof兼容的性能分析文件，支持火焰图可视化与分析。在CodeTraceBench上达到0.764 B³ F1，在三个问题定位基准上将MAP提升最多56%。",
+      "insight_zh": "该工作将系统性能分析方法迁移到AI智能体轨迹分析，其语义操作栈与递归分割思路对地理空间智能体工作流的性能诊断与优化有借鉴意义，但论文未涉及地理空间领域。"
+    },
+    {
       "key": "arxiv:2609.20423",
       "title": "WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing",
       "title_zh": "WeVisDoc：从覆盖到能力，面向鲁棒端到端文档解析",
@@ -5467,6 +5691,36 @@
       "insight_zh": "该工作提示：冻结特征加正常参考评分可在无异常标签下检测异常，并可通过层间表示分析揭示亚型差异；若迁移到遥感变化检测，可能有助于无监督异常/变化发现，但论文未涉及地理空间数据。"
     },
     {
+      "key": "arxiv:2609.19644",
+      "title": "ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI",
+      "title_zh": "ScientistTwo：以自主AI开拓人类知识前沿",
+      "url": "https://arxiv.org/abs/2609.19644",
+      "arxiv_id": "2609.19644",
+      "authors": [
+        "Jaehyun Nam",
+        "Jinsung Yoon",
+        "Yanzhou Pan",
+        "Yubo Wang",
+        "Rui Meng",
+        "Parthasarathy Ranganathan",
+        "Tomas Pfister"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-17T03:37:42+00:00",
+      "score": 25,
+      "reason": "该论文提出面向自主科学发现的多智能体框架，涉及多智能体协调与自动化研究流程，与LLM和多智能体研究主题相关，但应用领域为通用科学发现，与GIS和城市研究的直接关联有限。",
+      "tags": [
+        "自主AI",
+        "多智能体",
+        "科学发现",
+        "自动化研究"
+      ],
+      "summary_zh": "科学发现的定义在于识别现有知识的边界并进入未探索的领域。AI在科学中的终极愿景是问题驱动的自主研究：给定人类专家提出的基础性挑战，AI独立导航科学图景，揭示理论和实证瓶颈，并系统性地拓展知识前沿。本文提出ScientistTwo，一个完全自主的多智能体框架，旨在实现这一愿景。具体而言，ScientistTwo以初始问题为输入，建立最先进的基线，提出新颖假设，并协调专门智能体在无人工干预的情况下编排端到端的发现周期。此外，该框架使用多样化的数据集和指标严格进行实验，通过自动化消融研究优化方法论，并通过闭环模拟同行评审反驳引擎验证研究发现。为评估ScientistTwo相对于人类科学成就最高标准的能力，本文在ICLR、ICML和NeurIPS等顶级会议接受的论文上进行了基准测试。结果表明，ScientistTwo自主生成专家级、可发表的论文和完全验证的可执行代码库，其解决方案持续超越人类最先进模型，并在自动化AI评审智能体下获得比人类撰写论文更高的平均评审评分。",
+      "insight_zh": "该研究展示的自主科学发现多智能体框架，可为地理空间智能领域的自动化研究流程提供概念参考，但其通用科学发现场景与城市更新、遥感变化检测等具体任务的结合尚需验证。"
+    },
+    {
       "key": "arxiv:2609.20245",
       "title": "SAGE-Yoga: Multi-Cue Learning for Yoga Pose Classification and Joint-Level Correction",
       "title_zh": "SAGE-Yoga：面向瑜伽姿态分类与关节级纠正的多线索学习",
@@ -5579,6 +5833,40 @@
       ],
       "summary_zh": "从无组织点云进行三维重建仍是计算机视觉、几何建模和计算机辅助设计中的挑战性问题。虽然神经隐式方法实现了令人印象深刻的重建精度，但几何通常编码在潜在表示中，限制了可解释性和工程工作流中的复用。我们提出NeuSOGA3D（3D神经符号几何抽象），一个混合框架，结合从NeuSOGA继承的学习感知先验与显式符号几何推理。该方法将点云投影到主正交平面，从所得观测构建符号隐式样条表示，并通过保形构造实体几何操作融合它们以生成粗略视觉外壳。额外几何细节通过截面分解和使用部分保形样条的体积重建恢复。与常规神经隐式方法不同，NeuSOGA3D逐步将观测转化为显式符号实体，包括控制多边形、隐式样条场、截面和体积放样。在ModelNet40基准全部四十个类别上的实验证明了该框架从多样点云观测中恢复结构有意义且CAD兼容的几何表示的能力。结果凸显了结合学习感知与符号几何推理用于可解释几何智能的潜力。",
       "insight_zh": "该研究提出的神经符号几何抽象方法将点云转化为显式符号实体，其可解释性思路对遥感三维重建有潜在借鉴，但摘要未涉及地理空间或城市更新应用。"
+    },
+    {
+      "key": "arxiv:2609.19391",
+      "title": "MAGS: Multi-agent Auto-formalization Guarantees Safety for Agentic Outputs",
+      "title_zh": "MAGS：多智能体自动形式化保障智能体输出的安全性",
+      "url": "https://arxiv.org/abs/2609.19391",
+      "arxiv_id": "2609.19391",
+      "authors": [
+        "Albert Wu",
+        "Nicholas Roberts",
+        "Tzu-Heng Huang",
+        "Haoran Lin",
+        "Gil Friedman",
+        "Sungjun Cho",
+        "Gabriel Orlanski",
+        "Frederic Sala"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.SE"
+      ],
+      "published": "2026-09-16T20:15:36+00:00",
+      "score": 25,
+      "reason": "该论文提出多智能体框架MAGS，利用LLM生成带形式化安全保证的程序，涉及多智能体与LLM，与研究方向中的LLM和多智能体部分相关，但不涉及地理空间或城市应用。",
+      "tags": [
+        "multi-agent",
+        "LLM",
+        "formal verification",
+        "code generation",
+        "safety"
+      ],
+      "summary_zh": "LLM编码智能体生成的复杂程序规模庞大，人工审查困难，存在安全风险。常见方法如模糊测试、静态分析和LLM验证器难以覆盖所有边界情况。本文提出统一多智能体框架MAGS，以Dafny作为可验证的中间表示，形式化并冻结人工审核的API与安全需求，将生成代码翻译为Dafny，利用验证器反馈修复违规，再将验证通过的程序编译回可执行代码。在100个CUDA内核、100个终端脚本和20个机械臂任务共220个样例上，MAGS实现100%成功率生成具有非平凡安全保证的程序，独立安全与功能评估表现良好，但也揭示了自动形式化语义未能完全捕捉目标行为时的失败情况。",
+      "insight_zh": "该工作展示了多智能体与形式化验证结合保障LLM生成代码安全性的可行路径，其多智能体协作与验证反馈修复机制或可启发地理空间智能体工作流的安全保障设计，但论文未涉及地理空间领域。"
     },
     {
       "key": "arxiv:2609.18259",
@@ -6391,6 +6679,34 @@
       "insight_zh": "该文将深层图消息传递替换为元路径聚合以提升效率与表达力，其思路或可迁移到多源地理空间数据的异构图建模，但摘要未涉及任何地理空间应用或时空数据。"
     },
     {
+      "key": "arxiv:2609.19183",
+      "title": "Message capacity and claim wording set the transition points of collective truth-finding in language-model networks",
+      "title_zh": "消息容量与主张措辞设定语言模型网络中集体求真的转变点",
+      "url": "https://arxiv.org/abs/2609.19183",
+      "arxiv_id": "2609.19183",
+      "authors": [
+        "Makoto Fukushima"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.CL",
+        "nlin.AO",
+        "physics.soc-ph"
+      ],
+      "published": "2026-09-15T14:46:31+00:00",
+      "score": 22,
+      "reason": "该论文研究LLM网络中集体求真行为的转变点，涉及多智能体通信与集体决策，与研究方向中的LLM和多智能体部分相关，但不涉及地理空间应用。",
+      "tags": [
+        "LLM networks",
+        "collective behavior",
+        "message capacity",
+        "truth-finding",
+        "multi-agent"
+      ],
+      "summary_zh": "无论是人类还是LLM，讨论中的智能体只能阅读少数他人的贡献，受认知、上下文或成本限制。LLM集体即使在多数初始正确时也可能达成错误共识，本文探究阅读限制本身在多大程度上决定结果。用单一数字——消息容量——建模该限制，决定智能体阅读多少他人消息，并据此生成通信网络。在31824次随机查询中，发现80亿参数模型对主张的判断有效简化为其收件箱加权和的逻辑函数，即具有除法归一化权重的随机二值神经元更新规则。仅从这些权重和网络度统计，预测当智能体平均阅读少于31个来源中的6.4个时，错误共识从任何起点都应不可达。但在1414个指定起点的回合中预测失败：正确方从每个起点获胜率低于50%，当75%智能体初始正确时仅28-45%。失败源于领域——主张措辞在阅读任何消息前设定的阈值。反转措辞表明阈值跟随主张所断言的内容而非其真实性。在第二个8B模型上，流程预测主张依赖的双稳态；转变点出现在计算位置，八主张校准在16个条件中匹配15个。在70B模型上未检测到断言偏差。",
+      "insight_zh": "该研究表明集体命运很大程度上由两个单智能体测量决定：主张措辞设定的阈值和消息容量，其多智能体通信与集体决策分析对地理空间智能体协作有启发，但论文未涉及地理空间领域。"
+    },
+    {
       "key": "arxiv:2609.20262",
       "title": "Generative Verification: Rethinking the Uncertainty Signal for Active Learning of Object Detection",
       "title_zh": "生成式验证：重新思考目标检测主动学习中的不确定性信号",
@@ -6599,6 +6915,43 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法或结论。",
       "insight_zh": "摘要缺失，无法推断具体方法或结果；从标题推测，该工作可能构建了一个用于评估LLM生成Web应用质量的基准，或对地理空间智能中LLM生成交互式地图/Web GIS应用的评测有方法学参考。"
+    },
+    {
+      "key": "arxiv:2609.19664",
+      "title": "VideoResearcher: Self-Improving Tool Design for Long-Video Understanding",
+      "title_zh": "VideoResearcher：面向长视频理解的自改进工具设计",
+      "url": "https://arxiv.org/abs/2609.19664",
+      "arxiv_id": "2609.19664",
+      "authors": [
+        "Dingqiang Ye",
+        "Dongdi Zhao",
+        "Kaishen Wang",
+        "Qingqiao Hu",
+        "Jingchen Sun",
+        "Yijun Liang",
+        "Yuqi Jia",
+        "Yiqiao Huang",
+        "Yunjie Tian",
+        "Jiaxing Zhang",
+        "Chuanyang Jin",
+        "Ke Zhang",
+        "Vishal M. Patel",
+        "Di Fu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T04:04:23+00:00",
+      "score": 20,
+      "reason": "该论文提出面向长视频理解的自改进多智能体工具设计框架，涉及多智能体协调与工具进化，与LLM和多智能体研究主题相关，但应用领域为视频理解，与GIS和城市研究的直接关联有限。",
+      "tags": [
+        "多智能体",
+        "长视频理解",
+        "工具设计",
+        "自改进"
+      ],
+      "summary_zh": "视频智能体在长视频理解方面已取得实质性进展，但有效的视频智能体系统需要昂贵、耗时的手动设计和试错。现有自改进方法要么优化低影响的提示，要么重组预定义的微工具，要么在工具链优化中难以收敛。为弥补这一差距，本文以高影响力视频工具为目标，提出VideoResearcher，一个无需训练的多智能体框架，能够像人类研究者一样自主设计、测试和优化视频理解工具。VideoResearcher通过双重求解和进化循环运作：分析工具使用轨迹以识别能力差距，协调专门智能体开发和验证可执行工具，并复用进化后的工具以增强后续视频推理中的证据获取。通过迭代工具优化和验证，它在不更新模型参数的情况下逐步增强证据获取能力。VideoResearcher在自改进智能体中实现了最先进性能，并接近人工设计的上限，展示了一种无需训练的长视频理解范式。",
+      "insight_zh": "该研究提出的自主工具设计与进化机制，可为多智能体系统在复杂时空数据分析中的工具链自动化构建提供思路，但其长视频理解场景与地理空间任务的结合尚需探索。"
     },
     {
       "key": "arxiv:2609.02998",
@@ -7822,6 +8175,35 @@
       "insight_zh": "该研究表明智能体中介流程会系统性改变决策结果与可复现性，提示在将多智能体用于城市治理或规划评审等决策场景时，需关注流程设计对结果分布和稳定性的影响。"
     },
     {
+      "key": "arxiv:2609.19393",
+      "title": "WZPlanner: Safe End-to-End Path Planning for Autonomous Driving in Work Zones",
+      "title_zh": "WZPlanner：施工区自动驾驶的安全端到端路径规划",
+      "url": "https://arxiv.org/abs/2609.19393",
+      "arxiv_id": "2609.19393",
+      "authors": [
+        "Nishad Sahu",
+        "Changzhong Qian",
+        "Guangzhou Cai",
+        "Shounak Sural",
+        "and Ragunathan (Raj) Rajkumar"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-16T20:22:51+00:00",
+      "score": 18,
+      "reason": "该论文研究自动驾驶在施工区的端到端路径规划，涉及多模态数据集构建与Transformer模型，属于自动驾驶与机器人领域，与GIS博士研究中的城市更新、时空数据挖掘等方向仅有间接关联。",
+      "tags": [
+        "autonomous driving",
+        "path planning",
+        "work zones",
+        "multimodal dataset",
+        "transformer"
+      ],
+      "summary_zh": "施工区通过临时交通管制和封闭改变车道几何，而这些信息可能不在车载地图中，给自动驾驶感知与规划带来挑战。本文提出WorkZonePlan数据集，包含14.9万+合成样本和5千+真实多模态样本，带车道边界、施工区边界和驾驶轨迹选项的3D标注，并提供76个闭环CARLA场景在三种天气下回放生成的228条Bench2Drive格式评估路线。同时提出半自动数据生成流程WAVE和基于Transformer的BoundaryFormer（BF），联合预测车道与施工区边界多项式及驾驶轨迹。BF++在211条公共路线上取得63.0和64.4的驾驶得分，优于SimLingo的59.3和TransFuser++的26.1，且模型规模小得多。",
+      "insight_zh": "该研究显示联合预测车道边界、施工区边界与驾驶轨迹是有效方向，其多模态数据生成与边界预测思路对城市道路变化检测与更新有一定参考价值，但论文未涉及城市更新或遥感应用。"
+    },
+    {
       "key": "arxiv:2609.20465",
       "title": "Training Neural Networks to Approach the Optimum Bayes Estimator in Dense Multi-Emitter Localization",
       "title_zh": "训练神经网络逼近密集多发射源定位中的最优贝叶斯估计器",
@@ -8334,59 +8716,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19291",
-      "title": "Why Pretraining Fails to Share Cross-Lingual Knowledge",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19291",
-      "arxiv_id": "2609.19291",
-      "authors": [
-        "Adam Gaber",
-        "Uriel Dolev",
-        "Elisabeth Fittschen",
-        "Bobby Cheng",
-        "Yuval Marton",
-        "Leshem Choshen"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-16T18:02:29+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19393",
-      "title": "WZPlanner: Safe End-to-End Path Planning for Autonomous Driving in Work Zones",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19393",
-      "arxiv_id": "2609.19393",
-      "authors": [
-        "Nishad Sahu",
-        "Changzhong Qian",
-        "Guangzhou Cai",
-        "Shounak Sural",
-        "and Ragunathan (Raj) Rajkumar"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T20:22:51+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19158",
       "title": "VisKG-LM: Compiling Knowledge Graphs into Visual Memory for Multiple-Choice Question Answering",
       "title_zh": "",
@@ -8409,67 +8738,6 @@
       "reason": "关键词命中：Graph Neural Network",
       "tags": [
         "Graph Neural Network"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19664",
-      "title": "VideoResearcher: Self-Improving Tool Design for Long-Video Understanding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19664",
-      "arxiv_id": "2609.19664",
-      "authors": [
-        "Dingqiang Ye",
-        "Dongdi Zhao",
-        "Kaishen Wang",
-        "Qingqiao Hu",
-        "Jingchen Sun",
-        "Yijun Liang",
-        "Yuqi Jia",
-        "Yiqiao Huang",
-        "Yunjie Tian",
-        "Jiaxing Zhang",
-        "Chuanyang Jin",
-        "Ke Zhang",
-        "Vishal M. Patel",
-        "Di Fu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T04:04:23+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19702",
-      "title": "Understanding and Exploiting Diagonal Attention Sparsity in Autoregressive Image Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19702",
-      "arxiv_id": "2609.19702",
-      "authors": [
-        "Daeun Kim",
-        "Junwha Hong",
-        "Changhun Oh",
-        "Yoonsung Kim",
-        "Yoonhyeong Lee",
-        "Jongse Park"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.PF"
-      ],
-      "published": "2026-09-17T04:54:59+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8500,176 +8768,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19363",
-      "title": "Stiefel Attention: When the Geometry of Transformer Projection Matrices Dominates Optimizer Choice---and When It Does Not",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19363",
-      "arxiv_id": "2609.19363",
-      "authors": [
-        "Rub\\'en Dar\\'io Guerrero"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.NA",
-        "math.NA"
-      ],
-      "published": "2026-09-16T19:35:47+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19719",
-      "title": "SeetaPsych v1.0: An Open-source Computer Vision Toolkit for Behavior-based Psychological Measurement",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19719",
-      "arxiv_id": "2609.19719",
-      "authors": [
-        "Jiabei Zeng",
-        "Chiqin Li",
-        "Kaizhou Li",
-        "Fei Chang",
-        "Yong Li",
-        "Yuanhao Zhao",
-        "Dan Han",
-        "Wenqiang Yang",
-        "Xilin Chen",
-        "Shiguang Shan"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T05:26:10+00:00",
-      "score": 17,
-      "reason": "关键词命中：Computer Vision",
-      "tags": [
-        "Computer Vision"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19644",
-      "title": "ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19644",
-      "arxiv_id": "2609.19644",
-      "authors": [
-        "Jaehyun Nam",
-        "Jinsung Yoon",
-        "Yanzhou Pan",
-        "Yubo Wang",
-        "Rui Meng",
-        "Parthasarathy Ranganathan",
-        "Tomas Pfister"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-17T03:37:42+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19499",
-      "title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19499",
-      "arxiv_id": "2609.19499",
-      "authors": [
-        "Mobina Kashaniyan",
-        "Ali Jannesari"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.DC",
-        "cs.PF",
-        "Qwen2.5-1.5B",
-        "on",
-        "GSM8K",
-        "and",
-        "SciQ",
-        "using",
-        "NVIDIA",
-        "A100",
-        "V100",
-        "GPUs.",
-        "Studies",
-        "LLM",
-        "test-time",
-        "scaling,",
-        "candidate-generation",
-        "scheduling,",
-        "latency,",
-        "throughput,",
-        "GPU-hours,",
-        "GPU-device",
-        "energy",
-        "Efficiency",
-        "with",
-        "Sustainable",
-        "Performance",
-        "(EESP),",
-        "co-located",
-        "SC26,",
-        "Chicago,",
-        "USA,2026.",
-        "8",
-        "pages,",
-        "4",
-        "figures,",
-        "9",
-        "tables.",
-        "Experiments",
-        "evaluate",
-        "Phi-3-mini",
-        "USA,2026"
-      ],
-      "published": "2026-09-16T23:29:57+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19421",
-      "title": "RGS: Reflection-aware Gaussian Splatting via Learning Geometry Continuity for Reflective Objects",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19421",
-      "arxiv_id": "2609.19421",
-      "authors": [
-        "Xiaobiao Du",
-        "Yida Wang",
-        "Cheng Bi",
-        "Kun Zhan",
-        "Xin Yu"
-      ],
-      "categories": [
-        "cs.CV",
-        "ICRA2026"
-      ],
-      "published": "2026-09-16T20:55:24+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20283",
       "title": "Queries Knew More Than We Thought: Uncovering Latent Knowledge in Segmentation Models",
       "title_zh": "",
@@ -8693,162 +8791,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19203",
-      "title": "Position: It is Time to Virtualize Foundation Models with a Self-evolving Operating System Layer",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19203",
-      "arxiv_id": "2609.19203",
-      "authors": [
-        "Suparna Bhattacharya",
-        "Tarun Kumar",
-        "Cong Xu",
-        "Satish Kumar Mopur",
-        "Jiahao Li",
-        "Ashish Mishra",
-        "Aalap Tripathy",
-        "Annmary Justine Koomthanam",
-        "Martin Foltin",
-        "Ian Foster"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG",
-        "cs.MA",
-        "cs.OS"
-      ],
-      "published": "2026-09-16T09:26:32+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19358",
-      "title": "Open-vocabulary 3D object detection with promptable segmentation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19358",
-      "arxiv_id": "2609.19358",
-      "authors": [
-        "\\\"Omer Faruk Deniz",
-        "Mustafa Taha Ko\\c{c}yi\\u{g}it"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-16T19:31:00+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19183",
-      "title": "Message capacity and claim wording set the transition points of collective truth-finding in language-model networks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19183",
-      "arxiv_id": "2609.19183",
-      "authors": [
-        "Makoto Fukushima"
-      ],
-      "categories": [
-        "cs.MA",
-        "cs.CL",
-        "nlin.AO",
-        "physics.soc-ph"
-      ],
-      "published": "2026-09-15T14:46:31+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19374",
-      "title": "Machine-Learning Assessment of the Predictive Value of Inflammatory Biomarkers for Cognitive Impairment in an Older Hispanic Adult Cohort",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19374",
-      "arxiv_id": "2609.19374",
-      "authors": [
-        "Antony Garcia",
-        "Gabrielle Britton",
-        "Alcibiades Villarreal",
-        "Diana Oviedo",
-        "Giselle Rangel",
-        "Xinming Huang"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-16T19:50:57+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19391",
-      "title": "MAGS: Multi-agent Auto-formalization Guarantees Safety for Agentic Outputs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19391",
-      "arxiv_id": "2609.19391",
-      "authors": [
-        "Albert Wu",
-        "Nicholas Roberts",
-        "Tzu-Heng Huang",
-        "Haoran Lin",
-        "Gil Friedman",
-        "Sungjun Cho",
-        "Gabriel Orlanski",
-        "Frederic Sala"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CR",
-        "cs.SE"
-      ],
-      "published": "2026-09-16T20:15:36+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19521",
-      "title": "LSTM-UT and Recurrent-Depth Transformers on Cellular Automata",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19521",
-      "arxiv_id": "2609.19521",
-      "authors": [
-        "Aras Kavuncu"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T00:17:39+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20300",
       "title": "Improving Generalization and Robustness in Offline Reinforcement Learning via Boundary-Aware Data Augmentation",
       "title_zh": "",
@@ -8867,30 +8809,6 @@
       "reason": "关键词命中：Computer Vision",
       "tags": [
         "Computer Vision"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19107",
-      "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19107",
-      "arxiv_id": "2609.19107",
-      "authors": [
-        "Zixi Chen",
-        "Akshay Vegesna",
-        "Samip Dahal",
-        "Andrew Gordon Wilson"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-16T17:36:13+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8920,84 +8838,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19740",
-      "title": "Federated Learning Framework for Privacy-Preserving Kidney Stone Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19740",
-      "arxiv_id": "2609.19740",
-      "authors": [
-        "Najiyya Younas",
-        "Omar Abdulkader",
-        "Yaser Ali Shah",
-        "Muhammad Jawad Ikram",
-        "Jebran Khan",
-        "Amaad Khalil"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "published": "2026-09-17T06:06:03+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19680",
-      "title": "FINSKILLOPS: A Self-Evolving Multi-Agent System for SEC Filing QA",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19680",
-      "arxiv_id": "2609.19680",
-      "authors": [
-        "Yanzhang Ma",
-        "Zhenghan Tai",
-        "Hanwei Wu",
-        "Sizhe Guan",
-        "Jianliang Lei",
-        "Hailin He",
-        "Chaolong Jiang",
-        "Jijun Chi",
-        "Tung Sum Thomas Kwok",
-        "Bohuai Xiao",
-        "Jingrui Tian",
-        "Xinlu Wu",
-        "Xingao Zhan",
-        "Peng Lu",
-        "Muzhi Li",
-        "Yihong Wu",
-        "Liheng Ma",
-        "Sicheng Lyu",
-        "Tianshuo Yan",
-        "Junhao Zhu",
-        "Yaqian Xu",
-        "Lei Ding",
-        "Yufei Cui",
-        "Ziquan Liu",
-        "Boyu Han",
-        "Hengli Liu",
-        "Ling Zhou",
-        "Xinyu Wang"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.IR",
-        "cs.MA",
-        "cs.SE"
-      ],
-      "published": "2026-09-17T04:25:17+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20722",
       "title": "Deep Noir: Autonomous Steering Discovery via Architectural Chronometry in Transformer Models",
       "title_zh": "",
@@ -9018,81 +8858,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19425",
-      "title": "Closed-World Resolution Against Tool Hallucination in LLM Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19425",
-      "arxiv_id": "2609.19425",
-      "authors": [
-        "Laxmipriya Ganesh Iyer"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CR",
-        "cs.SE"
-      ],
-      "published": "2026-09-16T21:02:31+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19606",
-      "title": "Chain-of-Thought Entropy as a Reliability Signal: A Preregistered Reproduction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19606",
-      "arxiv_id": "2609.19606",
-      "authors": [
-        "Theodore O. Cochran"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "published": "2026-09-17T02:40:31+00:00",
-      "score": 17,
-      "reason": "关键词命中：Large Language Model",
-      "tags": [
-        "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20301",
-      "title": "AgentPProf: Semantic Profiler for Long Horizon AI Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20301",
-      "arxiv_id": "2609.20301",
-      "authors": [
-        "Yusheng Zheng",
-        "Chaokun Chang",
-        "Yu Mao",
-        "Tianyuan Wu",
-        "Yuxi Huang",
-        "Tao Ma",
-        "Wenan Mao",
-        "Shuyi Cheng",
-        "Andi Quinn",
-        "Wei Wang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-14T02:46:15+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -9534,6 +9299,35 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据或结论。",
       "insight_zh": "从标题看，该基准关注LLM通过多轮对话澄清科学任务需求的能力，可能对地理空间智能中的人机交互任务定义有方法借鉴，但缺乏摘要无法进一步判断。"
+    },
+    {
+      "key": "arxiv:2609.20302",
+      "title": "SAGG: Sample-Adaptive Gradient Gating for Robust Multimodal Learning under Heterogeneous Corruption",
+      "title_zh": "SAGG：面向异构损坏下鲁棒多模态学习的样本自适应梯度门控",
+      "url": "https://arxiv.org/abs/2609.20302",
+      "arxiv_id": "2609.20302",
+      "authors": [
+        "Wentao Zhang",
+        "Yifan Zhu",
+        "Yutong Zhang",
+        "and Wentao Mo"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.MM"
+      ],
+      "published": "2026-07-30T09:24:40+00:00",
+      "score": 15,
+      "reason": "该论文研究异构损坏下的鲁棒多模态学习与样本自适应梯度门控，属于多模态机器学习与鲁棒性理论，与多源数据融合有方法论上的间接关联，但未涉及地理空间应用。",
+      "tags": [
+        "多模态学习",
+        "梯度门控",
+        "异构损坏",
+        "鲁棒性",
+        "样本自适应"
+      ],
+      "summary_zh": "多模态梯度平衡方法以每模态共享标量调制编码器梯度，隐含假设损坏在训练批次内是均匀的。实践中，损坏是样本异构的：在单个小批次内，不同样本可能有不同模态受损。本文证明，在该异构损坏模型下，任何批次级、样本无关且共享调制参数的线性估计器都会相对于干净数据梯度产生不可约偏差，而样本级全有或全无门控是在一类自然的无分布估计器类中唯一无偏的策略。受此结果启发，本文提出样本自适应梯度门控（SAGG），通过在线特征范数质量检验对每个样本做出二元保留或丢弃决策，并引入截断机制以控制方差。本文证明基于SAGG的SGD以标准O(1/sqrt(T))速率收敛到干净损失的驻点，且无依赖损坏的误差下限，并推导出独立编码器架构的认证鲁棒半径，将每模态Lipschitz常数与分类间隔联系起来。在Kinetics-Sounds与UCF-101上，在高斯噪声注入、部分模态缺失与自然贡献不平衡条件下，SAGG持续优于十种现有方法，在高损坏情形下增益最大，此时批次级偏差最为严重。",
+      "insight_zh": "该研究关于样本级自适应门控优于批次级共享调制的理论结论，或可为多源地理数据融合中异质噪声与缺失模态的鲁棒处理提供方法借鉴，但其验证限于视频-音频多模态基准。"
     },
     {
       "key": "arxiv:2605.23285",
@@ -10396,6 +10190,60 @@
       "insight_zh": "该文展示了小模型微调与大型模型微调在专业领域关系抽取中的对比，方法上可类比到地理文本信息抽取；但摘要未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.19680",
+      "title": "FINSKILLOPS: A Self-Evolving Multi-Agent System for SEC Filing QA",
+      "title_zh": "FINSKILLOPS：面向SEC文件问答的自进化多智能体系统",
+      "url": "https://arxiv.org/abs/2609.19680",
+      "arxiv_id": "2609.19680",
+      "authors": [
+        "Yanzhang Ma",
+        "Zhenghan Tai",
+        "Hanwei Wu",
+        "Sizhe Guan",
+        "Jianliang Lei",
+        "Hailin He",
+        "Chaolong Jiang",
+        "Jijun Chi",
+        "Tung Sum Thomas Kwok",
+        "Bohuai Xiao",
+        "Jingrui Tian",
+        "Xinlu Wu",
+        "Xingao Zhan",
+        "Peng Lu",
+        "Muzhi Li",
+        "Yihong Wu",
+        "Liheng Ma",
+        "Sicheng Lyu",
+        "Tianshuo Yan",
+        "Junhao Zhu",
+        "Yaqian Xu",
+        "Lei Ding",
+        "Yufei Cui",
+        "Ziquan Liu",
+        "Boyu Han",
+        "Hengli Liu",
+        "Ling Zhou",
+        "Xinyu Wang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.IR",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "published": "2026-09-17T04:25:17+00:00",
+      "score": 15,
+      "reason": "该论文提出面向SEC文件问答的自进化多智能体系统，涉及多智能体协调与技能生命周期管理，与LLM和多智能体研究主题相关，但应用领域为金融问答，与GIS和城市研究无直接关联。",
+      "tags": [
+        "多智能体系统",
+        "金融问答",
+        "自进化",
+        "技能管理"
+      ],
+      "summary_zh": "金融问答系统通常在部署前通过改进检索、提示或智能体协调来优化，此后其可靠性行为便固定不变。在实践中，新的SEC文件问题反复暴露出在期间、实体、证据使用和计算方面的异构错误。现有自改进方法可以将失败转化为新行为，但对修正应应用于何处或可能破坏哪些先前正确答案的控制有限。因此，本文将部署后改进框架化为受控的行为维护：反复出现的失败应转化为有范围的技能补丁，每个补丁应在不引入回归的情况下获得部署资格。本文在FINSKILLOPS中实例化了这一观点，这是一个面向SEC文件问答的多智能体系统。FINSKILLOPS从基于证据的类型化失败诊断中提取可复用技能，并通过定向验证、保护案例回归检查、阴性对照以及版本化替换或退役来治理这些技能。在六个金融问答基准上，单一冻结技能注册表在所评估系统中实现了最高的判定加权正确性和参考一致性。进化技能将增强基准上的正确性从3.70提升至4.55。在另一项12轮操作研究中，33个提议技能中仅有6个被提升，同时监控非纠正率从20.0%降至12.5%。",
+      "insight_zh": "该研究提出的受控技能范围、准入和生命周期管理机制，可为多智能体系统在复杂领域中的可靠自改进提供方法论参考，但其金融问答场景与地理空间智能任务的迁移需进一步探索。"
+    },
+    {
       "key": "arxiv:2609.19799",
       "title": "Evolution or Illusion? Rethinking Evaluation in LLM Evolutionary Search",
       "title_zh": "进化还是幻觉？重新审视LLM进化搜索的评估",
@@ -10565,6 +10413,32 @@
       ],
       "summary_zh": "一个记忆可能正确回答当前查询，却丢弃了后续更新所需的区分信息。作者通过配对历史审计研究这一失败：两个历史具有相同的当前答案，接收共享的未来更新，但需要不同的后续答案。一项试点评估了24个历史对，涵盖六种合成机制、12种记忆条件、两次重复和两个模型后端。确定性前沿选择器在DeepSeek上获得96/96的严格揭示准确率，在GLM上为82/96；结构化写入器获得62次成功、一个未解决结果和56/96。配置的四结果联合对比具有有限样本识别区间[0.521, 0.542]和[0.292, 0.313]，而非置信区间。记录级审计区分了保留状态充分性、响应传递和答案模式合规性，而不改变原始得分。它发现26个和25个格式良好但语义错误的结构化揭示记忆，而所有14个GLM前沿揭示失败都在错误包装中包含正确值。墓碑移除在目标机制中产生16/16的精确重放失败。标识符重命名随后暴露另一个缺陷：原始前沿晚期引用充分性从8/8下降到94/320个变换实例。作者提供并测试了一种标签等变修复，但它仅保留2/8个原始晚期引用答案：消除命名捷径并不能解决未知未来相关性。这些结果支持一种有范围限定的评估方法和可复现的失败分析，而非修复算法的普遍优越性。付费试点证据、回顾性诊断和新的离线测试分别报告；未声称独立留出或自然任务验证。",
       "insight_zh": "该文揭示记忆系统可能在当前查询上正确却在未来更新上失效，并提出配对历史审计来分离保留状态、响应传递和模式合规；这一审计思路对时空数据挖掘中增量更新与历史信息保留的评估有方法学借鉴，但原文未涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.19425",
+      "title": "Closed-World Resolution Against Tool Hallucination in LLM Agents",
+      "title_zh": "面向LLM智能体中工具幻觉的闭世界解析",
+      "url": "https://arxiv.org/abs/2609.19425",
+      "arxiv_id": "2609.19425",
+      "authors": [
+        "Laxmipriya Ganesh Iyer"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.SE"
+      ],
+      "published": "2026-09-16T21:02:31+00:00",
+      "score": 15,
+      "reason": "该论文研究LLM智能体中的工具幻觉问题并提出闭世界解析方案，涉及LLM智能体可靠性，与LLM和多智能体研究主题相关，但与GIS和城市研究的直接关联有限。",
+      "tags": [
+        "LLM智能体",
+        "工具幻觉",
+        "闭世界解析",
+        "MCP"
+      ],
+      "summary_zh": "工具增强的大型语言模型（LLM）智能体以一种工具选择或工具安全方法均未解决的方式失败：它们调用不存在的工具并传递没有模式声明的参数。现有防御要么选择正确的工具（选择），要么约束智能体对真实工具的操作（门控），二者都预设所发出的调用至少指向一个真实工具。本文表明这是一个结构性盲点：幻觉调用在构造上不是任何门控所做的决策，因此没有门控能拒绝它。本文主要是一项测量和基准研究。作者给出了工具幻觉的五类分类法（H1-H5），并作为参考点提出了Resolution Rung：一种无需训练的闭世界解析器（注册表成员资格加签名检查），其关注点在于它必须位于何处，而非它计算什么。本文证明幻觉防御必须先于任何因果门控，并刻画了唯一不可约的残留（借用的参数在模式上与有效调用无法区分）。在两种调用表面下的十个托管模型中，本文测量了322个真实幻觉；伪造工具调用集中在无约束的原始JSON表面（34对3），且模型规模无帮助（675B模型与7-8B模型相当）。随后扩展到模型上下文协议，其中将多个服务器合并为一个命名空间会创建单一注册表无法表达的幻觉表面（第二分类法M1-M5）；在实时MCP表面上测量了154个幻觉。",
+      "insight_zh": "该研究揭示的工具幻觉结构性盲点及闭世界解析方案，对地理空间AI智能体调用地理处理工具时的可靠性保障具有潜在参考价值，但其核心贡献在于通用LLM智能体安全而非地理空间领域。"
     },
     {
       "key": "arxiv:2609.20034",
@@ -10921,6 +10795,32 @@
       "insight_zh": "该文的共享潜在空间多模态融合思路对多源地理空间数据融合有方法学启发，但其任务为视觉-语言-动作推理，未涉及地理空间或城市应用。"
     },
     {
+      "key": "arxiv:2609.15857",
+      "title": "Task-Directed Residual AddUNet:Perfect-Reconstruction Routing for Full-Rate Representations",
+      "title_zh": "任务导向的残差AddUNet：全速率表示的完美重构路由",
+      "url": "https://arxiv.org/abs/2609.15857",
+      "arxiv_id": "2609.15857",
+      "authors": [
+        "Vikram R. Lakkavalli"
+      ],
+      "categories": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "published": "2026-09-14T16:50:14+00:00",
+      "score": 12,
+      "reason": "该论文研究AddUNet的完美重构解释与残差全速率架构，属于信号处理与表示学习理论，实验在TIMIT语音数据上进行，与城市更新、时空数据挖掘、遥感等GIS研究方向基本无关。",
+      "tags": [
+        "AddUNet",
+        "完美重构",
+        "多速率滤波器组",
+        "表示学习",
+        "语音识别"
+      ],
+      "summary_zh": "本文建立了AddUNet及其全速率实现的完美重构（PR）解释，并提出一种用于任务导向表示学习的残差全速率PR架构。研究表明，受约束加性U-Net的幸存者-跳跃结构恰好等价于一个临界采样多速率PR滤波器组。全速率表述在保持PR的同时去除了临界采样系统的互补子带限制。随后提出一种残差全速率PR架构，将任务无关、干扰或冗余结构逐步从面向任务的幸存者路径中路由出去，同时显式保留被路由的信息。对于任意形状兼容的线性或非线性路由算子，均可保证精确重构，无需可逆性、匹配的合成滤波器组、重构损失或学习解码器。该架构将表示设计与重构设计解耦：守恒是结构性的，而学习专注于任务导向的路由。同一表述还识别出保留残差输出的恒等捷径ResNet即为一个全速率PR系统。实验验证了线性可分离因子的精确单通道路由达到机器精度。在TIMIT上，所提出的前端在识别器与训练协议固定的情况下将测试PER从28.60±2.09%改善至25.76±0.41%，同时保持精确重构。说话人探测进一步表明，结构性守恒本身并不意味着任务特定的不变性。",
+      "insight_zh": "该研究提出的结构性守恒与任务导向路由解耦思想，或可为多源数据融合中的特征保留与任务适配提供理论借鉴，但其应用场景为语音信号处理，与地理空间智能的直接关联有限。"
+    },
+    {
       "key": "arxiv:2609.15369",
       "title": "SlopShape: Identifying AI-Generated Commercial Web Content",
       "title_zh": "SlopShape：识别AI生成的商业网页内容",
@@ -10958,6 +10858,35 @@
       ],
       "summary_zh": "词级检测器几乎能完美识别未经编辑的AI生成文本，但文献记录了其在改写下的脆弱性，且词级分数既不能刻画文本特征，也无法识别是哪个AI模型所写。本文探究能否从更深一层的结构签名来识别AI生成文本：信息如何呈现、以何顺序、用何证据、以何口吻。作者在商业内容上复现了StoryScope（Russell等，2026）——该研究曾展示AI生成小说的此类模式——使用268个公司域名的2250篇ChatGPT前人类博客文章，对比来自五个前沿模型的11250篇AI镜像文章。一个由LLM应用的214特征工具，经人工金标注会话验证（人-人kappa 0.928，人-模型0.946），仅凭其187个结构特征即可在留出公司上以98.0宏F1检测AI文章，且当每篇AI文章被其自身模型改写后该指标不变（98.1）。该信号既能刻画也能归因：AI文章共享一种整洁、自我宣告的形态，79.3%被归因到正确来源（随机率为16.7%），而人类文章占据罕见的结构配置。所有效应均复现了StoryScope的结果，方向一致且幅度更大。作者发布了流程、工具、提示词、代码和聚合产物。",
       "insight_zh": "该工作提示，AI生成文本的识别可从词级转向结构级签名，且结构信号在改写下更稳健；但其应用场景为商业网页内容鉴别，与地理空间智能或城市研究的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.19421",
+      "title": "RGS: Reflection-aware Gaussian Splatting via Learning Geometry Continuity for Reflective Objects",
+      "title_zh": "RGS：通过几何连续性学习实现反射感知的高斯泼溅",
+      "url": "https://arxiv.org/abs/2609.19421",
+      "arxiv_id": "2609.19421",
+      "authors": [
+        "Xiaobiao Du",
+        "Yida Wang",
+        "Cheng Bi",
+        "Kun Zhan",
+        "Xin Yu"
+      ],
+      "categories": [
+        "cs.CV",
+        "ICRA2026"
+      ],
+      "published": "2026-09-16T20:55:24+00:00",
+      "score": 12,
+      "reason": "该论文聚焦于3D高斯泼溅在反射物体上的几何建模与渲染质量提升，属于计算机视觉与图形学范畴，与城市更新、时空数据挖掘、遥感变化检测或多源地理空间智能等研究方向关联较弱。",
+      "tags": [
+        "3D Gaussian Splatting",
+        "novel view synthesis",
+        "geometry continuity",
+        "reflective objects"
+      ],
+      "summary_zh": "现有3D高斯泼溅方法在反射区域常出现表面塌陷，导致几何质量差和镜面反射渲染效果不佳。本文提出基于物理的延迟渲染框架RGS，利用强大的3D基础模型提供几何先验，并通过跨视角形状一致性正则化约束几何表面，使反射区域表面更平滑、减少几何空洞。同时提出反射感知致密化策略以捕捉不同视角下的镜面变化。实验表明该方法能持续渲染高质量反射物体，达到当前最优性能。",
+      "insight_zh": "该工作表明3D基础模型的几何先验可用于正则化高斯泼溅的反射区域几何，这一思路或可迁移至城市三维重建中玻璃幕墙等反射表面的建模，但论文本身未涉及城市或遥感场景。"
     },
     {
       "key": "arxiv:2609.20638",
@@ -11753,6 +11682,37 @@
       "insight_zh": "该文的混合生成范式对LLM推理效率有方法学意义，但其应用为通用语言建模，未涉及地理空间数据或城市分析。"
     },
     {
+      "key": "arxiv:2609.19291",
+      "title": "Why Pretraining Fails to Share Cross-Lingual Knowledge",
+      "title_zh": "预训练为何无法共享跨语言知识",
+      "url": "https://arxiv.org/abs/2609.19291",
+      "arxiv_id": "2609.19291",
+      "authors": [
+        "Adam Gaber",
+        "Uriel Dolev",
+        "Elisabeth Fittschen",
+        "Bobby Cheng",
+        "Yuval Marton",
+        "Leshem Choshen"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-16T18:02:29+00:00",
+      "score": 10,
+      "reason": "该论文研究多语言LLM预训练中跨语言知识迁移失败的原因，属于自然语言处理领域，与GIS博士研究方向中的LLM部分有微弱关联，但不涉及地理空间应用。",
+      "tags": [
+        "multilingual LLM",
+        "cross-lingual transfer",
+        "pretraining",
+        "token space"
+      ],
+      "summary_zh": "大型语言模型在多语言处理上取得显著进展，但与人类多语者不同，其跨语言知识迁移能力有限。本文预训练360M和7B参数LLM，发现跨语言知识泛化不足在预训练中产生并在标准干预下持续存在。通过受控双语预训练设置，使用同一语言的两种副本，共享相同文本和分词但映射到不相交的token空间，发现仅不相交token就足以导致知识区隔化，即使在同一语言的相同副本之间也是如此，确立不相交token空间是跨语言知识泛化的根本障碍。基于此，作者建议通过简单逐词翻译将语言映射到共享token空间，发现这显著改善跨语言知识泛化，恢复高达12.6%的母语学习效率，是基线的14倍。",
+      "insight_zh": "该研究揭示token空间不相交是跨语言知识迁移的根本障碍，其共享表示空间的思想对地理空间多源数据融合中的语义对齐有启发，但论文未涉及地理空间领域。"
+    },
+    {
       "key": "arxiv:2607.10116",
       "title": "When Data Imbalance Helps: Robust Generalization Through Shortcut Saturation",
       "title_zh": "当数据不平衡有益时：通过捷径饱和实现鲁棒泛化",
@@ -11776,6 +11736,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作揭示了数据不平衡在某些条件下有助于鲁棒泛化，并提出捷径饱和机制来解释这一现象。",
       "insight_zh": "摘要缺失，无法确认其理论机制；若其关于不平衡数据有益性的发现可迁移至遥感变化检测中的类别不平衡问题，或具参考价值，但需原文验证。"
+    },
+    {
+      "key": "arxiv:2609.20303",
+      "title": "Viveka-Insight: a cross-lingual concept graph and citation-grounded retrieval resource over the complete works of Swami Vivekananda in English and Bengali",
+      "title_zh": "Viveka-Insight：覆盖辨喜英文与孟加拉文全集的跨语言概念图与引文溯源检索资源",
+      "url": "https://arxiv.org/abs/2609.20303",
+      "arxiv_id": "2609.20303",
+      "authors": [
+        "Tamal Maharaj"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.DL",
+        "cs.IR"
+      ],
+      "published": "2026-07-30T11:31:10+00:00",
+      "score": 10,
+      "reason": "该论文构建辨喜著作的跨语言概念图与引文溯源检索资源，属于数字人文与知识图谱领域，虽涉及跨语言检索与概念图构建，但与GIS、城市更新、遥感等研究方向无直接关联。",
+      "tags": [
+        "跨语言概念图",
+        "引文溯源检索",
+        "双语语料",
+        "数字人文",
+        "知识图谱"
+      ],
+      "summary_zh": "古典哲学语料对语言资源构成三重叠加挑战：它们以多种语言存在且无平行对齐，其词汇与当代读者相距甚远，且对文化敏感材料生成的文本必须可验证地有据可依。本文提出Viveka-Insight，一个面向辨喜（1863-1902）著作的双语资源与开源流水线：九卷英文全集与十卷孟加拉文Vani o Rachana，两个相关但非平行的语料库，约1500万字符。发布四个层次：(i) 结构保持的解析（32,694段落，168,842句子），每段锚点可深链至已出版版本；(ii) 包含8,362个语言无关概念的跨语言概念图，具有87,518条关系类型化的段落-概念边与55,872条概念-概念边，其中规范英文标签作为字符串相等键，在无平行数据的情况下连接孟加拉文与英文段落；(iii) 包含60,850个表面形式的双语别名清单（英文30,053，孟加拉文30,797）；(iv) 由三名标注者判定的200条段落-概念边的人工标注集，随所有逐标注者判断一并发布。本文报告了在194对经验证的渲染讲座对上的已知项跨语言检索（双向Recall@10均为0.86）、对引文完整性与现代问题桥接的30问审计，以及一项将概念抽取精确率置于严格双标注者共识下0.60（Cohen's kappa = 0.61）的人类研究。抽取器的置信权重经过校准：限制权重>=0.8可将精确率提升至0.71，同时保留98%的含概念段落。孟加拉文精确率显著低于英文（0.54对0.68），将弱点定位于抽取环节。",
+      "insight_zh": "该工作在无平行数据条件下利用规范标签作为跨语言键构建概念图与引文溯源检索，其方法或可为多源地理文本数据的跨语言知识组织提供参考，但整体属于数字人文领域。"
     },
     {
       "key": "arxiv:2608.26585",
@@ -13023,6 +13010,31 @@
       "insight_zh": "摘要缺失，无法评估其轨迹建模方法是否可迁移至城市时空轨迹分析；仅从标题看，其聚焦于电子健康记录患者轨迹的联合嵌入预测预训练。"
     },
     {
+      "key": "arxiv:2609.19606",
+      "title": "Chain-of-Thought Entropy as a Reliability Signal: A Preregistered Reproduction",
+      "title_zh": "思维链熵作为可靠性信号：一项预注册复现研究",
+      "url": "https://arxiv.org/abs/2609.19606",
+      "arxiv_id": "2609.19606",
+      "authors": [
+        "Theodore O. Cochran"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-17T02:40:31+00:00",
+      "score": 10,
+      "reason": "该论文研究思维链熵作为LLM可靠性信号的可复现性，属于LLM推理可靠性方向，与LLM研究主题相关，但与GIS、城市更新和遥感变化检测无直接关联。",
+      "tags": [
+        "思维链",
+        "熵",
+        "可靠性信号",
+        "可复现研究"
+      ],
+      "summary_zh": "本实证研究是对Zhao于2026年报告的分离现象的独立复现。大型语言模型思维链熵轨迹的形状可预测最终答案是否正确，而总熵下降的幅度则不能。该分离现象值得复现，因为幅度部分仅基于单一模型、单一随机种子的300题运行，而形状部分已在两个基准和第二个模型家族上以完整规模报告。本研究在任何验证性运行之前已在OSF注册，将完整的GSM8K和MATH-500基准测试集与四个开放权重模型（包括一个原始研究未测试的推理蒸馏模型）交叉验证。形状信号得到复现。幅度信号因设置而异。在锚定模型上，单调与非单调链之间的准确率差距在GSM8K上为+9.6个百分点，在MATH-500上为+27.5个百分点，而总熵下降与正确性的秩相关在GSM8K上为-0.018，在MATH-500上为+0.414。在推理蒸馏模型上，形状信号的二元形式约每一百条链中仅触发一次，太少而无法估计注册的对比，而分级违规计数在该模型上仍具有预测性。在一项探索性比较中，仅最终步熵在所有八个模型-基准单元中按ROC面积均优于二元形状标志。",
+      "insight_zh": "该复现研究揭示了思维链熵信号在不同模型和基准上的条件依赖性，为LLM推理可靠性评估提供了方法论参考，但其与地理空间智能任务的结合尚需探索。"
+    },
+    {
       "key": "arxiv:2609.13445",
       "title": "Causal Analysis and Mitigation of Spurious Onsets in Full-Duplex Speech LLMs",
       "title_zh": "全双工语音LLM中虚假起始的因果分析与缓解",
@@ -13375,6 +13387,36 @@
       "insight_zh": "该工作提出多目标策略对齐框架，通过参数解耦与偏好构建平衡异构业务目标。其方法属于广告推荐系统，与地理空间智能无直接关联，但多目标对齐与偏好建模思路或可类比于多源数据融合中的目标权衡，论文未涉及该方向。"
     },
     {
+      "key": "arxiv:2609.19702",
+      "title": "Understanding and Exploiting Diagonal Attention Sparsity in Autoregressive Image Generation",
+      "title_zh": "理解并利用自回归图像生成中的对角注意力稀疏性",
+      "url": "https://arxiv.org/abs/2609.19702",
+      "arxiv_id": "2609.19702",
+      "authors": [
+        "Daeun Kim",
+        "Junwha Hong",
+        "Changhun Oh",
+        "Yoonsung Kim",
+        "Yoonhyeong Lee",
+        "Jongse Park"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.PF"
+      ],
+      "published": "2026-09-17T04:54:59+00:00",
+      "score": 8,
+      "reason": "该论文研究自回归图像生成中的注意力稀疏性，属于多模态AI与生成模型效率优化方向，与LLM和多智能体研究主题有一定关联，但与GIS、城市更新和遥感变化检测的直接关联较弱。",
+      "tags": [
+        "自回归图像生成",
+        "稀疏注意力",
+        "KV缓存",
+        "多模态AI"
+      ],
+      "summary_zh": "自回归图像生成因其与基于Transformer的LLM服务基础设施兼容而成为多模态AI系统的范式。然而，每次请求生成数千个视觉token使得解码日益受限于注意力计算中的KV缓存访问。稀疏注意力对此类工作负载特别有吸引力，因为许多视觉生成应用可以容忍适度的质量下降以换取性能和效率提升。虽然稀疏注意力已在文本LLM推理中得到广泛探索，但其稀疏性假设是否能有效推广到自回归图像生成尚不清楚。本文首次对自回归图像生成中的注意力稀疏性进行了跨多样工作负载和代表性开源模型的系统表征。分析揭示了若干显著特性，包括明显的预填充-解码不对称性、对提示和局部token的强注意力集中，以及由视觉token空间局部性产生的独特对角注意力稀疏模式。基于这些观察，本文提出一种对角感知稀疏注意力机制，在近期窗口内沿对角注意力方向选择性跳过KV条目。在基于GPU的服务系统上使用FlexGen、FlashAttention-2和自定义内核实现，相比密集推理实现了最高3.1倍吞吐量和1.19倍延迟改进，质量下降不到2%。",
+      "insight_zh": "该研究揭示的视觉token空间局部性导致的注意力稀疏模式，可能为地理空间视觉数据的生成模型效率优化提供参考，但其核心贡献在于图像生成推理加速而非地理空间分析。"
+    },
+    {
       "key": "arxiv:2609.20409",
       "title": "The Bias of Nonlinear Two-Time-scale Stochastic Approximation under Constant Step-Sizes",
       "title_zh": "常数步长下非线性双时间尺度随机逼近的偏差",
@@ -13475,6 +13517,73 @@
       ],
       "summary_zh": "正则化自博弈——DeepNash的Stratego对弈背后的方法族——通过向缓慢移动的、熵正则化的参考策略ρ做最优响应，驱动双人零和策略收敛到纳什均衡。当博弈存在价值等价均衡构成的多面体时，正则项会悄然打破平局：在均匀参考下它选择最大熵成员，即ρ到纳什集合的I投影。参考策略能否被用来有意选择均衡？在五个可精确求解的博弈加一个二维多面体上，使用精确最优响应和跨独立种子的等价性检验，将参考锚定在目标成员并细化，可将自博弈引导至该成员，平均坐标误差0.007，中位可利用度5×10⁻⁵，在±0.05内与请求TOST等价；锚定在细化过程中持续存在，并跟随参考而非初始化。选择遵循可达加权I投影（斜率0.969 [0.950, 0.987]）。作者同样强调失效情形：固定的离流形参考带来0.08–0.25的可利用度代价；刚性或平坦族需要更小的镜像步长，由预注册规则设定；边界目标会欠冲；曲率可预测边界饱和发生的位置（秩相关0.90，p=0.037），而内部精度与曲率无关。表格与MLP引导图在每个目标上等价（±0.03，30个种子）；匹配对照臂显示注意力的稳健特征是种子方差过大，任何系统性偏移上界为0.018且不显著。面对最优响应时，选择-稳健性权衡是退化的：引导仅在面对固定的非均衡对手时才有意义。该配方——将参考锚定在期望成员并细化——可复现。",
       "insight_zh": "该文属于博弈论与强化学习理论，与地理空间智能研究无直接关联，仅在多智能体博弈建模层面存在极弱的类比价值。"
+    },
+    {
+      "key": "arxiv:2609.19499",
+      "title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
+      "title_zh": "样本数量并不足够：候选生成策略塑造LLM测试时扩展的能耗与性能",
+      "url": "https://arxiv.org/abs/2609.19499",
+      "arxiv_id": "2609.19499",
+      "authors": [
+        "Mobina Kashaniyan",
+        "Ali Jannesari"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.DC",
+        "cs.PF",
+        "Qwen2.5-1.5B",
+        "on",
+        "GSM8K",
+        "and",
+        "SciQ",
+        "using",
+        "NVIDIA",
+        "A100",
+        "V100",
+        "GPUs.",
+        "Studies",
+        "LLM",
+        "test-time",
+        "scaling,",
+        "candidate-generation",
+        "scheduling,",
+        "latency,",
+        "throughput,",
+        "GPU-hours,",
+        "GPU-device",
+        "energy",
+        "Efficiency",
+        "with",
+        "Sustainable",
+        "Performance",
+        "(EESP),",
+        "co-located",
+        "SC26,",
+        "Chicago,",
+        "USA,2026.",
+        "8",
+        "pages,",
+        "4",
+        "figures,",
+        "9",
+        "tables.",
+        "Experiments",
+        "evaluate",
+        "Phi-3-mini",
+        "USA,2026"
+      ],
+      "published": "2026-09-16T23:29:57+00:00",
+      "score": 8,
+      "reason": "该论文研究LLM测试时扩展中候选生成策略对能耗和性能的影响，属于LLM推理效率方向，与LLM研究主题相关，但与GIS和城市研究无直接关联。",
+      "tags": [
+        "测试时扩展",
+        "LLM推理",
+        "GPU能效",
+        "生成调度"
+      ],
+      "summary_zh": "测试时扩展可以通过生成和组合多个候选响应来改进大型语言模型推理。在基于采样的方法中，推理预算通常由生成的候选数量N来描述。然而，N告诉我们生成了多少候选，而非它们如何被执行。相同的候选预算可以在一次批量生成调用中产生，也可以拆分为多次较小批量的顺序调用。本文首先使用Phi-3-mini和Qwen2.5-1.5B在500个GSM8K提示上研究增加N对推理准确率的影响。正如预期，将N从1增加到8使Phi-3-mini的准确率提高8.4个百分点，Qwen2.5-1.5B提高18.4个百分点。然而，仅凭准确率无法显示使用更大候选预算的系统成本。因此，本文固定N=8并比较四种生成调度：1x8、2x4、4x2和8x1，其中axb表示a次生成调用、每次b个候选。在保持总候选数不变的情况下测量延迟、吞吐量、GPU小时和总GPU设备能耗。在A100 GPU上，八次串行调用使用的总GPU设备能耗是一次批量调用的4.64-4.86倍，P95延迟为5.77-6.12倍。",
+      "insight_zh": "该研究强调候选数量不足以描述多候选测试时扩展的系统成本，生成调度和GPU级系统指标应被纳入评估，这一观点对地理空间AI中的大规模推理部署具有参考价值。"
     },
     {
       "key": "arxiv:2609.19747",
@@ -13676,6 +13785,36 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究针对联邦域泛化（Federated Domain Generalization）场景下的呼吸音分类任务，提出基于因果启发干预的方法，以缓解由听诊器引起的捷径学习（Shortcut Learning）问题。",
       "insight_zh": "由于摘要缺失，无法对具体方法或结论进行推断。仅从标题看，该工作与地理空间智能关联有限，但其因果干预缓解捷径学习的思路或对遥感变化检测中消除伪相关有方法层面的启发。"
+    },
+    {
+      "key": "arxiv:2609.19374",
+      "title": "Machine-Learning Assessment of the Predictive Value of Inflammatory Biomarkers for Cognitive Impairment in an Older Hispanic Adult Cohort",
+      "title_zh": "机器学习评估炎症生物标志物对老年西班牙裔成人队列认知障碍的预测价值",
+      "url": "https://arxiv.org/abs/2609.19374",
+      "arxiv_id": "2609.19374",
+      "authors": [
+        "Antony Garcia",
+        "Gabrielle Britton",
+        "Alcibiades Villarreal",
+        "Diana Oviedo",
+        "Giselle Rangel",
+        "Xinming Huang"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-16T19:50:57+00:00",
+      "score": 8,
+      "reason": "该论文应用可解释机器学习于临床表格数据，评估炎症生物标志物对认知障碍的预测价值，属于医学信息学领域，与GIS博士研究方向基本无关。",
+      "tags": [
+        "machine learning",
+        "clinical tabular data",
+        "Naive Bayes",
+        "biomarkers",
+        "cognitive impairment"
+      ],
+      "summary_zh": "小型临床表格数据集需要可解释机器学习，因为深度学习往往不实用且集成模型难以检查。本文使用巴拿马老龄化研究倡议-健康差异（PARI-HD）队列（n=165），实现防泄漏的阈值似然伯努利/分类朴素贝叶斯分类器。所有数据依赖步骤均在重复分层10折交叉验证（30次重复）内完成。人口学基线ROC-AUC为0.630±0.017。I-309（CCL1）是主要增量特征，使AUC提高0.110，配对DeLong检验在100%重复中p<0.05。在18个候选标志物的探索性分析中，I-309在冻结分区上达到Benjamini-Hochberg校正q=0.032，在85%随机分区中满足q<0.05，其他标志物未显示可靠增量预测价值。",
+      "insight_zh": "该研究强调统计显著不等于预测有用，其防泄漏交叉验证与可解释模型设计对地理空间小样本建模有方法论借鉴意义，但论文本身与地理空间研究无关。"
     },
     {
       "key": "arxiv:2609.19721",
@@ -14065,6 +14204,32 @@
       ],
       "summary_zh": "字素到音素（G2P）转换将原始文本转为音素形式，是文本到语音（TTS）和自动语音识别（ASR）系统的重要组成部分，要求快速、稳定且语境感知。对于日语等无分词语言，G2P还需将分词与高度依赖语境的多音字消歧耦合，而准确标注数据的稀缺仍是瓶颈。本文提出一种语境感知神经G2P方法，对基于词典构建的词格上的判别式条件随机场（CRF）路径进行评分。为应对数据稀缺，作者利用大语言模型生成超过200万句子。实验结果表明，该方法显著优于传统基于形态分析器的方法和神经序列模型。在Joyo-Kanji-Yomi基准上，方法达到99.62%的目标词读音准确率、0.32%的目标词音素错误率（PER）和0.14%的句子PER。",
       "insight_zh": "该研究展示了LLM生成大规模标注数据以缓解低资源语言任务数据稀缺的可行性，其词典约束CRF路径评分思路对地理文本地名标准化有间接方法借鉴，但与地理空间智能核心方向关联微弱。"
+    },
+    {
+      "key": "arxiv:2609.20304",
+      "title": "Diagnose, Recover, Certify: Task Readiness under Hidden Dynamics Changes",
+      "title_zh": "诊断、恢复、认证：隐藏动力学变化下的任务就绪",
+      "url": "https://arxiv.org/abs/2609.20304",
+      "arxiv_id": "2609.20304",
+      "authors": [
+        "Nguyen Viet Tuan Kiet",
+        "Huynh Thi Thanh Binh"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-30T12:30:16+00:00",
+      "score": 8,
+      "reason": "该论文研究隐藏动力学变化下的任务就绪决策问题，涉及主动变化诊断与控制恢复，属于控制与机器人领域，与GIS和遥感研究方向无直接关联。",
+      "tags": [
+        "控制策略",
+        "动力学变化",
+        "任务就绪",
+        "贝叶斯诊断",
+        "主动感知"
+      ],
+      "summary_zh": "已部署的控制策略可能掩盖具有后果的动力学变化：执行器可能失去效能，而当策略很少激发它时并不影响当前任务，尽管它对尚未指定的未来任务至关重要。本文提出休眠动力学漂移下的任务就绪问题，这是一个在有限且任务无关的交互预算下统一主动变化诊断与变化后控制恢复的决策问题。智能体必须识别局部动力学是否以及何处发生变化，在下游任务身份揭示之前利用少量信息性交互刻画变化，随后为每个候选任务提供恢复的策略及其可实现回报的校准下界，或做出弃权决策转向安全回退。本文提出证据门控匹配脉冲传输，一种基于干预的贝叶斯程序，通过共享匹配响应表示将故障定位与执行器效能估计耦合，从而在保持诊断可靠性的同时将局部证据转化为与恢复相关的不确定性。该不确定性被传播至任务条件策略选择与就绪认证，使部署决策能够显式权衡期望性能、置信度与回退使用。本文在跨多个模拟器的多样化休眠执行器基准上评估该框架，采用将诊断与能力恢复分离的协议，以就绪覆盖率、选择性风险、交互成本以及回报来评分部署，并识别出传输证据具有决定性的故障情形。",
+      "insight_zh": "该研究提出的诊断-恢复-认证框架与不确定性传播机制，或可为时空数据挖掘中变化检测与模型自适应提供概念类比，但其应用场景为控制系统的故障诊断，与地理空间智能关联较弱。"
     },
     {
       "key": "arxiv:2609.20051",
@@ -14646,27 +14811,6 @@
       "insight_zh": "摘要缺失，无法评估其水印有效性与鲁棒性；水印技术对LLM生成内容的溯源有潜在意义，但与地理空间智能的关联原文未提及。"
     },
     {
-      "key": "arxiv:2609.20303",
-      "title": "Viveka-Insight: a cross-lingual concept graph and citation-grounded retrieval resource over the complete works of Swami Vivekananda in English and Bengali",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20303",
-      "arxiv_id": "2609.20303",
-      "authors": [
-        "Tamal Maharaj"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.DL",
-        "cs.IR"
-      ],
-      "published": "2026-07-30T11:31:10+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20744",
       "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
       "title_zh": "",
@@ -14899,24 +15043,31 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.15857",
-      "title": "Task-Directed Residual AddUNet:Perfect-Reconstruction Routing for Full-Rate Representations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.15857",
-      "arxiv_id": "2609.15857",
+      "key": "arxiv:2609.19363",
+      "title": "Stiefel Attention: When the Geometry of Transformer Projection Matrices Dominates Optimizer Choice---and When It Does Not",
+      "title_zh": "Stiefel注意力：Transformer投影矩阵的几何何时主导优化器选择——以及何时不主导",
+      "url": "https://arxiv.org/abs/2609.19363",
+      "arxiv_id": "2609.19363",
       "authors": [
-        "Vikram R. Lakkavalli"
+        "Rub\\'en Dar\\'io Guerrero"
       ],
       "categories": [
         "cs.LG",
-        "eess.SP"
+        "cs.NA",
+        "math.NA"
       ],
-      "published": "2026-09-14T16:50:14+00:00",
+      "published": "2026-09-16T19:35:47+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究Transformer注意力投影矩阵的Stiefel流形优化，属于深度学习优化理论，与GIS博士研究方向无直接关联。",
+      "tags": [
+        "Stiefel manifold",
+        "Riemannian optimization",
+        "attention",
+        "transformer",
+        "optimizer"
+      ],
+      "summary_zh": "注意力中的查询和键投影通常由欧几里得优化器训练，对其几何无约束。本文将WQ、WK约束到Stiefel流形上，使用Riemannian Adam优化，每帧携带一个标量二阶矩，通过信赖域限制步长并极分解回缩。四个命题证明该更新在嵌入度量下为最速下降、独立于梯度尺度、良态且精确O(d)等变。第五个命题提供机制：权重衰减在St(d,r)上的Riemannian梯度恒为零，因此学习到的注意力几何在衰减驱动的塌缩循环中得以保留。在模算术grokking任务上，单次运行在第20000轮保持97.0%验证准确率，基线为61.1%。在CIFAR-10图像块上，该规则在12对配对起点上提升+8.98个百分点。消融表明增益来自步长尺度自由，而非投影器或等变性。",
+      "insight_zh": "该研究揭示了流形约束优化在注意力机制中的作用机制，其几何约束与优化器选择的分析思路对地理空间深度学习模型设计有理论参考价值，但论文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.20818",
@@ -15076,29 +15227,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推断，该研究提出一种统计哥德尔机（Statistical Godel Machine），旨在实现风险可控的递归自我修改。",
       "insight_zh": "该研究可能对AI安全与自我改进系统有理论贡献，但与地理空间智能或城市分析的关联不明确，摘要缺失导致无法进一步评估。"
-    },
-    {
-      "key": "arxiv:2609.20302",
-      "title": "SAGG: Sample-Adaptive Gradient Gating for Robust Multimodal Learning under Heterogeneous Corruption",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20302",
-      "arxiv_id": "2609.20302",
-      "authors": [
-        "Wentao Zhang",
-        "Yifan Zhu",
-        "Yutong Zhang",
-        "and Wentao Mo"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.MM"
-      ],
-      "published": "2026-07-30T09:24:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20174",
@@ -15624,7 +15752,7 @@
     {
       "key": "arxiv:2609.20296",
       "title": "Personalising a Cross-User Surface Electromyography Encoder Under a Small Calibration Budget",
-      "title_zh": "",
+      "title_zh": "小标定预算下跨用户表面肌电编码器的个性化",
       "url": "https://arxiv.org/abs/2609.20296",
       "arxiv_id": "2609.20296",
       "authors": [
@@ -15637,10 +15765,16 @@
       ],
       "published": "2026-07-31T01:18:22+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究小标定预算下跨用户表面肌电编码器的个性化方法，属于生物医学信号处理与个性化机器学习，与GIS相关研究方向无关。",
+      "tags": [
+        "表面肌电",
+        "跨用户编码器",
+        "个性化",
+        "小样本标定",
+        "微调"
+      ],
+      "summary_zh": "肌电接口需要用户标定后才能工作。早期工作将标定视为一种数量，但未追问设备在收集到标定重复后应如何处理它们。本文将跨用户编码器的个性化视为一项有成本的设计决策。针对每个留出受试者的单一跨用户编码器，测试了四种使用完全相同有标签重复的替代方法。在各自数据库允许的最大预算内（DB1为五次重复，DB2和DB5为四次），测试了原型自适应、线性探针、缩放微调与全量微调。在77名受试者上比较四种花费小标定预算的方式，全量微调在每个预算下都最准确，且一致到受试者子集中没有例外。然而，对工程决策更具影响的结果是：一种无梯度的原型规则在无优化器、无每用户权重副本的情况下恢复了其收益的52%至78%，这使得个性化成为可穿戴设备在佩戴时即可完成的事情。认为好的表示只需一个新分类器的普遍直觉在此并不成立。每种方法相对于临床会拟合的每用户分类器的表现将取决于具体数据库。",
+      "insight_zh": "该研究关于小样本标定下个性化策略成本-收益的对比框架，或可为城市感知中跨设备、跨区域的模型快速适配提供类比思路，但其具体结论限于肌电信号领域。"
     },
     {
       "key": "arxiv:2609.20110",
@@ -16062,6 +16196,30 @@
       "insight_zh": "该研究为理解循环网络训练动力学提供了理论框架，但其关注点是学习理论本身，对地理空间或城市分析应用没有直接启示。"
     },
     {
+      "key": "arxiv:2609.19521",
+      "title": "LSTM-UT and Recurrent-Depth Transformers on Cellular Automata",
+      "title_zh": "LSTM-UT与循环深度Transformer在元胞自动机上的研究",
+      "url": "https://arxiv.org/abs/2609.19521",
+      "arxiv_id": "2609.19521",
+      "authors": [
+        "Aras Kavuncu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T00:17:39+00:00",
+      "score": 5,
+      "reason": "该论文比较循环深度Transformer在元胞自动机上的表现，属于序列建模与Transformer架构研究，与GIS、城市更新和遥感变化检测无直接关联。",
+      "tags": [
+        "循环深度Transformer",
+        "元胞自动机",
+        "LSTM",
+        "序列建模"
+      ],
+      "summary_zh": "循环深度Transformer重复应用共享计算，但在跨步骤信息保留方式上存在差异。本文比较了仅携带当前隐藏状态的块通用Transformer（BUT）、还保留扩展注意力缓存的CoTFormer，以及一种新的具有有界门控记忆的LSTM通用Transformer（LSTM-UT）。在Rule 30元胞自动机上，BUT比CoTFormer更可靠地外推到未见过的循环深度，尽管其准确率最终会下降。状态和缓存干预表明CoTFormer的失败取决于二者的交互：修正当前状态可暂时恢复准确率，而保留的历史可能削弱这种修正。在延迟回忆任务中，BUT尽管无法直接访问过去状态，仍优于CoTFormer；CoTFormer无法可靠地选择所请求的缓存表示。LSTM-UT在这些基线上改进了深度外推和延迟回忆。",
+      "insight_zh": "该研究表明有界门控记忆作为重复计算和后续检索的有效归纳偏置，可为序列建模架构设计提供参考，但其元胞自动机实验与地理空间时序分析的应用距离较远。"
+    },
+    {
       "key": "arxiv:2601.21349",
       "title": "L2R: Low-Rank and Lipschitz-Controlled Routing for Mixture-of-Experts",
       "title_zh": "L2R：面向混合专家模型的低秩与Lipschitz控制路由",
@@ -16185,7 +16343,7 @@
     {
       "key": "arxiv:2609.20297",
       "title": "Intact-to-Amputee Transfer in Surface-EMG Gesture Decoding: Training Source and Calibration Budget",
-      "title_zh": "",
+      "title_zh": "表面肌电手势解码中的健全人到截肢者迁移：训练来源与标定预算",
       "url": "https://arxiv.org/abs/2609.20297",
       "arxiv_id": "2609.20297",
       "authors": [
@@ -16198,10 +16356,16 @@
       ],
       "published": "2026-07-31T01:18:28+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究表面肌电手势解码中从健全人到截肢者的迁移学习与标定预算，属于生物医学信号处理领域，与GIS、城市更新、遥感等研究方向无关。",
+      "tags": [
+        "表面肌电",
+        "手势解码",
+        "跨用户迁移",
+        "截肢者",
+        "标定预算"
+      ],
+      "summary_zh": "在一个人身上训练的识别器很少能迁移到另一个人，而有用性能通常需要终端用户重新进行一轮有标签标定。对1077项研究的系统综述量化了证据薄弱之处：截肢者约占六分之一。本文将一种与电极布局无关的跨用户编码器迁移到11名经桡截肢者，采用与其健全肢体训练数据相匹配的协议。零样本跨群体迁移完全失败：编码器需要来自新用户的有标签数据才能开始解码，此后在三次重复下其宏F1比临床会拟合的每用户分类器高出0.190，且在该队列中每个受试者上均如此。给定三次有标签重复，其宏F1达到0.779，而每用户流水线为0.589。在40名健全受试者上训练比在10名其他截肢者上训练能更好地迁移到新截肢者，而两者结合比单独任一都更好。本研究预注册的预测——在编码器基线强度解释上增加截肢者肌电可分性较低的假设——仅在若干次重复可用且源池加入额外截肢者后才成立。在单次重复下，以及在源与健全肢体比较相匹配的每种预算下，该预测均不成立。因此，本文界定了所提解释的边界。",
+      "insight_zh": "该研究关于跨群体迁移中源数据构成与标定预算的实证发现，虽属肌电领域，但其对迁移学习边界条件的严谨刻画方法，或可为跨城市、跨区域的时空数据迁移建模提供方法论参考。"
     },
     {
       "key": "arxiv:2502.17003",
@@ -16307,6 +16471,33 @@
       "insight_zh": "该研究属于计算机视觉和多媒体取证领域，与GIS博士研究主题无直接关联。"
     },
     {
+      "key": "arxiv:2609.19107",
+      "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
+      "title_zh": "模型增长、递归与边界算子如何影响缩放指数",
+      "url": "https://arxiv.org/abs/2609.19107",
+      "arxiv_id": "2609.19107",
+      "authors": [
+        "Zixi Chen",
+        "Akshay Vegesna",
+        "Samip Dahal",
+        "Andrew Gordon Wilson"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-16T17:36:13+00:00",
+      "score": 5,
+      "reason": "该文研究预训练缩放指数与架构干预（循环深度、模型增长、边界算子），属于大模型训练理论，与地理空间智能或多智能体LLM应用仅有非常间接的关联。",
+      "tags": [
+        "缩放定律",
+        "模型增长",
+        "循环Transformer",
+        "计算效率"
+      ],
+      "summary_zh": "缩放定律预测损失如何随计算量增加而下降。本文表明，与传统认知相反，架构干预可以改变预训练中的缩放指数，从而在计算量增加时带来指数级性能提升。作者以循环Transformer的架构形式为锚点：循环（递归深度）提供了一种模型增长机制，可在训练中增加循环次数。带或不带权重共享的模型增长对缩放指数改变最大，例如一个7.4B的模型增长架构在CORE上以约20倍更少计算量匹配GPT-3 13B，且计算效率增益随规模增大。此外，在普通Transformer中使用边界算子（归一化并注入较早的块）也能带来递增的计算效率增益，但幅度较小。在数据受限的多轮训练场景中，标准循环具有正则化效果，且随规模增大增加循环次数是计算最优的。作者从计算深度视角解释这些结果：给定计算预算，希望增加Transformer的可用深度，从而带来随规模增大的效率增益。",
+      "insight_zh": "该文对理解大模型训练效率有参考价值，但其研究对象为通用语言模型架构，与地理空间智能或城市分析无直接应用关联。"
+    },
+    {
       "key": "arxiv:2609.20779",
       "title": "Harm Laundering in GPT Models: Evidence That Gender Discrimination Is Transformed Rather Than Reduced Across Safety-Trained Generations",
       "title_zh": "",
@@ -16371,35 +16562,6 @@
         "cs.LG"
       ],
       "published": "2026-09-16T11:19:06+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16603",
-      "title": "G3AR: Graph-Guided Neural Visual Geometry for Scalable Multi-Sequence Aerial Registration",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16603",
-      "arxiv_id": "2609.16603",
-      "authors": [
-        "Jeng Wen Joshua Lean",
-        "Ting-Yu Yen",
-        "Wei-Fang Sun",
-        "Simon See",
-        "Hung-Kuo Chu",
-        "Shih-Hsuan Hung"
-      ],
-      "categories": [
-        "cs.CV",
-        "Technical",
-        "Communications",
-        "Communications.",
-        "Code:",
-        "https://github.com/Joshimello/g3ar"
-      ],
-      "published": "2026-09-15T03:58:17+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16506,6 +16668,36 @@
       "tags": [],
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.19740",
+      "title": "Federated Learning Framework for Privacy-Preserving Kidney Stone Detection",
+      "title_zh": "面向隐私保护肾结石检测的联邦学习框架",
+      "url": "https://arxiv.org/abs/2609.19740",
+      "arxiv_id": "2609.19740",
+      "authors": [
+        "Najiyya Younas",
+        "Omar Abdulkader",
+        "Yaser Ali Shah",
+        "Muhammad Jawad Ikram",
+        "Jebran Khan",
+        "Amaad Khalil"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-09-17T06:06:03+00:00",
+      "score": 5,
+      "reason": "该论文聚焦联邦学习与YOLOv8在肾结石CT检测中的应用，属于医学影像隐私保护方向，与城市更新、时空数据挖掘、遥感变化检测、多源数据融合及地理空间智能等研究主题无直接关联。",
+      "tags": [
+        "联邦学习",
+        "医学影像",
+        "目标检测",
+        "隐私保护"
+      ],
+      "summary_zh": "针对集中式数据存储带来的患者隐私与医疗数据安全风险，本文提出一种结合优化YOLOv8网络的联邦学习模型，用于在CT图像上检测肾结石并保护患者隐私。该系统允许不同医疗机构在不交换患者信息的情况下联合训练共享模型，以符合GDPR和HIPAA等数据保护法规。YOLOv8中引入了残差特征融合和DropBlock正则化等架构改进，以增强检测鲁棒性并减少过拟合。在分布式CT数据集上的实验表明，联邦YOLOv8模型的mAP@50为0.733，同时保持数据机密性。其轻量设计还支持临床环境中的快速边缘部署和实时推理。",
+      "insight_zh": "该研究提示联邦学习可在不共享原始数据的条件下支持多机构协同的医学图像检测，但其应用场景为医疗CT影像，与地理空间或城市分析任务的方法迁移需进一步验证。"
     },
     {
       "key": "arxiv:2609.19559",
@@ -16781,26 +16973,6 @@
       ],
       "summary_zh": "模型的测试误差相对于其参数数量d的曲线先下降，在模型恰好能拟合训练数据时达到峰值，然后再次下降，呈现双下降现象。我们用统计力学解释这一现象。基于随机梯度的训练方法的训练轨迹是一个粒子在训练损失的能量景观上以诱导温度T游走，一个已平衡的运行会等概率地访问给定训练损失的每个参数向量，这是统计力学的基本假设，其概率由玻尔兹曼分布给出。由于训练从初始点开始且只有有限时间扩散，它带有有效的权重衰减，使每个参数成为二次自由度。能量均分定理随后将能量以T/2的份额分配给d个自由度，因此在固定训练损失下增加参数会降低温度，并驱动玻尔兹曼分布趋向平稳路径。最后，增加参数只能降低平稳路径的L2范数，因此在固定损失下采样的解随d增大而更不可能很大，实际上增强了权重正则化。",
       "insight_zh": "该研究为理解模型容量与泛化关系提供了物理视角，属于基础学习理论，对地理空间建模实践无直接指导意义。"
-    },
-    {
-      "key": "arxiv:2609.20304",
-      "title": "Diagnose, Recover, Certify: Task Readiness under Hidden Dynamics Changes",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20304",
-      "arxiv_id": "2609.20304",
-      "authors": [
-        "Nguyen Viet Tuan Kiet",
-        "Huynh Thi Thanh Binh"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-07-30T12:30:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20104",
@@ -17206,91 +17378,6 @@
       "insight_zh": "摘要缺失，无法推断其隐私风险分析是否适用于地理空间数据的隐私保护；仅从标题看，其关注批归一化对模型记忆化和隐私风险的放大作用。"
     },
     {
-      "key": "arxiv:2609.15818",
-      "title": "Atria Dawn: The Dawn of Agentic Superintelligence",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.15818",
-      "arxiv_id": "2609.15818",
-      "authors": [
-        "Honglin Guo",
-        "Tao Gui",
-        "Kun Cai",
-        "Haodong Chen",
-        "Yicheng Chen",
-        "Guanting Dong",
-        "Qiming Ge",
-        "Yuyang Hu",
-        "Zixian Huang",
-        "Jiajie Jin",
-        "Alexander Lam",
-        "Yining Li",
-        "Jiahang Lin",
-        "Yanjiang Liu",
-        "Xinyu Lu",
-        "Haijun Lv",
-        "Zerun Ma",
-        "Junlin Shang",
-        "Qisheng Su",
-        "Guoqiang Wang",
-        "Rui Wang",
-        "Zhecan Wang",
-        "Hao Xiang",
-        "Xinchen Xie",
-        "Shuhao Xing",
-        "Xiaoyu Xing",
-        "Wanghan Xu",
-        "Xinyu Yang",
-        "Yajie Yang",
-        "Chengfeng Zhao",
-        "Haoran Zhao",
-        "Penghao Zhao",
-        "Ruojun Zhou",
-        "Yunhua Zhou",
-        "Dongsheng Zhu",
-        "Yicheng Zou",
-        "Qiye Cai",
-        "Xinmeng Che",
-        "Jiabei Chen",
-        "Jiahao Chen",
-        "Jiayi Chen",
-        "Yujia Chen",
-        "Lizhi Cui",
-        "Youheng Dai",
-        "Xin Deng",
-        "Yi Dong",
-        "Shihan Dou",
-        "Chenya Gu",
-        "Xu Guo",
-        "Ding Han",
-        "Feiyang Hao",
-        "Haotan He",
-        "Jie Hou",
-        "Binze Hu",
-        "Zijian Hu",
-        "Junhao Huang",
-        "Huicheng Jiang",
-        "Jiazhen Jiang",
-        "Shufan Jiang",
-        "Jiahao Kuang",
-        "Bowen Lai",
-        "Bo Li",
-        "Jiaqiang Li",
-        "Peng Li",
-        "Qilong Li",
-        "Zhuoqun Li",
-        "et al. (77 additional authors not shown)"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-14T16:22:30+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20106",
       "title": "AnyviewMeter: Adapting Robotic Reward Models with Camera Geometry and Multi-View Attention",
       "title_zh": "",
@@ -17600,6 +17687,39 @@
       ],
       "summary_zh": "反带宽与循环反带宽问题是 NP 难的图标记问题，目标是最小化相邻顶点标签之间的最小（循环）距离。大量研究已产生多种数学表述和计算方法。然而，其最小跨度视角——即固定规定的最小（循环）距离，目标是最小化标签跨度——受到的关注相对较少。本文考虑这一互补视角，引入最小跨度反带宽/循环反带宽标记（MSABL/MSCABL）问题，并开发统一的基于布尔可满足性（SAT）的求解框架。该 SAT 框架将 MSABL/MSCABL 表述为一系列决策问题，并利用其单调性加速搜索过程。作者还考虑两种 SAT 求解策略：并行与增量 SAT 求解；前者同时检查多个候选跨度，后者复用单个 SAT 实例并逐步限制标签域。所提方法在 Harwell-Boeing 稀疏矩阵集合的基准实例上评估，并与 CPLEXCP、CPLEXMIP 和 Gurobi 比较。结果表明，基于 SAT 的方法在解质量上极具竞争力，并行方法在 MSCABL 上总体表现最佳，增量方法在 MSABL 上最佳。在无洞约束下，它们仍与 CPLEXCP 保持竞争力，并显著优于 CPLEXMIP 和 Gurobi，尤其在 MSCABL 上。这些结果证明 SAT 求解作为 MSABL 和 MSCABL 精确方法的有效性。",
       "insight_zh": "该研究属于图标记与精确组合优化，与地理空间智能中的网络优化或空间配置问题可能存在非常间接的方法论联系，但摘要未提及任何地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.19719",
+      "title": "SeetaPsych v1.0: An Open-source Computer Vision Toolkit for Behavior-based Psychological Measurement",
+      "title_zh": "SeetaPsych v1.0：面向基于行为的心理测量的开源计算机视觉工具包",
+      "url": "https://arxiv.org/abs/2609.19719",
+      "arxiv_id": "2609.19719",
+      "authors": [
+        "Jiabei Zeng",
+        "Chiqin Li",
+        "Kaizhou Li",
+        "Fei Chang",
+        "Yong Li",
+        "Yuanhao Zhao",
+        "Dan Han",
+        "Wenqiang Yang",
+        "Xilin Chen",
+        "Shiguang Shan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T05:26:10+00:00",
+      "score": 3,
+      "reason": "该论文介绍面向行为心理测量的计算机视觉工具包，涉及人脸、心率、视线等分析，与GIS、城市更新、遥感及地理空间智能无直接关联。",
+      "tags": [
+        "计算机视觉",
+        "行为分析",
+        "心理测量",
+        "开源工具包"
+      ],
+      "summary_zh": "自动化视觉分析为基于行为的心理测量开辟了新途径，但现有技术模块通常分散在任务特定系统中，接口异构且部署要求各异。本文提出SeetaPsych v1.0，一个开源、统一且可扩展的计算机视觉工具包，用于从面部图像和/或基于面部的视频中提取心理相关信号。当前版本包含四个核心模块：统一面部情绪分析（同时进行面部表情识别、面部动作单元检测和效价-唤醒度估计）、基于摄像头的心率估计、屏幕注视点估计和场景注视跟随。此外还包括人脸检测、面部关键点检测和头部检测等辅助预处理模块。这些功能封装在模块化的Pipeline/Runner架构中，可自动解析属性依赖、构建计算图并支持模块间中间结果共享。SeetaPsych提供标准化Python API以支持可复现的大规模分析，并提供交互式WebUI用于快速无代码方法评估。",
+      "insight_zh": "该工具包为心理学、行为科学和人机交互研究提供了集成的视觉测量平台，但其方法体系与地理空间分析、城市研究或遥感变化检测的交叉点有限。"
     },
     {
       "key": "arxiv:2609.19709",
