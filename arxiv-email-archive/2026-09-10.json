@@ -16,6 +16,7 @@
     "arxiv:2609.07298",
     "arxiv:2609.10371",
     "arxiv:2609.10356",
+    "arxiv:2609.09482",
     "arxiv:2609.09451",
     "arxiv:2609.07941",
     "arxiv:2609.03829",
@@ -30,22 +31,21 @@
     "arxiv:2608.27971",
     "arxiv:2606.08405",
     "arxiv:2609.10135",
-    "arxiv:2609.08372",
-    "arxiv:2609.05758"
+    "arxiv:2609.08372"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:485",
-    "deepseek": "partial:0/50;failed-batches:5"
+    "deepseek": "partial:10/50;failed-batches:4"
   },
-  "updated_at": "2026-09-23T12:04:31.041575+00:00",
+  "updated_at": "2026-09-23T17:28:20.040409+00:00",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 435,
+    "analyzed": 445,
     "high": 13,
-    "medium": 24,
-    "low": 35,
-    "below_threshold": 363
+    "medium": 26,
+    "low": 36,
+    "below_threshold": 370
   },
   "papers": [
     {
@@ -466,6 +466,35 @@
       "abstract": "Long-term change understanding from images of the same place revisited over time is a challenging task with applications in map maintenance and urban infrastructure monitoring. Prior work addresses it either through pixel-level prediction or difference captioning, neither of which is sufficient to reliably measure how well models detect and describe such changes. We introduce SPOT-THE-SHIFT, a human-verified benchmark for grounded image difference captioning of long-term changes in real-world driving scenes. Our benchmark provides natural language captions and spatial masks for structural changes across each image pair. We further propose an evaluation protocol that reliably assesses models' captioning ability, validated through human studies. Benchmarking state-of-the-art MLLMs, we find that models struggle with the fine-grained multi-image spatial capability required for this task. Finally, we develop a synthetic data generation pipeline that improves an off-the-shelf MLLM without sacrificing general capabilities.",
       "summary_zh": "从同一地点随时间重访的图像中理解长期变化是一项具有挑战性的任务，在地图维护和城市基础设施监测中有应用。已有工作要么通过像素级预测、要么通过差异描述来处理，二者都不足以可靠衡量模型检测和描述此类变化的能力。作者提出SPOT-THE-SHIFT，一个经人工验证的基准，用于真实驾驶场景中长期变化的地基图像差异描述。该基准为每对图像提供自然语言描述和结构性变化的空间掩码。作者进一步提出一种评估协议，通过人工研究验证其能可靠评估模型的描述能力。对最先进多模态大模型的基准测试发现，模型难以具备该任务所需的细粒度多图像空间能力。最后，作者开发了一个合成数据生成流程，在不牺牲通用能力的前提下改进了一个现成多模态大模型。",
       "insight_zh": "该基准将变化检测从像素级扩展到语言描述与空间掩码联合评估，其合成数据增强思路或可迁移至遥感长期变化理解任务，但摘要未说明其在遥感影像上的直接适用性。"
+    },
+    {
+      "key": "arxiv:2609.09482",
+      "title": "Infra-Bench CLS: A Global, Open-Source Benchmark for Critical Infrastructure Classification with Earth Observation Foundation Models",
+      "title_zh": "Infra-Bench CLS：一个用于关键基础设施分类的全球开源基准与地球观测基础模型",
+      "url": "https://arxiv.org/abs/2609.09482",
+      "doi": "",
+      "arxiv_id": "2609.09482",
+      "authors": [
+        "Justin Guthrie",
+        "Edward Oughton",
+        "Konrad Wessels",
+        "Matthew Rice",
+        "Isaac Corley"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-08T21:56:29+00:00",
+      "score": 78,
+      "reason": "该论文提出基于地球观测基础模型的关键基础设施分类基准，直接涉及遥感影像分类和基础模型评估，与研究中遥感变化检测和多源数据融合方向高度相关。",
+      "tags": [
+        "地球观测基础模型",
+        "关键基础设施分类",
+        "遥感",
+        "Sentinel",
+        "基准测试"
+      ],
+      "abstract": "Critical infrastructure location data is often incomplete and unevenly distributed globally, especially in developing regions. Earth observation foundation models are proposed as a new step in enabling us to more efficiently understand the natural and built environment, raising questions as to their effectiveness in performing challenging downstream tasks. Yet, foundation models remain largely untested for detecting and classifying the facility-scale critical infrastructure that underpins a range of important societal and economic functions. Subsequently, Infra-Bench CLS is introduced as a benchmark to test foundation models on 18,756 Sentinel-1 SAR and Sentinel-2 multispectral facility-scale critical infrastructure asset images covering seven continents and 13 infrastructure classes, with results reported for the 10 retained classes. Using linear probing and fine-tuning for two training dataset levels (1.0x and 0.3x), seven foundation models are evaluated (SatlasPretrain S2, SatlasPretrain S1, CROMA, Prithvi-EO-2.0, AlphaEarth Foundations, OlmoEarth v1.1-Base, and DINOv3 ViT-L/16). When comparing macro F1 scores to a ResNet-18 supervised baseline of 39.2 percent, the best foundation model achieved 57.9 percent, a 48 percent improvement. Top performing classes were airports (F1 85.3 percent), train stations (F1 82.1 percent), and data centers (F1 77.6 percent). By contrast, many of the power sector classes perform poorly (F1 27.5-46.2 percent). These findings suggest foundation models can enable superior critical infrastructure classification, but future work should evaluate performance on higher-resolution imagery, particularly for poorly performing sectors, such as power.",
+      "summary_zh": "关键基础设施位置数据往往不完整且全球分布不均，尤其在发展中地区。地球观测基础模型被视为更高效理解自然和建成环境的新一步，引发对其执行挑战性下游任务有效性的疑问。然而基础模型在检测和分类支撑重要社会经济功能的设施级关键基础设施方面仍 largely 未经测试。因此本文引入Infra-Bench CLS，一个测试基础模型的基准，包含18,756张Sentinel-1 SAR和Sentinel-2多光谱设施级关键基础设施资产图像，覆盖七大洲和13个基础设施类别，报告10个保留类别的结果。使用线性探测和微调，针对两个训练数据集水平（1.0x和0.3x），评估七个基础模型（SatlasPretrain S2、SatlasPretrain S1、CROMA、Prithvi-EO-2.0、AlphaEarth Foundations、OlmoEarth v1.1-Base和DINOv3 ViT-L/16）。与ResNet-18监督基线39.2%的宏F1相比，最佳基础模型达到57.9%，提升48%。表现最好的类别是机场（F1 85.3%）、火车站（F1 82.1%）和数据中心（F1 77.6%）。相比之下，许多电力部门类别表现不佳（F1 27.5-46.2%）。这些发现表明基础模型可实现更优的关键基础设施分类，但未来工作应评估更高分辨率影像上的性能，尤其是表现不佳的部门如电力。",
+      "insight_zh": "该基准揭示了地球观测基础模型在设施级分类上的潜力与局限，其多源Sentinel数据融合和类别不平衡问题可为城市更新中的基础设施监测提供参考。"
     },
     {
       "key": "arxiv:2609.09451",
@@ -900,38 +929,6 @@
       "abstract": "A dense retriever encodes a question as one vector, but the question arrives one word at a time. We read 2,144 held-out headlines from Thu Vien Phap Luat (Vietnamese legal library) word by word with Nemotron-3-Embed 8B/1B and Qwen3-Embedding 8B/0.6B, encoding 65,444 prefixes against 20,034 articles, plus every prefix of 3,438 sub-questions from 1,112 multi-question headlines and of 168 answers. (i) The gold article becomes rank 1 after a median of 6-7 content words in every encoder, before the interrogative frame is read, and stays there to the end in 78-85% of cases. (ii) In a multi-question headline the lock is inside the first sub-question 94-98% of the time; the second leaves rank unchanged in 89-95%; encoded alone, the second reaches rank 1 in 42-58% vs 91-96% for the first, at the same lock word (95-97% identical). (iii) Numbers, dates and instrument identifiers move the embedding twice as far as content words and four times as far as interrogative words; 72-78% of steps move toward the gold article, and the closing interrogative frame moves against that direction in 95-99% of headlines. (iv) Rank/cosine clustering yields six archetypes (instant, typical, unstable, late, never-locking) that differ by legal area and form (chi-squared p < 1e-8): real-estate and litigation headlines never lock on a number; environmental and accounting headlines do so a third of the time. (v) An answer read word by word retrieves its article after 8-16 words and addresses the sub-questions in order asked in 83-89% of cases. (vi) A word's step keeps a consistent direction across headlines (cosine 0.25-0.33; 0.44-0.60 for numbers); a preceding question rotates that step by about 60 degrees and a greeting by about 30 degrees; steps shrink as i^{-0.8}; and a two-question headline is within 12-17 degrees of a linear mix of its two questions. We call this a context-modulated additive walk.",
       "summary_zh": "该研究逐词编码法律标题前缀，分析其嵌入轨迹。发现目标文章通常在读取6-7个内容词后即成为排名第一，且多问题标题的锁定发生在第一个子问题内。研究还识别了六种轨迹原型，并分析了不同词类对嵌入移动的影响。",
       "insight_zh": "通过分析嵌入轨迹，可以揭示检索模型在读取查询时的决策过程，并识别不同查询类型和领域的锁定模式，这为优化地理空间文本检索系统提供了新的分析视角。"
-    },
-    {
-      "key": "arxiv:2609.05758",
-      "title": "From Monolithic Blending to Agentic Orchestration: Dynamic Response for Conversational Assistants at Scale",
-      "title_zh": "从单体混合到智能体编排：大规模对话助手的动态响应",
-      "url": "https://arxiv.org/abs/2609.05758",
-      "doi": "",
-      "arxiv_id": "2609.05758",
-      "authors": [
-        "Cen Mia Zhao",
-        "Peng Wang",
-        "Chuan Shi",
-        "Yufeng Zhang",
-        "Ying Lyu",
-        "Wanmeng Ren",
-        "Robert Xue",
-        "Claire Na Cheng",
-        "Yashar Mehdad"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-04T22:38:10+00:00",
-      "score": 65,
-      "reason": "论文报告了从单体模型到智能体编排的生产迁移，涉及LLM和多智能体系统，与博士研究方向中的LLM和多智能体高度相关。",
-      "tags": [
-        "LLM",
-        "多智能体",
-        "智能体编排",
-        "生产系统"
-      ],
-      "abstract": "Conversational assistants can blend retrieval, action selection, escalation, and wording in a single model path, or separate those roles. We report a production migration of a customer-support assistant at a large accommodation marketplace (millions of conversations per month, 11 languages, 10-second P90). Dynamic Response (DR) replaces a single Qwen3-235B-A22B blended responder with a bounded ReAct orchestrator over typed tools plus a smaller generator that writes from a backend-validated context contract. Because the migration also changed prompts, alignment, and serving, we attribute each effect to its cause and claim as architecture effects only those measured on identical replayed turns: typed entity selection moves the reservation selector to a precision-first operating point (precision 8.3% to 89.1%, recall 75.2% to 67.3%), and typed action IDs with a membership check remove observed structured-action hallucination (2.14% to 0.0%). A low-ramp A/B test reproduces the replay escalation reductions: hard-escalation responses fall from 5.60% to 3.08% and soft-escalation responses from 9.56% to 2.49%, while production handoff volume holds roughly steady; self-solve is directional (+5.1 points, 95% CI [-2, +12]). Serving optimizations cut orchestrator P90 latency from 3.87s to 2.24s on a GPU footprint reduced by roughly one-third, and self-hosting reduces estimated annual model-serving cost by more than an order of magnitude.",
-      "summary_zh": "对话助手可以在单一模型路径中混合检索、动作选择、升级和措辞，也可以分离这些角色。作者报告了一个大型住宿市场客服助手的生产迁移。动态响应（DR）用一个有界ReAct编排器（基于类型化工具）和一个较小的生成器取代了单一的Qwen3-235B-A22B混合响应器。通过回放测量，类型化实体选择将预订选择器移至精度优先的工作点，类型化动作ID和成员检查消除了结构化动作幻觉。A/B测试证实了升级次数的减少。",
-      "insight_zh": "该研究通过生产环境的迁移案例，展示了从单体LLM响应器到基于类型化工具和编排器的智能体架构，能够显著提升特定任务的精度并消除结构化幻觉，同时通过服务优化大幅降低延迟和成本。"
     }
   ]
 }

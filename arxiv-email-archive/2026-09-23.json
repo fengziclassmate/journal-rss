@@ -2,7 +2,9 @@
   "date": "2026-09-23",
   "guid": "arxiv-email-daily:2026-09-23",
   "paper_keys": [
+    "arxiv:2609.25731",
     "arxiv:2609.06563",
+    "arxiv:2609.14570",
     "arxiv:2602.01163",
     "arxiv:2606.14157",
     "arxiv:2609.25326",
@@ -11,9 +13,11 @@
     "arxiv:2605.29612",
     "arxiv:2605.25200",
     "arxiv:2609.26550",
+    "arxiv:2609.25939",
+    "arxiv:2609.25067",
     "arxiv:2609.25010",
-    "arxiv:2605.10698",
     "arxiv:2509.13813",
+    "arxiv:2605.10698",
     "arxiv:2608.25286",
     "arxiv:2604.13706",
     "arxiv:2609.26532",
@@ -22,32 +26,57 @@
     "arxiv:2609.25569",
     "arxiv:2609.25432",
     "arxiv:2609.25179",
+    "arxiv:2609.24526",
+    "arxiv:2609.22158",
     "arxiv:2609.26166",
-    "arxiv:2410.07421",
     "arxiv:2607.16900",
     "arxiv:2510.17881",
-    "arxiv:2512.02697",
-    "arxiv:2603.17043",
-    "arxiv:2606.22694",
-    "arxiv:2604.16548",
-    "arxiv:2609.23466",
-    "arxiv:2608.06765"
+    "arxiv:2410.07421"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:667",
-    "deepseek": "partial:259/600;failed-batches:34"
+    "deepseek": "partial:69/340;failed-batches:27"
   },
-  "updated_at": "2026-09-23T12:11:50.908435+00:00",
+  "updated_at": "2026-09-23T17:34:41.886680+00:00",
   "analysis_stats": {
     "total": 667,
-    "analyzed": 326,
-    "high": 2,
-    "medium": 13,
-    "low": 28,
-    "below_threshold": 283
+    "analyzed": 396,
+    "high": 3,
+    "medium": 16,
+    "low": 30,
+    "below_threshold": 347
   },
   "papers": [
+    {
+      "key": "arxiv:2609.25731",
+      "title": "Annual Earth-observation embeddings encode wildfire disturbance and support simplified burned area mapping",
+      "title_zh": "年度地球观测嵌入编码野火扰动并支持简化的火烧迹地制图",
+      "url": "https://arxiv.org/abs/2609.25731",
+      "doi": "",
+      "arxiv_id": "2609.25731",
+      "authors": [
+        "Jovana Knezevic",
+        "Clement Atzberger",
+        "Zhengpeng Feng",
+        "Adam F. A. Pellegrini",
+        "Srinivasan Keshav",
+        "David Coomes"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-22T06:05:46+00:00",
+      "score": 92,
+      "reason": "该论文直接研究地球观测嵌入用于野火烧迹地制图和跨大陆迁移，与用户的遥感变化检测和多源数据融合方向高度契合。",
+      "tags": [
+        "遥感变化检测",
+        "地球观测嵌入",
+        "火烧迹地制图",
+        "跨大陆迁移"
+      ],
+      "abstract": "Medium-resolution (10-30 m) burned area mapping is vital for monitoring wildfires and their impacts, but remains difficult to scale. Existing methods require either curated fire-specific imagery or dense time-series analysis. Here, we tested whether annual Earth-observation embeddings retain wildfire disturbance signals sufficiently to map burned areas without either requirement. Using Tessera and AlphaEarth embeddings, we tested individual burn-scar delineation, mapping of all same-year fires within an area, regional wall-to-wall mapping, cross-continental transfer, and intra-annual fire timing. Tessera strongly encoded wildfire disturbance, allowing even linear models to separate burned from unburned pixels; the signal was weaker in AlphaEarth. Models trained on a single Tessera embedding matched or exceeded equivalent models using paired pre- and post-fire HLS imagery, and outperformed post-fire imagery alone. The same approach mapped all same-year fires within benchmark scenes (F1 = 0.90). Applied across California, with no California fire data used for downstream training, it recovered 97% of reference burned area and detected substantially more small and medium-sized fires than GABAM or MCD64A1. Separately, a model trained on 2018-2021 US fires transferred without retraining to 88 European fires from 2024-2025 (F1 = 0.88). For well-detected fires, ignition timing was recovered with a mean absolute error of 13 days. Performance declined for fires ignited near the end of the calendar year, and wall-to-wall deployment produced systematic false positives in some unseen landscapes. Annual embeddings nevertheless achieve high segmentation accuracy while moving the burden of dense time series processing upstream, providing a promising path towards simpler regional burned area mapping.",
+      "summary_zh": "中分辨率（10-30米）火烧迹地制图对于监测野火及其影响至关重要，但难以规模化。现有方法需要精心策划的火灾特定影像或密集时间序列分析。在此，我们测试了年度地球观测嵌入是否保留足够的野火扰动信号，以在不需要上述任一条件的情况下制图火烧迹地。使用Tessera和AlphaEarth嵌入，我们测试了单个火烧迹地 delineation、区域内所有同年火灾的制图、区域逐墙制图、跨大陆迁移以及年内火灾时序。Tessera强烈编码了野火扰动，甚至线性模型也能区分燃烧和未燃烧像素；AlphaEarth中信号较弱。在单个Tessera嵌入上训练的模型匹配或超过了使用配对火灾前后HLS影像的等效模型，并优于仅使用火灾后影像的模型。相同方法在基准场景中制图了所有同年火灾（F1 = 0.90）。应用于整个加利福尼亚州，未使用任何加州火灾数据进行下游训练，恢复了97%的参考燃烧面积，并检测到比GABAM或MCD64A1更多的小型和中等规模火灾。另外，在2018-2021年美国火灾上训练的模型无需重新训练即迁移到2024-2025年的88场欧洲火灾（F1 = 0.88）。对于检测良好的火灾，点火时间以13天的平均绝对误差恢复。对于日历年末期点燃的火灾性能下降，逐墙部署在部分未见景观中产生系统性假阳性。年度嵌入尽管如此仍实现了高分割精度，同时将密集时间序列处理的负担上移，为更简单的区域火烧迹地制图提供了一条有前景的路径。",
+      "insight_zh": "该研究表明年度地球观测嵌入可有效编码野火扰动信号，简化火烧迹地制图流程并实现跨大陆迁移，为遥感变化检测提供了新思路，但其在年末火灾和未见景观中的性能局限值得关注。"
+    },
     {
       "key": "arxiv:2609.06563",
       "title": "MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games",
@@ -76,6 +105,35 @@
       "abstract": "Social deduction games (SDGs) require agents to reason under partial observability by maintaining relational beliefs about hidden roles and team alignments. While recent LLM-agent approaches improve gameplay through prompting and preference optimization, they often optimize actions and in-game speech without explicitly grounding them in such beliefs. This frequently leads to strategically inconsistent behavior, especially for compact LLM agents. We introduce Multi-Agent Relational Belief Optimization (MARBO), a belief-grounded preference optimization framework that leverages relational beliefs to guide strategic decisions and in-game speech. MARBO provides preference feedback only when behaviors are supported by reliable relational beliefs and lead to strategically favorable social outcomes, encouraging more consistent learning under uncertainty. Experiments on representative SDGs show that MARBO enables compact LLM agents to consistently outperform existing baselines. The Code is available on https://github.com/PleaseTakemeAway/MARBO.",
       "summary_zh": "论文提出多智能体关系信念优化（MARBO）框架，利用关系信念指导LLM智能体的策略决策和游戏内语言生成。MARBO仅在行为得到可靠关系信念支持并导致战略上有利的社会结果时提供偏好反馈，从而在不确定性下鼓励更一致的学习。在代表性社交推理游戏上的实验表明，MARBO使紧凑型LLM智能体能够持续优于现有基线。",
       "insight_zh": "将智能体的行为显式地锚定在结构化的关系信念上，而非仅优化表面行为，是提升LLM智能体在复杂社会交互中战略一致性的关键。"
+    },
+    {
+      "key": "arxiv:2609.14570",
+      "title": "Disentangling Topology and Diversity in Multi-Agent LLMs for Multilingual Low-Resource Emotion Detection",
+      "title_zh": "解耦多智能体LLM中的拓扑与多样性：面向多语言低资源情感检测",
+      "url": "https://arxiv.org/abs/2609.14570",
+      "doi": "",
+      "arxiv_id": "2609.14570",
+      "authors": [
+        "Ulugbek Shernazarov",
+        "Charitha Ruwansiri Weerakon Basnayake",
+        "Abdelkhaleq El Jarjini",
+        "Noel Crespi",
+        "Praboda Rajapaksha"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-13T14:58:26+00:00",
+      "score": 78,
+      "reason": "该文系统解耦多智能体LLM系统中的推理拓扑与智能体多样性来源，与研究者关注的LLM和多智能体方向高度契合。虽应用场景为多语言低资源情感检测而非地理空间任务，但其关于拓扑与专业化如何影响性能的结论对构建地理空间智能体系统具有方法论参考价值。",
+      "tags": [
+        "多智能体LLM",
+        "推理拓扑",
+        "智能体多样性",
+        "低资源情感检测",
+        "多语言"
+      ],
+      "abstract": "Multi-agent LLM systems combine multiple inference calls, but prior work often confounds how calls are connected with how they are diversified. We study these factors independently: inference topology and source of inter-agent diversity. In a controlled $2 \\times 3$ matrix, we cross parallel aggregation and sequential refinement with stochastic sampling, role prompting, and learned QLoRA specialization, under a fixed three-call budget and output protocol within each backbone. Using Qwen2.5-14B-Instruct and Llama-3.1-8B-Instruct, we evaluate all six configurations on multilingual low-resource emotion detection across nine languages. Parallel learned specialization is strongest on Qwen at 52.83 Macro-F1 and reaches 52.94 on Llama. On Qwen it also exceeds same-backbone zero-shot, few-shot, CoT, and seven-call self-consistency baselines. The preferred topology depends on diversity source: sequential refinement helps stochastic and prompted settings, while the learned Width advantage shrinks from 2.83 points on Qwen to 0.17 on Llama. Depth-wise analysis suggests that later learned specialists can overwrite correct early predictions, although the aggregate effect is backbone-dependent. Overall, how agents are differentiated produces larger performance shifts than topology, which should be evaluated jointly with specialization.",
+      "summary_zh": "多智能体LLM系统组合多次推理调用，但先前工作常将调用如何连接与如何多样化混为一谈。本文独立研究这两个因素：推理拓扑与智能体间多样性来源。在一个受控的2×3矩阵中，将并行聚合与顺序精炼同随机采样、角色提示和学习型QLoRA专业化进行交叉组合，在每个骨干模型内固定三次调用预算和输出协议。使用Qwen2.5-14B-Instruct和Llama-3.1-8B-Instruct，在九种语言的多语言低资源情感检测上评估全部六种配置。并行学习型专业化在Qwen上最强，达52.83 Macro-F1，在Llama上达52.94。在Qwen上它还超过同骨干的零样本、少样本、CoT和七次调用自一致性基线。偏好拓扑取决于多样性来源：顺序精炼有助于随机和提示设置，而学习型宽度优势从Qwen上的2.83分缩小到Llama上的0.17。深度分析表明较晚的学习型专家可能覆盖早期正确预测，尽管总体效应依赖骨干。总体而言，智能体如何被差异化比拓扑产生更大的性能变化，二者应与专业化联合评估。",
+      "insight_zh": "该文的核心启示——智能体差异化方式比拓扑结构对性能影响更大——可指导地理空间多智能体系统的设计，例如在城市更新分析中，为不同智能体分配角色（数据检索、空间推理、验证）可能比调整调用顺序更关键；但该结论基于情感检测任务，向地理空间任务的迁移需谨慎。"
     },
     {
       "key": "arxiv:2602.01163",
@@ -305,6 +363,64 @@
       "insight_zh": "该工作表明，在LLM评判中引入置信度感知的级联策略可在保持高准确率的同时大幅降低推理成本；但其优势在需要复杂推理或对抗性错误答案时减弱，提示低成本决策层适用于常规判断而非深度验证。"
     },
     {
+      "key": "arxiv:2609.25939",
+      "title": "ClusterFewshot: Improving Few-shot Optimization for LLMs workflow",
+      "title_zh": "ClusterFewshot：改进LLM工作流的少样本优化",
+      "url": "https://arxiv.org/abs/2609.25939",
+      "doi": "",
+      "arxiv_id": "2609.25939",
+      "authors": [
+        "Omri Bar Haim",
+        "Shahar Katz",
+        "Lior Wolf"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-22T09:45:29+00:00",
+      "score": 62,
+      "reason": "该论文聚焦LLM工作流中的少样本演示选择优化，与用户研究中的LLM和多智能体方向相关，但不涉及地理空间数据或城市更新应用。",
+      "tags": [
+        "LLM工作流",
+        "少样本学习",
+        "提示优化",
+        "语义聚类"
+      ],
+      "abstract": "The performance of large language model (LLM) workflows often depends on selecting a small set of in-context demonstrations to guide model behavior on new tasks. Recent methods improve this process by augmenting prompts with successful reasoning paths. However, their demonstration selection relies on random sampling or metric-based rankings, overlooking the semantic structure of the task. We propose ClusterFewshot, a strategy that combines semantic structuring with utility-aware scoring to construct representative and effective few-shot demonstration sets. Evaluated within DSPy-based pipelines, ClusterFewshot substantially reduces optimization cost across multiple benchmarks, while consistently improving accuracy relative to prior bootstrap-based methods in both standalone prompt tuning and hybrid prompt-weight optimization.",
+      "summary_zh": "大型语言模型（LLM）工作流的性能往往取决于选择一小组上下文演示来引导模型在新任务上的行为。近期方法通过用成功的推理路径增强提示来改进这一过程。然而，它们的演示选择依赖于随机采样或基于指标的排序，忽视了任务的语义结构。我们提出ClusterFewshot，一种将语义结构化与效用感知评分相结合的策略，用于构建具有代表性和有效的少样本演示集。在基于DSPy的流水线中评估，ClusterFewshot在多个基准上大幅降低了优化成本，同时在独立提示调优和混合提示-权重优化中，相对于先前的引导方法持续提升了准确率。",
+      "insight_zh": "该工作表明在LLM工作流中引入语义结构化的演示选择可同时降低优化成本并提升准确率，但其在空间任务中的适用性尚未验证。"
+    },
+    {
+      "key": "arxiv:2609.25067",
+      "title": "SPARC: SuperPixel-Aware Region Contrastive Learning for Self-Supervised Dense Prediction",
+      "title_zh": "SPARC：面向自监督密集预测的超像素感知区域对比学习",
+      "url": "https://arxiv.org/abs/2609.25067",
+      "doi": "",
+      "arxiv_id": "2609.25067",
+      "authors": [
+        "David Szczecina",
+        "Yuanpei Xiang",
+        "Jitao Hu",
+        "David Clausi",
+        "Yuhao Chen",
+        "Jason Deglint",
+        "Paul Fieguth"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T22:40:07+00:00",
+      "score": 62,
+      "reason": "该文提出基于超像素的区域级对比自监督学习框架，用于语义分割和目标检测等密集预测任务。遥感变化检测本质上属于密集预测问题，区域级表征学习对多源遥感数据的特征提取具有方法借鉴意义，但与城市更新、时空数据挖掘、LLM多智能体等核心方向关联较弱。",
+      "tags": [
+        "自监督学习",
+        "对比学习",
+        "超像素",
+        "密集预测",
+        "语义分割",
+        "变化检测基础模型"
+      ],
+      "abstract": "Self-supervised learning (SSL) has become an effective approach for learning visual representations without manual annotations. Among SSL approaches, contrastive learning has been widely used for visual representation learning. However, existing contrastive SSL methods have focused primarily on image-level or pixel-level representation learning, while region-level representation learning remains less explored. We propose SPARC, a region-level contrastive learning framework that leverages superpixels to establish explicit correspondence between augmented image views. SPARC introduces a region contrastive branch that performs superpixel-based feature pooling and optimizes a region-level contrastive objective jointly with a global image-level objective. Under identical settings, SPARC consistently outperforms previous methods such as MoCo-v2 and DenseCL, achieving improvements of up to +9.79 mIoU for semantic segmentation and +4.88 AP for object detection. Ablation studies further demonstrate that region-level objectives produce the strongest performance. Thus, region-level contrastive learning is an effective approach for improving self-supervised visual pretraining for dense prediction tasks. Code repository can be accessed at https://github.com/xRIPEIx/SPARC.",
+      "summary_zh": "自监督学习已成为无需人工标注学习视觉表征的有效途径，其中对比学习被广泛用于视觉表征学习。然而现有对比自监督方法主要关注图像级或像素级表征学习，区域级表征学习仍较少被探索。本文提出SPARC，一种利用超像素在增强图像视图之间建立显式对应关系的区域级对比学习框架。SPARC引入区域对比分支，执行基于超像素的特征池化，并将区域级对比目标与全局图像级目标联合优化。在相同设置下，SPARC持续优于MoCo-v2和DenseCL等先前方法，在语义分割上最高提升+9.79 mIoU，在目标检测上提升+4.88 AP。消融研究进一步表明区域级目标产生最强性能。因此，区域级对比学习是提升自监督视觉预训练用于密集预测任务的有效途径。代码仓库见 https://github.com/xRIPEIx/SPARC。",
+      "insight_zh": "该文的区域级对比学习思路可迁移至遥感密集预测任务（如变化检测、语义分割）的预训练阶段，超像素作为区域划分单元与遥感影像的地物边界具有一定契合度；但摘要未涉及遥感数据或城市应用，其实际迁移效果需进一步验证。"
+    },
+    {
       "key": "arxiv:2609.25010",
       "title": "Do Synthetic Personas Predict Real Audience Response? A Sim-to-Real Study Where a No-Persona Baseline Beats Persona-Based Copy Simulation",
       "title_zh": "合成人物能预测真实受众反应吗？一项无人物基线优于基于人物的文案模拟的模拟到现实研究",
@@ -328,31 +444,6 @@
       "abstract": "Marketers increasingly use large language models (LLMs) as \"synthetic personas\" to predict how an audience will react to a piece of copy before it ships, encouraged by evidence that profile-conditioned LLMs mimic human samples. But is that prediction actually valid against real behaviour - and does the persona machinery help? We present a sim-to-real validity study using the Upworthy Research Archive - thousands of headline A/B tests on shared real traffic, with measured click-through - as held-out ground truth. We compare a ten-persona panel, grounded in the real audience's demographics, against a no-persona zero-shot baseline that simply asks the model how likely a typical reader is to click. Two findings stand out. First, ground-truth reliability is the binding constraint: most A/B tests have no statistically distinguishable winner, so validity can only be measured on the reliable subset (n = 399). Second, and counter to the persona-simulation premise, persona conditioning degrades predictive validity: the no-persona baseline ranks variants markedly better (Kendall {\\tau} = 0.361, a medium effect; top-1 accuracy 49.2%) than the persona panel ({\\tau} = 0.084; top-1 34.6%), with non-overlapping confidence intervals. Asking the model directly taps an accurate population-level prior; forcing it to role-play specific personas injects bias and noise. The result replicates across three independent Upworthy splits, holds in direction on a different-domain news dataset, and is robust to seed, prompt phrasing, and model choice - across three Gemini tiers and a different model family (OpenAI gpt-4.1, significant paired gap). The takeaway: for predicting aggregate engagement, a plain LLM ranker beats persona simulation - synthetic personas are not merely a weak predictor, they are worse than not using them. All numbers regenerate from a public, artifact-first replication package.",
       "summary_zh": "营销人员越来越多地使用大语言模型（LLM）作为“合成人物”，在文案发布前预测受众反应，这受到有证据表明基于画像条件的LLM能模仿人类样本的鼓励。但这种预测对真实行为是否真正有效——人物机制是否有帮助？我们提出一项模拟到现实效度研究，使用Upworthy研究档案——数千个在共享真实流量上进行的标题A/B测试，并测量点击率——作为留出的真实基准。我们将一个基于真实受众人口统计特征的十人物小组，与一个无人物零样本基线进行比较，后者只是询问模型典型读者点击的可能性。两个发现尤为突出。第一，真实基准的可靠性是约束瓶颈：大多数A/B测试没有统计上可区分的胜者，因此效度只能在可靠子集（n = 399）上测量。第二，与人物模拟前提相反，人物条件化降低了预测效度：无人物基线对变体的排序明显更好（Kendall τ = 0.361，中等效应；top-1准确率49.2%），优于人物小组（τ = 0.084；top-1 34.6%），且置信区间不重叠。直接询问模型利用了准确的群体层面先验；强迫其扮演特定人物会注入偏差和噪声。该结果在三个独立的Upworthy划分上复现，在另一个领域的新闻数据集上方向一致，并且对随机种子、提示措辞和模型选择稳健——涵盖三个Gemini层级和另一个模型家族（OpenAI gpt-4.1，配对差距显著）。结论：对于预测总体参与度，普通LLM排序器优于人物模拟——合成人物不仅是弱预测器，它们……",
       "insight_zh": "该研究提示，在利用LLM模拟人类行为时，直接询问群体层面先验可能优于强制角色扮演，这对基于LLM代理的城市模拟或多智能体行为预测具有方法学参考价值。"
-    },
-    {
-      "key": "arxiv:2605.10698",
-      "title": "The Bystander Effect in Multi-Agent Reasoning: Quantifying Cognitive Loafing in Collaborative Interactions",
-      "title_zh": "多智能体推理中的旁观者效应：量化协作交互中的认知懈怠",
-      "url": "https://arxiv.org/abs/2605.10698",
-      "doi": "",
-      "arxiv_id": "2605.10698",
-      "authors": [
-        "Dahlia Shehata",
-        "Ming Li"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 62,
-      "reason": "该论文量化多智能体推理中的旁观者效应与认知懈怠，属于多智能体系统与LLM协作方向，与研究者关注的多智能体主题直接相关，但未涉及地理空间或城市应用。",
-      "tags": [
-        "多智能体",
-        "多智能体推理",
-        "协作交互",
-        "认知懈怠"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅含分隔线），无法提取具体方法、数据或结论。",
-      "insight_zh": "从标题推断，该工作可能通过实验量化多智能体协作推理中类似旁观者效应的认知懈怠现象，并分析其对协作效率的影响；因摘要缺失，无法确认其具体实验设计、指标或结论。"
     },
     {
       "key": "arxiv:2509.13813",
@@ -382,6 +473,31 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据与结论信息。",
       "insight_zh": "仅从标题推断，该工作可能利用几何化的不确定性度量来识别和修正大语言模型的幻觉输出；由于摘要为空，无法确认其技术路线、实验设置或效果，需查阅原文进一步判断。"
+    },
+    {
+      "key": "arxiv:2605.10698",
+      "title": "The Bystander Effect in Multi-Agent Reasoning: Quantifying Cognitive Loafing in Collaborative Interactions",
+      "title_zh": "多智能体推理中的旁观者效应：量化协作交互中的认知懈怠",
+      "url": "https://arxiv.org/abs/2605.10698",
+      "doi": "",
+      "arxiv_id": "2605.10698",
+      "authors": [
+        "Dahlia Shehata",
+        "Ming Li"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 62,
+      "reason": "该论文量化多智能体推理中的旁观者效应与认知懈怠，属于多智能体系统与LLM协作方向，与研究者关注的多智能体主题直接相关，但未涉及地理空间或城市应用。",
+      "tags": [
+        "多智能体",
+        "多智能体推理",
+        "协作交互",
+        "认知懈怠"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅含分隔线），无法提取具体方法、数据或结论。",
+      "insight_zh": "从标题推断，该工作可能通过实验量化多智能体协作推理中类似旁观者效应的认知懈怠现象，并分析其对协作效率的影响；因摘要缺失，无法确认其具体实验设计、指标或结论。"
     },
     {
       "key": "arxiv:2608.25286",
@@ -599,6 +715,66 @@
       "insight_zh": ""
     },
     {
+      "key": "arxiv:2609.24526",
+      "title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination",
+      "title_zh": "ME-VLM：面向具身认知与智能体协调的统一视觉语言模型",
+      "url": "https://arxiv.org/abs/2609.24526",
+      "doi": "",
+      "arxiv_id": "2609.24526",
+      "authors": [
+        "Foundation Model",
+        "Li Auto Inc"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-21T12:59:59+00:00",
+      "score": 55,
+      "reason": "该文构建统一视觉语言模型以支持具身认知与多模态智能体能力，强调物理感知与时空推理，与研究中LLM和多智能体方向相关；但聚焦具身与自动驾驶任务，未涉及城市更新或地理空间数据挖掘，故相关性中等。",
+      "tags": [
+        "视觉语言模型",
+        "具身智能",
+        "多智能体协调",
+        "时空推理",
+        "边缘部署"
+      ],
+      "abstract": "Physical AI requires models to ground visual and linguistic understanding in real-world environments while accounting for environmental constraints and execution feedback. We introduce MachEmbodied-VLM (ME-VLM), a unified vision-language model with two variants, 4B and 35B-A3B, that brings together embodied cognition and multimodal agent capabilities. Our work emphasizes physical perception and spatiotemporal reasoning, together with planning, interaction, and outcome assessment in both digital and physical environments. We construct training data spanning embodied and multimodal agent tasks, including execution observations and feedback to support outcome assessment and decision refinement. The training pipeline comprises embodied capability injection, separate reinforcement learning of embodied and multimodal-agent experts, and multi-teacher on-policy distillation that consolidates their complementary capabilities into a single model. Experiments show competitive performance on both embodied and agent benchmarks, as well as on autonomous-driving and embodied-navigation tasks. For edge deployment, visual token compression, W4A8 quantization, and hardware--software co-optimization enable on-device inference of the 4B variant on the M100, reducing prefill latency from 400 ms to 188 ms. Project Page: https://machembodied.com/ME-Brain/ME-VLM.html Code Repository: https://github.com/MachEmbodied/ME-VLM",
+      "summary_zh": "物理AI要求模型将视觉与语言理解落地到真实环境，同时考虑环境约束与执行反馈。作者提出MachEmbodied-VLM（ME-VLM），一个统一的视觉语言模型，包含4B与35B-A3B两个版本，融合具身认知与多模态智能体能力。该工作强调物理感知与时空推理，以及在数字与物理环境中的规划、交互与结果评估。作者构建了涵盖具身与多模态智能体任务的训练数据，包括执行观测与反馈以支持结果评估与决策优化。训练流程包括具身能力注入、具身与多模态智能体专家的分别强化学习，以及多教师在线策略蒸馏，将互补能力整合到单一模型中。实验显示其在具身与智能体基准以及自动驾驶和具身导航任务上具有竞争力。面向边缘部署，视觉token压缩、W4A8量化与软硬件协同优化使4B版本可在M100上端侧推理，预填充延迟从400毫秒降至188毫秒。",
+      "insight_zh": "多教师在线策略蒸馏整合具身与智能体能力的训练范式，或可迁移到地理空间智能体中，用于融合遥感解译与规划决策等异构能力；其时空推理与结果评估机制对城市更新中的智能体决策反馈设计有参考价值。"
+    },
+    {
+      "key": "arxiv:2609.22158",
+      "title": "StepKV: Step-Aware KV Cache Compression for LLM Agents",
+      "title_zh": "StepKV：面向LLM智能体的步骤感知KV缓存压缩",
+      "url": "https://arxiv.org/abs/2609.22158",
+      "doi": "",
+      "arxiv_id": "2609.22158",
+      "authors": [
+        "Boyu Feng",
+        "Jiahong Liu",
+        "Yifan Li",
+        "Wenhao Yu",
+        "Zexuan Qiu",
+        "Yuliang Sun",
+        "Ming Shen",
+        "Xiang Li",
+        "Quanyu Dai",
+        "Irwin King"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-26T11:22:58+00:00",
+      "score": 55,
+      "reason": "该文提出面向多步LLM智能体的步骤感知KV缓存压缩方法，与研究者关注的LLM和多智能体方向相关。其以推理步骤为保留单元的思路对长程地理空间推理智能体的效率优化有参考价值，但不涉及地理空间数据。",
+      "tags": [
+        "KV缓存压缩",
+        "LLM智能体",
+        "多步推理",
+        "推理连续性",
+        "效率优化"
+      ],
+      "abstract": "Key-value (KV) caching is essential for efficient autoregressive large language model (LLM) inference, but the cache grows linearly with context length, increasing storage and decoding costs. KV cache compression mitigates this cost by retaining only a subset of cached tokens. This challenge is particularly important for multi-step LLM agents, where a query expands into trajectories of reasoning, tool interactions, and retrieved observations. Existing pruning methods typically treat the cache as a flat token stream and rank tokens by recency or attention saliency. This creates a mismatch between the unit of compression and the unit of reasoning: token-level pruning removes individual entries, whereas useful information in multi-step agents is often organized into reasoning steps with uneven and delayed importance. Consequently, an early observation or intermediate decision may receive little recent attention yet remain essential for later evidence synthesis. We term this failure mode Reasoning Continuity Disruption.These observations motivate KV cache compression that jointly considers token- and reasoning-step-level information. StepKV addresses this goal by treating reasoning steps as first-class retention units. It associates cache entries with their generating steps, estimates step utility from trajectory-derived signals, and combines this utility with token-level saliency. The resulting scores globally rank prunable tokens, from which StepKV retains the top-scoring entries under a target budget. StepKV thus provides a step-centric perspective for agent KV cache compression. Across multi-hop QA and long-horizon web reasoning tasks, StepKV sustains accuracy under low KV budgets where token-level baselines degrade sharply, offering a more robust efficiency-accuracy trade-off for multi-step agent inference.",
+      "summary_zh": "键值（KV）缓存对高效自回归大语言模型推理至关重要，但缓存随上下文长度线性增长，增加存储和解码成本。KV缓存压缩通过仅保留缓存token的子集来缓解此成本。这一挑战对多步LLM智能体尤为重要，其中查询扩展为推理、工具交互和检索观察的轨迹。现有剪枝方法通常将缓存视为扁平token流，按新近度或注意力显著性对token排序。这造成压缩单元与推理单元之间的错配：token级剪枝移除单个条目，而多步智能体中的有用信息常组织为重要性不均且延迟出现的推理步骤。因此，早期观察或中间决策可能近期注意力很低但对后续证据综合仍至关重要。我们将此失效模式称为推理连续性中断。这些观察促使KV缓存压缩需联合考虑token级和推理步骤级信息。StepKV通过将推理步骤视为一等保留单元来实现此目标。它将缓存条目与其生成步骤关联，从轨迹派生信号估计步骤效用，并将该效用与token级显著性结合。所得分数对可剪枝token进行全局排序，StepKV在目标预算下保留得分最高的条目。StepKV由此为智能体KV缓存压缩提供步骤中心的视角。在多跳问答和长程网页推理任务上，StepKV在低KV预算下维持准确率，而token级基线急剧退化，提供了更稳健的效率-准确率权衡。",
+      "insight_zh": "该文以推理步骤为压缩单元的思路，对构建长程地理空间推理智能体（如多步空间分析、跨数据源证据综合）的效率优化具有借鉴意义，尤其在城市更新分析中智能体需整合多源时空证据时；但摘要未涉及地理空间任务，迁移需验证。"
+    },
+    {
       "key": "arxiv:2609.26166",
       "title": "MGRL-RSCC: Multi-Granularity Reward Reinforcement Learning for Fine-Grained Remote Sensing Change Captioning",
       "title_zh": "",
@@ -625,34 +801,6 @@
       "abstract": "Remote Sensing Change Captioning (RSCC), which aims to generate accurate and detailed linguistic descriptions of ground object variations from bi-temporal remote sensing images, is a critical and challenging task in intelligent remote sensing interpretation. The mainstream autoregressive training paradigm faces severe exposure bias and train-test distribution mismatch, resulting in cumulative generation errors. They tend to produce conservative and template-fixed captions while ignoring subtle scene change details. To address these challenges, this paper proposes a novel multi-granularity reward reinforcement learning paradigm, termed MGRL-RSCC. Specifically, we first leverage a CNN and hierarchical self-attention module to extract and enhance visual features from bi-temporal remote sensing images. A Transformer decoder is then utilized to complete visual-to-linguistic translation. Different from existing methods, we design a dual-decoding strategy and a two-stage joint optimization scheme, which combines token-level supervised learning via greedy decoding and multi-granularity reward-driven self-critical reinforcement learning via sampling decoding. We further construct three complementary reward functions covering linguistic fluency, change state consistency, and structural-semantic relevance to comprehensively optimize caption quality and alleviate false and missing change descriptions. Extensive experiments on multiple public RSCC benchmark datasets demonstrate that the proposed MGRL-RSCC effectively mitigates exposure bias and conservative generation problems in traditional autoregressive methods. The source code and pre-trained models will be released on https://github.com/Event-AHU/MGRL-RSCC",
       "summary_zh": "",
       "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2410.07421",
-      "title": "Bayesian Fusion of Active Contour Models and ConvNet Priors for Standing Dead Tree Segmentation",
-      "title_zh": "主动轮廓模型与ConvNet先验的贝叶斯融合用于立枯木分割",
-      "url": "https://arxiv.org/abs/2410.07421",
-      "doi": "",
-      "arxiv_id": "2410.07421",
-      "authors": [
-        "Przemyslaw Polewski",
-        "Jacquelyn Shelton",
-        "Wei Yao",
-        "Marco Heurich"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文研究立枯木分割，属于遥感影像分割与变化检测相关领域，与用户画像中的遥感变化检测和多源数据融合有一定关联，但摘要缺失，无法评估具体方法细节。",
-      "tags": [
-        "遥感",
-        "立枯木分割",
-        "主动轮廓",
-        "ConvNet先验",
-        "贝叶斯融合"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要缺失，无法提供内容摘要。",
-      "insight_zh": "从标题看，该工作将主动轮廓模型与卷积网络先验进行贝叶斯融合以分割立枯木，属于遥感影像目标分割范畴；由于摘要缺失，无法确认其数据集、精度或创新点，但与用户遥感变化检测方向存在潜在关联。"
     },
     {
       "key": "arxiv:2607.16900",
@@ -719,184 +867,32 @@
       "insight_zh": "从标题推测，该工作可能通过从用户交互中推断自然语言形式的偏好来实现LLM个性化；由于摘要为空，无法确认其推断机制、评估方式或应用场景。"
     },
     {
-      "key": "arxiv:2512.02697",
-      "title": "GeoBridge++: Fact-Guided Geo-Semantic Bridging for Unified Cross-View Geo-Localization",
-      "title_zh": "GeoBridge++：面向统一跨视角地理定位的事实引导地理语义桥接",
-      "url": "https://arxiv.org/abs/2512.02697",
+      "key": "arxiv:2410.07421",
+      "title": "Bayesian Fusion of Active Contour Models and ConvNet Priors for Standing Dead Tree Segmentation",
+      "title_zh": "主动轮廓模型与ConvNet先验的贝叶斯融合用于立枯木分割",
+      "url": "https://arxiv.org/abs/2410.07421",
       "doi": "",
-      "arxiv_id": "2512.02697",
+      "arxiv_id": "2410.07421",
       "authors": [
-        "Zixuan Song",
-        "Jing Zhang",
-        "Di Wang",
-        "Zhiming Luo",
-        "Wenbin Liu",
-        "Haonan Guo",
-        "En Wang",
-        "Bo Du",
-        "Liangpei Zhang"
+        "Przemyslaw Polewski",
+        "Jacquelyn Shelton",
+        "Wei Yao",
+        "Marco Heurich"
       ],
       "venue": "arXiv",
       "published": "",
       "score": 55,
-      "reason": "该论文研究跨视角地理定位中的事实引导地理语义桥接，属于地理空间智能与多源数据融合方向，与GIS博士研究方向较为相关。",
+      "reason": "该论文研究立枯木分割，属于遥感影像分割与变化检测相关领域，与用户画像中的遥感变化检测和多源数据融合有一定关联，但摘要缺失，无法评估具体方法细节。",
       "tags": [
-        "跨视角地理定位",
-        "地理语义",
-        "事实引导",
-        "多源数据融合"
+        "遥感",
+        "立枯木分割",
+        "主动轮廓",
+        "ConvNet先验",
+        "贝叶斯融合"
       ],
       "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据集与性能结果。",
-      "insight_zh": "标题表明其利用事实引导实现跨视角地理语义对齐，若方法有效，或可服务于城市多源影像匹配与地理空间智能，但摘要缺失无法确认细节。"
-    },
-    {
-      "key": "arxiv:2603.17043",
-      "title": "OpenQlaw: An Agentic AI Assistant for Analysis of 2D Quantum Materials",
-      "title_zh": "OpenQlaw：用于二维量子材料分析的智能体AI助手",
-      "url": "https://arxiv.org/abs/2603.17043",
-      "doi": "",
-      "arxiv_id": "2603.17043",
-      "authors": [
-        "Sankalp Pandey",
-        "Thanh-Dat Truong",
-        "Xuan-Bac Nguyen",
-        "Hoang-Quan Nguyen",
-        "Tim Faltermeier",
-        "Nicholas Borys",
-        "Hugh Churchill",
-        "Khoa Luu"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文涉及LLM驱动的智能体助手用于科学分析，与研究中LLM和多智能体方向高度相关，但应用领域为二维量子材料而非地理空间，摘要缺失限制了进一步判断。",
-      "tags": [
-        "Agentic AI",
-        "LLM",
-        "Materials Science",
-        "Scientific Assistant"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，仅提供标题与发表信息。标题表明该工作提出一个面向二维量子材料分析的智能体AI助手。",
-      "insight_zh": "其智能体架构与LLM工具调用范式或可迁移至地理空间分析场景，如城市更新中的多源数据自动分析；但摘要缺失，无法确认其方法细节与可迁移性。"
-    },
-    {
-      "key": "arxiv:2606.22694",
-      "title": "SATURN: Symbolic Spatial Reasoning for Multi-Perspective Grounding",
-      "title_zh": "SATURN：面向多视角 grounding 的符号空间推理",
-      "url": "https://arxiv.org/abs/2606.22694",
-      "doi": "",
-      "arxiv_id": "2606.22694",
-      "authors": [
-        "Danial Kamali",
-        "Tanawan Premsri",
-        "Shreya Rajpal",
-        "Amir Zadeh",
-        "Chuan Li",
-        "Parisa Kordjamshidi"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文研究多视角 grounding 的符号空间推理，属于空间推理与符号方法结合方向。空间推理是地理空间智能与时空数据挖掘的重要基础能力，尤其与 LLM/多智能体结合时可用于地理空间问答与场景理解，因此与研究方向存在中等关联。",
-      "tags": [
-        "spatial reasoning",
-        "symbolic reasoning",
-        "multi-perspective grounding",
-        "geospatial intelligence"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据集与实验结论。根据标题可推断，该工作提出一种符号空间推理框架，用于在多视角条件下进行 grounding，强调符号化表示与空间关系推理。",
-      "insight_zh": "摘要为空，无法确认其是否涉及地理空间数据或 LLM/多智能体。若其符号空间推理机制可与地理空间智能中的场景理解、多视角遥感解译结合，则对时空推理与地理空间智能方向具有潜在参考价值。"
-    },
-    {
-      "key": "arxiv:2604.16548",
-      "title": "A Survey on Long-Term Memory Security in LLM Agents: Attacks, Defenses, and Governance Across the Memory Lifecycle",
-      "title_zh": "LLM智能体长期记忆安全综述：记忆生命周期中的攻击、防御与治理",
-      "url": "https://arxiv.org/abs/2604.16548",
-      "doi": "",
-      "arxiv_id": "2604.16548",
-      "authors": [
-        "Zehao Lin",
-        "Xixuan Hao",
-        "Renyu Fu",
-        "Shaobo Cui",
-        "Kai Chen",
-        "Chunyu Li",
-        "Zhiyu Li",
-        "Feiyu Xiong"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文综述了LLM智能体长期记忆安全中的攻击、防御与治理，与GIS博士研究中LLM和多智能体方向有较强关联，但未涉及地理空间应用场景。",
-      "tags": [
-        "LLM智能体",
-        "长期记忆安全",
-        "攻击与防御",
-        "治理"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，仅从标题推断该综述系统梳理了LLM智能体长期记忆在生命周期各阶段面临的安全威胁、防御策略与治理框架。",
-      "insight_zh": "该综述对构建安全可靠的地理空间LLM智能体具有参考价值，尤其是在多智能体协同的城市分析场景中，记忆安全机制的设计或可借鉴其治理框架。"
-    },
-    {
-      "key": "arxiv:2609.23466",
-      "title": "RPMem: Learning Long-Term Recurrent Parametric Memory Across Sessions for LLM Agents",
-      "title_zh": "RPMem：为LLM智能体学习跨会话的长期循环参数化记忆",
-      "url": "https://arxiv.org/abs/2609.23466",
-      "doi": "",
-      "arxiv_id": "2609.23466",
-      "authors": [
-        "Fanyu Zhao",
-        "Ruike Cao",
-        "Liang Dong",
-        "Fugen Yao",
-        "Jian Xu",
-        "Guanjun Jiang",
-        "Han Zhang",
-        "Yifei Zhao",
-        "Yinsheng Li"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-20T08:51:10+00:00",
-      "score": 50,
-      "reason": "该文研究LLM智能体的跨会话长期参数化记忆，与LLM和多智能体研究方向直接相关，可为地理空间智能体提供记忆机制参考，但与GIS核心主题关联中等。",
-      "tags": [
-        "LLM智能体",
-        "长期记忆",
-        "参数化记忆",
-        "跨会话学习"
-      ],
-      "abstract": "Long-running LLM agents require memory that persists and evolves across sessions. Text-based memory retrieves and reconstructs past interactions at every query, making long-horizon performance increasingly dependent on retrieval quality and contextual reasoning as histories grow. Parametric memory encodes experience directly into model computation, but existing approaches provide limited support for cross-session memory evolution. Their coupling to a specific backbone further restricts memory reuse after model replacement. We introduce RPMem, a two-stage architecture that compiles each session into a model-independent latent memory through forward computation and selectively integrates it with retained memory via a task-trained recurrent gate. The consolidated memory is then mapped to backbone-specific low-rank adaptation (LoRA) parameters, allowing the encoding capability to transfer when the backbone is replaced. Evaluation across three long-term memory benchmarks and five diverse backbones demonstrates broad generalization with near-constant update cost and memory footprint. With Qwen3-8B on PERMA, RPMem reaches 85.52%, outperforming the strongest parametric and text-based baselines by 5.32 and 12.98 percentage points, respectively. Ablations validate the complementary roles of session compilation and cross-session consolidation, while dynamics analyses reveal that the gate acquires task-specific memory integration strategies. These results establish RPMem as a lifecycle-independent parametric memory framework that maintains evolving cross-session memory that remains reusable across backbone replacements. Our implementation is available at https://github.com/Quark-Medical/rpmem/tree/main.",
-      "summary_zh": "长期运行的LLM智能体需要跨会话持续并演化的记忆。基于文本的记忆在每次查询时检索并重建过往交互，使长时程性能随历史增长越来越依赖检索质量和上下文推理。参数化记忆将经验直接编码到模型计算中，但现有方法对跨会话记忆演化的支持有限。它们与特定骨干模型的耦合进一步限制了模型替换后的记忆复用。本文提出RPMem，一种两阶段架构，通过前向计算将每个会话编译为与模型无关的潜在记忆，并通过任务训练的循环门控选择性地将其与保留记忆整合。整合后的记忆随后映射为骨干特定的低秩适配（LoRA）参数，使编码能力在骨干替换时可迁移。在三个长期记忆基准和五个不同骨干上的评估表明其具有广泛泛化能力，更新成本和内存占用近乎恒定。在PERMA上使用Qwen3-8B时，RPMem达到85.52%，分别超过最强的参数化和文本基线5.32和12.98个百分点。消融实验验证了会话编译和跨会话整合的互补作用，动力学分析揭示门控习得了任务特定的记忆整合策略。这些结果确立了RPMem作为一种生命周期无关的参数化记忆框架，能够维持不断演化的跨会话记忆并在骨干替换后保持可复用。实现见https://github.com/Quark-Medical/rpmem/tree/main。",
-      "insight_zh": "RPMem的跨会话参数化记忆机制或可应用于长期运行的城市地理空间智能体，但其评测基准为通用对话记忆，向地理空间任务的迁移尚待探索。"
-    },
-    {
-      "key": "arxiv:2608.06765",
-      "title": "Where Does Neural Advantage Arise in Continuous-Time Dynamic Graph Prediction?",
-      "title_zh": "LiFTER：面向连续时间动态图预测的接地神经符号显微镜",
-      "url": "https://arxiv.org/abs/2608.06765",
-      "doi": "",
-      "arxiv_id": "2608.06765",
-      "authors": [
-        "Minwoo Yu",
-        "Young-guk Ha"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 50,
-      "reason": "该论文提出面向连续时间动态图预测的神经符号方法，与研究中'时空数据挖掘'和'多源数据融合'有方法层面的关联，但未明确涉及城市更新或遥感应用，相关性中等。",
-      "tags": [
-        "动态图预测",
-        "神经符号",
-        "连续时间",
-        "可解释性"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作提出一种名为LiFTER的神经符号框架，用于连续时间动态图的预测任务，并强调接地性（grounded）与可解释性。",
-      "insight_zh": "由于摘要缺失，无法确认其方法、数据集或结论。仅从标题推断，该工作可能为时空动态图（如城市交通、社交网络）的预测提供神经符号方案，或对时空数据挖掘有参考价值，但需查阅原文验证。"
+      "summary_zh": "摘要缺失，无法提供内容摘要。",
+      "insight_zh": "从标题看，该工作将主动轮廓模型与卷积网络先验进行贝叶斯融合以分割立枯木，属于遥感影像目标分割范畴；由于摘要缺失，无法确认其数据集、精度或创新点，但与用户遥感变化检测方向存在潜在关联。"
     }
   ]
 }

@@ -2,11 +2,11 @@
   "date": "2026-09-14",
   "analysis_stats": {
     "total": 484,
-    "analyzed": 404,
+    "analyzed": 405,
     "high": 7,
     "medium": 14,
     "low": 21,
-    "below_threshold": 362
+    "below_threshold": 363
   },
   "papers": [
     {
@@ -8754,6 +8754,36 @@
       "insight_zh": "该主题与地理空间智能、城市更新及多源数据融合无直接关联，对研究者当前方向的方法论启发有限。"
     },
     {
+      "key": "arxiv:2609.12018",
+      "title": "Toward Reliable Railway-Bogie Response Prediction Using Multifidelity TDNN and Physics-Informed Residual Learning",
+      "title_zh": "面向可靠铁路转向架响应预测的多保真度TDNN与物理信息残差学习",
+      "url": "https://arxiv.org/abs/2609.12018",
+      "arxiv_id": "2609.12018",
+      "authors": [
+        "Gyeolhee Lee",
+        "Moosun Kim",
+        "Taewook Kwon",
+        "Jaehun Kim",
+        "Changsung Jeon",
+        "Dongjin Lee"
+      ],
+      "categories": [
+        "cs.LG",
+        "physics.app-ph"
+      ],
+      "published": "2026-09-10T07:56:53+00:00",
+      "score": 10,
+      "reason": "该论文研究铁路转向架响应的多保真度预测与物理信息残差学习，属于工程仿真与机器学习交叉，与地理空间智能、城市更新等方向基本无关。",
+      "tags": [
+        "多保真度建模",
+        "物理信息学习",
+        "铁路转向架",
+        "残差学习"
+      ],
+      "summary_zh": "铁路工程师需要能在无法穷尽测试的各种运行场景下预测车辆响应的仿真模型。与代表性测量结果一致是必要证据，但在有限工况下的标定并不能保证其他工况下的准确性。作者提出一种多保真度铁路转向架响应修正方法，将多体仿真历史视为低保真信息，将滚振试验台测量视为高保真证据。该方法结合了以实验为锚的保真度分配与面向多通道转向架响应历史的物理信息差异学习。时延神经网络（TDNN）表示随工况变化的仿真趋势，基于开发集拟合的幅值对齐定义低保真基线。随后残差修正网络对该基线未能解释的可复现响应成分建模，并将其加到基线上。一个有效动态平衡方程通过表示仿真系统与物理系统在惯性、阻尼、刚度和外部激励上的差异，对学习到的差异施加约束。训练目标将该约束与残差匹配、时间平滑性以及选择性施加的位移—加速度一致性项相结合。在所评估的重构案例中，修正后的响应给出平均决定系数0.8197、平均归一化均方根误差（NRMSE）4.6055%、平均归一化平均绝对误差（NMAE）1.9297%。这些结果为在留出的385 km/h工况下实现准确响应预测提供了初步证据。",
+      "insight_zh": "该研究展示了将物理约束嵌入残差学习以修正低保真仿真的思路，其“低保真趋势+高保真差异校正”的框架对地理空间多源数据融合中的偏差校正有类比价值，但摘要未涉及地理或遥感场景。"
+    },
+    {
       "key": "arxiv:2609.12111",
       "title": "The Cost of Compression: A Rate-Distortion Limit on Factual Hallucination",
       "title_zh": "压缩的代价：事实幻觉的率失真极限",
@@ -11563,31 +11593,6 @@
       ],
       "summary_zh": "人格漂移仍然是个性化语言模型的核心挑战，因为用户画像在长期交互中会演变而非永久固定。因此模型必须在偏好真正改变时修正持久人格状态，同时避免由短暂、模糊或未解决的观测驱动的更新。作者提出CORE，将轮次局部证据与持久人格状态修正分离，并通过不确定性感知的信念修正选择性更新有依据的用户偏好。作者还引入PERSIST，一个用于顺序交互压力下人格状态鲁棒性的留出后锚定基准，涵盖模糊性、冲突和受控社会影响。在ALOE、PersonaChat和PERSIST上，CORE提升了个性化对齐和鲁棒性，并在归一化闭槽状态保真度上取得互补增益。人工评估和机制控制进一步支持显式更新控制优于仅更强的生成或持久记忆。",
       "insight_zh": "该工作的人格状态修正与不确定性感知更新思路可能对地理空间智能中用户偏好建模有间接参考，但论文聚焦对话系统，未涉及地理空间应用。"
-    },
-    {
-      "key": "arxiv:2609.12018",
-      "title": "Toward Reliable Railway-Bogie Response Prediction Using Multifidelity TDNN and Physics-Informed Residual Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12018",
-      "arxiv_id": "2609.12018",
-      "authors": [
-        "Gyeolhee Lee",
-        "Moosun Kim",
-        "Taewook Kwon",
-        "Jaehun Kim",
-        "Changsung Jeon",
-        "Dongjin Lee"
-      ],
-      "categories": [
-        "cs.LG",
-        "physics.app-ph"
-      ],
-      "published": "2026-09-10T07:56:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.12259",

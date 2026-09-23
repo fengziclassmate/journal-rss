@@ -2,11 +2,11 @@
   "date": "2026-09-10",
   "analysis_stats": {
     "total": 485,
-    "analyzed": 435,
+    "analyzed": 445,
     "high": 13,
-    "medium": 24,
-    "low": 35,
-    "below_threshold": 363
+    "medium": 26,
+    "low": 36,
+    "below_threshold": 370
   },
   "papers": [
     {
@@ -461,6 +461,41 @@
       ],
       "summary_zh": "从同一地点随时间重访的图像中理解长期变化是一项具有挑战性的任务，在地图维护和城市基础设施监测中有应用。已有工作要么通过像素级预测、要么通过差异描述来处理，二者都不足以可靠衡量模型检测和描述此类变化的能力。作者提出SPOT-THE-SHIFT，一个经人工验证的基准，用于真实驾驶场景中长期变化的地基图像差异描述。该基准为每对图像提供自然语言描述和结构性变化的空间掩码。作者进一步提出一种评估协议，通过人工研究验证其能可靠评估模型的描述能力。对最先进多模态大模型的基准测试发现，模型难以具备该任务所需的细粒度多图像空间能力。最后，作者开发了一个合成数据生成流程，在不牺牲通用能力的前提下改进了一个现成多模态大模型。",
       "insight_zh": "该基准将变化检测从像素级扩展到语言描述与空间掩码联合评估，其合成数据增强思路或可迁移至遥感长期变化理解任务，但摘要未说明其在遥感影像上的直接适用性。"
+    },
+    {
+      "key": "arxiv:2609.09482",
+      "title": "Infra-Bench CLS: A Global, Open-Source Benchmark for Critical Infrastructure Classification with Earth Observation Foundation Models",
+      "title_zh": "Infra-Bench CLS：一个用于关键基础设施分类的全球开源基准与地球观测基础模型",
+      "url": "https://arxiv.org/abs/2609.09482",
+      "arxiv_id": "2609.09482",
+      "authors": [
+        "Justin Guthrie",
+        "Edward Oughton",
+        "Konrad Wessels",
+        "Matthew Rice",
+        "Isaac Corley"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "Submitted",
+        "to",
+        "Big",
+        "Earth",
+        "Data"
+      ],
+      "published": "2026-09-08T21:56:29+00:00",
+      "score": 78,
+      "reason": "该论文提出基于地球观测基础模型的关键基础设施分类基准，直接涉及遥感影像分类和基础模型评估，与研究中遥感变化检测和多源数据融合方向高度相关。",
+      "tags": [
+        "地球观测基础模型",
+        "关键基础设施分类",
+        "遥感",
+        "Sentinel",
+        "基准测试"
+      ],
+      "summary_zh": "关键基础设施位置数据往往不完整且全球分布不均，尤其在发展中地区。地球观测基础模型被视为更高效理解自然和建成环境的新一步，引发对其执行挑战性下游任务有效性的疑问。然而基础模型在检测和分类支撑重要社会经济功能的设施级关键基础设施方面仍 largely 未经测试。因此本文引入Infra-Bench CLS，一个测试基础模型的基准，包含18,756张Sentinel-1 SAR和Sentinel-2多光谱设施级关键基础设施资产图像，覆盖七大洲和13个基础设施类别，报告10个保留类别的结果。使用线性探测和微调，针对两个训练数据集水平（1.0x和0.3x），评估七个基础模型（SatlasPretrain S2、SatlasPretrain S1、CROMA、Prithvi-EO-2.0、AlphaEarth Foundations、OlmoEarth v1.1-Base和DINOv3 ViT-L/16）。与ResNet-18监督基线39.2%的宏F1相比，最佳基础模型达到57.9%，提升48%。表现最好的类别是机场（F1 85.3%）、火车站（F1 82.1%）和数据中心（F1 77.6%）。相比之下，许多电力部门类别表现不佳（F1 27.5-46.2%）。这些发现表明基础模型可实现更优的关键基础设施分类，但未来工作应评估更高分辨率影像上的性能，尤其是表现不佳的部门如电力。",
+      "insight_zh": "该基准揭示了地球观测基础模型在设施级分类上的潜力与局限，其多源Sentinel数据融合和类别不平衡问题可为城市更新中的基础设施监测提供参考。"
     },
     {
       "key": "arxiv:2609.10371",
@@ -1121,6 +1156,35 @@
       "insight_zh": "该工作提示，智能体可通过“写程序—评估—蒸馏为文本”的闭环获得可迁移的搜索策略；对时空数据挖掘而言，或可借鉴其将优化经验文本化并跨模型迁移的思路，但文中未涉及地理空间任务。"
     },
     {
+      "key": "arxiv:2609.09647",
+      "title": "Black-Box Red Teaming of Agentic AI: A Taxonomy-Driven Framework for Automated Risk Discovery",
+      "title_zh": "智能体AI的黑盒红队测试：一种分类驱动的自动化风险发现框架",
+      "url": "https://arxiv.org/abs/2609.09647",
+      "arxiv_id": "2609.09647",
+      "authors": [
+        "Divyanshu Kumar",
+        "Nitin Aravind Birur",
+        "Tanay Baswa",
+        "Sahil Agarwal",
+        "Prashanth Harshangi"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-09T03:00:25+00:00",
+      "score": 62,
+      "reason": "该论文研究智能体AI的黑盒红队测试框架，涉及多智能体架构（CrewAI、AutoGen）的风险发现与评估，与研究中LLM和多智能体方向直接相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "多智能体系统",
+        "智能体安全",
+        "红队测试",
+        "LLM智能体",
+        "风险评估"
+      ],
+      "summary_zh": "智能体系统正快速进入生产环境，它们读取不可信输入、以真实权限调用工具并自主行动，使安全面超出纯聊天模型。然而标准评估仍为单轮，无法捕捉多步智能体漏洞。本文提出一个系统化的黑盒框架用于风险感知的智能体评估，仅需基本系统描述。方法包括：(1) 将可观察行为映射到风险类别的七域分类法；(2) 全自动SAGE-RT红队测试，每域生成120个对抗场景；(3) 使用LLM评判者进行人工验证的评估。在两个智能体架构（CrewAI和AutoGen）与四个基础模型上的实证验证揭示了令人警觉的模式：平均治理风险56.25%，多智能体配置中隐私风险65%，智能体行为漏洞达85%。该黑盒方法无需特权访问即可有效识别关键架构漏洞，为更安全的智能体部署提供了可扩展路径。",
+      "insight_zh": "该框架的分类法与自动化红队流程可为多智能体地理空间推理系统的安全性评估提供参考，但其风险类别和场景生成是否适用于地理空间任务尚需验证。"
+    },
+    {
       "key": "arxiv:2609.10177",
       "title": "Beyond Surface Imitation: Contrastive Modeling for Reasoning Path Alignment in Multimodal In-Context Learning",
       "title_zh": "超越表面模仿：多模态上下文学习中推理路径对齐的对比建模",
@@ -1242,6 +1306,40 @@
       ],
       "summary_zh": "摘要缺失，无法提供具体内容概述。从标题推测，该研究可能从世界模型构建的角度分析LLM智能体在新环境中探索失败的原因，并提出改进思路。",
       "insight_zh": "若研究揭示LLM智能体世界建模能力的不足，可能对基于多智能体的城市模拟和地理空间决策中的智能体环境适应性问题有重要参考价值，但需完整摘要确认。"
+    },
+    {
+      "key": "arxiv:2609.09628",
+      "title": "Who Are They to Each Other? Multi-Agent Reasoning for Speaker Relationship Inference",
+      "title_zh": "他们彼此是什么关系？用于说话人关系推断的多智能体推理",
+      "url": "https://arxiv.org/abs/2609.09628",
+      "arxiv_id": "2609.09628",
+      "authors": [
+        "Yaohan Guan",
+        "Yen-Ju Lu",
+        "Yuzhe Wang",
+        "Junhyeok Lee",
+        "Jesus Villalba",
+        "Laureano Moro Velazquez",
+        "Thomas Thebaud",
+        "Najim Dehak"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.CL",
+        "cs.SD"
+      ],
+      "published": "2026-09-09T02:40:02+00:00",
+      "score": 55,
+      "reason": "该论文提出免训练的多智能体推理框架用于说话人关系推断，与研究中LLM和多智能体方向相关，但应用场景为语音对话理解，与地理空间智能无直接联系。",
+      "tags": [
+        "多智能体推理",
+        "说话人关系推断",
+        "LLM智能体",
+        "多模态",
+        "免训练框架"
+      ],
+      "summary_zh": "从口语对话中推断说话人关系是迈向社交感知语音理解的重要一步。然而该任务仍未被充分探索，监督建模训练和扩展成本高昂。同时，现有推理时LLM方法对处理微妙、分布式和多模态的关系线索（可能支持多种合理解释）提供的结构有限。为解决这些局限，本文引入一个免训练的多智能体推理框架，通过LLM智能体间的结构化交互组织推理，使关系判断无需任务特定训练即可被提出、质疑和裁决。我们用两种互补设计实例化该框架。我们提出多角色多智能体辩论，作为标准多智能体辩论针对说话人关系推断的任务特定适配，为智能体分配互补角色或基于社会理论的视角，而非单一无差别观点。相反，我们引入多智能体竞争，一种基于竞争的协议，通过成对裁决比较智能体判断，淘汰较弱候选并保留最可辩护的一个。我们在Seamless Interaction数据集上跨不同模态设置评估这些方法，涵盖二分类和细粒度关系细节预测。结果表明它们在多数情况下优于零样本和现有多智能体基线。人工评估进一步表明该任务即使对人也很困难。LLM方法在包含文本的设置中有时可超越人类标注者，但在音频设置中竞争力较弱。总体而言，这些发现表明关系推断受益于结构化交互。",
+      "insight_zh": "其多智能体辩论与竞争机制可为地理空间决策中的多智能体协作推理提供方法借鉴，但需适配空间关系与多源数据的特性。"
     },
     {
       "key": "arxiv:2609.10263",
@@ -3237,6 +3335,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取研究的具体方法、数据与结论。",
       "insight_zh": "从标题推断，该工作可能探索将视觉Transformer与生成式语言-图像预训练结合，或可为地理空间多模态基础模型提供方法参考；但因摘要缺失，无法确认其与遥感或城市研究的直接关联。"
+    },
+    {
+      "key": "arxiv:2609.09491",
+      "title": "Learning Global Camera Poses from Noisy View-Graphs for Structure from Motion",
+      "title_zh": "从噪声视图图学习全局相机位姿用于运动恢复结构",
+      "url": "https://arxiv.org/abs/2609.09491",
+      "arxiv_id": "2609.09491",
+      "authors": [
+        "Fadi Khatib",
+        "Meirav Galun",
+        "Ronen Basri"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-08T22:14:03+00:00",
+      "score": 35,
+      "reason": "该论文研究基于学习视图图聚合的全局运动恢复结构，涉及图神经网络和三维重建，与遥感变化检测和多源数据融合有间接方法关联，但非地理空间应用。",
+      "tags": [
+        "运动恢复结构",
+        "相机位姿估计",
+        "图神经网络",
+        "三维重建"
+      ],
+      "summary_zh": "相机位姿估计是三维重建和视图合成流水线的关键步骤。本文提出一个基于学习视图图聚合的深度全局运动恢复结构框架。方法采用置换等变、边条件图神经网络，以噪声成对相对位姿为输入，输出全局一致的相机外参。网络无需真值监督训练，仅依赖相对位姿一致性目标。随后进行三维点三角化和鲁棒光束法平差。该方法高效、可扩展至一千多张图像，且对图密度鲁棒。我们在MegaDepth、1DSfM、Strecha和BlendedMVS上评估。实验表明，相比深度轨迹中心方法，该方法实现更优的旋转和平移精度，同时在许多场景中注册更多图像，与最先进经典流水线相比具有竞争力且快得多。",
+      "insight_zh": "其置换等变图神经网络与无监督一致性训练思路或可启发多源遥感数据融合中的图结构建模，但需适配地理空间数据的特性。"
     },
     {
       "key": "arxiv:2606.13945",
@@ -6994,6 +7118,37 @@
       "insight_zh": "LinearMask-GS通过线性增量激活解决了掩码训练中的双峰分布问题，实现了更稳定的重要性排序和更紧凑的3D表示，其思路可能对遥感三维重建中的模型压缩有参考价值。"
     },
     {
+      "key": "arxiv:2609.09477",
+      "title": "LeCor: Learning to Be Corrected by Meta-Learned Test-Time Training for Interactive 3D Lung-Tumour Segmentation",
+      "title_zh": "LeCor：通过元学习测试时训练学习被纠正，用于交互式三维肺肿瘤分割",
+      "url": "https://arxiv.org/abs/2609.09477",
+      "arxiv_id": "2609.09477",
+      "authors": [
+        "Yi Luo",
+        "Yike Guo",
+        "Wenxuan Li",
+        "Zongwei Zhou",
+        "Rui Zhang",
+        "and Kai Ding"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-09-08T21:49:56+00:00",
+      "score": 20,
+      "reason": "该论文研究交互式三维肺肿瘤分割的元学习测试时训练，与遥感变化检测有方法层面的间接关联（交互式分割、测试时适应），但应用域为医学影像。",
+      "tags": [
+        "交互式分割",
+        "测试时训练",
+        "元学习",
+        "医学图像",
+        "SAM"
+      ],
+      "summary_zh": "在计算机断层扫描（CT）上勾画肺肿瘤占放疗计划耗时的相当份额，模型提出的轮廓可由临床医生交互式细化。SAM 3等可提示基础模型通过将每次纠正写入会话记忆来条件化剩余切片，从而支持该工作流，而模型权重保持固定。在来自五个公开CT队列的690个测试病例上，对肺肿瘤微调SAM 3将单点提示获得的Dice从0.298提升到0.757，七轮纠正进一步提升到0.765，但仅在记忆条件下，标注者未触及切片的准确率在六轮后停止改善。因此我们将每次纠正视为训练信号，提出LeCor，对一小组病例适配器执行测试时训练，这些适配器每个病例重置，并经元学习使得由点击驱动的单步梯度改善未被点击的切片。在跨越至少八个切片的133个测试病例上，LeCor将七轮纠正后达到的Dice从微调模型的0.787提升到0.827，将从未达到Dice 0.80的病例数从47减少到27，并在三轮纠正中达到微调模型七轮才达到的准确率。",
+      "insight_zh": "其元学习测试时训练与交互式纠正机制或可启发遥感变化检测中的人机交互标注与模型在线适应，但需适配地理空间数据的时空特性。"
+    },
+    {
       "key": "arxiv:2609.09185",
       "title": "Integrating Unimodal and Vision-Language Representations in Latent Space for Multi-Label Chest X-Ray Classification",
       "title_zh": "在潜空间中整合单模态与视觉-语言表示用于多标签胸部X光分类",
@@ -7812,6 +7967,43 @@
       "insight_zh": "该文将蒸馏目标构建视为动态策略决策的思路，对地理空间多模态模型在低质量或异质数据上的适配训练有潜在借鉴价值，但摘要未涉及地理空间任务。"
     },
     {
+      "key": "arxiv:2609.09634",
+      "title": "LightMedSeg-ISLES: Stroke Lesion Segmentation with 81x Fewer Parameters than nnU-Net",
+      "title_zh": "LightMedSeg-ISLES：参数比nnU-Net少81倍的卒中病灶分割",
+      "url": "https://arxiv.org/abs/2609.09634",
+      "arxiv_id": "2609.09634",
+      "authors": [
+        "Giorgi Nikvashvili",
+        "Hanxue Gu",
+        "Jie Bao",
+        "Kang Wang",
+        "Yang Yang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "published",
+        "in",
+        "Nature",
+        "Lecture",
+        "Notes",
+        "Computer",
+        "Science",
+        "(LNCS)"
+      ],
+      "published": "2026-09-09T02:49:58+00:00",
+      "score": 18,
+      "reason": "该论文聚焦医学图像分割的轻量化模型，与遥感变化检测或多源数据融合无直接关联，仅方法层面（轻量分割）有微弱参考价值。",
+      "tags": [
+        "医学图像分割",
+        "轻量模型",
+        "卒中病灶",
+        "参数高效"
+      ],
+      "summary_zh": "大型网络和集成方法常在医学图像分割挑战中胜出，但其存储和推理需求使部署复杂化。本文提出LightMedSeg-ISLES，一个126万参数的流水线，用于ISLES'26中T1加权卒中病灶分割。在146例留出队列上，翻转测试时增强产生0.618平均Dice和0.599病灶级F1。一个1.0235亿参数的nnU-Net ResEnc-L在尺寸过滤后产生0.634 Dice和0.544病灶级F1。因此LightMedSeg以少81.4倍的参数保留了nnU-Net Dice的97.5%，同时将病灶级F1提高0.055。其四遍TTA工作点每标准化图块所需FLOPs比nnU-Net少4.7倍。它还略微超过过滤后的UNETR++和nnFormer。更长训练和更强增强在不增加容量的情况下增加0.0358 Dice，确立了作为远大于模型的有力单检查点替代方案。",
+      "insight_zh": "其参数高效的分割思路或可启发遥感变化检测中的轻量化模型设计，但任务域差异较大，直接迁移价值有限。"
+    },
+    {
       "key": "arxiv:2609.10451",
       "title": "JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition",
       "title_zh": "JarvisGUI：迈向具备动态任务组合能力的跨设备GUI智能体",
@@ -8056,36 +8248,6 @@
       "insight_zh": "该基准将科学语音交互拆解为识别、感知、推理与发音等阶段，并引入模拟用户智能体进行多轮评测，这一思路可迁移至地理空间智能中的人机交互评测设计，但其本身未涉及地理空间数据或城市分析。"
     },
     {
-      "key": "arxiv:2609.09628",
-      "title": "Who Are They to Each Other? Multi-Agent Reasoning for Speaker Relationship Inference",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09628",
-      "arxiv_id": "2609.09628",
-      "authors": [
-        "Yaohan Guan",
-        "Yen-Ju Lu",
-        "Yuzhe Wang",
-        "Junhyeok Lee",
-        "Jesus Villalba",
-        "Laureano Moro Velazquez",
-        "Thomas Thebaud",
-        "Najim Dehak"
-      ],
-      "categories": [
-        "cs.MA",
-        "cs.CL",
-        "cs.SD"
-      ],
-      "published": "2026-09-09T02:40:02+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10139",
       "title": "TransGaze-Object: Transformer Based Driver Gaze Object Prediction Framework in Real Driving",
       "title_zh": "",
@@ -8104,33 +8266,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09564",
-      "title": "Robust Industrial Cyber Physical Classification Using Neuromorphic Temporal Embeddings and Hybrid SNN XGBoost Under Machine Unlearning Attacks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09564",
-      "arxiv_id": "2609.09564",
-      "authors": [
-        "Ammar Kamoona",
-        "Sajad Koushkbaghi",
-        "Mahdi Jalili",
-        "Peter McTaggart",
-        "and Xinghuo Yu"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CR",
-        "cs.NE"
-      ],
-      "published": "2026-09-09T00:43:44+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8243,90 +8378,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.09634",
-      "title": "LightMedSeg-ISLES: Stroke Lesion Segmentation with 81x Fewer Parameters than nnU-Net",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09634",
-      "arxiv_id": "2609.09634",
-      "authors": [
-        "Giorgi Nikvashvili",
-        "Hanxue Gu",
-        "Jie Bao",
-        "Kang Wang",
-        "Yang Yang"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG",
-        "published",
-        "in",
-        "Nature",
-        "Lecture",
-        "Notes",
-        "Computer",
-        "Science",
-        "(LNCS)"
-      ],
-      "published": "2026-09-09T02:49:58+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09491",
-      "title": "Learning Global Camera Poses from Noisy View-Graphs for Structure from Motion",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09491",
-      "arxiv_id": "2609.09491",
-      "authors": [
-        "Fadi Khatib",
-        "Meirav Galun",
-        "Ronen Basri"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-08T22:14:03+00:00",
-      "score": 17,
-      "reason": "关键词命中：Graph Neural Network",
-      "tags": [
-        "Graph Neural Network"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09477",
-      "title": "LeCor: Learning to Be Corrected by Meta-Learned Test-Time Training for Interactive 3D Lung-Tumour Segmentation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09477",
-      "arxiv_id": "2609.09477",
-      "authors": [
-        "Yi Luo",
-        "Yike Guo",
-        "Wenxuan Li",
-        "Zongwei Zhou",
-        "Rui Zhang",
-        "and Kai Ding"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "published": "2026-09-08T21:49:56+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.10144",
       "title": "Kernel-Managed Shared Memory for System-Wide Personalization",
       "title_zh": "",
@@ -8345,37 +8396,6 @@
       "reason": "关键词命中：Multi-Agent",
       "tags": [
         "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09482",
-      "title": "Infra-Bench CLS: A Global, Open-Source Benchmark for Critical Infrastructure Classification with Earth Observation Foundation Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09482",
-      "arxiv_id": "2609.09482",
-      "authors": [
-        "Justin Guthrie",
-        "Edward Oughton",
-        "Konrad Wessels",
-        "Matthew Rice",
-        "Isaac Corley"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG",
-        "Submitted",
-        "to",
-        "Big",
-        "Earth",
-        "Data"
-      ],
-      "published": "2026-09-08T21:56:29+00:00",
-      "score": 17,
-      "reason": "关键词命中：Foundation Model",
-      "tags": [
-        "Foundation Model"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8410,83 +8430,6 @@
       "reason": "关键词命中：Computer Vision",
       "tags": [
         "Computer Vision"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09486",
-      "title": "Efficient Fairness Auditing Across Guidance Scales in Text-to-Image Diffusion Models via Causal Abstraction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09486",
-      "arxiv_id": "2609.09486",
-      "authors": [
-        "Nabila Tasfiha Rahman",
-        "Rajatsubhra Chakraborty",
-        "Depeng Xu",
-        "Lu Zhang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CV"
-      ],
-      "published": "2026-09-08T22:05:06+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09554",
-      "title": "BuzzASR: A Swarm of 100+ Monolingual Speech Recognition Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09554",
-      "arxiv_id": "2609.09554",
-      "authors": [
-        "Shivam Singh",
-        "Aditya Yadavalli",
-        "Catherine Arnett",
-        "Alex Warstadt"
-      ],
-      "categories": [
-        "cs.CL",
-        "Project",
-        "page:",
-        "https://lemn-lab.github.io/buzz-asr"
-      ],
-      "published": "2026-09-09T00:18:08+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.09647",
-      "title": "Black-Box Red Teaming of Agentic AI: A Taxonomy-Driven Framework for Automated Risk Discovery",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.09647",
-      "arxiv_id": "2609.09647",
-      "authors": [
-        "Divyanshu Kumar",
-        "Nitin Aravind Birur",
-        "Tanay Baswa",
-        "Sahil Agarwal",
-        "Prashanth Harshangi"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-09T03:00:25+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -9384,6 +9327,33 @@
       "insight_zh": "该文对多智能体系统中的缓存复用有工程意义，但其与地理空间智能或城市分析的关联仅限于多智能体这一概念标签，无直接方法迁移。"
     },
     {
+      "key": "arxiv:2609.10089",
+      "title": "Hybrid Quantum-Classical NLP Classification with Compact Semantic Representations: An Experimental Analysis of Representation Compression",
+      "title_zh": "紧凑语义表示的混合量子经典NLP分类：表示压缩的实验分析",
+      "url": "https://arxiv.org/abs/2609.10089",
+      "arxiv_id": "2609.10089",
+      "authors": [
+        "Ali Hassan",
+        "Zijia Zhao",
+        "and Maha A. Metawei"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-09T12:09:50+00:00",
+      "score": 15,
+      "reason": "该论文研究混合量子经典NLP分类中的表示压缩，与GIS、城市更新、遥感或地理空间智能无直接关联，仅在降维方法上有微弱参考价值。",
+      "tags": [
+        "量子机器学习",
+        "混合量子经典",
+        "NLP分类",
+        "降维",
+        "语义表示"
+      ],
+      "summary_zh": "大型语言和句子嵌入模型提供丰富的语义表示，但其高维度对近期量子机器学习（QML）构成挑战，因为量子电路只能处理有限数量的输入特征。我们研究一个混合量子经典流水线，将高维句子嵌入转换为紧凑表示用于变分量子分类。工作流结合预训练句子嵌入模型、降维、角度编码、变分量子电路（VQC）和经典决策层。我们系统比较主成分分析（PCA）、邻域成分分析（NCA）和线性判别分析（LDA），涵盖无监督和有监督降维。使用TREC问题分类数据集，我们研究表示维度、信息保留、量子比特数和分类性能之间的关系。初步PCA实验揭示强信息瓶颈：将768维嵌入降至3、4、5和8维分别保留约8.2%、10.2%、11.9%和16.4%的方差，对应分类准确率为50.3%、51.2%、57.9%和63.4%。相比之下，有监督降维效率显著更高。在无泄漏交叉验证协议下，LDA仅用5维达到85.3%准确率，NCA达到83.1%，而完整384维经典基线为85.1%。这些结果表明有监督降维能比基于方差的压缩更有效地保留任务相关信息，使紧凑表示成为实用混合量子经典NLP模型的有前景路径。",
+      "insight_zh": "其有监督降维优于方差压缩的发现或可启发高维地理空间特征的紧凑表示学习，但与核心研究方向关联较弱。"
+    },
+    {
       "key": "arxiv:2502.01555",
       "title": "Generative AI for Analysts",
       "title_zh": "面向分析师的生成式AI",
@@ -10271,6 +10241,37 @@
       ],
       "summary_zh": "音频与多模态大语言模型发展迅速，但评测框架仍以英语为中心，东南亚语言严重缺乏代表性。本文提出 SEA-SpeechBench，据作者所述是首个面向 11 种东南亚语言的大规模多任务语音理解基准，包含 99 个评测集、97,194 个样本、597 小时精选音频。基准涵盖 3 大类共 9 项任务：语音处理（自动语音识别、语音翻译、口语问答）、副语言分析（情绪、性别、年龄、说话人识别）以及时间理解这一新维度（带时间戳的内容查询与最长 3 分钟长音频中的时间定位）。作者采用东南亚母语与英语两种多语言提示方式以反映用户与音频语言模型的交互。对主流开源与闭源系统的评测显示性能差距明显：所有模型在时间理解、情绪识别和语音翻译上表现不佳；缅甸语、泰米尔语等低资源语言提示比英语低至多 41 个百分点。研究揭示了模型的关键局限，强调包容性模型开发的必要性。",
       "insight_zh": "该基准提示多语言与长音频时间定位评测仍是短板，其任务设计思路（时间戳查询、长序列定位）对时空数据中的时序标注与评测设计有一定借鉴意义，但研究本身不涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.09564",
+      "title": "Robust Industrial Cyber Physical Classification Using Neuromorphic Temporal Embeddings and Hybrid SNN XGBoost Under Machine Unlearning Attacks",
+      "title_zh": "机器遗忘攻击下基于神经形态时序嵌入与混合SNN-XGBoost的鲁棒工业网络物理分类",
+      "url": "https://arxiv.org/abs/2609.09564",
+      "arxiv_id": "2609.09564",
+      "authors": [
+        "Ammar Kamoona",
+        "Sajad Koushkbaghi",
+        "Mahdi Jalili",
+        "Peter McTaggart",
+        "and Xinghuo Yu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CR",
+        "cs.NE"
+      ],
+      "published": "2026-09-09T00:43:44+00:00",
+      "score": 12,
+      "reason": "该论文研究工业网络物理系统的入侵检测与机器遗忘攻击鲁棒性，与城市更新、遥感或地理空间智能无直接关联。",
+      "tags": [
+        "脉冲神经网络",
+        "XGBoost",
+        "工业网络物理系统",
+        "机器遗忘攻击",
+        "入侵检测"
+      ],
+      "summary_zh": "电力分配网络的数字化增加了电网基础设施对网络攻击的暴露。然而现有入侵检测系统常依赖计算昂贵的深度学习模型，难以在边缘部署。周期性再训练也使这些系统暴露于机器遗忘攻击，选择性数据移除会降低检测性能。本文提出一种混合脉冲神经网络（SNN）与XGBoost架构，结合高效时序编码与轻量分类器，并对这类攻击提供结构性韧性。SNN在干净数据上训练一次并用作固定特征提取器，模型更新期间仅再训练XGBoost分类器。在两个真实公开电力系统数据集上评估，所提方法在Synchrophasor数据集上达到99.9%准确率（F1-macro 0.999），在MSU/ORNL数据集上达到95.0%准确率（F1-macro 0.943），优于独立基线。在选择性标签翻转攻击下，混合模型在10%投毒时仅损失0.9% F1-macro，并将目标类崩溃从60%投毒延迟到70%投毒。这些结果表明神经形态时序编码可为网络物理系统提供准确的网络攻击检测和改进的数据投毒韧性。",
+      "insight_zh": "其固定特征提取器加轻量分类器的混合架构思路或可启发遥感变化检测中的高效鲁棒模型设计，但应用域差异显著。"
     },
     {
       "key": "arxiv:2609.09507",
@@ -11577,6 +11578,34 @@
       "insight_zh": "该研究关注AI偏见问题，可能对地理空间AI的公平性研究有间接启示，但关联性较弱。"
     },
     {
+      "key": "arxiv:2609.09486",
+      "title": "Efficient Fairness Auditing Across Guidance Scales in Text-to-Image Diffusion Models via Causal Abstraction",
+      "title_zh": "通过因果抽象在文本到图像扩散模型中跨引导尺度的高效公平性审计",
+      "url": "https://arxiv.org/abs/2609.09486",
+      "arxiv_id": "2609.09486",
+      "authors": [
+        "Nabila Tasfiha Rahman",
+        "Rajatsubhra Chakraborty",
+        "Depeng Xu",
+        "Lu Zhang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "published": "2026-09-08T22:05:06+00:00",
+      "score": 10,
+      "reason": "该论文研究文本到图像扩散模型的公平性审计，与GIS、城市更新、遥感或地理空间智能无直接关联。",
+      "tags": [
+        "公平性审计",
+        "扩散模型",
+        "因果抽象",
+        "文本到图像"
+      ],
+      "summary_zh": "文本到图像扩散模型的公平性审计通常需要在采样配置下生成大量图像，使全面评估计算昂贵。本文提出一种基于因果抽象的审计工具，用于在分类器无关引导尺度干预下高效评估公平性。给定固定提示和目标特征函数，我们将扩散过程表示为低层结构因果模型，并构建抽象去噪状态上的对应高层模型。我们刻画投影因果结构，建立公平性相关干预查询的可识别性，并提供高层模型保持该查询的充分条件。一个概率Transformer将高层模型实现为目标特征分布跨引导尺度的摊销预测器。实验评估分布保真度、公平性查询准确性和计算效率。我们展示两个审计演示：一个使用标准Stable Diffusion 1.5，另一个使用StayFair（一个公平性增强的Stable Diffusion模型），以考察它们跨引导尺度的行为。",
+      "insight_zh": "其因果抽象与摊销预测思路或可启发地理空间AI模型的公平性评估，但与核心研究方向关联很弱。"
+    },
+    {
       "key": "arxiv:2609.10253",
       "title": "DiSCo: A Distribution-First Steering and Cultural Prior Evaluation Framework for Measuring Cultural Preference Bias in LLMs",
       "title_zh": "DiSCo：一个分布优先的引导与文化先验评估框架，用于衡量大语言模型中的文化偏好偏差",
@@ -12279,6 +12308,36 @@
       ],
       "summary_zh": "内容审核政策日益复杂，对其一致性操作化构成关键挑战。尽管基础模型具备应对该挑战所需的基本能力，但它们能否可靠地审核在线内容仍是一个未解问题。本文系统比较了两种视觉语言模型（VLM）引导范式：指令驱动方法（模型依据政策条文推理）与示例驱动方法（模型从既有先例中泛化）。作者将研究建立在ModerationBench之上，这是一个包含来自Bluesky平台4000条人工标注真实帖子的新基准。实验表明，基础模型可以显著超越Bluesky已部署的审核系统，在基准中的随机帖子上将其F1分数提升近三倍（0.60 vs 0.22），且指令驱动与示例驱动两种范式达到的峰值效果相当。这些发现为大规模可靠且可适应的政策操作化指明了路径。",
       "insight_zh": "该研究比较指令与示例两种策略落地范式，其结论对将复杂规则（如规划政策）转化为模型可执行判断具有类比价值，但摘要未涉及地理或城市政策场景。"
+    },
+    {
+      "key": "arxiv:2609.09554",
+      "title": "BuzzASR: A Swarm of 100+ Monolingual Speech Recognition Models",
+      "title_zh": "BuzzASR：一个由100多个单语语音识别模型组成的群体",
+      "url": "https://arxiv.org/abs/2609.09554",
+      "arxiv_id": "2609.09554",
+      "authors": [
+        "Shivam Singh",
+        "Aditya Yadavalli",
+        "Catherine Arnett",
+        "Alex Warstadt"
+      ],
+      "categories": [
+        "cs.CL",
+        "Project",
+        "page:",
+        "https://lemn-lab.github.io/buzz-asr"
+      ],
+      "published": "2026-09-09T00:18:08+00:00",
+      "score": 8,
+      "reason": "该论文研究多语言语音识别模型的规模化语言适配，与GIS、城市更新、遥感或地理空间智能无直接关联。",
+      "tags": [
+        "语音识别",
+        "语言适配",
+        "Whisper",
+        "多语言模型"
+      ],
+      "summary_zh": "我们引入BuzzASR，一个为102种语言适配的自动语音识别（ASR）语言专用微调Whisper模型集合。Whisper等大型端到端Transformer ASR模型已革新ASR，但多数主流模型高度多语言化。因此这些模型在训练集中代表性不足的语言上往往表现不佳。虽然通过单语数据简单微调即可实现有效语言适配早已为人所知，但该策略仅应用于少数语言。我们将这一简单方法大规模扩展到FLEURS数据集覆盖的102种语言，同时实现更复杂的语言适配策略，整合单语分词器替换和使用纯文本微调的数据增强。BuzzASR模型在102种语言中的77种上优于Whisper-large-v3，平均将字符错误率（CER）降低2.8倍以上。我们的模型在FLEURS和Common Voice组合测试集上于102种语言中的27种达到开源系统中最先进的CER。我们的分词器替换策略相比Whisper的多语言BPE平均压缩率（每token字符数）提升3.3倍，最高提升21.7倍。我们发布所有模型、代码和详细结果。",
+      "insight_zh": "其大规模语言专用微调与分词器替换策略对多语言地理文本处理有间接参考价值，但与核心研究方向关联较弱。"
     },
     {
       "key": "arxiv:2609.10518",
@@ -13724,27 +13783,6 @@
       ],
       "summary_zh": "企业部署的是系统而非检查点，可用能力取决于权重、服务路由、精度、输出契约和执行框架，但现有18个审计基准都只对广告中的模型标识符打分。本文将此视为测量误差，提出可报告该误差的协议IB2，包含三部分：金标准盲测的能力绑定预检、将失败纳入评分的可靠性包容首轮评分规则、以及结构性评分盲审。协议发布算法、分类表、请求契约和清单模式，其参考实例包含128个锁定任务和987条断言，覆盖文档、表格、图表、工具和数据库工作，但保持密封。在十一个系统上的结果显示：能力可用性可测量，两次相同权重的单路由运行后来未能通过最终绑定门的不同谓词，而广告标识符未暴露该限制；区分度不均匀，七个套件中四个在六系统带内饱和，差异几乎全部来自受治理的数据库工作和多标签页连接；服务臂选择使一个声明修订和精度从77.38变为82.54，配对区间[0.11,10.60]。",
       "insight_zh": "该研究强调AI系统评测应关注实际服务路由而非模型名称，其评测方法论对地理空间智能中LLM应用的可复现评测有参考意义，但研究本身不涉及地理空间数据或城市议题。"
-    },
-    {
-      "key": "arxiv:2609.10089",
-      "title": "Hybrid Quantum-Classical NLP Classification with Compact Semantic Representations: An Experimental Analysis of Representation Compression",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.10089",
-      "arxiv_id": "2609.10089",
-      "authors": [
-        "Ali Hassan",
-        "Zijia Zhao",
-        "and Maha A. Metawei"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-09T12:09:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.09898",

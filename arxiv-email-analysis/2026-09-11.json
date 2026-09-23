@@ -2,9 +2,9 @@
   "date": "2026-09-11",
   "analysis_stats": {
     "total": 511,
-    "analyzed": 441,
+    "analyzed": 442,
     "high": 6,
-    "medium": 14,
+    "medium": 15,
     "low": 32,
     "below_threshold": 389
   },
@@ -221,6 +221,38 @@
       ],
       "summary_zh": "高光谱（HS）与激光雷达（LiDAR）数据的融合通过联合利用光谱、空间和结构线索，在提升土地覆盖分类方面发挥关键作用。然而，现有多模态融合方法在保持计算效率的同时，仍难以建模长程依赖和复杂的各向异性交互。本文提出M2Heat，一个受物理启发的框架，从热传导视角研究多模态融合。其核心是物理驱动的视觉热传导模块（vHeat）和增强的频率值嵌入（FVE），模拟各向异性信息流，以亚二次复杂度捕获全局依赖并具备物理解释性。该机制与名为跨频融合（CFF）模块的混合空间-频率融合策略相结合，产生高度判别性和鲁棒的特征表示。M2Heat在Trento、Houston2013和Augsburg三个基准上取得有竞争力的整体性能，同时为多模态特征融合提供了可解释的热传导引导视角。这些结果表明热传导引导的神经算子在高效率、可解释的遥感多模态融合方面具有潜力。源代码公开于https://github.com/Weikan0425/M2Heat_HSI_LiDAR。",
       "insight_zh": "该工作将物理热传导机制引入遥感多模态融合，为高光谱与LiDAR联合分类提供了可解释的全局依赖建模思路；其亚二次复杂度设计对大规模地理空间数据融合具有潜在价值，但摘要未说明其在变化检测任务上的适用性。"
+    },
+    {
+      "key": "arxiv:2609.11580",
+      "title": "A Dataset and Model for Imputing Water Surface Elevation on a Large and Extremely Sparse Spatiotemporal Graph",
+      "title_zh": "面向大规模极稀疏时空图的水位高程插补数据集与模型",
+      "url": "https://arxiv.org/abs/2609.11580",
+      "arxiv_id": "2609.11580",
+      "authors": [
+        "Ruben Cartuyvels",
+        "Karim Douch",
+        "Gabriele Bertoli",
+        "Mounia El Baz",
+        "Artemis Vrettou",
+        "S\\'ebastien Lef\\`evre",
+        "Diego Fernandez Prieto"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-10T14:12:02+00:00",
+      "score": 78,
+      "reason": "该论文提出大规模极稀疏时空图上的水位高程插补数据集与模型，涉及卫星测高、时空图学习与多源数据融合，与时空数据挖掘、遥感及多源数据融合方向高度相关。",
+      "tags": [
+        "水位高程",
+        "时空图插补",
+        "卫星测高",
+        "SWOT",
+        "稀疏观测",
+        "亚马逊流域"
+      ],
+      "summary_zh": "对河网水位高程的连续监测对洪水预报、水资源管理和理解全球水循环至关重要。然而，全球许多地区缺乏原位水文站，制约了可靠建模框架的发展。卫星测高有望缓解这一问题，但目前受限于稀疏的时间覆盖。为此，作者提出AmazonSWE，一个用于训练和评估大规模时空图插补方法的数据集，整合了来自多种来源（包括近期宽刈幅SWOT传感器）的经处理卫星测高测量。该数据集覆盖亚马逊流域超过1.9万个河段和10年（2016–2026），并保留原位水文站用于评估。除贡献一个具有社会影响潜力的新颖真实用例之外，AmazonSWE还带来显著技术挑战：每天被观测的河段不足1%，远稀疏于现有插补基准；其有向无环河流拓扑在结构上既不同于现有数据集中的图，规模也更大。作者表明，先前的时空图插补方法未能适应这种拓扑、规模和稀疏性，并提出一个简单的双向选择性状态空间模型，通过采样连通子图并将空间与时间展平为单一token序列，配合拓扑感知位置编码，从而优于这些方法。与已发表的、将统计与物理建模相结合的SWOT水位高程加密最先进方法相比，该模型相对原位水文站将RMSE降低18–39%，同时为每个河段生成预测，而不仅是那些有观测的河段。",
+      "insight_zh": "该工作表明，在极稀疏观测条件下，将河网拓扑先验与选择性状态空间建模结合可显著优于统计—物理混合方法，其“连通子图采样+时空展平+拓扑感知编码”的设计对城市时空数据插补与多源融合具有方法借鉴意义；摘要未说明该模型在其他流域或城市尺度上的泛化能力。"
     },
     {
       "key": "arxiv:2609.06843",
@@ -14928,31 +14960,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法与结论。",
       "insight_zh": "从标题推测，该文可能提出一种基于密度矩阵的框架用于锂电池电解质的电子结构分析，属于计算化学方向；与地理空间智能研究基本无关。"
-    },
-    {
-      "key": "arxiv:2609.11580",
-      "title": "A Dataset and Model for Imputing Water Surface Elevation on a Large and Extremely Sparse Spatiotemporal Graph",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.11580",
-      "arxiv_id": "2609.11580",
-      "authors": [
-        "Ruben Cartuyvels",
-        "Karim Douch",
-        "Gabriele Bertoli",
-        "Mounia El Baz",
-        "Artemis Vrettou",
-        "S\\'ebastien Lef\\`evre",
-        "Diego Fernandez Prieto"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-10T14:12:02+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.11550",

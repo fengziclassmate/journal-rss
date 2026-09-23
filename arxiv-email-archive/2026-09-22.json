@@ -6,6 +6,8 @@
     "arxiv:2609.07780",
     "arxiv:2609.24911",
     "arxiv:2609.24278",
+    "arxiv:2609.23853",
+    "arxiv:2609.22117",
     "arxiv:2609.00689",
     "arxiv:2609.22258",
     "arxiv:2508.03749",
@@ -17,35 +19,33 @@
     "arxiv:2609.24677",
     "arxiv:2609.24531",
     "arxiv:2609.23989",
+    "arxiv:2609.23881",
     "arxiv:2609.23534",
     "arxiv:2609.22497",
     "arxiv:2609.22206",
     "arxiv:2609.22174",
+    "arxiv:2609.22126",
     "arxiv:2609.22359",
     "arxiv:2512.21066",
     "arxiv:2605.27690",
     "arxiv:2607.11295",
     "arxiv:2501.16698",
     "arxiv:2512.18046",
-    "arxiv:2609.23986",
-    "arxiv:2609.22090",
-    "arxiv:2609.24895",
-    "arxiv:2609.24626",
-    "arxiv:2609.24526"
+    "arxiv:2609.23986"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1190",
-    "deepseek": "partial:48/558;failed-batches:51"
+    "deepseek": "partial:29/509;failed-batches:48"
   },
-  "updated_at": "2026-09-23T12:09:50.488319+00:00",
+  "updated_at": "2026-09-23T17:33:11.265176+00:00",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 680,
+    "analyzed": 710,
     "high": 5,
-    "medium": 25,
-    "low": 59,
-    "below_threshold": 591
+    "medium": 29,
+    "low": 60,
+    "below_threshold": 616
   },
   "papers": [
     {
@@ -183,6 +183,64 @@
       "abstract": "Change point detection (CPD) identifies abrupt and significant changes in sequential data, with applications in human activity recognition, financial markets, cybersecurity, manufacturing, and autonomous systems. Traditional CPD methods often face computational challenges in high-dimensional settings and typically provide limited explanations for detected changes, which can restrict their practical usability. This paper introduces a CPD framework that improves scalability and interpretability by leveraging the Sliced Wasserstein (SW) distance. Our contributions are fourfold: (1) we transform multivariate sequential data into one-dimensional scores using the SW distance, making the resulting representation compatible with existing CPD methods; (2) we analyze the distributional behavior of random slices of the SW distance and show that, under suitable assumptions, they can be approximated by a Gamma distribution, providing a principled basis for threshold calibration; (3) we propose a self-adapting online CPD algorithm that combines this SW-based score with an adaptive quantile-based threshold; (4) we introduce a model-specific framework for generating contrastive explanations for annotated change points. Empirically, our method reduces false positives by at least $48\\%$ on average compared with popular online and offline CPD baselines, while maintaining competitive or superior detection performance. Code is available at https://github.com/jsve96/SWCPD_Code. At the same time, it produces interpretable change-point annotations, making it practical for deployment in high-stakes applications.",
       "summary_zh": "变化点检测（CPD）用于识别序列数据中的突变，应用于人类活动识别、金融市场、网络安全、制造与自主系统。传统方法在高维场景下计算困难且解释性有限。本文提出基于Sliced Wasserstein（SW）距离的CPD框架，贡献包括：(1) 用SW距离将多变量序列转为一维得分，兼容现有CPD方法；(2) 分析SW随机切片的分布行为，在适当假设下可用Gamma分布近似，为阈值标定提供依据；(3) 提出结合SW得分与自适应分位数阈值的自适在线CPD算法；(4) 提出针对标注变化点的对比解释生成框架。实验显示，相比主流在线与离线基线，该方法平均减少至少48%的误报，同时保持相当或更优的检测性能，并产生可解释的变化点标注。",
       "insight_zh": "该框架的SW降维+自适应分位数阈值思路可迁移到城市时空监测与遥感时序变化检测中，用于降低高维误报；其对比解释机制也有助于变化检测结果的可解释呈现，但摘要未验证地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.23853",
+      "title": "From UNDRR Reports to Event Records: Schema-Constrained LLM Extraction of Georeferenced Disasters",
+      "title_zh": "从UNDRR报告到事件记录：地理参考灾害的模式约束LLM抽取",
+      "url": "https://arxiv.org/abs/2609.23853",
+      "doi": "",
+      "arxiv_id": "2609.23853",
+      "authors": [
+        "Camilla Andreozzi",
+        "Phuong-Anh Nguyen-Le",
+        "Zhijing Jin",
+        "Revati Mani"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-20T20:14:51+00:00",
+      "score": 78,
+      "reason": "该文利用LLM从UNDRR报告中抽取地理参考灾害事件记录，涉及地理编码、模式约束抽取和地理空间数据构建，与地理空间智能和多源数据融合高度相关，且灾害事件时空数据挖掘与城市更新研究中的时空数据挖掘方法论相通。",
+      "tags": [
+        "LLM信息抽取",
+        "灾害事件",
+        "地理编码",
+        "模式约束",
+        "地理空间智能"
+      ],
+      "abstract": "Disaster-risk-reduction archives describe hazard events in prose that databases such as EM-DAT (Delforge et al., 2025) cannot ingest directly. We present an LLM pipeline that generates candidate georeferenced event records using a controlled hazard vocabulary and fixed schema, retaining evidence for review. Applied to 10,000 documents from PreventionWeb, the knowledge hub managed by UNDRR, it produced 3,572 records from 1,913 documents across 24 hazard types and resolved 81% of location mentions to OpenStreetMap geometries. On 171 human-positive document windows from a stratified 217-document reference set, GPT-5 achieved 86.0% pooled attribute $F_1$, versus 44.2% for the spaCy-gazetteer baseline. Evaluation pools hazard families, location strings, and event years within documents, without assessing their assignment to individual events. GPT-5.4 ranked highest among ten LLMs (86.6% $F_1$). Verbatim evidence occurrence was 72.0% for GPT-5 and 47.2% for GPT-5.4, measuring textual traceability without establishing attribute support. We report production failure modes and automated label and location-rule compliance checks. Prompts, schema, and outputs will be released for adaptation to national reporting archives.",
+      "summary_zh": "灾害风险减少档案以散文形式描述灾害事件，EM-DAT等数据库无法直接摄取。本文提出一个LLM流程，使用受控灾害词汇表和固定模式生成候选地理参考事件记录，并保留证据以供审查。应用于UNDRR管理的知识中心PreventionWeb的10,000份文档，从1,913份文档中生成3,572条记录，涵盖24种灾害类型，并将81%的位置提及解析为OpenStreetMap几何。在分层217份文档参考集中171个人工正例文档窗口上，GPT-5达到86.0%的汇总属性F_1，而spaCy-gazetteer基线为44.2%。评估在文档内汇总灾害家族、位置字符串和事件年份，未评估其到单个事件的分配。GPT-5.4在十个LLM中排名最高（86.6% F_1）。GPT-5的逐字证据出现率为72.0%，GPT-5.4为47.2%，衡量文本可追溯性但未确立属性支持。报告了生产故障模式及自动化标签和位置规则合规检查。提示、模式及输出将发布以供适配国家报告档案。",
+      "insight_zh": "该文的模式约束LLM抽取+地理编码流程可直接启发城市更新研究中从政策文本或规划报告中抽取地理参考事件记录；其证据保留和合规检查机制对构建可审查的时空知识库具有参考价值，但需注意其评估未涉及事件级分配精度。"
+    },
+    {
+      "key": "arxiv:2609.22117",
+      "title": "LE4Mob: Towards Inductive, Distance-Aware and General-Purpose Location Embedding for Human Mobility Modelling",
+      "title_zh": "LE4Mob：面向人类移动性建模的归纳式、距离感知与通用位置嵌入",
+      "url": "https://arxiv.org/abs/2609.22117",
+      "doi": "",
+      "arxiv_id": "2609.22117",
+      "authors": [
+        "Xinglei Wang",
+        "Stephen Law",
+        "Zichao Zeng",
+        "Junyuan Liu",
+        "Guangsheng Dong",
+        "Tao Cheng"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-19T21:20:57+00:00",
+      "score": 78,
+      "reason": "该论文提出归纳式、距离感知、通用位置嵌入框架LE4Mob用于人类移动性建模，直接涉及时空数据挖掘、位置表示学习与地理空间智能，与研究方向高度契合，尤其与时空数据挖掘和多源数据融合相关。",
+      "tags": [
+        "位置嵌入",
+        "人类移动性",
+        "时空数据挖掘",
+        "归纳式表示学习",
+        "地理空间智能"
+      ],
+      "abstract": "Location representations provide mobility models with fundamental information about the spatial position, functional characteristics, and relationships of places. However, existing embeddings are often dependent on mobility observations, unable to represent unseen locations, and weakly constrained to retain geographic distance. This limits their reuse across datasets and mobility tasks. To address these limitations, we propose LE4Mob, an inductive, distance-aware, and geography-derived location embedding framework for mobility modelling. LE4Mob extends contrastive language-location pre-training while introducing a distance-aware regularisation objective that encourages the embedding space to preserve spatial relationships. Pre-trained from geographic context, LE4Mob can encode rich spatial-semantic information and generate embeddings for unseen locations inductively. Its independence from downstream mobility task supervision also makes it transferable across different mobility tasks. We evaluate LE4Mob on individual-level next location prediction and population-level commuter flow generation. Experiments across multiple datasets and study areas show that LE4Mob outperforms strong baselines, with particular advantages in inductive settings and when downstream models rely directly on interactions between location embeddings. These findings demonstrate the potential of distance-aware, geography-derived location representations as reusable foundations for human mobility modelling.",
+      "summary_zh": "位置表示为移动性模型提供关于地点空间位置、功能特征和关系的基础信息。然而，现有嵌入往往依赖移动性观测，无法表示未见位置，且对保留地理距离的约束较弱，限制了其跨数据集和跨移动性任务的复用。为解决这些局限，作者提出LE4Mob，一种面向移动性建模的归纳式、距离感知且由地理信息导出的位置嵌入框架。LE4Mob扩展了对比式语言—位置预训练，同时引入距离感知正则化目标，促使嵌入空间保留空间关系。由于从地理语境预训练，LE4Mob能编码丰富的空间语义信息，并归纳式地为未见位置生成嵌入；其独立于下游移动性任务监督，也使其可跨不同移动性任务迁移。作者在个体级下一位置预测和群体级通勤流生成上评估LE4Mob。跨多个数据集和研究区域的实验表明，LE4Mob优于强基线，在归纳式设置以及下游模型直接依赖位置嵌入间交互时优势尤为明显。",
+      "insight_zh": "该工作表明，将地理语境与距离感知正则化结合，可产生可复用、可归纳的位置表示，缓解传统嵌入对观测数据的依赖；这一思路对城市更新中的地点功能表征和跨城市迁移建模具有潜在价值，但其在细粒度城市更新场景下的适用性尚待验证。"
     },
     {
       "key": "arxiv:2609.00689",
@@ -541,6 +599,43 @@
       "insight_zh": "该工作为智能体持续学习提供了系统性的分析框架和评估基准，其多LoRA专家路由与离线回放结合的方案可能为多智能体系统中能力整合提供参考，但需注意其应用场景为通用推理与智能体任务，未涉及地理空间领域。"
     },
     {
+      "key": "arxiv:2609.23881",
+      "title": "MotionJEPA: Preventing Temporal Feature Collapse by Capturing Visual Changes in Latent Space",
+      "title_zh": "MotionJEPA：通过在潜在空间中捕捉视觉变化防止时序特征坍缩",
+      "url": "https://arxiv.org/abs/2609.23881",
+      "doi": "",
+      "arxiv_id": "2609.23881",
+      "authors": [
+        "Markus Karmann",
+        "Shile Li",
+        "Christian Intern\\`o",
+        "Bruno Andreis",
+        "David Klindt",
+        "Randall Balestriero",
+        "Jindong Gu",
+        "Philip Torr",
+        "Qi Zhang",
+        "Peng-Tao Jiang",
+        "Hao Zhang",
+        "Bo Li",
+        "Onay Urfalioglu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-20T21:32:12+00:00",
+      "score": 62,
+      "reason": "该文提出MotionJEPA，通过差异图像与单图像嵌入正则化防止时序特征坍缩，核心在于潜在空间中捕捉视觉变化，与遥感变化检测和时空数据挖掘在方法论上高度相关，但未涉及地理空间数据或城市应用。",
+      "tags": [
+        "自监督学习",
+        "时空表征学习",
+        "变化检测",
+        "JEPA",
+        "潜在空间建模"
+      ],
+      "abstract": "Joint Embedding Predictive Architectures (JEPAs) are a promising paradigm for learning task-agnostic latent world models without visual reconstruction. However, standard JEPA training exhibits a strong inductive bias towards slow features, causing feature suppression and the collapse of latent representation. While inverse dynamics provides temporal anti-collapse, it relies on action labels and offers little incentive to embed general, unlabeled dynamics. We introduce Difference Image and Single image embedding Regularization (DISReg), a novel regularizer that builds on an inverse-dynamics-style module that predicts temporal difference image embeddings without any pixel reconstruction loss, encouraging balanced static and dynamic feature learning. DISReg consists of a static term that shapes the distribution of the image embedding and encourages slow features, and a dynamic term, which, unlike direct regularization on the embedding, imposes no constraint on the image embedding's shape or distribution and instead only incentivizes that dynamic features be present. By integrating this regularizer into a standard JEPA, we establish our new architecture, MotionJEPA. Latent probing demonstrates that MotionJEPA produces more complete representations than other methods, and our trajectory analysis shows it maintains geometrically simple latent embeddings with low curvature. We further show that MotionJEPA improves downstream planning success under static-background distractors across four environments.",
+      "summary_zh": "联合嵌入预测架构（JEPA）是一种无需视觉重建即可学习任务无关潜在世界模型的有前景范式。然而，标准JEPA训练对慢特征存在强归纳偏置，导致特征抑制和潜在表征坍缩。逆动力学虽提供时序抗坍缩能力，但依赖动作标签，且对嵌入通用的无标签动态缺乏激励。本文提出差异图像与单图像嵌入正则化（DISReg），一种基于逆动力学风格模块的新型正则化器，可在无任何像素重建损失的情况下预测时序差异图像嵌入，鼓励静态与动态特征的平衡学习。DISReg包含静态项（塑造图像嵌入分布并鼓励慢特征）和动态项（不同于对嵌入的直接正则化，不对图像嵌入的形状或分布施加约束，仅激励动态特征的存在）。将该正则化器集成到标准JEPA中，构建了新架构MotionJEPA。潜在探测表明MotionJEPA产生比其他方法更完整的表征，轨迹分析显示其保持几何简单、低曲率的潜在嵌入。进一步表明MotionJEPA在四个环境中提升了静态背景干扰下的下游规划成功率。",
+      "insight_zh": "该文的时序差异嵌入正则化思路可迁移至遥感变化检测中的双时相特征学习，有助于缓解变化信号被静态背景淹没的问题；但其验证环境为通用视觉任务，向地理空间场景的适用性尚需进一步检验。"
+    },
+    {
       "key": "arxiv:2609.23534",
       "title": "PosEviLoc: Position-Conditioned Spatial Evidence for Language-Based 3D Localization",
       "title_zh": "PosEviLoc：面向基于语言的三维定位的位置条件化空间证据",
@@ -648,6 +743,35 @@
       "abstract": "Anticipating emerging research directions is a critical goal of AI-assisted science. Existing methods mainly predict which concepts will co-occur in future papers, but co-occurrence captures shared attention rather than the scientific meaning of a connection, such as whether one method uses, combines, replaces, or contradicts another. We formulate research-direction discovery as hierarchical scientific-relation forecasting over a shared candidate-pair space, comprising three temporally aligned tasks: first co-occurrence, first scientific-relation formation, and relation type at formation. We construct SCoR-Graph from 187,848 cs.CV papers published between 2017 and 2026, yielding 270,687 consolidated concepts, 7.45 million co-occurrence edges, and 615,036 typed, directed relation edges. From cutoff-specific graph snapshots, we derive SCoR-Bench, a leakage-audited benchmark for these three capabilities, with expert-verified gold labels for the entire relation-type test set. We further introduce HiSCoR, a task-adapted model family that models relation emergence as a temporally evolving, hierarchically constrained process by encoding pre-cutoff event histories and conditioning relation formation on future co-occurrence. On the held-out 2025-2026 window, HiSCoR achieves an AUROC of 0.9515, a 2.4% relative improvement over the strongest temporal-graph baseline, and improves population-AUPRC by 14.0%; its relation-type variant achieves a Macro-AUROC of 0.7795. Ablations show that semantic, co-occurrence, and typed-relation views provide complementary predictive evidence. SCoR advances research-direction forecasting from predicting which concepts will co-occur to anticipating whether and how evidence-backed scientific relations will emerge.",
       "summary_zh": "该文将研究方向发现重新表述为共享候选对空间上的层次化科学关系预测，包含三个时间对齐任务：首次共现、首次科学关系形成以及形成时的关系类型。作者基于2017至2026年间187,848篇cs.CV论文构建了SCoR-Graph，包含270,687个整合概念、745万条共现边和615,036条带类型的有向关系边，并由此派生出去泄漏审计的基准SCoR-Bench，其关系类型测试集全部由专家验证。作者进一步提出HiSCoR模型族，将关系涌现建模为时间演化且受层次约束的过程，通过编码截断前事件历史并以未来共现为条件来预测关系形成。在2025-2026留出窗口上，HiSCoR取得0.9515的AUROC，较最强时序图基线相对提升2.4%，population-AUPRC提升14.0%；关系类型变体取得0.7795的Macro-AUROC。消融实验表明语义、共现和类型化关系三种视图提供互补的预测证据。",
       "insight_zh": "该工作把研究前沿预测从“哪些概念会共现”推进到“是否以及如何形成有证据支撑的科学关系”，其层次化时序图建模思路可迁移到城市更新中多主体、多类型事件关系的演化预测，但论文本身未涉及地理空间场景。"
+    },
+    {
+      "key": "arxiv:2609.22126",
+      "title": "SolarFlowRefiner: Refinement-Aware Flow Matching for Surface Solar Radiation Downscaling",
+      "title_zh": "SolarFlowRefiner：面向地表太阳辐射降尺度的细化感知流匹配方法",
+      "url": "https://arxiv.org/abs/2609.22126",
+      "doi": "",
+      "arxiv_id": "2609.22126",
+      "authors": [
+        "Udbhav Srivastava",
+        "Antonita Racheal",
+        "Yiheng Chen",
+        "Runlong Yu",
+        "Xinyue Ye"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-21T21:24:55+00:00",
+      "score": 62,
+      "reason": "该论文研究多源降尺度任务，将粗分辨率ERA5再分析辐射变量与配准卫星通道融合，重建高分辨率地表太阳辐射场，属于遥感与多源地理空间数据融合范畴，与研究方向中的遥感变化检测和多源数据融合有一定关联，但不涉及城市更新、时空数据挖掘或LLM多智能体。",
+      "tags": [
+        "遥感降尺度",
+        "多源数据融合",
+        "生成模型",
+        "地表太阳辐射",
+        "流匹配"
+      ],
+      "abstract": "High-resolution surface solar radiation (SSR) is important for solar forecasting and grid operation. However, physically consistent reanalysis products are too coarse to resolve localized cloud-driven variability. In this paper, we study a multisource downscaling task that reconstructs high-resolution SolarCube SSR fields from coarse ERA5 radiative variables and co-registered satellite channels. The task is challenging because a single ERA5 grid cell may contain both sunlit and cloud-shadowed regions. As a result, the missing high-resolution correction can be spatially sharp and inherently ambiguous. One-stage predictors often oversmooth these structures. Post-hoc refinement also introduces a stage-wise mismatch: the generator is optimized independently, even though its output determines the refiner's initial state. We introduce SolarFlowRefiner, a refinement-aware flow-matching framework for SSR downscaling. A conditional FlowMatch generator first predicts a normalized correction to an upsampled ERA5 baseline. The refiner is then trained on prediction-conditioned states between the current FlowMatch output and the target residual. This exposes the refiner to the structured errors produced by the generator. The refinement objective is also backpropagated through the FlowMatch sampler, allowing generation and correction to be jointly optimized for the final reconstruction. Experiments on a day-blocked ERA5--SolarCube benchmark show consistent improvements over standalone generation and post-hoc refinement. More broadly, SolarFlowRefiner provides a general strategy for coupling generative predictors with iterative correctors.",
+      "summary_zh": "高分辨率地表太阳辐射（SSR）对太阳能预报和电网运行十分重要，但物理一致的再分析产品分辨率过粗，难以刻画局地云致变化。本文研究一项多源降尺度任务：从粗分辨率ERA5辐射变量和配准卫星通道重建高分辨率SolarCube SSR场。该任务的难点在于单个ERA5网格单元可能同时包含日照区和云影区，因此缺失的高分辨率订正可能空间上十分尖锐且本质模糊，单阶段预测器往往过度平滑这些结构；事后细化还会引入阶段间失配，因为生成器独立优化，而其输出却决定细化器的初始状态。作者提出SolarFlowRefiner，一种细化感知的流匹配框架：条件FlowMatch生成器先预测对上采样ERA5基线的归一化订正，细化器则在当前FlowMatch输出与目标残差之间的预测条件状态上训练，从而暴露于生成器产生的结构化误差；细化目标还通过FlowMatch采样器反向传播，使生成与订正联合优化以服务于最终重建。在按天分块的ERA5–SolarCube基准上，该方法相较独立生成和事后细化均取得一致提升。更广泛地，SolarFlowRefiner为耦合生成式预测器与迭代校正器提供了通用策略。",
+      "insight_zh": "该工作提示，在多源遥感降尺度中，将生成式预测器与迭代校正器联合优化、并让校正器暴露于生成器的结构化误差，可能缓解单阶段过度平滑问题；这一思路或可迁移到其他高分辨率地理空间场重建任务，但其有效性仍需在更多数据集上验证。"
     },
     {
       "key": "arxiv:2609.22359",
@@ -840,110 +964,6 @@
       "abstract": "Agentic memory is becoming essential for long-horizon AI agents, yet many existing systems rely on autoregressive LLMs to control how memories are organized, retrieved, and used, placing expensive generation on the critical path of memory operations. We introduce \\textbf{\\method}, a new agentic memory architecture inspired by System-One/System-Two cognition. System One captures fast, lightweight decision-making, whereas System Two performs slower, deliberative reasoning. Jev-Mem brings this division of labor to agentic memory through a dedicated System-One control plane, a structured multi-relational memory plane, and a System-Two reasoning plane. The System-One controller governs memory typing and relational organization during construction, and dynamically performs query routing, retrieval-budget allocation, graph traversal, candidate scoring, and adaptive stopping during retrieval. System Two is invoked only for complex reasoning and answer synthesis. This design improves both memory effectiveness and system efficiency: on LoCoMo Jev-Mem achieves an overall LLM-as-a-Judge score of 0.777, an 11.0\\% relative improvement over the strongest baseline, while reducing memory construction time to 158\\,s, a 6.6$\\times$ speedup over the fastest competing memory system, and lowering average query latency to 0.93\\,s, a 36.7\\% reduction.",
       "summary_zh": "智能体记忆对长时程AI智能体日益重要，但许多现有系统依赖自回归LLM来控制记忆的组织、检索和使用，将昂贵的生成过程置于记忆操作的关键路径上。作者提出Jev-Mem，一种受System-One/System-Two认知启发的新型智能体记忆架构。System One负责快速轻量决策，System Two负责缓慢审慎推理。Jev-Mem通过专用System-One控制平面、结构化多关系记忆平面和System-Two推理平面实现这种分工。System-One控制器在构建阶段管理记忆类型和关系组织，在检索阶段动态执行查询路由、检索预算分配、图遍历、候选评分和自适应停止。System Two仅在复杂推理和答案合成时调用。该设计同时提升记忆有效性和系统效率：在LoCoMo上Jev-Mem取得0.777的LLM-as-a-Judge总分，相对最强基线提升11.0%，同时将记忆构建时间降至158秒，比最快竞争系统快6.6倍，平均查询延迟降至0.93秒，减少36.7%。",
       "insight_zh": "该架构通过快慢系统分工优化智能体记忆效率，其结构化多关系记忆平面和图遍历机制可能对地理空间知识组织有启发，但论文未涉及地理空间数据或应用场景。"
-    },
-    {
-      "key": "arxiv:2609.22090",
-      "title": "Recognition, Simulation, and Refusal: A Contamination-Aware Study of Classic Psychological Effects in LLM Agents",
-      "title_zh": "识别、模拟与拒绝：LLM智能体中经典心理学效应的污染感知研究",
-      "url": "https://arxiv.org/abs/2609.22090",
-      "doi": "",
-      "arxiv_id": "2609.22090",
-      "authors": [
-        "Joy Bose"
-      ],
-      "venue": "arXiv",
-      "published": "2026-07-23T10:34:06+00:00",
-      "score": 58,
-      "reason": "该文构建LLM智能体心理学效应基准，属于LLM与多智能体研究，与研究者关注的LLM和多智能体方向相关，但不涉及城市更新、时空数据挖掘或遥感变化检测等GIS核心主题。",
-      "tags": [
-        "LLM智能体",
-        "心理学效应",
-        "基准测试",
-        "污染感知"
-      ],
-      "abstract": "An LLM producing the response pattern associated with a human psychological effect is not the same claim as the LLM possessing that bias. We present PsyAgentBench, a benchmark that re-runs classic psychology experiments on LLM agents under a factorial design built to separate these: each paradigm is run with the paradigm explicitly labeled in the prompt (named) or framed as a routine task (blind), and on the literal textbook version of the task (canonical) or a structurally matched variant written to reduce lexical and scenario overlap with likely training data (counterfactual), crossed with a persona manipulation. Across five completed paradigms, evaluated on up to three open-weight model families with 41,904 trials released, apparently human-like effects arise through qualitatively different routes rather than one susceptibility: paradigm-label gating with explicit override (Asch conformity, 0 percent blind to 83.3 percent named on gpt-oss-120B), knowledge-dependent signal reliance (anchoring, exactly zero on grounded facts versus near total on invented quantities, a pattern equally consistent with rational use of the only available signal), amplification on novel content under labeling (framing), robust absence (sunk cost), and safety-mediated selection where refusal itself is the primary finding (minimal-group allocation). A one-sentence persona change (agreeableness, framed as an instruction rather than a verified trait manipulation) eliminates, dampens, or reverses these effects depending on which effect it is, arguing against any single response-bias account. We further formalize, and in two cases document empirically, three ways a psychology paradigm can fail to port to LLM agents: persona dominance, population collapse, and safety selection. We argue scalar bias-susceptibility scores obscure this structure and report replication profiles instead.",
-      "summary_zh": "LLM产生与人类心理效应相关的响应模式，并不等同于LLM具有该偏见。作者提出PsyAgentBench，在因子设计下重跑经典心理学实验以区分二者：每个范式在提示中明确标注范式名称（命名）或伪装为常规任务（盲测），并使用教科书原版任务（经典）或结构匹配但减少词汇与场景重叠的变体（反事实），并与人格操纵交叉。在五个完成的范式上，评估最多三个开放权重模型家族，发布41,904次试验，发现看似类人的效应通过质上不同的路径产生，而非单一易感性：范式标签门控与显式覆盖（Asch从众，gpt-oss-120B上盲测0%到命名83.3%）、知识依赖的信号依赖（锚定，在有根据事实上恰好为零，而在虚构数量上近乎完全，这一模式同样符合对唯一可用信号的理性使用）、标注下新内容的放大（框架效应）、稳健缺失（沉没成本）以及安全介导的选择（最小组分配中拒绝本身是主要发现）。一句话人格改变（宜人性，作为指令而非验证过的特质操纵）会消除、减弱或反转这些效应，取决于具体效应，反对任何单一响应偏见解释。作者进一步形式化并在两个案例中实证记录了心理学范式移植到LLM智能体的三种失败方式：人格主导、群体崩溃和安全选择。",
-      "insight_zh": "该基准强调在评估LLM智能体行为时需区分识别与模拟，其污染感知的因子设计思路可迁移至多智能体仿真中行为真实性的验证，避免将训练数据记忆误判为涌现行为。"
-    },
-    {
-      "key": "arxiv:2609.24895",
-      "title": "Human-LLM Deliberation as Interactive Proof: Conditions for Verifiability Without Transparency",
-      "title_zh": "作为交互式证明的人机LLM审议：无透明度条件下可验证性的条件",
-      "url": "https://arxiv.org/abs/2609.24895",
-      "doi": "",
-      "arxiv_id": "2609.24895",
-      "authors": [
-        "Baotong Zhang",
-        "Dean Foster",
-        "Jo\\~ao Sedoc"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-21T17:00:15+00:00",
-      "score": 55,
-      "reason": "该文将人机LLM审议建模为交互式证明，探讨无透明度条件下的可验证性，与LLM可信评估相关，但未涉及地理空间或城市应用。",
-      "tags": [
-        "人机交互",
-        "交互式证明",
-        "LLM验证",
-        "不确定性",
-        "理论分析"
-      ],
-      "abstract": "When an LLM supplies an argument that a user could not readily construct, how can the user decide whether to accept its claim? Inspired by interactive proofs, we model human-LLM deliberation as an interaction between a prover with unrestricted internal search and a resource-bounded human verifier. The verifier requests and checks supporting details without access to the LLM's internal state. Passed checks accumulate evidence toward an acceptance threshold. We prove anytime-valid soundness against adaptive provers: the probability of ever accepting a false claim is at most a chosen error level, provided the task supplies bounds on false passes and human checking errors that remain valid after every relevant history. A finite-horizon completeness bound additionally requires bounds on the adequacy of honest responses and sufficient diagnostic progress. Further checks can strengthen the evidence for acceptance, but each requires another adequate response and reliable human effort. Whether this tradeoff permits certification depends on the verifier's effort budget, cognitive load, expertise, and fatigue. We identify conditions under which the supplied bounds certify a specified sequence of local checks but not a specified global check under the same resource budgets.",
-      "summary_zh": "当LLM提供一个用户难以自行构建的论证时，用户如何决定是否接受其主张？受交互式证明启发，我们将人机LLM审议建模为具有无限制内部搜索能力的证明者与资源受限的人类验证者之间的交互。验证者请求并检查支持性细节，但无法访问LLM的内部状态。通过的检查累积证据直至接受阈值。我们证明了针对自适应证明者的随时有效可靠性：只要任务提供在每一相关历史之后仍然有效的误通过和人类检查错误界限，则曾经接受错误主张的概率至多等于选定错误水平。有限时域完备性界限还要求诚实响应的充分性和足够的诊断进展有界。更多检查可以增强接受的证据，但每次都需要另一个充分响应和可靠的人类努力。这一权衡是否允许认证取决于验证者的努力预算、认知负荷、专业知识和疲劳程度。我们识别了在相同资源预算下，所提供的界限能够认证指定局部检查序列但不能认证指定全局检查的条件。",
-      "insight_zh": "该理论框架为LLM输出的人类可验证性提供了形式化条件，提示在依赖LLM进行地理空间决策时，需考虑验证者认知负荷与检查预算对可靠性的影响。"
-    },
-    {
-      "key": "arxiv:2609.24626",
-      "title": "Relationally Grounded Latent World Models for Autonomous Driving",
-      "title_zh": "面向自动驾驶的关系基础潜在世界模型",
-      "url": "https://arxiv.org/abs/2609.24626",
-      "doi": "",
-      "arxiv_id": "2609.24626",
-      "authors": [
-        "Fabian Schmidt",
-        "Markus Enzweiler",
-        "Abhinav Valada"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-21T14:10:06+00:00",
-      "score": 55,
-      "reason": "该论文利用交通场景图作为潜在世界模型的语义监督，涉及空间关系建模和轨迹预测，与研究中时空数据挖掘和多源数据融合方向有一定关联，但应用领域为自动驾驶而非城市更新或遥感。",
-      "tags": [
-        "自动驾驶",
-        "潜在世界模型",
-        "场景图",
-        "语义监督",
-        "轨迹预测"
-      ],
-      "abstract": "Latent world models learn predictive representations for autonomous driving, but the relational semantics these states preserve often remain implicit. We investigate whether traffic scene graphs can serve as privileged semantic supervision for latent world representations. Building on LAW, we construct actor-centric scene graphs from nuScenes 3D annotations, encode their serialized relational structure using a frozen text embedding model, and align the visual latent representations with this semantic target during training. We remove the supervision branch at inference, so it requires neither scene graphs nor 3D annotations and adds no test-time computation. On nuScenes, our method reduces average trajectory L2 error from 0.661 to 0.622 (5.9%) and collision rate from 0.456 to 0.217 (52.4%) relative to our retrained LAW baseline. It also outperforms an unstructured caption-style semantic target, supporting the benefit of explicit relational structure for latent world-model representation learning.",
-      "summary_zh": "潜在世界模型为自动驾驶学习预测性表示，但这些状态所保留的关系语义往往仍是隐式的。我们研究交通场景图能否作为潜在世界表示的特权语义监督。基于LAW，我们从nuScenes 3D标注构建以行动者为中心的场景图，使用冻结的文本嵌入模型编码其序列化关系结构，并在训练期间将视觉潜在表示与该语义目标对齐。我们在推理时移除监督分支，因此它既不需要场景图也不需要3D标注，且不增加测试时计算。在nuScenes上，相对于我们重新训练的LAW基线，我们的方法将平均轨迹L2误差从0.661降至0.622（5.9%），碰撞率从0.456降至0.217（52.4%）。它还优于非结构化的描述式语义目标，支持显式关系结构对潜在世界模型表示学习的益处。",
-      "insight_zh": "该研究表明显式关系结构（场景图）作为语义监督能有效提升潜在世界模型的轨迹预测和碰撞率表现，其关系语义对齐思路对时空数据挖掘中的多源数据融合有借鉴意义。"
-    },
-    {
-      "key": "arxiv:2609.24526",
-      "title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination",
-      "title_zh": "ME-VLM：面向具身认知与智能体协调的统一视觉语言模型",
-      "url": "https://arxiv.org/abs/2609.24526",
-      "doi": "",
-      "arxiv_id": "2609.24526",
-      "authors": [
-        "Foundation Model",
-        "Li Auto Inc"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-21T12:59:59+00:00",
-      "score": 55,
-      "reason": "该文构建统一视觉语言模型以支持具身认知与多模态智能体能力，强调物理感知与时空推理，与研究中LLM和多智能体方向相关；但聚焦具身与自动驾驶任务，未涉及城市更新或地理空间数据挖掘，故相关性中等。",
-      "tags": [
-        "视觉语言模型",
-        "具身智能",
-        "多智能体协调",
-        "时空推理",
-        "边缘部署"
-      ],
-      "abstract": "Physical AI requires models to ground visual and linguistic understanding in real-world environments while accounting for environmental constraints and execution feedback. We introduce MachEmbodied-VLM (ME-VLM), a unified vision-language model with two variants, 4B and 35B-A3B, that brings together embodied cognition and multimodal agent capabilities. Our work emphasizes physical perception and spatiotemporal reasoning, together with planning, interaction, and outcome assessment in both digital and physical environments. We construct training data spanning embodied and multimodal agent tasks, including execution observations and feedback to support outcome assessment and decision refinement. The training pipeline comprises embodied capability injection, separate reinforcement learning of embodied and multimodal-agent experts, and multi-teacher on-policy distillation that consolidates their complementary capabilities into a single model. Experiments show competitive performance on both embodied and agent benchmarks, as well as on autonomous-driving and embodied-navigation tasks. For edge deployment, visual token compression, W4A8 quantization, and hardware--software co-optimization enable on-device inference of the 4B variant on the M100, reducing prefill latency from 400 ms to 188 ms. Project Page: https://machembodied.com/ME-Brain/ME-VLM.html Code Repository: https://github.com/MachEmbodied/ME-VLM",
-      "summary_zh": "物理AI要求模型将视觉与语言理解落地到真实环境，同时考虑环境约束与执行反馈。作者提出MachEmbodied-VLM（ME-VLM），一个统一的视觉语言模型，包含4B与35B-A3B两个版本，融合具身认知与多模态智能体能力。该工作强调物理感知与时空推理，以及在数字与物理环境中的规划、交互与结果评估。作者构建了涵盖具身与多模态智能体任务的训练数据，包括执行观测与反馈以支持结果评估与决策优化。训练流程包括具身能力注入、具身与多模态智能体专家的分别强化学习，以及多教师在线策略蒸馏，将互补能力整合到单一模型中。实验显示其在具身与智能体基准以及自动驾驶和具身导航任务上具有竞争力。面向边缘部署，视觉token压缩、W4A8量化与软硬件协同优化使4B版本可在M100上端侧推理，预填充延迟从400毫秒降至188毫秒。",
-      "insight_zh": "多教师在线策略蒸馏整合具身与智能体能力的训练范式，或可迁移到地理空间智能体中，用于融合遥感解译与规划决策等异构能力；其时空推理与结果评估机制对城市更新中的智能体决策反馈设计有参考价值。"
     }
   ]
 }
