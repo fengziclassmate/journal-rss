@@ -12,6 +12,7 @@
     "arxiv:2609.22258",
     "arxiv:2508.03749",
     "arxiv:2608.27206",
+    "arxiv:2609.22687",
     "arxiv:2609.22191",
     "arxiv:2601.12538",
     "arxiv:2606.08151",
@@ -21,6 +22,7 @@
     "arxiv:2609.23989",
     "arxiv:2609.23881",
     "arxiv:2609.23534",
+    "arxiv:2609.22716",
     "arxiv:2609.22497",
     "arxiv:2609.22206",
     "arxiv:2609.22174",
@@ -29,23 +31,21 @@
     "arxiv:2512.21066",
     "arxiv:2605.27690",
     "arxiv:2607.11295",
-    "arxiv:2501.16698",
-    "arxiv:2512.18046",
-    "arxiv:2609.23986"
+    "arxiv:2501.16698"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1190",
-    "deepseek": "partial:29/509;failed-batches:48"
+    "deepseek": "partial:19/479;failed-batches:46"
   },
-  "updated_at": "2026-09-23T17:33:11.265176+00:00",
+  "updated_at": "2026-09-23T21:59:57.663957+00:00",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 710,
+    "analyzed": 730,
     "high": 5,
-    "medium": 29,
-    "low": 60,
-    "below_threshold": 616
+    "medium": 31,
+    "low": 63,
+    "below_threshold": 631
   },
   "papers": [
     {
@@ -360,6 +360,35 @@
       "insight_zh": "该研究提出在视觉编码前进行信息密度评估和自适应压缩，挑战了视觉token必须全部编码的传统假设，为高分辨率遥感影像的实时视觉语言理解提供了新的效率优化方向。"
     },
     {
+      "key": "arxiv:2609.22687",
+      "title": "PanoSeg3R: Feed-Forward 3D Semantic Segmentation for Panoramic Images with an Automatic Data Curation Pipeline",
+      "title_zh": "PanoSeg3R：面向全景图像的前馈三维语义分割与自动数据策展流程",
+      "url": "https://arxiv.org/abs/2609.22687",
+      "doi": "",
+      "arxiv_id": "2609.22687",
+      "authors": [
+        "Heechan Yoon",
+        "Dongki Jung",
+        "Phuc Nguyen",
+        "Ming Lin",
+        "Dinesh Manocha"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-19T01:42:19+00:00",
+      "score": 68,
+      "reason": "该文提出全景图像的前馈三维语义分割框架与自动数据策展流程，涉及三维场景理解、伪标签生成与零样本泛化，与遥感变化检测、多源数据融合及地理空间智能有较强方法关联。",
+      "tags": [
+        "三维语义分割",
+        "全景图像",
+        "前馈重建",
+        "数据自动策展",
+        "零样本泛化"
+      ],
+      "abstract": "We present PanoSeg3R, a feed-forward framework for 3D panoramic semantic segmentation. Unlike existing methods designed for perspective inputs, PanoSeg3R jointly predicts 3D geometry and multi-view semantic segmentation in one single forward pass. Built upon a pretrained reconstruction backbone that supports panoramic images, our approach extends feed-forward 3D reconstruction with a query-based mask decoder. Furthermore, we introduce an automatic panorama data curation pipeline that leverages the complementary strengths of off-the-shelf foundation models to generate reliable pseudo semantic annotations, substantially expanding the training data and improving zero-shot generalization. PanoSeg3R achieves state-of-the-art performance on panoramic 3D semantic segmentation, improving 3D mIoU by up to 16.02 on ScanNet++, while the curated training data further improves zero-shot performance by up to 4.26 and 43.28 mIoU on Stanford2D3D and ToF-360, respectively. Website: https://harryyoon777.github.io/PanoSeg3R/",
+      "summary_zh": "本文提出PanoSeg3R，一种用于三维全景语义分割的前馈框架。与面向透视输入设计的现有方法不同，PanoSeg3R在单次前向传播中联合预测三维几何与多视角语义分割。该方法建立在支持全景图像的预训练重建骨干之上，通过基于查询的掩码解码器扩展前馈三维重建。此外，作者引入自动全景数据策展流程，利用现成基础模型的互补优势生成可靠的伪语义标注，大幅扩展训练数据并提升零样本泛化能力。PanoSeg3R在全景三维语义分割上达到最先进性能，在ScanNet++上三维mIoU最多提升16.02，而策展训练数据进一步在Stanford2D3D和ToF-360上分别将零样本性能提升最多4.26和43.28 mIoU。",
+      "insight_zh": "该文利用基础模型生成伪标注以扩展训练数据的策略，对遥感与地理空间领域中标注稀缺场景下的数据增强与零样本迁移具有参考价值。"
+    },
+    {
       "key": "arxiv:2609.22191",
       "title": "WildfireSpreadBench: The Metric Decides the Model in Wildfire Spread Prediction",
       "title_zh": "WildfireSpreadBench：在野火蔓延预测中指标决定模型",
@@ -663,6 +692,39 @@
       "insight_zh": "该工作将空间关系显式建模为位置条件化证据，可能为地理空间智能中的语言-位置对齐提供思路，但其应用场景为室内/物体级点云定位，向城市尺度的迁移需进一步验证。"
     },
     {
+      "key": "arxiv:2609.22716",
+      "title": "ZIL: Zero-shot Image-to-LiDAR Registration",
+      "title_zh": "ZIL：零样本图像到LiDAR配准",
+      "url": "https://arxiv.org/abs/2609.22716",
+      "doi": "",
+      "arxiv_id": "2609.22716",
+      "authors": [
+        "Zijun Li",
+        "Xiaotian Sun",
+        "Xuelun Shen",
+        "Yao Dai",
+        "Sheng Ao",
+        "Yangyang Shi",
+        "Jakob Engel",
+        "Zhipeng Cai",
+        "Cheng Wang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-19T03:04:51+00:00",
+      "score": 62,
+      "reason": "该文提出零样本图像-LiDAR配准基础模型，属于多源数据融合与跨模态空间对齐方向，与地理空间智能中的多模态数据融合有方法层面的关联，但与城市更新、时空数据挖掘的直接联系较弱。",
+      "tags": [
+        "多源数据融合",
+        "跨模态配准",
+        "零样本泛化",
+        "基础模型",
+        "点云"
+      ],
+      "abstract": "Image-to-LiDAR registration estimates the camera pose of an image with respect to a LiDAR point cloud. It has diverse applications in autonomous driving, robot navigation etc. However, state-of-the-art (SOTA) methods still 1) mostly assume same-frame inputs, struggling with the image and point cloud from distant frames; 2) rely on domain-specific training, failing to generalize to unseen scenarios. We propose ZIL, the first foundation model for zero-shot non-synchronized image-to-LiDAR registration. ZIL encodes the input image and point cloud with the Vision and Point Transformers. In addition to regressing the relative pose, ZIL also learns to predict 3D coordinates, which substantially improves the pose accuracy without additional annotations. Interestingly, naive mix-data training cannot enable zero-shot generalization, which requires normalization on both camera intrinsics and the LiDAR vertical-axis origin. Trained on 7 public datasets with 1.4M LiDAR frames, ZIL consistently and significantly outperforms previous SOTA with a single model across 5 in-domain and zero-shot benchmarks, reducing the translation and rotation errors by up to 87% and 76% (shown in Fig. 1). Code and models are available at https://github.com/ZijunLi7/ZIL.",
+      "summary_zh": "图像到LiDAR配准旨在估计图像相对于LiDAR点云的相机位姿，在自动驾驶、机器人导航等领域有广泛应用。然而现有最先进方法仍存在两点不足：一是大多假设图像与点云来自同一帧，难以处理远距离帧的输入；二是依赖特定领域训练，无法泛化到未见场景。本文提出ZIL，首个用于零样本非同步图像到LiDAR配准的基础模型。ZIL使用视觉Transformer和点云Transformer分别编码输入图像与点云。除回归相对位姿外，ZIL还学习预测三维坐标，从而在无需额外标注的情况下显著提升位姿精度。有趣的是，简单的混合数据训练无法实现零样本泛化，需要对相机内参和LiDAR垂直轴原点进行归一化。ZIL在7个公开数据集、140万LiDAR帧上训练，以单一模型在5个域内和零样本基准上持续显著超越此前最先进方法，平移和旋转误差最多降低87%和76%。代码与模型已开源。",
+      "insight_zh": "该工作表明跨模态配准的零样本泛化依赖于对相机内参与LiDAR垂直轴原点的归一化处理，这一发现对多源地理空间数据融合中的坐标与传感器参数标准化具有方法启示。"
+    },
+    {
       "key": "arxiv:2609.22497",
       "title": "The Wisdom of Artificial Deliberative Crowds",
       "title_zh": "人工审议式群体的智慧",
@@ -911,59 +973,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失，仅从标题可知该工作提出3D-MoE方法，利用混合专家架构实现3D推理与动作生成，目标是推进空间智能。",
       "insight_zh": "该混合专家架构可能为地理空间智能中的3D场景理解与智能体动作决策提供技术借鉴，但摘要缺失导致无法评估其具体性能与适用场景。"
-    },
-    {
-      "key": "arxiv:2512.18046",
-      "title": "YolovN-CBi: A Lightweight and Efficient Architecture for Real-Time Detection of Small UAVs",
-      "title_zh": "YolovN-CBi：用于小型无人机实时检测的轻量高效架构",
-      "url": "https://arxiv.org/abs/2512.18046",
-      "doi": "",
-      "arxiv_id": "2512.18046",
-      "authors": [
-        "Ami Pandat",
-        "Punna Rajasekhar",
-        "Gopika Vinod",
-        "Rohit Shukla"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 60,
-      "reason": "研究轻量级实时目标检测，与遥感变化检测中的目标识别相关，但未涉及城市更新。",
-      "tags": [
-        "目标检测",
-        "轻量级架构",
-        "小型无人机",
-        "实时检测"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "提出一种轻量级高效架构YolovN-CBi，用于实时检测小型无人机。",
-      "insight_zh": "该架构可应用于遥感图像中的小目标检测，提升城市监测效率。"
-    },
-    {
-      "key": "arxiv:2609.23986",
-      "title": "Jev-Mem: System-One-Controlled Agentic Memory for Efficient AI Agents",
-      "title_zh": "Jev-Mem：面向高效AI智能体的System-One控制型智能体记忆",
-      "url": "https://arxiv.org/abs/2609.23986",
-      "doi": "",
-      "arxiv_id": "2609.23986",
-      "authors": [
-        "Dongming Jiang",
-        "Yi Li",
-        "Bingzhe Li"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-21T01:43:12+00:00",
-      "score": 58,
-      "reason": "该论文提出受System-One/System-Two认知启发的智能体记忆架构，与LLM和多智能体研究方向相关，但未涉及地理空间数据或城市应用。",
-      "tags": [
-        "LLM",
-        "智能体记忆",
-        "多智能体",
-        "系统架构"
-      ],
-      "abstract": "Agentic memory is becoming essential for long-horizon AI agents, yet many existing systems rely on autoregressive LLMs to control how memories are organized, retrieved, and used, placing expensive generation on the critical path of memory operations. We introduce \\textbf{\\method}, a new agentic memory architecture inspired by System-One/System-Two cognition. System One captures fast, lightweight decision-making, whereas System Two performs slower, deliberative reasoning. Jev-Mem brings this division of labor to agentic memory through a dedicated System-One control plane, a structured multi-relational memory plane, and a System-Two reasoning plane. The System-One controller governs memory typing and relational organization during construction, and dynamically performs query routing, retrieval-budget allocation, graph traversal, candidate scoring, and adaptive stopping during retrieval. System Two is invoked only for complex reasoning and answer synthesis. This design improves both memory effectiveness and system efficiency: on LoCoMo Jev-Mem achieves an overall LLM-as-a-Judge score of 0.777, an 11.0\\% relative improvement over the strongest baseline, while reducing memory construction time to 158\\,s, a 6.6$\\times$ speedup over the fastest competing memory system, and lowering average query latency to 0.93\\,s, a 36.7\\% reduction.",
-      "summary_zh": "智能体记忆对长时程AI智能体日益重要，但许多现有系统依赖自回归LLM来控制记忆的组织、检索和使用，将昂贵的生成过程置于记忆操作的关键路径上。作者提出Jev-Mem，一种受System-One/System-Two认知启发的新型智能体记忆架构。System One负责快速轻量决策，System Two负责缓慢审慎推理。Jev-Mem通过专用System-One控制平面、结构化多关系记忆平面和System-Two推理平面实现这种分工。System-One控制器在构建阶段管理记忆类型和关系组织，在检索阶段动态执行查询路由、检索预算分配、图遍历、候选评分和自适应停止。System Two仅在复杂推理和答案合成时调用。该设计同时提升记忆有效性和系统效率：在LoCoMo上Jev-Mem取得0.777的LLM-as-a-Judge总分，相对最强基线提升11.0%，同时将记忆构建时间降至158秒，比最快竞争系统快6.6倍，平均查询延迟降至0.93秒，减少36.7%。",
-      "insight_zh": "该架构通过快慢系统分工优化智能体记忆效率，其结构化多关系记忆平面和图遍历机制可能对地理空间知识组织有启发，但论文未涉及地理空间数据或应用场景。"
     }
   ]
 }

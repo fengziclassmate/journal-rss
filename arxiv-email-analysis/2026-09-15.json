@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 932,
+    "analyzed": 942,
     "high": 8,
-    "medium": 46,
+    "medium": 47,
     "low": 62,
-    "below_threshold": 816
+    "below_threshold": 825
   },
   "papers": [
     {
@@ -448,6 +448,40 @@
       ],
       "summary_zh": "罗伯特·史密森1970年的大地艺术作品《螺旋形防波堤》位于犹他州大盐湖北臂，在湖泊严重萎缩期间交替淹没和出露。本文分析了1984至2025年间每年和每个日历月共1,744个共配准的Landsat 4-9和Sentinel-2影像切片。一个14特征复杂度签名结合了香农熵、多尺度排列熵、分形维数、空隙度、灰度共生纹理、强度统计以及ImageNet预训练ResNet50特征。这些测量与来自NASA GISTEMP、USGS NWIS、Open-Meteo和全球碳预算的42年月度气候与水文面板数据进行比较。Bootstrap分析表明，香农熵是弱代理，不支持早期小样本关于与全球温度正相关的说法。相比之下，粗尺度排列熵和平均强度强烈追踪湖泊高程，Spearman相关系数为0.85至0.88，95%置信区间排除零。ResNet50嵌入的第三主成分在无监督下作为AI气候轴出现，与累积CO2相关0.86，与湖泊高程相关-0.83。图像复杂度领先湖面阶段约三年，滞后+3时Pearson r=0.58，95%置信区间为0.40至0.73。STL分解揭示非单调趋势，从1984年到2015年上升，此后随着湖泊接近历史最低水位而急剧下降。控制月份和传感器的偏相关确认了对季节和传感器效应的稳健性。这些结果将艺术作为温度计的隐喻细化为艺术作为水文状态领先指标的解释。数据集、特征管道和分析代码已发布。",
       "insight_zh": "该研究展示了如何利用多源遥感时间序列和图像复杂度特征监测水文变化，并发现图像复杂度可能领先湖泊水位约三年；这一思路可启发城市更新中利用遥感纹理与复杂度指标监测地表变化，但其对象为单一湖泊与艺术作品，未涉及城市区域。"
+    },
+    {
+      "key": "arxiv:2609.14570",
+      "title": "Disentangling Topology and Diversity in Multi-Agent LLMs for Multilingual Low-Resource Emotion Detection",
+      "title_zh": "解耦多智能体LLM中的拓扑与多样性：面向多语言低资源情感检测",
+      "url": "https://arxiv.org/abs/2609.14570",
+      "arxiv_id": "2609.14570",
+      "authors": [
+        "Ulugbek Shernazarov",
+        "Charitha Ruwansiri Weerakon Basnayake",
+        "Abdelkhaleq El Jarjini",
+        "Noel Crespi",
+        "Praboda Rajapaksha"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "EMNLP",
+        "2026.",
+        "Code:",
+        "https://github.com/eracoding/topologyxdiversity"
+      ],
+      "published": "2026-09-13T14:58:26+00:00",
+      "score": 78,
+      "reason": "该文系统解耦多智能体LLM系统中的推理拓扑与智能体多样性来源，与研究者关注的LLM和多智能体方向高度契合。虽应用场景为多语言低资源情感检测而非地理空间任务，但其关于拓扑与专业化如何影响性能的结论对构建地理空间智能体系统具有方法论参考价值。",
+      "tags": [
+        "多智能体LLM",
+        "推理拓扑",
+        "智能体多样性",
+        "低资源情感检测",
+        "多语言"
+      ],
+      "summary_zh": "多智能体LLM系统组合多次推理调用，但先前工作常将调用如何连接与如何多样化混为一谈。本文独立研究这两个因素：推理拓扑与智能体间多样性来源。在一个受控的2×3矩阵中，将并行聚合与顺序精炼同随机采样、角色提示和学习型QLoRA专业化进行交叉组合，在每个骨干模型内固定三次调用预算和输出协议。使用Qwen2.5-14B-Instruct和Llama-3.1-8B-Instruct，在九种语言的多语言低资源情感检测上评估全部六种配置。并行学习型专业化在Qwen上最强，达52.83 Macro-F1，在Llama上达52.94。在Qwen上它还超过同骨干的零样本、少样本、CoT和七次调用自一致性基线。偏好拓扑取决于多样性来源：顺序精炼有助于随机和提示设置，而学习型宽度优势从Qwen上的2.83分缩小到Llama上的0.17。深度分析表明较晚的学习型专家可能覆盖早期正确预测，尽管总体效应依赖骨干。总体而言，智能体如何被差异化比拓扑产生更大的性能变化，二者应与专业化联合评估。",
+      "insight_zh": "该文的核心启示——智能体差异化方式比拓扑结构对性能影响更大——可指导地理空间多智能体系统的设计，例如在城市更新分析中，为不同智能体分配角色（数据检索、空间推理、验证）可能比调整调用顺序更关键；但该结论基于情感检测任务，向地理空间任务的迁移需谨慎。"
     },
     {
       "key": "arxiv:2608.06406",
@@ -6200,6 +6234,46 @@
       "insight_zh": "该工作表明模块化适配器与动态路由可在不牺牲任务性能的前提下实现定向安全纠错，其路由与专家激活机制或可启发多智能体协作中的动态角色分配设计，但论文未涉及地理空间场景。"
     },
     {
+      "key": "arxiv:2609.13969",
+      "title": "Zero-Shot Cross-Material Ptychographic Phase Reconstruction Using Deep Learning",
+      "title_zh": "基于深度学习的零样本跨材料叠层相位重建",
+      "url": "https://arxiv.org/abs/2609.13969",
+      "arxiv_id": "2609.13969",
+      "authors": [
+        "Wen-Chun Lin",
+        "Yu-Chee Tseng",
+        "Jen-Jee Chen",
+        "Nan-You Chen"
+      ],
+      "categories": [
+        "cs.CV",
+        "collaborative",
+        "work",
+        "that",
+        "had",
+        "been",
+        "submitted",
+        "for",
+        "publication",
+        "prior",
+        "to",
+        "this",
+        "preprint"
+      ],
+      "published": "2026-09-12T14:36:06+00:00",
+      "score": 30,
+      "reason": "该文提出零样本跨材料的叠层相位重建深度学习方法，属于计算成像与材料表征领域。其局部到全局的学习框架和跨域迁移思路对遥感变化检测中的跨域泛化有一定启发，但与GIS核心研究方向关联有限。",
+      "tags": [
+        "叠层相位重建",
+        "零样本跨材料迁移",
+        "深度学习",
+        "4D-STEM",
+        "逆问题"
+      ],
+      "summary_zh": "叠层相位重建通常被表述为迭代逆问题，需要反复更新物体和探针，对大规模4D-STEM数据造成巨大计算成本。本文提出一种直接式局部到全局学习框架，在推理时无需迭代精炼即可从衍射测量重建全场相位图。所提网络使用正弦-余弦表示从单个衍射图预测局部包裹相位块，并利用标定扫描位置和高斯加权拼接将预测组装为全场重建。为评估训练域之外的泛化能力，模型在一种材料上训练并直接应用于另一种材料，进行零样本设置且不进行目标域微调。在AuPd和MoS2上的实验表明双向跨材料迁移一致，所提方法在评估的基于学习方法中取得最佳全场MSE、PSNR和MS-SSIM。与迭代ePIE方法相比，所提直接式局部到全局流程将端到端重建时间减少约10倍，展示了高效且可迁移的叠层重建潜力。",
+      "insight_zh": "该文的零样本跨材料迁移与局部到全局重建策略，在方法论上与遥感跨域变化检测（如跨传感器、跨区域迁移）有相似之处，可作为跨域泛化思路的参考；但摘要未涉及地理空间数据，直接相关性有限。"
+    },
+    {
       "key": "arxiv:2606.12852",
       "title": "WISE: A Long-Horizon Agent in Minecraft with Why-Which Reasoning",
       "title_zh": "WISE：Minecraft中具备“为何-哪个”推理的长时程智能体",
@@ -11898,6 +11972,34 @@
       "insight_zh": "该研究提示，通过后向SDE构造终端条件反演可在推理结束时保证物理可行性，并支持不确定性采样；其方法或可启发遥感逆问题中的物理约束生成，但论文未涉及地理空间数据。"
     },
     {
+      "key": "arxiv:2609.13548",
+      "title": "AutoTailor: Automatic, User-Aligned Capability Selection and Adaptation for Web Agents",
+      "title_zh": "AutoTailor：面向Web智能体的自动、用户对齐能力选择与适配",
+      "url": "https://arxiv.org/abs/2609.13548",
+      "arxiv_id": "2609.13548",
+      "authors": [
+        "Xinyun Cao",
+        "Adriana Szekeres",
+        "Fazle Elahi Faisal"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "published": "2026-09-11T21:24:40+00:00",
+      "score": 20,
+      "reason": "该论文提出面向Web智能体的自动能力选择与适配框架，涉及多智能体与工具管理，与LLM和多智能体研究方向有较强关联，但应用场景为Web自动化，与地理空间智能无直接关系。",
+      "tags": [
+        "Web智能体",
+        "MCP API",
+        "工具选择",
+        "动态重选",
+        "用户对齐"
+      ],
+      "summary_zh": "Web智能体可以利用可复用工具来降低低级浏览器交互的成本和延迟，但自动发现的工具集合可能庞大、冗余且与用户需求对齐不佳。我们提出AutoTailor，一个元智能体框架，用于构建和维护一组紧凑的、从轨迹衍生的模型上下文协议（MCP）API。离线时，AutoTailor将Web轨迹转换为参数化浏览器自动化程序，应用质量过滤器移除粒度不当和功能冗余的API，并应用使用可能性过滤器优先考虑广泛有用的能力，同时保持语义覆盖。在线时，动态重选监控任务结果和API使用，识别反复出现的覆盖缺口，添加相关候选，并修剪持续未使用的能力。我们在106个WebArena Postmill任务上评估AutoTailor。离线过滤将初始1,283个未精炼API减少到87个，动态重选产生33个API的集合。在推理与行动（ReAct）回退下，该集合达到90.6%正确率，而单独ReAct为87.5%，同时将平均总请求token成本降低57.8%，延迟降低29.4%。无ReAct时，它达到60.1%正确率，略匹配未精炼集合的性能，同时将请求token使用降低94.9%。总之，这些结果表明静态过滤产生一个紧凑的API清单，预期支持核心、高可能性任务，而动态重选进一步根据观察到的用户需求定制该清单。这种组合提高了准确率和延迟，同时大幅降低token使用和端到端成本，展示了用户对齐能力管理对高效Web智能体的价值。",
+      "insight_zh": "该工作表明，离线质量与使用可能性过滤结合在线动态重选，可在保持任务正确率的同时大幅压缩工具集与token成本；这一用户对齐的能力管理思路可能对多智能体系统中的工具选择与维护有借鉴意义。"
+    },
+    {
       "key": "arxiv:2609.15277",
       "title": "Artificial entrepreneurial cognition: Locating and causally steering an opportunity recognition dial inside large language models (LLMs)",
       "title_zh": "人工创业认知：定位并因果操控大语言模型（LLM）内部的机会识别旋钮",
@@ -12325,6 +12427,31 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作提出模糊谱区域分解方法，结合自适应谱学习架构构建多算子Koopman表示。",
       "insight_zh": "摘要缺失，无法判断其方法细节。Koopman算子在时空动态系统建模中具有理论潜力，但该工作聚焦一般动力系统，与地理空间智能的关联需进一步探索。"
+    },
+    {
+      "key": "arxiv:2609.13824",
+      "title": "When Consistency Does Not Mean Reliability: Evaluating Local LLM Judges Against Human Ratings",
+      "title_zh": "当一致性并不意味着可靠性：评估本地LLM评判者与人类评分",
+      "url": "https://arxiv.org/abs/2609.13824",
+      "arxiv_id": "2609.13824",
+      "authors": [
+        "Aakash Kumar Tiwari"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-12T09:15:59+00:00",
+      "score": 18,
+      "reason": "该论文评估本地LLM作为评判者与人类评分的一致性，涉及LLM评估方法，与LLM和多智能体研究方向有方法关联，但未涉及地理空间应用。",
+      "tags": [
+        "LLM-as-a-Judge",
+        "人类评估",
+        "自一致性",
+        "可靠性",
+        "对齐"
+      ],
+      "summary_zh": "大语言模型（LLM）越来越多地用于评估其他语言模型的回答。这种方法被称为LLM-as-a-Judge，比人类评估更快、更便宜。然而，评判者可能产生一致的分数，却不一定与人类评估者一致。在本工作中，我们使用两个本地开源权重LLM评判者LLaMA-3-8B和Qwen2.5-7B研究这一问题。我们评估了指令微调GPT-2（124M）模型针对100个问题生成的300个回答，涵盖五个类别：事实知识、指令遵循、数学、推理和写作。每个回答由九名人类标注者评分，并由每个LLM评判者使用相同评分标准评估三次。我们使用Pearson相关、Spearman相关、平均绝对误差（MAE）、符号偏差和自一致性将评判者分数与平均人类分数比较。LLaMA-3-8B与人类分数的Pearson相关为0.275，而Qwen2.5-7B达到0.340。它们的MAE分别为27.71和18.64。尽管一致性有限，两个评判者都表现出高自一致性，LLaMA-3-8B的完全一致率为97.3%，Qwen2.5-7B为92.3%。这些结果表明，高自一致性不一定意味着与人类判断的高一致性。我们的发现强调，在使用本地LLM作为自动评判者时，需要同时评估一致性和人类对齐。",
+      "insight_zh": "该研究揭示LLM评判者的高自一致性可能掩盖其与人类判断的低对齐，提示在将LLM用于自动评估时，仅报告一致性不足以保证可靠性，需同时测量与人类评分的对齐程度。"
     },
     {
       "key": "arxiv:2609.15579",
@@ -13572,42 +13699,6 @@
       "insight_zh": "该工作展示了时空缓存与稀疏图计算协同设计在超低延迟场景的潜力，其“时空局部性感知”的存储层次思想对处理大规模时空事件数据有启发，但论文面向视觉传感硬件，未涉及地理空间分析。"
     },
     {
-      "key": "arxiv:2609.13969",
-      "title": "Zero-Shot Cross-Material Ptychographic Phase Reconstruction Using Deep Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13969",
-      "arxiv_id": "2609.13969",
-      "authors": [
-        "Wen-Chun Lin",
-        "Yu-Chee Tseng",
-        "Jen-Jee Chen",
-        "Nan-You Chen"
-      ],
-      "categories": [
-        "cs.CV",
-        "collaborative",
-        "work",
-        "that",
-        "had",
-        "been",
-        "submitted",
-        "for",
-        "publication",
-        "prior",
-        "to",
-        "this",
-        "preprint"
-      ],
-      "published": "2026-09-12T14:36:06+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14247",
       "title": "What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements",
       "title_zh": "",
@@ -14640,36 +14731,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.14570",
-      "title": "Disentangling Topology and Diversity in Multi-Agent LLMs for Multilingual Low-Resource Emotion Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14570",
-      "arxiv_id": "2609.14570",
-      "authors": [
-        "Ulugbek Shernazarov",
-        "Charitha Ruwansiri Weerakon Basnayake",
-        "Abdelkhaleq El Jarjini",
-        "Noel Crespi",
-        "Praboda Rajapaksha"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "EMNLP",
-        "2026.",
-        "Code:",
-        "https://github.com/eracoding/topologyxdiversity"
-      ],
-      "published": "2026-09-13T14:58:26+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -16825,6 +16886,36 @@
       "insight_zh": "由于摘要缺失，无法判断其方法细节与实验结论。从标题推断，该工作可能对高维数据降维与可视化有参考价值，或可应用于地理空间数据的可视化分析，但与城市更新等主题关联有限。"
     },
     {
+      "key": "arxiv:2609.13918",
+      "title": "LoRA Fine-Tuned Models for Control Systems Course Q\\&A: A Multidimensional Evaluation of Model Scale and Rank Effects",
+      "title_zh": "面向控制系统课程问答的LoRA微调模型：模型规模与秩效应的多维评估",
+      "url": "https://arxiv.org/abs/2609.13918",
+      "arxiv_id": "2609.13918",
+      "authors": [
+        "Shaowen Lu",
+        "Chengxu Liu",
+        "Ping Zhou",
+        "Tao Yang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.SY",
+        "eess.SY"
+      ],
+      "published": "2026-09-12T13:04:04+00:00",
+      "score": 15,
+      "reason": "该论文研究LoRA微调在控制系统课程问答中的效果，涉及LLM微调与评估，与LLM和多智能体研究方向有技术关联，但应用场景为课程问答，与城市更新或地理空间智能无直接关系。",
+      "tags": [
+        "大语言模型",
+        "LoRA微调",
+        "课程问答",
+        "模型规模",
+        "秩效应"
+      ],
+      "summary_zh": "大语言模型（LLM）越来越多地用于专业大学课程，但控制系统问题需要协调的术语、符号、推导和逐步解释。通用直接回答可能结构不一致且难以验证。我们使用线性控制系统课程的习题和参考答案，构建了包含360个系统-用户-助手对话的监督微调数据集。我们将LoRA应用于Qwen2.5-3B-Instruct和Qwen2.5-7B-Instruct。在相同数据划分、推理设置和评估协议下，我们比较了基础模型和微调模型，并测试了LoRA秩r=4、8和16。评估使用ROUGE、BERTScore和结构化输出特征，以衡量参考答案相似度和Solution-Method-Teaching Points格式的稳定性。LoRA在两种规模下均改善了相似度和结构化输出稳定性。在当前测试集上，7B-r16取得了最高的ROUGE-L（0.4093）和BERTScore-F1（0.8643），而r=8在性能和参数效率之间提供了更好的平衡。Bootstrap重采样显示，3B-r16的ROUGE-L增益为0.0764 [0.0613, 0.0915]，7B-r16为0.0874 [0.0687, 0.1042]；两个区间均超过零，表明在当前测试集上文本相似度改进稳定。这些结果表明，LoRA可以使开源指令微调模型更贴近课程参考答案的语言和教学组织。然而，这些指标主要捕捉文本相似度和格式一致性，而非领域特定推理或数学正确性，后者需要专家评估和任务特定评分标准。",
+      "insight_zh": "该研究表明LoRA微调能提升开源LLM在专业课程问答中的文本相似度与格式稳定性，但现有指标无法衡量领域推理与数学正确性；这一局限提示在将LLM用于专业领域评估时需引入专家评分或任务特定标准。"
+    },
+    {
       "key": "arxiv:2609.10490",
       "title": "Learning with Covariance Matrices: Principal Component Analysis Meets Learning with Graphs",
       "title_zh": "基于协方差矩阵的学习：主成分分析遇上图学习",
@@ -18715,6 +18806,63 @@
       ],
       "summary_zh": "自动语音识别（ASR）系统通过配对语音-文本数据训练，并借助纯文本数据训练的语言模型（LM）得到改进。浅融合和密度比等LM融合方法是在ASR解码过程中引入外部LM的成熟方法，但由于LM推理会带来额外计算成本，对近期更大的LM尤为不利。本研究提出通过模型合并引入外部LM，将LM直接整合到基于LLM的ASR模型参数中，推理时无需额外计算成本。作者将领域扩展和迁移表述为LoRA参数上的算术运算。实验针对在CSJ和LibriSpeech上训练的基于LLM的ASR进行领域自适应评估，结果表明LM合并在目标领域持续提升ASR性能，且不降低推理速度或内存占用。",
       "insight_zh": "该研究提示，模型合并可作为在推理阶段无额外开销地注入外部知识的一种途径；但其验证局限于语音识别领域自适应，未涉及地理空间或城市分析任务。"
+    },
+    {
+      "key": "arxiv:2609.13919",
+      "title": "Machine Learning in Fish Farming",
+      "title_zh": "水产养殖中的机器学习",
+      "url": "https://arxiv.org/abs/2609.13919",
+      "arxiv_id": "2609.13919",
+      "authors": [
+        "Fearghal O'Donncha",
+        "Nikos Papandroulakis",
+        "Jennie Korus",
+        "Abigail Langbridge",
+        "Alexander Timms",
+        "Konstantinos Topouzelis",
+        "Abdul Baseer Khan",
+        "Shree Rama Kamal Kumar Vegu",
+        "Mahtab Sarvmaili",
+        "Ryan Mowat",
+        "Rhanna Turberville",
+        "Tyler Sclodnick",
+        "Christopher Whidden"
+      ],
+      "categories": [
+        "cs.LG",
+        "O'Donncha,",
+        "F.,",
+        "Fore,",
+        "M.,",
+        "Grant,",
+        "J.",
+        "(eds)",
+        "Digital",
+        "Twin",
+        "for",
+        "Marine",
+        "Fish",
+        "Farming.",
+        "Aquatic",
+        "Production",
+        "Systems.",
+        "Springer,",
+        "Cham"
+      ],
+      "published": "2026-09-12T13:05:16+00:00",
+      "score": 12,
+      "reason": "该论文综述机器学习在水产养殖中的应用，涉及CNN、RNN、GNN和LLM等技术，与遥感变化检测、多源数据融合有间接技术关联，但应用领域为渔业，与城市更新和地理空间智能无直接关系。",
+      "tags": [
+        "水产养殖",
+        "机器学习",
+        "物联网",
+        "CNN",
+        "RNN",
+        "GNN",
+        "LLM"
+      ],
+      "summary_zh": "本章探讨机器学习（ML）如何变革水产养殖，特别关注增强决策过程和提高运营效率。章节结构首先介绍水产养殖中的挑战及人工智能的作用，然后概述水产养殖背景下的ML技术，随后是应用、新兴趋势、未来方向和案例研究。重点在于ML技术的实际应用，包括随机森林、卷积神经网络（CNN）和循环神经网络（RNN），以及图神经网络（GNN）和大语言模型（LLM）等新兴技术。关键应用包括生物量估计、物种识别、行为分析和环境预测。本章还强调了ML与物联网（IoT）在实时监测和决策支持方面的协同作用。最终，ML驱动的创新有潜力彻底改变鱼类养殖，推动水产养殖业实现更高效、可持续和高产的做法。",
+      "insight_zh": "该综述显示，CNN、RNN、GNN和LLM等技术已在水产养殖的监测、识别与预测中形成应用谱系，其中ML与IoT结合的实时决策支持模式可能对多源数据融合与地理空间智能中的类似场景有借鉴意义。"
     },
     {
       "key": "arxiv:2603.22179",
@@ -22563,6 +22711,32 @@
       "insight_zh": "该研究强调在标注极少的冷启动场景中，先利用冻结自监督嵌入的几何结构再蒸馏分类器，可能比依赖模型自身置信度更稳健；这一思路对遥感小样本地物分类有潜在借鉴意义，但文中未涉及遥感数据。"
     },
     {
+      "key": "arxiv:2609.13920",
+      "title": "Finite-Time Node Separation in Recurrent Graph Neural Networks with Persistent Gaussian Perturbations",
+      "title_zh": "持续高斯扰动下循环图神经网络的有限时间节点分离",
+      "url": "https://arxiv.org/abs/2609.13920",
+      "arxiv_id": "2609.13920",
+      "authors": [
+        "Mostafa Haghir Chehreghani"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-12T13:06:41+00:00",
+      "score": 10,
+      "reason": "该论文分析循环图神经网络在持续高斯扰动下的有限时间节点分离，属于图神经网络理论与表示学习，与时空数据挖掘、多智能体或地理空间智能中的图结构建模有潜在方法关联，但未涉及地理应用。",
+      "tags": [
+        "图神经网络",
+        "过平滑",
+        "随机扰动",
+        "有限时间分析",
+        "节点表示分离"
+      ],
+      "summary_zh": "已有研究表明，持续高斯扰动通过确保正稳态狄利克雷能量，可防止循环图神经网络（GNN）中的渐近过平滑。然而，这一全局能量界并不保证单个节点表示在有限深度下保持可区分。本文对同一持续噪声架构提供互补的有限时间分析。设\\(d\\)为表示维度，\\(\\sigma\\)为噪声标准差。我们首先证明任意两个节点表示之间期望平方距离的精确二阶矩分解，在每一正时间步给出通用下界\\(2\\sigma^2 d\\)，无需收缩或平稳性假设。更精确地，条件成对距离具有非中心卡方特征：非中心参数为确定性消息传递分离度除以\\(2\\sigma^2\\)。这产生了具有动态感知的固定时间和有限时域近碰撞界，保留了中心最坏情况分析所丢弃的信息。先前的中心高斯界作为最坏零分离情形被恢复。我们还证明了几乎必然的成对非碰撞，推导了一致有限时域保证，并建立了随机动力学的分布置换等变性及置换不变的图输出。我们的结果补充了先前工作的渐近能量分析，并为节点级表示分离提供了严格的有限时间保证。",
+      "insight_zh": "该工作表明，持续噪声不仅从全局能量角度防止过平滑，还能在有限深度下为节点表示分离提供可证明的下界；这一有限时间视角可能对需要保持节点可区分性的图表示学习任务有方法启示。"
+    },
+    {
       "key": "arxiv:2509.11252",
       "title": "Exploring the Potential of Diffusion Large Language Models in Code Generation",
       "title_zh": "探索扩散大语言模型在代码生成中的潜力",
@@ -25397,6 +25571,43 @@
       "insight_zh": "该研究揭示了连续与离散流匹配之间的理论联系，对生成模型设计有理论意义，但与地理空间数据挖掘或城市分析的应用场景相距较远。"
     },
     {
+      "key": "arxiv:2609.13927",
+      "title": "Exploring napping paradigm for Recurrent Spiking Neural Networks",
+      "title_zh": "探索循环脉冲神经网络的微睡眠范式",
+      "url": "https://arxiv.org/abs/2609.13927",
+      "arxiv_id": "2609.13927",
+      "authors": [
+        "Andreas Massey",
+        "Stefano Nichele",
+        "Aliaksandr Hubin"
+      ],
+      "categories": [
+        "cs.LG",
+        "2026).",
+        "To",
+        "appear",
+        "in",
+        "Springer",
+        "Communications",
+        "Computer",
+        "and",
+        "Information",
+        "Science"
+      ],
+      "published": "2026-09-12T13:18:57+00:00",
+      "score": 8,
+      "reason": "该论文研究脉冲神经网络的微睡眠范式与权重归一化，属于神经形态计算与机器学习理论，与城市更新、时空数据挖掘、遥感变化检测、多智能体或地理空间智能无直接关联。",
+      "tags": [
+        "脉冲神经网络",
+        "无监督学习",
+        "STDP",
+        "正则化",
+        "神经形态计算"
+      ],
+      "summary_zh": "生物体通过平衡内部世界模型的两个竞争需求来最小化自由能：模型需足够准确以预测感觉输入，又需足够简单以泛化。两种离线机制调节这一平衡：睡眠通过渐进式突触下调降低复杂度，而随机噪声削弱精度，放松感觉输入对突触重组的约束。工程脉冲神经网络（SNN）未处理这一平衡，倾向于瞬时、无噪声的权重归一化。本文研究一种受生物启发的微睡眠范式——微睡眠（napping）——结合比例权重缩放与连续随机膜活动，能否在降低模型复杂度的同时复现归一化的稳定性。我们在基于迹的脉冲时序依赖可塑性（STDP）训练的无监督循环SNN上评估，使用Gabor预处理的MNIST。我们通过扫描微睡眠时长和膜噪声水平，在三种正则化机制下调整微睡眠，然后将最佳配置与权重归一化比较。在所有三种机制中，调优良好的微睡眠在准确率上与归一化相当：准确率在短时长和低噪声时达到峰值，随后随二者增长单调下降。聚类结果出现分化，最强的几何分离出现在较长时长和较高噪声下——自由能的两项相互拉扯，准确率奖励数据拟合，结构奖励渐进、带噪下调所诱导的更简单表示。这一收益伴随归一化所避免的模拟成本，因此微睡眠在表示结构而非原始分类效率优先时最具吸引力。",
+      "insight_zh": "该研究提示，在无监督脉冲神经网络中引入带噪声的渐进权重缩放可在保持分类准确率的同时改变表示结构，但其代价是额外的模拟成本；这一权衡可能对以表示质量为目标而非分类效率的任务有参考价值。"
+    },
+    {
       "key": "arxiv:2609.15077",
       "title": "Ensemble-Conditioned Molecular Design",
       "title_zh": "集合条件化分子设计",
@@ -26429,25 +26640,6 @@
       "insight_zh": "该研究区分相对偏差放大与绝对梯度误差，提示在利用人类反馈或选择性数据训练地理空间模型时需注意定位机制可能引入的相对偏差，需结合绝对误差综合评估。"
     },
     {
-      "key": "arxiv:2609.13824",
-      "title": "When Consistency Does Not Mean Reliability: Evaluating Local LLM Judges Against Human Ratings",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13824",
-      "arxiv_id": "2609.13824",
-      "authors": [
-        "Aakash Kumar Tiwari"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-12T09:15:59+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2601.08696",
       "title": "What resources are needed for optimal learning of bosonic Gaussian states?",
       "title_zh": "最优学习玻色高斯态需要哪些资源？",
@@ -26573,7 +26765,7 @@
     {
       "key": "arxiv:2609.13825",
       "title": "ViperQ: Order Flow Pattern Recognition via Auction Market Theory for Reinforcement Learning Trading",
-      "title_zh": "",
+      "title_zh": "ViperQ：基于拍卖市场理论的订单流模式识别用于强化学习交易",
       "url": "https://arxiv.org/abs/2609.13825",
       "arxiv_id": "2609.13825",
       "authors": [
@@ -26587,10 +26779,16 @@
       ],
       "published": "2026-09-12T09:18:39+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文将强化学习与拍卖市场理论用于金融交易，属于金融时间序列与强化学习交叉领域，与时空数据挖掘或地理空间智能无直接关联。",
+      "tags": [
+        "强化学习",
+        "拍卖市场理论",
+        "订单流",
+        "交易",
+        "PPO"
+      ],
+      "summary_zh": "学术文献中发表的强化学习交易系统绝大多数依赖价格聚合状态表示（OHLCV柱）或限价订单簿深度特征，使从业者文献中的微观结构模式理论——即拍卖市场理论和市场轮廓——缺乏同行评审的计算实例。我们提出ViperQ，一个强化学习系统，其状态表示明确由拍卖市场理论原语构建：成交量控制点、价值区域位置、低成交量节点标志、累积成交量差分歧和磁带速度特征，组装成20维Z归一化向量。两个近端策略优化智能体使用基于前景理论的不对称奖励函数训练，该函数对亏损持有的惩罚幅度与Kahneman和Tversky的损失厌恶系数一致。在智能体从未见过的机构逐笔数据留出十二个月分区上评估，ViperQ在TSLA上实现+163.6% ROI（-27.5%最大回撤，27,019笔交易），在NVDA上实现+116.5% ROI（-47.8%最大回撤，12,892笔交易），零杠杆。这些结果确立了拍卖市场理论特征作为金融时间序列序贯决策的可处理结构化输入模态，并推动微观结构感知策略学习的进一步研究。",
+      "insight_zh": "该工作将拍卖市场理论原语编码为强化学习状态表示，在金融逐笔数据上取得正收益，提示领域理论驱动的结构化状态表示可能对序贯决策任务有增益，但其应用场景与地理空间智能相距较远。"
     },
     {
       "key": "arxiv:2609.15964",
@@ -26759,26 +26957,6 @@
       ],
       "summary_zh": "增加答案选项可能降低多选题得分而不提高评估有效性。土耳其MMLU Pro使用来自58个部分的12000个土耳其语源问题检验这一区别。每个问题保留题干、五个原始选项和源答案，并获得从同一部分其他问题复制的五个选项。句子嵌入检索提出候选；语言模型选择现有标识符。确定性验证重建所有60000个添加项。25个模型的校准暴露了评分和生成预算效应。五次评估产生34.8%-81.4%的源答案准确率。在981个共享问题上，一个API服务模型从五选一的93.7%降至十选一的83.1%；115个丢失的正确回答中有102个选择了借用选项。在启发式标记的否定题干上下降24.4个百分点，其他为5.9个百分点。对200个抽样问题的已完成人工检查审计（评审工具使用未记录）在两组记录中分别产生47和31个多答案判断，后者有25个未解决。这些记录支持对歧义的担忧，但其依赖性和不完整的评审方法文档限制了验证。由于顺序和标签也改变，配对比较衡量的是实际实施的增强。贡献是可追溯的构建及其有效性局限分析，而非证明十选一低分更好地衡量知识。",
       "insight_zh": "该研究提醒在构建领域特定评估基准（如地理空间知识评测）时，选项增强可能引入歧义而非提升评估效度。"
-    },
-    {
-      "key": "arxiv:2609.13547",
-      "title": "Toward Optimal Switching Regret for Multi-Armed Bandits with Oblivious Adversary",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13547",
-      "arxiv_id": "2609.13547",
-      "authors": [
-        "Mengxiao Zhang"
-      ],
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "published": "2026-09-11T21:23:20+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.13581",
@@ -28508,55 +28686,6 @@
       "insight_zh": "从标题可知其面向意第绪语构建语言模型及评测基准，属于低资源语言NLP工作，但缺少摘要无法判断模型规模、数据来源与评测任务。"
     },
     {
-      "key": "arxiv:2609.13919",
-      "title": "Machine Learning in Fish Farming",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13919",
-      "arxiv_id": "2609.13919",
-      "authors": [
-        "Fearghal O'Donncha",
-        "Nikos Papandroulakis",
-        "Jennie Korus",
-        "Abigail Langbridge",
-        "Alexander Timms",
-        "Konstantinos Topouzelis",
-        "Abdul Baseer Khan",
-        "Shree Rama Kamal Kumar Vegu",
-        "Mahtab Sarvmaili",
-        "Ryan Mowat",
-        "Rhanna Turberville",
-        "Tyler Sclodnick",
-        "Christopher Whidden"
-      ],
-      "categories": [
-        "cs.LG",
-        "O'Donncha,",
-        "F.,",
-        "Fore,",
-        "M.,",
-        "Grant,",
-        "J.",
-        "(eds)",
-        "Digital",
-        "Twin",
-        "for",
-        "Marine",
-        "Fish",
-        "Farming.",
-        "Aquatic",
-        "Production",
-        "Systems.",
-        "Springer,",
-        "Cham"
-      ],
-      "published": "2026-09-12T13:05:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14495",
       "title": "MCIQA-2K: A Multi-Dimensional Dataset and No-Reference Quality Assessment Benchmark for Colorized Images",
       "title_zh": "MCIQA-2K：面向着色图像的多维数据集与无参考质量评估基准",
@@ -28627,30 +28756,6 @@
         "Workshop"
       ],
       "published": "2026-09-14T16:51:35+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13918",
-      "title": "LoRA Fine-Tuned Models for Control Systems Course Q\\&A: A Multidimensional Evaluation of Model Scale and Rank Effects",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13918",
-      "arxiv_id": "2609.13918",
-      "authors": [
-        "Shaowen Lu",
-        "Chengxu Liu",
-        "Ping Zhou",
-        "Tao Yang"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.SY",
-        "eess.SY"
-      ],
-      "published": "2026-09-12T13:04:04+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -29625,26 +29730,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13920",
-      "title": "Finite-Time Node Separation in Recurrent Graph Neural Networks with Persistent Gaussian Perturbations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13920",
-      "arxiv_id": "2609.13920",
-      "authors": [
-        "Mostafa Haghir Chehreghani"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-12T13:06:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2606.01008",
       "title": "FVSpec: Real-World Property-Based Tests as Lean Challenges",
       "title_zh": "FVSpec：将真实世界基于属性的测试作为Lean挑战",
@@ -29715,37 +29800,6 @@
         "https://github.com/ForeverMJ/THEMIS"
       ],
       "published": "2026-09-14T02:01:19+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13927",
-      "title": "Exploring napping paradigm for Recurrent Spiking Neural Networks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13927",
-      "arxiv_id": "2609.13927",
-      "authors": [
-        "Andreas Massey",
-        "Stefano Nichele",
-        "Aliaksandr Hubin"
-      ],
-      "categories": [
-        "cs.LG",
-        "2026).",
-        "To",
-        "appear",
-        "in",
-        "Springer",
-        "Communications",
-        "Computer",
-        "and",
-        "Information",
-        "Science"
-      ],
-      "published": "2026-09-12T13:18:57+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -31445,28 +31499,6 @@
       "insight_zh": "由于摘要缺失，无法进行实质性推断。该信号处理方法与GIS研究方向关联度极低。"
     },
     {
-      "key": "arxiv:2609.13548",
-      "title": "AutoTailor: Automatic, User-Aligned Capability Selection and Adaptation for Web Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13548",
-      "arxiv_id": "2609.13548",
-      "authors": [
-        "Xinyun Cao",
-        "Adriana Szekeres",
-        "Fazle Elahi Faisal"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.SE"
-      ],
-      "published": "2026-09-11T21:24:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2608.27817",
       "title": "Auditing Generative Audio Calls for Known-Task Audio-LLM Evaluatio",
       "title_zh": "审计生成音频调用：用于已知任务音频LLM评估",
@@ -32156,6 +32188,31 @@
       ],
       "summary_zh": "虚拟试穿（VTON）旨在将参考服装穿在人物身上，产生符合人类偏好的视觉合理结果。将这一偏好导向的目标转化为可操作的目标依赖于与人类品味对齐的评分函数。然而，经典保真度指标与人类判断相关性较弱，通用VLM无法提供试穿质量评估所需的判别粒度，后者取决于忠实保持服装和人物细节。这一缺陷在强化微调（RFT）优化中进一步加剧，导致严重的奖励黑客。为此，我们提出TryOnReward，一个为VTON量身定制的细粒度奖励模型。基于视觉语言骨干，它采用中央凹校准目标，将每个质量维度锚定在相关区域以避免全局捷径学习。同时，TryOnReward通过边界感知监督联合优化成对偏好和逐维度质量分数，利用相对和绝对质量信号。为模型训练和评估，我们构建了TryOnReward-100K，一个人工标注的逐维度评分数据集，以及TryOn-Bench和TryOnRewardBench两个覆盖多样真实场景的基准。大量实验证实，TryOnReward在人类偏好对齐方面显著优于通用评判器，当作为RFT奖励函数时，它在多个基线上持续产生人类偏好的试穿结果。",
       "insight_zh": "该研究聚焦于虚拟试穿领域的奖励模型设计，其技术路线与地理空间智能、城市分析或遥感无直接关联，对GIS博士研究参考价值很低。"
+    },
+    {
+      "key": "arxiv:2609.13547",
+      "title": "Toward Optimal Switching Regret for Multi-Armed Bandits with Oblivious Adversary",
+      "title_zh": "面向遗忘性对抗者的多臂老虎机最优切换遗憾",
+      "url": "https://arxiv.org/abs/2609.13547",
+      "arxiv_id": "2609.13547",
+      "authors": [
+        "Mengxiao Zhang"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-09-11T21:23:20+00:00",
+      "score": 3,
+      "reason": "该论文研究对抗性多臂老虎机中的切换遗憾，属于在线学习理论，与城市更新、时空数据挖掘、遥感或地理空间智能无直接关联。",
+      "tags": [
+        "多臂老虎机",
+        "切换遗憾",
+        "对抗性",
+        "在线学习"
+      ],
+      "summary_zh": "我们研究对抗性多臂老虎机中的切换遗憾，学习器与一个最多变化$S$次的臂序列竞争。当$S$已知时，可获得最优期望遗憾$\\widetilde{\\mathcal{O}}(\\sqrt{(S+1)KT})$ [Auer et al., 2002]。然而，当$S$未知时，Marinov和Zimmert [2021]表明在自适应对抗者下这一保证不可能实现。在本文中，我们表明单一算法对遗忘性对抗者在每个$S$上实现$\\widetilde{\\mathcal{O}}(\\sqrt{(S+1)KT})$期望遗憾，解决了Auer et al. [2019b]的开放问题。我们的算法结合了一个以较小学习率初始化的固定份额学习器和若干二元区间子程序，这些子程序使用随机化学习率和隐式探索搜索局部改进。重要的是，非均匀先验偏向跟随主学习器，使维护许多子程序的成本保持较小。当子程序相对于主学习器积累足够改进时，其学习率加倍，从而适应未知的比较器切换次数$S$。",
+      "insight_zh": "该理论结果解决了对抗性多臂老虎机中未知切换次数下的最优切换遗憾开放问题，其结合固定份额学习器与二元区间子程序的自适应机制可能对在线学习理论有贡献，但与地理空间应用无直接关联。"
     },
     {
       "key": "arxiv:2608.25536",

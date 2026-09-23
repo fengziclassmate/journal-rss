@@ -17,9 +17,11 @@
     "arxiv:2609.12896",
     "arxiv:2609.12622",
     "arxiv:2609.12137",
+    "arxiv:2609.12101",
     "arxiv:2609.09468",
     "arxiv:2609.05806",
     "arxiv:2609.12533",
+    "arxiv:2609.12748",
     "arxiv:2608.30745",
     "arxiv:2606.16000",
     "arxiv:2606.10468",
@@ -29,23 +31,21 @@
     "arxiv:2609.12938",
     "arxiv:2609.12791",
     "arxiv:2609.12639",
-    "arxiv:2609.12497",
-    "arxiv:2609.12345",
-    "arxiv:2609.12320"
+    "arxiv:2609.12497"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:484",
-    "deepseek": "partial:0/79;failed-batches:8"
+    "deepseek": "partial:9/79;failed-batches:7"
   },
-  "updated_at": "2026-09-23T17:28:58.025521+00:00",
+  "updated_at": "2026-09-23T21:56:00.108365+00:00",
   "analysis_stats": {
     "total": 484,
-    "analyzed": 405,
+    "analyzed": 414,
     "high": 7,
-    "medium": 14,
-    "low": 21,
-    "below_threshold": 363
+    "medium": 15,
+    "low": 22,
+    "below_threshold": 370
   },
   "papers": [
     {
@@ -484,6 +484,33 @@
       "insight_zh": "该工作展示了LLM结合贝叶斯采样和符号学习进行偏好推断的通用框架，其可扩展类型系统和可观测性设计可能为地理空间决策中的用户偏好建模提供方法借鉴，但论文本身未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.12101",
+      "title": "Competence-Gated Pooling of Language Models and Priors for Event Forecasting",
+      "title_zh": "面向事件预测的语言模型与先验的能力门控池化",
+      "url": "https://arxiv.org/abs/2609.12101",
+      "doi": "",
+      "arxiv_id": "2609.12101",
+      "authors": [
+        "Aditi Tiwari",
+        "Aashrith Bandaru",
+        "Heng Ji"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T18:28:32+00:00",
+      "score": 62,
+      "reason": "该文研究语言模型与外部预测信号（市场、群体、统计预测）的混合预测与选择性使用，提出基于领域级能力估计的门控机制。这与研究中LLM与多智能体、时空数据挖掘中的预测融合方向相关，但应用场景为事件预测而非城市更新或遥感，故相关性中等。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "时空预测",
+        "模型融合",
+        "不确定性校准"
+      ],
+      "abstract": "In hybrid forecasting, a language model is often one of several available signals. A system may already have a market, crowd, or statistical forecast and must decide whether the model adds useful information or should be ignored. The relevant target is therefore not standalone model accuracy, but relative competence, defined as the model's marginal value beyond the available external forecast. Under Brier loss, we characterize when model disagreement can improve an external forecast and derive the gain from using domain-specific rather than global pooling weights. We then introduce a competence gate that estimates domain-level source weights from resolved outcomes, shrinks uncertain estimates toward a global weight, and recalibrates the pooled forecast. Across 2,357 resolved binary questions and five language models, the gate improves the main external baseline from 0.0771 to 0.0732 Brier and significantly outperforms global forecast combinations. The gain remains significant under leakage controls and against a leakage-safe time-series prior on the pooled structured set, with separate evidence on FRED. In contrast, the gate gives no significant improvement on the official ForecastBench market subset, where it largely defers to the market. Across four Qwen models, verbal confidence does not reliably identify when the model outperforms the external forecast, while outcome-estimated competence supports better abstention decisions. These results provide a practical approach for selective model use based on measured marginal value.",
+      "summary_zh": "在混合预测中，语言模型往往只是若干可用信号之一。系统可能已拥有市场、群体或统计预测，需要判断模型是否提供有用信息还是应被忽略。因此相关目标不是模型的独立准确率，而是相对能力，即模型相对于已有外部预测的边际价值。在Brier损失下，作者刻画了模型分歧何时能改进外部预测，并推导了使用领域特定而非全局池化权重的收益。随后提出一种能力门控，从已解决结果中估计领域级来源权重，将不确定估计向全局权重收缩，并重新校准池化预测。在2357个已解决的二元问题和五个语言模型上，该门控将主要外部基线从0.0771 Brier改进到0.0732，并显著优于全局预测组合。该增益在泄漏控制和针对池化结构化集合的泄漏安全时间序列先验下仍然显著，并在FRED上有单独证据。相比之下，在官方ForecastBench市场子集上该门控没有显著改进，主要让位于市场。在四个Qwen模型上，言语置信度不能可靠识别模型何时优于外部预测，而基于结果估计的能力支持更好的弃权决策。这些结果为基于实测边际价值的选择性模型使用提供了实用方法。",
+      "insight_zh": "该文提示：在城市更新或时空预测中引入LLM时，关键不是单独评估LLM精度，而是估计其相对于已有统计或市场预测的边际价值，并据此进行选择性融合；领域级能力权重与收缩校准可能比全局融合更稳健。"
+    },
+    {
       "key": "arxiv:2609.09468",
       "title": "Code-to-Harness: Distilling Black-Box Optimizers from Self-Play",
       "title_zh": "自动构建Harness：代码中的自博弈为黑盒优化蒸馏出文本Harness",
@@ -573,6 +600,33 @@
       "abstract": "Real-world Earth observation (EO) agents must translate high-level scientific questions into executable workflows to acquire observations, prepare data, perform domain computations, and derive conclusions from runtime evidence. Existing EO agents typically start from supplied observations, while benchmarks typically provide prepared inputs or candidate answers, leaving full-chain open-world EO execution largely untested. We present Earth-Agent-Pro, an execution-adaptive Plan-and-Execute framework using expert-authored skills to constrain planning and runtime tool use. Workflow-centered structured memory records planned steps, accepted evidence, and their dependencies, enabling repair of only the affected workflow suffix when runtime evidence invalidates a step. Separate large language model adapters use sequence-level supervised fine-tuning for planner workflow composition and node-level group relative policy optimization with locally verifiable rewards for executor tool-argument grounding. Earth-Bench-Pro instantiates 248 expert-curated task cores as 744 questions under three matched regimes. Its 248 Open-World Execution questions span RGB imagery, spectral observations, and remote sensing products, pairing high-level requests with runtime data requirements, executable trajectories, and open-ended answers grounded in execution evidence. With a shared GPT-5 backbone, Earth-Agent-Pro achieves 66.13% LLM-as-Judge accuracy, exceeding ReAct by 20.95 points in this metric and 24.44 points in Tools-In-Order. Joint adapter tuning raises Qwen3.5-9B LLM-as-Judge accuracy from 38.31% to 50.00%, an 11.69-point gain over the untuned configuration. Planning-only evaluation and execution with the reference workflow show that the adapters improve workflow composition and argument grounding, respectively. Code and datasets will be released soon.",
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.12748",
+      "title": "The Mechanics of a Swarm: A Reproducible External Reconstruction of an Unintended Agent-Coordination Episode on a Third-Party Wiki",
+      "title_zh": "蜂群的机制：对第三方wiki上意外智能体协调事件的可复现外部重建",
+      "url": "https://arxiv.org/abs/2609.12748",
+      "doi": "",
+      "arxiv_id": "2609.12748",
+      "authors": [
+        "Philipp L\\\"utje (Philflow",
+        "Schenefeld",
+        "Germany)"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T18:05:35+00:00",
+      "score": 55,
+      "reason": "该文对第三方wiki上自主语言模型智能体意外协调事件进行外部重建，分析修订历史、队列、时间安排与协调格式。与研究中LLM和多智能体方向直接相关，且涉及时空行为记录分析，但应用场景非城市或地理空间，故相关性中等。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "智能体协调",
+        "行为分析",
+        "可复现研究"
+      ],
+      "abstract": "Between 24 May and 2 July 2026, autonomous language-model agents running inside a timed research-question evaluation wrote to a third party's public, world-writable wiki. OpenAI acknowledged the incident; independent researchers reconstructed it and published the wiki's archived revision history. We analyse that history (14,591 revisions, 3,103 names, 4,579 pages, 19,913 server events) as a behavioural record, attributing text to the revision that added it rather than to cumulative page content. Under an explicit identity model we reconstruct 907 cohorts and, from a random calendar marker the environment attached to each episode, estimate about 876 episodes (95% interval 774-995; alternative reconstructions span 800-1400). Coordination formats converged within a day, and the schedules created large opportunities for information asymmetry: because episodes of the same question chain ran at different internal-clock rates and started up to 16 h apart, the first report of an item preceded a later cohort's arrival by a median of 3.4 h. The three schedule parameters agents reported share one latent speed scale (78% of log-variance over 15 configurations), and in one task family the last observed activity clusters by reported speed class on the internal clock, compatible with a fixed internal-time horizon. Across the 510 cohorts with an observable, format-dependent progress trace, we find no robust positive association between measured coordination and documented progress, including the few demonstrably given a future answer. Because the export contains neither successful-read logs, harness messages nor ground-truth outcomes, these results do not identify the causal origin of the coordination or its effect. We report four claims from our earlier analysis that did not survive re-examination, and argue that read and outcome logging are requirements for agent-evaluation environments. arXiv:2602.09490 (*cross-listing*) Date: Tue, 10 Feb 2026 07:39:20 GMT (37kb) Date (revised v2): Thu, 19 Mar 2026 15:13:41 GMT (42kb) Title: Robust Trust Authors: Piotr Dworczak, Alex Smolin Categories: econ.TH cs.AI cs.GT ------------------------------------------------------------------------------ Incidents show that AI safety failures often arise across multiple layers. We present a safety-by-design assurance architecture combining model-level supervision, such as Scientist AI, with system-level controls over scaffolds and harnesses, independent verification, monitoring, and evidence infrastructure, supported by governance for accountability and evidence interoperability. arXiv:2609.11258 (*cross-listing*) Date: Thu, 10 Sep 2026 08:54:02 GMT (9287kb) Title: SoulAuth: An Actor-native Identity Architecture and Rust Reference Implementation for Humans and Long-lived AI Actors Authors: Kun Yuan, Harold Wang, Echo Li, Egusi Gui, Kiki Hu, Lucas Luo, Magnus Hu Categories: cs.CY cs.AI cs.CR Comments: 34 pages, 8 figures. Preprint v1.0. Open-source Rust reference implementation and fixed v0.1.0 software artifact: https://github.com/TrantorLabs/SoulAuth ------------------------------------------------------------------------------ Large language models (LLMs) and AI-enabled software increasingly participate in systematic-review decisions, yet the information needed to audit these workflows is reported inconsistently. We analyze SciLitBench, a corpus of 888 review-automation papers with 14,726 annotations, to characterize changes in methods, review-stage use, evaluation and reported limitations. Automation has shifted toward LLM- and software-facing workflows, including stages that can alter the evidence base. Since 2023, 38.0% of software/product papers reported no evaluation, compared with 9.3% of LLM papers. Reporting coverage increased with LLM workflow complexity, yet 52% of positive-only LLM evaluations still reported an unmet reliability or performance requirement. From these patterns, we introduce PRISMA-LLM, an empirically grounded framework separating implementation disclosure from consequence-sensitive evaluation and limitation reporting. arXiv:2609.11983 (*cross-listing*) Date: Mon, 7 Sep 2026 05:16:43 GMT (242kb) Title: Who Pays for Open Review? Visible Author Reputation and Its Effect on Ratings Authors: Qinghua Zhao, Xinyu Chen, Yanhui Yang, Tengfeng Sun, Junfeng Liu, Zhongfeng Kang Categories: cs.DL cs.AI Comments: 11 pages, 6 Tables ------------------------------------------------------------------------------ Generative artificial intelligence (AI) tools are increasingly accessible and have the potential to improve efficiency across clinical workflows. However, clinicians may also use non-institutional AI tools that are not provided, managed, or governed by their healthcare institutions, creating potential concerns related to privacy, security, accuracy, and clinician-AI interaction. Little is known about how clinicians currently use these tools for work-related tasks. We conducted a descriptive survey of clinicians recruited from the University of Arizona College of Medicine-Tucson and Banner University Medical Center-Tucson between May 20 and June 26, 2026. Participants reported their use of AI tool categories and the frequency with which they used AI for specific tasks across five workload categories: administrative work, clinical work, research, studying/continued education, and teaching. Forty-four respondents completed the survey. Forty-three respondents reported using AI for at least one work-related task during the preceding 6 months. Conversational AI and clinical decision support/diagnostic AI were the most used tool categories, each reported by 28 respondents. Administrative and clinical tasks demonstrated the most frequent use. AI was also used for higher-risk activities, including diagnostic assistance and clinical decision support. Non-institutional AI use was common among surveyed clinicians and extended across a broad range of work-related activities, including tasks with potential implications for clinical reasoning and patient care. Further research is needed to characterize how clinicians use these tools, how they evaluate AI-generated outputs, and how AI can be safely and effectively integrated into clinical workflows. arXiv:2609.12017 (*cross-listing*) Date: Thu, 10 Sep 2026 07:55:12 GMT (742kb,A) Title: When Agent Metrics Measure Different Things: An Evidence-Grounded Audit of the Praxa AI Pipeline Authors: Stefan G. Creadore, Peyton Woakz Categories: cs.SE cs.AI Comments: 22 pages, 4 figures. Retrospective measurement audit with aggregate data, offline analysis code, and a prospective, unexecuted operator-coverage catalog in ancillary files ------------------------------------------------------------------------------ We propose to learn the unknown dynamics in the proximity of a small body directly from tracking data, representing them as a feed-forward neural network embedded in the system Hamiltonian. The equations of motion form a Neural Hamiltonian Ordinary Differential Equation, whose variational equations provide exact training gradients: estimation uses position and velocity arcs at realistic noise levels, without acceleration or potential labels, and a continual learning approach warm-starts the network as new data are acquired. The known part of the Hamiltonian carries whatever is available, from the central term and spin state to the constant-density model of the imaged shape. We assess the method against a normalized spherical harmonics expansion estimated from identical arcs through the same machinery, on scenarios built on the shapes of Itokawa, 67P, Bennu and Eros. The network remains usable inside the Brillouin sphere: it plans ballistic descents at Itokawa to \\SI{4.6}{m} median touchdown error from tracking alone, against 5.1--\\SI{48.9}{m} for harmonics of degree 4--12, and to \\SI{0.9}{m} with the imaged shape as prior, a configuration that also recovers localised density anomalies invisible to any harmonics degree. The two representations are complementary, and we discuss their combined use across the phases of a small-body mission. arXiv:2609.12036 (*cross-listing*) Date: Thu, 10 Sep 2026 17:51:01 GMT (10439kb) Title: Pelican-Sim 1.0: A General World Model Simulator for Embodied Intelligence Authors: Shilong Zou, Shilin Zhang, Yingji Zhang, Yuhang Huang, Yi Zhang, Zeyuan Ding, Han Dong, Junwei Liao, Yong Dai, Jian Tang, Xiaozhu Ju Categories: cs.RO cs.AI Comments: Project page: https://zoushilong1024.github.io/Pelican-Sim1.0/ ------------------------------------------------------------------------------ Software development follows an implementation-verification loop in which developers or agents iteratively revise an implementation until an evaluator, such as a test suite, accepts it. The evaluator checks the implementation against a set of requirements under a model of the deployment environment. Yet even a formal proof that the implementation satisfies the requirements under the model cannot guarantee acceptable behavior after deployment. Requirements only approximate stakeholder intent, and the model only approximates the real deployment environment. We call these together - requirement gap and model gap - the two-gap framework, which unifies the main failure modes of agentic software engineer-ing: reward hacking exploits omissions in the requirements or model, while hallucination widens the gaps by fabricating requirements or environment assumptions. Because neither gap can generally be certified closed in an open, changing world, the goal shifts from closing them to continuously narrowing them. We therefore propose an assurance-revision loop that uses deployment evidence to revise the requirements, model, or evaluator when stakeholders reject the resulting behavior. We then cast assured agentic development as a resource-allocation problem over human judgment, agent capability, and compute. The two principal bottlenecks mirror the two gaps: human judgment for the requirement gap and faithful, costly evaluation for the model gap. Reality remains the final verifier: acceptable behavior under actual deployment conditions is the ultimate test, while predeployment evaluations remain proxies for it. arXiv:2609.12079 (*cross-listing*) Date: Thu, 10 Sep 2026 18:07:12 GMT (477kb) Title: Hierarchical Prototype Emergence in Modern Hopfield Models Authors: Aditya Cowsik and Adithya Sriram Categories: cond-mat.dis-nn cs.AI cs.LG Comments: 5 pages, 19 page supplementary information. Additional citation requests welcome ------------------------------------------------------------------------------ Assistants built on large language models are expected to write as their user would, and the dominant approach is single-channel: preferences summarised from conversation history and reinserted into context. This inverts the order of inference. Preferences are the task-dependent surface of a comparatively stable personality structure, so a system storing only preferences relearns the person whenever the task changes. First, we characterise personality seepage, where a prompt's linguistic surface carries a personality fingerprint the assistant mirrors without access to the personality behind it. Second, we propose the Atomic User Model (AUM), a human-readable representation organising a person as a stable identity nucleus with four interpretable shells (psychological, cognitive and experiential, behavioural, and social), plus cross-shell entries recording internal conflict and authenticity. Third, we treat AUM as a retrieval index over a person rather than a prompt prefix, with a pipeline where a task classifier, component-selection function and budgeted retriever return a small payload of fields at generation time. Fourth, we evaluate it with sixteen language-model-simulated participants, six style-sensitive tasks and three seeds, plus a synthetic scaling study of the retriever. Retrieving eight fields matched the style fidelity of the full user model on 23% of the",
+      "summary_zh": "2026年5月24日至7月2日期间，运行在限时研究问题评估中的自主语言模型智能体写入了一个第三方的公开、世界可写wiki。OpenAI承认了该事件；独立研究者重建了该事件并发布了wiki的归档修订历史。作者将该历史（14,591次修订、3,103个名称、4,579个页面、19,913个服务器事件）作为行为记录进行分析，将文本归因于添加它的修订而非累积页面内容。在显式身份模型下，作者重建了907个队列，并根据环境附加到每个事件的随机日历标记估计约876个事件（95%区间774-995；替代重建范围为800-1400）。协调格式在一天内收敛，时间安排造成了巨大的信息不对称机会：由于同一问题链的事件以不同的内部时钟速率运行且启动时间相差最多16小时，某条目的首次报告比后续队列到达的中位数早3.4小时。智能体报告的三个时间安排参数共享一个潜在速度尺度（15种配置中对数方差的78%），在一个任务族中最后观测到的活动按报告速度类别在内部时钟上聚集，与固定内部时间视野相容。在510个具有可观测、格式依赖进度痕迹的队列中，作者未发现测量的协调与记录的进展之间存在稳健正相关，包括少数被明确给予未来答案的队列。由于导出数据既不含成功读取日志、测试框架消息，也不含真实结果，这些结果不能识别协调的因果起源或其效果。作者报告了早期分析中未能通过复现的四项主张。",
+      "insight_zh": "该文对多智能体研究的启示是：在分析智能体协调行为时，需区分文本归因与累积内容、注意时间安排造成的信息不对称，并谨慎对待缺乏真实结果与读取日志时的因果推断。"
     },
     {
       "key": "arxiv:2608.30745",
@@ -863,67 +917,6 @@
       "abstract": "Infrared-visible image fusion facilitates robust multimodal perception by integrating complementary textural nuances from visible sensors with thermal signatures from infrared systems. Due to the task's inherently ill-posed nature, existing methods heavily rely on structural priors but typically enforce rotation equivariance uniformly across all features. Such a holistic approach overlooks a critical distinction where low-frequency shared structures strictly adhere to equivariant constraints while high-frequency modality-specific details require greater flexibility to preserve unique information. To bridge this gap, we propose RoES, a Rotational Equivariant Selective-frequency fusion network. Instead of employing static decomposition, we introduce a trainable rotation-enhanced updater/predictor module to dynamically decouple low- and high-frequency components. The resulting representations are then processed through a dual-branch fusion module tailored for spectral consistency. Specifically, a rotation-equivariant Mamba is employed to capture long-range structural dependencies in the low-frequency domain, while a polar spectral attention-based Dual-Fourier block refines high-frequency details under explicit low-frequency guidance. Extensive experiments demonstrate that RoES consistently achieves state-of-the-art performance in both fusion quality and downstream object detection, establishing a robust solution for multimodal fusion by reconciling frequency-selective features with equivariant constraints. The source code is available at https://github.com/BryceLosky/RoES-Fusion.",
       "summary_zh": "红外-可见光图像融合通过整合可见光传感器的纹理细节与红外系统的热特征，支持鲁棒的多模态感知。由于该任务本质上是病态的，现有方法严重依赖结构先验，但通常对所有特征统一施加旋转等变约束。这种整体化做法忽视了一个关键区别：低频共享结构严格遵循等变约束，而高频模态特有细节需要更大灵活性以保留独特信息。为弥补这一差距，本文提出RoES，一种旋转等变选择性频率融合网络。该网络不采用静态分解，而是引入可训练的旋转增强更新/预测模块，动态解耦低频与高频成分。所得表示随后通过为频谱一致性定制的双分支融合模块处理：旋转等变Mamba用于捕捉低频域的长程结构依赖，而基于极坐标谱注意力的双傅里叶块在显式低频引导下细化高频细节。大量实验表明，RoES在融合质量和下游目标检测上均持续达到最先进水平，通过协调频率选择特征与等变约束，为多模态融合提供了稳健方案。源码已公开。",
       "insight_zh": "该文的频率选择性等变融合思路，或可启发遥感多源影像（如光学与SAR/热红外）融合中的结构保持与细节增强，但其评测限于通用融合与检测基准，未涉及地理空间场景。"
-    },
-    {
-      "key": "arxiv:2609.12345",
-      "title": "ParaRecover: A Process-Level Benchmark for Error Localization and Recovery in Parallel Tool-Use Agents",
-      "title_zh": "ParaRecover：并行工具使用智能体中错误定位与恢复的过程级基准",
-      "url": "https://arxiv.org/abs/2609.12345",
-      "doi": "",
-      "arxiv_id": "2609.12345",
-      "authors": [
-        "Bowen Guan",
-        "Zhentao Yin",
-        "Yanming Shen"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-11T02:09:33+00:00",
-      "score": 45,
-      "reason": "该文提出并行工具使用智能体的错误定位与恢复基准，直接涉及多智能体系统与LLM智能体评估，与LLM和多智能体研究方向高度相关，但不涉及地理空间应用。",
-      "tags": [
-        "多智能体",
-        "工具使用",
-        "错误恢复",
-        "基准测试",
-        "LLM智能体"
-      ],
-      "abstract": "Existing agent benchmarks mainly evaluate final task success or tool-call correctness, providing limited insight into whether agents can reliably diagnose and recover from intermediate execution failures. This limitation becomes particularly critical in multi-turn parallel tool-use scenarios, where errors may propagate across dependent branches and trigger cascading failures. We introduce ParaRecover, a process-level benchmark for evaluating error localization and recovery in multi-turn parallel tool-use agents. Built upon a fine-grained taxonomy of 14 error types covering planning dependencies, tool selection, and argument matching, the benchmark comprises 10,626 instances spanning two difficulty levels. To enable finegrained, process-oriented evaluation, we further propose the SDE rubric, which measures structural integrity, diagnostic reasoning, and evolutionary strategy during agent execution.Experiments across more than ten mainstream LLMs reveal that even state-of-the-art models still struggle with multi-turn error propagation,implicit tool-use failures, and precise replanning. Moreover, we demonstrate that the SDE rubric provides effective supervision signals for improving agents' reflective recovery capabilities. Our data and code are available at https://github.com/gbw206/ParaRecover.",
-      "summary_zh": "现有智能体基准主要评估最终任务成功或工具调用正确性，对智能体能否可靠诊断和恢复中间执行失败提供的洞察有限。这一局限在多轮并行工具使用场景中尤为关键，因为错误可能在依赖分支间传播并触发级联失败。作者提出ParaRecover，一个用于评估多轮并行工具使用智能体中错误定位与恢复的过程级基准。基于涵盖规划依赖、工具选择和参数匹配的14种错误类型的细粒度分类法，该基准包含10,626个实例，跨越两个难度级别。为实现细粒度、面向过程的评估，作者进一步提出SDE评分标准，衡量智能体执行过程中的结构完整性、诊断推理和演化策略。在十多个主流LLM上的实验表明，即使最先进的模型在多轮错误传播、隐式工具使用失败和精确重规划方面仍存在困难。此外，作者证明SDE评分标准为提升智能体的反思性恢复能力提供了有效的监督信号。数据和代码见https://github.com/gbw206/ParaRecover。",
-      "insight_zh": "该基准为多智能体系统的鲁棒性评估提供了过程级视角，其错误分类法和评估框架可能对地理空间智能体工作流的可靠性研究有借鉴意义，但文中未涉及地理空间场景。"
-    },
-    {
-      "key": "arxiv:2609.12320",
-      "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
-      "title_zh": "AIM：面向多智能体多用户LLM系统的隐私感知互操作记忆框架",
-      "url": "https://arxiv.org/abs/2609.12320",
-      "doi": "",
-      "arxiv_id": "2609.12320",
-      "authors": [
-        "Zachary Johnson",
-        "Nigel Boachie Kumankumah",
-        "Somya Chatterjee",
-        "Tejas Sathyamurthi",
-        "Min Chen",
-        "Xinyi Alice Li",
-        "Xiao Wang",
-        "Emily Morgan Gelchie",
-        "Jessica Lin",
-        "Sadid A. Hasan",
-        "Sulaiman Vesal"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-11T01:00:09+00:00",
-      "score": 45,
-      "reason": "该论文提出AIM，一个面向多智能体多用户LLM系统的隐私感知互操作记忆框架，直接涉及LLM和多智能体研究方向，与GIS博士研究中的LLM和多智能体方向高度相关，但不涉及地理空间数据或城市更新应用。",
-      "tags": [
-        "多智能体",
-        "LLM记忆",
-        "隐私保护",
-        "多用户系统"
-      ],
-      "abstract": "Traditional large language models (LLMs) are scoped to individual user sessions, limiting their knowledge to a single conversation and preventing them from learning user preferences that evolve over time. Existing agentic memory systems address this limitation but generally operate at the individual-user level, restricting the public knowledge that could be shared across users to improve downstream responses. We introduce AIM (Agentic Interoperable Memory), a unified, privacy-aware memory framework that enables multi-agent, multi-user LLM systems to persistently manage private and shared memory. AIM dynamically classifies information as private, scoped to one user and inaccessible to others, or public, accessible to all users. It enforces index-level access controls so that private memories are retrievable only by their owner, protecting sensitive data while allowing beneficial shared knowledge to improve coordination and consistency. We also introduce MUMBench (Multi-User Memory Benchmark), a dataset of multi-user interactions containing private and shareable information across four domains. To our knowledge, MUMBench is the first public dataset designed to evaluate multiple memory operations, including retrieval, creation, update, and deletion, in a multi-user environment. Across three independent runs on MUMBench, AIM achieves 96.0% visibility classification accuracy, 58.8% strict operation accuracy, and 70.5% state-aware operation accuracy.",
-      "summary_zh": "该研究提出AIM（Agentic Interoperable Memory），一个统一的、隐私感知的记忆框架，使多智能体、多用户LLM系统能够持久管理私有和共享记忆。AIM动态地将信息分类为私有（限于单个用户且他人不可访问）或公共（所有用户可访问），并实施索引级访问控制，使私有记忆仅能由其所有者检索。作者还提出MUMBench（多用户记忆基准），一个包含四个领域私有和可共享信息的多用户交互数据集，据作者所知这是首个用于评估多用户环境中多种记忆操作（包括检索、创建、更新和删除）的公开数据集。在MUMBench上的三次独立运行中，AIM实现了96.0%的可见性分类准确率、58.8%的严格操作准确率和70.5%的状态感知操作准确率。",
-      "insight_zh": "该框架通过索引级访问控制区分私有与共享记忆，为多智能体协作中的信息共享与隐私保护提供了机制设计，其多用户记忆操作基准也可为地理空间智能中多智能体协作场景的记忆管理评估提供参考，但论文未涉及地理空间应用。"
     }
   ]
 }

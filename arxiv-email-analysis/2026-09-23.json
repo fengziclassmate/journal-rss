@@ -2,11 +2,11 @@
   "date": "2026-09-23",
   "analysis_stats": {
     "total": 667,
-    "analyzed": 396,
+    "analyzed": 407,
     "high": 3,
     "medium": 16,
-    "low": 30,
-    "below_threshold": 347
+    "low": 31,
+    "below_threshold": 357
   },
   "papers": [
     {
@@ -1601,6 +1601,38 @@
       "insight_zh": "该文指出校准在LLM评估中未被广泛采用，而许多基准已具备计算校准所需输入；将校准与主性能指标配对可提升评估可信度，但开放式生成的校准定义仍是挑战。"
     },
     {
+      "key": "arxiv:2609.26214",
+      "title": "Bridging the Data Gap: Digital Twin as a New Paradigm for AI-based Radio Sensing",
+      "title_zh": "弥合数据鸿沟：数字孪生作为AI无线电感知的新范式",
+      "url": "https://arxiv.org/abs/2609.26214",
+      "arxiv_id": "2609.26214",
+      "authors": [
+        "\\'Eloi Sainte-Beuve (1",
+        "2)",
+        "Guillaume Larue (1)",
+        "Louis-Adrien Dufr\\`ene (1)",
+        "Quentin Lampin (1)",
+        "Ali Al Khansa (1) ((1) Orange Research",
+        "(2) IMT Atlantique)"
+      ],
+      "categories": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "published": "2026-08-11T08:26:17+00:00",
+      "score": 45,
+      "reason": "该文以3D数字孪生生成合成信道数据训练无线电感知模型，涉及数字孪生、空间几何建模与序列神经网络，与多源数据融合和地理空间智能有方法层面的关联，但应用为室内无线电定位而非城市更新或遥感。",
+      "tags": [
+        "数字孪生",
+        "射线追踪",
+        "无线电感知",
+        "无设备定位",
+        "状态空间模型"
+      ],
+      "summary_zh": "作者提出一种方法，将环境的3D数字孪生（DT）置于大规模无线电感知开发的核心。DT充当世界模型，向射线追踪引擎提供几何、材质以及发射器/接收器位置，为大量合理场景（移动的人与物体、布局变体、季节/天气条件等）生成带时间索引的信道冲激响应（CIR）。基于这些合成序列，作者训练一个序列神经网络，将CIR时间序列映射为空间占用估计，从而在无目标设备的情况下实现无设备定位（DFL）。作者主张感知最好被视为环境条件化的学习问题：与其寻求单一全局模型，不如训练或微调专门针对特定站点DT的局部模型。作为首个实验，作者提出一种新的状态空间模型架构，在多个房间几何结构上训练与评估。所获得的定位性能展示了该方法的潜力。",
+      "insight_zh": "该文将数字孪生作为合成数据生成器以缓解感知数据稀缺，其“环境条件化局部模型”思路可类比到城市数字孪生驱动的时空数据挖掘；但研究限于室内无线电定位，未涉及城市更新或遥感变化检测。"
+    },
+    {
       "key": "arxiv:2609.11115",
       "title": "Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation",
       "title_zh": "Benchmark Radar：面向AI基准与评估的活数据库与搜索引擎",
@@ -2706,6 +2738,32 @@
       ],
       "summary_zh": "本文提出知识拉取请求（KPRs）框架，用于持续文档编写，使每次变更具有可解释性。文档需要随着来自其他来源、语言或时间的新知识出现而持续修订，但现有方法要么在编辑时不考虑知识变化，要么从头重新生成。KPR通过提取声明、过滤并路由到相应章节、标记与现有内容的冲突，将新知识整合到文档中，生成一个ChangeLog，将知识变化（声明提议）与文本变化（文档差异）分离。作者在跨语言修订维基百科和更新RAGTIME上由查询驱动的报告两个任务上评估KPR。结果表明，KPR比从来源重写或从头重新生成能整合更多信息并更好地保留现有内容，同时每生成一个token增加的信息量最大。经KPR修订的文章在问答 grounding 方面也优于带搜索的前沿模型，后者无法呈现仅以其他语言记录的知识。",
       "insight_zh": "该框架将知识更新与文本编辑解耦的思路，可能对地理空间知识库的持续维护和多源数据融合中的冲突检测有借鉴意义，但论文本身未涉及地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.26231",
+      "title": "High-Order Liquid Evidence Modeling for Continuous and Subtle GNSS Spoofing Detection in Autonomous Driving",
+      "title_zh": "面向自动驾驶中连续细微GNSS欺骗检测的高阶液态证据建模",
+      "url": "https://arxiv.org/abs/2609.26231",
+      "arxiv_id": "2609.26231",
+      "authors": [
+        "Muhammad Ayub Sabir",
+        "Junbiao Pang",
+        "Fatima Ashraf"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-12T09:05:05+00:00",
+      "score": 35,
+      "reason": "该文研究自动驾驶中GNSS欺骗检测，涉及多源传感器一致性与时序证据建模，与多源数据融合和时空数据挖掘有一定方法关联，但应用场景为车辆导航安全而非城市更新或遥感。",
+      "tags": [
+        "GNSS欺骗检测",
+        "自动驾驶",
+        "时序证据建模",
+        "多源传感器融合"
+      ],
+      "summary_zh": "连续且细微的GNSS欺骗对自动驾驶车辆构成严重威胁，因为伪造位置可能局部看似合理，却逐渐与车载非GNSS传感器观测到的车辆运动不一致。现有面向自动驾驶的检测器多依赖残差阈值或特征级分类，对微弱GNSS-运动不一致如何随时间发展并持续缺乏建模。本文将细微GNSS欺骗检测表述为因果序列证据建模问题，提出高阶液态证据检测器。方法首先比较连续GNSS位置隐含的位移与独立车载运动观测推断的位移，将其差异转化为不确定性归一化的残差证据；随后将当前不一致性、其局部演化、超出正常水平的超额量、累积持续性以及位移有效性表示为因果弱证据。这些线索被映射为瞬时、演化与持续潜在状态，通过有界的类基尔霍夫对称交换对齐，并经显式三阶交互组合，以捕捉其对欺骗的协同支持。为建模该协同证据随时间的发展，二阶液态动力学追踪其记忆与演化以估计因果欺骗概率，再通过验证集选定的阈值与持续性参数转化为确认告警。在AV-GPS数据集族上的实验展示了良好的受控与外部泛化能力，以及清晰的序列告警行为。在Dataset-1上，所提检测器取得AUROC 0.9932与AUPRC 0.9843，同时获得最低的假阳性率。",
+      "insight_zh": "该文将多源传感器一致性差异建模为时序因果证据，其“残差证据+高阶时序动力学”思路可启发城市多源数据融合中的异常检测；但应用限于车辆GNSS安全，未涉及地理空间语义或城市更新分析。"
     },
     {
       "key": "arxiv:2609.24971",
@@ -5671,6 +5729,42 @@
       "insight_zh": "该工作展示了扩散并行生成与自回归验证结合以加速结构化图像到文本转换的路径，对遥感影像中大量文本标注（如地图注记、报告扫描件）的自动化处理具有潜在效率价值，但需验证其在低质量或复杂版式地理文档上的表现。"
     },
     {
+      "key": "arxiv:2609.20906",
+      "title": "Continuous Delayed-Memory Stochastic Gradient Descent and Continuous-Time Reinforcement Learning from History of Astrophysical Time Series Studies",
+      "title_zh": "连续延迟记忆随机梯度下降与基于天体物理时间序列研究历史的连续时间强化学习",
+      "url": "https://arxiv.org/abs/2609.20906",
+      "arxiv_id": "2609.20906",
+      "authors": [
+        "Juncheng Yi"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.AP",
+        "Continuous-Delayed-Memory",
+        "Stochastic",
+        "Gradient",
+        "Descent,",
+        "Delay",
+        "Differential",
+        "Equation,",
+        "Reinforcement",
+        "Learning,",
+        "Adjoint",
+        "method"
+      ],
+      "published": "2026-09-17T15:38:37+00:00",
+      "score": 20,
+      "reason": "该文从天体物理光变曲线建模出发，提出连续延迟记忆随机梯度下降与连续时间强化学习结构，涉及时间序列建模与强化学习，但与城市更新、遥感变化检测等GIS核心方向关联较弱。",
+      "tags": [
+        "随机微分方程",
+        "连续时间强化学习",
+        "天体物理时间序列",
+        "优化算法"
+      ],
+      "summary_zh": "类星体是宇宙中的明亮天体，其随机亮度变化编码了驱动它们的超大质量黑洞的信息，而基于地面巡天数据时间序列（即光变曲线）对这些变化进行建模是一项统计挑战。本文回顾了随机微分方程（SDE）如何与神经网络参数化相结合，以在历史上克服这一挑战。作者提出了连续延迟记忆随机梯度下降，它依赖于离散迭代过程的过去状态。作者在一些二维景观上进行了模拟，通过调整超参数，观察到与普通SGD相比更广泛的探索和更精确的收敛行为。此外，作者提出了一种具有连续时间策略梯度的强化学习结构，用于探索性策略而无需求解HJB偏微分方程，并表明其最优性条件可恢复此前工作中的Gibbs策略。",
+      "insight_zh": "该工作将连续时间随机建模与强化学习结合，其延迟记忆优化思路或对时空序列建模中的非马尔可夫动态有一定启发，但需进一步验证其在地理时空数据上的适用性。"
+    },
+    {
       "key": "arxiv:2503.15242",
       "title": "BigO(Bench): Can LLMs Generate Code with Controlled Time and Space Complexity?",
       "title_zh": "BigO(Bench)：LLM能否生成具有受控时间与空间复杂度的代码？",
@@ -7655,6 +7749,31 @@
       "insight_zh": "从标题看其联合重建轨迹与姿态，若涉及多源空间数据融合，或对地理空间轨迹建模有启发，但摘要缺失无法进一步推断。"
     },
     {
+      "key": "arxiv:2609.26157",
+      "title": "Toward User-Mediated Self-Repair in Ubiquitous Robots Through Goal-Oriented Agentic AI",
+      "title_zh": "面向普适机器人用户介导自修复的目标导向智能体AI",
+      "url": "https://arxiv.org/abs/2609.26157",
+      "arxiv_id": "2609.26157",
+      "authors": [
+        "Morten Roed Frederiksen"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-08-11T19:50:11+00:00",
+      "score": 15,
+      "reason": "该文研究面向普适机器人自修复的目标导向智能体架构，涉及多智能体/智能体AI与人机交互，与LLM和多智能体方向有部分关联，但无地理空间应用。",
+      "tags": [
+        "智能体AI",
+        "目标导向",
+        "人机对话",
+        "机器人维护"
+      ],
+      "summary_zh": "普适机器人系统常缺乏传统视觉界面，因此维护与修复任务需要具备韧性的自然语言交互。本文提出一种目标导向的智能体AI架构，旨在使非专家用户通过情境对话完成技术修复。该框架采用多层方法，将高层战略规划与反应式对话执行解耦，把不受约束的人类指令转化为结构化的目标层级。作者开展了一项20名参与者参与的研究，在物理硬件测试平台上评估系统效能。该架构取得95%的任务完成率，参与者在实时指导后报告了积极的自我效能感，指导过程能适应对话偏离与语言变化。与在线基线的对比分析显示，转向物理环境显著降低了感知社会临场感（p=.0005）以及信任与胜任感（p=.037），而智能体框架在整个交互过程中保持稳健。这些发现表明，目标导向的智能体AI可通过赋能用户在普适情境中执行关键维护，支持可穿戴技术的可持续性。",
+      "insight_zh": "该文展示了目标分解与对话执行解耦的智能体架构，对多智能体协作与LLM驱动的任务规划有方法参考；但其场景为机器人维护，未涉及地理空间或城市系统。"
+    },
+    {
       "key": "arxiv:2409.02244",
       "title": "Therapy as an NLP Task: Comparing LLMs and Human Peers Behaviors in CBT Sessions",
       "title_zh": "将治疗视为 NLP 任务：比较 CBT 会话中 LLM 与人类同伴的行为",
@@ -9174,6 +9293,33 @@
       "insight_zh": "该论文的多专家融合与条件调制思路在方法论上具有一般性，但其应用场景为电池老化建模，与地理空间智能无直接关联。"
     },
     {
+      "key": "arxiv:2609.26257",
+      "title": "Information-Theoretic Decoupled Prompt Tuning for Continual Learning",
+      "title_zh": "面向持续学习的信息论解耦提示微调",
+      "url": "https://arxiv.org/abs/2609.26257",
+      "arxiv_id": "2609.26257",
+      "authors": [
+        "Yunfei Zhang",
+        "Wen Wen",
+        "Tieliang Gong",
+        "Weizhan Zhang"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-13T06:52:53+00:00",
+      "score": 12,
+      "reason": "该文研究持续学习中的提示微调与信息瓶颈理论，属于通用机器学习方法，未涉及地理空间数据、城市更新或遥感应用，与研究方向关联较弱。",
+      "tags": [
+        "持续学习",
+        "提示微调",
+        "信息瓶颈",
+        "CLIP"
+      ],
+      "summary_zh": "持续学习旨在从序列数据中增量获取知识并避免灾难性遗忘。提示微调作为适配预训练模型的高效方法受到关注，但现有提示设计范式常受检索依赖与分类器偏置困扰，导致模型适配对提示选择敏感、预测偏向新到类别。为此，作者提出解耦提示微调（DPT4CL），将CLIP文本提示解耦为任务共享提示分布与类别特定提示。任务共享提示分布通过优化信息瓶颈目标获得，以促进跨任务知识迁移并缓解分类器偏置；类别特定提示则在不依赖显式提示检索的情况下增强类间可分性。此外，作者从信息论角度建立了统一的超额风险界，为框架的稳健泛化与遗忘缓解提供理论支持。在标准持续学习基准上的大量实验表明DPT4CL达到当前最优性能。",
+      "insight_zh": "该工作将信息瓶颈引入提示解耦，理论上可缓解持续学习中的偏置与遗忘；但其方法面向通用视觉-语言持续学习，若要迁移到地理空间场景，需考虑空间数据的任务序列构造与地理语义提示设计。"
+    },
+    {
       "key": "arxiv:2412.07813",
       "title": "How Can Incentives and Cut Layer Selection Influence Data Contribution in Split Federated Learning?",
       "title_zh": "激励与切层选择如何影响分割联邦学习中的数据贡献？",
@@ -10689,6 +10835,36 @@
       "insight_zh": "该工作表明小型模型可被训练为大型模型的可复用搜索策略，这一思路对构建地理空间推理智能体中的规划模块具有启发意义，但其验证限于数学推理，向空间决策任务迁移需重新设计奖励与验证器。"
     },
     {
+      "key": "arxiv:2609.26216",
+      "title": "Beyond Imitation: Auditing the Recoverability of Reasoning in Distilled Models",
+      "title_zh": "超越模仿：审计蒸馏模型中推理的可恢复性",
+      "url": "https://arxiv.org/abs/2609.26216",
+      "arxiv_id": "2609.26216",
+      "authors": [
+        "Ruitong Li",
+        "Binjie Guo",
+        "Aisheng Mo",
+        "Guowei Su",
+        "Han Wang",
+        "Jie Li",
+        "Ru Zhang"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-11T10:21:49+00:00",
+      "score": 10,
+      "reason": "该文研究蒸馏模型推理能力的可恢复性诊断，属于LLM训练与评估方法，与地理空间研究无直接关联。",
+      "tags": [
+        "知识蒸馏",
+        "推理可恢复性",
+        "前缀恢复",
+        "模型容量"
+      ],
+      "summary_zh": "当接收方学生模型能够继续推理时，正确的教师解答才成为有用的监督。作者用前缀恢复来度量这种兼容性：在揭示已验证解答的25%、50%或75%后，测试学生能否正确完成。作者将恢复与全词表上交叉熵和反向KL梯度之间的余弦冲突联系起来。在0.6B至8B参数的相邻Qwen3师生对上，反向KL蒸馏对两个小于2B参数的学生带来最一致的数学与代码改进。在固定的1000条轨迹队列上，随着学生规模从0.6B增至4B，平均前缀恢复从71.0%升至91.9%，稳健-脆弱恢复差距从46.0个百分点缩小至14.4个百分点。教师固定为8B时，冲突分离度从0.993降至0.233。一项独立的目标干预发现，反向KL在脆弱轨迹上的挽救效果最大。三项测量定位出同一容量依赖的迁移机制：当正确轨迹的可恢复性仍不均衡时，分布匹配具有最大提升空间。前缀恢复为选择昂贵的分布级蒸馏提供了实用诊断。",
+      "insight_zh": "该文提出的前缀恢复诊断可用于评估地理空间LLM蒸馏后的推理可靠性，提示在容量受限时分布匹配蒸馏的收益取决于轨迹可恢复性；但研究未涉及空间任务。"
+    },
+    {
       "key": "arxiv:2609.15478",
       "title": "BVB: Benchmarking Agentic Video Understanding via Programmatic Reconstruction in Blender",
       "title_zh": "BVB：通过Blender程序化重建基准测试智能体视频理解",
@@ -10801,6 +10977,34 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结论。",
       "insight_zh": "摘要缺失，无法判断其加速方法是否适用于遥感影像生成或变化检测任务；仅从标题可知其面向视觉生成模型训练，与地理空间应用无直接关联。"
+    },
+    {
+      "key": "arxiv:2609.26243",
+      "title": "A Hybrid AI Framework for Academic Advising: Integrating Ensemble-Based Grade Prediction and a Rule-Based Expert System",
+      "title_zh": "面向学术指导的混合AI框架：集成成绩预测与规则专家系统的整合",
+      "url": "https://arxiv.org/abs/2609.26243",
+      "arxiv_id": "2609.26243",
+      "authors": [
+        "Hamid Saadatfar",
+        "Rohollah Hedayati-Nasab",
+        "AmirHossein Eshghi",
+        "Arash Hajihashemi"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-12T18:10:13+00:00",
+      "score": 10,
+      "reason": "该文为教育领域的成绩预测与规则推荐系统，属于数据挖掘与专家系统应用，与城市更新、遥感、地理空间智能无直接关联。",
+      "tags": [
+        "教育数据挖掘",
+        "集成学习",
+        "专家系统",
+        "成绩预测"
+      ],
+      "summary_zh": "学生规模快速增长给传统学术指导流程带来严峻挑战。本研究设计并实现了一个支持学生学业进展的多用途智能系统，基于两部分混合框架：（1）先进的成绩预测模型；（2）基于规则的推荐引擎。研究使用包含伊朗比尔詹德大学416,558条教育记录的数据集，首先用高斯混合模型（GMM）将学生划分为同质聚类，随后为每个聚类专门训练一个结合随机森林、梯度提升与MLP的堆叠集成模型。评估结果显示堆叠模型在所有聚类上均优于基模型，最终聚合RMSE为2.35。第二部分是专家系统，通过将教育规章与第一部分预测成绩协同，提供智能建议。该系统已在比尔詹德大学门户网站作为实用工具部署，为学生提供学期GPA预测、学业预警风险提示以及提升GPA的选课建议等实时反馈。",
+      "insight_zh": "该框架展示了聚类+堆叠集成+规则引擎的混合范式，可类比用于城市更新中的分区建模与规则化决策支持；但其数据与任务均为教育场景，方法迁移需重新定义特征与规则体系。"
     },
     {
       "key": "arxiv:2609.25845",
@@ -11117,6 +11321,37 @@
       "insight_zh": "该工作揭示了平均指标掩盖输入类别差异的问题，并提出基于预填充信号的逐输入准入决策，这一“先判断是否适用再执行压缩”的思路在方法论上具有跨领域启发性，但论文本身与地理空间研究无关。"
     },
     {
+      "key": "arxiv:2609.26249",
+      "title": "PACE-dLLM: Elastic Block Decoding via Confidence Cliff Estimation for Diffusion Language Models",
+      "title_zh": "PACE-dLLM：基于置信度悬崖估计的扩散语言模型弹性块解码",
+      "url": "https://arxiv.org/abs/2609.26249",
+      "arxiv_id": "2609.26249",
+      "authors": [
+        "Xiaocheng Lu",
+        "Shuhan Guo",
+        "Ziyue Ma",
+        "Jie Zhang",
+        "Jian Liu",
+        "Jingcai Guo",
+        "Haoxuan Che",
+        "and Song Guo"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-13T05:12:09+00:00",
+      "score": 8,
+      "reason": "该文聚焦扩散语言模型的解码加速，属于大模型推理效率研究，与LLM相关但无地理空间或城市分析应用，关联度低。",
+      "tags": [
+        "扩散语言模型",
+        "并行解码",
+        "推理加速",
+        "置信度估计"
+      ],
+      "summary_zh": "扩散语言模型（dLLM）如LLaDA和Dream在生成质量上已可与自回归LLM竞争，并支持原生并行解码。块式解码是常见加速策略，每次前向预测长度为B的块并提交高置信度token，但B耦合了前瞻视野与提交token数两个不同决策。现有加速器通过波动性追踪、分隔符检测、学习评分等间接启发式方法处理该限制。作者指出所需信息已编码在模型自身的逐步置信度中：窗口内置信度通常呈现依赖上下文的悬崖，其饱和点直接指示合适的前瞻视野。据此提出PACE-dLLM，每步以闭式拟合该参数化悬崖，由饱和点设定下一视野，并用独立置信度阈值决定token提交。在饱和产出抽象下，作者证明悬崖锚定视野是达到最大有效单次产出所需的最小视野：固定视野若低于该值会导致更差的渐近NFE率，而超出则不增加有效产出。在四个推理与代码基准上，PACE-dLLM在两个开源dLLM骨干上取得最佳平均准确率，相对未加速的半自回归基线在LLaDA上平均加速5.23倍、Dream上3.06倍（数学任务最高8.52倍），推进了质量-吞吐帕累托前沿。",
+      "insight_zh": "该工作表明模型自身置信度动态可替代外部启发式来指导并行解码，对多智能体或LLM推理效率优化有参考价值；但其评测限于语言推理与代码任务，未涉及地理空间推理场景。"
+    },
+    {
       "key": "arxiv:2609.26052",
       "title": "Optimizing Denoising Trajectories in dLLMs: A Lightweight Evolutionary Heuristic Approach",
       "title_zh": "优化dLLM中的去噪轨迹：一种轻量级进化启发式方法",
@@ -11388,6 +11623,35 @@
       "insight_zh": "该文的纵向配对比较模块与视角注意力聚合思路，可为多时相遥感影像的变化表征学习提供方法借鉴；但其应用场景为医学影像，与地理空间智能的直接关联有限。"
     },
     {
+      "key": "arxiv:2609.26217",
+      "title": "MSA-CITE: A Co-Adapted LoRA Specialist Ecology for Fixed-Budget Small-Model Inference",
+      "title_zh": "MSA-CITE：面向固定预算小模型推理的协同适配LoRA专家生态",
+      "url": "https://arxiv.org/abs/2609.26217",
+      "arxiv_id": "2609.26217",
+      "authors": [
+        "Ruitong Li",
+        "Binjie Guo",
+        "Aisheng Mo",
+        "Guowei Su",
+        "Jie Li",
+        "Ru Zhang"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-11T10:26:06+00:00",
+      "score": 8,
+      "reason": "该文研究小模型部署中的多LoRA分支组合推理，属于LLM高效推理与模型集成，与地理空间研究无直接关联。",
+      "tags": [
+        "小模型推理",
+        "LoRA",
+        "多分支集成",
+        "推理时证据"
+      ],
+      "summary_zh": "紧凑语言模型通常通过保留单一训练后检查点并重复采样来部署。本文挑战这一做法，将多个被丢弃的检查点视为可组合的部署资产。作者从单一Qwen3-4B骨干出发，保留四个冻结的LoRA分支，每个来自不同的训练后轨迹。方法不再从单一分支采样四次生成，而是将固定的四次生成预算分配为每个分支采样一个补全。所提方法MSA-CITE（多路径专家适配与校准推理时证据）处理所得组合：将最终答案分组为等价类，通过求和校准导出的来源先验为每个类打分，并在确定性平局规则下选择代表。读出阶段不从评估结果学习，也不引入额外生成、验证器或重排序步骤。在200道留出数学题上，四路径组合达到65.5%准确率，而最强单分支基线为62.0%；在100题学科不相交迁移上为42.0%对40.0%。在同分布条件下，相对同质SFT与Online-OPD重复的改进是稳健的；相对最强基线及迁移条件下的结果尚不具结论性。作者认为其贡献虽窄但具体：训练后分支即使未经协同训练，也可在部署中集体受益。",
+      "insight_zh": "该文提出将多个训练后LoRA分支作为可组合资产以固定预算采样，思路可启发多智能体或多模型在地理任务中的集成推理；但其评测限于数学与学科问答，未涉及空间推理。"
+    },
+    {
       "key": "arxiv:2609.25199",
       "title": "Lean Pool: An AI-Maintained Archive of Formalized Mathematics",
       "title_zh": "Lean Pool：一个由AI维护的形式化数学档案库",
@@ -11633,6 +11897,35 @@
       ],
       "summary_zh": "文档视觉问答中的答案溯源仍是一个开放挑战：大多数基准缺乏溯源标注或提供质量有限的标签，而构建有溯源的数集仍需昂贵的人工工作。作者提出DocAttriBench（DAB），一个用于文档VQA中细粒度、元素级来源归因的大规模基准，将答案溯源到特定布局元素，如文本块、表格和图像。为构建DAB，作者提出基于掩码的困惑度推导归因方法（MAPPET），结合文档布局和语言建模，为每个答案识别最具信息量的元素。MAPPET测量掩码候选元素后困惑度的增加，并将答案归因于对模型置信度贡献最大的元素。将MAPPET应用于多个现有文档VQA数据集生成DAB，包含237k文档和296k问答对，具有元素级溯源。作者在DAB上对具备溯源能力的多模态LLM进行基准测试，评估答案准确率、归因准确率和整体答案质量。结果表明，虽然更大的模型通常获得更高的答案准确率，但即使最强的模型也常常无法定位支持元素。DAB为开发有溯源、可验证和可信的文档VQA模型提供了可扩展的基准。数据集和代码见 https://aimagelab.github.io/DocAttriBench/。",
       "insight_zh": "该工作的元素级溯源思路可启发地理空间多模态数据（如遥感影像与文本报告）的答案归因，但需适配空间布局与地理语义。"
+    },
+    {
+      "key": "arxiv:2609.26241",
+      "title": "Damage Predicts Recovery: When Calibration Data Matters in Compressing Financial LLMs",
+      "title_zh": "损伤预测恢复：压缩金融LLM时校准数据何时重要",
+      "url": "https://arxiv.org/abs/2609.26241",
+      "arxiv_id": "2609.26241",
+      "authors": [
+        "Junyi Ye",
+        "Mengjia Yu",
+        "Debapriya Hazra",
+        "Guiling Wang"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-12T17:22:10+00:00",
+      "score": 8,
+      "reason": "该文研究金融领域LLM压缩中的校准数据选择，属于模型压缩与领域适配，与地理空间研究无直接联系。",
+      "tags": [
+        "模型压缩",
+        "量化",
+        "剪枝",
+        "金融LLM",
+        "校准数据"
+      ],
+      "summary_zh": "训练后量化与剪枝依赖小型校准语料。金融等专业领域是否需要领域匹配的校准数据尚无定论。作者认为答案取决于压缩造成的任务级损伤，而非领域不匹配：若压缩保持目标任务能力，更换校准语料影响甚微；若压缩造成较大损失，任务格式化的校准可恢复部分损失。作者在两个模型家族、六种压缩配置、三个token匹配的校准语料以及十个金融分类与数值问答任务上检验该假设。结果支持该假设：量化基本保持任务性能，校准选择影响很小；剪枝使数值问答准确率下降超过40个点，在此类受损情形下，另一通用语料无帮助，而金融任务示例混合的FinMix可恢复大部分损失。损伤与恢复的关联在模型家族与规模上均成立。这些发现支持一条实用规则：先测量任务特定的压缩损伤，仅在损伤较大时构建专用校准数据。",
+      "insight_zh": "该文提出的“先测损伤、再决定校准”原则可推广到遥感或地理LLM的压缩部署中，提示领域校准数据的价值取决于压缩对目标任务的实际损害程度。"
     },
     {
       "key": "arxiv:2608.03079",
@@ -12716,26 +13009,6 @@
         "cs.LG"
       ],
       "published": "2026-08-01T12:34:27+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26157",
-      "title": "Toward User-Mediated Self-Repair in Ubiquitous Robots Through Goal-Oriented Agentic AI",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26157",
-      "arxiv_id": "2609.26157",
-      "authors": [
-        "Morten Roed Frederiksen"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.RO"
-      ],
-      "published": "2026-08-11T19:50:11+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14819,32 +15092,6 @@
       "insight_zh": "从标题推断，该工作属于神经网络压缩与高效推理方向，与地理空间智能的关联需依赖摘要进一步确认，目前无法判断其应用价值。"
     },
     {
-      "key": "arxiv:2609.26249",
-      "title": "PACE-dLLM: Elastic Block Decoding via Confidence Cliff Estimation for Diffusion Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26249",
-      "arxiv_id": "2609.26249",
-      "authors": [
-        "Xiaocheng Lu",
-        "Shuhan Guo",
-        "Ziyue Ma",
-        "Jie Zhang",
-        "Jian Liu",
-        "Jingcai Guo",
-        "Haoxuan Che",
-        "and Song Guo"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-08-13T05:12:09+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2507.15836",
       "title": "Optimizing Canaries for Privacy Auditing with Metagradient Descent",
       "title_zh": "利用元梯度下降优化隐私审计中的金丝雀",
@@ -15437,30 +15684,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26217",
-      "title": "MSA-CITE: A Co-Adapted LoRA Specialist Ecology for Fixed-Budget Small-Model Inference",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26217",
-      "arxiv_id": "2609.26217",
-      "authors": [
-        "Ruitong Li",
-        "Binjie Guo",
-        "Aisheng Mo",
-        "Guowei Su",
-        "Jie Li",
-        "Ru Zhang"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-08-11T10:26:06+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.26025",
       "title": "MICRO: Multi-Fidelity Active Search for Severe Error Discovery",
       "title_zh": "",
@@ -15804,28 +16027,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26257",
-      "title": "Information-Theoretic Decoupled Prompt Tuning for Continual Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26257",
-      "arxiv_id": "2609.26257",
-      "authors": [
-        "Yunfei Zhang",
-        "Wen Wen",
-        "Tieliang Gong",
-        "Weizhan Zhang"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-08-13T06:52:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.25836",
       "title": "In-Context Guidance: Learning Inter-Task Synergies via Numerical Foundational Models for Few-Shot Multitask Optimization",
       "title_zh": "上下文引导：通过数值基础模型学习任务间协同以实现少样本多任务优化",
@@ -15996,27 +16197,6 @@
         "cs.AI"
       ],
       "published": "2026-09-22T00:08:12+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26231",
-      "title": "High-Order Liquid Evidence Modeling for Continuous and Subtle GNSS Spoofing Detection in Autonomous Driving",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26231",
-      "arxiv_id": "2609.26231",
-      "authors": [
-        "Muhammad Ayub Sabir",
-        "Junbiao Pang",
-        "Fatima Ashraf"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-08-12T09:05:05+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -17505,29 +17685,6 @@
       "insight_zh": "无法从摘要推断洞见。"
     },
     {
-      "key": "arxiv:2609.26241",
-      "title": "Damage Predicts Recovery: When Calibration Data Matters in Compressing Financial LLMs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26241",
-      "arxiv_id": "2609.26241",
-      "authors": [
-        "Junyi Ye",
-        "Mengjia Yu",
-        "Debapriya Hazra",
-        "Guiling Wang"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "published": "2026-08-12T17:22:10+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.26121",
       "title": "DTOC: Dynamic Tool Output Compression for Adaptive Context Management in AI Agents",
       "title_zh": "",
@@ -17621,37 +17778,6 @@
         "stat.ML"
       ],
       "published": "2026-09-21T23:58:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20906",
-      "title": "Continuous Delayed-Memory Stochastic Gradient Descent and Continuous-Time Reinforcement Learning from History of Astrophysical Time Series Studies",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20906",
-      "arxiv_id": "2609.20906",
-      "authors": [
-        "Juncheng Yi"
-      ],
-      "categories": [
-        "cs.LG",
-        "stat.AP",
-        "Continuous-Delayed-Memory",
-        "Stochastic",
-        "Gradient",
-        "Descent,",
-        "Delay",
-        "Differential",
-        "Equation,",
-        "Reinforcement",
-        "Learning,",
-        "Adjoint",
-        "method"
-      ],
-      "published": "2026-09-17T15:38:37+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -18105,32 +18231,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26214",
-      "title": "Bridging the Data Gap: Digital Twin as a New Paradigm for AI-based Radio Sensing",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26214",
-      "arxiv_id": "2609.26214",
-      "authors": [
-        "\\'Eloi Sainte-Beuve (1",
-        "2)",
-        "Guillaume Larue (1)",
-        "Louis-Adrien Dufr\\`ene (1)",
-        "Quentin Lampin (1)",
-        "Ali Al Khansa (1) ((1) Orange Research",
-        "(2) IMT Atlantique)"
-      ],
-      "categories": [
-        "cs.LG",
-        "eess.SP"
-      ],
-      "published": "2026-08-11T08:26:17+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.26147",
       "title": "Block-Level Weight-Space Structure Persists Under Post-Training: An Empirical Study Across LLM Families",
       "title_zh": "",
@@ -18203,31 +18303,6 @@
         "stat.ML"
       ],
       "published": "2026-09-22T09:22:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26216",
-      "title": "Beyond Imitation: Auditing the Recoverability of Reasoning in Distilled Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26216",
-      "arxiv_id": "2609.26216",
-      "authors": [
-        "Ruitong Li",
-        "Binjie Guo",
-        "Aisheng Mo",
-        "Guowei Su",
-        "Han Wang",
-        "Jie Li",
-        "Ru Zhang"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-08-11T10:21:49+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -18571,7 +18646,7 @@
     {
       "key": "arxiv:2609.26167",
       "title": "Activation-Energy Pruning for Spiking Neural Networks: Unsupervised Personalization via Spike-Count Saliency",
-      "title_zh": "",
+      "title_zh": "脉冲神经网络的激活能量剪枝：基于脉冲计数显著性的无监督个性化",
       "url": "https://arxiv.org/abs/2609.26167",
       "arxiv_id": "2609.26167",
       "authors": [
@@ -18583,10 +18658,15 @@
       ],
       "published": "2026-08-11T06:55:22+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究脉冲神经网络的激活能量剪枝，属于神经形态计算与模型压缩，与地理空间研究无直接关联。",
+      "tags": [
+        "脉冲神经网络",
+        "剪枝",
+        "激活能量",
+        "无监督个性化"
+      ],
+      "summary_zh": "激活能量剪枝——移除权重幅值与累积突触前脉冲计数乘积低于阈值的权重——已被确立为传统深度神经网络的有效无监督个性化策略。本文探讨将同一准则应用于脉冲神经网络（SNN）时会发生什么，因为在SNN中激活能量不仅是启发式指标，更是与每个突触代谢成本成正比的字面物理量。答案在三个方面令人意外。第一，在传统网络上表现有竞争力的基于梯度的剪枝方法（SNIP、GraSP、幅度剪枝）在SNN上持续表现不佳，在所有测试架构与数据集上，当稀疏度σ=0.2时准确率均跌至接近随机水平。作者将此归因于代理梯度显著性估计与二值脉冲序列表示之间的系统性不兼容，但也不能排除替代代理选择或超参数设置可能部分缓解该效应。第二，将激活能量剪枝应用于神经形态基准……（摘要在此处截断）。",
+      "insight_zh": "该文揭示了代理梯度剪枝与脉冲表示的不兼容性，对神经形态硬件上的高效模型部署有参考价值；但其研究限于SNN剪枝，与地理空间数据挖掘无直接联系。"
     },
     {
       "key": "arxiv:2609.25914",
@@ -18770,29 +18850,6 @@
         "cs.AI"
       ],
       "published": "2026-09-22T01:18:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26243",
-      "title": "A Hybrid AI Framework for Academic Advising: Integrating Ensemble-Based Grade Prediction and a Rule-Based Expert System",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26243",
-      "arxiv_id": "2609.26243",
-      "authors": [
-        "Hamid Saadatfar",
-        "Rohollah Hedayati-Nasab",
-        "AmirHossein Eshghi",
-        "Arash Hajihashemi"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-08-12T18:10:13+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

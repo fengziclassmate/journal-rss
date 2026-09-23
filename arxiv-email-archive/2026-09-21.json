@@ -17,35 +17,35 @@
     "arxiv:2609.21554",
     "arxiv:2609.21192",
     "arxiv:2609.19759",
+    "arxiv:2609.21379",
     "arxiv:2609.21859",
     "arxiv:2609.20889",
     "arxiv:2609.21801",
     "arxiv:2609.21629",
+    "arxiv:2609.21386",
     "arxiv:2609.21187",
     "arxiv:2609.21123",
     "arxiv:2609.20975",
     "arxiv:2608.27409",
     "arxiv:2504.06647",
+    "arxiv:2609.21363",
     "arxiv:2609.21241",
     "arxiv:2609.21164",
-    "arxiv:2609.03395",
-    "arxiv:2609.21938",
-    "arxiv:2609.21527",
-    "arxiv:2609.21522"
+    "arxiv:2609.03395"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:453",
-    "deepseek": "partial:0/80;failed-batches:8"
+    "deepseek": "partial:10/79;failed-batches:7"
   },
-  "updated_at": "2026-09-23T17:31:07.160655+00:00",
+  "updated_at": "2026-09-23T21:58:07.905035+00:00",
   "analysis_stats": {
     "total": 453,
-    "analyzed": 373,
+    "analyzed": 384,
     "high": 3,
-    "medium": 16,
-    "low": 25,
-    "below_threshold": 329
+    "medium": 17,
+    "low": 29,
+    "below_threshold": 335
   },
   "papers": [
     {
@@ -481,6 +481,34 @@
       "insight_zh": "该研究提示，在城市更新等复杂时空任务中引入多智能体协作时，应优先考虑任务是否具有长时程、稀疏依赖的结构特征，而非盲目增加智能体数量；语义感知的图演化机制或可迁移用于地理空间智能中的多源信息协同。"
     },
     {
+      "key": "arxiv:2609.21379",
+      "title": "JEPA Guided Diffusion: Predictive Vision-Language Conditioning for Generative Traffic Forecasting",
+      "title_zh": "JEPA引导的扩散：面向生成式交通预测的预测性视觉-语言条件化",
+      "url": "https://arxiv.org/abs/2609.21379",
+      "doi": "",
+      "arxiv_id": "2609.21379",
+      "authors": [
+        "Trinh Tra Giang Nguyen",
+        "Thanh Nguyen Vo",
+        "Nguyen Hoai Thuong Bui",
+        "Ha Duc Bui"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T06:45:37+00:00",
+      "score": 60,
+      "reason": "该文提出解耦的交通预测框架，结合V-JEPA预测表征与扩散视频生成，涉及时空预测、多模态表征与生成式建模，与时空数据挖掘和遥感变化检测方向有较强方法关联。",
+      "tags": [
+        "交通预测",
+        "扩散模型",
+        "JEPA",
+        "视频生成",
+        "多源数据融合"
+      ],
+      "abstract": "Accurate traffic forecasting requires both understanding scene dynamics and synthesizing realistic future observations. Recent diffusion-based video generation models produce visually plausible predictions but require expensive end-to-end training and often entangle scene understanding with image synthesis. In this work, we propose a decoupled forecasting framework that separates future representation learning from video generation. A frozen V-JEPA encoder first extracts predictive latent representations from the observed traffic videos, capturing the underlying scene dynamics in a semantic latent space. A lightweight latent alignment module then projects these representations into the conditioning space of a frozen Cosmos diffusion module, enabling future video synthesis without retraining the large generative model. By freezing all foundation models and training only the lightweight alignment module, the proposed framework substantially reduces optimization complexity while preserving forecasting capability. Experimental results on the AI City Challenge 2026 Track 5 benchmark demonstrate that the proposed method achieved a score of 75.1297, ranking third in the competition. These results suggest that predictive world representations learned by V-JEPA can effectively guide downstream video generation, providing a practical and efficient alternative to end-to-end diffusion-based forecasting.",
+      "summary_zh": "准确的交通预测既需要理解场景动态，也需要合成真实的未来观测。近期基于扩散的视频生成模型能产生视觉上合理的预测，但需要昂贵的端到端训练，且往往将场景理解与图像合成纠缠在一起。在本工作中，作者提出一种解耦的预测框架，将未来表征学习与视频生成分离。一个冻结的V-JEPA编码器首先从观测到的交通视频中提取预测性潜在表征，在语义潜在空间中捕捉底层场景动态。随后，一个轻量级潜在对齐模块将这些表征投影到冻结的Cosmos扩散模块的条件空间中，从而无需重新训练大型生成模型即可实现未来视频合成。通过冻结所有基础模型并仅训练轻量级对齐模块，所提框架在保持预测能力的同时大幅降低了优化复杂度。在AI City Challenge 2026 Track 5基准上的实验结果表明，所提方法取得75.1297分，在竞赛中排名第三。这些结果表明，V-JEPA学习到的预测性世界表征能够有效引导下游视频生成，为端到端基于扩散的预测提供了一种实用且高效的替代方案。",
+      "insight_zh": "该框架表明冻结的预测性世界表征可有效条件化生成模型，这种解耦思路或可迁移至遥感变化检测与多源时空数据融合中的未来状态生成任务。"
+    },
+    {
       "key": "arxiv:2609.21859",
       "title": "TrialAtlas: Multi-Agent Research Organization for Clinical Trial Design and Optimization",
       "title_zh": "TrialAtlas：面向临床试验设计与优化的多智能体研究组织",
@@ -591,6 +619,35 @@
       "abstract": "Multi-Channel imaging (MCI) data differs fundamentally from natural images, as each channel records a semantically distinct signal rather than a colour band. To adapt vision encoders to MCI data, Multi-Channel Vision Transformers (MC-ViTs) tokenize each channel independently and concatenate the resulting tokens into one sequence, and the channel count is no longer fixed by the architecture. Self-attention is then computed across all channel-patch tokens with no restriction on which channels attend to which, which dilutes the features of individual channels. The Decoupled Vision Transformer (DC-ViT) regulates this by separating updates computed within a channel from updates computed across channels, and by forming a representation per channel before the channels are combined. Its formulation, however, pairs tokens by spatial position, and thus requires the same visible tokens in every channel. Correspondence under independent per-channel masking is recovered by solving a linear assignment between the retained patches of each channel, which allows decoupled attention to be combined with current masked multi-channel training in its standard configuration rather than a restricted one. Across three classification and three segmentation benchmarks spanning fluorescence microscopy, imaging mass cytometry and satellite imaging, including dense prediction at high channel counts, the resulting formulation outperforms the strongest MC-ViT baseline.",
       "summary_zh": "多通道成像（MCI）数据与自然图像有本质区别，每个通道记录语义上不同的信号而非颜色波段。为将视觉编码器适配MCI数据，多通道视觉Transformer（MC-ViT）独立地对每个通道进行标记化，并将生成的标记拼接为一个序列，通道数不再由架构固定。自注意力在所有通道-块标记上计算，不限制哪些通道关注哪些通道，从而稀释了单个通道的特征。解耦视觉Transformer（DC-ViT）通过分离通道内更新与跨通道更新，并在通道组合前为每个通道形成表示来规范这一过程。然而其公式按空间位置配对标记，因此要求每个通道具有相同的可见标记。本文通过求解各通道保留块之间的线性分配来恢复独立逐通道掩码下的对应关系，使解耦注意力能够以标准配置而非受限配置与当前掩码多通道训练相结合。在涵盖荧光显微镜、成像质谱流式细胞术和卫星成像的三个分类和三个分割基准上，包括高通道数的密集预测，所提公式优于最强的MC-ViT基线。",
       "insight_zh": "该工作对多通道遥感影像的Transformer建模具有方法学参考价值，尤其是通道解耦注意力机制可能有助于处理多光谱/高光谱遥感数据中的通道异质性问题。"
+    },
+    {
+      "key": "arxiv:2609.21386",
+      "title": "AgentVidBench: A Multi-Hop Video Question Answering Benchmark for Evaluating MLLM Agents",
+      "title_zh": "AgentVidBench：用于评估MLLM智能体的多跳视频问答基准",
+      "url": "https://arxiv.org/abs/2609.21386",
+      "doi": "",
+      "arxiv_id": "2609.21386",
+      "authors": [
+        "Seoyeon An",
+        "Hyeonseo Jang",
+        "Minsu Kim",
+        "Chanho Lee",
+        "Younghan Park",
+        "Kangwook Lee"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T06:56:33+00:00",
+      "score": 55,
+      "reason": "该文提出面向MLLM智能体的多跳视频问答基准，涉及时空与因果推理及智能体轨迹评估，与LLM和多智能体、时空推理方向相关，但未涉及城市或地理空间应用。",
+      "tags": [
+        "多模态大语言模型",
+        "视频问答基准",
+        "多跳推理",
+        "智能体工作流"
+      ],
+      "abstract": "Comprehensive video understanding is crucial for advancing artificial intelligence toward the intricate dynamics of the physical world. While recent advances in Multimodal Large Language Models (MLLMs) have demonstrated remarkable capabilities in video understanding, existing benchmarks remain confined to simple scene-level queries or global summaries that require only single-step inference. Real-world video understanding involves more challenging tasks that require multi-hop multimodal reasoning, and there is a critical absence of video benchmarks equipped to rigorously evaluate these agentic capabilities. To bridge this gap, we introduce AgentVidBench, a multi-hop video question answering benchmark focused on evaluating the spatial, temporal, and causal reasoning capabilities of MLLM agents. Beyond standard question-answer pairs, AgentVidBench provides step-by-step solution traces to support trajectory evaluation that assesses whether agents explicitly acquire the evidence needed to justify their answers. Experiments with 12 proprietary and open-source MLLMs show that single-turn performance remains limited on AgentVidBench, while integrating these models into state-of-the-art agentic workflows generally improves performance with respect to both accuracy and trajectory scores. We further present a simple yet effective agentic strategy that serves as a competitive baseline on AgentVidBench, establishing our benchmark as a holistic testbed for future research on agentic video understanding. Code and datasets are available at https://github.com/krafton-ai/agentvidbench and https://huggingface.co/datasets/agentvidbench/agentvidbench.",
+      "summary_zh": "全面的视频理解对于推动人工智能走向物理世界的复杂动态至关重要。尽管多模态大语言模型（MLLM）的最新进展在视频理解方面展现出显著能力，但现有基准仍局限于简单的场景级查询或仅需单步推理的全局摘要。真实世界的视频理解涉及更具挑战性的任务，需要多跳多模态推理，而目前严重缺乏能够严格评估这些智能体能力的视频基准。为填补这一空白，作者提出AgentVidBench，一个专注于评估MLLM智能体空间、时间和因果推理能力的多跳视频问答基准。除标准问答对外，AgentVidBench还提供逐步解题轨迹，以支持评估智能体是否明确获取了支撑其答案所需的证据。对12个专有和开源MLLM的实验表明，单轮性能在AgentVidBench上仍然有限，而将这些模型集成到最先进的智能体工作流中，通常在准确率和轨迹分数两方面都能提升性能。作者进一步提出一种简单而有效的智能体策略，作为AgentVidBench上的有竞争力基线，使该基准成为未来智能体视频理解研究的整体测试平台。代码和数据集见 https://github.com/krafton-ai/agentvidbench 和 https://huggingface.co/datasets/agentvidbench/agentvidbench。",
+      "insight_zh": "该基准强调多跳时空与因果推理及证据轨迹评估，其设计思路可为构建面向地理空间视频或遥感时序数据的智能体推理评测提供参考。"
     },
     {
       "key": "arxiv:2609.21187",
@@ -750,6 +807,36 @@
       "insight_zh": "摘要缺失，无法确认具体方法细节；但从标题看，该工作涉及先验知识与在线地图构建的结合，对城市更新中的动态地图维护和时空数据融合有潜在启发，但需进一步验证其与GIS方法的兼容性。"
     },
     {
+      "key": "arxiv:2609.21363",
+      "title": "Hiding in Plain Sight: A Diffusion-based Mitigation of Geolocation Privacy Leakage in Vision-Language Models",
+      "title_zh": "藏于明处：基于扩散的视觉语言模型地理定位隐私泄露缓解方法",
+      "url": "https://arxiv.org/abs/2609.21363",
+      "doi": "",
+      "arxiv_id": "2609.21363",
+      "authors": [
+        "Yining Wang",
+        "Xi Li",
+        "Mi Zhang",
+        "Xiaohan Zhang",
+        "Xiaoyu You",
+        "Zhenxing Qian",
+        "Mi Wen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T06:24:29+00:00",
+      "score": 50,
+      "reason": "该文研究视觉语言模型的地理定位隐私泄露与基于扩散的防御，直接涉及地理定位信号与多模态模型，与地理空间智能和遥感影像分析有方法关联，但侧重隐私保护而非城市更新或变化检测。",
+      "tags": [
+        "地理定位隐私",
+        "扩散模型",
+        "视觉语言模型",
+        "对抗扰动"
+      ],
+      "abstract": "Multimodal large reasoning models (MLRMs) have demonstrated remarkable capabilities in complex visual understanding. However, this very power introduces a critical yet underexplored privacy threat: adversaries can exploit MLRMs to precisely infer users' geographic locations from casually shared photographs, by performing structured reasoning over subtle visual cues such as architectural styles, vegetation, and lighting conditions. In this work, we present a systematic study of MLRM-driven geolocation privacy leakage. We first reveal that refusal-based safeguards are critically insufficient, as carefully crafted jailbreak prompts can raise model response rates to 100%. We further identify that existing defenses, which inject imperceptible perturbations into shared images, suffer from structural limitations intrinsic to their pixel-space optimization, resulting in degraded black-box transferability and pronounced visual artifacts. Motivated by these findings, we propose a diffusion-based framework that provides targeted, proactive defense against geolocation privacy leakage. By injecting perturbations into the latent space of a diffusion model during reverse sampling, our method operates directly on high-level semantic representations, thereby resolving the effectiveness-utility bottlenecks by construction. We further ground our optimization with GeoCLIP, a model explicitly aligned with GPS coordinates, as a surrogate to pinpoint and disrupt the geographic signals that MLRMs exploit for location inference. This targeted semantic disruption yields significantly stronger black-box transferability while preserving perceptual image quality, offering a seamless integration on social media platforms.",
+      "summary_zh": "多模态大推理模型（MLRM）在复杂视觉理解方面展现出显著能力。然而，这种能力本身引入了一个关键且尚未充分探索的隐私威胁：对手可利用MLRM，通过对建筑风格、植被和光照条件等细微视觉线索进行结构化推理，从随意分享的照片中精确推断用户的地理位置。在本工作中，作者对MLRM驱动的地理定位隐私泄露进行了系统研究。作者首先揭示，基于拒绝的安全防护严重不足，精心构造的越狱提示可将模型响应率提升至100%。作者进一步发现，现有通过在共享图像中注入不可感知扰动进行防御的方法，受限于其像素空间优化的内在结构局限，导致黑盒迁移性下降并出现明显视觉伪影。基于这些发现，作者提出一种基于扩散的框架，针对地理定位隐私泄露提供有针对性的主动防御。通过在反向采样过程中向扩散模型的潜在空间注入扰动，该方法直接作用于高层语义表征，从而在构造上解决了有效性-可用性的瓶颈。作者进一步使用GeoCLIP（一个与GPS坐标显式对齐的模型）作为代理来定位并破坏MLRM用于位置推断的地理信号，从而为优化提供依据。这种有针对性的语义破坏在保持感知图像质量的同时，显著增强了黑盒迁移性，为社交媒体平台提供了无缝集成方案。",
+      "insight_zh": "该研究揭示多模态模型可从影像中推断地理位置的隐私风险，其潜在空间扰动与地理信号破坏思路，对遥感影像发布中的位置隐私保护与地理空间智能的伦理边界具有参考意义。"
+    },
+    {
       "key": "arxiv:2609.21241",
       "title": "Multiclass Semantic Segmentation of Wildland Fire Images Using Context-Aware Centralized Copy-Paste Data Augmentation",
       "title_zh": "基于上下文感知集中复制粘贴数据增强的野火图像多类语义分割",
@@ -835,91 +922,6 @@
       "abstract": "Large Language Models (LLMs) have shown strong performance on table question answering, yet their accuracy often degrades as table size increases. We find that this degradation is not uniform across question types. Localization-sensitive questions are particularly affected by irrelevant table content, while questions requiring broader evidence may still benefit from full-table reasoning. Based on this observation, we propose a question-adaptive framework that dynamically selects between localized and full-table reasoning. The framework constructs question-specific sub-tables through operation-aware table decomposition and uses the predicted question type to determine the appropriate reasoning mode. We further introduce silver reference sub-tables for evaluating evidence selection and construct SLQA, a benchmark based on real-world long tables. Experiments on WikiTQ and SLQA show that localization is particularly effective for lookup and local reasoning questions, while adaptive selection between localized and full-table reasoning achieves the best overall performance. These results highlight that long-table QA requires deciding not only how to localize, but also when to localize. Our code and datasets will be made available upon publication of the paper.",
       "summary_zh": "提出问题自适应框架，根据问题类型动态选择局部或全表推理，在长表格问答中取得最佳性能，并构建了SLQA基准。",
       "insight_zh": "长表格问答的关键不仅在于如何定位，还在于何时定位，问题类型决定了推理模式的选择。"
-    },
-    {
-      "key": "arxiv:2609.21938",
-      "title": "Info3R: Information-Adaptive Test-Time Training for 3D Reconstruction",
-      "title_zh": "Info3R：面向三维重建的信息自适应测试时训练",
-      "url": "https://arxiv.org/abs/2609.21938",
-      "doi": "",
-      "arxiv_id": "2609.21938",
-      "authors": [
-        "Sunghyun Baek",
-        "Hanna Bae",
-        "Minchan Kwon",
-        "and Junmo Kim"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-18T15:55:00+00:00",
-      "score": 45,
-      "reason": "该论文研究在线三维重建与测试时训练，与遥感变化检测和多源数据融合的关联较弱，仅在三维几何感知层面有间接联系。",
-      "tags": [
-        "三维重建",
-        "测试时训练",
-        "在线视频流",
-        "位姿估计"
-      ],
-      "abstract": "Transformer-based models have recently achieved strong performance on 3D reconstruction from images, and recent works extend them to process video streams in an online manner for real-world deployment. However, existing methods overlook two key signals when handling long image streams: the importance of each incoming frame and the information saturation of the model's internal state. In this paper, we propose Info3R, a novel information-adaptive test-time training method for the online 3D reconstruction. We introduce an information-aware state update that modulates the state update strength based on the redundancy and informativeness of each incoming frame. To restore the state's plasticity -- its capacity to incorporate new observations -- we propose a dynamic state reset, triggered by the cumulative magnitude of state updates and the model's prediction confidence and accompanied by an anchor-to-world alignment. Our method achieves consistent improvements on camera pose estimation, video depth estimation, and 3D reconstruction, while substantially mitigating the performance degradation in the long sequence evaluation. Notably, on KITTI Odometry, our method achieves on average 1.68x lower ATE than LongStream, demonstrating its robustness on extended outdoor sequences.",
-      "summary_zh": "基于Transformer的模型近期在图像三维重建上取得强劲性能，已有工作将其扩展为在线方式处理视频流以用于真实部署。然而，现有方法在处理长图像流时忽略了两个关键信号：每个输入帧的重要性以及模型内部状态的信息饱和度。本文提出Info3R，一种面向在线三维重建的信息自适应测试时训练方法。作者引入信息感知的状态更新，根据每个输入帧的冗余度和信息量调节状态更新强度。为恢复状态的塑性（即纳入新观测的能力），作者提出动态状态重置，由状态更新的累积幅度和模型预测置信度触发，并伴随锚点到世界坐标的对齐。该方法在相机位姿估计、视频深度估计和三维重建上取得一致改进，同时显著缓解长序列评估中的性能退化。值得注意的是，在KITTI Odometry上，该方法平均ATE比LongStream低1.68倍，显示其在长距离户外序列上的鲁棒性。",
-      "insight_zh": "信息自适应状态更新与动态重置机制或可为长时序遥感影像的在线处理提供借鉴，但论文未涉及遥感或地理空间数据。"
-    },
-    {
-      "key": "arxiv:2609.21527",
-      "title": "OpenMAS-GCom. A Diagnostic Benchmark for Graph-enhanced Multi-Agent Systems",
-      "title_zh": "OpenMAS-GCom：图增强多智能体系统的诊断基准",
-      "url": "https://arxiv.org/abs/2609.21527",
-      "doi": "",
-      "arxiv_id": "2609.21527",
-      "authors": [
-        "Kairui Yang",
-        "Xunkai Li",
-        "Kaixiang Zhang",
-        "Minghao An",
-        "Zekai Chen",
-        "Yuxuan Ba",
-        "Rong-Hua Li"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-18T09:17:20+00:00",
-      "score": 45,
-      "reason": "该论文研究图增强多智能体系统的诊断基准，涉及LLM智能体协作，与LLM和多智能体研究方向相关，但应用领域非GIS。",
-      "tags": [
-        "多智能体系统",
-        "图增强",
-        "LLM",
-        "基准测试",
-        "诊断评估"
-      ],
-      "abstract": "Graph-enhanced multi-agent systems (G-MAS) coordinate large language model agents through communication graphs and role assignments, which determine how agents exchange information and divide responsibilities. However, final-score comparisons across systems combine differences in models, communication patterns, roles, and computation costs, making performance differences difficult to attribute to specific communication structures, role assignments, and information flows. To address this evaluation attribution problem, we introduce OpenMAS-GCom, a benchmark for diagnosing how these components affect G-MAS performance through controlled interventions. We represent systems through collaboration units, communication links, shared intermediate information, and execution rules. OpenMAS-GCom compares original systems with versions modified by changing one component while keeping tasks, models, prompts, and budget limits fixed. We rewire communication edges, remove specialist or critic agents, replace intermediate messages with incorrect content, and disable workers during execution. The benchmark evaluates 17 single-agent, ordinary multi-agent, and graph-enhanced configurations on 29 datasets across six domains. We add 400 G-MAS-Complex tasks requiring agents to combine information from multiple documents, resolve conflicting records, and return specified values with source identifiers. Experiments show larger mean losses after specialist removal than after critic removal, different performance degradation under incorrect messages and worker failures despite similar original scores, and different configurations achieving the highest accuracy and accuracy per token on G-MAS-Complex.",
-      "summary_zh": "图增强多智能体系统（G-MAS）通过通信图和角色分配协调大语言模型智能体，这决定了智能体如何交换信息和划分职责。然而跨系统的最终分数比较混合了模型、通信模式、角色和计算成本的差异，使得性能差异难以归因于特定的通信结构、角色分配和信息流。为解决这一评估归因问题，本文提出OpenMAS-GCom，一个通过受控干预诊断这些组件如何影响G-MAS性能的基准。系统通过协作单元、通信链路、共享中间信息和执行规则来表示。OpenMAS-GCom将原始系统与仅改变一个组件而保持任务、模型、提示和预算限制不变的修改版本进行比较。实验重新连接通信边、移除专家或批评者智能体、用错误内容替换中间消息、在执行期间禁用工作者。该基准在六个领域的29个数据集上评估17种单智能体、普通多智能体和图增强配置。新增400个G-MAS-Complex任务，要求智能体组合多文档信息、解决冲突记录并返回带来源标识符的指定值。实验表明专家移除后的平均损失大于批评者移除，错误消息和工作器故障下性能退化不同，不同配置在G-MAS-Complex上达到最高准确率和每token准确率。",
-      "insight_zh": "该基准的诊断方法论或可启发GIS领域中基于LLM的多智能体空间分析系统的评估设计，但其应用场景与城市更新和遥感无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.21522",
-      "title": "Refine Then Fusion: Training-Free 3D Point Cloud Adaptation with Priority Refinement and Multi-Modal Knowledge Fusion",
-      "title_zh": "先精炼再融合：基于优先精炼与多模态知识融合的免训练3D点云适配",
-      "url": "https://arxiv.org/abs/2609.21522",
-      "doi": "",
-      "arxiv_id": "2609.21522",
-      "authors": [
-        "Hang Cheng",
-        "Yan Chen",
-        "Mingyu Fan",
-        "Long Zeng"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-18T09:11:55+00:00",
-      "score": 45,
-      "reason": "该论文提出免训练3D点云少样本识别框架，涉及多模态知识融合与可靠性感知聚合，与多源数据融合方向有方法论关联，但应用为3D视觉而非地理空间遥感。",
-      "tags": [
-        "3D点云",
-        "少样本学习",
-        "多模态融合",
-        "免训练适配"
-      ],
-      "abstract": "Recent pre-trained foundation models provide rich multi-modal priors for downstream 3D vision tasks. However, the effectiveness of these representations in few-shot scenarios is limited by two fundamental challenges: High-dimensional features often contain substantial channel redundancy and task-irrelevant noise, while the reliability of different modalities varies across samples. Consequently, direct aggregation of heterogeneous representations overlooks sample-dependent modality reliability and may obscure the discriminative cues essential. To address these limitations, we propose Refine Then Fusion(RTF), a training-free framework for few-shot 3D recognition. RTF first identifies discriminative feature channels by jointly modeling inter-class similarity and intra-class stability, thereby decoupling domain-specific knowledge refinement from the cached representations of pre-trained models. It then introduces a reliability-aware fusion mechanism that estimates sample-wise modality reliability from the distribution shifts induced by feature refinement, enabling adaptive aggregation of multi-modal representations. Furthermore, RTF constructs a memory cache that integrates instance-level support features with class-level prototypes to infer query labels. Extensive experiments on five benchmarks demonstrate that RTF consistently outperforms single-modal baselines, partial-fusion variants, and existing lightweight adaptation methods, achieving state-of-the-art few-shot 3D recognition performance without gradient optimization, additional training data, auxiliary training, or parameter updates.",
-      "summary_zh": "近期预训练基础模型为下游3D视觉任务提供丰富的多模态先验。然而这些表征在少样本场景中的有效性受两个基本挑战限制：高维特征常含大量通道冗余与任务无关噪声，而不同模态的可靠性因样本而异。因此直接聚合异构表征忽视了样本依赖的模态可靠性，可能掩盖关键的判别线索。为解决这些局限，作者提出先精炼再融合（RTF），一种用于少样本3D识别的免训练框架。RTF首先通过联合建模类间相似度与类内稳定性识别判别性特征通道，从而将领域特定知识精炼与预训练模型的缓存表征解耦。随后引入可靠性感知融合机制，从特征精炼引起的分布偏移估计样本级模态可靠性，实现多模态表征的自适应聚合。此外，RTF构建记忆缓存，整合实例级支持特征与类级原型以推断查询标签。在五个基准上的大量实验表明，RTF持续优于单模态基线、部分融合变体及现有轻量适配方法，在无需梯度优化、额外训练数据、辅助训练或参数更新的情况下实现最先进的少样本3D识别性能。",
-      "insight_zh": "其可靠性感知的多模态融合与免训练适配策略可启发遥感多源数据融合中的模态可靠性建模，但需验证其在遥感影像与点云融合场景中的适用性。"
     }
   ]
 }

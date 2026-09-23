@@ -2,11 +2,11 @@
   "date": "2026-09-21",
   "analysis_stats": {
     "total": 453,
-    "analyzed": 373,
+    "analyzed": 384,
     "high": 3,
-    "medium": 16,
-    "low": 25,
-    "below_threshold": 329
+    "medium": 17,
+    "low": 29,
+    "below_threshold": 335
   },
   "papers": [
     {
@@ -672,6 +672,34 @@
       "insight_zh": "该框架可为多智能体系统在复杂组织环境中的部署提供治理与风险控制思路，但其在GIS或城市更新场景中的适用性尚未验证。"
     },
     {
+      "key": "arxiv:2609.21379",
+      "title": "JEPA Guided Diffusion: Predictive Vision-Language Conditioning for Generative Traffic Forecasting",
+      "title_zh": "JEPA引导的扩散：面向生成式交通预测的预测性视觉-语言条件化",
+      "url": "https://arxiv.org/abs/2609.21379",
+      "arxiv_id": "2609.21379",
+      "authors": [
+        "Trinh Tra Giang Nguyen",
+        "Thanh Nguyen Vo",
+        "Nguyen Hoai Thuong Bui",
+        "Ha Duc Bui"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-18T06:45:37+00:00",
+      "score": 60,
+      "reason": "该文提出解耦的交通预测框架，结合V-JEPA预测表征与扩散视频生成，涉及时空预测、多模态表征与生成式建模，与时空数据挖掘和遥感变化检测方向有较强方法关联。",
+      "tags": [
+        "交通预测",
+        "扩散模型",
+        "JEPA",
+        "视频生成",
+        "多源数据融合"
+      ],
+      "summary_zh": "准确的交通预测既需要理解场景动态，也需要合成真实的未来观测。近期基于扩散的视频生成模型能产生视觉上合理的预测，但需要昂贵的端到端训练，且往往将场景理解与图像合成纠缠在一起。在本工作中，作者提出一种解耦的预测框架，将未来表征学习与视频生成分离。一个冻结的V-JEPA编码器首先从观测到的交通视频中提取预测性潜在表征，在语义潜在空间中捕捉底层场景动态。随后，一个轻量级潜在对齐模块将这些表征投影到冻结的Cosmos扩散模块的条件空间中，从而无需重新训练大型生成模型即可实现未来视频合成。通过冻结所有基础模型并仅训练轻量级对齐模块，所提框架在保持预测能力的同时大幅降低了优化复杂度。在AI City Challenge 2026 Track 5基准上的实验结果表明，所提方法取得75.1297分，在竞赛中排名第三。这些结果表明，V-JEPA学习到的预测性世界表征能够有效引导下游视频生成，为端到端基于扩散的预测提供了一种实用且高效的替代方案。",
+      "insight_zh": "该框架表明冻结的预测性世界表征可有效条件化生成模型，这种解耦思路或可迁移至遥感变化检测与多源时空数据融合中的未来状态生成任务。"
+    },
+    {
       "key": "arxiv:2609.21859",
       "title": "TrialAtlas: Multi-Agent Research Organization for Clinical Trial Design and Optimization",
       "title_zh": "TrialAtlas：面向临床试验设计与优化的多智能体研究组织",
@@ -827,6 +855,38 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题可推断，该研究将PrevPredMap扩展为一个统一的先验信息建模框架，用于在线矢量化高精地图构建。",
       "insight_zh": "摘要缺失，无法确认具体方法细节；但从标题看，该工作涉及先验知识与在线地图构建的结合，对城市更新中的动态地图维护和时空数据融合有潜在启发，但需进一步验证其与GIS方法的兼容性。"
+    },
+    {
+      "key": "arxiv:2609.12748",
+      "title": "The Mechanics of a Swarm: A Reproducible External Reconstruction of an Unintended Agent-Coordination Episode on a Third-Party Wiki",
+      "title_zh": "蜂群的机制：对第三方wiki上意外智能体协调事件的可复现外部重建",
+      "url": "https://arxiv.org/abs/2609.12748",
+      "arxiv_id": "2609.12748",
+      "authors": [
+        "Philipp L\\\"utje (Philflow",
+        "Schenefeld",
+        "Germany)"
+      ],
+      "categories": [
+        "cs.GT",
+        "cs.MA",
+        "cs.SY",
+        "eess.SY",
+        "math.OC",
+        "https://doi.org/10.5281/zenodo.22689980"
+      ],
+      "published": "2026-09-10T18:05:35+00:00",
+      "score": 55,
+      "reason": "该文对第三方wiki上自主语言模型智能体意外协调事件进行外部重建，分析修订历史、队列、时间安排与协调格式。与研究中LLM和多智能体方向直接相关，且涉及时空行为记录分析，但应用场景非城市或地理空间，故相关性中等。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "智能体协调",
+        "行为分析",
+        "可复现研究"
+      ],
+      "summary_zh": "2026年5月24日至7月2日期间，运行在限时研究问题评估中的自主语言模型智能体写入了一个第三方的公开、世界可写wiki。OpenAI承认了该事件；独立研究者重建了该事件并发布了wiki的归档修订历史。作者将该历史（14,591次修订、3,103个名称、4,579个页面、19,913个服务器事件）作为行为记录进行分析，将文本归因于添加它的修订而非累积页面内容。在显式身份模型下，作者重建了907个队列，并根据环境附加到每个事件的随机日历标记估计约876个事件（95%区间774-995；替代重建范围为800-1400）。协调格式在一天内收敛，时间安排造成了巨大的信息不对称机会：由于同一问题链的事件以不同的内部时钟速率运行且启动时间相差最多16小时，某条目的首次报告比后续队列到达的中位数早3.4小时。智能体报告的三个时间安排参数共享一个潜在速度尺度（15种配置中对数方差的78%），在一个任务族中最后观测到的活动按报告速度类别在内部时钟上聚集，与固定内部时间视野相容。在510个具有可观测、格式依赖进度痕迹的队列中，作者未发现测量的协调与记录的进展之间存在稳健正相关，包括少数被明确给予未来答案的队列。由于导出数据既不含成功读取日志、测试框架消息，也不含真实结果，这些结果不能识别协调的因果起源或其效果。作者报告了早期分析中未能通过复现的四项主张。",
+      "insight_zh": "该文对多智能体研究的启示是：在分析智能体协调行为时，需区分文本归因与累积内容、注意时间安排造成的信息不对称，并谨慎对待缺乏真实结果与读取日志时的因果推断。"
     },
     {
       "key": "arxiv:2609.21123",
@@ -997,6 +1057,39 @@
       "insight_zh": "不同融合范式各有优劣，选择取决于具体场景和资源约束，这为多领域智能体能力整合提供了实用指导。"
     },
     {
+      "key": "arxiv:2609.21386",
+      "title": "AgentVidBench: A Multi-Hop Video Question Answering Benchmark for Evaluating MLLM Agents",
+      "title_zh": "AgentVidBench：用于评估MLLM智能体的多跳视频问答基准",
+      "url": "https://arxiv.org/abs/2609.21386",
+      "arxiv_id": "2609.21386",
+      "authors": [
+        "Seoyeon An",
+        "Hyeonseo Jang",
+        "Minsu Kim",
+        "Chanho Lee",
+        "Younghan Park",
+        "Kangwook Lee"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "https://github.com/krafton-ai/agentvidbench",
+        "Dataset:",
+        "https://huggingface.co/datasets/agentvidbench/agentvidbench"
+      ],
+      "published": "2026-09-18T06:56:33+00:00",
+      "score": 55,
+      "reason": "该文提出面向MLLM智能体的多跳视频问答基准，涉及时空与因果推理及智能体轨迹评估，与LLM和多智能体、时空推理方向相关，但未涉及城市或地理空间应用。",
+      "tags": [
+        "多模态大语言模型",
+        "视频问答基准",
+        "多跳推理",
+        "智能体工作流"
+      ],
+      "summary_zh": "全面的视频理解对于推动人工智能走向物理世界的复杂动态至关重要。尽管多模态大语言模型（MLLM）的最新进展在视频理解方面展现出显著能力，但现有基准仍局限于简单的场景级查询或仅需单步推理的全局摘要。真实世界的视频理解涉及更具挑战性的任务，需要多跳多模态推理，而目前严重缺乏能够严格评估这些智能体能力的视频基准。为填补这一空白，作者提出AgentVidBench，一个专注于评估MLLM智能体空间、时间和因果推理能力的多跳视频问答基准。除标准问答对外，AgentVidBench还提供逐步解题轨迹，以支持评估智能体是否明确获取了支撑其答案所需的证据。对12个专有和开源MLLM的实验表明，单轮性能在AgentVidBench上仍然有限，而将这些模型集成到最先进的智能体工作流中，通常在准确率和轨迹分数两方面都能提升性能。作者进一步提出一种简单而有效的智能体策略，作为AgentVidBench上的有竞争力基线，使该基准成为未来智能体视频理解研究的整体测试平台。代码和数据集见 https://github.com/krafton-ai/agentvidbench 和 https://huggingface.co/datasets/agentvidbench/agentvidbench。",
+      "insight_zh": "该基准强调多跳时空与因果推理及证据轨迹评估，其设计思路可为构建面向地理空间视频或遥感时序数据的智能体推理评测提供参考。"
+    },
+    {
       "key": "arxiv:2609.03395",
       "title": "TabScope: Question-Adaptive Scope Selection for Table Question Answering",
       "title_zh": "TabScope：表格问答中的问题自适应范围选择",
@@ -1084,6 +1177,37 @@
       ],
       "summary_zh": "整合临床笔记、实验室结果和医学影像等多种数据模态对于推进临床决策至关重要。尽管大型语言模型（LLM）在处理非结构化临床文本方面表现出色，但其纳入非文本模态的能力有限，阻碍了其在医疗应用中的更广泛效用。在此，我们提出M2G-LLM（多模态医学图-LLM），一个通过图神经网络（GNN）增强LLM多模态整合与对齐的新颖框架。我们的方法建模患者就诊之间的时间关系，在临床相似患者之间传播信息，并对齐异构数据源以构建丰富的多模态上下文向量。这些向量被注入LLM的中间层，实现对文本和非文本模态的联合推理。我们在MIMIC-IV和MIMIC-CXR数据集上评估M2G-LLM，证明其在临床预测任务上优于强基线模型。结果凸显了将LLM的语言理解能力与GNN的关系推理能力相结合用于全面多模态医疗分析的潜力。",
       "insight_zh": "GNN与LLM中间层注入相结合的多模态融合范式，可启发地理空间智能中遥感影像、文本报告与图结构数据的联合推理，但需适配地理时空关系。"
+    },
+    {
+      "key": "arxiv:2609.21363",
+      "title": "Hiding in Plain Sight: A Diffusion-based Mitigation of Geolocation Privacy Leakage in Vision-Language Models",
+      "title_zh": "藏于明处：基于扩散的视觉语言模型地理定位隐私泄露缓解方法",
+      "url": "https://arxiv.org/abs/2609.21363",
+      "arxiv_id": "2609.21363",
+      "authors": [
+        "Yining Wang",
+        "Xi Li",
+        "Mi Zhang",
+        "Xiaohan Zhang",
+        "Xiaoyu You",
+        "Zhenxing Qian",
+        "Mi Wen"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-09-18T06:24:29+00:00",
+      "score": 50,
+      "reason": "该文研究视觉语言模型的地理定位隐私泄露与基于扩散的防御，直接涉及地理定位信号与多模态模型，与地理空间智能和遥感影像分析有方法关联，但侧重隐私保护而非城市更新或变化检测。",
+      "tags": [
+        "地理定位隐私",
+        "扩散模型",
+        "视觉语言模型",
+        "对抗扰动"
+      ],
+      "summary_zh": "多模态大推理模型（MLRM）在复杂视觉理解方面展现出显著能力。然而，这种能力本身引入了一个关键且尚未充分探索的隐私威胁：对手可利用MLRM，通过对建筑风格、植被和光照条件等细微视觉线索进行结构化推理，从随意分享的照片中精确推断用户的地理位置。在本工作中，作者对MLRM驱动的地理定位隐私泄露进行了系统研究。作者首先揭示，基于拒绝的安全防护严重不足，精心构造的越狱提示可将模型响应率提升至100%。作者进一步发现，现有通过在共享图像中注入不可感知扰动进行防御的方法，受限于其像素空间优化的内在结构局限，导致黑盒迁移性下降并出现明显视觉伪影。基于这些发现，作者提出一种基于扩散的框架，针对地理定位隐私泄露提供有针对性的主动防御。通过在反向采样过程中向扩散模型的潜在空间注入扰动，该方法直接作用于高层语义表征，从而在构造上解决了有效性-可用性的瓶颈。作者进一步使用GeoCLIP（一个与GPS坐标显式对齐的模型）作为代理来定位并破坏MLRM用于位置推断的地理信号，从而为优化提供依据。这种有针对性的语义破坏在保持感知图像质量的同时，显著增强了黑盒迁移性，为社交媒体平台提供了无缝集成方案。",
+      "insight_zh": "该研究揭示多模态模型可从影像中推断地理位置的隐私风险，其潜在空间扰动与地理信号破坏思路，对遥感影像发布中的位置隐私保护与地理空间智能的伦理边界具有参考意义。"
     },
     {
       "key": "arxiv:2609.19366",
@@ -1174,6 +1298,46 @@
       ],
       "summary_zh": "确保LLM生成代码的正确性是现代软件工程的核心挑战。智能体代码生成的基准测试通常用留出测试套件检查正确性，但测试套件本质上不完整且越来越容易被记忆。形式化验证可避免这两个问题，但现有工作仅覆盖规范作为输入给出的独立任务，而非涉及大型仓库且以模糊自然语言表达意图的真实问题。我们提出Benchproofer，一个将已知正确补丁的编码任务转化为形式化验证任务的流水线：它为新增代码编写规范，用公理概括被调用现有函数，并且只有在机械门和对抗门都同意后才接纳一个实例。将其应用于SWE-bench Verified后得到SWE-Proof，包含500个真实问题，其正确性通过形式化验证而非测试来确认，并可扩展到SWE-bench Pro。在两个前沿模型上，验证能捕捉测试遗漏的问题：四分之一到一半的测试通过补丁存在反例，结构化自然语言规范无法解决这一问题，而正确的形式化规范将Opus 4.8的解决率从85%提升到95%。编写该规范是难点：必须自行编写规范的模型相比无辅助基线没有增益，且其规范只有62%通过审计。常见失败是忠实性不足，即规范只约束了部分所需行为而放任其余部分。规范质量仍与结果相关，未解决实例的失败率为89%，而已解决实例为47%，这使得忠实规范合成成为一个具体的开放问题。",
       "insight_zh": "形式化验证可提升LLM生成代码的可靠性，但其对规范编写质量的依赖提示在GIS自动化分析流程中需谨慎对待LLM生成代码的正确性保证。"
+    },
+    {
+      "key": "arxiv:2609.21371",
+      "title": "RobotEQ-Video: A Video-Centric Benchmark for Social Proactive Intelligence with World-State Taxonomy",
+      "title_zh": "RobotEQ-Video：面向社会主动智能的视频中心基准与世界状态分类体系",
+      "url": "https://arxiv.org/abs/2609.21371",
+      "arxiv_id": "2609.21371",
+      "authors": [
+        "Xinyi Che",
+        "Zheng Lian",
+        "Kuofei Fang",
+        "Xuehao Wang",
+        "Xinghai Gao",
+        "Junqing Wu",
+        "Chuyu Wu",
+        "Liyi Liu",
+        "Yanhan Huang",
+        "Keyi Xie",
+        "Haomin Ouyang",
+        "Jinyang Wu",
+        "Fan Zhang",
+        "Runhao Zeng",
+        "Xun Yang",
+        "Bin He"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "published": "2026-09-18T06:35:56+00:00",
+      "score": 45,
+      "reason": "该文提出视频中心的社交主动智能基准与世界状态分类体系，涉及视频理解、状态分类与具身场景，与多智能体和时空数据挖掘有一定关联，但应用领域为社交机器人而非地理空间。",
+      "tags": [
+        "视频基准",
+        "社会主动智能",
+        "世界状态分类",
+        "具身智能"
+      ],
+      "summary_zh": "社会主动智能（SPI）将主动协助从任务完成度扩展到在多样具身场景中考虑社会适当性。然而，此前的SPI研究面临两个关键局限。第一，现有工作聚焦于静态图像，而动态视频为推断人类状态和需求提供了关键线索，比孤立图像提供更丰富的信息。第二，此前工作往往依赖自由形式的数据采集流程，无法保证对多样场景的全面覆盖。为弥补这些空白，作者提出RobotEQ-Video，将焦点从以图像为中心转向以视频为中心的分析。为确保全面的视频覆盖，作者构建了一个分层世界状态分类体系，组织为四级由粗到细的结构，包含6个领域、20个维度、142个一级属性和816个二级属性。由此产生的基准包含2K+视频、100K+人工标注和16K+用于评估行为适当性的标签。基准评估显示，当前系统仍不可靠，且未达到人类表现。作者进一步探索了世界模型如何帮助解决该任务。这项工作将SPI研究从静态图像推进到动态视频，并确保基准测试中更全面的场景覆盖。",
+      "insight_zh": "该基准的分层世界状态分类体系与视频中心评估思路，可为构建面向城市动态场景的多智能体行为理解与状态分类评测提供结构参考。"
     },
     {
       "key": "arxiv:2504.15776",
@@ -1448,6 +1612,33 @@
       ],
       "summary_zh": "多模态具身系统需要将人类意图转化为跨异构模态的可解释且协调的行为。然而，现有多模态智能体往往依赖隐式表示，限制了可控性和跨模态一致性。作者提出一种混合多智能体框架，用于交互式多模态行为模拟，通过统一参数表示（UPR）桥接语义推理与物理执行。基于LLM的推理智能体将多模态输入转化为UPR，UPR编码行为状态和可解释的控制参数，供模拟智能体生成同步的三维运动、空间化声景和环境行为。作者开发BirdsongChat作为所提框架的原型实现，以交互式鸟类行为模拟作为紧密耦合运动、发声和环境背景的测试平台。BirdsongChat在涉及物种、行为、情感状态、环境和多鸟交互的文本和图像引导场景中进行评估。系统在跨模态一致性上达到94.4%的归一化分数，情感一致性为100%，生成一致性为92.6%。这些结果表明，显式中间表示有效桥接了语义推理与物理执行，提升了可控性和多模态同步性。所提框架因此为需要在多模态间进行可解释语义到物理协调的具身AI系统提供了可推广的设计原则，在仿生生态声学、群体机器人、虚拟环境和创意多媒体中具有潜在应用。",
       "insight_zh": "其显式中间表示桥接语义推理与物理执行的设计原则，或可启发城市更新模拟中人类意图到空间行为的可解释转化，但当前应用场景与地理空间智能的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.21390",
+      "title": "Offline Multimodal Large Language Models for Decision Support in Air Operations",
+      "title_zh": "面向空中作战决策支持的离线多模态大语言模型",
+      "url": "https://arxiv.org/abs/2609.21390",
+      "arxiv_id": "2609.21390",
+      "authors": [
+        "Joao P. A. Dantas",
+        "Jelton A. Cunha",
+        "Gabriel Dietzsch"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-18T07:00:29+00:00",
+      "score": 42,
+      "reason": "该文研究离线多模态大模型在受限环境下的决策支持，涉及多模态输入与检索增强架构，与LLM和多智能体方向相关，但应用场景为航空作战而非城市更新或地理空间智能，与GIS博士研究主题关联有限。",
+      "tags": [
+        "多模态大语言模型",
+        "离线决策支持",
+        "检索增强生成",
+        "人机协同评估"
+      ],
+      "summary_zh": "空中作战依赖复杂规则、既定程序以及在有限连通性和严格安全约束下的时间紧迫分析。在此类环境中，分析人员必须将书面条令与图像结合，且往往无法访问外部计算资源。本文研究将离线大语言模型作为决策支持工具，部署于隔离受限环境中，使分析人员能够通过自然语言交互获取可追溯至原始来源的条令知识。作者描述了一种适用于无互联网连接运行的模块化检索增强架构，支持来自技术手册的文本和图像输入。作为评估该架构的第一步，作者报告了一项针对巴西空军四名图像分析人员的试点研究，包括：(i) 基于其电子目标识别条令的条令知识评估，比较人类与所提系统在同一测试上的表现；(ii) 测量在无AI辅助下人工生成侦察目标报告（REMIR）所涉及的认知负荷。结果显示，人工任务要求较高，尤其在心理需求（6.0/7）和努力程度（5.0/7）方面，而所提系统达到与人类相同的分数（8/10），并在7.1分钟内完成评估（人类平均为26.5分钟），为未来AI辅助评估建立了基线。最后，作者描述了未来系统比较人工与AI辅助工作流的评估协议。",
+      "insight_zh": "该研究提示，在无网络、强安全约束的场景中，检索增强的离线多模态大模型可作为可追溯的决策支持工具，其认知负荷与效率优势值得在类似受限环境的地理空间分析任务中进一步验证。"
     },
     {
       "key": "arxiv:2609.21770",
@@ -2039,6 +2230,35 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究细节。根据标题推测，该研究探讨注意力头的梯度稳定性特征与LLM输出正确性之间的关联信号。",
       "insight_zh": "若该研究确实建立了注意力头梯度稳定性与LLM正确性之间的关联，可能为LLM在城市更新文本分析等任务中的可靠性评估提供一种内部信号检测思路，但需结合具体摘要内容进一步判断。"
+    },
+    {
+      "key": "arxiv:2609.21354",
+      "title": "Field Tracking of Insects Using a Stereoscopic Event-Based Camera Setup",
+      "title_zh": "使用立体事件相机装置对昆虫进行野外跟踪",
+      "url": "https://arxiv.org/abs/2609.21354",
+      "arxiv_id": "2609.21354",
+      "authors": [
+        "Pratham G. Shenwai",
+        "Martin J. Lankheet",
+        "John T. Hrynuk",
+        "Mandiyam Y. Mahadeeswara",
+        "Mandyam V. Srinivasan",
+        "Sridhar Ravi"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-18T06:10:28+00:00",
+      "score": 35,
+      "reason": "该文利用立体事件相机进行野外昆虫三维跟踪，涉及新型传感器、目标跟踪与野外监测，与遥感变化检测和目标跟踪有方法关联，但应用对象为昆虫行为生态。",
+      "tags": [
+        "事件相机",
+        "立体视觉",
+        "目标跟踪",
+        "野外监测"
+      ],
+      "summary_zh": "在自然环境中对小型、快速移动的生物进行高速跟踪，对于更好地理解其行为和生态具有重要意义。传统基于帧的成像因时间分辨率低而存在运动模糊，并受数据存储限制，推动了对更具适应性解决方案的探索。事件相机以像素级亮度变化而非整帧进行捕捉，通过提高时间分辨率和数据效率，已成为一种有前景的解决方案。在此，作者展示了如何通过将异步事件转换为传统视频格式，将事件成像与标准基于视频的处理方法结合使用，从而利用事件相机增强的时间细节捕捉复杂的昆虫飞行运动，并应用成熟的图像分析技术。将这一转换过程与立体配置相结合，可在野外条件下对快速移动目标进行连续、低延迟的三维跟踪。结果表明，作者显著减轻了运动伪影，并获得了更准确的动物运动表征。通过使事件成像更易于应用于自然野外环境，该方法支持动物行为与生态研究、农业管理以及其他需要在野外进行高保真目标跟踪的领域的更广泛应用。",
+      "insight_zh": "该研究说明事件相机结合立体配置可在野外实现低延迟三维跟踪，其高时间分辨率与数据效率优势或可启发遥感与生态监测中的快速运动目标观测。"
     },
     {
       "key": "arxiv:2509.24789",
@@ -2786,6 +3006,44 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究问题、方法或结论。",
       "insight_zh": "从标题推断，该工作可能利用软提示微调提升LLM的文化对齐能力；由于摘要为空，无法确认其数据集、评估指标或具体效果。"
+    },
+    {
+      "key": "arxiv:2609.21387",
+      "title": "Consistent Relexicalization of Clinical Documents using Graph-Based Approach",
+      "title_zh": "基于图方法的临床文档一致性再词汇化",
+      "url": "https://arxiv.org/abs/2609.21387",
+      "arxiv_id": "2609.21387",
+      "authors": [
+        "Dipankar Das",
+        "Atri Mandal",
+        "Sandeep Singh",
+        "Tushar Shandhilya"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "ML",
+        "Systems",
+        "(AIMLSystems",
+        "2026),",
+        "Lake",
+        "Como,",
+        "Italy,",
+        "October",
+        "6-9,",
+        "2026"
+      ],
+      "published": "2026-09-18T06:56:40+00:00",
+      "score": 30,
+      "reason": "该文将LLM与图方法结合用于临床文档的再词汇化，属于LLM应用与图结构建模，但与城市更新、时空数据挖掘、遥感变化检测等GIS核心方向关联较弱。",
+      "tags": [
+        "临床NLP",
+        "图方法",
+        "大语言模型",
+        "数据脱敏"
+      ],
+      "summary_zh": "再词汇化是临床自然语言处理中的关键技术，因为它有助于对敏感信息进行稳健掩蔽，同时合成保留高保真真实世界特征的数据集。然而，在转换过程中保持结构完整性、关系连贯性和时间一致性仍是一项重大挑战。现有方法往往依赖独立的实体替换，导致纵向记录中出现临床不一致性，从而降低此类再词汇化数据集对下游科学分析的价值。为解决这些局限，作者提出G-RELIC（基于图的上下文再词汇化与改进一致性），将大语言模型的能力与图相结合。G-RELIC实现了一种基于图的映射机制，优化原始实体与替代实体之间的一一对应关系，并引入确定性时间重定位算法以保持时间一致性。在多样化的真实临床数据集上的实证评估验证，G-RELIC显著优于最先进的基线方法。G-RELIC在关系完整性上提升30.4个百分点（从62.1%到92.5%），在时间一致性上提升45.9个百分点（从46%到91.9%），且未损害临床数据集公认的隐私基准。这最大化了再词汇化数据集的分析效用，同时最小化了重识别风险。",
+      "insight_zh": "该工作表明，将LLM与图结构结合可在一一映射与时间重定位约束下提升数据转换的一致性，这一思路或可迁移至需要保持时空关系一致性的多源数据融合与脱敏场景。"
     },
     {
       "key": "arxiv:2606.30175",
@@ -4455,6 +4713,42 @@
       ],
       "summary_zh": "LLM越来越多地用于社会模拟中的社交互动智能体与机器人，相比基于规则的系统提供更大灵活性。然而，尽管它们很好地模仿人类行为，却始终存在一种异质感。本文研究人格感知微调能否通过提升人格条件对话生成的一致性与可控性来缩小这一差距，并与仅使用指令提示进行比较。作者使用一个结合人格标注社交媒体帖子与对话的语料，对两个小型开放权重LLM（Qwen2.5-7B-Instruct与Ministral-8B-Instruct）进行微调，构建用于社会模拟的基于人格的对话引擎。所得模型在多个社交互动场景中由三个独立LLM评判者评估，评判人格保真度并提供基于证据的行为解释。作者还量化了评分者间一致性与生成对话的词汇特征。结果表明，微调模型在扮演不同人格方面并不优于各自的基线模型。然而，较低的评分者间一致性限制了这些结果的可解释置信度。在生成文本质量方面，微调模型大多与基线相当，微调提升了Qwen模型的语言多样性。尽管结果总体可用且基线模型表现最佳，未来研究应更重视训练数据的质量与领域对齐，以实现准确的人格角色扮演。",
       "insight_zh": "该研究对人格微调提升社会模拟智能体表现的有效性提出审慎质疑，并指出评分者一致性限制，对多智能体社会模拟研究具有方法警示意义，但未涉及地理空间或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.20906",
+      "title": "Continuous Delayed-Memory Stochastic Gradient Descent and Continuous-Time Reinforcement Learning from History of Astrophysical Time Series Studies",
+      "title_zh": "连续延迟记忆随机梯度下降与基于天体物理时间序列研究历史的连续时间强化学习",
+      "url": "https://arxiv.org/abs/2609.20906",
+      "arxiv_id": "2609.20906",
+      "authors": [
+        "Juncheng Yi"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.AP",
+        "Continuous-Delayed-Memory",
+        "Stochastic",
+        "Gradient",
+        "Descent,",
+        "Delay",
+        "Differential",
+        "Equation,",
+        "Reinforcement",
+        "Learning,",
+        "Adjoint",
+        "method"
+      ],
+      "published": "2026-09-17T15:38:37+00:00",
+      "score": 20,
+      "reason": "该文从天体物理光变曲线建模出发，提出连续延迟记忆随机梯度下降与连续时间强化学习结构，涉及时间序列建模与强化学习，但与城市更新、遥感变化检测等GIS核心方向关联较弱。",
+      "tags": [
+        "随机微分方程",
+        "连续时间强化学习",
+        "天体物理时间序列",
+        "优化算法"
+      ],
+      "summary_zh": "类星体是宇宙中的明亮天体，其随机亮度变化编码了驱动它们的超大质量黑洞的信息，而基于地面巡天数据时间序列（即光变曲线）对这些变化进行建模是一项统计挑战。本文回顾了随机微分方程（SDE）如何与神经网络参数化相结合，以在历史上克服这一挑战。作者提出了连续延迟记忆随机梯度下降，它依赖于离散迭代过程的过去状态。作者在一些二维景观上进行了模拟，通过调整超参数，观察到与普通SGD相比更广泛的探索和更精确的收敛行为。此外，作者提出了一种具有连续时间策略梯度的强化学习结构，用于探索性策略而无需求解HJB偏微分方程，并表明其最优性条件可恢复此前工作中的Gibbs策略。",
+      "insight_zh": "该工作将连续时间随机建模与强化学习结合，其延迟记忆优化思路或对时空序列建模中的非马尔可夫动态有一定启发，但需进一步验证其在地理时空数据上的适用性。"
     },
     {
       "key": "arxiv:2609.22068",
@@ -6466,6 +6760,31 @@
       ],
       "summary_zh": "稀疏纵向CT随访在仅有少量先前观测时限制了病灶尺寸预测。作者从DeepLesion和Deep Lesion Tracker（DLT）构建了一个五访视DLT衍生的同病灶轨迹基准，产生来自129名患者的205条轨迹。作者比较了探索性传统稀疏到最终分析与主要固定访视索引视界设计，后者在逐步添加早期观测的同时预测从T3到T4的常见对数变化，评估预测准确性、不确定性可靠性、事后共形区间校准、亚组性能和Gompertz启发轨迹正则化。所评估方法显示出部分重叠的点预测准确性但不同的不确定性行为。十个训练种子上的平均留出RMSE在m=1、2、3、4时分别为0.4726、0.4305、0.4499和0.4513，表明m=2时平均RMSE最低；额外历史未改善RMSE。在m=4时，原始队列级特征GP覆盖率接近95%名义水平，而MC Dropout、Deep Ensemble和残差尺度区间则保守。患者级共形校准通常产生接近名义或保守的覆盖率，代价是区间更宽。患者分组开发交叉验证为Gompertz启发项选择lambda*=0。全局人群参考常与病灶级变化方向相反，预测难度在不同解剖亚组间存在差异。总体而言，一旦控制预测视界，额外历史观测提供的预测收益有限，而预测准确性、不确定性可靠性和轨迹一致性不一定同步改善，应在稀疏纵向影像中联合评估。",
       "insight_zh": "该研究强调稀疏纵向影像中预测准确性、不确定性可靠性与轨迹一致性需联合评估，其共形校准与可靠性评估思路或可启发遥感时序变化检测中的不确定性量化。"
+    },
+    {
+      "key": "arxiv:2609.21383",
+      "title": "Prediction Dynamics in Depth-Recurrent Language Models",
+      "title_zh": "深度循环语言模型中的预测动力学",
+      "url": "https://arxiv.org/abs/2609.21383",
+      "arxiv_id": "2609.21383",
+      "authors": [
+        "Xinyue Luo",
+        "Fei Yu"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-18T06:56:11+00:00",
+      "score": 15,
+      "reason": "该文分析深度循环语言模型的预测动力学与分数变化几何，属于语言模型内部机制研究，与GIS博士研究的城市更新、时空数据挖掘、遥感等方向基本无关。",
+      "tags": [
+        "深度循环语言模型",
+        "预测动力学",
+        "分数分解"
+      ],
+      "summary_zh": "深度循环语言模型通过反复的潜在更新来精炼预测。为什么中间答案可以与最终答案一致，而其分数却持续变化？作者推导出一个精确的边界刻画，将幅度界的保守性分解为共同平移、相对于胜者的方向，以及每个竞争者更新与其分数差距的配对。在Huginn-3.5B和Ouro-1.4B上，在完整答案文本评分下，考虑更新方向和竞争者配对后，平均最早合格深度比仅去除平移进一步减少总深度的22.5-34.4%。这一回顾性比较使用已完成的轨迹。在标签评分下也出现显著贡献。对于共享预测分布，作者正交地分离共同运动与对比运动，并通过候选集质量和集合内集中度表达共同分量。共同能量与对比能量可以以不同速率衰减，从而使不断增长的偏好变化份额与缩小的绝对更新并存。这些发现通过观测到的分数变化的几何与组成解释了有限深度下的答案保持现象。",
+      "insight_zh": "该研究提供了理解循环模型预测收敛的几何视角，但其结论限于语言模型内部机制，对地理空间智能的直接启示有限。"
     },
     {
       "key": "arxiv:2609.18120",
@@ -9356,6 +9675,35 @@
       "insight_zh": "该研究的跨域迁移评估框架（多任务套件、零样本泛化）对遥感变化检测中的跨区域迁移评估有方法论借鉴意义。其发现预训练目标与下游任务对齐的重要性，提示地理空间预训练模型设计中任务对齐的关键作用。"
     },
     {
+      "key": "arxiv:2609.21362",
+      "title": "Beyond Atomic Tokens: Factorizing Syllables for Language Model Pretraining",
+      "title_zh": "超越原子词元：为语言模型预训练分解音节",
+      "url": "https://arxiv.org/abs/2609.21362",
+      "arxiv_id": "2609.21362",
+      "authors": [
+        "Nghia Hieu Nguyen",
+        "Thai Bao Huynh",
+        "Binh-An Dinh-Le",
+        "Phu Gia Hoang",
+        "Dat Tien Nguyen",
+        "Kiet Van Nguyen",
+        "Ngan Luu-Thuy Nguyen"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-18T06:21:38+00:00",
+      "score": 10,
+      "reason": "该文提出基于音系结构的分词器用于语言模型预训练，属于NLP基础方法研究，与GIS博士研究主题无直接关联。",
+      "tags": [
+        "分词器",
+        "音系结构",
+        "语言模型预训练"
+      ],
+      "summary_zh": "传统分词器将文本表示为字符或统计推导的子词，忽视了音节的内部音系结构，且往往需要庞大的词表。作者提出Phonemic Tokenizer，一种面向越南语和汉语的、具有语言学动机的分词器，它将每个音节转换为IPA并分解为三个音系成分：声母、韵母和声调。这三个成分共同占据一个上下文位置，在保持音节级序列长度的同时，实现音系相关音节之间的表征共享。非音系和不支持的单元通过字符级回退处理。这种确定性设计无需依赖语料库的词表学习，中文词表仅112项，越南语仅256项。内在评估显示，该分词器在两种语言中均实现了显著更高的Rényi效率，以恰好为1的Fertility表示标准越南语音节词典中的每个条目，并且通常产生比现有预训练分词器更短的越南语序列。作者进一步将该分词器实例化于……",
+      "insight_zh": "该工作展示了利用语言学结构约束分词以提升效率与表征共享的可能性，但其结论限于语言建模，对地理空间文本挖掘的潜在迁移价值尚需验证。"
+    },
+    {
       "key": "arxiv:2601.07316",
       "title": "BEAT-Net: Injecting Biomimetic Spatio-Temporal Priors for Interpretable ECG Diagnosis",
       "title_zh": "BEAT-Net：注入仿生时空先验的可解释心电图诊断",
@@ -11157,32 +11505,6 @@
       "insight_zh": "摘要为空，无法推断具体贡献；从标题看，该工作聚焦于音视频生成中的时序建模，与地理信息科学领域关联较弱。"
     },
     {
-      "key": "arxiv:2609.12748",
-      "title": "The Mechanics of a Swarm: A Reproducible External Reconstruction of an Unintended Agent-Coordination Episode on a Third-Party Wiki",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12748",
-      "arxiv_id": "2609.12748",
-      "authors": [
-        "Philipp L\\\"utje (Philflow",
-        "Schenefeld",
-        "Germany)"
-      ],
-      "categories": [
-        "cs.GT",
-        "cs.MA",
-        "cs.SY",
-        "eess.SY",
-        "math.OC",
-        "https://doi.org/10.5281/zenodo.22689980"
-      ],
-      "published": "2026-09-10T18:05:35+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2603.01250",
       "title": "The MAMA-MIA Challenge: Advancing Generalizability and Fairness in Breast MRI Tumor Segmentation and Treatment Response Prediction",
       "title_zh": "MAMA-MIA挑战赛：推进乳腺MRI肿瘤分割与治疗响应预测的泛化性与公平性",
@@ -11478,41 +11800,6 @@
       "insight_zh": "摘要为空，无法确认具体贡献；从标题看属于强化学习探索与表示学习方向，与地理空间智能的关联性有限。"
     },
     {
-      "key": "arxiv:2609.21371",
-      "title": "RobotEQ-Video: A Video-Centric Benchmark for Social Proactive Intelligence with World-State Taxonomy",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21371",
-      "arxiv_id": "2609.21371",
-      "authors": [
-        "Xinyi Che",
-        "Zheng Lian",
-        "Kuofei Fang",
-        "Xuehao Wang",
-        "Xinghai Gao",
-        "Junqing Wu",
-        "Chuyu Wu",
-        "Liyi Liu",
-        "Yanhan Huang",
-        "Keyi Xie",
-        "Haomin Ouyang",
-        "Jinyang Wu",
-        "Fan Zhang",
-        "Runhao Zeng",
-        "Xun Yang",
-        "Bin He"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.HC"
-      ],
-      "published": "2026-09-18T06:35:56+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.21827",
       "title": "RheoSampling: Resolving the One-Hot Dilemma in Stochastic Dynamic-Tree Speculative Decoding",
       "title_zh": "",
@@ -11740,27 +12027,6 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题推断该工作提出一种在参数空间进行分布匹配的概率流蒸馏方法。",
       "insight_zh": "摘要为空，无法确认具体贡献；从标题看属于模型压缩与蒸馏的理论方法研究，与地理空间智能的关联性有限。"
-    },
-    {
-      "key": "arxiv:2609.21383",
-      "title": "Prediction Dynamics in Depth-Recurrent Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21383",
-      "arxiv_id": "2609.21383",
-      "authors": [
-        "Xinyue Luo",
-        "Fei Yu"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "published": "2026-09-18T06:56:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2603.29532",
@@ -12113,28 +12379,6 @@
       "insight_zh": "该研究的细粒度评估框架（基于因素的检查项设计）对遥感变化检测中的多因素评估有一定方法论参考价值，但整体属于视频生成领域，与GIS核心研究方向关联度极低。"
     },
     {
-      "key": "arxiv:2609.21390",
-      "title": "Offline Multimodal Large Language Models for Decision Support in Air Operations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21390",
-      "arxiv_id": "2609.21390",
-      "authors": [
-        "Joao P. A. Dantas",
-        "Jelton A. Cunha",
-        "Gabriel Dietzsch"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-18T07:00:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.21822",
       "title": "Object Detection Benchmarks are Incomplete: The Role of Label Errors and Annotation Uncertainty",
       "title_zh": "",
@@ -12475,54 +12719,6 @@
       "insight_zh": "该研究展示了端侧实时情感编辑的可行性，其轻量化条件生成思路对移动端地理可视化或实时数据呈现有间接参考价值，但摘要未涉及地理空间应用。"
     },
     {
-      "key": "arxiv:2609.21379",
-      "title": "JEPA Guided Diffusion: Predictive Vision-Language Conditioning for Generative Traffic Forecasting",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21379",
-      "arxiv_id": "2609.21379",
-      "authors": [
-        "Trinh Tra Giang Nguyen",
-        "Thanh Nguyen Vo",
-        "Nguyen Hoai Thuong Bui",
-        "Ha Duc Bui"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-18T06:45:37+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.21363",
-      "title": "Hiding in Plain Sight: A Diffusion-based Mitigation of Geolocation Privacy Leakage in Vision-Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21363",
-      "arxiv_id": "2609.21363",
-      "authors": [
-        "Yining Wang",
-        "Xi Li",
-        "Mi Zhang",
-        "Xiaohan Zhang",
-        "Xiaoyu You",
-        "Zhenxing Qian",
-        "Mi Wen"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "published": "2026-09-18T06:24:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2605.02376",
       "title": "Graph-Augmented Topological Internalization with Dual-Stream Classifiers for Medical Report Generation",
       "title_zh": "图增强的拓扑内化与双流分类器用于医学报告生成",
@@ -12603,30 +12799,6 @@
       ],
       "summary_zh": "在非平稳在线学习中，动态遗憾作为衡量在线学习器相对于时变比较器序列表现如何的指标日益受到关注。尽管已有相当进展，但针对强凸和指数凹损失获得最优界往往涉及复杂分析。本文提出一个简单框架，将动态遗憾最小化归约为切换遗憾最小化。因此，可以利用具有切换遗憾保证的现成算法推导动态遗憾界。该归约的关键思想是：对任意比较器序列构造一个辅助随机序列，该序列在每一轮无偏，且具有受控方差和可管理的切换次数。将此构造与合适的代理损失结合，可将动态遗憾分解为相对于随机序列的期望切换遗憾及其受控方差。理论上，对于强凸和指数凹损失，作者建立了Õ(T^{1/3}P_T^{2/3})动态遗憾界，其中T表示时间跨度，P_T表示比较器序列的路径长度。此外，对于一般凸损失，同一归约也恢复了O(√(T(1+P_T)))动态遗憾界。值得注意的是，所有发现均与这三类损失的极小极大最优结果相匹配，凸显了所提框架的通用性。",
       "insight_zh": "该工作提供了一种将动态遗憾归约为切换遗憾的通用框架，其非平稳在线学习理论或可启发时空数据流中的自适应预测，但摘要未涉及地理空间应用。"
-    },
-    {
-      "key": "arxiv:2609.21354",
-      "title": "Field Tracking of Insects Using a Stereoscopic Event-Based Camera Setup",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21354",
-      "arxiv_id": "2609.21354",
-      "authors": [
-        "Pratham G. Shenwai",
-        "Martin J. Lankheet",
-        "John T. Hrynuk",
-        "Mandiyam Y. Mahadeeswara",
-        "Mandyam V. Srinivasan",
-        "Sridhar Ravi"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-18T06:10:28+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.21829",
@@ -12868,70 +13040,6 @@
       "insight_zh": "该工作通过将MVO的KKT条件嵌入学习目标，使预测训练与约束决策问题保持一致；这可能为决策导向学习提供可处理的重构思路，但其应用领域是金融投资组合而非地理空间分析。"
     },
     {
-      "key": "arxiv:2609.20906",
-      "title": "Continuous Delayed-Memory Stochastic Gradient Descent and Continuous-Time Reinforcement Learning from History of Astrophysical Time Series Studies",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20906",
-      "arxiv_id": "2609.20906",
-      "authors": [
-        "Juncheng Yi"
-      ],
-      "categories": [
-        "cs.LG",
-        "stat.AP",
-        "Continuous-Delayed-Memory",
-        "Stochastic",
-        "Gradient",
-        "Descent,",
-        "Delay",
-        "Differential",
-        "Equation,",
-        "Reinforcement",
-        "Learning,",
-        "Adjoint",
-        "method"
-      ],
-      "published": "2026-09-17T15:38:37+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.21387",
-      "title": "Consistent Relexicalization of Clinical Documents using Graph-Based Approach",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21387",
-      "arxiv_id": "2609.21387",
-      "authors": [
-        "Dipankar Das",
-        "Atri Mandal",
-        "Sandeep Singh",
-        "Tushar Shandhilya"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "ML",
-        "Systems",
-        "(AIMLSystems",
-        "2026),",
-        "Lake",
-        "Como,",
-        "Italy,",
-        "October",
-        "6-9,",
-        "2026"
-      ],
-      "published": "2026-09-18T06:56:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2508.03030",
       "title": "Collab-Solver: Collaborative Solving Policy Learning for Mixed-Integer Linear Programming",
       "title_zh": "Collab-Solver：面向混合整数线性规划的协同求解策略学习",
@@ -13113,31 +13221,6 @@
         "evaluations"
       ],
       "published": "2026-09-18T13:33:57+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.21362",
-      "title": "Beyond Atomic Tokens: Factorizing Syllables for Language Model Pretraining",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21362",
-      "arxiv_id": "2609.21362",
-      "authors": [
-        "Nghia Hieu Nguyen",
-        "Thai Bao Huynh",
-        "Binh-An Dinh-Le",
-        "Phu Gia Hoang",
-        "Dat Tien Nguyen",
-        "Kiet Van Nguyen",
-        "Ngan Luu-Thuy Nguyen"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-18T06:21:38+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13375,34 +13458,6 @@
         "cs.CL"
       ],
       "published": "2026-09-18T17:34:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.21386",
-      "title": "AgentVidBench: A Multi-Hop Video Question Answering Benchmark for Evaluating MLLM Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.21386",
-      "arxiv_id": "2609.21386",
-      "authors": [
-        "Seoyeon An",
-        "Hyeonseo Jang",
-        "Minsu Kim",
-        "Chanho Lee",
-        "Younghan Park",
-        "Kangwook Lee"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "https://github.com/krafton-ai/agentvidbench",
-        "Dataset:",
-        "https://huggingface.co/datasets/agentvidbench/agentvidbench"
-      ],
-      "published": "2026-09-18T06:56:33+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

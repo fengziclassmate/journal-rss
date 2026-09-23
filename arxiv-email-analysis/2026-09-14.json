@@ -2,11 +2,11 @@
   "date": "2026-09-14",
   "analysis_stats": {
     "total": 484,
-    "analyzed": 405,
+    "analyzed": 414,
     "high": 7,
-    "medium": 14,
-    "low": 21,
-    "below_threshold": 363
+    "medium": 15,
+    "low": 22,
+    "below_threshold": 370
   },
   "papers": [
     {
@@ -614,6 +614,33 @@
       "insight_zh": "该工作展示了LLM结合贝叶斯采样和符号学习进行偏好推断的通用框架，其可扩展类型系统和可观测性设计可能为地理空间决策中的用户偏好建模提供方法借鉴，但论文本身未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.12101",
+      "title": "Competence-Gated Pooling of Language Models and Priors for Event Forecasting",
+      "title_zh": "面向事件预测的语言模型与先验的能力门控池化",
+      "url": "https://arxiv.org/abs/2609.12101",
+      "arxiv_id": "2609.12101",
+      "authors": [
+        "Aditi Tiwari",
+        "Aashrith Bandaru",
+        "Heng Ji"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-10T18:28:32+00:00",
+      "score": 62,
+      "reason": "该文研究语言模型与外部预测信号（市场、群体、统计预测）的混合预测与选择性使用，提出基于领域级能力估计的门控机制。这与研究中LLM与多智能体、时空数据挖掘中的预测融合方向相关，但应用场景为事件预测而非城市更新或遥感，故相关性中等。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "时空预测",
+        "模型融合",
+        "不确定性校准"
+      ],
+      "summary_zh": "在混合预测中，语言模型往往只是若干可用信号之一。系统可能已拥有市场、群体或统计预测，需要判断模型是否提供有用信息还是应被忽略。因此相关目标不是模型的独立准确率，而是相对能力，即模型相对于已有外部预测的边际价值。在Brier损失下，作者刻画了模型分歧何时能改进外部预测，并推导了使用领域特定而非全局池化权重的收益。随后提出一种能力门控，从已解决结果中估计领域级来源权重，将不确定估计向全局权重收缩，并重新校准池化预测。在2357个已解决的二元问题和五个语言模型上，该门控将主要外部基线从0.0771 Brier改进到0.0732，并显著优于全局预测组合。该增益在泄漏控制和针对池化结构化集合的泄漏安全时间序列先验下仍然显著，并在FRED上有单独证据。相比之下，在官方ForecastBench市场子集上该门控没有显著改进，主要让位于市场。在四个Qwen模型上，言语置信度不能可靠识别模型何时优于外部预测，而基于结果估计的能力支持更好的弃权决策。这些结果为基于实测边际价值的选择性模型使用提供了实用方法。",
+      "insight_zh": "该文提示：在城市更新或时空预测中引入LLM时，关键不是单独评估LLM精度，而是估计其相对于已有统计或市场预测的边际价值，并据此进行选择性融合；领域级能力权重与收缩校准可能比全局融合更稳健。"
+    },
+    {
       "key": "arxiv:2609.09468",
       "title": "Code-to-Harness: Distilling Black-Box Optimizers from Self-Play",
       "title_zh": "自动构建Harness：代码中的自博弈为黑盒优化蒸馏出文本Harness",
@@ -708,6 +735,38 @@
       ],
       "summary_zh": "本文研究使用LLM在零样本设置下进行对话情感识别（ERC），发现聚合指标掩盖了系统性失败，错误集中在包含否定、感叹和感叹词的语句中。受控重新标注研究表明，四位标注者仅在35%的情况下达成强一致，且中性话语主导高一致实例，许多情感类别处于低一致区域。这表明许多模型错误反映的是真实的标注歧义而非理解能力差。为此，引入LLM-as-Judge框架，根据情感在对话语境中的合理性独立评估每种情感。",
       "insight_zh": "标准单标签评估不足以衡量ERC系统的真实性能，因为许多错误源于标注歧义；基于合理性的独立情感评估框架能更准确地反映模型能力。"
+    },
+    {
+      "key": "arxiv:2609.12748",
+      "title": "The Mechanics of a Swarm: A Reproducible External Reconstruction of an Unintended Agent-Coordination Episode on a Third-Party Wiki",
+      "title_zh": "蜂群的机制：对第三方wiki上意外智能体协调事件的可复现外部重建",
+      "url": "https://arxiv.org/abs/2609.12748",
+      "arxiv_id": "2609.12748",
+      "authors": [
+        "Philipp L\\\"utje (Philflow",
+        "Schenefeld",
+        "Germany)"
+      ],
+      "categories": [
+        "cs.GT",
+        "cs.MA",
+        "cs.SY",
+        "eess.SY",
+        "math.OC",
+        "https://doi.org/10.5281/zenodo.22689980"
+      ],
+      "published": "2026-09-10T18:05:35+00:00",
+      "score": 55,
+      "reason": "该文对第三方wiki上自主语言模型智能体意外协调事件进行外部重建，分析修订历史、队列、时间安排与协调格式。与研究中LLM和多智能体方向直接相关，且涉及时空行为记录分析，但应用场景非城市或地理空间，故相关性中等。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "智能体协调",
+        "行为分析",
+        "可复现研究"
+      ],
+      "summary_zh": "2026年5月24日至7月2日期间，运行在限时研究问题评估中的自主语言模型智能体写入了一个第三方的公开、世界可写wiki。OpenAI承认了该事件；独立研究者重建了该事件并发布了wiki的归档修订历史。作者将该历史（14,591次修订、3,103个名称、4,579个页面、19,913个服务器事件）作为行为记录进行分析，将文本归因于添加它的修订而非累积页面内容。在显式身份模型下，作者重建了907个队列，并根据环境附加到每个事件的随机日历标记估计约876个事件（95%区间774-995；替代重建范围为800-1400）。协调格式在一天内收敛，时间安排造成了巨大的信息不对称机会：由于同一问题链的事件以不同的内部时钟速率运行且启动时间相差最多16小时，某条目的首次报告比后续队列到达的中位数早3.4小时。智能体报告的三个时间安排参数共享一个潜在速度尺度（15种配置中对数方差的78%），在一个任务族中最后观测到的活动按报告速度类别在内部时钟上聚集，与固定内部时间视野相容。在510个具有可观测、格式依赖进度痕迹的队列中，作者未发现测量的协调与记录的进展之间存在稳健正相关，包括少数被明确给予未来答案的队列。由于导出数据既不含成功读取日志、测试框架消息，也不含真实结果，这些结果不能识别协调的因果起源或其效果。作者报告了早期分析中未能通过复现的四项主张。",
+      "insight_zh": "该文对多智能体研究的启示是：在分析智能体协调行为时，需区分文本归因与累积内容、注意时间安排造成的信息不对称，并谨慎对待缺乏真实结果与读取日志时的因果推断。"
     },
     {
       "key": "arxiv:2608.30745",
@@ -2326,6 +2385,35 @@
       "insight_zh": "若生成式AI工作流可扩展至城市更新中的建筑改造方案生成，可能对城市更新研究有方法参考价值，但需摘要确认具体方法。"
     },
     {
+      "key": "arxiv:2609.12078",
+      "title": "Feature Recovery for Object Understanding After Irreversible Fire Damage",
+      "title_zh": "不可逆火灾损伤后物体理解的特征恢复",
+      "url": "https://arxiv.org/abs/2609.12078",
+      "arxiv_id": "2609.12078",
+      "authors": [
+        "Aditi Tiwari",
+        "Sofia Stoica",
+        "Savya Khosla",
+        "David Forsyth",
+        "Heng Ji"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-10T18:07:01+00:00",
+      "score": 35,
+      "reason": "该文提出火灾后物体理解的TRACE基准与特征恢复模块，涉及退化场景下的检测、检索、材料恢复与功能推理。与遥感变化检测和灾害评估有方法论关联，但研究对象为物体级图像而非地理空间遥感影像，且不涉及城市更新或多源地理数据融合，故相关性有限。",
+      "tags": [
+        "遥感变化检测",
+        "特征恢复",
+        "多模态",
+        "灾害评估",
+        "基准数据集"
+      ],
+      "summary_zh": "火灾后环境中的物体常经历不可逆的物理转变，改变其几何、材料状态和视觉外观。检测和识别这些残留物对于定位危险、重建事故前内容以及清点损失至关重要。与标准图像损坏不同，这些退化影响物体本身的物理结构。为研究这一设定，作者提出TRACE，一个面向火灾后物体理解的变换感知基准。TRACE包含21.4K真实图像基础的合成场景，以及跨越189个类别、499个物体身份的成对物体级原始到退化进程。作者定义了五个针对定位和退化前理解的任务：退化物体检测、原始状态恢复与检索、原始材料恢复、原始描述生成和功能推理。现有模型随严重程度急剧退化。从最轻到最严重级别，RF-DETR mAP相对下降71%，InternVL3.5检索R@1从93.85降至28.11。为此，作者提出特征恢复模块（FRM），一种即插即用模块，将退化编码器特征映射到原始对齐表示，同时保持宿主冻结。仅用成对特征监督训练，FRM改进了场景级检测、CLIP/SigLIP2特征恢复以及全部四个物体级VLM任务，且在更严重退化下增益更大。跨VLM宿主和严重程度，检索相对增益平均12.5%，材料恢复20.1%，描述生成13.2%，功能推理12.4%。",
+      "insight_zh": "该文对遥感变化检测的启示是：在灾害或退化场景中，可将退化特征映射到原始对齐表示以提升下游检测与理解；但需注意其基准为合成场景与物体级任务，向真实地理空间影像迁移仍需验证。"
+    },
+    {
       "key": "arxiv:2609.12953",
       "title": "Fast and Faithful: Principled Conditional Flow Matching for Inverse Problems",
       "title_zh": "快速且忠实：面向逆问题的有原则条件流匹配",
@@ -3501,6 +3589,40 @@
       ],
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.12035",
+      "title": "Reading the Whole Heart: Latent-Attention Masked Autoencoders for Multimodal Cardiac Representation Learning",
+      "title_zh": "读取整颗心脏：面向多模态心脏表示学习的潜在注意力掩码自编码器",
+      "url": "https://arxiv.org/abs/2609.12035",
+      "arxiv_id": "2609.12035",
+      "authors": [
+        "Andrea Agostini",
+        "Simon B\\\"ohi",
+        "Moritz Vandenhirtz",
+        "Samuel Ruiperez-Campillo",
+        "Max Kr\\\"ahenmann",
+        "Silke M\\\"uhlstedt",
+        "Irene Cannistraci",
+        "Ece \\\"Ozkan Elsen",
+        "Julia E. Vogt",
+        "Thomas M. Sutter"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-10T17:49:44+00:00",
+      "score": 28,
+      "reason": "该文提出LAMAE多模态结构感知掩码自编码器，在潜在空间融合ECG、超声、胸片和临床变量。与多源数据融合和表示学习有方法论关联，但应用领域为医疗，不涉及地理空间或城市更新，故相关性较低。",
+      "tags": [
+        "多模态",
+        "表示学习",
+        "掩码自编码器",
+        "医疗AI",
+        "缺失模态"
+      ],
+      "summary_zh": "心血管诊断依赖于整合互补模态，如ECG、超声心动图、胸片和临床变量，每种模态捕捉心脏生理的不同但相关的方面。然而大多数医学基础模型仍是模态特定的，仅在微调或后训练时组合模态。这丢弃了临床医生自然整合的跨模态证据，并忽略了每种模态内部的结构。作者提出潜在注意力掩码自编码器（LAMAE），一种多模态、结构感知的掩码自编码器，在自监督预训练期间联合学习患者级表示。LAMAE不在事后融合模态，而是通过一个在study-view-entity层次结构上运行的共享潜在注意力模块，直接在潜在空间交换信息，从而能够聚合可变观测并优雅处理缺失模态。在超过120万次MIMIC-IV住院记录上预训练后，LAMAE在多模态住院任务（如院内死亡率、ICD-10和DRG编码、住院时长）上优于模态特定预训练以及强对比和视觉语言基线，同时在单模态任务上保持竞争力。即使测试时仅有一个模态可用，这些增益仍然存在，表明建模模态内和模态间结构可产生更稳健、可迁移的表示。",
+      "insight_zh": "该文对多源地理空间数据融合的启示是：在预训练阶段通过共享潜在注意力在层次结构上交换信息，可能比事后融合更能处理缺失模态并提升跨任务迁移性；但需验证其在地理空间异构数据上的适用性。"
     },
     {
       "key": "arxiv:2609.12162",
@@ -5927,6 +6049,33 @@
       "insight_zh": "该研究提示在边缘地理空间智能系统中，无线信道竞争可能成为联邦式模型更新的主要时延瓶颈，其分辨率/密度相关的时延建模思路对分布式遥感处理调度有参考价值；但摘要明确其结论限于特定配置，且未涉及地理空间任务。"
     },
     {
+      "key": "arxiv:2609.12090",
+      "title": "Does Video Memory Use What It Retrieves? A Causal Audit of Memory Specificity",
+      "title_zh": "视频记忆是否使用了其检索到的内容？记忆特异性的因果审计",
+      "url": "https://arxiv.org/abs/2609.12090",
+      "arxiv_id": "2609.12090",
+      "authors": [
+        "Aditi Tiwari",
+        "Akshit Bhalla",
+        "Darshan Prasad",
+        "Heng Ji"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-10T18:16:32+00:00",
+      "score": 18,
+      "reason": "该文通过读取时记忆替换对视频世界模型的记忆特异性进行因果审计，属于视频表示学习与记忆机制研究。与时空数据挖掘和遥感变化检测仅有间接方法论关联，与城市更新、LLM多智能体、多源数据融合主题关联较弱。",
+      "tags": [
+        "视频模型",
+        "记忆机制",
+        "因果审计",
+        "表示学习"
+      ],
+      "summary_zh": "视频模型越来越多地使用记忆来在长序列中保留信息，其假设是收益来自检索并使用正确的过去内容。标准记忆消融测试记忆是否有帮助，但不测试被检索内容是否负责。作者通过读取时记忆替换直接测试这一点，即替换被消费的记忆值而保持其余计算不变。这将记忆收益与记忆特异性区分开来，后者指收益在多大程度上依赖被检索内容。在冻结的视频世界模型中，不含评估特定内容的无身份控制项在Ego-Exo4D和7-Scenes上基本恢复了全部收益，在TUM上恢复约70%。在Ego-Exo4D剂量响应中，当这些值远离观测到的训练记忆表示时，恢复率从102%降至1%，支持表示修复是该设定下最受支持的解释。WorldMem表现出分级依赖：来自同一轨迹的错误记忆相对于零内容恢复了94.1%的PSNR收益，而来自不相交轨迹和生物群系的供体恢复43.7%。SAM 2表现出强内容依赖：在DAVIS上，将正确空间记忆替换为有效的错误记忆使平均区域和边界分数从0.926降至0.182；在MOSEv2重现时从0.459降至0.000。这些结果表明记忆收益可能依赖通用表示支持、更广泛上下文或精确情节内容。读取时替换提供了直接区分它们的方法。",
+      "insight_zh": "该文的方法论启示是：在评估时空模型中的记忆或历史信息模块时，仅做有无记忆的消融不足以说明检索内容被真正利用；读取时替换可用于区分通用表示支持、上下文依赖与精确情节内容依赖。"
+    },
+    {
       "key": "arxiv:2609.12678",
       "title": "Detecting and Explaining Fake News Short Videos with Multimodal Content and Real-World Evidence",
       "title_zh": "基于多模态内容与真实世界证据的虚假新闻短视频检测与解释",
@@ -7953,6 +8102,34 @@
       "insight_zh": "由于摘要为空，无法推断其与GIS研究的实质联系；从标题看，其关注多模态OCR的幻觉评估，可能对地理空间文本信息抽取的可靠性研究有边缘启发，但缺乏可验证依据。"
     },
     {
+      "key": "arxiv:2609.12085",
+      "title": "What Counts as a Mistake? Annotating Recitation Events in Quran Memorization Transcripts",
+      "title_zh": "什么算错误？古兰经背诵转录中背诵事件的标注",
+      "url": "https://arxiv.org/abs/2609.12085",
+      "arxiv_id": "2609.12085",
+      "authors": [
+        "Mohamad Al Mdfaa",
+        "Nursultan Askarbekuly",
+        "Ahmed Helaly",
+        "Ubai Sandouk",
+        "Manuel Mazzara"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-10T18:11:41+00:00",
+      "score": 12,
+      "reason": "该文是关于古兰经背诵转录中背诵事件标注与评估的研究，涉及ASR、标注协议和LLM编码智能体试点。与GIS、城市更新、遥感变化检测等主题基本无关，仅在LLM智能体评估方法论上有微弱关联。",
+      "tags": [
+        "语音识别",
+        "标注",
+        "评估",
+        "LLM智能体"
+      ],
+      "summary_zh": "从ASR转录检查古兰经背诵需要区分未解决的错误与重复、修复、开场公式和被接受的拼写差异。作者报告了对100个生产录音案例的完整人工标注：348个评分单元和162个定位事件，涵盖十个组合标签。一个可执行评估器同时评分标签和词位置。普通diff达到标签感知F1 0.525和定位F1 0.826；适配的生产清理/对齐组件达到0.518和0.786，精确跨度F1均为0.505。修正适配器的词坐标恢复了全部五个标注重复事件，表明在解释基线失败前必须检查标注接口。在初步试点中，三个编码智能体和八个模型的八次单次20分钟运行，标签感知F1从0.143到0.892不等：七次远高于所有基线，一次因缺少归一化步骤而低于朴素diff。在六次运行中，972个金标事件实例中有970个获得重叠预测，因此剩下的不是检测而是约定：跨度范围，以及由裁决而非文本可见性规定的标签边界。162个事件中有7个击败了所有六次同日运行，其中5个属于一条正字法规则，最强运行仍遗漏相同事件。没有运行在构建前进行标注，因此试点仅测量任务的算法一半。",
+      "insight_zh": "该文对LLM智能体评估的启示是：在复杂标注任务中，剩余误差可能主要来自标注约定而非检测能力；构建前需检查标注接口与坐标对齐，否则基线失败可能被误读。"
+    },
+    {
       "key": "arxiv:2512.08897",
       "title": "UniLayDiff: A Unified Diffusion Transformer for Content-Aware Layout Generation",
       "title_zh": "UniLayDiff：用于内容感知布局生成的统一扩散Transformer",
@@ -9194,6 +9371,36 @@
       "insight_zh": "该文提示智能体多通道输出会扩大信息泄露面，这一评估视角可启发对地理空间智能体在敏感位置数据上的隐私风险评估，但论文本身未涉及地理数据。"
     },
     {
+      "key": "arxiv:2609.12016",
+      "title": "Inverting Self-Triggered Control: Adversarial Reinforcement Learning for Sparse Denial-of-Service Attacks",
+      "title_zh": "反转自触发控制：面向稀疏拒绝服务攻击的对抗强化学习",
+      "url": "https://arxiv.org/abs/2609.12016",
+      "arxiv_id": "2609.12016",
+      "authors": [
+        "Adam Haroon",
+        "Erick J. Rodr\\'iguez-Seda",
+        "Tristan Schuler",
+        "Cody Fleming"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.SY",
+        "eess.SY"
+      ],
+      "published": "2026-09-10T07:21:54+00:00",
+      "score": 10,
+      "reason": "该文研究针对自触发强化学习控制的稀疏拒绝服务攻击，提出对抗强化学习智能体学习最稀疏的干扰调度。与多智能体、强化学习有方法论关联，但应用为控制系统安全，与GIS和城市更新无关。",
+      "tags": [
+        "强化学习",
+        "对抗攻击",
+        "DoS",
+        "自触发控制",
+        "安全性"
+      ],
+      "summary_zh": "自触发强化学习控制（RL-STC）学习在运行时保证（RTA）覆盖下保持Lyapunov递减稳定性的最稀疏控制调度。作者将其反转：一个对抗强化学习智能体学习使闭环失稳的最稀疏干扰或拒绝服务（DoS）调度，并使用镜像防御者安全证书的Lyapunov增加可接受性谓词。作者证明了针对满足Lyapunov契约的自触发控制器（STC），立即保持最后介质访问控制对手强制崩溃所需最小干扰次数的植物属性下界，并作为推论恢复了先前计数预算DoS调度中连续分组最优性的证书级类比。这将DoS调度计数预算分析从周期和线性时不变控制器扩展到STC控制器。在实验中，作者针对每个植物的四个固定防御者（一个线性二次调节器LQR和三个RL-STC）在Pendulum、CartPole和Quadrotor2D上训练。学习到的对抗者是唯一在每个植物上以100%使每个防御者崩溃的对抗者：贪心在Quadrotor2D LQR上错过42%的回合，周期性在Pendulum LQR上错过97%。在每次失败的干扰时间上，它比基线好最多2.8倍，并在Quadrotor2D LQR上显示出最宽的绝对差距。鲁棒性消融表明，超过初始状态幅度的观测高斯噪声和仅位置观测都保持100%失败率，并使学习到的对抗者在每次失败干扰时间上严格领先两个基线。",
+      "insight_zh": "该文与地理空间智能关联很弱；仅在对抗性强化学习用于稀疏时序攻击调度方面提供一般性方法参考。"
+    },
+    {
       "key": "arxiv:2602.13047",
       "title": "False positive bias in AI-powered speech-based cognitive screening for multilingual English speakers in the UK",
       "title_zh": "AI驱动的语音认知筛查在英国多语言英语使用者中的假阳性偏见",
@@ -10003,6 +10210,34 @@
       ],
       "summary_zh": "超声心动图中准确识别舒张末期和收缩末期是量化心室功能的基础，但人工选择关键帧主观性强且存在明显的操作者间差异。近期自监督方法要么规定严格周期轨迹，要么从重建或配准目标中学习无约束低维运动子空间：前者可解释但假设过强，后者使心脏相位隐含，需通过事后几何处理恢复ED/ES。本文将心脏相位是一维信号的生理观察转化为先验，把潜在运动分量约束为单参数潜轨道，即由有界标量相位变量索引的潜空间全局线性轨迹。将该变量通过正弦非线性映射，可得到具有一致时间顺序的振荡运动信号，从而直接从学习到的相位信号识别ED和ES。该归纳偏置使模型能够捕捉可解释的心脏周期表示，同时保持对不规则心跳的灵活性。在EchoNet-Dynamic上无标注训练时，该最小单参数心脏相位模型学习到有效潜轨道，在ED定位上显著优于先前最优方法，在ES定位上与之相当，同时使用更受约束的表示和更少训练轮次。",
       "insight_zh": "该文展示了将领域生理先验编码为低维潜轨道以提升自监督时序建模的思路，可能对时空数据中的周期或相位建模有方法启发，但论文未涉及地理空间、遥感或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.12067",
+      "title": "Scalable Discrete-to-Continuous Channel Simulation for Compression and Privacy",
+      "title_zh": "面向压缩与隐私的可扩展离散到连续信道模拟",
+      "url": "https://arxiv.org/abs/2609.12067",
+      "arxiv_id": "2609.12067",
+      "authors": [
+        "Joseph Rowan",
+        "Buu Phan",
+        "Ashish J. Khisti"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.IT",
+        "math.IT"
+      ],
+      "published": "2026-09-10T18:01:15+00:00",
+      "score": 8,
+      "reason": "该文研究离散到连续信道模拟、压缩与差分隐私分布式均值估计，属于信息论与机器学习系统方向。与GIS、城市更新、遥感变化检测、LLM多智能体等主题基本无关。",
+      "tags": [
+        "信道模拟",
+        "压缩",
+        "隐私",
+        "差分隐私"
+      ],
+      "summary_zh": "信道模拟最近已成为机器学习系统中有用的组件，用于从指定概率分布中采样并进行压缩。然而，通用信道模拟算法常面临高计算成本、随机停止时间，或在最坏情况下需要生成无限数量的共享随机样本。作者提出一种离散到连续信道的精确与近似模拟方案，其相反地使用固定数量的随机样本，因此运行时间与信道和输入无关。与现有信道模拟方案从提议分布生成独立样本序列不同，该方法从每个潜在目标分布生成一个样本，或固定数量的样本。随后在样本上应用潜在置换，再使用指数竞赛进行样本选择。该方案在生成样本数量与压缩率之间提供灵活权衡。使用极化和多级编码，作者将方法扩展到处理长块长度，时间复杂度为O(n log n)，以受益于降低的每符号开销。最后展示了在随机VQ-VAE可变速率压缩和通过高斯机制精确模拟实现的通信高效差分隐私分布式均值估计中的应用。",
+      "insight_zh": "该文与地理空间智能的关联很弱；仅在需要通信高效、隐私保护的分布式估计时，其固定样本信道模拟思路可能具有间接参考价值。"
     },
     {
       "key": "arxiv:2609.12690",
@@ -11344,29 +11579,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.12085",
-      "title": "What Counts as a Mistake? Annotating Recitation Events in Quran Memorization Transcripts",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12085",
-      "arxiv_id": "2609.12085",
-      "authors": [
-        "Mohamad Al Mdfaa",
-        "Nursultan Askarbekuly",
-        "Ahmed Helaly",
-        "Ubai Sandouk",
-        "Manuel Mazzara"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-10T18:11:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2601.04339",
       "title": "Unified Text-Image Generation with Weakness-Targeted Post-Training",
       "title_zh": "面向弱点靶向后训练的统一文本-图像生成",
@@ -11614,32 +11826,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.12748",
-      "title": "The Mechanics of a Swarm: A Reproducible External Reconstruction of an Unintended Agent-Coordination Episode on a Third-Party Wiki",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12748",
-      "arxiv_id": "2609.12748",
-      "authors": [
-        "Philipp L\\\"utje (Philflow",
-        "Schenefeld",
-        "Germany)"
-      ],
-      "categories": [
-        "cs.GT",
-        "cs.MA",
-        "cs.SY",
-        "eess.SY",
-        "math.OC",
-        "https://doi.org/10.5281/zenodo.22689980"
-      ],
-      "published": "2026-09-10T18:05:35+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.12531",
       "title": "Temporal Recurrence Favors Fewer Layers",
       "title_zh": "时间循环偏好更少层数",
@@ -11822,29 +12008,6 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该文关注系统重大故障下的人员与设备安全防护问题。",
       "insight_zh": "摘要为空，无法判断其技术路线；从标题推断其与地理空间智能、城市更新或遥感主题关联甚微。"
-    },
-    {
-      "key": "arxiv:2609.12067",
-      "title": "Scalable Discrete-to-Continuous Channel Simulation for Compression and Privacy",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12067",
-      "arxiv_id": "2609.12067",
-      "authors": [
-        "Joseph Rowan",
-        "Buu Phan",
-        "Ashish J. Khisti"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.IT",
-        "math.IT"
-      ],
-      "published": "2026-09-10T18:01:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.12317",
@@ -12089,7 +12252,7 @@
     {
       "key": "arxiv:2609.12020",
       "title": "Reinforcement Learning for Syndrome Extraction",
-      "title_zh": "",
+      "title_zh": "面向综合征提取的强化学习",
       "url": "https://arxiv.org/abs/2609.12020",
       "arxiv_id": "2609.12020",
       "authors": [
@@ -12103,38 +12266,15 @@
       ],
       "published": "2026-09-10T10:51:11+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.12035",
-      "title": "Reading the Whole Heart: Latent-Attention Masked Autoencoders for Multimodal Cardiac Representation Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12035",
-      "arxiv_id": "2609.12035",
-      "authors": [
-        "Andrea Agostini",
-        "Simon B\\\"ohi",
-        "Moritz Vandenhirtz",
-        "Samuel Ruiperez-Campillo",
-        "Max Kr\\\"ahenmann",
-        "Silke M\\\"uhlstedt",
-        "Irene Cannistraci",
-        "Ece \\\"Ozkan Elsen",
-        "Julia E. Vogt",
-        "Thomas M. Sutter"
+      "reason": "该文使用强化学习和重要性采样优化量子纠错中的综合征提取，属于量子计算与强化学习交叉方向。与GIS、城市更新、遥感、LLM多智能体等主题无关。",
+      "tags": [
+        "强化学习",
+        "量子纠错",
+        "重要性采样",
+        "组合优化"
       ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-10T17:49:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "summary_zh": "量子纠错的一个关键子任务是提取综合征，若非平凡则表明存在错误。提取综合征的可能方式数量随综合征规模指数增长，且这些实现在线路容错性（以逻辑错误率衡量）上差异很大。这自然形成一个搜索问题：找到具有低逻辑错误率的实现。先前工作解决了该问题，但牺牲了解质量或可扩展性。本文使用强化学习和重要性采样，在所有规模上优于先前工作。与最先进的自动调度工具AlphaSyndrome和PropHunt相比，该工具平均分别将逻辑错误率降低25.9%和71.7%，在距离15的表面码上最终降低97.8%。",
+      "insight_zh": "该文与地理空间智能无直接关联；仅在将强化学习用于组合调度搜索方面具有一般性方法论参考。"
     },
     {
       "key": "arxiv:2609.12223",
@@ -12675,30 +12815,6 @@
       "insight_zh": "该工作表明显式运动差分特征对序列翻译有效，或可类比用于时空轨迹或视频变化描述任务，但摘要未涉及地理空间应用。"
     },
     {
-      "key": "arxiv:2609.12016",
-      "title": "Inverting Self-Triggered Control: Adversarial Reinforcement Learning for Sparse Denial-of-Service Attacks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12016",
-      "arxiv_id": "2609.12016",
-      "authors": [
-        "Adam Haroon",
-        "Erick J. Rodr\\'iguez-Seda",
-        "Tristan Schuler",
-        "Cody Fleming"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.SY",
-        "eess.SY"
-      ],
-      "published": "2026-09-10T07:21:54+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2602.09328",
       "title": "In-Hospital Stroke Risk-State Classification from PPG-Derived Hemodynamic Features",
       "title_zh": "基于PPG血流动力学特征的院内卒中风险状态分类",
@@ -13008,29 +13124,6 @@
       "insight_zh": "生成式测量模型可启发城市人口空间分布的模拟，但直接关联性弱。"
     },
     {
-      "key": "arxiv:2609.12078",
-      "title": "Feature Recovery for Object Understanding After Irreversible Fire Damage",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12078",
-      "arxiv_id": "2609.12078",
-      "authors": [
-        "Aditi Tiwari",
-        "Sofia Stoica",
-        "Savya Khosla",
-        "David Forsyth",
-        "Heng Ji"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-10T18:07:01+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2506.13061",
       "title": "Fast Convergence for High-Order ODE Solvers in Diffusion Probabilistic Models",
       "title_zh": "扩散概率模型中高阶ODE求解器的快速收敛",
@@ -13320,28 +13413,6 @@
       ],
       "summary_zh": "我们提出DuplexDrama，这是首个同时覆盖四个维度的合成口语对话数据集：（i）完整的角色和场景设置；（ii）三种全双工行为（打断、反馈、不完整）；（iii）具有角色对齐情感标签的表现性语音；（iv）脚本感知的声音事件。DuplexDrama通过4阶段流水线构建；对脚本和合成音频的质量验证确认了其质量。我们已生成超过2,000小时的音频数据，拥有64种音色池，涵盖13种角色和5个年龄组；所有轮次中3.8%至少携带一种全双工行为。该数据已通过内部全双工模型训练验证。我们将发布一个精选的6,400个双语对话子集（800小时，中文约500小时+英文约300小时），以推进全双工口语对话模型研究。数据样本可在我们的演示页面获取，LLM评判评估提示将随数据集发布。",
       "insight_zh": "该数据集面向语音对话系统研究，与用户关注的地理空间智能或城市更新无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.12090",
-      "title": "Does Video Memory Use What It Retrieves? A Causal Audit of Memory Specificity",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12090",
-      "arxiv_id": "2609.12090",
-      "authors": [
-        "Aditi Tiwari",
-        "Akshit Bhalla",
-        "Darshan Prasad",
-        "Heng Ji"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-10T18:16:32+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.12446",
@@ -13678,27 +13749,6 @@
       ],
       "summary_zh": "测试用例合成对于评估和排序大语言模型生成的程序至关重要。然而，构建高质量测试用例仍然困难，因为可靠的期望输出往往难以获得。本文提出置信度门控转导式测试生成（CoTT），它首先使用高效的归纳式流程，仅在归纳置信度较低时才调用转导式生成。这种自适应设计在提升输出可靠性的同时，仅在需要时分配额外计算。在代码重排序基准上，CoTT在所报告指标上优于既有基线，同时相比对每个输入都应用转导式生成降低了成本。结果表明，基于置信度的测试时计算分配，在单一高效LLM下提供了有利的效率-效果权衡。",
       "insight_zh": "该文的置信度门控自适应计算分配思路，或可迁移到时空数据挖掘中按需调用高成本模型或数据的场景，但其本身与地理空间研究无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.12101",
-      "title": "Competence-Gated Pooling of Language Models and Priors for Event Forecasting",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.12101",
-      "arxiv_id": "2609.12101",
-      "authors": [
-        "Aditi Tiwari",
-        "Aashrith Bandaru",
-        "Heng Ji"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-10T18:28:32+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.12014",
