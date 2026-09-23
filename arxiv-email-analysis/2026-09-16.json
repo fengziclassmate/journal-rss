@@ -2,11 +2,11 @@
   "date": "2026-09-16",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 474,
+    "analyzed": 484,
     "high": 8,
     "medium": 20,
     "low": 40,
-    "below_threshold": 406
+    "below_threshold": 416
   },
   "papers": [
     {
@@ -4723,6 +4723,37 @@
       "insight_zh": "从标题推断，该工作可能提出一种函数抽象方法以支持Python中的程序化3D生成，属于3D内容生成范畴，与地理空间智能的直接关联有限。"
     },
     {
+      "key": "arxiv:2609.17427",
+      "title": "Tracking the Unseen: An Occlusion-Robust Framework for Target Tracking Under Full and Long-Term Occlusion",
+      "title_zh": "追踪未见目标：面向完全与长期遮挡的遮挡鲁棒目标跟踪框架",
+      "url": "https://arxiv.org/abs/2609.17427",
+      "arxiv_id": "2609.17427",
+      "authors": [
+        "Mais Mohammed",
+        "Sharifa Mohammed",
+        "Hanan Awadh",
+        "Haneen Bamaas",
+        "Raghad Bawazeer",
+        "Elham Alghamdi"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-15T16:41:57+00:00",
+      "score": 25,
+      "reason": "该论文研究遮挡鲁棒的多目标跟踪框架，属于计算机视觉与视频分析，其目标跟踪与重识别方法对遥感视频监控、城市交通监测等地理空间应用有潜在借鉴意义，但论文本身未涉及地理空间数据。",
+      "tags": [
+        "多目标跟踪",
+        "遮挡鲁棒",
+        "重识别",
+        "YOLO",
+        "卡尔曼滤波"
+      ],
+      "summary_zh": "实时多目标跟踪系统在完全和长期遮挡下仍高度脆弱，目标暂时或完全从相机视野消失。传统跟踪器可能过早终止轨迹，导致身份丢失和态势感知下降。该文提出遮挡鲁棒目标跟踪框架，集成YOLOv11n目标检测、卡尔曼滤波运动预测和遮挡感知外观重识别，包含目标检测、遮挡期间位置估计和目标重现后身份恢复三阶段。在相同跟踪框架下评估六种Re-ID架构，遮挡感知掩码网络（OAMN）总体性能最佳被选入最终流程。在公开OVIS数据集上与OccluTrack对比，MOTA相对提升18.1%，IDF1相对提升25.1%，身份切换减少12.8%。在模拟监视和战场环境的自定义军事数据集上，MOTA为0.734，IDF1为0.729，相对OccluTrack分别提升14.2%和5.8%。",
+      "insight_zh": "该框架在长期遮挡下保持轨迹连续性和身份保持的能力，对遥感视频中的目标跟踪（如城市交通流监测、灾害应急监视）有方法上的参考价值，但其应用场景为地面监视，未涉及地理空间数据融合或城市分析。"
+    },
+    {
       "key": "arxiv:2608.28823",
       "title": "Text-Driven Artistic Staging: 3D Posing, Lighting, and Camera References from Paintings",
       "title_zh": "文本驱动的艺术化舞台布置：从绘画中提取姿态、光照和相机参考",
@@ -5464,6 +5495,42 @@
       ],
       "summary_zh": "多模态指令跟随（MMIF）对于构建通用智能体至关重要。然而，当前训练范式严重依赖监督微调（SFT），这往往导致表层模式匹配并削弱通用能力。虽然带可验证奖励的强化学习（RLVR）提供了有前景的替代方案，但其在MMIF中的可扩展性受到高质量、RL就绪的多模态数据稀缺的严重制约。为弥合这一差距，我们提出了MIFS（多模态……）（摘要在此处截断）。",
       "insight_zh": "该文提出的RLVR数据合成与蒸馏思路，若扩展到遥感影像与地理文本的多模态指令数据，或可支撑地理空间智能体的训练，但论文本身未涉及地理场景。"
+    },
+    {
+      "key": "arxiv:2609.17429",
+      "title": "Learning-Guided Planning in Large Dynamic Action Spaces: Budgeted Tree Search for One-to-Many Mobile Charging",
+      "title_zh": "大规模动态动作空间中的学习引导规划：一对多移动充电的预算树搜索",
+      "url": "https://arxiv.org/abs/2609.17429",
+      "arxiv_id": "2609.17429",
+      "authors": [
+        "Liang-Ching Tao",
+        "Pi-Chung Wang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "PUCT,",
+        "and",
+        "sequential",
+        "decision-making",
+        "in",
+        "large",
+        "dynamic",
+        "action",
+        "spaces"
+      ],
+      "published": "2026-09-15T16:42:12+00:00",
+      "score": 22,
+      "reason": "该论文研究大规模动态动作空间中的学习引导规划与预算树搜索，应用于移动充电问题，属于强化学习与组合优化，与GIS中的空间优化和路径规划有方法上的潜在关联，但论文本身未涉及地理空间数据。",
+      "tags": [
+        "学习引导规划",
+        "树搜索",
+        "动态动作空间",
+        "移动充电",
+        "PUCT"
+      ],
+      "summary_zh": "许多学习型序列决策系统直接将当前状态映射到动作，但当候选动作数量众多、几何结构复杂且随状态重建时，这种捷径变得脆弱。一对多移动充电使这一设定具体化：N=250个传感器时，初始状态诱导约1,125个候选充电站动作，每个选定站点同时服务其范围内传感器，动作空间随传感器死亡而变化。LP-BTS是一种学习引导规划架构：图提议策略集中小候选支持集，学习价值评论家评估叶节点，边预算PUCT比较短模拟未来后提交动作。由于策略对该集合评分无需固定输出头，单个冻结检查点覆盖所有评估设置，动作空间从736到2,813个站点。匹配消融显示互补效应：均匀采样损失8.8个生存百分点，而固定目标支持时PUCT联合保留1.4个百分点（约250个传感器中的3.5个），直接策略选择多行驶23%。在预先指定、密封的30场景确认库上一次性评估，LP-BTS取得最高观测生存率（0.4545）和alive-AUC（0.8031），相对最强领域工程比较器的估计生存优势为+0.0066（95% CI [-0.0037, +0.0184]），差异未定，但在每个配对场景上超过截止时间启发式和两个源派生直接策略重建。",
+      "insight_zh": "该工作为大规模动态动作空间中的学习引导规划提供了受控证据，其图提议策略与预算树搜索思路对城市空间中的动态设施选址、移动服务调度等地理空间优化问题有潜在方法迁移价值，但论文未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.17376",
@@ -6453,6 +6520,33 @@
       "insight_zh": "摘要缺失，无法评估其研究方法与结论；其关于空间化交互的探讨或对地理空间智能中的人机交互界面设计有启发，但证据不足。"
     },
     {
+      "key": "arxiv:2609.17443",
+      "title": "BrainFocus: EEG-Guided ROI Selection for Efficient Vision-Language Models",
+      "title_zh": "BrainFocus：面向高效视觉语言模型的EEG引导ROI选择",
+      "url": "https://arxiv.org/abs/2609.17443",
+      "arxiv_id": "2609.17443",
+      "authors": [
+        "Yihui Peng",
+        "Guorui Lu",
+        "Qinyu Chen"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T16:51:13+00:00",
+      "score": 20,
+      "reason": "该论文研究EEG引导的视觉语言模型ROI选择与高效推理，属于多模态AI与脑机接口交叉领域，与GIS核心议题关联较弱，但其ROI选择与高效视觉处理思路对遥感图像中的目标区域分析有间接借鉴意义。",
+      "tags": [
+        "视觉语言模型",
+        "EEG",
+        "ROI选择",
+        "高效推理",
+        "VQA"
+      ],
+      "summary_zh": "视觉语言模型（VLM）在视觉问答（VQA）中表现强劲，但处理大尺寸杂乱图像时计算成本高，而仅小区域相关。脑电图（EEG）信号可提供人类对视觉刺激的神经响应，作为感兴趣区域（ROI）的语义线索，但EEG引导的视觉类别解码尚不完善，直接ROI路由不可靠。BrainFocus提出可靠的EEG引导高效VLM框架：EEG分类器预测目标类别，YOLO检测器定位匹配ROI，仅当两者均通过置信度阈值时VLM才处理裁剪ROI，否则处理全图。基于EEG-ImageNet构建40类基准，包含生成杂乱图像和真实物体中心图像，带目标ROI标注和600个英文视觉问答对。在Qwen3.5-VL 2B、4B和9B模型上，BrainFocus在杂乱场景中将VQA准确率提升4.14-9.87个百分点，同时减少输入token和总token 23.2%-39.4%和23.2%-39.3%，端到端FLOPs减少23.2%-39.5%。",
+      "insight_zh": "该研究表明即使语义解码不完美，EEG仍可引导高效VLM推理，其置信度门控与ROI裁剪策略对遥感图像中基于注意力机制的高效目标分析有方法上的类比价值，但论文未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2609.15995",
       "title": "Bias Audits Detect Bias but Disagree on Ranking: Evidence from Ten Instruments and Ten Frontier Models",
       "title_zh": "偏见审计能检测偏见但在排名上不一致：来自十种工具与十个前沿模型的证据",
@@ -6719,6 +6813,39 @@
       ],
       "summary_zh": "标准子词分词器要么将单词的每种拼写变体（如hello、Hello、HELLO和H'ello）视为不相关的词汇条目，从而碎片化嵌入空间，要么通过有损归一化丢弃这些变体。我们提出功能化器（Functionalizer），一种无损预分词框架，在分词之前将拼写和结构变体分解为组合式操作码/操作数前缀流：一个规范基础词元（操作数）前缀以参数化变换算子（操作码），编码在Unicode私用区中。我们引入覆盖大小写（CAPITALIZE）、变音符号（13个专用操作码）和字符重复（REPEAT、MULTIREPEAT）的算子，这些算子完全可逆。在六个自然语言和代码语料库上，功能化器在无约束条件下实现了完整语料覆盖且词汇表显著更小，将实际词汇槽需求减少最多16%。在序列长度方面，我们观察到明显的领域相关权衡：它压缩缩进密集的代码序列，但膨胀自然语言散文序列。在2500万参数GPT-2规模模型上的初步下游评估表明，在此规模下，功能化器大幅提升代码语法有效性并改善代码字符困惑度，同时在散文上保持相似的文本连贯性。这些发现表明功能分解可以成为词汇高效、结构感知语言建模的有效机制，并值得在生产规模上进一步验证。",
       "insight_zh": "该文的分词方法可能对处理地理文本数据（如地名变体、多语言地名）有潜在价值，但摘要未涉及地理空间应用，与核心研究方向的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.17458",
+      "title": "Tables Decoded: DELTA for Structure, TARQA for Understanding",
+      "title_zh": "表格解码：DELTA用于结构，TARQA用于理解",
+      "url": "https://arxiv.org/abs/2609.17458",
+      "arxiv_id": "2609.17458",
+      "authors": [
+        "Jahanvi Rajput",
+        "Dhruv Kudale",
+        "Saikiran Kasturi",
+        "Utkarsh Verma",
+        "Ganesh Ramakrishnan"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "Computer",
+        "Vision",
+        "2026"
+      ],
+      "published": "2026-09-15T16:59:42+00:00",
+      "score": 18,
+      "reason": "该论文研究表格重建与表格视觉问答，属于文档智能与LLM应用，与GIS核心议题关联较弱，但结构化文本表示与多语言文档处理可能对地理空间数据中的表格信息抽取有间接借鉴意义。",
+      "tags": [
+        "表格理解",
+        "文档智能",
+        "多语言",
+        "LLM",
+        "结构化文本表示"
+      ],
+      "summary_zh": "表格理解是文档智能的核心任务，包含表格重建和表格视觉问答（TabVQA）两个子任务。该文提出基于结构化文本表示的替代方案，认为其更易处理、更契合LLM且无需语言特定的视觉编码器，适合多语言文档。DELTA将物理结构识别、逻辑结构识别和OCR分离，输出优化表格结构语言（OTSL）格式。在TSR任务上，DELTA在FinTabNet、PubTabNet和PubTables-1M上取得与最先进方法相当的TEDS-Structure分数，并通过自建的印地语基准TORQUE验证鲁棒性。基于OTSL序列微调的LLM TARQA在WTQ上提升9.3个百分点，在FinTabNetQA上提升9.2个百分点，在TORQUE上排名第二。",
+      "insight_zh": "该研究提示结构化文本表示在多语言表格理解中可替代视觉编码器，对地理空间领域中多源表格数据（如统计年鉴、遥感元数据表）的自动化解析与问答具有潜在方法借鉴价值，但论文本身未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.16977",
@@ -7097,6 +7224,33 @@
       ],
       "summary_zh": "摘要内容缺失，仅提供标题与发表信息，无法获取具体研究内容。",
       "insight_zh": "从标题推断，该工作关注弱监督时序动作定位中的时序一致性问题，可能涉及视频时序建模，但与地理空间智能或城市研究的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.17230",
+      "title": "DecoGS: Adaptive Static-Dynamic Decoupling of 3D Gaussians for Free-Viewpoint Video Streaming",
+      "title_zh": "DecoGS：面向自由视点视频流的三维高斯自适应静态-动态解耦",
+      "url": "https://arxiv.org/abs/2609.17230",
+      "arxiv_id": "2609.17230",
+      "authors": [
+        "Idil Sulo",
+        "Alexey Supikov",
+        "Ilke Demir",
+        "Sainan Liu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T14:12:16+00:00",
+      "score": 18,
+      "reason": "该论文研究流式视频的3D高斯在线训练与自由视点视频流，属于3D重建与视频处理，其静态-动态解耦思路对城市动态场景建模有潜在借鉴意义，但论文未涉及地理空间数据。",
+      "tags": [
+        "3D高斯",
+        "自由视点视频",
+        "流式重建",
+        "静态动态解耦"
+      ],
+      "summary_zh": "流式3D重建需要速度和时序保真度，但现有方法每帧更新所有高斯，包括静态区域，从而损害目标。DecoGS提出从流式视频高效在线训练3D高斯的方法，引入自适应机制选择性优化表现运动或光度变化的时空区域，消除静态区域冗余更新导致的闪烁和漂移，同时实现快速高保真场景更新。流程集成区域感知高斯管理，通过梯度门控和高效可见性过滤保持时序一致性和紧凑内存占用。在N3DV和MeetRoom上，DecoGS分别达到34.55和31.60 dB PSNR，优于所有流式和离线基线，渲染速度261 FPS，时序闪烁比最佳先前方法低70倍，无需大规模预训练。",
+      "insight_zh": "该工作表明自适应静态-动态解耦可显著提升流式3D重建效率与稳定性，其区域感知优化思路对城市动态场景（如交通流、人群）的实时三维建模有潜在启发，但论文未涉及地理空间或遥感应用。"
     },
     {
       "key": "arxiv:2609.16590",
@@ -8420,6 +8574,32 @@
       ],
       "summary_zh": "零样本异常检测旨在无目标域样本的情况下定位异常。现有基于CLIP的方法存在异常图粗糙和语义提示有限的问题。该文提出PSMP-CLIP，整合patch-prompt SAM2分割（PPSS）与多语义引导提示正则化（MSGPR）。PPSS直接从中间patch特征采样提示，避免阈值漂移并引导SAM2生成精确掩码；MSGPR使用受语义锚约束的多个可学习提示以保持泛化性。在14个数据集上的实验显示其性能极具竞争力，在MVTec AD、BTAD、DTD-Synthetic、CVC-ClinicDB、TN3K、Endo和Kvasir上取得最佳像素级AUROC。",
       "insight_zh": "该文的提示采样与多语义提示正则化思路，可能对遥感变化检测中的零样本或弱监督分割任务有方法参考价值，但其数据集与任务均为工业与医学异常检测，与地理空间应用无直接联系。"
+    },
+    {
+      "key": "arxiv:2609.17450",
+      "title": "ORCA: Occlusion-Aware Refinement and Completion for Novel View Synthesis",
+      "title_zh": "ORCA：面向新视角合成的遮挡感知细化与补全",
+      "url": "https://arxiv.org/abs/2609.17450",
+      "arxiv_id": "2609.17450",
+      "authors": [
+        "Weronika Jakubowska",
+        "Maciej Zi\\k{e}ba",
+        "Przemys{\\l}aw Spurek"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-15T16:53:54+00:00",
+      "score": 15,
+      "reason": "该论文研究单图像新视角合成与遮挡感知补全，属于计算机视觉与3D重建，与遥感变化检测或GIS分析无直接关联，但三维场景重建方法可能对城市三维建模有间接参考价值。",
+      "tags": [
+        "新视角合成",
+        "3D重建",
+        "遮挡处理",
+        "高斯锚点"
+      ],
+      "summary_zh": "单图像新视角合成本质上是模糊问题，相机远离输入视角时隐藏区域暴露，导致几何缺失和空洞。现有方法常依赖生成模型补全，但许多伪影只是深度边界附近的小间隙，无需生成新内容。ORCA提出遮挡感知方法，首先利用单目深度将3D结构引入高斯锚点表示并保持原始相机射线对应关系；场景探索时根据缺失区域的大小和结构处理，小遮挡用重建中已有的RGB-D信息修复，仅对大区域使用生成式修复。新高斯锚点在局部添加和优化而不修改现有表示。在DIV2K上，ORCA在所有报告指标上优于VistaDream，MUSIQ从61.60提升至68.71，CLIP-IQA从0.474提升至0.574。",
+      "insight_zh": "该工作表明复用重建场景中已有信息可有效修复新视角伪影并减少生成幻觉，其遮挡感知与局部优化思路对城市三维重建中的遮挡补全问题有潜在启发，但论文未涉及遥感或地理空间应用。"
     },
     {
       "key": "arxiv:2608.20948",
@@ -10014,6 +10194,35 @@
       "insight_zh": "该文表明，在高风险心理健康场景中，模型表现差异显著，且提升推理并不必然改善安全性；其基准构建与临床校准方法对LLM安全评测有参考价值，但原文未涉及地理空间或城市应用。"
     },
     {
+      "key": "arxiv:2609.17475",
+      "title": "JustFit: Just-in-Time State Management for Local LLM Serving",
+      "title_zh": "JustFit：面向本地LLM服务的即时状态管理",
+      "url": "https://arxiv.org/abs/2609.17475",
+      "arxiv_id": "2609.17475",
+      "authors": [
+        "Yuhua Chen"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.PF",
+        "materials",
+        "are",
+        "publicly",
+        "available"
+      ],
+      "published": "2026-09-15T17:15:48+00:00",
+      "score": 12,
+      "reason": "该论文聚焦本地LLM服务的状态管理与推理运行时优化，与GIS、城市更新、时空数据挖掘、遥感变化检测或多源数据融合无直接关联，仅在大模型推理基础设施层面与LLM研究兴趣有微弱交集。",
+      "tags": [
+        "LLM推理",
+        "本地部署",
+        "状态管理",
+        "KV缓存"
+      ],
+      "summary_zh": "该文提出JustFit，一种基于MLX的推理运行时，结合KVExec压缩KV执行、PhaseSwap组件驻留和StateTrans状态保持服务转换，在不依赖模型权重量化的前提下协调即时物化与释放。在24 GiB M4 Pro MacBook上运行Qwen3.8-27B MXFP4的满执行容量测试中，三次独立运行完成196,608输入和16,384输出token，将单请求上下文从mlx-vlm基线的30,720位置提升至212,992（6.93倍）；双请求运行聚合保留229,376位置。性能测试中，32K输入、64输出探针达到19.11 tokens/s，重复32K+6K工作负载的中位峰值进程占用为16,374 MiB。集成运行时在30道AIME 2026题目中正确回答29道。",
+      "insight_zh": "该工作表明紧凑状态与生命周期感知执行可扩展本地服务容量并支持长推理，但其应用场景为通用LLM推理基础设施，对地理空间智能或城市分析的直接迁移价值有限，可能仅在本地部署LLM辅助地理文本处理时具有间接参考意义。"
+    },
+    {
       "key": "arxiv:2609.16946",
       "title": "High-Fidelity Video Quality Assessment with VQA-Specific Saliency",
       "title_zh": "基于VQA特定显著性的高保真视频质量评估",
@@ -11106,6 +11315,54 @@
       ],
       "summary_zh": "掩码扩散语言模型（dLLM）通过双向注意力迭代去噪掩码token来生成文本。跨生成块扩展推理通常需要将先前生成的文本保留在上下文中。本文探讨dLLM能否在清除该文本后仅使用固定大小的携带状态继续推理。该状态实现为少量寄存器token：专用固定位置token，其连续隐藏状态被训练以跨生成块携带推理进展。作者对dLLM进行后训练，使其解码一个文本块，在保留寄存器值的同时清除该文本，并从提示和携带状态继续解码。在LLaDA和Dream上的主要比较中，寄存器在每个基准上均优于离散文本携带，数学提升最高8.5分，代码提升最高19.5分。寄存器对有界代码生成尤为有效，正确程序通常跨越多个块。最后，寄存器可通过长程推理任务上的强化学习进一步精炼。",
       "insight_zh": "寄存器token作为固定大小携带状态替代上下文保留，为dLLM长程推理提供了新机制，其思路对多智能体或长序列建模有潜在启发，但与地理空间智能无直接关联。"
+    },
+    {
+      "key": "arxiv:2609.17440",
+      "title": "Reduced-Space Multi-Fidelity Bayesian Optimization of Process Simulation Models",
+      "title_zh": "过程模拟模型的降维多保真度贝叶斯优化",
+      "url": "https://arxiv.org/abs/2609.17440",
+      "arxiv_id": "2609.17440",
+      "authors": [
+        "Niki Triantafyllou",
+        "Andrea Bernardi",
+        "and Maria M. Papathanasiou"
+      ],
+      "categories": [
+        "cs.LG",
+        "math.OC",
+        "(LION",
+        "20),",
+        "2026.",
+        "Corrected",
+        "author",
+        "version.",
+        "This",
+        "version",
+        "corrects",
+        "a",
+        "typo",
+        "in",
+        "the",
+        "mathematical",
+        "description",
+        "of",
+        "multi-fidelity",
+        "covariance",
+        "kernel",
+        "Section",
+        "3.2"
+      ],
+      "published": "2026-09-15T16:46:51+00:00",
+      "score": 10,
+      "reason": "该论文研究工业过程模拟模型的降维多保真度贝叶斯优化，属于优化与过程工程领域，与GIS、城市更新或时空数据挖掘无直接关联。",
+      "tags": [
+        "贝叶斯优化",
+        "多保真度",
+        "过程模拟",
+        "降维"
+      ],
+      "summary_zh": "工业过程流程优化常因严格模拟的高成本和复杂设计空间的维数灾难而计算困难。该文提出降维多保真度贝叶斯优化（RS-MFBO）框架，面向高维昂贵黑箱函数。方法将全局敏感性分析（GSA）用于降维，结合保真度增强高斯过程捕捉低成本近似与高保真评估之间的相关性，并采用成本感知采集策略配合冷却和提升机制自适应分配样本。在SuperPro Designer的质粒DNA生物过程和Aspen HYSYS的绿色燃料合成装置上验证，结果表明该方法在保持竞争性优化性能的同时显著减少高保真模拟器评估次数。",
+      "insight_zh": "该工作展示了降维多保真度优化在昂贵模拟中的效率优势，其思路对地理空间模拟中的多尺度、多精度数据融合优化有潜在方法借鉴，但论文本身未涉及地理空间或城市系统。"
     },
     {
       "key": "arxiv:2609.15292",
@@ -12377,6 +12634,32 @@
       "insight_zh": "摘要缺失，无法确认其方法细节；其流式贝叶斯检测与风险校准思路或对时空流数据的异常检测有类比价值，但关联较弱。"
     },
     {
+      "key": "arxiv:2609.17435",
+      "title": "Right Tool, Right Job: Native-Language Evaluation, Tokenizer Sensitivity, and Methodological Findings from a French-Only BabyLM",
+      "title_zh": "正确工具做正确事：法语BabyLM的原生语言评估、分词器敏感性与方法学发现",
+      "url": "https://arxiv.org/abs/2609.17435",
+      "arxiv_id": "2609.17435",
+      "authors": [
+        "Adam Zachary Wasserman",
+        "David Beauchemin"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-15T16:43:32+00:00",
+      "score": 8,
+      "reason": "该论文研究法语BabyLM模型、分词器敏感性与跨语言评估方法，属于NLP低资源语言建模，与GIS或遥感无直接关联。",
+      "tags": [
+        "BabyLM",
+        "法语",
+        "分词器",
+        "跨语言评估",
+        "低资源语言"
+      ],
+      "summary_zh": "该文提交MéTRON-FR，一个在92.47M法语词上预训练的125M GPT-2模型，参加BabyLM 2026 Strict赛道。在QFrBLiMP（魁北克法语语法最小对基准）上得分85.97±0.17%，在BabyLM加权排行榜上得分62.80%。跨语言GLUE协议结合法语任务数据翻译和rank-16 LoRA产生明显的任务类型梯度：关系任务有可测量增益，世界知识任务则退化。双语词典归纳将法语嵌入对齐到GPT-2，p@1=68.84±8.61%，是随机水平的18倍，表明跨语言对齐追踪的是习得的语法能力而非训练时长。消融研究表明单token零样本评分在儿童规模下受分词器和模板伪影主导，因此提倡将分词器替换敏感性、安慰剂对照提示和原生语言最小对基准作为标准诊断。",
+      "insight_zh": "该研究强调原生语言评估和分词器敏感性对低资源语言模型的重要性，其方法学讨论对地理空间领域中的多语言文本挖掘（如多语言社交媒体地理定位）有间接参考价值，但论文未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.16660",
       "title": "Rewarding Reasoning, Not Answers: Fixing and Bounding Test-Time Reinforcement Learning on Medical QA",
       "title_zh": "奖励推理而非答案：修复并约束医学问答中的测试时强化学习",
@@ -12428,9 +12711,9 @@
         "Shaofan Liu",
         "Junzhe Wang",
         "Dingwei Zhu",
-        "Zhiheng Xi",
         "Minlong Peng",
         "Yuan Hua",
+        "Zhiheng Xi",
         "Qi Zhang",
         "Tao Gui",
         "Xuanjing Huang"
@@ -13823,31 +14106,6 @@
       "insight_zh": "该研究的因果启发注意力分析思路可能对地理空间AI中的空间偏见（如城市区域表征不平等）研究有方法学启发，但其应用场景为通用视觉语言模型，与GIS直接关联有限。"
     },
     {
-      "key": "arxiv:2609.17427",
-      "title": "Tracking the Unseen: An Occlusion-Robust Framework for Target Tracking Under Full and Long-Term Occlusion",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17427",
-      "arxiv_id": "2609.17427",
-      "authors": [
-        "Mais Mohammed",
-        "Sharifa Mohammed",
-        "Hanan Awadh",
-        "Haneen Bamaas",
-        "Raghad Bawazeer",
-        "Elham Alghamdi"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-15T16:41:57+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15545",
       "title": "The Token Before the Value Is the Key: How Hybrid Architectures Organize Induction Circuits",
       "title_zh": "值之前的 token 是关键：混合架构如何组织归纳电路",
@@ -14036,33 +14294,6 @@
       ],
       "summary_zh": "音频驱动的数字人生成在虚拟通信、沉浸式交互和媒体制作中具有重要作用。随着神经辐射场（NeRF）和3D高斯泼溅（3DGS）的发展，近期的说话头系统获得了更忠实的三维面部几何与外观建模。然而一个遗留难题是：语音特征主要描述时间声学模式，而非显式的面部布局。因此，直接用音频驱动三维面部变形可能产生不准确的嘴部运动、微弱的表情细节和局部伪影。为解决该问题，作者提出一个面部关键点引导的空间增强模块。预测的关键点为选择和丰富表情敏感面部区域周围的空间点提供结构线索。作者进一步引入全局关键点补偿机制，将完整的关键点集合编码为条件向量以细化3DGS属性。该补偿为底层形状表示提供全脸结构信息。在自驱动和跨驱动设置下的实验表明，所提方法在视觉质量、面部真实感和唇形同步方面均有提升。",
       "insight_zh": "该工作将面部关键点作为结构先验注入3DGS属性优化，以弥补音频特征缺乏显式空间布局的不足；其思路对需要将稀疏语义线索与三维表示耦合的任务具有参考价值，但摘要未涉及地理空间或城市应用。"
-    },
-    {
-      "key": "arxiv:2609.17458",
-      "title": "Tables Decoded: DELTA for Structure, TARQA for Understanding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17458",
-      "arxiv_id": "2609.17458",
-      "authors": [
-        "Jahanvi Rajput",
-        "Dhruv Kudale",
-        "Saikiran Kasturi",
-        "Utkarsh Verma",
-        "Ganesh Ramakrishnan"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.LG",
-        "Computer",
-        "Vision",
-        "2026"
-      ],
-      "published": "2026-09-15T16:59:42+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2605.16581",
@@ -14550,26 +14781,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17435",
-      "title": "Right Tool, Right Job: Native-Language Evaluation, Tokenizer Sensitivity, and Methodological Findings from a French-Only BabyLM",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17435",
-      "arxiv_id": "2609.17435",
-      "authors": [
-        "Adam Zachary Wasserman",
-        "David Beauchemin"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-15T16:43:32+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16665",
       "title": "Right Direction, Wrong Step: Geometric Analysis of Finite-Step Failure in Looped Transformers",
       "title_zh": "方向正确，步长错误：循环Transformer有限步失败的几何分析",
@@ -14655,49 +14866,6 @@
       ],
       "summary_zh": "汉语中有两种能产的重叠构式，重复双字基词或其构成成分（例如“健健康康”“讨论讨论”）。其多样含义被描述为实现复数性、 valence色彩、声音象征和语用功能。本研究有双重目标。第一个目标是澄清是否可以通过分布语义的词嵌入更精确地理解汉语重叠的多样语义。第二个目标是探索嵌入对于理解语义复杂构词过程细节的有用性。作者表明，嵌入空间恢复了文献中已识别的重叠词的语义和语法属性，验证了腾讯嵌入用于形态学研究的有效性。语义剖析显示，重叠构式往往在多个维度上表现强烈。两种模式在分布空间中表现出清晰的语义和语用分化。Procrustes分析表明，基词空间的整体组织在重叠空间中基本得以保留，局部不匹配凸显了话语-语用重组的区域。总体而言，这些结果表明高维词嵌入可以恢复既有的语言学概括，并捕捉汉语重叠的语义多样性和构式透明度。",
       "insight_zh": "该工作展示了分布语义嵌入在捕捉复杂构式语义分化方面的能力，对地理文本语义分析有极弱的方法论类比，但论文未涉及地理空间或城市数据。"
-    },
-    {
-      "key": "arxiv:2609.17440",
-      "title": "Reduced-Space Multi-Fidelity Bayesian Optimization of Process Simulation Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17440",
-      "arxiv_id": "2609.17440",
-      "authors": [
-        "Niki Triantafyllou",
-        "Andrea Bernardi",
-        "and Maria M. Papathanasiou"
-      ],
-      "categories": [
-        "cs.LG",
-        "math.OC",
-        "(LION",
-        "20),",
-        "2026.",
-        "Corrected",
-        "author",
-        "version.",
-        "This",
-        "version",
-        "corrects",
-        "a",
-        "typo",
-        "in",
-        "the",
-        "mathematical",
-        "description",
-        "of",
-        "multi-fidelity",
-        "covariance",
-        "kernel",
-        "Section",
-        "3.2"
-      ],
-      "published": "2026-09-15T16:46:51+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.16427",
@@ -14855,27 +15023,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作构建了面向波斯语的音频语言模型综合评测基准。",
       "insight_zh": "摘要缺失，无法判断其基准构成或评测结果；该研究与地理空间智能主题关联较弱。"
-    },
-    {
-      "key": "arxiv:2609.17450",
-      "title": "ORCA: Occlusion-Aware Refinement and Completion for Novel View Synthesis",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17450",
-      "arxiv_id": "2609.17450",
-      "authors": [
-        "Weronika Jakubowska",
-        "Maciej Zi\\k{e}ba",
-        "Przemys{\\l}aw Spurek"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T16:53:54+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2608.00320",
@@ -15051,36 +15198,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17429",
-      "title": "Learning-Guided Planning in Large Dynamic Action Spaces: Budgeted Tree Search for One-to-Many Mobile Charging",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17429",
-      "arxiv_id": "2609.17429",
-      "authors": [
-        "Liang-Ching Tao",
-        "Pi-Chung Wang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "PUCT,",
-        "and",
-        "sequential",
-        "decision-making",
-        "in",
-        "large",
-        "dynamic",
-        "action",
-        "spaces"
-      ],
-      "published": "2026-09-15T16:42:12+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2606.16462",
       "title": "Learning aligned EEG representations with subject-specific encoders",
       "title_zh": "基于主体特定编码器的对齐EEG表示学习",
@@ -15107,30 +15224,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作可能提出使用主体特定编码器来学习对齐的EEG表示。",
       "insight_zh": "摘要缺失，无法评估其方法；主体特定编码器的对齐思路或可类比至跨城市/跨区域的时空数据对齐，但缺乏具体证据。"
-    },
-    {
-      "key": "arxiv:2609.17475",
-      "title": "JustFit: Just-in-Time State Management for Local LLM Serving",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17475",
-      "arxiv_id": "2609.17475",
-      "authors": [
-        "Yuhua Chen"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.PF",
-        "materials",
-        "are",
-        "publicly",
-        "available"
-      ],
-      "published": "2026-09-15T17:15:48+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.16626",
@@ -15693,28 +15786,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17230",
-      "title": "DecoGS: Adaptive Static-Dynamic Decoupling of 3D Gaussians for Free-Viewpoint Video Streaming",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17230",
-      "arxiv_id": "2609.17230",
-      "authors": [
-        "Idil Sulo",
-        "Alexey Supikov",
-        "Ilke Demir",
-        "Sainan Liu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T14:12:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2607.04987",
       "title": "Data-Driven Soft Labeling Scales DNA Read Classification to Whole-Body Cell-Type Deconvolution",
       "title_zh": "数据驱动软标签将DNA读取分类扩展至全身细胞类型解卷积",
@@ -15940,27 +16011,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.17443",
-      "title": "BrainFocus: EEG-Guided ROI Selection for Efficient Vision-Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.17443",
-      "arxiv_id": "2609.17443",
-      "authors": [
-        "Yihui Peng",
-        "Guorui Lu",
-        "Qinyu Chen"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-15T16:51:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16380",
       "title": "Bounded Adjustment with Reliability-Guided Embedding for Imbalanced Learning with Noisy Labels",
       "title_zh": "BARGE：面向噪声标签不平衡学习的有界调整与可靠性引导嵌入",
@@ -16139,7 +16189,7 @@
     {
       "key": "arxiv:2609.17235",
       "title": "AraMIP: Extending MIPVU Towards Metaphor Identification in Arabic",
-      "title_zh": "",
+      "title_zh": "AraMIP：将MIPVU扩展至阿拉伯语隐喻识别",
       "url": "https://arxiv.org/abs/2609.17235",
       "arxiv_id": "2609.17235",
       "authors": [
@@ -16161,10 +16211,15 @@
       ],
       "published": "2026-09-15T14:14:10+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究阿拉伯语隐喻识别标注指南，属于计算语言学与语料标注，与GIS、遥感或城市分析无直接关联。",
+      "tags": [
+        "阿拉伯语",
+        "隐喻识别",
+        "MIPVU",
+        "语料标注"
+      ],
+      "summary_zh": "隐喻研究因与语言创造力、语言使用、认知过程等相关而日益受关注。英语等语言的隐喻识别和标注已有大量工作，但阿拉伯语在此领域资源不足。该文提出阿拉伯语隐喻识别程序（AraMIP），基于广泛使用的MIPVU框架并针对阿拉伯语语言特性进行调整。区分三种主要阿拉伯语比喻语言类型：Isti'ara（隐喻）、kinaya（转喻/间接表达）和tashbih（明喻），标注了300句（5277词）的试点数据集。分析揭示阿拉伯语特有的挑战，包括形态复杂性、词典义项排序不一致以及标注者缺乏标准化上下文材料。",
+      "insight_zh": "该工作为阿拉伯语比喻语言标注标准化迈出第一步，其多语言语料标注方法对地理空间文本挖掘中的多语言处理有极间接的参考意义，但论文本身与地理空间研究无关。"
     },
     {
       "key": "arxiv:2609.13197",

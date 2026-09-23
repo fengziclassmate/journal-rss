@@ -10,6 +10,7 @@
     "arxiv:2609.22258",
     "arxiv:2508.03749",
     "arxiv:2608.27206",
+    "arxiv:2609.22191",
     "arxiv:2601.12538",
     "arxiv:2606.08151",
     "arxiv:2609.24921",
@@ -18,6 +19,7 @@
     "arxiv:2609.23989",
     "arxiv:2609.23534",
     "arxiv:2609.22497",
+    "arxiv:2609.22206",
     "arxiv:2609.22174",
     "arxiv:2609.22359",
     "arxiv:2512.21066",
@@ -29,23 +31,21 @@
     "arxiv:2609.22090",
     "arxiv:2609.24895",
     "arxiv:2609.24626",
-    "arxiv:2609.24526",
-    "arxiv:2609.24482",
-    "arxiv:2609.24409"
+    "arxiv:2609.24526"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1190",
-    "deepseek": "partial:58/618;failed-batches:56"
+    "deepseek": "partial:48/558;failed-batches:51"
   },
-  "updated_at": "2026-09-23T00:58:39.490937+00:00",
+  "updated_at": "2026-09-23T12:09:50.488319+00:00",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 630,
+    "analyzed": 680,
     "high": 5,
-    "medium": 23,
-    "low": 56,
-    "below_threshold": 546
+    "medium": 25,
+    "low": 59,
+    "below_threshold": 591
   },
   "papers": [
     {
@@ -300,6 +300,31 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "PACE是一个无需训练的推理框架，通过统一的Condense-and-Extract范式加速视觉编码器和LLM。在Condense阶段，自适应像素压缩器在编码前评估视觉信息密度，自适应下采样冗余输入。在Extract阶段，动态双注意力提取器通过融合编码器的内部视觉信号和LLM的语义信号选择性保留视觉token。集成到Qwen2.5-VL-7B后，仅使用10%的视觉token即可保留93.8%的性能，实现3.1倍的TTFT加速。",
       "insight_zh": "该研究提出在视觉编码前进行信息密度评估和自适应压缩，挑战了视觉token必须全部编码的传统假设，为高分辨率遥感影像的实时视觉语言理解提供了新的效率优化方向。"
+    },
+    {
+      "key": "arxiv:2609.22191",
+      "title": "WildfireSpreadBench: The Metric Decides the Model in Wildfire Spread Prediction",
+      "title_zh": "WildfireSpreadBench：在野火蔓延预测中指标决定模型",
+      "url": "https://arxiv.org/abs/2609.22191",
+      "doi": "",
+      "arxiv_id": "2609.22191",
+      "authors": [
+        "Arin Gopakumar",
+        "Marco Pannozzo"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-29T03:29:14+00:00",
+      "score": 68,
+      "reason": "该文研究野火蔓延预测的评估指标问题，属于遥感与地理空间机器学习应用，与遥感变化检测和地理空间智能方向较为相关，但其重点在评估指标而非变化检测方法本身。",
+      "tags": [
+        "野火蔓延预测",
+        "遥感变化检测",
+        "评估指标",
+        "机器学习"
+      ],
+      "abstract": "Machine learning is being increasingly used to predict where active wildfires will burn the following day, helping inform evacuation boundaries and containment lines. Most models are evaluated using Average Precision (AP), which summarizes performance across all decision thresholds, although acting on a forecast requires choosing one. We benchmarked five discriminative architectures and one generative model on WildfireSpreadTS using a shared evaluation pipeline and two input configurations. We found that model rankings varied depending on whether performance was measured by AP or by threshold-dependent metrics like F1 and IoU. The highest-AP model flagged 4 to 5 times the area that burned and ranked fifth of six on F1 and IoU, and the most recall-heavy model flagged 16 to 23 times. Models with more usable predictions had AP scores 24 to 37 lower. Across architectures, we identified three distinct prediction profiles: over-predicting, balanced, and under-predicting, which AP alone could not distinguish. Expanding the input from 7 to 23 channels changed AP by 0.03 on average, against a 0.21 to 0.24 spread across architectures. These results show AP alone can favor models whose predictions are poorly suited for operational wildfire forecasting.",
+      "summary_zh": "机器学习正越来越多地用于预测活跃野火次日将燃烧的位置，以帮助确定疏散边界和隔离线。大多数模型使用平均精度（AP）评估，它汇总了所有决策阈值下的性能，而根据预报采取行动则需要选择一个阈值。作者在WildfireSpreadTS上使用共享评估流水线和两种输入配置，对五种判别式架构和一种生成模型进行基准测试。他们发现，模型排名会因使用AP还是使用F1和IoU等阈值依赖指标而不同。AP最高的模型标记的面积是实际燃烧面积的4至5倍，在F1和IoU上排名六者中的第五；而召回率最高的模型标记面积达16至23倍。预测更可用的模型AP分数低24至37。跨架构，作者识别出三种不同的预测特征：过度预测、平衡和预测不足，仅靠AP无法区分。将输入从7个通道扩展到23个通道使AP平均变化0.03，而架构间的差异为0.21至0.24。这些结果表明，仅用AP可能偏向那些预测不适合实际野火预报的模型。",
+      "insight_zh": "该研究警示，在遥感变化检测与地理空间预测任务中，评估指标的选择可能显著影响模型排名与业务适用性，提示研究者在城市变化检测等任务中应结合阈值依赖指标进行综合评估。"
     },
     {
       "key": "arxiv:2601.12538",
@@ -568,6 +593,34 @@
       "abstract": "The aggregation of many lay estimates often outperforms individual expert judgment, a phenomenon known as the wisdom of crowds. While this is usually attributed to the independence of estimates, an even stronger effect arises through deliberation: averaging the consensus estimates of small deliberating groups outperforms the classical wisdom of crowds, with individual judgments themselves also becoming more accurate after deliberation. Whether these improvements transfer to large language models deliberating amongst themselves is unknown. Here we adapt a three-stage deliberation paradigm previously used with human participants for use with large language models from three different families, and test it across four domains of increasing real-world stakes: visual numerical estimation (Study 1), peer review of machine-learning papers (Study 2), detection of hidden malicious behavior by an artificial intelligence agent (Study 3), and sports forecasting against a real prediction market (Study 4). Across domains, deliberation reduced collective error beyond passive aggregation of independent responses, and post-deliberation individual judgments retained this collective gain. Notably, the advantage required model diversity: groups composed of clones of a single model did not benefit from deliberating. These results establish machine deliberation as a general-purpose aggregation mechanism, and point to diversity as an active ingredient.",
       "summary_zh": "该研究将原本用于人类参与者的三阶段审议范式迁移至三个不同家族的大语言模型，并在四个现实风险递增的领域进行测试：视觉数值估计（研究1）、机器学习论文同行评审（研究2）、检测人工智能代理的隐藏恶意行为（研究3）以及对抗真实预测市场的体育预测（研究4）。结果显示，在所有领域中，审议均比独立回答的被动聚合更能降低集体误差，且审议后的个体判断仍保留了集体增益。值得注意的是，这一优势需要模型多样性：由单一模型克隆组成的群体无法从审议中获益。",
       "insight_zh": "该研究提示，多智能体系统中引入异质性模型可能比同质模型集成更有效，这一发现或可迁移至城市更新场景中多源异构数据或多角色智能体的协同决策框架设计，但需注意其验证领域与地理空间任务存在显著差异。"
+    },
+    {
+      "key": "arxiv:2609.22206",
+      "title": "Dissecting Training-Free Uncertainty Estimation in Multimodal Large Language Models",
+      "title_zh": "剖析多模态大语言模型中的免训练不确定性估计",
+      "url": "https://arxiv.org/abs/2609.22206",
+      "doi": "",
+      "arxiv_id": "2609.22206",
+      "authors": [
+        "Soroush Seifi",
+        "Vaggelis Dorovatas",
+        "Lin Li",
+        "Yarin Gal",
+        "Rahaf Aljundi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-01T12:32:28+00:00",
+      "score": 62,
+      "reason": "该文系统研究多模态大语言模型的免训练不确定性估计，与LLM及多智能体方向相关，但其核心是模型不确定性而非地理空间智能或城市更新，故相关性中等。",
+      "tags": [
+        "多模态大语言模型",
+        "不确定性量化",
+        "免训练方法",
+        "语义空间"
+      ],
+      "abstract": "Multimodal Large Language Models (MLLMs) have achieved remarkable performance across a wide range of multimodal tasks, yet understanding and quantifying their predictive uncertainty remains underexplored despite being central for safety critical applications. In this work, we present a systematic study of training-free uncertainty quantification strategies for MLLMs, categorizing existing approaches into three conceptual families: token-level methods, which operate directly in the text output space; verbalized methods, which elicit uncertainty estimates or abstention signals via natural language prompts; and semantic methods, which measure uncertainty in a semantic meaning space. We benchmark these strategies across multiple datasets, model families, generations, and scales, and find that no single family dominates: token-level entropy (at sampling temperature 1.0) wins on short answers, verbalized abstention on sentence-length responses, and semantic methods on long-form generation.",
+      "summary_zh": "多模态大语言模型（MLLMs）在多种多模态任务上表现优异，但其预测不确定性的理解与量化仍研究不足，而这对于安全关键应用至关重要。本文系统研究MLLMs的免训练不确定性量化策略，将现有方法分为三类：在文本输出空间直接操作的token级方法、通过自然语言提示引出不确定性估计或弃权信号的言语化方法，以及在语义意义空间度量不确定性的语义方法。作者在多个数据集、模型家族、代际和规模上对这些策略进行基准测试，发现没有单一类别占优：token级熵（采样温度1.0）在短答案上胜出，言语化弃权在句子长度回答上胜出，语义方法在长文本生成上胜出。",
+      "insight_zh": "该研究提示，在将LLM用于地理空间智能任务时，不确定性估计方法的选择需依输出形式而定，短答案、句子级回答与长文本生成可能适用不同策略，这对构建可靠的地理空间问答或智能体系统具有参考价值。"
     },
     {
       "key": "arxiv:2609.22174",
@@ -868,7 +921,7 @@
     },
     {
       "key": "arxiv:2609.24526",
-      "title": "ME-VLM:A Unified VLM for Embodied Cognition and Agent Coordination",
+      "title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination",
       "title_zh": "ME-VLM：面向具身认知与智能体协调的统一视觉语言模型",
       "url": "https://arxiv.org/abs/2609.24526",
       "doi": "",
@@ -891,61 +944,6 @@
       "abstract": "Physical AI requires models to ground visual and linguistic understanding in real-world environments while accounting for environmental constraints and execution feedback. We introduce MachEmbodied-VLM (ME-VLM), a unified vision-language model with two variants, 4B and 35B-A3B, that brings together embodied cognition and multimodal agent capabilities. Our work emphasizes physical perception and spatiotemporal reasoning, together with planning, interaction, and outcome assessment in both digital and physical environments. We construct training data spanning embodied and multimodal agent tasks, including execution observations and feedback to support outcome assessment and decision refinement. The training pipeline comprises embodied capability injection, separate reinforcement learning of embodied and multimodal-agent experts, and multi-teacher on-policy distillation that consolidates their complementary capabilities into a single model. Experiments show competitive performance on both embodied and agent benchmarks, as well as on autonomous-driving and embodied-navigation tasks. For edge deployment, visual token compression, W4A8 quantization, and hardware--software co-optimization enable on-device inference of the 4B variant on the M100, reducing prefill latency from 400 ms to 188 ms. Project Page: https://machembodied.com/ME-Brain/ME-VLM.html Code Repository: https://github.com/MachEmbodied/ME-VLM",
       "summary_zh": "物理AI要求模型将视觉与语言理解落地到真实环境，同时考虑环境约束与执行反馈。作者提出MachEmbodied-VLM（ME-VLM），一个统一的视觉语言模型，包含4B与35B-A3B两个版本，融合具身认知与多模态智能体能力。该工作强调物理感知与时空推理，以及在数字与物理环境中的规划、交互与结果评估。作者构建了涵盖具身与多模态智能体任务的训练数据，包括执行观测与反馈以支持结果评估与决策优化。训练流程包括具身能力注入、具身与多模态智能体专家的分别强化学习，以及多教师在线策略蒸馏，将互补能力整合到单一模型中。实验显示其在具身与智能体基准以及自动驾驶和具身导航任务上具有竞争力。面向边缘部署，视觉token压缩、W4A8量化与软硬件协同优化使4B版本可在M100上端侧推理，预填充延迟从400毫秒降至188毫秒。",
       "insight_zh": "多教师在线策略蒸馏整合具身与智能体能力的训练范式，或可迁移到地理空间智能体中，用于融合遥感解译与规划决策等异构能力；其时空推理与结果评估机制对城市更新中的智能体决策反馈设计有参考价值。"
-    },
-    {
-      "key": "arxiv:2609.24482",
-      "title": "STA-TFM: Spatio-Temporal Aggregation Across Views TransForMer for Pose Estimation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24482",
-      "doi": "",
-      "arxiv_id": "2609.24482",
-      "authors": [
-        "Mena Kamel",
-        "Natalie Won",
-        "Amrut Sarangi",
-        "Sven Jager",
-        "Albert Pla Planas"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-21T12:22:35+00:00",
-      "score": 55,
-      "reason": "关键词命中：Spatio-temporal、Transformer",
-      "tags": [
-        "Spatio-temporal",
-        "Transformer"
-      ],
-      "abstract": "Monocular 3D human pose estimation (HPE) remains challenging due to depth ambiguity, occlu- sions, and the need for temporal consistency. While multi-view methods provide superior accuracy over monocular approaches, they often require complex setups. We introduce STA-TFM, a transformer-based architecture that combines spatial and temporal information for multi-view pose estimation. The approach leverages DSTformer, a monocular feature extractor, to capture long-range pose dependencies within each view. A fusion transformer then aggregates information across views to produce coherent 3D estimates. To address training data scarcity, we use a data generation pipeline that transforms any existing 3D pose dataset into multi-view setups with controllable parameters. Experiments on various datasets demonstrate that STA-TFM outperforms existing camera-parameter-free multi-view methods. STA-TFM achieves 50.9% and 49.5% reductions in mean per joint position error (MPJPE) and mean per joint velocity error (MPJVE) on the DHP19 dataset. Furthermore, it achieves 6.7% and 7.7% respective reductions on HAA4D, and a 15.2% MPJPE reduction on TotalCapture. STA-TFM handles noisy and missing 2D inputs, supporting potential deployment in healthcare monitoring, athletic assessment, and immersive technologies. Code, training checkpoints, and data are available at https://zenodo.org/records/22832620.",
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24409",
-      "title": "DeCo: Efficient Decouple-to-Couple Learning for Multi-Task Visual Grounding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24409",
-      "doi": "",
-      "arxiv_id": "2609.24409",
-      "authors": [
-        "Xiaoqiang Lu",
-        "Licheng Jiao",
-        "Long Sun",
-        "Yuting Yang",
-        "Xu Liu",
-        "Lingling Li",
-        "Wenping Ma",
-        "Fang Liu"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-21T10:58:55+00:00",
-      "score": 55,
-      "reason": "关键词命中：Remote Sensing、Segmentation",
-      "tags": [
-        "Remote Sensing",
-        "Segmentation"
-      ],
-      "abstract": "Multi-task visual grounding requires models to jointly understand linguistic semantics and perform accurate visual localization and segmentation. Despite the success of multimodal large language models, effectively adapting them to multiple grounding objectives remains challenging. Existing methods commonly enforce task cooperation through shared representations, while overlooking the intrinsic conflict between task-oriented feature interests. In this paper, we introduce $\\textbf{DeCo}$, an efficient $\\textbf{De}$couple-to-$\\textbf{Co}$uple learning framework that resolves this dilemma through a two-stage paradigm: task-specific representation decoupling followed by complementary prior coupling. Specifically, we first propose Task-aware Semantic Decoupling (TSD) to route shared visual cues into individual features under salient word-level guidance, alleviating representation interference between localization and segmentation. Furthermore, we observe that segmentation naturally provides informative localization priors due to dense supervision. Based on this insight, we introduce Hybrid Prior Coupling (HPC), which integrates sentence-level semantic prior with mask-derived spatial prior for enhanced grounding. Built upon a frozen multimodal encoder, DeCo requires lightweight trainable parameters while achieving strong generalization across multiple grounding objectives. Extensive experiments on RefCOCO/+, G-Ref, ReferIt, Flickr, DIOR-RSVG, SARVG1.0, RRSIS-D, RIS-LAD, and RefDIOR demonstrate that DeCo achieves state-of-the-art performance on both natural and remote sensing benchmarks. The code and models are available at https://github.com/xiaoqiang-lu/DeCo.",
-      "summary_zh": "",
-      "insight_zh": ""
     }
   ]
 }

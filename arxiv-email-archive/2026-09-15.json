@@ -9,6 +9,7 @@
     "arxiv:2609.15485",
     "arxiv:2609.14821",
     "arxiv:2609.13903",
+    "arxiv:2609.11580",
     "arxiv:2609.13277",
     "arxiv:2609.13182",
     "arxiv:2608.00929",
@@ -20,6 +21,7 @@
     "arxiv:2608.23474",
     "arxiv:2608.23691",
     "arxiv:2609.14824",
+    "arxiv:2609.13306",
     "arxiv:2609.15087",
     "arxiv:2609.14138",
     "arxiv:2609.08914",
@@ -29,23 +31,21 @@
     "arxiv:2609.14142",
     "arxiv:2609.15172",
     "arxiv:2609.13453",
-    "arxiv:2609.13283",
-    "arxiv:2608.22108",
-    "arxiv:2505.18686"
+    "arxiv:2609.13283"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1082",
-    "deepseek": "partial:0/178;failed-batches:18"
+    "deepseek": "partial:28/178;failed-batches:15"
   },
-  "updated_at": "2026-09-23T00:53:48.116263+00:00",
+  "updated_at": "2026-09-23T12:06:03.736256+00:00",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 904,
+    "analyzed": 932,
     "high": 8,
-    "medium": 42,
-    "low": 60,
-    "below_threshold": 794
+    "medium": 46,
+    "low": 62,
+    "below_threshold": 816
   },
   "papers": [
     {
@@ -271,6 +271,38 @@
       "abstract": "We study how to update a pre-built aerial scene with a newly captured, unposed ground-view sequence. The aerial scene already contains a reliable metric Structure-from-Motion (SfM) reconstruction and a pre-trained 3D Gaussian Splatting (3DGS) model, whereas the ground-view sequence is collected later to add street-level appearance but has unknown camera poses and global scale. Registering this sequence to the aerial SfM reconstruction is challenging because single-image cross-view localization is brittle and long trajectories are prone to drift. To address these challenges, we present SkyAnchor, which treats the existing aerial scene as a fixed scaffold for ground-view registration and scene update instead of jointly reconstructing aerial and ground imagery from scratch. It first localizes short groups of consecutive ground frames against geometrically verified aerial support, producing sparse anchor poses. It then recovers the full ground trajectory with anchor-constrained submaps, fixing the front and rear anchor poses during incremental registration and bundle adjustment. Finally, it inserts filtered ground Gaussians while preserving the aerial view, followed by lightweight joint refinement. Experiments on seven real aerial--ground scenes show accurate metric ground trajectories and updated 3D Gaussian scenes with strong aerial- and ground-view rendering quality.",
       "summary_zh": "本文研究如何用新采集的无位姿地面视角序列更新预建的航空场景。航空场景已包含可靠的米制SfM重建与预训练的3D高斯泼溅（3DGS）模型，而地面序列采集较晚，用于补充街景外观，但相机位姿与全局尺度未知。将该序列配准到航空SfM重建具有挑战性，因为单图像跨视角定位脆弱且长轨迹易漂移。为此，作者提出SkyAnchor，将已有航空场景视为固定支架用于地面视角配准与场景更新，而非从头联合重建航空与地面影像。方法首先针对几何验证的航空支撑定位短组连续地面帧，产生稀疏锚点位姿；随后通过锚点约束的子图恢复完整地面轨迹，在增量配准与光束法平差中固定前后锚点位姿；最后在保持航空视角的同时插入过滤后的地面高斯，并进行轻量联合精炼。在七个真实航空-地面场景上的实验显示，方法获得准确的米制地面轨迹，并更新出在航空与地面视角均具良好渲染质量的三维高斯场景。",
       "insight_zh": "该工作表明以既有航空重建为锚点可缓解地面序列的位姿与尺度不确定性，为多源视角融合与场景更新提供了思路；其评估限于七个真实场景，未涉及大范围城市尺度或时序变化检测。"
+    },
+    {
+      "key": "arxiv:2609.11580",
+      "title": "A Dataset and Model for Imputing Water Surface Elevation on a Large and Extremely Sparse Spatiotemporal Graph",
+      "title_zh": "面向大规模极稀疏时空图的水位高程插补数据集与模型",
+      "url": "https://arxiv.org/abs/2609.11580",
+      "doi": "",
+      "arxiv_id": "2609.11580",
+      "authors": [
+        "Ruben Cartuyvels",
+        "Karim Douch",
+        "Gabriele Bertoli",
+        "Mounia El Baz",
+        "Artemis Vrettou",
+        "S\\'ebastien Lef\\`evre",
+        "Diego Fernandez Prieto"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T14:12:02+00:00",
+      "score": 78,
+      "reason": "该论文提出大规模极稀疏时空图上的水位高程插补数据集与模型，涉及卫星测高、时空图学习与多源数据融合，与时空数据挖掘、遥感及多源数据融合方向高度相关。",
+      "tags": [
+        "水位高程",
+        "时空图插补",
+        "卫星测高",
+        "SWOT",
+        "稀疏观测",
+        "亚马逊流域"
+      ],
+      "abstract": "Continuous monitoring of water surface elevation across river networks is critical for flood forecasting, water resource management, and understanding the global water cycle. Yet, the scarcity of in situ gauges across much of the globe constrains the development of reliable modeling frameworks. Satellite altimetry has the potential to alleviate this problem but its use is currently hindered by sparse temporal coverage. To this end, we introduce AmazonSWE, a dataset for training and evaluating large-scale spatiotemporal graph imputation methods that integrates processed satellite altimetry measurements from a range of sources, including the recent wide-swath SWOT sensor. The dataset covers over 19K river sections and 10 years (2016-2026) in the Amazon river basin, with in situ gauges held out for evaluation. Besides contributing a novel real-world use case with the potential for societal impact, AmazonSWE introduces significant technical challenges: with fewer than 1% of sections observed per day, the dataset is far sparser than existing imputation benchmarks, and its directed acyclic river topology is both structurally different from and larger than graphs in existing datasets. We show that prior spatiotemporal graph imputation methods are not adapted to this topology, scale and sparsity, and propose a simple bidirectional selective state space model that outperforms them by sampling connected subgraphs and flattening space and time into a single token sequence with topology-aware positional encodings. Compared to the state-of-the-art published method for SWOT-based WSE densification, which integrates statistics with physical modeling, our model reduces RMSE against in situ gauges by 18-39%, while producing predictions for every river section rather than only those with sufficient nearby satellite coverage.",
+      "summary_zh": "对河网水位高程的连续监测对洪水预报、水资源管理和理解全球水循环至关重要。然而，全球许多地区缺乏原位水文站，制约了可靠建模框架的发展。卫星测高有望缓解这一问题，但目前受限于稀疏的时间覆盖。为此，作者提出AmazonSWE，一个用于训练和评估大规模时空图插补方法的数据集，整合了来自多种来源（包括近期宽刈幅SWOT传感器）的经处理卫星测高测量。该数据集覆盖亚马逊流域超过1.9万个河段和10年（2016–2026），并保留原位水文站用于评估。除贡献一个具有社会影响潜力的新颖真实用例之外，AmazonSWE还带来显著技术挑战：每天被观测的河段不足1%，远稀疏于现有插补基准；其有向无环河流拓扑在结构上既不同于现有数据集中的图，规模也更大。作者表明，先前的时空图插补方法未能适应这种拓扑、规模和稀疏性，并提出一个简单的双向选择性状态空间模型，通过采样连通子图并将空间与时间展平为单一token序列，配合拓扑感知位置编码，从而优于这些方法。与已发表的、将统计与物理建模相结合的SWOT水位高程加密最先进方法相比，该模型相对原位水文站将RMSE降低18–39%，同时为每个河段生成预测，而不仅是那些有观测的河段。",
+      "insight_zh": "该工作表明，在极稀疏观测条件下，将河网拓扑先验与选择性状态空间建模结合可显著优于统计—物理混合方法，其“连通子图采样+时空展平+拓扑感知编码”的设计对城市时空数据插补与多源融合具有方法借鉴意义；摘要未说明该模型在其他流域或城市尺度上的泛化能力。"
     },
     {
       "key": "arxiv:2609.13277",
@@ -617,6 +649,31 @@
       "insight_zh": ""
     },
     {
+      "key": "arxiv:2609.13306",
+      "title": "HGSQ: Heatmap-Guided Sparse Query Detector for Real-Time Aerial Small Object Detection",
+      "title_zh": "HGSQ：面向实时航空小目标检测的热图引导稀疏查询检测器",
+      "url": "https://arxiv.org/abs/2609.13306",
+      "doi": "",
+      "arxiv_id": "2609.13306",
+      "authors": [
+        "Yangchen Zeng"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-10T12:52:34+00:00",
+      "score": 72,
+      "reason": "该文提出面向航空/无人机小目标检测的实时检测器，直接属于遥感图像分析与目标检测方向，与研究中遥感变化检测和地理空间智能高度相关；虽非变化检测任务，但方法层面（稀疏查询、热图引导计算预算）可迁移。",
+      "tags": [
+        "遥感目标检测",
+        "小目标检测",
+        "稀疏查询",
+        "实时检测",
+        "无人机影像"
+      ],
+      "abstract": "Real-time aerial small object detection is an important visual signal and image processing problem, requiring a detector to preserve fine-grained localization while avoiding redundant computation on large background regions. This paper focuses on this deployment-oriented aerial/UAV setting rather than claiming a universal detector for all object detection scenarios. Existing Transformer-based detectors provide strong global modeling, but their dense query initialization and multi-layer decoder still spend substantial computation on background tokens, which is inefficient when small objects occupy only sparse image regions. To address this problem, this paper proposes HGSQ, a Heatmap-Guided Sparse Query Detector for real-time aerial small object detection. HGSQ uses a lightweight Heatmap Budget Predictor (HBP) to predict a foreground budget map in a single forward pass. The predicted heatmap is then used by three fixed components: Heatmap-Guided Sparse Query Selection (HSQS), which initializes decoder queries from high-confidence foreground positions; Heatmap-Gated Lite Snake Convolution (HGLSConv), which performs local shape refinement only on heatmap-activated small-object regions; and Adaptive Query-Decoder Budgeting (AQDB), which adjusts the query budget and decoder depth according to the estimated object density. Unlike post-hoc heatmap generation, HGSQ treats the heatmap as a real-time computation budget rather than a visualization map during deployment. Experiments on NWPU VHR-10 and VisDrone2019 show that HGSQ achieves 95.10 mAP50 on NWPU VHR-10 and 54.8 mAP50 on VisDrone2019, while reducing GFLOPs to 48.6 and running at 96.0 FPS on an RTX 4070 under our TensorRT FP16 deployment protocol.",
+      "summary_zh": "实时航空小目标检测要求检测器在保持细粒度定位的同时避免在大片背景区域上的冗余计算。现有基于Transformer的检测器具有强全局建模能力，但其密集查询初始化和多层解码器仍在背景token上消耗大量计算，当小目标仅占据稀疏图像区域时效率低下。本文提出HGSQ，一种热图引导的稀疏查询检测器。HGSQ使用轻量级热图预算预测器（HBP）在单次前向传播中预测前景预算图，随后由三个固定组件使用：热图引导稀疏查询选择（HSQS）从高置信前景位置初始化解码器查询；热图门控轻量蛇形卷积（HGLSConv）仅在热图激活的小目标区域执行局部形状细化；自适应查询-解码器预算（AQDB）根据估计的目标密度调整查询预算和解码器深度。与事后热图生成不同，HGSQ在部署中将热图视为实时计算预算而非可视化图。在NWPU VHR-10和VisDrone2019上，HGSQ分别达到95.10 mAP50和54.8 mAP50，GFLOPs降至48.6，在RTX 4070上以TensorRT FP16部署协议运行达96.0 FPS。",
+      "insight_zh": "将热图作为实时计算预算而非事后可视化的思路，为遥感变化检测中稀疏变化区域的高效计算分配提供了可借鉴的设计；但该工作针对单时相目标检测，未涉及多时相对比或变化定位，迁移到变化检测需重新设计预算预测与查询选择机制。"
+    },
+    {
       "key": "arxiv:2609.15087",
       "title": "Beyond Numerical Time Series: A Unified Benchmark for Multimodal Forecasting with Heterogeneous Context",
       "title_zh": "超越数值时间序列：面向异构上下文多模态预测的统一基准",
@@ -914,66 +971,6 @@
       "abstract": "We present a multimodal foundation model for lunar remote sensing, pretrained from scratch on SomBench, a geographically partitioned corpus of nearly two million co-registered tile bundles spanning 11 modalities at two spatial scales (1 m/pixel and 100 m/pixel). The model adapts the TerraMind masked-token architecture with two lunar-specific extensions: acquisition geometry is provided as explicit context, and meter- and hundred-meter-scale tiles are trained jointly so that a single set of weights covers both resolutions. FlexiViT patch embeddings allow adaptation to different patch sizes without retraining, while modality-wise inputs enable flexible multimodal fine-tuning. Qualitative generation experiments suggest the model learns meaningful cross-modal correspondences, including terrain derivatives from elevation and illumination-consistent reflectance from geometry. We evaluate on four benchmarks: crater detection at WAC and NAC scales, irregular mare patch (IMP) segmentation, and polar ice prospectivity regression. Across tasks, the pretrained model matches or outperforms ImageNet-pretrained baselines and an architecturally identical random-init control. On multimodal ice prospectivity regression, pretrained variants achieve the best results, while the random-init model outperforms most baselines, suggesting gains arise from both the architecture and pretraining. Label efficiency is notable for WAC crater detection, where the pretrained model trained on 50% of the data exceeds the strongest ImageNet baseline trained on the full dataset. Among adaptation strategies, LoRA matches or surpasses full fine-tuning on crater detection and IMP segmentation while using far fewer trainable parameters, whereas full fine-tuning performs best for ice prospectivity regression. We release the pretrained checkpoint, benchmark datasets, and fine-tuning code to support reproducible lunar AI research.",
       "summary_zh": "",
       "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2608.22108",
-      "title": "Development and Feasibility Evaluation of an Edge AI as Medical Device System for Breast Cancer Multidisciplinary Team Meetings",
-      "title_zh": "用于乳腺癌多学科团队会议的边缘AI医疗设备系统开发与可行性评估",
-      "url": "https://arxiv.org/abs/2608.22108",
-      "doi": "",
-      "arxiv_id": "2608.22108",
-      "authors": [
-        "Aarzoo Dhiman",
-        "Farzana Haque",
-        "Iqtedar Muazzam",
-        "Kartikae Grover",
-        "Lydia Brian Smith",
-        "William Stephen Jones"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-22T21:20:51+00:00",
-      "score": 65,
-      "reason": "展示了在边缘设备上部署结合ASR和LLM的隐私保护AI系统，用于处理敏感信息并辅助决策，其架构和方法对在GIS中处理敏感地理数据或构建本地化智能系统有参考价值。",
-      "tags": [
-        "边缘AI",
-        "医疗",
-        "ASR",
-        "LLM",
-        "RAG",
-        "隐私保护"
-      ],
-      "abstract": "Breast Cancer Multidisciplinary Team (MDT) meetings manage increasingly complex cases under considerable time pressure, and documentation requirements can reduce clinical efficiency and decision quality. Existing AI based MDT workflows rely on cloud-based processing, limiting their use because patient discussions contain identifiable information. We developed a fully on-device AI pipeline using open-source Automatic Speech Recognition (ASR) and Large Language Models (LLMs) that transcribes breast cancer MDT discussions, structures clinical information, and generates treatment recommendations using retrieval-augmented generation (RAG) grounded in National Institute for Health and Care Excellence (NICE) guidance. The pipeline runs on a single NVIDIA Jetson AGX Orin, ensuring that patient audio, transcripts, and outputs remain within institutional infrastructure. Evaluation included two recorded simulated MDT discussions, ten clinically validated synthetic discussions, and 1,270 acoustically augmented recordings. Optimisation of Whisper large-v3 reduced word error rate by 20.7% and 24.4% on the recorded discussions and achieved performance within 0.58% WER and 1.58% word information lost of a commercial clinical ASR benchmark on augmented audio. MedGemma-RAG identified 2.3 times more MDT-concordant interventions than a proprietary cloud comparator (p = 0.020), with no significant difference in overall accuracy. Stakeholders identified automated documentation, treatment recommendation support, and case triage as the most credible near-term applications while highlighting workflow integration, governance, and clinician trust as key implementation challenges. These findings demonstrate the feasibility of privacy-preserving, fully on-device AI for MDT documentation and guideline-informed decision support, providing a foundation for prospective clinical evaluation.",
-      "summary_zh": "开发了一个完全在设备端运行的AI流程，使用开源ASR和LLM转录乳腺癌多学科团队讨论，结构化临床信息，并基于NICE指南通过RAG生成治疗建议。系统在单个NVIDIA Jetson AGX Orin上运行，确保患者数据不出机构。评估显示，优化后的Whisper模型性能接近商业基准，基于MedGemma的RAG系统识别出更多与MDT一致的建议，证明了隐私保护型全设备端AI的可行性。",
-      "insight_zh": "该研究为在敏感地理数据（如位置隐私、个人轨迹）处理中部署边缘AI提供了可行范式，即通过本地化处理结合RAG来增强决策支持，同时满足隐私和合规要求，对构建隐私友好的地理空间智能系统具有启发意义。"
-    },
-    {
-      "key": "arxiv:2505.18686",
-      "title": "WeakMCN: Multi-task Collaborative Network for Weakly Supervised Referring Expression Comprehension and Segmentation",
-      "title_zh": "WeakMCN：用于弱监督指代表达理解与分割的多任务协同网络",
-      "url": "https://arxiv.org/abs/2505.18686",
-      "doi": "",
-      "arxiv_id": "2505.18686",
-      "authors": [
-        "Silin Cheng",
-        "Yang Liu",
-        "Xinwei He",
-        "Sebastien Ourselin",
-        "Lei Tan",
-        "Gen Luo"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 65,
-      "reason": "该研究提出弱监督多任务网络用于指代理解与分割，其多任务协同与弱监督策略对城市更新中基于自然语言进行目标识别与提取的研究有借鉴意义。",
-      "tags": [
-        "弱监督学习",
-        "多任务学习",
-        "指代理解",
-        "指代分割"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，无法提供详细信息。",
-      "insight_zh": "无法从摘要中提取有效信息。"
     }
   ]
 }
