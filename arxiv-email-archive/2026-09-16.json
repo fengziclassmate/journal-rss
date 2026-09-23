@@ -11,11 +11,13 @@
     "arxiv:2607.19326",
     "arxiv:2508.19003",
     "arxiv:2608.14599",
+    "arxiv:2609.16986",
     "arxiv:2609.17138",
     "arxiv:2505.15147",
     "arxiv:2609.16852",
     "arxiv:2511.02831",
     "arxiv:2609.17317",
+    "arxiv:2609.17040",
     "arxiv:2609.17039",
     "arxiv:2609.16305",
     "arxiv:2609.16155",
@@ -26,26 +28,24 @@
     "arxiv:2605.29879",
     "arxiv:2609.14637",
     "arxiv:2607.09493",
+    "arxiv:2609.17021",
     "arxiv:2609.17017",
     "arxiv:2609.16268",
-    "arxiv:2609.17523",
-    "arxiv:2609.17310",
-    "arxiv:2609.17107",
-    "arxiv:2609.16997"
+    "arxiv:2609.17523"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:554",
-    "deepseek": "partial:0/100;failed-batches:10"
+    "deepseek": "partial:18/98;failed-batches:8"
   },
-  "updated_at": "2026-09-22T17:17:59.313440+00:00",
+  "updated_at": "2026-09-23T00:54:26.622740+00:00",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 454,
-    "high": 7,
-    "medium": 18,
-    "low": 37,
-    "below_threshold": 392
+    "analyzed": 474,
+    "high": 8,
+    "medium": 20,
+    "low": 40,
+    "below_threshold": 406
   },
   "papers": [
     {
@@ -329,6 +329,31 @@
       "insight_zh": "从标题推断，该工作可能结合地理数据与数字孪生技术优化城市基站部署；摘要缺失，无法确认其是否涉及多源数据融合方法或与城市更新场景的结合。"
     },
     {
+      "key": "arxiv:2609.16986",
+      "title": "ToMAS: A Pilot Failure-Grounded Theory-of-Mind Benchmark from Multi-Agent LLM Failures",
+      "title_zh": "ToMAS：从多智能体LLM失败中构建的试点性失败锚定心智理论基准",
+      "url": "https://arxiv.org/abs/2609.16986",
+      "doi": "",
+      "arxiv_id": "2609.16986",
+      "authors": [
+        "Muhammad Ashar Ishfaq",
+        "Glaucia Melo"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T11:01:30+00:00",
+      "score": 68,
+      "reason": "该文从多智能体LLM失败案例构建心智理论基准，直接涉及LLM与多智能体系统，与研究者LLM和多智能体方向高度相关，但未涉及地理空间应用。",
+      "tags": [
+        "多智能体LLM",
+        "心智理论",
+        "失败分析",
+        "基准构建"
+      ],
+      "abstract": "LLM-based multi-agent systems can fail even when communication succeeds because agents do not correctly track their peers' roles, knowledge, or intentions. We investigate whether such inter-agent misalignment cases, labelled FC2 in MAST-Data, can be converted into functional partner-state reasoning items. ToMAS applies four explicit convertibility criteria to diagnosed execution traces. A full conversion pass over 242 eligible non-AG2 training traces produced 39 CLEAN items. In an 18-trace reliability pilot, two annotators achieved 94.4% raw agreement and Cohen's kappa = 0.92. We then used the converted items as binary rewards in a small-scale GRPO feasibility experiment with Qwen2.5-1.5B. On a 28-item held-out Magentic GAIA diagnostic, every evaluated condition exceeded the ROUGE-L threshold on the same 2 of 28 items. Post-hoc adapter checks show why: under the learning rate used, the LoRA update remained numerically negligible (max abs Delta W about 7e-6), so all conditions decode identically to the untrained checkpoint. The experiment therefore does not show a training effect and cannot establish one; it reports an executable pipeline together with two limitations that any conclusive study must address: a provenance gap between the training and evaluation items, and lexical-overlap scoring. ToMAS provides a preliminary rubric and pipeline for converting diagnosed coordination failures into trainable partner-state reasoning items and identifies the requirements for a conclusive matched-domain evaluation.",
+      "summary_zh": "基于LLM的多智能体系统即使在通信成功时也可能失败，因为智能体未能正确追踪同伴的角色、知识或意图。作者研究此类智能体间错位案例（在MAST-Data中标记为FC2）能否转化为功能性伙伴状态推理项。ToMAS对已诊断的执行轨迹应用四项明确的转换标准。对242条符合条件的非AG2训练轨迹进行完整转换，产生39个CLEAN项。在18条轨迹的可靠性试点中，两名标注者达到94.4%原始一致率和Cohen's kappa=0.92。随后作者将转换项用作二元奖励，在Qwen2.5-1.5B上进行小规模GRPO可行性实验。在28项留出的Magentic GAIA诊断上，每个评估条件都在相同的2/28项上超过ROUGE-L阈值。事后适配器检查显示原因：在所用学习率下，LoRA更新在数值上可忽略（最大绝对ΔW约7e-6），因此所有条件解码结果与未训练检查点相同。因此该实验未显示训练效应，也无法确立训练效应；它报告了一个可执行流程以及任何结论性研究都必须解决的两个局限：训练项与评估项之间的来源差距，以及词汇重叠评分。ToMAS提供了将已诊断协调失败转化为可训练伙伴状态推理项的初步评分标准和流程，并确定了结论性匹配域评估的要求。",
+      "insight_zh": "该工作为多智能体LLM的协调失败提供了转化为可训练推理项的初步流程，并诚实指出训练效应未确立及来源差距等局限；对多智能体地理空间协作系统的失败诊断与基准构建有方法启示，但原文未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.17138",
       "title": "From Foundation Embeddings to Cropland Maps: Label Efficiency, Temporal Transferability and Independent Human Validation",
       "title_zh": "",
@@ -462,6 +487,35 @@
       "abstract": "The use of LLMs to complete online surveys impacts the validity of survey-based research, but detecting such usage remains underexplored. We introduce an initial benchmark dataset, namely ASURRE, for AI-assisted survey participation to capture usage strategies ranging from full generation and revision to persona-grounded agentic completion. Controlled by these strategies, LLM-assisted survey responses are generated using multiple LLMs on three real-world surveys in different disciplines, paired with genuine human responses. Our evaluation of existing machine-generated text (MGT) detectors shows that naive AI usage is readily detectable, whereas persona-grounded agents that mimic entire respondents push detector performance toward chance. We further show that agentic completion cannot fully replicate respondent-level behaviour and leaves distinctive behavioural traces. While individual cues can be circumvented by targeted prompting, a simple few-shot, training-free aggregator over these cues improves mean AUROC by +0.14 over the best existing detector across agentic settings. Our project is available at https://github.com/mike-qz-wang/ASURRE.",
       "summary_zh": "使用LLM完成在线调查会影响调查研究的有效性，但对此类使用的检测仍研究不足。作者引入初始基准数据集ASURRE，用于AI辅助调查参与，涵盖从完全生成、修改到基于人格的智能体化完成等使用策略。在这些策略控制下，使用多个LLM在三个不同学科的真实调查上生成LLM辅助的调查回答，并与真实人类回答配对。对现有机器生成文本（MGT）检测器的评估表明，朴素的AI使用容易被检测，而模仿完整受访者的人格化智能体使检测器性能接近随机水平。作者进一步表明，智能体化完成无法完全复现受访者层面的行为，并留下独特的行为痕迹。虽然单个线索可通过针对性提示被规避，但一个简单的少样本、免训练聚合器在这些线索上，在智能体设置下将平均AUROC较最佳现有检测器提升+0.14。项目见https://github.com/mike-qz-wang/ASURRE。",
       "insight_zh": "该研究提示，当LLM智能体被赋予人格设定时，其生成内容更难与人类区分，但行为层面仍可能残留可聚合的痕迹；这对依赖问卷或多智能体模拟的研究具有数据效度警示意义。"
+    },
+    {
+      "key": "arxiv:2609.17040",
+      "title": "Sparse MLLM Anchors, Dense Adaptation: Breaking the Self-Referential Loop in Wild Test-Time Adaptation",
+      "title_zh": "稀疏MLLM锚点，密集自适应：打破野外测试时自适应中的自指循环",
+      "url": "https://arxiv.org/abs/2609.17040",
+      "doi": "",
+      "arxiv_id": "2609.17040",
+      "authors": [
+        "Zhenbin Wang",
+        "Lei Zhang",
+        "Lituan Wang",
+        "Yan Wang",
+        "Zhao Zhang",
+        "Wei Huang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T11:48:30+00:00",
+      "score": 62,
+      "reason": "该文提出用冻结多模态大模型提供结构化语义描述作为外部锚点，缓解测试时自适应中的自指循环，与LLM/多智能体及地理空间智能中的语义推理方向相关，但未涉及城市更新或遥感变化检测。",
+      "tags": [
+        "多模态大模型",
+        "测试时自适应",
+        "语义锚点",
+        "分布偏移"
+      ],
+      "abstract": "Wild test-time adaptation (WTTA) updates a source model online under small test batches, concurrent distribution shifts, and time-varying class imbalance. Most WTTA methods derive their adaptation signals, including predictive uncertainty, sample reliability, and local feature geometry, from the model being adapted. When the source model is unreliable under shift, these signals can reinforce its own errors, forming a self-referential loop. We introduce MASA (Multimodal-LLM-Anchored Semantic Adaptation), which complements model-internal evidence with structured semantic descriptions from a frozen multimodal large language model (MLLM). To limit inference cost, MASA queries the MLLM only for a small set of diverse, reliability-ranked anchors. The resulting descriptions capture the object family and nuisance factors such as style, viewpoint, and occlusion. MASA encodes these descriptions, propagates them to neighboring test samples, and stores the resulting visual-semantic information in an online prototype memory. Descriptor-aware retrieval from this memory provides an auxiliary target for lightweight adaptation of normalization-affine parameters. We evaluate MASA on the WTTA ImageNet-C benchmark under limited-batch, mixed-domain, and imbalanced-label-shift settings with ResNet and ViT backbones.",
+      "summary_zh": "野外测试时自适应（WTTA）在小批量测试、并发分布偏移和时变类别不平衡下在线更新源模型。多数WTTA方法从被自适应模型自身获取自适应信号（预测不确定性、样本可靠性、局部特征几何），当源模型在偏移下不可靠时，这些信号会强化自身错误，形成自指循环。作者提出MASA（多模态大模型锚定的语义自适应），用冻结多模态大模型（MLLM）提供的结构化语义描述补充模型内部证据。为限制推理成本，MASA仅查询少量多样且按可靠性排序的锚点。所得描述捕捉物体类别及风格、视角、遮挡等干扰因素。MASA编码这些描述，传播到邻近测试样本，并将所得视觉-语义信息存入在线原型记忆。基于描述符感知的检索从该记忆提供辅助目标，用于轻量自适应归一化仿射参数。作者在WTTA ImageNet-C基准上以ResNet和ViT骨干，在有限批量、混合域和标签偏移不平衡设置下评估MASA。",
+      "insight_zh": "该工作提示：在分布偏移下，引入外部冻结大模型的语义先验可作为打破模型自指错误的补充信号；其“稀疏锚点+在线原型记忆”思路或可迁移到遥感场景中跨域变化检测的测试时自适应，但原文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.17039",
@@ -744,6 +798,34 @@
       "insight_zh": "共享持久记忆机制或可应用于多智能体城市更新模拟中，使各智能体在长期演化中保持对关键城市状态的一致性记忆，但需完整摘要确认其技术细节。"
     },
     {
+      "key": "arxiv:2609.17021",
+      "title": "sensVLA: Spatially-Grounded Vision-Language-Action Model for Autonomous Wheel Loader",
+      "title_zh": "sensVLA：面向自主轮式装载机的空间定位视觉-语言-动作模型",
+      "url": "https://arxiv.org/abs/2609.17021",
+      "doi": "",
+      "arxiv_id": "2609.17021",
+      "authors": [
+        "Gopi Krishna Erabati",
+        "Bjarne Johannsen",
+        "Angus Stewart",
+        "Vardeep Singh Sandhu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-15T11:29:50+00:00",
+      "score": 58,
+      "reason": "该文提出融合BEV激光雷达特征与视觉语言模型的VLA架构用于轮式装载机自主控制，涉及多源数据融合与空间定位，与地理空间智能有方法上的关联，但应用场景为重型设备自主而非城市/遥感。",
+      "tags": [
+        "视觉-语言-动作模型",
+        "空间定位",
+        "BEV",
+        "激光雷达融合",
+        "自动驾驶"
+      ],
+      "abstract": "Autonomous wheel-loader control requires joint reasoning over task semantics, egocentric vision, proprioception, and 3D scene geometry. We present sensVLA, a Vision-Language-Action (VLA) architecture that combines a Qwen3-2B Vision-Language Model (VLM) with a fully trainable transformer action expert trained by flow-matching velocity regression. sensVLA routes Bird's-Eye-View (BEV) features, extracted from fused front and rear lidar, directly to the action expert through a dedicated cross-attention pathway, while the VLM consumes front and rear RGB views to provide task-conditioned semantic context. This design decouples spatial grounding from linguistic reasoning while preserving interaction between both streams at decision time. The expert predicts six action dimensions: longitudinal velocity, steering, body-frame displacement, arm rate, and bucket rate. On a real-world dataset from a wheel loader, sensVLA reaches aggregate per-step parity with a strong camera-only baseline and reduces longitudinal velocity RMSE by 28% and displacement error by 9% on loading centric scenarios. It also degrades 29% less when the camera stream is corrupted or removed, evidencing that explicit spatial grounding improves accuracy and fault-tolerance for heavy equipment autonomy.",
+      "summary_zh": "自主轮式装载机控制需要对任务语义、自我中心视觉、本体感知和3D场景几何进行联合推理。作者提出sensVLA，一种视觉-语言-动作（VLA）架构，将Qwen3-2B视觉语言模型（VLM）与完全可训练的Transformer动作专家结合，后者通过流匹配速度回归训练。sensVLA将融合前后激光雷达提取的鸟瞰图（BEV）特征，通过专用交叉注意力通路直接路由到动作专家，而VLM消费前后RGB视图以提供任务条件语义上下文。该设计将空间定位与语言推理解耦，同时在决策时保留两路流的交互。动作专家预测六个动作维度：纵向速度、转向、机体坐标系位移、臂速率和铲斗速率。在轮式装载机真实数据集上，sensVLA达到与强纯相机基线相当的逐步聚合性能，并在装载中心场景中将纵向速度RMSE降低28%、位移误差降低9%。当相机流损坏或移除时，其性能下降减少29%，表明显式空间定位提升了重型设备自主的精度与容错性。",
+      "insight_zh": "该工作显示，将BEV等显式空间表征与语言模型解耦并保留决策时交互，可提升空间定位精度与传感器故障鲁棒性；这一架构思路对地理空间智能中的多模态空间推理有借鉴意义，但原文未涉及城市或遥感任务。"
+    },
+    {
       "key": "arxiv:2609.17017",
       "title": "BeWater: Effective Protesters Navigate Watersheds in Street Networks",
       "title_zh": "BeWater：抗议者在街道网络中的有效分水岭导航",
@@ -838,91 +920,6 @@
       "abstract": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution evidence into tasks and evaluation rubrics for continual learning. At its core is recursive-in-recursive self-improvement, a paradigm that couples harness evolution with model reinforcement learning: the inner recursion improves the harness with the model fixed, while the outer recursion trains the model under the improved harness. Harness evolution shapes training experience, and model learning creates new opportunities for harness adaptation. We present case studies of researcher interaction, harness refinement, and model learning, with the benchmark cases spanning four scientific task families. By releasing ScienceBuddy as a research product, we make this paradigm available to the scientific community and take a step toward discovery intelligence: scientific AI that advances through sustained collaboration with researchers and evolves alongside the research it supports. Website: http://science-buddy.io",
       "summary_zh": "本文介绍并发布了ScienceBuddy，一个交互式科学研究工作区，将持续改进的科学智能体引入研究者的日常工作流。ScienceBuddy支持研究者执行科学任务，同时将其请求、反馈和执行证据转化为任务和评估标准，用于持续学习。其核心是递归中递归自改进范式，将工具链演化与模型强化学习耦合：内层递归在模型固定时改进工具链，外层递归在改进后的工具链下训练模型。工具链演化塑造训练经验，模型学习为工具链适应创造新机会。文中展示了研究者交互、工具链细化和模型学习的案例研究，基准案例涵盖四个科学任务族。通过将ScienceBuddy作为研究产品发布，作者使该范式可供科学界使用，并向发现智能迈进一步：通过与研究者持续协作而进步、与其支持的研究共同演化的科学AI。网站：http://science-buddy.io",
       "insight_zh": "该工作将LLM智能体的自改进机制与科学研究工作流结合，其递归自改进范式可能为地理空间智能中的智能体持续学习提供方法论参考，但摘要未涉及地理空间应用，需进一步验证其可迁移性。"
-    },
-    {
-      "key": "arxiv:2609.17310",
-      "title": "Zero-shot narrative detection in social messaging",
-      "title_zh": "社会信息中的零样本叙事检测",
-      "url": "https://arxiv.org/abs/2609.17310",
-      "doi": "",
-      "arxiv_id": "2609.17310",
-      "authors": [
-        "Jes\\'us M. Fraile-Hern\\'andez",
-        "Anselmo Pe\\~nas",
-        "Patrick Giedemann"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-15T15:20:49+00:00",
-      "score": 55,
-      "reason": "该文探讨LLM零样本识别社会信息中的隐藏叙事，属于LLM文本理解与分类应用，与LLM方向相关，但不涉及地理空间、城市或遥感数据，相关性一般。",
-      "tags": [
-        "LLM",
-        "零样本",
-        "叙事检测",
-        "社会信息",
-        "集成方法"
-      ],
-      "abstract": "This study investigates the zero-shot ability of large language models (LLMs) to identify and classify hidden narratives in social messages. Our research hypothesis is that LLMs' extensive contextual knowledge allows them to interpret messages on a deeper, pragmatic level, going beyond basic sentiment or topic analysis. Experiments on the Dipromats and SemEval datasets show that providing models with human-written narrative descriptions significantly improves performance, without the need of training examples. In contrast, automatically generated descriptions or the use of few examples (few-shot) often degrade accuracy due to subtle shifts in framing. The study also finds that ensemble methods, particularly majority voting, enhance robustness and that larger models perform best while also being less sensitive to prompt variations. The findings validate that LLMs can effectively detect strategic narratives in a zero-shot setting, and when combined with simple ensembling and human-written descriptions, they can rival supervised systems, offering a scalable solution for narrative detection, specially when there is no training data for the vast majority of domains.",
-      "summary_zh": "本研究考察大语言模型（LLM）识别和分类社会信息中隐藏叙事的零样本能力。研究假设是LLM广泛的上下文知识使其能够在更深层的语用层面解释信息，超越基本的情感或主题分析。在Dipromats和SemEval数据集上的实验表明，向模型提供人工撰写的叙事描述可显著提升性能，且无需训练样本。相比之下，自动生成的描述或使用少量样本（少样本）常因框架的细微变化而降低准确率。研究还发现，集成方法尤其是多数投票可增强稳健性，且更大的模型表现最佳，同时对提示变化较不敏感。研究结果验证了LLM可在零样本设置下有效检测策略性叙事，当结合简单集成和人工撰写描述时，可媲美监督系统，为叙事检测提供可扩展方案，尤其在大多数领域没有训练数据时。",
-      "insight_zh": "该研究说明，LLM的零样本叙事识别高度依赖高质量的人工叙事描述，自动生成描述反而可能引入框架偏移；集成与人工先验结合是提升稳健性的关键。"
-    },
-    {
-      "key": "arxiv:2609.17107",
-      "title": "Symbolic Separation: Grounding Deep Agents in Knowledge Graphs for Trustworthy Operational Data Analytics",
-      "title_zh": "符号分离：以知识图谱为深度智能体奠基以实现可信运维数据分析",
-      "url": "https://arxiv.org/abs/2609.17107",
-      "doi": "",
-      "arxiv_id": "2609.17107",
-      "authors": [
-        "Baibek Davletiyarov",
-        "Junaid Ahmed Khan",
-        "Andrea Bartolini"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-15T12:38:43+00:00",
-      "score": 55,
-      "reason": "该文提出符号分离方法，将深度智能体与知识图谱结合用于可信运维数据分析，涉及LLM智能体、知识图谱和结构化推理，与LLM和多智能体、地理空间智能方向有较强的方法论关联。",
-      "tags": [
-        "知识图谱",
-        "神经符号",
-        "深度智能体",
-        "数据完整性",
-        "运维分析"
-      ],
-      "abstract": "Generative AI promises natural language access to the massive numerical telemetry of data centers and Industry 4.0 installations, yet text-to-query and tool-using agents stay unreliable: even frontier models answer little more than half of real-world database questions, and far fewer of the multi-step, operational ones, because the LLM must compose how heterogeneous sources relate and hallucinates the relations, not just the fields. We propose symbolic separation: a deep agent reasons freely but may act on data only through an ontology-constrained Virtual Knowledge Graph with deterministic pre-execution validation. Unlike a tool API's interface contract, this domain-semantic contract turns a complex question into one validated graph traversal instead of LLM-inferred joins. Instantiated as the Neurosymbolic Deep Analyst and evaluated on 49.9 TB of superconputer telemetry against a rigid workflow and a non-symbolic ablation, it raises end-to-end task success from 43% to 86%, prevents silent data-integrity errors that no syntactic check catches, and cuts token cost by 2.4x, letting a smaller on-premise model outperform a larger one.",
-      "summary_zh": "生成式AI有望为数据中心和工业4.0设施的海量数值遥测数据提供自然语言访问，但文本到查询和工具使用智能体仍不可靠：即使是前沿模型也只能回答略多于一半的真实世界数据库问题，对于多步骤运维问题则更少，因为LLM必须组合异构数据源之间的关系，并且不仅会幻觉字段，还会幻觉关系。本文提出符号分离：深度智能体自由推理，但只能通过本体约束的虚拟知识图谱对数据采取行动，并具有确定性的执行前验证。与工具API的接口契约不同，这种领域语义契约将复杂问题转化为一次经过验证的图遍历，而非LLM推断的连接。实例化为神经符号深度分析师，并在49.9 TB超级计算机遥测数据上针对刚性工作流和非符号消融进行评估，它将端到端任务成功率从43%提升至86%，防止了任何句法检查都无法捕获的静默数据完整性错误，并将token成本降低2.4倍，使较小的本地部署模型能够超越更大的模型。",
-      "insight_zh": "该文的符号分离架构——本体约束的虚拟知识图谱作为LLM智能体的确定性行动接口——对地理空间智能中多源数据融合与可信分析具有重要借鉴意义，尤其是城市更新中涉及多部门异构数据的复杂查询场景，可参考其将领域语义契约转化为验证图遍历的思路。"
-    },
-    {
-      "key": "arxiv:2609.16997",
-      "title": "Can LLMs Follow the Pulse of a Crisis? Evaluating Crisis Sentiment in Bangladesh's July Uprising",
-      "title_zh": "LLM能否把握危机脉搏？评估孟加拉国七月起义中的危机情感",
-      "url": "https://arxiv.org/abs/2609.16997",
-      "doi": "",
-      "arxiv_id": "2609.16997",
-      "authors": [
-        "Md. Samiul Alim",
-        "Mahir Shahriar Tamim",
-        "Tanvir Ahmed Khan",
-        "Sharjil Khan",
-        "Rafia Ferdous Duti",
-        "Shahriyar Zaman Ridoy",
-        "Mohammad Ali Moni"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-15T11:08:25+00:00",
-      "score": 55,
-      "reason": "该文构建孟加拉语危机情感数据集并评估LLM，涉及社交媒体时空事件分析与低资源语言，与时空数据挖掘和LLM方向相关，但不涉及城市更新或遥感。",
-      "tags": [
-        "危机情感分析",
-        "低资源语言",
-        "孟加拉语",
-        "社交媒体",
-        "时空阶段"
-      ],
-      "abstract": "Crisis sentiment analysis is especially challenging for low-resource languages such as Bangla, where language, context, and public reaction shift rapidly. We introduce UNRESTSENT200K, a Bangla crisis sentiment dataset with approximately 200K Facebook and YouTube comments from the July-August 2024 Bangladesh uprising. The dataset covers five event-aligned phases, from early escalation and internet blackout to regime transition and a later flood crisis. Each comment is linked to its parent post, enabling evaluation with and without discourse context. All comments are annotated through a fully human process involving 14 native Bangla-speaking annotators and senior validation, achieving substantial agreement (kappa = 0.73, alpha = 0.71) and 94.2% blind-audit agreement. We benchmark fine-tuned encoders, prompted LLMs, and LoRA-tuned LLMs. Results show that parent-post context consistently improves performance, while temporal shift across phases causes large performance drops. Strong LLMs perform well, but still struggle with sarcasm, implicit political references, and phase-dependent meaning. UNRESTSENT200K provides a benchmark for studying context-aware and temporally robust sentiment analysis in low-resource crisis discourse. UNRESTSENT200K is available at https://sami0055.github.io/UNRESTSENT200K/",
-      "summary_zh": "危机情感分析对孟加拉语等低资源语言尤为困难，因为语言、语境和公众反应变化迅速。本文提出UNRESTSENT200K，一个孟加拉语危机情感数据集，包含约20万条来自2024年7月至8月孟加拉国起义期间的Facebook和YouTube评论。该数据集覆盖五个与事件对齐的阶段，从早期升级、互联网封锁到政权过渡及随后的洪灾危机。每条评论与其父帖关联，支持在有和无话语语境下进行评估。所有评论通过14名孟加拉语母语标注者和资深验证者参与的完全人工流程标注，达到较高一致性（kappa=0.73，alpha=0.71）和94.2%的盲审一致率。作者对微调编码器、提示式LLM和LoRA微调LLM进行基准测试。结果表明，父帖语境持续提升性能，而跨阶段的时间偏移导致大幅性能下降。强LLM表现良好，但在讽刺、隐晦政治指涉和阶段依赖语义上仍有困难。UNRESTSENT200K为低资源危机话语中的语境感知与时间鲁棒情感分析提供了基准。数据集见https://sami0055.github.io/UNRESTSENT200K/。",
-      "insight_zh": "该研究显示，社交媒体危机情感分析中时间阶段偏移会显著削弱模型性能，这一发现对城市事件时空数据挖掘中的非平稳性建模具有参考价值；其父帖语境增强思路或可迁移至地理社交媒体分析，但摘要未涉及地理空间特征。"
     }
   ]
 }

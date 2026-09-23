@@ -14,6 +14,7 @@
     "arxiv:2609.21502",
     "arxiv:2605.18359",
     "arxiv:2609.21940",
+    "arxiv:2609.21554",
     "arxiv:2609.21192",
     "arxiv:2609.19759",
     "arxiv:2609.21859",
@@ -30,22 +31,21 @@
     "arxiv:2609.03395",
     "arxiv:2609.21938",
     "arxiv:2609.21527",
-    "arxiv:2609.21190",
-    "arxiv:2609.20887"
+    "arxiv:2609.21522"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:453",
-    "deepseek": "partial:9/109;failed-batches:10"
+    "deepseek": "partial:20/100;failed-batches:8"
   },
-  "updated_at": "2026-09-22T17:19:47.527088+00:00",
+  "updated_at": "2026-09-23T00:56:05.041385+00:00",
   "analysis_stats": {
     "total": 453,
-    "analyzed": 353,
+    "analyzed": 373,
     "high": 3,
-    "medium": 15,
-    "low": 24,
-    "below_threshold": 311
+    "medium": 16,
+    "low": 25,
+    "below_threshold": 329
   },
   "papers": [
     {
@@ -394,6 +394,33 @@
       "abstract": "Long-term memory is essential for large language model (LLM) agents to maintain consistency and personalization over extended interactions. Existing memory systems typically rely on fixed granularities or static schemas, but these designs struggle when heterogeneous information, such as preferences, events, constraints, and temporal updates, is embedded in a single mixed representation. The resulting semantic interference makes top-K retrieval sensitive to noise and often leaves relevant evidence poorly ranked. We present AutoViewMem, a data-driven framework that organizes long-term conversational memory into self-configuring, low-overlap semantic views before indexing. AutoViewMem discovers candidate views from interaction traces, selects a compact complementary view set, and uses these views to guide write-time structured extraction of provenance-grounded memories. This representation-first design moves semantic disentanglement from retrieval time to write time, allowing standard top-K similarity search to retrieve focused evidence without explicit routing or iterative retrieval. We further apply offline consolidation to improve memory compactness and consistency. Experiments on the LoCoMo and PersonaMem benchmarks, under both Qwen3-8B and Qwen3-14B backbones, show that AutoViewMem improves long-horizon question answering and personalization over strong memory baselines while preserving a simple inference pipeline.",
       "summary_zh": "长期记忆对大型语言模型（LLM）智能体在长程交互中保持一致性与个性化至关重要。现有记忆系统通常依赖固定粒度或静态模式，但当偏好、事件、约束和时间更新等异构信息嵌入单一混合表示时，这些设计难以应对，由此产生的语义干扰使top-K检索对噪声敏感，相关证据排序不佳。本文提出AutoViewMem，一个数据驱动框架，在索引前将长期对话记忆组织为自配置、低重叠的语义视图。AutoViewMem从交互轨迹中发现候选视图，选择紧凑的互补视图集，并利用这些视图指导写入时的结构化提取，生成有来源依据的记忆。这种表示优先的设计将语义解耦从检索时移至写入时，使标准top-K相似度搜索无需显式路由或迭代检索即可获取聚焦证据。作者进一步应用离线整合以提升记忆的紧凑性与一致性。在LoCoMo和PersonaMem基准上，基于Qwen3-8B和Qwen3-14B骨干的实验表明，AutoViewMem在保持简单推理流程的同时，在长程问答和个性化方面优于强记忆基线。",
       "insight_zh": "该工作提示，将语义解耦前移到写入阶段可降低检索噪声，这一思路或可迁移至多源地理时空数据的组织与索引，但论文本身未涉及地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.21554",
+      "title": "MIRAGE: Multi-Perspective Creative Language Model Reasoning with Reinforcement Learning Guidance",
+      "title_zh": "MIRAGE：基于强化学习引导的多视角创造性语言模型推理",
+      "url": "https://arxiv.org/abs/2609.21554",
+      "doi": "",
+      "arxiv_id": "2609.21554",
+      "authors": [
+        "Arash Lagzian",
+        "Srinivas Anumasa",
+        "Dianbo Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-18T09:44:13+00:00",
+      "score": 62,
+      "reason": "该论文提出多视角推理时框架MIRAGE，包含选择器与推理器两个智能体式组件，与研究中LLM和多智能体方向直接相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM推理",
+        "多智能体",
+        "推理时计算",
+        "多视角推理",
+        "强化学习引导"
+      ],
+      "abstract": "Recent advances in Large Language Models (LLMs) have revolutionized artificial intelligence and how human interact with AIs. Despite impressive advancements, LLMs struggle with complex mathematical, scientific, and logical tasks. Inspired by human cognitive flexibility - our ability to dynamically switch mental perspectives - we propose MIRAGE (Multi-perspective Inference-time Reasoning via Agent-Guided Exploration), a novel inference-time creative thinking framework. MIRAGE includes a Selector that prioritizes effective conceptual perspectives (e.g., algebraic, probabilistic) and a Reasoner that sequentially solves tasks until a confident solution emerges, otherwise aggregating multiple perspectives. Tested on GSM8K, MATH500, MMLU-Pro, and Game-of-24 benchmarks, MIRAGE consistently outperforms methods like Chain-of-Thought and diverse prompting ensembles, significantly boosting accuracy with minimal inference overhead, providing a scalable solution for practical applications.",
+      "summary_zh": "受人类认知灵活性（动态切换思维视角的能力）启发，作者提出MIRAGE（多视角推理时推理，经由智能体引导探索），一种新颖的推理时创造性思维框架。MIRAGE包含一个选择器，用于优先选取有效的概念视角（如代数、概率视角），以及一个推理器，顺序求解任务直至出现置信解，否则聚合多个视角。在GSM8K、MATH500、MMLU-Pro和Game-of-24基准上，MIRAGE持续优于思维链和多样化提示集成等方法，在极小的推理开销下显著提升准确率，为实际应用提供了可扩展方案。",
+      "insight_zh": "该框架的智能体引导多视角探索机制可迁移至地理空间智能中的复杂推理任务（如多源数据融合决策），但其验证仅限于数学与逻辑基准，尚需在地理空间场景中检验。"
     },
     {
       "key": "arxiv:2609.21192",
@@ -868,65 +895,31 @@
       "insight_zh": "该基准的诊断方法论或可启发GIS领域中基于LLM的多智能体空间分析系统的评估设计，但其应用场景与城市更新和遥感无直接关联。"
     },
     {
-      "key": "arxiv:2609.21190",
-      "title": "SWE-Proof: Can Language Models Resolve Real-World Issues with Machine-Checked Proofs?",
-      "title_zh": "SWE-Proof：语言模型能否用机器可检验证明解决真实世界问题？",
-      "url": "https://arxiv.org/abs/2609.21190",
+      "key": "arxiv:2609.21522",
+      "title": "Refine Then Fusion: Training-Free 3D Point Cloud Adaptation with Priority Refinement and Multi-Modal Knowledge Fusion",
+      "title_zh": "先精炼再融合：基于优先精炼与多模态知识融合的免训练3D点云适配",
+      "url": "https://arxiv.org/abs/2609.21522",
       "doi": "",
-      "arxiv_id": "2609.21190",
+      "arxiv_id": "2609.21522",
       "authors": [
-        "George Ma",
-        "Benjamin Mikek",
-        "Haoyu Li",
-        "Ferhat Erata",
-        "Yuhao Zhang",
-        "Zeren Shui",
-        "Behrooz Omidvar Tehrani",
-        "Jun Huan",
-        "Murali Krishna Ramanathan",
-        "Somayeh Sojoudi",
-        "Hao Zhou",
-        "Anoop Deoras"
+        "Hang Cheng",
+        "Yan Chen",
+        "Mingyu Fan",
+        "Long Zeng"
       ],
       "venue": "arXiv",
-      "published": "2026-09-18T01:16:53+00:00",
+      "published": "2026-09-18T09:11:55+00:00",
       "score": 45,
-      "reason": "该文关注LLM生成代码的形式化验证，与LLM研究相关，但与GIS、城市更新或遥感无直接联系。",
+      "reason": "该论文提出免训练3D点云少样本识别框架，涉及多模态知识融合与可靠性感知聚合，与多源数据融合方向有方法论关联，但应用为3D视觉而非地理空间遥感。",
       "tags": [
-        "LLM代码生成",
-        "形式化验证",
-        "软件工程",
-        "基准测试"
+        "3D点云",
+        "少样本学习",
+        "多模态融合",
+        "免训练适配"
       ],
-      "abstract": "Ensuring the correctness of LLM-generated code is a core challenge for modern software engineering. Benchmarks for agentic code generation check correctness with held-out test suites, which are inherently incomplete and increasingly susceptible to memorization. Formal verification avoids both problems, but existing work covers only standalone tasks whose specifications are given as input, not real issues, which touch large repositories and state intent in vague natural language. We present Benchproofer, a pipeline that turns a coding task with a known correct patch into a formally verified one: it writes a specification for the new code, summarizes the existing functions that code calls with axioms, and admits an instance only after mechanical and adversarial gates agree. Applying it to SWE-bench Verified yields SWE-Proof, 500 real issues whose correctness is formally verified rather than tested, and it extends to SWE-bench Pro. Across two frontier models, verification catches what tests miss: a quarter to a half of test-passing patches admit counterexamples, which a structured natural-language specification does not fix, while a correct formal one lifts resolution from 85% to 95% for Opus 4.8. Writing that specification is the hard part: models that must write their own gain nothing over an unaided baseline, and only 62% of their specifications pass our audit. The usual failure is faithfulness, a specification that constrains part of the required behavior and leaves the rest free. Specification quality still tracks the outcome, failing on 89% of unresolved instances against 47% of resolved ones, making faithful specification synthesis a concrete open problem.",
-      "summary_zh": "确保LLM生成代码的正确性是现代软件工程的核心挑战。智能体代码生成的基准测试通常用留出测试套件检查正确性，但测试套件本质上不完整且越来越容易被记忆。形式化验证可避免这两个问题，但现有工作仅覆盖规范作为输入给出的独立任务，而非涉及大型仓库且以模糊自然语言表达意图的真实问题。我们提出Benchproofer，一个将已知正确补丁的编码任务转化为形式化验证任务的流水线：它为新增代码编写规范，用公理概括被调用现有函数，并且只有在机械门和对抗门都同意后才接纳一个实例。将其应用于SWE-bench Verified后得到SWE-Proof，包含500个真实问题，其正确性通过形式化验证而非测试来确认，并可扩展到SWE-bench Pro。在两个前沿模型上，验证能捕捉测试遗漏的问题：四分之一到一半的测试通过补丁存在反例，结构化自然语言规范无法解决这一问题，而正确的形式化规范将Opus 4.8的解决率从85%提升到95%。编写该规范是难点：必须自行编写规范的模型相比无辅助基线没有增益，且其规范只有62%通过审计。常见失败是忠实性不足，即规范只约束了部分所需行为而放任其余部分。规范质量仍与结果相关，未解决实例的失败率为89%，而已解决实例为47%，这使得忠实规范合成成为一个具体的开放问题。",
-      "insight_zh": "形式化验证可提升LLM生成代码的可靠性，但其对规范编写质量的依赖提示在GIS自动化分析流程中需谨慎对待LLM生成代码的正确性保证。"
-    },
-    {
-      "key": "arxiv:2609.20887",
-      "title": "BirdsongChat: A Hybrid Multi-Agent Framework for Multimodal Embodied Behavior Simulation",
-      "title_zh": "BirdsongChat：面向多模态具身行为模拟的混合多智能体框架",
-      "url": "https://arxiv.org/abs/2609.20887",
-      "doi": "",
-      "arxiv_id": "2609.20887",
-      "authors": [
-        "Callie C. Liao",
-        "Duoduo Liao",
-        "Ellie L. Zhang"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-16T23:09:13+00:00",
-      "score": 45,
-      "reason": "该文提出混合多智能体框架用于多模态具身行为模拟，涉及LLM推理与物理执行的桥接，与LLM和多智能体方向相关，但应用场景为鸟类行为模拟，与地理空间智能关联较弱。",
-      "tags": [
-        "多模态具身系统",
-        "多智能体框架",
-        "统一参数表示",
-        "行为模拟"
-      ],
-      "abstract": "Multimodal embodied systems require translating human intentions into interpretable and coordinated behaviors across heterogeneous modalities. However, existing multimodal agents often rely on implicit representations, limiting controllability and cross-modal consistency. We present a hybrid multi-agent framework for interactive multimodal behavior simulation that bridges semantic reasoning and physical execution through a Unified Parameter Representation (UPR). LLM-based reasoning agents transform multimodal inputs into UPR, which encodes behavioral states and interpretable control parameters for simulation agents generating synchronized 3D motion, spatialized soundscapes, and environmental behaviors. We develop BirdsongChat as a prototype implementation of the proposed framework, using interactive avian behavior simulation as a testbed that tightly couples motion, vocalization, and environmental context. BirdsongChat is evaluated on text- and image-guided scenarios involving species, behaviors, affective states, environments, and multi-bird interactions. The system achieves normalized scores of 94.4\\% for cross-modal coherence, 100% for affective consistency, and 92.6% for generation consistency. These results demonstrate that an explicit intermediate representation effectively bridges semantic reasoning and physical execution, improving controllability and multimodal synchronization. The proposed framework thus offers a generalizable design principle for embodied AI systems requiring interpretable semantic-to-physical coordination across modalities, with potential applications in bio-inspired ecoacoustics, swarm robotics, virtual environments, and creative multimedia.",
-      "summary_zh": "多模态具身系统需要将人类意图转化为跨异构模态的可解释且协调的行为。然而，现有多模态智能体往往依赖隐式表示，限制了可控性和跨模态一致性。作者提出一种混合多智能体框架，用于交互式多模态行为模拟，通过统一参数表示（UPR）桥接语义推理与物理执行。基于LLM的推理智能体将多模态输入转化为UPR，UPR编码行为状态和可解释的控制参数，供模拟智能体生成同步的三维运动、空间化声景和环境行为。作者开发BirdsongChat作为所提框架的原型实现，以交互式鸟类行为模拟作为紧密耦合运动、发声和环境背景的测试平台。BirdsongChat在涉及物种、行为、情感状态、环境和多鸟交互的文本和图像引导场景中进行评估。系统在跨模态一致性上达到94.4%的归一化分数，情感一致性为100%，生成一致性为92.6%。这些结果表明，显式中间表示有效桥接了语义推理与物理执行，提升了可控性和多模态同步性。所提框架因此为需要在多模态间进行可解释语义到物理协调的具身AI系统提供了可推广的设计原则，在仿生生态声学、群体机器人、虚拟环境和创意多媒体中具有潜在应用。",
-      "insight_zh": "其显式中间表示桥接语义推理与物理执行的设计原则，或可启发城市更新模拟中人类意图到空间行为的可解释转化，但当前应用场景与地理空间智能的直接关联有限。"
+      "abstract": "Recent pre-trained foundation models provide rich multi-modal priors for downstream 3D vision tasks. However, the effectiveness of these representations in few-shot scenarios is limited by two fundamental challenges: High-dimensional features often contain substantial channel redundancy and task-irrelevant noise, while the reliability of different modalities varies across samples. Consequently, direct aggregation of heterogeneous representations overlooks sample-dependent modality reliability and may obscure the discriminative cues essential. To address these limitations, we propose Refine Then Fusion(RTF), a training-free framework for few-shot 3D recognition. RTF first identifies discriminative feature channels by jointly modeling inter-class similarity and intra-class stability, thereby decoupling domain-specific knowledge refinement from the cached representations of pre-trained models. It then introduces a reliability-aware fusion mechanism that estimates sample-wise modality reliability from the distribution shifts induced by feature refinement, enabling adaptive aggregation of multi-modal representations. Furthermore, RTF constructs a memory cache that integrates instance-level support features with class-level prototypes to infer query labels. Extensive experiments on five benchmarks demonstrate that RTF consistently outperforms single-modal baselines, partial-fusion variants, and existing lightweight adaptation methods, achieving state-of-the-art few-shot 3D recognition performance without gradient optimization, additional training data, auxiliary training, or parameter updates.",
+      "summary_zh": "近期预训练基础模型为下游3D视觉任务提供丰富的多模态先验。然而这些表征在少样本场景中的有效性受两个基本挑战限制：高维特征常含大量通道冗余与任务无关噪声，而不同模态的可靠性因样本而异。因此直接聚合异构表征忽视了样本依赖的模态可靠性，可能掩盖关键的判别线索。为解决这些局限，作者提出先精炼再融合（RTF），一种用于少样本3D识别的免训练框架。RTF首先通过联合建模类间相似度与类内稳定性识别判别性特征通道，从而将领域特定知识精炼与预训练模型的缓存表征解耦。随后引入可靠性感知融合机制，从特征精炼引起的分布偏移估计样本级模态可靠性，实现多模态表征的自适应聚合。此外，RTF构建记忆缓存，整合实例级支持特征与类级原型以推断查询标签。在五个基准上的大量实验表明，RTF持续优于单模态基线、部分融合变体及现有轻量适配方法，在无需梯度优化、额外训练数据、辅助训练或参数更新的情况下实现最先进的少样本3D识别性能。",
+      "insight_zh": "其可靠性感知的多模态融合与免训练适配策略可启发遥感多源数据融合中的模态可靠性建模，但需验证其在遥感影像与点云融合场景中的适用性。"
     }
   ]
 }
