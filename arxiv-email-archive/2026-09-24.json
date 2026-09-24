@@ -19,6 +19,7 @@
     "arxiv:2609.27690",
     "arxiv:2609.27462",
     "arxiv:2609.27332",
+    "arxiv:2609.27173",
     "arxiv:2609.27143",
     "arxiv:2605.29313",
     "arxiv:2604.22099",
@@ -30,22 +31,21 @@
     "arxiv:2609.28286",
     "arxiv:2609.28230",
     "arxiv:2609.28194",
-    "arxiv:2609.27457",
-    "arxiv:2609.27327"
+    "arxiv:2609.27457"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:560",
-    "deepseek": "partial:267/498;failed-batches:23"
+    "deepseek": "partial:41/231;failed-batches:19"
   },
-  "updated_at": "2026-09-24T12:17:30.360427+00:00",
+  "updated_at": "2026-09-24T17:39:41.933057+00:00",
   "analysis_stats": {
     "total": 560,
-    "analyzed": 329,
+    "analyzed": 370,
     "high": 5,
-    "medium": 17,
-    "low": 22,
-    "below_threshold": 285
+    "medium": 18,
+    "low": 23,
+    "below_threshold": 324
   },
   "papers": [
     {
@@ -565,6 +565,36 @@
       "insight_zh": "该工作提示在长时程智能体记忆压缩中，任务证据保留比几何覆盖更关键；其思路或可迁移到时空数据挖掘中长序列交互历史的压缩，但论文本身未涉及地理空间场景。"
     },
     {
+      "key": "arxiv:2609.27173",
+      "title": "Realize What Matters: Principled Context Representation for Large-Scale Reasoning",
+      "title_zh": "实现关键内容：面向大规模推理的原则化上下文表示",
+      "url": "https://arxiv.org/abs/2609.27173",
+      "doi": "",
+      "arxiv_id": "2609.27173",
+      "authors": [
+        "Michael Theologitis",
+        "Dean Light",
+        "Shuyue Stella Li",
+        "Benjamin Newman",
+        "Yulia Tsvetkov",
+        "Dan Suciu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T00:12:45+00:00",
+      "score": 62,
+      "reason": "该论文提出面向超大规模异构上下文的原则化表示方法R3Con，与LLM推理、检索组织和多源信息融合相关，可为地理空间智能中多源数据组织与LLM推理提供方法参考，但不涉及城市更新或遥感变化检测。",
+      "tags": [
+        "大语言模型",
+        "上下文表示",
+        "大规模推理",
+        "检索增强",
+        "多智能体"
+      ],
+      "abstract": "Solving complex tasks in domains such as science, medicine, law, and finance often requires assembling interdependent information scattered across vast, heterogeneous sources far beyond model context limits. Existing approaches tackle this challenge by organizing information into more manageable representations over which models can reason, such as graphs, textual memories, and retrieval collections. These representations dictate what downstream reasoning is possible and, ultimately, whether it succeeds; yet their design and construction remain largely ad hoc. In this work, drawing on the cognitive theory of relevance realization, we propose concrete principles for designing AI systems that construct effective representations of very large contexts. We analyze existing approaches and show how their successes and failures map onto their alignment with these principles, and introduce R3Con, a harness designed to operationalize the principles more systematically. We evaluate R3Con against nine state-of-the-art baselines on two recent benchmarks of reasoning over large document corpora. On these benchmarks, R3Con substantially outperforms the strongest baseline, by $20$ and $8.4$ percentage points. It also enables smaller models to outperform much larger ones: R3Con with 4B and 9B models outperforms all evaluated 35B baselines, while R3Con with a 35B-A3B model outperforms Claude Code with Claude-Sonnet-5 at $3.7\\times$ lower cost. Our results show that context representations following our principled approach can reduce reliance on model scale, pointing toward a future of AI systems with frontier-level performance powered by smaller models. Our code is available at https://github.com/michaeltheologitis/r3con",
+      "summary_zh": "该研究针对科学、医学、法律、金融等领域中跨大量异构来源的复杂任务，指出将信息组织为图、文本记忆或检索集合等表示形式会决定下游推理能力，但现有设计多为经验性。作者借鉴认知理论中的相关性实现，提出设计有效大规模上下文表示的原则，并据此分析现有方法的成败，同时提出R3Con框架以更系统地落实这些原则。在两个大规模文档语料推理基准上，R3Con显著优于最强基线，分别提升20和8.4个百分点；使用4B和9B模型的R3Con超过所有评估的35B基线，使用35B-A3B模型的R3Con在成本低3.7倍的情况下超过Claude Code与Claude-Sonnet-5。结果表明，遵循该原则的上下文表示可降低对模型规模的依赖。",
+      "insight_zh": "该工作提示，在地理空间智能中处理多源异构数据时，表示结构本身可能比单纯扩大模型规模更关键；但其结论基于文档语料推理基准，是否适用于时空数据仍需验证。"
+    },
+    {
       "key": "arxiv:2609.27143",
       "title": "A Systematic Evaluation of Infrastructure-Based Radar System for Highway Traffic Monitoring",
       "title_zh": "面向高速公路交通监测的路侧雷达系统系统性评估",
@@ -924,37 +954,6 @@
       "abstract": "Vision-language models (VLMs) are often reported to outperform task-specific vision backbones for unmanned aerial vehicle (UAV) power-line defect assessment. We test that claim on ElecVQA-Bench, a 56,972-item benchmark derived from the public InsPLAD dataset, across six evaluation choices: partition, evaluated item set, label space, replication, input resolution, and side information. On a matched partition, a Swin Transformer and the strongest adapted VLM differ by only 0.03 points at binary screening. At seven-way defect typing, increasing the vision backbones from 224 px to the measured pixel budget of the VLM preprocessor narrows the gap against InternVL3.5-8B from +20.53 to -0.57 points for ResNet-50 and from +23.67 to +4.70 points for Swin-T. A pixel-budget audit shifts Qwen3-VL-8B macro recall by 10.78 points, yet a source-pixel-matched InternVL control still leaves Qwen ahead by 7.43 to 13.61 points while using 56% fewer visual tokens, so neither source pixels nor token budget explains the difference between the two VLMs. A two-seed global replication changes Qwen binary accuracy and seven-way macro recall by 0.86 and 1.02 points. After split-specific retraining, Qwen does not lead at crop or image level, and a 14-tower, three-seed replication reverses the sign across seeds, giving mean common-six macro recall of 0.9085 for Qwen against 0.9509 for ResNet-50. No split regime yields a family-level advantage that survives multiple-comparison correction. The study supports a benchmark-audit contribution rather than a general claim of VLM superiority.",
       "summary_zh": "视觉语言模型（VLM）常被报道在无人机电力线缺陷评估中优于任务专用视觉骨干网络。本文在ElecVQA-Bench（基于公开InsPLAD数据集构建的56,972项基准）上检验该说法，涵盖六种评估选择：划分、评估项集、标签空间、重复、输入分辨率和辅助信息。在匹配划分上，Swin Transformer与最强适配VLM在二分类筛查中仅差0.03分。在七类缺陷分型中，将视觉骨干从224像素提升至VLM预处理器实测像素预算后，ResNet-50对InternVL3.5-8B的差距从+20.53缩小至-0.57分，Swin-T从+23.67缩小至+4.70分。像素预算审计使Qwen3-VL-8B宏召回变化10.78分，但源像素匹配的InternVL对照仍使Qwen领先7.43至13.61分，同时少用56%视觉token，因此源像素和token预算均无法解释两个VLM之间的差异。双种子全局重复使Qwen二分类准确率和七类宏召回分别变化0.86和1.02分。经划分特定重训练后，Qwen在裁剪或图像级别均不领先，而14塔三种子重复在种子间反转符号，Qwen的common-six宏召回均值为0.9085，ResNet-50为0.9509。没有任何划分机制能产生经多重比较校正后仍存活的家族级优势。该研究支持基准审计贡献，而非VLM优越性的普遍主张。",
       "insight_zh": "该研究提示，在遥感与无人机影像分析中，VLM相对专用视觉模型的优势可能被评估设置（分辨率、token预算、划分方式）显著混淆；开展多模态地理空间智能研究时需进行严格的基准审计与公平比较。"
-    },
-    {
-      "key": "arxiv:2609.27327",
-      "title": "Can Vision-Language Models Analyze Human-Centered Video? Mapping Model Capabilities and Human-AI Collaborative Workflows",
-      "title_zh": "视觉语言模型能否分析以人为中心的视频？映射模型能力与人机协作工作流",
-      "url": "https://arxiv.org/abs/2609.27327",
-      "doi": "",
-      "arxiv_id": "2609.27327",
-      "authors": [
-        "Xiyuan Shen",
-        "Jiuyang Lyu",
-        "Seokhyun Hwang",
-        "Huanfen Yao",
-        "Shwetak Patel",
-        "Zhihan Zhang",
-        "Jacob O. Wobbrock"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-23T04:00:15+00:00",
-      "score": 55,
-      "reason": "该文评估视觉语言模型分析人本视频的能力并比较人机协作标注流程，与LLM/多智能体及多源数据融合有一定关联，但不涉及遥感、GIS或城市更新。",
-      "tags": [
-        "视觉语言模型",
-        "视频分析",
-        "人本计算",
-        "人机协作",
-        "标注工作流"
-      ],
-      "abstract": "Video provides a rich record of human behavior, interaction, and situated contexts, offering important evidence for understanding people and conducting human-centered research. As vision-language models (VLMs) become increasingly capable of analyzing video, they offer opportunities to automate this traditionally human-intensive process. Yet a central question remains: when can VLMs analyze human-centered video independently, and when does reliable analysis still require human involvement? To address this question, we first characterize video analysis practices in human-centered research. We systematically analyze all 1,702 CHI 2026 full papers and identify 125 that annotate videos. Through iterative coding, we derive a five-dimensional taxonomy spanning analytic purpose, viewpoint, phenomenon, reasoning requirement, and annotation authority. Grounded in recurring annotation tasks captured by this taxonomy, we construct a benchmark of 15 representative tasks from open datasets to map the capabilities and limitations of a general-purpose VLM. We examine the division of labor between humans and VLMs by comparing three annotation workflows: VLM alone, human alone, and human verification of VLM outputs. Across tasks, VLM-alone annotation approaches human accuracy on average (HNS = 97.0, where 100 denotes human-alone performance), demonstrating substantial potential to automate human-centered video analysis. Human verification achieves the highest accuracy (HNS = 121.5) while reducing human annotation time by 48.9% and monetary cost by 31.3%-44.5% relative to human-alone annotation. Our findings connect real-world human-centered video analysis tasks and current VLM capabilities, and clarify how human-AI collaboration can make VLM-assisted analysis reliable and efficient.",
-      "summary_zh": "视频记录了人类行为、互动与情境，是以人为中心研究的重要证据。随着视觉语言模型（VLM）分析视频的能力增强，一个核心问题是：何时VLM可独立分析，何时仍需人工参与。作者系统分析了CHI 2026全部1,702篇全文，识别出125篇涉及视频标注的论文，并通过迭代编码归纳出涵盖分析目的、视角、现象、推理需求和标注权威的五维分类法。基于该分类法中的常见标注任务，作者构建了包含15个代表性任务的基准，比较VLM单独、人工单独以及人工验证VLM输出三种工作流。结果显示，VLM单独标注平均接近人工准确率（HNS=97.0，100表示人工单独表现）；人工验证取得最高准确率（HNS=121.5），同时相对人工单独标注减少48.9%的标注时间和31.3%-44.5%的金钱成本。",
-      "insight_zh": "该研究表明VLM在人本视频分析中已具备较高自动化潜力，而人工验证可在提升准确率的同时显著降低成本；其分类法与工作流比较思路或可启发遥感影像解译中的人机协同标注设计，但论文未涉及遥感数据。"
     }
   ]
 }

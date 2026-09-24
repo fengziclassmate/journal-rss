@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 538,
+    "analyzed": 548,
     "high": 4,
     "medium": 22,
     "low": 35,
-    "below_threshold": 477
+    "below_threshold": 487
   },
   "papers": [
     {
@@ -3184,6 +3184,44 @@
       ],
       "summary_zh": "扩散大语言模型（dLLM）的一个热门卖点是其并行能力：能够比需要每个token一次前向传播的自回归模型更高效地生成文本序列。然而，在从掩码扩散到均匀扩散再到高斯扩散的众多竞争范式中，对这些不同方案在并行性方面如何比较的原则性理解仍然有限。本文首次对这三种主流方法的并行能力进行细粒度比较，并证明如下结论：均匀扩散和高斯扩散可以在与底层分布的“对偶总相关”成比例的前向传播次数内完成采样，该度量反映内在复杂度，可能远小于上下文长度；此前仅知道掩码扩散能够实现这一点。对于某类随机经验测度，本文证明使用均匀或高斯扩散采样需要且仅需Õ(√d)次前向传播，但存在某些近似分数预言机使得掩码扩散需要Õ(d)次前向传播。这建立了三种主流dLLM范式之间首个可证明的并行性分离。与“掩码扩散因必须确定token取值而更难并行”的流行直觉相反，这一分离源于掩码扩散采样中的临界窗口渐近地比均匀和高斯扩散采样中的更窄。",
       "insight_zh": "该理论结果提示，不同扩散语言模型范式在并行采样效率上存在本质差异，若未来将此类模型用于大规模地理文本或时空语义生成，需根据任务复杂度选择合适范式。"
+    },
+    {
+      "key": "arxiv:2609.19961",
+      "title": "Neuro-Symbolic Agentic AI for Networked Low-Altitude UAVs",
+      "title_zh": "面向网络化低空无人机的神经符号智能体AI",
+      "url": "https://arxiv.org/abs/2609.19961",
+      "arxiv_id": "2609.19961",
+      "authors": [
+        "Yuqi Ping",
+        "Tianhao Liang",
+        "Nanchi Su",
+        "Guangyu Lei",
+        "Junwei Wu",
+        "Qinyu Zhang",
+        "and Tingting Zhang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.SY",
+        "eess.SY",
+        "autonomous",
+        "decision-making,",
+        "networked",
+        "UAV",
+        "systems"
+      ],
+      "published": "2026-09-17T09:31:24+00:00",
+      "score": 35,
+      "reason": "该文研究面向网络化低空无人机的神经符号智能体AI框架，包含城市火灾巡检案例，涉及城市空间任务规划与多智能体决策，与GIS博士研究中的多智能体、城市应用有一定关联，但侧重无人机自主性与符号推理而非时空数据挖掘。",
+      "tags": [
+        "神经符号AI",
+        "智能体",
+        "无人机",
+        "城市火灾巡检",
+        "低空网络"
+      ],
+      "summary_zh": "网络化低空无人机需要在不确定观测、动态环境和间歇性连接下具备可靠且自适应的决策能力，而许多现有智能体系统受限于幻觉风险、数据依赖和泛化能力弱。本文探讨神经符号智能体AI（NSAAI）作为结合神经接地、符号推理与闭环智能体交互的框架，以支持更可靠、自适应的无人机自主性。作者首先考察其在数据效率、组合泛化、持续学习和零样本迁移方面的能力基础，进而提出参考架构，整合任务与目标管理、神经符号规划、验证与元认知、技能执行与网络交互，以及共享知识与记忆。在LAESim中实现的城市火灾巡检案例展示了无人机如何在间歇性连接下协调感知与云端访问、复用已验证的图像投递技能，并在完成任务前满足明确的证据条件。结果说明NSAAI在支持可复用技能、基于证据的决策和自适应任务执行方面的潜力。文章进一步讨论了不确定性感知推理、知识与技能扩展、自适应自我监控和标准化评估等关键研究方向。",
+      "insight_zh": "该框架将符号推理与神经感知结合以提升城市低空任务的可信度，其证据条件与技能复用机制对城市更新中的多智能体协同与任务规划有借鉴意义，但案例为仿真演示，实际部署效果尚待验证。"
     },
     {
       "key": "arxiv:2607.21653",
@@ -7419,6 +7457,36 @@
       "insight_zh": "其多模态索引与多路检索融合机制对遥感影像质量评估与参考案例检索有借鉴潜力，但论文未涉及地理空间影像，需谨慎推断适用性。"
     },
     {
+      "key": "arxiv:2609.19866",
+      "title": "Reproducibility is not construct validity: LLM measurement of institutionally situated communication",
+      "title_zh": "可复现性不等于构念效度：LLM对制度情境化传播的测量",
+      "url": "https://arxiv.org/abs/2609.19866",
+      "arxiv_id": "2609.19866",
+      "authors": [
+        "Veronika Batzdorfer (KIT)",
+        "Carlo Romano Marcello Alessandro Santagiustina (ALMAnaCH",
+        "m\\'edialab",
+        "Sciences Po)"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CY",
+        "q-fin.RM"
+      ],
+      "published": "2026-09-17T08:19:58+00:00",
+      "score": 20,
+      "reason": "该文讨论LLM标注的可复现性与构念效度差异，并使用欧洲国家空间自相关分析，涉及LLM作为测量工具的方法论问题与空间统计，与GIS研究中的LLM应用和空间分析有间接关联。",
+      "tags": [
+        "LLM测量",
+        "构念效度",
+        "空间自相关",
+        "政策文本分析"
+      ],
+      "summary_zh": "高标注可复现性并不必然意味着LLM推断的测量捕捉到了其意图测量的构念。本文利用欧盟委员会AI法案咨询的数据集检验这一区分，将同一利益相关方的结构化调查回答与自由文本咨询提交相链接。LLM对咨询提交的标注具有高度可复现性（组内相关系数>0.99），但与调查所报告的、其意图近似的名义构念测量之间收敛有限。调查与LLM推断的文本测量之间的分歧在不同利益相关方群体间系统性变化：商业协会在文本咨询中比调查回答中表达出更大的AI风险担忧（ḡ=+1.0），而公共机构及若干非商业群体的分歧较小或为负。分数分歧显示欧洲国家间存在正空间自相关（Moran's I=0.347，p=0.036），表明邻国利益相关方在AI安全担忧的文本立场上趋于相似。尽管存在分歧，调查报告的担忧在所有分歧水平上都与对可解释性的支持强烈相关。",
+      "insight_zh": "该研究强调LLM作为测量工具时需区分可复现性、构念效度与传播情境变异，其空间自相关发现提示制度情境具有地理聚集性；对GIS研究中使用LLM进行文本测量与空间分析具有方法论警示意义。"
+    },
+    {
       "key": "arxiv:2609.20507",
       "title": "Radio Frequency Detection and Classification of Microplastics in Water",
       "title_zh": "水中微塑料的射频检测与分类",
@@ -10704,6 +10772,34 @@
       "insight_zh": "摘要缺失，无法判断其具体实验或结论；从标题推测可能质疑更细粒度引用必然更优的假设，但无法确认。"
     },
     {
+      "key": "arxiv:2609.20106",
+      "title": "AnyviewMeter: Adapting Robotic Reward Models with Camera Geometry and Multi-View Attention",
+      "title_zh": "AnyviewMeter：基于相机几何与多视角注意力的机器人奖励模型适配",
+      "url": "https://arxiv.org/abs/2609.20106",
+      "arxiv_id": "2609.20106",
+      "authors": [
+        "Yuang Tu",
+        "Runjia Tan",
+        "Yujie Yan",
+        "Jinghan Hu",
+        "Chen Lv"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T12:07:22+00:00",
+      "score": 15,
+      "reason": "该文研究机器人奖励模型的相机几何条件化适配与多视角注意力，涉及视觉观测与空间几何建模，与遥感变化检测中的视角/几何问题有微弱的方法论联系，但不涉及地理空间尺度或城市应用。",
+      "tags": [
+        "机器人奖励模型",
+        "相机几何",
+        "多视角注意力",
+        "参数高效微调"
+      ],
+      "summary_zh": "机器人奖励模型从视觉观测评估任务执行，但当底层任务状态不变时，其预测会随相机视角与遮挡而变化。因此将预训练奖励模型适配到本地任务需要考虑任务的观测方式。本文提出AnyviewMeter，一种几何条件化的机器人奖励模型适配框架，将任务进度表示为标量奖励信号。它结合低秩微调与token对齐的Plücker射线及同步块注意力：射线条件化将相机几何融入视觉特征及注意力的查询与键，块注意力在预训练解码器内融合同步视角。框架通过参数高效适配预训练Robometer模型，支持单视角奖励预测与联合多视角评估。在PickCube上，单视角适配在每个相机组中均改善进度预测，在视场变化下相比RGB微调将平均绝对误差降低约21%。在仿真操作任务中，联合多视角预测相比平均单视角RGB预测将进度误差降低41-69%，并在约88%的任务-相机组中改善时间排序。在固定与腕部相机的真实任务中，平均绝对误差相比平均RGB微调降低约21%。",
+      "insight_zh": "该工作显示相机几何与联合视觉证据对任务特定的奖励适配具有价值；其将视角几何显式编码进注意力机制的做法，对多视角遥感观测下的变化检测建模有潜在启发。"
+    },
+    {
       "key": "arxiv:2506.12374",
       "title": "AntiGrounding: Executable Robot Trajectories as Visual Prompts for VLM-Guided Manipulation",
       "title_zh": "AntiGrounding：以可执行机器人轨迹作为视觉提示的视觉语言模型引导操作",
@@ -11188,6 +11284,36 @@
       "insight_zh": "该工作提示：在视觉基础模型中，层选择本身可作为可学习问题，且轻量路由器即可带来显著收益。对地理空间智能而言，若将类似思路迁移到遥感基础模型的多层特征利用上，或可降低多源数据融合与变化检测中的计算开销，但该文并未涉及地理空间数据，迁移需另行验证。"
     },
     {
+      "key": "arxiv:2609.19947",
+      "title": "Not All AI Agents Are Equal: Characterizing Resource and Performance Dynamics",
+      "title_zh": "并非所有AI智能体都相同：刻画资源与性能动态",
+      "url": "https://arxiv.org/abs/2609.19947",
+      "arxiv_id": "2609.19947",
+      "authors": [
+        "Wonmi Choi",
+        "Minuk Park",
+        "Zhixiong Niu",
+        "Yongqiang Xiong",
+        "Chuck Yoo",
+        "Gyeongsik Yang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.PF"
+      ],
+      "published": "2026-09-17T09:20:53+00:00",
+      "score": 12,
+      "reason": "该文分析LLM智能体的资源与性能动态，属于系统与性能优化研究，与GIS博士研究中的多智能体主题有微弱关联，但不涉及地理空间分析或城市应用。",
+      "tags": [
+        "LLM智能体",
+        "资源调度",
+        "性能分析",
+        "系统优化"
+      ],
+      "summary_zh": "基于LLM的AI智能体通过迭代推理与工具执行处理用户请求，常涉及调用远程LLM API与本地工具容器。这种执行模型使智能体服务优化变得困难，因为延迟、本地资源需求与容器瓶颈在请求间相互交织。然而当前智能体生态运行几乎不考虑资源动态，导致宝贵资源的显著浪费。本文分析三类代表性任务（检索增强问答、网络搜索、软件编程）中AI智能体的资源交织情况，刻画并发处理多请求与多任务时相对于资源动态的延迟。测量显示智能体行为因任务而异，即使同一工具在资源动态上也可能差异显著。作者还发现并发运行多请求会暴露CPU、磁盘I/O和内存等任务相关的资源瓶颈，且更快的LLM响应或更多CPU核心并不总能加速智能体。基于这些观察，作者展示了利用任务资源动态的新优化机会：CPU感知工具准入与任务感知CPU分配。结果显示CPU敏感智能体任务的延迟改善约5.4倍，多任务平均延迟相比原生智能体降低约32%。",
+      "insight_zh": "该研究揭示智能体性能瓶颈具有任务依赖性，其资源感知调度思路对多智能体系统的工程部署有参考意义，但与地理空间智能研究关联较弱。"
+    },
+    {
       "key": "arxiv:2609.19148",
       "title": "Modality Discrepancy Transformer for Ambivalence and Hesitancy Recognition",
       "title_zh": "用于矛盾与犹豫识别的模态差异Transformer",
@@ -11279,6 +11405,34 @@
       ],
       "summary_zh": "执行长时程操作任务的分层机器人系统必须做出高层语义决策，以协调随机的低层技能。在此设定下，失败的 rollout 具有模糊性：下游状态不佳可能反映高层决策无效、部分观测，或决策有效但物理执行失败。传统监督学习缺乏此类恢复状态的数据，而强化学习则受稀疏奖励和非局部信用分配困扰。作者提出MAGMA-GEN，一种在线策略数据生成流水线，将模糊的失败 rollout 转化为经验证的恢复监督。MAGMA-GEN首先使用特权教练假设早期决策级错误，并提出局部纠正或恢复动作。由于该诊断可能出错，候选仅在相同状态下以匹配条件重新执行能改善下游进展时才被保留。这从智能体自身的失败分布中产生监督样本，无需逐步人工演示。在交互式长时程操作任务上评估，MAGMA-GEN在演化的任务约束下，在仿真和真实机器人执行中均优于蒸馏和轨迹修复基线，提高了任务成功率和恢复能力。",
       "insight_zh": "该文的核心思路是用反事实重执行验证失败诊断，从而在无人工标注下生成恢复监督；这一验证式数据生成范式对多智能体或城市模拟中的失败样本利用可能有启发，但原文未涉及地理空间场景。"
+    },
+    {
+      "key": "arxiv:2609.20129",
+      "title": "Local Sparsity Enables Unsupervised LLM Safety Detection",
+      "title_zh": "局部稀疏性实现无监督LLM安全检测",
+      "url": "https://arxiv.org/abs/2609.20129",
+      "arxiv_id": "2609.20129",
+      "authors": [
+        "Xin Chen",
+        "Gil Kur",
+        "Alexander Shevchenko",
+        "Andreas Krause"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-17T12:23:04+00:00",
+      "score": 12,
+      "reason": "该文研究LLM部署时的无监督安全检测，利用稀疏自编码器中的局部稀疏性进行异常检测，与城市更新、时空数据挖掘、遥感变化检测等GIS核心议题无直接关联，仅在大模型方法论层面有微弱参考价值。",
+      "tags": [
+        "LLM安全",
+        "异常检测",
+        "稀疏自编码器",
+        "线性表示假设"
+      ],
+      "summary_zh": "针对大语言模型部署时的安全问题，现有方法多为有监督且依赖不安全训练数据，难以应对新出现的攻击与危害类别。本文从异常检测视角出发，仅对安全数据建模并标记分布外输入。作者指出，在线性表示假设（LRH）下，通过稀疏自编码器（SAE）恢复的概念空间中，邻近点共享较小的公共活跃支撑集，从而为异常检测提供统计可行性。基于这一局部稀疏性洞见，提出局部掩码SAE异常检测框架并给出理论论证。在多种架构与数据集（包括能力测试与安全专用数据集）上验证有效；当允许使用1%分布外数据进行校准时，局部稀疏方法接近最优性能，且仅使用1-2%的SAE神经元参与计算。",
+      "insight_zh": "该工作提示，在高维表示空间中利用局部稀疏结构可提升无监督异常检测的可行性；但其结论建立在LRH与SAE概念空间假设之上，是否可迁移至地理空间表示学习尚需验证。"
     },
     {
       "key": "arxiv:2609.19786",
@@ -12630,6 +12784,34 @@
       ],
       "summary_zh": "谱共聚类是发现词-文档矩阵中潜在结构的有用工具，但其对奇异值分解（SVD）的依赖会使标准形式在高维数据上代价高昂。本文提出两种用于二部文本数据归一化谱共聚类的随机近似方法，适用于文档簇与词簇数量可能不同的情形。第一种方法通过随机投影使用随机SVD，第二种将部分SVD与逐元素随机采样相结合。在真实和合成数据集上，两种方法相对于全SVD基线均减少了运行时间，但其表现取决于矩阵稀疏性。随机投影方法在测试设置中是更可靠的近似，而基于采样的方法在较稠密矩阵上最有用，在已经稀疏的文本数据上收益有限。这些结果表明，谱共聚类的随机近似应根据数据的底层结构来选择。",
       "insight_zh": "该研究为高维稀疏矩阵的谱共聚类提供了计算效率方案，对大规模文本或属性数据的降维分析有方法参考意义，但与地理空间智能无直接联系。"
+    },
+    {
+      "key": "arxiv:2609.20123",
+      "title": "QoS-Aware Federated Learning for Multimodal In-Cabin Interaction in Smart Vehicles",
+      "title_zh": "面向智能车辆多模态舱内交互的QoS感知联邦学习",
+      "url": "https://arxiv.org/abs/2609.20123",
+      "arxiv_id": "2609.20123",
+      "authors": [
+        "Baran Can G\\\"ul",
+        "Mert Nak{\\i}p",
+        "Nasser Jazdi",
+        "Michael Weyrich"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T12:20:07+00:00",
+      "score": 10,
+      "reason": "该文面向智能车辆舱内多模态交互的联邦学习框架，关注车载网络QoS约束下的异步训练，与GIS博士研究中的多源数据融合有方法论上的间接联系，但不涉及地理空间分析或城市议题。",
+      "tags": [
+        "联邦学习",
+        "多模态融合",
+        "智能车辆",
+        "QoS感知",
+        "异步训练"
+      ],
+      "summary_zh": "现代智能车辆利用从高带宽视觉系统到低速率生理监测的多模态传感器提供个性化舱内服务，但车载网络的异构且时变QoS约束阻碍了高保真多模态融合与协同训练。标准联邦学习采用刚性同步轮次，无法应对资源不对称，导致安全关键的时序违规与能耗耗尽。本文提出FedQoS，一种异步、事件触发的联邦学习框架，通过两阶段门控机制解耦本地计算与全局通信：资源感知训练门仅在感知缓冲与能量储备满足安全阈值时启动本地学习；QoS感知传输策略基于平衡模型新颖性与瞬时延迟和能耗的效率分数来门控上行更新。本地客户端优化含陈旧感知近端项的目标函数，根据更新年龄动态调整全局锚点强度。在多模态车载数据集上的实验表明，FedQoS相比FedAvg在个性化精度上仅有边际损失，同时显著减少QoS违规，通信开销降低76.7%，延迟成本降低26.0%。",
+      "insight_zh": "该框架将资源约束与模型更新质量联合建模，其异步门控与陈旧感知机制对资源受限环境下的分布式多源数据协同学习具有参考意义，但应用场景限于车载系统。"
     },
     {
       "key": "arxiv:2609.19513",
@@ -14126,6 +14308,39 @@
       "insight_zh": "该文的查询条件化子模覆盖思路可启发遥感图像理解中的token/区域选择，例如按查询保留变化相关证据；但其面向通用MLLM效率，未涉及地理空间任务或数据。"
     },
     {
+      "key": "arxiv:2609.20110",
+      "title": "Perception, Layout, and Validation: Calibrated Confidence for Reliable Straight-Through Processing of Financial Documents",
+      "title_zh": "感知、布局与验证：面向金融文档可靠直通式处理的校准置信度",
+      "url": "https://arxiv.org/abs/2609.20110",
+      "arxiv_id": "2609.20110",
+      "authors": [
+        "Yichao Jin",
+        "Yushuo Wang",
+        "Yuxuan Han",
+        "Kwan Ching Yee Sonia",
+        "Weiyang Song",
+        "Chiu Jin-Chun Kent",
+        "Wong Chong Hwee",
+        "Wong Tiong Kiat",
+        "Kenneth Zhu Ke",
+        "Jingyuan Zhao"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-17T12:09:21+00:00",
+      "score": 8,
+      "reason": "该文研究金融文档关键值抽取的校准置信度与保形风险控制，属于VLM应用与不确定性量化，与GIS研究中的遥感变化检测、时空数据挖掘无直接关联。",
+      "tags": [
+        "视觉语言模型",
+        "文档理解",
+        "置信度校准",
+        "保形风险控制"
+      ],
+      "summary_zh": "金融文档关键值字段的直通式处理（STP）无需人工复核，但需要校准概率并对自动批准层的残余误差给出有界保证。现代视觉语言模型（VLM）可开箱即用地抽取关键值，但其口头化置信度信号不可靠，与字段正确性关联较弱。本文提出沿感知、布局、验证三个可解释通道分解的置信度层，并结合最终保形风险控制，用于金融文档的可靠STP。方法在三个公开数据集（真实发票、合成发票、广告购买表单）上验证，使用两个VLM系列（Qwen3.6-27B与Gemini-3.1-Flash-Lite）。分解分数持续改善正确与错误抽取的区分度，将AUROC从VLM口头化信号的0.54-0.74提升至0.90-0.99，三个通道均有贡献。对工业部署而言，原生VLM置信度信号在目标误差<10%的风险控制下仅能通过0.1%-7.0%的字段，而所提方法可自动批准49-72%的字段，同时将接受层的经验误差控制在目标以内。",
+      "insight_zh": "该工作表明，将VLM置信度分解为可解释通道并结合保形风险控制，可显著提升自动化决策的可靠性；其不确定性量化思路对地理空间智能中的可信推断有方法层面的借鉴价值。"
+    },
+    {
       "key": "arxiv:2605.22866",
       "title": "Multi-Resolution Attribution from Adaptive Routing State",
       "title_zh": "基于自适应路由状态的多分辨率归因",
@@ -14389,6 +14604,33 @@
       ],
       "summary_zh": "大型语言模型的安全评估依赖表面形式分类器，报告代际间危害分数下降。本文提供证据表明该方法系统性不完整：显性歧视内容被转化而非移除，作者称之为“危害洗白”。通过分析跨越GPT-2至GPT-5的15个模型、三种人口统计条件下的45万条性别指向补全，作者显示GPT-2中针对女性的性暴力聚类在GPT-4中消失，而针对男性的补全获得了女性补全所没有的正面表征领域（照护、情感范围、盟友身份）。该模式在GPT-5最明显：主题5（1997份文档）将乳腺癌框定为男性权利辩论，而女性指向输出中无等价聚类。三个独立分类器将该内容评为无毒。情感分数在GPT-4发生反转：早期模型贬低女性，后期模型过度矫正。在GPT-4对齐边界，女性指向补全的主题多样性相对男性下降36%（W/M=0.58，GPT-2时为0.91）。REGARD表征危害差异与发布日期相关（ρ=+0.55，p=.034），而Detoxify不相关（ρ=-0.23，p=.42）：毒性分数下降的同时表征危害上升。作者将危害洗白形式化为三标准检验，并提供适用于任何生成模型的三阶段检测协议。",
       "insight_zh": "该研究提示毒性分数降低不足以作为危害减少的代理指标，对LLM智能体在地理空间应用中的公平性评估有间接警示意义，但摘要未涉及地理空间场景。"
+    },
+    {
+      "key": "arxiv:2609.19956",
+      "title": "Graph-Based Stochastic Power-UCT: Monte-Carlo Graph Search with Power Mean Estimation",
+      "title_zh": "基于图的随机Power-UCT：带幂均值估计的蒙特卡洛图搜索",
+      "url": "https://arxiv.org/abs/2609.19956",
+      "arxiv_id": "2609.19956",
+      "authors": [
+        "Tung Tran",
+        "Viet Bao Mai",
+        "Hoang Ta",
+        "Tuan Dam"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T09:28:35+00:00",
+      "score": 8,
+      "reason": "该文提出基于图的随机Power-UCT蒙特卡洛图搜索算法，属于强化学习与规划算法研究，与GIS时空数据挖掘无直接关联，仅在智能体决策方法层面有间接参考。",
+      "tags": [
+        "蒙特卡洛树搜索",
+        "图搜索",
+        "随机MDP",
+        "采样效率"
+      ],
+      "summary_zh": "基于树的蒙特卡洛树搜索（MCTS）在随机MDP中通过不同轨迹到达同一状态时会重复该状态，浪费模拟次数。本文提出Graph-Based Stochastic-Power-UCT（GS-Power-UCT），在同一规划深度到达的状态间共享节点，同时为不同深度到达的状态保留独立值。该设计适用于一般随机MDP，包括含环问题。作者证明在固定规划时域下，根估计以O(n^{-1/2})速率收敛到有限时域值，与基于树的Stochastic-Power-UCT相当，同时跨共享状态复用样本。文章还研究两种全状态变体：GS-Power-UCT-F为每个物理状态存储一个节点以增加样本共享，但可能混合不同剩余时域的值；GS-Power-UCT-F⁺使用自适应时域控制该偏差，当跨深度差距消失时收敛到根状态s₀的最优无限时域折扣值V*(s₀)。在随机规划基准上的实验显示相比基于树和基于图的基线具有更好的样本效率。",
+      "insight_zh": "该算法通过状态共享提升随机规划中的样本效率，其图结构搜索思路对多智能体路径规划或时空决策问题有潜在方法价值，但未涉及地理空间场景。"
     },
     {
       "key": "arxiv:2609.19907",
@@ -15666,31 +15908,6 @@
       "insight_zh": "摘要缺失，无法评估其方法创新与实验效果；其时间序列建模思路或与时空预测有方法论上的相似性，但原文未涉及地理空间应用。"
     },
     {
-      "key": "arxiv:2609.19866",
-      "title": "Reproducibility is not construct validity: LLM measurement of institutionally situated communication",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19866",
-      "arxiv_id": "2609.19866",
-      "authors": [
-        "Veronika Batzdorfer (KIT)",
-        "Carlo Romano Marcello Alessandro Santagiustina (ALMAnaCH",
-        "m\\'edialab",
-        "Sciences Po)"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.CY",
-        "q-fin.RM"
-      ],
-      "published": "2026-09-17T08:19:58+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19170",
       "title": "Regularized Emphatic Temporal-Difference Learning: Stability under Constant Stepsizes",
       "title_zh": "正则化强调式时序差分学习：恒定步长下的稳定性",
@@ -15835,28 +16052,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该工作提出R2DN方法，实现收缩和Lipschitz循环深度网络的可扩展参数化。",
       "insight_zh": "摘要缺失，无法评估其稳定性保证与实验表现；循环网络的稳定性约束对时空序列建模有潜在价值，但原文未涉及地理空间应用。"
-    },
-    {
-      "key": "arxiv:2609.20123",
-      "title": "QoS-Aware Federated Learning for Multimodal In-Cabin Interaction in Smart Vehicles",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20123",
-      "arxiv_id": "2609.20123",
-      "authors": [
-        "Baran Can G\\\"ul",
-        "Mert Nak{\\i}p",
-        "Nasser Jazdi",
-        "Michael Weyrich"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T12:20:07+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.19865",
@@ -16065,34 +16260,6 @@
       "insight_zh": "该研究关于小样本标定下个性化策略成本-收益的对比框架，或可为城市感知中跨设备、跨区域的模型快速适配提供类比思路，但其具体结论限于肌电信号领域。"
     },
     {
-      "key": "arxiv:2609.20110",
-      "title": "Perception, Layout, and Validation: Calibrated Confidence for Reliable Straight-Through Processing of Financial Documents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20110",
-      "arxiv_id": "2609.20110",
-      "authors": [
-        "Yichao Jin",
-        "Yushuo Wang",
-        "Yuxuan Han",
-        "Kwan Ching Yee Sonia",
-        "Weiyang Song",
-        "Chiu Jin-Chun Kent",
-        "Wong Chong Hwee",
-        "Wong Tiong Kiat",
-        "Kenneth Zhu Ke",
-        "Jingyuan Zhao"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-17T12:09:21+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19853",
       "title": "PACE: Precise AI Cinematic Expression",
       "title_zh": "",
@@ -16150,7 +16317,7 @@
     {
       "key": "arxiv:2609.19955",
       "title": "One Intervention per Component is Enough: Towards Identifiability in Linear Stochastic Dynamics from Steady State",
-      "title_zh": "",
+      "title_zh": "每个组件一次干预即足够：从稳态出发的线性随机动力学可识别性",
       "url": "https://arxiv.org/abs/2609.19955",
       "arxiv_id": "2609.19955",
       "authors": [
@@ -16161,67 +16328,15 @@
       ],
       "published": "2026-09-17T09:27:52+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19947",
-      "title": "Not All AI Agents Are Equal: Characterizing Resource and Performance Dynamics",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19947",
-      "arxiv_id": "2609.19947",
-      "authors": [
-        "Wonmi Choi",
-        "Minuk Park",
-        "Zhixiong Niu",
-        "Yongqiang Xiong",
-        "Chuck Yoo",
-        "Gyeongsik Yang"
+      "reason": "该文研究线性随机动力学（OU过程）从稳态数据中的参数可识别性，属于因果推断与统计学习理论，与GIS研究无直接关联。",
+      "tags": [
+        "因果推断",
+        "可识别性",
+        "随机动力学",
+        "干预数据"
       ],
-      "categories": [
-        "cs.AI",
-        "cs.PF"
-      ],
-      "published": "2026-09-17T09:20:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19961",
-      "title": "Neuro-Symbolic Agentic AI for Networked Low-Altitude UAVs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19961",
-      "arxiv_id": "2609.19961",
-      "authors": [
-        "Yuqi Ping",
-        "Tianhao Liang",
-        "Nanchi Su",
-        "Guangyu Lei",
-        "Junwei Wu",
-        "Qinyu Zhang",
-        "and Tingting Zhang"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.SY",
-        "eess.SY",
-        "autonomous",
-        "decision-making,",
-        "networked",
-        "UAV",
-        "systems"
-      ],
-      "published": "2026-09-17T09:31:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "summary_zh": "本文研究从稳态观测与干预数据中恢复多元Ornstein-Uhlenbeck（OU）过程参数的问题。在基因扰动实验等应用中，仅能获得稳态“快照”测量，使得依赖时间序列轨迹的标准随机微分方程估计方法不再适用。作者首先建立可识别性结果：对漂移图的每个强连通分量（SCC）进行一次干预，即可在全局缩放因子意义下一般性地恢复所有OU过程参数，前提是SCC凝聚图连通且具有单一根节点，并满足一定的谱非退化假设。作者提出递归学习算法，按拓扑顺序排列SCC，对每个分量隔离其边际动力学，并利用上游分量已恢复的参数求解由稳态矩方程导出的线性系统。在此理论基础上，提出正则化最小二乘估计器，联合最小化观测与干预数据下稳态均值与协方差方程的残差。实验结果验证了理论发现。",
+      "insight_zh": "该工作为仅依赖稳态快照的因果结构学习提供了可识别性保证，其干预设计思路对时空数据中的因果发现研究有理论参考价值，但未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2506.11747",
@@ -16379,29 +16494,6 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该研究评估商用深度传感器在医学场景下的精度。",
       "insight_zh": "深度传感器精度评估可能对三维感知有参考价值，但未涉及城市更新、时空数据挖掘或遥感变化检测，相关性很低。"
-    },
-    {
-      "key": "arxiv:2609.20129",
-      "title": "Local Sparsity Enables Unsupervised LLM Safety Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20129",
-      "arxiv_id": "2609.20129",
-      "authors": [
-        "Xin Chen",
-        "Gil Kur",
-        "Alexander Shevchenko",
-        "Andreas Krause"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-17T12:23:04+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20581",
@@ -16726,28 +16818,6 @@
       ],
       "summary_zh": "缩放定律预测损失如何随计算量增加而下降。本文表明，与传统认知相反，架构干预可以改变预训练中的缩放指数，从而在计算量增加时带来指数级性能提升。作者以循环Transformer的架构形式为锚点：循环（递归深度）提供了一种模型增长机制，可在训练中增加循环次数。带或不带权重共享的模型增长对缩放指数改变最大，例如一个7.4B的模型增长架构在CORE上以约20倍更少计算量匹配GPT-3 13B，且计算效率增益随规模增大。此外，在普通Transformer中使用边界算子（归一化并注入较早的块）也能带来递增的计算效率增益，但幅度较小。在数据受限的多轮训练场景中，标准循环具有正则化效果，且随规模增大增加循环次数是计算最优的。作者从计算深度视角解释这些结果：给定计算预算，希望增加Transformer的可用深度，从而带来随规模增大的效率增益。",
       "insight_zh": "该文对理解大模型训练效率有参考价值，但其研究对象为通用语言模型架构，与地理空间智能或城市分析无直接应用关联。"
-    },
-    {
-      "key": "arxiv:2609.19956",
-      "title": "Graph-Based Stochastic Power-UCT: Monte-Carlo Graph Search with Power Mean Estimation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19956",
-      "arxiv_id": "2609.19956",
-      "authors": [
-        "Tung Tran",
-        "Viet Bao Mai",
-        "Hoang Ta",
-        "Tuan Dam"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T09:28:35+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.19209",
@@ -17148,7 +17218,7 @@
     {
       "key": "arxiv:2609.20104",
       "title": "Design of the IBM Granite 5.0 TurboCTC ASR Model",
-      "title_zh": "",
+      "title_zh": "IBM Granite 5.0 TurboCTC ASR模型设计",
       "url": "https://arxiv.org/abs/2609.20104",
       "arxiv_id": "2609.20104",
       "authors": [
@@ -17166,10 +17236,15 @@
       ],
       "published": "2026-09-17T12:05:58+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文介绍IBM Granite 5.0 TurboCTC语音识别模型的架构与训练方法，属于语音处理领域，与GIS博士研究方向无实质关联。",
+      "tags": [
+        "语音识别",
+        "CTC模型",
+        "模型架构",
+        "推理加速"
+      ],
+      "summary_zh": "本文描述Granite 5.0 Turbo CTC的架构、训练方法与推理加速，这是一个4.7亿参数的仅编码器模型，具有出色的速度-精度权衡。架构在Conformer块内使用基于步进深度卷积的金字塔时间下采样、块对角（分块）自注意力，以及来自中间层中间预测的条件化。训练亮点包括仅使用公开数据、新颖地使用Muon优化器以及平衡数据采样。推理加速包括将1×1卷积替换为线性层并优化Conformer块中的注意力计算。这些措施使模型在英语短格式ASR的Open ASR排行榜上处于速度-精度帕累托前沿，同时比最快的竞争者快两倍。模型可在宽松许可下使用。",
+      "insight_zh": "该工作聚焦语音识别模型效率优化，其架构与训练技巧与地理空间智能研究无直接关联，参考价值有限。"
     },
     {
       "key": "arxiv:2609.19880",
@@ -17499,29 +17574,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。",
       "insight_zh": "摘要缺失，无法推断其隐私风险分析是否适用于地理空间数据的隐私保护；仅从标题看，其关注批归一化对模型记忆化和隐私风险的放大作用。"
-    },
-    {
-      "key": "arxiv:2609.20106",
-      "title": "AnyviewMeter: Adapting Robotic Reward Models with Camera Geometry and Multi-View Attention",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20106",
-      "arxiv_id": "2609.20106",
-      "authors": [
-        "Yuang Tu",
-        "Runjia Tan",
-        "Yujie Yan",
-        "Jinghan Hu",
-        "Chen Lv"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T12:07:22+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2605.26163",

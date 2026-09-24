@@ -2,11 +2,11 @@
   "date": "2026-09-22",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 770,
+    "analyzed": 780,
     "high": 5,
     "medium": 34,
     "low": 63,
-    "below_threshold": 668
+    "below_threshold": 678
   },
   "papers": [
     {
@@ -12930,6 +12930,54 @@
       "insight_zh": "该研究提示，在虾病检测这一特定视觉任务中，ViT与自监督学习可在标注有限的情况下取得有竞争力的表现，但其结论限于所报告的数据集与疾病类别，不能直接外推到其他领域。"
     },
     {
+      "key": "arxiv:2609.22223",
+      "title": "EAVer: Long-Form Factuality Verification as an End-to-End Agentic Policy",
+      "title_zh": "EAVer：将长文本事实性验证作为端到端智能体策略",
+      "url": "https://arxiv.org/abs/2609.22223",
+      "arxiv_id": "2609.22223",
+      "authors": [
+        "Kening Zheng",
+        "Aoying Zheng",
+        "Zhigang Chang",
+        "Yazhi Guo",
+        "Miaotian Guo",
+        "Qingwei Zong",
+        "Xianhai Xie",
+        "Weiqiang Jin",
+        "Chengze Li",
+        "Hanrong Zhang",
+        "Jie Yang",
+        "Wei-Chieh Huang",
+        "Lingzhe Zhang",
+        "Liancheng Fang",
+        "Xin Zou",
+        "Hanqian Li",
+        "Jiahao Huo",
+        "Yibo Yan",
+        "Zizhuang Deng",
+        "Lei Miao",
+        "Wei Guo",
+        "Haihong Tang",
+        "Bo Zheng",
+        "Philip S. Yu"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-02T21:00:35+00:00",
+      "score": 18,
+      "reason": "该文研究长文本事实性验证的端到端智能体策略，涉及LLM智能体、搜索工具调用与证据复用，与多智能体和LLM方向有较强关联，但与GIS、城市更新、遥感变化检测等核心方向无直接关系。",
+      "tags": [
+        "LLM智能体",
+        "事实性验证",
+        "工具调用",
+        "端到端策略"
+      ],
+      "summary_zh": "长文本事实性验证通常实现为静态的“分解—搜索—验证”流水线，各模块分别提示并处理声明、调用外部搜索。独立处理声明会使LLM和搜索调用随声明数量增长，并导致对相关声明重叠证据的重复搜索。论文提出EAVer，一个端到端智能体验证器，学习将完整的响应级验证工作流作为统一策略进行控制。EAVer将语义相关的声明分组，根据置信度将每组路由到直接验证或定向搜索，并将搜索返回的证据保存在紧凑的上下文备忘录中供跨声明复用。为训练该策略，作者开发了特权教师合成流水线，将金标声明标注转换为带实时搜索的可执行多轮工具交互轨迹，而非事后理由。结构、标签对齐、工具使用、搜索预算和泄漏检查产生1447条质量受控轨迹。作者进一步构建794对双向同轨迹偏好对，保持声明分组、搜索和证据固定，从而对事实性决策token进行决策导向的直接偏好优化（DPO）。使用Qwen3-8B的结果显示，EAVer在VeriFastScore上比最强基于搜索的基线高2.88个Macro-F1点，在分布外FaStFact-Bench上高4.73个点，同时搜索次数比最省搜索的基线少约80%。此外，EAVer在4B到32B参数范围的模型上持续提升性能，显示出较强泛化能力。",
+      "insight_zh": "该工作展示了将验证流程统一为可学习智能体策略、并通过证据备忘录复用降低搜索成本的方法；其思路对需要多源证据核验的地理空间信息验证任务可能有启发，但论文未涉及地理数据。"
+    },
+    {
       "key": "arxiv:2609.22104",
       "title": "DeepInstructor: An Agentic AI Instructor for Experience-Driven Idea Evaluation",
       "title_zh": "DeepInstructor：面向经验驱动想法评估的智能体AI导师",
@@ -17378,6 +17426,35 @@
       "insight_zh": "层级提示与双曲嵌入的结合可启发遥感场景分类中利用地物分类体系（如父类—子类）进行零样本/少样本迁移，但摘要未涉及遥感数据。"
     },
     {
+      "key": "arxiv:2609.22241",
+      "title": "H2LooP Telecom Model v1: From Telecom Comprehension to Autonomous Issue and PR Resolution",
+      "title_zh": "H2LooP电信模型v1：从电信理解到自主问题与PR解决",
+      "url": "https://arxiv.org/abs/2609.22241",
+      "arxiv_id": "2609.22241",
+      "authors": [
+        "Amit Singh",
+        "Vedant Nipane",
+        "Mayank Goel",
+        "Pulkit Agrawal",
+        "Sairanjan Mishra"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T13:27:17+00:00",
+      "score": 15,
+      "reason": "该文是电信领域专用LLM与自主代码/PR解决智能体，属于LLM领域适配与智能体研究，与GIS、城市更新、遥感变化检测等核心方向无直接关系，仅与LLM和多智能体主题有一般性关联。",
+      "tags": [
+        "LLM",
+        "电信领域模型",
+        "代码智能体",
+        "领域微调"
+      ],
+      "summary_zh": "论文发布H2LooP Telecom Model v1，这是面向电信行业微调的领域专用大语言模型，包含两个互补变体：面向电信领域问答与推理的理解型变体，以及面向自主电信代码生成、拉取请求解决和生产仓库代码提交的智能体型变体。H2LooP Telecom在GSMA Open Telecom Lite（OT-Lite）基准和专有电信代码生成基准上取得较强结果，在独立排行榜评估中超过GPT-5、Claude Opus等前沿闭源模型，同时保持通用能力。理解型变体在OT-Lite Pass@3上取得81.8%加权平均，并在官方社区运行的Open Telco AI Leaderboard上以仅31B参数独立排名第5，领先Claude Opus 4.6、GPT-5、Gemini 3 Flash、Grok-4-fast和Kimi K2.5等前沿闭源系统。智能体型变体在电信代码生成上相对基座模型取得AST相似度+8.8%和位置IoU+20.0%的相对提升，同时保持相同的MMLU（74.0%）和BFCL v3多轮函数调用（79.0%）表现，表明没有灾难性遗忘。作者认为，在涵盖3GPP标准、O-RAN规范、网络遥测和真实仓库提交的精选电信语料上进行领域专业化，能在同等规模上显著优于通用模型，在领域评估上接近前沿闭源模型，并得到官方排行榜排名的独立佐证。",
+      "insight_zh": "该工作展示了领域专用LLM在垂直行业理解与代码智能体任务上的潜力，但其方法面向电信文本与代码，未涉及地理空间数据、城市更新或遥感任务。"
+    },
+    {
       "key": "arxiv:2607.11498",
       "title": "Greedy Volume Maximization of Gradient Embeddings for Long-Tailed Frame-Level Bioacoustic Active Learning",
       "title_zh": "面向长尾帧级生物声学主动学习的梯度嵌入贪心体积最大化",
@@ -18558,6 +18635,32 @@
       "insight_zh": "该文发现聚合比较可跨任务族迁移，但临床有意义任务存在更强任务-方法交互；其评估方法论反思或可启发地理空间AI的基准设计，但文中未涉及地理空间任务。"
     },
     {
+      "key": "arxiv:2609.22243",
+      "title": "Replay-Gated Neural Execution: Decoupling Persistent Behavioral Specifications from Neural Realizations in Frozen Language Models",
+      "title_zh": "重放门控神经执行：在冻结语言模型中将持久行为规范与神经实现解耦",
+      "url": "https://arxiv.org/abs/2609.22243",
+      "arxiv_id": "2609.22243",
+      "authors": [
+        "Xianliang Zeng",
+        "Zhanzhan Zhao"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-05T06:24:42+00:00",
+      "score": 12,
+      "reason": "该文研究冻结语言模型中的行为规范与神经实现解耦，属于LLM机制与执行语义研究，与城市更新、时空数据挖掘、遥感变化检测或多源地理空间融合无直接关联，仅与LLM/智能体主题有微弱联系。",
+      "tags": [
+        "LLM",
+        "神经执行语义",
+        "冻结语言模型",
+        "重放认证"
+      ],
+      "summary_zh": "论文提出“重放门控神经执行”，将持久行为谓词、状态索引的认证实现集、瞬态动作见证、预算受限查找器和执行授权五个对象分离。候选动作需在冻结模型上进行隔离的FP32/BF16重放，提交还需通过运行审计。在Qwen3-0.6B和SmolLM2-360M-Instruct上的实验显示这些对象存在不同失效模式：独立初始化在全部24个固定状态单元中产生不同认证动作；SmolLM2见证在128个原生状态中全部保持认证，但在384个非对角迁移中仅66个通过；767个Qwen见证全部重放成功，但预算受限查找器在三次预设运行中均漏掉一个已知可实现单元；1141个重放提交候选中174个未通过项目认证。冻结的三层级联利用这些边界拒绝未认证提案并升级审计有效的搜索遗漏。在256个此前封存的Qwen Fresh请求上，221个在最低成本层首次认证，全部256个获得审计授权，未观察到绕过。相对于冻结全搜索，中位单例搜索与认证成本比为0.1055，P95为1.3485（含失败层）。作者认为，在两个小模型的行为族内，结果支持状态索引、集合值化的执行语义：规范持续存在，搜索提出见证，重放认证加运行审计授予执行权限。",
+      "insight_zh": "该工作提示，在LLM智能体执行中，行为规范、候选动作与执行授权可以被显式分离，并通过重放认证来约束执行；但其结论限于两个小模型和特定行为族，未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2406.03678",
       "title": "Reflective Policy Optimization",
       "title_zh": "反思性策略优化",
@@ -19081,6 +19184,36 @@
       ],
       "summary_zh": "大语言模型（LLM）的显著成功为下一代推荐系统提供了重要启示。在结构上，推荐和语言生成有相似之处：两者都旨在产生优化用户体验的有序序列。然而，如何将LLM范式的精髓精确吸收到成熟的工业推荐系统中仍是一个开放问题。存在两个挑战。第一，如何将LLM范式中的序列级生成和优化纳入推荐尚不清楚。第二，现实世界的推荐系统是成熟系统，围绕特定产品、业务约束、服务基础设施和组织归属经过多年迭代定制。整体替换此类系统往往在技术上高风险且在组织上具有破坏性。本文提出LIGE-GR，一个列表级生成与评估推荐框架，从基于逐项推荐的传统排序系统升级为生成式推荐范式。LIGE-GR不是从头重建整个推荐栈，而是将现有的逐点推荐系统泛化为列表级生成系统。这使成熟推荐系统能够受益于列表级优化，同时保持与现有模型、价值函数和服务基础设施的兼容性。我们在Instagram Reels和Facebook Video的短视频推荐中验证了LIGE-GR。在这些推荐场景中，LIGE-GR将Instagram Reels的停留时间提升1.14%，Facebook Video提升0.72%，且仅需适度的额外推理资源。",
       "insight_zh": "该研究展示了LLM生成范式在工业推荐系统中的渐进式落地路径，其列表级生成与评估思路或可启发城市服务推荐或出行推荐，但本文未涉及地理空间数据，相关性有限。"
+    },
+    {
+      "key": "arxiv:2609.22219",
+      "title": "Knowing, and Saying It Only When Asked: LLM Endognostics and the Schizognosis of Minerva-7B",
+      "title_zh": "知道，并且只在被问到时说出来：LLM内省审计与Minerva-7B的Schizognosis",
+      "url": "https://arxiv.org/abs/2609.22219",
+      "arxiv_id": "2609.22219",
+      "authors": [
+        "Fabrizio Davide",
+        "Francesco Collova"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "evaluation",
+        "datasets",
+        "included"
+      ],
+      "published": "2026-09-02T09:38:04+00:00",
+      "score": 12,
+      "reason": "该文提出LLM内省审计框架，研究残差流中潜在知识的提取与因果操控，属于LLM可解释性与内部机制研究，与LLM主题有较强关联，但与GIS、城市更新、遥感变化检测等核心方向无直接关系。",
+      "tags": [
+        "LLM可解释性",
+        "内部审计",
+        "残差流",
+        "因果操控"
+      ],
+      "summary_zh": "通过阅读答案来评估对齐语言模型，假设答案携带评估者关心的区分。论文提出LLM内省审计（endognostics），一个白盒内部审计框架，用于提取并因果操控残差流中的潜在知识。将其应用于Minerva-7B-Instruct-v1.0，在12类职业风险的124个最小提示对上，行为评估在大多数集合上失败：模型在63.7%的提示对上行为相同（95% CI [55.0%, 71.6%]），对两个成员都顺从或都拒绝。然而，通过Jacobian透镜将残差流投影到词汇表上，揭示了统计显著的对立内省边际，证明模型内部保持稳健的风险区分。在第二个协议中，将25个事实与五种语言框架交叉，作者显示模型在72%的情况下顺从预设的虚假信息，尽管其潜在层中表征了真实实体。手术式消融植入虚假信息的方向，在25个被抑制案例中恢复了11个正确答案（McNemar p = 0.0010），并经盲法人工标注验证（二元一致kappa = 0.68）。相比之下，样本外线性探针在第10层达到77%准确率，但其正交消融的恢复率为0%。这建立了一个基本理论分离：抽象线性表征并不意味着对言语化的因果控制。作者的主要贡献是形式化内省审计，证明行为评估与内部读取在常见情况下系统性不一致，且线性可解码性与因果控制解耦。",
+      "insight_zh": "该研究提示，LLM的行为输出可能与其内部表征不一致，评估智能体或LLM应用时需区分“知道”与“说出”；这一视角对地理空间LLM智能体的可信评估有间接启发，但论文未涉及地理任务。"
     },
     {
       "key": "arxiv:2609.17475",
@@ -20419,6 +20552,36 @@
       "insight_zh": "量化投资系统的设计可归结为对少数关键参数的声明，这些参数决定了系统的整体架构。"
     },
     {
+      "key": "arxiv:2609.22221",
+      "title": "Team DArgk at the 2026 ELOQUENT lab for evaluating generative language model quality: Residuals of Humanity: AI Detection Evasion via GRPO Fine-Tuning",
+      "title_zh": "Team DArgk在2026 ELOQUENT生成语言模型质量评估实验室：人性的残差——通过GRPO微调规避AI检测",
+      "url": "https://arxiv.org/abs/2609.22221",
+      "arxiv_id": "2609.22221",
+      "authors": [
+        "Antonela Tommasel",
+        "Juan Manuel Rodriguez"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "Evaluation",
+        "Forum",
+        "(CLEF",
+        "2026)"
+      ],
+      "published": "2026-09-02T12:26:10+00:00",
+      "score": 10,
+      "reason": "该文研究通过GRPO微调规避AI文本检测器，属于LLM对抗生成与检测鲁棒性研究，与LLM主题有一般关联，但与GIS、城市更新、遥感变化检测等核心方向无直接关系。",
+      "tags": [
+        "LLM",
+        "AI文本检测",
+        "GRPO",
+        "对抗生成"
+      ],
+      "summary_zh": "大语言模型（LLM）能生成流畅连贯、越来越难以与人类写作区分的文本，推动了自动AI生成文本检测器的发展。然而，此类检测器在对抗生成下的鲁棒性仍不确定。论文提出SHADE（Stochastic Human-like generation via Adversarial Detector Evasion），一个将检测器规避表述为策略优化问题的强化学习框架。SHADE不采用事后扰动或基于提示的重写，而是使用Group Relative Policy Optimization（GRPO）微调指令微调的LLaMA模型，并以基于PAN 2025 mdok系统的替代检测器反馈为奖励。实验显示，带小KL正则惩罚的全量微调达到98.5%的替代检测器规避率，而基座模型仅为1.5%；在正则化下，基于LoRA的适配效果明显较差。语言分析表明，成功规避与更短、更简单、词汇多样性更低的输出相关，说明高检测器规避率不一定对应更像人类的写作。在官方Voight-Kampff竞赛设置中，作者提交的作品排名第六和第七，表明针对单一替代检测器的优化只能部分迁移到未见评估分类器。这些结果凸显了强化学习用于对抗AI文本生成的潜力与局限，并推动更鲁棒的多检测器评估协议。",
+      "insight_zh": "该工作揭示了针对单一检测器优化时的迁移局限，提示在评估LLM生成内容（包括地理空间文本）时需采用多检测器或更鲁棒的评估协议；但论文未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.23688",
       "title": "Tail-Weight Control and Localized Generalization in Nearly Low-Rank Adversarial Classification",
       "title_zh": "近低秩对抗分类中的尾部权重控制与局部泛化",
@@ -21521,6 +21684,42 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据与结论信息。",
       "insight_zh": "摘要为空，无法评估其具体方法；从标题推测其关注3D高斯泼溅的压缩效率，可能对大规模城市三维场景的存储与传输有间接价值，但缺乏摘要依据。"
+    },
+    {
+      "key": "arxiv:2609.22239",
+      "title": "Knowledge Graph-Augmented Ambient AI for Clinical Note Generation",
+      "title_zh": "知识图谱增强的环境AI用于临床笔记生成",
+      "url": "https://arxiv.org/abs/2609.22239",
+      "arxiv_id": "2609.22239",
+      "authors": [
+        "Jakir Hossain",
+        "Yi-Fei Zhao",
+        "Hongjian Wang",
+        "Minmei Shih",
+        "Katie Leigh Mullen",
+        "Ahmad P. Tafti",
+        "Leming Zhou",
+        "Manoj Purohit",
+        "William Hogan",
+        "Jay Zeng",
+        "Elizabeth Skidmore",
+        "Yanshan Wang"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-04T03:05:50+00:00",
+      "score": 10,
+      "reason": "该文将知识图谱与LLM结合用于临床笔记生成中的信息覆盖修订，属于知识图谱增强的LLM应用，与GIS、城市更新、遥感变化检测等核心方向无直接关联，仅在知识图谱与LLM结合方法上有一般性参考价值。",
+      "tags": [
+        "知识图谱",
+        "环境AI",
+        "临床笔记生成",
+        "LLM"
+      ],
+      "summary_zh": "环境AI在医疗中日益用于从医患对话自动生成临床笔记，有望显著减轻临床医生的文书负担。然而，生成的笔记可能遗漏就诊中讨论的临床相关信息，造成信息缺口并影响后续诊疗。从就诊转录构建的知识图谱（KG）可以提供所讨论内容的结构化表示，并系统识别生成笔记中缺失但对患者护理关键的信息。本研究提出Coverage-Directed Revision（CDR），一个模型无关框架：从就诊转录构建KG，识别初始生成笔记中缺失的医学概念，并指导大语言模型（LLM）恢复缺失信息，而不修改底层笔记生成系统。作者在两个数据集上评估CDR：本地康复会话数据集Pitt-Bench和公开临床笔记生成基准数据集ACI-Bench，并测试了环境AI系统中广泛使用的四种底层LLM。结果表明，CDR在所有评估条件下持续提升内容召回率。该研究为提升环境AI生成临床文档的完整性提供了实用方法。",
+      "insight_zh": "该工作表明知识图谱可用于识别LLM生成文本中的信息缺失并指导修订，这一“覆盖导向修订”思路对地理空间文本生成或报告完整性检查可能有方法借鉴意义，但论文本身限于临床笔记场景。"
     },
     {
       "key": "arxiv:2604.24083",
@@ -24182,6 +24381,33 @@
       "insight_zh": "摘要缺失，无法推断具体贡献；从标题推测其关注模型内在技能的表征与刻画，可能与LLM能力分析相关，但与地理空间研究无明显交集。"
     },
     {
+      "key": "arxiv:2609.22222",
+      "title": "Can Coding Agents Reproduce Official Statistics? Metadata, Retry Budget and the Limits of Execution Feedback in a Controlled Eurostat Benchmark",
+      "title_zh": "编码智能体能复现官方统计吗？受控Eurostat基准中的元数据、重试预算与执行反馈的局限",
+      "url": "https://arxiv.org/abs/2609.22222",
+      "arxiv_id": "2609.22222",
+      "authors": [
+        "Sabina-Cristiana Necula"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "published": "2026-09-02T13:21:14+00:00",
+      "score": 8,
+      "reason": "该文评估编码智能体在Eurostat官方统计任务中的可复现性，涉及LLM代码生成、元数据与执行反馈，与LLM智能体主题有一般关联，但与GIS、城市更新、遥感变化检测等核心方向无直接关系。",
+      "tags": [
+        "编码智能体",
+        "官方统计",
+        "元数据",
+        "可复现性"
+      ],
+      "summary_zh": "大语言模型可以生成可执行的数据分析代码，但成功执行并不等于有效的官方统计结果。本研究询问权威元数据和执行反馈是否能提升编码智能体生成Eurostat答案的可复现性，并分离执行反馈的实际贡献。作者构建了30个自然语言任务基准，覆盖7个领域、7个Eurostat数据集和4个难度层级，并在四种条件下运行：仅任务（A）、任务加冻结数据集元数据卡（B）、元数据加由净化执行反馈驱动的修复循环（C）、元数据加相同尝试预算但无任何诊断信息（D）。Claude Sonnet 5通过Anthropic Messages API生成Python，进行三次独立重复，共360次任务运行。精确正确要求成功执行、正确的数据集、过滤器、输出形状、数值和单位。在输出契约欠指定的伴随实验中，所需排序键和单位表示从未告知模型，使条件C被低估23.4个百分点，表明评估器和契约设计可能主导测得的智能体误差。作者认为，可靠的统计编码智能体需要针对冻结规范的语义验证、完全指定的输出契约和重试预算，而非执行诊断。",
+      "insight_zh": "该研究强调在官方统计等强规范场景中，元数据与输出契约比执行反馈更关键；这一结论对地理空间统计或遥感指标计算智能体的评估设计有间接参考价值，但论文本身限于Eurostat任务。"
+    },
+    {
       "key": "arxiv:2609.22697",
       "title": "COT-TTS: Audio Context-Aware Text-to-Speech with Chain-of-Thought Reasoning",
       "title_zh": "COT-TTS：基于思维链推理的音频上下文感知文本转语音",
@@ -24841,6 +25067,34 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该工作提出一种噪声去偏的热力学方差方法，用于探测局部学习系数。",
       "insight_zh": "该工作可能为模型复杂度与泛化分析提供工具，但摘要缺失，无法判断其与地理空间智能任务的关联。"
+    },
+    {
+      "key": "arxiv:2609.22220",
+      "title": "Measuring the Checker: Mutation Analysis for GPU-Kernel Benchmark Oracles",
+      "title_zh": "测量检查器：GPU内核基准预言机的变异分析",
+      "url": "https://arxiv.org/abs/2609.22220",
+      "arxiv_id": "2609.22220",
+      "authors": [
+        "Mingzhe Du",
+        "Anh Tuan Luu",
+        "Dong Huang",
+        "See-Kiong Ng"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.PL"
+      ],
+      "published": "2026-09-02T10:30:05+00:00",
+      "score": 6,
+      "reason": "该文研究GPU内核基准测试预言机的变异分析，属于LLM生成代码的正确性评估与基准测试方法，与GIS、城市更新、遥感变化检测等核心方向基本无关。",
+      "tags": [
+        "GPU内核",
+        "基准测试",
+        "变异分析",
+        "LLM代码生成"
+      ],
+      "summary_zh": "用于LLM生成GPU内核的基准通常用少量随机输入和宽松的浮点容差判定正确性，而这些判定现在会影响排行榜和强化学习奖励。近期研究一致认为这些检查器较弱，并通过手工方式修补——增加输入分布、模糊测试配方、收紧容差——但无法衡量任何修补是否足够。论文引入变异分析作为内核基准预言机充分性的度量：确定性规则向188个KernelBench问题的已验证CUDA实现注入10303个可编译故障，其中7384个具有独立杀死见证；任何测试协议按检测到的故障比例评分。官方检查确定性地漏掉六分之一的见证故障（16.9%），且漏检按族别偏斜：算术故障漏检8.7%，但精度故障漏检78.6%。该度量解释了原因（容差盲带随归约规模增长；输入激进度受合法浮点方差限制的上限），审计了最强现有补丁（KernelBench-Verified的增益可拆分为隐藏输入带来的+4.0点和更紧容差带来的+4.5点，其作者无法计算这一拆分），并暴露了一个已发表的模糊测试配方会拒绝……",
+      "insight_zh": "该工作提出用变异分析量化基准预言机的充分性，这一评估思路对遥感变化检测或地理空间模型基准的鲁棒性审计可能有方法借鉴意义，但论文对象是GPU内核代码。"
     },
     {
       "key": "arxiv:2609.21457",
@@ -26231,31 +26485,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.22221",
-      "title": "Team DArgk at the 2026 ELOQUENT lab for evaluating generative language model quality: Residuals of Humanity: AI Detection Evasion via GRPO Fine-Tuning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22221",
-      "arxiv_id": "2609.22221",
-      "authors": [
-        "Antonela Tommasel",
-        "Juan Manuel Rodriguez"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "Evaluation",
-        "Forum",
-        "(CLEF",
-        "2026)"
-      ],
-      "published": "2026-09-02T12:26:10+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22254",
       "title": "Teacher Should Think Ahead: Adaptive Continuations for Reliable On-Policy Distillation",
       "title_zh": "",
@@ -26277,41 +26506,6 @@
         "cs.AI"
       ],
       "published": "2026-09-06T07:08:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.22238",
-      "title": "Task-Aware QUBO Allocation for Mixed-Precision Quantization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22238",
-      "arxiv_id": "2609.22238",
-      "authors": [
-        "Osama Orabi",
-        "Artur Zagitov",
-        "Hadi Salloum",
-        "Viktor A. Lobachev",
-        "and Yaroslav Kholodov"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CV",
-        "architectures",
-        "and",
-        "baselines,",
-        "robustness",
-        "analysis,",
-        "updated",
-        "presentation.",
-        "Corrected",
-        "the",
-        "title",
-        "metadata"
-      ],
-      "published": "2026-09-04T01:26:23+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -26582,7 +26776,7 @@
     {
       "key": "arxiv:2609.22240",
       "title": "Statistical Inference for Adversarial Training: Central Limit Theorems via Optimal Transport",
-      "title_zh": "",
+      "title_zh": "对抗训练的统计推断：基于最优传输的中心极限定理",
       "url": "https://arxiv.org/abs/2609.22240",
       "arxiv_id": "2609.22240",
       "authors": [
@@ -26598,10 +26792,15 @@
       ],
       "published": "2026-09-04T03:14:00+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究对抗训练模型的统计性质与经验最优部分传输的中心极限定理，属于机器学习理论与最优传输理论，与GIS、城市更新、时空数据挖掘、遥感变化检测等方向基本无关。",
+      "tags": [
+        "对抗训练",
+        "最优传输",
+        "统计推断",
+        "中心极限定理"
+      ],
+      "summary_zh": "论文旨在严格量化分类中对抗训练模型的统计与学习理论性质，等价地建立经验最优部分传输的统计性质。作者首先给出两类中心极限定理：以经验期望值为中心的CLT，以及带平滑的以总体值为中心的CLT。这些结果基于多种等价最优传输形式中最优势的唯一性以及经验过程理论论证。在二分类设定下，作者利用最优部分传输与导出的多边际最优传输公式之间的联系，证明了最优势的唯一性。作为副产品，还得到对抗训练模型鞍点的稳定性，以及泛化误差的样本复杂度和集中概率。",
+      "insight_zh": "该研究为对抗训练提供了统计推断层面的理论工具，但其对象是分类模型与最优部分传输，不涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2603.21568",
@@ -27376,27 +27575,6 @@
         "cs.CV"
       ],
       "published": "2026-09-21T03:34:38+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.22243",
-      "title": "Replay-Gated Neural Execution: Decoupling Persistent Behavioral Specifications from Neural Realizations in Frozen Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22243",
-      "arxiv_id": "2609.22243",
-      "authors": [
-        "Xianliang Zeng",
-        "Zhanzhan Zhao"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-05T06:24:42+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -28975,29 +29153,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.22220",
-      "title": "Measuring the Checker: Mutation Analysis for GPU-Kernel Benchmark Oracles",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22220",
-      "arxiv_id": "2609.22220",
-      "authors": [
-        "Mingzhe Du",
-        "Anh Tuan Luu",
-        "Dong Huang",
-        "See-Kiong Ng"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.PL"
-      ],
-      "published": "2026-09-02T10:30:05+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22934",
       "title": "Measuring Behavioural Signatures of Large Language Models through Psychometric Profiling",
       "title_zh": "",
@@ -29708,62 +29863,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.22239",
-      "title": "Knowledge Graph-Augmented Ambient AI for Clinical Note Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22239",
-      "arxiv_id": "2609.22239",
-      "authors": [
-        "Jakir Hossain",
-        "Yi-Fei Zhao",
-        "Hongjian Wang",
-        "Minmei Shih",
-        "Katie Leigh Mullen",
-        "Ahmad P. Tafti",
-        "Leming Zhou",
-        "Manoj Purohit",
-        "William Hogan",
-        "Jay Zeng",
-        "Elizabeth Skidmore",
-        "Yanshan Wang"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-04T03:05:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.22219",
-      "title": "Knowing, and Saying It Only When Asked: LLM Endognostics and the Schizognosis of Minerva-7B",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22219",
-      "arxiv_id": "2609.22219",
-      "authors": [
-        "Fabrizio Davide",
-        "Francesco Collova"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG",
-        "evaluation",
-        "datasets",
-        "included"
-      ],
-      "published": "2026-09-02T09:38:04+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2605.10681",
       "title": "Kernel-based potential mean-field games with unbiased random Fourier $U$-statistics",
       "title_zh": "基于核的势平均场博弈与无偏随机傅里叶U统计量",
@@ -30274,30 +30373,6 @@
         "cs.CV"
       ],
       "published": "2026-09-19T14:47:57+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.22241",
-      "title": "H2LooP Telecom Model v1: From Telecom Comprehension to Autonomous Issue and PR Resolution",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22241",
-      "arxiv_id": "2609.22241",
-      "authors": [
-        "Amit Singh",
-        "Vedant Nipane",
-        "Mayank Goel",
-        "Pulkit Agrawal",
-        "Sairanjan Mishra"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-04T13:27:17+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -31013,49 +31088,6 @@
       ],
       "summary_zh": "带内全双工（IBFD）多输入多输出（MIMO）系统能够在同一频段同时发送和接收，提高下一代无线网络的频谱效率。然而，IBFD-MIMO系统易受自干扰（SI）影响，SI可能压倒目标信号（SOI）。在这种情况下，可采用盲源分离（BSS）算法去除SI并执行联合感知与通信（JSAC），但BSS算法大多假设理想化的线性准平稳信号模型，这在现实射频（RF）损伤下不成立，如I/Q不平衡、载波频率偏移（CFO）、相位噪声和功率放大器非线性。本文提出一种两阶段回声状态网络（ESN）方案，在这些现实条件下优于BSS。一个冻结的ESN离线训练以表征静态SI路径，而一个自适应ESN通过递归最小二乘在线更新，使用稀疏导频符号跟踪时变SOI路径。我们评估所提方案在不同块大小下的SOI恢复性能和捕获速度，并与其他循环神经网络（RNN）如长短期记忆（LSTM）和门控循环单元（GRU）进行比较。仿真结果表明，所提方法在效率和SOI恢复方面均优于BSS、LSTM和GRU，证明了ESN在现实IBFD MIMO系统中实时非线性自干扰消除的可行性。",
       "insight_zh": "该研究展示了ESN在非线性信号恢复中的潜力，但其应用场景为无线通信，与地理空间智能或城市时空数据挖掘无直接联系。"
-    },
-    {
-      "key": "arxiv:2609.22223",
-      "title": "EAVer: Long-Form Factuality Verification as an End-to-End Agentic Policy",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22223",
-      "arxiv_id": "2609.22223",
-      "authors": [
-        "Kening Zheng",
-        "Aoying Zheng",
-        "Zhigang Chang",
-        "Yazhi Guo",
-        "Miaotian Guo",
-        "Qingwei Zong",
-        "Xianhai Xie",
-        "Weiqiang Jin",
-        "Chengze Li",
-        "Hanrong Zhang",
-        "Jie Yang",
-        "Wei-Chieh Huang",
-        "Lingzhe Zhang",
-        "Liancheng Fang",
-        "Xin Zou",
-        "Hanqian Li",
-        "Jiahao Huo",
-        "Yibo Yan",
-        "Zizhuang Deng",
-        "Lei Miao",
-        "Wei Guo",
-        "Haihong Tang",
-        "Bo Zheng",
-        "Philip S. Yu"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "published": "2026-09-02T21:00:35+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2512.13853",
@@ -32035,28 +32067,6 @@
         "cs.CV"
       ],
       "published": "2026-09-21T10:55:26+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.22222",
-      "title": "Can Coding Agents Reproduce Official Statistics? Metadata, Retry Budget and the Limits of Execution Feedback in a Controlled Eurostat Benchmark",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22222",
-      "arxiv_id": "2609.22222",
-      "authors": [
-        "Sabina-Cristiana Necula"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "cs.SE"
-      ],
-      "published": "2026-09-02T13:21:14+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -34220,6 +34230,45 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据或结论信息。",
       "insight_zh": "从标题推断，该工作可能通过细粒度任务拆分提升异构GPU利用率，或对地理空间深度学习训练有间接算力意义，但摘要缺失无法确认。"
+    },
+    {
+      "key": "arxiv:2609.22238",
+      "title": "Task-Aware QUBO Allocation for Mixed-Precision Quantization",
+      "title_zh": "面向混合精度量化的任务感知QUBO分配",
+      "url": "https://arxiv.org/abs/2609.22238",
+      "arxiv_id": "2609.22238",
+      "authors": [
+        "Osama Orabi",
+        "Artur Zagitov",
+        "Hadi Salloum",
+        "Viktor A. Lobachev",
+        "and Yaroslav Kholodov"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CV",
+        "architectures",
+        "and",
+        "baselines,",
+        "robustness",
+        "analysis,",
+        "updated",
+        "presentation.",
+        "Corrected",
+        "the",
+        "title",
+        "metadata"
+      ],
+      "published": "2026-09-04T01:26:23+00:00",
+      "score": 3,
+      "reason": "该论文研究神经网络结构化剪枝的QUBO框架，属于模型压缩与优化领域，与地理空间智能无直接关联。",
+      "tags": [
+        "模型剪枝",
+        "组合优化",
+        "量化"
+      ],
+      "summary_zh": "神经网络剪枝可以表述为组合优化问题，但许多现有方法依赖独立的滤波器重要性分数或简化的目标函数。本文提出一种混合二次无约束二元优化（QUBO）框架，用于结构化滤波器剪枝，将任务感知的敏感度信息与候选滤波器之间的交互相结合。该公式将一阶泰勒敏感度和Weight-Fisher敏感度纳入目标的线性部分，并可额外将激活相似度纳入二次交互。为在不引入显式二次基数惩罚的情况下控制目标剪枝基数，作者对容量激励进行二分搜索，以确定经验上产生目标剪枝基数的系数。作者进一步研究了两阶段QUBO-张量列精化策略，其中QUBO解初始化无梯度概率黑盒优化，以使用下游指标搜索改进的剪枝掩码。在SIDD图像去噪任务和Half-UNet模型上的实验表明，在所研究的剪枝目标下，混合QUBO比所评估的泰勒和L1基QUBO基线获得更高的PSNR和SSIM。在固定数据集协议下的多种子实验用于评估鲁棒性，而受控子问题实验表明，随着组合问题规模增长，张量列精化变得越来越有价值。结果支持混合QUBO作为所评估设置下的任务感知结构化剪枝框架，同时也凸显了基于掩码的剪枝在计算和部署方面的局限性。",
+      "insight_zh": "该工作将剪枝建模为QUBO组合优化，其任务感知敏感度与交互建模思路或可迁移至地理空间模型压缩，但论文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2608.02027",
