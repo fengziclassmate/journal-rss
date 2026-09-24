@@ -14,38 +14,38 @@
     "arxiv:2605.25200",
     "arxiv:2609.26550",
     "arxiv:2609.25939",
+    "arxiv:2609.25669",
     "arxiv:2609.25067",
+    "arxiv:2609.26094",
+    "arxiv:2609.26093",
     "arxiv:2609.25010",
     "arxiv:2509.13813",
     "arxiv:2605.10698",
     "arxiv:2608.25286",
     "arxiv:2604.13706",
     "arxiv:2609.26532",
+    "arxiv:2609.26261",
     "arxiv:2602.04577",
     "arxiv:2609.26505",
     "arxiv:2609.25569",
     "arxiv:2609.25432",
     "arxiv:2609.25179",
     "arxiv:2609.24526",
-    "arxiv:2609.22158",
-    "arxiv:2609.26166",
-    "arxiv:2607.16900",
-    "arxiv:2510.17881",
-    "arxiv:2410.07421"
+    "arxiv:2609.22158"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:667",
-    "deepseek": "partial:10/270;failed-batches:26"
+    "deepseek": "partial:29/259;failed-batches:23"
   },
-  "updated_at": "2026-09-23T22:01:12.259803+00:00",
+  "updated_at": "2026-09-24T00:51:16.789962+00:00",
   "analysis_stats": {
     "total": 667,
-    "analyzed": 407,
+    "analyzed": 437,
     "high": 3,
-    "medium": 16,
-    "low": 31,
-    "below_threshold": 357
+    "medium": 19,
+    "low": 35,
+    "below_threshold": 380
   },
   "papers": [
     {
@@ -389,6 +389,33 @@
       "insight_zh": "该工作表明在LLM工作流中引入语义结构化的演示选择可同时降低优化成本并提升准确率，但其在空间任务中的适用性尚未验证。"
     },
     {
+      "key": "arxiv:2609.25669",
+      "title": "From Utterances to Networks: Modelling Slang Adoption and Diffusion Across Subreddits",
+      "title_zh": "从话语到网络：建模俚语在Reddit子社区间的采纳与扩散",
+      "url": "https://arxiv.org/abs/2609.25669",
+      "doi": "",
+      "arxiv_id": "2609.25669",
+      "authors": [
+        "Xiaoning Wang",
+        "Ted Underwood",
+        "Zhewei Sun"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-22T04:19:16+00:00",
+      "score": 62,
+      "reason": "该研究利用大语言模型作为可扩展标注器，结合社会网络结构与语言上下文建模新词在Reddit子社区间的采纳与扩散，与研究中LLM应用及多智能体/网络扩散建模方向相关，但地理空间属性较弱。",
+      "tags": [
+        "LLM标注",
+        "社会网络扩散",
+        "在线社区",
+        "俚语传播",
+        "时空数据挖掘"
+      ],
+      "abstract": "Adoption and diffusion of neologisms in online communities have received renewed attention in recent years. As internet slang terms such as APT, referring to a K-pop song, and phrases such as Canon Event meaning an embarrassing but pivotal event, go viral online, it becomes increasingly important to understand the mechanisms that contribute to their success. Prior studies have often explained slang diffusion either from the perspective of social interaction or from the linguistic properties of the slang itself, but rarely from both perspectives together. One major obstacle has been the high cost of annotating slang usage in large-scale online communication. Recent advances in large language models (LLMs), however, make it possible to use them as scalable annotators for such tasks. In this study, we first curate a human-annotated benchmark to evaluate LLM performance in detecting slang usage in real Reddit communication. We then leverage LLM-based annotations to model slang adoption and diffusion. Our results show that slang diffusers with higher bridging capital are associated with increased subsequent adoption, whereas diffusers with higher bonding capital are associated with reduced adoption. We also find that wider contextual usage of a slang term is associated with a longer time before new users officially adopt it. Together, these findings suggest that both social-network structure and linguistic context shape the diffusion of neologisms in online communities.",
+      "summary_zh": "该研究关注网络新词（如APT、Canon Event等）在在线社区中的传播机制。以往研究多从社会互动或语言属性单一视角解释俚语扩散，且大规模标注俚语使用成本高昂。本文首先构建人工标注基准以评估大语言模型在真实Reddit交流中检测俚语使用的能力，随后利用LLM标注建模俚语的采纳与扩散。结果显示，具有更高桥接资本的扩散者与后续采纳增加相关，而具有更高 bonding 资本的扩散者与采纳减少相关；俚语更广泛的上下文使用与其被新用户正式采纳所需时间更长相关。研究表明社会网络结构与语言上下文共同塑造在线社区新词的扩散。",
+      "insight_zh": "该工作提示LLM可作为低成本标注器支撑大规模社会传播建模，其“网络结构+语言上下文”双视角思路可迁移至城市更新中政策话语、社区议题或网络舆情的扩散分析，但需注意其数据与结论均限于在线社区场景。"
+    },
+    {
       "key": "arxiv:2609.25067",
       "title": "SPARC: SuperPixel-Aware Region Contrastive Learning for Self-Supervised Dense Prediction",
       "title_zh": "SPARC：面向自监督密集预测的超像素感知区域对比学习",
@@ -419,6 +446,61 @@
       "abstract": "Self-supervised learning (SSL) has become an effective approach for learning visual representations without manual annotations. Among SSL approaches, contrastive learning has been widely used for visual representation learning. However, existing contrastive SSL methods have focused primarily on image-level or pixel-level representation learning, while region-level representation learning remains less explored. We propose SPARC, a region-level contrastive learning framework that leverages superpixels to establish explicit correspondence between augmented image views. SPARC introduces a region contrastive branch that performs superpixel-based feature pooling and optimizes a region-level contrastive objective jointly with a global image-level objective. Under identical settings, SPARC consistently outperforms previous methods such as MoCo-v2 and DenseCL, achieving improvements of up to +9.79 mIoU for semantic segmentation and +4.88 AP for object detection. Ablation studies further demonstrate that region-level objectives produce the strongest performance. Thus, region-level contrastive learning is an effective approach for improving self-supervised visual pretraining for dense prediction tasks. Code repository can be accessed at https://github.com/xRIPEIx/SPARC.",
       "summary_zh": "自监督学习已成为无需人工标注学习视觉表征的有效途径，其中对比学习被广泛用于视觉表征学习。然而现有对比自监督方法主要关注图像级或像素级表征学习，区域级表征学习仍较少被探索。本文提出SPARC，一种利用超像素在增强图像视图之间建立显式对应关系的区域级对比学习框架。SPARC引入区域对比分支，执行基于超像素的特征池化，并将区域级对比目标与全局图像级目标联合优化。在相同设置下，SPARC持续优于MoCo-v2和DenseCL等先前方法，在语义分割上最高提升+9.79 mIoU，在目标检测上提升+4.88 AP。消融研究进一步表明区域级目标产生最强性能。因此，区域级对比学习是提升自监督视觉预训练用于密集预测任务的有效途径。代码仓库见 https://github.com/xRIPEIx/SPARC。",
       "insight_zh": "该文的区域级对比学习思路可迁移至遥感密集预测任务（如变化检测、语义分割）的预训练阶段，超像素作为区域划分单元与遥感影像的地物边界具有一定契合度；但摘要未涉及遥感数据或城市应用，其实际迁移效果需进一步验证。"
+    },
+    {
+      "key": "arxiv:2609.26094",
+      "title": "CoEvo: Oracle-Grounded Self-Evolution of a Single Model for Multi-Step Causal Reasoning",
+      "title_zh": "CoEvo：面向多步因果推理的单模型Oracle锚定自演化",
+      "url": "https://arxiv.org/abs/2609.26094",
+      "doi": "",
+      "arxiv_id": "2609.26094",
+      "authors": [
+        "Jian Zhang",
+        "Bingyi Wang",
+        "Yizhi Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-18T03:29:29+00:00",
+      "score": 62,
+      "reason": "该文提出基于可查询oracle的单模型自演化框架，通过Proposer与Solver角色交替实现多步因果推理的过程级监督，与研究中LLM和多智能体方向高度相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "因果推理",
+        "自演化",
+        "过程监督"
+      ],
+      "abstract": "Multi-step causal reasoning requires chaining inferences where each step constrains the next. An early error propagates silently, and a correct answer reached via flawed logic evades outcome-level detection. In specialized domains, teacher LLMs err on intermediate steps, safety constraints restrict cloud distillation, and shifting conditions demand adaptation, leaving self-evolution as the practical route. Naive self-evolution can collapse: outcome-only rewards let the model exploit distributional shortcuts, and weak self-evaluation reinforces spurious paths into stable failure patterns. We exploit a key asymmetry: generating a correct chain is hard, but verifying a single step is easy. Many high-stakes domains admit a deterministic, queryable oracle, a physics simulator or rule engine over codified constraints. It checks asserted steps without teacher-level ability and abstains beyond its rules; it can check what the model asserts, never replace it. This enables CoEvo, an oracle-grounded self-evolution framework where a single model alternates between Proposer and Solver. As Solver, the model generates competing chains; intra-group debate exposes disagreement steps, a proxy for the capability boundary, and the oracle adjudicates them into process-level supervision. As Proposer, the same model constructs progressively harder scenarios inside oracle constraints, steering the curriculum toward deep multi-hop chains. Both roles are updated jointly, so training pressure co-evolves with the model. On industrial, clinical, and legal multi-step causal reasoning benchmarks, CoEvo enables an 8B LLM to sustain self-evolution, surpassing distillation baselines and the strongest proprietary reference on path correctness (82.1% vs. 71.4%). The trained model generalizes to unseen categories and systems, preserving root-cause accuracy.",
+      "summary_zh": "多步因果推理需要逐步约束的推理链，早期错误会静默传播，而通过错误逻辑得到的正确答案难以在结果层面被检测。在专业领域中，教师LLM在中间步骤会出错，安全约束限制云端蒸馏，条件变化要求适应，因此自演化成为可行路径。朴素自演化可能崩溃：仅结果奖励使模型利用分布捷径，弱自评估将虚假路径强化为稳定失败模式。作者利用一个关键不对称性：生成正确链很难，但验证单步很容易。许多高风险领域存在确定性、可查询的oracle（如物理模拟器或规则引擎），它无需教师级能力即可检查断言步骤，并在规则之外弃权。这促成了CoEvo框架，单个模型在Proposer和Solver之间交替。作为Solver，模型生成竞争链，组内辩论暴露分歧步骤（能力边界的代理），oracle将其裁决为过程级监督。作为Proposer，同一模型在oracle约束内构建逐渐更难的情景，引导课程走向深度多跳链。两个角色联合更新。在工业、临床和法律多步因果推理基准上，CoEvo使8B LLM持续自演化，在路径正确率上超越蒸馏基线和最强专有参考（82.1% vs. 71.4%）。",
+      "insight_zh": "该框架的oracle锚定过程监督思路可迁移至地理空间智能中的规则约束推理（如城市规划法规、遥感解译规则），但其摘要未涉及地理空间数据或城市更新场景，需自行验证跨域适用性。"
+    },
+    {
+      "key": "arxiv:2609.26093",
+      "title": "RECAP: Relation Evidence Calibration for Detecting Spatial Relation Hallucinations in Vision-Language Models",
+      "title_zh": "RECAP：用于检测视觉语言模型中空间关系幻觉的关系证据校准",
+      "url": "https://arxiv.org/abs/2609.26093",
+      "doi": "",
+      "arxiv_id": "2609.26093",
+      "authors": [
+        "Feixiang Liu",
+        "Qiang Qiu",
+        "Qingyang Li",
+        "Hui Xu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-04T14:03:52+00:00",
+      "score": 62,
+      "reason": "该文研究视觉语言模型中的空间关系幻觉检测与关系证据校准，与LLM/多智能体及地理空间智能方向相关，但其核心是模型可信度校准而非地理空间分析，与城市更新或遥感变化检测的直接关联有限。",
+      "tags": [
+        "视觉语言模型",
+        "空间关系",
+        "幻觉检测",
+        "选择性预测",
+        "不确定性校准"
+      ],
+      "abstract": "Vision-language models can answer spatial relation questions confidently even when the image supports an incompatible relation. We formulate relation-grounded selective prediction: accept or reject an already-produced yes/no answer by auditing its visual support, rather than treating uncertainty as evidence. RECAP, our relation-evidence calibration framework, compares image-conditioned likelihoods for a claim, its semantic contradictions, and optional one-sided supports, then converts these witnesses into an answer-conditioned rejection risk. A calibration-only gate preserves confidence as a veto when confidence is demonstrably informative and otherwise deploys relation evidence alone. Across 20 group/image-disjoint splits, RECAP lowers H-FPR@80 over confidence by between 2.0 and 17.9 points on VSR and raises Acc@80 by 3.0, 8.6, and 12.6 points on What'sUp for Qwen3-VL-8B, InternVL3.5-8B, and LLaVA-1.5-7B. It outperforms matched VCD-style visual contrast on all four primary metrics in all six settings. Full-pool VSR fallback, target-ranked GSR-Bench transfer, equal-budget supervised controls, and two additional checkpoints show a consistent operating principle: structured counterevidence complements certainty when confidence is misaligned, while the gate retains confidence when it is already useful.",
+      "summary_zh": "视觉语言模型即使图像支持的是不相容的关系，也可能自信地回答空间关系问题。作者提出“关系接地的选择性预测”：通过审查已生成的是/否答案的视觉支持来决定接受或拒绝，而不是把不确定性本身当作证据。RECAP框架比较某个断言、其语义矛盾以及可选单侧支持在图像条件下的似然，并将这些证据转化为以答案为条件的拒绝风险。一个仅做校准的门控在置信度确实有信息量时保留其否决作用，否则仅使用关系证据。在20个组/图像不相交的划分上，RECAP在VSR上将H-FPR@80较置信度降低2.0至17.9个百分点，并在What'sUp上对Qwen3-VL-8B、InternVL3.5-8B和LLaVA-1.5-7B分别将Acc@80提高3.0、8.6和12.6个百分点。在全部六种设置下，它在四项主要指标上均优于匹配的VCD式视觉对比。全池VSR回退、目标排序的GSR-Bench迁移、等预算监督对照以及另外两个检查点显示出一致的工作原则：当置信度失准时，结构化反证据可补充确定性；而当置信度已有用时，门控会保留置信度。",
+      "insight_zh": "该工作提示，在空间关系判断中引入结构化反证据可作为置信度校准的补充手段；对地理空间智能中依赖VLM进行空间推理的场景，可能提供一种拒绝不可靠空间断言的思路，但其结论限于所测基准与模型。"
     },
     {
       "key": "arxiv:2609.25010",
@@ -583,6 +665,36 @@
       "abstract": "LLM agents often use generative models for bounded decisions, raising the question of when these decisions can be handled more efficiently without reducing task success. We study REFLEX, an agent architecture that uses Jev as a fast, typed decision layer and calls a strong LLM when confidence is low, or generation is required. On a frozen 100-task benchmark, REFLEX achieves 95% success with 72.7% fewer strong-model calls than a strong-only agent, with reductions persisting across three fallback families. Controlled interventions show that reliability depends on action-set size and near-valid alternatives near authorization boundaries. External BFCL and $\\tau$-style evaluations reveal limited advantages over a cheap generative cascade when ordinary routing is already highly accurate. These findings identify when selective control with Jev can reduce computation and where its benefits are limited.",
       "summary_zh": "LLM智能体常使用生成模型进行有界决策，这引出了何时可以更高效地处理这些决策而不降低任务成功率的问题。我们研究REFLEX，一种使用Jev作为快速、类型化决策层，并在置信度低或需要生成时调用强LLM的智能体架构。在一个冻结的100任务基准上，REFLEX达到95%成功率，强模型调用次数比仅用强模型的智能体减少72.7%，且该减少在三种回退族中持续存在。受控干预表明，可靠性取决于动作集大小以及授权边界附近的近有效替代方案。外部BFCL和τ风格评估显示，当普通路由已经高度准确时，其相对于廉价生成式级联的优势有限。这些发现识别了使用Jev进行选择性控制何时能减少计算，以及其收益有限之处。",
       "insight_zh": "该工作表明，在LLM智能体中引入类型化快速决策层并按置信度升级，可显著减少强模型调用并保持高成功率；但其收益受动作集规模和边界模糊性制约，在路由已高度准确时优势有限。"
+    },
+    {
+      "key": "arxiv:2609.26261",
+      "title": "Coding Agents are Strong Prompt Optimizers",
+      "title_zh": "编码智能体是强大的提示优化器",
+      "url": "https://arxiv.org/abs/2609.26261",
+      "doi": "",
+      "arxiv_id": "2609.26261",
+      "authors": [
+        "Agamdeep Singh",
+        "Srishti Gautam",
+        "Priyanshu Gupta",
+        "Nikita Mehrotra",
+        "Tanmay Bakshi",
+        "Sumit Gulwani"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-13T11:10:32+00:00",
+      "score": 58,
+      "reason": "该文提出编码智能体技能蒸馏（CASD）方法，利用编码智能体对轨迹语料进行离线分析以合成优化提示，与研究中LLM和多智能体方向高度相关，但未涉及地理空间应用。",
+      "tags": [
+        "编码智能体",
+        "提示优化",
+        "智能体轨迹",
+        "LLM",
+        "离线分析"
+      ],
+      "abstract": "Search-based prompt optimizers improve prompts through iterative search: they propose edits, execute fresh rollouts, score the resulting trajectories, and retain only edits that improve a validation metric. We show that this optimization loop is unnecessary. Given only a static corpus of agent trajectories, an off-the-shelf coding agent can directly synthesize an optimized prompt, requiring neither environment access nor validation data. We call this approach \\textit{Coding-Agent Skill Distillation} (CASD). The key insight is reflection scope. Rather than reasoning over a small batch of trajectories at each optimization step, the coding agent writes and executes analysis code to compute corpus-wide statistics, identifies systematic failure modes, inspects representative episodes, and distills the resulting insights into behavioral rules. Across four agentic benchmarks (ALFWorld, $\\tau^2$-bench retail and telecom, and SpreadsheetBench-Verified), under matched data access, a single CASD pass outperforms GEPA, a state-of-the-art reflective prompt optimizer, on three of four benchmarks and outperforms validation-gated reflective search (SkillOpt) on all four, improving the unoptimized baseline by 16.6 percentage points on average versus 10.9 for GEPA and 5.3 for SkillOpt. Because CASD performs a single offline analysis pass rather than iterative search, producing an optimized prompt costs approximately \\$1.60---over $22\\times$ cheaper than validation-gated search. Even when competing methods are granted additional validation data and unrestricted environment access, CASD remains ahead on two of four benchmarks. These results suggest that corpus-scale statistical reflection is a viable alternative to iterative search for prompt optimization.",
+      "summary_zh": "基于搜索的提示优化器通过迭代搜索改进提示：提出编辑、执行新rollout、评分轨迹、仅保留改善验证指标的编辑。作者展示这一优化循环是不必要的。仅给定智能体轨迹的静态语料，现成的编码智能体可以直接合成优化提示，既不需要环境访问也不需要验证数据。作者称此方法为编码智能体技能蒸馏（CASD）。关键洞见是反思范围。编码智能体不是在每个优化步骤推理小批量轨迹，而是编写并执行分析代码以计算语料级统计、识别系统性失败模式、检查代表性片段，并将洞见蒸馏为行为规则。在四个智能体基准（ALFWorld、τ²-bench零售和电信、SpreadsheetBench-Verified）上，在匹配数据访问下，单次CASD通过优于最先进的反思提示优化器GEPA（四个基准中的三个），并优于验证门控反思搜索SkillOpt（全部四个），将未优化基线平均提升16.6个百分点，而GEPA为10.9，SkillOpt为5.3。由于CASD执行单次离线分析而非迭代搜索，生成优化提示的成本约为1.60美元——比验证门控搜索便宜22倍以上。即使竞争方法获得额外验证数据和无限制环境访问，CASD仍在四个基准中的两个上领先。",
+      "insight_zh": "语料级统计反思替代迭代搜索的思路可迁移至地理空间智能中的智能体工作流优化（如城市更新分析智能体的提示工程），但摘要未涉及地理空间任务，需自行验证。"
     },
     {
       "key": "arxiv:2602.04577",
@@ -773,126 +885,6 @@
       "abstract": "Key-value (KV) caching is essential for efficient autoregressive large language model (LLM) inference, but the cache grows linearly with context length, increasing storage and decoding costs. KV cache compression mitigates this cost by retaining only a subset of cached tokens. This challenge is particularly important for multi-step LLM agents, where a query expands into trajectories of reasoning, tool interactions, and retrieved observations. Existing pruning methods typically treat the cache as a flat token stream and rank tokens by recency or attention saliency. This creates a mismatch between the unit of compression and the unit of reasoning: token-level pruning removes individual entries, whereas useful information in multi-step agents is often organized into reasoning steps with uneven and delayed importance. Consequently, an early observation or intermediate decision may receive little recent attention yet remain essential for later evidence synthesis. We term this failure mode Reasoning Continuity Disruption.These observations motivate KV cache compression that jointly considers token- and reasoning-step-level information. StepKV addresses this goal by treating reasoning steps as first-class retention units. It associates cache entries with their generating steps, estimates step utility from trajectory-derived signals, and combines this utility with token-level saliency. The resulting scores globally rank prunable tokens, from which StepKV retains the top-scoring entries under a target budget. StepKV thus provides a step-centric perspective for agent KV cache compression. Across multi-hop QA and long-horizon web reasoning tasks, StepKV sustains accuracy under low KV budgets where token-level baselines degrade sharply, offering a more robust efficiency-accuracy trade-off for multi-step agent inference.",
       "summary_zh": "键值（KV）缓存对高效自回归大语言模型推理至关重要，但缓存随上下文长度线性增长，增加存储和解码成本。KV缓存压缩通过仅保留缓存token的子集来缓解此成本。这一挑战对多步LLM智能体尤为重要，其中查询扩展为推理、工具交互和检索观察的轨迹。现有剪枝方法通常将缓存视为扁平token流，按新近度或注意力显著性对token排序。这造成压缩单元与推理单元之间的错配：token级剪枝移除单个条目，而多步智能体中的有用信息常组织为重要性不均且延迟出现的推理步骤。因此，早期观察或中间决策可能近期注意力很低但对后续证据综合仍至关重要。我们将此失效模式称为推理连续性中断。这些观察促使KV缓存压缩需联合考虑token级和推理步骤级信息。StepKV通过将推理步骤视为一等保留单元来实现此目标。它将缓存条目与其生成步骤关联，从轨迹派生信号估计步骤效用，并将该效用与token级显著性结合。所得分数对可剪枝token进行全局排序，StepKV在目标预算下保留得分最高的条目。StepKV由此为智能体KV缓存压缩提供步骤中心的视角。在多跳问答和长程网页推理任务上，StepKV在低KV预算下维持准确率，而token级基线急剧退化，提供了更稳健的效率-准确率权衡。",
       "insight_zh": "该文以推理步骤为压缩单元的思路，对构建长程地理空间推理智能体（如多步空间分析、跨数据源证据综合）的效率优化具有借鉴意义，尤其在城市更新分析中智能体需整合多源时空证据时；但摘要未涉及地理空间任务，迁移需验证。"
-    },
-    {
-      "key": "arxiv:2609.26166",
-      "title": "MGRL-RSCC: Multi-Granularity Reward Reinforcement Learning for Fine-Grained Remote Sensing Change Captioning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26166",
-      "doi": "",
-      "arxiv_id": "2609.26166",
-      "authors": [
-        "Futian Wang",
-        "Mengqi Wang",
-        "Xiao Wang",
-        "Wentao Wu",
-        "Haowen Wang",
-        "Zhicheng Zhao",
-        "Jin Tang"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-09T11:05:34+00:00",
-      "score": 55,
-      "reason": "关键词命中：Remote Sensing、Transformer",
-      "tags": [
-        "Remote Sensing",
-        "Transformer"
-      ],
-      "abstract": "Remote Sensing Change Captioning (RSCC), which aims to generate accurate and detailed linguistic descriptions of ground object variations from bi-temporal remote sensing images, is a critical and challenging task in intelligent remote sensing interpretation. The mainstream autoregressive training paradigm faces severe exposure bias and train-test distribution mismatch, resulting in cumulative generation errors. They tend to produce conservative and template-fixed captions while ignoring subtle scene change details. To address these challenges, this paper proposes a novel multi-granularity reward reinforcement learning paradigm, termed MGRL-RSCC. Specifically, we first leverage a CNN and hierarchical self-attention module to extract and enhance visual features from bi-temporal remote sensing images. A Transformer decoder is then utilized to complete visual-to-linguistic translation. Different from existing methods, we design a dual-decoding strategy and a two-stage joint optimization scheme, which combines token-level supervised learning via greedy decoding and multi-granularity reward-driven self-critical reinforcement learning via sampling decoding. We further construct three complementary reward functions covering linguistic fluency, change state consistency, and structural-semantic relevance to comprehensively optimize caption quality and alleviate false and missing change descriptions. Extensive experiments on multiple public RSCC benchmark datasets demonstrate that the proposed MGRL-RSCC effectively mitigates exposure bias and conservative generation problems in traditional autoregressive methods. The source code and pre-trained models will be released on https://github.com/Event-AHU/MGRL-RSCC",
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2607.16900",
-      "title": "Simulate to Generalize: Scaling Stateful Supervision for API-calling Agents using LLM World Models",
-      "title_zh": "仿真以泛化：利用LLM世界模型扩展API调用智能体的状态化监督",
-      "url": "https://arxiv.org/abs/2607.16900",
-      "doi": "",
-      "arxiv_id": "2607.16900",
-      "authors": [
-        "Seanie Lee",
-        "Sanjoy Chowdhury",
-        "Chao Jiang",
-        "Cheng-Yu Hsieh",
-        "Ting-Yao Hu",
-        "Alexander T Toshev",
-        "Oncel Tuzel",
-        "Raviteja Vemulapalli"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文研究基于LLM世界模型的API调用智能体训练与泛化，与研究中LLM和多智能体方向直接相关，但摘要缺失，无法评估其与地理空间任务的结合程度。",
-      "tags": [
-        "LLM世界模型",
-        "API调用智能体",
-        "状态化监督",
-        "仿真到泛化"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，仅提供标题与发表场所（arXiv）。标题表明该工作通过LLM世界模型为API调用智能体提供可扩展的状态化监督，以实现仿真到真实场景的泛化。",
-      "insight_zh": "从标题推断，该工作可能为智能体在复杂环境中的训练与泛化提供方法框架，或可迁移至地理空间智能体任务，但摘要缺失，无法确认具体数据集、实验结果或创新点。"
-    },
-    {
-      "key": "arxiv:2510.17881",
-      "title": "POPI: Personalizing LLMs via Optimized Natural Language Preference Inference",
-      "title_zh": "POPI：通过优化的自然语言偏好推断实现LLM个性化",
-      "url": "https://arxiv.org/abs/2510.17881",
-      "doi": "",
-      "arxiv_id": "2510.17881",
-      "authors": [
-        "Yizhuo Chen",
-        "Xin Liu",
-        "Ruijie Wang",
-        "Zheng Li",
-        "Pei Chen",
-        "Changlong Yu",
-        "Qingyu Yin",
-        "Priyanka Nigam",
-        "Meng Jiang",
-        "Bing Yin"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文研究通过优化的自然语言偏好推断实现LLM个性化，属于LLM应用方向，与研究者LLM与多智能体兴趣相关，但无地理空间维度。",
-      "tags": [
-        "LLM",
-        "个性化",
-        "偏好推断",
-        "自然语言"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据与结论信息。",
-      "insight_zh": "从标题推测，该工作可能通过从用户交互中推断自然语言形式的偏好来实现LLM个性化；由于摘要为空，无法确认其推断机制、评估方式或应用场景。"
-    },
-    {
-      "key": "arxiv:2410.07421",
-      "title": "Bayesian Fusion of Active Contour Models and ConvNet Priors for Standing Dead Tree Segmentation",
-      "title_zh": "主动轮廓模型与ConvNet先验的贝叶斯融合用于立枯木分割",
-      "url": "https://arxiv.org/abs/2410.07421",
-      "doi": "",
-      "arxiv_id": "2410.07421",
-      "authors": [
-        "Przemyslaw Polewski",
-        "Jacquelyn Shelton",
-        "Wei Yao",
-        "Marco Heurich"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 55,
-      "reason": "该论文研究立枯木分割，属于遥感影像分割与变化检测相关领域，与用户画像中的遥感变化检测和多源数据融合有一定关联，但摘要缺失，无法评估具体方法细节。",
-      "tags": [
-        "遥感",
-        "立枯木分割",
-        "主动轮廓",
-        "ConvNet先验",
-        "贝叶斯融合"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要缺失，无法提供内容摘要。",
-      "insight_zh": "从标题看，该工作将主动轮廓模型与卷积网络先验进行贝叶斯融合以分割立枯木，属于遥感影像目标分割范畴；由于摘要缺失，无法确认其数据集、精度或创新点，但与用户遥感变化检测方向存在潜在关联。"
     }
   ]
 }

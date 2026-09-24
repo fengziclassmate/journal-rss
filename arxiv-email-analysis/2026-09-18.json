@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 518,
+    "analyzed": 528,
     "high": 4,
     "medium": 22,
     "low": 35,
-    "below_threshold": 457
+    "below_threshold": 467
   },
   "papers": [
     {
@@ -6508,6 +6508,36 @@
       "insight_zh": "该研究展示了应用商店评论作为用户感知数据源的价值，其跨平台文本挖掘流程（主题建模+情感分类+统计检验）可类比用于评估地理信息类应用或城市服务平台的用户反馈，但原文未涉及地理空间维度。"
     },
     {
+      "key": "arxiv:2609.19158",
+      "title": "VisKG-LM: Compiling Knowledge Graphs into Visual Memory for Multiple-Choice Question Answering",
+      "title_zh": "VisKG-LM：将知识图谱编译为视觉记忆用于多选问答",
+      "url": "https://arxiv.org/abs/2609.19158",
+      "arxiv_id": "2609.19158",
+      "authors": [
+        "Yixin Peng",
+        "Er Jin",
+        "Shiwei Luo",
+        "Diego Collarana",
+        "Stefan Decker"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-07-29T17:02:58+00:00",
+      "score": 22,
+      "reason": "该论文将知识图谱编译为视觉记忆用于多选问答，涉及知识图谱、视觉语言模型与 LLM 推理，与研究中 LLM 与多智能体方向有一定方法关联，但不涉及城市更新或时空数据。",
+      "tags": [
+        "知识图谱",
+        "视觉记忆",
+        "多选问答",
+        "LLM"
+      ],
+      "summary_zh": "知识图谱通常通过图神经网络编码检索到的子图并与语言模型在线融合，导致同一子图在训练轮次、随机种子和评估运行中被反复重新编码，尽管知识图谱本身不变。作者提出 VisKG-LM，将图编码与语言推理解耦：把每个检索到的候选特定子图序列化为关系标注路径，并渲染为二维布局保留路径分支结构的图像；每张图像离线编码一次并缓存复用。推理时语言模型仅从文本理解问题与候选，最后一层才查询缓存的视觉记忆，读取其全局布局与局部关系细节，即图信息在文本理解之后才进入。在 CommonsenseQA、OpenBookQA 和 MedQA-USMLE 测试集上，VisKG-LM 相比 GreaseLM 分别提升 1.2、0.8 和 4.3 分，仅用约 4 亿在线参数即匹配或超过 70 亿参数的视觉语言模型 GraphVis；相比接收相同关系标注路径的纯文本对照，分别提升 4.2、6.5 和 5.1 分。",
+      "insight_zh": "该研究提示：将结构化知识离线编译为可复用的视觉记忆，可降低在线推理成本并保留关系细节；这一“离线编译+只读记忆”范式或可启发地理知识图谱与 LLM 结合的空间推理架构，但论文未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.20451",
       "title": "Seismic Site Response Prediction from Sparse Observations Using Finite-Element-Pretrained Latent Dynamics",
       "title_zh": "基于有限元预训练潜动力学的稀疏观测地震场地响应预测",
@@ -8000,6 +8030,41 @@
       "insight_zh": "从标题推断，该工作可能通过梯度信号自动决定多语言语音翻译模型中的参数共享策略以缓解低资源问题。其参数共享思路或可间接借鉴至多源地理数据融合模型，但需查阅全文确认。"
     },
     {
+      "key": "arxiv:2609.20804",
+      "title": "An Empirical Study of Harness Design for Coding Agents",
+      "title_zh": "编码智能体框架设计的实证研究",
+      "url": "https://arxiv.org/abs/2609.20804",
+      "arxiv_id": "2609.20804",
+      "authors": [
+        "Run-Ze Fan",
+        "Zihao Zhang",
+        "Simin Ma",
+        "Yebowen Hu",
+        "Shouju Wang",
+        "Kaiqiang Song",
+        "Fei Liu",
+        "Hamed Zamani",
+        "Xiaoyang Wang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "published": "2026-09-17T17:58:07+00:00",
+      "score": 20,
+      "reason": "该论文对编码智能体的框架组件（规划、动作空间、上下文管理）进行组件级实证研究，与研究中 LLM 与多智能体方向有较强方法关联，但不涉及地理空间数据或城市更新。",
+      "tags": [
+        "编码智能体",
+        "智能体框架设计",
+        "上下文管理",
+        "LLM"
+      ],
+      "summary_zh": "编码框架决定了自主编码智能体如何将模型能力转化为长时程软件工程表现，但已有工作通常将框架作为整体系统评估，各组件有效性不明。为支持组件级比较，作者使用一个轻量编码框架，固定执行循环，仅变化三个组件：规划、动作空间与上下文管理。在 SWE-Bench Verified 与 Terminal-Bench 2.1 上对四个模型评估了 176 个匹配设置，涵盖五种上下文管理策略、四种上下文窗口预算，以及规划与动作空间的有针对性消融。发现：（1）上下文窗口预算越紧，上下文管理越有价值，其收益主要来自避免上下文溢出失败；（2）在基于 LLM 的摘要之前先进行基于规则的省略，整体效率最高，而让被省略内容可恢复会增加模型很少使用的机制且无精度收益；（3）规划对较弱模型是精度支架，对较强模型则转为节省成本，精度变化不大；（4）预定义工具提升 bash 能力较弱模型的表现，而具备 bash 能力的模型可仅用 bash 接口有效工作并显著降低成本，在命令行任务上尤为明显。轨迹级分析解释了这些效应：上下文管理延长执行轨迹而不显著改变智能体行为，规划改变轨迹停止位置，动作空间改变代码编写的粒度。",
+      "insight_zh": "该研究提示：智能体框架的收益高度依赖组件与模型能力的匹配，上下文管理主要防止溢出而非改变行为；这些结论对构建面向地理空间分析的多智能体工作流（如工具接口与上下文预算设计）具有参考价值，但需在地理任务中重新验证。"
+    },
+    {
       "key": "arxiv:2601.15417",
       "title": "Ambient Dataloops: Generative Models for Dataset Refinement",
       "title_zh": "环境数据循环：用于数据集精炼的生成模型",
@@ -8309,6 +8374,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究探讨针对自托管AI智能体（Self-Hosted AI Agents）的自状态攻击（Self-State Attacks），并评估操作系统层面防御措施的有效性边界。",
       "insight_zh": "由于摘要缺失，无法对具体方法或结论进行推断。仅从标题看，该工作与地理空间智能的直接关联有限，但其关于AI智能体安全性的讨论或对多智能体地理空间系统中的安全与鲁棒性问题有参考价值。"
+    },
+    {
+      "key": "arxiv:2609.20283",
+      "title": "Queries Knew More Than We Thought: Uncovering Latent Knowledge in Segmentation Models",
+      "title_zh": "查询知道得比我们以为的更多：揭示分割模型中的潜在知识",
+      "url": "https://arxiv.org/abs/2609.20283",
+      "arxiv_id": "2609.20283",
+      "authors": [
+        "Ignacio M. De la Jara",
+        "Cristian Rodriguez-Opazo",
+        "and Damith Ranasinghe"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-30T01:46:10+00:00",
+      "score": 18,
+      "reason": "该论文研究冻结 DETR 系列分割模型的输出选择瓶颈，属于计算机视觉分割方法。其“已计算但未暴露的候选掩膜”思路对遥感变化检测与地理空间分割有潜在方法借鉴价值，但论文本身不涉及地理空间数据。",
+      "tags": [
+        "分割模型",
+        "DETR",
+        "输出选择",
+        "遥感变化检测可迁移"
+      ],
+      "summary_zh": "现代分割器常在昂贵计算完成后才失败：模型基于查询的候选中已存在有用掩膜，但部署时的选择规则未能将其暴露。作者研究冻结 DETR 系列模型中的这一输出选择瓶颈。仅使用真值的 oracle 首先显示，在已计算的掩膜提案中存在可观的隐藏提升空间。由此提出 HYDRA——一个仅在缓存冻结输出上训练的小型选择器，推理时对缓存候选打分并与显式保留基线比较，仅当留出集校准的边际表明所选候选足够更好时才采取行动。在 ADE20k 和 COCO 上，HYDRA 将 Mask2Former、MaskDINO 和 OneFormer 提升最多 +7.41 数据集 mIoU；在八个领域上平均将 SAM 3 提升 +9.4 类宏平均提示 IoU。配对 LoRA 对照表明轻量权重适配无法消除该瓶颈。作者进一步将这一效应与二分匹配下的查询特化联系起来，并在受控 TinyDETR 研究中验证。",
+      "insight_zh": "该工作提示：在遥感变化检测等分割任务中，冻结模型的候选输出可能已包含被选择规则抑制的有用结果，通过轻量选择器回收这些候选或可提升精度，但需在具体地理空间任务中另行验证。"
     },
     {
       "key": "arxiv:2609.20634",
@@ -8716,33 +8807,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19158",
-      "title": "VisKG-LM: Compiling Knowledge Graphs into Visual Memory for Multiple-Choice Question Answering",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19158",
-      "arxiv_id": "2609.19158",
-      "authors": [
-        "Yixin Peng",
-        "Er Jin",
-        "Shiwei Luo",
-        "Diego Collarana",
-        "Stefan Decker"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.IR",
-        "cs.LG"
-      ],
-      "published": "2026-07-29T17:02:58+00:00",
-      "score": 17,
-      "reason": "关键词命中：Graph Neural Network",
-      "tags": [
-        "Graph Neural Network"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.20186",
       "title": "To Copy or Not to Copy: Controlling Speculative Decoding via Intrinsic Model Signals",
       "title_zh": "",
@@ -8763,52 +8827,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20283",
-      "title": "Queries Knew More Than We Thought: Uncovering Latent Knowledge in Segmentation Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20283",
-      "arxiv_id": "2609.20283",
-      "authors": [
-        "Ignacio M. De la Jara",
-        "Cristian Rodriguez-Opazo",
-        "and Damith Ranasinghe"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-07-30T01:46:10+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20300",
-      "title": "Improving Generalization and Robustness in Offline Reinforcement Learning via Boundary-Aware Data Augmentation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20300",
-      "arxiv_id": "2609.20300",
-      "authors": [
-        "Gong Gao",
-        "Weidong Zhao",
-        "and Xianhui Liu"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-08-22T10:52:59+00:00",
-      "score": 17,
-      "reason": "关键词命中：Computer Vision",
-      "tags": [
-        "Computer Vision"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8858,31 +8876,6 @@
       "reason": "关键词命中：Transformer",
       "tags": [
         "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20222",
-      "title": "A Two-Stage Multi-Scale Attention-Based Network for Weakly Supervised Cataract Fundus Image Enhancement",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20222",
-      "arxiv_id": "2609.20222",
-      "authors": [
-        "Xiaoyong Fang",
-        "Yue Wang",
-        "Xiangyu Li",
-        "Wanshu Fan",
-        "and Dongsheng Zhou"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-04T01:22:24+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -8999,6 +8992,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结论。",
       "insight_zh": "摘要缺失，无法推断具体贡献；从标题看为特定语言的情感检测数据集，对社交媒体时空数据挖掘中的文本分析或有间接参考，但此推断缺乏摘要依据。"
+    },
+    {
+      "key": "arxiv:2609.20808",
+      "title": "Unifying Models of Intergroup Hostility in Online Discourse",
+      "title_zh": "统一在线话语中的群体间敌意模型",
+      "url": "https://arxiv.org/abs/2609.20808",
+      "arxiv_id": "2609.20808",
+      "authors": [
+        "Patrick Gerard",
+        "Julia Mendelsohn",
+        "Kristina Lerman"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.SI"
+      ],
+      "published": "2026-09-17T17:58:25+00:00",
+      "score": 15,
+      "reason": "该论文用大规模社媒数据统一建模群体间敌意修辞的六种理论机制，属于计算社会科学与文本挖掘，与时空数据挖掘仅有方法层面的弱关联，不涉及地理空间分析。",
+      "tags": [
+        "计算社会科学",
+        "在线话语",
+        "敌意修辞",
+        "社媒数据"
+      ],
+      "summary_zh": "针对社会群体的敌意修辞可能使排斥正常化、为不当对待辩护，并加剧极化与政治暴力。在线言论的敌意修辞治理借鉴了社会心理学、道德心理学与政治学的基础理论，但这些理论多平行发展，对敌意如何形成常给出不同甚至冲突的解释，且很少在真实话语中相互检验，导致对敌意修辞机制的理解碎片化。作者使用 2024 年美国总统大选期间 TikTok、Truth Social 和 Twitter/X 上的 286 万条帖子，在统一实证框架内建模六种群体间敌意基础理论的机制——边界建构、威胁建构、替罪羊化、负面评价、非人化与行动导向——以还原敌意修辞的整体组织方式。结构上发现边界建构与威胁建构锚定整个系统；时间上这些机制倾向于遵循规律顺序：边界建构、贬损与行动导向较早出现，非人化与威胁建构较晚，替罪羊化最晚。",
+      "insight_zh": "该研究提示：将多个竞争性理论放入同一实证框架可揭示修辞机制的结构与时间顺序；其“多理论统一建模+时序顺序分析”思路对时空舆情或城市社会感知研究有方法借鉴，但论文未涉及地理维度。"
     },
     {
       "key": "arxiv:2609.19122",
@@ -11118,6 +11138,31 @@
       "insight_zh": "该研究提供了关于LLM置信度信号在检索主导场景中局限性的预注册负面证据，对多智能体或LLM驱动的空间决策系统中置信度路由设计具有方法学警示意义，但未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.20300",
+      "title": "Improving Generalization and Robustness in Offline Reinforcement Learning via Boundary-Aware Data Augmentation",
+      "title_zh": "通过边界感知数据增强提升离线强化学习的泛化性与鲁棒性",
+      "url": "https://arxiv.org/abs/2609.20300",
+      "arxiv_id": "2609.20300",
+      "authors": [
+        "Gong Gao",
+        "Weidong Zhao",
+        "and Xianhui Liu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-22T10:52:59+00:00",
+      "score": 12,
+      "reason": "该论文研究离线强化学习中的数据增强与泛化鲁棒性，属于强化学习与机器学习方法层面，与城市更新、时空数据挖掘、遥感变化检测或多源地理空间数据融合没有直接关联，仅可作为通用方法参考。",
+      "tags": [
+        "离线强化学习",
+        "数据增强",
+        "泛化与鲁棒性"
+      ],
+      "summary_zh": "当前离线强化学习算法容易过拟合训练数据集，在真实环境中部署时分布内泛化与鲁棒性较差。现有方法多借用计算机视觉中的正则化技术，但由于低层物理信号对分布偏移高度敏感，这些方法仍存在明显局限。作者从理论上分析了随机片段插值训练下行为策略与动作价值函数的误差界，发现误差与状态间距离正相关。据此提出边界感知数据增强（BADA），利用邻近状态构建插值边界，生成更忠实保留原始数据分布的合成数据。在玩具环境中的定性研究表明，BADA 生成的混合样本在保持策略平滑性的同时能准确重建多模态价值分布；在有限离线数据集上的大量实验表明，BADA 在多个基准上达到当前最优性能。",
+      "insight_zh": "该工作提示：在数据受限条件下，通过构造边界感知的插值样本来缓解分布偏移，可能对时空数据稀缺场景下的模型泛化有借鉴意义；但其验证限于强化学习基准，尚未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.20250",
       "title": "How Far Can Sub-3B Open Language Models Go in Zero-Shot Essay Scoring on an 8 GB Consumer GPU?",
       "title_zh": "在8GB消费级GPU上，亚3B开源语言模型在零样本作文评分上能走多远？",
@@ -11998,6 +12043,37 @@
       "insight_zh": "从标题推断，该工作可能涉及视频中的时序变化建模，但应用场景为医学内窥镜视频，与地理空间或城市分析无直接关联。"
     },
     {
+      "key": "arxiv:2609.20818",
+      "title": "SplashSplat: Reconstructing Splashing Liquids from Real-World Multi-View Videos",
+      "title_zh": "SplashSplat：从真实世界多视角视频重建飞溅液体",
+      "url": "https://arxiv.org/abs/2609.20818",
+      "arxiv_id": "2609.20818",
+      "authors": [
+        "Peiyu Liu",
+        "Dingxi Zhang",
+        "Federico Tombari",
+        "Marc Pollefeys",
+        "Christina Tsalicoglou",
+        "Daniel Barath"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "page:",
+        "https://niko-creater.github.io/splashsplat-web/"
+      ],
+      "published": "2026-09-17T17:59:41+00:00",
+      "score": 10,
+      "reason": "该论文研究真实多视角视频中飞溅液体的重建，属于动态场景重建与神经渲染，与遥感变化检测或多源地理空间数据融合无直接关联。",
+      "tags": [
+        "动态高斯泼溅",
+        "多视角重建",
+        "流体仿真"
+      ],
+      "summary_zh": "飞溅只持续一瞬间：液片撕裂成液丝与液滴，外观依赖视角且几乎无纹理，几乎没有可长期跟踪的结构，因此重建研究多集中于烟雾、合成液体或缓慢变形表面。作者称目前尚无同步多视角飞溅液体数据集，因此构建了包含 20 个真实场景的基准，从连贯水流到剧烈飞溅，由七台同步标定的 4K 相机以 60 fps 采集，并提供人工精修的各视角液体与容器掩膜及固定评测划分。基于“仅在观测能约束之处施加物理结构”的原则，作者提出 SplashSplat：由掩膜融合得到逐帧液体 SDF 提供几何，相邻 SDF 间的水平集输运给出粗略速度场，沿该流场平流的拉格朗日载体在每次新观测下校正并在覆盖丢失处重新播种，解码局部高斯以进行可微渲染。SplashSplat 在真实采集与合成基准上均优于当前最先进的动态高斯泼溅方法，运动更符合物理且训练成本更低，同一表示还支持无需重新优化的时间插值与风格迁移。",
+      "insight_zh": "该工作展示了“仅在观测可约束处引入物理先验”的重建策略与多视角同步采集基准的价值；其思路对动态地理场景（如洪水、地表形变）的时序重建或有启发，但论文本身面向流体视觉重建。"
+    },
+    {
       "key": "arxiv:2506.17277",
       "title": "Spherical Cauchy Variational Autoencoders: Heavy Angular Tails and Exact KL Evaluation",
       "title_zh": "球面Cauchy变分自编码器：重角度尾部与精确KL计算",
@@ -12055,6 +12131,30 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推测，该研究提出一种仿真与人类协同训练（Sim-and-Human Co-training）方法，旨在实现数据高效且具备场景泛化能力的双臂机器人操作。",
       "insight_zh": "由于摘要缺失，无法对具体方法或结论进行推断。仅从标题看，该工作与地理空间智能领域关联较弱，但其协同训练思路或对多源数据融合中的仿真-真实数据结合有概念层面的启发。"
+    },
+    {
+      "key": "arxiv:2609.20807",
+      "title": "Score Centering Stabilizes Off-policy Reinforcement Learning",
+      "title_zh": "分数中心化稳定离策略强化学习",
+      "url": "https://arxiv.org/abs/2609.20807",
+      "arxiv_id": "2609.20807",
+      "authors": [
+        "Martin Marek",
+        "Max Ryabinin"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T17:58:17+00:00",
+      "score": 10,
+      "reason": "该论文研究大语言模型强化学习中的训练-推理失配与稳定性，属于 LLM 训练方法，与研究中 LLM 方向有间接关联，但不涉及地理空间数据或城市分析。",
+      "tags": [
+        "强化学习",
+        "LLM 训练",
+        "训练-推理失配"
+      ],
+      "summary_zh": "大语言模型的强化学习对训练引擎与推理引擎之间的微小差异（即训练-推理失配，TIM）极为敏感，但完全消除 TIM 并不现实，因为会严重损害 rollout 效率。作者表明 TIM 下强化学习的不稳定主要源于漂移：训练与推理引擎之间随每步训练累积的持续偏差。作者推导出一个加性的“分数中心化”修正项，通过抵消漂移来稳定 TIM 下的强化学习。在 0.6B 到 30B 参数模型的训练中，仅使用分数中心化即可匹配或超过量化条件下基于重要性采样的方法，且失配越严重差距越大。由于该修正是加性的，分数中心化还可与重要性采样组合，在陈旧性实验中其组合优于纯重要性采样基线。",
+      "insight_zh": "该工作提示：训练与推理引擎间的系统性偏差是稳定性问题的关键，加性修正项可与现有重要性采样方法叠加；这一思路对多智能体仿真中训练-执行不一致问题或有启发，但论文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.20398",
@@ -14439,6 +14539,33 @@
       "insight_zh": "该文对LLM评估方法学的批判性分析提示，在时空数据挖掘中采用深度或迭代结构时，需区分计算量、参数复用与表示分布偏移等因素，但本身不涉及地理空间任务。"
     },
     {
+      "key": "arxiv:2609.20222",
+      "title": "A Two-Stage Multi-Scale Attention-Based Network for Weakly Supervised Cataract Fundus Image Enhancement",
+      "title_zh": "用于弱监督白内障眼底图像增强的两阶段多尺度注意力网络",
+      "url": "https://arxiv.org/abs/2609.20222",
+      "arxiv_id": "2609.20222",
+      "authors": [
+        "Xiaoyong Fang",
+        "Yue Wang",
+        "Xiangyu Li",
+        "Wanshu Fan",
+        "and Dongsheng Zhou"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-04T01:22:24+00:00",
+      "score": 8,
+      "reason": "该论文面向白内障眼底图像增强，属于医学图像处理与弱监督学习，与地理空间智能、遥感变化检测或城市更新研究无直接关系。",
+      "tags": [
+        "医学图像增强",
+        "弱监督学习",
+        "多尺度注意力"
+      ],
+      "summary_zh": "白内障是视力丧失的主要原因之一，并会妨碍进一步诊断，但白内障眼底图像增强常面临配对白内障视网膜图像有限、视网膜图像细节恢复不足等挑战。为此，作者提出两阶段多尺度注意力网络（TSMSA-Net）用于弱监督白内障眼底图像增强。该方法利用域变换合成类真实白内障图像，解决配对图像难以获取的问题；并引入多尺度注意力阶段以提取更有用的特征、减少增强过程中的伪影。在 Kaggle 和 ODIR-5K 上的实验表明，即使没有配对图像，TSMSA-Net 也优于当前最先进的白内障眼底图像增强方法，并表现出一定的泛化能力，同时可提升白内障图像中血管分割与分类的性能。",
+      "insight_zh": "该研究说明域变换合成配对数据与多尺度注意力结合，可在缺乏配对监督时改善图像细节恢复；这一思路或可迁移到遥感影像的跨域增强，但论文本身未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2604.11757",
       "title": "A Two-Stage Multi-Modal MRI Framework for Lifespan Brain Age Prediction",
       "title_zh": "面向全生命周期脑龄预测的两阶段多模态MRI框架",
@@ -14531,6 +14658,37 @@
       ],
       "summary_zh": "大语言模型的最新进展革新了心理咨询领域，尤其是在认知行为疗法（CBT）背景下。虽然CBT的成功在很大程度上依赖于基于来访者实时心理状态的动态决策，但这一方面在当前研究中常被忽视，限制了灵活性和治疗效果。本文提出StratCBT，一个专为具有CBT策略的心理咨询对话设计的数据集，包含9,688个会话和约256K条话语，每个咨询师的回复与八种不同策略之一对齐。StratCBT的创建涉及基于来访者负面思维建模，并通过自我对话生成高质量咨询对话，同时以真实会话为指导，从而在通用咨询和CBT特定技能上显著超越现有数据集。作者进行了大量实验以证明策略对齐生成的有效性，并评估其在LLM模拟来访者中提供专业有效咨询的效果，以反映真实场景。数据集可从 https://github.com/zimuwangnlp/StratCBT 获取。",
       "insight_zh": "该研究的策略对齐对话生成框架对城市更新中的多智能体协商与公众参与有潜在借鉴，但领域差异较大，需重新设计策略空间。"
+    },
+    {
+      "key": "arxiv:2609.20816",
+      "title": "Paint-Anything: Unified Any-Color Control for Image Generation and Editing",
+      "title_zh": "Paint-Anything：面向图像生成与编辑的统一任意颜色控制",
+      "url": "https://arxiv.org/abs/2609.20816",
+      "arxiv_id": "2609.20816",
+      "authors": [
+        "Ji Xie",
+        "Dewei Zhou",
+        "Xinyu Huang",
+        "Zhennan Chen",
+        "Xun Wang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "content",
+        "unchanged"
+      ],
+      "published": "2026-09-17T17:59:30+00:00",
+      "score": 6,
+      "reason": "该论文研究图像生成与编辑中的任意颜色控制，属于生成式视觉与多模态方向，与地理空间智能、城市更新或时空数据挖掘无直接关系。",
+      "tags": [
+        "图像生成与编辑",
+        "颜色控制",
+        "多模态"
+      ],
+      "summary_zh": "专业设计需要任意颜色控制，即用任意 24 位十六进制值指定物体目标颜色，并同时适用于图像生成与编辑。已有工作多依赖专用颜色表示或特殊推理流程。作者提出 Paint-Anything，通过物体级颜色监督学习一个共享的十六进制提示接口，统一生成与编辑。其数据管线通过物体定位、感知颜色标注与编辑对合成，从真实图像构建 Paint-500K。由于阴影使真实图像标注仅为近似颜色，作者补充了像素与配对十六进制值完全一致的纯色锚点，仅在噪声较高的时间步使用，低噪声训练仍用自然图像。作者还提出 Any Color Benchmark（ACBench），包含 ACBench-T2I 与 ACBench-Edit，用于衡量两个任务中的物体级十六进制颜色保真度。在 FLUX.2-4B 上，Paint-Anything 相对基模型将 ACBench-T2I 与 ACBench-Edit 分数分别提升 85.3% 与 28.3%，消融实验支持其训练配方，并在对比方法中取得最高平均 CompColor 分数。",
+      "insight_zh": "该研究提示：用紧凑模型即可建立十六进制值与颜色语义的关联，并通过纯色锚点弥补真实标注的近似性；这一“精确锚点+自然数据分阶段训练”策略或可迁移到遥感影像的色调一致性控制，但论文未涉及地理空间任务。"
     },
     {
       "key": "arxiv:2609.20592",
@@ -14895,28 +15053,6 @@
       "insight_zh": "多模态表征学习在方法层面可能与多源数据融合有间接相似性，但应用领域为机器人操作，与地理空间智能无关。"
     },
     {
-      "key": "arxiv:2609.20808",
-      "title": "Unifying Models of Intergroup Hostility in Online Discourse",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20808",
-      "arxiv_id": "2609.20808",
-      "authors": [
-        "Patrick Gerard",
-        "Julia Mendelsohn",
-        "Kristina Lerman"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.SI"
-      ],
-      "published": "2026-09-17T17:58:25+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.12397",
       "title": "UFO: Chain-of-Evaluation for Omni-Condition Alignment in Multi-Modal Image Generation",
       "title_zh": "UFO：多模态图像生成中全条件对齐的评估链",
@@ -15063,33 +15199,6 @@
       "insight_zh": "该研究揭示了流形约束优化在注意力机制中的作用机制，其几何约束与优化器选择的分析思路对地理空间深度学习模型设计有理论参考价值，但论文未涉及地理空间应用。"
     },
     {
-      "key": "arxiv:2609.20818",
-      "title": "SplashSplat: Reconstructing Splashing Liquids from Real-World Multi-View Videos",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20818",
-      "arxiv_id": "2609.20818",
-      "authors": [
-        "Peiyu Liu",
-        "Dingxi Zhang",
-        "Federico Tombari",
-        "Marc Pollefeys",
-        "Christina Tsalicoglou",
-        "Daniel Barath"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.GR",
-        "page:",
-        "https://niko-creater.github.io/splashsplat-web/"
-      ],
-      "published": "2026-09-17T17:59:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19615",
       "title": "Semantic Layer Induction from Raw Telemetry via Hierarchical LLM and RAG Abstraction",
       "title_zh": "",
@@ -15142,26 +15251,6 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该研究将基于分数的扩散模型应用于扩散光学断层成像的严重不适定逆问题。",
       "insight_zh": "扩散模型求解逆问题的思路或可迁移至遥感反演，但论文应用领域为医学成像，与地理空间智能无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.20807",
-      "title": "Score Centering Stabilizes Off-policy Reinforcement Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20807",
-      "arxiv_id": "2609.20807",
-      "authors": [
-        "Martin Marek",
-        "Max Ryabinin"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T17:58:17+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.19610",
@@ -15791,33 +15880,6 @@
         "cs.AI"
       ],
       "published": "2026-09-17T12:09:21+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20816",
-      "title": "Paint-Anything: Unified Any-Color Control for Image Generation and Editing",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20816",
-      "arxiv_id": "2609.20816",
-      "authors": [
-        "Ji Xie",
-        "Dewei Zhou",
-        "Xinyu Huang",
-        "Zhennan Chen",
-        "Xun Wang"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG",
-        "content",
-        "unchanged"
-      ],
-      "published": "2026-09-17T17:59:30+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16917,7 +16979,7 @@
     {
       "key": "arxiv:2609.20815",
       "title": "ERCPMP-Gx: Endoscopic Image and Video Dataset for Morphological, Histopathological, and Genomic Characterization of Colorectal Polyposis",
-      "title_zh": "",
+      "title_zh": "ERCPMP-Gx：用于结直肠息肉病形态学、组织病理学与基因组学表征的内镜图像与视频数据集",
       "url": "https://arxiv.org/abs/2609.20815",
       "arxiv_id": "2609.20815",
       "authors": [
@@ -16933,10 +16995,14 @@
       ],
       "published": "2026-09-17T17:59:28+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文发布结直肠息肉病的内镜、组织病理与基因组数据集，属于医学影像与临床数据资源，与地理空间研究无直接关联。",
+      "tags": [
+        "医学数据集",
+        "内窥镜影像",
+        "基因组学"
+      ],
+      "summary_zh": "遗传性息肉病综合征可能是结直肠癌的前驱病变，并与多种结肠外肿瘤相关，早期识别与准确分类对及时诊断、个体化管理和家族靶向监测至关重要。然而公开内镜数据集多围绕散发性单个息肉组织，尚无在患者层面将息肉病表型与组织病理及胚系发现相链接的数据集。作者提出 ERCPMP-Gx，一个支持人工智能识别、表征与分类结直肠息肉病的内镜、组织病理与基因组数据集。多数操作使用 Olympus EVIS X1 系统，涵盖白光内镜、窄带成像、放大窄带成像及近焦窄带成像模式，共 160 张图像及配套视频片段。约 80% 病例为临床和/或遗传学确诊的遗传性息肉病综合征，包括家族性腺瘤性息肉病、Peutz-Jeghers 综合征、幼年性息肉病综合征和神经节细胞瘤综合征；其余 20% 为非遗传性息肉及形态重叠的类息肉病变，用于支持鉴别分类。每条发布记录在可用时链接标准化内镜标注、代表性组织病理与临床报告的胚系发现，形成面向 AI 的患者级标注框架。数据集已在 Mendeley 公开。",
+      "insight_zh": "该数据集的价值在于患者级多模态（影像-病理-基因组）链接与含鉴别类别的设计；这种“表型-病理-基因”对齐思路对多源地理空间数据融合中的实体级链接有类比意义，但论文本身属医学领域。"
     },
     {
       "key": "arxiv:2609.19076",
@@ -17387,36 +17453,6 @@
         "cs.CV"
       ],
       "published": "2026-09-17T12:07:22+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20804",
-      "title": "An Empirical Study of Harness Design for Coding Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20804",
-      "arxiv_id": "2609.20804",
-      "authors": [
-        "Run-Ze Fan",
-        "Zihao Zhang",
-        "Simin Ma",
-        "Yebowen Hu",
-        "Shouju Wang",
-        "Kaiqiang Song",
-        "Fei Liu",
-        "Hamed Zamani",
-        "Xiaoyang Wang"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG",
-        "cs.SE"
-      ],
-      "published": "2026-09-17T17:58:07+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
