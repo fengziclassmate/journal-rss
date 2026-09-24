@@ -7,9 +7,11 @@
     "arxiv:2609.24911",
     "arxiv:2609.24278",
     "arxiv:2609.23853",
+    "arxiv:2609.22218",
     "arxiv:2609.22117",
     "arxiv:2609.00689",
     "arxiv:2609.22258",
+    "arxiv:2609.22217",
     "arxiv:2508.03749",
     "arxiv:2608.27206",
     "arxiv:2609.22687",
@@ -19,6 +21,7 @@
     "arxiv:2609.24921",
     "arxiv:2609.24677",
     "arxiv:2609.24531",
+    "arxiv:2609.24115",
     "arxiv:2609.23989",
     "arxiv:2609.23881",
     "arxiv:2609.23534",
@@ -28,24 +31,21 @@
     "arxiv:2609.22174",
     "arxiv:2609.22126",
     "arxiv:2609.22359",
-    "arxiv:2512.21066",
-    "arxiv:2605.27690",
-    "arxiv:2607.11295",
-    "arxiv:2501.16698"
+    "arxiv:2512.21066"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1190",
-    "deepseek": "partial:19/459;failed-batches:44"
+    "deepseek": "partial:20/440;failed-batches:42"
   },
-  "updated_at": "2026-09-24T00:50:00.881963+00:00",
+  "updated_at": "2026-09-24T12:14:56.401654+00:00",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 750,
+    "analyzed": 770,
     "high": 5,
-    "medium": 31,
+    "medium": 34,
     "low": 63,
-    "below_threshold": 651
+    "below_threshold": 668
   },
   "papers": [
     {
@@ -213,6 +213,31 @@
       "insight_zh": "该文的模式约束LLM抽取+地理编码流程可直接启发城市更新研究中从政策文本或规划报告中抽取地理参考事件记录；其证据保留和合规检查机制对构建可审查的时空知识库具有参考价值，但需注意其评估未涉及事件级分配精度。"
     },
     {
+      "key": "arxiv:2609.22218",
+      "title": "Toollery: Scaling LLM Agents to Thousands of Skills and Tools",
+      "title_zh": "Toollery：将LLM智能体扩展至数千种技能与工具",
+      "url": "https://arxiv.org/abs/2609.22218",
+      "doi": "",
+      "arxiv_id": "2609.22218",
+      "authors": [
+        "Xiangxi Tian",
+        "Ran Guan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-02T09:26:17+00:00",
+      "score": 78,
+      "reason": "该论文研究LLM智能体在数千种技能与工具规模下的扩展问题，与用户研究兴趣中“LLM和多智能体”方向高度契合，但其应用场景并非地理空间领域，因此相关性较高但非完全匹配。",
+      "tags": [
+        "LLM智能体",
+        "工具调用",
+        "技能库扩展",
+        "多智能体系统"
+      ],
+      "abstract": "As LLM agents are exposed to hundreds to tens of thousands of skills, tools, and API functions, full-library prompting becomes costly, slow, and less reliable: each added candidate increases prompt tokens and latency, while longer candidate lists introduce more distractors for LLM selection. We present ------------------------------------------------------------------------------",
+      "summary_zh": "随着LLM智能体面对数百至数万种技能、工具和API函数，全库提示变得昂贵、缓慢且可靠性下降：每增加一个候选项都会增加提示词元数和延迟，更长的候选列表也会引入更多干扰项。本文提出了Toollery（摘要在此处截断，未提供完整方法细节）。",
+      "insight_zh": "该工作聚焦于LLM智能体在工具规模扩展时的效率与选择可靠性问题，其思路可能为地理空间智能中多工具协同的智能体系统提供参考，但摘要未给出具体方法或实验结论，无法进一步推断其在地理空间领域的适用性。"
+    },
+    {
       "key": "arxiv:2609.22117",
       "title": "LE4Mob: Towards Inductive, Distance-Aware and General-Purpose Location Embedding for Human Mobility Modelling",
       "title_zh": "LE4Mob：面向人类移动性建模的归纳式、距离感知与通用位置嵌入",
@@ -301,6 +326,40 @@
       "abstract": "Large language model-driven remote sensing (RS) agents offer a promising approach to automating geospatial analysis. However, lightweight RS agents based on compact language models struggle with multi-step interactive tasks due to loss of long-horizon states, inefficient environmental feedback utilization, and sparse optimization signals. We propose RS-Claw-Evolution, an environment-feedback-driven framework that progressively improves lightweight agents through three stages. Interaction evolution uses executable code to control observations, maintain intermediate states, and reduce context redundancy. Experience evolution combines failure-aware trajectory generation with error-turn masking to learn from informative failure-recovery experiences without imitating faulty actions. Decision evolution uses reinforcement learning with multi-dimensional environment rewards and turn-level advantage protection to optimize tool-use behaviors and improve credit assignment in long sequences. On Earth-Bench, the optimized Qwen3-4B-based agent achieves 65.9% accuracy in Autonomous Planning mode, outperforming the untrained Qwen3-32B baseline (43.8%) and DeepSeek-V3.1 (60.8%), while approaching GPT-5 (71.6%). These results demonstrate that learning from environmental feedback can improve lightweight agents and narrow their performance gap with larger models in long-horizon RS tasks.",
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.22217",
+      "title": "UniGIO: Unified Generative Global In-situ Weather Modeling from Spatiotemporal Incomplete Observations",
+      "title_zh": "UniGIO：面向时空不完整观测的统一生成式全球原位气象建模",
+      "url": "https://arxiv.org/abs/2609.22217",
+      "doi": "",
+      "arxiv_id": "2609.22217",
+      "authors": [
+        "Songru Yang",
+        "Zili Liu",
+        "Tao Han",
+        "Ben Fei",
+        "Lei Bai",
+        "Chang Liu",
+        "Zhengxia Zou",
+        "Xiangyang Ji",
+        "Wanli Ouyang",
+        "Zhenwei Shi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-02T08:37:27+00:00",
+      "score": 72,
+      "reason": "该论文处理全球原位气象观测的时空不完整性问题，提出生成式框架统一预测、插补与生成任务，与用户研究兴趣中的“时空数据挖掘”和“多源数据融合”方向相关，但应用领域为气象而非城市更新或遥感变化检测。",
+      "tags": [
+        "时空数据",
+        "生成模型",
+        "气象建模",
+        "不完整观测",
+        "多源数据融合"
+      ],
+      "abstract": "Global In-situ Observation (GIO) provides fine-scale, direct records of the global weather system from sparse point stations, making it an indispensable source for capturing localized and transient dynamics beyond the reach of satellite gridded data, and playing a critical role in key fields such as numerical weather prediction, disaster prevention, and agriculture. However, GIO exhibits strong spatiotemporal incompleteness, severely impairing accurate and real-time in-situ weather modeling. Unlike existing methods waiting for completed AI-ready data with extra introduced errors, in this work, we explore UniGIO, a novel generative framework for directly modeling global in-situ weather dynamics from native incomplete GIO. By generating missing data from observed ones annotated by masks, it unifies the coexisting forecasting, imputation, and generation under arbitrary missing ratios. Between the missing and observed, UniGIO captures station and region level complementarity through the Observation Mixer and Event Aligner, which diffuse discrete observations into continuous spaces where weather processes naturally span multiple stations. We further establish temporal dependencies with pattern shifts using the Adaptive Temporal Mixer, and track extreme events in chaotic local weather systems through a Mixture-ofExperts structure. Steady and extreme events are adapted in decoder by a Local Refiner. Extensive experiments on the up-todate largest global station weather dataset Weather-5K validate its SOTA performance with 11%, 12%, and 5% advantages on accuracy, fidelity, and extreme event capture, delivering a novel holistic solution for weather modeling in GIO networks.",
+      "summary_zh": "全球原位观测（GIO）通过稀疏站点提供全球天气系统的精细直接记录，是捕捉卫星网格数据无法覆盖的局地和瞬态动态不可或缺的来源。然而GIO存在强烈的时空不完整性，严重损害了准确实时的原位气象建模。本文提出UniGIO，一种新颖的生成式框架，可直接从原生不完整GIO建模全球原位天气动态。通过从带掩码标注的观测数据生成缺失数据，UniGIO统一了任意缺失比例下并存的预测、插补和生成任务。UniGIO通过Observation Mixer和Event Aligner在缺失与观测之间捕捉站点和区域级别的互补性，将离散观测扩散到连续空间；通过Adaptive Temporal Mixer建立时间依赖性与模式偏移；通过Mixture-of-Experts结构追踪混沌局地天气系统中的极端事件。在迄今最大的全球站点天气数据集Weather-5K上的大量实验验证了其SOTA性能，在准确性、保真度和极端事件捕捉方面分别有11%、12%和5%的优势。",
+      "insight_zh": "该工作展示了生成式框架在处理时空不完整观测数据方面的潜力，其统一预测、插补与生成的思路可能对城市时空数据挖掘中普遍存在的数据缺失问题具有方法借鉴意义，但摘要未涉及城市更新或遥感变化检测场景。"
     },
     {
       "key": "arxiv:2508.03749",
@@ -590,6 +649,40 @@
       "abstract": "Thermography plays a vital role in military and broader thermal analysis applications. Recent progress in 3D thermal reconstruction has extended temperature analysis from 2D to 3D space, yet most existing works assume static temperature distributions, neglecting the temporal dynamics of heat transfer in real-world environments. To address this limitation, we propose the first dynamic RGB-Thermal reconstruction framework for complex scenes. Our method jointly models RGB appearance, thermal observations, and scene geometry as they change over time. Specifically, we introduce a multimodal dynamic scene representation that anchors both the color and thermal modalities to a shared geometric substrate, ensuring their consistency under spatiotemporal deformations. We further design multimodal embeddings to enhance the motion expressiveness for each modality, and propose a multimodal routing mechanism that retains a unified set of shared multimodal Gaussians as the geometric backbone while adaptively spawning modality-specific Gaussians to strengthen the representational capacity in detail-rich regions of each individual modality. In addition, we contribute a novel benchmark dataset featuring high-frequency temperature variations to facilitate the evaluation of 4D reconstruction. Extensive experiments demonstrate that our method achieves high-fidelity spatiotemporal reconstruction of both appearance and temperature. Our code and dataset are available at: https://github.com/LinLif1869/DTG.",
       "summary_zh": "热成像在军事及更广泛的热分析应用中至关重要。近期三维热重建的进展将温度分析从二维扩展到三维空间，但多数现有工作假设温度分布是静态的，忽略了真实环境中热传递的时间动态。为解决这一局限，作者提出首个面向复杂场景的动态RGB-热红外重建框架。该方法联合建模随时间变化的RGB外观、热观测与场景几何。具体而言，作者引入多模态动态场景表示，将颜色与热模态锚定到共享几何基底，确保其在时空形变下的一致性；进一步设计多模态嵌入以增强各模态的运动表达能力，并提出多模态路由机制，在保留统一共享多模态高斯作为几何主干的同时，自适应生成模态特定的高斯以增强各模态细节丰富区域的表示能力。此外，作者贡献了一个具有高频温度变化的新基准数据集以支持4D重建评估。大量实验表明该方法实现了外观与温度的高保真时空重建。代码与数据集已公开。",
       "insight_zh": "共享几何基底加模态特定高斯的表示思路，可能为多源遥感数据（如光学与热红外）的时空一致性融合提供借鉴；其高频温度变化基准也提示热动态建模需要专门的时序数据支撑。"
+    },
+    {
+      "key": "arxiv:2609.24115",
+      "title": "EDGEGEN: Improving Tool-Calling Agents Beyond Happy Paths with Synthetic Edge Case Generation",
+      "title_zh": "EDGEGEN：利用合成边缘案例生成改进超越顺利路径的工具调用智能体",
+      "url": "https://arxiv.org/abs/2609.24115",
+      "doi": "",
+      "arxiv_id": "2609.24115",
+      "authors": [
+        "Harshavardhan Abichandani",
+        "Penny Chong",
+        "Jiyuan Shen",
+        "Gunraj Singh",
+        "Ashutosh Hathidara",
+        "Marcus Duigan Xing Yu",
+        "Jane Lo",
+        "Atin Ghosh",
+        "Yipeng Li",
+        "Daniel Dahlmeier"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-21T05:07:45+00:00",
+      "score": 62,
+      "reason": "该文研究工具调用LLM智能体的合成边缘案例生成与自动化闭环优化，与研究中LLM和多智能体方向直接相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM智能体",
+        "工具调用",
+        "合成数据生成",
+        "边缘案例",
+        "智能体微调"
+      ],
+      "abstract": "Tool-calling LLM agents are increasingly deployed in enterprise applications. However, effective evaluation and optimization require high-quality, diverse task datasets that are often difficult to obtain due to privacy and other constraints. Existing synthetic task generation methods often produce generic tasks that ignore an agent's underlying state or database and fail to reflect real-world usage diversity. We propose EdgeGen, a synthetic task generation framework that extracts compliance rules from an agent's specification and uses them to generate database-grounded edge-case tasks designed to violate these rules. When combined with existing synthetic data generation techniques, EdgeGen enables agent improvement through finetuning and harness optimization. The resulting pipeline forms a fully automated closed-loop system that requires no human annotation. Finetuning on data generated by EdgeGen yields a consistent mean progress improvement of 2 percent to 42 percent on tau2bench airline domain, while other baseline methods show degradation for some models. On the other hand, for harness optimization, our method shows a mean progress improvement of 10 percent and 30 percent over the human-curated and base harnesses, respectively, for the Gemma-4-e4b model.",
+      "summary_zh": "工具调用型LLM智能体正越来越多地部署于企业应用中，但高质量、多样化的任务数据集因隐私等限制往往难以获取。现有合成任务生成方法常产生通用任务，忽视智能体的底层状态或数据库，且无法反映真实使用多样性。作者提出EdgeGen，一种合成任务生成框架，从智能体规范中提取合规规则，并据此生成旨在违反这些规则的、基于数据库的边缘案例任务。与现有合成数据生成技术结合后，EdgeGen可通过微调和框架优化实现智能体改进，形成无需人工标注的全自动闭环系统。在tau2bench航空领域，基于EdgeGen生成数据的微调带来2%至42%的平均进度提升，而其他基线方法在某些模型上出现性能退化；在框架优化方面，该方法相较人工整理和基础框架分别取得10%和30%的平均进度提升（Gemma-4-e4b模型）。",
+      "insight_zh": "该工作提示：面向智能体的合成数据若能从规范中抽取约束并定向生成违规边缘案例，可在无人工标注下形成闭环优化；这一思路或可迁移至地理空间智能体的任务评测与鲁棒性提升，但文中未涉及地理场景。"
     },
     {
       "key": "arxiv:2609.23989",
@@ -887,92 +980,6 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅含分隔线），无法获取具体研究内容。根据标题推断，该研究提出一种智能体式可解释人工智能（Agentic XAI）方法，并以日本水稻种植决策支持为案例，探索如何生成更好的解释。",
       "insight_zh": "由于摘要缺失，无法确认其方法细节与结论。从标题看，该工作可能将智能体机制引入XAI以提升解释质量，其决策支持场景与农业地理相关，或可为地理空间智能中的可解释决策提供思路，但需查阅全文验证。"
-    },
-    {
-      "key": "arxiv:2605.27690",
-      "title": "TRACES: Proactive Safety Auditing for Multi-Turn LLM Agents via Trajectory-State Modeling",
-      "title_zh": "TRACES：基于轨迹-状态建模的多轮LLM智能体主动安全审计",
-      "url": "https://arxiv.org/abs/2605.27690",
-      "doi": "",
-      "arxiv_id": "2605.27690",
-      "authors": [
-        "Jiaqian Li",
-        "Yanshu Li",
-        "Boxuan Zhang",
-        "Ruixiang Tang",
-        "Kuan-Hao Huang"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 62,
-      "reason": "该论文研究多轮LLM智能体的主动安全审计与轨迹-状态建模，与研究中“LLM和多智能体”方向直接相关，但未涉及地理空间或城市更新应用。",
-      "tags": [
-        "LLM智能体",
-        "多轮交互",
-        "安全审计",
-        "轨迹建模"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据与结论信息。",
-      "insight_zh": "从标题推断，该工作可能将多轮智能体交互建模为轨迹与状态序列以进行主动安全审计；由于摘要缺失，无法确认其具体技术路线、实验设置或效果，需查阅原文后再评估其对多智能体地理空间工作流的可迁移性。"
-    },
-    {
-      "key": "arxiv:2607.11295",
-      "title": "Metadata Supervised Imaging Representations for Modelling and Controlling Acquisition Variability",
-      "title_zh": "面向采集变异性建模与控制的元数据监督成像表征",
-      "url": "https://arxiv.org/abs/2607.11295",
-      "doi": "",
-      "arxiv_id": "2607.11295",
-      "authors": [
-        "Mehmet Yigit Avci",
-        "Pedro Borges",
-        "Virginia Fernandez",
-        "Natalia Glazman",
-        "Paul Wright",
-        "Mehmet Yigitsoy",
-        "Sebastien Ourselin",
-        "Jorge Cardoso"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 62,
-      "reason": "该论文关注元数据监督下的成像表征学习与采集变异性建模，与遥感变化检测中跨时相/跨传感器差异建模、多源数据融合及地理空间智能方向有方法层面的关联，但摘要缺失，无法确认具体应用场景。",
-      "tags": [
-        "遥感成像",
-        "元数据监督",
-        "成像表征学习",
-        "采集变异性",
-        "多源数据融合"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法或结论。",
-      "insight_zh": "从标题推断，该工作可能利用采集元数据作为监督信号来学习对成像条件变化更稳健的表征，这一思路或可迁移到遥感影像中跨传感器、跨时相差异的建模与归一化；但由于摘要缺失，无法确认其是否涉及遥感数据、变化检测任务或具体实验结论。"
-    },
-    {
-      "key": "arxiv:2501.16698",
-      "title": "3D-MoE: Towards Spatial Intelligence with Mixture-of-Experts for 3D Reasoning and Action Generation",
-      "title_zh": "3D-MoE：面向3D推理与动作生成的空间智能混合专家方法",
-      "url": "https://arxiv.org/abs/2501.16698",
-      "doi": "",
-      "arxiv_id": "2501.16698",
-      "authors": [
-        "Yueen Ma",
-        "Zenglin Xu",
-        "Irwin King"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 60,
-      "reason": "该论文提出面向3D推理与动作生成的空间智能混合专家模型，与研究中地理空间智能和多智能体方向有较强关联，尤其涉及空间推理能力。",
-      "tags": [
-        "3D推理",
-        "空间智能",
-        "混合专家",
-        "动作生成"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失，仅从标题可知该工作提出3D-MoE方法，利用混合专家架构实现3D推理与动作生成，目标是推进空间智能。",
-      "insight_zh": "该混合专家架构可能为地理空间智能中的3D场景理解与智能体动作决策提供技术借鉴，但摘要缺失导致无法评估其具体性能与适用场景。"
     }
   ]
 }

@@ -1,0 +1,960 @@
+{
+  "date": "2026-09-24",
+  "guid": "arxiv-email-daily:2026-09-24",
+  "paper_keys": [
+    "arxiv:2609.27149",
+    "arxiv:2609.28192",
+    "arxiv:2608.22152",
+    "arxiv:2409.13568",
+    "arxiv:2609.02250",
+    "arxiv:2609.28154",
+    "arxiv:2609.27442",
+    "arxiv:2608.29088",
+    "arxiv:2609.27290",
+    "arxiv:2609.06080",
+    "arxiv:2608.26706",
+    "arxiv:2512.11490",
+    "arxiv:2609.27370",
+    "arxiv:2609.27298",
+    "arxiv:2609.27690",
+    "arxiv:2609.27462",
+    "arxiv:2609.27332",
+    "arxiv:2609.27143",
+    "arxiv:2605.29313",
+    "arxiv:2604.22099",
+    "arxiv:2609.27307",
+    "arxiv:2608.28316",
+    "arxiv:2609.27677",
+    "arxiv:2609.27321",
+    "arxiv:2510.03161",
+    "arxiv:2609.28286",
+    "arxiv:2609.28230",
+    "arxiv:2609.28194",
+    "arxiv:2609.27457",
+    "arxiv:2609.27327"
+  ],
+  "paper_count": 30,
+  "source_status": {
+    "arxiv-email": "ok:1;papers:560",
+    "deepseek": "partial:267/498;failed-batches:23"
+  },
+  "updated_at": "2026-09-24T12:17:30.360427+00:00",
+  "analysis_stats": {
+    "total": 560,
+    "analyzed": 329,
+    "high": 5,
+    "medium": 17,
+    "low": 22,
+    "below_threshold": 285
+  },
+  "papers": [
+    {
+      "key": "arxiv:2609.27149",
+      "title": "Temporally Ordered Region-Token Mamba with Logit-Space Diffusion for Remote Sensing Change Detection",
+      "title_zh": "用于遥感变化检测的时序有序区域Token Mamba与Logit空间扩散",
+      "url": "https://arxiv.org/abs/2609.27149",
+      "doi": "",
+      "arxiv_id": "2609.27149",
+      "authors": [
+        "Anuvab Sen",
+        "Maneet Chatterjee",
+        "Aparup Ghosh",
+        "Udayon Sen",
+        "Arnav Aditya",
+        "Yixin Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-22T23:25:12+00:00",
+      "score": 90,
+      "reason": "该论文直接研究遥感变化检测，提出结合时序状态空间建模与logit空间扩散精化的方法，与研究中遥感变化检测、时空数据挖掘方向高度相关，且涉及高效长程建模。",
+      "tags": [
+        "遥感变化检测",
+        "Mamba",
+        "扩散模型",
+        "状态空间模型",
+        "双时相分析"
+      ],
+      "abstract": "Remote sensing change detection requires both global reasoning across bitemporal images and precise localization of changed regions. However, dense attention is computationally expensive for high-resolution imagery, while conventional feature fusion and coarse decoding may inadequately separate genuine changes from appearance variations or preserve object boundaries. We present Bitemporal Mamba-Diffusion for Change Detection (BMD-CD), which combines temporally structured state-space modeling with logit-space diffusion refinement. BMD-CD converts deep bitemporal features into region tokens and arranges them in explicit temporal partitions before bidirectional state-space propagation. Its Bitemporal Ordered Mamba Operator enables long-range cross-temporal interaction with linear sequence complexity, while Orthogonal Feature Disentanglement forms a change-oriented output and a complementary rotated output using learned pairwise rotations and unchanged-region consistency. Multiscale decoding then produces coarse change logits, which are refined through a five-step Conditional Diffusion Decoder operating directly in logit space. Experiments on LEVIR-CD, WHU-CD, DSIFN-CD, CDD, and S2Looking demonstrate strong performance across diverse change-detection settings. BMD-CD achieves F1 scores of 93.7%, 96.0%, 97.8%, and 99.0% on the four standard benchmarks and improves 3-pixel Boundary-F1 to 87.7% and 91.4% on LEVIR-CD and WHU-CD, respectively. The full model requires 32.09 GFLOPs and 47 ms per 256 x 256 image pair, while also showing zero-shot transfer to ValaisCD and B-FLAIR-test. Our code is available at https://github.com/Aparup2139/Public_WACV/",
+      "summary_zh": "遥感变化检测需要跨双时相图像的全局推理和变化区域的精确定位。然而，密集注意力对高分辨率影像计算成本高昂，而传统的特征融合和粗解码可能不足以将真实变化与外观变化分离或保留目标边界。我们提出用于变化检测的双时相Mamba-扩散模型（BMD-CD），将时序结构化的状态空间建模与logit空间扩散精化相结合。BMD-CD将深层双时相特征转换为区域token，并在双向状态空间传播之前将其排列为显式时序分区。其双时相有序Mamba算子以线性序列复杂度实现长程跨时序交互，而正交特征解耦利用学习到的成对旋转和未变化区域一致性形成面向变化的输出和互补的旋转输出。多尺度解码随后产生粗略变化logits，通过直接在logit空间操作的五步条件扩散解码器进行精化。在LEVIR-CD、WHU-CD、DSIFN-CD、CDD和S2Looking上的实验展示了在多样变化检测设置中的强劲性能。BMD-CD在四个标准基准上分别达到93.7%、96.0%、97.8%和99.0%的F1分数，并在LEVIR-CD和WHU-CD上将3像素Boundary-F1分别提升至87.7%和91.4%。完整模型每对256×256图像需要32.09 GFLOPs和47 ms，同时展示了对ValaisCD和B-FLAIR-test的零样本迁移。代码见https://github.com/Aparup2139/Public_WACV/。",
+      "insight_zh": "该研究提示，将Mamba状态空间模型与扩散精化结合可能为遥感变化检测提供兼顾全局推理与边界定位的高效方案，其线性复杂度特性或有利于高分辨率影像处理；零样本迁移结果暗示一定泛化潜力，但跨传感器与跨区域稳定性仍需进一步检验。"
+    },
+    {
+      "key": "arxiv:2609.28192",
+      "title": "From Change Captions to Change Detection: Semantic-Appearance Agreement Framework for Remote Sensing Change Detection",
+      "title_zh": "从变化描述到变化检测：面向遥感变化检测的语义-外观一致性框架",
+      "url": "https://arxiv.org/abs/2609.28192",
+      "doi": "",
+      "arxiv_id": "2609.28192",
+      "authors": [
+        "Yuan Qian",
+        "Jie Ma"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T14:32:01+00:00",
+      "score": 85,
+      "reason": "该论文直接研究遥感变化检测，提出以变化描述作为监督信号的新范式，与研究中遥感变化检测、多源数据融合方向高度相关，且涉及语义引导的定位方法。",
+      "tags": [
+        "遥感变化检测",
+        "变化描述",
+        "弱监督学习",
+        "语义-外观一致性",
+        "多模态"
+      ],
+      "abstract": "Remote sensing change detection (RSCD) is essential for monitoring land-cover changes and urban development. However, most methods demand pixel-level change masks, which are costly and time-consuming to annotate. Weakly supervised methods reduce this cost by using image-level change labels. Yet these labels indicate only whether a change occurs, leaving models to recover the location of the change and semantic meaning through additional and complex mechanisms. This missing information can be supplied directly by change captions, which describe what changes, what it becomes, and where it occurs. Therefore, we introduce change-caption-guided RSCD, using change captions as the sole task-specific supervision to learn change masks without manually annotated change masks. Our framework has two components: a caption-driven generation pipeline that produces bi-temporal remote sensing image pairs at scale with controlled changes matching each caption, and a change detector guided by the caption's transition semantics. The detector uses our Semantic-Appearance Agreement Framework (SAAF) to combine caption-grounded semantic responses with RGB differences for change localization, while text conditioning guides dense prediction. Experiments on our newly constructed Flair-RSGen dataset and WHU-CDC show that SAAF outperforms the closest reproduced limited-supervision baselines in macro-averaged IoU and F1 under the evaluated protocols. Code is publicly available at https://github.com/qianyuancs/SAAF.",
+      "summary_zh": "遥感变化检测（RSCD）对于监测土地覆盖变化和城市发展至关重要。然而，大多数方法需要像素级变化掩码，标注成本高昂且耗时。弱监督方法通过使用图像级变化标签来降低成本。但这些标签仅指示是否发生变化，模型需要通过额外且复杂的机制来恢复变化的位置和语义含义。这种缺失的信息可以直接由变化描述提供，变化描述说明了什么发生了变化、变成了什么以及发生在哪里。因此，我们引入变化描述引导的RSCD，使用变化描述作为唯一的任务特定监督来学习变化掩码，而无需人工标注的变化掩码。我们的框架包含两个组件：一个描述驱动的生成流程，可大规模生成双时相遥感图像对，并具有与每个描述匹配的受控变化；以及一个由描述过渡语义引导的变化检测器。该检测器使用我们的语义-外观一致性框架（SAAF）将基于描述的语义响应与RGB差异相结合以进行变化定位，同时文本条件引导密集预测。在新构建的Flair-RSGen数据集和WHU-CDC上的实验表明，SAAF在评估协议下的宏平均IoU和F1上优于最接近的复现有限监督基线。代码公开于https://github.com/qianyuancs/SAAF。",
+      "insight_zh": "该研究提示，变化描述可作为比图像级标签更丰富的弱监督信号，通过语义-外观一致性框架实现无需像素级掩码的变化检测；其合成数据生成流程或可缓解遥感变化检测中标注数据稀缺的问题，但跨区域泛化能力仍需验证。"
+    },
+    {
+      "key": "arxiv:2608.22152",
+      "title": "The Collaboration Tax: How Much LLM Multi-Agent Systems Pay to Coordinate",
+      "title_zh": "协作税：LLM多智能体系统为协调付出多少代价",
+      "url": "https://arxiv.org/abs/2608.22152",
+      "doi": "",
+      "arxiv_id": "2608.22152",
+      "authors": [
+        "Weixiang Sun",
+        "Zehong Wang",
+        "Hong Huang",
+        "Colby Nelson",
+        "Yijun Ma",
+        "Yanfang Ye"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-23T00:47:00+00:00",
+      "score": 85,
+      "reason": "该论文直接研究LLM多智能体系统的协作成本，与用户研究兴趣中的LLM和多智能体高度相关，提供了对多智能体系统性能损耗的量化分析。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "协作",
+        "性能评估",
+        "协调成本"
+      ],
+      "abstract": "Multi-agent systems built from large language models are deployed widely, yet how much performance is lost when two LLMs must coordinate rather than act alone remains unclear. We formulate the collaboration tax as the team-decentralisation loss of a two-player cooperative game with private information, with two propositions characterising its sign and its equivalence to a max-superadditivity violation. We operationalise this definition on 32 solo-tractable tasks grouped by source of grounding friction and measure it on 11 models from 7 providers. The tax is structured along two no-exception axes: a category ordering across every model and a monotonic decrease with capability. The proximate mechanism is not a reasoning deficit but a four-stage conversational cascade in which agents make ungrounded claims, fail to query the partner, skip integrating both views, and accept the answer without re-derivation. The tax is mechanically predictable from conversation features and partly tractable: a prompt intervention targeting all four stages closes a substantial fraction of the gap, with the dominant bottleneck differing across categories. In heterogeneous pairs the tax is pulled toward the stronger partner rather than the additive midpoint, empirically realising the max-superadditivity violation predicted by our framework. Together these results recast collaboration in LLM systems as a measurable, predictable, and partly tractable cost.",
+      "summary_zh": "该论文提出了“协作税”的概念，用以量化两个LLM在需要协调而非单独行动时的性能损失。作者将其定义为两人合作博弈中的团队去中心化损失，并通过32个任务和11个模型进行了测量。研究发现，协作税存在两个无例外的规律：跨模型的类别排序和能力单调递减。其机制并非推理缺陷，而是一个四阶段的对话级联，包括无根据的声明、未能查询伙伴、跳过整合双方观点以及未重新推导就接受答案。该税收可从对话特征中机械地预测，并且部分可处理：针对所有四个阶段的提示干预可以缩小很大一部分差距。在异构配对中，税收偏向于更强的伙伴，而非加性中点。",
+      "insight_zh": "该研究将LLM系统中的协作重新定义为一种可测量、可预测且部分可处理的成本，为理解和优化多智能体系统的协调机制提供了量化框架。"
+    },
+    {
+      "key": "arxiv:2409.13568",
+      "title": "Tackling fluffy clouds: robust agricultural field boundary delineation from Sentinel-1 and Sentinel-2 satellite image time series",
+      "title_zh": "应对模糊云层：基于Sentinel-1和Sentinel-2卫星影像时间序列的稳健农田边界提取",
+      "url": "https://arxiv.org/abs/2409.13568",
+      "doi": "",
+      "arxiv_id": "2409.13568",
+      "authors": [
+        "Foivos I. Diakogiannis",
+        "Zheng-Shu Zhou",
+        "Jeff Wang",
+        "Gonzalo Mata",
+        "Dave Henry",
+        "Roger Lawes",
+        "Amy Parker",
+        "Peter Caccetta",
+        "Suzanne Furby",
+        "Rodrigo Ibata",
+        "Ondrej Hlinka",
+        "Jonathan Richetti",
+        "Kathryn Batchelor",
+        "Chris Herrmann",
+        "Andrew Toovey",
+        "John Taylor"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 85,
+      "reason": "该论文利用Sentinel-1和Sentinel-2卫星影像时间序列进行农田边界提取，属于遥感影像分析与多源数据融合方向，与遥感变化检测和多源数据融合的研究兴趣高度相关。",
+      "tags": [
+        "遥感",
+        "Sentinel-1",
+        "Sentinel-2",
+        "农田边界提取",
+        "时间序列",
+        "变化检测"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，从标题可知该研究针对云层干扰问题，利用Sentinel-1和Sentinel-2卫星影像时间序列实现稳健的农田边界提取。",
+      "insight_zh": "该工作可能涉及多源遥感数据融合与时间序列分析，其方法思路或可迁移至城市更新中的地物边界提取与变化检测任务。"
+    },
+    {
+      "key": "arxiv:2609.02250",
+      "title": "RideSkill: A Hierarchical Algorithm for Generalized Ride Sharing with LLM-Driven Automatic Evolution",
+      "title_zh": "RideSkill：一种具有LLM驱动自动演化的广义共享出行层次化算法",
+      "url": "https://arxiv.org/abs/2609.02250",
+      "doi": "",
+      "arxiv_id": "2609.02250",
+      "authors": [
+        "Zijian Zhao",
+        "Sen Li",
+        "Xialiang Tong",
+        "Mingxuan Yuan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-02T07:57:03+00:00",
+      "score": 80,
+      "reason": "该研究提出一种结合LLM的层次化共享出行算法，解决多智能体强化学习在泛化性、迁移性和训练难度上的问题，对城市交通流和时空动态的建模具有参考价值。",
+      "tags": [
+        "共享出行",
+        "多智能体强化学习",
+        "LLM",
+        "层次化算法",
+        "自动算法设计"
+      ],
+      "abstract": "Ride-sharing, which allows multiple passengers with different origin-destination (OD) pairs to share a single vehicle, is a challenging operational problem, as it requires orders with different OD pairs to be efficiently bundled and assigned to vehicles under uncertain and varying scenarios. Although multi-agent reinforcement learning (MARL) solutions have achieved promising performance, they suffer from limited generalization (adapting to different environmental scenarios), low transferability (adapting to different platform objectives), and training difficulties in large-scale systems, such as the curse of dimensionality. Recently, motivated by the scaling of large language models (LLMs), several works have incorporated LLMs into ride-hailing systems, either by employing LLMs directly as decision-making agents or using them for automatic algorithm design. However, none of these approaches support vehicle sharing, which complicates the problem by expanding both the state and action spaces exponentially. Moreover, most of them require frequent LLM calls at inference time, making them infeasible for real-time deployment. To address these issues, we propose RideSkill, a hierarchical method for ride-sharing that leverages LLM-assisted automatic algorithmic design. RideSkill consists of a combiner that assigns appropriate skills to each vehicle from a learned skill repository, enabling adaptive dispatch under varying scenarios and objectives, and a repositioner that sequentially relocates idle vehicles to emerging regions, avoiding conflicts among vehicles. Crucially, the skill repository, combiner, and repositioner are all trained by an LLM-based automatic evolutionary method, eliminating the need for LLM calls during deployment and thus ensuring high real-time performance.",
+      "summary_zh": "论文提出RideSkill，一种用于共享出行的层次化方法，利用LLM辅助的自动算法设计。它包含一个组合器，从学习的技能库中为每辆车分配技能，以及一个重定位器，顺序地将空闲车辆重新定位到新兴区域。技能库、组合器和重定位器均由基于LLM的自动进化方法训练，部署时无需LLM调用，保证了实时性能。",
+      "insight_zh": "该研究展示了一种将LLM用于离线自动算法设计而非在线决策的范式，通过进化方法训练出可部署的轻量级组件，从而在保持适应性的同时满足实时性要求，为大规模动态调度问题提供了新思路。"
+    },
+    {
+      "key": "arxiv:2609.28154",
+      "title": "A comparative assessment of global building and settlement datasets across geographic and settlement contexts",
+      "title_zh": "全球建筑与定居点数据集在地理与定居点情境下的比较评估",
+      "url": "https://arxiv.org/abs/2609.28154",
+      "doi": "",
+      "arxiv_id": "2609.28154",
+      "authors": [
+        "Rufai Omowunmi Balogun",
+        "Caroline Margaux Gevaert",
+        "Capucine Riom",
+        "Derrick Mirindi",
+        "Aaron Opdyke",
+        "Hamed Alemohammad",
+        "Pierre Chrzanowski",
+        "Edward Charles Anderson"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T14:08:16+00:00",
+      "score": 78,
+      "reason": "该论文对七个全球建筑与定居点数据集进行跨地理与定居点情境的系统基准评估，直接涉及遥感建筑制图、城市监测和多源数据融合，与城市更新和遥感变化检测研究方向高度相关。",
+      "tags": [
+        "全球建筑数据集",
+        "定居点制图",
+        "基准评估",
+        "遥感变化检测",
+        "城市监测"
+      ],
+      "abstract": "Global building and settlement datasets increasingly support population mapping, exposure assessment, urban monitoring, and other analyses of the built environment, yet comparative evidence remains fragmented across products, geographic regions, reference datasets, spatial scales, and evaluation methods. We benchmark seven global or near-global products, including Overture Maps, Global Building Atlas, 3D-GloBFP, Google Open Buildings 2.5D Temporal (OBT), Microsoft TEMPO, GHSL, and WSF Tracker, against harmonized reference footprints across 135 study areas. The evaluation combines complementary measures of detection, geometric agreement, and aggregate quantity accuracy, together with stratified analyses of settlement characteristics and diagnostic experiments on error size and temporal alignment. Overture achieved the highest median city-level vector F1 (0.786). Raster rankings were resolution-dependent: OBT achieved the highest median F1 at 10m (0.642), whereas WSF Tracker led at 100m (0.862). However, WSF Tracker substantially overestimated built-up area, emphasizing that when using raster products, it is important for the user to understand whether the raster identifies only buildings or includes additional impervious surfaces. Raster accuracy increased consistently with building density (Spearman \\r{ho} = 0.58-0.75), while small candidate buildings were disproportionately associated with false positives in the vector products. Temporally aligning WSF Tracker with reference imagery increased mean F1 by 0.060 (median +0.037), indicating that the reported accuracies are conservative in rapidly growing areas. The study establishes a reproducible benchmark for comparing heterogeneous global urban and settlement layer datasets across geographic and settlement contexts.",
+      "summary_zh": "全球建筑与定居点数据集日益支撑人口制图、暴露评估、城市监测及其他建成环境分析，然而比较证据仍分散于不同产品、地理区域、参考数据集、空间尺度和评估方法之间。本文对七个全球或近全球产品进行基准测试，包括Overture Maps、Global Building Atlas、3D-GloBFP、Google Open Buildings 2.5D Temporal（OBT）、Microsoft TEMPO、GHSL和WSF Tracker，在135个研究区与协调后的参考建筑轮廓进行对比。评估结合了检测、几何一致性和总量精度等互补指标，并对定居点特征进行分层分析，以及针对误差大小和时间对齐的诊断实验。Overture取得最高的城市级矢量F1中位数（0.786）。栅格排名依赖分辨率：OBT在10米处取得最高F1中位数（0.642），而WSF Tracker在100米处领先（0.862）。然而WSF Tracker显著高估建成区面积，强调使用栅格产品时用户需了解该栅格是仅识别建筑物还是包含其他不透水面。栅格精度随建筑密度持续提高（Spearman ρ = 0.58-0.75），而小型候选建筑在矢量产品中不成比例地关联于假阳性。将WSF Tracker与参考影像进行时间对齐后，平均F1提高0.060（中位数+0.037），表明在快速增长地区报告的精度偏保守。该研究建立了一个可复现的基准，用于跨地理与定居点情境比较异构的全球城市与定居点图层数据集。",
+      "insight_zh": "该基准为城市更新研究中选择建筑与定居点数据源提供了实证依据，尤其提示栅格产品在密度、分辨率与时间对齐上的差异会显著影响变化检测与城市监测结果的可靠性。"
+    },
+    {
+      "key": "arxiv:2609.27442",
+      "title": "SatUnreal: A High-Precision Synthetic Dataset for Satellite Stereo Matching via Unreal Engine",
+      "title_zh": "SatUnreal：通过Unreal Engine构建的高精度卫星立体匹配合成数据集",
+      "url": "https://arxiv.org/abs/2609.27442",
+      "doi": "",
+      "arxiv_id": "2609.27442",
+      "authors": [
+        "Han-Gyeol Kim",
+        "JaeWan Park",
+        "Junmin Park",
+        "Darongsae Kwon"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T07:07:31+00:00",
+      "score": 75,
+      "reason": "该论文构建卫星立体匹配合成数据集，涉及遥感三维重建与合成数据生成，与研究中遥感变化检测、多源数据融合及地理空间智能方向相关，尤其对合成数据在遥感中的应用有参考价值。",
+      "tags": [
+        "卫星立体匹配",
+        "合成数据集",
+        "Unreal Engine",
+        "三维重建",
+        "Sim-to-Real"
+      ],
+      "abstract": "3D reconstruction from satellite imagery is essential for large-scale topographic analysis, yet the lack of high-fidelity training datasets with accurate occlusion labels remains a primary bottleneck. Existing benchmarks, such as US3D and WHU-Stereo, face inherent challenges in spatio-temporal mismatch -- environmental changes and shadow displacements between multi-view acquisitions -- and provide ambiguous ground truth in occluded regions due to LiDAR sparsity. In this paper, we propose SatUnreal, a high-precision synthetic dataset designed to fundamentally overcome these limitations through an Unreal Engine-based simulation pipeline. SatUnreal provides 10,000 stereo pairs with high resolution (0.3m GSD) and is characterized by: (1) Physical Geometry Simulation, replicating realistic satellite orbits by systematically varying baselines and azimuths; (2) Spatio-temporal Consistency, eliminating temporal noise through fixed virtual environments; (3) Topographic Diversity, spanning dense urban canyons to low-texture natural terrains; and (4) Mathematical Label Integrity, utilizing a novel two-step linetrace algorithm to generate flawless occlusion masks. Experimental results using SOTA iterative models demonstrate that models trained exclusively on SatUnreal achieve superior zero-shot transfer performance on real-world benchmarks (US3D, WHU-Stereo) compared to those trained on real datasets. Our findings prove that physically accurate synthetic data provides a more effective supervisory signal for learning geometric features than complex real-world observations, establishing a new paradigm for Sim-to-Real transfer in Earth Observation. Code and dataset are available at https://github.com/jmp-Telepix/SatUnreal_A_High-Precision_Synthetic_Dataset_for_Satellite_Stereo_Matching_via_UnrealEngine",
+      "summary_zh": "从卫星影像进行三维重建对于大规模地形分析至关重要，但缺乏具有准确遮挡标签的高保真训练数据集仍是主要瓶颈。现有基准如US3D和WHU-Stereo面临多视角采集间环境变化和阴影位移导致的时空不匹配固有挑战，并且由于LiDAR稀疏性在遮挡区域提供模糊的真值。本文提出SatUnreal，一个通过基于Unreal Engine的仿真流程设计的高精度合成数据集，旨在从根本上克服这些限制。SatUnreal提供10,000对立体像对，高分辨率（0.3m GSD），具有以下特点：（1）物理几何仿真，通过系统改变基线和方位角复现真实卫星轨道；（2）时空一致性，通过固定虚拟环境消除时间噪声；（3）地形多样性，涵盖密集城市峡谷到低纹理自然地形的范围；（4）数学标签完整性，利用新颖的两步linetrace算法生成无瑕疵遮挡掩码。使用SOTA迭代模型的实验结果表明，仅在SatUnreal上训练的模型在真实世界基准（US3D、WHU-Stereo）上实现了优于在真实数据集上训练的模型的零样本迁移性能。我们的发现证明，物理准确的合成数据为学习几何特征提供了比复杂真实世界观测更有效的监督信号，为地球观测中的Sim-to-Real迁移建立了新范式。代码和数据集见https://github.com/jmp-Telepix/SatUnreal_A_High-Precision_Synthetic_Dataset_for_Satellite_Stereo_Matchin。",
+      "insight_zh": "该研究提示，物理准确的合成数据可能为卫星立体匹配提供比真实数据更有效的监督信号，尤其在遮挡区域标签质量方面；其Sim-to-Real迁移思路或可启发遥感变化检测中合成数据的构建与应用，但需注意合成环境与真实场景的域差距。"
+    },
+    {
+      "key": "arxiv:2608.29088",
+      "title": "HANIA: Planner-Guided Multimodal Graph Evidence Selection for Grounded Question Answering",
+      "title_zh": "HANIA：规划器引导的多模态图证据选择用于接地问答",
+      "url": "https://arxiv.org/abs/2608.29088",
+      "doi": "",
+      "arxiv_id": "2608.29088",
+      "authors": [
+        "Zafar Ali",
+        "Asad Khan",
+        "Nimbeshaho Thierry",
+        "Nabila Amir",
+        "Adam A. Q. Mohammed",
+        "Pavlos Kefalas"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 75,
+      "reason": "论文提出多模态图证据选择框架用于问答，涉及视觉和文本信息融合与推理，与多源数据融合和地理空间智能有方法上的关联，但非直接针对地理空间数据。",
+      "tags": [
+        "多模态问答",
+        "图证据选择",
+        "规划器"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出HANIA框架，通过冻结视觉语言模型提取视觉证据，构建多模态图，并使用有限状态规划器协调描述性和关系性证据，实现无需微调的接地问答。",
+      "insight_zh": "结构化证据规划和紧凑图引导检索可支持竞争性的多模态问答，无需目标数据集微调。"
+    },
+    {
+      "key": "arxiv:2609.27290",
+      "title": "Sparse-Observation Atmospheric Thermal Forecasting with Physics-Informed Neural Networks for Climate-Aware Digital Twins",
+      "title_zh": "面向气候感知数字孪生的稀疏观测大气热力预报物理信息神经网络",
+      "url": "https://arxiv.org/abs/2609.27290",
+      "doi": "",
+      "arxiv_id": "2609.27290",
+      "authors": [
+        "Tannaz Goodarzvand Chegini",
+        "Elyas Shivanian",
+        "Behzad Karimi",
+        "Faraz Dadgostari"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T03:29:16+00:00",
+      "score": 72,
+      "reason": "该文使用物理信息神经网络进行稀疏观测下的大气温度短时预报，涉及遥感再分析数据、时空预测与气候数字孪生，与遥感变化检测、多源数据融合和地理空间智能有较强关联。",
+      "tags": [
+        "物理信息神经网络",
+        "大气温度预测",
+        "稀疏观测",
+        "数字孪生",
+        "遥感再分析"
+      ],
+      "abstract": "Short-horizon forecasts of atmospheric temperature are needed to support climate-aware digital-twin systems, but such forecasts must be produced where thermal observations are incomplete. This study evaluates a physics-informed neural network for potential-temperature forecasting, constrained by a pressure-coordinate thermodynamic advection-source equation and a diabatic-source closure fit from the preceding 12-hour period and frozen before future-time training. Using hourly ERA5 reanalysis at three pressure levels, the model is evaluated as a conditional hindcast at lead times of one, two and three hours against persistence, local-trend, and two matched neural-network baselines, one of which receives the same future meteorological forcing as the PINN, helping distinguish the physical constraint from access to future forcing. In an Oklahoma development case, mean RMSE improvement over the strongest baseline grew from 8.1\\% at one hour to 23.8\\% at three hours; under an observation-density sweep down to 5\\% of candidate locations, this 3-hour advantage remained 14.6--16.9\\%, with no evidence that lower density improves performance. Under a fixed protocol transferred to an Alabama heat event with three virtual-observation layouts, three-hour improvement ranged 19.7-24.4\\% with consistent origin-level wins. A parallel Montana stress test, in which fixed pressure levels intersected complex terrain, produced a three-hour degradation of roughly 17.5\\%, identifying a terrain-related applicability limit of the formulation. Together, these results indicate that the physics constraint's benefit grows with forecast horizon, persists under severe observation sparsity, and transfers across regions, but is bounded by the validity of a fixed vertical-coordinate representation over complex terrain, evidence relevant to physics-constrained components of climate-aware forecasting and digital-twin systems.",
+      "summary_zh": "气候感知数字孪生系统需要短时大气温度预报，但必须在热力观测不完整的地区生成。本研究评估一种物理信息神经网络用于位温预报，受气压坐标热力学平流-源方程约束，并由前12小时拟合、在未来时间训练前冻结的非绝热源闭合项约束。使用三个气压层的逐小时ERA5再分析数据，模型在1、2、3小时提前期作为条件后报进行评估，对比持续性、局部趋势和两个匹配神经网络基线，其中一个基线接收与PINN相同的未来气象强迫，以区分物理约束与未来强迫获取的影响。在俄克拉荷马开发案例中，相对最强基线的平均RMSE改进从1小时的8.1%增长到3小时的23.8%；在观测密度降至候选位置5%的扫描下，3小时优势仍为14.6%-16.9%。在阿拉巴马热事件中，3小时改进为19.7-24.4%。蒙大拿压力测试中，固定气压层与复杂地形相交导致3小时性能下降约17.5%，揭示该公式在地形相关适用性上的限制。",
+      "insight_zh": "该研究表明物理约束的收益随预报时效增长、在严重观测稀疏下仍存在并可跨区域迁移，但受固定垂直坐标表示在复杂地形上有效性的限制；对地理空间智能中的物理约束时空预测与稀疏观测融合具有参考价值。"
+    },
+    {
+      "key": "arxiv:2609.06080",
+      "title": "PhenoBench: Mapping What a Deeply Phenotyped Human Cohort Can Tell Us",
+      "title_zh": "PhenoBench：绘制深度表型人类队列能告诉我们什么",
+      "url": "https://arxiv.org/abs/2609.06080",
+      "doi": "",
+      "arxiv_id": "2609.06080",
+      "authors": [
+        "Gal Sapir",
+        "Alon Diament",
+        "Adva Wolf",
+        "Doron Yaya-Stupp",
+        "Dikla Gelbard Solodkin",
+        "Dana Azouri",
+        "Anat Etzion-Fuchs",
+        "Guy Lutsker",
+        "Eran Segal",
+        "Hagai Rossman"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-05T13:15:40+00:00",
+      "score": 70,
+      "reason": "该论文构建了一个多模态纵向队列的基准测试框架，与GIS中多源数据融合和时间序列分析的研究方向高度相关，其方法论（如评估协议、任务定义）可借鉴到城市多源时空数据挖掘中。",
+      "tags": [
+        "多模态数据",
+        "基准测试",
+        "纵向队列",
+        "临床数据",
+        "预测模型"
+      ],
+      "abstract": "Deeply phenotyped cohorts combine clinical, imaging, molecular, and wearable observations across timescales from seconds to years. This breadth can reveal which measurements inform which health-related questions, but heterogeneous analyses are not directly comparable. We present PhenoBench, an executable benchmark built around the Human Phenotype Project, in which more than 13,000 participants have completed the initial visit. Each question fixes the target, eligible population, timing, and allowed information; its evaluation contract specifies the split, metric, baseline, and claim boundary. The benchmark defines 90 clinically grounded tasks across 15 domains and 26 input modalities. Measurements showed question- and representation-dependent predictive value, including positive, near-zero, and negative changes in held-out performance relative to matched baselines. We used PhenoBench to evaluate emerging tabular foundation models across 160 matched regression comparisons spanning 52 tasks. These models ranked above standard task-specific models in aggregate but, averaged across the three pretrained models within each cell, improved on ridge by a median of only 0.004 $R^2$ (95% CI, 0.002--0.006). We then used the same cohort data and evaluation contracts to evaluate 14 language models, collectively covering 40 tasks spanning phenotype recovery, classification, follow-up forecasting, and participant ordering. Without cohort-specific fitting, language models made informative predictions on some tasks, but showed task-specific capability gaps, shared failures of scale, and rarely surpassed models fitted on the same fields. PhenoBench turns a multimodal longitudinal cohort into a versioned, auditable evaluation system where new questions, measurements, and models can be added without redefining existing comparisons.",
+      "summary_zh": "PhenoBench是一个围绕人类表型项目构建的可执行基准，包含超过13,000名参与者的临床、影像、分子和可穿戴设备数据。该基准定义了90项跨15个领域和26种输入模态的临床任务，并提供了评估协议。研究发现预测价值因问题和表示而异，并评估了表格基础模型和语言模型在多种任务上的表现。",
+      "insight_zh": "该研究强调了在异构多模态数据中，任务定义和评估协议对模型性能比较的重要性，并指出不同数据模态和表示方法对预测结果的贡献存在显著差异。"
+    },
+    {
+      "key": "arxiv:2608.26706",
+      "title": "Towards Expert Financial QA via Self-Improving RAG",
+      "title_zh": "通过自我改进RAG实现专家级金融问答",
+      "url": "https://arxiv.org/abs/2608.26706",
+      "doi": "",
+      "arxiv_id": "2608.26706",
+      "authors": [
+        "Junjie Xiong",
+        "Shawheen Ghezavat",
+        "Aum Hirpara"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 70,
+      "reason": "该研究提出自我改进的RAG框架，与LLM和多智能体在城市更新中的应用相关，可借鉴其智能体协作和反馈机制。",
+      "tags": [
+        "金融问答",
+        "检索增强生成",
+        "多智能体",
+        "自我改进",
+        "可审计性"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "提出Self-Improving RAG框架，通过检索、推理和评判三个智能体协作，实现金融文档问答的自我纠正和可审计性。",
+      "insight_zh": "基于评判驱动的重试机制，无需动态路由即可显著提升问答准确性，并保持完全的可解释性。"
+    },
+    {
+      "key": "arxiv:2512.11490",
+      "title": "VLM2GeoVec: Toward Universal Multimodal Embeddings for Remote Sensing",
+      "title_zh": "VLM2GeoVec：面向遥感的通用多模态嵌入",
+      "url": "https://arxiv.org/abs/2512.11490",
+      "doi": "",
+      "arxiv_id": "2512.11490",
+      "authors": [
+        "Emanuel S\\'anchez Aimar",
+        "Gulnaz Zhambulova",
+        "Fahad Shahbaz Khan",
+        "Yonghao Xu",
+        "Michael Felsberg"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 70,
+      "reason": "该论文研究面向遥感的通用多模态嵌入，与研究中多源数据融合、地理空间智能及LLM应用方向相关，可能为遥感图像-文本对齐提供基础模型支持。",
+      "tags": [
+        "遥感",
+        "多模态嵌入",
+        "视觉语言模型",
+        "基础模型"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，无法提供详细总结。",
+      "insight_zh": "仅从标题推断，该工作可能致力于构建遥感领域的通用视觉-语言嵌入模型，或为多源遥感数据融合与跨模态检索提供基础表示；但其具体架构、训练数据与评测结果需查阅全文确认。"
+    },
+    {
+      "key": "arxiv:2609.27370",
+      "title": "Geometry-Conditioned Visual Place Recognition in Natural Environments",
+      "title_zh": "自然环境中几何条件化的视觉地点识别",
+      "url": "https://arxiv.org/abs/2609.27370",
+      "doi": "",
+      "arxiv_id": "2609.27370",
+      "authors": [
+        "Walter Nedov",
+        "Saimunur Rahman",
+        "Kavindie Katuwandeniya",
+        "David Hall",
+        "Kaushik Roy",
+        "Peyman Moghadam"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T05:19:23+00:00",
+      "score": 68,
+      "reason": "该论文提出几何条件化的视觉地点识别方法，利用几何基础模型提供持久结构先验，与遥感变化检测、地理空间智能和跨视图场景理解高度相关，尤其适用于自然环境下外观变化大的场景。",
+      "tags": [
+        "视觉地点识别",
+        "几何基础模型",
+        "深度感知蒸馏",
+        "自然环境",
+        "跨视图变化"
+      ],
+      "abstract": "Visual Place Recognition (VPR) in natural environments remains challenging due to repetitive vegetation, sparse distinctive landmarks, and substantial appearance and viewpoint variation across traversals. While visual observations of the same place can change considerably, their underlying spatial structure is often more persistent. We exploit this complementary geometric consistency through Depth-Aware Distillation (DAD), which conditions the token representations of a pretrained Vision Foundation Model (VFM) on geometry inferred by a Geometric Foundation Model (GFM), without any depth sensor. Rather than treating geometry as an additional input modality, DAD projects image-aligned depth into the VFM token space and selectively modulates visual representations through channel-wise geometric conditioning. A two-stage teacher-guided learning strategy first anchors the geometry-conditioned representation to the pretrained appearance space, before refining it for place discrimination. Evaluated on the WildCross benchmark, DAD improves average inter-sequence Recall@1 from 61.41% to 66.37% and Recall@5 from 65.86% to 72.49% over a matched appearance-only baseline, with the largest gains under reverse traversal and long-term appearance variation. These results show that GFM-derived geometry can provide a persistent structural prior for VPR when visual appearance becomes unreliable.",
+      "summary_zh": "自然环境中的视觉地点识别（VPR）因重复植被、稀疏显著地标以及跨遍历的外观和视角大幅变化而仍具挑战性。同一地点的视觉观测可能变化很大，但其底层空间结构通常更持久。本文通过深度感知蒸馏（Depth-Aware Distillation, DAD）利用这种互补的几何一致性，在无需深度传感器的情况下，将预训练视觉基础模型（VFM）的token表示条件化于几何基础模型（GFM）推断的几何。DAD不将几何视为额外输入模态，而是将图像对齐深度投影到VFM token空间，并通过通道级几何条件化选择性调制视觉表示。两阶段教师引导学习策略首先将几何条件化表示锚定到预训练外观空间，再针对地点判别进行细化。在WildCross基准上评估，DAD将平均跨序列Recall@1从61.41%提升至66.37%，Recall@5从65.86%提升至72.49%，优于匹配的纯外观基线，在反向遍历和长期外观变化下增益最大。这些结果表明，当视觉外观不可靠时，GFM导出的几何可为VPR提供持久的结构先验。",
+      "insight_zh": "该研究说明，几何基础模型提供的结构先验可在外观变化剧烈时增强地点识别鲁棒性；这一思路可迁移至遥感变化检测与跨时相地理空间智能，利用几何一致性弥补外观差异。"
+    },
+    {
+      "key": "arxiv:2609.27298",
+      "title": "StateComp: Learning When to Compress History in Long Horizon Agents",
+      "title_zh": "StateComp：学习长时程智能体中何时压缩历史",
+      "url": "https://arxiv.org/abs/2609.27298",
+      "doi": "",
+      "arxiv_id": "2609.27298",
+      "authors": [
+        "Mingxuan Wang",
+        "Hongyue Chen",
+        "Yinglong Guo",
+        "Fei Luo",
+        "Chao Ning",
+        "Bo Wang",
+        "Guorun Yao",
+        "Yanbiao Ma",
+        "Jungong Han"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T03:34:08+00:00",
+      "score": 63,
+      "reason": "该文研究长时程智能体何时可安全压缩历史，属于LLM与多智能体方向，与时空数据挖掘中的长序列管理有潜在关联，但不涉及地理空间应用。",
+      "tags": [
+        "长时程智能体",
+        "上下文压缩",
+        "状态条件压缩",
+        "记忆管理",
+        "LLM智能体"
+      ],
+      "abstract": "Long-horizon agents continuously accumulate interaction history during task execution, yet the importance of past interactions changes as the agent state evolves. Existing context management methods largely compress history based on fixed windows, periodic schedules, or current relevance, overlooking a more fundamental question: when has a past interaction become safe to replace? Premature compression may remove information still needed for future actions, while overly conservative retention leads to substantial context overhead. To address this, we propose State Conditioned Compression (StateComp), a framework that determines when historical interactions can be safely compressed according to the current agent state. StateComp constructs KEEP and READY supervision through a two-stage annotation procedure and trains an imbalance-aware router on hidden representations from a frozen language model. A bounded state representation further reduces the cost of evaluating long histories, while adjacent READY interactions are grouped into continuous spans and replaced with compact summaries during execution. Experiments on WorkBuddyBench show that StateComp reduces total agent and summarization tokens by 52.27% while maintaining task performance, and achieves a 12.67-fold speedup in representation extraction.",
+      "summary_zh": "长时程智能体在执行任务时不断累积交互历史，而过去交互的重要性随智能体状态演化而变化。现有上下文管理方法多基于固定窗口、周期调度或当前相关性压缩历史，忽略了更根本的问题：过去交互何时已可安全替换？过早压缩可能移除未来动作仍需的信息，过度保留则带来大量上下文开销。作者提出状态条件压缩（StateComp），根据当前智能体状态判断历史交互何时可安全压缩。StateComp通过两阶段标注构建KEEP和READY监督，并在冻结语言模型的隐藏表示上训练不平衡感知路由器。有界状态表示进一步降低评估长历史的成本，相邻READY交互被分组为连续片段并在执行时替换为紧凑摘要。在WorkBuddyBench上，StateComp将智能体和摘要总token减少52.27%，同时保持任务性能，表示提取加速12.67倍。",
+      "insight_zh": "该工作将历史压缩时机建模为状态条件决策，强调安全压缩的判定；其思路或可迁移到时空数据挖掘中长时程交互历史的动态管理，但论文未涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.27690",
+      "title": "Consequential Behaviour and Representational Fairness in the Validation of Synthetic Research",
+      "title_zh": "合成研究验证中的后果行为与表征公平性",
+      "url": "https://arxiv.org/abs/2609.27690",
+      "doi": "",
+      "arxiv_id": "2609.27690",
+      "authors": [
+        "Florian Kutzner",
+        "Celina Kacperski",
+        "Laura de Moli\\`ere",
+        "Edoardo Chidichimo",
+        "Min Jun Jung",
+        "Felix Patrick Sedgwick Wallis",
+        "James Kunling He"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T11:10:16+00:00",
+      "score": 62,
+      "reason": "该文讨论LLM驱动的合成调查受访者在应用研究中的验证问题，提出包含分布、过程与承认三维度的公平性验证框架，与研究中LLM与多智能体方向相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM",
+        "合成数据",
+        "验证框架",
+        "公平性",
+        "行为预测"
+      ],
+      "abstract": "Researchers in industry and academia use synthetic survey respondents powered by large language models as substitutes for human samples. These synthetic populations require validation against real-world data, so researchers often address them using ad hoc comparisons with human surveys. Inspired by the intention-behaviour gap in behavioural science, we argue that these validations test the wrong thing for most applied cases where decision makers commission synthetic research to anticipate consequential behaviour. To address this problem, we propose a validation framework with two requirements. First, every validity claim must state its level of correspondence with human data: does the sample predict what the represented people do, which of four diagnostics (location, dispersion, response process and structure) does the validation address, and does the validation compare against experimental effects? Second, researchers must report validity claims for subgroups, since these groups are often the most affected by consequential decisions and aggregate accuracy hides their misrepresentation. Our validation framework operationalises three justice dimensions (distributional, procedural, and recognition) as measurable quantities and defines within-persona counterfactual experiments as a validation requirement. We then apply the framework to electric vehicle charging tariffs, before closing with a reporting checklist that researchers can use to make convincing validity claims.",
+      "summary_zh": "工业界与学术界的研究者使用由大语言模型驱动的合成调查受访者作为人类样本的替代。这些合成人群需要对照真实世界数据进行验证，因此研究者常通过临时性的人类调查比较来处理。受行为科学中意图—行为差距的启发，作者认为对于决策者委托合成研究以预判后果行为的大多数应用场景而言，这些验证检验了错误的对象。为解决这一问题，作者提出一个包含两项要求的验证框架。第一，每一项效度主张必须说明其与人类数据的对应水平：样本是否预测了所代表人群的行为，验证涉及位置、离散度、反应过程与结构这四项诊断中的哪一项，以及验证是否与实验效应进行比较。第二，研究者必须报告子群体的效度主张，因为这些群体往往受后果性决策影响最大，而总体准确率会掩盖其被错误表征的情况。该验证框架将三个正义维度（分配、程序与承认）操作化为可测量量，并将人设内反事实实验定义为一项验证要求。作者随后将该框架应用于电动汽车充电电价，最后给出可供研究者使用以提出有说服力的效度主张的报告清单。",
+      "insight_zh": "该框架将公平性维度操作化为可测量量，并强调子群体效度报告，可为涉及LLM合成人群的城市与地理应用研究提供验证思路；但其应用示例为电动汽车充电电价，未涉及地理空间数据或城市更新场景。"
+    },
+    {
+      "key": "arxiv:2609.27462",
+      "title": "Hybrid Gaussians for Robust Open-Vocabulary 3D Segmentation with Multi-View Object Association and Boundary Refinement",
+      "title_zh": "混合高斯：面向鲁棒开放词汇3D分割的多视图对象关联与边界细化",
+      "url": "https://arxiv.org/abs/2609.27462",
+      "doi": "",
+      "arxiv_id": "2609.27462",
+      "authors": [
+        "Xueqi Qiu",
+        "Yueming Sun",
+        "Tianyu Zhang",
+        "Yuxuan Xia",
+        "Yang Long"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T07:27:54+00:00",
+      "score": 62,
+      "reason": "该论文提出混合高斯表示用于开放词汇3D分割，涉及多视图对象关联与边界细化，与遥感变化检测和多源数据融合中的三维场景理解有一定关联，但未直接涉及城市更新或时空数据挖掘。",
+      "tags": [
+        "3D分割",
+        "开放词汇",
+        "多视图关联",
+        "高斯表示",
+        "边界优化"
+      ],
+      "abstract": "Open-vocabulary 3D segmentation localizes objects from free-form text queries, but remains challenging in real image sequences: incomplete or noisy 2D supervision destabilizes multi-view identity assignment, while full-scene semantic learning weakens object-level discriminability. We introduce Hybrid Gaussians, a unified 3D representation jointly modeling object association and language-aligned semantics. Its Multi-View Object Association mechanism combines Observation Fusion and Semantic Contrastive Learning to improve identity consistency and semantic discrimination. Boundary Reconstruction Optimization further refines local boundary structure to improve contour quality. Experiments on LERF and 3D-OVS demonstrate strong quantitative and qualitative performance. Our method achieves 59.1\\% mIoU on LERF, yielding a 13.4\\% relative gain over the baseline. Project page: https://nora202.github.io/hybridgaussians.",
+      "summary_zh": "开放词汇3D分割旨在根据自由文本查询定位物体，但在真实图像序列中仍具挑战性：不完整或噪声的2D监督会破坏多视图身份分配，而全场景语义学习会削弱对象级判别力。本文提出混合高斯（Hybrid Gaussians），一种统一3D表示，联合建模对象关联与语言对齐语义。其多视图对象关联机制结合观测融合与语义对比学习，提升身份一致性和语义判别力。边界重建优化进一步细化局部边界结构以改善轮廓质量。在LERF和3D-OVS上的实验展示了良好的定量与定性性能。该方法在LERF上达到59.1% mIoU，相对基线提升13.4%。项目页面：https://nora202.github.io/hybridgaussians。",
+      "insight_zh": "该工作表明，将对象关联与语言对齐语义统一到3D表示中，并辅以边界优化，可提升开放词汇3D分割的鲁棒性；其多视图关联思路或可迁移至多源遥感数据融合中的跨视图对象一致性建模。"
+    },
+    {
+      "key": "arxiv:2609.27332",
+      "title": "Stable Geometry with Divergent Task Evidence for Efficient Long-Horizon Agent Compression",
+      "title_zh": "稳定几何与发散任务证据：面向高效长时程智能体压缩",
+      "url": "https://arxiv.org/abs/2609.27332",
+      "doi": "",
+      "arxiv_id": "2609.27332",
+      "authors": [
+        "Mingxuan Wang",
+        "Fei Luo",
+        "Bo Wang",
+        "Guorun Yao",
+        "Yinglong Guo",
+        "Chao Ning",
+        "Hongyue Chen",
+        "Yanbiao Ma",
+        "Jungong Han"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T04:09:19+00:00",
+      "score": 62,
+      "reason": "该文研究长时程智能体的历史压缩，提出几何引导的证据保留记忆机制，与LLM和多智能体方向相关，但未涉及地理空间数据或城市更新应用。",
+      "tags": [
+        "LLM智能体",
+        "长时程智能体",
+        "上下文压缩",
+        "记忆管理",
+        "几何冗余"
+      ],
+      "abstract": "Long horizon agents accumulate growing interaction histories that increase context and inference costs. We find that geometric redundancy alone is an insufficient criterion for safe compression. Although agent histories exhibit strong low dimensional structure, similar global geometry can preserve very different amounts of task evidence. At identical retained block counts, evidence aware selection raises next action Top 3 retention from 0.31 to 0.69, while centroid similarity remains 0.98. Controlled replacement further shows that action related information can be substantially altered while global geometric measures remain nearly unchanged. Motivated by this gap between geometry and evidence, we introduce Geometry Guided Evidence Preserving Memory (GEM), a training free compressor that protects task and execution evidence before using geometric residuals to complete coverage. GEM reduces mean combined token usage from 2.69M to 2.11M per task, a 21.4% reduction, while maintaining comparable task reward. Our results show that efficient agent history compression should optimize for preserved task evidence rather than geometric coverage alone.",
+      "summary_zh": "长时程智能体在交互中不断累积历史，导致上下文和推理成本上升。作者发现仅凭几何冗余不足以安全压缩：尽管智能体历史具有强低维结构，相似的全局几何可能保留差异极大的任务证据。在保留块数相同时，证据感知选择将下一动作Top-3保留率从0.31提升到0.69，而质心相似度仍为0.98。受几何与证据之间差距的启发，作者提出几何引导的证据保留记忆（GEM），一种无需训练的压缩器，先保护任务与执行证据，再用几何残差补全覆盖。GEM将每任务平均合并token用量从2.69M降至2.11M（减少21.4%），同时保持相当的任务奖励。",
+      "insight_zh": "该工作提示在长时程智能体记忆压缩中，任务证据保留比几何覆盖更关键；其思路或可迁移到时空数据挖掘中长序列交互历史的压缩，但论文本身未涉及地理空间场景。"
+    },
+    {
+      "key": "arxiv:2609.27143",
+      "title": "A Systematic Evaluation of Infrastructure-Based Radar System for Highway Traffic Monitoring",
+      "title_zh": "面向高速公路交通监测的路侧雷达系统系统性评估",
+      "url": "https://arxiv.org/abs/2609.27143",
+      "doi": "",
+      "arxiv_id": "2609.27143",
+      "authors": [
+        "Tianheng Zhu",
+        "Woei-chyi Chang",
+        "Alamss Riaz",
+        "Sogand Hasanzadeh",
+        "Yiheng Feng"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-22T23:06:31+00:00",
+      "score": 62,
+      "reason": "该文系统评估路侧雷达在高速公路交通监测中的检测、跟踪与宏观参数估计性能，并发布无人机与雷达双模态轨迹数据集，与时空数据挖掘、多源数据融合和城市交通感知研究高度相关。",
+      "tags": [
+        "路侧雷达",
+        "交通监测",
+        "车辆轨迹",
+        "无人机真值",
+        "多模态数据集",
+        "宏观交通参数"
+      ],
+      "abstract": "Infrastructure-based radar systems offer robust and long-range solutions for traffic monitoring, yet their detection and tracking performance under real-world conditions remains insufficiently evaluated. This study introduces DRaT (Drone and Radar Trajectories), a dual-modality dataset of naturalistic vehicle trajectories collected at a highway merging segment in Fort Worth, Texas, to systematically assess radar sensing performance against drone-derived ground truth. The performance is evaluated at three levels: individual vehicle detection, trajectory tracking, and macroscopic traffic parameter estimation. For individual vehicle detection, the radar achieves an overall precision of 78% and a recall of 57%, with degraded performance under congested traffic conditions and at longer distances. At the trajectory level, the radar demonstrates reasonably strong tracking performance (IDF1 = 0.699), maintaining reliable vehicle identities when tracks are successfully established. For macroscopic traffic flow metrics, the radar accurately estimates space-mean speed (MAPE < 4%) but underestimates density and volume by approximately 23% due to missed detections. The paper also discusses practical deployment considerations and potential downstream applications of roadside radar sensing systems. To support reproducible research on infrastructure-based sensing systems, we have open-sourced the DRaT dataset on Zenodo: https://zenodo.org/records/20171110.",
+      "summary_zh": "路侧雷达系统为交通监测提供稳健且远距离的解决方案，但其在真实条件下的检测与跟踪性能尚未得到充分评估。本研究提出DRaT（无人机与雷达轨迹），一个在德克萨斯州沃思堡高速公路合流段采集的自然车辆轨迹双模态数据集，用于系统评估雷达感知相对于无人机真值的性能。评估在三个层面进行：单车检测、轨迹跟踪和宏观交通参数估计。在单车检测方面，雷达总体精确率为78%，召回率为57%，在拥堵交通条件和较远距离下性能下降。在轨迹层面，雷达表现出较好的跟踪性能（IDF1 = 0.699），在成功建立轨迹时能保持可靠车辆身份。在宏观交通流指标方面，雷达能准确估计空间平均速度（MAPE < 4%），但由于漏检，密度和流量被低估约23%。论文还讨论了实际部署考虑和路侧雷达感知系统的潜在下游应用。为支持基础设施感知系统的可复现研究，DRaT数据集已在Zenodo开源：https://zenodo.org/records/20171110。",
+      "insight_zh": "该研究为多源交通数据融合提供了雷达与无人机真值的对比基准，其揭示的漏检导致的密度与流量低估问题，对基于路侧感知的城市交通时空分析具有重要方法学参考价值。"
+    },
+    {
+      "key": "arxiv:2605.29313",
+      "title": "PatchBoard: Schema-Grounded State Mutation for Reliable and Auditable LLM Multi-Agent Collaboration",
+      "title_zh": "PatchBoard：面向可靠且可审计的LLM多智能体协作的模式约束状态变异",
+      "url": "https://arxiv.org/abs/2605.29313",
+      "doi": "",
+      "arxiv_id": "2605.29313",
+      "authors": [
+        "Shuyu Zhang",
+        "Yaqi Shi",
+        "Jiarui Zhang",
+        "Yanxiao Zhao",
+        "Lu Wang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 62,
+      "reason": "该论文聚焦LLM多智能体协作的可靠性与可审计性，与研究者关注的LLM和多智能体方向直接相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM多智能体",
+        "协作可靠性",
+        "状态变异",
+        "可审计性"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。",
+      "insight_zh": "仅从标题推断，该工作可能通过模式约束的状态变异机制提升多智能体协作的可靠性与可审计性；由于摘要缺失，无法确认其方法、数据或结论。"
+    },
+    {
+      "key": "arxiv:2604.22099",
+      "title": "Assessing the impact of dimensionality reduction on clustering performance - a systematic study",
+      "title_zh": "评估降维对聚类性能的影响——一项系统性研究",
+      "url": "https://arxiv.org/abs/2604.22099",
+      "doi": "",
+      "arxiv_id": "2604.22099",
+      "authors": [
+        "Ousmane Assani Amate",
+        "Elyes Lounissi",
+        "Mohammadreza Bakhtyari",
+        "\\'Emilie Roy",
+        "Roman Sarrazin-Gendron",
+        "Vladimir Makarenkov"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 62,
+      "reason": "该论文系统评估降维对聚类性能的影响，与时空数据挖掘中的高维特征处理与聚类分析直接相关，可为城市更新多源数据聚类提供方法参考。",
+      "tags": [
+        "降维",
+        "聚类",
+        "时空数据挖掘",
+        "方法评估"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失，仅从标题可知该研究对降维方法在聚类任务中的表现进行了系统性评估。",
+      "insight_zh": "若研究涉及不同降维方法与聚类算法的组合比较，其结论可能为城市更新中高维时空特征的预处理与聚类流程设计提供经验依据；但具体数据集、指标与结论无法从现有信息推断。"
+    },
+    {
+      "key": "arxiv:2609.27307",
+      "title": "Learn How to Act from Your Own Interactions: On-Policy Self-Distillation for GUI Agents",
+      "title_zh": "从自身交互中学习行动：面向GUI智能体的在线自蒸馏",
+      "url": "https://arxiv.org/abs/2609.27307",
+      "doi": "",
+      "arxiv_id": "2609.27307",
+      "authors": [
+        "Yan Zhang",
+        "Daiqing Wu",
+        "Huawen Shen",
+        "Liang Li",
+        "Gang Cao",
+        "Zhi Gong",
+        "Wei Dai",
+        "Xiaode Zhang",
+        "Can Ma",
+        "Yu Zhou"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T03:38:11+00:00",
+      "score": 60,
+      "reason": "该文研究多轮GUI智能体的在线自蒸馏训练，属于LLM智能体方向，与多智能体及长时程交互相关，但不涉及地理空间数据或城市更新。",
+      "tags": [
+        "GUI智能体",
+        "在线自蒸馏",
+        "多轮交互",
+        "长时程记忆",
+        "强化学习"
+      ],
+      "abstract": "Graphical User Interface (GUI) agents enable the fulfillment of complex user instructions through multi-turn interactions with software environments, requiring step-wise reasoning and long-horizon memory to guide actions and retain task-relevant information, respectively. Recent on-policy self-distillation (OPSD) methods have achieved strong performance on GUI grounding, a foundational subtask for GUI agents, owing to dense token-level supervision from privilege-conditioned self-teachers. However, extending existing OPSD methods to multi-turn GUI agents is hindered by self-teachers' limited privilege-following ability and insufficient privileged guidance. In this paper, we introduce GUI-SD-v2, the next version of GUI-SD, which extends OPSD from GUI grounding to multi-turn GUI interaction and addresses key limitations through a two-stage training framework. Specifically, GUI-SD-v2 first strengthens privilege following by jointly optimizing rollouts with and without privileged guidance from the same GUI states. Furthermore, it selectively distills step-specific reasoning and memory guidance through a privilege-conditioned self-teacher, supporting action decisions and the retention of task-relevant information for subsequent interactions. Extensive experiments on two representative GUI agent benchmarks, AndroidWorld and MobileWorld, show that GUI-SD-v2 compares favorably with existing OPSD baselines while consistently outperforming the evaluated state-of-the-art methods in both Pass@1 and Pass@3 success rates. Code and training data will be publicly released.",
+      "summary_zh": "图形用户界面（GUI）智能体通过多轮交互完成复杂用户指令，需要逐步推理和长时程记忆来指导动作并保留任务相关信息。近期在线自蒸馏（OPSD）方法在GUI grounding这一基础子任务上表现优异，得益于特权条件自教师的密集token级监督。然而将现有OPSD扩展到多轮GUI智能体受限于自教师的特权遵循能力不足和特权指导不充分。作者提出GUI-SD-v2，将OPSD从GUI grounding扩展到多轮GUI交互，通过两阶段训练框架解决关键限制：首先联合优化有特权指导和无特权指导的rollout以增强特权遵循；其次通过特权条件自教师选择性蒸馏步骤特定的推理和记忆指导。在AndroidWorld和MobileWorld两个基准上，GUI-SD-v2在Pass@1和Pass@3成功率上均优于所评估的现有最优方法。",
+      "insight_zh": "该工作将在线自蒸馏从单步grounding扩展到多轮交互，强调步骤特定推理与记忆指导；其训练思路或可迁移到需要多轮交互的地理空间智能体，但论文未涉及地理空间场景。"
+    },
+    {
+      "key": "arxiv:2608.28316",
+      "title": "Conditional Visual Evidence Utility: State-Dependent Rank Reversals in Frozen Vision-Language Encoders",
+      "title_zh": "条件视觉证据效用：冻结视觉语言编码器中的状态依赖排序反转",
+      "url": "https://arxiv.org/abs/2608.28316",
+      "doi": "",
+      "arxiv_id": "2608.28316",
+      "authors": [
+        "Yunxuan Fang",
+        "Xinhe Wang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 60,
+      "reason": "该研究探讨了视觉语言编码器中证据重要性的状态依赖性，与LLM和多智能体中的信息获取与决策过程相关。其关于条件证据效用的发现对设计自适应信息选择策略有启发，但应用场景为视觉搜索，与城市更新关联度中等。",
+      "tags": [
+        "视觉语言模型",
+        "证据效用",
+        "状态依赖",
+        "组合搜索",
+        "条件排序"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "本文研究了在组合视觉搜索中，视觉证据的重要性是否随已观察线索而变化。实验发现，冻结的OpenCLIP和SigLIP模型表现出稳健的状态依赖排序反转，且该现象在候选重叠区域集中出现。进一步分析表明，基于首次获取后重新排序的决策策略能带来正向效用，说明证据重要性是状态依赖的，而非静态排序。",
+      "insight_zh": "该研究揭示了视觉语言模型中证据价值的情境依赖性，提示在设计智能体信息获取策略时，应考虑条件化的证据评估，而非依赖静态重要性排序。"
+    },
+    {
+      "key": "arxiv:2609.27677",
+      "title": "RoadOcc Learns When to Persist, Transport, or Refresh Memory for Roadside Occupancy Prediction",
+      "title_zh": "RoadOcc学习何时保持、迁移或刷新记忆以进行路侧占用预测",
+      "url": "https://arxiv.org/abs/2609.27677",
+      "doi": "",
+      "arxiv_id": "2609.27677",
+      "authors": [
+        "Xiaokai Bai",
+        "Lei Yang",
+        "Songkai Wang",
+        "Lianqing Zheng",
+        "Si-Yuan Cao",
+        "Hui-liang Shen"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T10:47:53+00:00",
+      "score": 58,
+      "reason": "该文提出路侧相机占用预测中的时序记忆路由方法，涉及运动补偿、多尺度体素速度估计与稀疏融合，与遥感变化检测及多源数据融合方向有方法上的关联，但应用场景为路侧交通感知而非城市更新。",
+      "tags": [
+        "路侧感知",
+        "占用预测",
+        "时序记忆",
+        "运动补偿",
+        "多尺度融合"
+      ],
+      "abstract": "Fixed roadside cameras repeatedly observe a stable scene overlaid by sparse moving traffic. Temporal memory can recover weak observations, but reusing moving evidence at stale locations can corrupt occupancy predictions. Motion compensation addresses displacement, while reliance on the resulting history remains a separate learning problem. We introduce RoadOcc, which learns soft routing among fixed-coordinate history (\\emph{Persist}), velocity-addressed history (\\emph{Transport}), and current evidence (\\emph{Refresh}). Motion state and class-consistent historical support supervise these source choices. Dynamic-aware cross-attention (DCA) updates candidate locations, multi-scale voxel velocity estimation (VVE) constructs transport addresses from multi-scale current--history correspondence, and velocity-guided dynamic sparse fusion (VDSF) combines routed evidence under fixed sparse-token budgets. On InfraOcc, RoadOcc reaches 65.29 mIoU and 32.37 dynamic mIoU, gains of 4.44 and 4.71 over STCOcc. Controlled address experiments show that VVE raises dynamic mIoU by 0.87 over fixed-coordinate reading. Across three seeds, supervised P/T/R adds 1.40 dynamic points over motion-corrected retrieval, while removing Refresh costs 0.32 points. Results from two transfer models, Occ3D-nuScenes, and longer intervals provide additional support. Code will be released.",
+      "summary_zh": "固定路侧相机反复观测一个稳定场景，其上叠加稀疏移动的交通流。时序记忆可以恢复微弱观测，但在陈旧位置复用移动证据可能破坏占用预测。运动补偿处理位移，而对由此产生的历史信息的依赖则是一个独立的学习问题。作者提出RoadOcc，它在固定坐标历史（Persist）、速度寻址历史（Transport）与当前证据（Refresh）之间学习软路由。运动状态与类别一致的历史支持监督这些来源选择。动态感知交叉注意力（DCA）更新候选位置，多尺度体素速度估计（VVE）从多尺度当前—历史对应关系构建迁移地址，速度引导动态稀疏融合（VDSF）在固定稀疏令牌预算下组合路由证据。在InfraOcc上，RoadOcc达到65.29 mIoU和32.37动态mIoU，较STCOcc分别提升4.44和4.71。受控地址实验表明，VVE相较固定坐标读取将动态mIoU提升0.87。在三个随机种子下，有监督的P/T/R相较运动校正检索增加1.40动态点，而去除Refresh损失0.32点。来自两个迁移模型、Occ3D-nuScenes以及更长间隔的结果提供了额外支持。代码将发布。",
+      "insight_zh": "该文将时序记忆的复用问题形式化为保持、迁移与刷新之间的软路由，并通过多尺度速度估计构建迁移地址，其运动补偿与稀疏融合思路对遥感时序变化检测中的位移与陈旧证据问题具有方法参考价值；但研究场景为路侧交通占用预测，未涉及城市更新。"
+    },
+    {
+      "key": "arxiv:2609.27321",
+      "title": "Verifiable Hidden Dynamics Play: Generating Agentic RL Environments from Solved Mechanisms",
+      "title_zh": "可验证隐藏动态博弈：从已解机制生成智能体强化学习环境",
+      "url": "https://arxiv.org/abs/2609.27321",
+      "doi": "",
+      "arxiv_id": "2609.27321",
+      "authors": [
+        "Xinjie Shen",
+        "Wei Fan",
+        "Xudong Guo",
+        "Jianhong Tu",
+        "Yang Su",
+        "Chuqiao Kuang",
+        "Yinger Zhang",
+        "Dayiheng Liu"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T03:51:54+00:00",
+      "score": 58,
+      "reason": "该文提出从已解机制生成可验证的智能体强化学习环境，属于LLM与多智能体训练方向，但与地理空间智能或城市更新无直接关联。",
+      "tags": [
+        "LLM智能体",
+        "强化学习环境",
+        "长时程任务",
+        "环境生成",
+        "可验证动态"
+      ],
+      "abstract": "Language-model agents increasingly face long-horizon tasks with evolving state, interdependent decisions, and delayed outcomes. Scaling their training requires diverse agentic environments, dependable outcome signals, and low extension cost. Existing generation pipelines commonly construct an environment before defining its outcome rule or annotating its trajectories, leaving dynamics and evaluation to be aligned post hoc. VHD-Play reverses this dependency by sampling and solving a mathematical model before a corpus-grounded setter renders its decision process as stateful tools. The executable dynamics and trajectory-scoring reference are inherited from the same solved model. The pipeline produces 3,300 diverse agentic environments at a cost of a few cents each. Training Qwen3.6-35B-A3B on three families raises its mean agentic score from 0.204 to 0.815 in a five-family diagnostic. Gains also appear on held-out instances from all three training families and eight unseen mechanism families, then extend beyond the generated substrate to external benchmarks for general function calling, travel planning, and 365-day e-commerce. On E-Commerce Bench, the trained checkpoint completes every run without bankruptcy and exceeds Qwen3.7-Max. We compare written-out problems with stateful versions that reveal or hide their parameters. The comparison shows that most of the learnable gap lies in stateful interaction rather than underlying problem solving. A frozen 35B setter realizes larger environments, and scale-matched training retains gains as mechanism size and horizon grow, indicating the potential for an evolving training substrate.",
+      "summary_zh": "语言模型智能体日益面临状态演化、决策相互依赖、结果延迟的长时程任务，扩展其训练需要多样化的智能体环境、可靠的结果信号和低扩展成本。现有生成流程通常先构建环境再定义结果规则或标注轨迹，导致动态与评估事后对齐。VHD-Play反转这一依赖：先采样并求解一个数学模型，再由基于语料的设定器将其决策过程渲染为有状态工具，可执行动态与轨迹评分参考均继承自同一已解模型。该流程以每个环境几美分的成本生成3,300个多样化智能体环境。在五族诊断中，用三个族训练Qwen3.6-35B-A3B使其平均智能体得分从0.204提升到0.815，并在三个训练族的留出实例和八个未见机制族上出现增益，还扩展到通用函数调用、旅行规划和365天电商等外部基准。",
+      "insight_zh": "该工作提出以已解数学模型为源头生成可验证智能体环境，强调有状态交互是主要可学习差距；其环境生成范式或可启发地理空间智能体训练环境构建，但论文未涉及地理空间任务。"
+    },
+    {
+      "key": "arxiv:2510.03161",
+      "title": "UniShield: An Adaptive Multi-Agent Framework for Unified Forgery Image Detection and Localization",
+      "title_zh": "UniShield：面向统一伪造图像检测与定位的自适应多智能体框架",
+      "url": "https://arxiv.org/abs/2510.03161",
+      "doi": "",
+      "arxiv_id": "2510.03161",
+      "authors": [
+        "Qing Huang",
+        "Zhipei Xu",
+        "Xuanyu Zhang",
+        "Xiangyu Yu",
+        "Jian Zhang"
+      ],
+      "venue": "arXiv",
+      "published": "",
+      "score": 58,
+      "reason": "该论文涉及多智能体框架与图像伪造检测定位，与研究者关注的多智能体和遥感变化检测存在方法层面的潜在关联，但应用领域为图像取证而非地理空间。",
+      "tags": [
+        "多智能体",
+        "伪造图像检测",
+        "定位",
+        "自适应框架"
+      ],
+      "abstract": "------------------------------------------------------------------------------",
+      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。",
+      "insight_zh": "仅从标题推断，该工作可能提出一种自适应多智能体框架以统一处理伪造图像的检测与定位任务；由于摘要缺失，无法确认其方法细节、数据集或实验结果。"
+    },
+    {
+      "key": "arxiv:2609.28286",
+      "title": "PBLH Estimation from Satellite Radiances via a Dual-Encoder Transformer",
+      "title_zh": "基于双编码器Transformer的卫星辐射边界层高度估计",
+      "url": "https://arxiv.org/abs/2609.28286",
+      "doi": "",
+      "arxiv_id": "2609.28286",
+      "authors": [
+        "Lorenzo Innocenti",
+        "Luca Catalano",
+        "Edoardo Arnaudo",
+        "Claudio Rossi",
+        "Salvatore Larosa",
+        "Domenico Cimini",
+        "Paolo Garza"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T15:33:02+00:00",
+      "score": 55,
+      "reason": "该文利用卫星辐射数据估计行星边界层高度，涉及遥感反演、Transformer架构和多模态数据处理，与遥感变化检测和多源数据融合有一定关联，但更偏向大气参数反演而非城市更新或时空数据挖掘。",
+      "tags": [
+        "遥感",
+        "卫星辐射",
+        "Transformer",
+        "边界层高度估计",
+        "多模态"
+      ],
+      "abstract": "Estimating the Planetary Boundary Layer Height (PBLH) from satellite observations is a challenging regression problem due to the indirect relationship between top-of-atmosphere radiances and near-surface atmospheric structure. Progress has been limited both by the lack of architectures capable of handling the multimodal, spatially incomplete nature of satellite overpasses, and by the scarcity of suitable datasets. In this paper, we build upon the large-scale dataset pairing MetOp radiances with ERA5 PBLH labels that we introduced in our previous work, making three contributions. First, we establish a benchmark across eight approaches spanning pixel-wise regression, swath-wise sequence models, and convolutional and Transformer models operating on the full orbital passage. Second, we quantify what the resulting model actually relies on, using grouped Shapley decomposition over the input blocks. Third, we present the best-performing architecture found: a dual-encoder Transformer whose masked-input handling lets it operate in all weather conditions. The proposed model achieves MAE = 155.8 m on the held-out global test set, outperforming all baselines on every evaluation subset. On 30 out-of-distribution granules acquired on two days overlapping the TEAMx observational campaign, it achieves MAE = 165.3 m, outperforming a pixel-wise baseline trained on the same data (MAE = 197 m).",
+      "summary_zh": "从卫星观测估计行星边界层高度（PBLH）是一个具有挑战性的回归问题，因为大气顶辐射与近地表大气结构之间存在间接关系。进展受限既因为缺乏能够处理卫星过境多模态、空间不完整特性的架构，也因为合适数据集的稀缺。本文基于作者先前工作引入的大规模数据集（将MetOp辐射与ERA5 PBLH标签配对），做出三项贡献。第一，建立了涵盖八种方法的基准，包括逐像素回归、沿轨序列模型以及在完整轨道过境上运行的卷积和Transformer模型。第二，使用分组Shapley分解对输入块进行量化，分析模型实际依赖的信息。第三，提出了性能最佳的架构：一种双编码器Transformer，其掩码输入处理使其能在所有天气条件下运行。所提模型在留出的全球测试集上达到MAE = 155.8 m，在所有评估子集上优于所有基线。在TEAMx观测活动重叠的两天获取的30个分布外颗粒上，达到MAE = 165.3 m，优于在同一数据上训练的逐像素基线（MAE = 197 m）。",
+      "insight_zh": "该研究展示了Transformer在多模态卫星遥感回归任务中的潜力，其双编码器设计和掩码输入处理对处理空间不完整遥感数据有参考价值，分组Shapley分解也为遥感模型可解释性提供了思路，可启发地理空间智能中的多源数据融合与归因分析。"
+    },
+    {
+      "key": "arxiv:2609.28230",
+      "title": "A Unified Framework and Dataset for Oriented Object Visual Grounding in Remote Sensing",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2609.28230",
+      "doi": "",
+      "arxiv_id": "2609.28230",
+      "authors": [
+        "Zeyu Ding",
+        "Yong Zhou",
+        "Jiaqi Zhao",
+        "Wen-Liang Du",
+        "Xixi Li",
+        "Hancheng Zhu",
+        "Rui Yao",
+        "Abdulmotaleb El Saddik"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T14:54:46+00:00",
+      "score": 55,
+      "reason": "关键词命中：Remote Sensing、Transformer",
+      "tags": [
+        "Remote Sensing",
+        "Transformer"
+      ],
+      "abstract": "Visual grounding in remote sensing images aims to locate objects described by referring expressions. Most existing methods predict horizontal bounding boxes, which are often inaccurate for objects with arbitrary orientations. To address this limitation, we introduce O$^2$-VG, a family of models for oriented object visual grounding with three complementary designs. Specifically, O$^2$-VG-Trans is a cross-modality transformer for oriented object visual grounding. It establishes a strong discriminative foundation for the model family. Building upon it, O$^2$-VG-Uni predicts universal oriented proposals for possible foreground objects without specific text prompts. It also supports object retrieval through cached proposal embeddings. Using these universal oriented proposals as input prompts, O$^2$-VG-VLM is an autoregressive vision-language model. It generates oriented box token blocks in parallel through multi-token prediction. In addition, we construct DIOR-R-RSVG, a dataset for oriented object visual grounding in remote sensing images. It provides image, expression, and oriented box triplets for training and evaluation. Together, the O$^2$-VG family provides a flexible framework that spans discriminative transformers and generative vision-language models. It achieves superior performance across multiple benchmarks. Code is available at https://github.com/wokaikaixinxin/ai4rs.",
+      "summary_zh": "",
+      "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.28194",
+      "title": "Geospatial embeddings detect old-growth forests but buffered spatial validation narrows their advantage over Sentinel features",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2609.28194",
+      "doi": "",
+      "arxiv_id": "2609.28194",
+      "authors": [
+        "Thomas Ratsakatika (1)",
+        "Mihai Zotta (2)",
+        "Srinivasan Keshav (3)",
+        "Emily R. Lines (1) ((1) Department of Geography",
+        "University of Cambridge",
+        "Cambridge",
+        "UK",
+        "(2) Fundatia Conservation Carpathia",
+        "Brasov",
+        "Romania",
+        "(3) Department of Computer Science",
+        "Technology",
+        "University of Cambridge",
+        "Cambridge",
+        "UK)"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T14:33:19+00:00",
+      "score": 55,
+      "reason": "关键词命中：Geospatial、Foundation Model",
+      "tags": [
+        "Geospatial",
+        "Foundation Model"
+      ],
+      "abstract": "Old-growth forests develop over centuries under minimal anthropogenic disturbance, producing structurally complex and biodiverse stands. In Europe, protecting them requires mapping that is accurate for individual forest parcels yet deployable continent-wide. Geospatial foundation model (GFM) embeddings enable label-scarce land classification, but their value for old-growth detection remains unknown. Here, we map old-growth forests across 211,893 ha of Romania's Southern Carpathians, a beech-spruce landscape typical of the Alpine Biogeographic Region. We construct high-confidence, expert-informed reference labels for old-growth and non-old-growth parcels. We add AlphaEarth, TESSERA v2 and Sentinel-1/2 features to a common baseline of topographic and human-access predictors, then compare them under spatially blocked validation with and without 10 km train-test buffers to limit residual autocorrelation. With buffering, GFM and Sentinel-1/2 predictors increase precision-recall AUC by 0.21-0.25 [95% CIs: 0.15-0.34] relative to baseline, indicating spectral data contain a spatially robust old-growth signal. With a PR-AUC of 0.84 [0.79-0.88], TESSERA outperforms Sentinel-1/2 (+0.08 [+0.05 to +0.11]) and AlphaEarth (+0.08 [+0.04 to +0.12]) under unbuffered spatial validation. At a 10 km buffer, however, this advantage narrows to +0.04 [-0.01 to +0.11] and +0.03 [-0.04 to +0.10], intervals consistent with no difference. At 10 m resolution, convolutional neural networks add no benefit over pixel-based XGBoost. Comparisons with four national- and continental-scale products show the importance of non-old-growth labels, and reveal 81% agreement between our predictions and a field-calibrated map. We conclude that buffered spatial validation is vital when transferring old-growth detection models to unseen landscapes, and provide our labels and predictions for future work.",
+      "summary_zh": "",
+      "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.27457",
+      "title": "Beyond Balanced Accuracy: A Resolution and Parity-Controlled Benchmark for Vision-Language and Vision-Only Defect Assessment in UAV Power-Line Inspection",
+      "title_zh": "超越平衡准确率：面向无人机电力线巡检中视觉语言与纯视觉缺陷评估的分辨率与配对控制基准",
+      "url": "https://arxiv.org/abs/2609.27457",
+      "doi": "",
+      "arxiv_id": "2609.27457",
+      "authors": [
+        "Linghao Zhang",
+        "Siyu Xiang",
+        "Junwei Kuang",
+        "Peiyu Yi"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T07:23:58+00:00",
+      "score": 55,
+      "reason": "该论文构建了无人机电力线缺陷评估基准，系统比较视觉语言模型与纯视觉模型，涉及遥感/无人机影像分析与多模态模型评测，与遥感变化检测和多源数据融合有方法学关联，但主题偏向电力巡检而非城市更新。",
+      "tags": [
+        "无人机巡检",
+        "视觉语言模型",
+        "基准评测",
+        "电力线缺陷检测",
+        "分辨率控制"
+      ],
+      "abstract": "Vision-language models (VLMs) are often reported to outperform task-specific vision backbones for unmanned aerial vehicle (UAV) power-line defect assessment. We test that claim on ElecVQA-Bench, a 56,972-item benchmark derived from the public InsPLAD dataset, across six evaluation choices: partition, evaluated item set, label space, replication, input resolution, and side information. On a matched partition, a Swin Transformer and the strongest adapted VLM differ by only 0.03 points at binary screening. At seven-way defect typing, increasing the vision backbones from 224 px to the measured pixel budget of the VLM preprocessor narrows the gap against InternVL3.5-8B from +20.53 to -0.57 points for ResNet-50 and from +23.67 to +4.70 points for Swin-T. A pixel-budget audit shifts Qwen3-VL-8B macro recall by 10.78 points, yet a source-pixel-matched InternVL control still leaves Qwen ahead by 7.43 to 13.61 points while using 56% fewer visual tokens, so neither source pixels nor token budget explains the difference between the two VLMs. A two-seed global replication changes Qwen binary accuracy and seven-way macro recall by 0.86 and 1.02 points. After split-specific retraining, Qwen does not lead at crop or image level, and a 14-tower, three-seed replication reverses the sign across seeds, giving mean common-six macro recall of 0.9085 for Qwen against 0.9509 for ResNet-50. No split regime yields a family-level advantage that survives multiple-comparison correction. The study supports a benchmark-audit contribution rather than a general claim of VLM superiority.",
+      "summary_zh": "视觉语言模型（VLM）常被报道在无人机电力线缺陷评估中优于任务专用视觉骨干网络。本文在ElecVQA-Bench（基于公开InsPLAD数据集构建的56,972项基准）上检验该说法，涵盖六种评估选择：划分、评估项集、标签空间、重复、输入分辨率和辅助信息。在匹配划分上，Swin Transformer与最强适配VLM在二分类筛查中仅差0.03分。在七类缺陷分型中，将视觉骨干从224像素提升至VLM预处理器实测像素预算后，ResNet-50对InternVL3.5-8B的差距从+20.53缩小至-0.57分，Swin-T从+23.67缩小至+4.70分。像素预算审计使Qwen3-VL-8B宏召回变化10.78分，但源像素匹配的InternVL对照仍使Qwen领先7.43至13.61分，同时少用56%视觉token，因此源像素和token预算均无法解释两个VLM之间的差异。双种子全局重复使Qwen二分类准确率和七类宏召回分别变化0.86和1.02分。经划分特定重训练后，Qwen在裁剪或图像级别均不领先，而14塔三种子重复在种子间反转符号，Qwen的common-six宏召回均值为0.9085，ResNet-50为0.9509。没有任何划分机制能产生经多重比较校正后仍存活的家族级优势。该研究支持基准审计贡献，而非VLM优越性的普遍主张。",
+      "insight_zh": "该研究提示，在遥感与无人机影像分析中，VLM相对专用视觉模型的优势可能被评估设置（分辨率、token预算、划分方式）显著混淆；开展多模态地理空间智能研究时需进行严格的基准审计与公平比较。"
+    },
+    {
+      "key": "arxiv:2609.27327",
+      "title": "Can Vision-Language Models Analyze Human-Centered Video? Mapping Model Capabilities and Human-AI Collaborative Workflows",
+      "title_zh": "视觉语言模型能否分析以人为中心的视频？映射模型能力与人机协作工作流",
+      "url": "https://arxiv.org/abs/2609.27327",
+      "doi": "",
+      "arxiv_id": "2609.27327",
+      "authors": [
+        "Xiyuan Shen",
+        "Jiuyang Lyu",
+        "Seokhyun Hwang",
+        "Huanfen Yao",
+        "Shwetak Patel",
+        "Zhihan Zhang",
+        "Jacob O. Wobbrock"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-23T04:00:15+00:00",
+      "score": 55,
+      "reason": "该文评估视觉语言模型分析人本视频的能力并比较人机协作标注流程，与LLM/多智能体及多源数据融合有一定关联，但不涉及遥感、GIS或城市更新。",
+      "tags": [
+        "视觉语言模型",
+        "视频分析",
+        "人本计算",
+        "人机协作",
+        "标注工作流"
+      ],
+      "abstract": "Video provides a rich record of human behavior, interaction, and situated contexts, offering important evidence for understanding people and conducting human-centered research. As vision-language models (VLMs) become increasingly capable of analyzing video, they offer opportunities to automate this traditionally human-intensive process. Yet a central question remains: when can VLMs analyze human-centered video independently, and when does reliable analysis still require human involvement? To address this question, we first characterize video analysis practices in human-centered research. We systematically analyze all 1,702 CHI 2026 full papers and identify 125 that annotate videos. Through iterative coding, we derive a five-dimensional taxonomy spanning analytic purpose, viewpoint, phenomenon, reasoning requirement, and annotation authority. Grounded in recurring annotation tasks captured by this taxonomy, we construct a benchmark of 15 representative tasks from open datasets to map the capabilities and limitations of a general-purpose VLM. We examine the division of labor between humans and VLMs by comparing three annotation workflows: VLM alone, human alone, and human verification of VLM outputs. Across tasks, VLM-alone annotation approaches human accuracy on average (HNS = 97.0, where 100 denotes human-alone performance), demonstrating substantial potential to automate human-centered video analysis. Human verification achieves the highest accuracy (HNS = 121.5) while reducing human annotation time by 48.9% and monetary cost by 31.3%-44.5% relative to human-alone annotation. Our findings connect real-world human-centered video analysis tasks and current VLM capabilities, and clarify how human-AI collaboration can make VLM-assisted analysis reliable and efficient.",
+      "summary_zh": "视频记录了人类行为、互动与情境，是以人为中心研究的重要证据。随着视觉语言模型（VLM）分析视频的能力增强，一个核心问题是：何时VLM可独立分析，何时仍需人工参与。作者系统分析了CHI 2026全部1,702篇全文，识别出125篇涉及视频标注的论文，并通过迭代编码归纳出涵盖分析目的、视角、现象、推理需求和标注权威的五维分类法。基于该分类法中的常见标注任务，作者构建了包含15个代表性任务的基准，比较VLM单独、人工单独以及人工验证VLM输出三种工作流。结果显示，VLM单独标注平均接近人工准确率（HNS=97.0，100表示人工单独表现）；人工验证取得最高准确率（HNS=121.5），同时相对人工单独标注减少48.9%的标注时间和31.3%-44.5%的金钱成本。",
+      "insight_zh": "该研究表明VLM在人本视频分析中已具备较高自动化潜力，而人工验证可在提升准确率的同时显著降低成本；其分类法与工作流比较思路或可启发遥感影像解译中的人机协同标注设计，但论文未涉及遥感数据。"
+    }
+  ]
+}

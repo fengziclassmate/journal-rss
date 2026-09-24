@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 528,
+    "analyzed": 538,
     "high": 4,
     "medium": 22,
     "low": 35,
-    "below_threshold": 467
+    "below_threshold": 477
   },
   "papers": [
     {
@@ -5780,6 +5780,36 @@
       "insight_zh": "对需要在边缘设备上部署遥感或城市感知模型的GIS研究，该综述提供了RISC-V硬件生态的概览，但未涉及地理空间应用或数据。"
     },
     {
+      "key": "arxiv:2609.20754",
+      "title": "RAFT: A Stateful Retrieval-Augmented Framework for Troubleshooting Agents",
+      "title_zh": "RAFT：面向故障排查智能体的有状态检索增强框架",
+      "url": "https://arxiv.org/abs/2609.20754",
+      "arxiv_id": "2609.20754",
+      "authors": [
+        "Mingxuan Zhang",
+        "Xiaowen Wang",
+        "Anupma Sharan",
+        "Zhengyi Chen",
+        "Chenyu Diana Zhang",
+        "Shanshan Yang",
+        "Chittibabu Pacharu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-17T17:41:31+00:00",
+      "score": 25,
+      "reason": "该文提出有状态检索增强框架用于故障排查智能体，与LLM智能体和多智能体系统在方法论上有较强关联，但不涉及地理空间或城市更新应用。",
+      "tags": [
+        "检索增强生成",
+        "故障排查智能体",
+        "有状态检索",
+        "企业支持"
+      ],
+      "summary_zh": "企业客户支持中有效的故障排查智能体依赖从相似历史案例中检索可操作指导，但现有检索增强生成（RAG）系统将支持案例视为静态文档，忽视其多阶段、有状态的性质。作者提出 RAFT（面向故障排查智能体的检索增强框架），一种有状态RAG框架，将每个已关闭历史案例抽象为时间线条目的有向链，并在条目级别检索，浮现中间状态与当前案例匹配的案例，返回以匹配状态为锚点的父案例轨迹；可选案例级图通过可配置相似度表示链接案例。作者直接评估该检索层，与评估完整智能体系统不同，无需生产部署。由于公共多阶段故障排查数据极为稀缺，作者将基于Microsoft Learn Windows Server文档构建的合成基准与带有真人创建重复标签的真实Apache Jira问题配对。RAFT在案例进展的每个阶段都优于普通RAG和GraphRAG基线的案例命中率，相对最强基线有统计显著提升；Jira结果为该优势迁移到真实案例历史提供方向性证据。作者发布基准、实现和Apache Jira评估集。",
+      "insight_zh": "该工作为LLM智能体提供有状态检索机制，可能对城市更新中的案例推理与知识管理有方法借鉴，但摘要未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2609.20177",
       "title": "PaGNet: A Panel-Aware GBDT--Neural Network for Multi-Target Corporate Tax Avoidance Proxy Forecasting",
       "title_zh": "PaGNet：面向多目标企业避税代理预测的面板感知GBDT-神经网络模型",
@@ -6737,6 +6767,42 @@
       "insight_zh": "该研究表明集体命运很大程度上由两个单智能体测量决定：主张措辞设定的阈值和消息容量，其多智能体通信与集体决策分析对地理空间智能体协作有启发，但论文未涉及地理空间领域。"
     },
     {
+      "key": "arxiv:2609.20800",
+      "title": "JEPA-Anything: Learning Predictive Models across Different Worlds",
+      "title_zh": "JEPA-Anything：跨不同世界学习预测模型",
+      "url": "https://arxiv.org/abs/2609.20800",
+      "arxiv_id": "2609.20800",
+      "authors": [
+        "Taoyong Cui",
+        "Zhongyao Wang",
+        "Xinyue Xu",
+        "Weiyang Liu",
+        "Zhaochen Yu",
+        "Yuying Zhang",
+        "Qiang Gao",
+        "Mengyue Yang",
+        "Wanli Ouyang",
+        "Pheng Ann Heng",
+        "Yingcheng Wu",
+        "Zhenfei Yin",
+        "Ling Yang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-17T17:55:57+00:00",
+      "score": 22,
+      "reason": "该文提出跨域通用预测建模框架，与时空数据挖掘和地理空间智能在方法论层面有潜在关联，但不涉及城市更新、遥感变化检测或多源地理数据融合等具体应用。",
+      "tags": [
+        "世界模型",
+        "预测学习",
+        "JEPA",
+        "跨域建模"
+      ],
+      "summary_zh": "世界建模使智能体能够预测后果、指导干预并从交互中学习，但预测模型通常局限于特定领域。本文提出 JEPA-Anything，一个基于正交预测分解（OPF）的领域无关框架。该框架扩展了联合嵌入预测架构，将潜在目标分解为互补因子，通过专门路径学习并在共享预测设计中重组。作者在视觉、生物学、临床轨迹、控制、分子动力学、物理场和天气七个领域进行评估，涵盖表示学习、干预预测、分布外泛化和长时程动力学，包括10个匹配动力学任务、1000多个临床事件预测以及四个系统的100步分子推演。与匹配的JEPA基线相比，JEPA-Anything在全部10个动力学任务上提升了报告指标，并将Interventional Pong的单次干预预测误差降低34.8%；在四个系统中取得最低的一步和100步分子误差。此外，一个因子命名的生物干预在细胞共培养、患者来源类器官、肿瘤片段和小鼠中获得实验支持；潜在轨道模式恢复开普勒标度指数，拟合斜率为-1.4991。",
+      "insight_zh": "该工作提示一种跨异构系统的因子化预测原则，可能为地理空间智能中的多域时空预测提供方法论借鉴，但其摘要未涉及地理或城市应用，需谨慎推断其可迁移性。"
+    },
+    {
       "key": "arxiv:2609.20262",
       "title": "Generative Verification: Rethinking the Uncertainty Signal for Active Learning of Object Detection",
       "title_zh": "生成式验证：重新思考目标检测主动学习中的不确定性信号",
@@ -6814,6 +6880,38 @@
       ],
       "summary_zh": "Web智能体经常重访相同网站，但多数评估丢弃了先前成功交互中学到的流程。作者提出EconSkills，一个技能库与评估框架，将已验证的EconWebArena轨迹提炼为用于检索实时经济数据的参数化标准操作流程。每个技能记录其适用范围、导航流程、站点特定指导、验证检查和恢复步骤，同时用占位符替换源实例值。EconSkills区分两个问题：已知相关流程能否迁移到留出任务，以及智能体在从库中选择时能否保持该收益。在受控迁移中，匹配技能相比无技能提示提升成功率，并在配对成功案例中需要更少步骤，而抽象化比回放原始轨迹更有效。在库规模下，检索总体与无技能基线相当，在直接覆盖的任务上表现最佳；按覆盖分层的结果显示，未覆盖任务上的近似匹配抵消了这些收益。浏览器轨迹进一步识别出程序性指导何时缩短门户特定导航，以及何时仍需语义验证。这些结果确立可复用的经济Web流程能跨任务实例迁移，并为覆盖感知的选择与上下文传递提供了具体设计目标。",
       "insight_zh": "该研究表明将成功轨迹抽象为参数化技能可提升Web智能体迁移效率，但库规模扩大后近似匹配会稀释收益。这提示在构建地理空间数据检索智能体时，需关注技能覆盖度与检索精度的平衡。"
+    },
+    {
+      "key": "arxiv:2609.20139",
+      "title": "Cross-Modal Attention Acts as a Frequency Filter: Why Verbose Prompts Improve Robustness in Vision-Language Models",
+      "title_zh": "跨模态注意力作为频率滤波器：为何冗长提示提升视觉语言模型的鲁棒性",
+      "url": "https://arxiv.org/abs/2609.20139",
+      "arxiv_id": "2609.20139",
+      "authors": [
+        "Farooq Ahmad Wani",
+        "Maria Sofia Bucarelli",
+        "Mujtaba Hussain Mirza",
+        "Oleksandr Pryymak",
+        "Aryo Pradipta Gema",
+        "Iacopo Masi",
+        "Pasquale Minervini",
+        "Fabrizio Silvestri"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-17T12:31:07+00:00",
+      "score": 22,
+      "reason": "该文研究视觉语言模型在图像损坏下的鲁棒性与跨模态注意力机制，与遥感图像理解、多源数据融合中的鲁棒性有方法关联，但不涉及地理空间数据或城市更新。",
+      "tags": [
+        "视觉语言模型",
+        "跨模态注意力",
+        "鲁棒性",
+        "频率滤波"
+      ],
+      "summary_zh": "视觉语言模型（VLM）在图像损坏下表现脆弱。作者发现问题措辞以两种相反方式影响VLM。冗长问题使VLM显著更鲁棒——例如将“Is there a cat?”改写为“Please look carefully and answer: is there a cat?”。相反，当问题语义复杂或更细粒度时，VLM在损坏下更脆弱，例如“what colour is the cup left of the chair?”而非“is there a cup?”。两种效应均源于问题条件的跨模态注意力，它在图像块上诱导频谱滤波器：冗长问题拓宽其频率支持，而细粒度问题将其集中于更少的视觉尺度。当该滤波器与损坏处于相同空间频率时，模型答案漂移最大。作者在Qwen3-VL和LLaVA-OneVision上跨GQA和CLEVR测试滤波器观点；冗长改写使8B模型的漂移方差降低70-81%。实用配方——填充提示——进一步在图像损坏下带来可测量的准确率提升。",
+      "insight_zh": "该研究揭示提示措辞通过跨模态注意力频率滤波影响VLM鲁棒性，对遥感图像理解中的提示设计与鲁棒性评估有间接启示，但摘要未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.20352",
@@ -7869,6 +7967,32 @@
       "insight_zh": "摘要缺失，无法确认其数据来源、任务定义与实验结果；若其涉及交通视频或轨迹数据，则可能与城市时空数据挖掘相关，但原文未说明，故不作推断。"
     },
     {
+      "key": "arxiv:2609.20769",
+      "title": "FlowSGS: Improving Flow Matching Priors for Inverse Imaging with Stochastic Interpolants",
+      "title_zh": "FlowSGS：利用随机插值改进逆成像的流匹配先验",
+      "url": "https://arxiv.org/abs/2609.20769",
+      "arxiv_id": "2609.20769",
+      "authors": [
+        "Tianao Li",
+        "Xinhui Qian",
+        "Emma Alexander"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-17T17:46:07+00:00",
+      "score": 20,
+      "reason": "该文提出基于流匹配的逆成像后验采样方法，与遥感成像逆问题和变化检测中的生成式先验有方法关联，但未涉及地理空间数据或城市应用。",
+      "tags": [
+        "流匹配",
+        "逆成像",
+        "后验采样",
+        "计算成像"
+      ],
+      "summary_zh": "流匹配已成为最先进的生成模型，并被用作即插即用（PnP）先验来求解计算成像中的逆问题。然而现有基于流的逆求解器假设线性前向模型和/或在后验采样中做简化近似。为规避这些问题，作者提出 FlowSGS，一种基于流的后验采样方法，使用分裂吉布斯采样（SGS）将后验分解为似然步和先验步。具体而言，似然步使用Langevin动力学采样，并利用随机插值（SI）框架将预训练流模型集成到先验步中。作者给出使用SI反向时间SDE的先验步形式，并展示与先前PnP方法的联系。此外，借助流先验的直线概率路径和一种新的反向时间SDE时间步校正技术，FlowSGS在先验步中所需的网络评估次数少于即插即用扩散采样器。实验表明该方法在一系列逆问题上达到最先进性能，并首次为基于流的逆求解器提供非线性逆问题（傅里叶相位恢复）实验。",
+      "insight_zh": "该工作为非线性逆成像提供流匹配后验采样方案，可能对遥感图像重建与变化检测中的生成式先验设计有方法借鉴，但摘要未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2607.09678",
       "title": "Faithful, Not Corrective: Model Capability Governs Message-Format Effects in Multi-Hop Agent Relays",
       "title_zh": "忠实而非纠正：模型能力主导多跳智能体中继中的消息格式效应",
@@ -8400,6 +8524,39 @@
       ],
       "summary_zh": "现代分割器常在昂贵计算完成后才失败：模型基于查询的候选中已存在有用掩膜，但部署时的选择规则未能将其暴露。作者研究冻结 DETR 系列模型中的这一输出选择瓶颈。仅使用真值的 oracle 首先显示，在已计算的掩膜提案中存在可观的隐藏提升空间。由此提出 HYDRA——一个仅在缓存冻结输出上训练的小型选择器，推理时对缓存候选打分并与显式保留基线比较，仅当留出集校准的边际表明所选候选足够更好时才采取行动。在 ADE20k 和 COCO 上，HYDRA 将 Mask2Former、MaskDINO 和 OneFormer 提升最多 +7.41 数据集 mIoU；在八个领域上平均将 SAM 3 提升 +9.4 类宏平均提示 IoU。配对 LoRA 对照表明轻量权重适配无法消除该瓶颈。作者进一步将这一效应与二分匹配下的查询特化联系起来，并在受控 TinyDETR 研究中验证。",
       "insight_zh": "该工作提示：在遥感变化检测等分割任务中，冻结模型的候选输出可能已包含被选择规则抑制的有用结果，通过轻量选择器回收这些候选或可提升精度，但需在具体地理空间任务中另行验证。"
+    },
+    {
+      "key": "arxiv:2609.20794",
+      "title": "PosteriorBench: From Point Estimates to Posterior Matching in Evaluating Generative Inverse Solvers",
+      "title_zh": "PosteriorBench：从点估计到后验匹配的生成式逆求解器评估",
+      "url": "https://arxiv.org/abs/2609.20794",
+      "arxiv_id": "2609.20794",
+      "authors": [
+        "Jiachen Yao",
+        "Zi-Siang Hsu",
+        "Xi Deng",
+        "Aditi Gupta",
+        "Xin Ju",
+        "Sally M Benson",
+        "Gege Wen",
+        "Anima Anandkumar"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CE",
+        "https://github.com/neuraloperator/PosteriorBench"
+      ],
+      "published": "2026-09-17T17:54:12+00:00",
+      "score": 18,
+      "reason": "该文关注生成式逆求解器的后验分布评估，与遥感变化检测中的逆问题求解和不确定性量化有间接方法关联，但未涉及地理空间数据或城市应用。",
+      "tags": [
+        "生成模型",
+        "逆问题",
+        "后验匹配",
+        "不确定性量化"
+      ],
+      "summary_zh": "生成模型越来越多地用于求解科学逆问题，但现有评估主要关注方法能否产生单一合理重建，这对不适定问题不足，因为同一稀疏或噪声观测可能对应多个解。本文提出 PosteriorBench，一个评估生成式逆求解器分布精度的基准。该基准评估四个基于物理的逆问题：Darcy流反演、Poisson源恢复、碳捕集与封存以及光传输材料推断。每个任务使用拒绝采样和马尔可夫链蒙特卡洛等成熟但计算昂贵的方法构建高保真参考后验，从而直接评估求解器是否恢复完整解集而非单一最优样本。作者配套提出五指标后验评估套件：后验均值误差、后验标准差误差、最大均值差异、切片Wasserstein距离和径向平均功率谱误差，用于评估逐点精度、边际不确定性、分布对齐和全局频率保真度。基准涵盖稀疏传感、低分辨率观测、非线性前向模型、不同噪声水平和多峰先验，并提供统一的分布匹配与不确定性量化流程。实验揭示了当前求解器存在显著分布匹配差距，同时表明神经算子……",
+      "insight_zh": "该基准强调逆问题中后验分布评估的重要性，对遥感反演与变化检测中的不确定性建模有方法启示，但其摘要未涉及地理空间数据，应用迁移需进一步验证。"
     },
     {
       "key": "arxiv:2609.20634",
@@ -10461,6 +10618,32 @@
       "insight_zh": "该研究揭示的工具幻觉结构性盲点及闭世界解析方案，对地理空间AI智能体调用地理处理工具时的可靠性保障具有潜在参考价值，但其核心贡献在于通用LLM智能体安全而非地理空间领域。"
     },
     {
+      "key": "arxiv:2609.20765",
+      "title": "Calibrated RF-Fingerprinting Under Interference With Heterogeneous Transmission Protocols",
+      "title_zh": "异构传输协议干扰下的校准射频指纹识别",
+      "url": "https://arxiv.org/abs/2609.20765",
+      "arxiv_id": "2609.20765",
+      "authors": [
+        "Tariq Abdul-Quddoos",
+        "Xiangfang Li",
+        "Lijun Qian"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T17:44:22+00:00",
+      "score": 15,
+      "reason": "该文研究干扰环境下的射频指纹识别与校准，与多源信号融合和频谱监测有方法关联，但不涉及地理空间数据挖掘或城市更新。",
+      "tags": [
+        "射频指纹",
+        "干扰环境",
+        "多标签分类",
+        "校准"
+      ],
+      "summary_zh": "射频（RF）指纹识别是一种频谱监测技术，基于发射信号中硬件损伤印记来识别特定发射机。尽管研究广泛，但几乎只考虑单一发射机发射的场景，限制了实际适用性。本文进一步研究同信道干扰下的RF指纹识别，即多个发射信号在时间和频率上重叠相互干扰。作者将该问题形式化为多标签分类问题，采用一维卷积神经网络（CNN）。此外，模型经过校准以导出标签概率的置信阈值，并对平均假阴性数量提供上界保证，从而在不错过真实频谱政策违规方面提供一定置信度。所提方法使用POWDER 5G测试床的真实数据验证，设备发射802.11a（Wi-Fi）、4G LTE和5G NR波形。结果显示，根据信道条件，校准后准确率高达97%、低至73%。针对不同平均假阴性上界进行校准可获得约（1-校准假阴性）的微召回分数，且校准对分布外干扰具有鲁棒性，展示了该方法在现实高竞争无线环境中的潜力。",
+      "insight_zh": "该工作展示多标签分类与校准在干扰环境下的信号识别能力，对多源数据融合中的信号分离与置信度校准有间接参考，但摘要未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.20034",
       "title": "Astronex-World 1.0: Real-Time Interactive World Model Foundation",
       "title_zh": "Astronex-World 1.0：实时交互式世界模型基础",
@@ -10794,6 +10977,7 @@
         "Haoqiang Kang",
         "Yizhe Zhang",
         "Nikki Lijing Kuang",
+        "Jiatao Gu",
         "Yian Ma",
         "Lianhui Qin"
       ],
@@ -10878,6 +11062,41 @@
       ],
       "summary_zh": "词级检测器几乎能完美识别未经编辑的AI生成文本，但文献记录了其在改写下的脆弱性，且词级分数既不能刻画文本特征，也无法识别是哪个AI模型所写。本文探究能否从更深一层的结构签名来识别AI生成文本：信息如何呈现、以何顺序、用何证据、以何口吻。作者在商业内容上复现了StoryScope（Russell等，2026）——该研究曾展示AI生成小说的此类模式——使用268个公司域名的2250篇ChatGPT前人类博客文章，对比来自五个前沿模型的11250篇AI镜像文章。一个由LLM应用的214特征工具，经人工金标注会话验证（人-人kappa 0.928，人-模型0.946），仅凭其187个结构特征即可在留出公司上以98.0宏F1检测AI文章，且当每篇AI文章被其自身模型改写后该指标不变（98.1）。该信号既能刻画也能归因：AI文章共享一种整洁、自我宣告的形态，79.3%被归因到正确来源（随机率为16.7%），而人类文章占据罕见的结构配置。所有效应均复现了StoryScope的结果，方向一致且幅度更大。作者发布了流程、工具、提示词、代码和聚合产物。",
       "insight_zh": "该工作提示，AI生成文本的识别可从词级转向结构级签名，且结构信号在改写下更稳健；但其应用场景为商业网页内容鉴别，与地理空间智能或城市研究的直接关联有限。"
+    },
+    {
+      "key": "arxiv:2609.20784",
+      "title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
+      "title_zh": "RetireOPD：面向智能体强化学习的自退役在线策略蒸馏",
+      "url": "https://arxiv.org/abs/2609.20784",
+      "arxiv_id": "2609.20784",
+      "authors": [
+        "Yan Yu",
+        "Zhengxi Lu",
+        "Yizhou Liu",
+        "Yichen Pan",
+        "Aozhe Wang",
+        "Qipeng Chen",
+        "Hua Yang",
+        "Wenqi Zhang",
+        "Weiming Lu",
+        "Qianglong Chen",
+        "Yongliang Shen"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-17T17:52:08+00:00",
+      "score": 12,
+      "reason": "该文研究智能体强化学习中的在线策略蒸馏方法，与多智能体系统和LLM智能体训练有方法关联，但不涉及地理空间或城市更新应用。",
+      "tags": [
+        "强化学习",
+        "多智能体",
+        "策略蒸馏",
+        "智能体训练"
+      ],
+      "summary_zh": "使用强化学习训练的多轮智能体每条轨迹仅获得单一标量奖励，这促使自在线策略蒸馏（OPD）从具有特权任务技能的自教师提供密集的token级监督，让无技能学生内化这些技能。然而在智能体任务中，这一方案受到两个发现的削弱：仅有特权信息并不总能使教师可靠，且教师监督的收益具有阶段依赖性。为此作者提出 RetireOPD（自退役在线策略蒸馏），首先用环境奖励优化一个解耦的技能条件教师，然后联合使用RL和OPD训练无技能学生。RetireOPD采用自适应退役而非预定义蒸馏计划：一旦学生与教师的差异不再缩小且达到教师成功率的目标准比例，学生便自行放弃教师，之后仅用RL继续训练。在Qwen2.5 1.5B至7B模型上，RetireOPD将ALFWorld成功率较RL基线提升14.1%至18.8%，WebShop准确率提升11.8%至19.0%，并在所有设置中超越其技能条件教师。",
+      "insight_zh": "该工作为多智能体强化学习中的教师-学生训练提供自适应退役机制，可能对LLM智能体协作与技能迁移有参考价值，但摘要未涉及地理空间任务。"
     },
     {
       "key": "arxiv:2609.19421",
@@ -11246,6 +11465,31 @@
       ],
       "summary_zh": "代词、副词等功能词（如they、her、somewhere、there）常用来替代具体名词或短语，当其属性（如性别、语法数）为给定语境提供足够信息时。预训练Transformer模型是否以类似人类的方式编码这些功能词？语言模型能否识别如\"The researchers wrote the paper\"与\"They wrote it\"这类句子的句法和语义平行性？作者将这些语言学问题映射到预训练Transformer模型的嵌入空间，比较名词与可替代这些名词的代词和副词在孤立及平行词汇化/功能化句子中的表示，并探测平行句子嵌入中的共享句法和语义结构。发现功能词相对名词位于中心位置但又彼此区分，与其作为多种语境占位符的行为一致。平行句子嵌入分析显示它们处于嵌入空间的不同子空间。蒸馏句子结构信息的实验表明，仅用任一类数据训练都无法揭示共享结构——功能数据因词汇过度一致，词汇化版本因变化过多。但混合功能句和词汇化句训练时，共享结构得以显现。",
       "insight_zh": "该研究揭示了功能词在Transformer嵌入空间中的中心但独特的定位，以及混合训练对共享结构涌现的必要性，对理解LLM的语言抽象机制有理论意义，但与地理空间智能应用无直接关联。"
+    },
+    {
+      "key": "arxiv:2609.20138",
+      "title": "Fast-varying Natural Frequencies and Damping Ratio Identification for Linear Time-Varying System",
+      "title_zh": "线性时变系统快速变化固有频率与阻尼比的辨识",
+      "url": "https://arxiv.org/abs/2609.20138",
+      "arxiv_id": "2609.20138",
+      "authors": [
+        "Melisa Bozaci",
+        "Alice Cicirello"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T12:29:44+00:00",
+      "score": 12,
+      "reason": "该文提出物理增强机器学习方法用于线性时变系统辨识，与时空数据挖掘中的物理信息建模有方法关联，但不涉及地理空间或城市更新应用。",
+      "tags": [
+        "系统辨识",
+        "时变系统",
+        "物理增强机器学习",
+        "卡尔曼滤波"
+      ],
+      "summary_zh": "本文提出一种物理增强机器学习方法，用于在时变工况下辨识线性时变（LTV）系统的快速变化固有频率和阻尼比，方法结合长短期记忆网络与扩展卡尔曼滤波（EKF）。所提方法使用振动数据（位移和速度测量）、模态阻尼比的领域知识以及可产生近似固有频率时间依赖模型的物理模型。该方法使用两叶片海上风力发电机有限元模型在真实环境和工况下生成的合成数据验证。该系统因工况而呈现快速时变频率，由于风浪载荷，其辨识尤其具有挑战性。作者在假设系统信息不正确（如阻尼比）的情况下评估所提方法的鲁棒性，并在不同环境和工况下评估以展示其适用性。结果表明该方法能准确辨识所选快速变化固有频率——一阶前后（FA-1）模态，最大均方根误差为0.0012 Hz。结果还表明，基于EKF估计训练的模型依赖准确阻尼值，而基于物理数据训练的模型对错误阻尼假设具有鲁棒性。该方法通过估计基于EKF估计与物理数据训练模型之间的均方根误差，扩展到所选模态的阻尼比辨识，结果显示该方法能给出FA-1模态阻尼的良好近似。",
+      "insight_zh": "该工作展示物理知识与机器学习结合用于时变系统辨识，可能对时空数据中的物理信息建模有方法借鉴，但摘要未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.20341",
@@ -11808,6 +12052,40 @@
       ],
       "summary_zh": "古典哲学语料对语言资源构成三重叠加挑战：它们以多种语言存在且无平行对齐，其词汇与当代读者相距甚远，且对文化敏感材料生成的文本必须可验证地有据可依。本文提出Viveka-Insight，一个面向辨喜（1863-1902）著作的双语资源与开源流水线：九卷英文全集与十卷孟加拉文Vani o Rachana，两个相关但非平行的语料库，约1500万字符。发布四个层次：(i) 结构保持的解析（32,694段落，168,842句子），每段锚点可深链至已出版版本；(ii) 包含8,362个语言无关概念的跨语言概念图，具有87,518条关系类型化的段落-概念边与55,872条概念-概念边，其中规范英文标签作为字符串相等键，在无平行数据的情况下连接孟加拉文与英文段落；(iii) 包含60,850个表面形式的双语别名清单（英文30,053，孟加拉文30,797）；(iv) 由三名标注者判定的200条段落-概念边的人工标注集，随所有逐标注者判断一并发布。本文报告了在194对经验证的渲染讲座对上的已知项跨语言检索（双向Recall@10均为0.86）、对引文完整性与现代问题桥接的30问审计，以及一项将概念抽取精确率置于严格双标注者共识下0.60（Cohen's kappa = 0.61）的人类研究。抽取器的置信权重经过校准：限制权重>=0.8可将精确率提升至0.71，同时保留98%的含概念段落。孟加拉文精确率显著低于英文（0.54对0.68），将弱点定位于抽取环节。",
       "insight_zh": "该工作在无平行数据条件下利用规范标签作为跨语言键构建概念图与引文溯源检索，其方法或可为多源地理文本数据的跨语言知识组织提供参考，但整体属于数字人文领域。"
+    },
+    {
+      "key": "arxiv:2609.20744",
+      "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
+      "title_zh": "Video DeltaNet：面向直播视频生成的视频原生混合注意力",
+      "url": "https://arxiv.org/abs/2609.20744",
+      "arxiv_id": "2609.20744",
+      "authors": [
+        "Haocheng Xi",
+        "Yiming Xie",
+        "Hexu Zhao",
+        "Yiwen Zhang",
+        "Michael Liu",
+        "Thomas Creavin",
+        "Kurt Keutzer",
+        "Xiuyu Li",
+        "Zhaoyang Lv",
+        "Chenfeng Xu",
+        "Haiwen Feng"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T17:33:15+00:00",
+      "score": 10,
+      "reason": "该文研究视频扩散模型的高效注意力机制，与遥感视频或时空数据生成有间接方法关联，但不涉及地理空间分析或城市更新。",
+      "tags": [
+        "视频生成",
+        "线性注意力",
+        "扩散模型",
+        "直播视频"
+      ],
+      "summary_zh": "视频扩散模型在去噪过程中反复处理长时空token序列，使注意力成为主要计算瓶颈。线性注意力提供了有吸引力的替代方案，并已被近期大型语言模型广泛采用，但直接应用于视频模型往往无法保留高质量生成所需的细粒度交互。作者提出 Video DeltaNet（VDN），结合局部Softmax注意力与双向线性记忆以处理长程视频上下文。其线性分支引入 Video Delta Attention（VDA），通过联合纳入每帧的空间token，每帧更新一次记忆。独立的输出投影和可学习门控校准两个分支，分阶段教师对齐方案逐步将新路径引入预训练模型。作者在MiniMax H3上实例化VDN，将混合机制应用于视频到视频交互，同时保留Softmax用于涉及文本或音频的交互。结合八步蒸馏和优化的SGLang服务栈，VDN-H3在八块NVIDIA B200 GPU上于6.70秒内完成14.3秒、768p视频的DiT去噪，相对相同GPU数量下50步稠密H3基线实现14.5倍加速。",
+      "insight_zh": "该工作展示视频生成中线性注意力与Softmax混合的效率优势，可能对时空数据生成与遥感视频处理有间接参考，但摘要未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2608.26585",
@@ -12434,32 +12712,6 @@
       "insight_zh": "该工作提出骨干无关的单视图3DGS压缩流水线，通过事后剪枝与循环精化减少空间冗余。其方法属于三维视觉重建，与地理空间分析无直接关联，但三维高斯表示与压缩思路或可类比于地理空间三维场景的高效表示，论文未涉及该方向。"
     },
     {
-      "key": "arxiv:2609.18766",
-      "title": "Performance of Machine Learning Classification in Sonomammogram Images using BI-RADS",
-      "title_zh": "基于BI-RADS的乳腺超声图像机器学习分类性能研究",
-      "url": "https://arxiv.org/abs/2609.18766",
-      "arxiv_id": "2609.18766",
-      "authors": [
-        "Malitha Gunawardhana",
-        "Norbert Zolek"
-      ],
-      "categories": [
-        "eess.IV",
-        "cs.CV"
-      ],
-      "published": "",
-      "score": 10,
-      "reason": "该论文研究乳腺超声图像中基于BI-RADS的机器学习分类，属于医学影像分析方向，与GIS、城市更新、时空数据挖掘、遥感变化检测、多源数据融合等核心方向基本无关，仅与遥感变化检测在图像分类方法层面有极弱的间接联系。",
-      "tags": [
-        "机器学习分类",
-        "乳腺超声图像",
-        "BI-RADS",
-        "医学影像"
-      ],
-      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法或结论。",
-      "insight_zh": "摘要缺失，无法推断具体方法或结果；从标题推测，该工作可能评估不同机器学习分类器在乳腺超声图像BI-RADS分类上的表现，与地理空间智能研究关联很弱，仅在图像分类方法论层面有极有限的参考价值。"
-    },
-    {
       "key": "arxiv:2609.19985",
       "title": "Past, Future, All at Once: Mitigating Stability-Plasticity Dilemma via Post-hoc JANUS Rectification",
       "title_zh": "过去、未来，同时发生：通过事后JANUS校正缓解稳定性-可塑性困境",
@@ -12578,6 +12830,45 @@
       ],
       "summary_zh": "摘要缺失。",
       "insight_zh": "仅从标题推断，该研究可能提出低秩正交化技术以提升基础模型训练效率，对遥感基础模型训练有潜在间接价值，但需全文确认。"
+    },
+    {
+      "key": "arxiv:2609.18766",
+      "title": "Long-Tail Rebalancing for Non-Verbal Vocalization-Aware ASR: A Track 1 System for the NVVSpeech Challenge",
+      "title_zh": "基于BI-RADS的乳腺超声图像机器学习分类性能研究",
+      "url": "https://arxiv.org/abs/2609.18766",
+      "arxiv_id": "2609.18766",
+      "authors": [
+        "Shangyue Jia",
+        "Jingru Ma",
+        "Yangzhuo Li",
+        "Daoping Luo",
+        "Bowen Tian",
+        "Hanchen Lu",
+        "Wenze Ren",
+        "Yunxiang Chen",
+        "Houdun Liu",
+        "Su Feng",
+        "Lei Xie",
+        "Liumeng Xue"
+      ],
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "eess.AS",
+        "cs.CL",
+        "cs.SD"
+      ],
+      "published": "",
+      "score": 10,
+      "reason": "该论文研究乳腺超声图像中基于BI-RADS的机器学习分类，属于医学影像分析方向，与GIS、城市更新、时空数据挖掘、遥感变化检测、多源数据融合等核心方向基本无关，仅与遥感变化检测在图像分类方法层面有极弱的间接联系。",
+      "tags": [
+        "机器学习分类",
+        "乳腺超声图像",
+        "BI-RADS",
+        "医学影像"
+      ],
+      "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取论文的具体研究内容、方法或结论。",
+      "insight_zh": "摘要缺失，无法推断具体方法或结果；从标题推测，该工作可能评估不同机器学习分类器在乳腺超声图像BI-RADS分类上的表现，与地理空间智能研究关联很弱，仅在图像分类方法论层面有极有限的参考价值。"
     },
     {
       "key": "arxiv:2609.19717",
@@ -14073,6 +14364,33 @@
       "insight_zh": "由于摘要缺失，无法对具体方法或结论进行推断。仅从标题看，该工作与地理空间智能的直接关联有限，但其关于视角/方位角对分类影响的讨论或对遥感目标识别中的视角不变性问题有类比参考价值。"
     },
     {
+      "key": "arxiv:2609.20779",
+      "title": "Harm Laundering in GPT Models: Evidence That Gender Discrimination Is Transformed Rather Than Reduced Across Safety-Trained Generations",
+      "title_zh": "GPT模型中的危害洗白：证据表明性别歧视在安全训练的代际间被转化而非减少",
+      "url": "https://arxiv.org/abs/2609.20779",
+      "arxiv_id": "2609.20779",
+      "authors": [
+        "Sarah Wyer",
+        "Sue Black",
+        "Noura Al Moubayed"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-17T17:49:28+00:00",
+      "score": 8,
+      "reason": "该文研究GPT系列模型中的性别歧视表现形式变化，与LLM评估和安全相关，但与GIS、城市更新或遥感主题无直接关联。",
+      "tags": [
+        "LLM安全",
+        "性别歧视",
+        "危害洗白",
+        "模型评估"
+      ],
+      "summary_zh": "大型语言模型的安全评估依赖表面形式分类器，报告代际间危害分数下降。本文提供证据表明该方法系统性不完整：显性歧视内容被转化而非移除，作者称之为“危害洗白”。通过分析跨越GPT-2至GPT-5的15个模型、三种人口统计条件下的45万条性别指向补全，作者显示GPT-2中针对女性的性暴力聚类在GPT-4中消失，而针对男性的补全获得了女性补全所没有的正面表征领域（照护、情感范围、盟友身份）。该模式在GPT-5最明显：主题5（1997份文档）将乳腺癌框定为男性权利辩论，而女性指向输出中无等价聚类。三个独立分类器将该内容评为无毒。情感分数在GPT-4发生反转：早期模型贬低女性，后期模型过度矫正。在GPT-4对齐边界，女性指向补全的主题多样性相对男性下降36%（W/M=0.58，GPT-2时为0.91）。REGARD表征危害差异与发布日期相关（ρ=+0.55，p=.034），而Detoxify不相关（ρ=-0.23，p=.42）：毒性分数下降的同时表征危害上升。作者将危害洗白形式化为三标准检验，并提供适用于任何生成模型的三阶段检测协议。",
+      "insight_zh": "该研究提示毒性分数降低不足以作为危害减少的代理指标，对LLM智能体在地理空间应用中的公平性评估有间接警示意义，但摘要未涉及地理空间场景。"
+    },
+    {
       "key": "arxiv:2609.19907",
       "title": "GS-PI: An Optimization-Decoupled Appearance Decomposition Approach for Generating PBR Gaussian Assets",
       "title_zh": "GS-PI：一种用于生成PBR高斯资产的优化解耦外观分解方法",
@@ -14962,35 +15280,6 @@
       "insight_zh": "摘要缺失，无法评估其水印有效性与鲁棒性；水印技术对LLM生成内容的溯源有潜在意义，但与地理空间智能的关联原文未提及。"
     },
     {
-      "key": "arxiv:2609.20744",
-      "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20744",
-      "arxiv_id": "2609.20744",
-      "authors": [
-        "Haocheng Xi",
-        "Yiming Xie",
-        "Hexu Zhao",
-        "Yiwen Zhang",
-        "Michael Liu",
-        "Thomas Creavin",
-        "Kurt Keutzer",
-        "Xiuyu Li",
-        "Zhaoyang Lv",
-        "Chenfeng Xu",
-        "Haiwen Feng"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T17:33:15+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15964",
       "title": "Verifiable by Construction: Claim-Level Evaluation of Verbatim Citation in Clinical Question Answering",
       "title_zh": "构造即可验证：临床问答中逐字引用的声明级评估",
@@ -15351,36 +15640,6 @@
       "insight_zh": "该工作属于联邦强化学习理论，与地理空间智能的关联非常间接，可能仅在方法论层面（如分布式鲁棒学习）对多源地理数据融合有微弱借鉴意义。"
     },
     {
-      "key": "arxiv:2609.20784",
-      "title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20784",
-      "arxiv_id": "2609.20784",
-      "authors": [
-        "Yan Yu",
-        "Zhengxi Lu",
-        "Yizhou Liu",
-        "Yichen Pan",
-        "Aozhe Wang",
-        "Qipeng Chen",
-        "Hua Yang",
-        "Wenqi Zhang",
-        "Weiming Lu",
-        "Qianglong Chen",
-        "Yongliang Shen"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-17T17:52:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2312.01020",
       "title": "ResNLS: An Improved Model for Stock Price Forecasting",
       "title_zh": "ResNLS：一种改进的股票价格预测模型",
@@ -15551,31 +15810,6 @@
       "insight_zh": "该研究属于语音情感识别与判别式适配，与用户研究方向无直接联系，仅在LLM适配方法层面有非常间接的参考价值。"
     },
     {
-      "key": "arxiv:2609.20754",
-      "title": "RAFT: A Stateful Retrieval-Augmented Framework for Troubleshooting Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20754",
-      "arxiv_id": "2609.20754",
-      "authors": [
-        "Mingxuan Zhang",
-        "Xiaowen Wang",
-        "Anupma Sharan",
-        "Zhengyi Chen",
-        "Chenyu Diana Zhang",
-        "Shanshan Yang",
-        "Chittibabu Pacharu"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-17T17:41:31+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2504.01250",
       "title": "R2DN: Scalable Parameterization of Contracting and Lipschitz Recurrent Deep Networks",
       "title_zh": "R2DN：收缩与Lipschitz循环深度网络的可扩展参数化",
@@ -15671,34 +15905,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推断，该研究利用上下文赌博机（contextual bandit）强化学习方法对线性求解器的精度进行自动调优。",
       "insight_zh": "该研究可能在科学计算与RL结合方面有方法贡献，但与地理空间智能、城市更新或遥感变化检测的关联不明确。"
-    },
-    {
-      "key": "arxiv:2609.20794",
-      "title": "PosteriorBench: From Point Estimates to Posterior Matching in Evaluating Generative Inverse Solvers",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20794",
-      "arxiv_id": "2609.20794",
-      "authors": [
-        "Jiachen Yao",
-        "Zi-Siang Hsu",
-        "Xi Deng",
-        "Aditi Gupta",
-        "Xin Ju",
-        "Sally M Benson",
-        "Gege Wen",
-        "Anima Anandkumar"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CE",
-        "https://github.com/neuraloperator/PosteriorBench"
-      ],
-      "published": "2026-09-17T17:54:12+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.20269",
@@ -16323,37 +16529,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.20800",
-      "title": "JEPA-Anything: Learning Predictive Models across Different Worlds",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20800",
-      "arxiv_id": "2609.20800",
-      "authors": [
-        "Taoyong Cui",
-        "Zhongyao Wang",
-        "Xinyue Xu",
-        "Weiyang Liu",
-        "Zhaochen Yu",
-        "Yuying Zhang",
-        "Qiang Gao",
-        "Mengyue Yang",
-        "Wanli Ouyang",
-        "Pheng Ann Heng",
-        "Yingcheng Wu",
-        "Zhenfei Yin",
-        "Ling Yang"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-17T17:55:57+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2407.06868",
       "title": "Interactive proofs for verifying (quantum) learning and testing",
       "title_zh": "物理信息Sylvester归一化流用于磁共振波谱中的贝叶斯推断",
@@ -16553,28 +16728,6 @@
       "insight_zh": "该文对理解大模型训练效率有参考价值，但其研究对象为通用语言模型架构，与地理空间智能或城市分析无直接应用关联。"
     },
     {
-      "key": "arxiv:2609.20779",
-      "title": "Harm Laundering in GPT Models: Evidence That Gender Discrimination Is Transformed Rather Than Reduced Across Safety-Trained Generations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20779",
-      "arxiv_id": "2609.20779",
-      "authors": [
-        "Sarah Wyer",
-        "Sue Black",
-        "Noura Al Moubayed"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-17T17:49:28+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19956",
       "title": "Graph-Based Stochastic Power-UCT: Monte-Carlo Graph Search with Power Mean Estimation",
       "title_zh": "",
@@ -16704,27 +16857,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.20769",
-      "title": "FlowSGS: Improving Flow Matching Priors for Inverse Imaging with Stochastic Interpolants",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20769",
-      "arxiv_id": "2609.20769",
-      "authors": [
-        "Tianao Li",
-        "Xinhui Qian",
-        "Emma Alexander"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-17T17:46:07+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19740",
       "title": "Federated Learning Framework for Privacy-Preserving Kidney Stone Detection",
       "title_zh": "面向隐私保护肾结石检测的联邦学习框架",
@@ -16769,26 +16901,6 @@
         "cs.LG"
       ],
       "published": "2026-09-17T01:41:17+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20138",
-      "title": "Fast-varying Natural Frequencies and Damping Ratio Identification for Linear Time-Varying System",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20138",
-      "arxiv_id": "2609.20138",
-      "authors": [
-        "Melisa Bozaci",
-        "Alice Cicirello"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T12:29:44+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -17087,33 +17199,6 @@
       "insight_zh": "该方法通过固定大小比特流桥接熵编码与并行注意力核，若应用于地理空间大模型的长序列推理，可能有助于降低部署成本，但其地理场景适用性尚未验证。"
     },
     {
-      "key": "arxiv:2609.20139",
-      "title": "Cross-Modal Attention Acts as a Frequency Filter: Why Verbose Prompts Improve Robustness in Vision-Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20139",
-      "arxiv_id": "2609.20139",
-      "authors": [
-        "Farooq Ahmad Wani",
-        "Maria Sofia Bucarelli",
-        "Mujtaba Hussain Mirza",
-        "Oleksandr Pryymak",
-        "Aryo Pradipta Gema",
-        "Iacopo Masi",
-        "Pasquale Minervini",
-        "Fabrizio Silvestri"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-17T12:31:07+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19551",
       "title": "Continual Enterprise World Model Discovery in Dynamic Systems",
       "title_zh": "",
@@ -17193,27 +17278,6 @@
         "cs.LG"
       ],
       "published": "2026-09-17T02:13:21+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20765",
-      "title": "Calibrated RF-Fingerprinting Under Interference With Heterogeneous Transmission Protocols",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20765",
-      "arxiv_id": "2609.20765",
-      "authors": [
-        "Tariq Abdul-Quddoos",
-        "Xiangfang Li",
-        "Lijun Qian"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T17:44:22+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

@@ -2,11 +2,11 @@
   "date": "2026-09-23",
   "analysis_stats": {
     "total": 667,
-    "analyzed": 437,
+    "analyzed": 447,
     "high": 3,
-    "medium": 19,
+    "medium": 21,
     "low": 35,
-    "below_threshold": 380
+    "below_threshold": 388
   },
   "papers": [
     {
@@ -220,6 +220,34 @@
       "insight_zh": "该方法或可应用于城市更新中的交通可达性评估与多源数据融合，但摘要缺失，无法确认其数据集、实验或创新性。"
     },
     {
+      "key": "arxiv:2609.26125",
+      "title": "When Big Data Becomes a Curse: Spatial Heterogeneity and the Limits of Learning from Passive Acoustic Monitoring Data",
+      "title_zh": "当大数据成为诅咒：空间异质性与被动声学监测数据学习的局限",
+      "url": "https://arxiv.org/abs/2609.26125",
+      "arxiv_id": "2609.26125",
+      "authors": [
+        "Gabriel Spadon",
+        "Wayne Renaud",
+        "Priyanka Aravindan"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.SD"
+      ],
+      "published": "2026-08-06T14:44:46+00:00",
+      "score": 72,
+      "reason": "该文分析被动声学监测数据中的空间异质性与验证偏差，强调随机窗口验证会高估对未见站点的迁移能力，与地理空间智能中的空间依赖、验证方法和空间采样问题高度相关。",
+      "tags": [
+        "被动声学监测",
+        "空间异质性",
+        "依赖感知验证",
+        "迁移学习",
+        "空间采样"
+      ],
+      "summary_zh": "被动声学监测产生大量档案，其录音按部署、季节、站点标识和采集配置聚集。作者分析了来自38次部署、20个大西洋加拿大站点标识和21个接收器位置的908,072条AIS标注的679秒录音。AIS接触先验变化超过200倍，各部署的筛选分布需要局部解释。在两个季节均观测到的18个站点标识上进行双向跨季节迁移，预测站点身份高于5.56%的均匀随机水平，AIS接触录音的平衡准确率为15.9%，无AIS接触录音为16.4%。相同描述符对两种水听器模型的预测准确率分别为74.1%和85.6%，但水听器模型与季节及其他部署级采集差异强烈混淆。在一个回顾性筛选和封顶的54,507条录音基准上，重复的站点分组留出法得到ROC-AUC为0.612，站点自助法95%区间为0.582至0.648，而随机窗口诊断下为0.661。两者的配对差异为0.049（0.040至0.056）。移除原始能量使未见站点ROC-AUC从0.612变为0.603，而一项探索性训练站点尺度分析呈非单调。这些结果表明，在该语料库中，随机窗口验证高估了对未见站点标识的迁移能力。它们支持依赖感知验证和更广泛的独立空间采样，而空间专家模型仍是一个假设而非已确立的补救措施。",
+      "insight_zh": "该研究揭示了在具有强空间聚集结构的数据中，随机窗口验证会系统性高估模型对未见空间位置的泛化能力，配对差异虽小但方向一致；这为地理空间智能中的验证协议设计提供了警示，即应采用依赖感知的站点分组验证，并指出空间专家模型的有效性尚待验证。"
+    },
+    {
       "key": "arxiv:2609.25326",
       "title": "Spatiotemporal Kronecker Covariance Neural Networks",
       "title_zh": "时空Kronecker协方差神经网络",
@@ -358,6 +386,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅含分隔线），无法提取具体方法、数据或结论。",
       "insight_zh": "从标题推断，该工作可能利用共识与置信度信号动态组织LLM多智能体临时团队，以提升协作效率；由于摘要缺失，无法确认其具体机制、评测任务或效率提升幅度。"
+    },
+    {
+      "key": "arxiv:2609.26097",
+      "title": "One Domain, Many Tongues: Composing Domain and Language LoRAs for Cross-Lingual Remote-Sensing MLLMs without Paired Data",
+      "title_zh": "一个领域，多种语言：无需配对数据为跨语言遥感多模态大模型组合领域与语言LoRA",
+      "url": "https://arxiv.org/abs/2609.26097",
+      "arxiv_id": "2609.26097",
+      "authors": [
+        "Xuechen Li"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-04T23:42:49+00:00",
+      "score": 65,
+      "reason": "该文研究遥感多模态大语言模型的跨语言能力扩展，提出无需配对数据的域-语言LoRA组合方法，直接涉及遥感MLLM与多语言迁移，与遥感变化检测和多源数据融合有较强方法学关联。",
+      "tags": [
+        "遥感多模态大模型",
+        "跨语言",
+        "LoRA组合",
+        "正交约束"
+      ],
+      "summary_zh": "遥感（RS）多模态大语言模型（MLLM）仅在英语中训练和评估，而纯文本指令数据覆盖100多种语言。作者提出MODL（互正交域-语言组合），一种无需一个多语言遥感样本即可为英语遥感MLLM添加新语言的配方：在英语遥感图像上训练的领域LoRA和在纯文本上训练的语言LoRA被联合学习，在一个损失项下使两个更新在训练全程每一层都保持互正交。这一约束是该配方的核心要素。没有它，相同训练能正确回答遥感问题但用英语，抹去基座模型的大部分多语言文本能力，并在三个种子中的一个上发散；从免训练合并到先前正交性变体的十六种替代方案都以同样方式失败。MODL在每个种子上修复了所有失败：答案正确且以目标语言给出的比例为56-71%，而最佳替代方案仅达27%，大多数低于8%；文本能力保持在未训练基座水平，在西班牙语上超越Qwen2.5-VL-7B，且零多语言多模态数据。单个五语言适配器在三个种子上保持英语、西班牙语和越南语的全强度；非拉丁文字仍是开放边界。",
+      "insight_zh": "该研究证明，通过互正交约束联合训练领域与语言LoRA，可在无配对多语言遥感数据的情况下实现跨语言遥感问答，且不损害基座模型的多语言文本能力；这一方法对遥感多模态模型的多语言部署与多源数据融合具有参考价值，但非拉丁文字场景仍待解决。"
     },
     {
       "key": "arxiv:2605.25200",
@@ -5071,7 +5125,8 @@
         "cs.CV",
         "link,",
         "manuscript",
-        "unchanged"
+        "unchanged",
+        "link"
       ],
       "published": "",
       "score": 25,
@@ -6709,6 +6764,40 @@
       "insight_zh": "由于摘要为空，无法判断其具体贡献与实验设置。若其状态空间建模思路可迁移，或对三维城市建模、点云补全等地理空间任务有潜在参考价值，但当前信息不足以支撑此类推断。"
     },
     {
+      "key": "arxiv:2609.26121",
+      "title": "DTOC: Dynamic Tool Output Compression for Adaptive Context Management in AI Agents",
+      "title_zh": "DTOC：面向AI智能体自适应上下文管理的动态工具输出压缩",
+      "url": "https://arxiv.org/abs/2609.26121",
+      "arxiv_id": "2609.26121",
+      "authors": [
+        "Abhay Chaturvedi",
+        "Shreya Bhattacharya",
+        "Rashmika Gopalkrishnan",
+        "Peter van der Putten"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA",
+        "October",
+        "5-9,",
+        "2026,",
+        "Mainz,",
+        "Germany"
+      ],
+      "published": "2026-08-06T12:06:36+00:00",
+      "score": 18,
+      "reason": "该文提出LLM智能体的动态工具输出压缩框架，属于智能体上下文管理方法，与多智能体系统有方法学联系，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "LLM智能体",
+        "上下文管理",
+        "工具输出压缩",
+        "可逆操作"
+      ],
+      "summary_zh": "随着智能体能力增长，实际限制越来越多地来自受限的上下文窗口而非模型容量。常见策略如截断、启发式老化与有损摘要可能丢弃有用信息或引入幻觉风险。为应对这些挑战，作者提出动态工具输出压缩（DTOC），一个面向LLM智能体可扩展上下文管理的框架，将上下文更新建模为智能体推理循环中显式且可逆的操作。DTOC将完整工具输出保留在外部记忆中，同时在活动上下文中插入紧凑占位符，从而在需要时进行选择性重建。作者形式化了DTOC机制，将其集成到ReAct风格智能体架构中，并提供了支持按需恢复压缩输出的面向生产的实现。在DeepSWE上的实验显示出模型依赖效应：对于响应性模型（Sonnet 4.6、GPT-5.4），DTOC减少输入token（10.3%和12.7%）和智能体步数（2.4%和32.3%），同时提高解决率（2.5倍和1.5倍）并降低每解决任务成本（3倍和3.5倍）。对于其他模型结果更为混合，GPT-5.5解决率翻倍且成本减半，但其他模型解决率无影响且成本为负。消融结果表明可逆性至关重要：仅禁用压缩的变体性能下降，而完整DTOC在显著降低上下文成本的同时恢复基线准确率。这些发现表明，显式、可逆的上下文管理可以在不降低任务性能的情况下提高长时程智能体推理的效率。",
+      "insight_zh": "该研究证明可逆的上下文压缩能在降低token成本的同时维持甚至提升智能体任务表现，其显式外部记忆与按需重建机制对多智能体地理空间工作流的上下文管理有借鉴意义，但论文未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2607.01940",
       "title": "Conditional Co-Ablation: Recovering Self-Repair Backups in Transformer Circuits",
       "title_zh": "条件共消融：恢复Transformer电路中的自修复备份",
@@ -7669,7 +7758,7 @@
         "Longfei Liu",
         "Wei Liu",
         "Kai Chen",
-        "Jiangjiang Kong",
+        "Jiangang Kong",
         "Wei Zhou",
         "Yifeng Qian",
         "Dexiong Chen",
@@ -9241,6 +9330,34 @@
       "insight_zh": "该多智能体框架中导师-执行者-评估者的分工模式可为地理空间智能体系统设计提供参考，尤其是在需要整合多源地理数据与领域工具（如遥感解译、空间分析）的复杂工作流中。"
     },
     {
+      "key": "arxiv:2609.26060",
+      "title": "ChainUQ: Reasoning Consistency-Aware Uncertainty Quantification for Large Language Models",
+      "title_zh": "ChainUQ：面向大语言模型的推理一致性感知不确定性量化",
+      "url": "https://arxiv.org/abs/2609.26060",
+      "arxiv_id": "2609.26060",
+      "authors": [
+        "Dahai Yu",
+        "Rongchao Xu",
+        "Lin Jiang",
+        "Ximiao Li",
+        "Guang Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-08T01:28:49+00:00",
+      "score": 15,
+      "reason": "该文提出推理一致性感知的LLM不确定性量化框架，属于LLM可靠性方法研究，与地理空间智能中的LLM应用有间接方法学联系，但不涉及时空数据或遥感。",
+      "tags": [
+        "LLM不确定性量化",
+        "推理一致性",
+        "校准",
+        "AUROC"
+      ],
+      "summary_zh": "尽管大语言模型（LLM）展现出令人印象深刻的推理能力，但当中间主张与最终结论冲突时，响应级置信度可能仍不可靠。因此，需要有效的不确定性量化（UQ）来捕捉推理链内部的逻辑不一致，而不仅仅是最终输出的正确性。当前方法有两大局限：（1）依赖token级概率，无法捕捉推理一致性；（2）缺乏利用生成链结构逻辑动态校准置信度的机制。为推进现有研究，作者提出ChainUQ，一个面向LLM的推理一致性感知不确定性量化框架。ChainUQ包含两个关键技术组件：一个对齐感知的轻量级UQ模块，从与最终结论对齐的冻结特征中估计原始内在模型置信度分数；以及一个推理一致性感知校准器，利用推理链一致性证据精炼该分数。在多样化的分布内和分布外基准上的评估表明，ChainUQ持续改善响应级不确定性估计，AUROC平均相对提升3.1%，ECE相对降低最高达45.0%，且无需额外微调即可直接迁移到新设置。",
+      "insight_zh": "该研究强调推理链内部一致性对不确定性估计的重要性，提出将结构逻辑证据纳入校准；这一思路可启发地理空间智能中LLM推理结果的可靠性评估，但论文未涉及地理空间或时空数据场景。"
+    },
+    {
       "key": "arxiv:2609.26112",
       "title": "Certified Mechanistic Interpretability: Lifting Single-Input Findings to Bounded Neighbourhoods",
       "title_zh": "认证式机制可解释性：将单输入发现提升到有界邻域",
@@ -9483,6 +9600,30 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体方法、数据集与实验结论。根据标题可推断，该工作提供一个开源全栈框架，用于构建可实时交互的视频世界模型。",
       "insight_zh": "摘要为空，无法评估其技术细节与性能。若视频世界模型可用于城市环境动态模拟，或与城市更新场景仿真存在潜在结合点，但当前信息不足以确认。"
+    },
+    {
+      "key": "arxiv:2609.26144",
+      "title": "When Verifiers Vote Backwards under Verdict Substitution: Signed Pivotal Value in Correlated Self-Consistency",
+      "title_zh": "当验证器在裁决替换下反向投票：相关自一致性中的符号枢轴值",
+      "url": "https://arxiv.org/abs/2609.26144",
+      "arxiv_id": "2609.26144",
+      "authors": [
+        "Yang Shu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-08T05:02:34+00:00",
+      "score": 12,
+      "reason": "该文研究自一致性投票中验证器替换对多数决策的影响，属于LLM推理可靠性分析，与城市更新、时空数据挖掘、遥感变化检测或多源地理空间融合无直接关联，仅与LLM方法学有边缘联系。",
+      "tags": [
+        "LLM自一致性",
+        "验证器",
+        "投票机制",
+        "不确定性"
+      ],
+      "summary_zh": "替换一张选票只有在单票决定多数的查询上才会改变多数决策，这一结构性事实无需独立性假设。作者使用带标签的裁决式干预研究该变化的符号：在k=7的自一致性面板中，用一个正确性信号替换一个正确性指示选票。该诊断性干预不等同于实际部署中的答案身份多数投票。一项MATH-500主实验（n=570）中，不同模型的验证器带来+24.2个百分点的枢轴增益，而角色互换配置则为-11.2个百分点；一项探索性代码压力测试（9个任务中14个枢轴行）为-24.5个百分点。精确的符号增益分解通过验证器的状态特定准确率以及两个单票计票状态的构成解释了所有观察到的符号，而非全局准确率或模型来源。同源信号在枢轴层上准确率下降（主配置中从65%降至44%），而误差相关性提供了描述性的误差关联诊断。受控退化和k∈{3,5,7}子集敏感性分析检验了该模式在此核算框架下的稳定性。在评估的平局视为错误的答案身份多数投票分析下，结构性零值和强验证器收益依然存在，但角色互换的损害减弱至-0.9个百分点且不显著。因此，结果确立了有害的裁决替换，而非普遍有害的部署多数投票，并激发了一个可检验但尚未验证的关于负过程奖励模型权重的假设。",
+      "insight_zh": "该研究提示，在LLM自一致性集成中引入外部验证器并非总是有益，其效果取决于验证器在特定计票状态下的准确率构成；这一发现对多智能体协作中的投票与验证机制设计具有参考意义，但作者明确区分了诊断性干预与实际部署的多数投票，且角色互换的负面效应在部署分析下并不显著。"
     },
     {
       "key": "arxiv:2606.14629",
@@ -10192,6 +10333,40 @@
       "insight_zh": "该文提出的联合能力与安全的后训练框架及风险条件化策略，可为地理空间智能体在执行敏感空间操作时的安全约束建模提供方法借鉴，但其本身未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.20744",
+      "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
+      "title_zh": "Video DeltaNet：面向直播视频生成的视频原生混合注意力",
+      "url": "https://arxiv.org/abs/2609.20744",
+      "arxiv_id": "2609.20744",
+      "authors": [
+        "Haocheng Xi",
+        "Yiming Xie",
+        "Hexu Zhao",
+        "Yiwen Zhang",
+        "Michael Liu",
+        "Thomas Creavin",
+        "Kurt Keutzer",
+        "Xiuyu Li",
+        "Zhaoyang Lv",
+        "Chenfeng Xu",
+        "Haiwen Feng"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-17T17:33:15+00:00",
+      "score": 10,
+      "reason": "该文研究视频扩散模型的高效注意力机制，与遥感视频或时空数据生成有间接方法关联，但不涉及地理空间分析或城市更新。",
+      "tags": [
+        "视频生成",
+        "线性注意力",
+        "扩散模型",
+        "直播视频"
+      ],
+      "summary_zh": "视频扩散模型在去噪过程中反复处理长时空token序列，使注意力成为主要计算瓶颈。线性注意力提供了有吸引力的替代方案，并已被近期大型语言模型广泛采用，但直接应用于视频模型往往无法保留高质量生成所需的细粒度交互。作者提出 Video DeltaNet（VDN），结合局部Softmax注意力与双向线性记忆以处理长程视频上下文。其线性分支引入 Video Delta Attention（VDA），通过联合纳入每帧的空间token，每帧更新一次记忆。独立的输出投影和可学习门控校准两个分支，分阶段教师对齐方案逐步将新路径引入预训练模型。作者在MiniMax H3上实例化VDN，将混合机制应用于视频到视频交互，同时保留Softmax用于涉及文本或音频的交互。结合八步蒸馏和优化的SGLang服务栈，VDN-H3在八块NVIDIA B200 GPU上于6.70秒内完成14.3秒、768p视频的DiT去噪，相对相同GPU数量下50步稠密H3基线实现14.5倍加速。",
+      "insight_zh": "该工作展示视频生成中线性注意力与Softmax混合的效率优势，可能对时空数据生成与遥感视频处理有间接参考，但摘要未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.24815",
       "title": "Uranus: Building the Next-Generation Simulation Infrastructure for Embodied AI",
       "title_zh": "Uranus：构建面向具身智能的新一代仿真基础设施",
@@ -10246,7 +10421,18 @@
         "we",
         "request",
         "withdrawal",
-        "submission"
+        "submission",
+        "https://d-robotics-ai-lab.github.io/large-model-team/blog/uranus/",
+        "Inference",
+        "Code:",
+        "https://github.com/D-Robotics-AI-Lab/Uranus-OSS",
+        "Data:",
+        "https://huggingface.co/datasets/D-Robotics/Uranus-Demo-Data",
+        "SDK",
+        "https://github.com/D-Robotics-AI-Lab/Uranus-SDK",
+        "Model",
+        "Weights:",
+        "https://huggingface.co/collections/D-Robotics/uranus"
       ],
       "published": "",
       "score": 10,
@@ -11322,6 +11508,38 @@
       "insight_zh": "该文的双曲层次量化思路或可启发多尺度地理空间表征的离散化建模，但论文未涉及地理空间数据，属于通用表征学习方法。"
     },
     {
+      "key": "arxiv:2609.26095",
+      "title": "FusionMMT: A Unified Multimodal and Multitask Learning Framework for Nuclear Fusion",
+      "title_zh": "FusionMMT：面向核聚变的统一多模态多任务学习框架",
+      "url": "https://arxiv.org/abs/2609.26095",
+      "arxiv_id": "2609.26095",
+      "authors": [
+        "Qiang Chen",
+        "Xiao Wang",
+        "Qingquan Yang",
+        "Hao Si",
+        "Zikang Yan",
+        "Meiwen Chen",
+        "Guosheng Xu",
+        "and Jin Tang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-08-06T14:52:30+00:00",
+      "score": 10,
+      "reason": "该文提出面向核聚变等离子体诊断的多模态多任务学习框架，涉及视觉与时序数据融合，与多源数据融合方法学有边缘联系，但应用领域为核聚变而非地理空间。",
+      "tags": [
+        "多模态多任务学习",
+        "核聚变",
+        "等离子体诊断",
+        "时序数据"
+      ],
+      "summary_zh": "随着全球能源需求增长，核聚变已成为未来清洁能源的一个有前景的方向。托卡马克是磁约束聚变的主要途径之一。实现高性能、长脉冲和稳态运行需要对等离子体状态进行有效诊断。然而，现有智能诊断方法大多局限于多模态单任务或单模态多任务学习，统一的多模态多任务学习框架仍未被充分探索。为填补这一空白，作者构建了EAST-VTD640，一个整合了640个EAST炮的视觉和时间序列诊断的多模态多任务数据集，用于破裂预测、边缘局域模（ELM）识别和H98回归。在此基础上，作者提出FusionMMT，首个面向智能托卡马克等离子体诊断的统一多模态多任务框架。FusionMMT采用多尺度、时间感知和变量感知建模来处理异构采样率和高频序列的高计算成本。它进一步结合任务自适应多模态融合与渐进式多任务优化，学习共享和任务特定表示，同时缓解跨任务冲突和优化不平衡。在EAST-VTD640上的大量实验表明，FusionMMT在破裂预测、ELM识别和H98回归方面优于代表性多模态多任务方法。源代码将在https://github.com/Event-AHU/OpenFusion发布。",
+      "insight_zh": "该工作展示了多尺度、时间感知和变量感知建模在异构采样率多模态数据融合中的有效性，其任务自适应融合与渐进式多任务优化策略对地理空间多源数据融合有方法学参考价值，但论文应用场景为核聚变诊断。"
+    },
+    {
       "key": "arxiv:2606.19887",
       "title": "FinRED: An Expert-Guided Benchmark Generation and Evaluation Framework for Financial LLM Red-Teaming",
       "title_zh": "FinRED：面向金融LLM红队测试的专家引导基准生成与评估框架",
@@ -12380,6 +12598,40 @@
       "insight_zh": "该工作从信息论角度界定部分可观测模仿所需的最小记忆，暗示智能体在隐藏状态下的行为充分性可与码率分离；其思路或对资源受限的地理空间智能体设计有启发，但摘要未涉及地理场景。"
     },
     {
+      "key": "arxiv:2609.26092",
+      "title": "Match One, Learn with Graph: One-to-Graph Query Collaboration with Backward Sharing for Object Detection",
+      "title_zh": "匹配一个，用图学习：面向目标检测的一对图查询协作与反向共享",
+      "url": "https://arxiv.org/abs/2609.26092",
+      "arxiv_id": "2609.26092",
+      "authors": [
+        "Wenxiao Fan",
+        "Jingling Fu",
+        "Luohang Liu",
+        "Lichen Ma",
+        "Yu He",
+        "Zhiyang Yu",
+        "Weishan Bi",
+        "Junshi Huang",
+        "Yan Li",
+        "Gu Simiu",
+        "Kan Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-06T02:35:29+00:00",
+      "score": 8,
+      "reason": "该文提出基于图的查询协作方法改进DETR目标检测，属于计算机视觉检测方法，与遥感变化检测有潜在方法学联系，但论文未涉及遥感或地理空间数据。",
+      "tags": [
+        "目标检测",
+        "DETR",
+        "查询协作",
+        "图神经网络"
+      ],
+      "summary_zh": "一对一（O2O）匹配使检测Transformer（DETR）能够通过为每个对象分配单个正查询来执行端到端集合预测。然而，一个对象最强的分类、中心、尺度和重叠证据往往分布在多个查询中。这种不匹配导致只有匹配的所有者被正监督，而其他携带证据的查询对该对象没有框目标。作者将这一现象称为查询知识碎片化。为了在不使用一对多监督的情况下利用这种互补证据，作者提出BS-O2G，一个即插即用模块，从解码特征、框和类别分布构建稀疏的预测感知图，以在特征和优化空间中组织查询协作，同时保留原始O2O匹配器、正标签和目标函数。一对图（O2G）校准在该图上传播相对消息，以在前向传播中整合查询证据；而反向共享（BS）复用其转置的分离邻接矩阵，在持久查询基向量之间路由梯度，而不改变前向传播中的解码器输入。在多种DETR方法、骨干网络、COCO和CrowdHuman上的实验显示出一致的增益和更快的收敛，参数/FLOP增长可忽略且运行时开销适中，支持基于图的查询协作作为扩展正分配的替代方案。",
+      "insight_zh": "该工作通过构建预测感知图来整合分散在多个查询中的互补证据，为DETR类检测器提供了一种不改变匹配机制的增强方案；其图传播与梯度路由思路对遥感变化检测中的多尺度目标关联有潜在参考价值，但论文未涉及遥感场景。"
+    },
+    {
       "key": "arxiv:2609.26443",
       "title": "Mammo-LIFE: Longitudinal Mammographic Imaging and Clinical Feature Enrichment for Post-Radiotherapy Outcome Prediction",
       "title_zh": "Mammo-LIFE：用于放疗后预后预测的纵向乳腺钼靶影像与临床特征增强",
@@ -12764,6 +13016,33 @@
       ],
       "summary_zh": "训练后量化与剪枝依赖小型校准语料。金融等专业领域是否需要领域匹配的校准数据尚无定论。作者认为答案取决于压缩造成的任务级损伤，而非领域不匹配：若压缩保持目标任务能力，更换校准语料影响甚微；若压缩造成较大损失，任务格式化的校准可恢复部分损失。作者在两个模型家族、六种压缩配置、三个token匹配的校准语料以及十个金融分类与数值问答任务上检验该假设。结果支持该假设：量化基本保持任务性能，校准选择影响很小；剪枝使数值问答准确率下降超过40个点，在此类受损情形下，另一通用语料无帮助，而金融任务示例混合的FinMix可恢复大部分损失。损伤与恢复的关联在模型家族与规模上均成立。这些发现支持一条实用规则：先测量任务特定的压缩损伤，仅在损伤较大时构建专用校准数据。",
       "insight_zh": "该文提出的“先测损伤、再决定校准”原则可推广到遥感或地理LLM的压缩部署中，提示领域校准数据的价值取决于压缩对目标任务的实际损害程度。"
+    },
+    {
+      "key": "arxiv:2609.26056",
+      "title": "CricRAG: Retrieval Augmented Vision-Language Models for Personalized Cricket Coaching",
+      "title_zh": "CricRAG：面向个性化板球教练的检索增强视觉语言模型",
+      "url": "https://arxiv.org/abs/2609.26056",
+      "arxiv_id": "2609.26056",
+      "authors": [
+        "Agamdeep Singh",
+        "Sujit PB",
+        "Mayank Vatsa"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-08-08T02:29:26+00:00",
+      "score": 8,
+      "reason": "该文将检索增强视觉语言模型应用于板球个性化教练，属于体育视频分析与VLM应用，与地理空间智能、城市更新或遥感无直接关联。",
+      "tags": [
+        "视觉语言模型",
+        "检索增强",
+        "体育教练",
+        "对比学习"
+      ],
+      "summary_zh": "视觉语言模型（VLM）在自动化体育教练方面展现出潜力，但存在一个根本局限：它们隐含地与专业标准进行比较，使得其反馈对发展中球员不切实际。作者提出CricRAG，一个检索增强框架，使VLM与适合技能水平的基准对齐，以实现个性化板球教练。其核心洞见是：通过检索相似但更优的技术作为参考点，可以引导VLM提供符合人类教练实践的发展适宜反馈。贡献包括：（1）一个涵盖多个技能水平的288个板球技术视频的标注数据集；（2）一个使用对比学习的高效动作检索流程，达到78%的top-3检索准确率；（3）一种降低推理成本的帧采样技术；（4）一种检索增强方法，显著改善反馈与教练原则的对齐，与专业评估的一致率最高达94%，而无检索上下文时为67%。",
+      "insight_zh": "该工作表明，检索相似但更优的参考样本可有效校准VLM输出，使其符合特定技能水平的反馈标准；这一思路对需要分层基准的地理空间智能应用（如城市更新中的案例类比）有方法学借鉴价值，但论文本身未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2608.03079",
@@ -13239,25 +13518,6 @@
       "insight_zh": "该研究为MoE模型的推理效率提供了实证见解，但其应用领域与地理空间研究无直接联系。"
     },
     {
-      "key": "arxiv:2609.26144",
-      "title": "When Verifiers Vote Backwards under Verdict Substitution: Signed Pivotal Value in Correlated Self-Consistency",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26144",
-      "arxiv_id": "2609.26144",
-      "authors": [
-        "Yang Shu"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-08-08T05:02:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.26487",
       "title": "When Recursive Models Finish Computing",
       "title_zh": "当递归模型完成计算时",
@@ -13351,28 +13611,6 @@
         "cs.MA"
       ],
       "published": "2026-09-22T09:20:51+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26125",
-      "title": "When Big Data Becomes a Curse: Spatial Heterogeneity and the Limits of Learning from Passive Acoustic Monitoring Data",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26125",
-      "arxiv_id": "2609.26125",
-      "authors": [
-        "Gabriel Spadon",
-        "Wayne Renaud",
-        "Priyanka Aravindan"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.SD"
-      ],
-      "published": "2026-08-06T14:44:46+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13502,35 +13740,6 @@
         "cs.AI"
       ],
       "published": "2026-09-22T07:08:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.20744",
-      "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20744",
-      "arxiv_id": "2609.20744",
-      "authors": [
-        "Haocheng Xi",
-        "Yiming Xie",
-        "Hexu Zhao",
-        "Yiwen Zhang",
-        "Michael Liu",
-        "Thomas Creavin",
-        "Kurt Keutzer",
-        "Xiuyu Li",
-        "Zhaoyang Lv",
-        "Chenfeng Xu",
-        "Haiwen Feng"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-17T17:33:15+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -15672,27 +15881,6 @@
       "insight_zh": "摘要为空，无法确认具体方法或结论；从标题推断其属于隐私审计方向，与GIS研究方向关联度低。"
     },
     {
-      "key": "arxiv:2609.26097",
-      "title": "One Domain, Many Tongues: Composing Domain and Language LoRAs for Cross-Lingual Remote-Sensing MLLMs without Paired Data",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26097",
-      "arxiv_id": "2609.26097",
-      "authors": [
-        "Xuechen Li"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "published": "2026-08-04T23:42:49+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22295",
       "title": "On The Robustness-Resolution Tradeoff In Temporal Quantization Of Event Streams",
       "title_zh": "",
@@ -16110,35 +16298,6 @@
         "cs.LG"
       ],
       "published": "2026-09-22T00:23:52+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26092",
-      "title": "Match One, Learn with Graph: One-to-Graph Query Collaboration with Backward Sharing for Object Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26092",
-      "arxiv_id": "2609.26092",
-      "authors": [
-        "Wenxiao Fan",
-        "Jingling Fu",
-        "Luohang Liu",
-        "Lichen Ma",
-        "Yu He",
-        "Zhiyang Yu",
-        "Weishan Bi",
-        "Junshi Huang",
-        "Yan Li",
-        "Gu Simiu",
-        "Kan Li"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-06T02:35:29+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16960,33 +17119,6 @@
       "insight_zh": "该工作为流匹配模型中的调度设计提供了理论见解，但未涉及地理空间应用。"
     },
     {
-      "key": "arxiv:2609.26095",
-      "title": "FusionMMT: A Unified Multimodal and Multitask Learning Framework for Nuclear Fusion",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26095",
-      "arxiv_id": "2609.26095",
-      "authors": [
-        "Qiang Chen",
-        "Xiao Wang",
-        "Qingquan Yang",
-        "Hao Si",
-        "Zikang Yan",
-        "Meiwen Chen",
-        "Guosheng Xu",
-        "and Jin Tang"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CV"
-      ],
-      "published": "2026-08-06T14:52:30+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.25050",
       "title": "FrontierMath Erd\\H{o}s",
       "title_zh": "",
@@ -17251,7 +17383,7 @@
     {
       "key": "arxiv:2609.26123",
       "title": "FairMon: A Tool for Monitoring and Visualizing Algorithmic Fairness",
-      "title_zh": "",
+      "title_zh": "FairMon：算法公平性监控与可视化工具",
       "url": "https://arxiv.org/abs/2609.26123",
       "arxiv_id": "2609.26123",
       "authors": [
@@ -17268,10 +17400,15 @@
       ],
       "published": "2026-08-07T19:21:32+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文提出算法公平性运行时监控与可视化工具，属于可信AI与决策系统公平性研究，与地理空间智能、城市更新或遥感无直接关联。",
+      "tags": [
+        "算法公平性",
+        "运行时监控",
+        "可视化",
+        "RTLola"
+      ],
+      "summary_zh": "运行时监控最近被提出作为一种严谨方法，用于分析信贷、求职和刑事司法系统等关键场景中自主决策系统的算法公平性。先前工作表明，运行时监控原则上可以成为建立欧盟人工智能法案等立法所要求的人类监督的有效技术。在实践中，现有监控工具并非为此类应用而开发，在这些场景中显示出若干关键缺陷。本文提出FairMon，一个面向高风险决策系统公平性分析的运行时监控工具。FairMon使用RTLola作为灵活的监控规范语言，并扩展了条件概率算子，允许简洁描述算法公平性属性。该工具还具备中间值的实时可视化，使人类能够洞察被监控系统的动态。",
+      "insight_zh": "该工具将运行时监控与可视化结合用于公平性分析，其条件概率算子和实时可视化思路对城市更新决策中的公平性监测有潜在借鉴意义，但论文聚焦于通用高风险决策系统，未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.26377",
@@ -17985,57 +18122,6 @@
       "insight_zh": "无法从摘要推断洞见。"
     },
     {
-      "key": "arxiv:2609.26121",
-      "title": "DTOC: Dynamic Tool Output Compression for Adaptive Context Management in AI Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26121",
-      "arxiv_id": "2609.26121",
-      "authors": [
-        "Abhay Chaturvedi",
-        "Shreya Bhattacharya",
-        "Rashmika Gopalkrishnan",
-        "Peter van der Putten"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.MA",
-        "October",
-        "5-9,",
-        "2026,",
-        "Mainz,",
-        "Germany"
-      ],
-      "published": "2026-08-06T12:06:36+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26056",
-      "title": "CricRAG: Retrieval Augmented Vision-Language Models for Personalized Cricket Coaching",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26056",
-      "arxiv_id": "2609.26056",
-      "authors": [
-        "Agamdeep Singh",
-        "Sujit PB",
-        "Mayank Vatsa"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-08-08T02:29:26+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.25297",
       "title": "Correcting Within-Group Self-Selection Bias in Prioritized Replay",
       "title_zh": "",
@@ -18261,29 +18347,6 @@
         "cs.AI"
       ],
       "published": "2026-09-21T19:28:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26060",
-      "title": "ChainUQ: Reasoning Consistency-Aware Uncertainty Quantification for Large Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26060",
-      "arxiv_id": "2609.26060",
-      "authors": [
-        "Dahai Yu",
-        "Rongchao Xu",
-        "Lin Jiang",
-        "Ximiao Li",
-        "Guang Wang"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-08-08T01:28:49+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

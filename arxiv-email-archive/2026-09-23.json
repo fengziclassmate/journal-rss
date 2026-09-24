@@ -8,9 +8,11 @@
     "arxiv:2602.01163",
     "arxiv:2606.14157",
     "arxiv:2609.25326",
+    "arxiv:2609.26125",
     "arxiv:2609.08016",
     "arxiv:2608.19621",
     "arxiv:2605.29612",
+    "arxiv:2609.26097",
     "arxiv:2605.25200",
     "arxiv:2609.26550",
     "arxiv:2609.25939",
@@ -29,23 +31,21 @@
     "arxiv:2609.26505",
     "arxiv:2609.25569",
     "arxiv:2609.25432",
-    "arxiv:2609.25179",
-    "arxiv:2609.24526",
-    "arxiv:2609.22158"
+    "arxiv:2609.25179"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:667",
-    "deepseek": "partial:29/259;failed-batches:23"
+    "deepseek": "partial:9/229;failed-batches:22"
   },
-  "updated_at": "2026-09-24T00:51:16.789962+00:00",
+  "updated_at": "2026-09-24T12:15:51.455097+00:00",
   "analysis_stats": {
     "total": 667,
-    "analyzed": 437,
+    "analyzed": 447,
     "high": 3,
-    "medium": 19,
+    "medium": 21,
     "low": 35,
-    "below_threshold": 380
+    "below_threshold": 388
   },
   "papers": [
     {
@@ -216,6 +216,33 @@
       "insight_zh": "KVNN通过Kronecker积解耦时空依赖，为时空数据建模提供了可证明稳定的谱方法，对地理空间多源时空数据融合与预测具有直接的方法论参考价值。"
     },
     {
+      "key": "arxiv:2609.26125",
+      "title": "When Big Data Becomes a Curse: Spatial Heterogeneity and the Limits of Learning from Passive Acoustic Monitoring Data",
+      "title_zh": "当大数据成为诅咒：空间异质性与被动声学监测数据学习的局限",
+      "url": "https://arxiv.org/abs/2609.26125",
+      "doi": "",
+      "arxiv_id": "2609.26125",
+      "authors": [
+        "Gabriel Spadon",
+        "Wayne Renaud",
+        "Priyanka Aravindan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-06T14:44:46+00:00",
+      "score": 72,
+      "reason": "该文分析被动声学监测数据中的空间异质性与验证偏差，强调随机窗口验证会高估对未见站点的迁移能力，与地理空间智能中的空间依赖、验证方法和空间采样问题高度相关。",
+      "tags": [
+        "被动声学监测",
+        "空间异质性",
+        "依赖感知验证",
+        "迁移学习",
+        "空间采样"
+      ],
+      "abstract": "Passive Acoustic Monitoring produces large archives whose recordings are clustered by deployment, season, station identifier, and acquisition configuration. We analyze 908,072 AIS-labeled 679-second recordings from 38 deployments, 20 Atlantic Canadian station identifiers, and 21 receiver positions. The AIS-contact prior varies by more than 200-fold, and per-deployment screening distributions require local interpretation. Bidirectional cross-season transfer over the 18 station identifiers observed in both seasons predicts station identity above the 5.56% uniform-chance level, with balanced accuracy of 15.9% for AIS-contact and 16.4% for no-AIS-contact recordings. The same descriptors predict the two hydrophone models at 74.1% and 85.6% balanced accuracy, respectively, but hydrophone model is strongly confounded with season and other deployment-level acquisition differences. On a retrospectively screened and capped benchmark of 54m507 recordings, repeated station-grouped holdout yields an ROC-AUC of 0.612 with a station-bootstrap 95% interval of 0.582 to 0.648, compared with 0.661 under a random-window diagnostic. Their paired difference is 0.049 (0.040 to 0.056). Removing raw energy changes unseen-station ROC-AUC from 0.612 to 0.603, while an exploratory training-station scale analysis is non-monotonic. These results show that random-window validation overstates transfer to unseen station identifiers in this corpus. They support dependence-aware validation and broader independent spatial sampling, while spatial-expert models remain a hypothesis rather than an established remedy.",
+      "summary_zh": "被动声学监测产生大量档案，其录音按部署、季节、站点标识和采集配置聚集。作者分析了来自38次部署、20个大西洋加拿大站点标识和21个接收器位置的908,072条AIS标注的679秒录音。AIS接触先验变化超过200倍，各部署的筛选分布需要局部解释。在两个季节均观测到的18个站点标识上进行双向跨季节迁移，预测站点身份高于5.56%的均匀随机水平，AIS接触录音的平衡准确率为15.9%，无AIS接触录音为16.4%。相同描述符对两种水听器模型的预测准确率分别为74.1%和85.6%，但水听器模型与季节及其他部署级采集差异强烈混淆。在一个回顾性筛选和封顶的54,507条录音基准上，重复的站点分组留出法得到ROC-AUC为0.612，站点自助法95%区间为0.582至0.648，而随机窗口诊断下为0.661。两者的配对差异为0.049（0.040至0.056）。移除原始能量使未见站点ROC-AUC从0.612变为0.603，而一项探索性训练站点尺度分析呈非单调。这些结果表明，在该语料库中，随机窗口验证高估了对未见站点标识的迁移能力。它们支持依赖感知验证和更广泛的独立空间采样，而空间专家模型仍是一个假设而非已确立的补救措施。",
+      "insight_zh": "该研究揭示了在具有强空间聚集结构的数据中，随机窗口验证会系统性高估模型对未见空间位置的泛化能力，配对差异虽小但方向一致；这为地理空间智能中的验证协议设计提供了警示，即应采用依赖感知的站点分组验证，并指出空间专家模型的有效性尚待验证。"
+    },
+    {
       "key": "arxiv:2609.08016",
       "title": "What Does Multi-Agent LLM Debate Actually Change? A Layered Analysis of Disagreement and Answer Quality",
       "title_zh": "多智能体LLM辩论中分歧与答案质量的分层分析",
@@ -303,6 +330,30 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "摘要内容缺失（仅含分隔线），无法提取具体方法、数据或结论。",
       "insight_zh": "从标题推断，该工作可能利用共识与置信度信号动态组织LLM多智能体临时团队，以提升协作效率；由于摘要缺失，无法确认其具体机制、评测任务或效率提升幅度。"
+    },
+    {
+      "key": "arxiv:2609.26097",
+      "title": "One Domain, Many Tongues: Composing Domain and Language LoRAs for Cross-Lingual Remote-Sensing MLLMs without Paired Data",
+      "title_zh": "一个领域，多种语言：无需配对数据为跨语言遥感多模态大模型组合领域与语言LoRA",
+      "url": "https://arxiv.org/abs/2609.26097",
+      "doi": "",
+      "arxiv_id": "2609.26097",
+      "authors": [
+        "Xuechen Li"
+      ],
+      "venue": "arXiv",
+      "published": "2026-08-04T23:42:49+00:00",
+      "score": 65,
+      "reason": "该文研究遥感多模态大语言模型的跨语言能力扩展，提出无需配对数据的域-语言LoRA组合方法，直接涉及遥感MLLM与多语言迁移，与遥感变化检测和多源数据融合有较强方法学关联。",
+      "tags": [
+        "遥感多模态大模型",
+        "跨语言",
+        "LoRA组合",
+        "正交约束"
+      ],
+      "abstract": "Remote-sensing (RS) multimodal large language models (MLLMs) are trained and evaluated only in English, while text-only instruction data covers over 100 languages. We propose MODL (Mutually Orthogonal Domain-Language composition), a recipe that adds new languages to an English RS MLLM without a single multilingual RS example: a domain LoRA trained on English RS imagery and a language LoRA trained on text alone are learned jointly, under one loss term that keeps the two updates mutually orthogonal at every layer throughout training. This constraint is the recipe's active ingredient. Without it, the same training answers RS questions correctly but in English, erases much of the base model's multilingual text ability, and diverges on one seed in three; sixteen alternatives, from training-free merging to prior orthogonality variants, fail the same way. MODL repairs every failure on every seed: answers are correct and in the target language 56-71% of the time, where the best alternative reaches 27% and most stay below 8%, text ability stays at the level of the untrained base, and on Spanish it surpasses Qwen2.5-VL-7B, with zero multilingual-multimodal data. A single five-language adapter retains English, Spanish, and Vietnamese at full strength across three seeds; non-Latin scripts remain an open boundary.",
+      "summary_zh": "遥感（RS）多模态大语言模型（MLLM）仅在英语中训练和评估，而纯文本指令数据覆盖100多种语言。作者提出MODL（互正交域-语言组合），一种无需一个多语言遥感样本即可为英语遥感MLLM添加新语言的配方：在英语遥感图像上训练的领域LoRA和在纯文本上训练的语言LoRA被联合学习，在一个损失项下使两个更新在训练全程每一层都保持互正交。这一约束是该配方的核心要素。没有它，相同训练能正确回答遥感问题但用英语，抹去基座模型的大部分多语言文本能力，并在三个种子中的一个上发散；从免训练合并到先前正交性变体的十六种替代方案都以同样方式失败。MODL在每个种子上修复了所有失败：答案正确且以目标语言给出的比例为56-71%，而最佳替代方案仅达27%，大多数低于8%；文本能力保持在未训练基座水平，在西班牙语上超越Qwen2.5-VL-7B，且零多语言多模态数据。单个五语言适配器在三个种子上保持英语、西班牙语和越南语的全强度；非拉丁文字仍是开放边界。",
+      "insight_zh": "该研究证明，通过互正交约束联合训练领域与语言LoRA，可在无配对多语言遥感数据的情况下实现跨语言遥感问答，且不损害基座模型的多语言文本能力；这一方法对遥感多模态模型的多语言部署与多源数据融合具有参考价值，但非拉丁文字场景仍待解决。"
     },
     {
       "key": "arxiv:2605.25200",
@@ -825,66 +876,6 @@
       "abstract": "Predicting the remaining useful life (RUL) is essential for effective predictive maintenance. Spatio-Temporal Graph Neural Networks (ST-GNNs), which can model both temporal and spatial relationships by representing time series data as a sequence of graphs, have shown exceptional performance in RUL prediction. However, current ST-GNNs face several drawbacks. First, they require domain expertise or significant computational power to establish graph structures prior to deploying GNNs. Second, the models are restricted to capture temporal dependencies within a predefined fixed-size lookback window. This restriction ignores the common issue of varying time series lengths, leading the prediction model to miss short-term or long-term dependencies. Finally, conventional models often fail to capture the inherent relationships between samples generated from adjacent time windows, which are crucial for improving both the accuracy and robustness of predictions. To address the aforementioned issues, we introduce a novel framework called Multi-Term Fourier Graph Neural Network with Sample Relationship Learning (MTFGN-SRL). Rather than treating the sample as a sequence of graphs, we consider it as a single complete graph and utilize a Fourier Graph Neural Network (FGN) to capture the spatio-temporal information in the frequency domain. We propose a multi-term learning module that utilizes multiple lookback windows to generate samples with varying terms, which are then fed into the FGN to enhance the extraction of useful information from the data. Finally, we develop a sample relationship learning module by training a heterogeneous GNN to identify inter-sample relationships, resulting in enhanced accuracy and robustness in predictions. Evaluations on the CMAPSS dataset demonstrate MTFGN-SRL's superior performance over state-of-the-art methods in RUL prediction.",
       "summary_zh": "",
       "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24526",
-      "title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination",
-      "title_zh": "ME-VLM：面向具身认知与智能体协调的统一视觉语言模型",
-      "url": "https://arxiv.org/abs/2609.24526",
-      "doi": "",
-      "arxiv_id": "2609.24526",
-      "authors": [
-        "Foundation Model",
-        "Li Auto Inc"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-21T12:59:59+00:00",
-      "score": 55,
-      "reason": "该文构建统一视觉语言模型以支持具身认知与多模态智能体能力，强调物理感知与时空推理，与研究中LLM和多智能体方向相关；但聚焦具身与自动驾驶任务，未涉及城市更新或地理空间数据挖掘，故相关性中等。",
-      "tags": [
-        "视觉语言模型",
-        "具身智能",
-        "多智能体协调",
-        "时空推理",
-        "边缘部署"
-      ],
-      "abstract": "Physical AI requires models to ground visual and linguistic understanding in real-world environments while accounting for environmental constraints and execution feedback. We introduce MachEmbodied-VLM (ME-VLM), a unified vision-language model with two variants, 4B and 35B-A3B, that brings together embodied cognition and multimodal agent capabilities. Our work emphasizes physical perception and spatiotemporal reasoning, together with planning, interaction, and outcome assessment in both digital and physical environments. We construct training data spanning embodied and multimodal agent tasks, including execution observations and feedback to support outcome assessment and decision refinement. The training pipeline comprises embodied capability injection, separate reinforcement learning of embodied and multimodal-agent experts, and multi-teacher on-policy distillation that consolidates their complementary capabilities into a single model. Experiments show competitive performance on both embodied and agent benchmarks, as well as on autonomous-driving and embodied-navigation tasks. For edge deployment, visual token compression, W4A8 quantization, and hardware--software co-optimization enable on-device inference of the 4B variant on the M100, reducing prefill latency from 400 ms to 188 ms. Project Page: https://machembodied.com/ME-Brain/ME-VLM.html Code Repository: https://github.com/MachEmbodied/ME-VLM",
-      "summary_zh": "物理AI要求模型将视觉与语言理解落地到真实环境，同时考虑环境约束与执行反馈。作者提出MachEmbodied-VLM（ME-VLM），一个统一的视觉语言模型，包含4B与35B-A3B两个版本，融合具身认知与多模态智能体能力。该工作强调物理感知与时空推理，以及在数字与物理环境中的规划、交互与结果评估。作者构建了涵盖具身与多模态智能体任务的训练数据，包括执行观测与反馈以支持结果评估与决策优化。训练流程包括具身能力注入、具身与多模态智能体专家的分别强化学习，以及多教师在线策略蒸馏，将互补能力整合到单一模型中。实验显示其在具身与智能体基准以及自动驾驶和具身导航任务上具有竞争力。面向边缘部署，视觉token压缩、W4A8量化与软硬件协同优化使4B版本可在M100上端侧推理，预填充延迟从400毫秒降至188毫秒。",
-      "insight_zh": "多教师在线策略蒸馏整合具身与智能体能力的训练范式，或可迁移到地理空间智能体中，用于融合遥感解译与规划决策等异构能力；其时空推理与结果评估机制对城市更新中的智能体决策反馈设计有参考价值。"
-    },
-    {
-      "key": "arxiv:2609.22158",
-      "title": "StepKV: Step-Aware KV Cache Compression for LLM Agents",
-      "title_zh": "StepKV：面向LLM智能体的步骤感知KV缓存压缩",
-      "url": "https://arxiv.org/abs/2609.22158",
-      "doi": "",
-      "arxiv_id": "2609.22158",
-      "authors": [
-        "Boyu Feng",
-        "Jiahong Liu",
-        "Yifan Li",
-        "Wenhao Yu",
-        "Zexuan Qiu",
-        "Yuliang Sun",
-        "Ming Shen",
-        "Xiang Li",
-        "Quanyu Dai",
-        "Irwin King"
-      ],
-      "venue": "arXiv",
-      "published": "2026-08-26T11:22:58+00:00",
-      "score": 55,
-      "reason": "该文提出面向多步LLM智能体的步骤感知KV缓存压缩方法，与研究者关注的LLM和多智能体方向相关。其以推理步骤为保留单元的思路对长程地理空间推理智能体的效率优化有参考价值，但不涉及地理空间数据。",
-      "tags": [
-        "KV缓存压缩",
-        "LLM智能体",
-        "多步推理",
-        "推理连续性",
-        "效率优化"
-      ],
-      "abstract": "Key-value (KV) caching is essential for efficient autoregressive large language model (LLM) inference, but the cache grows linearly with context length, increasing storage and decoding costs. KV cache compression mitigates this cost by retaining only a subset of cached tokens. This challenge is particularly important for multi-step LLM agents, where a query expands into trajectories of reasoning, tool interactions, and retrieved observations. Existing pruning methods typically treat the cache as a flat token stream and rank tokens by recency or attention saliency. This creates a mismatch between the unit of compression and the unit of reasoning: token-level pruning removes individual entries, whereas useful information in multi-step agents is often organized into reasoning steps with uneven and delayed importance. Consequently, an early observation or intermediate decision may receive little recent attention yet remain essential for later evidence synthesis. We term this failure mode Reasoning Continuity Disruption.These observations motivate KV cache compression that jointly considers token- and reasoning-step-level information. StepKV addresses this goal by treating reasoning steps as first-class retention units. It associates cache entries with their generating steps, estimates step utility from trajectory-derived signals, and combines this utility with token-level saliency. The resulting scores globally rank prunable tokens, from which StepKV retains the top-scoring entries under a target budget. StepKV thus provides a step-centric perspective for agent KV cache compression. Across multi-hop QA and long-horizon web reasoning tasks, StepKV sustains accuracy under low KV budgets where token-level baselines degrade sharply, offering a more robust efficiency-accuracy trade-off for multi-step agent inference.",
-      "summary_zh": "键值（KV）缓存对高效自回归大语言模型推理至关重要，但缓存随上下文长度线性增长，增加存储和解码成本。KV缓存压缩通过仅保留缓存token的子集来缓解此成本。这一挑战对多步LLM智能体尤为重要，其中查询扩展为推理、工具交互和检索观察的轨迹。现有剪枝方法通常将缓存视为扁平token流，按新近度或注意力显著性对token排序。这造成压缩单元与推理单元之间的错配：token级剪枝移除单个条目，而多步智能体中的有用信息常组织为重要性不均且延迟出现的推理步骤。因此，早期观察或中间决策可能近期注意力很低但对后续证据综合仍至关重要。我们将此失效模式称为推理连续性中断。这些观察促使KV缓存压缩需联合考虑token级和推理步骤级信息。StepKV通过将推理步骤视为一等保留单元来实现此目标。它将缓存条目与其生成步骤关联，从轨迹派生信号估计步骤效用，并将该效用与token级显著性结合。所得分数对可剪枝token进行全局排序，StepKV在目标预算下保留得分最高的条目。StepKV由此为智能体KV缓存压缩提供步骤中心的视角。在多跳问答和长程网页推理任务上，StepKV在低KV预算下维持准确率，而token级基线急剧退化，提供了更稳健的效率-准确率权衡。",
-      "insight_zh": "该文以推理步骤为压缩单元的思路，对构建长程地理空间推理智能体（如多步空间分析、跨数据源证据综合）的效率优化具有借鉴意义，尤其在城市更新分析中智能体需整合多源时空证据时；但摘要未涉及地理空间任务，迁移需验证。"
     }
   ]
 }
