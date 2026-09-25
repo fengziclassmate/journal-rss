@@ -2,11 +2,11 @@
   "date": "2026-09-21",
   "analysis_stats": {
     "total": 453,
-    "analyzed": 384,
+    "analyzed": 393,
     "high": 3,
     "medium": 17,
     "low": 29,
-    "below_threshold": 335
+    "below_threshold": 344
   },
   "papers": [
     {
@@ -6823,6 +6823,30 @@
       "insight_zh": "该研究提供了理解循环模型预测收敛的几何视角，但其结论限于语言模型内部机制，对地理空间智能的直接启示有限。"
     },
     {
+      "key": "arxiv:2609.19113",
+      "title": "Playing log(N)-Questions over Wikipedia Abstracts: How Per-Round Errors Compound Under Information Asymmetry",
+      "title_zh": "在维基百科摘要上玩log(N)问题：信息不对称下逐轮错误如何累积",
+      "url": "https://arxiv.org/abs/2609.19113",
+      "arxiv_id": "2609.19113",
+      "authors": [
+        "Peter Potash"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-16T17:41:12+00:00",
+      "score": 15,
+      "reason": "该文评估LLM在双智能体log(N)-Questions游戏中的表现，涉及多智能体通信、信息不对称与错误累积，与LLM和多智能体研究直接相关，但不涉及地理空间数据。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "信息不对称",
+        "问答游戏"
+      ],
+      "summary_zh": "作者在双智能体log(N)-Questions游戏中评估六个前沿语言模型。提问者看到N个维基百科导言段落，必须用恰好log2 N个是/否问题识别秘密选定的目标。回答者只看到目标和问题，并用一个词回复。两个角色由同一提供商运行，因此该游戏衡量模型在信息不对称下与自身沟通的能力。作者在4至1024个段落文档集上运行408局游戏，总API成本363美元。一个模型明显落后：Claude Opus 5在68局中赢28局，而GLM-5.3、GPT-5.6 Sol、Grok 4.6、Gemini 3.8 Flash和Kimi K3为45至56局。领先的五个模型仅略有区分。合并这五个模型，胜率随集合规模下降，r=-0.973，并由单一逐轮可靠性参数拟合，形式为win=p^{log2 N}，p=0.928。失败大致均分为回答错误和区分失败，模型几乎从不命名自身证据排除的文档。对最弱模型的每个一致回答错误进行了检查：34个中有32个是“否”回答，针对文档首句陈述的属性，且指令明确警告不要默认回答“否”。由回答平衡估计的每问题信息量与胜率相关，r=+0.88。唯一两个每问题提取完整比特的模型也是唯一按文档标题划分的模型，该策略在N=32以下缺失，在N=32以上用于四分之一的问题。推理token支出在模型间变化4.5倍，与成功关系不大，且轨迹随候选集缩小而增长，但可靠性没有相应提升。",
+      "insight_zh": "该研究表明多智能体信息不对称游戏中的胜率可由单一逐轮可靠性参数刻画，错误随轮数复合累积，且有效的信息划分策略与成功相关，对多智能体通信与LLM可靠性研究有参考价值。"
+    },
+    {
       "key": "arxiv:2609.18120",
       "title": "PentestChain: A Cost-Aware, MCP-Orchestrated Framework for Automated Penetration Testing with Free-Tier LLMs",
       "title_zh": "PentestChain：面向免费层LLM的、成本感知的MCP编排自动化渗透测试框架",
@@ -7699,6 +7723,55 @@
       "insight_zh": "该研究提示LLM在心理测量问卷上的表现可能不稳定，人格提示可显著改变其响应分布；对使用LLM进行社会调查或价值建模的研究者而言，需警惕模型响应可能反映的是引导效应而非稳定特质。"
     },
     {
+      "key": "arxiv:2609.14744",
+      "title": "Runtime Authorization for Resources Acquired by AI Agents",
+      "title_zh": "AI智能体所获取资源的运行时授权",
+      "url": "https://arxiv.org/abs/2609.14744",
+      "arxiv_id": "2609.14744",
+      "authors": [
+        "Genliang Zhu (1",
+        "2)",
+        "Chu Wang (1",
+        "3) ((1) Accentrust",
+        "(2) Georgia Institute of Technology",
+        "(3) University of Illinois Urbana-Champaign)"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "terminology",
+        "to",
+        "use",
+        "standard",
+        "descriptive",
+        "language;",
+        "added",
+        "Chu",
+        "Wang",
+        "as",
+        "coauthor;",
+        "strengthened",
+        "the",
+        "peer-reviewed",
+        "literature",
+        "grounding;",
+        "technical",
+        "results",
+        "unchanged"
+      ],
+      "published": "2026-09-13T19:16:44+00:00",
+      "score": 12,
+      "reason": "该文提出AI智能体获取资源的运行时授权架构，涉及智能体委托、多智能体与安全，与多智能体研究有主题关联，但不涉及地理空间或城市分析。",
+      "tags": [
+        "AI智能体",
+        "运行时授权",
+        "安全",
+        "多智能体"
+      ],
+      "summary_zh": "通过获取计算、凭证、账户、服务和其他智能体，自主AI智能体可向任务引入新权限。支付、预算、OAuth、授权和履约检查可验证交易条件，但无法决定返回资源是否可成为可用权限。这一履约后激活缺口横跨工具介导创建、智能体间委托和智能体商务。作者提出AcquireBound，一种来源有界的运行时授权架构。它隔离获取的输出，通过版本化解析器从经认证的提供方证据解析其实际能力，并仅通过当前激活事务激活它们，该事务检查解析后的清单、来源、纪元以及类型化资源-能力超图上的向下封闭关系包络。该包络保留相关的身份、效果、数据、委托和图范围限制。单次使用效果许可在效果线性化时重新验证并消耗。在明确假设下，作者证明八项安全属性，涵盖隔离、背书、非放大、拆分不可规避、崩溃/重试、退款、纪元和效果限制。在五类资源上，参考语义在810个事件中接受20/20良性轨迹并拒绝40/40已登记不安全轨迹；独立检查器在60个基础和40个精化轨迹上一致，并拒绝89/89篡改测试。冻结的Codex和Gemini模型上下文协议（MCP）客户端组件完成54/54确定性本地stdio调用。在已登记的18例分阶段MCP到Docker组合中，两条良性路径均完成，16条不安全路径均未添加未授权Docker启动请求。五源审计对32个单元中的1,248个字段对进行分类；没有单一单元足以……",
+      "insight_zh": "该工作为AI智能体获取资源后的权限激活提供形式化安全架构与验证，对多智能体系统的安全治理有参考价值，但与地理空间研究无直接关联。"
+    },
+    {
       "key": "arxiv:2609.20845",
       "title": "Reading Less While Writing: A Closed-Form Bandwidth Dial for Streaming Multimodal Decoders",
       "title_zh": "写时少读：面向流式多模态解码器的闭式带宽调节旋钮",
@@ -7861,6 +7934,66 @@
       ],
       "summary_zh": "概率图模型（PGM），尤其是贝叶斯网络（BN），暴露有向结构和概率参数，使其成为神经符号AI的自然符号目标。然而，训练文本到参数化BN系统需要大规模成对的文本-BN资源，而这类资源尚不可得。作者提出PRISM-BN，一个受控语料，包含5054个以BN为基础的描述，配对离散参考BN，涵盖五个领域的变量、状态、有向边、根先验和完整多父节点CPD。实例源自50个以Wikipedia为种子的骨架，其概率是内部构建的基准目标，而非外部验证的因果估计。PRISM-BN使用PRISM构建，这是一种边际优先流程，引出边际和局部联合分布，解析恢复归一化CPD，并构建局部重参数化子图。作者定义了一个基准，包含语义节点和状态对齐、条件结构评分以及严格完整CPD评估。在六个LLM提取器上，节点F1范围为0.56至0.83，条件边F1为0.90至0.97，CPD-KL为1.11至3.14。条件状态和边恢复始终较强，而严格完整CPD一致性仍具挑战。这些趋势在独立生成的GPT-5.5参考下持续存在，人类试点也证实了结构可恢复性和相似的概率解释。PRISM-BN支持结构恢复和概率参数估计的分离评估。",
       "insight_zh": "该工作为文本到贝叶斯网络提取提供了受控基准，并区分结构恢复与参数估计的评估；其神经符号思路可能对地理空间因果建模或多源数据融合中的概率图构建有参考价值，但摘要未涉及时空或地理应用。"
+    },
+    {
+      "key": "arxiv:2609.19853",
+      "title": "PACE: Precise AI Cinematic Expression",
+      "title_zh": "PACE：精确AI电影化表达",
+      "url": "https://arxiv.org/abs/2609.19853",
+      "arxiv_id": "2609.19853",
+      "authors": [
+        "Bing Duan",
+        "Qiang Guo",
+        "Linpu Li",
+        "Zhijian Mao",
+        "Min Zhu",
+        "Zhirui Ren",
+        "Yiwei Yan",
+        "Xi Chu",
+        "Xiaoding Li"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "https://github.com/StudioPiLabs/pace-core",
+        "uploaded;",
+        "it",
+        "is",
+        "removed",
+        "and",
+        "its",
+        "69",
+        "references",
+        "resolved,",
+        "two",
+        "of",
+        "results",
+        "moved",
+        "into",
+        "the",
+        "main",
+        "text",
+        "one",
+        "dropped.",
+        "36",
+        "pages,",
+        "8",
+        "figures,",
+        "4",
+        "tables.",
+        "Code:"
+      ],
+      "published": "2026-09-17T08:05:08+00:00",
+      "score": 12,
+      "reason": "该文提出面向影视生成的类型化空间规划表示，涉及空间布局、相机位姿与几何度量，与GIS中的空间表示和三维场景构建有概念上的弱关联，但不涉及城市或地理尺度分析。",
+      "tags": [
+        "空间规划",
+        "扩散模型",
+        "相机求解",
+        "影视生成"
+      ],
+      "summary_zh": "在剧本与电影之间存在一个空间优先的规划问题：谁站在哪里，以及相机从何处看到什么。用自由文本要求图像扩散模型生成镜头时，模型会按自身默认方式决定该规划。本文提出PACE（精确AI电影化表达），一种用于该规划的类型化表示：剧本证据、所需角色、道具和地点、每个主体的站位以及相机行为。值在其所属层级（剧本、场景、镜头或面板）写入一次并在下层继承。编译器将结果转换为发送给扩散模型的提示词和以米为单位构建的3D场景，相机求解器放置相机使声明的取景即为构建的取景。在声明值变为几何之处，PACE逐字段测量编译相机和舞台渲染与声明的偏差，而非让模型判断。在11场景的Automatic Drive剧本上，每个单主体舞台面板将主体置于其声明位置1.2%画幅宽度以内；当有两个或三个主体时，单一相机位姿无法满足所有位置，残差被报告而非吸收。在204个外部导演分镜镜头上，交付的头部高度为导演文字目标的1.906倍、编译提示词的1.733倍、灰盒控制的0.955倍；取景保持最好的条件所绘制的描述动作最少。在30个镜头上声明位姿使绘制动作从58.9%提升至74.4%而不改变取景。转场、拟合运动和生成面板的人工审查仍待解决。",
+      "insight_zh": "该工作显示将空间规划显式类型化并编译为几何可提升取景精度，其空间声明与度量验证思路对地理空间场景构建有类比启发，但应用领域为影视生成而非GIS。"
     },
     {
       "key": "arxiv:2609.21561",
@@ -9712,6 +9845,71 @@
       "insight_zh": "该工作展示了利用语言学结构约束分词以提升效率与表征共享的可能性，但其结论限于语言建模，对地理空间文本挖掘的潜在迁移价值尚需验证。"
     },
     {
+      "key": "arxiv:2609.20886",
+      "title": "BI-Agent and BI-Bench: Towards Automating End-to-End Business Intelligence",
+      "title_zh": "BI-Agent与BI-Bench：迈向端到端商业智能自动化",
+      "url": "https://arxiv.org/abs/2609.20886",
+      "arxiv_id": "2609.20886",
+      "authors": [
+        "Chuxuan Hu",
+        "Yeye He",
+        "Penny Zhou",
+        "Wee Hyong Tok",
+        "Daniel Kang",
+        "Surajit Chaudhuri"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.DB",
+        "Business",
+        "intelligence",
+        "(BI)",
+        "is",
+        "a",
+        "cornerstone",
+        "of",
+        "enterprise",
+        "decision-making",
+        "and",
+        "Given",
+        "the",
+        "strong",
+        "capabilities",
+        "large",
+        "language",
+        "models",
+        "(LLMs)",
+        "in",
+        "working",
+        "with",
+        "We",
+        "find",
+        "that",
+        "even",
+        "frontier",
+        "LLMs",
+        "perform",
+        "poorly",
+        "on",
+        "BI-Bench,",
+        "less",
+        "than"
+      ],
+      "published": "2026-09-16T22:36:20+00:00",
+      "score": 10,
+      "reason": "该文标题涉及端到端商业智能自动化与智能体基准，与多智能体研究有主题关联，但摘要缺失，无法判断其与地理空间或城市分析的关联。",
+      "tags": [
+        "商业智能",
+        "智能体",
+        "基准测试",
+        "自动化"
+      ],
+      "summary_zh": "摘要缺失，无法提供内容摘要。",
+      "insight_zh": "由于摘要缺失，无法推断其方法、数据或结论；仅从标题看可能涉及智能体在商业智能任务中的自动化与评测。"
+    },
+    {
       "key": "arxiv:2601.07316",
       "title": "BEAT-Net: Injecting Biomimetic Spatio-Temporal Priors for Interpretable ECG Diagnosis",
       "title_zh": "BEAT-Net：注入仿生时空先验的可解释心电图诊断",
@@ -10930,6 +11128,33 @@
       "insight_zh": "该工作将因果结构与潜在优化结合用于扩散语言模型推理，其自校正机制或可启发LLM智能体推理，但摘要未涉及地理空间或城市应用。"
     },
     {
+      "key": "arxiv:2609.20904",
+      "title": "Bio-MF: Low-Latency and High-Fidelity EEG-to-fNIRS Cross-Modal Generation for Hybrid Motor-Imagery Brain--Computer Interfaces",
+      "title_zh": "Bio-MF：面向混合运动想象脑机接口的低延迟高保真EEG到fNIRS跨模态生成",
+      "url": "https://arxiv.org/abs/2609.20904",
+      "arxiv_id": "2609.20904",
+      "authors": [
+        "Boyuan Zhao",
+        "Sifan Zhang",
+        "and Luping Chen"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-17T14:52:42+00:00",
+      "score": 8,
+      "reason": "该论文研究EEG到fNIRS的跨模态生成，属于多模态信号生成与融合，但与城市更新、时空数据挖掘、遥感变化检测或地理空间智能无直接关联，仅与多源数据融合有非常弱的类比联系。",
+      "tags": [
+        "脑机接口",
+        "跨模态生成",
+        "EEG-fNIRS",
+        "生成模型"
+      ],
+      "summary_zh": "混合运动想象脑机接口结合EEG和fNIRS可优于仅用EEG的系统。为在无法配对采集时获得混合信息，近期研究关注EEG到fNIRS的跨模态生成，但现有方法生成慢且常需预训练。本文提出Bio-MF，一种无潜变量的一步MeanFlow框架，用于EEG条件fNIRS生成。它直接进行信号空间x预测，将其转换为MeanFlow速度监督，并通过一次网络评估完成推理。为在异构传感器布局下保留任务相关血流动力学结构，Bio-MF整合了时空交互4D编码、跨模态无分类器引导和噪声级门控FFT正则化。在数据集1上，EEG加合成fNIRS相比仅EEG在HbR和HbO上分别提升3.37和4.15个百分点；在数据集2的未见64通道EEG蒙太奇下分别提升2.98和2.50个百分点。在RTX PRO 6000 GPU上，Bio-MF生成一个fNIRS试次仅需7.0毫秒，相比1000步SCDM延迟加速857倍。",
+      "insight_zh": "该工作表明一步生成模型可在保持任务相关生成质量的同时实现快速跨模态信号合成，其思路或可启发其他模态间的低延迟生成，但与地理空间应用无直接联系。"
+    },
+    {
       "key": "arxiv:2609.20828",
       "title": "Beyond WER: Entity and Disfluency Recall in Accented Conversational ASR",
       "title_zh": "超越WER：口音对话ASR中的实体与不流畅词召回",
@@ -11637,7 +11862,7 @@
     {
       "key": "arxiv:2609.20883",
       "title": "Sparse Priors for Efficient Distribution Learning",
-      "title_zh": "",
+      "title_zh": "面向高效分布学习的稀疏先验",
       "url": "https://arxiv.org/abs/2609.20883",
       "arxiv_id": "2609.20883",
       "authors": [
@@ -11651,10 +11876,15 @@
       ],
       "published": "2026-09-16T21:13:14+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究稀疏先验下的分布学习理论，属于生成模型与统计学习理论，与时空数据挖掘中的分布建模有间接理论关联，但不涉及地理空间应用。",
+      "tags": [
+        "分布学习",
+        "稀疏先验",
+        "理论保证",
+        "生成模型"
+      ],
+      "summary_zh": "尽管生成式AI技术广泛使用并取得成功，但从n个样本学习d维支撑分布的理論保证以O(n^{-1/Θ(d)})退化，尽管已被证明是极小极大最优。作者假设现有界过于悲观，因为仅平滑性假设不足以刻画实际应用中常见分布的结构。因此，作者引入稀疏先验类，并定义“稀疏维度”作为所有分布空间上先验稀疏性的度量。作者证明，在k-稀疏先验下的分布学习在常见距离度量下达到Ω(√(k/n))的贝叶斯风险下界，并在温和附加假设下证明TV距离的匹配上界（在n、k上渐近对数项内）。作者证明在贝叶斯设定下分布学习与学习采样在统计上等价，因此结果也适用于学习采样。虽然k仍可依赖于维度d或内在维度概念，但结果表明在适当先验下学习克服了关于n依赖的维数灾难。",
+      "insight_zh": "该理论工作表明合适的稀疏先验可缓解分布学习对样本量的维数灾难，其思想或可启发高维时空数据的分布建模，但论文本身未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2310.01961",
@@ -11706,50 +11936,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。",
       "insight_zh": "由于摘要为空，无法判断其方法、数据或结论；仅从标题推测其讨论LLM自我参照与递归自我改进的理论阈值问题，对地理空间智能研究的直接借鉴价值不明确。"
-    },
-    {
-      "key": "arxiv:2609.14744",
-      "title": "Runtime Authorization for Resources Acquired by AI Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14744",
-      "arxiv_id": "2609.14744",
-      "authors": [
-        "Genliang Zhu (1",
-        "2)",
-        "Chu Wang (1",
-        "3) ((1) Accentrust",
-        "(2) Georgia Institute of Technology",
-        "(3) University of Illinois Urbana-Champaign)"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CR",
-        "terminology",
-        "to",
-        "use",
-        "standard",
-        "descriptive",
-        "language;",
-        "added",
-        "Chu",
-        "Wang",
-        "as",
-        "coauthor;",
-        "strengthened",
-        "the",
-        "peer-reviewed",
-        "literature",
-        "grounding;",
-        "technical",
-        "results",
-        "unchanged"
-      ],
-      "published": "2026-09-13T19:16:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.21332",
@@ -12092,25 +12278,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.19113",
-      "title": "Playing log(N)-Questions over Wikipedia Abstracts: How Per-Round Errors Compound Under Information Asymmetry",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19113",
-      "arxiv_id": "2609.19113",
-      "authors": [
-        "Peter Potash"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-16T17:41:12+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2604.23692",
       "title": "Personalizing Causal Audio-Driven Facial Motion via Dynamic Multi-modal Retrieval",
       "title_zh": "通过动态多模态检索实现个性化因果音频驱动面部运动",
@@ -12229,61 +12396,6 @@
         "cs.RO"
       ],
       "published": "2026-09-18T17:31:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19853",
-      "title": "PACE: Precise AI Cinematic Expression",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19853",
-      "arxiv_id": "2609.19853",
-      "authors": [
-        "Bing Duan",
-        "Qiang Guo",
-        "Linpu Li",
-        "Zhijian Mao",
-        "Min Zhu",
-        "Zhirui Ren",
-        "Yiwei Yan",
-        "Xi Chu",
-        "Xiaoding Li"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "https://github.com/StudioPiLabs/pace-core",
-        "uploaded;",
-        "it",
-        "is",
-        "removed",
-        "and",
-        "its",
-        "69",
-        "references",
-        "resolved,",
-        "two",
-        "of",
-        "results",
-        "moved",
-        "into",
-        "the",
-        "main",
-        "text",
-        "one",
-        "dropped.",
-        "36",
-        "pages,",
-        "8",
-        "figures,",
-        "4",
-        "tables.",
-        "Code:"
-      ],
-      "published": "2026-09-17T08:05:08+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12783,7 +12895,7 @@
     {
       "key": "arxiv:2609.20902",
       "title": "Generative Artificial Intelligence Chatbots for Motivational Interviewing: A Scoping Review From System Design to Intervention Outcomes",
-      "title_zh": "",
+      "title_zh": "用于动机式访谈的生成式人工智能聊天机器人：从系统设计到干预结果的范围综述",
       "url": "https://arxiv.org/abs/2609.20902",
       "arxiv_id": "2609.20902",
       "authors": [
@@ -12801,10 +12913,15 @@
       ],
       "published": "2026-09-17T13:43:09+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文是生成式AI聊天机器人在动机式访谈中的范围综述，涉及LLM对话系统设计与干预效果，与LLM和多智能体研究有间接关联，但不涉及地理空间或城市更新。",
+      "tags": [
+        "生成式AI",
+        "动机式访谈",
+        "聊天机器人",
+        "范围综述"
+      ],
+      "summary_zh": "动机式访谈（MI）是一种激发健康行为改变自主动机的协作方法。生成式AI（GenAI）为通过对话系统提供MI提供了新途径，但其设计、评估和转化为干预的证据仍较分散。本范围综述按照PRISMA-ScR进行，检索九个数据集，纳入2015年1月1日至2026年6月2日发表或公开的、使用GenAI生成MI聊天机器人回复或咨询师话语的研究。共纳入47份报告（48项研究）。20项（41.7%）聚焦系统设计而无直接参与者使用，28项（58.3%）涉及直接交互。多数系统为文本式且无实体形态，23项（47.9%）包含动态适应。安全措施报告不均衡。在直接使用研究中，21/28（75.0%）报告了知情同意或用户教育。30项（62.5%）评估了MI质量，总体显示互动符合MI原则。用户感知积极，尤其是共情、可用性、有用性和使用意愿，但测量方式异质。18项（37.5%）报告了干预结果，多为单次会话后。短期动机方面的积极发现较一致，而持续行为或功能改变的证据有限。",
+      "insight_zh": "综述表明GenAI-MI聊天机器人能提供符合MI原则且被积极感知的互动，但持续行为或功能改变的证据有限，未来需加强运行时安全监测、标准化MI质量评估并开展更长期研究。"
     },
     {
       "key": "arxiv:2609.20968",
@@ -12885,27 +13002,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.20888",
-      "title": "Elastic Threshold Attention: Learned Contextual Sparsity for Long-Context Decoding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20888",
-      "arxiv_id": "2609.20888",
-      "authors": [
-        "Themistoklis Haris",
-        "Henry Li",
-        "Maryam Karimzadehgan"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-16T23:23:10+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2510.13046",
       "title": "ECG-Mamba-V2: Architectural Refinements to a Bidirectional State Space Model for Multi-Label 12-Lead ECG Classification",
       "title_zh": "ECG-Mamba-V2：面向多标签12导联心电图分类的双向状态空间模型架构改进",
@@ -12939,26 +13035,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题可推断，该研究对ECG-Mamba模型进行架构改进，用于多标签12导联心电图分类任务。",
       "insight_zh": "摘要缺失，无法深入推断；该主题与GIS博士研究方向关联度极低，仅在时序信号建模方法上可能有非常间接的参考价值。"
-    },
-    {
-      "key": "arxiv:2609.16617",
-      "title": "Divergence Timing and Cumulative Disagreement under KV-Cache Eviction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16617",
-      "arxiv_id": "2609.16617",
-      "authors": [
-        "Xinyue Luo",
-        "Fei Yu"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-15T04:23:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2604.16955",
@@ -13184,28 +13260,6 @@
       "insight_zh": "仅从标题推断，该文可能利用执行反馈与双奖励模型改进自动程序修复；其强化学习奖励设计思路与地理空间智能体训练有极弱的类比性，但摘要缺失，无法确认具体方法与结论。"
     },
     {
-      "key": "arxiv:2609.20904",
-      "title": "Bio-MF: Low-Latency and High-Fidelity EEG-to-fNIRS Cross-Modal Generation for Hybrid Motor-Imagery Brain--Computer Interfaces",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20904",
-      "arxiv_id": "2609.20904",
-      "authors": [
-        "Boyuan Zhao",
-        "Sifan Zhang",
-        "and Luping Chen"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-17T14:52:42+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.21231",
       "title": "Beyond Reference-Based Evaluation: Reward Models for Meta-Evaluation of Grammatical Error Correction",
       "title_zh": "超越基于参考的评估：语法纠错元评估的奖励模型",
@@ -13330,66 +13384,6 @@
       ],
       "summary_zh": "性别偏见仍是机器翻译中的持续性问题，影响生成的译文及其自动评估。当源文本未指定人物性别时，译文可能用阳性或阴性形式表达该人物，而机器翻译系统和评估指标都可能系统性地偏好其中一种，尽管源文本并未提供区分依据。作者在WMT 2026自动翻译质量评估系统共享任务中，使用GAMBIT+中职业平衡的子集研究这一行为。研究考虑七个英语源语言对，其中六个来自原始数据集，目标语言为阿拉伯语、捷克语、希腊语、冰岛语、俄语和乌克兰语，并扩展加入德语。该子集每种目标语言包含1,308对阳性/阴性译文，覆盖436个ISCO-08职业组，每组三个示例。作者评估共享任务提交和基线在分数预测与错误标注上的表现，考察性别相关差异的方向、幅度和频率。结果发现总体上阳性译文倾向于获得更高分数，且不同职业的差异符合刻板性别表征，但这种偏好的强度和一致性在不同评估者和语言间差异很大。结果表明性别偏见仍存在于机器翻译评估中，但捕捉其程度需要超越单一聚合指标，考察评估者行为的互补维度。",
       "insight_zh": "该研究提示评估指标本身可能引入系统性偏差，这一警示对地理空间智能中的模型评测有一般性启发，但论文内容与地理空间数据无关。"
-    },
-    {
-      "key": "arxiv:2609.20886",
-      "title": "BI-Agent and BI-Bench: Towards Automating End-to-End Business Intelligence",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.20886",
-      "arxiv_id": "2609.20886",
-      "authors": [
-        "Chuxuan Hu",
-        "Yeye He",
-        "Penny Zhou",
-        "Wee Hyong Tok",
-        "Daniel Kang",
-        "Surajit Chaudhuri"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "cs.DB",
-        "Business",
-        "intelligence",
-        "(BI)",
-        "is",
-        "a",
-        "cornerstone",
-        "of",
-        "enterprise",
-        "decision-making",
-        "and",
-        "Given",
-        "the",
-        "strong",
-        "capabilities",
-        "large",
-        "language",
-        "models",
-        "(LLMs)",
-        "in",
-        "working",
-        "with",
-        "We",
-        "find",
-        "that",
-        "even",
-        "frontier",
-        "LLMs",
-        "perform",
-        "poorly",
-        "on",
-        "BI-Bench,",
-        "less",
-        "than"
-      ],
-      "published": "2026-09-16T22:36:20+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.22048",
@@ -13792,6 +13786,57 @@
       ],
       "summary_zh": "作者证明，通过随机proper学习算法在线学习函数类H的最优期望错误界为O(L(H) log T)，其中L(H)是H的Littlestone维数，T是时间范围。该结果改进了此前已知的最佳界O(L(H)……（摘要在此处截断）。",
       "insight_zh": "该结果给出随机proper在线学习相对于Littlestone维数和时间范围的最优期望错误界；摘要截断导致完整技术细节和证明思路无法确认。"
+    },
+    {
+      "key": "arxiv:2609.20888",
+      "title": "Elastic Threshold Attention: Learned Contextual Sparsity for Long-Context Decoding",
+      "title_zh": "弹性阈值注意力：面向长上下文解码的学习式上下文稀疏性",
+      "url": "https://arxiv.org/abs/2609.20888",
+      "arxiv_id": "2609.20888",
+      "authors": [
+        "Themistoklis Haris",
+        "Henry Li",
+        "Maryam Karimzadehgan"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-16T23:23:10+00:00",
+      "score": 3,
+      "reason": "该文提出长上下文解码的弹性阈值注意力机制，属于LLM效率优化，与LLM研究有技术关联，但与地理空间、城市更新或遥感无直接关系。",
+      "tags": [
+        "稀疏注意力",
+        "长上下文解码",
+        "KV缓存",
+        "模型效率"
+      ],
+      "summary_zh": "大规模KV缓存会在长上下文解码时造成严重的内存带宽瓶颈。稀疏注意力方法通过选择性加载缓解该问题，但代价是刚性启发式会丢弃必要上下文导致质量下降。本文提出弹性阈值注意力（ETA），一种端到端可训练架构，在不牺牲稠密模型质量的前提下实现硬件加速解码。ETA直接从查询表示预测动态上下文阈值，使模型能为困难检索或推理步骤分配类稠密上下文，同时剪除常规token。为从零学习该策略而不发生表示坍缩，ETA在训练时以乘法方式将低于阈值的logits抑制至零而非删除。针对这一平滑均匀注意力下限的训练提供了分布式概率储备，使初始token上的局部注意力汇消失。它还使模型能在推理时硬剪除无信息KV块，并吸收粗粒度GPU块选择偶然纳入的token。结果，一个1.45B预训练ETA模型在约85%训练稀疏度和约38%活跃解码密度下，在语言建模、常识推理和长上下文针检索上媲美稠密注意力。推理时，作者在Triton中实现自定义解码内核，使用缓存几何概率界以O(1)时间筛选KV块，在最长512K token序列上相比FlashAttention-2实现最高2.5倍墙钟解码加速。最后，作者提出一种面向领域部署的离线校准算法，冻结每头常数阈值以消除预测器开销。",
+      "insight_zh": "该工作表明可学习的上下文稀疏性可在保持稠密质量的同时显著加速长上下文解码，其效率优化思路对LLM应用有参考价值，但与地理空间研究无直接关联。"
+    },
+    {
+      "key": "arxiv:2609.16617",
+      "title": "Divergence Timing and Cumulative Disagreement under KV-Cache Eviction",
+      "title_zh": "KV缓存驱逐下的分歧时序与累积不一致",
+      "url": "https://arxiv.org/abs/2609.16617",
+      "arxiv_id": "2609.16617",
+      "authors": [
+        "Xinyue Luo",
+        "Fei Yu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-15T04:23:53+00:00",
+      "score": 3,
+      "reason": "该文分析KV缓存驱逐下的分歧时序与累积不一致，属于LLM推理机制研究，与LLM技术相关，但与地理空间、城市或遥感无直接联系。",
+      "tags": [
+        "KV缓存",
+        "LLM推理",
+        "分歧分析",
+        "蒙特卡洛"
+      ],
+      "summary_zh": "KV缓存驱逐会扰动自回归生成的条件token分布。作者研究首次分歧时序及后续token不匹配如何决定累积不一致。在指定的逐步最大耦合下，作者推导出精确分解：期望不匹配比例等于首次不匹配贡献加上分歧后暴露量乘以其不匹配率。作者给出无限制自回归核对上的显式构造，实现与有限分歧对齐观测窗口相容的风险锐利区间。残差分支条件蒙特卡洛提供对发生、占用及窗口/尾部贡献的无偏联合估计，且对总token损失具有逐重复方差优势。来自Meta-Llama-3.1-8B-Instruct和Qwen2.5-7B-Instruct的完整轨迹显示，50%保留率的SnapKV比相同50%提示缓存预算的SnapKV-512或近期token保留更晚且更少进入分歧，而分歧后总变差（TV）仍较高。在对288个文档的探索性分析中，分歧后暴露占四个聚合不匹配差距的85-90%。在90%保留率下对288个独立文档的预设比较显示，两个模型中晚期窗口的分支对齐TV均高于早期窗口。",
+      "insight_zh": "该分析表明KV缓存驱逐后的累积不一致主要由分歧后暴露主导，且不同驱逐策略在分歧时序上存在差异，为理解LLM推理扰动提供理论工具，但与地理空间应用无关。"
     },
     {
       "key": "arxiv:2609.18216",

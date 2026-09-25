@@ -2,11 +2,11 @@
   "date": "2026-09-22",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 790,
+    "analyzed": 800,
     "high": 5,
     "medium": 34,
-    "low": 63,
-    "below_threshold": 688
+    "low": 64,
+    "below_threshold": 697
   },
   "papers": [
     {
@@ -3128,6 +3128,36 @@
       "insight_zh": "摘要缺失，无法确认其子图构建标准与实验设置；若方法通用，可为地理知识图谱与LLM结合提供训练/评估参考，但当前无具体证据。"
     },
     {
+      "key": "arxiv:2609.24609",
+      "title": "GraphToolbox: A Configurable Python Framework for Graph Neural Network Forecasting",
+      "title_zh": "GraphToolbox：面向图神经网络预测的可配置Python框架",
+      "url": "https://arxiv.org/abs/2609.24609",
+      "arxiv_id": "2609.24609",
+      "authors": [
+        "Eloi Campagne (CB)",
+        "Yvenn Amara-Ouali (LMO",
+        "CELESTE)",
+        "Yannig Goude (EDF R\\&D)",
+        "Argyris Kalogeratos (CB",
+        "ENS Paris Saclay)"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-21T13:58:35+00:00",
+      "score": 45,
+      "reason": "该文提出配置驱动的GNN预测框架，用于具有空间关联的电力负荷预测，涉及时空图建模与多模型聚合，与时空数据挖掘方向相关，但应用为电力系统而非城市或遥感。",
+      "tags": [
+        "图神经网络",
+        "时空预测",
+        "电力负荷预测",
+        "开源框架"
+      ],
+      "summary_zh": "电力预测常涉及在区域、变电站和馈线上观测的空间相关信号，图神经网络（GNN）为表示这些关系提供了自然方式。然而构建完整的GNN预测实验仍很费力，因为图构建、模型选择、训练、聚合与解释分散在不兼容的工具中。本文提出GraphToolbox，一个开源Python框架，基于PyTorch Geometric将上述阶段统一为配置驱动的流程。它提供数据驱动的图构建、可实例化并训练65种PyTorch Geometric卷积中51种的适配器以及PyTorch Geometric Temporal的循环单元、在线专家聚合、预测可解释性以及对缓存预测的显著性检验。作者在两个案例研究中评估该流程。在法国区域负荷上，完整预测扫描中纳入的48种卷积误差落在1.14%至1.60%区间，在线聚合将其降至0.98%，且图模型优于经典加性与提升基线。在净负荷上，直接图模型不如经典加性模型准确，而分别预测各物理分量可改善它们但未弥合差距。两项比较使用同一实验接口，体现了GraphToolbox在系统性架构评估中的作用。",
+      "insight_zh": "该框架强调统一接口下的系统性架构评估与在线聚合，对多源时空预测的可复现实验设计有借鉴意义；其结论也提示图模型并非在所有空间预测任务中均优于经典基线。"
+    },
+    {
       "key": "arxiv:2609.23838",
       "title": "From Regional to Global: Transfer Learning for Atmospheric Transport Emulators",
       "title_zh": "从区域到全球：大气传输模拟器的迁移学习",
@@ -3720,6 +3750,33 @@
       ],
       "summary_zh": "本文提出了VIALS，一个包含161个视觉问答任务的基准，用于评估视觉语言模型在解读生命科学工作流中常见视觉伪影（如凝胶电泳图、显微图像）的能力。",
       "insight_zh": "该研究强调了领域知识和特定视觉推理能力对于专业图像理解的重要性，这与遥感图像分析中需要结合地学知识进行解译的挑战类似。"
+    },
+    {
+      "key": "arxiv:2609.24579",
+      "title": "Universal Multi-Modal Traceformer: Integrating Heterogeneous Context for Process Event Prediction",
+      "title_zh": "通用多模态Traceformer：融合异构上下文的过程事件预测",
+      "url": "https://arxiv.org/abs/2609.24579",
+      "arxiv_id": "2609.24579",
+      "authors": [
+        "Fabian Spaeh",
+        "Jingxing Fang",
+        "Shandian Zhe",
+        "Bin Shen"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-21T13:44:40+00:00",
+      "score": 40,
+      "reason": "该文提出融合异构上下文的多模态Transformer用于过程事件预测，涉及多模态融合与时空事件序列建模，与时空数据挖掘和多源数据融合方向相关，但应用为通用事件日志而非地理空间。",
+      "tags": [
+        "事件预测",
+        "多模态融合",
+        "Transformer",
+        "过程挖掘"
+      ],
+      "summary_zh": "事件日志广泛存在于各类现实过程中，不仅记录事件活动与时间戳，还包含多模态上下文信息。现有事件序列模型（包括许多时间点过程方法）主要建模事件活动与时间戳，而忽略异构上下文，如与单个事件和整条轨迹相关的数值测量、类别属性、文本描述和元数据。本文提出通用多模态Traceformer（UMT），一个将异构过程上下文纳入下一事件预测的统一框架。UMT以Transformer为骨干，引入通用特征编码器将多样特征类型映射到共享表示空间，并在事件级和轨迹级处理上下文信息。UMT进一步提出逐事件Perceiver模块，动态加权上下文特征并将其自适应整合到事件token表示中。为适应到达间隔时间的重尾且可能多峰的分布，UMT在多个时间尺度上表示每个间隔并联合预测相应的尺度特定量。在13个真实事件日志上的实验表明，UMT在下一事件活动与时间预测上均优于现有方法。",
+      "insight_zh": "该框架对事件级与轨迹级异构上下文的统一编码与动态加权，可为多源地理时空事件建模提供方法参考，但未涉及空间坐标或地理语义。"
     },
     {
       "key": "arxiv:2512.07624",
@@ -5184,6 +5241,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作可能提出一种将多变量时间序列的感知表示与语言描述解耦并对齐的方法。",
       "insight_zh": "摘要缺失，无法确认其具体技术路线；仅从标题看，其时间序列-语言对齐思路或可为时空数据与LLM结合提供方法参考，但需摘要支持才能进一步判断。"
+    },
+    {
+      "key": "arxiv:2609.24662",
+      "title": "DUMA-Bench: A Dual-Control Multi-Agent Benchmark for Evaluating LLM Agent Security",
+      "title_zh": "DUMA-Bench：评估LLM智能体安全性的双控多智能体基准",
+      "url": "https://arxiv.org/abs/2609.24662",
+      "arxiv_id": "2609.24662",
+      "authors": [
+        "Ivan Aleksandrov",
+        "German Kochnev",
+        "Sabrina Sadiekh",
+        "Yaroslav Rogoza"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-21T14:28:05+00:00",
+      "score": 35,
+      "reason": "该文提出评估LLM智能体在双控交互下安全性的多智能体基准，与研究者关注的LLM和多智能体方向直接相关，但聚焦安全评测而非城市或地理空间应用。",
+      "tags": [
+        "LLM智能体",
+        "多智能体",
+        "安全评测",
+        "基准测试"
+      ],
+      "summary_zh": "基于LLM的智能体日益在需与用户、工具和外部系统交互的环境中运行，但多数安全评估假设用户被动、控制静态，忽略了塑造真实智能体行为的交互动态。本文提出DUMA-Bench，一个用于衡量双控交互下智能体安全性的基准与评估协议，其中智能体与用户均可影响共享环境状态。DUMA-Bench在τ²-bench基础上扩展了覆盖八类漏洞的对抗环境，包括RAG投毒、跨智能体操纵和不安全输出处理。摘要在此处截断，未给出完整评估结果。",
+      "insight_zh": "双控交互视角提示多智能体系统评测需考虑用户与智能体的共同影响；该基准可为地理空间智能体系统的安全评估提供参考框架，但摘要未提供具体实验结论。"
     },
     {
       "key": "arxiv:2605.26446",
@@ -9079,6 +9163,36 @@
       "insight_zh": "摘要为空，无法确认具体网络结构与实验结果；从标题看，该研究在点云3D检测方面的方法可能对遥感点云处理有间接借鉴意义，但应用领域差异较大。"
     },
     {
+      "key": "arxiv:2609.24564",
+      "title": "HyperCLIP++: Fine-tuning CLIP forOpen-vocabulary Semantic Segmentation in Hyperbolic Space",
+      "title_zh": "HyperCLIP++：在双曲空间中微调CLIP用于开放词汇语义分割",
+      "url": "https://arxiv.org/abs/2609.24564",
+      "arxiv_id": "2609.24564",
+      "authors": [
+        "Zelin Peng",
+        "Zhengqin Xu",
+        "Changsong Wen",
+        "Yu Huang",
+        "Yaoming Wang",
+        "Xiaokang Yang",
+        "Wei Shen"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-21T13:26:39+00:00",
+      "score": 25,
+      "reason": "该文研究双曲空间中微调CLIP用于开放词汇语义分割，涉及视觉语言模型与分割，对遥感开放词汇分割有方法借鉴意义，但未涉及地理空间数据。",
+      "tags": [
+        "开放词汇分割",
+        "CLIP微调",
+        "双曲空间",
+        "视觉语言模型"
+      ],
+      "summary_zh": "CLIP作为基础视觉语言模型已成为开放词汇语义分割的有力工具。冻结CLIP文本编码器被认为可保持其泛化能力，但近期研究表明联合微调CLIP的文本与图像编码器能显著提升分割性能，尤其对开放集类别。本文从层级对齐角度解释这一现象，因为微调过程中图像嵌入的层级从图像级转向像素级。作者借助天然编码层级结构的双曲空间实现这一点。关键观察是微调过程中CLIP文本嵌入的双曲半径减小，从而更好地与视觉数据的像素级粒度对齐。基于此，作者提出HyperCLIP++，一种新颖且参数高效的适配策略。HyperCLIP++通过缩放变换直接调整CLIP嵌入的双曲半径，以实现与目标任务（即分割）的层级对齐。为确保该层级对齐在两种模态上一致生效并在训练中保持跨模态对齐，HyperCLIP++集成了双跨关系通信（DCRC）模块，在视觉与文本路径间同步这些调整。实验表明HyperCLIP++在三个基准上达到最先进性能，而仅微调约5%的CLIP总参数。更重要的是，作者观察到调整后CLIP文本嵌入在不同数据集上呈现相对固定的双曲半径，暗示该分割任务所需的层级可能是……（摘要截断）。",
+      "insight_zh": "双曲空间中的层级对齐与参数高效适配思路对遥感开放词汇分割具有潜在迁移价值，但本文未在地理空间影像上验证，且摘要末尾截断。"
+    },
+    {
       "key": "arxiv:2510.26915",
       "title": "Heterogeneous Robot Collaboration in Unstructured Environments with Grounded Generative Intelligence",
       "title_zh": "非结构化环境中基于接地生成式智能的异构机器人协作",
@@ -12158,6 +12272,33 @@
       "insight_zh": "该研究提示领域大模型的数据策展应以应用需求为导向，其“知识回忆提升不等于推理能力提升”的发现对构建面向城市更新决策的领域LLM具有警示意义，但论文未涉及地理空间任务。"
     },
     {
+      "key": "arxiv:2609.24625",
+      "title": "Custom Named Entity Recognition and Topic Classification for Global Health Publications",
+      "title_zh": "全球健康出版物的自定义命名实体识别与主题分类",
+      "url": "https://arxiv.org/abs/2609.24625",
+      "arxiv_id": "2609.24625",
+      "authors": [
+        "Genis Skura",
+        "Antoine Geissb\\\"uhler",
+        "Jean-Luc Falcone"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-21T14:09:53+00:00",
+      "score": 20,
+      "reason": "该文研究全球健康文献的命名实体识别与主题分类，涉及NLP模型选择与领域适配，与LLM及文本挖掘方法有交集，但应用域为健康文献而非地理空间或城市研究。",
+      "tags": [
+        "命名实体识别",
+        "主题分类",
+        "全球健康文献",
+        "低资源NLP"
+      ],
+      "summary_zh": "在标注数据和计算资源有限的场景下，应如何为全球健康文献选择与适配自然语言处理模型？本论文通过语义标签发现、命名实体识别（NER）和多标签主题分类实验探讨这些挑战。首先，将基于逐步扩大的专业语料训练的skip-gram word2vec模型与BioWordVec比较，以评估语料规模与领域语境对标签发现的影响；词汇覆盖率与定性评估表明更广覆盖未必产生更有用的领域关联。随后转向实体抽取，在1000句标注数据上比较卷积spaCy模型与基于RoBERTa的Transformer：宽松评分下Transformer达到0.80微F1，卷积模型为0.65-0.69，但耗时82秒而非5-6秒。这一权衡促使作者微调卷积模型并集成在NCBI疾病语料上达到81.33%测试F1的疾病识别器。结合PDF预处理、实体过滤与MeSH富集，所得流程支持文档级索引。为补充实体抽取，作者在50个主题和1000条手工测试句上比较基于MiniLM的少样本分类与BART-MNLI零样本推理：BART-MNLI单标签准确率95.2%对59%，多标签准确率在部分人工评估下为88%与32%，但其更高推理成本限制实际集成。",
+      "insight_zh": "结果表明领域专门化与轻量适配在部分场景具实用价值，而Transformer精度在另一些场景可证明其更高成本合理；该权衡分析对低资源地理文本挖掘有方法参考意义。"
+    },
+    {
       "key": "arxiv:2609.22360",
       "title": "Contrastive Siamese Representation Learning for Predictive Maintenance of Electrical Submersible Pumps",
       "title_zh": "面向电潜泵预测性维护的对比孪生表示学习",
@@ -12725,6 +12866,49 @@
       ],
       "summary_zh": "新测序蛋白质的功能注释仍是分子生物学的瓶颈：公共数据库序列增长远快于人工审编能力。多数计算方法将注释视为固定本体上的多标签分类，限制了预测只能落在预定义标签集内。本文将蛋白质注释作为序列到文本生成问题研究，使用 QLoRA（4 位 NF4 量化加低秩适配器）在序列-注释对上微调 30 亿参数的 Ministral 3 基础模型。评估采用“LLM 作为专家”协议：以 GPT 模型扮演资深分子生物学审编员，对生物体识别作二分类评分，并评估功能注释质量。作者认为，经 QLoRA 微调的紧凑 LLM 能为相当一部分蛋白质生成具有真实生物学价值的审编风格注释。文中还讨论了数据质量、模型扩展与证据接地等未来方向，以使该方法足够可靠以供实际使用。",
       "insight_zh": "该工作展示了小模型经参数高效微调后可生成领域专家风格文本，对地理空间领域（如遥感解译报告生成）有方法借鉴意义，但原文未涉及地理空间任务。"
+    },
+    {
+      "key": "arxiv:2609.24524",
+      "title": "Preoperative Prediction of Microvascular Invasion in Hepatocellular Carcinoma by Integrating Multimodal Ultrasound and Clinical Data: A Multicenter Study",
+      "title_zh": "整合多模态超声与临床数据术前预测肝细胞癌微血管侵犯：一项多中心研究",
+      "url": "https://arxiv.org/abs/2609.24524",
+      "arxiv_id": "2609.24524",
+      "authors": [
+        "Jun Cheng",
+        "Yuanyuan Kong",
+        "Qing Huang",
+        "Xiaotong Tan",
+        "Licong Dong",
+        "Yulong Han",
+        "Wufeng Xue",
+        "Ruobing Huang",
+        "Dong Ni",
+        "Qi Yang",
+        "Jie Yu",
+        "Ping Liang"
+      ],
+      "categories": [
+        "cs.CV",
+        "material:",
+        "18",
+        "pages,",
+        "6",
+        "figure,",
+        "and",
+        "9",
+        "tables"
+      ],
+      "published": "2026-09-21T12:59:53+00:00",
+      "score": 18,
+      "reason": "该文提出融合多模态超声与临床数据的多中心模型用于肝癌微血管侵犯预测，涉及多模态信息融合网络与表示一致性学习，与多源数据融合方向有方法关联，但应用为医学诊断。",
+      "tags": [
+        "多模态融合",
+        "医学影像",
+        "多中心研究",
+        "Transformer融合"
+      ],
+      "summary_zh": "背景：微血管侵犯（MVI）可预测肝细胞癌（HCC）的复发与生存，但诊断需术后组织病理学。作者开发并验证了整合多模态超声与临床数据的术前MVI预测模型。方法：该多中心研究纳入来自八个中心的489例HCC患者，所有患者均有B型超声（BUS）、彩色多普勒血流成像（CDFI）、动态对比增强超声（DCE-US）及临床信息。七个中心（n=421）的数据用于模型开发并做五折交叉验证，剩余一个中心（n=68）构成独立外部验证队列。所提多模态信息融合网络使用模态特定编码器、用于双向DCE-US灌注变化的血流动力学时间变化模块，以及在基于Transformer融合前对齐异构超声表示的表示一致性学习模块。结果：外部验证中，DCE-US取得最高单模态AUC（0.8545±0.0198），高于临床信息（0.6715±0.0156）、CDFI（0.6435±0.0344）和BUS（0.6087±0.0417）。像素差采样与所提时间模块优于其他采样与视频表示方法。完整模型表现最佳，AUC为0.8953±0.0180，准确率81.18%±2.83%，敏感度86.40%±6.69%，特异度78.14%±6.28。结论：整合多模态超声与临床信息可实现有前景的HCC术前MVI预测，DCE-US是主要预测信息来源，而BUS、CDFI与临床信息提供互补信息。",
+      "insight_zh": "该研究展示了模态特定编码器加表示一致性学习再经Transformer融合的多模态融合范式，对多源地理数据融合有方法借鉴意义，但其结论限于医学诊断场景。"
     },
     {
       "key": "arxiv:2609.22205",
@@ -13490,32 +13674,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24619",
-      "title": "Video-based Surgical Skill Assessment Using Dynamics-and-Uncertainty-Aware Tree-based Gaussian Process Classifier",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24619",
-      "arxiv_id": "2609.24619",
-      "authors": [
-        "Arefeh Rezaei",
-        "Mohammad Javad Ahmadi",
-        "Amir Molaei",
-        "Hamid D. Taghirad"
-      ],
-      "categories": [
-        "cs.CV",
-        "reports",
-        "Journal"
-      ],
-      "published": "2026-09-21T14:06:08+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.23875",
       "title": "VISTA: An Attention-Based Multi-Agent Reinforcement Learning Architecture for Space Situational Awareness Sensor Tasking",
       "title_zh": "",
@@ -13566,30 +13724,6 @@
         "cs.CV"
       ],
       "published": "2026-09-20T16:22:15+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24579",
-      "title": "Universal Multi-Modal Traceformer: Integrating Heterogeneous Context for Process Event Prediction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24579",
-      "arxiv_id": "2609.24579",
-      "authors": [
-        "Fabian Spaeh",
-        "Jingxing Fang",
-        "Shandian Zhe",
-        "Bin Shen"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-21T13:44:40+00:00",
       "score": 17,
       "reason": "关键词命中：Transformer",
       "tags": [
@@ -14124,46 +14258,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24524",
-      "title": "Preoperative Prediction of Microvascular Invasion in Hepatocellular Carcinoma by Integrating Multimodal Ultrasound and Clinical Data: A Multicenter Study",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24524",
-      "arxiv_id": "2609.24524",
-      "authors": [
-        "Jun Cheng",
-        "Yuanyuan Kong",
-        "Qing Huang",
-        "Xiaotong Tan",
-        "Licong Dong",
-        "Yulong Han",
-        "Wufeng Xue",
-        "Ruobing Huang",
-        "Dong Ni",
-        "Qi Yang",
-        "Jie Yu",
-        "Ping Liang"
-      ],
-      "categories": [
-        "cs.CV",
-        "material:",
-        "18",
-        "pages,",
-        "6",
-        "figure,",
-        "and",
-        "9",
-        "tables"
-      ],
-      "published": "2026-09-21T12:59:53+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22281",
       "title": "Performance vs Consistency: Evaluating a Foundation Model in Lung-RADS Screening",
       "title_zh": "",
@@ -14667,33 +14761,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24564",
-      "title": "HyperCLIP++: Fine-tuning CLIP forOpen-vocabulary Semantic Segmentation in Hyperbolic Space",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24564",
-      "arxiv_id": "2609.24564",
-      "authors": [
-        "Zelin Peng",
-        "Zhengqin Xu",
-        "Changsong Wen",
-        "Yu Huang",
-        "Yaoming Wang",
-        "Xiaokang Yang",
-        "Wei Shen"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-21T13:26:39+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.23951",
       "title": "HaikuS2S: A Cascaded System For Responding In Verse",
       "title_zh": "",
@@ -14791,58 +14858,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24609",
-      "title": "GraphToolbox: A Configurable Python Framework for Graph Neural Network Forecasting",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24609",
-      "arxiv_id": "2609.24609",
-      "authors": [
-        "Eloi Campagne (CB)",
-        "Yvenn Amara-Ouali (LMO",
-        "CELESTE)",
-        "Yannig Goude (EDF R\\&D)",
-        "Argyris Kalogeratos (CB",
-        "ENS Paris Saclay)"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-21T13:58:35+00:00",
-      "score": 17,
-      "reason": "关键词命中：Graph Neural Network",
-      "tags": [
-        "Graph Neural Network"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24732",
-      "title": "GraphSVR: q-Space--Aware Graph-Based Slice-to-Volume Registration for Diffusion MRI",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24732",
-      "arxiv_id": "2609.24732",
-      "authors": [
-        "Noga Kertes",
-        "Daphna Link Sourani",
-        "Alex M. Bronstein",
-        "Moti Freiman"
-      ],
-      "categories": [
-        "cs.CV",
-        "eess.IV"
-      ],
-      "published": "2026-09-21T15:06:09+00:00",
-      "score": 17,
-      "reason": "关键词命中：Graph Neural Network",
-      "tags": [
-        "Graph Neural Network"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -15123,49 +15138,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24668",
-      "title": "Ev-YOLO: Uncertainty-Aware Object Detection via a Unified Evidential Formulation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24668",
-      "arxiv_id": "2609.24668",
-      "authors": [
-        "Simon Barbarit-Gaboriau (LITIS - STI",
-        "INSA Rouen Normandie)",
-        "Hind Laghmara (LITIS - STI)",
-        "R\\'emi Boutteau (LITIS - STI)",
-        "Samia Ainouz (LITIS",
-        "LITIS - STI)"
-      ],
-      "categories": [
-        "cs.CV",
-        "review.",
-        "To",
-        "appear",
-        "in",
-        "the",
-        "proceedings",
-        "of",
-        "9th",
-        "International",
-        "Conference",
-        "on",
-        "Belief",
-        "Functions",
-        "(BFAS",
-        "2026),",
-        "Springer,",
-        "LNAI"
-      ],
-      "published": "2026-09-21T14:31:45+00:00",
-      "score": 17,
-      "reason": "关键词命中：Deep Learning",
-      "tags": [
-        "Deep Learning"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24746",
       "title": "Enhancing Transformer Representations of Symbolic ODE Expressions",
       "title_zh": "",
@@ -15413,30 +15385,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24662",
-      "title": "DUMA-Bench: A Dual-Control Multi-Agent Benchmark for Evaluating LLM Agent Security",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24662",
-      "arxiv_id": "2609.24662",
-      "authors": [
-        "Ivan Aleksandrov",
-        "German Kochnev",
-        "Sabrina Sadiekh",
-        "Yaroslav Rogoza"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-21T14:28:05+00:00",
-      "score": 17,
-      "reason": "关键词命中：Multi-Agent",
-      "tags": [
-        "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24872",
       "title": "DTKDP: A Dual Teacher Knowledge Distillation and Pruning Framework for Lightweight Oriented SAR Ship Detection",
       "title_zh": "",
@@ -15503,30 +15451,6 @@
       "reason": "关键词命中：Multi-Agent",
       "tags": [
         "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24625",
-      "title": "Custom Named Entity Recognition and Topic Classification for Global Health Publications",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24625",
-      "arxiv_id": "2609.24625",
-      "authors": [
-        "Genis Skura",
-        "Antoine Geissb\\\"uhler",
-        "Jean-Luc Falcone"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-21T14:09:53+00:00",
-      "score": 17,
-      "reason": "关键词命中：Transformer",
-      "tags": [
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -15872,40 +15796,6 @@
       "reason": "关键词命中：Large Language Model",
       "tags": [
         "Large Language Model"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24595",
-      "title": "Applications of Neural Cellular Automata: State of the Art, Challenges and Opportunities",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24595",
-      "arxiv_id": "2609.24595",
-      "authors": [
-        "Nick Lemke",
-        "Niklas Ihm",
-        "John Kalkhof",
-        "Mirko Konstantin",
-        "Henry J. Krumb",
-        "Daniel M. Lang",
-        "Ehsan Pajouheshagar",
-        "Ario Sadafi",
-        "Arjan Kuijper",
-        "Karim Lekadir",
-        "Marco Lorenzi",
-        "Carsten Marr",
-        "Julia A. Schnabel",
-        "Anirban Mukhopadhyay"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-21T13:52:19+00:00",
-      "score": 17,
-      "reason": "关键词命中：Segmentation",
-      "tags": [
-        "Segmentation"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -17719,6 +17609,52 @@
       ],
       "summary_zh": "在主要基于西方人群的大型队列上预训练的神经影像基础模型，越来越多地被提议作为脑MRI分析的通用骨干网络。然而，它们对代表性不足的临床人群的泛化能力在很大程度上尚未得到检验。作者在尼日利亚临床脑MRI数据集的88名受试者上，评估了四个近期基础模型（BrainIAC、Neuro-JEPA、NeuroVFM和Primus）在三分类诊断任务（对照、痴呆、帕金森病）上的表现，涵盖四种模态配置（T1w、T2w、T1w+T2w、FLAIR），并与端到端训练的ViT3D基线进行比较。冻结骨干网络退化为多数类预测，而Neuro-JEPA在FLAIR上表现出适度但仍有限的区分能力。相比之下，端到端训练的ViT3D在每个任务上都取得更高的准确率和MCC（最高53.4%准确率，MCC=0.27），且是唯一具有非平凡召回率的模型。研究结果表明，这些冻结的神经影像基础模型不足以在小规模非西方临床队列中进行细粒度诊断分类，需要在全球健康背景下进行参数高效适配和更广泛的多站点外部验证以实现公平部署。",
       "insight_zh": "该研究揭示了基础模型在跨人群泛化上的局限性，其关于域偏移和参数高效适配的发现对遥感基础模型的跨区域泛化研究有方法论上的参考价值，但论文本身聚焦医学影像领域。"
+    },
+    {
+      "key": "arxiv:2609.24668",
+      "title": "Ev-YOLO: Uncertainty-Aware Object Detection via a Unified Evidential Formulation",
+      "title_zh": "Ev-YOLO：基于统一证据表述的不确定性感知目标检测",
+      "url": "https://arxiv.org/abs/2609.24668",
+      "arxiv_id": "2609.24668",
+      "authors": [
+        "Simon Barbarit-Gaboriau (LITIS - STI",
+        "INSA Rouen Normandie)",
+        "Hind Laghmara (LITIS - STI)",
+        "R\\'emi Boutteau (LITIS - STI)",
+        "Samia Ainouz (LITIS",
+        "LITIS - STI)"
+      ],
+      "categories": [
+        "cs.CV",
+        "review.",
+        "To",
+        "appear",
+        "in",
+        "the",
+        "proceedings",
+        "of",
+        "9th",
+        "International",
+        "Conference",
+        "on",
+        "Belief",
+        "Functions",
+        "(BFAS",
+        "2026),",
+        "Springer,",
+        "LNAI"
+      ],
+      "published": "2026-09-21T14:31:45+00:00",
+      "score": 15,
+      "reason": "该文提出统一证据框架下的YOLOv8目标检测与不确定性估计，目标检测与不确定性建模对遥感变化检测与地理空间智能有方法借鉴意义，但未涉及地理空间数据或城市应用。",
+      "tags": [
+        "目标检测",
+        "不确定性估计",
+        "证据深度学习",
+        "遥感潜在应用"
+      ],
+      "summary_zh": "可靠的不确定性估计对自主系统在不确定环境中的目标检测器部署至关重要。证据深度学习（EDL）通过将网络输出表示为证据并借助主观逻辑解释预测，为不确定性感知分类提供了原则性框架。然而现有证据目标检测器通常将证据分类与回归不确定性模型结合，二者理论基础不一致。本文提出YOLOv8的证据版本，将分类与边界框回归统一在同一证据框架内。该方法利用YOLOv8基于分布的边界框表示，使证据表述不仅适用于分类也适用于定位。因此两个任务都产生可在Dempster-Shafer框架下解释的信念、不确定性与概率估计。在KITTI、MUSES和nuScenes上的实验表明，所得检测器在检测精度上与标准YOLOv8大体相当，同时提供能有效区分正确与错误检测的定位不确定性，且该不确定性在域偏移下更具判别力。",
+      "insight_zh": "统一证据框架可同时为分类与定位提供可解释的不确定性，域偏移下判别力增强这一特性对遥感跨域检测具有潜在价值，但本文未在地理空间数据上验证。"
     },
     {
       "key": "arxiv:2609.23205",
@@ -19559,6 +19495,34 @@
       ],
       "summary_zh": "摘要内容缺失（仅含分隔线），无法获取具体研究内容。从标题推断，该工作提出HALO-WA方法，将混合注意力机制与潜在引导的在线强化学习结合，用于世界-动作模型。",
       "insight_zh": "摘要缺失导致无法评估其技术贡献与实验设置；若其在线强化学习框架可迁移，或对多智能体决策类研究有参考价值，但与时空数据挖掘和遥感的关联有限。"
+    },
+    {
+      "key": "arxiv:2609.24732",
+      "title": "GraphSVR: q-Space--Aware Graph-Based Slice-to-Volume Registration for Diffusion MRI",
+      "title_zh": "GraphSVR：面向扩散MRI的q空间感知图基切片到体积配准",
+      "url": "https://arxiv.org/abs/2609.24732",
+      "arxiv_id": "2609.24732",
+      "authors": [
+        "Noga Kertes",
+        "Daphna Link Sourani",
+        "Alex M. Bronstein",
+        "Moti Freiman"
+      ],
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "published": "2026-09-21T15:06:09+00:00",
+      "score": 12,
+      "reason": "该文研究扩散MRI的4D切片到体积配准，属于医学影像处理，与城市更新、时空数据挖掘、遥感变化检测等GIS核心方向关联较弱，但图神经网络建模采集结构的方法对时空图建模有间接参考价值。",
+      "tags": [
+        "医学影像配准",
+        "图神经网络",
+        "扩散MRI",
+        "4D配准"
+      ],
+      "summary_zh": "扩散加权成像（DWI）易受被试运动影响，尤其在高效协议和易运动人群中。切片到体积配准（SVR）可缓解层间与堆栈间错位，但扩散MRI因扩散方向依赖的对比度以及需在共同参考系中对齐数十次测量，构成4D配准问题。现有方法主要依赖序列建模或成对相似度，在稀疏梯度采样或严重运动下常退化。作者提出GraphSVR，一种q空间感知的图基4D SVR框架，将切片组表示为采集结构图中的节点，边编码时间邻近性、空间切片几何与扩散编码关系。图神经网络预测全局一致的堆栈级刚性运动，并以自监督、零样本方式仅用解剖参考图像优化，无需配对真值运动。在完全合成扩散模拟与基于真实采集的可控运动严重度和梯度稀疏度的重组模拟上评估，以网格误差（mm）和旋转误差衡量。严重运动下，GraphSVR相比标准DWI运动校正方法FSL eddy将网格误差和旋转误差降低73%，在稀疏方向情形增益最大。",
+      "insight_zh": "该工作表明显式建模采集结构可提升4D运动估计的鲁棒性与全局一致性；其图结构编码采集关系的思路或可迁移至多源时空数据的结构化建模，但需注意其应用域为医学影像，与地理空间任务差异较大。"
     },
     {
       "key": "arxiv:2609.23726",
@@ -22757,6 +22721,43 @@
       "insight_zh": "该文的风险敏感、失败模式驱动评估思路，对LLM辅助城市政策文本生成或规划法规分析的评估设计有间接参考价值，但文中未涉及地理空间或城市更新应用。"
     },
     {
+      "key": "arxiv:2609.24595",
+      "title": "Applications of Neural Cellular Automata: State of the Art, Challenges and Opportunities",
+      "title_zh": "神经细胞自动机的应用：现状、挑战与机遇",
+      "url": "https://arxiv.org/abs/2609.24595",
+      "arxiv_id": "2609.24595",
+      "authors": [
+        "Nick Lemke",
+        "Niklas Ihm",
+        "John Kalkhof",
+        "Mirko Konstantin",
+        "Henry J. Krumb",
+        "Daniel M. Lang",
+        "Ehsan Pajouheshagar",
+        "Ario Sadafi",
+        "Arjan Kuijper",
+        "Karim Lekadir",
+        "Marco Lorenzi",
+        "Carsten Marr",
+        "Julia A. Schnabel",
+        "Anirban Mukhopadhyay"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-21T13:52:19+00:00",
+      "score": 10,
+      "reason": "该文综述神经细胞自动机及其在医学图像分析中的应用，属轻量神经网络架构综述，与GIS和遥感变化检测关联有限，仅在高效分割与配准方法上有间接参考。",
+      "tags": [
+        "神经细胞自动机",
+        "医学图像分析",
+        "综述",
+        "轻量模型"
+      ],
+      "summary_zh": "神经细胞自动机（NCA）是一类新型神经网络架构，能在极小模型规模下实现准确且鲁棒的推理。近来NCA已发展为图像分析、合成图像生成和仿真等任务中卷积与注意力架构的有趣低资源替代方案。技术的快速发展和研究兴趣的增长要求对该新兴技术进行全面综述。本综述概述NCA的基本原理、在医学影像中的应用以及对现状的洞见。作者分析近期对最初提出的NCA架构的修改及其效率与准确性，并回顾真实场景中的实际应用，重点关注医学图像分析、分割、分类、配准、深度估计和图像合成。最后，作者指出NCA的若干优势、研究空白，并以对NCA在受限环境或对鲁棒性或高效数据处理有特殊需求的医学应用中未来机遇的分析作结。",
+      "insight_zh": "NCA在极小模型规模下的鲁棒推理特性对资源受限的地理空间边缘计算场景有潜在启发，但本文聚焦医学影像，未涉及地理空间任务。"
+    },
+    {
       "key": "arxiv:2609.10469",
       "title": "AgroVisNet: A lightweight Convolutional Network and the BD-PlantDX Expert-Validated Benchmark for Radish, Potato and Pointed Gourd Disease Classification",
       "title_zh": "AgroVisNet：轻量卷积网络与BD-PlantDX专家验证基准用于萝卜、马铃薯和苦瓜病害分类",
@@ -23009,6 +23010,35 @@
       ],
       "summary_zh": "本文提出“虚拟神经网络”这一新概念：可训练参数数量保持不变，可扩展性完全通过计算资源实现。该概念是一个抽象框架，可用任何标准卷积神经网络实现。它融合了孪生神经网络与深度集成技术，通过生成大量共享来自少量物理模型权重的虚拟模型，使集成可同时包含多达数百个训练模型。所有虚拟网络接收相同输入，其互联结构引发内部扰动，从而提升整个集成的鲁棒性。集成准确率随虚拟网络数量增加而提升，且不改变模型容量。虚拟神经网络优于更大容量模型、典型深度集成以及SWA和Masksembles等当代方法。此外，集成中表现最佳的单模型也超过单独训练的其他模型，即使后者参数更多。",
       "insight_zh": "该文的参数共享集成思路或可用于遥感变化检测中的多模型融合，但摘要未涉及地理空间数据或任务，属于通用深度学习架构创新。"
+    },
+    {
+      "key": "arxiv:2609.24619",
+      "title": "Video-based Surgical Skill Assessment Using Dynamics-and-Uncertainty-Aware Tree-based Gaussian Process Classifier",
+      "title_zh": "基于动态与不确定性感知树状高斯过程分类器的手术技能视频评估",
+      "url": "https://arxiv.org/abs/2609.24619",
+      "arxiv_id": "2609.24619",
+      "authors": [
+        "Arefeh Rezaei",
+        "Mohammad Javad Ahmadi",
+        "Amir Molaei",
+        "Hamid D. Taghirad"
+      ],
+      "categories": [
+        "cs.CV",
+        "reports",
+        "Journal"
+      ],
+      "published": "2026-09-21T14:06:08+00:00",
+      "score": 8,
+      "reason": "该文研究基于视频的手术技能评估，属医学视频分析，与GIS、城市更新、遥感等方向基本无关，仅在不确定性感知与动态建模方法上有微弱方法参考。",
+      "tags": [
+        "手术技能评估",
+        "高斯过程",
+        "不确定性感知",
+        "视频分析"
+      ],
+      "summary_zh": "所提流程将表示流卷积神经网络与动态及不确定性感知的树状高斯过程分类器相结合。在该框架中，潜在运动动态既作为判别性表示，也作为输入不确定性来源，增强了对时间变化与异常运动转换的鲁棒性。相比传统深度学习方法，该策略所需训练数据更少且计算效率更高。为提升分类性能，作者引入新颖的语义感知复合核，有效捕捉手术视频特征中的语义、流与动态信息；此外开发不确定性感知核以增强复合核框架的鲁棒性与实用性。方法在两个基准数据集JIGSAWS和Cataract-LMM（撕囊术）上评估。实验显示在两个数据集上均有良好表现，包括JIGSAWS上的LOSO与LOUO评估协议，其中被试无关的LOUO协议下框架达到平均准确率96.9%；被试内LOSO协议结果亦有报告以与先前工作比较，在显著降低计算成本的同时取得有竞争力的准确率。",
+      "insight_zh": "该工作显示将运动动态同时用作表示与不确定性来源可在小数据下提升鲁棒性，这一思路对时空动态建模有间接启发，但应用域与地理空间无关。"
     },
     {
       "key": "arxiv:2601.18952",

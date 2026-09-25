@@ -2,11 +2,11 @@
   "date": "2026-09-23",
   "analysis_stats": {
     "total": 667,
-    "analyzed": 467,
+    "analyzed": 468,
     "high": 3,
     "medium": 21,
     "low": 36,
-    "below_threshold": 407
+    "below_threshold": 408
   },
   "papers": [
     {
@@ -8859,6 +8859,30 @@
       "insight_zh": "该工作强调在模型结构不确定性下，多准则一致性认证可减少决策损失，但未必优于置信度门控；对多智能体或模拟驱动决策中的弃权机制设计有参考价值，但未涉及地理空间应用。"
     },
     {
+      "key": "arxiv:2609.19113",
+      "title": "Playing log(N)-Questions over Wikipedia Abstracts: How Per-Round Errors Compound Under Information Asymmetry",
+      "title_zh": "在维基百科摘要上玩log(N)问题：信息不对称下逐轮错误如何累积",
+      "url": "https://arxiv.org/abs/2609.19113",
+      "arxiv_id": "2609.19113",
+      "authors": [
+        "Peter Potash"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-16T17:41:12+00:00",
+      "score": 15,
+      "reason": "该文评估LLM在双智能体log(N)-Questions游戏中的表现，涉及多智能体通信、信息不对称与错误累积，与LLM和多智能体研究直接相关，但不涉及地理空间数据。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "信息不对称",
+        "问答游戏"
+      ],
+      "summary_zh": "作者在双智能体log(N)-Questions游戏中评估六个前沿语言模型。提问者看到N个维基百科导言段落，必须用恰好log2 N个是/否问题识别秘密选定的目标。回答者只看到目标和问题，并用一个词回复。两个角色由同一提供商运行，因此该游戏衡量模型在信息不对称下与自身沟通的能力。作者在4至1024个段落文档集上运行408局游戏，总API成本363美元。一个模型明显落后：Claude Opus 5在68局中赢28局，而GLM-5.3、GPT-5.6 Sol、Grok 4.6、Gemini 3.8 Flash和Kimi K3为45至56局。领先的五个模型仅略有区分。合并这五个模型，胜率随集合规模下降，r=-0.973，并由单一逐轮可靠性参数拟合，形式为win=p^{log2 N}，p=0.928。失败大致均分为回答错误和区分失败，模型几乎从不命名自身证据排除的文档。对最弱模型的每个一致回答错误进行了检查：34个中有32个是“否”回答，针对文档首句陈述的属性，且指令明确警告不要默认回答“否”。由回答平衡估计的每问题信息量与胜率相关，r=+0.88。唯一两个每问题提取完整比特的模型也是唯一按文档标题划分的模型，该策略在N=32以下缺失，在N=32以上用于四分之一的问题。推理token支出在模型间变化4.5倍，与成功关系不大，且轨迹随候选集缩小而增长，但可靠性没有相应提升。",
+      "insight_zh": "该研究表明多智能体信息不对称游戏中的胜率可由单一逐轮可靠性参数刻画，错误随轮数复合累积，且有效的信息划分策略与成功相关，对多智能体通信与LLM可靠性研究有参考价值。"
+    },
+    {
       "key": "arxiv:2609.17521",
       "title": "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control",
       "title_zh": "PhysStream：基于结构化场景记忆与细粒度运动控制的流式物理基础视频生成",
@@ -15854,25 +15878,6 @@
         "cs.CV"
       ],
       "published": "2026-09-22T01:11:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19113",
-      "title": "Playing log(N)-Questions over Wikipedia Abstracts: How Per-Round Errors Compound Under Information Asymmetry",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19113",
-      "arxiv_id": "2609.19113",
-      "authors": [
-        "Peter Potash"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-16T17:41:12+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
