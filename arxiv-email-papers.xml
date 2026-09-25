@@ -5,10 +5,666 @@
     <link>https://fengziclassmate.github.io/journal-rss/arxiv-email-papers.xml</link>
     <description>仅从 QQ 邮箱当天收到的 arXiv 推送邮件中筛选的论文</description>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Sep 2026 00:51:40 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 12:18:26 +0000</lastBuildDate>
     <generator>journal-rss research_rss.py</generator>
     <ttl>1440</ttl>
     <atom:link href="https://fengziclassmate.github.io/journal-rss/arxiv-email-papers.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frame-to-Panorama Localization and Context-Aware Sampling for Scene-Specific Ship Detection in a Smart Marina Testbed</title>
+      <link>https://arxiv.org/abs/2609.29447</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29447</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;智慧码头试验台中面向场景特定船舶检测的帧到全景定位与上下文感知采样&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Ignat Romanov, Andreas Hadjipieris, Neofytos Dimitriou&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Smart maritime infrastructures provide continuous access to heterogeneous sensing streams, enabling repeated experimentation, digital-twin development, and AI-based maritime services. However, sensing hardware alone is not sufficient for scene-specific model development: historical video streams must also be spatially indexed, contextualized, and reduced to informative subsets for annotation. This paper presents a frame-to-panorama localization and context-aware sampling pipeline for ship detection in historical PTZ maritime video lacking reliable pan, tilt, and zoom metadata. The main contribution is an end-to-end data-curation approach that recovers camera-view information from historical PTZ video and combines it with environmental context and visual diversity to construct compact, scene-specific training sets. Specifically, frames are localized on a reference panorama using SuperPoint and LightGlue, enriched with weather and solar-state metadata, and selected through diversity sampling to preserve variation across camera view and environmental conditions. A second context-aware stage targets under-represented distant-vessel cases near the horizon using tile-level visual embeddings and Gaussian Mixture Model clustering. Applied within the CMMI MDigi-I Smart Marina testbed, the proposed pipeline reduces 40,718 candidate frames to 220 images for annotation, corresponding to a 99.5% reduction. A YOLO26-m detector fine-tuned on this subset achieves a mean AP50 of 94.78% $\pm$ 0.51% and a mean AP50-95 of 75.10% $\pm$ 1.73% under sequence-grouped five-fold cross-validation. These results demonstrate that highly redundant infrastructure video streams can be transformed into compact, spatially and contextually diverse training sets for scene-specific detector adaptation while substantially reducing annotation effort.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;智慧海事基础设施提供对异构传感流的持续访问，支持重复实验、数字孪生开发和基于AI的海事服务。然而，仅有传感硬件不足以进行场景特定模型开发：历史视频流还必须进行空间索引、上下文化，并缩减为信息子集以供标注。本文提出一个帧到全景定位与上下文感知采样流水线，用于缺乏可靠云台变焦元数据的历史PTZ海事视频中的船舶检测。主要贡献是一个端到端数据策展方法，从历史PTZ视频中恢复相机视角信息，并结合环境上下文和视觉多样性构建紧凑的场景特定训练集。具体而言，使用SuperPoint和LightGlue将帧定位到参考全景图上，用天气和太阳状态元数据丰富，并通过多样性采样选择以保持相机视角和环境条件的变化。第二个上下文感知阶段针对地平线附近代表性不足的远距离船只情况，使用块级视觉嵌入和高斯混合模型聚类。在CMMI MDigi-I智慧码头试验台中应用，所提流水线将40,718个候选帧缩减为220张图像用于标注，对应99.5%的缩减。在此子集上微调的YOLO26-m检测器在序列分组五折交叉验证下达到平均AP50为94.78% ± 0.51%和平均AP50-95为75.10% ± 1.73%。这些结果表明，高度冗余的基础设施视频流可以转化为紧凑、空间和上下文多样的训练集，用于场景特定检测器自适应。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作展示了如何将冗余的PTZ视频流通过空间定位与上下文感知采样转化为高效训练集，其数据策展思路对城市遥感视频监控中的变化检测与目标识别具有直接借鉴意义，尤其是远距离小目标采样策略。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该论文研究智慧码头场景下的船舶检测，涉及PTZ视频的空间索引、全景定位和上下文感知采样，与遥感变化检测、多源数据融合和地理空间智能有较强关联。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;智慧码头试验台中面向场景特定船舶检测的帧到全景定位与上下文感知采样&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Ignat Romanov, Andreas Hadjipieris, Neofytos Dimitriou&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Smart maritime infrastructures provide continuous access to heterogeneous sensing streams, enabling repeated experimentation, digital-twin development, and AI-based maritime services. However, sensing hardware alone is not sufficient for scene-specific model development: historical video streams must also be spatially indexed, contextualized, and reduced to informative subsets for annotation. This paper presents a frame-to-panorama localization and context-aware sampling pipeline for ship detection in historical PTZ maritime video lacking reliable pan, tilt, and zoom metadata. The main contribution is an end-to-end data-curation approach that recovers camera-view information from historical PTZ video and combines it with environmental context and visual diversity to construct compact, scene-specific training sets. Specifically, frames are localized on a reference panorama using SuperPoint and LightGlue, enriched with weather and solar-state metadata, and selected through diversity sampling to preserve variation across camera view and environmental conditions. A second context-aware stage targets under-represented distant-vessel cases near the horizon using tile-level visual embeddings and Gaussian Mixture Model clustering. Applied within the CMMI MDigi-I Smart Marina testbed, the proposed pipeline reduces 40,718 candidate frames to 220 images for annotation, corresponding to a 99.5% reduction. A YOLO26-m detector fine-tuned on this subset achieves a mean AP50 of 94.78% $\pm$ 0.51% and a mean AP50-95 of 75.10% $\pm$ 1.73% under sequence-grouped five-fold cross-validation. These results demonstrate that highly redundant infrastructure video streams can be transformed into compact, spatially and contextually diverse training sets for scene-specific detector adaptation while substantially reducing annotation effort.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;智慧海事基础设施提供对异构传感流的持续访问，支持重复实验、数字孪生开发和基于AI的海事服务。然而，仅有传感硬件不足以进行场景特定模型开发：历史视频流还必须进行空间索引、上下文化，并缩减为信息子集以供标注。本文提出一个帧到全景定位与上下文感知采样流水线，用于缺乏可靠云台变焦元数据的历史PTZ海事视频中的船舶检测。主要贡献是一个端到端数据策展方法，从历史PTZ视频中恢复相机视角信息，并结合环境上下文和视觉多样性构建紧凑的场景特定训练集。具体而言，使用SuperPoint和LightGlue将帧定位到参考全景图上，用天气和太阳状态元数据丰富，并通过多样性采样选择以保持相机视角和环境条件的变化。第二个上下文感知阶段针对地平线附近代表性不足的远距离船只情况，使用块级视觉嵌入和高斯混合模型聚类。在CMMI MDigi-I智慧码头试验台中应用，所提流水线将40,718个候选帧缩减为220张图像用于标注，对应99.5%的缩减。在此子集上微调的YOLO26-m检测器在序列分组五折交叉验证下达到平均AP50为94.78% ± 0.51%和平均AP50-95为75.10% ± 1.73%。这些结果表明，高度冗余的基础设施视频流可以转化为紧凑、空间和上下文多样的训练集，用于场景特定检测器自适应。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作展示了如何将冗余的PTZ视频流通过空间定位与上下文感知采样转化为高效训练集，其数据策展思路对城市遥感视频监控中的变化检测与目标识别具有直接借鉴意义，尤其是远距离小目标采样策略。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该论文研究智慧码头场景下的船舶检测，涉及PTZ视频的空间索引、全景定位和上下文感知采样，与遥感变化检测、多源数据融合和地理空间智能有较强关联。&lt;/p&gt;</content:encoded>
+      <dc:creator>Ignat Romanov</dc:creator>
+      <dc:creator>Andreas Hadjipieris</dc:creator>
+      <dc:creator>Neofytos Dimitriou</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-24T12:05:00+00:00</ns3:publicationDate>
+      <category>船舶检测</category>
+      <category>PTZ视频</category>
+      <category>全景定位</category>
+      <category>场景特定采样</category>
+      <category>智慧码头</category>
+      <category>数据策展</category>
+      <category>cs.CV</category>
+      <category>cs.AI</category>
+      <category>cs.CG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>IterSynth: Rethinking Deep Search Agents via Role-Decoupled Iterative Synthesis</title>
+      <link>https://arxiv.org/abs/2609.29444</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29444</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;IterSynth：通过角色解耦迭代合成重新思考深度搜索智能体&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xingyu Wu, Yuchen Yan, Zhengxi Lu, Siqi Chen, Xin ZHANG, Aiting Liu, Chao Deng, Jie Liu, Jin Ma, Jian Shao, Jun Xiao, Yongliang Shen&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Deep search requires LLM agents to decompose complex queries, search for evidence, and synthesize grounded answers, yet existing ReAct-style agents suffer from two limitations: role coupling, where one policy must handle planning, evidence use, and synthesis; and context accumulation, where growing search histories introduce noise and obscure useful information. To address these issues, we propose IterSynth, a role-decoupled and summary-based paradigm that alternates between a Planner for identifying information needs and a Synthesizer for integrating evidence into an evolving summary state. This design separates planning from synthesis while using the summary as the persistent state of search, reducing both capability coupling and context noise. To train IterSynth effectively, we further introduce Role-Decoupled Policy Optimization (RDPO) for reinforcement learning, which combines terminal outcome rewards with turn-level rubric evaluations and computes role-specific advantages for more precise credit assignment. Experiments on five long-horizon deep-search benchmarks such as BrowseComp and Xbench-DS show that IterSynth-8B achieves an average score of 50.7, surpassing the strongest prior $\leq$8B agent by +4.2\%. Moreover, IterSynth serves as a model-agnostic prompting paradigm, delivering substantial zero-shot gains over ReAct and similar prompting paradigms on frontier proprietary models.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;深度搜索要求LLM智能体分解复杂查询、搜索证据并合成有依据的答案，但现有ReAct风格智能体存在两个局限：角色耦合，即一个策略必须同时处理规划、证据使用和合成；以及上下文累积，即不断增长的搜索历史引入噪声并掩盖有用信息。为解决这些问题，我们提出IterSynth，一种角色解耦且基于摘要的范式，在负责识别信息需求的规划器和负责将证据整合为演进摘要状态的合成器之间交替。该设计将规划与合成分离，同时使用摘要作为搜索的持久状态，减少能力耦合和上下文噪声。为有效训练IterSynth，我们进一步引入角色解耦策略优化（RDPO）用于强化学习，它结合终端结果奖励与轮级评分评估，并计算角色特定优势以实现更精确的信用分配。在BrowseComp和Xbench-DS等五个长时域深度搜索基准上的实验表明，IterSynth-8B平均得分50.7，超过最强的先前≤8B智能体4.2%。此外，IterSynth作为一种模型无关的提示范式，在前沿专有模型上相较ReAct及类似提示范式带来显著的零样本增益。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;角色解耦与摘要状态机制可能可迁移至地理空间智能体中的多步空间查询与证据整合任务，但论文未验证地理空间场景，需进一步适配。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该论文提出基于LLM的深度搜索智能体框架，涉及多智能体角色解耦与强化学习，与研究中LLM和多智能体方向相关，但未涉及地理空间或城市应用。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;IterSynth：通过角色解耦迭代合成重新思考深度搜索智能体&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xingyu Wu, Yuchen Yan, Zhengxi Lu, Siqi Chen, Xin ZHANG, Aiting Liu, Chao Deng, Jie Liu, Jin Ma, Jian Shao, Jun Xiao, Yongliang Shen&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Deep search requires LLM agents to decompose complex queries, search for evidence, and synthesize grounded answers, yet existing ReAct-style agents suffer from two limitations: role coupling, where one policy must handle planning, evidence use, and synthesis; and context accumulation, where growing search histories introduce noise and obscure useful information. To address these issues, we propose IterSynth, a role-decoupled and summary-based paradigm that alternates between a Planner for identifying information needs and a Synthesizer for integrating evidence into an evolving summary state. This design separates planning from synthesis while using the summary as the persistent state of search, reducing both capability coupling and context noise. To train IterSynth effectively, we further introduce Role-Decoupled Policy Optimization (RDPO) for reinforcement learning, which combines terminal outcome rewards with turn-level rubric evaluations and computes role-specific advantages for more precise credit assignment. Experiments on five long-horizon deep-search benchmarks such as BrowseComp and Xbench-DS show that IterSynth-8B achieves an average score of 50.7, surpassing the strongest prior $\leq$8B agent by +4.2\%. Moreover, IterSynth serves as a model-agnostic prompting paradigm, delivering substantial zero-shot gains over ReAct and similar prompting paradigms on frontier proprietary models.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;深度搜索要求LLM智能体分解复杂查询、搜索证据并合成有依据的答案，但现有ReAct风格智能体存在两个局限：角色耦合，即一个策略必须同时处理规划、证据使用和合成；以及上下文累积，即不断增长的搜索历史引入噪声并掩盖有用信息。为解决这些问题，我们提出IterSynth，一种角色解耦且基于摘要的范式，在负责识别信息需求的规划器和负责将证据整合为演进摘要状态的合成器之间交替。该设计将规划与合成分离，同时使用摘要作为搜索的持久状态，减少能力耦合和上下文噪声。为有效训练IterSynth，我们进一步引入角色解耦策略优化（RDPO）用于强化学习，它结合终端结果奖励与轮级评分评估，并计算角色特定优势以实现更精确的信用分配。在BrowseComp和Xbench-DS等五个长时域深度搜索基准上的实验表明，IterSynth-8B平均得分50.7，超过最强的先前≤8B智能体4.2%。此外，IterSynth作为一种模型无关的提示范式，在前沿专有模型上相较ReAct及类似提示范式带来显著的零样本增益。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;角色解耦与摘要状态机制可能可迁移至地理空间智能体中的多步空间查询与证据整合任务，但论文未验证地理空间场景，需进一步适配。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该论文提出基于LLM的深度搜索智能体框架，涉及多智能体角色解耦与强化学习，与研究中LLM和多智能体方向相关，但未涉及地理空间或城市应用。&lt;/p&gt;</content:encoded>
+      <dc:creator>Xingyu Wu</dc:creator>
+      <dc:creator>Yuchen Yan</dc:creator>
+      <dc:creator>Zhengxi Lu</dc:creator>
+      <dc:creator>Siqi Chen</dc:creator>
+      <dc:creator>Xin ZHANG</dc:creator>
+      <dc:creator>Aiting Liu</dc:creator>
+      <dc:creator>Chao Deng</dc:creator>
+      <dc:creator>Jie Liu</dc:creator>
+      <dc:creator>Jin Ma</dc:creator>
+      <dc:creator>Jian Shao</dc:creator>
+      <dc:creator>Jun Xiao</dc:creator>
+      <dc:creator>Yongliang Shen</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-24T12:02:53+00:00</ns3:publicationDate>
+      <category>LLM智能体</category>
+      <category>深度搜索</category>
+      <category>角色解耦</category>
+      <category>强化学习</category>
+      <category>cs.CL</category>
+      <category>cs.AI</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>RD-JEPA: Predictive latent pretraining for few-trajectory transfer across reaction--diffusion equations</title>
+      <link>https://arxiv.org/abs/2609.29403</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29403</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;RD-JEPA：面向反应扩散方程少轨迹迁移的预测性潜空间预训练&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Chenhao Si, Ming Yan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Learning surrogates for time-dependent partial differential equations often requires a new simulation corpus when the governing operator changes. We introduce RD-JEPA, a joint-embedding predictive architecture for self-supervised pretraining on reaction-diffusion trajectories. A single model is pretrained on five parameterized systems and then adapted to three held-out systems whose reaction operators and trajectories are excluded from pretraining. Using one, five, or ten complete trajectories from a held-out system, RD-JEPA achieves lower mean relative discrete $\ell^2$ field error and mean absolute spatial first-difference error than five supervised surrogate baselines, an independently trained control that removes the trajectory-dependent predictive latent pathway, and an architecture-matched model trained from scratch. Within the evaluated equations, output resolution, forecast horizons, and choices of adaptation trajectories, the results indicate that prediction of future-state representations can support data-efficient adaptation across related reaction-diffusion systems.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;针对含时偏微分方程的代理学习通常需要在控制算子变化时重新构建仿真语料的问题，本文提出RD-JEPA，一种用于反应扩散轨迹自监督预训练的联合嵌入预测架构。单一模型在五个参数化系统上预训练，随后适配到三个留出系统，这些系统的反应算子和轨迹均未参与预训练。使用留出系统的一条、五条或十条完整轨迹时，RD-JEPA在平均相对离散ℓ²场误差和平均绝对空间一阶差分误差上均优于五个监督代理基线、一个去除轨迹相关预测潜路径的独立训练对照，以及一个架构匹配的从零训练模型。在所评估的方程、输出分辨率、预测时域和适配轨迹选择范围内，结果表明对未来状态表征的预测能够支持相关反应扩散系统间的数据高效适配。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作提示，预测性潜空间预训练可能有助于在动力学算子发生变化时减少对大量仿真数据的依赖，这一思路或可迁移到城市时空场或遥感时序变化的代理建模中，但需注意其验证范围仅限于反应扩散方程。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该文提出RD-JEPA，用于反应扩散方程轨迹的自监督预训练与少样本迁移，属于时空动力学代理建模。与时空数据挖掘和地理空间智能有方法层面的关联，但未涉及城市、遥感或地理空间数据，因此相关性中等。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;RD-JEPA：面向反应扩散方程少轨迹迁移的预测性潜空间预训练&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Chenhao Si, Ming Yan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Learning surrogates for time-dependent partial differential equations often requires a new simulation corpus when the governing operator changes. We introduce RD-JEPA, a joint-embedding predictive architecture for self-supervised pretraining on reaction-diffusion trajectories. A single model is pretrained on five parameterized systems and then adapted to three held-out systems whose reaction operators and trajectories are excluded from pretraining. Using one, five, or ten complete trajectories from a held-out system, RD-JEPA achieves lower mean relative discrete $\ell^2$ field error and mean absolute spatial first-difference error than five supervised surrogate baselines, an independently trained control that removes the trajectory-dependent predictive latent pathway, and an architecture-matched model trained from scratch. Within the evaluated equations, output resolution, forecast horizons, and choices of adaptation trajectories, the results indicate that prediction of future-state representations can support data-efficient adaptation across related reaction-diffusion systems.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;针对含时偏微分方程的代理学习通常需要在控制算子变化时重新构建仿真语料的问题，本文提出RD-JEPA，一种用于反应扩散轨迹自监督预训练的联合嵌入预测架构。单一模型在五个参数化系统上预训练，随后适配到三个留出系统，这些系统的反应算子和轨迹均未参与预训练。使用留出系统的一条、五条或十条完整轨迹时，RD-JEPA在平均相对离散ℓ²场误差和平均绝对空间一阶差分误差上均优于五个监督代理基线、一个去除轨迹相关预测潜路径的独立训练对照，以及一个架构匹配的从零训练模型。在所评估的方程、输出分辨率、预测时域和适配轨迹选择范围内，结果表明对未来状态表征的预测能够支持相关反应扩散系统间的数据高效适配。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作提示，预测性潜空间预训练可能有助于在动力学算子发生变化时减少对大量仿真数据的依赖，这一思路或可迁移到城市时空场或遥感时序变化的代理建模中，但需注意其验证范围仅限于反应扩散方程。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该文提出RD-JEPA，用于反应扩散方程轨迹的自监督预训练与少样本迁移，属于时空动力学代理建模。与时空数据挖掘和地理空间智能有方法层面的关联，但未涉及城市、遥感或地理空间数据，因此相关性中等。&lt;/p&gt;</content:encoded>
+      <dc:creator>Chenhao Si</dc:creator>
+      <dc:creator>Ming Yan</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-24T11:28:37+00:00</ns3:publicationDate>
+      <category>时空预测</category>
+      <category>自监督预训练</category>
+      <category>偏微分方程代理模型</category>
+      <category>反应扩散方程</category>
+      <category>迁移学习</category>
+      <category>cs.AI</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Lightweight Probabilistic Downscaling from a Deterministic Base Model</title>
+      <link>https://arxiv.org/abs/2609.29383</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29383</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;基于确定性基础模型的轻量级概率降尺度&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Joseph McLean, Tiffany Vlaar, Sigrid Passano Hellan, Linus Ericsson&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Climate data downscaling is the task of increasing the spatial resolution of climate data, typically by generating fine-resolution regional climate data from coarse global model output. Recent machine learning (ML) work in the related task of weather forecasting has seen significant improvements due to newly devised training methods and architectural components, but these have not yet benefited downscaling. We adapt two of these methods to create a family of lightweight probabilistic ML downscaling models built on a modified U-Net backbone and evaluate them on the CORDEX-ML-Bench suite for daily maximum temperature and precipitation across three geographic regions: the Alps, New Zealand and South Africa. We find that a two-stage training curriculum, combining deterministic pretraining with probabilistic tuning, transfers well to downscaling, beating the state-of-the-art for RMSE. Our work provides an advancement towards lightweight, probabilistic downscaling models, reducing the current trade-off between computational intensity and distributional fit.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;气候数据降尺度是指提高气候数据空间分辨率的任务，通常是从粗分辨率全球模式输出生成细分辨率区域气候数据。近期机器学习在相关天气预报任务中因新训练方法和架构组件而取得显著进展，但这些尚未惠及降尺度。本文将其中两种方法加以适配，构建了一族基于改进U-Net骨干的轻量级概率ML降尺度模型，并在CORDEX-ML-Bench套件上针对阿尔卑斯、新西兰和南非三个地理区域的日最高温度和降水进行评估。作者发现，将确定性预训练与概率微调相结合的两阶段训练课程能够很好地迁移到降尺度任务，在RMSE上优于当前最先进方法。该工作朝着轻量级概率降尺度模型迈进，缓解了当前计算强度与分布拟合之间的权衡。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究提示，将确定性预训练与概率微调结合的两阶段策略可能有助于在计算资源受限条件下实现概率降尺度，这一思路或可迁移到遥感影像空间分辨率提升或多源地理数据融合中，但其验证限于气候变量和特定区域。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该文研究气候数据降尺度，属于遥感与地理空间数据空间分辨率提升的方法研究。与遥感变化检测和多源数据融合有方法层面的关联，但未涉及城市更新或时空数据挖掘，相关性中等偏高。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;基于确定性基础模型的轻量级概率降尺度&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Joseph McLean, Tiffany Vlaar, Sigrid Passano Hellan, Linus Ericsson&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Climate data downscaling is the task of increasing the spatial resolution of climate data, typically by generating fine-resolution regional climate data from coarse global model output. Recent machine learning (ML) work in the related task of weather forecasting has seen significant improvements due to newly devised training methods and architectural components, but these have not yet benefited downscaling. We adapt two of these methods to create a family of lightweight probabilistic ML downscaling models built on a modified U-Net backbone and evaluate them on the CORDEX-ML-Bench suite for daily maximum temperature and precipitation across three geographic regions: the Alps, New Zealand and South Africa. We find that a two-stage training curriculum, combining deterministic pretraining with probabilistic tuning, transfers well to downscaling, beating the state-of-the-art for RMSE. Our work provides an advancement towards lightweight, probabilistic downscaling models, reducing the current trade-off between computational intensity and distributional fit.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;气候数据降尺度是指提高气候数据空间分辨率的任务，通常是从粗分辨率全球模式输出生成细分辨率区域气候数据。近期机器学习在相关天气预报任务中因新训练方法和架构组件而取得显著进展，但这些尚未惠及降尺度。本文将其中两种方法加以适配，构建了一族基于改进U-Net骨干的轻量级概率ML降尺度模型，并在CORDEX-ML-Bench套件上针对阿尔卑斯、新西兰和南非三个地理区域的日最高温度和降水进行评估。作者发现，将确定性预训练与概率微调相结合的两阶段训练课程能够很好地迁移到降尺度任务，在RMSE上优于当前最先进方法。该工作朝着轻量级概率降尺度模型迈进，缓解了当前计算强度与分布拟合之间的权衡。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究提示，将确定性预训练与概率微调结合的两阶段策略可能有助于在计算资源受限条件下实现概率降尺度，这一思路或可迁移到遥感影像空间分辨率提升或多源地理数据融合中，但其验证限于气候变量和特定区域。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该文研究气候数据降尺度，属于遥感与地理空间数据空间分辨率提升的方法研究。与遥感变化检测和多源数据融合有方法层面的关联，但未涉及城市更新或时空数据挖掘，相关性中等偏高。&lt;/p&gt;</content:encoded>
+      <dc:creator>Joseph McLean</dc:creator>
+      <dc:creator>Tiffany Vlaar</dc:creator>
+      <dc:creator>Sigrid Passano Hellan</dc:creator>
+      <dc:creator>Linus Ericsson</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-24T11:10:18+00:00</ns3:publicationDate>
+      <category>气候降尺度</category>
+      <category>概率降尺度</category>
+      <category>U-Net</category>
+      <category>两阶段训练</category>
+      <category>遥感</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>From Policy Documents to Structured Survey Responses: Evaluating Large Language Models for Policy Monitoring</title>
+      <link>https://arxiv.org/abs/2609.29370</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29370</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;从政策文档到结构化调查响应：评估大语言模型用于政策监测&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Carolyn Cole, Matthias Deschryvere, Toqeer Ehsan, Arash Hajikhani&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Science, technology, and innovation policies are crucial for competitiveness, yet their diversity and scale make them difficult to map and monitor consistently. Existing approaches rely heavily on manual survey efforts, which are costly and challenging to scale across countries. Large language models (LLMs) enable new possibilities for extracting and structuring information from long and unstructured policy documents. This paper presents an application of LLMs as &amp;quot;AI respondents&amp;quot; for generating structured survey responses from policy texts. We develop a data extraction pipeline based on long-context in-context learning to map information from public web sources into predefined survey categories, including policy instruments, target groups, and thematic areas. The pipeline integrates a validation step using a secondary LLM to assess relevance and evidence, alongside comparisons with human-provided responses. Using a multi-country dataset, we evaluate the alignment between LLM-generated and human-generated outputs through overlap measures and cross-validation. Results show that LLMs achieve high agreement for structured indicators (84-95%), while differences remain in free-text fields, where models tend to provide more detailed procedural descriptions. These findings highlight the potential of hybrid human-AI workflows for policy monitoring, improving both efficiency and scalability while maintaining the need for human validation and contextual interpretation.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;科学、技术和创新政策对竞争力至关重要，但其多样性和规模使其难以一致地映射和监测。现有方法严重依赖人工调查工作，成本高昂且难以跨国扩展。大语言模型为从长而结构化的政策文档中提取和结构化信息提供了新可能。本文提出将LLM作为“AI受访者”，从政策文本生成结构化调查响应。作者开发了一个基于长上下文上下文学习的数据抽取流水线，将公共网络来源的信息映射到预定义调查类别，包括政策工具、目标群体和主题领域。该流水线集成了一个使用次级LLM评估相关性和证据的验证步骤，并与人工提供的响应进行比较。使用多国数据集，作者通过重叠度量和交叉验证评估LLM生成输出与人工生成输出之间的一致性。结果表明，LLM在结构化指标上达到高一致性（84-95%），而在自由文本字段上仍存在差异，模型倾向于提供更详细的过程描述。这些发现凸显了混合人-AI工作流在政策监测中的潜力，在保持人工验证和情境解释需求的同时提高效率和可扩展性。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究提示，LLM可作为政策文本结构化抽取的辅助工具，其与人工响应在结构化指标上的一致性较高，这一思路或可应用于城市更新政策的多国比较或政策工具监测，但自由文本字段仍需人工验证。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;65/100 该文评估LLM从政策文档生成结构化调查响应，属于LLM在政策信息抽取中的应用。与LLM和多智能体研究以及城市更新政策分析有较强关联，但未涉及地理空间数据或遥感，相关性中等偏高。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;从政策文档到结构化调查响应：评估大语言模型用于政策监测&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Carolyn Cole, Matthias Deschryvere, Toqeer Ehsan, Arash Hajikhani&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Science, technology, and innovation policies are crucial for competitiveness, yet their diversity and scale make them difficult to map and monitor consistently. Existing approaches rely heavily on manual survey efforts, which are costly and challenging to scale across countries. Large language models (LLMs) enable new possibilities for extracting and structuring information from long and unstructured policy documents. This paper presents an application of LLMs as &amp;quot;AI respondents&amp;quot; for generating structured survey responses from policy texts. We develop a data extraction pipeline based on long-context in-context learning to map information from public web sources into predefined survey categories, including policy instruments, target groups, and thematic areas. The pipeline integrates a validation step using a secondary LLM to assess relevance and evidence, alongside comparisons with human-provided responses. Using a multi-country dataset, we evaluate the alignment between LLM-generated and human-generated outputs through overlap measures and cross-validation. Results show that LLMs achieve high agreement for structured indicators (84-95%), while differences remain in free-text fields, where models tend to provide more detailed procedural descriptions. These findings highlight the potential of hybrid human-AI workflows for policy monitoring, improving both efficiency and scalability while maintaining the need for human validation and contextual interpretation.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;科学、技术和创新政策对竞争力至关重要，但其多样性和规模使其难以一致地映射和监测。现有方法严重依赖人工调查工作，成本高昂且难以跨国扩展。大语言模型为从长而结构化的政策文档中提取和结构化信息提供了新可能。本文提出将LLM作为“AI受访者”，从政策文本生成结构化调查响应。作者开发了一个基于长上下文上下文学习的数据抽取流水线，将公共网络来源的信息映射到预定义调查类别，包括政策工具、目标群体和主题领域。该流水线集成了一个使用次级LLM评估相关性和证据的验证步骤，并与人工提供的响应进行比较。使用多国数据集，作者通过重叠度量和交叉验证评估LLM生成输出与人工生成输出之间的一致性。结果表明，LLM在结构化指标上达到高一致性（84-95%），而在自由文本字段上仍存在差异，模型倾向于提供更详细的过程描述。这些发现凸显了混合人-AI工作流在政策监测中的潜力，在保持人工验证和情境解释需求的同时提高效率和可扩展性。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究提示，LLM可作为政策文本结构化抽取的辅助工具，其与人工响应在结构化指标上的一致性较高，这一思路或可应用于城市更新政策的多国比较或政策工具监测，但自由文本字段仍需人工验证。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;65/100 该文评估LLM从政策文档生成结构化调查响应，属于LLM在政策信息抽取中的应用。与LLM和多智能体研究以及城市更新政策分析有较强关联，但未涉及地理空间数据或遥感，相关性中等偏高。&lt;/p&gt;</content:encoded>
+      <dc:creator>Carolyn Cole</dc:creator>
+      <dc:creator>Matthias Deschryvere</dc:creator>
+      <dc:creator>Toqeer Ehsan</dc:creator>
+      <dc:creator>Arash Hajikhani</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-24T10:49:37+00:00</ns3:publicationDate>
+      <category>大语言模型</category>
+      <category>政策监测</category>
+      <category>信息抽取</category>
+      <category>长上下文学习</category>
+      <category>人机协同</category>
+      <category>cs.CL</category>
+      <category>cs.AI</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>FoCal: Frequency-Oriented Cross-Modal Interaction and Spectral Calibration for Aerial Visible-Infrared Object Detection</title>
+      <link>https://arxiv.org/abs/2609.29125</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29125</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;FoCal：面向航空可见光-红外目标检测的频率导向跨模态交互与光谱校准&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Ben Liang, Chao Sui, Junqi Bai, Yuan Liu, Chunlai Li, Xiubao Sui, and Qian Chen&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; In aerial RGB--IR object detection, effectively exploiting complementary information across modalities is critical for robust perception under complex illumination and environmental conditions. Existing multimodal detectors mainly focus on spatial-domain interaction or frequency-specific feature enhancement, while the cross-modal interaction patterns of different frequency components remain insufficiently explored. Moreover, spectral discrepancy itself may contain both useful complementary cues and unreliable modality-specific responses, making indiscriminate frequency fusion suboptimal. To address these issues, we propose FoCal, a frequency-oriented framework for aerial RGB--IR object detection. First, a Frequency-Aware Dual-Domain Calibration (FADC) module is developed to explicitly model frequency-dependent cross-modal interaction. Low-frequency components are collaboratively consolidated into a shared structural consensus, whereas high-frequency components preserve modality-specific information through selective cross-modal exchange. The resulting frequency-aware cues are further transferred to the original feature domain to regulate cross-modal calibration. Second, we introduce a Discrepancy-Guided Spectral Modulation (DGSM) module, which characterizes cross-modal spectral imbalance using confidence-weighted relative amplitude discrepancy and transforms it into a bounded signed gate for adaptive enhancement, preservation, or attenuation of the joint multimodal spectrum. Extensive experiments on DroneVehicle, ESCVehicle, and ATR-UMOD demonstrate the effectiveness of FoCal, yielding $\mathrm{mAP}_{50}$ values of 83.5\%, 54.8\%, and 64.6\%, respectively. Meanwhile, with only 3.0M parameters, FoCal achieves 113.6 FPS while preserving leading detection accuracy, highlighting a favorable accuracy--efficiency trade-off. Code is available at {https://github.com/universeliang/FoCal.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;针对航空RGB-IR目标检测中跨模态互补信息利用不足的问题，本文提出FoCal框架。首先设计频率感知双域校准（FADC）模块，显式建模频率相关的跨模态交互：低频分量协同整合为共享结构共识，高频分量通过选择性跨模态交换保留模态特有信息，并将频率感知线索迁移回原始特征域以调控跨模态校准。其次引入差异引导光谱调制（DGSM）模块，利用置信度加权的相对幅度差异刻画跨模态光谱失衡，并将其转化为有界符号门控，实现对联合多模态频谱的自适应增强、保留或衰减。在DroneVehicle、ESCVehicle和ATR-UMOD数据集上的实验表明，FoCal分别取得83.5%、54.8%和64.6%的mAP50，仅3.0M参数下达到113.6 FPS，同时保持领先检测精度。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作提示在多源遥感融合中，频域分解与跨模态差异建模可作为提升复杂光照条件下鲁棒感知的有效手段，其轻量化设计思路对边缘部署场景具有参考价值。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;78/100 该论文研究航空RGB-IR多模态目标检测中的跨模态频域交互与光谱校准，与用户的多源数据融合和遥感方向高度相关，但更偏向目标检测而非变化检测。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;FoCal：面向航空可见光-红外目标检测的频率导向跨模态交互与光谱校准&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Ben Liang, Chao Sui, Junqi Bai, Yuan Liu, Chunlai Li, Xiubao Sui, and Qian Chen&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; In aerial RGB--IR object detection, effectively exploiting complementary information across modalities is critical for robust perception under complex illumination and environmental conditions. Existing multimodal detectors mainly focus on spatial-domain interaction or frequency-specific feature enhancement, while the cross-modal interaction patterns of different frequency components remain insufficiently explored. Moreover, spectral discrepancy itself may contain both useful complementary cues and unreliable modality-specific responses, making indiscriminate frequency fusion suboptimal. To address these issues, we propose FoCal, a frequency-oriented framework for aerial RGB--IR object detection. First, a Frequency-Aware Dual-Domain Calibration (FADC) module is developed to explicitly model frequency-dependent cross-modal interaction. Low-frequency components are collaboratively consolidated into a shared structural consensus, whereas high-frequency components preserve modality-specific information through selective cross-modal exchange. The resulting frequency-aware cues are further transferred to the original feature domain to regulate cross-modal calibration. Second, we introduce a Discrepancy-Guided Spectral Modulation (DGSM) module, which characterizes cross-modal spectral imbalance using confidence-weighted relative amplitude discrepancy and transforms it into a bounded signed gate for adaptive enhancement, preservation, or attenuation of the joint multimodal spectrum. Extensive experiments on DroneVehicle, ESCVehicle, and ATR-UMOD demonstrate the effectiveness of FoCal, yielding $\mathrm{mAP}_{50}$ values of 83.5\%, 54.8\%, and 64.6\%, respectively. Meanwhile, with only 3.0M parameters, FoCal achieves 113.6 FPS while preserving leading detection accuracy, highlighting a favorable accuracy--efficiency trade-off. Code is available at {https://github.com/universeliang/FoCal.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;针对航空RGB-IR目标检测中跨模态互补信息利用不足的问题，本文提出FoCal框架。首先设计频率感知双域校准（FADC）模块，显式建模频率相关的跨模态交互：低频分量协同整合为共享结构共识，高频分量通过选择性跨模态交换保留模态特有信息，并将频率感知线索迁移回原始特征域以调控跨模态校准。其次引入差异引导光谱调制（DGSM）模块，利用置信度加权的相对幅度差异刻画跨模态光谱失衡，并将其转化为有界符号门控，实现对联合多模态频谱的自适应增强、保留或衰减。在DroneVehicle、ESCVehicle和ATR-UMOD数据集上的实验表明，FoCal分别取得83.5%、54.8%和64.6%的mAP50，仅3.0M参数下达到113.6 FPS，同时保持领先检测精度。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作提示在多源遥感融合中，频域分解与跨模态差异建模可作为提升复杂光照条件下鲁棒感知的有效手段，其轻量化设计思路对边缘部署场景具有参考价值。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;78/100 该论文研究航空RGB-IR多模态目标检测中的跨模态频域交互与光谱校准，与用户的多源数据融合和遥感方向高度相关，但更偏向目标检测而非变化检测。&lt;/p&gt;</content:encoded>
+      <dc:creator>Ben Liang</dc:creator>
+      <dc:creator>Chao Sui</dc:creator>
+      <dc:creator>Junqi Bai</dc:creator>
+      <dc:creator>Yuan Liu</dc:creator>
+      <dc:creator>Chunlai Li</dc:creator>
+      <dc:creator>Xiubao Sui</dc:creator>
+      <dc:creator>and Qian Chen</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-24T07:02:14+00:00</ns3:publicationDate>
+      <category>遥感变化检测</category>
+      <category>多源数据融合</category>
+      <category>多模态目标检测</category>
+      <category>可见光-红外</category>
+      <category>频域交互</category>
+      <category>cs.CV</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>UpDown-SC: Gravity-Canonicalized Dual-Envelope Scan Context for Indoor LiDAR Place Recognition</title>
+      <link>https://arxiv.org/abs/2609.29118</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29118</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;UpDown-SC：重力规范化双包络扫描上下文用于室内LiDAR地点识别&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Jie Xu, Yongxin Yang, Ziyi Jin, Kangjin Yu, Hongjun Huang, Chao Han, and Zhongpu Xia&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; LiDAR place recognition is a key front end for loop closure and global relocalization, yet indoor retrieval remains difficult when attitude or sensor mounting height changes between mapping and query sessions. Scan Context stores the maximum height in each polar cell; indoors, broad ceilings can suppress the lower and mid-level geometry that distinguishes adjacent rooms and corridors. We present UpDown-SC, a training-free polar descriptor that first canonicalizes gravity and then represents two complementary surfaces: the upper envelope of lower/middle structures and the lower envelope of overhead structures. Their physical split is estimated once from a cell-balanced map height distribution and reused by every query. A mask-aware, non-uniform two-channel distance retains discriminative lower-level evidence while limiting sensitivity to its cross-session variation, without treating unobserved cells as zero-height measurements. Conventional Scan Context shortlisting and circular yaw alignment are retained, so retrieved hypotheses directly initialize geometric verification. Experiments across repeated indoor sessions, mounting-height changes, mixed outdoor-to-indoor trajectories, and an outdoor transfer sequence show more reliable first-choice retrieval on the indoor and mounting-height-varied sessions. A paired test finds a significant gain over Scan Context on the in-house sessions. UpDown-SC also gives the best or second-best F1max and AUPR under threshold-based acceptance while retaining a lightweight CPU front end. Continuous replay confirms that the retrieved hypotheses support metric prior-map localization. Code and evaluation artifacts: https://github.com/jiejie567/updown-sc.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;LiDAR地点识别是回环检测与全局重定位的关键前端，但室内检索在建模与查询会话间姿态或传感器安装高度变化时仍很困难。Scan Context在每个极坐标单元存储最大高度，室内宽大天花板会抑制区分相邻房间与走廊的中低层几何。本文提出UpDown-SC，一种免训练的极坐标描述子，先进行重力规范化，再表示两个互补表面：中低层结构的上包络与顶部结构的下包络。二者的物理分界由单元均衡的地图高度分布一次性估计，并被所有查询复用。掩码感知的非均匀双通道距离保留判别性低层证据，同时限制其对跨会话变化的敏感性，且不将未观测单元视为零高度测量。方法保留传统Scan Context候选筛选与环形偏航对齐，使检索假设可直接初始化几何验证。在重复室内会话、安装高度变化、室外到室内混合轨迹及室外迁移序列上的实验表明，该方法在室内及安装高度变化会话中具有更可靠的首选检索。配对检验显示在自建会话上相对Scan Context有显著提升。在基于阈值的接受条件下，UpDown-SC也取得最佳或次佳的F1max与AUPR，同时保持轻量CPU前端。连续回放验证检索假设支持度量先验地图定位。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作表明在室内LiDAR地点识别中，显式分离上下包络并处理未观测单元可提升跨会话鲁棒性，其免训练与轻量特性对大规模室内建图与重定位具有实用意义。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出室内LiDAR地点识别描述子，属于地理空间感知与定位方向，但与用户核心关注的城市更新、时空数据挖掘、LLM多智能体及遥感变化检测关联较弱。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;UpDown-SC：重力规范化双包络扫描上下文用于室内LiDAR地点识别&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Jie Xu, Yongxin Yang, Ziyi Jin, Kangjin Yu, Hongjun Huang, Chao Han, and Zhongpu Xia&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; LiDAR place recognition is a key front end for loop closure and global relocalization, yet indoor retrieval remains difficult when attitude or sensor mounting height changes between mapping and query sessions. Scan Context stores the maximum height in each polar cell; indoors, broad ceilings can suppress the lower and mid-level geometry that distinguishes adjacent rooms and corridors. We present UpDown-SC, a training-free polar descriptor that first canonicalizes gravity and then represents two complementary surfaces: the upper envelope of lower/middle structures and the lower envelope of overhead structures. Their physical split is estimated once from a cell-balanced map height distribution and reused by every query. A mask-aware, non-uniform two-channel distance retains discriminative lower-level evidence while limiting sensitivity to its cross-session variation, without treating unobserved cells as zero-height measurements. Conventional Scan Context shortlisting and circular yaw alignment are retained, so retrieved hypotheses directly initialize geometric verification. Experiments across repeated indoor sessions, mounting-height changes, mixed outdoor-to-indoor trajectories, and an outdoor transfer sequence show more reliable first-choice retrieval on the indoor and mounting-height-varied sessions. A paired test finds a significant gain over Scan Context on the in-house sessions. UpDown-SC also gives the best or second-best F1max and AUPR under threshold-based acceptance while retaining a lightweight CPU front end. Continuous replay confirms that the retrieved hypotheses support metric prior-map localization. Code and evaluation artifacts: https://github.com/jiejie567/updown-sc.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;LiDAR地点识别是回环检测与全局重定位的关键前端，但室内检索在建模与查询会话间姿态或传感器安装高度变化时仍很困难。Scan Context在每个极坐标单元存储最大高度，室内宽大天花板会抑制区分相邻房间与走廊的中低层几何。本文提出UpDown-SC，一种免训练的极坐标描述子，先进行重力规范化，再表示两个互补表面：中低层结构的上包络与顶部结构的下包络。二者的物理分界由单元均衡的地图高度分布一次性估计，并被所有查询复用。掩码感知的非均匀双通道距离保留判别性低层证据，同时限制其对跨会话变化的敏感性，且不将未观测单元视为零高度测量。方法保留传统Scan Context候选筛选与环形偏航对齐，使检索假设可直接初始化几何验证。在重复室内会话、安装高度变化、室外到室内混合轨迹及室外迁移序列上的实验表明，该方法在室内及安装高度变化会话中具有更可靠的首选检索。配对检验显示在自建会话上相对Scan Context有显著提升。在基于阈值的接受条件下，UpDown-SC也取得最佳或次佳的F1max与AUPR，同时保持轻量CPU前端。连续回放验证检索假设支持度量先验地图定位。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作表明在室内LiDAR地点识别中，显式分离上下包络并处理未观测单元可提升跨会话鲁棒性，其免训练与轻量特性对大规模室内建图与重定位具有实用意义。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出室内LiDAR地点识别描述子，属于地理空间感知与定位方向，但与用户核心关注的城市更新、时空数据挖掘、LLM多智能体及遥感变化检测关联较弱。&lt;/p&gt;</content:encoded>
+      <dc:creator>Jie Xu</dc:creator>
+      <dc:creator>Yongxin Yang</dc:creator>
+      <dc:creator>Ziyi Jin</dc:creator>
+      <dc:creator>Kangjin Yu</dc:creator>
+      <dc:creator>Hongjun Huang</dc:creator>
+      <dc:creator>Chao Han</dc:creator>
+      <dc:creator>and Zhongpu Xia</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-24T06:54:10+00:00</ns3:publicationDate>
+      <category>LiDAR</category>
+      <category>地点识别</category>
+      <category>室内定位</category>
+      <category>描述子</category>
+      <category>回环检测</category>
+      <category>cs.CV</category>
+      <category>cs.RO</category>
+      <category>https://github.com/jiejie567/updown-sc</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Evaluating Cross-region Generalization for Wavelet-Diffusion Precipitation Downscaling</title>
+      <link>https://arxiv.org/abs/2609.28749</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.28749</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;评估小波扩散降水降尺度的跨区域泛化能力&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Weikang Qian, Yixin Wen, Chugang Yi, Zhi Li, Lingcheng Li, and Haizhao Yang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Diffusion models have shown strong potential for kilometer-scale precipitation downscaling, but their performance in geographically unseen regions and event regimes remains insufficiently understood. Building on the wavelet diffusion model (WDM) framework, this study evaluates cross-region and cross-event generalization. Six 3 x 3 deg U.S. regions represent convective, winter, tropical, and atmospheric-river precipitation regimes. Low-resolution inputs are generated by block averaging NOAA Multi-Radar/Multi-Sensor (MRMS) composite reflectivity fields. A WDM trained only on Oklahoma (OK) samples and a WDM trained on all six regions are compared with nearest-neighbor and Bicubic interpolation. Model performance is evaluated using three metric families that measure image-domain reconstruction, spectral and distributional fidelity, and bin-wise precipitation detection. The OK-trained WDM remains competitive outside OK. Although the all-region WDM delivers the best and most consistent overall image-domain and detection performance, its gains are uneven across precipitation intensities. Bin-wise critical success index (CSI) over 5-dBZ reflectivity bins shows that WDM improvements concentrate in localized higher-reflectivity structures, which image-domain metrics partly obscure. In addition, the performance differences among samples are strongly associated with the spatial organization of the precipitation field, quantified by Moran&amp;#x27;s I as the spatial autocorrelation of each reflectivity bin. The sample-level Moran&amp;#x27;s I-CSI correlation stratified by sample intensity reaches 0.901 in all six regions, including regions unseen during training. Overall, these findings support future efforts to transfer downscaling models to regions with limited local training data and to generate globally consistent, high-resolution precipitation products.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;扩散模型在公里级降水降尺度上展现出强大潜力，但其在地理上未见区域及事件类型中的表现仍缺乏充分理解。基于小波扩散模型(WDM)框架，本研究评估跨区域与跨事件泛化。六个3×3度美国区域代表对流、冬季、热带与大气河降水类型。低分辨率输入由NOAA多雷达/多传感器(MRMS)复合反射率场经块平均生成。作者比较了仅在俄克拉荷马(OK)训练的WDM、在全部六个区域训练的WDM，以及最近邻与双三次插值。模型性能通过三类指标评估：图像域重建、频谱与分布保真度、以及分箱降水检测。仅在OK训练的WDM在OK之外仍具竞争力。尽管全区域WDM在整体图像域与检测性能上最佳且最一致，其增益在不同降水强度上并不均匀。超过5-dBZ反射率分箱的逐箱临界成功指数(CSI)显示，WDM改进集中在局部高反射率结构，而图像域指标部分掩盖了这一点。此外，样本间性能差异与降水场的空间组织密切相关，以各反射率分箱的空间自相关Moran&amp;#x27;s I量化。按样本强度分层的样本级Moran&amp;#x27;s I-CSI相关性在全部六个区域(包括训练中未见区域)达到0.901。总体而言，这些发现支持未来将降尺度模型迁移到本地训练数据有限的区域，并生成……&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究提示扩散降尺度模型的跨区域泛化与降水场空间组织(以Moran&amp;#x27;s I量化)强相关，逐箱检测指标能揭示图像域指标掩盖的改进；对遥感变化检测与多源数据融合中的空间统计评估有直接借鉴意义。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;88/100 该文评估小波扩散模型在降水降尺度中的跨区域与跨事件泛化，直接涉及遥感数据、空间统计(Moran&amp;#x27;s I)与地理空间智能，与遥感变化检测及多源数据融合研究高度相关。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;评估小波扩散降水降尺度的跨区域泛化能力&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Weikang Qian, Yixin Wen, Chugang Yi, Zhi Li, Lingcheng Li, and Haizhao Yang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Diffusion models have shown strong potential for kilometer-scale precipitation downscaling, but their performance in geographically unseen regions and event regimes remains insufficiently understood. Building on the wavelet diffusion model (WDM) framework, this study evaluates cross-region and cross-event generalization. Six 3 x 3 deg U.S. regions represent convective, winter, tropical, and atmospheric-river precipitation regimes. Low-resolution inputs are generated by block averaging NOAA Multi-Radar/Multi-Sensor (MRMS) composite reflectivity fields. A WDM trained only on Oklahoma (OK) samples and a WDM trained on all six regions are compared with nearest-neighbor and Bicubic interpolation. Model performance is evaluated using three metric families that measure image-domain reconstruction, spectral and distributional fidelity, and bin-wise precipitation detection. The OK-trained WDM remains competitive outside OK. Although the all-region WDM delivers the best and most consistent overall image-domain and detection performance, its gains are uneven across precipitation intensities. Bin-wise critical success index (CSI) over 5-dBZ reflectivity bins shows that WDM improvements concentrate in localized higher-reflectivity structures, which image-domain metrics partly obscure. In addition, the performance differences among samples are strongly associated with the spatial organization of the precipitation field, quantified by Moran&amp;#x27;s I as the spatial autocorrelation of each reflectivity bin. The sample-level Moran&amp;#x27;s I-CSI correlation stratified by sample intensity reaches 0.901 in all six regions, including regions unseen during training. Overall, these findings support future efforts to transfer downscaling models to regions with limited local training data and to generate globally consistent, high-resolution precipitation products.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;扩散模型在公里级降水降尺度上展现出强大潜力，但其在地理上未见区域及事件类型中的表现仍缺乏充分理解。基于小波扩散模型(WDM)框架，本研究评估跨区域与跨事件泛化。六个3×3度美国区域代表对流、冬季、热带与大气河降水类型。低分辨率输入由NOAA多雷达/多传感器(MRMS)复合反射率场经块平均生成。作者比较了仅在俄克拉荷马(OK)训练的WDM、在全部六个区域训练的WDM，以及最近邻与双三次插值。模型性能通过三类指标评估：图像域重建、频谱与分布保真度、以及分箱降水检测。仅在OK训练的WDM在OK之外仍具竞争力。尽管全区域WDM在整体图像域与检测性能上最佳且最一致，其增益在不同降水强度上并不均匀。超过5-dBZ反射率分箱的逐箱临界成功指数(CSI)显示，WDM改进集中在局部高反射率结构，而图像域指标部分掩盖了这一点。此外，样本间性能差异与降水场的空间组织密切相关，以各反射率分箱的空间自相关Moran&amp;#x27;s I量化。按样本强度分层的样本级Moran&amp;#x27;s I-CSI相关性在全部六个区域(包括训练中未见区域)达到0.901。总体而言，这些发现支持未来将降尺度模型迁移到本地训练数据有限的区域，并生成……&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究提示扩散降尺度模型的跨区域泛化与降水场空间组织(以Moran&amp;#x27;s I量化)强相关，逐箱检测指标能揭示图像域指标掩盖的改进；对遥感变化检测与多源数据融合中的空间统计评估有直接借鉴意义。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;88/100 该文评估小波扩散模型在降水降尺度中的跨区域与跨事件泛化，直接涉及遥感数据、空间统计(Moran&amp;#x27;s I)与地理空间智能，与遥感变化检测及多源数据融合研究高度相关。&lt;/p&gt;</content:encoded>
+      <dc:creator>Weikang Qian</dc:creator>
+      <dc:creator>Yixin Wen</dc:creator>
+      <dc:creator>Chugang Yi</dc:creator>
+      <dc:creator>Zhi Li</dc:creator>
+      <dc:creator>Lingcheng Li</dc:creator>
+      <dc:creator>and Haizhao Yang</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-23T19:47:31+00:00</ns3:publicationDate>
+      <category>遥感</category>
+      <category>降水降尺度</category>
+      <category>扩散模型</category>
+      <category>跨区域泛化</category>
+      <category>空间自相关</category>
+      <category>Moran's I</category>
+      <category>cs.LG</category>
+      <category>physics.ao-ph</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>REARL: A Closed-loop Autonomous Driving Simulation Enhancement Framework with Real Traffic Data and Large Language Models</title>
+      <link>https://arxiv.org/abs/2609.19903</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.19903</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;REARL：融合真实交通数据与大语言模型的闭环自动驾驶仿真增强框架&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiaojun Bi, Jun Jiang, Yiwen Sun, Quanyi Ou, Yizhi Ma, Ke Cheng, Mingjie Bi, Yexin Li, Bowen Du&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Accurate simulation is crucial for autonomous driving development, yet capturing real-world traffic complexity remains challenging. Existing simulators that rely on predefined rules or static data playback struggle with dynamic traffic. CRITICAL uses real traffic data and a large language model (LLM) to adjust the initial simulation configuration, but the simulated distribution still diverges from real traffic as the rollout evolves. We propose REARL, a closed-loop simulation enhancement framework that integrates real traffic data with LLMs. Real traffic data are clustered, and each cluster center is used as a representative scenario that provides typical real-world traffic patterns for the LLM. A timed sliding-window detector then monitors discrepancies in vehicle speed distribution and mean spacing between pairs of vehicles. If a metric exceeds a threshold, the LLM adjusts vehicle decision-making; otherwise the existing controller is kept. The LLM also selects a matching real vehicle from a traffic snapshot and modulates the simulated vehicle with reference to that real action. In a controlled HighD highway setting, compared with the CRITICAL baseline and a PPO-based learning baseline, REARL reduces the Hellinger distance for speed distributions to 0.3067 and the MAPE for mean spacing to 0.8371, while achieving a time headway (THW) of 22.8575 and a lane change rate of 0.0708.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;准确的仿真对自动驾驶开发至关重要，但捕捉真实世界交通复杂性仍具挑战。现有依赖预定义规则或静态数据回放的仿真器难以应对动态交通。CRITICAL使用真实交通数据和LLM调整初始仿真配置，但随着推演进行，仿真分布仍偏离真实交通。作者提出REARL，一个融合真实交通数据与LLM的闭环仿真增强框架。真实交通数据被聚类，每个聚类中心作为代表性场景为LLM提供典型真实交通模式。定时滑动窗口检测器监测车辆速度分布和车辆对平均间距的偏差，若指标超阈值则LLM调整车辆决策，否则保留现有控制器。LLM还从交通快照中选择匹配的真实车辆并参照其真实动作调制仿真车辆。在受控HighD高速公路场景中，与CRITICAL基线和基于PPO的学习基线相比，REARL将速度分布的Hellinger距离降至0.3067，平均间距MAPE降至0.8371，同时实现22.8575的时间车头时距和0.0708的换道率。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该框架展示了用LLM在闭环中动态校正仿真分布以贴近真实交通的可行性，其滑动窗口检测与LLM决策调整机制或可启发城市动态仿真中的多智能体行为校准，但应用场景限于高速公路驾驶。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文将真实交通数据与LLM结合用于闭环自动驾驶仿真增强，涉及多智能体决策与时空数据，但与城市更新、遥感变化检测等核心方向关联有限。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;REARL：融合真实交通数据与大语言模型的闭环自动驾驶仿真增强框架&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiaojun Bi, Jun Jiang, Yiwen Sun, Quanyi Ou, Yizhi Ma, Ke Cheng, Mingjie Bi, Yexin Li, Bowen Du&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Accurate simulation is crucial for autonomous driving development, yet capturing real-world traffic complexity remains challenging. Existing simulators that rely on predefined rules or static data playback struggle with dynamic traffic. CRITICAL uses real traffic data and a large language model (LLM) to adjust the initial simulation configuration, but the simulated distribution still diverges from real traffic as the rollout evolves. We propose REARL, a closed-loop simulation enhancement framework that integrates real traffic data with LLMs. Real traffic data are clustered, and each cluster center is used as a representative scenario that provides typical real-world traffic patterns for the LLM. A timed sliding-window detector then monitors discrepancies in vehicle speed distribution and mean spacing between pairs of vehicles. If a metric exceeds a threshold, the LLM adjusts vehicle decision-making; otherwise the existing controller is kept. The LLM also selects a matching real vehicle from a traffic snapshot and modulates the simulated vehicle with reference to that real action. In a controlled HighD highway setting, compared with the CRITICAL baseline and a PPO-based learning baseline, REARL reduces the Hellinger distance for speed distributions to 0.3067 and the MAPE for mean spacing to 0.8371, while achieving a time headway (THW) of 22.8575 and a lane change rate of 0.0708.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;准确的仿真对自动驾驶开发至关重要，但捕捉真实世界交通复杂性仍具挑战。现有依赖预定义规则或静态数据回放的仿真器难以应对动态交通。CRITICAL使用真实交通数据和LLM调整初始仿真配置，但随着推演进行，仿真分布仍偏离真实交通。作者提出REARL，一个融合真实交通数据与LLM的闭环仿真增强框架。真实交通数据被聚类，每个聚类中心作为代表性场景为LLM提供典型真实交通模式。定时滑动窗口检测器监测车辆速度分布和车辆对平均间距的偏差，若指标超阈值则LLM调整车辆决策，否则保留现有控制器。LLM还从交通快照中选择匹配的真实车辆并参照其真实动作调制仿真车辆。在受控HighD高速公路场景中，与CRITICAL基线和基于PPO的学习基线相比，REARL将速度分布的Hellinger距离降至0.3067，平均间距MAPE降至0.8371，同时实现22.8575的时间车头时距和0.0708的换道率。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该框架展示了用LLM在闭环中动态校正仿真分布以贴近真实交通的可行性，其滑动窗口检测与LLM决策调整机制或可启发城市动态仿真中的多智能体行为校准，但应用场景限于高速公路驾驶。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文将真实交通数据与LLM结合用于闭环自动驾驶仿真增强，涉及多智能体决策与时空数据，但与城市更新、遥感变化检测等核心方向关联有限。&lt;/p&gt;</content:encoded>
+      <dc:creator>Xiaojun Bi</dc:creator>
+      <dc:creator>Jun Jiang</dc:creator>
+      <dc:creator>Yiwen Sun</dc:creator>
+      <dc:creator>Quanyi Ou</dc:creator>
+      <dc:creator>Yizhi Ma</dc:creator>
+      <dc:creator>Ke Cheng</dc:creator>
+      <dc:creator>Mingjie Bi</dc:creator>
+      <dc:creator>Yexin Li</dc:creator>
+      <dc:creator>Bowen Du</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-17T08:47:40+00:00</ns3:publicationDate>
+      <category>LLM</category>
+      <category>自动驾驶仿真</category>
+      <category>闭环仿真</category>
+      <category>交通数据</category>
+      <category>多智能体</category>
+      <category>cs.LG</category>
+      <category>work</category>
+      <category>was</category>
+      <category>supported</category>
+      <category>by</category>
+      <category>the</category>
+      <category>National</category>
+      <category>Natural</category>
+      <category>Science</category>
+      <category>Foundation</category>
+      <category>of</category>
+      <category>China</category>
+      <category>(Grant</category>
+      <category>No.</category>
+      <category>62503015)</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Calibration is the Bottleneck: An Action-Class Diagnostic of Multi-Turn Tool-Calling</title>
+      <link>https://arxiv.org/abs/2609.00949</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.00949</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;校准是瓶颈：多轮工具调用的动作类诊断&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Kangjia Zhao, Jiajun Li, Haozhan Shen, Wei Chow, Linfeng Li, Hang Song, Lingdong Kong, Chen Zhi, Tiancheng Zhao, Songhua Liu, Jianwei Yin&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Multi-turn tool calling is a core evaluation scenario for large language model (LLM) agents. On public tool-calling benchmarks, open-weight models now approach or even surpass closed-source frontier models in aggregate accuracy. However, this metric averages over many different multi-turn situations and obscures whether progress is balanced across them. We propose an action-class-oriented diagnostic framework that decomposes multi-turn failures into two orthogonal modes: action-class miscalibration and action-execution failure. The framework operates over a four-class action space (TOOL_CALL/ASK/REFUSE/CONFIRM) and introduces a self-revealing upper bound Acc &amp;lt;= GAR (Gold Action Recall); the two modes show up as bound violation (Acc &amp;gt; GAR, exposing state-grader masking of miscalibration) and large bound slack (GAR &amp;gt;&amp;gt; Acc, localizing execution failure within TOOL_CALL). We validate it on a panel of tool-calling models across multiple multi-turn benchmarks. Across our panel, the diagnostic reveals action-class miscalibration as a substantial failure mode the state grader cannot see. This gap inflates standing for heavily tool-trained families, which our diagnostic separates from families with context-appropriate action choice. Calibration is reshapable through context-only perturbations, but the reshape is heterogeneous: a single perturbation moves accuracy in opposite directions across families (up to +11.5 vs -21.0 pp on the same scenario), and its effect further depends on the perturbation mechanism. We argue that multi-turn tool-calling evaluations should supplement aggregate accuracy with action-class diagnostics that expose what the model actually does in each scenario.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;提出一个动作类诊断框架，将多轮工具调用失败分解为动作类失准和执行失败，并引入自揭示上界Acc &amp;lt;= GAR来识别状态评分器无法察觉的失准问题。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;多轮工具调用的总体准确率可能掩盖动作类失准问题，需结合动作类诊断以揭示模型在具体场景中的真实行为，且校准扰动对不同模型影响方向可能相反。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;80/100 提出多轮工具调用评估的诊断框架，区分动作类失准与执行失败，对理解和改进LLM智能体行为至关重要，与LLM和多智能体研究方向高度契合。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;校准是瓶颈：多轮工具调用的动作类诊断&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Kangjia Zhao, Jiajun Li, Haozhan Shen, Wei Chow, Linfeng Li, Hang Song, Lingdong Kong, Chen Zhi, Tiancheng Zhao, Songhua Liu, Jianwei Yin&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Multi-turn tool calling is a core evaluation scenario for large language model (LLM) agents. On public tool-calling benchmarks, open-weight models now approach or even surpass closed-source frontier models in aggregate accuracy. However, this metric averages over many different multi-turn situations and obscures whether progress is balanced across them. We propose an action-class-oriented diagnostic framework that decomposes multi-turn failures into two orthogonal modes: action-class miscalibration and action-execution failure. The framework operates over a four-class action space (TOOL_CALL/ASK/REFUSE/CONFIRM) and introduces a self-revealing upper bound Acc &amp;lt;= GAR (Gold Action Recall); the two modes show up as bound violation (Acc &amp;gt; GAR, exposing state-grader masking of miscalibration) and large bound slack (GAR &amp;gt;&amp;gt; Acc, localizing execution failure within TOOL_CALL). We validate it on a panel of tool-calling models across multiple multi-turn benchmarks. Across our panel, the diagnostic reveals action-class miscalibration as a substantial failure mode the state grader cannot see. This gap inflates standing for heavily tool-trained families, which our diagnostic separates from families with context-appropriate action choice. Calibration is reshapable through context-only perturbations, but the reshape is heterogeneous: a single perturbation moves accuracy in opposite directions across families (up to +11.5 vs -21.0 pp on the same scenario), and its effect further depends on the perturbation mechanism. We argue that multi-turn tool-calling evaluations should supplement aggregate accuracy with action-class diagnostics that expose what the model actually does in each scenario.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;提出一个动作类诊断框架，将多轮工具调用失败分解为动作类失准和执行失败，并引入自揭示上界Acc &amp;lt;= GAR来识别状态评分器无法察觉的失准问题。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;多轮工具调用的总体准确率可能掩盖动作类失准问题，需结合动作类诊断以揭示模型在具体场景中的真实行为，且校准扰动对不同模型影响方向可能相反。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;80/100 提出多轮工具调用评估的诊断框架，区分动作类失准与执行失败，对理解和改进LLM智能体行为至关重要，与LLM和多智能体研究方向高度契合。&lt;/p&gt;</content:encoded>
+      <dc:creator>Kangjia Zhao</dc:creator>
+      <dc:creator>Jiajun Li</dc:creator>
+      <dc:creator>Haozhan Shen</dc:creator>
+      <dc:creator>Wei Chow</dc:creator>
+      <dc:creator>Linfeng Li</dc:creator>
+      <dc:creator>Hang Song</dc:creator>
+      <dc:creator>Lingdong Kong</dc:creator>
+      <dc:creator>Chen Zhi</dc:creator>
+      <dc:creator>Tiancheng Zhao</dc:creator>
+      <dc:creator>Songhua Liu</dc:creator>
+      <dc:creator>Jianwei Yin</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-09-01T09:08:15+00:00</ns3:publicationDate>
+      <category>LLM</category>
+      <category>智能体</category>
+      <category>工具调用</category>
+      <category>评估诊断</category>
+      <category>多轮交互</category>
+      <category>cs.CL</category>
+      <category>cs.AI</category>
+      <category>https://github.com/fbj2333/tool-calling-calibration</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>GeoRefer-Bench: A Benchmark from Referring Pixels to Verifiable Geospatial Reasoning</title>
+      <link>https://arxiv.org/abs/2609.29541</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.29541</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;GeoRefer-Bench：从指代像素到可验证地理空间推理的基准&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Shuaishuai Cao, Min Huang, Meng Tang, Xuan Liu, Youjin Wang, Hui Lin&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Referring segmentation in overhead imagery is inherently relational: a query may ask for the buildings north of the road or the pond closest to a residential area, so the correct referent can contain one object, several objects, or none. Existing benchmarks mainly score mask overlap, which cannot verify whether a model actually resolved the stated spatial relation. We introduce GeoRefer-Bench, a benchmark for verifiable geospatial referring segmentation. Each query is represented by an executable logical form over a metric scene graph, and predictions are evaluated with Exact Query Success (EQS), which is satisfied only when the returned instance set exactly matches the set denoted by the query. GeoRefer-Bench contains 700 whole 2048x2048 UAV scenes (2.94 Gpx) at 12.5 and 25 cm ground sampling distance, 26,217 instances, 142,796 spatial relations, and 20,916 executable queries spanning five reasoning levels. It further includes three paraphrases per query, 24.0% unanswerable queries, 2,477 counterfactual pairs, and five leakage-controlled evaluation splits. An independent audit re-derives object geometry, mask ownership, relation values, query execution, and split provenance, finding zero issues across all 700 scenes. Relation-blind strategies can retain non-trivial mIoU while achieving at most 22.7 EQS overall, showing that overlap alone does not certify relational grounding. Across fifteen current models, the strongest reaches 74.1 EQS but drops from 98.9 at level 1 to 60.5 at level 5, while ten models score below 5 EQS on two-hop queries. GeoRefer-Bench turns geospatial referring segmentation from mask matching into verifiable reference resolution.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;航拍影像中的指代分割本质上是关系性的：查询可能要求找出道路以北的建筑物或距离住宅区最近的池塘，因此正确的指代对象可能包含一个、多个或零个目标。现有基准主要评估掩码重叠度，无法验证模型是否真正解析了所述空间关系。作者提出GeoRefer-Bench，一个用于可验证地理空间指代分割的基准。每个查询表示为度量场景图上的可执行逻辑形式，预测结果采用精确查询成功（EQS）评估，仅当返回的实例集合与查询所指集合完全匹配时才满足。GeoRefer-Bench包含700个完整的2048x2048无人机场景（2.94 Gpx），地面采样距离为12.5和25厘米，26,217个实例，142,796个空间关系，以及跨越五个推理层级的20,916个可执行查询。它还包含每个查询的三个复述、24.0%的不可回答查询、2,477个反事实对，以及五个泄漏控制的评估划分。独立审计重新推导了目标几何、掩码归属、关系值、查询执行和划分来源，在全部700个场景中未发现问题。关系盲策略可保持非平凡的mIoU，但整体EQS最高仅为22.7，表明仅靠重叠无法证明关系接地。在十五个当前模型中，最强模型达到74.1 EQS，但从第1级的98.9下降到第5级的60.5，且有十个模型在两跳查询上EQS低于5。GeoRefer-Bench将地理空间指代分割从掩码匹配转变为可验证的指代解析。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该基准强调空间关系的可验证解析而非单纯掩码重叠，其度量场景图与可执行逻辑形式的设计思路，可为城市更新中的空间关系查询、遥感变化检测中的关系推理评估提供方法论借鉴。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;88/100 该文构建了面向地理空间指代分割的可验证推理基准，涉及航拍影像、空间关系推理与可执行查询评估，与遥感变化检测、多源数据融合和地理空间智能高度相关，对GIS研究具有直接参考价值。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;GeoRefer-Bench：从指代像素到可验证地理空间推理的基准&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Shuaishuai Cao, Min Huang, Meng Tang, Xuan Liu, Youjin Wang, Hui Lin&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Referring segmentation in overhead imagery is inherently relational: a query may ask for the buildings north of the road or the pond closest to a residential area, so the correct referent can contain one object, several objects, or none. Existing benchmarks mainly score mask overlap, which cannot verify whether a model actually resolved the stated spatial relation. We introduce GeoRefer-Bench, a benchmark for verifiable geospatial referring segmentation. Each query is represented by an executable logical form over a metric scene graph, and predictions are evaluated with Exact Query Success (EQS), which is satisfied only when the returned instance set exactly matches the set denoted by the query. GeoRefer-Bench contains 700 whole 2048x2048 UAV scenes (2.94 Gpx) at 12.5 and 25 cm ground sampling distance, 26,217 instances, 142,796 spatial relations, and 20,916 executable queries spanning five reasoning levels. It further includes three paraphrases per query, 24.0% unanswerable queries, 2,477 counterfactual pairs, and five leakage-controlled evaluation splits. An independent audit re-derives object geometry, mask ownership, relation values, query execution, and split provenance, finding zero issues across all 700 scenes. Relation-blind strategies can retain non-trivial mIoU while achieving at most 22.7 EQS overall, showing that overlap alone does not certify relational grounding. Across fifteen current models, the strongest reaches 74.1 EQS but drops from 98.9 at level 1 to 60.5 at level 5, while ten models score below 5 EQS on two-hop queries. GeoRefer-Bench turns geospatial referring segmentation from mask matching into verifiable reference resolution.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;航拍影像中的指代分割本质上是关系性的：查询可能要求找出道路以北的建筑物或距离住宅区最近的池塘，因此正确的指代对象可能包含一个、多个或零个目标。现有基准主要评估掩码重叠度，无法验证模型是否真正解析了所述空间关系。作者提出GeoRefer-Bench，一个用于可验证地理空间指代分割的基准。每个查询表示为度量场景图上的可执行逻辑形式，预测结果采用精确查询成功（EQS）评估，仅当返回的实例集合与查询所指集合完全匹配时才满足。GeoRefer-Bench包含700个完整的2048x2048无人机场景（2.94 Gpx），地面采样距离为12.5和25厘米，26,217个实例，142,796个空间关系，以及跨越五个推理层级的20,916个可执行查询。它还包含每个查询的三个复述、24.0%的不可回答查询、2,477个反事实对，以及五个泄漏控制的评估划分。独立审计重新推导了目标几何、掩码归属、关系值、查询执行和划分来源，在全部700个场景中未发现问题。关系盲策略可保持非平凡的mIoU，但整体EQS最高仅为22.7，表明仅靠重叠无法证明关系接地。在十五个当前模型中，最强模型达到74.1 EQS，但从第1级的98.9下降到第5级的60.5，且有十个模型在两跳查询上EQS低于5。GeoRefer-Bench将地理空间指代分割从掩码匹配转变为可验证的指代解析。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该基准强调空间关系的可验证解析而非单纯掩码重叠，其度量场景图与可执行逻辑形式的设计思路，可为城市更新中的空间关系查询、遥感变化检测中的关系推理评估提供方法论借鉴。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;88/100 该文构建了面向地理空间指代分割的可验证推理基准，涉及航拍影像、空间关系推理与可执行查询评估，与遥感变化检测、多源数据融合和地理空间智能高度相关，对GIS研究具有直接参考价值。&lt;/p&gt;</content:encoded>
+      <dc:creator>Shuaishuai Cao</dc:creator>
+      <dc:creator>Min Huang</dc:creator>
+      <dc:creator>Meng Tang</dc:creator>
+      <dc:creator>Xuan Liu</dc:creator>
+      <dc:creator>Youjin Wang</dc:creator>
+      <dc:creator>Hui Lin</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-08-25T17:58:47+00:00</ns3:publicationDate>
+      <category>地理空间指代分割</category>
+      <category>可验证推理</category>
+      <category>基准数据集</category>
+      <category>度量场景图</category>
+      <category>无人机影像</category>
+      <category>cs.CV</category>
+      <category>cs.AI</category>
+      <category>available</category>
+      <category>at</category>
+      <category>https://github.com/anticipate218/GeoRefer-Bench</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>StationPDE: Station-Oriented Surface PDE Learning for Multi-Station Multivariate Weather Forecasting</title>
+      <link>https://arxiv.org/abs/2609.22123</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.22123</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;StationPDE：面向多站点多变量气象预报的站点导向地表PDE学习&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiao Wang, Changjian Chen, Rongwen Li, Hongwu Liu, Kun Fang, Zhuo Tang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Multi-station multivariate weather forecasting aims to forecast future weather variables at multiple weather stations from historical surface observations. Existing station forecasting models learn statistical dependencies among discrete stations, but lack explicit physical evolution. Meanwhile, PDE-based weather models provide interpretable physical dynamics, yet require continuous fields and upper-air variables unavailable in surface station data. To bridge this gap, we propose StationPDE, a station-oriented surface PDE learning model. StationPDE constructs a terrain-aware continuous surface field from discrete station observations and decomposes its physical evolution into surface wind transport and upper-air inference. Surface wind transport explicitly evolves observable weather variables, while upper-air inference uses learnable horizontal diffusion to approximate the missing influence of unavailable upper-air variables. A parallel data-driven diffusion branch captures complementary motion patterns, and an adaptive router integrates the two forecasts for station-level multivariate forecasting. Experiments on Weather2K and MeteoNet show that StationPDE consistently outperforms state-of-the-art baselines, reducing MSE by about $9.6\%$ on average compared with the strongest baseline. Code and implementation details are available at https://github.com/hnu-vis/StationPDE.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;多站点多变量气象预报旨在根据历史地面观测预测多个气象站未来的天气变量。现有站点预报模型学习离散站点间的统计依赖，但缺乏显式的物理演化；而基于PDE的气象模型提供可解释的物理动力学，却需要连续场和地面站点数据中不具备的高空变量。为弥合这一差距，作者提出StationPDE，一种站点导向的地表PDE学习模型。StationPDE从离散站点观测构建地形感知的连续地表场，并将其物理演化分解为地表风输送和高空推断：地表风输送显式演化可观测天气变量，高空推断则用可学习的水平扩散近似缺失的高空变量影响。一个并行的数据驱动扩散分支捕捉互补的运动模式，自适应路由器整合两种预报以进行站点级多变量预报。在Weather2K和MeteoNet上的实验表明，StationPDE持续优于最先进基线，相较最强基线平均降低约9.6%的MSE。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作展示了将物理PDE结构与数据驱动分支结合、并用自适应路由整合的思路，可能为站点级时空预测提供兼顾可解释性与精度的方案；其地形感知连续场构建方式对城市尺度的多源观测融合亦有参考价值，但需注意其验证仅限于气象站点数据。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出面向站点的地表PDE学习模型用于多站点多变量气象预报，涉及时空数据建模与地理空间智能，与研究方向中的时空数据挖掘和地理空间智能有中等关联，但不涉及城市更新、遥感变化检测或LLM多智能体。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;StationPDE：面向多站点多变量气象预报的站点导向地表PDE学习&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiao Wang, Changjian Chen, Rongwen Li, Hongwu Liu, Kun Fang, Zhuo Tang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Multi-station multivariate weather forecasting aims to forecast future weather variables at multiple weather stations from historical surface observations. Existing station forecasting models learn statistical dependencies among discrete stations, but lack explicit physical evolution. Meanwhile, PDE-based weather models provide interpretable physical dynamics, yet require continuous fields and upper-air variables unavailable in surface station data. To bridge this gap, we propose StationPDE, a station-oriented surface PDE learning model. StationPDE constructs a terrain-aware continuous surface field from discrete station observations and decomposes its physical evolution into surface wind transport and upper-air inference. Surface wind transport explicitly evolves observable weather variables, while upper-air inference uses learnable horizontal diffusion to approximate the missing influence of unavailable upper-air variables. A parallel data-driven diffusion branch captures complementary motion patterns, and an adaptive router integrates the two forecasts for station-level multivariate forecasting. Experiments on Weather2K and MeteoNet show that StationPDE consistently outperforms state-of-the-art baselines, reducing MSE by about $9.6\%$ on average compared with the strongest baseline. Code and implementation details are available at https://github.com/hnu-vis/StationPDE.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;多站点多变量气象预报旨在根据历史地面观测预测多个气象站未来的天气变量。现有站点预报模型学习离散站点间的统计依赖，但缺乏显式的物理演化；而基于PDE的气象模型提供可解释的物理动力学，却需要连续场和地面站点数据中不具备的高空变量。为弥合这一差距，作者提出StationPDE，一种站点导向的地表PDE学习模型。StationPDE从离散站点观测构建地形感知的连续地表场，并将其物理演化分解为地表风输送和高空推断：地表风输送显式演化可观测天气变量，高空推断则用可学习的水平扩散近似缺失的高空变量影响。一个并行的数据驱动扩散分支捕捉互补的运动模式，自适应路由器整合两种预报以进行站点级多变量预报。在Weather2K和MeteoNet上的实验表明，StationPDE持续优于最先进基线，相较最强基线平均降低约9.6%的MSE。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该工作展示了将物理PDE结构与数据驱动分支结合、并用自适应路由整合的思路，可能为站点级时空预测提供兼顾可解释性与精度的方案；其地形感知连续场构建方式对城市尺度的多源观测融合亦有参考价值，但需注意其验证仅限于气象站点数据。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出面向站点的地表PDE学习模型用于多站点多变量气象预报，涉及时空数据建模与地理空间智能，与研究方向中的时空数据挖掘和地理空间智能有中等关联，但不涉及城市更新、遥感变化检测或LLM多智能体。&lt;/p&gt;</content:encoded>
+      <dc:creator>Xiao Wang</dc:creator>
+      <dc:creator>Changjian Chen</dc:creator>
+      <dc:creator>Rongwen Li</dc:creator>
+      <dc:creator>Hongwu Liu</dc:creator>
+      <dc:creator>Kun Fang</dc:creator>
+      <dc:creator>Zhuo Tang</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <ns3:publicationDate>2026-08-20T05:16:47+00:00</ns3:publicationDate>
+      <category>时空预测</category>
+      <category>偏微分方程学习</category>
+      <category>气象预报</category>
+      <category>多站点建模</category>
+      <category>地理空间智能</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>IDRBench: Benchmarking the Interactive Capabilities of Deep Research Agents</title>
+      <link>https://arxiv.org/abs/2601.06676</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2601.06676</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;IDRBench：深度研究智能体交互能力基准测试&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Yingchaojie Feng, Qiang Huang, Xiaoya Xie, Zhaorui Yang, Jun Yu, Wei Chen, Anthony K. H. Tung&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结论。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;由于摘要缺失，无法推断其具体贡献；仅从标题看，该工作可能构建了一个面向深度研究智能体交互能力的评测基准，但无法确认其任务设计、评价指标或实验发现。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出 IDRBench 用于评测深度研究智能体的交互能力，属于 LLM 智能体评测方向，与研究中 LLM 与多智能体部分有较强关联，但与 GIS、城市更新、时空数据挖掘等核心方向无直接关联。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;IDRBench：深度研究智能体交互能力基准测试&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Yingchaojie Feng, Qiang Huang, Xiaoya Xie, Zhaorui Yang, Jun Yu, Wei Chen, Anthony K. H. Tung&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结论。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;由于摘要缺失，无法推断其具体贡献；仅从标题看，该工作可能构建了一个面向深度研究智能体交互能力的评测基准，但无法确认其任务设计、评价指标或实验发现。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出 IDRBench 用于评测深度研究智能体的交互能力，属于 LLM 智能体评测方向，与研究中 LLM 与多智能体部分有较强关联，但与 GIS、城市更新、时空数据挖掘等核心方向无直接关联。&lt;/p&gt;</content:encoded>
+      <dc:creator>Yingchaojie Feng</dc:creator>
+      <dc:creator>Qiang Huang</dc:creator>
+      <dc:creator>Xiaoya Xie</dc:creator>
+      <dc:creator>Zhaorui Yang</dc:creator>
+      <dc:creator>Jun Yu</dc:creator>
+      <dc:creator>Wei Chen</dc:creator>
+      <dc:creator>Anthony K. H. Tung</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>深度研究智能体</category>
+      <category>交互能力</category>
+      <category>基准测试</category>
+      <category>cs.CL</category>
+      <category>cs.AI</category>
+      <category>cs.HC</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Persona Prompting in Multimodal Urban Perception: Descriptive Convergence and Interpretive Variation</title>
+      <link>https://arxiv.org/abs/2605.29064</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2605.29064</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;多模态城市感知中的人格提示：描述趋同与解释差异&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Neemias da Silva, Matt Ratto, Myriam Delgado, Rodrigo Minetto, Daniel Silver, Thiago H Silva&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、数据或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断其考察不同人格提示对多模态城市感知描述与解释的影响；这可能对利用LLM进行城市街景/城市感知分析时的提示设计有参考意义，但摘要缺失无法确认具体数据与结论。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该论文研究多模态城市感知中的人格提示（persona prompting），直接涉及城市感知与LLM多模态方法，与用户的城市更新、时空数据挖掘及LLM兴趣有较强关联。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;多模态城市感知中的人格提示：描述趋同与解释差异&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Neemias da Silva, Matt Ratto, Myriam Delgado, Rodrigo Minetto, Daniel Silver, Thiago H Silva&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、数据或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断其考察不同人格提示对多模态城市感知描述与解释的影响；这可能对利用LLM进行城市街景/城市感知分析时的提示设计有参考意义，但摘要缺失无法确认具体数据与结论。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该论文研究多模态城市感知中的人格提示（persona prompting），直接涉及城市感知与LLM多模态方法，与用户的城市更新、时空数据挖掘及LLM兴趣有较强关联。&lt;/p&gt;</content:encoded>
+      <dc:creator>Neemias da Silva</dc:creator>
+      <dc:creator>Matt Ratto</dc:creator>
+      <dc:creator>Myriam Delgado</dc:creator>
+      <dc:creator>Rodrigo Minetto</dc:creator>
+      <dc:creator>Daniel Silver</dc:creator>
+      <dc:creator>Thiago H Silva</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>城市感知</category>
+      <category>多模态</category>
+      <category>人格提示</category>
+      <category>LLM</category>
+      <category>城市研究</category>
+      <category>cs.CL</category>
+      <category>cs.CV</category>
+      <category>cs.HC</category>
+      <category>cs.MA</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>VLANeXt: Recipes for Building Strong VLA Models</title>
+      <link>https://arxiv.org/abs/2602.18532</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2602.18532</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;VLANeXt：构建强VLA模型的配方&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiao-Ming Wu, Bin Fan, Kang Liao, Jian-Jian Jiang, Runze Yang, Yihang Luo, Zhonghua Wu, Wei-Shi Zheng, Chen Change Loy&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出了VLANeXt，一套构建强视觉-语言-动作模型的系统方法，包括数据、架构和训练策略的优化，旨在提升模型在具身智能任务中的表现。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;VLA模型的构建经验可迁移至地理空间视觉-语言任务，但需注意动作空间与地理决策的差异。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;80/100 该研究探讨构建强视觉-语言-动作（VLA）模型的方法，与GIS中视觉-语言模型在地理场景理解中的应用相关，但侧重机器人动作。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;VLANeXt：构建强VLA模型的配方&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiao-Ming Wu, Bin Fan, Kang Liao, Jian-Jian Jiang, Runze Yang, Yihang Luo, Zhonghua Wu, Wei-Shi Zheng, Chen Change Loy&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出了VLANeXt，一套构建强视觉-语言-动作模型的系统方法，包括数据、架构和训练策略的优化，旨在提升模型在具身智能任务中的表现。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;VLA模型的构建经验可迁移至地理空间视觉-语言任务，但需注意动作空间与地理决策的差异。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;80/100 该研究探讨构建强视觉-语言-动作（VLA）模型的方法，与GIS中视觉-语言模型在地理场景理解中的应用相关，但侧重机器人动作。&lt;/p&gt;</content:encoded>
+      <dc:creator>Xiao-Ming Wu</dc:creator>
+      <dc:creator>Bin Fan</dc:creator>
+      <dc:creator>Kang Liao</dc:creator>
+      <dc:creator>Jian-Jian Jiang</dc:creator>
+      <dc:creator>Runze Yang</dc:creator>
+      <dc:creator>Yihang Luo</dc:creator>
+      <dc:creator>Zhonghua Wu</dc:creator>
+      <dc:creator>Wei-Shi Zheng</dc:creator>
+      <dc:creator>Chen Change Loy</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>视觉-语言-动作模型</category>
+      <category>模型构建</category>
+      <category>VLA</category>
+      <category>机器人</category>
+      <category>cs.CV</category>
+      <category>cs.AI</category>
+      <category>cs.RO</category>
+      <category>https://dravenalg.github.io/projects/VLANeXt/</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>OptiSAR-Net++: A Large-Scale Benchmark and Transformer-Free Framework for Cross-Domain Remote Sensing Visual Grounding</title>
+      <link>https://arxiv.org/abs/2603.24876</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2603.24876</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;OptiSAR-Net++：面向跨域遥感视觉定位的大规模基准与无Transformer框架&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiaoyu Tang, Jun Dong, Jintao Cheng, and Rui Fan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要缺失，无法提供内容摘要。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;由于摘要缺失，无法推断其具体方法、数据集或结论，仅从标题推测其可能涉及遥感视觉定位的跨域基准构建与轻量化框架设计。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该文标题涉及跨域遥感视觉定位的大规模基准与框架，与遥感变化检测和多源数据融合有一定关联，但摘要缺失，无法评估其具体方法与贡献，故相关性中等。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;OptiSAR-Net++：面向跨域遥感视觉定位的大规模基准与无Transformer框架&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xiaoyu Tang, Jun Dong, Jintao Cheng, and Rui Fan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要缺失，无法提供内容摘要。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;由于摘要缺失，无法推断其具体方法、数据集或结论，仅从标题推测其可能涉及遥感视觉定位的跨域基准构建与轻量化框架设计。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该文标题涉及跨域遥感视觉定位的大规模基准与框架，与遥感变化检测和多源数据融合有一定关联，但摘要缺失，无法评估其具体方法与贡献，故相关性中等。&lt;/p&gt;</content:encoded>
+      <dc:creator>Xiaoyu Tang</dc:creator>
+      <dc:creator>Jun Dong</dc:creator>
+      <dc:creator>Jintao Cheng</dc:creator>
+      <dc:creator>and Rui Fan</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>遥感视觉定位</category>
+      <category>跨域基准</category>
+      <category>Transformer-free框架</category>
+      <category>cs.CV</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Capturing Unseen Spatial Heat Extremes Through Dependence-Aware Generative Modeling</title>
+      <link>https://arxiv.org/abs/2507.09211</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2507.09211</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;通过依赖感知生成建模捕捉未观测的空间极端高温&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xinyue Liu, Xiao Peng, Shuyue Yan, Yuntian Chen, Dongxiao Zhang, Zhixiao Niu, Hui-Min Wang, Xiaogang He&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅从标题可知该工作提出一种依赖感知的生成建模方法，用于捕捉未观测到的空间极端高温事件，强调对空间依赖结构的建模以生成或推断极端情形。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;摘要缺失，无法确认其模型结构、数据来源与验证结果；从标题推断其空间依赖建模思路或可迁移至城市热环境与气候变化相关的时空分析，但这一推断缺乏摘要支撑。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;72/100 该论文关注空间极端高温的依赖感知生成建模，直接涉及空间依赖建模与极端事件生成，与时空数据挖掘、地理空间智能及遥感应用高度相关，对城市更新中的气候风险分析亦有潜在价值。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;通过依赖感知生成建模捕捉未观测的空间极端高温&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xinyue Liu, Xiao Peng, Shuyue Yan, Yuntian Chen, Dongxiao Zhang, Zhixiao Niu, Hui-Min Wang, Xiaogang He&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅从标题可知该工作提出一种依赖感知的生成建模方法，用于捕捉未观测到的空间极端高温事件，强调对空间依赖结构的建模以生成或推断极端情形。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;摘要缺失，无法确认其模型结构、数据来源与验证结果；从标题推断其空间依赖建模思路或可迁移至城市热环境与气候变化相关的时空分析，但这一推断缺乏摘要支撑。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;72/100 该论文关注空间极端高温的依赖感知生成建模，直接涉及空间依赖建模与极端事件生成，与时空数据挖掘、地理空间智能及遥感应用高度相关，对城市更新中的气候风险分析亦有潜在价值。&lt;/p&gt;</content:encoded>
+      <dc:creator>Xinyue Liu</dc:creator>
+      <dc:creator>Xiao Peng</dc:creator>
+      <dc:creator>Shuyue Yan</dc:creator>
+      <dc:creator>Yuntian Chen</dc:creator>
+      <dc:creator>Dongxiao Zhang</dc:creator>
+      <dc:creator>Zhixiao Niu</dc:creator>
+      <dc:creator>Hui-Min Wang</dc:creator>
+      <dc:creator>Xiaogang He</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>空间极端高温</category>
+      <category>生成建模</category>
+      <category>依赖感知</category>
+      <category>时空数据挖掘</category>
+      <category>cs.LG</category>
+      <category>physics.ao-ph</category>
+      <category>physics.data-an</category>
+      <category>physics.geo-ph</category>
+      <category>stat.ML</category>
+      <category>the</category>
+      <category>published</category>
+      <category>version</category>
+      <category>accordingly</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Learning Causal Structure of Time Series using Best Order Score Search</title>
+      <link>https://arxiv.org/abs/2603.05370</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2603.05370</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;使用最佳顺序评分搜索学习时间序列的因果结构&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Irene Gema Castillo Mansilla, Urmi Ninad&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;若该方法能有效学习时间序列因果结构，或可迁移至城市更新中的时序因果分析，但需结合摘要全文进一步判断。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该论文研究时间序列的因果结构学习，与时空数据挖掘和城市更新中的因果推断需求相关，但未涉及地理空间或遥感数据。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;使用最佳顺序评分搜索学习时间序列的因果结构&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Irene Gema Castillo Mansilla, Urmi Ninad&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;若该方法能有效学习时间序列因果结构，或可迁移至城市更新中的时序因果分析，但需结合摘要全文进一步判断。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该论文研究时间序列的因果结构学习，与时空数据挖掘和城市更新中的因果推断需求相关，但未涉及地理空间或遥感数据。&lt;/p&gt;</content:encoded>
+      <dc:creator>Irene Gema Castillo Mansilla</dc:creator>
+      <dc:creator>Urmi Ninad</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>时间序列</category>
+      <category>因果结构学习</category>
+      <category>评分搜索</category>
+      <category>时空数据挖掘</category>
+      <category>cs.LG</category>
+      <category>cs.AI</category>
+      <category>stat.ME</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>GOMA: Toward Structure-Driven Multimodal Alignment from a Graph Signal Smoothing Perspective</title>
+      <link>https://arxiv.org/abs/2605.15723</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2605.15723</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;GOMA：从图信号平滑视角迈向结构驱动的多模态对齐&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xu Wang, Xunkai Li, Yinlin Zhu, Rong-Hua Li, Guoren Wang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;图信号平滑的多模态对齐思路或可迁移至遥感与地理空间多源数据融合，但需全文验证其适用性。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该论文从图信号平滑视角研究结构驱动的多模态对齐，与多源数据融合和地理空间智能有方法层面的关联。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;GOMA：从图信号平滑视角迈向结构驱动的多模态对齐&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Xu Wang, Xunkai Li, Yinlin Zhu, Rong-Hua Li, Guoren Wang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;图信号平滑的多模态对齐思路或可迁移至遥感与地理空间多源数据融合，但需全文验证其适用性。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 该论文从图信号平滑视角研究结构驱动的多模态对齐，与多源数据融合和地理空间智能有方法层面的关联。&lt;/p&gt;</content:encoded>
+      <dc:creator>Xu Wang</dc:creator>
+      <dc:creator>Xunkai Li</dc:creator>
+      <dc:creator>Yinlin Zhu</dc:creator>
+      <dc:creator>Rong-Hua Li</dc:creator>
+      <dc:creator>Guoren Wang</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>多模态对齐</category>
+      <category>图信号平滑</category>
+      <category>结构驱动</category>
+      <category>多源数据融合</category>
+      <category>cs.LG</category>
+      <category>cs.CV</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Every Component Is a Lookup: One Linear Graph for Interaction, Composition and Attribution</title>
+      <link>https://arxiv.org/abs/2605.23393</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2605.23393</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;每个组件都是查找表：用于交互、组合与归因的线性图&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Po-Kai Chen, Aske Plaat, Niki van Stein&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;若该线性图框架可用于模型归因，或对地理空间智能中的可解释性分析有借鉴意义，但需全文评估。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出将组件视为查找表的线性图框架，用于交互、组合与归因，与LLM可解释性和多智能体交互有方法关联。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;每个组件都是查找表：用于交互、组合与归因的线性图&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Po-Kai Chen, Aske Plaat, Niki van Stein&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;若该线性图框架可用于模型归因，或对地理空间智能中的可解释性分析有借鉴意义，但需全文评估。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文提出将组件视为查找表的线性图框架，用于交互、组合与归因，与LLM可解释性和多智能体交互有方法关联。&lt;/p&gt;</content:encoded>
+      <dc:creator>Po-Kai Chen</dc:creator>
+      <dc:creator>Aske Plaat</dc:creator>
+      <dc:creator>Niki van Stein</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>线性图</category>
+      <category>交互</category>
+      <category>组合</category>
+      <category>归因</category>
+      <category>可解释性</category>
+      <category>cs.LG</category>
+      <category>cs.AI</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>A hybrid analytical-PINN model for subsurface simulation of geothermal heat exchangers in heterogeneous underground</title>
+      <link>https://arxiv.org/abs/2607.12271</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2607.12271</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;非均质地下地热换热器地下模拟的混合解析-PINN模型&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Moke Rao, Thomas Hamacher, Smajil Halilovic&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;物理信息神经网络在地下模拟中的应用或可启发城市地下空间与地热资源的时空建模，但需全文确认。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;50/100 该论文提出混合解析-PINN模型用于非均质地下地热换热器模拟，与地理空间智能和物理模拟有交叉，但非城市更新或遥感核心方向。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;非均质地下地热换热器地下模拟的混合解析-PINN模型&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Moke Rao, Thomas Hamacher, Smajil Halilovic&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失（仅提供分隔线），无法获取具体方法、实验或结论信息。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;物理信息神经网络在地下模拟中的应用或可启发城市地下空间与地热资源的时空建模，但需全文确认。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;50/100 该论文提出混合解析-PINN模型用于非均质地下地热换热器模拟，与地理空间智能和物理模拟有交叉，但非城市更新或遥感核心方向。&lt;/p&gt;</content:encoded>
+      <dc:creator>Moke Rao</dc:creator>
+      <dc:creator>Thomas Hamacher</dc:creator>
+      <dc:creator>Smajil Halilovic</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>PINN</category>
+      <category>地热</category>
+      <category>地下模拟</category>
+      <category>异构地下</category>
+      <category>物理信息神经网络</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>CLaST: Context-aware Contrastive VAE for Probabilistic Time Series Forecasting</title>
+      <link>https://arxiv.org/abs/2608.20025</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2608.20025</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;CLaST：用于概率时间序列预测的上下文感知对比VAE&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Alexander Marusov, Dmitry Anikin, Petr Sokerin, Vitaliy Pozdnyakov, Ilya Kuleshov, Alexey Zaytsev&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出CLaST，一种用于概率多变量时间序列预测的VAE框架。与现有生成模型不同，CLaST通过对比损失函数学习保留观测值之间上下文相似性的嵌入。在九个基准数据集上的实验表明，CLaST持续超越强基线方法，在短期预测中CRPS和NMAE分别提升高达16.4%和14.4%，在长期预测中分别提升高达48.6%和25.1%。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究强调通过对比学习增强潜在表示的表达能力，可有效捕捉时间序列中的内部时间依赖，为城市动态预测等GIS应用提供了新的建模思路。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;70/100 该论文提出用于概率多变量时间序列预测的VAE框架，与GIS中时空数据挖掘、城市动态预测等方向高度相关，方法可迁移至城市更新中的时间序列分析。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;CLaST：用于概率时间序列预测的上下文感知对比VAE&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Alexander Marusov, Dmitry Anikin, Petr Sokerin, Vitaliy Pozdnyakov, Ilya Kuleshov, Alexey Zaytsev&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出CLaST，一种用于概率多变量时间序列预测的VAE框架。与现有生成模型不同，CLaST通过对比损失函数学习保留观测值之间上下文相似性的嵌入。在九个基准数据集上的实验表明，CLaST持续超越强基线方法，在短期预测中CRPS和NMAE分别提升高达16.4%和14.4%，在长期预测中分别提升高达48.6%和25.1%。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该研究强调通过对比学习增强潜在表示的表达能力，可有效捕捉时间序列中的内部时间依赖，为城市动态预测等GIS应用提供了新的建模思路。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;70/100 该论文提出用于概率多变量时间序列预测的VAE框架，与GIS中时空数据挖掘、城市动态预测等方向高度相关，方法可迁移至城市更新中的时间序列分析。&lt;/p&gt;</content:encoded>
+      <dc:creator>Alexander Marusov</dc:creator>
+      <dc:creator>Dmitry Anikin</dc:creator>
+      <dc:creator>Petr Sokerin</dc:creator>
+      <dc:creator>Vitaliy Pozdnyakov</dc:creator>
+      <dc:creator>Ilya Kuleshov</dc:creator>
+      <dc:creator>Alexey Zaytsev</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>概率时间序列预测</category>
+      <category>VAE</category>
+      <category>对比学习</category>
+      <category>深度学习</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>DecoVAE: a Lightweight Interpretable Trend-Seasonal VAE Framework for Efficient Probabilistic Time Series Forecasting</title>
+      <link>https://arxiv.org/abs/2608.20052</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2608.20052</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;DecoVAE：一种用于高效概率时间序列预测的轻量级可解释趋势-季节VAE框架&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Alexander Marusov, Dmitry Anikin, Alexey Zaytsev&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出DecoVAE，一个轻量级、可解释的趋势-季节变分自编码器框架。它通过领域特定的归纳偏置将时间序列显式分解为趋势和季节成分：趋势流使用微分正则化器强制潜在轨迹平滑，季节流通过复数高斯VAE在频域操作以捕捉周期模式的振幅和相位。在多个基准上，DecoVAE在预测精度上超越强基线，同时大幅减少模型权重并提升速度。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;将时间序列显式分解为趋势和季节成分并分别建模，不仅能提升预测精度和效率，还增强了模型的可解释性，这对于理解城市更新中复杂指标的演变规律和驱动因素具有重要意义。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;75/100 该文提出一种轻量级、可解释的概率时间序列预测框架，与时空数据挖掘中的城市动态预测高度相关，其趋势-季节分解思想可直接应用于城市更新中的指标预测。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;DecoVAE：一种用于高效概率时间序列预测的轻量级可解释趋势-季节VAE框架&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Alexander Marusov, Dmitry Anikin, Alexey Zaytsev&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出DecoVAE，一个轻量级、可解释的趋势-季节变分自编码器框架。它通过领域特定的归纳偏置将时间序列显式分解为趋势和季节成分：趋势流使用微分正则化器强制潜在轨迹平滑，季节流通过复数高斯VAE在频域操作以捕捉周期模式的振幅和相位。在多个基准上，DecoVAE在预测精度上超越强基线，同时大幅减少模型权重并提升速度。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;将时间序列显式分解为趋势和季节成分并分别建模，不仅能提升预测精度和效率，还增强了模型的可解释性，这对于理解城市更新中复杂指标的演变规律和驱动因素具有重要意义。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;75/100 该文提出一种轻量级、可解释的概率时间序列预测框架，与时空数据挖掘中的城市动态预测高度相关，其趋势-季节分解思想可直接应用于城市更新中的指标预测。&lt;/p&gt;</content:encoded>
+      <dc:creator>Alexander Marusov</dc:creator>
+      <dc:creator>Dmitry Anikin</dc:creator>
+      <dc:creator>Alexey Zaytsev</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>时间序列预测</category>
+      <category>变分自编码器</category>
+      <category>趋势季节性分解</category>
+      <category>概率预测</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Effective Graph and Rank-based Contextual Embeddings for Textual and Multimedia Data</title>
+      <link>https://arxiv.org/abs/2608.29001</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2608.29001</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;用于文本和多媒体数据的有效图和基于排序的上下文嵌入&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Thiago C\&amp;#x27;esar Castilho Almeida, Gustavo Rosseto Let\&amp;#x27;icio, Lucas Pascotti Valem, Andr\&amp;#x27;e Freitas, Daniel Carlos Guimar\~aes Pedronette&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出了GRaCE，一个完全无监督的框架，通过利用鲁棒的基于排序的度量来选择代表性节点子集并生成节点嵌入。实验表明，GRaCE在多个文本和图像数据集上的检索、分类和聚类任务中优于RaDE和原始特征。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;基于排序的度量可以有效地选择代表性节点，从而生成具有可解释维度的嵌入，这为地理文本和遥感影像等多源数据的联合嵌入和检索提供了新的无监督方法。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;65/100 论文提出了GRaCE框架，一种基于图和排序的上下文嵌入方法，用于生成可解释的嵌入，并在文本和图像数据上验证了其有效性。这与GIS中多源数据（文本、影像）的融合和特征表达相关，但更侧重于通用数据表示。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;用于文本和多媒体数据的有效图和基于排序的上下文嵌入&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Thiago C\&amp;#x27;esar Castilho Almeida, Gustavo Rosseto Let\&amp;#x27;icio, Lucas Pascotti Valem, Andr\&amp;#x27;e Freitas, Daniel Carlos Guimar\~aes Pedronette&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;本文提出了GRaCE，一个完全无监督的框架，通过利用鲁棒的基于排序的度量来选择代表性节点子集并生成节点嵌入。实验表明，GRaCE在多个文本和图像数据集上的检索、分类和聚类任务中优于RaDE和原始特征。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;基于排序的度量可以有效地选择代表性节点，从而生成具有可解释维度的嵌入，这为地理文本和遥感影像等多源数据的联合嵌入和检索提供了新的无监督方法。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;65/100 论文提出了GRaCE框架，一种基于图和排序的上下文嵌入方法，用于生成可解释的嵌入，并在文本和图像数据上验证了其有效性。这与GIS中多源数据（文本、影像）的融合和特征表达相关，但更侧重于通用数据表示。&lt;/p&gt;</content:encoded>
+      <dc:creator>Thiago C\'esar Castilho Almeida</dc:creator>
+      <dc:creator>Gustavo Rosseto Let\'icio</dc:creator>
+      <dc:creator>Lucas Pascotti Valem</dc:creator>
+      <dc:creator>Andr\'e Freitas</dc:creator>
+      <dc:creator>Daniel Carlos Guimar\~aes Pedronette</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>图嵌入</category>
+      <category>无监督学习</category>
+      <category>可解释性</category>
+      <category>文本与图像</category>
+      <category>检索</category>
+      <category>cs.LG</category>
+      <category>cs.CV</category>
+      <category>cs.IR</category>
+      <category>(IJCNN</category>
+      <category>2025).</category>
+      <category>Code</category>
+      <category>available</category>
+      <category>in:</category>
+      <category>https://github.com/thcastilho/interpretable-embeddings</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Does On-Policy Distillation Really Distill? From Noisy Teacher to Self-Improvement</title>
+      <link>https://arxiv.org/abs/2608.31046</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2608.31046</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;在线策略蒸馏真的有效吗？从噪声教师到自我改进&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Yi Ding, Ruqi Zhang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;分析在线策略蒸馏的噪声问题，提出无监督的OPSA方法，通过熵自适应负优势抑制低概率token，提升模型性能。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;在线策略蒸馏的增益可能源于对低概率token的抑制，而非教师监督，此发现对LLM训练有启示。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 研究在线策略蒸馏的有效性并提出无监督方法，与LLM训练和优化相关，但非地理空间特定。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;在线策略蒸馏真的有效吗？从噪声教师到自我改进&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Yi Ding, Ruqi Zhang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;分析在线策略蒸馏的噪声问题，提出无监督的OPSA方法，通过熵自适应负优势抑制低概率token，提升模型性能。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;在线策略蒸馏的增益可能源于对低概率token的抑制，而非教师监督，此发现对LLM训练有启示。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 研究在线策略蒸馏的有效性并提出无监督方法，与LLM训练和优化相关，但非地理空间特定。&lt;/p&gt;</content:encoded>
+      <dc:creator>Yi Ding</dc:creator>
+      <dc:creator>Ruqi Zhang</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>强化学习</category>
+      <category>知识蒸馏</category>
+      <category>自适应性</category>
+      <category>LLM</category>
+      <category>cs.LG</category>
+      <category>cs.CL</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>SPARQL-LLM: Real-Time SPARQL Query Generation from Natural Language Questions</title>
+      <link>https://arxiv.org/abs/2512.14277</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2512.14277</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;SPARQL-LLM：从自然语言问题实时生成SPARQL查询&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Panayiotis Smeros, Vincent Emonet, Ruijie Wang, Ana-Claudia Sima, Tarcisio Mendes de Farias&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅从标题可知该研究提出SPARQL-LLM方法，实现从自然语言问题到SPARQL查询的实时生成。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该方法可迁移至地理空间知识图谱的自然语言查询场景，例如城市更新中的地理语义检索，但摘要缺失，无法确认其是否处理地理空间特有的空间关系与拓扑约束。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文研究从自然语言问题实时生成SPARQL查询，属于LLM与知识图谱/语义网交叉领域，与GIS中的地理空间语义查询和LLM应用有较强关联，但与城市更新、遥感变化检测等方向关联有限。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;SPARQL-LLM：从自然语言问题实时生成SPARQL查询&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Panayiotis Smeros, Vincent Emonet, Ruijie Wang, Ana-Claudia Sima, Tarcisio Mendes de Farias&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅从标题可知该研究提出SPARQL-LLM方法，实现从自然语言问题到SPARQL查询的实时生成。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该方法可迁移至地理空间知识图谱的自然语言查询场景，例如城市更新中的地理语义检索，但摘要缺失，无法确认其是否处理地理空间特有的空间关系与拓扑约束。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文研究从自然语言问题实时生成SPARQL查询，属于LLM与知识图谱/语义网交叉领域，与GIS中的地理空间语义查询和LLM应用有较强关联，但与城市更新、遥感变化检测等方向关联有限。&lt;/p&gt;</content:encoded>
+      <dc:creator>Panayiotis Smeros</dc:creator>
+      <dc:creator>Vincent Emonet</dc:creator>
+      <dc:creator>Ruijie Wang</dc:creator>
+      <dc:creator>Ana-Claudia Sima</dc:creator>
+      <dc:creator>Tarcisio Mendes de Farias</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>SPARQL</category>
+      <category>LLM</category>
+      <category>自然语言查询</category>
+      <category>知识图谱</category>
+      <category>cs.IR</category>
+      <category>cs.AI</category>
+      <category>cs.CL</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>PARTE: Plane-Assisted Robust Transformation Estimation for Point Cloud Registration</title>
+      <link>https://arxiv.org/abs/2609.25375</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2609.25375</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;PARTE：面向点云配准的平面辅助鲁棒变换估计&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Abolfazl Babanazari, Carson Cramer, Tyler Summers, Carlos Nieto, Kaveh Fathian&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅提供标题与发表场所（arXiv）。标题表明该工作提出PARTE方法，利用平面信息辅助点云配准中的鲁棒变换估计。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断该研究将平面结构作为几何先验引入点云配准的变换估计过程，以提升鲁棒性；但摘要缺失，无法确认其算法细节、数据集或精度指标，也无法判断其是否适用于大规模遥感点云场景。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 点云配准是遥感变化检测与多源数据融合中的基础技术，与地理空间智能方向相关，但摘要缺失，无法评估其具体贡献与适用场景。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;PARTE：面向点云配准的平面辅助鲁棒变换估计&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Abolfazl Babanazari, Carson Cramer, Tyler Summers, Carlos Nieto, Kaveh Fathian&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅提供标题与发表场所（arXiv）。标题表明该工作提出PARTE方法，利用平面信息辅助点云配准中的鲁棒变换估计。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断该研究将平面结构作为几何先验引入点云配准的变换估计过程，以提升鲁棒性；但摘要缺失，无法确认其算法细节、数据集或精度指标，也无法判断其是否适用于大规模遥感点云场景。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;55/100 点云配准是遥感变化检测与多源数据融合中的基础技术，与地理空间智能方向相关，但摘要缺失，无法评估其具体贡献与适用场景。&lt;/p&gt;</content:encoded>
+      <dc:creator>Abolfazl Babanazari</dc:creator>
+      <dc:creator>Carson Cramer</dc:creator>
+      <dc:creator>Tyler Summers</dc:creator>
+      <dc:creator>Carlos Nieto</dc:creator>
+      <dc:creator>Kaveh Fathian</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>点云配准</category>
+      <category>几何变换估计</category>
+      <category>三维视觉</category>
+      <category>cs.RO</category>
+      <category>cs.CV</category>
+      <category>https://ariarobotics.github.io/parte/.</category>
+      <category>Updated</category>
+      <category>project</category>
+      <category>website</category>
+      <category>URL</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>MultiwayPAM: Multiway Partitioning Around Medoids for LLM-as-a-Judge Score Analysis</title>
+      <link>https://arxiv.org/abs/2602.23012</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2602.23012</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;MultiwayPAM：面向LLM-as-a-Judge评分分析的多路围绕中心点划分&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Chihiro Watanabe, Jingyu Sun&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------ ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅提供标题与发表场所（arXiv）。标题表明该工作提出MultiwayPAM方法，用于分析LLM作为评判者（LLM-as-a-Judge）产生的评分数据，属于多路聚类/划分方法。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断该研究将多路围绕中心点划分（PAM）扩展到LLM评判评分分析场景，可能用于识别评分模式或评判者偏差；但摘要缺失，无法确认其算法细节与实验结论，与地理空间应用的直接关联尚不明确。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文涉及LLM作为评判者的评分分析，与LLM和多智能体方向相关，可能对利用LLM进行地理空间文本或评价数据分析有方法借鉴意义，但摘要缺失限制了评估深度。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;MultiwayPAM：面向LLM-as-a-Judge评分分析的多路围绕中心点划分&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Chihiro Watanabe, Jingyu Sun&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------ ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅提供标题与发表场所（arXiv）。标题表明该工作提出MultiwayPAM方法，用于分析LLM作为评判者（LLM-as-a-Judge）产生的评分数据，属于多路聚类/划分方法。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断该研究将多路围绕中心点划分（PAM）扩展到LLM评判评分分析场景，可能用于识别评分模式或评判者偏差；但摘要缺失，无法确认其算法细节与实验结论，与地理空间应用的直接关联尚不明确。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;45/100 该论文涉及LLM作为评判者的评分分析，与LLM和多智能体方向相关，可能对利用LLM进行地理空间文本或评价数据分析有方法借鉴意义，但摘要缺失限制了评估深度。&lt;/p&gt;</content:encoded>
+      <dc:creator>Chihiro Watanabe</dc:creator>
+      <dc:creator>Jingyu Sun</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>LLM-as-a-Judge</category>
+      <category>聚类分析</category>
+      <category>多路划分</category>
+      <category>stat.ML</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>DiffUNet^2: Bidirectional Conditional Diffusion for Probabilistic Scientific Spatiotemporal Modeling</title>
+      <link>https://arxiv.org/abs/2606.03926</link>
+      <guid isPermaLink="false">arxiv-email:arxiv:2606.03926</guid>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;DiffUNet^2：面向概率性科学时空建模的双向条件扩散&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Mengdi Chu, Jiaxin Yang, Angus G. Forbes, Nathan Debardeleben, Earl Lawrence, Ayan Biswas, Han-Wei Shen&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅提供标题与发表场所（arXiv）。标题表明该工作提出DiffUNet^2，一种双向条件扩散模型，用于概率性科学时空建模。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断该研究将双向条件扩散机制引入时空建模，以生成概率性预测结果；但摘要缺失，无法确认其网络结构、应用领域（如气象、流体或城市数据）与实验表现，其对地理空间智能的适用性有待进一步核实。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;65/100 该论文聚焦概率性科学时空建模，与时空数据挖掘方向高度相关，可能对城市时空动态建模与遥感时序分析有方法借鉴价值，但摘要缺失限制了对其具体贡献的评估。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;DiffUNet^2：面向概率性科学时空建模的双向条件扩散&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Mengdi Chu, Jiaxin Yang, Angus G. Forbes, Nathan Debardeleben, Earl Lawrence, Ayan Biswas, Han-Wei Shen&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; ------------------------------------------------------------------------------&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;摘要内容缺失，仅提供标题与发表场所（arXiv）。标题表明该工作提出DiffUNet^2，一种双向条件扩散模型，用于概率性科学时空建模。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;从标题可推断该研究将双向条件扩散机制引入时空建模，以生成概率性预测结果；但摘要缺失，无法确认其网络结构、应用领域（如气象、流体或城市数据）与实验表现，其对地理空间智能的适用性有待进一步核实。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;65/100 该论文聚焦概率性科学时空建模，与时空数据挖掘方向高度相关，可能对城市时空动态建模与遥感时序分析有方法借鉴价值，但摘要缺失限制了对其具体贡献的评估。&lt;/p&gt;</content:encoded>
+      <dc:creator>Mengdi Chu</dc:creator>
+      <dc:creator>Jiaxin Yang</dc:creator>
+      <dc:creator>Angus G. Forbes</dc:creator>
+      <dc:creator>Nathan Debardeleben</dc:creator>
+      <dc:creator>Earl Lawrence</dc:creator>
+      <dc:creator>Ayan Biswas</dc:creator>
+      <dc:creator>Han-Wei Shen</dc:creator>
+      <ns3:publicationName>arXiv</ns3:publicationName>
+      <category>时空建模</category>
+      <category>扩散模型</category>
+      <category>概率预测</category>
+      <category>cs.HC</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0800</pubDate>
+    </item>
     <item>
       <title>PBLH Estimation from Satellite Radiances via a Dual-Encoder Transformer</title>
       <link>https://arxiv.org/abs/2609.28286</link>
@@ -162,15 +818,15 @@
       <title>Consequential Behaviour and Representational Fairness in the Validation of Synthetic Research</title>
       <link>https://arxiv.org/abs/2609.27690</link>
       <guid isPermaLink="false">arxiv-email:arxiv:2609.27690</guid>
-      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;合成研究验证中的后果行为与表征公平性&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Florian Kutzner, Celina Kacperski, Laura de Moli\`ere, Edoardo Chidichimo, Min Jun Jung, Felix Patrick Sedgwick Wallis, James Kunling He&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Researchers in industry and academia use synthetic survey respondents powered by large language models as substitutes for human samples. These synthetic populations require validation against real-world data, so researchers often address them using ad hoc comparisons with human surveys. Inspired by the intention-behaviour gap in behavioural science, we argue that these validations test the wrong thing for most applied cases where decision makers commission synthetic research to anticipate consequential behaviour. To address this problem, we propose a validation framework with two requirements. First, every validity claim must state its level of correspondence with human data: does the sample predict what the represented people do, which of four diagnostics (location, dispersion, response process and structure) does the validation address, and does the validation compare against experimental effects? Second, researchers must report validity claims for subgroups, since these groups are often the most affected by consequential decisions and aggregate accuracy hides their misrepresentation. Our validation framework operationalises three justice dimensions (distributional, procedural, and recognition) as measurable quantities and defines within-persona counterfactual experiments as a validation requirement. We then apply the framework to electric vehicle charging tariffs, before closing with a reporting checklist that researchers can use to make convincing validity claims.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;工业界与学术界的研究者使用由大语言模型驱动的合成调查受访者作为人类样本的替代。这些合成人群需要对照真实世界数据进行验证，因此研究者常通过临时性的人类调查比较来处理。受行为科学中意图—行为差距的启发，作者认为对于决策者委托合成研究以预判后果行为的大多数应用场景而言，这些验证检验了错误的对象。为解决这一问题，作者提出一个包含两项要求的验证框架。第一，每一项效度主张必须说明其与人类数据的对应水平：样本是否预测了所代表人群的行为，验证涉及位置、离散度、反应过程与结构这四项诊断中的哪一项，以及验证是否与实验效应进行比较。第二，研究者必须报告子群体的效度主张，因为这些群体往往受后果性决策影响最大，而总体准确率会掩盖其被错误表征的情况。该验证框架将三个正义维度（分配、程序与承认）操作化为可测量量，并将人设内反事实实验定义为一项验证要求。作者随后将该框架应用于电动汽车充电电价，最后给出可供研究者使用以提出有说服力的效度主张的报告清单。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该框架将公平性维度操作化为可测量量，并强调子群体效度报告，可为涉及LLM合成人群的城市与地理应用研究提供验证思路；但其应用示例为电动汽车充电电价，未涉及地理空间数据或城市更新场景。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该文讨论LLM驱动的合成调查受访者在应用研究中的验证问题，提出包含分布、过程与承认三维度的公平性验证框架，与研究中LLM与多智能体方向相关，但未涉及地理空间或城市更新应用。&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;合成研究验证中的后果行为与表征公平性&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Florian Kutzner, Celina Kacperski, Laura de Moli\`ere, Edoardo Chidichimo, Min Jun Jung, Felix Patrick Sedgwick Wallis, James Kunling He&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Researchers in industry and academia use synthetic survey respondents powered by large language models as substitutes for human samples. These synthetic populations require validation against real-world data, so researchers often address them using ad hoc comparisons with human surveys. Inspired by the intention-behaviour gap in behavioural science, we argue that these validations test the wrong thing for most applied cases where decision makers commission synthetic research to anticipate consequential behaviour. To address this problem, we propose a validation framework with two requirements. First, every validity claim must state its level of correspondence with human data: does the sample predict what the represented people do, which of four diagnostics (location, dispersion, response process and structure) does the validation address, and does the validation compare against experimental effects? Second, researchers must report validity claims for subgroups, since these groups are often the most affected by consequential decisions and aggregate accuracy hides their misrepresentation. Our validation framework operationalises three justice dimensions (distributional, procedural, and recognition) as measurable quantities and defines within-persona counterfactual experiments as a validation requirement. We then apply the framework to electric vehicle charging tariffs, before closing with a reporting checklist that researchers can use to make convincing validity claims.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;工业界与学术界的研究者使用由大语言模型驱动的合成调查受访者作为人类样本的替代。这些合成人群需要对照真实世界数据进行验证，因此研究者常通过临时性的人类调查比较来处理。受行为科学中意图—行为差距的启发，作者认为对于决策者委托合成研究以预判后果行为的大多数应用场景而言，这些验证检验了错误的对象。为解决这一问题，作者提出一个包含两项要求的验证框架。第一，每一项效度主张必须说明其与人类数据的对应水平：样本是否预测了所代表人群的行为，验证涉及位置、离散度、反应过程与结构这四项诊断中的哪一项，以及验证是否与实验效应进行比较。第二，研究者必须报告子群体的效度主张，因为这些群体往往受后果性决策影响最大，而总体准确率会掩盖其被错误表征的情况。该验证框架将三个正义维度（分配、程序与承认）操作化为可测量量，并将人设内反事实实验定义为一项验证要求。作者随后将该框架应用于电动汽车充电电价，最后给出可供研究者使用以提出有说服力的效度主张的报告清单。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该框架将公平性维度操作化为可测量量，并强调子群体效度报告，可为涉及LLM合成人群的城市与地理应用研究提供验证思路；但其应用示例为电动汽车充电电价，未涉及地理空间数据或城市更新场景。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该文讨论LLM驱动的合成调查受访者在应用研究中的验证问题，提出包含分布、过程与承认三维度的公平性验证框架，与研究中LLM与多智能体方向相关，但未涉及地理空间或城市更新应用。&lt;/p&gt;</content:encoded>
+      <description>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;合成研究验证中的后果行为与表征公平性&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Florian Kutzner, Celina Kacperski, Laura de Moli\`ere, Edoardo Chidichimo, Min Jun Jung, Felix P. S. Wallis, James K. He&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Researchers in industry and academia use synthetic survey respondents powered by large language models as substitutes for human samples. These synthetic populations require validation against real-world data, so researchers often address them using ad hoc comparisons with human surveys. Inspired by the intention-behaviour gap in behavioural science, we argue that these validations test the wrong thing for most applied cases where decision makers commission synthetic research to anticipate consequential behaviour. To address this problem, we propose a validation framework with two requirements. First, every validity claim must state its level of correspondence with human data: does the sample predict what the represented people do, which of four diagnostics (location, dispersion, response process and structure) does the validation address, and does the validation compare against experimental effects? Second, researchers must report validity claims for subgroups, since these groups are often the most affected by consequential decisions and aggregate accuracy hides their misrepresentation. Our validation framework operationalises three justice dimensions (distributional, procedural, and recognition) as measurable quantities and defines within-persona counterfactual experiments as a validation requirement. We then apply the framework to electric vehicle charging tariffs, before closing with a reporting checklist that researchers can use to make convincing validity claims.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;工业界与学术界的研究者使用由大语言模型驱动的合成调查受访者作为人类样本的替代。这些合成人群需要对照真实世界数据进行验证，因此研究者常通过临时性的人类调查比较来处理。受行为科学中意图—行为差距的启发，作者认为对于决策者委托合成研究以预判后果行为的大多数应用场景而言，这些验证检验了错误的对象。为解决这一问题，作者提出一个包含两项要求的验证框架。第一，每一项效度主张必须说明其与人类数据的对应水平：样本是否预测了所代表人群的行为，验证涉及位置、离散度、反应过程与结构这四项诊断中的哪一项，以及验证是否与实验效应进行比较。第二，研究者必须报告子群体的效度主张，因为这些群体往往受后果性决策影响最大，而总体准确率会掩盖其被错误表征的情况。该验证框架将三个正义维度（分配、程序与承认）操作化为可测量量，并将人设内反事实实验定义为一项验证要求。作者随后将该框架应用于电动汽车充电电价，最后给出可供研究者使用以提出有说服力的效度主张的报告清单。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该框架将公平性维度操作化为可测量量，并强调子群体效度报告，可为涉及LLM合成人群的城市与地理应用研究提供验证思路；但其应用示例为电动汽车充电电价，未涉及地理空间数据或城市更新场景。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该文讨论LLM驱动的合成调查受访者在应用研究中的验证问题，提出包含分布、过程与承认三维度的公平性验证框架，与研究中LLM与多智能体方向相关，但未涉及地理空间或城市更新应用。&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;strong&gt;中文标题：&lt;/strong&gt;合成研究验证中的后果行为与表征公平性&lt;/p&gt;&lt;p&gt;&lt;strong&gt;作者：&lt;/strong&gt;Florian Kutzner, Celina Kacperski, Laura de Moli\`ere, Edoardo Chidichimo, Min Jun Jung, Felix P. S. Wallis, James K. He&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Researchers in industry and academia use synthetic survey respondents powered by large language models as substitutes for human samples. These synthetic populations require validation against real-world data, so researchers often address them using ad hoc comparisons with human surveys. Inspired by the intention-behaviour gap in behavioural science, we argue that these validations test the wrong thing for most applied cases where decision makers commission synthetic research to anticipate consequential behaviour. To address this problem, we propose a validation framework with two requirements. First, every validity claim must state its level of correspondence with human data: does the sample predict what the represented people do, which of four diagnostics (location, dispersion, response process and structure) does the validation address, and does the validation compare against experimental effects? Second, researchers must report validity claims for subgroups, since these groups are often the most affected by consequential decisions and aggregate accuracy hides their misrepresentation. Our validation framework operationalises three justice dimensions (distributional, procedural, and recognition) as measurable quantities and defines within-persona counterfactual experiments as a validation requirement. We then apply the framework to electric vehicle charging tariffs, before closing with a reporting checklist that researchers can use to make convincing validity claims.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;中文摘要：&lt;/strong&gt;工业界与学术界的研究者使用由大语言模型驱动的合成调查受访者作为人类样本的替代。这些合成人群需要对照真实世界数据进行验证，因此研究者常通过临时性的人类调查比较来处理。受行为科学中意图—行为差距的启发，作者认为对于决策者委托合成研究以预判后果行为的大多数应用场景而言，这些验证检验了错误的对象。为解决这一问题，作者提出一个包含两项要求的验证框架。第一，每一项效度主张必须说明其与人类数据的对应水平：样本是否预测了所代表人群的行为，验证涉及位置、离散度、反应过程与结构这四项诊断中的哪一项，以及验证是否与实验效应进行比较。第二，研究者必须报告子群体的效度主张，因为这些群体往往受后果性决策影响最大，而总体准确率会掩盖其被错误表征的情况。该验证框架将三个正义维度（分配、程序与承认）操作化为可测量量，并将人设内反事实实验定义为一项验证要求。作者随后将该框架应用于电动汽车充电电价，最后给出可供研究者使用以提出有说服力的效度主张的报告清单。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;研究启发（模型推断）：&lt;/strong&gt;该框架将公平性维度操作化为可测量量，并强调子群体效度报告，可为涉及LLM合成人群的城市与地理应用研究提供验证思路；但其应用示例为电动汽车充电电价，未涉及地理空间数据或城市更新场景。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;相关度：&lt;/strong&gt;62/100 该文讨论LLM驱动的合成调查受访者在应用研究中的验证问题，提出包含分布、过程与承认三维度的公平性验证框架，与研究中LLM与多智能体方向相关，但未涉及地理空间或城市更新应用。&lt;/p&gt;</content:encoded>
       <dc:creator>Florian Kutzner</dc:creator>
       <dc:creator>Celina Kacperski</dc:creator>
       <dc:creator>Laura de Moli\`ere</dc:creator>
       <dc:creator>Edoardo Chidichimo</dc:creator>
       <dc:creator>Min Jun Jung</dc:creator>
-      <dc:creator>Felix Patrick Sedgwick Wallis</dc:creator>
-      <dc:creator>James Kunling He</dc:creator>
+      <dc:creator>Felix P. S. Wallis</dc:creator>
+      <dc:creator>James K. He</dc:creator>
       <ns3:publicationName>arXiv</ns3:publicationName>
       <ns3:publicationDate>2026-09-23T11:10:16+00:00</ns3:publicationDate>
       <category>LLM</category>

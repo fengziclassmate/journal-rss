@@ -876,33 +876,6 @@
       "insight_zh": "该研究显示多信号后期融合可在不构建图结构的情况下提升多模态检索鲁棒性，其融合思路对多源地理空间数据检索有潜在借鉴意义，但论文未验证地理场景。"
     },
     {
-      "key": "arxiv:2609.20455",
-      "title": "SkillAA: Attribution-Guided Skill-Graph Updating with Targeted Validation and Rollback",
-      "title_zh": "SkillAA：归因引导的技能图更新与定向验证和回滚",
-      "url": "https://arxiv.org/abs/2609.20455",
-      "arxiv_id": "2609.20455",
-      "authors": [
-        "Ziqiao Shang",
-        "Ling-Yue Ge",
-        "Lan-Zhe Guo"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-17T14:20:45+00:00",
-      "score": 55,
-      "reason": "该文提出面向冻结语言模型的技能优化框架，涉及技能图更新、归因引导修复与验证回滚，属于LLM智能体与多智能体方向，与研究者关注点相关，但无地理空间应用。",
-      "tags": [
-        "技能图",
-        "归因引导",
-        "LLM智能体",
-        "技能更新",
-        "验证与回滚"
-      ],
-      "summary_zh": "外部技能无需参数更新即可提供领域流程，但现有方法往往直接从失败轨迹中编辑技能，缺乏从观察到失败到可编辑位置的结构化路由；现有技能图也未充分利用语义边界、对象地址和拓扑依赖进行技能检索、定向更新和范围验证。本文提出SkillAA（技能溯因归因），一种面向冻结语言模型的结构化技能优化框架。它将技能适用性、执行和组合统一表示为图，使同一结构支持技能选择、归因引导修复和更新验证。SkillAA对比成功与失败执行，将候选修复路由到特定图对象，仅更新选定的局部结构，并使用Local和Big Gates在提交前筛选候选变更。使用gpt-5.6-sol时，SkillAA在SearchQA、LiveMath和DocVQA上分别达到81.5%、66.7%和91.2%，并在每个主要设置中取得观测最高均值。这些结果支持归因引导图编辑和图范围验证的效用。",
-      "insight_zh": "该框架将技能选择、修复与验证统一在图结构上，其归因引导与局部更新思路可迁移至城市更新知识库或多智能体协作流程中的技能维护，但摘要未涉及地理空间数据。"
-    },
-    {
       "key": "arxiv:2609.20235",
       "title": "Scene-Q: Confidence-Aware Coarse-to-Fine Querying of 3D Scenes with Selective VLM Reasoning",
       "title_zh": "Scene-Q：面向3D场景的置信度感知由粗到细查询与选择性VLM推理",
@@ -983,6 +956,33 @@
       ],
       "summary_zh": "完全共识率常被视为集体认知的指标，却取决于参与和最终状态如何被操作化。我们用匹配的大语言模型（LLM）智能体群体复现了100个留出的人类Wason小组，为每位参与者讨论前的答案播种一个信念锚定智能体，并用相同代码对智能体和人类评分。在人类评分定义下，估计值从24.0%到57.0%不等；约五分之一参与者从未发帖，而智能体几乎总是发帖。智能体群体在两项揭盲后敏感性分析中仍更具共识性：基于提交的比较（n=98）在聊天和推理模式下分别产生34.0和43.9个百分点的差距，参与匹配比较（n=45）产生34.1和44.4个百分点的差距。这两条互补路径减少了不同的测量不对称性，却在0.5个百分点内收敛。该差距在无提前停止以及移除可记忆答案的重参数化下依然存在；推理模式群体随后几乎一致同意，且多同意错误答案。模拟共识并未追踪集体准确性，信念锚定智能体群体在此设定下是人类群体结果分布的有偏估计。这些分析为评估人类审议结果的模拟群体估计提供了评分明确的依据。",
       "insight_zh": "该研究揭示了LLM智能体群体在模拟人类审议时系统性高估共识，提示在多智能体仿真中需谨慎对待共识指标，但摘要未涉及地理空间或城市更新应用。"
+    },
+    {
+      "key": "arxiv:2609.20455",
+      "title": "GraphSkillAA: Attribution-Guided Skill-Graph Updating with Targeted Validation and Rollback",
+      "title_zh": "SkillAA：归因引导的技能图更新与定向验证和回滚",
+      "url": "https://arxiv.org/abs/2609.20455",
+      "arxiv_id": "2609.20455",
+      "authors": [
+        "Ziqiao Shang",
+        "Ling-Yue Ge",
+        "Lan-Zhe Guo"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-17T14:20:45+00:00",
+      "score": 55,
+      "reason": "该文提出面向冻结语言模型的技能优化框架，涉及技能图更新、归因引导修复与验证回滚，属于LLM智能体与多智能体方向，与研究者关注点相关，但无地理空间应用。",
+      "tags": [
+        "技能图",
+        "归因引导",
+        "LLM智能体",
+        "技能更新",
+        "验证与回滚"
+      ],
+      "summary_zh": "外部技能无需参数更新即可提供领域流程，但现有方法往往直接从失败轨迹中编辑技能，缺乏从观察到失败到可编辑位置的结构化路由；现有技能图也未充分利用语义边界、对象地址和拓扑依赖进行技能检索、定向更新和范围验证。本文提出SkillAA（技能溯因归因），一种面向冻结语言模型的结构化技能优化框架。它将技能适用性、执行和组合统一表示为图，使同一结构支持技能选择、归因引导修复和更新验证。SkillAA对比成功与失败执行，将候选修复路由到特定图对象，仅更新选定的局部结构，并使用Local和Big Gates在提交前筛选候选变更。使用gpt-5.6-sol时，SkillAA在SearchQA、LiveMath和DocVQA上分别达到81.5%、66.7%和91.2%，并在每个主要设置中取得观测最高均值。这些结果支持归因引导图编辑和图范围验证的效用。",
+      "insight_zh": "该框架将技能选择、修复与验证统一在图结构上，其归因引导与局部更新思路可迁移至城市更新知识库或多智能体协作流程中的技能维护，但摘要未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.20217",
@@ -1688,25 +1688,15 @@
       "url": "https://arxiv.org/abs/2609.19903",
       "arxiv_id": "2609.19903",
       "authors": [
-        "Xiaojun Bi (1)",
-        "Jun Jiang (1)",
-        "Yiwen Sun (2",
-        "3)",
-        "Quanyi Ou (1)",
-        "Ke Cheng (4)",
-        "Mingjie Bi (3)",
-        "and Yexin Li (3) ((1) Minzu University of China",
-        "Beijing",
-        "China",
-        "(2) Peking University",
-        "Beijing",
-        "China",
-        "(3) BIGAI",
-        "Beijing",
-        "China",
-        "(4) Beihang University",
-        "Beijing",
-        "China)"
+        "Xiaojun Bi",
+        "Jun Jiang",
+        "Yiwen Sun",
+        "Quanyi Ou",
+        "Yizhi Ma",
+        "Ke Cheng",
+        "Mingjie Bi",
+        "Yexin Li",
+        "Bowen Du"
       ],
       "categories": [
         "cs.LG",
@@ -5705,8 +5695,6 @@
         "Tianyuan Yao",
         "Zhenhao Guo",
         "John Cannon",
-        "Haichun Yang",
-        "Yuankai Huo",
         "Yuling Chi",
         "Lorraine Gudas",
         "Mert R. Sabuncu",

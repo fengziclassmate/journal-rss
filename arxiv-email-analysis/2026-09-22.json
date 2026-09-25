@@ -2,11 +2,11 @@
   "date": "2026-09-22",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 789,
+    "analyzed": 790,
     "high": 5,
     "medium": 34,
     "low": 63,
-    "below_threshold": 687
+    "below_threshold": 688
   },
   "papers": [
     {
@@ -12647,7 +12647,8 @@
         "Aowen Yang",
         "Jia Gao",
         "Wenzhe Zhai",
-        "ShanShan Liu"
+        "Shanshan Liu",
+        "Chengtao Cai"
       ],
       "categories": [
         "cs.LG"
@@ -18424,6 +18425,32 @@
       ],
       "summary_zh": "训练后量化（PTQ）可实现大语言模型的高效部署，其优化与评估通常基于通用重建、困惑度或答案准确率。但在解释至关重要的领域，仅保持最终答案可能不够，因为用户还会查看生成的推理依据以判断预测是否可信。本文在医学多项选择题问答中研究该问题，其中推理依据应提供支持所选答案的证据。作者提出一种面向基于变换的PTQ的解释感知目标：从全精度教师推理依据构建离线忠实度缓存，并在优化过程中用于保留支持答案的证据token及证据条件下的答案行为。该方法在W4A4KV4量化下实例化于OSTQuant，并在MedExQA、MedExpQA和ChallengeClinicalQA上评估四个7B–8B医学与指令微调LLM。结果显示，相同校准的OSTQuant基线虽保持任务准确率，却可能显著削弱支持答案的推理依据；本文目标在于保持全精度模型的答案支持行为而非提升金标签准确率，且方法更好地保持了全精度模型的答案行为与推理依据对答案的支持。作者据此提出，面向解释关键场景的PTQ应评估支持答案证据的保持程度，而不仅是答案准确率。",
       "insight_zh": "该研究提示，在解释敏感领域部署量化LLM时，仅以准确率为评估标准可能掩盖证据链的退化；其“忠实度缓存”思路或可迁移到需要可解释推理的地理空间智能问答场景，但摘要未涉及地理空间数据或城市应用。"
+    },
+    {
+      "key": "arxiv:2609.22244",
+      "title": "Universal Observatory Graphs for Distributed Sky Coverage and Artificial Intelligence Based Interplanetary Routing",
+      "title_zh": "面向分布式天空覆盖与基于人工智能的行星际路由的通用天文台图",
+      "url": "https://arxiv.org/abs/2609.22244",
+      "arxiv_id": "2609.22244",
+      "authors": [
+        "Mohammed Abdel Razek"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-05T09:23:40+00:00",
+      "score": 12,
+      "reason": "该文将分布式天文台建模为加权图并用Q学习求解行星际路由，属于图建模与强化学习的交叉应用，与时空数据挖掘、多智能体、遥感变化检测、城市更新等核心方向关联较弱，仅在图结构建模与多目标优化方法层面有间接参考价值。",
+      "tags": [
+        "图神经网络/图建模",
+        "多目标优化",
+        "强化学习",
+        "分布式观测网络",
+        "行星际路由"
+      ],
+      "summary_zh": "本研究提出通用天文台图（UOG），一个面向太阳系分布式天文观测的AI驱动框架。该架构将位于太阳—行星L2拉格朗日点的自主天文台建模为加权图中的节点，通信链路表示为图边，边由多目标物理与运行指标刻画，包括行星际距离、通信时延、发射功率和链路可靠性。所得图给出了协同行星际天文台网络的统一数学表示。该方案考察由地球、火星、木星、土星、天王星和海王星组成的六天文台太阳系配置。瞬时天空覆盖分别用20万方向斐波那契球、200万方向固定种子蒙特卡洛计算和确定性球面积分独立评估。三种方法在采用的指向模型下均给出完整的网络并集覆盖、约0.43%的六天文台完整交集以及约24.96%的平均成对Jaccard相似度。通信路由随后被建模为有限时域马尔可夫决策过程，并用表格型Q学习求解。奖励在节点参与度和依赖距离的可靠性代理与距离、光行时延迟及距离平方发射功率代理之间进行平衡。学到的地球—土星—天王星—海王星路径也是四跳约束下全部41条可行简单路径中折扣回报最高的路径。该框架为序贯覆盖评估和多目标路由提供了可复现的基线；依赖时间的星历、任务特定可见性、经校准的链路预算等（摘要在此处截断）。",
+      "insight_zh": "该文的核心可迁移点在于将空间分布节点与链路统一抽象为加权图，并把路由决策形式化为有限时域MDP用Q学习求解，这一“图建模+序贯决策”范式可类比用于城市传感器网络或分布式观测资源的任务调度；但需注意其评估仅基于摘要所述的指向模型与静态星历假设，未涉及真实时空动态数据，与城市更新、遥感变化检测等主题无直接关联。"
     },
     {
       "key": "arxiv:2406.03894",
@@ -26068,26 +26095,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.22244",
-      "title": "Universal Observatory Graphs for Distributed Sky Coverage and Artificial Intelligence Based Interplanetary Routing",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22244",
-      "arxiv_id": "2609.22244",
-      "authors": [
-        "Mohammed Abdel Razek"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-05T09:23:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.23169",
       "title": "UltraTex: Unleashing 2K Multi-View Diffusion for 3D Texturing",
       "title_zh": "",
@@ -28023,7 +28030,7 @@
         "Rujun Han",
         "Zifeng Wang",
         "Yanfei Chen",
-        "Yufan Zhang",
+        "Yufan Zhuang",
         "Yoonho Lee",
         "Chengsong Huang",
         "Han Yu",
@@ -32018,7 +32025,7 @@
     },
     {
       "key": "arxiv:2609.24208",
-      "title": "CoaG: Cylinders on a Grid: Coarse 3D Layout Control for Video Generation",
+      "title": "CoaG: Cylinders on a Grid for Coarse 3D Layout Control in Video Generation",
       "title_zh": "",
       "url": "https://arxiv.org/abs/2609.24208",
       "arxiv_id": "2609.24208",
