@@ -2,11 +2,11 @@
   "date": "2026-09-22",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 780,
+    "analyzed": 789,
     "high": 5,
     "medium": 34,
     "low": 63,
-    "below_threshold": 678
+    "below_threshold": 687
   },
   "papers": [
     {
@@ -12400,6 +12400,32 @@
       "insight_zh": "摘要为空，无法评估其分析框架；从标题推测其试图解释深度学习在视觉SLAM中的作用机制，其可解释性视角或对地理空间智能中深度学习模型的可信度研究有间接借鉴意义。"
     },
     {
+      "key": "arxiv:2609.24290",
+      "title": "When and How Should an Agent Clarify? CIGAsk: Teaching LLMs to Clarify via Counterfactual Information Gain",
+      "title_zh": "智能体何时以及如何澄清？CIGAsk：通过反事实信息增益教LLM澄清",
+      "url": "https://arxiv.org/abs/2609.24290",
+      "arxiv_id": "2609.24290",
+      "authors": [
+        "Yunxiang Li",
+        "Xixin Wu",
+        "Helen Meng"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-21T08:47:39+00:00",
+      "score": 18,
+      "reason": "该论文研究LLM智能体何时以及如何澄清模糊查询，属于多智能体与LLM交互研究，与GIS博士方向中的LLM和多智能体有直接关联，但未涉及地理空间任务。",
+      "tags": [
+        "LLM智能体",
+        "澄清提问",
+        "强化学习",
+        "多轮对话"
+      ],
+      "summary_zh": "面对欠指定查询的指令微调LLM往往直接选择单一解释，而非请求澄清，从而产生自信但错误的答案。在作者的实验中，仅靠提示是不够的：模型要么对每个查询都请求澄清，要么提出无法恢复缺失信息的模糊问题。解决这一失败需要学习两项耦合技能：何时提问而非回答，以及如何提出能恢复消歧信息的问题。现有方法要么只解决其中一项技能，要么需要单独训练的评价器。作者提出CIGAsk，一种RL方法，在多轮GRPO循环中通过两个互补奖励信号教授这两项技能。反事实信息增益（CIG）比较冻结参考模型在有无用户响应情况下对金标准答案的对数似然，提供逐轮信用以指导如何提问。非对称模糊性奖励根据金标准模糊标签在终止token处分配带符号奖励，指导何时提问。在涵盖表格、段落和开放域QA的三个澄清基准上，CIGAsk-7B尽管使用更小的骨干模型，仍优于最强的外部基线。它还能跨数据集迁移而无需逐数据集调优，同时在分布外基准上保持单轮QA性能。",
+      "insight_zh": "该工作提出的澄清提问学习框架，可能对地理空间智能中LLM智能体处理模糊空间查询（如“附近”的歧义）有启发，但其基准并非地理空间场景，需进一步适配验证。"
+    },
+    {
       "key": "arxiv:2609.24862",
       "title": "When Tomorrow Becomes Today: Self-Evolving Policies for Agentic Time-Series Forecasting",
       "title_zh": "当明日成为今日：面向智能体时间序列预测的自演化策略",
@@ -17042,6 +17068,33 @@
       "insight_zh": "若该研究揭示微调过程中遗忘的不均衡性，可能对遥感图像分类模型在跨区域或跨时相迁移时的稳定性评估有参考价值，但需具体方法验证。"
     },
     {
+      "key": "arxiv:2609.24313",
+      "title": "NeuIDO: Neural Intrinsic Dynamics Operator for Physics-Informed 4D World Models",
+      "title_zh": "NeuIDO：面向物理信息4D世界模型的神经内禀动力学算子",
+      "url": "https://arxiv.org/abs/2609.24313",
+      "arxiv_id": "2609.24313",
+      "authors": [
+        "Jiajing Lin",
+        "Xin Zhang",
+        "Jianhua Sun"
+      ],
+      "categories": [
+        "cs.CV",
+        "https://github.com/JiajingLin/NeuIDO"
+      ],
+      "published": "2026-09-21T09:12:47+00:00",
+      "score": 15,
+      "reason": "该论文提出物理信息4D世界模型与神经动力学算子，涉及时空动态建模，与时空数据挖掘和地理空间智能有概念上的间接联系，但未涉及城市或遥感应用。",
+      "tags": [
+        "世界模型",
+        "物理信息4D生成",
+        "神经算子",
+        "动力学建模"
+      ],
+      "summary_zh": "世界模型旨在捕捉环境动态并预测未来轨迹，在具身智能中展现出日益增长的潜力。物理信息4D生成整合物理模拟以预测3D物体交互，为世界模型提供了一条有前景的路径。然而，该范式依赖人工施加的动力学假设，而非内化世界动态，因此距离真正的世界模型仍有差距。为弥合这一差距，作者提出NeuIDO，一种新颖的世界动力学建模框架，从视觉观测中学习统一的内禀动力学表示，推动物理信息4D生成向世界模型迈进。具体而言，作者将世界建模表述为神经算子学习问题，并引入两阶段训练策略，学习从视觉观测分布到内禀动力学分布的泛化映射。基于这一观测-动力学映射，NeuIDO能够直接从视频进行零样本动力学推理，并可通过少样本适配进一步对齐复杂的真实世界动态。大量实验表明，NeuIDO有效将多样视觉观测背后的内禀动力学统一为共享表示，并能快速推理新场景中的动力学。",
+      "insight_zh": "该工作将世界建模视为神经算子学习问题，其从观测中学习内禀动力学表示的思想，可能对城市时空动态建模（如交通流、土地利用变化）有启发，但需验证其在地理空间尺度上的适用性。"
+    },
+    {
       "key": "arxiv:2609.23679",
       "title": "Mind the Gaps: A Curated Benchmark for Form Field Detection",
       "title_zh": "关注空白：一个精选的表单字段检测基准",
@@ -19101,6 +19154,34 @@
       "insight_zh": "该研究提示，多模态模型在需要专家判断的细粒度评估上仍存在差距，回归感知微调或可借鉴于地理空间多模态评估任务，但摘要未涉及地理场景。"
     },
     {
+      "key": "arxiv:2609.24244",
+      "title": "Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning",
+      "title_zh": "看向关键之处：一种免费、无标签的视觉证据信号用于细粒度视觉语言推理",
+      "url": "https://arxiv.org/abs/2609.24244",
+      "arxiv_id": "2609.24244",
+      "authors": [
+        "Santi Ram Tiwari",
+        "Nihal Naik",
+        "Devbrat Pandey",
+        "Nishant Sinha"
+      ],
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "published": "2026-09-21T08:09:18+00:00",
+      "score": 12,
+      "reason": "该论文研究多模态大模型的细粒度视觉推理与证据定位，属于视觉语言模型研究，与遥感变化检测有概念上的间接联系，但不涉及地理空间数据。",
+      "tags": [
+        "多模态大模型",
+        "视觉证据",
+        "细粒度推理",
+        "免训练"
+      ],
+      "summary_zh": "多模态大语言模型（MLLM）在细粒度视觉问题上失败，与其说是因为无法推理，不如说是因为它们从未看到证据：高分辨率图像在编码前被下采样，模型只能依据语言先验作答。标准补救措施代价高昂：标注答案（SFT）、手工设计的验证器（RLVR）或大型外部教师（在策略蒸馏）。作者追问视觉证据本身能否免费提供信号。作者形式化了对比证据差距，即模型在问题相关区域与无关区域条件下对其自身输出所赋予的逐token对数似然比，并在V*Bench上跨Qwen2.5-VL-7B、Qwen3-VL-8B和Qwen3-VL-30B-A3B进行研究。其主要正面结果是免训练的：使用单视图、无标签准则，选择模型答案分布最尖锐的候选裁剪区域，即可在无边界框、无训练、无标签的情况下发现承载答案的区域。其定位目标的能力是随机水平的4.4至5.1倍，并在推理时将细粒度准确率从70%提升至85%。作者进一步表明，该差距与模型自身置信度互补。两者结合比单独任一者更能预测正确性，AUC最高达0.99，并能标记自信但错误的答案，在高置信子集内AUC为0.97至1.00。所有效应集中在感知瓶颈问题上，在全局上下文对照上消失。最后，作者报告了一个诚实的负面结果：将同一信号转化为训练方法——门控自蒸馏（SEG-Distill）——在试点规模下跨三种门控设计均未超过基座模型，而更激进的门控会降低准确率。信号是真实的，但转化……",
+      "insight_zh": "该工作提出的无标签视觉证据信号，可能对遥感图像细粒度分析（如变化检测中的证据定位）有方法借鉴意义，但其研究对象为自然图像，需验证在遥感影像上的迁移性。"
+    },
+    {
       "key": "arxiv:2609.18148",
       "title": "LIGE-GR: A Smooth Leap from Ranking to Generative Recommendation in the LLM Era",
       "title_zh": "LIGE-GR：LLM时代从排序到生成式推荐的平滑跨越",
@@ -20171,6 +20252,35 @@
       ],
       "summary_zh": "大语言模型日益依赖长链式思维（CoT）轨迹进行复杂推理，但自回归生成带来显著的内存与推理开销。潜在推理模型（LRM）通过将中间推理压缩为少量连续潜在向量，提供了更高效的替代方案。然而其对抗鲁棒性仍鲜有研究。作者在文本与多模态设定下系统评估潜在推理的鲁棒性，覆盖八个模型与六个基准。结果显示，在所评估设定中，LRM通常比显式CoT基线更不鲁棒，在白盒攻击下退化尤为严重。进一步分析揭示不同模态的失败模式：文本潜在状态动态脆弱、对特定输入模式高度敏感；而多模态模型的潜在状态可能对输入扰动基本不变，且对最终预测影响有限。这些发现暴露了当前潜在推理方法的鲁棒性局限，并强调在设计隐式推理系统时需同时考虑效率与鲁棒性。作者已开源代码以便复现。",
       "insight_zh": "该研究指出潜在推理在效率提升的同时可能牺牲对抗鲁棒性，且不同模态的失效机制不同；这一权衡对部署于地理空间决策的推理模型具有警示意义，但原文未涉及地理空间任务。"
+    },
+    {
+      "key": "arxiv:2609.24330",
+      "title": "AlignMorph: Tuning-Free Diffusion Image Morphing via Explicit Semantic Transport",
+      "title_zh": "AlignMorph：基于显式语义传输的免调优扩散图像变形",
+      "url": "https://arxiv.org/abs/2609.24330",
+      "arxiv_id": "2609.24330",
+      "authors": [
+        "Wuyi Liu",
+        "Xu Han",
+        "Yuren Chen",
+        "Yige Mao",
+        "Zishuo Peng",
+        "Xianzhi Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-21T09:31:28+00:00",
+      "score": 12,
+      "reason": "该论文研究基于扩散模型的图像变形与语义对齐，属于计算机视觉生成方法，与城市更新、时空数据挖掘、遥感变化检测或多智能体LLM等研究方向关联较弱，仅在生成式对齐技术层面有间接参考价值。",
+      "tags": [
+        "扩散模型",
+        "图像变形",
+        "最优传输",
+        "生成模型"
+      ],
+      "summary_zh": "图像变形旨在生成两幅输入图像之间平滑且语义一致的过渡。现有基于扩散的变形方法要么需要昂贵的逐对优化，要么依赖隐式空间对齐，在布局差异较大时容易失败。为解决这些局限，作者提出AlignMorph，一个由“先传输后去噪”原则引导的新型免调优扩散框架。该方法显式地将几何对齐与生成去噪解耦，以避免结构纠缠。框架包含两个核心组件：（1）全局语义传输，通过熵最优传输和可靠性感知的潜变量变形实现与扩散兼容的语义对齐；（2）坐标对齐生成，使用对称双阶段注意力交接在去噪过程中保持空间坐标一致。无需任何调优，AlignMorph即可有效消除重影，在变形基准上取得更优的结构连贯性和时间平滑性。代码已开源。",
+      "insight_zh": "该工作提出的显式语义传输与坐标对齐生成思路，可能为遥感影像时序变化中的几何对齐与生成式插值提供方法借鉴，但其本身并非面向地理空间数据，需谨慎迁移。"
     },
     {
       "key": "arxiv:2503.03370",
@@ -21837,6 +21947,65 @@
       "insight_zh": "摘要缺失，无法评估其方法细节。高低频分解与Token压缩思路或对遥感影像高效处理有潜在参考价值，但缺乏摘要依据，不宜展开推断。"
     },
     {
+      "key": "arxiv:2609.24308",
+      "title": "HappyWorld-Bench",
+      "title_zh": "HappyWorld-Bench：世界模型综合基准",
+      "url": "https://arxiv.org/abs/2609.24308",
+      "arxiv_id": "2609.24308",
+      "authors": [
+        "Zhiqi Bai",
+        "Junai Cai",
+        "Yixin Chen",
+        "Jingrun Du",
+        "Tao Feng",
+        "Wei Gong",
+        "Siyuan Huang",
+        "Xiao Lin",
+        "Jiaheng Liu",
+        "Jun Luo",
+        "Yongzhe Lyu",
+        "Liya Ma",
+        "Zenan Meng",
+        "Lin Qu",
+        "Wenbo Su",
+        "Jiaming Wang",
+        "Qinghe Wang",
+        "Shaofei Wang",
+        "Yanghai Wang",
+        "Zequn Wang",
+        "Ziming Wang",
+        "Hu Wei",
+        "Jiangtao Wu",
+        "Ruiqi Wu",
+        "Jiaxin Xie",
+        "Yuchi Xu",
+        "Ze Xu",
+        "Chengting Yu",
+        "Liangyu Yuan",
+        "Gang Zeng",
+        "Yawen Zeng",
+        "Xingyao Zhang",
+        "Zizheng Zhang",
+        "Bo Zheng",
+        "Jiancheng Zhu",
+        "Song-Chun Zhu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-21T09:07:30+00:00",
+      "score": 10,
+      "reason": "该论文提出世界模型综合基准，涵盖空间世界模型评测，与地理空间智能有微弱关联，但主要面向生成式世界模型的交互可靠性，不涉及城市更新或遥感变化检测。",
+      "tags": [
+        "世界模型",
+        "基准评测",
+        "空间一致性",
+        "具身智能"
+      ],
+      "summary_zh": "评估世界模型需要同时考察其生成世界的质量，以及它们在探索、交互和修改下的一致性与响应性。作者提出HappyWorld-Bench，一个综合基准，用于评估生成世界在智能体与之交互时是否保持可靠。其设计基于六种世界能力（W1-W6）的层次化能力框架，从生成式构建到统一世界建模，并在三个独立评测轨道上实例化：视频世界模型、空间世界模型和具身世界模型。HappyWorld-Bench包含1,138个视频提示、300个空间场景和254个具身测试用例。在所有三个轨道上，作者构建并运行HappyWorld-Arena以组织人类A/B比较并得出模型级Elo评分，同时补充新设计的自动化指标以捕捉行为正确性。作者在该统一框架下评估了14个视频世界模型、9个空间系统和8个具身候选模型。结果揭示了三个轨道上仍存在的可靠性差距：视频模型在长时间推演和重访时一致性下降，空间模型最多达到70.14%的放置准确率和73.33%的编辑执行率，具身模型难以在多步动作中保持状态，也难以精确响应改变的动作条件和物理规则。这些发现强调，评估世界模型不仅应看视觉质量，还应看状态一致性及其对动作和干预响应的正确性。",
+      "insight_zh": "该基准对空间世界模型的评测维度（放置准确率、编辑执行率、状态一致性）可能为地理空间智能中的场景生成与交互评估提供参考框架，但其空间场景并非真实地理空间数据。"
+    },
+    {
       "key": "arxiv:2605.10893",
       "title": "Grounded or Guessing? LVLM Confidence Estimation via Blind-Image Contrastive Ranking",
       "title_zh": "有根据还是猜测？通过盲图像对比排序进行LVLM置信度估计",
@@ -23035,6 +23204,35 @@
       "insight_zh": "标题暗示其通过高风险决策仿真评估LLM的伦理推理与行动能力，可能揭示模型在道德判断上的不足，但具体实验与结论无法从摘要获知。"
     },
     {
+      "key": "arxiv:2609.24322",
+      "title": "The Undetected Damage of Quantization on Retrieval and How to Fix It",
+      "title_zh": "量化对检索的隐性损害及其修复方法",
+      "url": "https://arxiv.org/abs/2609.24322",
+      "arxiv_id": "2609.24322",
+      "authors": [
+        "Luca Zhou",
+        "Alessandro Zirilli",
+        "Daniele Solombrino",
+        "Roberto Dess\\`i",
+        "Emanuele Rodol\\`a"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-21T09:26:35+00:00",
+      "score": 8,
+      "reason": "该论文关注量化对检索任务的影响及修复策略，属于模型压缩与检索系统优化，与GIS博士研究方向中的LLM应用有微弱关联，但不涉及地理空间数据或城市分析。",
+      "tags": [
+        "模型量化",
+        "检索",
+        "分类",
+        "模型部署"
+      ],
+      "summary_zh": "作者表明，一个保持分类精度的量化模型仍会改变其14%至46%的top-1检索结果，而聚合排序指标只能揭示这种损害的一部分。作者将这一失败归因于最高两个分数之间的差距，并利用该差距判断量化答案何时可信、何处需要额外精度。作者证明，只有当该差距超过最大舍入误差的两倍时，top-1结果才保证在量化后存活。在分类中，分数是logits，损失函数将正确类别推离其他类别，从而鼓励这种差距；在检索中，分数是查询-文档分数，没有任何机制将top-1项与第二项分开。该差距无需标签即可测量：部署前可预测哪些模型会在量化下失效，部署时可逐输入判断量化答案是否仍与全精度答案一致。大多数分类输入的差距足以信任量化答案，但很少有检索查询如此。该差距在两类任务中催生了不同的修复方案：在检索中，将额外位宽分配给量化后使差距移动最大的层，可以以一半成本恢复额外一位收益的四分之三；在分类中，将少数低差距输入路由到全精度，可以以极小成本恢复大部分损失精度。",
+      "insight_zh": "该研究提示，在将LLM或多模态模型部署到地理空间检索（如遥感图像检索、POI检索）时，量化可能显著改变排序结果，需针对检索任务设计专门的位宽分配策略。"
+    },
+    {
       "key": "arxiv:2609.22156",
       "title": "The Limits of Speculation: Bounding Speculative Decoding in Mixture-of-Experts",
       "title_zh": "推测的极限：界定混合专家模型中的推测解码",
@@ -23893,6 +24091,40 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法、数据与结论。",
       "insight_zh": "从标题推测其分析隐蔽LLM智能体在田野实验中的说服策略及其影响范围，但实验设计、发现与结论均无法从摘要获知，不宜作进一步推断。"
+    },
+    {
+      "key": "arxiv:2609.24241",
+      "title": "Hessian Rank Constraint for Learning Structure of Nonlinear Latent Variable Models",
+      "title_zh": "非线性潜变量模型结构学习的Hessian秩约束",
+      "url": "https://arxiv.org/abs/2609.24241",
+      "arxiv_id": "2609.24241",
+      "authors": [
+        "Zijian Li",
+        "Ruichu Cai",
+        "Feng Xie",
+        "Xinshuai Dong",
+        "Haoyue Dai",
+        "Yuewen Sun",
+        "Yujia Zheng",
+        "Guangyi Chen",
+        "Yingyao Hu",
+        "Kun Zhang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-21T08:05:06+00:00",
+      "score": 8,
+      "reason": "该论文研究非线性潜在变量模型的因果结构学习，属于因果发现与潜变量建模，与时空数据挖掘有方法论上的间接联系，但不涉及地理空间应用。",
+      "tags": [
+        "潜在变量模型",
+        "因果发现",
+        "Hessian秩约束",
+        "非线性"
+      ],
+      "summary_zh": "从观测数据中揭示潜变量及其因果关系是一个基础而富有挑战性的问题。现有方法往往依赖限制性假设，如线性关系或可逆混合函数。为在一般非线性混合过程下更好地解决该问题，作者提出一种称为交叉Hessian秩约束（HRC）的条件，作为非线性潜变量因果发现的原始秩工具。特别地，作者表明在非线性情形下，观测数据对数密度的交叉Hessian会产生一种秩性质，揭示潜变量信息，并在线性高斯情形下退化为Tetrad约束。更具体地说，当两组观测变量被一组低维潜变量d-分离时，在条件对数密度导数的温和仿射导数假设下，该交叉Hessian的秩等于潜变量维度。当噪声水平较低或相关非线性适中时，该假设可自然满足。作为下游应用，作者在纯单因子测量设定中实例化HRC，用于定位潜变量并恢复其因果结构至马尔可夫等价类。合成和真实数据集上的实验结果支持了理论主张。",
+      "insight_zh": "该工作提出的基于交叉Hessian秩的因果发现方法，可能为时空数据中的潜因子建模（如城市更新中的潜在驱动因素识别）提供理论工具，但需验证其在高维地理空间数据上的可行性。"
     },
     {
       "key": "arxiv:2609.21677",
@@ -25380,27 +25612,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24290",
-      "title": "When and How Should an Agent Clarify? CIGAsk: Teaching LLMs to Clarify via Counterfactual Information Gain",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24290",
-      "arxiv_id": "2609.24290",
-      "authors": [
-        "Yunxiang Li",
-        "Xixin Wu",
-        "Helen Meng"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-21T08:47:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22910",
       "title": "When Should a VLM Look? Paying Only for Visual Calls That Were Needed and Used",
       "title_zh": "",
@@ -26264,30 +26475,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24322",
-      "title": "The Undetected Damage of Quantization on Retrieval and How to Fix It",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24322",
-      "arxiv_id": "2609.24322",
-      "authors": [
-        "Luca Zhou",
-        "Alessandro Zirilli",
-        "Daniele Solombrino",
-        "Roberto Dess\\`i",
-        "Emanuele Rodol\\`a"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-21T09:26:35+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.23092",
       "title": "The Role of Coordinates in Pareto Regret for Adversarial Multi-Objective Bandits",
       "title_zh": "",
@@ -26515,7 +26702,7 @@
     {
       "key": "arxiv:2609.24243",
       "title": "Taming CoT Obfuscation in VLMs: From Mechanistic Evidence to Activation Enforcement",
-      "title_zh": "",
+      "title_zh": "驯服VLM中的思维链混淆：从机制证据到激活强制",
       "url": "https://arxiv.org/abs/2609.24243",
       "arxiv_id": "2609.24243",
       "authors": [
@@ -26532,10 +26719,15 @@
       ],
       "published": "2026-09-21T08:08:56+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究视觉语言模型思维链的可监控性与机制干预，属于多模态LLM可解释性研究，与GIS博士方向中的LLM和多智能体有边缘关联，但不涉及地理空间应用。",
+      "tags": [
+        "视觉语言模型",
+        "思维链",
+        "可监控性",
+        "强化学习"
+      ],
+      "summary_zh": "强化学习（RL）提升了视觉语言模型（VLM）的推理能力，但可能诱发思维链（CoT）混淆：一种操作性的、非故意的结果，即任务奖励或准确率上升，而推理轨迹变得不那么有依据、不那么可监控。先前工作主要在行为层面记录这种衰减，其表示层面的关联和可操作的控制手段仍不清晰。作者发现，在RL过程中，模板相关激活和依据相关激活变得不那么可分离；匹配的干预支持了所选特征对可监控性退化的贡献。基于这一证据，作者提出TAME（Targeted Anti-obfuscation with Mechanistic Enforcement），利用稀疏自编码器（SAE）将行为反馈与RL过程中对模板相关激活的定向抑制相结合。其非对称约束仅在模板激活超过RL前基线时对其进行惩罚，从而锚定局部特征，同时行为反馈促进有依据的改进。在VIRL-39k、SPA-VL和两个模型家族上，TAME分别将CoT可监控性较GRPO提升最多30.9和16.7个百分点。盲法人工评估在两个数据集上均发现更高的人类可监控性，两个留出监控器家族复现了可监控性增益。任务准确率变化较小且方向不一，通用能力基准显示任务特定的权衡。这些结果为更可审计的RL训练多模态系统提供了一条从行为监控到表示层面监督的路径。",
+      "insight_zh": "该工作对多模态模型推理可监控性的机制分析，可能对地理空间智能中LLM智能体决策的可解释性与审计有间接参考价值，但需注意其研究对象并非地理空间任务。"
     },
     {
       "key": "arxiv:2609.24367",
@@ -28788,28 +28980,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24313",
-      "title": "NeuIDO: Neural Intrinsic Dynamics Operator for Physics-Informed 4D World Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24313",
-      "arxiv_id": "2609.24313",
-      "authors": [
-        "Jiajing Lin",
-        "Xin Zhang",
-        "Jianhua Sun"
-      ],
-      "categories": [
-        "cs.CV",
-        "https://github.com/JiajingLin/NeuIDO"
-      ],
-      "published": "2026-09-21T09:12:47+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.22774",
       "title": "NLPCC 2026 Task 10: Citation-Level Faithfulness Verification with DeBERTa Ensembles and Class-Wise Calibration",
       "title_zh": "",
@@ -29447,29 +29617,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24244",
-      "title": "Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24244",
-      "arxiv_id": "2609.24244",
-      "authors": [
-        "Santi Ram Tiwari",
-        "Nihal Naik",
-        "Devbrat Pandey",
-        "Nishant Sinha"
-      ],
-      "categories": [
-        "cs.CV",
-        "eess.IV"
-      ],
-      "published": "2026-09-21T08:09:18+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24979",
       "title": "LoRA-generating hypernetworks for efficient on-device LLM generative personalization",
       "title_zh": "",
@@ -29893,7 +30040,7 @@
     {
       "key": "arxiv:2609.24298",
       "title": "KV-COBRA: KV Cache Compression via Co-Optimized Bit-Rank Allocation",
-      "title_zh": "",
+      "title_zh": "KV-COBRA：通过协同优化位宽-秩分配的KV缓存压缩",
       "url": "https://arxiv.org/abs/2609.24298",
       "arxiv_id": "2609.24298",
       "authors": [
@@ -29907,10 +30054,15 @@
       ],
       "published": "2026-09-21T08:58:24+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究LLM推理中KV缓存压缩的位宽与秩分配优化，属于模型效率优化，与GIS博士方向中的LLM应用有边缘关联，但不涉及地理空间数据或城市分析。",
+      "tags": [
+        "KV缓存压缩",
+        "量化",
+        "低秩投影",
+        "LLM推理"
+      ],
+      "summary_zh": "是什么限制了极低位率下的KV缓存压缩？作者认为，限制因素不是压缩方案的选择，而是其预算如何在注意力头之间分配。现有方法统一应用秩和位宽，忽略了每个头有不同的秩截断与量化最优组合。作者表明，仅使用标准低秩投影和标量量化，对每个头协同优化秩和位宽，就能优于统一分配，且在低位率下增益最大。其方法KV-COBRA（Co-Optimized Bit-Rank Allocation）将此形式化为资源分配问题：在每个头内平衡秩截断损失与量化损失，然后在头之间重新分配预算以最小化总失真。融合Hadamard旋转均衡了逐通道方差，按注意力-KL重要性重排SVD基使求解器具备查询感知能力。同一分配器可扩展到联合K+V压缩。在困惑度、零样本和长上下文基准上，从每维0.5到4比特（bpd），KV-COBRA在低bpd下在所评估方法中显示出最小的精度退化，且无逐token开销。",
+      "insight_zh": "该研究对KV缓存压缩的资源分配思路，可能对在地理空间智能中部署长上下文LLM（如处理长时序遥感描述或城市文本）时的推理效率优化有间接参考价值。"
     },
     {
       "key": "arxiv:2609.23183",
@@ -30250,35 +30402,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.24241",
-      "title": "Hessian Rank Constraint for Learning Structure of Nonlinear Latent Variable Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24241",
-      "arxiv_id": "2609.24241",
-      "authors": [
-        "Zijian Li",
-        "Ruichu Cai",
-        "Feng Xie",
-        "Xinshuai Dong",
-        "Haoyue Dai",
-        "Yuewen Sun",
-        "Yujia Zheng",
-        "Guangyi Chen",
-        "Yingyao Hu",
-        "Kun Zhang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-21T08:05:06+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24974",
       "title": "Harness-Zero: Harness Distillation via Agent-as-Harness",
       "title_zh": "",
@@ -30297,60 +30420,6 @@
         "cs.NE"
       ],
       "published": "2026-09-21T17:55:20+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24308",
-      "title": "HappyWorld-Bench",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24308",
-      "arxiv_id": "2609.24308",
-      "authors": [
-        "Zhiqi Bai",
-        "Junai Cai",
-        "Yixin Chen",
-        "Jingrun Du",
-        "Tao Feng",
-        "Wei Gong",
-        "Siyuan Huang",
-        "Xiao Lin",
-        "Jiaheng Liu",
-        "Jun Luo",
-        "Yongzhe Lyu",
-        "Liya Ma",
-        "Zenan Meng",
-        "Lin Qu",
-        "Wenbo Su",
-        "Jiaming Wang",
-        "Qinghe Wang",
-        "Shaofei Wang",
-        "Yanghai Wang",
-        "Zequn Wang",
-        "Ziming Wang",
-        "Hu Wei",
-        "Jiangtao Wu",
-        "Ruiqi Wu",
-        "Jiaxin Xie",
-        "Yuchi Xu",
-        "Ze Xu",
-        "Chengting Yu",
-        "Liangyu Yuan",
-        "Gang Zeng",
-        "Yawen Zeng",
-        "Xingyao Zhang",
-        "Zizheng Zhang",
-        "Bo Zheng",
-        "Jiancheng Zhu",
-        "Song-Chun Zhu"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-21T09:07:30+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -33265,30 +33334,6 @@
         "https://github.com/Topdu/OpenOCR"
       ],
       "published": "2026-09-21T03:34:56+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.24330",
-      "title": "AlignMorph: Tuning-Free Diffusion Image Morphing via Explicit Semantic Transport",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.24330",
-      "arxiv_id": "2609.24330",
-      "authors": [
-        "Wuyi Liu",
-        "Xu Han",
-        "Yuren Chen",
-        "Yige Mao",
-        "Zishuo Peng",
-        "Xianzhi Li"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-21T09:31:28+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

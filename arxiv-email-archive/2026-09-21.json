@@ -20,6 +20,7 @@
     "arxiv:2609.21379",
     "arxiv:2609.21859",
     "arxiv:2609.20889",
+    "arxiv:2609.18317",
     "arxiv:2609.21801",
     "arxiv:2609.21629",
     "arxiv:2609.21386",
@@ -30,15 +31,14 @@
     "arxiv:2504.06647",
     "arxiv:2609.21363",
     "arxiv:2609.21241",
-    "arxiv:2609.21164",
-    "arxiv:2609.03395"
+    "arxiv:2609.21164"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:453",
     "deepseek": "partial:0/69;failed-batches:7"
   },
-  "updated_at": "2026-09-24T17:36:04.416304+00:00",
+  "updated_at": "2026-09-25T00:47:55.257531+00:00",
   "analysis_stats": {
     "total": 453,
     "analyzed": 384,
@@ -567,6 +567,33 @@
       "insight_zh": "该协议的去中心化语义路由思路，可为城市更新中分布式传感器网络或多无人机协同观测的通信架构设计提供参考，其容错性优势对存在节点失效风险的地理空间感知系统具有潜在价值。"
     },
     {
+      "key": "arxiv:2609.18317",
+      "title": "Knowledge-Graph Based Augmentation versus Retrieval Augmented Generation for Cultural-Related Question Answering",
+      "title_zh": "基于知识图谱的增强与检索增强生成在文化相关问答中的对比",
+      "url": "https://arxiv.org/abs/2609.18317",
+      "doi": "",
+      "arxiv_id": "2609.18317",
+      "authors": [
+        "Pablo Poulenard",
+        "Yannis Karmim",
+        "Valentin Barri\\`ere"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-16T08:36:30+00:00",
+      "score": 58,
+      "reason": "该文比较知识图谱增强与RAG在文化相关问答中的表现，涉及LLM与结构化知识融合，与研究者LLM方向相关，但缺乏地理空间维度。",
+      "tags": [
+        "知识图谱",
+        "RAG",
+        "文化问答",
+        "多语言",
+        "LLM"
+      ],
+      "abstract": "Large language models (LLMs) suffer from a long-tail deficit: culturally specific facts, particularly those concerning underrepresented regions such as Latin America, appear too rarely in pretraining corpora to be reliably memorized. Retrieval-Augmented Generation (RAG) addresses this by grounding generation in external text, but structured alternatives such as Knowledge Graphs (KGs) offer tighter control over what enters the context, along with potential gains in explainability and updatability. We benchmark Graph-RAG against standard RAG on LatamQA, a culturally grounded multiple-choice dataset spanning eight thematic categories. The graphs are built end-to-end from Wikipedia articles with KGGen, a recent open-domain extractor, without manual curation in our main setting. G-Retriever is competitive with RAG and reduces the error of the base LLM by 72\\% with a standard KG and 78\\% with a benchmark-aware variant, the gap to RAG narrowing further as the graph is oriented toward task-relevant content. The trained projection transfers zero-shot to Portuguese without target-language fine-tuning, indicating multilingual reach.",
+      "summary_zh": "大语言模型（LLM）存在长尾缺陷：文化特定事实，尤其是拉丁美洲等代表性不足地区的事实，在预训练语料中出现太少而无法可靠记忆。检索增强生成（RAG）通过将生成建立在外部文本上来解决这一问题，但知识图谱（KG）等结构化替代方案对进入上下文的内容提供更紧密的控制，并可能带来可解释性和可更新性的提升。本文在LatamQA（一个涵盖八个主题类别的文化基础多选题数据集）上对Graph-RAG与标准RAG进行基准测试。图谱在主设置中由Wikipedia文章通过近期开放域抽取器KGGen端到端构建，无需人工整理。G-Retriever与RAG具有竞争力，使用标准KG将基础LLM的错误降低72%，使用基准感知变体降低78%，随着图谱朝向任务相关内容，与RAG的差距进一步缩小。训练得到的投影可零样本迁移到葡萄牙语，无需目标语言微调，表明具有多语言覆盖能力。",
+      "insight_zh": "该研究表明结构化知识图谱在文化长尾问答中可部分替代或补充RAG，且图谱内容与任务相关性的对齐程度会影响其相对优势；零样本跨语言迁移提示该投影方式可能具备一定语言无关性。"
+    },
+    {
       "key": "arxiv:2609.21801",
       "title": "LLM-Generated Feature Pools for Time Series Anomaly Detection",
       "title_zh": "面向时间序列异常检测的LLM生成特征池",
@@ -896,32 +923,6 @@
       "abstract": "Integrating diverse data modalities --- such as clinical notes, laboratory results, and medical imaging --- is essential for advancing clinical decision-making. While Large Language Models (LLMs) have shown remarkable performance in processing unstructured clinical text, their limited capacity to incorporate non-text modalities hinders their broader utility in healthcare applications. Here, we introduce M2G-LLM (Multimodal MedGraph-LLM), a novel framework that enhances LLMs with multimodal integration and alignment via Graph Neural Networks (GNNs). Our approach models temporal relationships between patient visits, propagates information across clinically similar patients, and aligns heterogeneous data sources to construct enriched multimodal context vectors. These vectors are injected into the intermediate layers of the LLM, enabling joint reasoning over textual and non-textual modalities. We evaluate M2G-LLM on the MIMIC-IV and MIMIC-CXR datasets, demonstrating improvements in clinical prediction tasks over strong baseline models. Our results highlight the promise of combining the language understanding of LLMs with the relational reasoning capabilities of GNNs for comprehensive, multimodal healthcare analysis.",
       "summary_zh": "整合临床笔记、实验室结果和医学影像等多种数据模态对于推进临床决策至关重要。尽管大型语言模型（LLM）在处理非结构化临床文本方面表现出色，但其纳入非文本模态的能力有限，阻碍了其在医疗应用中的更广泛效用。在此，我们提出M2G-LLM（多模态医学图-LLM），一个通过图神经网络（GNN）增强LLM多模态整合与对齐的新颖框架。我们的方法建模患者就诊之间的时间关系，在临床相似患者之间传播信息，并对齐异构数据源以构建丰富的多模态上下文向量。这些向量被注入LLM的中间层，实现对文本和非文本模态的联合推理。我们在MIMIC-IV和MIMIC-CXR数据集上评估M2G-LLM，证明其在临床预测任务上优于强基线模型。结果凸显了将LLM的语言理解能力与GNN的关系推理能力相结合用于全面多模态医疗分析的潜力。",
       "insight_zh": "GNN与LLM中间层注入相结合的多模态融合范式，可启发地理空间智能中遥感影像、文本报告与图结构数据的联合推理，但需适配地理时空关系。"
-    },
-    {
-      "key": "arxiv:2609.03395",
-      "title": "TabScope: Question-Adaptive Scope Selection for Table Question Answering",
-      "title_zh": "TabScope：表格问答中的问题自适应范围选择",
-      "url": "https://arxiv.org/abs/2609.03395",
-      "doi": "",
-      "arxiv_id": "2609.03395",
-      "authors": [
-        "Yuxiang Wang",
-        "Junhao Gan",
-        "Jianzhong Qi"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-03T05:51:23+00:00",
-      "score": 50,
-      "reason": "研究长表格问答中的自适应范围选择，涉及LLM推理策略，与处理大规模地理数据表格有一定关联。",
-      "tags": [
-        "表格问答",
-        "LLM",
-        "问题自适应",
-        "长表格"
-      ],
-      "abstract": "Large Language Models (LLMs) have shown strong performance on table question answering, yet their accuracy often degrades as table size increases. We find that this degradation is not uniform across question types. Localization-sensitive questions are particularly affected by irrelevant table content, while questions requiring broader evidence may still benefit from full-table reasoning. Based on this observation, we propose a question-adaptive framework that dynamically selects between localized and full-table reasoning. The framework constructs question-specific sub-tables through operation-aware table decomposition and uses the predicted question type to determine the appropriate reasoning mode. We further introduce silver reference sub-tables for evaluating evidence selection and construct SLQA, a benchmark based on real-world long tables. Experiments on WikiTQ and SLQA show that localization is particularly effective for lookup and local reasoning questions, while adaptive selection between localized and full-table reasoning achieves the best overall performance. These results highlight that long-table QA requires deciding not only how to localize, but also when to localize. Our code and datasets will be made available upon publication of the paper.",
-      "summary_zh": "提出问题自适应框架，根据问题类型动态选择局部或全表推理，在长表格问答中取得最佳性能，并构建了SLQA基准。",
-      "insight_zh": "长表格问答的关键不仅在于如何定位，还在于何时定位，问题类型决定了推理模式的选择。"
     }
   ]
 }

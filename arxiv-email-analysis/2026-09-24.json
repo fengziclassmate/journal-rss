@@ -2,11 +2,11 @@
   "date": "2026-09-24",
   "analysis_stats": {
     "total": 560,
-    "analyzed": 370,
+    "analyzed": 380,
     "high": 5,
     "medium": 18,
     "low": 23,
-    "below_threshold": 324
+    "below_threshold": 334
   },
   "papers": [
     {
@@ -6289,6 +6289,44 @@
       "insight_zh": "摘要为空，无法推断其方法细节；若涉及空间局部性的生成建模，或可对地理空间智能中的局部变化模拟有参考价值。"
     },
     {
+      "key": "arxiv:2609.26981",
+      "title": "Lessons learned from deploying imaging AI with the open PACS-AI platform",
+      "title_zh": "使用开源PACS-AI平台部署影像AI的经验教训",
+      "url": "https://arxiv.org/abs/2609.26981",
+      "arxiv_id": "2609.26981",
+      "authors": [
+        "Samuel Kadoury",
+        "Julie G. Hussin",
+        "Pascal Th\\'eriault-Lauzier",
+        "Laurent L\\'etourneau-Guillon",
+        "Rob Lewis",
+        "Adam McArthur",
+        "Gordon J. Harris",
+        "Houda Bahig",
+        "Pierre-Luc D\\'eziel",
+        "Jay Kshirsagar",
+        "Jacob L. Jaremko",
+        "Julien Cohen-Adad",
+        "Jacques Delfrate",
+        "Robert Avram"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CY"
+      ],
+      "published": "2026-09-22T19:18:09+00:00",
+      "score": 15,
+      "reason": "该文描述在医院部署影像AI平台的经验，属于医学影像信息学与AI部署领域，与地理空间智能或多源数据融合仅有基础设施层面的间接联系。",
+      "tags": [
+        "医学影像AI",
+        "PACS-AI",
+        "部署经验",
+        "基础设施"
+      ],
+      "summary_zh": "本文描述了通过PACS-AI这一开源自托管平台在六家医院部署影像AI的经验。关键制约因素并非模型准确率，而是用于路由检查、显示结果、捕获反馈和审计运行内容的基础设施。在其中一个中心，血管造影模型完成了607项任务中的515项（84.8%）；失败反映了缺少诊断视图，638份临床医生评分中78.1%为正面。为每个模型发布诚实的就绪等级本身就是一种治理实践。",
+      "insight_zh": "该文强调AI部署中基础设施与治理的重要性，其经验可能对地理空间AI平台（如遥感变化检测系统）的实际部署与审计具有类比参考价值，但原文未涉及地理空间领域。"
+    },
+    {
       "key": "arxiv:2601.22029",
       "title": "Inverse Problems Conditioned on Observation Ensembles: Applications and Methods",
       "title_zh": "以观测集合为条件的反问题：应用与方法",
@@ -6765,6 +6803,41 @@
       ],
       "summary_zh": "带可验证奖励的强化学习（RLVR）通过最终答案正确性监督数学推理，但对单个token指导很少。在线策略蒸馏（OPD）对学生生成响应提供密集反馈，但教师偏好未必反映正确性。近期混合方法将OPD与验证器导出的优势结合，或使用教师比率重加权任务信用。然而，教师指导在验证器分组归一化之后进入，且token重加权未必保持分配给每个响应的总任务信用。作者提出Unified Entropy-Calibrated Credit Redistribution for GRPO（UECR-GRPO），在单一GRPO风格更新中于响应和token层面整合验证器与教师信号。Path-Utility Unification（PUU）将验证器奖励和教师到锚点的路径对数比结合在一个KL正则化目标中。其在线策略实现使用长度归一化的教师分数，并在分组归一化和PPO裁剪之前结合两种奖励，使教师证据影响响应排序。",
       "insight_zh": "该工作尝试在GRPO更新前统一验证器与教师信号，以保持任务信用分配；对需要可验证奖励的LLM推理训练有参考价值，但摘要未涉及地理空间任务或多智能体协作。"
+    },
+    {
+      "key": "arxiv:2609.26976",
+      "title": "When Learned Context Planning Fails to Beat Strong Retrieval: A Controlled Study of Planning, Routing, and Reranking for Long-Context QA",
+      "title_zh": "当学习式上下文规划未能超越强检索：面向长上下文问答的规划、路由与重排序受控研究",
+      "url": "https://arxiv.org/abs/2609.26976",
+      "arxiv_id": "2609.26976",
+      "authors": [
+        "Yingrui Li",
+        "Han Chen"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.IR",
+        "Results",
+        "in",
+        "NLP",
+        "(Insights",
+        "2026),",
+        "co-located",
+        "with",
+        "EMNLP",
+        "2026"
+      ],
+      "published": "2026-09-22T19:12:16+00:00",
+      "score": 12,
+      "reason": "该文对长上下文问答中学习式上下文规划与强检索进行受控研究，属于自然语言处理与信息检索领域，与LLM和多智能体方向有一定关联，但与城市更新或时空数据挖掘无直接联系。",
+      "tags": [
+        "长上下文问答",
+        "检索",
+        "上下文规划",
+        "重排序"
+      ],
+      "summary_zh": "学习式上下文规划在答案模型推理之前选择证据原子。本文测试在强检索、路由、预算选择器与重排序控制之后，这种学习式选择是否改善长上下文多选题问答。主要诊断使用全部503道LongBench-v2多选题，模型为Qwen2.5-7B-Instruct。规划器在来自140道训练题与28道开发题的结果选择轨迹上进行SFT训练；由于503题分析包含这些题目，因此部分具有转导性。在18k字符预算下，锚定混合检索达到36.18%准确率，BM25达到35.98%，而最佳直接规划器引导方法达到34.19%。在未触碰的152题测试划分上，锚定混合检索仍然更高（42.11%对36.84%）。无泄漏路由器无法转化大的oracle差距。在紧张预算下，最佳规划器在6k时仅领先0.40分，在9k时落后；规划器引导重排序在6k时估计为+1.79分，但配对区间跨零，在9k时与对照组持平。打包顺序与分数平坦度分析未识别出稳定机制。在此设置下，学习式规划是一种弱相关性信号，而非强检索的替代品。",
+      "insight_zh": "该文对学习式规划与强检索的对比结论，可能对地理空间智能中基于检索增强的LLM应用（如规划法规检索）具有方法警示意义，但原文未涉及地理空间领域。"
     },
     {
       "key": "arxiv:2609.27778",
@@ -7419,6 +7492,40 @@
       "insight_zh": "该工作提示，在迭代式生成模型中，中间隐藏状态轨迹可能比表层置信度信号更能反映推理质量；这一思路或可迁移到需要多步推理的地理空间智能任务中，但论文本身未涉及地理空间数据或城市应用。"
     },
     {
+      "key": "arxiv:2609.27009",
+      "title": "LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning",
+      "title_zh": "LEGO：协同专家GraphRAG与专家思维链进行法律推理",
+      "url": "https://arxiv.org/abs/2609.27009",
+      "arxiv_id": "2609.27009",
+      "authors": [
+        "Qingjing Chen",
+        "Junkai Zhang",
+        "Shaochun Wang",
+        "Jiahao Ding",
+        "Siyuan Zheng",
+        "Yukun Yan",
+        "Zhi Zheng",
+        "Antonino Rotolo",
+        "Yun Liu",
+        "Weixing Shen"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-09-22T19:48:52+00:00",
+      "score": 12,
+      "reason": "该文提出面向法律推理的GraphRAG与专家思维链框架，属于大语言模型与知识图谱应用领域，与LLM和多智能体研究方向有一定关联，但与城市更新或时空数据挖掘无直接联系。",
+      "tags": [
+        "法律推理",
+        "GraphRAG",
+        "思维链",
+        "大语言模型"
+      ],
+      "summary_zh": "大语言模型越来越多地应用于法律等高风险领域，但复杂的法律推理仍受两个结构性挑战限制。第一，现有RAG与GraphRAG方法强调词汇或语义相似性，而忽视法律条文之间的规范性关系。第二，普通思维链提示可能生成看似合理但未强制遵循法律推理规范结构的理由。为解决法律推理领域流水线的瓶颈，作者提出LEGO，一个协同法律专家GraphRAG与专家思维链的双模块框架，用于复杂法律推理。ExpertGraphRAG使用专家标注的民法典图编码这些规范性关系，并采用贪心规范覆盖检索算法动态提取实例特定的条文子图；ExpertCoT则将检索到的条文与案件事实组织为结构化的“条文-事实-结论”推理。以Qwen3-8B为骨干，LEGO在LawExamQA_Civil上达到40.53%的精确匹配准确率，优于所评估的RAG与CoT基线，并与所评估的更大模型表现相当，同时在多跳问题上保持鲁棒性。在开放式基准上，LEGO也在所评估基线中取得最佳结果。消融研究证实了两个模块各自的贡献与互补性，表明LEGO在提升LLM复杂法律推理能力方面的有效性。代码与数据集见链接：https://github.com/BLK-WHT/LEGO。",
+      "insight_zh": "该文的专家GraphRAG与结构化思维链协同思路，可能对地理空间智能中涉及规范关系（如规划法规、城市更新政策）的推理任务具有方法借鉴意义，但原文未涉及地理空间领域。"
+    },
+    {
       "key": "arxiv:2609.25244",
       "title": "How Children Design and Reason about Trustworthy AI Chatbots",
       "title_zh": "儿童如何设计与推理可信AI聊天机器人",
@@ -7964,6 +8071,31 @@
       "insight_zh": "由于摘要为空，无法确认其具体架构、功能或实验；从标题推测，其可能为具身智能提供仿真平台，但与城市更新、遥感变化检测等主题无直接证据关联。"
     },
     {
+      "key": "arxiv:2609.26959",
+      "title": "Transfer Learning with Conformalized Quantile Regression for Solar PV Forecasting Under Load-Shedding-Driven Data Scarcity",
+      "title_zh": "面向限电驱动数据稀缺下太阳能光伏预测的迁移学习与共形分位数回归",
+      "url": "https://arxiv.org/abs/2609.26959",
+      "arxiv_id": "2609.26959",
+      "authors": [
+        "Rakib Abdullah",
+        "K. M. Tahlil Mahfuz Faruk"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-22T18:49:40+00:00",
+      "score": 10,
+      "reason": "该文提出迁移学习与共形分位数回归用于数据稀缺下的太阳能光伏预测，属于能源预测与不确定性量化领域，与时空数据挖掘和遥感变化检测有一定间接联系。",
+      "tags": [
+        "太阳能光伏预测",
+        "迁移学习",
+        "共形分位数回归",
+        "数据稀缺"
+      ],
+      "summary_zh": "在受限电影响的地区，太阳能光伏（PV）预测具有挑战性，因为可靠的历史观测稀缺。本研究提出一种结合共形分位数回归（CQR）的迁移学习框架，以在严重数据稀缺下改善PV功率预测并提供可靠的不确定性估计。使用来自澳大利亚爱丽丝泉的源域PV数据集预训练时间预测模型，然后将其适配到代表不同历史可用性水平的模拟孟加拉国PV数据。实验结果表明，当仅有1个月目标域数据时，迁移学习将RMSE降低最多23.7%，当有3个月数据时降低13.7%。所提出的迁移学习加CQR框架在有3个月目标数据时达到94.3%的经验覆盖率，同时产生的预测区间比无迁移学习时窄14%。这些结果表明，将迁移学习与共形不确定性量化相结合，可在目标域PV数据严重受限时同时改善点预测准确率与不确定性可靠性。",
+      "insight_zh": "该文的迁移学习与共形不确定性量化思路，可能对地理空间智能中数据稀缺区域（如遥感影像或城市传感器数据）的预测与不确定性建模具有方法借鉴意义，但原文未涉及地理空间领域。"
+    },
+    {
       "key": "arxiv:2609.27277",
       "title": "TimeEvo: Failure-Driven Self-Evolution of a Time Series Agent",
       "title_zh": "TimeEvo：时间序列智能体的失败驱动自演化",
@@ -8114,6 +8246,33 @@
       ],
       "summary_zh": "本文提出一种基于梯度的注意力头归因策略，将Token级最大间隔损失反向传播到注意力图。该框架支持对注意力头进行大规模因果分析，适用于LLM。作者在上下文感知机器翻译的消歧任务上评估该方法，分析了4个模型和4个语言方向上的50种现象。实证表明，该方法与提高token到token关系注意力分数在三个模型和两个语言方向上的效果相一致，确保了方法的稳健性。分析揭示了“通用型”注意力头的存在，它们在关注不同关系时提升模型性能。作者发现，一个注意力头对某关系的平均注意力并不一定与模型性能相关，这表明模型在训练过程中就注意力头功能产生了冗余。",
       "insight_zh": "该研究对注意力头功能冗余的发现，或可为理解地理空间LLM中多模态注意力机制提供类比，但应用场景差异较大。"
+    },
+    {
+      "key": "arxiv:2609.26986",
+      "title": "Same evidence, different judgments: Evidence noncommutative in vision/speech-text conflicts",
+      "title_zh": "相同证据，不同判断：视觉/语音-文本冲突中的证据非交换性",
+      "url": "https://arxiv.org/abs/2609.26986",
+      "arxiv_id": "2609.26986",
+      "authors": [
+        "Zhuoyun Li",
+        "Boxuan Wang",
+        "Xiaowei Huang",
+        "Yi Dong"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-22T19:25:15+00:00",
+      "score": 10,
+      "reason": "该文研究多模态大语言模型中视觉/语音与文本冲突时的证据顺序效应，属于多模态学习与LLM研究领域，与LLM和多智能体方向有一定关联，但与城市更新或时空数据挖掘无直接联系。",
+      "tags": [
+        "多模态大语言模型",
+        "证据顺序",
+        "跨模态冲突",
+        "视觉-语音-文本"
+      ],
+      "summary_zh": "对于多模态大语言模型，当图像或语音与伴随文本冲突时，所测得的文本依赖度可能将模态偏好与证据位置纠缠在一起。此前的文本偏见研究常使用固定证据顺序，或随证据移动任务指令，使顺序的贡献不明确。本文采用配对比较方法，保持指令与证据内容不变，仅交换两个来源的位置，以量化这一潜在影响。在视觉与语音模型中，将图像或录音置于冲突文本之后，会持续使答案向其内容偏移。作者还重新审视了先前研究，并分析其实验设置为何可能导致误导性结论。这些发现揭示了跨模态证据非交换性：相同证据在顺序改变时可导致不同判断，而将感知证据置于较后位置可增加模型对其内容的依赖。",
+      "insight_zh": "该文揭示的证据顺序效应提示，在多源地理空间数据融合与LLM推理中，证据呈现顺序可能影响模型判断，但原文未涉及地理空间数据或应用。"
     },
     {
       "key": "arxiv:2603.17373",
@@ -9958,6 +10117,34 @@
       "insight_zh": "该研究聚焦于移动摄影中的卷帘快门伪影与HDR重建，属于计算摄影与图像处理范畴，与GIS、遥感或城市分析无直接关联。"
     },
     {
+      "key": "arxiv:2609.27011",
+      "title": "HYDRO: Towards Non-Reversible Face De-Identification Using a High-Fidelity Hybrid Diffusion and Target-Oriented Approach",
+      "title_zh": "HYDRO：基于高保真混合扩散与目标导向方法的不可逆人脸去标识化",
+      "url": "https://arxiv.org/abs/2609.27011",
+      "arxiv_id": "2609.27011",
+      "authors": [
+        "Felix Rosberg",
+        "Vitomir \\v{S}truc",
+        "Cristofer Englund",
+        "Eren Erdal Aksoy",
+        "Fernando Alonso-Fernandez"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-22T19:49:13+00:00",
+      "score": 8,
+      "reason": "该文提出混合扩散与目标导向的人脸去标识化方法，属于计算机视觉与隐私安全领域，与城市更新、时空数据挖掘或遥感变化检测无直接关联。",
+      "tags": [
+        "人脸去标识化",
+        "扩散模型",
+        "隐私保护",
+        "重建攻击"
+      ],
+      "summary_zh": "目标导向的人脸去标识化模型旨在跨不同图像或视频帧匿名化目标个体的身份，使其无法被可靠识别，同时保持视觉数据的关键特征。此类模型通常利用生成式编码器-解码器架构操纵面部外观，从而产生逼真的高保真去标识化结果，并具备相当的属性保留能力。然而，目标导向模型也存在无意中保留细微身份线索的风险，使其（可能）可逆并易受重建攻击。为解决该问题，本文提出一种新颖（鲁棒）的人脸去标识化方法HYDRO，将目标导向模型与专门设计的扩散过程相结合，以破坏任何可能用于学习逆转去标识化过程的不可感知信息。HYDRO首先对给定人脸图像进行去标识化，向去标识化结果注入噪声以阻碍重建，然后应用基于扩散的恢复步骤以提高保真度并最小化加噪过程对数据特征的影响。为进一步提高图像保真度并更好地保留注视方向，本文还提出了一种新的眼睛相似性判别器（ESD）并将其纳入HYDRO的训练。在三个不同数据集上的大量定量与定性实验表明，HYDRO展现出最先进的保真度与属性保留能力，同时是唯一对重建攻击具有鲁棒性的目标导向方法。与多个最先进竞争者相比，HYDRO降低了重建的成功率。",
+      "insight_zh": "该文强调去标识化的不可逆性，其扩散加噪与恢复的思路可能对地理空间数据中的人脸或身份信息脱敏具有借鉴意义，但原文未涉及地理空间应用场景。"
+    },
+    {
       "key": "arxiv:2606.08133",
       "title": "Gravity-guided Contact Dynamics Estimation from 3D Human Motions",
       "title_zh": "重力引导的3D人体运动接触动力学估计",
@@ -10127,6 +10314,32 @@
       "insight_zh": "该研究把环境对称性形式化为群胚轨道划分，从而在部分可观测强化学习中实现跨状态的知识共享与样本效率提升；这种结构化表示思路对地理空间智能中的对称性与可泛化建模具有启发意义，但论文未涉及地理数据或多智能体系统。"
     },
     {
+      "key": "arxiv:2609.26962",
+      "title": "CRISP: Scalable Importance-Stratified Coresets for Imbalanced Tabular Learning",
+      "title_zh": "CRISP：面向不平衡表格学习的可扩展重要性分层核心集",
+      "url": "https://arxiv.org/abs/2609.26962",
+      "arxiv_id": "2609.26962",
+      "authors": [
+        "Hardhik Mohanty",
+        "Indrayana Rustandi",
+        "and Mohamadreza Sheibani"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-22T18:54:26+00:00",
+      "score": 8,
+      "reason": "该文提出面向不平衡表格学习的可扩展重要性分层核心集方法，属于机器学习与数据挖掘领域，与时空数据挖掘仅有方法论层面的间接联系。",
+      "tags": [
+        "不平衡表格学习",
+        "核心集",
+        "梯度提升树",
+        "欺诈检测"
+      ],
+      "summary_zh": "大规模不平衡表格数据集使重复的梯度提升树训练代价高昂。现有核心集方法在移除大多数多数类样本时往往损失准确率。作者提出CRISP（通过重要性分层剪枝的核心集缩减），一种线性时间方法，将负类预算分配到代理模型得分的分位数层中。样本权重考虑了不相等的纳入概率。在生产欺诈数据集上以95%负类缩减率，CRISP在约25M行中的约1.70M行上训练，并保留全数据平均精度的99.7%。这意味着总训练行数减少93.2%。在公开的CriteoPrivateAds上，CRISP在90%至99.4%的每个测试多数类缩减率下均具有最高的平均精度。Sparkov结果在较低缩减率下表现不一，但CRISP在99.2%与99.4%时具有最高均值。消融实验确定预算分配与逆倾向加权是生产数据集增益的主要来源。",
+      "insight_zh": "该文的核心集缩减与重要性分层思路，可能对大规模时空数据的高效训练具有方法借鉴意义，但原文未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.08673",
       "title": "BIDETA: Brain-Inspired Data-Efficient Tactile Adaptation for Unseen Sensors",
       "title_zh": "BIDETA：面向未见传感器的类脑数据高效触觉自适应",
@@ -10281,6 +10494,33 @@
       ],
       "summary_zh": "摘要内容缺失，仅提供标题与会议信息。根据标题可知，该工作研究固定系统和递归自我改进系统在安全性方面的算法不可验证性问题。",
       "insight_zh": "摘要为空，无法了解具体定理、证明或系统模型；从标题推断，该文可能从计算理论角度论证安全属性无法被算法完全验证。"
+    },
+    {
+      "key": "arxiv:2609.27022",
+      "title": "Adversarial Attacks and Identity Leakage in De-Identification Systems: An Empirical Study",
+      "title_zh": "去标识化系统中的对抗攻击与身份泄露：一项实证研究",
+      "url": "https://arxiv.org/abs/2609.27022",
+      "arxiv_id": "2609.27022",
+      "authors": [
+        "Felix Rosberg",
+        "Cristofer Englund",
+        "Eren Erdal Aksoy",
+        "and Fernando Alonso-Fernandez"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-22T20:07:20+00:00",
+      "score": 8,
+      "reason": "该文研究人脸去标识化系统中的对抗攻击与身份泄露，属于计算机视觉与隐私安全领域，与城市更新、时空数据挖掘、遥感变化检测、多源数据融合或地理空间智能等研究方向无直接关联。",
+      "tags": [
+        "对抗攻击",
+        "人脸去标识化",
+        "身份泄露",
+        "隐私保护"
+      ],
+      "summary_zh": "本文研究了对抗攻击对真实去标识化框架中身份编码器的影响。实验表明，攻击可从外部替代模型迁移至系统模型（如从CosFace迁移至ArcFace），使对手能够在足够敏感的人脸识别系统中导致身份信息泄露。作者提供了实验证据并提出缓解策略：对基于失真的攻击（如雪、雾等），在对抗样本上微调有助于缓解该效应；而简单的低通滤波器可在不影响去标识化图像的情况下减弱对抗噪声的影响。该缓解措施使去标识化系统在保持其功能的同时，对对抗噪声具有显著更强的鲁棒性。",
+      "insight_zh": "该研究提示，去标识化系统的安全性不仅取决于模型本身，还受对抗迁移性影响；其缓解思路（微调与低通滤波）可能对涉及人脸隐私的地理空间数据采集与共享场景具有参考价值，但文中未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2606.01322",
@@ -10694,36 +10934,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26976",
-      "title": "When Learned Context Planning Fails to Beat Strong Retrieval: A Controlled Study of Planning, Routing, and Reranking for Long-Context QA",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26976",
-      "arxiv_id": "2609.26976",
-      "authors": [
-        "Yingrui Li",
-        "Han Chen"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.IR",
-        "Results",
-        "in",
-        "NLP",
-        "(Insights",
-        "2026),",
-        "co-located",
-        "with",
-        "EMNLP",
-        "2026"
-      ],
-      "published": "2026-09-22T19:12:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.27411",
       "title": "When Labels Are Scarce: An Oscillatory State Space Model for Vibration Diagnosis",
       "title_zh": "",
@@ -11029,26 +11239,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26959",
-      "title": "Transfer Learning with Conformalized Quantile Regression for Solar PV Forecasting Under Load-Shedding-Driven Data Scarcity",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26959",
-      "arxiv_id": "2609.26959",
-      "authors": [
-        "Rakib Abdullah",
-        "K. M. Tahlil Mahfuz Faruk"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-22T18:49:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2608.14929",
       "title": "Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification",
       "title_zh": "训练留下痕迹：用于语言模型血缘验证的中心残差签名",
@@ -11153,7 +11343,7 @@
     {
       "key": "arxiv:2609.26972",
       "title": "TinyUDE: Solver-Free Universal Differential Equations on Microcontrollers via Lie-Taylor Jet Matching",
-      "title_zh": "",
+      "title_zh": "TinyUDE：通过Lie-Taylor喷流匹配在微控制器上实现无求解器通用微分方程",
       "url": "https://arxiv.org/abs/2609.26972",
       "arxiv_id": "2609.26972",
       "authors": [
@@ -11166,10 +11356,15 @@
       ],
       "published": "2026-09-22T19:09:00+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文提出在微控制器上无求解器训练通用微分方程的方法，属于科学机器学习与边缘计算领域，与地理空间智能或时空数据挖掘仅有方法论层面的间接联系。",
+      "tags": [
+        "通用微分方程",
+        "微控制器",
+        "无求解器训练",
+        "边缘计算"
+      ],
+      "summary_zh": "训练通用微分方程（UDE）传统上依赖通过数值ODE求解器进行反向传播，其内存占用远超边缘微控制器的能力。作者提出Lie-Taylor喷流匹配，一种无求解器训练框架，直接将混合向量场拟合到观测系统状态的一阶与二阶时间导数。这些导数即截断的Lie-Taylor喷流，通过Savitzky-Golay滤波在线估计，从而无需自动微分软件即可获得完全解析梯度。作者评估消除求解器是否会在与常规基线（固定步长RK4积分、多重打靶、精确离散伴随、Adam）共享相同动力学、噪声模型、网络架构与指标的情况下损害准确率。虽然朴素导数匹配在传感器噪声下性能下降，但作者的噪声自适应机制缩小并逆转了这一差距：全速率相移采样、储层缓冲、带权重平均的余弦退火优化、设备端噪声估计以及多项式失配质量门控。在阻尼摆与混沌双摆上，该方法在匹配数据窗口下达到或超过基线准确率，并恢复未建模的阻尼系数。在0%至5%的噪声水平下，其在108 kB静态内存内达到基线几何平均相对场误差的0.65倍，而求解器磁带需要数兆字节。在ESP32微控制器上，设备端运行达到0.0020的场误差，并在61.3 kB静态内存与每次更新7.24 ms（25 Hz下18.1%占空比）内将阻尼系数恢复至c=0.400（真值0.400），证实无需数值求解器的实时设备端训练是可行的。",
+      "insight_zh": "该文的无求解器训练与边缘部署思路，可能对地理空间传感器网络中的实时动力学建模具有方法迁移潜力，但原文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.25804",
@@ -11637,28 +11832,6 @@
         "cs.AI"
       ],
       "published": "2026-09-20T09:38:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26986",
-      "title": "Same evidence, different judgments: Evidence noncommutative in vision/speech-text conflicts",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26986",
-      "arxiv_id": "2609.26986",
-      "authors": [
-        "Zhuoyun Li",
-        "Boxuan Wang",
-        "Xiaowei Huang",
-        "Yi Dong"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-22T19:25:15+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12973,39 +13146,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26981",
-      "title": "Lessons learned from deploying imaging AI with the open PACS-AI platform",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26981",
-      "arxiv_id": "2609.26981",
-      "authors": [
-        "Samuel Kadoury",
-        "Julie G. Hussin",
-        "Pascal Th\\'eriault-Lauzier",
-        "Laurent L\\'etourneau-Guillon",
-        "Rob Lewis",
-        "Adam McArthur",
-        "Gordon J. Harris",
-        "Houda Bahig",
-        "Pierre-Luc D\\'eziel",
-        "Jay Kshirsagar",
-        "Jacob L. Jaremko",
-        "Julien Cohen-Adad",
-        "Jacques Delfrate",
-        "Robert Avram"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.CY"
-      ],
-      "published": "2026-09-22T19:18:09+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.27473",
       "title": "Learning Where to Look: A Shared Relative-Alignment Module for Time-Series Forecasting and PPG-to-Vital-Sign Reconstruction",
       "title_zh": "",
@@ -13222,35 +13362,6 @@
         "2026)"
       ],
       "published": "2026-09-22T00:41:17+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.27009",
-      "title": "LEGO: Synergizing Expert GraphRAG and Expert Chain-of-Thought for Legal Reasoning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27009",
-      "arxiv_id": "2609.27009",
-      "authors": [
-        "Qingjing Chen",
-        "Junkai Zhang",
-        "Shaochun Wang",
-        "Jiahao Ding",
-        "Siyuan Zheng",
-        "Yukun Yan",
-        "Zhi Zheng",
-        "Antonino Rotolo",
-        "Yun Liu",
-        "Weixing Shen"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.IR"
-      ],
-      "published": "2026-09-22T19:48:52+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13555,29 +13666,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.27011",
-      "title": "HYDRO: Towards Non-Reversible Face De-Identification Using a High-Fidelity Hybrid Diffusion and Target-Oriented Approach",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27011",
-      "arxiv_id": "2609.27011",
-      "authors": [
-        "Felix Rosberg",
-        "Vitomir \\v{S}truc",
-        "Cristofer Englund",
-        "Eren Erdal Aksoy",
-        "Fernando Alonso-Fernandez"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-22T19:49:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.26822",
       "title": "HARN: Hierarchical Associative Resonance Network for Event-Driven Multi-Timeframe Forecasting",
       "title_zh": "",
@@ -13697,7 +13785,7 @@
     {
       "key": "arxiv:2609.27018",
       "title": "GeoRVQ: Decoder-aware geometry for residual-token prediction in physiological signals",
-      "title_zh": "",
+      "title_zh": "GeoRVQ：面向生理信号残差令牌预测的解码器感知几何",
       "url": "https://arxiv.org/abs/2609.27018",
       "arxiv_id": "2609.27018",
       "authors": [
@@ -13709,10 +13797,15 @@
       ],
       "published": "2026-09-22T19:59:29+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文提出面向生理信号残差令牌预测的解码器感知几何方法，属于信号处理与表示学习领域，与地理空间智能或多源数据融合仅有方法论层面的间接联系。",
+      "tags": [
+        "残差向量量化",
+        "生理信号",
+        "掩码建模",
+        "解码器感知目标"
+      ],
+      "summary_zh": "残差向量量化（RVQ）可将生理波形转换为紧凑的令牌序列，但传统掩码建模将所有错误令牌视为同等代价。作者提出GeoRVQ，一种由粗到细的掩码令牌模型，其目标函数反映冻结波形解码器的局部响应。解码器诱导的代价定义了几何感知的软目标与期望失真，而量化器因果预测则遵循从粗到细的残差依赖关系。在MIMIC-IV Waveform、VitalDB和CODE-15%上的描述性汇总显示，GeoRVQ将精确令牌准确率从0.133±0.004提升至0.143±0.003，将解码距离从0.606±0.006降至0.393±0.007，并在匹配模型与训练条件下将R峰F1从0.784±0.004提升至0.837±0.008。在45个留出代码替换中，解码器诱导代价与实际解码代价的Spearman相关系数为0.85，而欧氏码字距离为0.54。结果表明，解码器感知目标可在不显著提高精确令牌准确率的情况下改善波形与事件保留。",
+      "insight_zh": "该文的解码器感知目标与几何感知软目标思路，可能对时空信号（如遥感时序或传感器网络数据）的令牌化建模具有方法迁移潜力，但原文未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.27850",
@@ -15057,27 +15150,6 @@
       "insight_zh": "该工作为LLM评判在分布偏移下提供覆盖保障，其鲁棒共形预测思路或可启发地理空间智能中模型不确定性量化，但论文未涉及地理空间应用。"
     },
     {
-      "key": "arxiv:2609.26962",
-      "title": "CRISP: Scalable Importance-Stratified Coresets for Imbalanced Tabular Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26962",
-      "arxiv_id": "2609.26962",
-      "authors": [
-        "Hardhik Mohanty",
-        "Indrayana Rustandi",
-        "and Mohamadreza Sheibani"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-22T18:54:26+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.26905",
       "title": "CORE-STACK+: Meta-Learning for Deep Stacked Generalization",
       "title_zh": "",
@@ -15669,28 +15741,6 @@
         "cs.CL"
       ],
       "published": "2026-09-16T04:00:54+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.27022",
-      "title": "Adversarial Attacks and Identity Leakage in De-Identification Systems: An Empirical Study",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27022",
-      "arxiv_id": "2609.27022",
-      "authors": [
-        "Felix Rosberg",
-        "Cristofer Englund",
-        "Eren Erdal Aksoy",
-        "and Fernando Alonso-Fernandez"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-22T20:07:20+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
