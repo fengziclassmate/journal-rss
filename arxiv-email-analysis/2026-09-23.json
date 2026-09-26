@@ -2,11 +2,11 @@
   "date": "2026-09-23",
   "analysis_stats": {
     "total": 667,
-    "analyzed": 468,
+    "analyzed": 477,
     "high": 3,
     "medium": 21,
     "low": 36,
-    "below_threshold": 408
+    "below_threshold": 417
   },
   "papers": [
     {
@@ -8666,6 +8666,37 @@
       "insight_zh": "由于摘要为空，无法推断其具体数据、评价指标或结论；从标题看，其贡献可能在于 LLM 在心理治疗对话中的行为分析，但与地理空间智能主题关联较弱。"
     },
     {
+      "key": "arxiv:2609.26099",
+      "title": "Test-time Reinforcement Learning for Anomalous Video Understanding",
+      "title_zh": "面向异常视频理解的测试时强化学习",
+      "url": "https://arxiv.org/abs/2609.26099",
+      "arxiv_id": "2609.26099",
+      "authors": [
+        "Huining Li",
+        "Yuxiang Duan",
+        "Jiyang Tan",
+        "Qian Li",
+        "MingCai Chen",
+        "Jian Zhang",
+        "Xingdong Sheng",
+        "and Yuntao Du"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-18T13:49:45+00:00",
+      "score": 15,
+      "reason": "该研究提出异常视频理解的测试时强化学习框架，属于视频理解与异常检测，与遥感变化检测中的异常识别有方法关联，但研究对象为通用视频而非地理空间数据。",
+      "tags": [
+        "视频理解",
+        "异常检测",
+        "测试时强化学习",
+        "视频大语言模型"
+      ],
+      "summary_zh": "异常视频理解旨在识别视频中的异常事件并解释其语义含义，超越简单的异常检测。近期视频大语言模型（Video-LLM）在该任务上展现出有前景的零样本能力，但其性能仍受限于对多样异常模式和演化环境的适应不足。测试时强化学习通过自生成反馈信号使模型无需额外人工标注即可改进，提供了有前景的解决方案。然而将其应用于异常视频理解仍面临三个挑战：（1）当共识较弱时生成的伪标签可能不可靠；（2）二元奖励设计无法捕捉模型生成中的不确定性，导致优化信号无效；（3）一致rollout组获得相同奖励，导致组相对优势崩溃并消除有效策略梯度信号。为应对这些挑战，作者提出一种新颖的异常视频理解测试时强化学习框架，引入双查询一致性过滤、熵感知共识奖励和虚拟负锚机制。该框架通过语义等价查询间的一致性保留可靠样本，结合答案一致性与生成不确定性进行奖励估计，并引入虚拟负锚在一致rollout组中创造奖励变化，从而保持有效的组相对优化信号。在VAU-Bench上的实验表明，该方法优于所比较的冻结和监督基线。增益在VAU-Bench的ECVA子集上最为显著，其中准确率提升……",
+      "insight_zh": "该研究的测试时强化学习与一致性过滤思路对遥感变化检测中的无监督异常识别有方法借鉴价值，但其研究对象为通用视频异常理解，与地理空间智能的直接关联有限。"
+    },
+    {
       "key": "arxiv:2603.02293",
       "title": "Spectral Overfitting in Noisy Linear Probing of Pretrained Representations",
       "title_zh": "预训练表示噪声线性探测中的谱过拟合",
@@ -10409,6 +10440,33 @@
       "insight_zh": "由于摘要缺失，无法做出可靠推断。从标题看，该工作可能涉及联邦学习中的激励兼容性与模型分割优化，但与地理空间智能或城市研究的直接关联有限。"
     },
     {
+      "key": "arxiv:2609.25034",
+      "title": "From Tone to Trajectory: Continuous Sentiment and the Shape of Monetary Policy Communication",
+      "title_zh": "从语调到轨迹：连续情感与货币政策沟通的形态",
+      "url": "https://arxiv.org/abs/2609.25034",
+      "arxiv_id": "2609.25034",
+      "authors": [
+        "Martin Feldkircher",
+        "M\\'arton Kardos",
+        "Kristoffer Laigaard Nielbo"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-24T07:55:37+00:00",
+      "score": 12,
+      "reason": "该研究分析央行新闻发布会的连续情感轨迹，属于文本挖掘与序列建模方法，与时空数据挖掘或城市更新无直接关联，但情感序列建模思路对时空文本分析有间接参考价值。",
+      "tags": [
+        "情感分析",
+        "文本挖掘",
+        "货币政策沟通",
+        "序列建模"
+      ],
+      "summary_zh": "央行新闻发布会不仅是信息发布，更是结构化叙事。本文研究声明中情感的形态（而非仅平均语调）是否携带政策相关信号。作者沿货币政策立场、经济前景和不确定性三个维度为欧洲央行和美联储新闻发布会构建情感弧线，评估其对政策利率变动、通胀预期和预测者分歧的预测能力。研究发现，弧线形态在两个机构中均能稳健预测利率决策，超越基于词典的基准——不仅是声明平均听起来是否鹰派或经济乐观，而是这些情感在声明中的排序和强调方式携带政策信号。弧线特征还影响专业预测者如何更新通胀预期及其分歧程度，指向一种区别于直接政策信号的接收方效应。这些发现表明，沟通设计——政策语言在声明中的排序和强调——是政策信号的一阶特征，而非二阶修饰。",
+      "insight_zh": "该研究提示，文本情感的时间序列形态（而非均值）具有预测力，这一思路可迁移至城市更新舆情或政策文本的时空序列分析，但需注意其研究对象为金融政策沟通，与地理空间智能的直接关联有限。"
+    },
+    {
       "key": "arxiv:2609.25655",
       "title": "From Experts to Sub-experts: Fine-grained Parameter-Efficient Fine-Tuning for MoE LLMs",
       "title_zh": "从专家到子专家：面向MoE大语言模型的细粒度参数高效微调",
@@ -11403,6 +11461,39 @@
       ],
       "summary_zh": "AI规划研究智能体如何通过执行动作序列达成目标。为正确规划，智能体需要动作模型来描述每个动作何时可执行以及如何改变世界。手工构建此类模型需要领域专业知识，成本高且易出错。动作模型也可利用现有神经符号方法从可用数据中学习，但这些方法目前假设可以访问完全可观测图像的完整轨迹。在部分可观测条件下，某些图像可能缺失或不足以完全反映世界当前状态，这些方法无法学习动作模型。因此，本文提出NeSyAM，一种用于部分可观测下动作模型学习的新型神经符号建模范式。此外，本文提出统一变分框架，从理论上分析现有方法相对于所提方法的局限。随后在六个视觉规划领域和三种观测机制上对NeSyAM进行广泛测试，表明其在部分可观测下能一致地恢复真实动作模型的相关部分。",
       "insight_zh": "该研究暗示，在信息不完整条件下学习可解释的动作模型需要显式处理观测缺失；其变分分析框架或可为部分可观测的地理空间决策建模提供方法论参考，但摘要未提及任何地理应用。"
+    },
+    {
+      "key": "arxiv:2609.26105",
+      "title": "Neoadjuvant chemotherapy response prediction using pretreatment diffusion and contrast-enhanced magnetic resonance imaging with clinical variables",
+      "title_zh": "使用治疗前扩散和对比增强磁共振成像及临床变量预测新辅助化疗反应",
+      "url": "https://arxiv.org/abs/2609.26105",
+      "arxiv_id": "2609.26105",
+      "authors": [
+        "Pablo Garc\\'ia Marcos",
+        "Paula Puerta Gonz\\'alez",
+        "Guillermo Lorenzo",
+        "H\\'ector G\\'omez",
+        "Covadonga del Camino",
+        "Ad\\'an Rodr\\'iguez",
+        "Ignacio Pel\\'aez",
+        "Angel Rio-Alvarez",
+        "and V\\'ictor M. Gonz\\'alez"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-08-18T11:52:18+00:00",
+      "score": 10,
+      "reason": "该研究提出结合扩散和对比增强MRI与临床变量的深度学习模型预测化疗反应，属于医学影像多模态融合，与遥感多源数据融合有方法类比，但应用领域为医学。",
+      "tags": [
+        "医学影像",
+        "多模态融合",
+        "深度学习",
+        "化疗反应预测"
+      ],
+      "summary_zh": "在新辅助化疗前预测病理完全缓解可能有助于为乳腺癌患者制定更个性化的治疗计划。本文提出一种仅使用治疗前数据的深度学习模型，结合表观扩散系数图、动态对比增强磁共振成像和临床变量。研究使用公开的ACRIN 6698/I-SPY2多中心数据集。架构采用EfficientNet-B0预训练编码器进行图像特征提取，并与临床信息进行后期融合。评估了多个临床变量，包括年龄、种族、组织学类型、HR/HER2亚型、SBR分级和最大直径。仅HR/HER2亚型提高了平均受试者工作特征曲线下面积（AUC）并被保留在最终模型中。使用分层五折交叉验证，单独表观扩散系数图达到平均AUC 0.79，而动态对比增强磁共振成像达到0.74。加入HR/HER2亚型后性能分别提升至0.83和0.81。最终配置使用两种成像模态和HR/HER2亚型，达到AUC 0.86。这些结果支持治疗前多模态学习用于反应预测，但临床使用前需要外部验证。",
+      "insight_zh": "该研究的多模态后期融合策略（影像+临床变量）对遥感多源数据融合有方法类比价值，但其应用领域为医学影像，与城市更新或地理空间智能的直接关联有限。"
     },
     {
       "key": "arxiv:2512.16953",
@@ -13496,6 +13587,39 @@
       "insight_zh": "该研究提出利用伪异常探针在无异常标签下进行模型选择，其思路可能对时空异常检测中的无监督模型选择有借鉴意义，但论文未涉及地理空间数据。"
     },
     {
+      "key": "arxiv:2609.26147",
+      "title": "Block-Level Weight-Space Structure Persists Under Post-Training: An Empirical Study Across LLM Families",
+      "title_zh": "块级权重空间结构在后训练下持续存在：跨LLM家族的实证研究",
+      "url": "https://arxiv.org/abs/2609.26147",
+      "arxiv_id": "2609.26147",
+      "authors": [
+        "Zhaohui Wang"
+      ],
+      "categories": [
+        "cs.LG",
+        "Weight-Space",
+        "Symmetries:",
+        "from",
+        "Foundations",
+        "to",
+        "Practical",
+        "Applications.",
+        "OpenReview:",
+        "https://openreview.net/forum?id=jdVfddhT65"
+      ],
+      "published": "2026-08-23T05:15:25+00:00",
+      "score": 8,
+      "reason": "该研究分析LLM后训练对权重空间几何的影响，属于LLM基础研究，与GIS时空数据挖掘无直接关联，但对多智能体系统中LLM部署效率有间接意义。",
+      "tags": [
+        "大语言模型",
+        "权重空间结构",
+        "后训练",
+        "模型压缩"
+      ],
+      "summary_zh": "现代LLM以共享预训练权重的后训练变体家族（基础、指令、对话、代码）形式部署。本文对后训练如何改变权重空间几何进行实证研究，覆盖四个架构家族（Qwen2.5、Llama-3.1/3.2、Mistral、Gemma-2）的八种配置。作者识别出一个粒度差距：后训练修改每个张量（291-339个张量中零个保持字节相同，因此基于哈希的去重实现0%节省），但保留块级结构（平均余弦相似度超过0.99，相对Frobenius距离低于0.13）。因此后训练表现为一种结构化扰动，移动每个参数但保持块级几何完整。该性质并非普遍：独立训练的特化模型（如Qwen2.5-Coder）与通用基础模型的余弦相似度约为0.64，表明权重空间的非连通区域。扰动幅度随模型规模、架构家族和后训练配方系统性变化。作为实际应用，作者构建LinkerLLM，一种惰性加载器，在共驻变体间别名共享块，实现18-48%的GPU内存节省，使单个24GB消费级GPU上可运行多达五个7B参数变体。八种配置中有五种在MMLU、ARC-Challenge、HellaSwag和WinoGrande上保留至少94%的未共享变体质量；其余三种（Mistral-7B、Gemma-2-2B、Llama-3.2-1B）各有一个低于阈值的基准（87-91%），作者透明报告而非以单一阈值决定块共享。",
+      "insight_zh": "该研究揭示LLM后训练的结构化扰动特性，对多智能体系统中高效部署多个LLM变体有工程参考价值，但与地理空间智能或城市更新的方法论关联较弱。"
+    },
+    {
       "key": "arxiv:2609.11870",
       "title": "Augustinian BabyLM: What Ostensive Definition Can and Cannot Teach a Small Language Model",
       "title_zh": "奥古斯丁式BabyLM：明示定义能教给小语言模型什么、不能教什么",
@@ -13672,6 +13796,30 @@
       ],
       "summary_zh": "将大语言模型应用于中医处方生成暴露出三个临床关键缺口：模型产生端到端映射而缺乏遵循“理-法-方-药”范式的可审计推理（SR缺口）；将每次就诊孤立处理，缺乏“随证加减”的随访调整（LA缺口）；未能强制执行“十八反”等绝对禁忌规则（SC缺口）。作者提出渐进式四阶段框架（SFT → PG-CoT → Dynamic → K-RL）分别应对每个缺口：PG-CoT在“理-法-方-药”范式下约束思维链蒸馏以产生可审计的诊断链，Dynamic SFT以显式转移推理建模患者轨迹，K-RL将确定性药理规则编码为基于规则的DPO偏好信号。在12个微调模型和6个零样本基线上的实验表明，该框架显著提升处方质量，其中7B模型（Mistral-7B）在三项中医评估指标上均超过零样本GPT-5。",
       "insight_zh": "该研究展示，将领域规则编码为偏好信号并结合结构化推理链，可提升LLM在专业领域的可审计性与安全性；这一“知识驱动对齐”思路或可类比用于地理空间领域规则约束，但摘要未涉及地理数据。"
+    },
+    {
+      "key": "arxiv:2609.25028",
+      "title": "Retrieved-Span Training for Efficient Query-Focused Meeting Summarization on QMSum",
+      "title_zh": "面向QMSum高效查询聚焦会议摘要的检索跨度训练",
+      "url": "https://arxiv.org/abs/2609.25028",
+      "arxiv_id": "2609.25028",
+      "authors": [
+        "Edward Xi Yang (Ertas AI)"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-18T04:26:31+00:00",
+      "score": 6,
+      "reason": "该研究提出面向查询的会议摘要检索跨度训练方法，属于自然语言处理中的文本摘要，与GIS时空数据挖掘无直接关联。",
+      "tags": [
+        "会议摘要",
+        "检索增强",
+        "文本摘要",
+        "模型效率"
+      ],
+      "summary_zh": "QMSum没有评分器，使查询聚焦会议摘要结果难以比较。作者在同一实现下重新评分或生成15个系统。通过共同推理端口，一个已发布的406M Fusion-in-Decoder专家模型从截断长输入移至2000词检索跨度时损失6.30 ROUGE-1。在该跨度机制上微调可恢复损失。在测试集上其得分为36.33 ROUGE-1，而作者的1.2B系统为35.41；会议簇95%区间为[-0.27, +2.22]，因此QMSum在统计上无法区分二者。较小系统使用约三分之一的总参数和不到一半的峰值推理内存。在固定1.2B基础内，跨度机制微调增加5.29 [+4.02, +6.56]，而将前4500个转录词替换为2000个检索词在测试集上增加1.55，在验证集上增加0.29。另外，在单一简洁提示和参考重叠评分器下，一个已发布的406M专家模型超过五个专有托管模型至少6.2 ROUGE-1，但输出长度和缺乏人工或事实性评估限制了这一排序。结论仅限于QMSum和自动指标。",
+      "insight_zh": "该研究的检索跨度训练与效率优化思路对处理长文本时空数据有间接参考，但与地理空间智能或城市更新的核心主题关联较弱。"
     },
     {
       "key": "arxiv:2609.25438",
@@ -14388,29 +14536,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26233",
-      "title": "The Temporal Moderation Gap: Text-to-Video Safety Filters Are Blind to Harm in Motion",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26233",
-      "arxiv_id": "2609.26233",
-      "authors": [
-        "Yuxin Cao",
-        "Fusen Guo",
-        "Yuezhong Wu",
-        "Huadong Mo",
-        "Wei Song"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-19T09:27:58+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.25804",
       "title": "The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks",
       "title_zh": "",
@@ -14494,7 +14619,7 @@
     {
       "key": "arxiv:2609.26160",
       "title": "The Free-Recipe Limit: Every Recipe Effect Measures Which Premise of an Idealised Learner Broke",
-      "title_zh": "",
+      "title_zh": "自由配方极限：每个配方效应都衡量理想化学习者的哪个前提被打破",
       "url": "https://arxiv.org/abs/2609.26160",
       "arxiv_id": "2609.26160",
       "authors": [
@@ -14519,10 +14644,15 @@
       ],
       "published": "2026-08-09T03:01:10+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该研究分析微调配方搜索的极限，属于机器学习训练方法实证研究，与GIS时空数据挖掘无直接关联。",
+      "tags": [
+        "微调",
+        "配方搜索",
+        "技能学习",
+        "实证研究"
+      ],
+      "summary_zh": "固定语料并将配方搜索推向无穷：尝试技能的每种顺序、从阻塞到交错的每种安排、每种组合，并保留最佳。两个量决定该搜索的价值：它探索的可达集直径，以及任何人能区分两个端点的分辨率。当直径低于分辨率时，任何搜索量都无法转化为决策，其标志不是没有赢家，而是赢家无法在重跑中存活。作者用761次微调运行在12个基础模型（0.5B-14B，三个预训练家族）上测量这一配方搜索墙，任务为竞赛数学技能：基础检查点、AdamW监督微调、k=4精确匹配评分。在固定量下的单一连贯领域内，三个经典自由度平均为0.010-0.021，对照0.019下限，最大对比0.0619超过三种子分辨率，然后在两次重跑中读为+0.010和-0.015。具有系统性答案的偏离是连贯性：将一个池化语料减半并让两半在不兼容但同样正确的约定下写答案，将安排从能力转变为约定间分配，比同约定对照高两个数量级，而将约定写入输入可关闭该现象。该开关在第二个预训练家族上复现，并在其自身协议的独立重执行中存活，重执行差异（0.087）小于搜索选择的顺序单元携带的分辨率（0.144）。顺序本身是瞬态的，其符号在单次运行内三次穿过零。量——唯一没人称为配方的杠杆——是可靠回报的那个。公开记分卡对全部26个预注册声明评分：18个支持，5个……",
+      "insight_zh": "该研究对微调配方搜索极限的实证分析对理解模型训练中的可复现性问题有方法启示，但与地理空间智能或城市更新的研究主题关联很弱。"
     },
     {
       "key": "arxiv:2609.26018",
@@ -14597,32 +14727,6 @@
         "figures"
       ],
       "published": "2026-09-21T02:25:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26099",
-      "title": "Test-time Reinforcement Learning for Anomalous Video Understanding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26099",
-      "arxiv_id": "2609.26099",
-      "authors": [
-        "Huining Li",
-        "Yuxiang Duan",
-        "Jiyang Tan",
-        "Qian Li",
-        "MingCai Chen",
-        "Jian Zhang",
-        "Xingdong Sheng",
-        "and Yuntao Du"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-18T13:49:45+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -15256,25 +15360,6 @@
         "cs.CL"
       ],
       "published": "2026-09-22T02:49:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.25028",
-      "title": "Retrieved-Span Training for Efficient Query-Focused Meeting Summarization on QMSum",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.25028",
-      "arxiv_id": "2609.25028",
-      "authors": [
-        "Edward Xi Yang (Ertas AI)"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-08-18T04:26:31+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16101,34 +16186,6 @@
       "insight_zh": "该研究属于量子计算与无线通信交叉领域，与地理空间智能无直接关联。"
     },
     {
-      "key": "arxiv:2609.26105",
-      "title": "Neoadjuvant chemotherapy response prediction using pretreatment diffusion and contrast-enhanced magnetic resonance imaging with clinical variables",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26105",
-      "arxiv_id": "2609.26105",
-      "authors": [
-        "Pablo Garc\\'ia Marcos",
-        "Paula Puerta Gonz\\'alez",
-        "Guillermo Lorenzo",
-        "H\\'ector G\\'omez",
-        "Covadonga del Camino",
-        "Ad\\'an Rodr\\'iguez",
-        "Ignacio Pel\\'aez",
-        "Angel Rio-Alvarez",
-        "and V\\'ictor M. Gonz\\'alez"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CV"
-      ],
-      "published": "2026-08-18T11:52:18+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.25907",
       "title": "NaCR: Visual Localization via NeRF-aided Camera Ray Regression",
       "title_zh": "",
@@ -16318,25 +16375,6 @@
       "insight_zh": "该工作表明，考虑模块级几何结构的扰动可显著提升无梯度集成的样本效率；其架构感知采样思想或可迁移至其他大规模模型集成场景，但摘要未涉及地理空间任务。"
     },
     {
-      "key": "arxiv:2609.26272",
-      "title": "Mode Collapse Is Cheap to Detect: A Ground-Truth-Free Pre-Flight Check for Neural Samplers",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26272",
-      "arxiv_id": "2609.26272",
-      "authors": [
-        "Jian Xu"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-08-20T09:12:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.25054",
       "title": "MoM: Memory of Memory",
       "title_zh": "",
@@ -16470,7 +16508,7 @@
     {
       "key": "arxiv:2609.26081",
       "title": "Margin-Drop Coordinates for Cross-Budget Robustness Evaluation",
-      "title_zh": "",
+      "title_zh": "跨预算鲁棒性评估的边际下降坐标",
       "url": "https://arxiv.org/abs/2609.26081",
       "arxiv_id": "2609.26081",
       "authors": [
@@ -16488,10 +16526,15 @@
       ],
       "published": "2026-08-20T14:22:54+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该研究提出跨预算鲁棒性评估的边际下降坐标，属于视觉模型鲁棒性评估方法，与遥感变化检测中的模型鲁棒性评估有间接方法关联，但研究对象为通用视觉编码器。",
+      "tags": [
+        "鲁棒性评估",
+        "视觉编码器",
+        "对抗攻击",
+        "变化检测"
+      ],
+      "summary_zh": "固定预算鲁棒性评估可能选错冻结视觉编码器。一个在浅层攻击下存活的编码器，当同一评估被加强时可能失去大部分鲁棒性。本文追问浅层评估是否包含足够信息来识别这种预算脆弱性。对每个干净正确样本，评估记录干净成对边际、一阶线性化边际下降尺度、从干净起点单步攻击的边际下降，以及迭代攻击达到的下降。按该尺度归一化得到三个边际下降坐标，分别捕捉干净边际余量、单步不足和漂移，其中漂移是迭代攻击超出单步扰动的额外归一化边际下降。三者共同重建归一化攻击后边际，从而重建通过或失败结果。在42个预训练冻结视觉编码器上，浅层存活率对后续PGD-10到PGD-200崩溃几乎不携带秩信息（Spearman为-0.006），而中位浅层漂移坐标对同一崩溃的秩相关为+0.811。该结果在留出编码器池和ℓ∞评估下持续存在。在深度评估限于11个编码器时，按浅层漂移排序恢复17个高崩溃编码器中的11个，而存活率排序仅恢复5个。完整坐标分解进一步区分共享相同固定预算残差但在更深预算下发散的案例，并在干预下分离边际修复与漂移修复，揭示端点鲁棒性单独无法识别的不同修复路径。",
+      "insight_zh": "该研究提出的边际下降坐标方法对评估遥感变化检测模型的鲁棒性有潜在方法借鉴意义，但其研究对象为通用视觉编码器，与地理空间智能的直接关联有限。"
     },
     {
       "key": "arxiv:2609.25299",
@@ -17230,28 +17273,6 @@
         "cs.AI"
       ],
       "published": "2026-09-06T10:32:55+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.25034",
-      "title": "From Tone to Trajectory: Continuous Sentiment and the Shape of Monetary Policy Communication",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.25034",
-      "arxiv_id": "2609.25034",
-      "authors": [
-        "Martin Feldkircher",
-        "M\\'arton Kardos",
-        "Kristoffer Laigaard Nielbo"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "published": "2026-08-24T07:55:37+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -18396,34 +18417,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.26147",
-      "title": "Block-Level Weight-Space Structure Persists Under Post-Training: An Empirical Study Across LLM Families",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26147",
-      "arxiv_id": "2609.26147",
-      "authors": [
-        "Zhaohui Wang"
-      ],
-      "categories": [
-        "cs.LG",
-        "Weight-Space",
-        "Symmetries:",
-        "from",
-        "Foundations",
-        "to",
-        "Practical",
-        "Applications.",
-        "OpenReview:",
-        "https://openreview.net/forum?id=jdVfddhT65"
-      ],
-      "published": "2026-08-23T05:15:25+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.25916",
       "title": "Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement",
       "title_zh": "",
@@ -19043,6 +19036,34 @@
       "insight_zh": "该文的合成翻译数据构建思路或可启发低资源地理文本语料的扩充，但论文本身聚焦生命科学法语NLP，与地理空间智能无直接联系。"
     },
     {
+      "key": "arxiv:2609.26233",
+      "title": "The Temporal Moderation Gap: Text-to-Video Safety Filters Are Blind to Harm in Motion",
+      "title_zh": "时序审核缺口：文本到视频安全过滤器对运动中的危害视而不见",
+      "url": "https://arxiv.org/abs/2609.26233",
+      "arxiv_id": "2609.26233",
+      "authors": [
+        "Yuxin Cao",
+        "Fusen Guo",
+        "Yuezhong Wu",
+        "Huadong Mo",
+        "Wei Song"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-19T09:27:58+00:00",
+      "score": 4,
+      "reason": "该研究揭示文本到视频安全过滤器对运动中有害内容的盲区，属于视频内容安全研究，与GIS时空数据挖掘无直接关联。",
+      "tags": [
+        "文本到视频",
+        "安全过滤",
+        "时序顺序",
+        "内容审核"
+      ],
+      "summary_zh": "文本到视频（T2V）服务继承图像生成的安全栈，将关键词提示过滤器与逐帧检查器配对，当任一采样帧看起来不安全时阻止片段。该栈有一个视频特有的盲点。作者证明，任何忽略帧顺序的审核器在接受某片段的无害打乱版本时就会接受有害片段，因此仅由顺序携带的危害得以逃脱。实证上，未修改的基准提示已在四个留出种子上使32.7%的顺序动作目标落入该审核缺口，而改写、场景分割和反馈驱动的提示搜索均无显著改善（配对McNemar p≥0.12），因此无需提示工程即可暴露漏洞。对所有97个渲染帧进行密集评分显示，约三分之一的交付片段仅隐藏了一个不安全帧，其余即使作为有序视频仍有害，尽管每帧都通过，这是未修改提示在四分之一顺序动作目标上达到的顺序盲残差。作者还记录了一个测量陷阱：在自身渲染种子上对搜索提示评分会将7.5%的每次生成率夸大为表观46.7%。用户研究确认人们将这些片段读为有害，其打乱版本读为安全。修复方法是读取帧顺序，顺序感知检测器以AUC 0.74将这些片段与其打乱版本分离，而逐帧检查处于随机水平，这正是已部署审核丢弃的信号。",
+      "insight_zh": "该研究强调时序顺序在视频内容审核中的关键作用，对遥感视频变化检测中的时序建模有间接启发，但与地理空间智能的核心主题关联较弱。"
+    },
+    {
       "key": "arxiv:2609.26048",
       "title": "FIRE: Failure-Informed Runtime Engineering for Reliable Language-Model Agents",
       "title_zh": "FIRE：面向可靠语言模型智能体的失败知情运行时工程",
@@ -19267,6 +19288,30 @@
       ],
       "summary_zh": "深度神经网络通过将仿射映射与非线性激活函数复合来逼近函数，但复合本身如何产生逼近能力尚未被完全理解。作者研究一个基本机制：单个标量生成函数迭代的几何加权和。该机制是函数经典帐篷映射构造的基础——（摘要在此处截断）。",
       "insight_zh": "该理论工作探讨复合结构带来的逼近能力，可能对理解深度模型表达能力有一般性意义，但与地理空间数据、城市更新或遥感应用没有直接联系。"
+    },
+    {
+      "key": "arxiv:2609.26272",
+      "title": "Mode Collapse Is Cheap to Detect: A Ground-Truth-Free Pre-Flight Check for Neural Samplers",
+      "title_zh": "模式崩溃检测成本低廉：神经采样器的无真值预检",
+      "url": "https://arxiv.org/abs/2609.26272",
+      "arxiv_id": "2609.26272",
+      "authors": [
+        "Jian Xu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-20T09:12:29+00:00",
+      "score": 3,
+      "reason": "该研究提出神经采样器模式崩溃的无真值预检方法，属于生成模型诊断，与GIS时空数据挖掘无直接关联。",
+      "tags": [
+        "神经采样器",
+        "模式崩溃检测",
+        "预检",
+        "生成模型"
+      ],
+      "summary_zh": "神经采样器针对未归一化目标π̃=e^{-E}训练，没有π的样本，使实践者无法判断昂贵的训练运行是否静默丢弃了目标的一部分。常用诊断从模型自身抽取计算，因此局限于模型支撑集：作者展示一个采样器，其自归一化有效样本量为0.99，却遗漏了87%的目标质量。作者认为检测缺失质量严格比采样它更容易：检测需要每个遗漏盆地一个点加局部曲率估计，而修正需要重新训练采样器。作者将其转化为预检，消耗采样器自身训练预算的百分之几，仅使用E、∇E和∇²E。在具有精确可计算真值的高斯混合、Many-Well和旋转各向异性Many-Well目标上，该检查在2.7%训练成本下将缺失质量估计到10^{-3}以内，而调优的退火SMC参考需要70-280%训练成本却表现更差。该方法还不变地适用于无可处理密度的受控SDE采样器，其中ESS和ELBO根本无法形成。估计器带有自诊断，在无真值情况下向安全方向保守：在60种配置中通过16种，其中15种精确到10^{-2}或更好。作者明确说明其许可范围：该检查廉价产生缺失质量证据，有时产生搜索已稳定的证据，但不能认证运行，其阈值是启发式的。作者随后在真实物理景观LJ-13上映射方法边界，报告其失败之处及原因。",
+      "insight_zh": "该研究提出的无真值预检思路对生成模型诊断有方法价值，但与地理空间智能或城市更新的研究主题关联很弱。"
     },
     {
       "key": "arxiv:2609.25163",

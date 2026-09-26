@@ -2,11 +2,11 @@
   "date": "2026-09-16",
   "analysis_stats": {
     "total": 554,
-    "analyzed": 484,
+    "analyzed": 494,
     "high": 8,
     "medium": 20,
     "low": 40,
-    "below_threshold": 416
+    "below_threshold": 426
   },
   "papers": [
     {
@@ -2567,6 +2567,39 @@
       "insight_zh": "若该方法能有效实现跨任务视觉推理，可能为遥感影像的零样本/少样本变化检测或城市要素识别提供新思路，但需完整摘要验证。"
     },
     {
+      "key": "arxiv:2609.16233",
+      "title": "SceneBench: A Hierarchical Benchmark for Vision-Language Understanding of 3D Scenes",
+      "title_zh": "SceneBench：面向3D场景视觉语言理解的层次化基准",
+      "url": "https://arxiv.org/abs/2609.16233",
+      "arxiv_id": "2609.16233",
+      "authors": [
+        "Anubhav Khanal",
+        "Prabigya Acharya",
+        "Roshni Poudel",
+        "Sujan Kapali",
+        "Bigyan Bhatta",
+        "Pramish Paudel",
+        "Francois Rameau",
+        "Danda Pani Paudel"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-14T18:59:13+00:00",
+      "score": 40,
+      "reason": "该文提出面向3D场景视觉语言理解的层次化基准，包含场景、房间、功能区、物体组等层次语义与空间推理任务，与地理空间智能、多源数据融合和空间推理有较强方法学关联，但场景为室内3D重建而非城市或遥感。",
+      "tags": [
+        "3D场景理解",
+        "视觉语言模型",
+        "层次语义",
+        "基准数据集",
+        "空间推理"
+      ],
+      "summary_zh": "视觉语言模型在2D图像理解方面表现出色，但在3D空间推理方面仍受限。当前基准的局限阻碍了进展。首先，3D数据集常依赖点云，虽能捕捉几何信息，却丢弃了纹理、文字和材质等丰富视觉特征。其次，标注往往孤立地处理物体，忽略了现实世界中的层次组织（场景、房间、功能区、物体组）。第三，评估任务多聚焦于基础识别，而非多步空间推理。在此背景下，作者提出SceneBench，一个包含966个逼真3D场景的基准，这些场景使用高斯泼溅重建，并密集标注了跨越场景、房间、功能区、物体组和单个物体的层次语义。这些标注通过人机协同流程生成，结合视觉语言模型与约1500小时人工迭代精修与验证，产出超过18.3万个带文本描述和3D边界框的标注节点。基于这一表示，作者定义了三个评估任务：探测物体属性的存在性问题、涵盖计数、大小比较、距离和方向关系的空间智能问题，以及需要跨语义层次多步推理的接地QRA三元组。对最先进视觉语言模型的实验表明，模型在基础识别任务上表现良好（如检测准确率可达85%），但在层次化和组合推理上性能显著下降（如计数降至60%），揭示了现有基准未能捕捉的局限。SceneBench为开发和评估模型提供了逼真的测试平台。",
+      "insight_zh": "其层次化语义标注与多步空间推理评估思路可启发城市3D场景理解与地理空间问答基准构建，但摘要场景为室内重建，未涉及城市或遥感数据。"
+    },
+    {
       "key": "arxiv:2609.17019",
       "title": "SKIP: a Self-knowledge-guided Step-wise Preference Learning Framework for Concise Reasoning",
       "title_zh": "SKIP：面向简洁推理的自知识引导逐步偏好学习框架",
@@ -3185,6 +3218,37 @@
       ],
       "summary_zh": "科学测量常常分散在不同地点、时间段和机构中。将这些碎片合并为连续可微场，可以从其导数中恢复控制物理参数。本文为此目标做出两项贡献。第一，将固定基岭回归统计量的加性结构应用于张量积样条场：每个数据持有者计算局部Gram矩阵和矩向量，合并后的解在数学上与集中式拟合完全相同，无需共享原始数据，也无需迭代同步。该性质特定于固定特征平方误差设定；本文推导未建立对一般联合训练多层网络的类似保证。第二，完整流程将分布式观测通过场重建、导数提取和线性回归连接到物理参数推断。扩散系数恢复误差为0.11%，波速恢复误差为0.12%；两种情况下，分布式合并相对于集中式拟合均无退化。应用于41年NOAA海表温度数据，在真实时空观测上确认了该结果。",
       "insight_zh": "该工作表明，固定基样条场的分布式统计量合并可在不共享原始数据的情况下实现与集中式拟合等价的物理参数反演；其海表温度应用显示该方法可用于真实时空地理观测，但论文未讨论城市更新、遥感变化检测或多智能体LLM。"
+    },
+    {
+      "key": "arxiv:2609.16310",
+      "title": "Racing in Volume with Flow Ensembles",
+      "title_zh": "体量中的竞速：基于流集合的4D重建",
+      "url": "https://arxiv.org/abs/2609.16310",
+      "arxiv_id": "2609.16310",
+      "authors": [
+        "Saswat Subhajyoti Mallick",
+        "Riu Cherdchusakulchai",
+        "Marc Ruiz Olle",
+        "Albert Mosella-Montoro",
+        "Jose Ribeiro-Gomes",
+        "Francisco Vicente Carrasco",
+        "Fernando De la Torre"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-14T20:18:59+00:00",
+      "score": 35,
+      "reason": "该文提出流式4D高斯泼溅方法用于稀疏外部相机下的高速运动目标重建，并发布合成基准，属于三维/四维场景重建与多视角融合，与遥感变化检测和地理空间智能有方法学关联，但应用场景为体育赛事而非城市或遥感。",
+      "tags": [
+        "4D重建",
+        "高斯泼溅",
+        "流式重建",
+        "多视角几何",
+        "基准数据集"
+      ],
+      "summary_zh": "流式4D重建此前仅在室内、围绕以人类速度运动的目标、使用密集相机阵列的情况下得到验证。室外4D重建虽已存在，但要么依赖安装在运动车辆上的相机，要么依赖覆盖范围有限的阵列离线观测准静态目标。真正对观众重要的场景是：快速运动的目标，由稀疏的异中心相机环观测，并进行流式处理。目前没有方法针对这一场景，也没有评估基准。为此，作者提出FastFlowGS，一种流式4D高斯泼溅方法，用于从少量固定外部相机重建快速运动目标；并提出Monaco4D，一个用于高速室外重建的逼真Unreal Engine 5基准。FastFlowGS融合稀疏匹配、半稠密轨迹和稠密光流，通过几何不确定性将每种信号提升到3D，并通过卡尔曼式时间更新进行组合。Monaco4D提供不同光照下的一级方程式序列，包含赛道边、车载和无人机视角以及稠密真值。在CMU-Panoptic上，FastFlowGS在效率提高35%的同时，VMAF超过最强基线12.6%。在Monaco4D上，现有流式方法严重退化，而该方法将动态区域PSNR最多提升18.6%，每帧优化时间降低28.3%。数据集及更多细节见 https://humansensinglab.github.io/monaco4d/。",
+      "insight_zh": "其多信号融合与卡尔曼式时间更新对动态场景时空重建有参考价值，或可启发遥感视频/变化检测中的流式重建，但摘要未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2505.23686",
@@ -5519,6 +5583,35 @@
       "insight_zh": "该文提出的RLVR数据合成与蒸馏思路，若扩展到遥感影像与地理文本的多模态指令数据，或可支撑地理空间智能体的训练，但论文本身未涉及地理场景。"
     },
     {
+      "key": "arxiv:2609.16314",
+      "title": "Robust Fault Detection in Mechanical Multimodal Time Series via Self-Supervised Cross-Modal Reconstruction",
+      "title_zh": "基于自监督跨模态重建的机械多模态时间序列鲁棒故障检测",
+      "url": "https://arxiv.org/abs/2609.16314",
+      "arxiv_id": "2609.16314",
+      "authors": [
+        "Magnus Munk Jensen",
+        "Dorte Hammersh{\\o}i",
+        "Rafa{\\l} Wi\\'sniewski",
+        "Olga Fink"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.AP"
+      ],
+      "published": "2026-09-14T20:24:53+00:00",
+      "score": 22,
+      "reason": "该文提出基于跨模态重建的多模态时间序列异常检测框架，并强调对分布偏移的鲁棒性，其方法学与多源数据融合和时空异常检测有相通之处，但应用场景为工业系统故障检测，未涉及地理空间或城市问题。",
+      "tags": [
+        "多模态时间序列",
+        "异常检测",
+        "自监督学习",
+        "跨模态重建",
+        "分布偏移"
+      ],
+      "summary_zh": "故障检测在工业系统中至关重要，可及早识别异常行为，提升安全性、可靠性和运行效率。现代系统日益依赖异构传感模态，以捕捉底层物理过程的互补信息。然而，现有数据驱动异常检测方法往往独立处理各模态，或仅采用简单的特征级融合，限制了其利用刻画正常系统行为的跨模态关系的能力。其性能通常还假设训练与部署分布相似，而真实运行会受到工况变化、环境影响和系统退化影响，导致分布偏移并降低检测性能，尤其是在未见工况下。本文提出一种基于异构时间序列传感器数据跨模态重建的多模态异常检测框架。该框架不独立建模各模态，而是通过从其他模态重建某一模态来学习系统动态，从而利用模态间的互补信息。这一做法在无需显式时间对齐或相同采样率的情况下整合了跨传感通道的信息，同时提升了对传感器噪声、缺失测量和模态特定干扰的鲁棒性。为应对真实部署中的分布偏移，异常通过跨模态重建误差和一种自适应测试时阈值机制来识别，后者可随工况变化进行调整。三个工业案例实验表明，该方法具有较强故障检测性能，并在分布外条件下显著提升了鲁棒性。",
+      "insight_zh": "跨模态重建与自适应阈值思路可迁移至多源遥感或城市传感数据的异常检测，但摘要未给出地理空间实验，迁移性需进一步验证。"
+    },
+    {
       "key": "arxiv:2609.17429",
       "title": "Learning-Guided Planning in Large Dynamic Action Spaces: Budgeted Tree Search for One-to-Many Mobile Charging",
       "title_zh": "大规模动态动作空间中的学习引导规划：一对多移动充电的预算树搜索",
@@ -6598,6 +6691,33 @@
       "insight_zh": "该研究表明偏见审计工具的检测能力与排名能力可以脱节，跨工具排名一致性接近随机；对依赖多源评估指标的地理空间AI系统而言，这提示不同评估工具可能测量不同构念，不应简单合并为单一排名分数。"
     },
     {
+      "key": "arxiv:2609.16309",
+      "title": "Agentic Search Spaces for Tabular Machine Learning",
+      "title_zh": "面向表格机器学习的智能体搜索空间",
+      "url": "https://arxiv.org/abs/2609.16309",
+      "arxiv_id": "2609.16309",
+      "authors": [
+        "Renat Sergazinov",
+        "Artem Chistyakov",
+        "Sergey Pankevich",
+        "Artem Babenko"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-14T20:18:29+00:00",
+      "score": 20,
+      "reason": "该文研究LLM智能体为表格机器学习设计扩展超参数搜索空间，属于LLM智能体与自动化机器学习交叉，与研究中LLM和多智能体方向有方法学联系，但不涉及地理空间数据或城市应用。",
+      "tags": [
+        "LLM智能体",
+        "表格机器学习",
+        "超参数优化",
+        "自动化机器学习"
+      ],
+      "summary_zh": "尽管基于LLM的智能体在规划、代码生成和调试方面进展迅速，但其在表格机器学习中的实际价值仍未被充分探索。本文研究一个具体用例：当前最先进的智能体AI系统能否为既有表格模型设计扩展的HPO搜索空间，并超越模型作者提供的标准搜索空间。具体而言，作者将每个表格模型表示为一个模块化流水线，涵盖预处理、嵌入、架构、训练和推理。随后让智能体为每个模块提出候选代码实现，并使用经典HPO算法在这些候选与模型默认超参数上联合优化。与基础HPO空间相比，扩展搜索空间在45个数据集上提升了几乎所有模型族的性能，平均相对增益为0.6%，在中小型回归数据集上可达2.0%。值得注意的是，这些增益并未带来额外调参成本：在相同调参与集成预算下，扩展空间优于基础空间。这些增益还可迁移到近期TabArena基准上，智能体搜索空间提升了五个模型族中四个的官方Elo分数，且两个最强的智能体集成超过了传统模型的最佳AutoGluon集成。总体而言，本研究表明LLM智能体可通过扩展设计空间为表格ML提供实际价值。",
+      "insight_zh": "其智能体扩展搜索空间与联合优化思路可迁移至地理空间机器学习流水线设计，但摘要未涉及空间数据或城市分析。"
+    },
+    {
       "key": "arxiv:2609.08861",
       "title": "API Benchmark Scores Do Not Reliably Transfer to Chatbot Interfaces",
       "title_zh": "API基准分数不能可靠地迁移到聊天机器人界面",
@@ -7191,6 +7311,33 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该研究提出GraphIFE方法，利用不变学习来应对图数据中节点类别不平衡的分类问题。",
       "insight_zh": "图不平衡学习可迁移至城市空间单元分类、遥感地物类别不平衡等场景，但摘要缺失，无法确认其是否涉及空间图结构或地理语义。"
+    },
+    {
+      "key": "arxiv:2609.16317",
+      "title": "Generative models for simulation based filtering: Formulations and Empirical Comparisons",
+      "title_zh": "面向模拟滤波的生成模型：形式化与实证比较",
+      "url": "https://arxiv.org/abs/2609.16317",
+      "arxiv_id": "2609.16317",
+      "authors": [
+        "Mohammad Al-Jarrah",
+        "Wei Deng",
+        "Bamdad Hosseini",
+        "Amirhossein Taghvaei"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-14T20:31:29+00:00",
+      "score": 18,
+      "reason": "该文研究生成模型用于非线性滤波的统一框架与数值比较，属于状态估计与序列数据同化方法，与时空数据挖掘有间接方法学联系，但不涉及城市更新、遥感变化检测或多源地理空间数据融合等具体应用。",
+      "tags": [
+        "生成模型",
+        "非线性滤波",
+        "时空状态估计",
+        "集合方法"
+      ],
+      "summary_zh": "本文提出了生成模型求解非线性滤波问题的统一形式化框架，并进行了受控的数值比较。在该框架下，分析步通过将预报分布输运到后验分布来实现，不同方法仅在如何选择和学习该输运上有所区别。作者推导了三种新滤波器，分别基于随机插值、其确定性流匹配极限，以及通过前向-后向随机微分方程实现的薛定谔桥。研究还提出了一种两阶段调参流程，将生成模型的训练与其在线细化分离。所得方法在精度、计算时间以及对集合大小和状态维度的敏感性方面，与最优输运滤波器（OTF）、Knothe–Rosenblatt滤波器（KRF）、序贯重要性重采样（SIR）粒子滤波器和集合卡尔曼滤波（EnKF）进行了比较。结果表明，每种生成式滤波器都能解析出EnKF和SIR无法处理的多峰后验；没有单一生成框架占绝对优势，首选方法取决于可用的在线预算和集合大小；各滤波器在所产生的粒子轨迹规律性上存在差异。",
+      "insight_zh": "该文可为时空数据同化与动态状态估计提供生成式建模思路，但其摘要未涉及地理空间应用，对城市更新或遥感变化检测的直接价值有限。"
     },
     {
       "key": "arxiv:2609.16872",
@@ -9279,6 +9426,34 @@
       ],
       "summary_zh": "摘要内容缺失，仅从标题可知该研究提出一种无需微调即可生成高分辨率视频的方法。",
       "insight_zh": "高分辨率视频生成技术或可用于城市动态模拟或遥感时序数据增强，但当前摘要信息不足以评估其适用性。"
+    },
+    {
+      "key": "arxiv:2609.16301",
+      "title": "CLEAR: Cross-Source Evidence Adjudication for Large Language Models in Medicine",
+      "title_zh": "CLEAR：面向医学大语言模型的跨源证据仲裁",
+      "url": "https://arxiv.org/abs/2609.16301",
+      "arxiv_id": "2609.16301",
+      "authors": [
+        "Shuai Wang",
+        "Yize Zhao",
+        "Qingyu Chen"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-09-14T20:00:16+00:00",
+      "score": 15,
+      "reason": "该文提出医学领域LLM跨源证据仲裁的智能体框架，涉及RAG、多源证据冲突与裁决，与研究中LLM和多智能体方向有方法学联系，但应用领域为医学，不涉及地理空间。",
+      "tags": [
+        "LLM",
+        "医学问答",
+        "检索增强生成",
+        "证据仲裁",
+        "智能体框架"
+      ],
+      "summary_zh": "医学知识持续演进，而大语言模型（LLM）中编码的参数化知识在训练时即已固定。外部检索（包括检索增强生成，RAG）可提供新近证据，但检索到的信息可能不相关、不完整或相互冲突。因此，外部检索反而可能降低LLM输出的事实准确性和证据支撑性。为应对这一挑战，作者提出CLEAR，一个面向医学LLM跨源证据仲裁的智能体框架。CLEAR从三条互补路径独立生成候选答案——参数化知识、本地整理语料库和动态检索证据——反映LLM可用的三类常见信息源。一个聚合验证器联合评估候选答案、支撑证据、来源和源质量信息，以识别各来源之间的一致与冲突。随后，一个仲裁模块通过互补的覆盖—守卫和挑战—审计机制决定当前结论应保留还是修订，而未解决的冲突会触发有针对性的后续搜索与重新仲裁。",
+      "insight_zh": "其多源证据冲突识别与仲裁机制可类比多源地理空间数据融合中的一致性检验，但摘要未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.16884",
@@ -11968,6 +12143,34 @@
       "insight_zh": "该文的测试时自适应与交互式标注闭环思路，可能对遥感影像标注或变化检测样本构建有方法借鉴意义，但其数据与任务均为医学影像分割，与地理空间智能无直接关联。"
     },
     {
+      "key": "arxiv:2609.16222",
+      "title": "How I learned to stop worrying and love StopGrads: Stationarity, Convergence, and a case study on Flow Map Learning",
+      "title_zh": "我如何学会不再担忧并爱上StopGrad：平稳性、收敛性及流映射学习案例研究",
+      "url": "https://arxiv.org/abs/2609.16222",
+      "arxiv_id": "2609.16222",
+      "authors": [
+        "Max W. Shen",
+        "Mark Goldstein",
+        "Zichu Wang",
+        "Aahlad Puli",
+        "Rajesh Ranganath"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-14T18:51:55+00:00",
+      "score": 10,
+      "reason": "该文研究stopgrad训练目标的理论基础与收敛性，属于机器学习优化理论，与GIS、城市更新、遥感或地理空间智能无直接关联。",
+      "tags": [
+        "StopGrad",
+        "流映射学习",
+        "收敛性分析",
+        "扩散采样器"
+      ],
+      "summary_zh": "Stopgrad在机器学习模型训练中被广泛使用，但它会改变原目标的梯度、平稳点和收敛保证，从而使stopgrad训练在理论上缺乏依据。作者提出stopgrad回归原理，识别出一类stopgrad目标的通用模板，并给出平稳点及其唯一性的闭式刻画，统一了流映射、强化学习和扩散采样器中的stopgrad目标。作者为优化stopgrad流映射目标提供了理论依据，证明其唯一平稳点就是真实流映射，并给出欧拉式和拉格朗日式目标的正面收敛结果，包括MeanFlow和改进的MeanFlow。值得注意的是，作者证明在函数半梯度流下，所学流映射具有闭式表达，由初始流映射与真实流映射复合而成。此外，作者利用stopgrad回归原理提出了流映射目标的改进stopgrad放置方式，可将训练内存减少2倍。",
+      "insight_zh": "该文为生成式时空建模中的训练目标设计提供理论参考，但摘要未涉及地理空间数据或应用。"
+    },
+    {
       "key": "arxiv:2609.05233",
       "title": "Hessian-based molecular conformation augmentation for a scalable and efficient strategy of machine learning interatomic potentials",
       "title_zh": "基于Hessian的分子构象增强：一种可扩展且高效的机器学习原子间势策略",
@@ -13443,6 +13646,32 @@
       "insight_zh": "该工作表明，少量不确定性选择的样本结合合成CoT即可显著提升小型视频语言模型的推理能力，且CoT位置对紧凑模型效果有重要影响；这为资源受限场景下的多模态推理提供了高效蒸馏策略。"
     },
     {
+      "key": "arxiv:2609.16312",
+      "title": "Efficient One-to-Many Translation with Joint Multi-Stream Diffusion",
+      "title_zh": "基于联合多流扩散的高效一对多翻译",
+      "url": "https://arxiv.org/abs/2609.16312",
+      "arxiv_id": "2609.16312",
+      "authors": [
+        "Yiwen Guan",
+        "Jacob Whitehill"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-14T20:20:46+00:00",
+      "score": 8,
+      "reason": "该文研究离散扩散框架下的一对多多语言翻译，属于自然语言处理与生成模型效率问题，与GIS、城市更新、遥感或地理空间智能无直接关联。",
+      "tags": [
+        "扩散模型",
+        "多语言翻译",
+        "一對多生成",
+        "高效推理"
+      ],
+      "summary_zh": "一对多机器翻译（MT）对自回归（AR）系统而言计算代价高昂，其延迟会随序列长度和目标语言数量线性增长。本文探索如何利用扩散实现多语言翻译：采用离散扩散框架并行细化所有目标语言，从而在目标数量上实现亚线性延迟扩展，并支持以单一统一模型替代多个独立系统进行部署。该框架以连续语义锚点为条件而非源语言词元，因此无需重新训练即可零样本迁移到未见源语言，在零样本源语言上可保持约75%的监督翻译质量。作者研究了质量—延迟前沿，发现结合加速采样后，其监督质量可与AR基线相当，同时实现2倍加速，并在零样本BLEU上提升11.9%。这些结果凸显了联合多流扩散作为高效一对多翻译的实用且灵活替代方案的潜力。",
+      "insight_zh": "该文与地理空间智能无直接关系，但其并行多目标生成与零样本迁移思路或对多任务地理文本生成有启发，摘要未涉及地理应用。"
+    },
+    {
       "key": "arxiv:2609.16450",
       "title": "Early-Bird Decoding: Accelerating Diffusion LLMs with Learnable Block Sizes and Parallel Sampling",
       "title_zh": "早鸟解码：以可学习块大小与并行采样加速扩散大语言模型",
@@ -14530,7 +14759,7 @@
     {
       "key": "arxiv:2609.16306",
       "title": "Sequence Recognition in Bharatnatyam dance",
-      "title_zh": "",
+      "title_zh": "婆罗多舞中的序列识别",
       "url": "https://arxiv.org/abs/2609.16306",
       "arxiv_id": "2609.16306",
       "authors": [
@@ -14555,37 +14784,16 @@
       ],
       "published": "2026-09-14T20:12:51+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.16233",
-      "title": "SceneBench: A Hierarchical Benchmark for Vision-Language Understanding of 3D Scenes",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16233",
-      "arxiv_id": "2609.16233",
-      "authors": [
-        "Anubhav Khanal",
-        "Prabigya Acharya",
-        "Roshni Poudel",
-        "Sujan Kapali",
-        "Bigyan Bhatta",
-        "Pramish Paudel",
-        "Francois Rameau",
-        "Danda Pani Paudel"
+      "reason": "该文研究印度古典舞蹈Adavu序列识别，属于计算机视觉与动作序列识别，与GIS、城市更新、遥感或地理空间智能无直接关联。",
+      "tags": [
+        "动作识别",
+        "序列识别",
+        "CNN",
+        "SVM",
+        "文化遗产"
       ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-14T18:59:13+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "summary_zh": "婆罗多舞是印度最古老的古典舞蹈（ICD），在印度及世界各地被学习和练习。Adavu是这种舞蹈形式的核心，共有15种Adavu和58种变体。每种Adavu变体由一组定义明确的动作和姿态（称为舞步）按特定顺序组成。因此，学生在学习Adavu时，不仅要学习舞步，还要注意其出现顺序。本文提出了一种识别这些序列的方法。工作中首先使用卷积神经网络（CNN）和支持向量机（SVM）分别识别Adavu中涉及的关键姿态（KP）和动作。其中CNN达到99%的识别准确率，SVM达到84%。随后，作者使用编辑距离算法将这些KP和动作序列与真值进行比较以找到最佳匹配，准确率为98%。该论文以数字遗产、舞蹈教学系统等形式对现有技术作出重要贡献。论文提出三项新颖之处：（a）基于KP和动作而非仅基于KP来识别序列，区别于此前工作；（b）通过分析每个序列的预测时间来衡量所提方法的性能，并与处理同一问题的先前工作进行比较；（c）通过纳入所有Adavu变体来测试所提方法的可扩展性，而此前文献仅使用一两种变体。",
+      "insight_zh": "该文与地理空间研究无直接关系，其序列匹配思路对时空轨迹模式识别或有类比意义，但摘要未涉及地理应用。"
     },
     {
       "key": "arxiv:2609.17091",
@@ -14814,29 +15022,6 @@
       "insight_zh": "由于摘要缺失，无法推断具体方法、数据集或结论。从标题推测，该工作可能对理解模型在分布偏移下的表现有理论意义，但与地理空间智能的直接关联不明确。"
     },
     {
-      "key": "arxiv:2609.16314",
-      "title": "Robust Fault Detection in Mechanical Multimodal Time Series via Self-Supervised Cross-Modal Reconstruction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16314",
-      "arxiv_id": "2609.16314",
-      "authors": [
-        "Magnus Munk Jensen",
-        "Dorte Hammersh{\\o}i",
-        "Rafa{\\l} Wi\\'sniewski",
-        "Olga Fink"
-      ],
-      "categories": [
-        "cs.LG",
-        "stat.AP"
-      ],
-      "published": "2026-09-14T20:24:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16665",
       "title": "Right Direction, Wrong Step: Geometric Analysis of Finite-Step Failure in Looped Transformers",
       "title_zh": "方向正确，步长错误：循环Transformer有限步失败的几何分析",
@@ -14950,31 +15135,6 @@
       ],
       "summary_zh": "本文提出一个针对白俄罗斯语的数据清洗流程与英语-白俄罗斯语机器翻译微调方法。该清洗流程的独特之处在于采用纠正工具处理白俄罗斯语两种正字法问题、训练数据噪声、其他语言干扰以及互联网上常见的白俄罗斯语拼写错误。在未过滤训练数据上的匹配消融实验表明，过滤对所有微调模型都有显著收益，其中基于LLM的模型从过滤中获得的收益约为专用编码器-解码器机器翻译系统的两倍，支持了对于白俄罗斯语机器翻译而言数据质量是主要瓶颈之一的观点。",
       "insight_zh": "该研究强调数据质量对低资源语言翻译的关键作用，其清洗思路或可类比到地理空间文本数据（如地名、地址）的噪声处理，但论文本身与地理空间领域无关。"
-    },
-    {
-      "key": "arxiv:2609.16310",
-      "title": "Racing in Volume with Flow Ensembles",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16310",
-      "arxiv_id": "2609.16310",
-      "authors": [
-        "Saswat Subhajyoti Mallick",
-        "Riu Cherdchusakulchai",
-        "Marc Ruiz Olle",
-        "Albert Mosella-Montoro",
-        "Jose Ribeiro-Gomes",
-        "Francisco Vicente Carrasco",
-        "Fernando De la Torre"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-14T20:18:59+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2607.05364",
@@ -15357,29 +15517,6 @@
       "insight_zh": "由于摘要缺失，无法进行实质性推断。从标题看，该研究可能对全景视频传输优化有参考价值，但与GIS博士研究方向关联度低。"
     },
     {
-      "key": "arxiv:2609.16222",
-      "title": "How I learned to stop worrying and love StopGrads: Stationarity, Convergence, and a case study on Flow Map Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16222",
-      "arxiv_id": "2609.16222",
-      "authors": [
-        "Max W. Shen",
-        "Mark Goldstein",
-        "Zichu Wang",
-        "Aahlad Puli",
-        "Rajesh Ranganath"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-14T18:51:55+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16500",
       "title": "High-Performance Tensor Formulation of the Viterbi Algorithm for Hidden Semi-Markov Models",
       "title_zh": "隐半马尔可夫模型 Viterbi 算法的高性能张量表述",
@@ -15435,28 +15572,6 @@
       ],
       "summary_zh": "强化学习（RL）后训练驱动大语言模型的前沿能力，其墙钟时间主要由自回归展开生成主导。推测解码是这一瓶颈的既定补救措施，但现有草稿头必须在RL之前预训练或预热，引入大量RL运行之外的训练成本。作者观察到RL训练本身提供了在线草稿头训练所需的两个条件：其展开分布远比预训练窄，且其验证步骤持续产生与该分布对齐的监督信号。基于这些观察，作者提出GrowMTP，利用这一监督在RL循环内完全从零训练草稿头，所有头更新与策略主干分离。在Qwen3-4B（无草稿头）、MiMo-7B-SFT（弱头）和Qwen3.5-4B-Base（强头）上，GrowMTP分别实现2.13倍、1.93倍和1.36倍的展开加速，以及1.60倍、1.41倍和1.20倍的端到端加速。因此GrowMTP作为模块化组件服务于现有RL训练框架，特别为没有预训练草稿头的模型提供从零开始的加速路径。",
       "insight_zh": "该研究提出的RL循环内在线训练草稿头方法，对需要大量LLM推理的地理空间智能应用（如多智能体城市仿真）可能具有训练效率上的参考价值，但本身不涉及地理空间问题。"
-    },
-    {
-      "key": "arxiv:2609.16317",
-      "title": "Generative models for simulation based filtering: Formulations and Empirical Comparisons",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16317",
-      "arxiv_id": "2609.16317",
-      "authors": [
-        "Mohammad Al-Jarrah",
-        "Wei Deng",
-        "Bamdad Hosseini",
-        "Amirhossein Taghvaei"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-14T20:31:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.16350",
@@ -15596,27 +15711,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.16312",
-      "title": "Efficient One-to-Many Translation with Joint Multi-Stream Diffusion",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16312",
-      "arxiv_id": "2609.16312",
-      "authors": [
-        "Yiwen Guan",
-        "Jacob Whitehill"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-14T20:20:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.16690",
       "title": "Efficient 3D Whole-Body PET Image Denoising via Conditional Rectified Flow With Optimized Sampling Strategy",
       "title_zh": "基于条件整流流与优化采样策略的高效3D全身PET图像去噪",
@@ -15713,26 +15807,6 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作基于EFCAMDAT语料，检验持续预训练对自动作文评分的效果。",
       "insight_zh": "摘要缺失，无法确认其实验设计或结论；该研究与城市更新、遥感或时空数据挖掘主题关联较弱。"
-    },
-    {
-      "key": "arxiv:2609.16617",
-      "title": "Divergence Timing and Cumulative Disagreement under KV-Cache Eviction",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16617",
-      "arxiv_id": "2609.16617",
-      "authors": [
-        "Xinyue Luo",
-        "Fei Yu"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-15T04:23:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.15903",
@@ -15988,28 +16062,6 @@
       ],
       "summary_zh": "本文提出CVSS-X，一个大规模合成语音到语音翻译语料库，通过反转翻译方向扩展CVSS。CVSS将21种语言翻译为英语，而CVSS-X支持从英语翻译为覆盖12个语系的28种目标语言。该语料库每种语言约含24万对平行语音，总计超过16000小时，是CVSS的八倍。作者提供两个变体：CVSS-X-C每种语言两个规范音色，CVSS-X-T采用跨语言声音克隆，均为完全生成。评估显示翻译质量与CVSS相当，且在类型学多样的语言上表现一致。结合CVSS，该语料库可支持双向与多语言语音到语音翻译研究。代码见https://github.com/ErmisAI/XVSS-X，数据集以CC-BY-NC 4.0许可发布于https://huggingface.co/datasets/lgris/XVSS-X。",
       "insight_zh": "该工作为多语言语音翻译提供了大规模合成语料，其数据构建与评估方法或对多语言资源建设有参考价值，但摘要未涉及地理空间或城市应用，与GIS研究方向无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.16301",
-      "title": "CLEAR: Cross-Source Evidence Adjudication for Large Language Models in Medicine",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16301",
-      "arxiv_id": "2609.16301",
-      "authors": [
-        "Shuai Wang",
-        "Yize Zhao",
-        "Qingyu Chen"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "published": "2026-09-14T20:00:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.16338",
@@ -16271,28 +16323,6 @@
       ],
       "summary_zh": "算法信息动力学（AID）通过扰动系统并测量算法复杂度的变化来研究系统，但其常用估计量——块分解方法——是分段常数的，使微积分运算局限于有限差分。作者使用K^{CDM}_{sF}这一可认证、可微的估计量，将微积分引入学习动力学：grokking，其中复杂度序参量已知但尚未被用于施加作用。在瞬态损失冲击下，该估计量成为控制器，在Levin的描述长度—时间意义下加速grokking，处于依赖数据的Occam边界内，其有限尺寸趋势f_c~ln p/p与优惠券收集者解释一致。消融实验表明，复杂度门控在挽救失败随机种子方面与训练损失门控相当，但干预减少27%；在测试信号中，只有映射复杂度标记转变完成；可认证先验与逐参数∇K归因均可替换（均匀先验传感器做出比特相同的门控决策，随机支撑在稀疏阈值以上与∇K选择的支撑相当）；直接场扰动显示对Occam场的成核式响应（在所探测幅度上未分辨出线性区，因此这些测量不足以支持涨落—耗散替代），有限场响应在接近转变时增长数个数量级。这些测量解释了经验调参的阶梯式策略：bang-bang脉冲，在产出时触发与释放，其迭代可能构建了它所利用的响应。该冲击可迁移到稀疏奇偶任务和Transformer；持续权重空间损失则失败。算法估计量的独特贡献在于时机（何时……）。",
       "insight_zh": "该研究关注学习过程中的复杂度控制与时机，与地理空间智能无直接联系，摘要亦未涉及空间数据。"
-    },
-    {
-      "key": "arxiv:2609.16309",
-      "title": "Agentic Search Spaces for Tabular Machine Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.16309",
-      "arxiv_id": "2609.16309",
-      "authors": [
-        "Renat Sergazinov",
-        "Artem Chistyakov",
-        "Sergey Pankevich",
-        "Artem Babenko"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-14T20:18:29+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.16606",
@@ -16606,6 +16636,31 @@
       ],
       "summary_zh": "学习灵活的运动基元是熟练运动控制的标志。最近的神经科学理论提出运动基元可能实现为共享循环网络的低秩扰动，但未解决这种系统如何学习的问题。我们将这一原理转化为一种新颖的端到端运动技能学习架构：一个共享循环核心由残差适配器库调制，每个适配器由离散潜在代码选择。在闭环生物力学控制上训练，适配器在无架构秩约束的情况下发展出循环动力学的涌现低秩扰动，将任务表征置于共享核心网络的不同子空间中。一个简单的高级策略在学习到的选项上优化，同时整个网络被冻结，对低秩适配器进行排序以产生新颖的分布外运动。我们展示了在闭环控制设置中泛化到新颖运动序列的能力，将任务输入条件的多任务基线的泛化误差改善了最多一个数量级。",
       "insight_zh": "该研究提出的适配器库架构通过低秩扰动实现运动基元的组合泛化，其模块化组合思路可能对多任务地理空间模型的设计有概念启发，但论文未涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.16617",
+      "title": "Divergence Timing and Cumulative Disagreement under KV-Cache Eviction",
+      "title_zh": "KV缓存驱逐下的分歧时序与累积不一致",
+      "url": "https://arxiv.org/abs/2609.16617",
+      "arxiv_id": "2609.16617",
+      "authors": [
+        "Xinyue Luo",
+        "Fei Yu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-15T04:23:53+00:00",
+      "score": 3,
+      "reason": "该文分析KV缓存驱逐下的分歧时序与累积不一致，属于LLM推理机制研究，与LLM技术相关，但与地理空间、城市或遥感无直接联系。",
+      "tags": [
+        "KV缓存",
+        "LLM推理",
+        "分歧分析",
+        "蒙特卡洛"
+      ],
+      "summary_zh": "KV缓存驱逐会扰动自回归生成的条件token分布。作者研究首次分歧时序及后续token不匹配如何决定累积不一致。在指定的逐步最大耦合下，作者推导出精确分解：期望不匹配比例等于首次不匹配贡献加上分歧后暴露量乘以其不匹配率。作者给出无限制自回归核对上的显式构造，实现与有限分歧对齐观测窗口相容的风险锐利区间。残差分支条件蒙特卡洛提供对发生、占用及窗口/尾部贡献的无偏联合估计，且对总token损失具有逐重复方差优势。来自Meta-Llama-3.1-8B-Instruct和Qwen2.5-7B-Instruct的完整轨迹显示，50%保留率的SnapKV比相同50%提示缓存预算的SnapKV-512或近期token保留更晚且更少进入分歧，而分歧后总变差（TV）仍较高。在对288个文档的探索性分析中，分歧后暴露占四个聚合不匹配差距的85-90%。在90%保留率下对288个独立文档的预设比较显示，两个模型中晚期窗口的分支对齐TV均高于早期窗口。",
+      "insight_zh": "该分析表明KV缓存驱逐后的累积不一致主要由分歧后暴露主导，且不同驱逐策略在分歧时序上存在差异，为理解LLM推理扰动提供理论工具，但与地理空间应用无关。"
     },
     {
       "key": "arxiv:2609.16204",

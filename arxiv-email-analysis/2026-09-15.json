@@ -2,11 +2,11 @@
   "date": "2026-09-15",
   "analysis_stats": {
     "total": 1082,
-    "analyzed": 942,
+    "analyzed": 952,
     "high": 8,
     "medium": 47,
     "low": 62,
-    "below_threshold": 825
+    "below_threshold": 835
   },
   "papers": [
     {
@@ -9759,6 +9759,47 @@
       "insight_zh": "该研究展示了事件相机与脉冲神经网络在低功耗、高时间分辨率感知任务上的可行性，其“合成事件流+域增强”的数据构造策略对遥感时序数据的稀疏事件化建模有类比价值，但摘要未涉及遥感或城市尺度应用。"
     },
     {
+      "key": "arxiv:2609.13940",
+      "title": "Optimal Transport for Efficient, Unsupervised Anomaly Detection on Industrial Data",
+      "title_zh": "面向工业数据高效无监督异常检测的最优传输方法",
+      "url": "https://arxiv.org/abs/2609.13940",
+      "arxiv_id": "2609.13940",
+      "authors": [
+        "Abigail Langbridge",
+        "Fearghal O'Donncha",
+        "James T Rayfield",
+        "Bradley Eck"
+      ],
+      "categories": [
+        "cs.LG",
+        "unsupervised",
+        "anomaly",
+        "detection",
+        "on",
+        "industrial",
+        "data.\"",
+        "2024",
+        "IEEE",
+        "International",
+        "Conference",
+        "Big",
+        "Data",
+        "(BigData).",
+        "IEEE,"
+      ],
+      "published": "2026-09-12T13:34:49+00:00",
+      "score": 22,
+      "reason": "该论文提出基于最优传输的无监督时间序列异常检测方法，与时空数据挖掘中的异常检测有方法关联，可能对城市传感器数据异常检测有间接启发，但不涉及地理空间数据、遥感或城市更新。",
+      "tags": [
+        "最优传输",
+        "异常检测",
+        "时间序列",
+        "工业数据"
+      ],
+      "summary_zh": "有效的异常检测框架是工业4.0范式的核心支柱。本文提出一个基于最优传输（OT）的异常检测框架，旨在检测时间序列传感器数据中偏离正常行为的情况。该OT方法需要极少的用户输入，可适应实时数据而无需标注训练数据。该方法有效解决了与数据标注、泛化性和可扩展性相关的现有局限，展现出对短期波动、噪声和数据缺口的韧性——这些是工业环境中的常见挑战。此外，该方法提供反事实解释，提高了在工业环境中部署时的可审计性。所提方法通过一个适应数据动态性的滑动参考窗口学习正常与观测运行条件之间的映射。作者在三个工业数据集上评估该方法，分别来自航运、工业HVAC系统和公开基准数据。该方法在识别异常和减少假阳性方面非常有效，优于传统方法，同时保持计算效率和易于配置。",
+      "insight_zh": "该工作展示了最优传输在无监督时间序列异常检测中的有效性，其滑动参考窗口和反事实解释思路或可迁移到城市传感器网络或遥感时序异常检测，但论文面向工业场景，未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.13263",
       "title": "Multi-View Structure-from-Motion Enables Oriented Projective Shape Analysis in Three Dimensions",
       "title_zh": "多视图运动恢复结构实现三维有向投影形状分析",
@@ -10719,6 +10760,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究细节。根据标题推测，该工作可能构建了一个针对丹麦文化的LLM评估基准，用于测试模型对丹麦文化知识的理解。",
       "insight_zh": "由于摘要缺失，无法判断其具体方法、数据集或结论。仅从标题推断，该方向属于LLM文化能力评估，与地理空间智能的直接关联有限，但若研究涉及区域文化地理与LLM结合，可能有间接参考意义。"
+    },
+    {
+      "key": "arxiv:2609.13945",
+      "title": "SAILOR: Solver-Assisted Interactive LLM-based Optimization Recovery",
+      "title_zh": "SAILOR：求解器辅助的交互式LLM优化恢复",
+      "url": "https://arxiv.org/abs/2609.13945",
+      "arxiv_id": "2609.13945",
+      "authors": [
+        "Shaghayegh Sadeghi",
+        "Stephen L. Smith",
+        "David C. Del Rey Fern'andez"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-12T13:40:52+00:00",
+      "score": 20,
+      "reason": "该论文研究LLM在优化问题建模中的交互式数值恢复，与LLM应用和优化求解有交集，可能对城市资源配置等优化问题有间接启发，但不涉及地理空间数据、遥感或多智能体。",
+      "tags": [
+        "LLM",
+        "优化建模",
+        "交互式问答",
+        "求解器辅助"
+      ],
+      "summary_zh": "优化问题的自然语言描述可能对求解器所需的数值信息（包括成本、容量、需求、边界和惩罚）不完整或模糊。语言模型可以将描述翻译为代码，但当所需数值缺失时，它必须停止或猜测。作者提出SAILOR，一个概念验证系统，能够检测此类无支持的数值选择，向用户提出有针对性的后续问题，并在返回解之前更新优化模型。问题使用不确定性和求解器导出的估计进行优先级排序，以衡量每个缺失值对当前模型的影响强度。作者在七个掩码基准的1,723个实例上使用返回真值的理想化模拟器评估该流水线。精确目标值一致率在不同数据集上从27.0%到87.6%不等，平均每个实例需要1.4至5.7个问题。这些结果在受控的分支-揭示反馈下确立了可行性；它们并未衡量与人类用户交互时的性能或一般的结构性模型修复。代码见：https://github.com/sshaghayeghs/SAILOR。",
+      "insight_zh": "该工作表明LLM可通过交互式提问补全优化模型中的缺失数值，这一思路或可迁移到城市更新中的多目标优化建模，但论文未涉及地理空间场景，且仅在理想化模拟器下验证。"
     },
     {
       "key": "arxiv:2606.29997",
@@ -13522,6 +13589,37 @@
       ],
       "summary_zh": "联合源定位与地声反演需要优化一个由昂贵的简正模传播模型构建的目标函数。使用高斯过程代理的贝叶斯优化可以在有限的前向模型评估次数内获得准确的参数估计，但其性能取决于核函数族的选择。在七维搜索空间中观测很少的情况下，没有单一核函数能够期望在单个反演中始终表现良好。为减少这种依赖，我们使用不同核函数族的加权高斯过程集成，使代理能够适应观测到的目标函数，而无需预先承诺某一核函数。该集成与最优条件采集函数相结合，后者决定下一个昂贵目标函数应在何处评估。在模拟和实测SWellEx-96数据上的实验表明，所得方法在所考虑的贝叶斯优化策略中取得最低的平均最终目标值，并在大多数坐标上降低参数估计误差。消融结果进一步表明，集成提供了对核函数选择的鲁棒性，而采集函数贡献了大部分优化增益。",
       "insight_zh": "该研究通过高斯过程核集成降低对单一核函数的依赖，其思路可迁移至地理空间反演中代理模型构建与采集策略设计。"
+    },
+    {
+      "key": "arxiv:2609.13941",
+      "title": "BLInD: Learning Driver Intent as a Distribution over Future Ego Trajectories",
+      "title_zh": "BLInD：将驾驶员意图学习为未来自车轨迹上的分布",
+      "url": "https://arxiv.org/abs/2609.13941",
+      "arxiv_id": "2609.13941",
+      "authors": [
+        "Flavian Pegado",
+        "Ronit Hire",
+        "Shreyas Rajesh",
+        "and Soham Phade"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO",
+        "Transportation",
+        "Systems",
+        "(ITSC)"
+      ],
+      "published": "2026-09-12T13:35:28+00:00",
+      "score": 18,
+      "reason": "该论文研究基于车辆状态历史的驾驶意图轨迹分布预测，与时空轨迹建模有方法关联，可能对城市交通时空数据挖掘有间接启发，但不涉及地理空间数据融合、遥感或城市更新。",
+      "tags": [
+        "轨迹预测",
+        "驾驶意图",
+        "分布学习",
+        "自动驾驶"
+      ],
+      "summary_zh": "作者提出BLInD（Blind Learned Intent Distribution），一个紧凑网络，将近期车辆状态历史（如速度、曲率、转向灯和车辆类型）映射为未来自车轨迹的top-k分布，不使用摄像头、LiDAR、地图或目标轨迹输入。作者发现仅车辆状态历史就足以学习近期自车轨迹的有用多模态分布，其低延迟特性使其非常适合安全关键部署。作者研究了两种分布架构：自回归（AR）和流匹配，并在混合平台开源数据集和Wayve数据集上训练。两者均无需数据集特定适配即可泛化；流匹配模型在Wayve上取得最佳top-k ADE/FDE为0.15/0.37米，在Waymo上为0.15/0.36米，在nuScenes上为0.28/0.59米，AR模型达到相当的覆盖率。将分布集成到AEB触发任务中，严格的全体候选策略将假阳性从1.51%降至AR的0.11%（13.7倍缩减，94.9%真阳性）和流匹配的0.06%（25.1倍缩减，98.7%真阳性），相比1-CTRV策略的100%真阳性得分。BLInD在NVIDIA DRIVE Orin ECU上使用AR头运行时间为0.87毫秒，使用流匹配头为2.9毫秒，使其兼容汽车ECU上的实时部署。虽然现有学习分布模型依赖场景上下文，而盲车辆状态模型通常坍缩为单一路径，BLInD同时具备学习、盲和跨域特性，这一组合此前工作未展示。这些结果表明，此类分布为下游系统提供了可控且合理的意图采样接口，AEB是其中一种实例化。",
+      "insight_zh": "该工作表明仅凭车辆状态历史即可学习多模态轨迹分布，这一思路或可启发城市交通流预测中的轻量级时空建模，但论文面向自动驾驶，未涉及地理空间数据融合或城市更新。"
     },
     {
       "key": "arxiv:2609.15727",
@@ -17263,6 +17361,41 @@
       "insight_zh": "从标题推断，该研究可能利用语言模型知识增强语音对抗攻击；与地理空间研究无明显交集，摘要缺失进一步限制了相关性判断。"
     },
     {
+      "key": "arxiv:2609.13947",
+      "title": "Hardware-Aware Learned Representation Compression for Distributed In-Sensor Vision",
+      "title_zh": "面向分布式传感器内视觉的硬件感知学习表示压缩",
+      "url": "https://arxiv.org/abs/2609.13947",
+      "arxiv_id": "2609.13947",
+      "authors": [
+        "Chengwei Zhou",
+        "Abu Masum",
+        "Xuming Chen",
+        "Mehran Moghadam",
+        "Sreetama Sarkar",
+        "Arnab Sanyal",
+        "Md Abdullah-Al Kaiser",
+        "M. Hassan Najafi",
+        "Sercan Aygun",
+        "Gourav Datta"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.AR"
+      ],
+      "published": "2026-09-12T13:45:08+00:00",
+      "score": 15,
+      "reason": "该论文涉及传感器内视觉的表示压缩与硬件部署，与遥感变化检测中的边缘计算和图像压缩有间接方法关联，但不涉及地理空间数据挖掘、城市更新或LLM多智能体。",
+      "tags": [
+        "传感器内计算",
+        "表示压缩",
+        "超维计算",
+        "边缘视觉"
+      ],
+      "summary_zh": "传感器内计算通过在传感器附近执行早期处理，降低传输高分辨率图像数据的成本。然而，与CMOS图像传感器（CIS）集成的逻辑芯片在计算和内存方面受到严格限制，限制了传统深度神经网络的分区。作者提出OASIS，一个分布式传感器内视觉框架，使用轻量级编码器在片外传输前生成紧凑的、任务相关的表示。编码器使用任务、熵和重建目标进行端到端训练，而解码器仅在训练时使用。OASIS支持两条互补的部署路径。第一条应用4比特量化和Huffman编码，同时保留分类和密集预测任务所需的空间结构。第二条使用基于Sobol的超维计算（HDC）将编码器潜在表示转换为固定维度的二进制超向量，用于关联记忆分类。对于基于SwinViT的VWW模型，将3×3×8的潜在表示映射到64维超向量，相对于128维配置可额外实现1.77倍的通信缩减，精度损失不到一个百分点，与原始8比特图像传输相比总体缩减达18,816倍。作者在AMD Xilinx Zynq UltraScale+ FPGA上实现数字近传感器流水线，并通过板级直接功耗测量和Vivado实现后分析，结合电路仿真的CIS模型和7纳米ASIC投影对其进行表征。在视觉唤醒词分类、手部追踪和眼动追踪任务中，OASIS将系统总能耗降低约2至4.5倍，同时保持有竞争力的精度。",
+      "insight_zh": "该工作展示了在极端资源受限的传感器端进行任务相关表示压缩的可行性，其思路或可启发遥感卫星或无人机端的在轨/在机预处理，但论文本身面向消费级视觉任务，未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2606.23843",
       "title": "HANCLIP: A Family of Hyperbolic Angular Negation Vision Language Models",
       "title_zh": "HANCLIP：一族双曲角度否定视觉语言模型",
@@ -18364,6 +18497,33 @@
       "insight_zh": "该工作提示，AI生成文本的识别可从词级转向结构级签名，且结构信号在改写下更稳健；但其应用场景为商业网页内容鉴别，与地理空间智能或城市研究的直接关联有限。"
     },
     {
+      "key": "arxiv:2609.13966",
+      "title": "SGWIB:Sliced Gromov-Wasserstein Information Bottleneck for Video Highlight Detection",
+      "title_zh": "SGWIB：用于视频高光检测的切片Gromov-Wasserstein信息瓶颈",
+      "url": "https://arxiv.org/abs/2609.13966",
+      "arxiv_id": "2609.13966",
+      "authors": [
+        "Hanjuan Huang",
+        "Yung-Chieh Yeh",
+        "and Hsing-Kuo Pao"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-12T14:30:58+00:00",
+      "score": 12,
+      "reason": "该论文研究视频高光检测中的时序结构保持与信息瓶颈方法，与遥感变化检测或城市时空数据挖掘仅有非常间接的方法论关联，不涉及地理空间数据、城市更新或LLM多智能体。",
+      "tags": [
+        "视频理解",
+        "信息瓶颈",
+        "Gromov-Wasserstein",
+        "时序结构建模"
+      ],
+      "summary_zh": "视频高光检测旨在识别视频中时间上重要、信息量最大或最具吸引力的片段。可靠的预测不仅需要具有判别力的片段表示，还需要保留相邻和远距离片段之间的时序关系。信息瓶颈原理在学习紧凑且任务相关的表示方面已被证明有效，但尚未被用于视频高光检测，且直接应用传统形式会忽略片段间的关系结构，并在压缩过程中扭曲与高光相关的时序组织。为此，作者引入切片Gromov-Monge差距（SGMG），这是一种结构感知正则化项，用于度量给定源到瓶颈映射相对于最优切片结构对应关系所引入的额外关系失真。基于SGMG，作者提出SGWIB，一个用于单模态视频高光检测的信息瓶颈框架，在保留片段间时序结构的同时学习紧凑的瓶颈表示。作者进一步引入Home-Away-Related Contextual Pseudo-Labels和上下文解耦模块，通过将高光导向信息与上下文模式分离来减少体育特定上下文偏差。在MrHiSum和MoSu上的实验表明，SGWIB在两个数据集上均取得所比较单模态方法中最佳的Kendall's tau、Spearman's rho、mAP@50和mAP@30。在MrHiSum上，视觉模型在这四项指标上分别比此前最强结果提升0.031、0.031、0.87和0.75。这些结果表明，结构感知的信息瓶颈正则化结合上下文解耦可改善片段级高光检测。",
+      "insight_zh": "该工作提示，在时序数据（如遥感变化检测中的多时相序列）中引入结构感知的信息瓶颈正则化，可能有助于在压缩表示时保留时序关系；但其应用场景为视频高光检测，与地理空间任务无直接关联。"
+    },
+    {
       "key": "arxiv:2609.13280",
       "title": "RxScribe Bench: A Multi-Axis Benchmark for Evaluating Vision-Language Models on Indian Outpatient Prescriptions",
       "title_zh": "RxScribe Bench：评估印度门诊处方视觉语言模型的多轴基准",
@@ -18393,6 +18553,55 @@
       ],
       "summary_zh": "处方转录错误并非可互换：模型捏造药物与误读清晰剂量带来的临床风险差异很大，但处方转录准确率通常以单一混合数字报告，将两者等同。本文提出RxScribe Bench，一个评估手写处方数字化视觉语言模型的基准，将性能分解为四个与临床严重性相关的轴，而非折叠为单一聚合分数。仅给定处方图像和输出模式，模型生成结构化记录，随后与形状相同的人工标注真值逐字段比较，每个字段还标注可见性和可读性。四个轴隔离不同失效模式：正确性、幻觉、参与度和鲁棒性。鲁棒性轴在支持样本低于最小证据阈值时保留其困难字段结果而非报告。在真实处方上对前沿视觉语言模型进行每图独立冷运行评估，发现没有单一模型在四个轴上全部胜出。",
       "insight_zh": "该基准强调按临床严重性分解评估而非单一聚合分数，其多轴、字段级评估与证据阈值设计对地理空间信息抽取任务的评估有方法借鉴意义，但原文未涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.14744",
+      "title": "Runtime Authorization for Resources Acquired by AI Agents",
+      "title_zh": "AI智能体所获取资源的运行时授权",
+      "url": "https://arxiv.org/abs/2609.14744",
+      "arxiv_id": "2609.14744",
+      "authors": [
+        "Genliang Zhu (1",
+        "2)",
+        "Chu Wang (1",
+        "3) ((1) Accentrust",
+        "(2) Georgia Institute of Technology",
+        "(3) University of Illinois Urbana-Champaign)"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "terminology",
+        "to",
+        "use",
+        "standard",
+        "descriptive",
+        "language;",
+        "added",
+        "Chu",
+        "Wang",
+        "as",
+        "coauthor;",
+        "strengthened",
+        "the",
+        "peer-reviewed",
+        "literature",
+        "grounding;",
+        "technical",
+        "results",
+        "unchanged"
+      ],
+      "published": "2026-09-13T19:16:44+00:00",
+      "score": 12,
+      "reason": "该文提出AI智能体获取资源的运行时授权架构，涉及智能体委托、多智能体与安全，与多智能体研究有主题关联，但不涉及地理空间或城市分析。",
+      "tags": [
+        "AI智能体",
+        "运行时授权",
+        "安全",
+        "多智能体"
+      ],
+      "summary_zh": "通过获取计算、凭证、账户、服务和其他智能体，自主AI智能体可向任务引入新权限。支付、预算、OAuth、授权和履约检查可验证交易条件，但无法决定返回资源是否可成为可用权限。这一履约后激活缺口横跨工具介导创建、智能体间委托和智能体商务。作者提出AcquireBound，一种来源有界的运行时授权架构。它隔离获取的输出，通过版本化解析器从经认证的提供方证据解析其实际能力，并仅通过当前激活事务激活它们，该事务检查解析后的清单、来源、纪元以及类型化资源-能力超图上的向下封闭关系包络。该包络保留相关的身份、效果、数据、委托和图范围限制。单次使用效果许可在效果线性化时重新验证并消耗。在明确假设下，作者证明八项安全属性，涵盖隔离、背书、非放大、拆分不可规避、崩溃/重试、退款、纪元和效果限制。在五类资源上，参考语义在810个事件中接受20/20良性轨迹并拒绝40/40已登记不安全轨迹；独立检查器在60个基础和40个精化轨迹上一致，并拒绝89/89篡改测试。冻结的Codex和Gemini模型上下文协议（MCP）客户端组件完成54/54确定性本地stdio调用。在已登记的18例分阶段MCP到Docker组合中，两条良性路径均完成，16条不安全路径均未添加未授权Docker启动请求。五源审计对32个单元中的1,248个字段对进行分类；没有单一单元足以……",
+      "insight_zh": "该工作为AI智能体获取资源后的权限激活提供形式化安全架构与验证，对多智能体系统的安全治理有参考价值，但与地理空间研究无直接关联。"
     },
     {
       "key": "arxiv:2609.15488",
@@ -19082,6 +19291,31 @@
       ],
       "summary_zh": "生成式AI写作助手及其背后的大语言模型（LLM）正日益成为选民在选举前获取信息的方式。随着越来越多证据表明它们会影响用户观点，理解这些工具的观点与立场愈发重要。为更好地理解这些观点，本文考察六个LLM在2026年瑞典议会选举前对多种瑞典语写作任务所提供的立场。作者将107项政策提案与77个写作模板以及中性、正面和负面提示框架交叉，每个模型产生24,717个提示，共148,302条回复。为研究这些回复，作者考察模型的默认立场倾向，比较它们对相似议题的回应，并将其与瑞典八个议会政党在同一议题上的回应进行比较。结果发现Claude、DeepSeek、Gemini与Mistral具有相似画像；ChatGPT更常提供中性或模棱两可的文本；Grok在移民、犯罪与性别等议题上差异最大。在政党比较中，社会民主党与所有六个模型最为接近。但在多重比较校正后，模型内政党距离差异均不显著。总体而言，没有模型表现出明确偏好，也没有对某政党的明确偏好，但这取决于用户所询问的具体议题或任务。",
       "insight_zh": "该研究提供了LLM立场偏见的评估方法，或可类比用于地理空间政策文本分析，但论文本身聚焦选举政治，与所述研究方向关联有限。"
+    },
+    {
+      "key": "arxiv:2609.13936",
+      "title": "Inter-Rater Reliability of LLM and Rule-Based Annotation for Inferential Narrative Features: Three Studies on a Turkish Corpus",
+      "title_zh": "LLM与规则标注在推理性叙事特征上的评分者间信度：基于土耳其语语料的三项研究",
+      "url": "https://arxiv.org/abs/2609.13936",
+      "arxiv_id": "2609.13936",
+      "authors": [
+        "Levent Bulut"
+      ],
+      "categories": [
+        "cs.CL",
+        "https://doi.org/10.5281/zenodo.21740239"
+      ],
+      "published": "2026-09-12T13:31:30+00:00",
+      "score": 12,
+      "reason": "该论文评估LLM与规则标注在叙事特征上的评分者间信度，与LLM标注可靠性有交集，可能对LLM辅助地理空间文本标注有间接参考，但不涉及地理空间数据、遥感或城市更新。",
+      "tags": [
+        "LLM标注",
+        "评分者间信度",
+        "叙事特征",
+        "土耳其语语料"
+      ],
+      "summary_zh": "附带自动生成特征标注的数据集引出一个很少被追问的问题：人类会同意这些标签吗？本报告针对Objective Projection语料库回答了这一问题，该语料库是一个土耳其语叙事数据集，其场景带有一个来自基于规则检测器的逐场景applied_rules字段，涵盖六种写作特征——两种禁止项（情感标注、明喻）和四种正向技巧（物质化隐喻、微观聚焦、时间锚点、氛围矛盾）。报告了三项研究。研究1（n=120）将检测器与来自该方案作者本人的盲标注进行评分对比。研究2（n=100，不相交的场景集）将检测器加上Gemini 2.5 Flash和Grok与一位独立非专家评分者进行对比，该评分者的标注在任何机器运行之前已锁定。研究2b使用Claude Fable 5（High）和ChatGPT 5.5重新运行相同协议。核心结果涉及一条规则。在物质化隐喻上——最接近该方法论理论核心的特征——五个机器标注者在100个场景中返回的阳性率分别为0、1、40、72和78，而人类计数为9。在六位标注者中有五位，Cohen's κ处于或与随机水平无法区分，跨越两个人类参考和两个场景集：0.004、0.015、0.000、0.019、0.027。原始一致率从74.7%到84.5%不等，这是类别不平衡的产物而非能力的标志。作者有意不将其归结为单一解释。两种解读仍然成立：该特征确实是推理性的，超出当前自动检测能力；或者该规则的定义尚未足够可操作，以至于任何评分者（包括人类）都无法一致应用。区分二者需要第二位独立人类评分者，本报告没有，因此不做此判断。",
+      "insight_zh": "该研究警示，LLM在推理性特征标注上的评分者间信度可能接近随机水平，这对将LLM用于地理空间文本或社交媒体数据的自动标注具有方法论警示意义，但论文本身面向叙事语料，未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.15145",
@@ -23494,6 +23728,52 @@
       "insight_zh": "摘要为空，无法判断其是否涉及地理空间模型的分布外泛化；仅从标题推测其属于可解释性与泛化性关系的实证研究。"
     },
     {
+      "key": "arxiv:2609.13942",
+      "title": "CRITICS - Critical Science Without Borders: Language Models to Promote Critical Thinking in Science Education",
+      "title_zh": "CRITICS——无国界的批判性科学：语言模型促进科学教育中的批判性思维",
+      "url": "https://arxiv.org/abs/2609.13942",
+      "arxiv_id": "2609.13942",
+      "authors": [
+        "Rodrigo Agerri",
+        "Itziar Aldabe",
+        "Elena Cabrio",
+        "Mark Cieliebak",
+        "Jan Deriu",
+        "Mariana Flores",
+        "Jurgita Kapociute-Dzikiene",
+        "Dovile Kuiziniene",
+        "Arantza Rico",
+        "Aritz Ruiz-Gonzalez",
+        "Aitor Soroa",
+        "Mantas Vaskevicius",
+        "Serena Villata"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "for",
+        "Natural",
+        "Language",
+        "Processing,",
+        "Le\\'on,",
+        "Spain,",
+        "22-25",
+        "September",
+        "2026"
+      ],
+      "published": "2026-09-12T13:37:10+00:00",
+      "score": 10,
+      "reason": "该论文是科学教育中的LLM机器翻译与批判性思维项目，与LLM应用有交集，但不涉及地理空间数据、城市更新、遥感或多智能体。",
+      "tags": [
+        "机器翻译",
+        "科学教育",
+        "批判性思维",
+        "LLM"
+      ],
+      "summary_zh": "CRITICS项目通过将基于大语言模型（LLM）的先进机器翻译（MT）与教育技术相融合，致力于解决科学可及性与科学素养问题。通过利用针对科学内容专门优化的MT系统，教育机构可以提供准确、文化相关的科学材料母语翻译，确保复杂科学概念既可理解又保持技术准确性。在这些翻译的基础上，该项目探索设计和评估基于课程对齐教学法的创新科学教学-学习方案。因此，CRITICS将研究科学论证和批判性思维实践的关键组成部分，以及与学习目标一致并受基于能力的评估框架启发的文本反馈。CRITICS旨在打破获取前沿研究和目前仅以高资源语言提供的教育材料的语言障碍，从而促进科学知识的民主化并培养科学教育中的批判性思维。",
+      "insight_zh": "该工作聚焦于通过LLM翻译促进科学教育公平，与地理空间智能研究无直接关联，但其关于LLM辅助知识传播的思路对地理信息科学教育有极弱的间接参考价值。"
+    },
+    {
       "key": "arxiv:2609.15164",
       "title": "CITECHOICE: A Causal Audit of How Document Presentation Redistributes Citation Credit in Agentic Search",
       "title_zh": "CITECHOICE：文档呈现如何在智能体搜索中重新分配引用信用的因果审计",
@@ -24091,6 +24371,33 @@
       ],
       "summary_zh": "近期研究表明，教师模型可以通过一个已过滤掉所有该偏差显式引用的数据集将偏差传递给学生模型，且即使知道要寻找何种偏差，也没有可靠的数据层面防御能移除或检测它。为揭示这些偏差的隐藏痕迹，作者展示了一种基于Sentence BERT嵌入的简单特征，在已知攻击者所用教师模型时能以0.83的Matthews相关系数识别该偏差的主题，未知时则为0.46。此外，作者观察到不同教师模型似乎通过不同词汇表达同一偏差。",
       "insight_zh": "该结果提示，数据集中被过滤的偏差仍可能以嵌入层面的主题痕迹残留，且不同模型表达方式不同；这对依赖大规模文本或标注数据的地理空间数据治理有间接警示意义，但研究本身未涉及地理数据。"
+    },
+    {
+      "key": "arxiv:2609.13948",
+      "title": "Thought without systematicity? Evaluating reasoning models on rule induction tasks",
+      "title_zh": "无系统性的思维？在规则归纳任务上评估推理模型",
+      "url": "https://arxiv.org/abs/2609.13948",
+      "arxiv_id": "2609.13948",
+      "authors": [
+        "Simon Schug",
+        "Brenden M. Lake"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-12T13:45:11+00:00",
+      "score": 8,
+      "reason": "该论文评估推理模型在规则归纳任务上的系统性，与LLM研究有交集，但聚焦认知科学视角的评测，未涉及多智能体、地理空间数据或城市应用。",
+      "tags": [
+        "推理模型",
+        "系统性",
+        "规则归纳",
+        "认知科学"
+      ],
+      "summary_zh": "人类认知的一个核心原则是系统性，即理解一个概念与理解该概念的相近变体本质上是相互关联的。推理模型是否稳健地展现出这种系统性？如果是，我们应期望模型在同一任务的结构等价变体上表现一致。本文扩展了认知科学中已有的规则归纳任务，以评估当前推理模型思维的系统性。每个任务族具有组合结构，作者利用该结构通过重组和替换等任务同构方式创建结构等价的变体。作者发现，尽管模型能够正确解决某一任务，它们往往在同一任务的结构等价变体上失败。这些发现表明，许多模型行为缺乏系统性，使得在超出其被评估的特定情境之外稳健地确立推理模型的认知能力变得困难。",
+      "insight_zh": "该研究提示，LLM在规则归纳上的表现可能高度依赖具体情境而非真正掌握底层规则，这对将LLM用于需要稳健推理的地理空间决策任务具有警示意义，但论文本身未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.14528",
@@ -27024,28 +27331,6 @@
       "insight_zh": "该研究提出模块化分词器框架以提升多语言模型效率与公平性，可能对多语言自然语言处理有参考价值，但与地理空间研究无直接联系。"
     },
     {
-      "key": "arxiv:2609.13948",
-      "title": "Thought without systematicity? Evaluating reasoning models on rule induction tasks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13948",
-      "arxiv_id": "2609.13948",
-      "authors": [
-        "Simon Schug",
-        "Brenden M. Lake"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-09-12T13:45:11+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15545",
       "title": "The Token Before the Value Is the Key: How Hybrid Architectures Organize Induction Circuits",
       "title_zh": "值之前的 token 是关键：混合架构如何组织归纳电路",
@@ -27613,49 +27898,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13966",
-      "title": "SGWIB:Sliced Gromov-Wasserstein Information Bottleneck for Video Highlight Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13966",
-      "arxiv_id": "2609.13966",
-      "authors": [
-        "Hanjuan Huang",
-        "Yung-Chieh Yeh",
-        "and Hsing-Kuo Pao"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-12T14:30:58+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.13945",
-      "title": "SAILOR: Solver-Assisted Interactive LLM-based Optimization Recovery",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13945",
-      "arxiv_id": "2609.13945",
-      "authors": [
-        "Shaghayegh Sadeghi",
-        "Stephen L. Smith",
-        "David C. Del Rey Fern'andez"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-12T13:40:52+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2607.27913",
       "title": "S-CEReBrO: Breaking the Memory Barrier in Continuous EEG Monitoring",
       "title_zh": "S-CEReBrO：突破连续脑电图监测中的内存瓶颈",
@@ -27689,50 +27931,6 @@
       ],
       "summary_zh": "论文提出S-CEReBrO方法，以突破连续脑电图监测中的内存瓶颈。",
       "insight_zh": "内存优化技术可借鉴于大规模遥感数据流处理，但领域差异显著。"
-    },
-    {
-      "key": "arxiv:2609.14744",
-      "title": "Runtime Authorization for Resources Acquired by AI Agents",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.14744",
-      "arxiv_id": "2609.14744",
-      "authors": [
-        "Genliang Zhu (1",
-        "2)",
-        "Chu Wang (1",
-        "3) ((1) Accentrust",
-        "(2) Georgia Institute of Technology",
-        "(3) University of Illinois Urbana-Champaign)"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CR",
-        "terminology",
-        "to",
-        "use",
-        "standard",
-        "descriptive",
-        "language;",
-        "added",
-        "Chu",
-        "Wang",
-        "as",
-        "coauthor;",
-        "strengthened",
-        "the",
-        "peer-reviewed",
-        "literature",
-        "grounding;",
-        "technical",
-        "results",
-        "unchanged"
-      ],
-      "published": "2026-09-13T19:16:44+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.14360",
@@ -28402,42 +28600,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.13940",
-      "title": "Optimal Transport for Efficient, Unsupervised Anomaly Detection on Industrial Data",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13940",
-      "arxiv_id": "2609.13940",
-      "authors": [
-        "Abigail Langbridge",
-        "Fearghal O'Donncha",
-        "James T Rayfield",
-        "Bradley Eck"
-      ],
-      "categories": [
-        "cs.LG",
-        "unsupervised",
-        "anomaly",
-        "detection",
-        "on",
-        "industrial",
-        "data.\"",
-        "2024",
-        "IEEE",
-        "International",
-        "Conference",
-        "Big",
-        "Data",
-        "(BigData).",
-        "IEEE,"
-      ],
-      "published": "2026-09-12T13:34:49+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14969",
       "title": "Online Language Adaptive Sampling for Better Distributed Cross-lingual Gains",
       "title_zh": "",
@@ -28765,7 +28927,7 @@
     {
       "key": "arxiv:2609.13954",
       "title": "Linear Ensemble Sampling with Smaller Ensembles",
-      "title_zh": "",
+      "title_zh": "更小集成规模的线性集成采样",
       "url": "https://arxiv.org/abs/2609.13954",
       "arxiv_id": "2609.13954",
       "authors": [
@@ -28778,10 +28940,15 @@
       ],
       "published": "2026-09-12T13:54:32+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文属于在线学习与线性赌博机的理论工作，与GIS、遥感、城市更新或LLM多智能体无直接关联，仅在强化学习/决策理论层面有极弱的间接联系。",
+      "tags": [
+        "线性赌博机",
+        "集成采样",
+        "遗憾界",
+        "随机探索"
+      ],
+      "summary_zh": "集成采样通过维护一组模型为随机化探索提供了一种实用方法，但集成规模可以小到何种程度同时仍保持强遗憾保证，这一问题尚未解决。具体而言，现有保证使用Θ(d log T)的集成规模，相对于内在的Ω(d)集成规模下界，在时间跨度T上留下对数差距。作者旨在缩小这一差距，提出一种仅在正则化Gram矩阵发生显著变化时才刷新集成的集成采样算法。该机制将扰动分析局部化到Gram矩阵漂移受控的时段，并将充分集成规模降至Θ(d log d + d log log T)，同时保持任意有界臂集下集成采样的当前最优Õ(d^{3/2}√T)遗憾。作者进一步表明，当臂集为基数K的有限集时，所提算法达到更紧的遗憾界Õ(d√(T log K))。据作者所知，这是首个同时恢复随机化线性赌博机算法两个经典遗憾标度的集成采样保证：任意有界臂集的Õ(d^{3/2}√T)速率和有限臂集的Õ(d√(T log K))速率。该算法还支持无需重置历史数据的随时实现，实验表明其在使用显著更小集成的同时仍与基线具有竞争力。",
+      "insight_zh": "该工作表明，通过自适应刷新机制可显著降低集成规模而不损失理论保证，这一思路或可启发资源受限场景下的探索策略设计，但与地理空间智能研究无直接交集。"
     },
     {
       "key": "arxiv:2609.14977",
@@ -29163,26 +29330,6 @@
       "insight_zh": "由于摘要缺失，无法判断其与地理空间智能的潜在联系；仅从标题看，属于强化学习与LLM训练方法，对GIS研究的相关性较低。"
     },
     {
-      "key": "arxiv:2609.13936",
-      "title": "Inter-Rater Reliability of LLM and Rule-Based Annotation for Inferential Narrative Features: Three Studies on a Turkish Corpus",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13936",
-      "arxiv_id": "2609.13936",
-      "authors": [
-        "Levent Bulut"
-      ],
-      "categories": [
-        "cs.CL",
-        "https://doi.org/10.5281/zenodo.21740239"
-      ],
-      "published": "2026-09-12T13:31:30+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.15886",
       "title": "Inoculation Midtraining with Learned Neologisms",
       "title_zh": "使用学习新词的接种中训练",
@@ -29457,36 +29604,6 @@
       ],
       "summary_zh": "论文提出了HarvestBench基准，通过农场模拟环境，衡量LLM智能体在达成目标过程中为避免伤害动物（而非无生命物体）而愿意付出的燃料代价。研究发现不同模型的“仁慈度”差异巨大，且与模型能力无关，并受道德提示的显著影响。",
       "insight_zh": "该研究揭示了LLM智能体在具体决策中对道德考量的价格敏感性，以及提示词对智能体行为倾向的显著塑造作用。"
-    },
-    {
-      "key": "arxiv:2609.13947",
-      "title": "Hardware-Aware Learned Representation Compression for Distributed In-Sensor Vision",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13947",
-      "arxiv_id": "2609.13947",
-      "authors": [
-        "Chengwei Zhou",
-        "Abu Masum",
-        "Xuming Chen",
-        "Mehran Moghadam",
-        "Sreetama Sarkar",
-        "Arnab Sanyal",
-        "Md Abdullah-Al Kaiser",
-        "M. Hassan Najafi",
-        "Sercan Aygun",
-        "Gourav Datta"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.AR"
-      ],
-      "published": "2026-09-12T13:45:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.15001",
@@ -31024,47 +31141,6 @@
       "insight_zh": "该工作为多语言语音翻译提供了大规模合成语料，其数据构建与评估方法或对多语言资源建设有参考价值，但摘要未涉及地理空间或城市应用，与GIS研究方向无直接关联。"
     },
     {
-      "key": "arxiv:2609.13942",
-      "title": "CRITICS - Critical Science Without Borders: Language Models to Promote Critical Thinking in Science Education",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13942",
-      "arxiv_id": "2609.13942",
-      "authors": [
-        "Rodrigo Agerri",
-        "Itziar Aldabe",
-        "Elena Cabrio",
-        "Mark Cieliebak",
-        "Jan Deriu",
-        "Mariana Flores",
-        "Jurgita Kapociute-Dzikiene",
-        "Dovile Kuiziniene",
-        "Arantza Rico",
-        "Aritz Ruiz-Gonzalez",
-        "Aitor Soroa",
-        "Mantas Vaskevicius",
-        "Serena Villata"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "for",
-        "Natural",
-        "Language",
-        "Processing,",
-        "Le\\'on,",
-        "Spain,",
-        "22-25",
-        "September",
-        "2026"
-      ],
-      "published": "2026-09-12T13:37:10+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2608.25370",
       "title": "CRAMER: Control via Request-Aware Masking for Editing Recommenders",
       "title_zh": "CRAMER：面向推荐系统编辑的请求感知掩码控制",
@@ -31382,32 +31458,6 @@
       ],
       "summary_zh": "研究者在每轮探测 n 个臂中的至多 k 个，收到其奖励在 [0,1] 内的最大值，并与最佳固定臂竞争。论文确定了两条极小极大规律：在独立随机奖励且带赢家反馈（最大值与获胜标签）下，或在给定块最大值之间单一符号对比的任意固定序列上，极小极大遗憾为 Φ_{n,k}(T)=min{(n-k)/n·T,(n-k)/k}，2≤k<n；在赢家反馈下，任意联合独立同分布奖励与固定序列的极小极大遗憾为 R_{n,k}(T)=(n-k)/n·min{T,(n+T)/k,√(nT/k)}。两条规律均具有通用常数与任意时间上界。第一条将遗憾归结为纯覆盖成本；第二条增加了学习成本，在时间跨度 n 时与覆盖成本相当。下界允许任意自适应动作规模。",
       "insight_zh": "该工作为带探测反馈的在线决策提供了理论遗憾刻画，但其设定与地理空间或城市分析场景无直接联系，对所述研究方向参考价值有限。"
-    },
-    {
-      "key": "arxiv:2609.13941",
-      "title": "BLInD: Learning Driver Intent as a Distribution over Future Ego Trajectories",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.13941",
-      "arxiv_id": "2609.13941",
-      "authors": [
-        "Flavian Pegado",
-        "Ronit Hire",
-        "Shreyas Rajesh",
-        "and Soham Phade"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.RO",
-        "Transportation",
-        "Systems",
-        "(ITSC)"
-      ],
-      "published": "2026-09-12T13:35:28+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.13264",

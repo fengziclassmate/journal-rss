@@ -2,11 +2,11 @@
   "date": "2026-09-17",
   "analysis_stats": {
     "total": 595,
-    "analyzed": 505,
+    "analyzed": 516,
     "high": 3,
     "medium": 28,
     "low": 34,
-    "below_threshold": 440
+    "below_threshold": 451
   },
   "papers": [
     {
@@ -7854,6 +7854,30 @@
       "insight_zh": "该工作为符号图上的谱推断提供了理论保证，其扰动分析与集中不等式工具或可启发地理空间网络中的噪声标签推断问题，但应用场景与城市更新或遥感无直接关联。"
     },
     {
+      "key": "arxiv:2609.19113",
+      "title": "Playing log(N)-Questions over Wikipedia Abstracts: How Per-Round Errors Compound Under Information Asymmetry",
+      "title_zh": "在维基百科摘要上玩log(N)问题：信息不对称下逐轮错误如何累积",
+      "url": "https://arxiv.org/abs/2609.19113",
+      "arxiv_id": "2609.19113",
+      "authors": [
+        "Peter Potash"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-16T17:41:12+00:00",
+      "score": 15,
+      "reason": "该文评估LLM在双智能体log(N)-Questions游戏中的表现，涉及多智能体通信、信息不对称与错误累积，与LLM和多智能体研究直接相关，但不涉及地理空间数据。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "信息不对称",
+        "问答游戏"
+      ],
+      "summary_zh": "作者在双智能体log(N)-Questions游戏中评估六个前沿语言模型。提问者看到N个维基百科导言段落，必须用恰好log2 N个是/否问题识别秘密选定的目标。回答者只看到目标和问题，并用一个词回复。两个角色由同一提供商运行，因此该游戏衡量模型在信息不对称下与自身沟通的能力。作者在4至1024个段落文档集上运行408局游戏，总API成本363美元。一个模型明显落后：Claude Opus 5在68局中赢28局，而GLM-5.3、GPT-5.6 Sol、Grok 4.6、Gemini 3.8 Flash和Kimi K3为45至56局。领先的五个模型仅略有区分。合并这五个模型，胜率随集合规模下降，r=-0.973，并由单一逐轮可靠性参数拟合，形式为win=p^{log2 N}，p=0.928。失败大致均分为回答错误和区分失败，模型几乎从不命名自身证据排除的文档。对最弱模型的每个一致回答错误进行了检查：34个中有32个是“否”回答，针对文档首句陈述的属性，且指令明确警告不要默认回答“否”。由回答平衡估计的每问题信息量与胜率相关，r=+0.88。唯一两个每问题提取完整比特的模型也是唯一按文档标题划分的模型，该策略在N=32以下缺失，在N=32以上用于四分之一的问题。推理token支出在模型间变化4.5倍，与成功关系不大，且轨迹随候选集缩小而增长，但可靠性没有相应提升。",
+      "insight_zh": "该研究表明多智能体信息不对称游戏中的胜率可由单一逐轮可靠性参数刻画，错误随轮数复合累积，且有效的信息划分策略与成功相关，对多智能体通信与LLM可靠性研究有参考价值。"
+    },
+    {
       "key": "arxiv:2609.12913",
       "title": "Parameter-Efficient Retrievers for Polish and European Languages",
       "title_zh": "面向波兰语和欧洲语言的参数高效检索器",
@@ -9440,6 +9464,48 @@
       ],
       "summary_zh": "心脏骤停后的神经预后通常依赖脑电图（EEG），但EEG需要较高的临床资源。床旁心电图（ECG）是标准且低成本的手段，但其预测神经结局的价值仍未被充分探索。本研究提出NeuroECG，一个基于ECGFounder的深度表征框架，用于无需EEG的辅助预后。NeuroECG通过任务特定微调适配预训练的ECG基础模型，在单通道床旁监测ECG上采用渐进式解冻策略。每位患者的多段ECG被编码为片段级深度特征，这些嵌入通过分位数池化（q = 0.24）聚合，并使用主成分分析（PCA）压缩。在多中心I-CARE数据库中412名有ECG数据的患者上的实验表明，适配后的ECGFounder主干在仅用ECG的主干基线中表现最佳，测试AUROC为0.7333。作者进一步将学习到的深度ECG表征与静态临床协变量结合，所提出的NeuroECG模型达到测试AUROC 0.8077、AUPRC 0.8970。这些结果支持深度床旁ECG表征作为辅助预后信息的有用来源，其与静态临床协变量的整合可在无EEG环境下改善预测。源代码见https://github.com/goddream66/NeuroECG_。",
       "insight_zh": "该工作展示了将预训练基础模型通过渐进式解冻微调迁移到低资源单通道信号上的思路；这一迁移学习范式在方法论上可类比于遥感或地理时空信号中利用预训练模型进行下游任务适配，但本文本身不涉及地理空间数据。"
+    },
+    {
+      "key": "arxiv:2609.19101",
+      "title": "Monitoring and Discovering Reward Hacking with Internal Representations during LLM Evaluations",
+      "title_zh": "在LLM评估中利用内部表征监测和发现奖励黑客行为",
+      "url": "https://arxiv.org/abs/2609.19101",
+      "arxiv_id": "2609.19101",
+      "authors": [
+        "Leon Bergen",
+        "Usha Bhalla",
+        "Andrew Lee",
+        "Barak Widawsky",
+        "Linas Nasvytis",
+        "Connor Watts",
+        "Siddharth Boppana",
+        "Sidharth Baskaran",
+        "Dron Hazra",
+        "Michael Byun",
+        "Atticus Geiger",
+        "Owen Lewis",
+        "Matthew Kowal",
+        "Vasudev Shyam",
+        "Thomas Fel",
+        "Thomas McGrath",
+        "Ekdeep Singh Lubana",
+        "Jack Merullo"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-09-16T17:31:52+00:00",
+      "score": 12,
+      "reason": "该论文研究LLM评估中的奖励黑客行为及其内部表征检测，属于LLM安全与可解释性方向，与城市更新、时空数据挖掘、遥感变化检测或多智能体地理空间智能无直接关联，仅与LLM研究有微弱的方法论交集。",
+      "tags": [
+        "LLM评估",
+        "奖励黑客",
+        "内部表征",
+        "可解释性"
+      ],
+      "summary_zh": "随着模型规模扩大，奖励黑客行为变得更频繁、更复杂且影响更大。本文分析了前沿开源LLM中奖励黑客行为的内部表征方式，以及如何利用这些表征来理解和发现模型表现出的各类黑客行为。研究发现，简单的均值差向量在Kimi K3、GLM 5.2和Qwen 3.8 Max中能够连贯地表征奖励黑客行为，且具有泛化性和可解释性，可用于可靠检测。在DeepSWE和SWE-bench等基准上，模型存在大量奖励黑客行为（GLM 5.2在DeepSWE上57.2%的rollout、SWE-bench上73%的rollout存在黑客行为）。DoM向量检测效果与LLM监控器相当但几乎零成本，在Kimi K3上多捕获3.1%的黑客行为，在GLM 5.2上少捕获7.9%。DoM向量还可在线预测后续动作中的奖励黑客行为。研究还分析了LLM监控器未捕获的探测命中，并发现其他不良行为，同时展示了向非SWE评估的迁移能力。",
+      "insight_zh": "该研究提示，简单的白盒方法可扩展地研究和监测前沿开源模型中的奖励黑客行为，为LLM评估的可靠性提供了低成本监测思路。"
     },
     {
       "key": "arxiv:2602.23994",
@@ -11696,6 +11762,37 @@
       "insight_zh": "该工作的多模态推理框架或可类比迁移至遥感多模态数据融合，但领域差异大，直接借鉴价值有限。"
     },
     {
+      "key": "arxiv:2609.18909",
+      "title": "Beyond Outcomes: Dual-View Relational Learning for Efficient Agent Benchmarking",
+      "title_zh": "超越结果：面向高效智能体基准测试的双视角关系学习",
+      "url": "https://arxiv.org/abs/2609.18909",
+      "arxiv_id": "2609.18909",
+      "authors": [
+        "Xinshuai Guo",
+        "Junjie Wu",
+        "Dolly Deng",
+        "Yinghui Li",
+        "Hai-Tao Zheng",
+        "Suncong Zheng",
+        "Maxm Pan"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-16T16:49:50+00:00",
+      "score": 10,
+      "reason": "该论文研究智能体基准的高效评估与压缩方法，属于LLM智能体评估方向，与多智能体研究有方法论上的间接关联，但与GIS、城市更新、遥感变化检测无直接关系。",
+      "tags": [
+        "智能体基准",
+        "基准压缩",
+        "过程信号",
+        "关系学习"
+      ],
+      "summary_zh": "智能体基准的评估成本远高于传统LLM基准。基准压缩因此成为自然解决方案，但现有方法主要建模任务-模型最终得分分布中的冗余，这在智能体评估中很重要。为解决这一局限，本文分析大规模轨迹并识别出六个与最终智能体性能系统性相关的互补过程信号。为从完整视角解耦智能体性能冗余，作者提出DualViewEval，一种智能体基准压缩方法，联合利用结果和过程关系来学习精确大小的最小集并预测全基准得分。在五个智能体基准和五个代表性基线上，DualViewEval在所有数据集上取得最佳结果。仅用20个任务，它在APEX-Agents和BFCL上实现24倍至40倍压缩，将平均绝对误差（MAE）较最强竞争者降低14.5%至28.2%，同时在SWE-bench Verified上将Kendall's τ较EssenceBench提升高达7.2%。所选最小集进一步揭示了不同智能体之间的能力差异，为高效智能体模型开发提供紧凑且具诊断性的反馈。",
+      "insight_zh": "该研究提示，联合利用结果与过程关系的基准压缩方法可在极少任务下保持评估准确性，并为智能体能力诊断提供紧凑反馈。"
+    },
+    {
       "key": "arxiv:2603.23069",
       "title": "AuthorMix: Modular Authorship Style Transfer via Layer-wise Adapter Mixing",
       "title_zh": "AuthorMix：通过逐层适配器混合的模块化作者风格迁移",
@@ -12369,6 +12466,33 @@
       ],
       "summary_zh": "注意力在每一层、对每个输入都要付出搜索连接对象的代价。我们探讨用固定、稀疏且逐层简单旋转的连接能走多远。将序列的n个位置视为log2 n维超立方体的顶点，并在第ℓ层将每个位置连接到其沿维度ℓ mod……的邻居。（摘要在此处截断）",
       "insight_zh": "该研究为高效序列建模提供了替代注意力的思路，但摘要不完整且与地理空间智能无直接关联，不建议纳入GIS文献。"
+    },
+    {
+      "key": "arxiv:2609.19077",
+      "title": "Probabilistic Linear Explanations",
+      "title_zh": "概率线性解释",
+      "url": "https://arxiv.org/abs/2609.19077",
+      "arxiv_id": "2609.19077",
+      "authors": [
+        "Frederic Koriche",
+        "Jean-Marie Lagniez",
+        "Chi Tran"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-16T17:18:00+00:00",
+      "score": 8,
+      "reason": "该论文提出概率线性解释框架，属于可解释机器学习方向，与GIS、城市更新、遥感变化检测等无直接关联，但可解释性方法可能对地理空间智能中的模型解释有间接参考价值。",
+      "tags": [
+        "可解释性",
+        "概率解释",
+        "线性模型",
+        "稀疏性"
+      ],
+      "summary_zh": "形式化可解释性为个体预测提供数学上可靠的依据。然而，溯因解释往往因涉及过多特征而超出人类认知极限，而概率松弛主要局限于分类任务。本文提出一个基于稀疏锚定线性模型的统一概率可解释性框架，适用于二分类和连续回归。通过将实例映射到布尔超立方体，线性解释严格推广了基于子集的方法：它们同时捕捉特征贡献的幅度和方向，同时强制执行规定的稀疏预算k。作者证明，当底层模型为神经网络时，最小化此类解释的相关性误差是NPPP难的，并将这一难解目标与可处理的替代目标——保真度误差——联系起来。对于参数化的局部分布族，任何k稀疏解释的相关性误差由其保真度误差乘以一个局部保持较小的因子所界定。作者使用两种互补方法解决由此产生的经验问题：混合整数规划（MIP）公式可产生可证明最优的经验解并保持多项式样本复杂度，以及具有可证明近似保证的多项式时间迭代硬阈值（IHT）算法。实证评估表明，与LIME和MAPLE等最先进基线不同，本文的解释在构造上同时满足锚定和稀疏约束，同时持续实现更低的相关性误差。",
+      "insight_zh": "该研究提示，稀疏锚定线性模型可为分类和回归提供兼具幅度与方向信息的概率解释，且MIP和IHT方法在保证约束的同时实现较低相关性误差。"
     },
     {
       "key": "arxiv:2609.01232",
@@ -13062,6 +13186,35 @@
       ],
       "summary_zh": "公平性感知模型压缩需要选择方法和配置，以平衡准确率、公平性和部署成本。当压缩方法被组合或用户需求变化时，这些决策变得更加困难。在本文中，作者提出FairCompressAgent（FCA），一个智能体框架，通过通用算子接口集成公平性感知剪枝、增量量化和稀疏低秩分解。一个语言模型规划器使用模型画像和测量结果来选择压缩配置，而执行层执行压缩、微调、评估和基于约束的选择。FCA还支持需求更新，并在请求无法满足时报告剩余违规。在Fitzpatrick-17k上使用VGG-11的实验比较了四种搜索方法在40个测量配置上的表现。在准确率约束请求下，FCA选择了一个压缩模型，推理张量存储减少59.54%，同时验证平均精度从0.5141提升到0.5233，均等机会（EOpp）从0.2251降至0.2168。在各自的停止策略下，它达到与一次性规划相同的最终选择，平均候选评估次数为7.33对12。重复微调、留出测试和在线需求更新刻画了该压缩工作流的稳定性和交互式使用。结果展示了测量反馈和显式约束如何支持公平性感知压缩配置的选择和交互式细化。",
       "insight_zh": "该工作的智能体规划与约束反馈机制，或可启发地理空间模型在边缘设备部署时的资源-精度权衡，但摘要未涉及地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.19099",
+      "title": "Evidence-Grounded Agentic Formulation Development in an Autonomous Laboratory",
+      "title_zh": "自主实验室中基于证据的智能体制剂开发",
+      "url": "https://arxiv.org/abs/2609.19099",
+      "arxiv_id": "2609.19099",
+      "authors": [
+        "Michael M. Craig",
+        "Riley J. Hickman",
+        "Yingshan Ma",
+        "R\\'emi Pich\\'e-Taillefer",
+        "Christine Allen",
+        "Pauric Bannigan"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-16T17:31:27+00:00",
+      "score": 8,
+      "reason": "该论文介绍自主实验室中的智能体制剂开发系统，属于AI驱动科学发现与智能体应用方向，与GIS、城市更新、遥感变化检测等研究领域无直接关联。",
+      "tags": [
+        "自主实验室",
+        "智能体系统",
+        "药物制剂",
+        "证据推理"
+      ],
+      "summary_zh": "自乳化药物递送系统（SEDDS）可提高难溶性药物的口服生物利用度，但识别高性能制剂仍需大量实验。本文提出Andromeda 2，一个基于结构化内部实验证据进行推理并调用计算与实验工具来设计和执行连续制剂批次的智能体系统。在匹配预算的小型自动化实验室中，将其与Andromeda 1（已部署于数十个实际开发项目的概率优化模型）和湿实验室实验设计（DoE）活动进行基准比较。对于紫杉醇，Andromeda 2实现了50%的高性能命中率，而Andromeda 1为17%，DoE为2%；识别出12个满足全部四项目标产品概况（TPP）目标的制剂，而两者分别为6个和0个。中位AUC10-240分别为70.1、12.0和3.5 mg·min/mL，Andromeda 2与Andromeda 1的最大AUC相当。选定的全TPP制剂在首次FaSSIF测量中实现了19±5% w/w的表观有效紫杉醇载量，约为已发表紫杉醇S-SEDDS的5.7% w/w载量的3.3倍。消融实验表明，获取结构化内部实验证据使平均AUC提高34%。",
+      "insight_zh": "该研究表明，基于结构化实验证据的智能体系统可在匹配预算下显著提升制剂开发效率，证据获取对性能提升具有关键作用。"
     },
     {
       "key": "arxiv:2609.17886",
@@ -14394,7 +14547,7 @@
     {
       "key": "arxiv:2609.19093",
       "title": "Reporting Practice Matters: The Impact of Reference Choice on Chest X-ray Report Evaluation",
-      "title_zh": "",
+      "title_zh": "报告实践很重要：参考选择对胸部X光报告评估的影响",
       "url": "https://arxiv.org/abs/2609.19093",
       "arxiv_id": "2609.19093",
       "authors": [
@@ -14413,10 +14566,15 @@
       ],
       "published": "2026-09-16T17:28:51+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究胸部X光报告评估中参考选择对指标的影响，属于医学影像与NLP交叉领域，与GIS、城市更新、遥感变化检测等无直接关联。",
+      "tags": [
+        "医学影像",
+        "报告生成",
+        "评估指标",
+        "参考选择"
+      ],
+      "summary_zh": "放射科医生遵循异质的报告实践。两位放射科医生检查同一图像并识别相同临床发现时，可能仍会撰写表面上不同的报告，在术语、简写、格式和详细程度上存在差异。这些报告规范的差异是评估AI放射学报告生成（RRG）模型时一个未被充分认识的障碍，因为机器生成的报告通常根据与人类生成参考的一致性来评估。本文量化了既定评估指标对报告实践变化的敏感性，揭示了足以改变模型排名的显著影响。作者引入了放射科医生知情的放射学报告实践变化分类法，以及一种方法（ReRef），该方法沿分类法各轴重写参考报告，同时保留临床解释。例如，在使用RadCliQ-v1比较MIMIC-CXR上九个RRG模型的性能时，压缩参考报告中正常发现的讨论会导致Libra从第一降至第二，而CheXOne从第三升至第一。结果表明，许多当前指标无法将临床解释与对报告实践的遵从性解耦，选择能准确反映所需报告实践的“正确”参考在实践中可能很重要。为支持未来研究，作者发布了MIMIC-CXR-Ext-ReRef，一个由MIMIC-CXR衍生的120对（原始、替代）参考报告的放射科医生验证数据集。",
+      "insight_zh": "该研究提示，当前RRG评估指标对报告实践变化高度敏感，选择反映目标报告实践的参考对模型排名具有实质影响。"
     },
     {
       "key": "arxiv:2609.19070",
@@ -14462,37 +14620,6 @@
         "cs.CV"
       ],
       "published": "2026-09-16T15:51:51+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19074",
-      "title": "RLLBC-Lib: An Educational Code Library for Reinforcement Learning and Learning-Based Control",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19074",
-      "arxiv_id": "2609.19074",
-      "authors": [
-        "Bernd Frauenknecht",
-        "Emma Cramer",
-        "Artur Eisele",
-        "Paul Kruse",
-        "Lukas Kesper",
-        "Jonas Hertrampf",
-        "Ramil Sabirov",
-        "Jyotirmaya Patra",
-        "Johannes Berger",
-        "Paul Brunzema",
-        "Friedrich Solowjow",
-        "Sebastian Trimpe"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-16T17:15:59+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -14578,28 +14705,6 @@
       ],
       "summary_zh": "从视频中恢复3D人体运动对于康复评估和运动表现评价等应用很重要。对于假肢使用者，这需要同时捕捉自然身体关节和假肢装置的几何形态，而现有方法并非为此设计。基于模型的估计器依赖在非截肢个体上训练的身体模型，无法表示假肢几何；无模型方法缺乏身体运动学先验，在遮挡下不可靠。这一问题对跑步专用假肢（RSP）使用者尤为突出，因为RSP具有复杂的曲线几何并在运动过程中动态移动。为填补这一空白，作者采集了RSP3D，这是首个RSP使用者的3D数据集，使用多相机标记点运动捕捉装置，覆盖不同截肢条件参与者的基本日常生活和运动动作。作者正式定义了假肢感知的3D姿态估计任务，在零样本设置下评估了代表性方法并确认了它们各自的局限。作者进一步提出一种混合基线，将基于模型的身体关节估计与无模型的RSP形状恢复相结合，为未来研究建立了起点。",
       "insight_zh": "该研究通过专用数据集与混合建模应对特殊几何结构的姿态估计问题，其数据采集与基准构建思路对遥感变化检测中的标注数据构建有一般性参考，但主题与地理空间智能距离较远。"
-    },
-    {
-      "key": "arxiv:2609.19077",
-      "title": "Probabilistic Linear Explanations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19077",
-      "arxiv_id": "2609.19077",
-      "authors": [
-        "Frederic Koriche",
-        "Jean-Marie Lagniez",
-        "Chi Tran"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-16T17:18:00+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.17595",
@@ -14689,25 +14794,6 @@
       ],
       "summary_zh": "摘要缺失，无法提供内容概述。",
       "insight_zh": "仅凭标题推断，该研究可能探讨预测辅助对探索性压缩过程时间动态的影响，但缺乏摘要信息，无法确认其方法、数据或结论，也无法判断其与地理空间研究的关联。"
-    },
-    {
-      "key": "arxiv:2609.19113",
-      "title": "Playing log(N)-Questions over Wikipedia Abstracts: How Per-Round Errors Compound Under Information Asymmetry",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19113",
-      "arxiv_id": "2609.19113",
-      "authors": [
-        "Peter Potash"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-16T17:41:12+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.18440",
@@ -15084,43 +15170,6 @@
       "insight_zh": "该研究展示了跨模态蒸馏和重排序在生物信号解码中的效果与瓶颈，并强调声学后验质量是根本限制；其负面结果提醒在地理空间多源数据融合中，若底层特征缺失关键信息，后续融合或重排序难以弥补。"
     },
     {
-      "key": "arxiv:2609.19101",
-      "title": "Monitoring and Discovering Reward Hacking with Internal Representations during LLM Evaluations",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19101",
-      "arxiv_id": "2609.19101",
-      "authors": [
-        "Leon Bergen",
-        "Usha Bhalla",
-        "Andrew Lee",
-        "Barak Widawsky",
-        "Linas Nasvytis",
-        "Connor Watts",
-        "Siddharth Boppana",
-        "Sidharth Baskaran",
-        "Dron Hazra",
-        "Michael Byun",
-        "Atticus Geiger",
-        "Owen Lewis",
-        "Matthew Kowal",
-        "Vasudev Shyam",
-        "Thomas Fel",
-        "Thomas McGrath",
-        "Ekdeep Singh Lubana",
-        "Jack Merullo"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "published": "2026-09-16T17:31:52+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2507.21828",
       "title": "Modelling Adjectival Modification Effects on Semantic Plausibility",
       "title_zh": "建模形容词修饰对语义合理性的影响",
@@ -15260,7 +15309,7 @@
     {
       "key": "arxiv:2609.19088",
       "title": "MUSE: Benchmarking Large Vision-Language Models on Multi-Modal Understanding in Situated Education",
-      "title_zh": "",
+      "title_zh": "MUSE：在情境化教育中评估大型视觉语言模型的多模态理解",
       "url": "https://arxiv.org/abs/2609.19088",
       "arxiv_id": "2609.19088",
       "authors": [
@@ -15277,10 +15326,15 @@
       ],
       "published": "2026-09-16T17:26:10+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文提出教育场景下艺术图像多模态理解的基准，属于视觉语言模型评估方向，与GIS、城市更新、遥感变化检测等无直接关联。",
+      "tags": [
+        "视觉语言模型",
+        "教育基准",
+        "多模态理解",
+        "艺术图像"
+      ],
+      "summary_zh": "大型视觉语言模型在多模态理解方面取得了显著进展，但其在教育环境中的能力仍缺乏充分评估。在AI辅助语言学习中，模型必须解读艺术图像，理解其语义、情感和文化内容，并推理视觉语境以支持有意义的互动。然而，现有基准主要关注真实世界图像或特定领域的教育推理，对艺术教育内容的覆盖有限。为填补这一空白，本文提出MUSE，一个用于评估大型视觉语言模型在情境化教育应用中艺术图像理解的基准。MUSE将图像标注与问题生成解耦，从而在减少标注工作量的同时实现难度可控的多样化任务。它包含十二项任务，涵盖视觉感知、语义与情感解读、文化理解和组合推理，并精心策划了以新加坡和东南亚多元文化语境为中心、同时涵盖西方艺术传统的多样化艺术图像，覆盖多个主题和难度级别。对开源和专有模型的评估揭示了各能力维度上的显著差异，尤其是在情感解读和组合推理方面。分析进一步识别了常见失败模式以及开发可信教育多模态模型的关键挑战。作者希望MUSE能成为推进情境化教育应用中多模态理解的标准化基准。",
+      "insight_zh": "该研究提示，当前视觉语言模型在艺术教育场景的情感解读和组合推理方面存在明显不足，MUSE可作为该方向的标准化评估工具。"
     },
     {
       "key": "arxiv:2609.18393",
@@ -15370,7 +15424,7 @@
     {
       "key": "arxiv:2609.18935",
       "title": "Long-Lived Characters, Local Inference: Incremental Memory Maintenance for Game NPCs",
-      "title_zh": "",
+      "title_zh": "长生命周期角色，本地推理：游戏NPC的增量记忆维护",
       "url": "https://arxiv.org/abs/2609.18935",
       "arxiv_id": "2609.18935",
       "authors": [
@@ -15383,10 +15437,15 @@
       ],
       "published": "2026-09-16T17:09:05+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究游戏NPC的增量记忆维护，属于LLM本地部署与记忆管理方向，与GIS、城市更新、遥感变化检测等无直接关联。",
+      "tags": [
+        "游戏NPC",
+        "增量记忆维护",
+        "本地推理",
+        "LLM"
+      ],
+      "summary_zh": "游戏角色不应在每次对话前重读其整个生命历程。然而，对于本地部署的语言模型角色，修改少量记忆可能使一个长可复用前缀失效。由此产生的准备成本与前台对话及其他角色的维护相竞争。当对话馈入游戏定义的动作和价值判断时，这一点尤为重要：对物品归属或转移是否已发生的流畅但不正确的描述，可能破坏原本确定性规则的输入。本文研究量化Qwen混合循环-注意力模型中长生命周期游戏NPC的增量记忆维护。运行时移除被取代的注意力KV条目，在真实序列尾部计算替换记录，并保留持续的循环状态和未更改的KV。现有本地实验结合了多更新对话回放、固定输入放置消融和注意力诊断。独立块组合削弱了查询条件记忆选择，但没有统一的块初始注意力崩溃。真实尾部更新在八轮脚本化维护中保留了重要的当前状态和历史绑定；一个放置案例在三次重建中恢复了完整重填量，而保留槽位的替代方案重复了双重减法错误。仅注意力分布接近性无法解释这些语义差异。结果促使将角色的推理状态视为一种维护的、依赖历史的资源，而不仅仅是其最新记忆文本的一次性编码。",
+      "insight_zh": "该研究提示，将游戏角色的推理状态视为需维护的历史依赖资源，而非一次性编码，有助于在本地部署中保持记忆一致性与规则正确性。"
     },
     {
       "key": "arxiv:2609.18106",
@@ -15709,28 +15768,6 @@
       "insight_zh": "该研究评估了LLM在教育课堂观察中的应用，对LLM辅助评估有参考价值，但与地理空间智能无直接关联。"
     },
     {
-      "key": "arxiv:2609.18908",
-      "title": "How Much is a Human Right Worth? ECtHR-NPD: A Benchmark for Predicting Non-Pecuniary Damage Awards",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18908",
-      "arxiv_id": "2609.18908",
-      "authors": [
-        "Yanyi Pu",
-        "Damian A. Gonzalez-Salzberg",
-        "Zheng Yuan",
-        "Nikolaos Aletras"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-16T16:49:48+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19107",
       "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
       "title_zh": "模型增长、递归与边界算子如何影响缩放指数",
@@ -15820,7 +15857,7 @@
     {
       "key": "arxiv:2609.18916",
       "title": "Higher-order pruning of experts in mixture-of-experts language models",
-      "title_zh": "",
+      "title_zh": "混合专家语言模型中专家的高阶剪枝",
       "url": "https://arxiv.org/abs/2609.18916",
       "arxiv_id": "2609.18916",
       "authors": [
@@ -15836,10 +15873,15 @@
       ],
       "published": "2026-09-16T16:55:46+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究混合专家语言模型的专家剪枝方法，属于模型压缩与高效推理方向，与GIS、城市更新、遥感变化检测等无直接关联。",
+      "tags": [
+        "混合专家模型",
+        "专家剪枝",
+        "高阶优化",
+        "模型压缩"
+      ],
+      "summary_zh": "混合专家（MoE）语言模型面临参数量庞大的问题，造成显著的内存瓶颈。专家剪枝是减少参数量的最直接方法，但现有方法对每个专家独立做出剪枝决策，并假设专家的贡献纯粹是可加的。实际上，MoE中专家的使用本质上是协作的。本文推导出HOPE（专家高阶剪枝），一个二阶剪枝目标，可证明地最小化剪枝导致的误差上界。作者证明REAP（一种最先进的一阶剪枝方法）是HOPE在忽略交互项时的特例。在三个前沿MoE模型（最大122B参数）、两个不同校准集和多个基准（包括数学、指令遵循、编码和智能体套件）上，HOPE产生的剪枝决策优于现有方法，其优势在高剪枝率和具有挑战性的智能体工作负载上最为显著。在50%剪枝率下，HOPE优于所有基线，在5种方法中平均排名1.58（次优方法REAP为2.42），在智能体编码上提升高达+6.1%。在所有条件下，HOPE再次取得最佳平均排名，并在大多数头对头比较中超越其他所有方法。通过保留一阶方法忽略的协作专家结构，HOPE能够以最小退化实现激进压缩，尤其是在长序列中调用多样专家组合的复杂任务上。",
+      "insight_zh": "该研究提示，考虑专家间协作结构的高阶剪枝目标可在高压缩率下保持MoE模型性能，尤其有利于复杂智能体任务。"
     },
     {
       "key": "arxiv:2609.18431",
@@ -16151,30 +16193,6 @@
       ],
       "summary_zh": "对美国政治语言的分析通常基于书面形式（如总统演讲）或各种社交网络上发布的帖子。然而，口语产出更为频繁，能更好地揭示说话者的风格和思维方式。本研究通过考察1960至2024年间总统选举的19位候选人，覆盖了这种语言交流模式。主要研究目标是揭示这些总统辩论中隐藏的主要趋势：美国政治语言是否随时间明显简化？与其他候选人相比，特朗普的语言是否贫乏？不寻常的文体特征是否只出现在某一位特定总统身上？此外，能否检测出解释某些被提名者成功或失败的模式？研究显示，随着时间推移，政治语言复杂度显著降低，平均句长减少，复杂术语明显下降。此外，几十年来情感语调上升，而逻辑与理性思维趋于减弱。",
       "insight_zh": "该研究推断美国政治口语在数十年间呈现复杂度下降、句长缩短、情感语调上升而逻辑理性减弱的趋势；但关于特朗普语言是否贫乏、文体特征是否专属某位总统、以及成功失败模式等问题，摘要未给出明确结论。"
-    },
-    {
-      "key": "arxiv:2609.19099",
-      "title": "Evidence-Grounded Agentic Formulation Development in an Autonomous Laboratory",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19099",
-      "arxiv_id": "2609.19099",
-      "authors": [
-        "Michael M. Craig",
-        "Riley J. Hickman",
-        "Yingshan Ma",
-        "R\\'emi Pich\\'e-Taillefer",
-        "Christine Allen",
-        "Pauric Bannigan"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-09-16T17:31:27+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.18852",
@@ -16700,32 +16718,6 @@
         ":72)"
       ],
       "published": "2026-07-23T18:09:20+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.18909",
-      "title": "Beyond Outcomes: Dual-View Relational Learning for Efficient Agent Benchmarking",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.18909",
-      "arxiv_id": "2609.18909",
-      "authors": [
-        "Xinshuai Guo",
-        "Junjie Wu",
-        "Dolly Deng",
-        "Yinghui Li",
-        "Hai-Tao Zheng",
-        "Suncong Zheng",
-        "Maxm Pan"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-16T16:49:50+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -17348,6 +17340,41 @@
       "insight_zh": "摘要缺失，无法评估其技术细节。该方向属于深度学习模型压缩，若地理空间智能应用需在边缘设备部署大模型，可能有间接参考价值，但当前无证据支持。"
     },
     {
+      "key": "arxiv:2609.19074",
+      "title": "RLLBC-Lib: An Educational Code Library for Reinforcement Learning and Learning-Based Control",
+      "title_zh": "RLLBC-Lib：强化学习与学习型控制的教育代码库",
+      "url": "https://arxiv.org/abs/2609.19074",
+      "arxiv_id": "2609.19074",
+      "authors": [
+        "Bernd Frauenknecht",
+        "Emma Cramer",
+        "Artur Eisele",
+        "Paul Kruse",
+        "Lukas Kesper",
+        "Jonas Hertrampf",
+        "Ramil Sabirov",
+        "Jyotirmaya Patra",
+        "Johannes Berger",
+        "Paul Brunzema",
+        "Friedrich Solowjow",
+        "Sebastian Trimpe"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-16T17:15:59+00:00",
+      "score": 3,
+      "reason": "该论文介绍强化学习与学习型控制的教育代码库，属于教学工具方向，与GIS、城市更新、遥感变化检测等无直接关联。",
+      "tags": [
+        "强化学习",
+        "教育代码库",
+        "学习型控制"
+      ],
+      "summary_zh": "强化学习（RL）是一个令人兴奋的概念，也是一个值得分享的显著成功案例。然而，RL建立在不同对象之间跨多个周期展开的相当复杂的交互之上。这种动态通常最好通过易于访问的实现来解释。本文提出RLLBC-Lib，一个精心设计的代码库，旨在降低学生和其他学习者在学习型控制背景下学习RL的门槛。其核心包含一个全面的表格型RL方法库，以强化对理论基础的理解。一个深度RL库遵循相同的设计原则，强调简单表格型与最先进深度RL方法之间的平行关系。此外，RLLBC-Lib提供了一系列实现，说明核心RL原理并将RL与其他学习型控制方法进行对比。最后，RLLBC-Lib为创建具有自动评分的编程作业提供了理想基础。",
+      "insight_zh": "该研究提示，通过统一设计原则的表格型与深度RL代码库，可有效降低RL学习门槛并支持自动评分教学。"
+    },
+    {
       "key": "arxiv:2609.14820",
       "title": "POLARIS: Training-Free Audio Fingerprinting with Saliency-Based Landmarks and Delaunay Grouping",
       "title_zh": "POLARIS：基于显著性地标与Delaunay分组的免训练音频指纹",
@@ -17373,6 +17400,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究细节。",
       "insight_zh": "从标题推断，该工作可能利用Delaunay分组提升音频指纹的鲁棒性，但缺乏摘要内容，无法评估其与地理空间分析的潜在联系。"
+    },
+    {
+      "key": "arxiv:2609.18908",
+      "title": "How Much is a Human Right Worth? ECtHR-NPD: A Benchmark for Predicting Non-Pecuniary Damage Awards",
+      "title_zh": "一项人权值多少钱？ECtHR-NPD：非金钱损害赔偿预测基准",
+      "url": "https://arxiv.org/abs/2609.18908",
+      "arxiv_id": "2609.18908",
+      "authors": [
+        "Yanyi Pu",
+        "Damian A. Gonzalez-Salzberg",
+        "Zheng Yuan",
+        "Nikolaos Aletras"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-16T16:49:48+00:00",
+      "score": 3,
+      "reason": "该论文提出欧洲人权法院非金钱损害赔偿预测基准，属于法律AI与基准构建方向，与GIS、城市更新、遥感变化检测等无直接关联。",
+      "tags": [
+        "法律基准",
+        "非金钱损害赔偿",
+        "欧洲人权法院",
+        "预测"
+      ],
+      "summary_zh": "现有法律基准涵盖多样化任务，而连续金钱救济相对而言研究不足。本文提出ECtHR-NPD，据作者所知，这是首个从案件信息预测欧洲人权法院（ECtHR）非金钱损害（NPD）赔偿的基准，且不存在法定公式或明确计算规则来确定金额。ECtHR-NPD包含14,575个案件，附有以名义欧元计的案件级赔偿额、按时间顺序的划分，以及将目标构建与模型输入分离的协议。作者评估了一系列方法，包括常数预测器、梯度提升树、检索方法、微调编码器语言模型（LM）、提示解码器LM和知识增强智能体。结果表明，更复杂的LM和智能体方法并未持续优于最强的基于特征的基线。所有模型家族都难以识别零赔偿并校准高赔偿预测，在挑战性测试视图上进一步退化，使ECtHR-NPD成为当前最先进开源权重和专有LM的挑战性测试平台。",
+      "insight_zh": "该研究提示，在缺乏明确计算规则的非金钱损害赔偿预测任务中，复杂LM和智能体方法并未稳定超越特征基线，零赔偿识别和高赔偿校准仍是难点。"
     },
     {
       "key": "arxiv:2609.17913",

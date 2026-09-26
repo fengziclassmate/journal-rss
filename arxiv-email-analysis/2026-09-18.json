@@ -2,11 +2,11 @@
   "date": "2026-09-18",
   "analysis_stats": {
     "total": 588,
-    "analyzed": 548,
+    "analyzed": 558,
     "high": 4,
     "medium": 22,
     "low": 35,
-    "below_threshold": 487
+    "below_threshold": 497
   },
   "papers": [
     {
@@ -8157,6 +8157,37 @@
       "insight_zh": "仅从标题推断，该工作可能针对溯源图中不同关系的重要性差异，提出关系平衡与校准的图学习方法来改进入侵检测；由于摘要缺失，无法确认其模型结构、数据集或性能表现。"
     },
     {
+      "key": "arxiv:2609.19208",
+      "title": "CC-OPI: Online Distributed Task Allocation for UAV Swarms under Communication Constraints",
+      "title_zh": "CC-OPI：通信约束下无人机集群的在线分布式任务分配",
+      "url": "https://arxiv.org/abs/2609.19208",
+      "arxiv_id": "2609.19208",
+      "authors": [
+        "Biao Liu",
+        "Tong Zhang"
+      ],
+      "categories": [
+        "cs.MA",
+        "material.",
+        "Code",
+        "and",
+        "data:",
+        "https://github.com/bdathe-lb/CC-OPI-Exp"
+      ],
+      "published": "2026-09-16T11:04:01+00:00",
+      "score": 20,
+      "reason": "该文研究通信受限下无人机集群的在线分布式任务分配，属于多智能体与空间任务规划，与地理空间智能和多智能体研究有方法关联，但不涉及城市更新、遥感变化检测或时空数据挖掘。",
+      "tags": [
+        "无人机集群",
+        "任务分配",
+        "通信约束",
+        "多机器人系统",
+        "灾害救援"
+      ],
+      "summary_zh": "在灾后搜救等多机器人任务中，较短的通信范围会将无人机集群分割成瞬时的信息孤岛。在这种间歇连接下，主流的“先分配后执行”范式——要求在任何物理移动前达成全局共识——会失效。本文提出通信约束在线性能影响（CC-OPI）算法，一种将任务协商与物理执行交错进行的事件驱动方法。CC-OPI仅在离散的物理和拓扑事件发生时重新规划，并整合两个进一步要素。第一是一对适应动态拓扑的成本评估度量——一个带空间局部性惩罚以促进区域化运行，另一个带截止时间感知的紧迫性项——并辅以非抢占式状态锁以保护每架无人机正在进行的动作。第二是一个去中心化容错层，将基于版本的状态同步与全局时间驱动的应急池配对。作者证明CC-OPI在有限时间内终止，不会出现陈旧完成死锁，也不会在任务周期内出现无界重新分配。在250米通信半径的仿真中，CC-OPI维持约0.80的任务完成率：比未修改的性能影响（PI）和基于共识的捆绑算法（CBBA）规则的匹配在线执行高出约七个百分点，比朴素迁移的静态基线高出约20个百分点，并在完全连通时与PI和CBBA相差几个百分点以内。在测试设置中，CC-OPI随连通性减弱而优雅退化，并能吸收丢包、地形遮挡和运行时任务到达。代价是更多消息和一些冗余行程。",
+      "insight_zh": "该工作针对通信受限下的空间任务分配提出事件驱动与去中心化容错机制，其“先分配后执行”失效的洞察对地理空间智能中的多智能体协同有参考价值；但实验限于无人机仿真，未涉及城市更新或遥感数据。"
+    },
+    {
       "key": "arxiv:2609.19875",
       "title": "BINDER: A Latent Variable Model for Probabilistic Medical Image Registration",
       "title_zh": "BINDER：面向概率医学图像配准的潜变量模型",
@@ -10648,6 +10679,36 @@
       "insight_zh": "该文揭示记忆系统可能在当前查询上正确却在未来更新上失效，并提出配对历史审计来分离保留状态、响应传递和模式合规；这一审计思路对时空数据挖掘中增量更新与历史信息保留的评估有方法学借鉴，但原文未涉及地理空间数据。"
     },
     {
+      "key": "arxiv:2609.19551",
+      "title": "Continual Enterprise World Model Discovery in Dynamic Systems",
+      "title_zh": "动态系统中持续的企业世界模型发现",
+      "url": "https://arxiv.org/abs/2609.19551",
+      "arxiv_id": "2609.19551",
+      "authors": [
+        "Shambhavi Mishra",
+        "David Vazquez",
+        "Perouz Taslakian",
+        "Marco Pedersoli",
+        "Jose Dolz",
+        "Issam H. Laradji"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-17T01:23:43+00:00",
+      "score": 15,
+      "reason": "该文研究企业系统中智能体的持续世界模型发现，与LLM和多智能体研究相关，可能对地理空间智能中的智能体建模有方法启发，但不涉及时空数据或遥感。",
+      "tags": [
+        "世界模型",
+        "智能体",
+        "动态系统",
+        "持续学习",
+        "企业系统"
+      ],
+      "summary_zh": "在企业系统中，更新一个字段可能设置另一个字段、创建一条记录或启动一次审批。这些效果由业务规则产生，而业务规则并非平台内置，而是由各组织编写并随时间修订。在这样的系统中工作的智能体若不了解这些规则，就无法预测自身行动的结果。本文研究持续的企业世界模型发现，即智能体在初始不了解这些业务规则的情况下，通过与记录交互并观察结果来发现规则。根据这些观察，智能体构建一个世界模型，并随规则变化而修订该模型。为进行评估，作者提出EnterpriseWorldShift，构建于一个实时ServiceNow环境之上，包含九张表、25条隐藏规则和600个评估动作。它呈现同一企业世界的四个版本，表与记录保持不变，而规则依次被修改、添加、删除，从而分别测试发现、修订、扩展和退役。其持续发现智能体（CDA）构建这样的模型并将其从一个世界带到下一个世界。它预测隐藏规则效果的能力比先前工作所采用的逐问题查找方法高出最多8.98个IoU点，并且无需查询运行中的系统即可依据自身模型作答。",
+      "insight_zh": "该工作将世界模型发现置于规则可变的动态企业环境中，强调持续修订而非一次性学习，这一思路或可迁移到城市系统中规则与政策动态变化的智能体建模；但实验限于ServiceNow企业环境，未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.19425",
       "title": "Closed-World Resolution Against Tool Hallucination in LLM Agents",
       "title_zh": "面向LLM智能体中工具幻觉的闭世界解析",
@@ -11246,6 +11307,66 @@
       "insight_zh": "该工作将程序状态跟踪与在线错误检测结合，强调在完整试验中评估错误与恢复，而非截断于首次错误。其状态后验与顺序检验思路可能对需要在线监测与状态推断的时序任务有方法借鉴意义，但论文未涉及地理空间或城市应用。"
     },
     {
+      "key": "arxiv:2609.19853",
+      "title": "PACE: Precise AI Cinematic Expression",
+      "title_zh": "PACE：精确AI电影化表达",
+      "url": "https://arxiv.org/abs/2609.19853",
+      "arxiv_id": "2609.19853",
+      "authors": [
+        "Bing Duan",
+        "Qiang Guo",
+        "Linpu Li",
+        "Zhijian Mao",
+        "Min Zhu",
+        "Zhirui Ren",
+        "Yiwei Yan",
+        "Xi Chu",
+        "Xiaoding Li"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "https://github.com/StudioPiLabs/pace-core",
+        "uploaded;",
+        "it",
+        "is",
+        "removed",
+        "and",
+        "its",
+        "69",
+        "references",
+        "resolved,",
+        "two",
+        "of",
+        "results",
+        "moved",
+        "into",
+        "the",
+        "main",
+        "text",
+        "one",
+        "dropped.",
+        "36",
+        "pages,",
+        "8",
+        "figures,",
+        "4",
+        "tables.",
+        "Code:"
+      ],
+      "published": "2026-09-17T08:05:08+00:00",
+      "score": 12,
+      "reason": "该文提出面向影视生成的类型化空间规划表示，涉及空间布局、相机位姿与几何度量，与GIS中的空间表示和三维场景构建有概念上的弱关联，但不涉及城市或地理尺度分析。",
+      "tags": [
+        "空间规划",
+        "扩散模型",
+        "相机求解",
+        "影视生成"
+      ],
+      "summary_zh": "在剧本与电影之间存在一个空间优先的规划问题：谁站在哪里，以及相机从何处看到什么。用自由文本要求图像扩散模型生成镜头时，模型会按自身默认方式决定该规划。本文提出PACE（精确AI电影化表达），一种用于该规划的类型化表示：剧本证据、所需角色、道具和地点、每个主体的站位以及相机行为。值在其所属层级（剧本、场景、镜头或面板）写入一次并在下层继承。编译器将结果转换为发送给扩散模型的提示词和以米为单位构建的3D场景，相机求解器放置相机使声明的取景即为构建的取景。在声明值变为几何之处，PACE逐字段测量编译相机和舞台渲染与声明的偏差，而非让模型判断。在11场景的Automatic Drive剧本上，每个单主体舞台面板将主体置于其声明位置1.2%画幅宽度以内；当有两个或三个主体时，单一相机位姿无法满足所有位置，残差被报告而非吸收。在204个外部导演分镜镜头上，交付的头部高度为导演文字目标的1.906倍、编译提示词的1.733倍、灰盒控制的0.955倍；取景保持最好的条件所绘制的描述动作最少。在30个镜头上声明位姿使绘制动作从58.9%提升至74.4%而不改变取景。转场、拟合运动和生成面板的人工审查仍待解决。",
+      "insight_zh": "该工作显示将空间规划显式类型化并编译为几何可提升取景精度，其空间声明与度量验证思路对地理空间场景构建有类比启发，但应用领域为影视生成而非GIS。"
+    },
+    {
       "key": "arxiv:2609.20299",
       "title": "Not All Layers Are Equal: Dynamic Layer Routing for Reliable CLIP OOD Detection",
       "title_zh": "并非所有层都平等：面向可靠CLIP OOD检测的动态层路由",
@@ -11607,6 +11728,45 @@
       ],
       "summary_zh": "代词、副词等功能词（如they、her、somewhere、there）常用来替代具体名词或短语，当其属性（如性别、语法数）为给定语境提供足够信息时。预训练Transformer模型是否以类似人类的方式编码这些功能词？语言模型能否识别如\"The researchers wrote the paper\"与\"They wrote it\"这类句子的句法和语义平行性？作者将这些语言学问题映射到预训练Transformer模型的嵌入空间，比较名词与可替代这些名词的代词和副词在孤立及平行词汇化/功能化句子中的表示，并探测平行句子嵌入中的共享句法和语义结构。发现功能词相对名词位于中心位置但又彼此区分，与其作为多种语境占位符的行为一致。平行句子嵌入分析显示它们处于嵌入空间的不同子空间。蒸馏句子结构信息的实验表明，仅用任一类数据训练都无法揭示共享结构——功能数据因词汇过度一致，词汇化版本因变化过多。但混合功能句和词汇化句训练时，共享结构得以显现。",
       "insight_zh": "该研究揭示了功能词在Transformer嵌入空间中的中心但独特的定位，以及混合训练对共享结构涌现的必要性，对理解LLM的语言抽象机制有理论意义，但与地理空间智能应用无直接关联。"
+    },
+    {
+      "key": "arxiv:2609.19553",
+      "title": "From Parameters to Behaviors: A Survey of Model Fusion for Large Language Models",
+      "title_zh": "从参数到行为：大语言模型模型融合综述",
+      "url": "https://arxiv.org/abs/2609.19553",
+      "arxiv_id": "2609.19553",
+      "authors": [
+        "Shuo Cai",
+        "Yanggan Gu",
+        "Zihao Wang",
+        "Yuanyi Wang",
+        "Yibo Yan",
+        "Wenjun Wang",
+        "Yuhang Liu",
+        "Guanghao Zhu",
+        "Sirui Huang",
+        "Ming Li",
+        "Hongxia Yang"
+      ],
+      "categories": [
+        "cs.CL",
+        "Computational",
+        "Linguistics:",
+        "EMNLP",
+        "2026"
+      ],
+      "published": "2026-09-17T01:24:23+00:00",
+      "score": 12,
+      "reason": "该文是大语言模型模型融合的综述，与LLM研究相关，可能对地理空间智能中的LLM应用有方法参考价值，但不涉及时空数据、遥感或城市更新。",
+      "tags": [
+        "模型融合",
+        "大语言模型",
+        "综述",
+        "参数级融合",
+        "行为级融合"
+      ],
+      "summary_zh": "模型融合将源模型的能力整合到单一目标模型中。截至2026年6月，Hugging Face托管了超过200万个模型。这一不断增长的模型池为模型复用和能力整合提供了丰富基础。然而现有综述往往只覆盖该空间的局部，且未提供统一定义或系统分类法。本综述定义了模型融合，并将先前工作组织为三个层次：参数级、表示级和行为级融合。作者还回顾了相关指标、基准和应用，总结了当前挑战并指出未来方向。其目标是提供该领域的清晰地图，支持模型融合的未来工作。模型融合论文的综合列表见https://github.com/Baicaihaochi/Awesome-Model-Fusion-Survey。",
+      "insight_zh": "该综述提出的参数级、表示级、行为级三层分类法，可能为地理空间智能中融合多源LLM或领域模型提供组织框架；但文中未涉及地理空间数据或城市应用。"
     },
     {
       "key": "arxiv:2609.20138",
@@ -12167,6 +12327,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题推断，该工作揭示了数据不平衡在某些条件下有助于鲁棒泛化，并提出捷径饱和机制来解释这一现象。",
       "insight_zh": "摘要缺失，无法确认其理论机制；若其关于不平衡数据有益性的发现可迁移至遥感变化检测中的类别不平衡问题，或具参考价值，但需原文验证。"
+    },
+    {
+      "key": "arxiv:2609.19182",
+      "title": "What Do We Expect from LLMs? Mapping the Design of LLM Benchmarks",
+      "title_zh": "我们对LLM有何期待？映射LLM基准的设计",
+      "url": "https://arxiv.org/abs/2609.19182",
+      "arxiv_id": "2609.19182",
+      "authors": [
+        "Chao Wang (Independent Researcher)"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "https://github.com/xxcg322/LLM-Bench-Map"
+      ],
+      "published": "2026-09-15T13:43:16+00:00",
+      "score": 10,
+      "reason": "该文系统梳理LLM基准的设计演变，与LLM研究相关，可能对地理空间智能中的LLM评估有方法参考，但不涉及时空数据或遥感。",
+      "tags": [
+        "LLM基准",
+        "评估设计",
+        "元分析",
+        "智能体"
+      ],
+      "summary_zh": "基准是评估和传达大语言模型进展的核心。然而仅凭模型排名难以揭示评估需求本身如何变化。基准种类的不断扩展提供了另一视角：研究者期待LLM做什么，以及他们把什么视为成功表现。作者系统梳理了2022年1月至2026年8月间arXiv上引入或更新评估资源的14,767篇论文。通过分阶段筛选和自动全文编码，作者考察了目标系统与领域、评估材料与条件以及评分机制的变化。该集合显示对行动、交互和专业应用的关注日益增长，同时既有与较新的设计元素经常共存。模型参与也发展不均：基于LLM的评分在智能体和非智能体组中均有增长，而模型生成材料在近期批次中没有可比的持续增长。这些发现揭示了公共研究如何将能力期待转化为具体的测试与成功标准。随着AI参与构建测试、执行任务和评判回答，它们也提出一个问题：不断扩展的评估是提供了更多独立证据，还是有可能复制其参与模型的偏好与盲点？",
+      "insight_zh": "该工作揭示LLM评估中模型参与度上升可能带来的偏好复制风险，这一元评估视角对地理空间智能中构建领域基准有警示意义；但文中未涉及地理空间或城市应用。"
     },
     {
       "key": "arxiv:2609.20303",
@@ -14998,6 +15184,32 @@
       "insight_zh": "该文“以领域评价指标作为强化学习奖励”的范式，可类比用于遥感变化检测中以变化检测精度等非可微指标直接优化模型；但其应用域为单细胞生物学，未涉及地理空间数据。"
     },
     {
+      "key": "arxiv:2609.19180",
+      "title": "BioPhys-Bridge: A Benchmark for Interdisciplinary Scientific Reasoning in Physics-Grounded Biological Research",
+      "title_zh": "BioPhys-Bridge：物理基础生物学研究中跨学科科学推理的基准",
+      "url": "https://arxiv.org/abs/2609.19180",
+      "arxiv_id": "2609.19180",
+      "authors": [
+        "Qingyang Xu"
+      ],
+      "categories": [
+        "cs.AI",
+        "q-bio.QM",
+        "figures"
+      ],
+      "published": "2026-09-15T12:53:16+00:00",
+      "score": 8,
+      "reason": "该文提出生物物理跨学科科学推理基准，属于科学文献问答与RAG评估，与地理空间智能中的多源数据融合和证据溯源有间接方法关联，但不涉及城市更新或遥感。",
+      "tags": [
+        "科学推理基准",
+        "生物物理",
+        "检索增强生成",
+        "证据溯源"
+      ],
+      "summary_zh": "语言模型在分析跨学科科研文献时面临独特挑战。在生物物理研究中，忠实回答需要将观测数据锚定于来源证据，通过定量物理模型加以解释，并将其与生物机制联系起来。为应对这一挑战，作者提出BioPhys-Bridge，一个用于生物物理文献上证据锚定科学推理的新基准数据集。每个案例包含证据块、稳定的证据ID、定量数值、单位、方程、假设、机制以及作为问答和检索增强生成（RAG）锚定目标的下一步决策。初始版本包含500个案例、1,517个面向智能体的任务，覆盖六个生物学领域和九个物理模型族，其中三个稀疏族保留供未来扩展。作者对所有案例在模式、证据完整性、定量锚定、来源许可、重复、单位归一化方面执行严格质量门，并由领域专家对81个案例进行审查和标注。初步评估显示，DeepSeek-V4-Flash获得最高的证据ID F1分数（0.360），其次是Qwen3.7-Max（0.316）和GPT-4o-mini（0.294）。BioPhys-Bridge是一个跨学科基准，用于评估复杂多步科学推理中的归因、忠实性、幻觉减少和生物实验设计。未来工作将增加数据集规模与复杂度并进行全面评估。代码和数据见GitHub仓库和Hugging Face。",
+      "insight_zh": "该基准强调证据ID锚定与定量物理模型解释，其证据溯源与忠实性评估思路或可迁移到地理空间智能中的多源证据融合问答；但数据与结论限于生物物理文献，未涉及地理空间数据。"
+    },
+    {
       "key": "arxiv:2609.19669",
       "title": "Beyond Patch Removal: Persistent Adversarial Effects in Vision-Language-Action Policies",
       "title_zh": "超越补丁移除：视觉-语言-动作策略中的持续性对抗效应",
@@ -15170,6 +15382,34 @@
       ],
       "summary_zh": "该研究指出视觉Transformer存在深度方向的计算冗余，现有利用冗余的方法要么无法降低推理计算量，要么严重损害模型表达能力。作者提出Transformer-Within-Transformer（TWT），一种事后方法，将连续的冗余层组融合为单个学习到的代理层，从而减少参数量和推理计算量。在自然图像上以一半深度保持竞争力，在若干组织病理学下游任务中甚至匹配或超越原始基线。",
       "insight_zh": "该工作提供了一种通用的Transformer层融合压缩思路，若遥感或地理空间基础模型存在类似深度冗余，或可借鉴其事后融合策略降低推理成本，但论文本身未涉及地理空间数据或应用场景。"
+    },
+    {
+      "key": "arxiv:2609.19555",
+      "title": "A Multi-Modal Generative Model for Tomato Disease Leaves Understanding",
+      "title_zh": "面向番茄病害叶片理解的多模态生成模型",
+      "url": "https://arxiv.org/abs/2609.19555",
+      "arxiv_id": "2609.19555",
+      "authors": [
+        "Khang Nguyen Quoc",
+        "Minh-Phuoc Tran",
+        "Gia-Han Truong",
+        "Luyl-Da Quach"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-09-17T01:25:57+00:00",
+      "score": 8,
+      "reason": "该文研究番茄病害叶片的多模态生成式理解，属于农业遥感/精准农业中的视觉-语言应用，与遥感变化检测和多源数据融合有间接方法关联，但不涉及城市更新或时空数据挖掘。",
+      "tags": [
+        "多模态生成模型",
+        "植物病害识别",
+        "视觉问答",
+        "精准农业"
+      ],
+      "summary_zh": "植物病害分析的人工智能已从任务专用分类器发展到能够联合解读视觉与文本信息的多模态模型。然而，由于多数现有方法将病害理解视为孤立的预测任务，未能捕捉症状识别、严重程度评估与问题驱动诊断推理之间的互补关系，其在精准农业中的实际部署仍然受限。在番茄病理学中，准确解读病叶不仅需要标签预测，还需要将视觉症状与语义上下文整合，以支持全面且可解释的理解。本文提出SOLAR，一个理解番茄病害的多模态生成模型，涵盖六项问答任务。SOLAR通过基于专家混合的融合专家模块，学习将视觉特征与任务感知的语言表示对齐，从而在多样诊断任务中生成上下文相关的答案。通过将番茄病害分析表述为生成式视觉问答任务，SOLAR提供了支持单模型多任务推理的灵活框架，同时提升性能并促进跨任务知识共享。作者在41,677张图像（包括216,209个问答对）上评估SOLAR，在封闭式和开放式问答设置下理解番茄叶片病害。实验结果表明，SOLAR在所有任务上持续优于当前最优的纯视觉、视觉-语言和任务专用模型，展现出更高的准确率、鲁棒性和多模态推理能力。这些发现凸显了生成式多模态建模作为理解方向的有效潜力。",
+      "insight_zh": "该工作将病害诊断统一为生成式视觉问答任务，可能为农业遥感中的多任务解释提供可借鉴的建模范式；但其数据与结论限于番茄叶片病害，未涉及地理空间尺度或变化检测。"
     },
     {
       "key": "arxiv:2609.20565",
@@ -15440,30 +15680,9 @@
       "insight_zh": "该工作通过控制实验分离特权信息与蒸馏本身的贡献，发现OPSD主要通过共享参数改善对已有推理能力的访问，而非依赖参考揭示的解题内容。其方法属于语言模型训练分析，与地理空间智能无直接关联。"
     },
     {
-      "key": "arxiv:2609.19182",
-      "title": "What Do We Expect from LLMs? Mapping the Design of LLM Benchmarks",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19182",
-      "arxiv_id": "2609.19182",
-      "authors": [
-        "Chao Wang (Independent Researcher)"
-      ],
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "https://github.com/xxcg322/LLM-Bench-Map"
-      ],
-      "published": "2026-09-15T13:43:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19212",
       "title": "What Do Current Systematic Generalization Tasks Miss? A Reasoning-Centered Analysis",
-      "title_zh": "",
+      "title_zh": "当前系统泛化任务遗漏了什么？以推理为中心的分析",
       "url": "https://arxiv.org/abs/2609.19212",
       "arxiv_id": "2609.19212",
       "authors": [
@@ -15476,10 +15695,15 @@
       ],
       "published": "2026-09-16T11:53:03+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究Transformer的系统泛化与推理能力评估，属于通用机器学习与认知科学交叉，与地理空间智能无直接关联。",
+      "tags": [
+        "系统泛化",
+        "推理",
+        "Transformer",
+        "基准测试"
+      ],
+      "summary_zh": "系统泛化——通过重组已知原子元素来解决新问题的能力——是人类智能的核心，但在受控条件下难以严格研究。因此现有研究依赖一些简化，如近似线性的动作组合、基于产出性的测试以及动作显式的目标，这些简化使系统泛化更易研究，却遗漏了该能力的一些本质方面。为刻画这些简化遗漏了什么，作者采用以推理为中心的视角，提出TranSGrid，一个在统一任务中融合演绎、归纳和溯因推理的测试平台。在4,800个TranSGrid实例上对七个Transformer的实验表明，所有模型在TranSGrid上的表现都远差于在留出测试集上的表现：最大的模型解决了测试集的79.6%，但仅解决TranSGrid的55.3%和最困难子集的15.8%。该差距在训练长度范围内依然存在，表明仅凭产出性不足以评估系统泛化。此外，作者将另外两个简化重新引入TranSGrid：一个变体使动作近似线性组合（降低归纳需求），另一个使目标动作显式（降低溯因需求）。在这两种情况下，解决率都回到大致测试集水平，表明任一简化单独就足以将TranSGrid降为普通的留出测试集。总体而言，结果表明现有任务降低了一个或两个归纳与溯因需求，而全面衡量系统泛化需要一个涉及全部三种推理形式的任务。",
+      "insight_zh": "该工作指出仅靠产出性测试不足以衡量系统泛化，并强调演绎、归纳、溯因三者结合的必要性；这一评估视角对地理空间智能中复杂推理任务的基准设计可能有间接参考，但文中未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2509.24368",
@@ -16248,61 +16472,6 @@
       "insight_zh": "该研究关于小样本标定下个性化策略成本-收益的对比框架，或可为城市感知中跨设备、跨区域的模型快速适配提供类比思路，但其具体结论限于肌电信号领域。"
     },
     {
-      "key": "arxiv:2609.19853",
-      "title": "PACE: Precise AI Cinematic Expression",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19853",
-      "arxiv_id": "2609.19853",
-      "authors": [
-        "Bing Duan",
-        "Qiang Guo",
-        "Linpu Li",
-        "Zhijian Mao",
-        "Min Zhu",
-        "Zhirui Ren",
-        "Yiwei Yan",
-        "Xi Chu",
-        "Xiaoding Li"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "https://github.com/StudioPiLabs/pace-core",
-        "uploaded;",
-        "it",
-        "is",
-        "removed",
-        "and",
-        "its",
-        "69",
-        "references",
-        "resolved,",
-        "two",
-        "of",
-        "results",
-        "moved",
-        "into",
-        "the",
-        "main",
-        "text",
-        "one",
-        "dropped.",
-        "36",
-        "pages,",
-        "8",
-        "figures,",
-        "4",
-        "tables.",
-        "Code:"
-      ],
-      "published": "2026-09-17T08:05:08+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.19955",
       "title": "One Intervention per Component is Enough: Towards Identifiability in Linear Stochastic Dynamics from Steady State",
       "title_zh": "每个组件一次干预即足够：从稳态出发的线性随机动力学可识别性",
@@ -16810,7 +16979,7 @@
     {
       "key": "arxiv:2609.19209",
       "title": "Generative Query Suggestion via Intent Coverage and Query-Level Credit Assignment",
-      "title_zh": "",
+      "title_zh": "基于意图覆盖与查询级信用分配的生成式查询建议",
       "url": "https://arxiv.org/abs/2609.19209",
       "arxiv_id": "2609.19209",
       "authors": [
@@ -16829,10 +16998,15 @@
       ],
       "published": "2026-09-16T11:19:06+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究生成式查询建议与意图覆盖，属于信息检索与推荐系统，与城市更新、时空数据挖掘或遥感无直接关联。",
+      "tags": [
+        "查询建议",
+        "意图覆盖",
+        "信用分配",
+        "生成式推荐"
+      ],
+      "summary_zh": "生成式查询建议旨在通过预测用户意图并推荐相关的后续查询来提升用户参与度。一个核心挑战是生成这样的查询列表：其中单个查询有用，同时整个列表覆盖不同意图。作者提出一个意图驱动的查询建议框架，采用双阶段优化。首先，意图感知多样性建模构建意图对齐的监督微调数据，并使用意图感知多样性奖励来优化意图覆盖。其次，查询级信用分配将单个质量信号路由到相应的查询词元，同时在列表层面共享多样性信号。在大规模生产数据集上的实验，包括在线A/B测试和离线评估，显示点击率、查询质量和意图覆盖均有提升。",
+      "insight_zh": "该工作的双阶段优化与查询级信用分配思路，或可启发地理空间推荐或搜索中的多样性建模；但其应用场景为通用查询建议，未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.19596",
@@ -16851,39 +17025,6 @@
         "cs.HC"
       ],
       "published": "2026-09-17T02:21:39+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19553",
-      "title": "From Parameters to Behaviors: A Survey of Model Fusion for Large Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19553",
-      "arxiv_id": "2609.19553",
-      "authors": [
-        "Shuo Cai",
-        "Yanggan Gu",
-        "Zihao Wang",
-        "Yuanyi Wang",
-        "Yibo Yan",
-        "Wenjun Wang",
-        "Yuhang Liu",
-        "Guanghao Zhu",
-        "Sirui Huang",
-        "Ming Li",
-        "Hongxia Yang"
-      ],
-      "categories": [
-        "cs.CL",
-        "Computational",
-        "Linguistics:",
-        "EMNLP",
-        "2026"
-      ],
-      "published": "2026-09-17T01:24:23+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -16947,7 +17088,7 @@
     {
       "key": "arxiv:2609.19559",
       "title": "FedFIbOS: Fisher Importance based Optimal Submodelling for Heterogeneous Federated Learning",
-      "title_zh": "",
+      "title_zh": "FedFIbOS：基于Fisher重要性的异构联邦学习最优子建模",
       "url": "https://arxiv.org/abs/2609.19559",
       "arxiv_id": "2609.19559",
       "authors": [
@@ -16960,10 +17101,15 @@
       ],
       "published": "2026-09-17T01:41:17+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该文研究异构联邦学习中的子模型参数选择与收敛性，属于机器学习系统优化，与城市更新、时空数据挖掘、遥感变化检测、多源数据融合或地理空间智能均无直接关联。",
+      "tags": [
+        "联邦学习",
+        "异构计算",
+        "Fisher信息",
+        "子模型选择"
+      ],
+      "summary_zh": "异构联邦学习要求计算能力不同的客户端协作训练全局模型，每个客户端训练一个受容量约束的子模型。现有方法使用启发式重要性度量（最突出的是参数幅值）来选择子模型参数，但缺乏这些度量为何支持收敛的理论依据。作者指出一个根本性缺口：现有参数选择准则在收敛框架中缺乏理论根基，且部分客户端参与会在Fisher分数中引入额外的估计效应。为此提出FedFIbOS，使用Fisher信息构建一个由最小化子模型掩码误差推导出的原则性准则。作者从理论上将子模型选择表述为Fisher加权的二次掩码代理，并证明FedFIbOS实现的原始Fisher top-k规则在Fisher主导排序条件下可求解该代理。所得方法保留了底层掩码联邦优化界的收敛结构。Fisher分数通过平方梯度从经验对角Fisher信息中高效估计，无需额外优化开销即可实现稳定且自适应的参数选择。在CIFAR-10、CIFAR-100和AGNews上，在病态与Dirichlet非独立同分布设置下，FedFIbOS比当前最优方法准确率高出约10%，且异构性越强提升越明显。",
+      "insight_zh": "该工作将子模型参数选择从启发式幅值准则转向基于Fisher信息的理论化准则，可能为资源受限的分布式学习提供更稳健的参数选择思路；但其应用场景为通用联邦学习，与地理空间任务无直接联系。"
     },
     {
       "key": "arxiv:2603.25244",
@@ -17262,30 +17408,6 @@
       "insight_zh": "该方法通过固定大小比特流桥接熵编码与并行注意力核，若应用于地理空间大模型的长序列推理，可能有助于降低部署成本，但其地理场景适用性尚未验证。"
     },
     {
-      "key": "arxiv:2609.19551",
-      "title": "Continual Enterprise World Model Discovery in Dynamic Systems",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19551",
-      "arxiv_id": "2609.19551",
-      "authors": [
-        "Shambhavi Mishra",
-        "David Vazquez",
-        "Perouz Taslakian",
-        "Marco Pedersoli",
-        "Jose Dolz",
-        "Issam H. Laradji"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-17T01:23:43+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2506.06104",
       "title": "Comparison of Image Processing Models in Quark Gluon Jet Classification",
       "title_zh": "夸克-胶子喷注分类中图像处理模型的比较",
@@ -17341,31 +17463,6 @@
         "cs.LG"
       ],
       "published": "2026-09-17T02:13:21+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.19208",
-      "title": "CC-OPI: Online Distributed Task Allocation for UAV Swarms under Communication Constraints",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19208",
-      "arxiv_id": "2609.19208",
-      "authors": [
-        "Biao Liu",
-        "Tong Zhang"
-      ],
-      "categories": [
-        "cs.MA",
-        "material.",
-        "Code",
-        "and",
-        "data:",
-        "https://github.com/bdathe-lb/CC-OPI-Exp"
-      ],
-      "published": "2026-09-16T11:04:01+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -17452,27 +17549,6 @@
       ],
       "summary_zh": "块扩散语言模型（BDLM）将块间的自回归依赖与块内的并行去噪相结合，但长上下文训练受限于分布式注意力通信和激活内存。传统上下文并行（CP）按位置对干净加损坏的合并序列进行分片，通信共享的干净K/V以及块特定的损坏K/V及其梯度。我们观察到BDLM目标在目标块上可分离。我们引入块并行（BP），一种新的分布式并行维度，将每个损坏块的计算分配给一个rank。为将BP扩展到长上下文，我们引入上下文分片块并行（CSBP），它还将共享的干净序列在这些rank间分片。CSBP保持损坏K/V和梯度本地化，避免复制干净前缀，并保持BDLM训练语义。在16块H200 GPU、256K上下文下，CSBP相比最佳基线在监督微调上吞吐提升1.18-1.45倍，在自回归模型转换为BDLM上提升1.27-1.33倍，同时匹配或降低峰值HBM。在512K时全模型加速达1.61倍。在八块H100 GPU上，CSBP在512K时将DFlash2推测解码器训练加速2.48倍，在1M时加速7.59倍。在匹配的12小时DiffusionGemma 26B-A4B SFT运行中，CSBP在SWE-bench Verified和Terminal-Bench Lite的每个训练检查点上都取得更高的通过率。代码：https://github.com/ScalingIntelligence/Turbo-dLLM",
       "insight_zh": "该工作为长上下文扩散语言模型训练提供了新的并行维度，属于训练系统优化，对地理空间大模型训练有潜在工程参考，但摘要未涉及地理空间数据或应用。"
-    },
-    {
-      "key": "arxiv:2609.19180",
-      "title": "BioPhys-Bridge: A Benchmark for Interdisciplinary Scientific Reasoning in Physics-Grounded Biological Research",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19180",
-      "arxiv_id": "2609.19180",
-      "authors": [
-        "Qingyang Xu"
-      ],
-      "categories": [
-        "cs.AI",
-        "q-bio.QM",
-        "figures"
-      ],
-      "published": "2026-09-15T12:53:16+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.19989",
@@ -17641,29 +17717,6 @@
       ],
       "summary_zh": "摘要内容缺失，仅提供标题。标题表明该工作提出一种对抗生成方法，用于创建实时可动画的3D高斯头部虚拟形象。",
       "insight_zh": "从标题推断，该工作聚焦于3D高斯表示与头部虚拟形象生成，与城市更新、时空数据挖掘、遥感变化检测或多源数据融合无直接联系。"
-    },
-    {
-      "key": "arxiv:2609.19555",
-      "title": "A Multi-Modal Generative Model for Tomato Disease Leaves Understanding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.19555",
-      "arxiv_id": "2609.19555",
-      "authors": [
-        "Khang Nguyen Quoc",
-        "Minh-Phuoc Tran",
-        "Gia-Han Truong",
-        "Luyl-Da Quach"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "published": "2026-09-17T01:25:57+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.10986",
