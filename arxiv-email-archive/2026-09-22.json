@@ -11,6 +11,7 @@
     "arxiv:2609.22117",
     "arxiv:2609.00689",
     "arxiv:2609.22258",
+    "arxiv:2609.24727",
     "arxiv:2609.22217",
     "arxiv:2508.03749",
     "arxiv:2608.27206",
@@ -30,22 +31,21 @@
     "arxiv:2609.22206",
     "arxiv:2609.22174",
     "arxiv:2609.22126",
-    "arxiv:2609.22359",
-    "arxiv:2512.21066"
+    "arxiv:2609.22359"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1190",
-    "deepseek": "partial:0/390;failed-batches:39"
+    "deepseek": "partial:20/390;failed-batches:37"
   },
-  "updated_at": "2026-09-26T00:54:15.435484+00:00",
+  "updated_at": "2026-09-27T00:56:21.405496+00:00",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 800,
+    "analyzed": 820,
     "high": 5,
-    "medium": 34,
+    "medium": 35,
     "low": 64,
-    "below_threshold": 697
+    "below_threshold": 716
   },
   "papers": [
     {
@@ -326,6 +326,35 @@
       "abstract": "Large language model-driven remote sensing (RS) agents offer a promising approach to automating geospatial analysis. However, lightweight RS agents based on compact language models struggle with multi-step interactive tasks due to loss of long-horizon states, inefficient environmental feedback utilization, and sparse optimization signals. We propose RS-Claw-Evolution, an environment-feedback-driven framework that progressively improves lightweight agents through three stages. Interaction evolution uses executable code to control observations, maintain intermediate states, and reduce context redundancy. Experience evolution combines failure-aware trajectory generation with error-turn masking to learn from informative failure-recovery experiences without imitating faulty actions. Decision evolution uses reinforcement learning with multi-dimensional environment rewards and turn-level advantage protection to optimize tool-use behaviors and improve credit assignment in long sequences. On Earth-Bench, the optimized Qwen3-4B-based agent achieves 65.9% accuracy in Autonomous Planning mode, outperforming the untrained Qwen3-32B baseline (43.8%) and DeepSeek-V3.1 (60.8%), while approaching GPT-5 (71.6%). These results demonstrate that learning from environmental feedback can improve lightweight agents and narrow their performance gap with larger models in long-horizon RS tasks.",
       "summary_zh": "",
       "insight_zh": ""
+    },
+    {
+      "key": "arxiv:2609.24727",
+      "title": "ReSTI: A Source-Grounded Audit and Repair of STI-Bench",
+      "title_zh": "ReSTI：对STI-Bench的源数据溯源审计与修复",
+      "url": "https://arxiv.org/abs/2609.24727",
+      "doi": "",
+      "arxiv_id": "2609.24727",
+      "authors": [
+        "Pengzhan Sun",
+        "Ramanathan Rajaraman",
+        "Shiu-Hong Kao",
+        "Junbin Xiao",
+        "Angela Yao"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-21T15:01:35+00:00",
+      "score": 72,
+      "reason": "该论文对时空基准进行源数据审计与修复，涉及坐标系统、时间戳与物理量一致性，与时空数据挖掘及遥感变化检测中的时空对齐问题高度相关。",
+      "tags": [
+        "时空基准",
+        "基准审计",
+        "视频空间推理",
+        "坐标系统",
+        "数据质量"
+      ],
+      "abstract": "Spatial--temporal benchmarks are valid only when their questions, source annotations, and answer options identify the same physical quantity. We audit STI-Bench against the official ScanNet, Waymo, and Omni6DPose sources and find systematic coordinate-system and timestamp errors, under-specified targets and times, and disagreements between keyed options and answer details. We introduce ReSTI, a source-backed revision that reconstructs every recoverable answer under an explicit target, time, coordinate system, physical quantity, and unit. Source reconstruction reveals task-level geometric failures: ScanNet Grounding omits the required alignment between annotation and raw camera coordinate systems, while Orientation measures camera rotation on the wrong plane. ReSTI replaces these labels with explicit, source-consistent geometric definitions and corrects other source-verifiable defects, including Waymo poses evaluated at the wrong timestamp. Across 2,064 legacy questions, ReSTI retains 1,782 questions and records 282 evidence-backed exclusions. ReSTI therefore provides a conservative and source-traceable basis for evaluating precise video spatial--temporal reasoning. Project page: https://github.com/pengzhansun/ReSTI.",
+      "summary_zh": "时空基准只有在问题、源标注与答案选项指向同一物理量时才有效。作者对照官方ScanNet、Waymo与Omni6DPose源数据审计STI-Bench，发现系统性的坐标系统与时间戳错误、目标与时间描述不充分，以及键控选项与答案细节不一致等问题。为此提出ReSTI，一种基于源数据的修订方案，在明确的目标、时间、坐标系统、物理量与单位下重建每个可恢复的答案。源数据重建揭示了任务层面的几何失败：ScanNet Grounding遗漏了标注与原始相机坐标系统之间所需的配准，而Orientation在错误的平面上测量相机旋转。ReSTI用显式且与源数据一致的几何定义替换这些标签，并修正其他可由源数据验证的缺陷，包括Waymo位姿在错误时间戳上被评估的问题。在2064个遗留问题中，ReSTI保留1782个问题，并记录282个有证据支持的排除项。因此，ReSTI为评估精确的视频时空推理提供了保守且可溯源的基础。",
+      "insight_zh": "该工作提示：时空基准的可靠性依赖于坐标系统、时间戳与物理量定义的一致性；在构建或使用时空数据集时，源数据溯源审计可作为提升评估可信度的必要步骤。"
     },
     {
       "key": "arxiv:2609.22217",
@@ -952,34 +981,6 @@
       "abstract": "An aligned model asked to hold its answer against a manipulative source must still update on a reliable one and reject an unreliable one: resistance, reliable-update, and unreliable-source rejection are one three-way contract, not three independent behaviors. We show the objective most anti-sycophancy work optimizes is non-identifying with respect to source reliability: because no preference label depends on whether a source is actually reliable, any scalar mixture of the arms traces a single deference dial, and no point separates two same-template testimonies differing only in stated reliability. This fixation$\\leftrightarrow$gullibility frontier is a property of the objective, not any model. We make reliability identifiable through data: a threshold benchmark where a source asserts the opposite answer while stating its reliability $r$, and the correct action is to flip iff $r$ exceeds the model's prior strength $p$. Preference optimization over balanced coverage installs a prior-dependent reliability switch: across three seeds on Qwen2.5-7B-Instruct the threshold $r^\\star$ rises monotonically with the prior, decision accuracy reaches $0.84$ with a monotone flip curve (Spearman $0.56$), and the policy generalizes to unseen reliability values and a held-out notation, following stated reliability over role prestige. Three controls localize the cause: an unmatched variant installs the switch equally ($0.80$), a second preference optimizer (IPO) installs it just as well ($0.86$), whereas supervised imitation does not ($0.50$), so the cause is preference optimization over reliability-labeled coverage, not pairing, loss, or imitation. A confirmatory battery replicates the switch on a fresh test draw, bounds it honestly (it keys on reliability stated in the testimony, not a separately audited record), and transfers it to Llama-3.1-8B. The frontier is empirical, not a theorem.",
       "summary_zh": "该研究指出，对齐模型在面对操纵性来源时需同时满足抵抗、可靠更新与不可靠来源拒绝这一三方契约，而非三种独立行为。作者证明多数反谄媚工作优化的目标对来源可靠性不可识别，因为偏好标签不依赖于来源是否真实可靠，任何标量混合都只能追踪单一的顺从刻度。为此，作者通过数据使可靠性可识别：构建阈值基准，来源在声明其可靠性r的同时断言相反答案，正确行为是当且仅当r超过模型先验强度p时翻转。在Qwen2.5-7B-Instruct上跨三个随机种子，偏好优化在平衡覆盖下安装了一个依赖先验的可靠性开关，阈值r*随先验单调上升，决策准确率达0.84，翻转曲线单调（Spearman 0.56），策略可泛化到未见可靠性值与留出符号，并遵循声明的可靠性而非角色声望。三项控制实验定位了原因：非匹配变体同样安装开关（0.80），另一偏好优化器IPO同样有效（0.86），而监督模仿则无效（0.50），说明原因是基于可靠性标注覆盖的偏好优化，而非配对、损失或模仿。",
       "insight_zh": "该工作提示，在涉及多源信息融合与智能体决策的场景中，模型对来源可靠性的处理可能受偏好优化目标的结构性限制，需通过显式可靠性标注数据来建立可识别的可靠性判断机制。"
-    },
-    {
-      "key": "arxiv:2512.21066",
-      "title": "Agentic Explainable Artificial Intelligence (Agentic XAI) Approach To Explore Better Explanation: A Case Study in Decision Support for Rice Cultivation in Japan",
-      "title_zh": "智能体式可解释人工智能（Agentic XAI）方法探索更优解释：日本水稻种植决策支持案例研究",
-      "url": "https://arxiv.org/abs/2512.21066",
-      "doi": "",
-      "arxiv_id": "2512.21066",
-      "authors": [
-        "Tomoaki Yamaguchi",
-        "Yutong Zhou",
-        "Masahiro Ryo",
-        "Keisuke Katsura"
-      ],
-      "venue": "arXiv",
-      "published": "",
-      "score": 62,
-      "reason": "该论文将智能体式可解释人工智能（Agentic XAI）应用于日本水稻种植决策支持，属于LLM与多智能体方向的应用研究，与研究中'LLM和多智能体'兴趣点相关，但地理空间/城市更新关联较弱。",
-      "tags": [
-        "Agentic XAI",
-        "可解释人工智能",
-        "决策支持",
-        "农业",
-        "多智能体"
-      ],
-      "abstract": "------------------------------------------------------------------------------",
-      "summary_zh": "摘要内容缺失（仅含分隔线），无法获取具体研究内容。根据标题推断，该研究提出一种智能体式可解释人工智能（Agentic XAI）方法，并以日本水稻种植决策支持为案例，探索如何生成更好的解释。",
-      "insight_zh": "由于摘要缺失，无法确认其方法细节与结论。从标题看，该工作可能将智能体机制引入XAI以提升解释质量，其决策支持场景与农业地理相关，或可为地理空间智能中的可解释决策提供思路，但需查阅全文验证。"
     }
   ]
 }
