@@ -2,11 +2,11 @@
   "date": "2026-09-24",
   "analysis_stats": {
     "total": 560,
-    "analyzed": 380,
+    "analyzed": 390,
     "high": 5,
     "medium": 18,
     "low": 23,
-    "below_threshold": 334
+    "below_threshold": 344
   },
   "papers": [
     {
@@ -1729,7 +1729,7 @@
     },
     {
       "key": "arxiv:2609.27675",
-      "title": "Track2Art: Motion-Centric Articulated Object Model Recovery from 2D Point Trackers",
+      "title": "Track2Art: Articulated Object Model Recovery with Visual-Geometric Track Representations",
       "title_zh": "Track2Art：从2D点跟踪器恢复以运动为中心的铰接物体模型",
       "url": "https://arxiv.org/abs/2609.27675",
       "arxiv_id": "2609.27675",
@@ -2123,6 +2123,41 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法或结论。",
       "insight_zh": "摘要缺失，无法评估具体贡献；从标题推断该工作提出规则傅里叶特征以提升非平稳高斯过程的建模效率，此类方法可潜在应用于地理空间非平稳过程的建模与插值，但原文未提及地理空间应用。"
+    },
+    {
+      "key": "arxiv:2609.26855",
+      "title": "QUARTET: Quad-branch cross-Attention and Random-walk Traces for Enhancing Transformers on Relational Graphs",
+      "title_zh": "QUARTET：面向关系图 Transformer 增强的四分支交叉注意力与随机游走轨迹",
+      "url": "https://arxiv.org/abs/2609.26855",
+      "arxiv_id": "2609.26855",
+      "authors": [
+        "Kyaw Hpone Myint",
+        "Nan Jiang",
+        "Xiang Li",
+        "Zhe Wu",
+        "Alexandre G.R. Day",
+        "Pranab Mohanty",
+        "Giri Iyengar"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "Graphs",
+        "(LoG)",
+        "2026"
+      ],
+      "published": "2026-09-22T14:36:19+00:00",
+      "score": 35,
+      "reason": "该文研究关系型多表数据库上的图 Transformer，涉及异质时序图建模与随机游走采样，与时空数据挖掘和图学习方法相关，但应用基准为 RelBench 而非地理时空数据。",
+      "tags": [
+        "关系深度学习",
+        "图Transformer",
+        "随机游走",
+        "异质时序图",
+        "多表数据库"
+      ],
+      "summary_zh": "关系深度学习将多表数据库建模为异质时序图，图 Transformer 在 RelBench 等基准上取得当前最优性能。然而现有领先模型 RelGT 存在两个局限：其随机局部采样器产生连接松散的子图，阻碍消息传递；其全局注意力模块依赖单一的基于种子特征的记忆，忽略更宏观的动态。作者提出 QUARTET，一种在局部子图上应用完全自注意力、并通过交叉注意力分支丰富全局上下文的图 Transformer 架构。QUARTET 采用基于近期截断个性化 PageRank 的因果随机游走采样器，在不引入时间泄漏的前提下提取紧凑、抗枢纽、稠密连接的局部子图；同时，四分支交叉注意力模块从种子特征、种子拓扑、时间动态与协作动态四个互补视角整合全局上下文。在 RelBench v1 分类任务上，QUARTET 持续匹配或超越当前最优图 Transformer 基线（HGT 与 RelGT）。消融实验证实因果随机游走采样器显著提升局部邻域质量，全局分支提供必要的任务特定预测增益。",
+      "insight_zh": "其因果随机游走采样与多视角全局注意力设计，对时空异质图（如交通流、城市设施关系网络）建模具有方法借鉴价值，但需在地理时空基准上另行验证。"
     },
     {
       "key": "arxiv:2609.27105",
@@ -2561,6 +2596,35 @@
       "insight_zh": "该方法对处理噪声大、立场稀疏的社交媒体文本具有借鉴意义，可用于城市舆情或公众价值取向的时空分析，但论文本身未涉及地理维度或城市更新场景。"
     },
     {
+      "key": "arxiv:2609.27825",
+      "title": "CAST: Context- and Anomaly Structure-Conditioned Time Series Anomaly Generation",
+      "title_zh": "CAST：上下文与异常结构条件化的时间序列异常生成",
+      "url": "https://arxiv.org/abs/2609.27825",
+      "arxiv_id": "2609.27825",
+      "authors": [
+        "Haochen Zhang",
+        "Jie Peng",
+        "Songyuan Sui",
+        "Yu-Chao Huang",
+        "Xiangqi Zhu",
+        "Tianlong Chen"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-19T02:14:00+00:00",
+      "score": 35,
+      "reason": "该论文研究时间序列异常生成，属于时空数据挖掘中的时间序列分析方向，与GIS博士研究中的时空数据挖掘有一定关联，但不涉及城市更新或遥感变化检测。",
+      "tags": [
+        "时间序列",
+        "异常生成",
+        "数据增强",
+        "时空数据挖掘"
+      ],
+      "summary_zh": "异常时间序列在安全关键领域至关重要，但其本身稀缺、异质且获取成本高。现有时间序列生成方法主要关注合成正常数据，在需要异常样本时价值有限。作者识别出异常生成的两个根本挑战：（i）异常数据稀缺；（ii）异常形态特征的异质性。为解决这些挑战，作者提出CAST，一个上下文与异常结构条件化的时间序列异常生成框架，采用有原则的两阶段预训练与微调策略。在预训练阶段，利用丰富的正常时间序列数据学习底层系统动态，大幅缓解异常数据有限的问题。在微调阶段，CAST显式地以学习到的异常结构表示为条件，使其能够在相似上下文条件下捕捉异质异常形态。在多个真实世界单变量和多变量数据集上的大量实验表明，CAST在生成保真度和下游任务效用方面均持续优于最先进的异常生成方法，凸显了所提方法的有效性。",
+      "insight_zh": "该研究提出的两阶段预训练-微调与异常结构条件化策略，可启发时空数据中稀缺异常事件（如城市异常事件、遥感突变）的合成与增强，但其验证限于通用时间序列数据集，未涉及地理空间场景。"
+    },
+    {
       "key": "arxiv:2609.28366",
       "title": "AnchorReasoning: A Visual Grounding and Causal Reasoning Dataset in Long-Tail Autonomous Driving Scenarios",
       "title_zh": "AnchorReasoning：长尾自动驾驶场景中的视觉 grounding 与因果推理数据集",
@@ -2767,6 +2831,8 @@
         "Ibrahim Ethem Hamamci",
         "Sezgin Er",
         "Bjoern Menze",
+        "Zongwei Zhou",
+        "Wenxuan Li",
         "Marc Edgar",
         "Yufan He",
         "Pengfei Guo",
@@ -2850,6 +2916,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。从标题可推断，该研究考察多智能体系统中共享状态的表示/描述方式如何影响智能体之间的同步行为。",
       "insight_zh": "摘要为空，无法确认其是否提出新的状态表示框架或同步机制；若涉及多智能体协作中的共识与协调，或可为地理空间智能中的分布式智能体协同提供概念参考。"
+    },
+    {
+      "key": "arxiv:2609.27821",
+      "title": "Groundbench: Multi-Resolution Polygon Grounding Exposes the Geometry Gap in Vision-Language Models",
+      "title_zh": "Groundbench：多分辨率多边形定位揭示视觉语言模型中的几何差距",
+      "url": "https://arxiv.org/abs/2609.27821",
+      "arxiv_id": "2609.27821",
+      "authors": [
+        "Zhonghan Bian",
+        "Zhenran Wang",
+        "Jinsong Li",
+        "Zhangyang Qi"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-18T17:31:24+00:00",
+      "score": 30,
+      "reason": "该论文研究视觉语言模型的多边形定位能力与几何差距，属于遥感变化检测与地理空间智能中视觉定位评估的相关方向，但与城市更新、时空数据挖掘关联较弱。",
+      "tags": [
+        "视觉语言模型",
+        "多边形定位",
+        "几何评估",
+        "基准测试"
+      ],
+      "summary_zh": "RefCOCO系列定位任务上的边界框分数已难以区分前沿视觉语言系统，但边界框丢弃了物体形状。作者提出GroundingBench，一个匹配基准，将相同的1,500个图像-表达-指称三元组重新定向为五种顶点预算下的精确N边形。一个固定分母的测试框架分别审计填充区域交并比（IoU）和合法多边形完成度。最强测试配置达到88.2的框IoU和97.1的IoU>=.5准确率（Acc@.5），而直接多边形分别为57.7和69.2；由于这些头条分数使用不同参考，作者还将直接多边形与预测框针对同一轮廓目标进行栅格化比较，汇总后得到57.7对57.3。性能随N非单调变化，并在最密集预算处崩溃，此时合法性失败与残余几何误差叠加。Qwen的思考设置对比是测试中最大的输入保持配置差异；在冻结模板下，虚假空间线索比虚假颜色线索更具破坏性，目标偏好可能保持高位而轮廓追踪很差。替代掩码和连续面积评分器保持了主要排序。因此，GroundingBench衡量的是跨越定位、边界构建、序列化和拓扑的操作性输出几何差距，而非仅仅是潜在边界感知。",
+      "insight_zh": "该研究揭示视觉语言模型在多边形几何输出上的系统性缺陷，对遥感变化检测中地物边界提取与定位评估有方法学启发，但其基准为通用图像-表达任务，未涉及遥感或城市地理数据。"
     },
     {
       "key": "arxiv:2609.11493",
@@ -3038,38 +3131,6 @@
       "tags": [
         "Transformer",
         "Multi-Agent"
-      ],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.26855",
-      "title": "QUARTET: Quad-branch cross-Attention and Random-walk Traces for Enhancing Transformers on Relational Graphs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.26855",
-      "arxiv_id": "2609.26855",
-      "authors": [
-        "Kyaw Hpone Myint",
-        "Nan Jiang",
-        "Xiang Li",
-        "Zhe Wu",
-        "Alexandre G.R. Day",
-        "Pranab Mohanty",
-        "Giri Iyengar"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "Graphs",
-        "(LoG)",
-        "2026"
-      ],
-      "published": "2026-09-22T14:36:19+00:00",
-      "score": 29,
-      "reason": "关键词命中：Deep Learning、Transformer",
-      "tags": [
-        "Deep Learning",
-        "Transformer"
       ],
       "summary_zh": "",
       "insight_zh": ""
@@ -3371,6 +3432,31 @@
       "insight_zh": "该研究以共享单车治理为动机场景，探讨了演化稳定性与有限样本学习可达性之间的区别，其多智能体博弈框架对城市共享出行治理或平台经济分析有潜在参考价值，但摘要未涉及地理空间数据或城市更新实证。"
     },
     {
+      "key": "arxiv:2609.27794",
+      "title": "DMM-Align: Closed-Loop Optimization for 2D-3D Registration with Dual-Role Diffusion",
+      "title_zh": "DMM-Align：基于双角色扩散的2D-3D配准闭环优化",
+      "url": "https://arxiv.org/abs/2609.27794",
+      "arxiv_id": "2609.27794",
+      "authors": [
+        "Chongjian Wang",
+        "Junjie Gao"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-17T15:01:25+00:00",
+      "score": 25,
+      "reason": "该论文研究2D-3D配准的闭环优化与双角色扩散，属于三维视觉与几何配准方向，与遥感变化检测、多源数据融合中的配准问题有方法学关联，但应用场景为室内RGB-D，非地理空间。",
+      "tags": [
+        "2D-3D配准",
+        "扩散模型",
+        "闭环优化",
+        "几何反馈"
+      ],
+      "summary_zh": "2D-3D配准在低重叠、遮挡、重复结构和严重跨模态歧义等挑战性场景中仍然脆弱。一个关键原因是现有方法孤立地改进表示学习、对应估计或位姿计算，而主要失败模式本质上是跨层次的，误差在特征、对应关系和位姿之间传播。为解决这一局限，作者提出DMM-Align：基于扩散的匹配矩阵对齐，一个通过共享可微分几何状态耦合对应细化、位姿估计和表示学习的闭环框架。该方法利用扩散的两个协调角色：几何感知扩散过程细化软匹配矩阵以实现鲁棒的对应估计，而几何条件扩散教师将位姿诱导的监督注入特征学习。这些过程通过一个可微分几何铰链连接，将对应关系转换为全局位姿，并将几何不一致性暴露给上游模块。在7-Scenes和RGB-D Scenes V2上的大量实验表明，DMM-Align持续优于强基线，尤其是在低重叠和重遮挡条件下，凸显了闭环几何反馈对鲁棒2D-3D配准的有效性。",
+      "insight_zh": "该研究提出的闭环几何反馈与双角色扩散机制，对遥感影像与三维地理数据配准、多源数据融合中的跨层次误差传播问题有方法学借鉴，但其验证限于室内RGB-D数据集。"
+    },
+    {
       "key": "arxiv:2604.18980",
       "title": "AdaGScale: Viewpoint-Adaptive Gaussian Scaling in 3D Gaussian Splatting to Reduce Gaussian-Tile Pairs",
       "title_zh": "AdaGScale：3D高斯泼溅中视角自适应高斯缩放以减少高斯-瓦片对",
@@ -3667,6 +3753,30 @@
       ],
       "summary_zh": "标准对比学习框架主要从语义角度设计，然而学习保留3D空间结构的2D视觉表征对场景理解同样重要。本文提出深度引导对比学习（DGCL），一种简单的辅助目标，将3D空间感知注入2D对比表征学习。其核心思想是利用深度将局部3D邻近性转化为对比相似性：在3D空间中更接近的像素被鼓励拥有比距离更远的像素更相似的表示。DGCL不依赖绝对深度值，而是通过随机采样像素之间的相对3D距离比较来构建监督，使目标对深度尺度不变、计算高效且易于集成到现有对比框架中。在不同数据集和模型上的实验表明，DGCL持续改善2D表征学习，并通过更强的空间和几何理解惠及语义下游任务。代码见https://github.com/LeungTsang/DGCL。",
       "insight_zh": "该深度引导的对比学习思路，或可启发遥感影像中结合DSM或LiDAR深度信息来增强2D表征的空间感知能力，服务于变化检测等任务。"
+    },
+    {
+      "key": "arxiv:2609.27787",
+      "title": "Ask Which, Not How Good: Sizing Benchmarks Scored by an LLM",
+      "title_zh": "问哪个，而非多好：LLM评分基准的规模确定",
+      "url": "https://arxiv.org/abs/2609.27787",
+      "arxiv_id": "2609.27787",
+      "authors": [
+        "Atul Anand"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-17T09:08:49+00:00",
+      "score": 22,
+      "reason": "该论文研究LLM评分基准的测量分辨率与协议设计，属于LLM评估方法论，与GIS博士研究中LLM和多智能体方向有间接关联，但不涉及地理空间应用。",
+      "tags": [
+        "LLM评估",
+        "基准测试",
+        "测量理论",
+        "评分协议"
+      ],
+      "summary_zh": "由LLM评判员评分的基准经常裁决十分之一分的差异，但这些基准的分辨率从未被测量。现有样本复杂度工作覆盖准确率基准，而将评判情形留空。作者将系统视为测量对象，使用泛化理论将373,019次评判分解为系统、项目、评判员和交互成分。核心结果是结构性的：在单一评判员下，泛化性渐近于sigma2_s/(sigma2_s+sigma2_sj)，与项目数无关，因为系统-评判员项不携带n_i。项目会饱和；评判员不会。目标的项目成本在目标接近该上限时发散。该上限是逐点评分准则的属性，而非LLM评判的属性。以两种呈现顺序作为成对偏好运行时，sigma2_sj比sigma2_s低两个数量级，上限升至0.986（在11个系统上自助法[0.934, 1.000]），因此一个评判员就足够。成对比较带来另一个问题：同一系统首先呈现时获胜频率比其次呈现时高8.6个百分点，这一偏差是作者恢复的53个已发表胜率比较中声称的中位改进的1.23倍。协议设计主导面板规模。在原生项目数下，测量下限为0-5分制上的0.41-1.24分，而报告的中位改进为0.28分；在唯一一个重复频率足以进行精确匹配比较的基准上，所有17个恢复的MT-Bench改进都低于MT-Bench自身的下限，70%的胜率声称低于成对下限。对628篇arXiv论文的审计，由两个独立模型双重编码并对照盲人编码验证（kappa=0.73），发现不到四分之一的论文说明其评估是否以……运行。",
+      "insight_zh": "该研究揭示了LLM评分基准的分辨率上限与协议设计的重要性，对GIS研究中基于LLM的评估（如LLM辅助的空间分析或智能体评估）有方法学警示，但未涉及地理空间数据或任务。"
     },
     {
       "key": "arxiv:2609.27139",
@@ -4147,6 +4257,32 @@
       "insight_zh": "该框架的逐层几何分析思路或可迁移到遥感特征表示评估，但论文未涉及地理空间数据，属于方法层面的潜在借鉴。"
     },
     {
+      "key": "arxiv:2609.27779",
+      "title": "Fusion-Aware Direct 3D Gaussian Generation with Structured Patch Latent Flows",
+      "title_zh": "融合感知的直接3D高斯生成与结构化块潜在流",
+      "url": "https://arxiv.org/abs/2609.27779",
+      "arxiv_id": "2609.27779",
+      "authors": [
+        "Yizhao Wang",
+        "Jingbo Wang",
+        "Guantao Zhang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-18T01:19:53+00:00",
+      "score": 20,
+      "reason": "该论文研究3D高斯泼溅的直接生成与结构化潜在流，属于三维生成与计算机视觉方向，与GIS中的遥感变化检测、城市更新有潜在的三维场景建模关联，但非直接相关。",
+      "tags": [
+        "3D高斯泼溅",
+        "生成模型",
+        "流匹配",
+        "三维生成"
+      ],
+      "summary_zh": "类别引导的3D物体生成对于智能内容创作、虚拟环境和数字资产设计非常重要。尽管3D高斯泼溅（3DGS）提供了显式且渲染高效的表示，但直接生成3D高斯物体很困难，因为高斯基元是无序的、大小可变的、局部密集且对渲染高度敏感。现有3DGS生成方法通常依赖多视图合成、重建或提升的2D先验，主要从观测视图融合信息，而非建模3D高斯物体的内在结构分布。本文提出一种融合感知的层次化高斯块表示，用于基于整流流的直接类别引导3DGS生成。不规则高斯集被分解为规范局部块并编码为结构化令牌。由此产生的层次化潜在空间融合了全局类别语义、块级几何与外观、空间对应关系以及渲染敏感线索。在此基础上，作者设计了结构感知整流流模型，具有块位置条件、全局-局部耦合速度预测和密度感知速度加权，能够在数秒内直接潜在生成类别条件化的3DGS物体。渲染反馈融合策略进一步使潜在流学习与解码多视图渲染质量对齐。实验表明，所提方法生成的3D高斯物体相比基线潜在生成模型具有更连贯的几何、更锐利的局部细节和更好的多视图一致性。消融研究证实了层次化信息融合、全局-局部耦合、密度感知监督和渲染反馈学习的贡献，同时保持实用的采样效率。",
+      "insight_zh": "该工作提出的层次化块表示与融合感知生成策略，对三维城市建模或遥感场景的三维重建有潜在启发，但其研究聚焦于通用物体生成，未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2609.23065",
       "title": "From Concept Alignment to Causal Grounding: An Intervention Test of Chain-of-Thought Faithfulness",
       "title_zh": "从概念对齐到因果接地：思维链忠实性的干预检验",
@@ -4431,8 +4567,32 @@
       "insight_zh": "摘要为空，无法确认威胁模型、影子记忆的具体实现或实验效果；从标题推断，该方法可能通过维护额外记忆来检测或缓解长时程攻击。"
     },
     {
+      "key": "arxiv:2609.27855",
+      "title": "Reachable Global Optimization in AI Systems: How Global Is Global?",
+      "title_zh": "AI系统中可达的全局优化：全局究竟有多全局？",
+      "url": "https://arxiv.org/abs/2609.27855",
+      "arxiv_id": "2609.27855",
+      "authors": [
+        "Wesley Shu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-20T03:29:59+00:00",
+      "score": 18,
+      "reason": "该论文讨论AI系统优化中的可达性与全局最优性问题，属于通用AI方法论，与城市更新、时空数据挖掘、遥感变化检测等GIS核心议题无直接关联，仅对多智能体优化评估有间接参考价值。",
+      "tags": [
+        "优化理论",
+        "可达性",
+        "AI系统",
+        "基准测试"
+      ],
+      "summary_zh": "AI系统日益声称能够优化提示词、策略、架构、规划、工具使用轨迹、推理轨迹以及测试时计算。本文认为，除非这些声称说明执行优化的系统实际可达的区域，否则它们是不充分的。作者提出可达性诱导优化（RIO）模型，其中生成器、验证器、控制器、记忆、工具和预算共同诱导出一个可达候选区域。因此，返回的解只是最佳访问点、近似可达最优，只有当额外证书将可达区域与完整形式空间关联时，才是精确全局最优。作者证明了可达最优性、虚假全局性、间隙分解、证书、逃逸、剪枝和控制价值等结果。完整基准记录包含66,150次执行试验，覆盖六个已知最优景观族、七种控制策略、270个景观，每个景观-方法组合运行35次。在线附录包含原始试验记录、汇总表、图表、基准代码、验证脚本和校验和。结果表明，控制可以限制、扩展或误导可达性，优化质量、可达性质量和控制可靠性必须分别报告。",
+      "insight_zh": "该研究提示，在评估AI优化系统（包括多智能体或LLM驱动的空间决策）时，应明确区分可达最优与全局最优，并分别报告优化质量、可达性与控制可靠性；这对GIS中基于智能体的规划评估具有方法论借鉴意义，但未涉及具体地理空间应用。"
+    },
+    {
       "key": "arxiv:2605.05870",
-      "title": "QuadraSHAP: Stable and Scalable Shapley Values for Product Games via Gauss-Legendre Quadrature",
+      "title": "QuadraSHAP: $\\epsilon$-Exact Shapley Values for Product Games in Logarithmic Parallel Time",
       "title_zh": "QuadraSHAP：基于高斯-勒让德求积的乘积博弈稳定可扩展Shapley值",
       "url": "https://arxiv.org/abs/2605.05870",
       "arxiv_id": "2605.05870",
@@ -5573,7 +5733,8 @@
       "categories": [
         "cs.CV",
         "cs.AI",
-        "cs.DB"
+        "cs.DB",
+        "https://hku-healthai.github.io/brainvlm_project.github.io/"
       ],
       "published": "2026-09-15T03:46:03+00:00",
       "score": 17,
@@ -5657,6 +5818,38 @@
       ],
       "summary_zh": "许多知识工作基准围绕单个任务构建，任务所需上下文与任务一起或之后选定。这种设计在专为任务搭建的环境中衡量类职场任务表现。当任务规范引导上下文选择时，评估可能将任务信息编码进环境，并预先完成职场表现通常需要的信息定位工作。本文提出WorkWorlds，一种将组织状态与任务规范分离的评估基础设施。世界首先固定修订版本、日期和员工席位，并物化该员工可访问的组织状态；任务随后才引入。作者在一家合成制药公司中实现WorkWorlds，包含6个员工席位上的8项测量任务，并构建了额外的组织世界。在192次匹配评估中，从任务定制上下文转向完整角色可见职场，使证据获取率从90.4%降至74.5%，标准通过率从79.4%降至68.2%，而在证据获取条件下的通过率几乎不变；大部分测量差异发生在智能体获得充分证据之前。",
       "insight_zh": "该工作表明任务定制上下文会高估智能体的信息定位能力，分离组织状态与任务规范可更真实地评估职场表现；其评测设计思路对构建地理空间智能体基准有借鉴意义，但论文未涉及地理空间任务。"
+    },
+    {
+      "key": "arxiv:2609.27819",
+      "title": "When Adaptation Hurts: Split Sensitivity and Person-Level Negative Transfer in Federated Wearable Onboarding",
+      "title_zh": "当适应带来伤害：联邦可穿戴设备入门中的分割敏感性与个体级负迁移",
+      "url": "https://arxiv.org/abs/2609.27819",
+      "arxiv_id": "2609.27819",
+      "authors": [
+        "Rahil Aftab",
+        "Vineet Kumar Rakesh",
+        "Soumya Mazumdar",
+        "Tapas Samanta"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.DC",
+        "and",
+        "supplementary",
+        "scripts:",
+        "https://github.com/TitanRahil/When-Adaptation-Hurts"
+      ],
+      "published": "2026-08-18T15:23:51+00:00",
+      "score": 15,
+      "reason": "该论文研究联邦可穿戴设备模型中的个体级负迁移与分割敏感性，属于联邦学习与个体化评估方法，与GIS博士研究方向无直接关联。",
+      "tags": [
+        "联邦学习",
+        "可穿戴设备",
+        "负迁移",
+        "个体级评估"
+      ],
+      "summary_zh": "联邦可穿戴模型最终会服务于源训练中不存在的人群，但良好的平均准确率并不能证明无标签入门对每个人都有帮助。作者在五个可穿戴数据集上评估六种核心入门策略，采用泄漏控制协议：固定源检查点、仅从源数据估计归一化、将校准与评估记录分离，并对留出个体而非窗口、设备或随机种子进行推理。完成所有符合条件的HHAR和PAMAP2外层个体轮换后，从原始冻结折得到的结论发生实质性变化。在HHAR上，单个个体的平衡准确率为95.6-97.2%，而所有九位用户为78.3-83.0%，降低了13.8-17.8个百分点（pp）。显示的平均领先者在两个数据集上都发生变化，而成对领先者-亚军自助法区间包含零，无法确定更优方法。没有自适应核心机制能在所有五个数据集中同时实现正平均增益和零种子平均个体级损失大于2个百分点（pp）。FedBN有一个此类损失，ATP风格适应有八个；仅特征方法在种子平均后没有，但其精确单侧95%上界为7.6%。一项补充的种子-个体压力审计记录了FedBN、ATP风格和仅特征方法在114次中分别有4、22和10次有害实现；这些是重复实现，而非独立参与者。尾部质量、校准可用性和跌倒窗口特异性揭示了被平均准确率掩盖的额外失败。因此，该研究提供了一个可审计的开发基准和失败图谱，而非普遍优越性或部署安全性声明。",
+      "insight_zh": "该研究强调个体级评估与负迁移风险，对多源数据融合中个体化模型评估有方法学借鉴，但其应用场景为可穿戴健康数据，与地理空间智能无直接关联。"
     },
     {
       "key": "arxiv:2609.27064",
@@ -6123,10 +6316,10 @@
       "url": "https://arxiv.org/abs/2609.27735",
       "arxiv_id": "2609.27735",
       "authors": [
-        "Xiaohe Jiang (1)",
-        "Guoqiang Zhang (1)",
-        "Tianjin Huang (1)",
-        "Ronghui Mu (1) ((1) University of Exeter)"
+        "Xiaohe Jiang",
+        "Guoqiang Zhang",
+        "Tianjin Huang",
+        "Ronghui Mu (University of Exeter)"
       ],
       "categories": [
         "cs.LG",
@@ -7589,6 +7782,41 @@
       ],
       "summary_zh": "通过线性投影进行概念擦除的方法假设特征位于可分离子空间中。作者表明，在密集叠加下这一假设不成立：当两个特征被迫形成共享单一子空间的对跖对时，最先进的线性擦除会同时破坏两者，而不仅仅是目标特征。使用梯度下降训练的网络以非线性方式解决该问题，但并非一致：它们根据初始化收敛到两种不同的回路级解之一，作者称之为镜像解和阴影解。作者将这种分叉映射为特征纠缠的函数，表明它反映的是稳定的吸引子结构而非实验设置的伪影，并使用有针对性的因果干预证明，两种解都留下了被擦除特征表示的实质性、可测量的痕迹，可通过单个标量补丁恢复，而无需进一步训练。这与最近在LLM遗忘中经验观察到的失效模式相呼应：抑制而非删除使被遗忘的知识重新浮现；该结果为这一失效模式为何发生提供了机制性、因果验证的解释。",
       "insight_zh": "该工作提示，在涉及LLM或多智能体的地理空间智能系统中，若采用概念擦除或遗忘机制来移除敏感空间知识，可能只是抑制而非真正删除，相关表示仍可能被恢复。"
+    },
+    {
+      "key": "arxiv:2609.27848",
+      "title": "Geometry-anchored PET-aware multimodal pseudo-CT synthesis for whole-body attenuation correction: the BIC-MAC Challenge",
+      "title_zh": "几何锚定的PET感知多模态伪CT合成用于全身衰减校正：BIC-MAC挑战赛",
+      "url": "https://arxiv.org/abs/2609.27848",
+      "arxiv_id": "2609.27848",
+      "authors": [
+        "Xuan Loc Nguyen",
+        "Hoang-Loc Cao",
+        "Truong Thanh Hung Nguyen",
+        "Phuc Ho",
+        "Phuc Truong Loc Nguyen",
+        "Nguyen Truong Toan To",
+        "Hung Cao"
+      ],
+      "categories": [
+        "cs.CV",
+        "(BIC-MAC)",
+        "Challenge",
+        "at",
+        "MICCAI",
+        "2026"
+      ],
+      "published": "2026-08-19T16:27:07+00:00",
+      "score": 12,
+      "reason": "该论文聚焦医学影像中的多模态伪CT合成与PET衰减校正，属于医学影像分析领域，与城市更新、遥感变化检测、时空数据挖掘等GIS研究方向无直接关联。",
+      "tags": [
+        "医学影像",
+        "多模态融合",
+        "伪CT合成",
+        "PET衰减校正"
+      ],
+      "summary_zh": "BIC-MAC挑战赛的目标是从非衰减校正PET（NAC-PET）、Dixon MRI和二维定位像合成全身伪CT，用于无CT的PET衰减校正。作者提出GeoPACT，一个几何锚定的多模态框架，以NAC-PET作为空间参考，通过门控残差融合引入定位像和MRI特征。绝对坐标和全身条件支持解剖学一致的基于块的预测。训练结合衰减图监督与可微分PET响应代理，以减少对下游PET重建相关的误差。使用滑动窗口推理生成全分辨率伪CT体数据，测试时无需CT或PET标签。",
+      "insight_zh": "该工作展示了多模态融合与几何锚定策略在医学影像合成中的应用，其门控残差融合与滑动窗口推理思路对多源地理空间数据融合有间接启发，但研究本身不涉及地理空间场景。"
     },
     {
       "key": "arxiv:2609.27110",
@@ -10525,6 +10753,30 @@
       "insight_zh": "该研究提示，去标识化系统的安全性不仅取决于模型本身，还受对抗迁移性影响；其缓解思路（微调与低通滤波）可能对涉及人脸隐私的地理空间数据采集与共享场景具有参考价值，但文中未涉及地理空间应用。"
     },
     {
+      "key": "arxiv:2609.27824",
+      "title": "\"AI Is Turning Too Human\": How Teenagers Experience and Negotiate AI in Everyday Life",
+      "title_zh": "“AI正变得过于像人”：青少年如何在日常生活中体验与协商AI",
+      "url": "https://arxiv.org/abs/2609.27824",
+      "arxiv_id": "2609.27824",
+      "authors": [
+        "Jianfeng Zhu"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-08-18T22:54:47+00:00",
+      "score": 8,
+      "reason": "该论文研究青少年对生成式AI的日常体验与协商，属于AI社会影响与人机交互研究，与GIS博士研究方向无直接关联。",
+      "tags": [
+        "青少年",
+        "生成式AI",
+        "社会影响",
+        "主题分析"
+      ],
+      "summary_zh": "生成式AI正迅速进入青少年的日常生活，而这一时期正是认知、社交和情感发展的关键阶段。然而其采用速度超过了关于青少年自身如何体验、理解并协商其在生活中日益扩大角色的证据。作者使用经过验证的关键词检索和人在回路、LLM辅助的主题分析，考察了2023年1月至2026年7月r/teenagers上的AI相关话语。AI相关讨论随时间显著增加，11,083条分析编码帖子揭示了八个相互关联的体验领域。日常与社交使用最为普遍（36.8%），而话语日益转向真实性、个人控制与安全以及未来人类角色。在各领域中，青少年质疑AI何时应支持或替代人类思维与创造力、对话式AI如何改变关系与能动性感知、什么仍可被视为真实、谁控制个人信息与表征，以及哪些机会和角色应保留给人类。这些发现将青少年AI使用不仅定位为技术采用，而是关于AI在日常生活中位置与边界的新兴协商。支持这一转变需要发展适宜的AI素养、心理与社会支持，以及保护青少年能动性、隐私、关系和人类发展机会的AI系统与政策。",
+      "insight_zh": "该研究揭示了青少年对AI真实性与能动性的关切，对理解LLM和多智能体在社会场景中的接受度有间接参考，但与地理空间智能或城市研究无直接联系。"
+    },
+    {
       "key": "arxiv:2606.01322",
       "title": "TukaBench: A Culturally Grounded Jailbreak Benchmark for African Languages",
       "title_zh": "TukaBench：面向非洲语言的文化语境越狱基准",
@@ -10976,33 +11228,6 @@
         "cs.AI"
       ],
       "published": "2026-09-23T09:21:14+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.27819",
-      "title": "When Adaptation Hurts: Split Sensitivity and Person-Level Negative Transfer in Federated Wearable Onboarding",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27819",
-      "arxiv_id": "2609.27819",
-      "authors": [
-        "Rahil Aftab",
-        "Vineet Kumar Rakesh",
-        "Soumya Mazumdar",
-        "Tapas Samanta"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.DC",
-        "and",
-        "supplementary",
-        "scripts:",
-        "https://github.com/TitanRahil/When-Adaptation-Hurts"
-      ],
-      "published": "2026-08-18T15:23:51+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -12139,25 +12364,6 @@
         "cs.AI"
       ],
       "published": "2026-09-22T18:30:09+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.27855",
-      "title": "Reachable Global Optimization in AI Systems: How Global Is Global?",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27855",
-      "arxiv_id": "2609.27855",
-      "authors": [
-        "Wesley Shu"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-08-20T03:29:59+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13316,6 +13522,30 @@
       "insight_zh": ""
     },
     {
+      "key": "arxiv:2609.27176",
+      "title": "LeakScale: Estimating the Causal Effect of Benchmark Exposure",
+      "title_zh": "超越重叠：估计基准暴露的因果效应",
+      "url": "https://arxiv.org/abs/2609.27176",
+      "arxiv_id": "2609.27176",
+      "authors": [
+        "Divyansh Singh"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-23T00:28:57+00:00",
+      "score": 5,
+      "reason": "该论文研究基准暴露的因果效应估计，属于LLM评估方法论方向，与GIS博士研究主题无实质关联。",
+      "tags": [
+        "基准污染",
+        "因果推断",
+        "干预框架",
+        "评估方法"
+      ],
+      "summary_zh": "评估材料进入训练的证据并不能揭示它对评估产生了多大影响。这一区别使得受污染的基准分数难以解释：溯源可以确立接触，但只有反事实才能量化归因于该接触的性能。作者提出LeakScale，一个用于估计这一缺失量的干预框架。LeakScale创建全新的可执行任务，这些任务需要公开任务中不存在且无法推导出的私有、家族特定信息，控制对该信息的访问，并估计由此产生的经控制调整的可执行准确率变化。在2048个独特家族、两个模型家族、两个可执行领域和262144次生成中，暴露在每个模型-领域组合中都提升了准确率，增益范围为+7.17至+27.31个百分点。这些发现区分了两个常被混淆的实证问题：基准接触是否发生，以及报告分数在多大程度上依赖于此。LeakScale使后者可直接测量。",
+      "insight_zh": "该工作为量化基准污染提供了因果框架，对任何依赖公开基准的领域（包括地理空间AI）都有方法论警示意义，但论文未涉及地理空间数据或城市应用。"
+    },
+    {
       "key": "arxiv:2609.27455",
       "title": "Latent evolving World Action Model",
       "title_zh": "",
@@ -13711,28 +13941,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.27821",
-      "title": "Groundbench: Multi-Resolution Polygon Grounding Exposes the Geometry Gap in Vision-Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27821",
-      "arxiv_id": "2609.27821",
-      "authors": [
-        "Zhonghan Bian",
-        "Zhenran Wang",
-        "Jinsong Li",
-        "Zhangyang Qi"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-18T17:31:24+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.27912",
       "title": "Global tree forecasters collapse at the hierarchical aggregate: a five-panel failure characterization",
       "title_zh": "",
@@ -13748,36 +13956,6 @@
         "stat.AP"
       ],
       "published": "2026-08-21T14:59:27+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.27848",
-      "title": "Geometry-anchored PET-aware multimodal pseudo-CT synthesis for whole-body attenuation correction: the BIC-MAC Challenge",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27848",
-      "arxiv_id": "2609.27848",
-      "authors": [
-        "Xuan Loc Nguyen",
-        "Hoang-Loc Cao",
-        "Truong Thanh Hung Nguyen",
-        "Phuc Ho",
-        "Phuc Truong Loc Nguyen",
-        "Nguyen Truong Toan To",
-        "Hung Cao"
-      ],
-      "categories": [
-        "cs.CV",
-        "(BIC-MAC)",
-        "Challenge",
-        "at",
-        "MICCAI",
-        "2026"
-      ],
-      "published": "2026-08-19T16:27:07+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -13881,27 +14059,6 @@
       ],
       "summary_zh": "摘要内容缺失，从标题可知该研究提出GLOW方法，针对动态共置光源与相机捕获的室内场景进行全局光照感知逆渲染。",
       "insight_zh": "该逆渲染技术可能对三维场景重建有参考价值，但与城市更新、时空数据挖掘或遥感变化检测的直接关联有限。"
-    },
-    {
-      "key": "arxiv:2609.27779",
-      "title": "Fusion-Aware Direct 3D Gaussian Generation with Structured Patch Latent Flows",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27779",
-      "arxiv_id": "2609.27779",
-      "authors": [
-        "Yizhao Wang",
-        "Jingbo Wang",
-        "Guantao Zhang"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-18T01:19:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.27244",
@@ -14707,26 +14864,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.27794",
-      "title": "DMM-Align: Closed-Loop Optimization for 2D-3D Registration with Dual-Role Diffusion",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27794",
-      "arxiv_id": "2609.27794",
-      "authors": [
-        "Chongjian Wang",
-        "Junjie Gao"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-17T15:01:25+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.28430",
       "title": "Cross-Scale Transfer Learning for Depression Severity Prediction: From PHQ-8 to HAMD-17 Across Languages and Clinical Paradigms",
       "title_zh": "抑郁症严重程度预测的跨尺度迁移学习：从PHQ-8到HAMD-17跨语言与临床范式",
@@ -15220,30 +15357,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.27825",
-      "title": "CAST: Context- and Anomaly Structure-Conditioned Time Series Anomaly Generation",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27825",
-      "arxiv_id": "2609.27825",
-      "authors": [
-        "Haochen Zhang",
-        "Jie Peng",
-        "Songyuan Sui",
-        "Yu-Chao Huang",
-        "Xiangqi Zhu",
-        "Tianlong Chen"
-      ],
-      "categories": [
-        "cs.LG"
-      ],
-      "published": "2026-08-19T02:14:00+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.27336",
       "title": "CART: Closed-Loop Adaptive Red Teaming for Large Language Models",
       "title_zh": "",
@@ -15402,30 +15515,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.27176",
-      "title": "Beyond Overlap: Estimating the Causal Effect of Benchmark Exposure",
-      "title_zh": "超越重叠：估计基准暴露的因果效应",
-      "url": "https://arxiv.org/abs/2609.27176",
-      "arxiv_id": "2609.27176",
-      "authors": [
-        "Divyansh Singh"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-23T00:28:57+00:00",
-      "score": 5,
-      "reason": "该论文研究基准暴露的因果效应估计，属于LLM评估方法论方向，与GIS博士研究主题无实质关联。",
-      "tags": [
-        "基准污染",
-        "因果推断",
-        "干预框架",
-        "评估方法"
-      ],
-      "summary_zh": "评估材料进入训练的证据并不能揭示它对评估产生了多大影响。这一区别使得受污染的基准分数难以解释：溯源可以确立接触，但只有反事实才能量化归因于该接触的性能。作者提出LeakScale，一个用于估计这一缺失量的干预框架。LeakScale创建全新的可执行任务，这些任务需要公开任务中不存在且无法推导出的私有、家族特定信息，控制对该信息的访问，并估计由此产生的经控制调整的可执行准确率变化。在2048个独特家族、两个模型家族、两个可执行领域和262144次生成中，暴露在每个模型-领域组合中都提升了准确率，增益范围为+7.17至+27.31个百分点。这些发现区分了两个常被混淆的实证问题：基准接触是否发生，以及报告分数在多大程度上依赖于此。LeakScale使后者可直接测量。",
-      "insight_zh": "该工作为量化基准污染提供了因果框架，对任何依赖公开基准的领域（包括地理空间AI）都有方法论警示意义，但论文未涉及地理空间数据或城市应用。"
-    },
-    {
       "key": "arxiv:2609.27356",
       "title": "Beyond Mean Foils: Auditing Worst-Foil Specificity in Frozen CLIP Region Explanations",
       "title_zh": "",
@@ -15543,25 +15632,6 @@
         "cs.LG"
       ],
       "published": "2026-09-23T05:21:10+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.27787",
-      "title": "Ask Which, Not How Good: Sizing Benchmarks Scored by an LLM",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27787",
-      "arxiv_id": "2609.27787",
-      "authors": [
-        "Atul Anand"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-08-17T09:08:49+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -15971,25 +16041,6 @@
         "2026)"
       ],
       "published": "2026-09-22T07:22:53+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.27824",
-      "title": "\"AI Is Turning Too Human\": How Teenagers Experience and Negotiate AI in Everyday Life",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.27824",
-      "arxiv_id": "2609.27824",
-      "authors": [
-        "Jianfeng Zhu"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-08-18T22:54:47+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],

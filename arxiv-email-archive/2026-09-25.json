@@ -15,10 +15,13 @@
     "arxiv:2609.29370",
     "arxiv:2608.29001",
     "arxiv:2606.03926",
+    "arxiv:2609.30250",
+    "arxiv:2609.29828",
     "arxiv:2405.17044",
     "arxiv:2605.29064",
     "arxiv:2603.05370",
     "arxiv:2508.18192",
+    "arxiv:2609.29802",
     "arxiv:2609.29447",
     "arxiv:2609.29444",
     "arxiv:2609.29383",
@@ -28,24 +31,21 @@
     "arxiv:2609.29508",
     "arxiv:2607.12271",
     "arxiv:2609.30186",
-    "arxiv:2609.29403",
-    "arxiv:2609.29118",
-    "arxiv:2609.28580",
-    "arxiv:2609.28693"
+    "arxiv:2609.29792"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:630",
-    "deepseek": "partial:30/330;failed-batches:30"
+    "deepseek": "partial:30/300;failed-batches:27"
   },
-  "updated_at": "2026-09-28T01:10:28.225937+00:00",
+  "updated_at": "2026-09-28T04:57:13.599192+00:00",
   "analysis_stats": {
     "total": 630,
-    "analyzed": 330,
+    "analyzed": 360,
     "high": 7,
-    "medium": 12,
-    "low": 23,
-    "below_threshold": 288
+    "medium": 14,
+    "low": 25,
+    "below_threshold": 314
   },
   "papers": [
     {
@@ -206,21 +206,21 @@
     },
     {
       "key": "arxiv:2602.18532",
-      "title": "VLANeXt: Recipes for Building Strong VLA Models",
+      "title": "VLANeXt Family: A Systematic Study of VLA Models from Core Recipes to Emerging Paradigms",
       "title_zh": "VLANeXt：构建强VLA模型的配方",
       "url": "https://arxiv.org/abs/2602.18532",
       "doi": "",
       "arxiv_id": "2602.18532",
       "authors": [
         "Xiao-Ming Wu",
-        "Bin Fan",
         "Kang Liao",
+        "Yihang Luo",
+        "Bin Fan",
         "Jian-Jian Jiang",
         "Runze Yang",
-        "Yihang Luo",
         "Zhonghua Wu",
         "Wei-Shi Zheng",
-        "Chen Change Loy"
+        "and Chen Change Loy"
       ],
       "venue": "arXiv",
       "published": "",
@@ -440,6 +440,58 @@
       "insight_zh": "从标题可推断该研究将双向条件扩散机制引入时空建模，以生成概率性预测结果；但摘要缺失，无法确认其网络结构、应用领域（如气象、流体或城市数据）与实验表现，其对地理空间智能的适用性有待进一步核实。"
     },
     {
+      "key": "arxiv:2609.30250",
+      "title": "Agentic Detection of Online Conspiracies",
+      "title_zh": "在线阴谋论的智能体检测",
+      "url": "https://arxiv.org/abs/2609.30250",
+      "doi": "",
+      "arxiv_id": "2609.30250",
+      "authors": [
+        "Lior Biton",
+        "Oren Tsur"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-24T17:58:43+00:00",
+      "score": 62,
+      "reason": "该论文提出智能体框架，利用社会语境工具推断社交媒体话语的言外之意，与研究中LLM和多智能体方向相关，但其应用领域为阴谋论检测而非城市更新或地理空间分析。",
+      "tags": [
+        "LLM",
+        "多智能体",
+        "社交媒体分析",
+        "意图推断",
+        "社会语境"
+      ],
+      "abstract": "Conspiratorial discourse on social media is not always expressed through explicit claims or stable lexical markers. The same surface content may express endorsement, legitimate concerns, criticism, satire, or mockery. The main challenge is therefore not only recognizing conspiracy-related claims, but inferring the speaker's intent -- the utterance's illocutionary force. We argue that this can be achieved through the use of relevant social contexts and propose an agentic framework, equipped with a set of tools supporting social queries. We demonstrate the benefits of our approach on a unique dataset of Hebrew tweets, covering 80\\%--90\\% of the public Hebrew tweets published over a four-year span (late 2018-- early 2023), encompassing several election cycles as well as the COVID pandemic years and related vaccination campaigns. This extensive coverage can be used in recovering different social contexts. Evaluating our framework on a manually-annotated adversarial dataset, we find that context-aware workflows consistently outperform text-only classification and that the agentic framework performs significantly better than other frameworks and settings, including a non-agentic model exposed to the same contexts available to the agent. We further provide an analysis of the results, the errors and efficiency (token economy) tradeoffs. These findings support viewing the task of conspiracy detection as a socially embedded interpretation task, in which effective classification depends not only on access to contexts, but also on adaptive reasoning in which the agent uses tools on a per-case basis, asking only for evidence relevant to its current reasoning step.",
+      "summary_zh": "社交媒体上的阴谋论话语并不总是通过明确主张或稳定词汇标记表达，相同表层内容可能表达支持、合理关切、批评、讽刺或嘲弄。核心挑战不仅是识别阴谋论相关主张，还在于推断说话者意图，即话语的言外之力。作者认为可通过相关社会语境实现这一目标，并提出一个配备社会查询工具的智能体框架。他们在覆盖2018年末至2023年初四年间80%–90%公共希伯来语推文的独特数据集上验证该方法，该时期涵盖多次选举周期及新冠疫情期间的疫苗接种活动。在人工标注的对抗性数据集上评估表明，语境感知工作流持续优于纯文本分类，且智能体框架显著优于其他框架和设置，包括可访问相同语境的非智能体模型。作者进一步分析了结果、错误及效率（token经济性）权衡。",
+      "insight_zh": "该研究提示，将分类任务视为社会嵌入的解释任务，并让智能体按案例自适应调用工具获取相关证据，可能提升意图推断效果；这一思路或可迁移至城市更新相关的社交媒体话语分析，但需注意其数据集和任务领域的特定性。"
+    },
+    {
+      "key": "arxiv:2609.29828",
+      "title": "ChunkRank: Model-Aware Text Chunking and Abstention-Aware Answer Selection for LLM Pipelines",
+      "title_zh": "ChunkRank：面向LLM流水线的模型感知文本分块与弃权感知答案选择",
+      "url": "https://arxiv.org/abs/2609.29828",
+      "doi": "",
+      "arxiv_id": "2609.29828",
+      "authors": [
+        "Amit Nautiyal",
+        "Ayush Bhatt",
+        "Gaurav Nautiyal"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-24T13:59:51+00:00",
+      "score": 62,
+      "reason": "该论文研究LLM流水线中的文本分块与答案选择，与用户关注的LLM和多智能体方向相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM",
+        "文本分块",
+        "检索增强生成",
+        "答案选择"
+      ],
+      "abstract": "We present ChunkRank, an open-source Python library that derives chunk boundaries from a target model's tokenizer and context window, and selects an answer among candidates produced independently per chunk. It ships a validated registry of 90 models across 15 providers and six answer-selection methods, and needs only three core dependencies. For chunking, ChunkRank avoids context-window overflow automatically from the model name, whereas character-based splitters overflow or waste the budget, and a fidelity study across 11 languages shows why token-exact budgets matter beyond English. For answer selection we report a negative result: on NaturalQuestions, TriviaQA and HotpotQA, with extractive and generative readers, no content-based ranker reliably beats taking the first non-empty answer. The reason is reader abstention on chunks that lack the answer, not answer position. A long-context baseline shows that chunking matches single-call reading on single-hop questions, so ChunkRank targets small-window and beyond-window settings. Code, registry and evaluation harness are released.",
+      "summary_zh": "本文提出ChunkRank，一个开源Python库，根据目标模型的分词器和上下文窗口推导分块边界，并在各分块独立生成的候选答案中选择最终答案。该库提供覆盖15个提供商、90个模型的验证注册表以及六种答案选择方法，仅需三个核心依赖。在分块方面，ChunkRank可根据模型名称自动避免上下文窗口溢出，而基于字符的分割器则会溢出或浪费预算；一项覆盖11种语言的保真度研究说明了为何精确到token的预算在英语之外同样重要。在答案选择方面，作者报告了一个负面结果：在NaturalQuestions、TriviaQA和HotpotQA上，使用抽取式和生成式阅读器时，没有任何基于内容的排序器能够稳定优于直接取第一个非空答案。原因在于阅读器对不含答案的分块会弃权，而非答案位置。一个长上下文基线表明，分块在单跳问题上与单次调用阅读相当，因此ChunkRank面向小窗口和超窗口场景。代码、注册表和评估工具已发布。",
+      "insight_zh": "该工作提示在构建LLM流水线时，分块策略应与目标模型的分词器对齐，且答案选择中阅读器弃权可能是主要瓶颈；但其结论基于特定问答数据集，未必可直接迁移到地理空间文本任务。"
+    },
+    {
       "key": "arxiv:2405.17044",
       "title": "Generating Interesting Scientific Ideas using Knowledge Graphs and LLMs: Evaluations with 100 Research Group Leaders",
       "title_zh": "利用知识图谱与大语言模型生成有趣的科学创意：基于100位研究组负责人的评估",
@@ -546,6 +598,32 @@
       "abstract": "------------------------------------------------------------------------------",
       "summary_zh": "该论文尝试通过模块社区（module communities）来解析大语言模型的认知模式。摘要仅提供标题信息，未说明具体方法、实验设置或发现。",
       "insight_zh": "从标题推断，该研究可能将LLM内部模块视为网络社区以刻画其认知组织方式；若方法有效，或可为理解LLM在空间推理与地理空间智能任务中的行为提供分析视角，但摘要未给出具体结论或验证结果。"
+    },
+    {
+      "key": "arxiv:2609.29802",
+      "title": "Learning to Ideate for Scientific Impact",
+      "title_zh": "为科学影响而学习创意生成",
+      "url": "https://arxiv.org/abs/2609.29802",
+      "doi": "",
+      "arxiv_id": "2609.29802",
+      "authors": [
+        "Shubham Kale",
+        "Aniketh Garikaparthi",
+        "Manasi Patwardhan"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-24T13:37:59+00:00",
+      "score": 55,
+      "reason": "该论文研究LLM在科学创意生成中的对齐，与用户关注的LLM和多智能体方向相关，但未涉及地理空间或城市更新应用。",
+      "tags": [
+        "LLM",
+        "科学创意生成",
+        "强化学习",
+        "引用影响"
+      ],
+      "abstract": "Scientific ideation is increasingly mediated by large language models, but current ideation systems are usually trained and evaluated on immediately judgeable proxies such as novelty, clarity, and feasibility. This leaves open whether delayed signals of scientific uptake can be used as feedback for steering models toward research directions with higher expected \\emph{impact}. We study this question using citation-normalized impact as a noisy but scalable proxy for scholarly uptake. We construct a large-scale dataset from over 100K computer science papers by extracting goal-conditioned idea descriptions and assigning each paper an ordinal, year-normalized citation label. We then train a goal-conditioned reward model to predict citation-impact labels from research goal and idea pairs, and use this reward to align an idea generator through supervised fine-tuning followed by reinforcement learning. To reduce circularity, we evaluate generated ideas with a held-out, reference-grounded protocol that compares model outputs against historical ideas under the same research goal and weights judgments by the reference idea's citation-impact label. Experiments show that our RL-tuned model consistently produces ideas with higher estimated impact than both the base model and supervised fine-tuning baselines. Our findings position scientific impact as a practical, outcome-grounded feedback signal for aligning LLMs in open-ended scientific discovery.",
+      "summary_zh": "科学创意生成正日益被大型语言模型所中介，但当前的创意生成系统通常在可即时评判的代理指标（如新颖性、清晰度和可行性）上进行训练和评估。这使得延迟的科学采纳信号能否用作反馈来引导模型走向具有更高期望影响力的研究方向这一问题悬而未决。我们使用引用归一化影响作为学术采纳的噪声但可扩展的代理来研究这一问题。我们构建了一个来自超过10万篇计算机科学论文的大规模数据集，提取目标条件化的创意描述，并为每篇论文分配一个序数、年份归一化的引用标签。然后我们训练一个目标条件化的奖励模型，从研究目标和创意对中预测引用影响标签，并使用该奖励通过监督微调后接强化学习来对齐创意生成器。为减少循环性，我们使用一个留出的、基于参考的协议评估生成的创意，该协议在同一研究目标下将模型输出与历史创意进行比较，并按参考创意的引用影响标签对判断进行加权。实验表明，我们经RL调优的模型持续产生比基础模型和监督微调基线具有更高估计影响力的创意。我们的发现将科学影响定位为在开放式科学发现中对齐LLM的一种实用、基于结果的反馈信号。",
+      "insight_zh": "该工作提出以引用影响作为延迟反馈信号来对齐LLM创意生成，其思路可能对利用LLM辅助城市更新研究选题有启发，但需注意引用影响作为代理指标的噪声和循环性问题。"
     },
     {
       "key": "arxiv:2609.29447",
@@ -808,115 +886,37 @@
       "insight_zh": "该文提出的规划-执行解耦思路可降低智能体推理成本，对多智能体系统设计有参考价值；但其应用场景为移动GUI交互，与地理空间智能无直接关联。"
     },
     {
-      "key": "arxiv:2609.29403",
-      "title": "RD-JEPA: Predictive latent pretraining for few-trajectory transfer across reaction--diffusion equations",
-      "title_zh": "RD-JEPA：面向反应扩散方程少轨迹迁移的预测性潜空间预训练",
-      "url": "https://arxiv.org/abs/2609.29403",
+      "key": "arxiv:2609.29792",
+      "title": "TimeBraid: Unifying Time Series and Language for Understanding and Forecasting",
+      "title_zh": "TimeBraid：统一时间序列与语言以支持理解与预测",
+      "url": "https://arxiv.org/abs/2609.29792",
       "doi": "",
-      "arxiv_id": "2609.29403",
+      "arxiv_id": "2609.29792",
       "authors": [
-        "Chenhao Si",
-        "Ming Yan"
+        "Xinyue Wang",
+        "Jiacheng Pang",
+        "Kun Zhou",
+        "Kexin Zhang",
+        "Defu Cao",
+        "Fan Feng",
+        "Faisal",
+        "Songyao Jin",
+        "Yan Liu",
+        "Biwei Huang"
       ],
       "venue": "arXiv",
-      "published": "2026-09-24T11:28:37+00:00",
+      "published": "2026-09-24T13:30:02+00:00",
       "score": 45,
-      "reason": "该文提出RD-JEPA，用于反应扩散方程轨迹的自监督预训练与少样本迁移，属于时空动力学代理建模。与时空数据挖掘和地理空间智能有方法层面的关联，但未涉及城市、遥感或地理空间数据，因此相关性中等。",
+      "reason": "该论文研究时间序列与语言的统一建模，与用户关注的时空数据挖掘和LLM方向有一定关联，但不涉及地理空间或城市应用。",
       "tags": [
-        "时空预测",
-        "自监督预训练",
-        "偏微分方程代理模型",
-        "反应扩散方程",
-        "迁移学习"
+        "时间序列",
+        "语言模型",
+        "统一建模",
+        "预测"
       ],
-      "abstract": "Learning surrogates for time-dependent partial differential equations often requires a new simulation corpus when the governing operator changes. We introduce RD-JEPA, a joint-embedding predictive architecture for self-supervised pretraining on reaction-diffusion trajectories. A single model is pretrained on five parameterized systems and then adapted to three held-out systems whose reaction operators and trajectories are excluded from pretraining. Using one, five, or ten complete trajectories from a held-out system, RD-JEPA achieves lower mean relative discrete $\\ell^2$ field error and mean absolute spatial first-difference error than five supervised surrogate baselines, an independently trained control that removes the trajectory-dependent predictive latent pathway, and an architecture-matched model trained from scratch. Within the evaluated equations, output resolution, forecast horizons, and choices of adaptation trajectories, the results indicate that prediction of future-state representations can support data-efficient adaptation across related reaction-diffusion systems.",
-      "summary_zh": "针对含时偏微分方程的代理学习通常需要在控制算子变化时重新构建仿真语料的问题，本文提出RD-JEPA，一种用于反应扩散轨迹自监督预训练的联合嵌入预测架构。单一模型在五个参数化系统上预训练，随后适配到三个留出系统，这些系统的反应算子和轨迹均未参与预训练。使用留出系统的一条、五条或十条完整轨迹时，RD-JEPA在平均相对离散ℓ²场误差和平均绝对空间一阶差分误差上均优于五个监督代理基线、一个去除轨迹相关预测潜路径的独立训练对照，以及一个架构匹配的从零训练模型。在所评估的方程、输出分辨率、预测时域和适配轨迹选择范围内，结果表明对未来状态表征的预测能够支持相关反应扩散系统间的数据高效适配。",
-      "insight_zh": "该工作提示，预测性潜空间预训练可能有助于在动力学算子发生变化时减少对大量仿真数据的依赖，这一思路或可迁移到城市时空场或遥感时序变化的代理建模中，但需注意其验证范围仅限于反应扩散方程。"
-    },
-    {
-      "key": "arxiv:2609.29118",
-      "title": "UpDown-SC: Gravity-Canonicalized Dual-Envelope Scan Context for Indoor LiDAR Place Recognition",
-      "title_zh": "UpDown-SC：重力规范化双包络扫描上下文用于室内LiDAR地点识别",
-      "url": "https://arxiv.org/abs/2609.29118",
-      "doi": "",
-      "arxiv_id": "2609.29118",
-      "authors": [
-        "Jie Xu",
-        "Yongxin Yang",
-        "Ziyi Jin",
-        "Kangjin Yu",
-        "Hongjun Huang",
-        "Chao Han",
-        "and Zhongpu Xia"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-24T06:54:10+00:00",
-      "score": 45,
-      "reason": "该论文提出室内LiDAR地点识别描述子，属于地理空间感知与定位方向，但与用户核心关注的城市更新、时空数据挖掘、LLM多智能体及遥感变化检测关联较弱。",
-      "tags": [
-        "LiDAR",
-        "地点识别",
-        "室内定位",
-        "描述子",
-        "回环检测"
-      ],
-      "abstract": "LiDAR place recognition is a key front end for loop closure and global relocalization, yet indoor retrieval remains difficult when attitude or sensor mounting height changes between mapping and query sessions. Scan Context stores the maximum height in each polar cell; indoors, broad ceilings can suppress the lower and mid-level geometry that distinguishes adjacent rooms and corridors. We present UpDown-SC, a training-free polar descriptor that first canonicalizes gravity and then represents two complementary surfaces: the upper envelope of lower/middle structures and the lower envelope of overhead structures. Their physical split is estimated once from a cell-balanced map height distribution and reused by every query. A mask-aware, non-uniform two-channel distance retains discriminative lower-level evidence while limiting sensitivity to its cross-session variation, without treating unobserved cells as zero-height measurements. Conventional Scan Context shortlisting and circular yaw alignment are retained, so retrieved hypotheses directly initialize geometric verification. Experiments across repeated indoor sessions, mounting-height changes, mixed outdoor-to-indoor trajectories, and an outdoor transfer sequence show more reliable first-choice retrieval on the indoor and mounting-height-varied sessions. A paired test finds a significant gain over Scan Context on the in-house sessions. UpDown-SC also gives the best or second-best F1max and AUPR under threshold-based acceptance while retaining a lightweight CPU front end. Continuous replay confirms that the retrieved hypotheses support metric prior-map localization. Code and evaluation artifacts: https://github.com/jiejie567/updown-sc.",
-      "summary_zh": "LiDAR地点识别是回环检测与全局重定位的关键前端，但室内检索在建模与查询会话间姿态或传感器安装高度变化时仍很困难。Scan Context在每个极坐标单元存储最大高度，室内宽大天花板会抑制区分相邻房间与走廊的中低层几何。本文提出UpDown-SC，一种免训练的极坐标描述子，先进行重力规范化，再表示两个互补表面：中低层结构的上包络与顶部结构的下包络。二者的物理分界由单元均衡的地图高度分布一次性估计，并被所有查询复用。掩码感知的非均匀双通道距离保留判别性低层证据，同时限制其对跨会话变化的敏感性，且不将未观测单元视为零高度测量。方法保留传统Scan Context候选筛选与环形偏航对齐，使检索假设可直接初始化几何验证。在重复室内会话、安装高度变化、室外到室内混合轨迹及室外迁移序列上的实验表明，该方法在室内及安装高度变化会话中具有更可靠的首选检索。配对检验显示在自建会话上相对Scan Context有显著提升。在基于阈值的接受条件下，UpDown-SC也取得最佳或次佳的F1max与AUPR，同时保持轻量CPU前端。连续回放验证检索假设支持度量先验地图定位。",
-      "insight_zh": "该工作表明在室内LiDAR地点识别中，显式分离上下包络并处理未观测单元可提升跨会话鲁棒性，其免训练与轻量特性对大规模室内建图与重定位具有实用意义。"
-    },
-    {
-      "key": "arxiv:2609.28580",
-      "title": "Token Clustering and Semantic Sequence Mamba for Hyperspectral Image Classification",
-      "title_zh": "Token聚类与语义序列Mamba用于高光谱图像分类",
-      "url": "https://arxiv.org/abs/2609.28580",
-      "doi": "",
-      "arxiv_id": "2609.28580",
-      "authors": [
-        "Yimin Zhu",
-        "Mahmood Elahi",
-        "Lincoln Linlin Xu"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-23T18:32:34+00:00",
-      "score": 45,
-      "reason": "该论文研究高光谱图像分类，属于遥感领域，与遥感变化检测和多源数据融合研究方向有一定关联，但其方法聚焦于分类而非变化检测，且不涉及城市更新或时空数据挖掘。",
-      "tags": [
-        "高光谱图像分类",
-        "遥感",
-        "Mamba",
-        "语义序列建模"
-      ],
-      "abstract": "Although hyperspectral images (HSIs) provide rich spectral-spatial information, accurate pixel-level classification remains challenging because of spectral-spatial heterogeneity and complex spatial structures. Existing vision state space models (Mamba) typically construct sequences according to predefined spatial neighborhoods, without explicitly accounting for semantic similarity or spatial non-stationarity. To address this limitation, we propose Token Clustering and Semantic Sequence Mamba (STMamba), which organizes sparse tokens into semantically coherent sequences for hyperspectral image classification with the following features. First, at the macro level, a hierarchical encoder decoder progressively selects semantic tokens with the Token Clustering Module (TCM) and restores dense features using a parameter-free Cross-scale Neighborhood Attention (CNA) Upsampler. Second, at the micro level, TCM first identifies representative cluster centers through density-aware clustering and estimates soft memberships based on feature similarity. A quadtree-based dynamic selection strategy then retains sparse and spatially distributed tokens from each semantic cluster, forming coherent semantic-token sequences while reducing redundant pixel-wise representations. Third, parallel Spatial and Spectral Semantic-wise Sequencing Mamba (SWSM) modules capture complementary long-range spatial and spectral dependencies within homogeneous semantic token sequences while suppressing irrelevant interactions across heterogeneous regions. Experimental results on three large-scale benchmark datasets demonstrate that STMamba outperforms the SOTA methods with respect to quantitative and qualitative results.",
-      "summary_zh": "尽管高光谱图像（HSI）提供了丰富的光谱-空间信息，但由于光谱-空间异质性和复杂的空间结构，准确的像素级分类仍然具有挑战性。现有的视觉状态空间模型（Mamba）通常根据预定义的空间邻域构建序列，而没有明确考虑语义相似性或空间非平稳性。为解决这一局限，我们提出了Token聚类与语义序列Mamba（STMamba），它将稀疏token组织成语义连贯的序列用于高光谱图像分类，具有以下特征。首先，在宏观层面，分层编码器-解码器通过Token聚类模块（TCM）逐步选择语义token，并使用无参数的跨尺度邻域注意力（CNA）上采样器恢复密集特征。其次，在微观层面，TCM首先通过密度感知聚类识别代表性聚类中心，并基于特征相似性估计软隶属度。然后，基于四叉树的动态选择策略从每个语义聚类中保留稀疏且空间分布的token，形成连贯的语义token序列，同时减少冗余的像素级表示。第三，并行的空间和光谱语义序列Mamba（SWSM）模块在同质语义token序列内捕捉互补的长程空间和光谱依赖关系，同时抑制异质区域之间的无关交互。在三个大规模基准数据集上的实验结果表明，STMamba在定量和定性结果上均优于SOTA方法。",
-      "insight_zh": "该研究将Mamba状态空间模型与语义token聚类结合用于高光谱图像分类，其处理光谱-空间异质性的思路对遥感图像分析有参考价值，但未涉及变化检测或多源数据融合。"
-    },
-    {
-      "key": "arxiv:2609.28693",
-      "title": "Progressive Skill Discovery as Access Control for Tool-Using LLM Agents: Structural Governance through Role-Scoped Capability Delivery",
-      "title_zh": "渐进式技能发现作为工具使用型 LLM 智能体的访问控制：基于角色范围能力交付的结构化治理",
-      "url": "https://arxiv.org/abs/2609.28693",
-      "doi": "",
-      "arxiv_id": "2609.28693",
-      "authors": [
-        "Michael Stettler",
-        "Benjamin Girardet",
-        "Jonas Canton",
-        "Nicolas Corod"
-      ],
-      "venue": "arXiv",
-      "published": "2026-09-23T18:31:44+00:00",
-      "score": 45,
-      "reason": "该文研究工具使用型 LLM 智能体的能力治理与访问控制，与研究者关注的 LLM 与多智能体方向直接相关，但其应用场景为企业工具集治理，未涉及地理空间任务。",
-      "tags": [
-        "LLM智能体",
-        "工具调用",
-        "访问控制",
-        "多智能体",
-        "能力治理"
-      ],
-      "abstract": "Large Language Model (LLM) agents struggle to scale safely when exposed to vast enterprise toolsets. Providing an agent with access to every internal tool leads to oversized context windows, degraded tool selection, and severe governance vulnerabilities - as system policies defined purely in prompts remain probabilistic advice rather than hard constraints. Existing mitigations, such as multi-agent domain delegation, decentralize audit logs and fail to guarantee policy compliance across sessions. We introduce skilder, a framework that packages capabilities into roles: bundles of skills, tools, and instructions, together with the limits that bound them. An agent begins with a minimal role catalog, learns the roles a task requires, and receives each role's skills, instructions, and tools through a single MCP server. Because tools reach the agent only inside learned skills, the same server enforces the scope of what was learned deterministically. We evaluate skilder against flat-context tool selection and multi-agent orchestration across 13 tasks using six models (10 runs each). Our results show that, when models completed discovery and issued a governed call, the skilder simulated authorization layer enforced governance boundaries: no unauthorized tool call or parameter violation (e.g., a spending-limit breach) executed. Aggregate task pass rates also reflect whether each model followed the discovery protocol and satisfied response-quality checks; those misses are not authorization failures. Furthermore, by allowing agents to dynamically acquire cross-role capabilities mid-task, skilder preserves problem-solving flexibility while providing hard system-level enforcement.",
-      "summary_zh": "LLM 智能体在接入庞大企业工具集时难以安全扩展：开放全部内部工具会导致上下文窗口过大、工具选择退化以及治理漏洞，因为仅以提示词定义的系统策略只是概率性建议而非硬约束。现有缓解手段（如多智能体领域委派）会分散审计日志且无法保证跨会话的策略合规。作者提出 skilder 框架，将能力打包为角色——即技能、工具、指令及其边界的集合。智能体从最小角色目录开始，学习任务所需的角色，并通过单一 MCP 服务器获取每个角色的技能、指令与工具。由于工具仅在学习到的技能内部到达智能体，同一服务器可确定性地执行所学范围。作者在 13 项任务、6 个模型（各 10 次运行）上对比扁平上下文工具选择与多智能体编排。结果显示，当模型完成发现并发起受治理调用时，skilder 模拟授权层未执行任何未授权工具调用或参数违规（如超支）。总体任务通过率还反映模型是否遵循发现协议并满足响应质量检查，这些未通过并非授权失败。此外，允许智能体在任务中途动态获取跨角色能力，使 skilder 在提供硬性系统级执行的同时保持问题求解灵活性。",
-      "insight_zh": "该框架的角色化能力封装与确定性授权机制，可为地理空间智能体系统（如多源数据查询与地图服务调用）提供权限与上下文管理的设计参考，但其评估未涉及地理空间工具链。"
+      "abstract": "We present TimeBraid, a series of unified time-series and language models that align pretrained language models and pretrained time-series foundation models through interleaved global residual attention layers. Each model inherits knowledge, instruction following, and reasoning from one side, continuous-signal perception and zero-shot forecasting from the other, and fuses the two in a shared representation space where both modalities are understood and generated. We study the design choices that make such unified modeling work: where to align the two representation spaces, how to ground language in temporal structure, how to balance understanding with generation, and how to keep joint optimization stable. The resulting recipe combines a unified prompting scheme for diverse time-series and text tasks, stabilized joint training, and supervision from 2.2M curated series--text pairs and 4.9M instruction-tuning samples. Across benchmarks spanning time-series perception, understanding, reasoning, and both context-aided and unimodal forecasting, TimeBraid remains competitive with far larger general-purpose models and task-specific counterparts.",
+      "summary_zh": "我们提出TimeBraid，一系列统一的时间序列与语言模型，通过交错的全局残差注意力层对齐预训练语言模型和预训练时间序列基础模型。每个模型从一侧继承知识、指令遵循和推理能力，从另一侧继承连续信号感知和零样本预测能力，并在共享表示空间中融合两者，使两种模态均可被理解和生成。我们研究了使这种统一建模奏效的设计选择：在哪里对齐两个表示空间、如何将语言锚定在时间结构中、如何平衡理解与生成，以及如何保持联合优化稳定。由此得到的配方结合了面向多样时间序列和文本任务的统一提示方案、稳定化的联合训练，以及来自220万条精选序列-文本对和490万条指令微调样本的监督。在涵盖时间序列感知、理解、推理以及上下文辅助和单模态预测的基准上，TimeBraid与远更大的通用模型和任务特定对应方法相比仍具竞争力。",
+      "insight_zh": "该工作展示了时间序列基础模型与语言模型对齐的可行路径，其统一提示和稳定联合训练思路可能对地理空间时序数据的多模态理解有启发，但未涉及空间维度或城市应用。"
     }
   ]
 }

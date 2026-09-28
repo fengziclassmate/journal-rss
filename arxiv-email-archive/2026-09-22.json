@@ -12,6 +12,7 @@
     "arxiv:2609.00689",
     "arxiv:2609.22258",
     "arxiv:2609.24727",
+    "arxiv:2609.23003",
     "arxiv:2609.22217",
     "arxiv:2508.03749",
     "arxiv:2608.27206",
@@ -30,22 +31,21 @@
     "arxiv:2609.22497",
     "arxiv:2609.22206",
     "arxiv:2609.22174",
-    "arxiv:2609.22126",
-    "arxiv:2609.22359"
+    "arxiv:2609.22126"
   ],
   "paper_count": 30,
   "source_status": {
     "arxiv-email": "ok:1;papers:1190",
-    "deepseek": "partial:10/370;failed-batches:36"
+    "deepseek": "partial:10/360;failed-batches:35"
   },
-  "updated_at": "2026-09-28T01:07:09.168926+00:00",
+  "updated_at": "2026-09-28T04:54:06.981061+00:00",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 830,
+    "analyzed": 840,
     "high": 5,
-    "medium": 35,
+    "medium": 36,
     "low": 64,
-    "below_threshold": 726
+    "below_threshold": 735
   },
   "papers": [
     {
@@ -355,6 +355,38 @@
       "abstract": "Spatial--temporal benchmarks are valid only when their questions, source annotations, and answer options identify the same physical quantity. We audit STI-Bench against the official ScanNet, Waymo, and Omni6DPose sources and find systematic coordinate-system and timestamp errors, under-specified targets and times, and disagreements between keyed options and answer details. We introduce ReSTI, a source-backed revision that reconstructs every recoverable answer under an explicit target, time, coordinate system, physical quantity, and unit. Source reconstruction reveals task-level geometric failures: ScanNet Grounding omits the required alignment between annotation and raw camera coordinate systems, while Orientation measures camera rotation on the wrong plane. ReSTI replaces these labels with explicit, source-consistent geometric definitions and corrects other source-verifiable defects, including Waymo poses evaluated at the wrong timestamp. Across 2,064 legacy questions, ReSTI retains 1,782 questions and records 282 evidence-backed exclusions. ReSTI therefore provides a conservative and source-traceable basis for evaluating precise video spatial--temporal reasoning. Project page: https://github.com/pengzhansun/ReSTI.",
       "summary_zh": "时空基准只有在问题、源标注与答案选项指向同一物理量时才有效。作者对照官方ScanNet、Waymo与Omni6DPose源数据审计STI-Bench，发现系统性的坐标系统与时间戳错误、目标与时间描述不充分，以及键控选项与答案细节不一致等问题。为此提出ReSTI，一种基于源数据的修订方案，在明确的目标、时间、坐标系统、物理量与单位下重建每个可恢复的答案。源数据重建揭示了任务层面的几何失败：ScanNet Grounding遗漏了标注与原始相机坐标系统之间所需的配准，而Orientation在错误的平面上测量相机旋转。ReSTI用显式且与源数据一致的几何定义替换这些标签，并修正其他可由源数据验证的缺陷，包括Waymo位姿在错误时间戳上被评估的问题。在2064个遗留问题中，ReSTI保留1782个问题，并记录282个有证据支持的排除项。因此，ReSTI为评估精确的视频时空推理提供了保守且可溯源的基础。",
       "insight_zh": "该工作提示：时空基准的可靠性依赖于坐标系统、时间戳与物理量定义的一致性；在构建或使用时空数据集时，源数据溯源审计可作为提升评估可信度的必要步骤。"
+    },
+    {
+      "key": "arxiv:2609.23003",
+      "title": "M3GA-Wild: A Large-Scale Dataset and Benchmark for Multi-Modal Multi-session Ground-to-Aerial Place Recognition in Forests",
+      "title_zh": "M3GA-Wild：面向森林多模态多会话地面到空中地点识别的大规模数据集与基准",
+      "url": "https://arxiv.org/abs/2609.23003",
+      "doi": "",
+      "arxiv_id": "2609.23003",
+      "authors": [
+        "Ethan Griffiths",
+        "Maryam Haghighat",
+        "Simon Denman",
+        "Clinton Fookes",
+        "Milad Ramezani"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-19T13:05:09+00:00",
+      "score": 72,
+      "reason": "该论文构建了森林环境中多模态多会话地面到空中地点识别的大规模数据集与基准，涉及LiDAR、RGB影像、跨模态对齐和地理参考位姿，与遥感变化检测、多源数据融合和地理空间智能高度相关。",
+      "tags": [
+        "多模态",
+        "多会话",
+        "地面到空中",
+        "地点识别",
+        "森林",
+        "LiDAR",
+        "基准数据集",
+        "跨平台定位"
+      ],
+      "abstract": "We present M3GA-Wild, the first benchmark for multi-modal, multi-session ground-to-aerial place recognition in forests. M3GA-Wild unifies and extends existing forest localisation datasets, providing a holistic benchmark with synchronised RGB imagery and LiDAR from ground traversals spanning 36 km, aligned high-resolution aerial imagery and multi-altitude LiDAR covering 370 hectares, and accurate geo-referenced 6-DoF poses for precise evaluation. M3GA-Wild captures diverse forest scenes with varying viewpoints, occlusion, and environmental conditions, enabling systematic evaluation of visual, LiDAR, cross-modal, and multi-modal methods. Baseline experiments show that LiDAR-based approaches significantly outperform vision-only methods under severe viewpoint differences, while current multi-modal fusion strategies yield limited gains due to poor cross-modal alignment. By pairing aerial RGB imagery with geo-referenced aerial LiDAR, M3GA-Wild also enables evaluation of foundation models for monocular depth estimation as a cheap source of 3D geometry from forest imagery, with initial experiments revealing shortfalls of current methods. These results highlight key challenges in cross-platform localisation, including modality misalignment and severe domain gaps. M3GA-Wild establishes a new benchmark to support research in robust multi-modal localisation and long-term autonomy in unstructured natural environments. The dataset and code will be available upon acceptance.",
+      "summary_zh": "本文提出M3GA-Wild，首个面向森林多模态多会话地面到空中地点识别的基准。M3GA-Wild统一并扩展了现有森林定位数据集，提供涵盖36公里地面遍历的同步RGB影像和LiDAR、覆盖370公顷的对齐高分辨率航空影像和多高度LiDAR，以及精确地理参考的6自由度位姿用于精确评估。M3GA-Wild捕获了具有不同视角、遮挡和环境条件的多样森林场景，支持对视觉、LiDAR、跨模态和多模态方法的系统评估。基线实验表明，在严重视角差异下，基于LiDAR的方法显著优于纯视觉方法，而当前多模态融合策略由于跨模态对齐不佳而收益有限。通过将航空RGB影像与地理参考航空LiDAR配对，M3GA-Wild还支持评估单目深度估计基础模型作为森林影像廉价3D几何来源的能力，初步实验揭示了当前方法的不足。这些结果凸显了跨平台定位中的关键挑战，包括模态错位和严重域差距。M3GA-Wild为结构化自然环境中鲁棒多模态定位和长期自主性研究建立了新基准。",
+      "insight_zh": "该基准揭示了森林环境中跨平台定位的核心挑战——模态错位和域差距，其多模态多会话设计对遥感变化检测中的跨时相配准和多源数据融合研究具有直接参考价值，尤其是LiDAR与视觉融合在复杂自然场景中的局限性值得关注。"
     },
     {
       "key": "arxiv:2609.22217",
@@ -956,31 +988,6 @@
       "abstract": "High-resolution surface solar radiation (SSR) is important for solar forecasting and grid operation. However, physically consistent reanalysis products are too coarse to resolve localized cloud-driven variability. In this paper, we study a multisource downscaling task that reconstructs high-resolution SolarCube SSR fields from coarse ERA5 radiative variables and co-registered satellite channels. The task is challenging because a single ERA5 grid cell may contain both sunlit and cloud-shadowed regions. As a result, the missing high-resolution correction can be spatially sharp and inherently ambiguous. One-stage predictors often oversmooth these structures. Post-hoc refinement also introduces a stage-wise mismatch: the generator is optimized independently, even though its output determines the refiner's initial state. We introduce SolarFlowRefiner, a refinement-aware flow-matching framework for SSR downscaling. A conditional FlowMatch generator first predicts a normalized correction to an upsampled ERA5 baseline. The refiner is then trained on prediction-conditioned states between the current FlowMatch output and the target residual. This exposes the refiner to the structured errors produced by the generator. The refinement objective is also backpropagated through the FlowMatch sampler, allowing generation and correction to be jointly optimized for the final reconstruction. Experiments on a day-blocked ERA5--SolarCube benchmark show consistent improvements over standalone generation and post-hoc refinement. More broadly, SolarFlowRefiner provides a general strategy for coupling generative predictors with iterative correctors.",
       "summary_zh": "高分辨率地表太阳辐射（SSR）对太阳能预报和电网运行十分重要，但物理一致的再分析产品分辨率过粗，难以刻画局地云致变化。本文研究一项多源降尺度任务：从粗分辨率ERA5辐射变量和配准卫星通道重建高分辨率SolarCube SSR场。该任务的难点在于单个ERA5网格单元可能同时包含日照区和云影区，因此缺失的高分辨率订正可能空间上十分尖锐且本质模糊，单阶段预测器往往过度平滑这些结构；事后细化还会引入阶段间失配，因为生成器独立优化，而其输出却决定细化器的初始状态。作者提出SolarFlowRefiner，一种细化感知的流匹配框架：条件FlowMatch生成器先预测对上采样ERA5基线的归一化订正，细化器则在当前FlowMatch输出与目标残差之间的预测条件状态上训练，从而暴露于生成器产生的结构化误差；细化目标还通过FlowMatch采样器反向传播，使生成与订正联合优化以服务于最终重建。在按天分块的ERA5–SolarCube基准上，该方法相较独立生成和事后细化均取得一致提升。更广泛地，SolarFlowRefiner为耦合生成式预测器与迭代校正器提供了通用策略。",
       "insight_zh": "该工作提示，在多源遥感降尺度中，将生成式预测器与迭代校正器联合优化、并让校正器暴露于生成器的结构化误差，可能缓解单阶段过度平滑问题；这一思路或可迁移到其他高分辨率地理空间场重建任务，但其有效性仍需在更多数据集上验证。"
-    },
-    {
-      "key": "arxiv:2609.22359",
-      "title": "Resist, Update, Reject: Preference Optimization Installs a Prior-Dependent Reliability Switch",
-      "title_zh": "抵抗、更新、拒绝：偏好优化安装了一个依赖先验的可靠性开关",
-      "url": "https://arxiv.org/abs/2609.22359",
-      "doi": "",
-      "arxiv_id": "2609.22359",
-      "authors": [
-        "Sen Yang",
-        "Yuen-Hei Yeung"
-      ],
-      "venue": "arXiv",
-      "published": "2026-07-26T19:39:47+00:00",
-      "score": 62,
-      "reason": "该文研究LLM在来源可靠性下的抵抗、更新与拒绝行为，属于LLM与多智能体研究范畴，与研究者关注的LLM和多智能体方向相关，但与城市更新、时空数据挖掘、遥感变化检测等核心GIS主题关联较弱。",
-      "tags": [
-        "LLM对齐",
-        "偏好优化",
-        "多智能体",
-        "可靠性推理"
-      ],
-      "abstract": "An aligned model asked to hold its answer against a manipulative source must still update on a reliable one and reject an unreliable one: resistance, reliable-update, and unreliable-source rejection are one three-way contract, not three independent behaviors. We show the objective most anti-sycophancy work optimizes is non-identifying with respect to source reliability: because no preference label depends on whether a source is actually reliable, any scalar mixture of the arms traces a single deference dial, and no point separates two same-template testimonies differing only in stated reliability. This fixation$\\leftrightarrow$gullibility frontier is a property of the objective, not any model. We make reliability identifiable through data: a threshold benchmark where a source asserts the opposite answer while stating its reliability $r$, and the correct action is to flip iff $r$ exceeds the model's prior strength $p$. Preference optimization over balanced coverage installs a prior-dependent reliability switch: across three seeds on Qwen2.5-7B-Instruct the threshold $r^\\star$ rises monotonically with the prior, decision accuracy reaches $0.84$ with a monotone flip curve (Spearman $0.56$), and the policy generalizes to unseen reliability values and a held-out notation, following stated reliability over role prestige. Three controls localize the cause: an unmatched variant installs the switch equally ($0.80$), a second preference optimizer (IPO) installs it just as well ($0.86$), whereas supervised imitation does not ($0.50$), so the cause is preference optimization over reliability-labeled coverage, not pairing, loss, or imitation. A confirmatory battery replicates the switch on a fresh test draw, bounds it honestly (it keys on reliability stated in the testimony, not a separately audited record), and transfers it to Llama-3.1-8B. The frontier is empirical, not a theorem.",
-      "summary_zh": "该研究指出，对齐模型在面对操纵性来源时需同时满足抵抗、可靠更新与不可靠来源拒绝这一三方契约，而非三种独立行为。作者证明多数反谄媚工作优化的目标对来源可靠性不可识别，因为偏好标签不依赖于来源是否真实可靠，任何标量混合都只能追踪单一的顺从刻度。为此，作者通过数据使可靠性可识别：构建阈值基准，来源在声明其可靠性r的同时断言相反答案，正确行为是当且仅当r超过模型先验强度p时翻转。在Qwen2.5-7B-Instruct上跨三个随机种子，偏好优化在平衡覆盖下安装了一个依赖先验的可靠性开关，阈值r*随先验单调上升，决策准确率达0.84，翻转曲线单调（Spearman 0.56），策略可泛化到未见可靠性值与留出符号，并遵循声明的可靠性而非角色声望。三项控制实验定位了原因：非匹配变体同样安装开关（0.80），另一偏好优化器IPO同样有效（0.86），而监督模仿则无效（0.50），说明原因是基于可靠性标注覆盖的偏好优化，而非配对、损失或模仿。",
-      "insight_zh": "该工作提示，在涉及多源信息融合与智能体决策的场景中，模型对来源可靠性的处理可能受偏好优化目标的结构性限制，需通过显式可靠性标注数据来建立可识别的可靠性判断机制。"
     }
   ]
 }

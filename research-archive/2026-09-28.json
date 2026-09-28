@@ -1,11 +1,13 @@
 {
   "date": "2026-09-28",
   "guid": "research-daily:2026-09-28",
-  "paper_keys": [],
-  "paper_count": 0,
+  "paper_keys": [
+    "arxiv:2609.31050"
+  ],
+  "paper_count": 1,
   "source_status": {
     "arxiv-api": "error:HTTPError",
-    "arxiv-email": "ok:0",
+    "arxiv-email": "ok:1",
     "crossref:Applied Geography": "ok:8",
     "crossref:Applied Soft Computing": "ok:51",
     "crossref:Artificial Intelligence": "ok:2",
@@ -20,11 +22,38 @@
     "crossref:Landscape and Urban Planning": "ok:3",
     "crossref:Pattern Recognition": "ok:46",
     "crossref:RSE": "ok:17",
-    "crossref:SCS": "ok:20",
-    "crossref:Science Bulletin": "ok:21",
+    "crossref:SCS": "error:HTTPError",
+    "crossref:Science Bulletin": "error:HTTPError",
     "crossref:Urban Climate": "ok:15",
     "deepseek": "partial:0/30;failed-batches:3"
   },
-  "updated_at": "2026-09-28T01:02:06.349317+00:00",
-  "papers": []
+  "updated_at": "2026-09-28T04:49:57.273236+00:00",
+  "papers": [
+    {
+      "key": "arxiv:2609.31050",
+      "title": "Where Compute Matters: Heterogeneous Attention for Efficient Video Diffusion",
+      "title_zh": "",
+      "url": "https://arxiv.org/abs/2609.31050",
+      "doi": "",
+      "arxiv_id": "2609.31050",
+      "authors": [
+        "Olga Zatsarynna",
+        "Denis Korzhenkov",
+        "Juergen Gall",
+        "Amir Habibian",
+        "Mohsen Ghafoorian"
+      ],
+      "venue": "arXiv",
+      "published": "2026-09-25T09:43:04+00:00",
+      "score": 55,
+      "reason": "关键词命中：Spatio-temporal、Transformer",
+      "tags": [
+        "Spatio-temporal",
+        "Transformer"
+      ],
+      "abstract": "Efficient video generation requires reducing the quadratic cost of self-attention over long spatio-temporal token sequences. Existing efficient-attention methods typically apply the same computation pattern to every token, even though denoising difficulty varies substantially across video regions and evolves throughout the generation process. We introduce HetA-DiT, a heterogeneous attention mechanism that adaptively allocates computation according to token difficulty. A lightweight uncertainty branch predicts a token-wise estimate of denoising difficulty, which is used to route uncertain tokens through dense global attention while processing more reliable tokens with efficient local attention. The resulting routing is content- and timestep-adaptive, retains global context where it matters most, and provides a single parameter for controlling the quality-efficiency trade-off. HetA-DiT is compatible with few-step distribution-matching distillation and introduces no additional Transformer evaluation at inference time by reusing uncertainty estimates from the preceding denoising step. We evaluate the method on DMD-distilled Wan2.2-5B and Wan2.1-1.3B models. Across VBench, VBench-2.0, and human preference evaluation, HetA-DiT maintains competitive generation quality while routing only approximately 20% of tokens through dense attention.",
+      "summary_zh": "",
+      "insight_zh": ""
+    }
+  ]
 }

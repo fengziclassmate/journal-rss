@@ -2,11 +2,11 @@
   "date": "2026-09-22",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 830,
+    "analyzed": 840,
     "high": 5,
-    "medium": 35,
+    "medium": 36,
     "low": 64,
-    "below_threshold": 726
+    "below_threshold": 735
   },
   "papers": [
     {
@@ -476,6 +476,39 @@
       ],
       "summary_zh": "时空基准只有在问题、源标注与答案选项指向同一物理量时才有效。作者对照官方ScanNet、Waymo与Omni6DPose源数据审计STI-Bench，发现系统性的坐标系统与时间戳错误、目标与时间描述不充分，以及键控选项与答案细节不一致等问题。为此提出ReSTI，一种基于源数据的修订方案，在明确的目标、时间、坐标系统、物理量与单位下重建每个可恢复的答案。源数据重建揭示了任务层面的几何失败：ScanNet Grounding遗漏了标注与原始相机坐标系统之间所需的配准，而Orientation在错误的平面上测量相机旋转。ReSTI用显式且与源数据一致的几何定义替换这些标签，并修正其他可由源数据验证的缺陷，包括Waymo位姿在错误时间戳上被评估的问题。在2064个遗留问题中，ReSTI保留1782个问题，并记录282个有证据支持的排除项。因此，ReSTI为评估精确的视频时空推理提供了保守且可溯源的基础。",
       "insight_zh": "该工作提示：时空基准的可靠性依赖于坐标系统、时间戳与物理量定义的一致性；在构建或使用时空数据集时，源数据溯源审计可作为提升评估可信度的必要步骤。"
+    },
+    {
+      "key": "arxiv:2609.23003",
+      "title": "M3GA-Wild: A Large-Scale Dataset and Benchmark for Multi-Modal Multi-session Ground-to-Aerial Place Recognition in Forests",
+      "title_zh": "M3GA-Wild：面向森林多模态多会话地面到空中地点识别的大规模数据集与基准",
+      "url": "https://arxiv.org/abs/2609.23003",
+      "arxiv_id": "2609.23003",
+      "authors": [
+        "Ethan Griffiths",
+        "Maryam Haghighat",
+        "Simon Denman",
+        "Clinton Fookes",
+        "Milad Ramezani"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-09-19T13:05:09+00:00",
+      "score": 72,
+      "reason": "该论文构建了森林环境中多模态多会话地面到空中地点识别的大规模数据集与基准，涉及LiDAR、RGB影像、跨模态对齐和地理参考位姿，与遥感变化检测、多源数据融合和地理空间智能高度相关。",
+      "tags": [
+        "多模态",
+        "多会话",
+        "地面到空中",
+        "地点识别",
+        "森林",
+        "LiDAR",
+        "基准数据集",
+        "跨平台定位"
+      ],
+      "summary_zh": "本文提出M3GA-Wild，首个面向森林多模态多会话地面到空中地点识别的基准。M3GA-Wild统一并扩展了现有森林定位数据集，提供涵盖36公里地面遍历的同步RGB影像和LiDAR、覆盖370公顷的对齐高分辨率航空影像和多高度LiDAR，以及精确地理参考的6自由度位姿用于精确评估。M3GA-Wild捕获了具有不同视角、遮挡和环境条件的多样森林场景，支持对视觉、LiDAR、跨模态和多模态方法的系统评估。基线实验表明，在严重视角差异下，基于LiDAR的方法显著优于纯视觉方法，而当前多模态融合策略由于跨模态对齐不佳而收益有限。通过将航空RGB影像与地理参考航空LiDAR配对，M3GA-Wild还支持评估单目深度估计基础模型作为森林影像廉价3D几何来源的能力，初步实验揭示了当前方法的不足。这些结果凸显了跨平台定位中的关键挑战，包括模态错位和严重域差距。M3GA-Wild为结构化自然环境中鲁棒多模态定位和长期自主性研究建立了新基准。",
+      "insight_zh": "该基准揭示了森林环境中跨平台定位的核心挑战——模态错位和域差距，其多模态多会话设计对遥感变化检测中的跨时相配准和多源数据融合研究具有直接参考价值，尤其是LiDAR与视觉融合在复杂自然场景中的局限性值得关注。"
     },
     {
       "key": "arxiv:2508.03749",
@@ -16464,7 +16497,8 @@
       "categories": [
         "cs.CV",
         "cs.AI",
-        "cs.DB"
+        "cs.DB",
+        "https://hku-healthai.github.io/brainvlm_project.github.io/"
       ],
       "published": "2026-09-15T03:46:03+00:00",
       "score": 17,
@@ -20320,6 +20354,33 @@
       "insight_zh": "该研究表明，在专家标注存在系统性风格差异的任务中，将标注者或站点的策略显式建模为条件变量，可以显著改变模型评估结论；这提示在依赖人工标注的地理空间数据任务中，也需区分真实误差与标注风格差异。"
     },
     {
+      "key": "arxiv:2609.23012",
+      "title": "CrowdCue: Specialist-Cue Conditioning for Vision-Language Crowd Counting",
+      "title_zh": "CrowdCue：面向视觉语言人群计数的专家线索条件化",
+      "url": "https://arxiv.org/abs/2609.23012",
+      "arxiv_id": "2609.23012",
+      "authors": [
+        "Moshiur Farazi",
+        "Bekir Ciftler",
+        "Abdulhalim Dandoush",
+        "Reda Bendraou"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-09-19T13:19:23+00:00",
+      "score": 12,
+      "reason": "该论文研究视觉语言模型在人群计数中的专业线索条件化，属于多模态融合与视觉理解范畴，与遥感变化检测、地理空间智能有方法论上的间接关联，但不涉及地理空间数据或城市分析。",
+      "tags": [
+        "视觉语言模型",
+        "人群计数",
+        "多模态融合",
+        "遥感变化检测（弱相关）"
+      ],
+      "summary_zh": "生成式视觉语言模型（VLM）能够同时输出计数和场景的自然语言描述，但其原始计数精度仅相当于百万参数以下的专家回归器。本文评估了Qwen2.5-VL-7B在四个常用人群计数基准（ShanghaiTech A和B、UCF-QNRF、NWPU-Crowd）上的表现。零样本提示很少产生可解析的计数，因此采用LoRA监督微调建立基线，总体MAE为81.64。将P2PNet导出的密度热图作为辅助视觉信号进行条件化在所有测试编码中均失败，对抗交换协议表明模型能读取热图但反向应用。作者提出CrowdCue，将同一专家已整合的整数计数作为离散符号提供给VLM。文本通道变体达到MAE 72.04，视觉通道变体将整数渲染为印刷数字并作为第二张图像提供，达到MAE 62.65，为本文最强结果，且优于提供线索的专家本身（同一划分上为84.45）。在所研究的晚期融合VLM中，约束瓶颈不是通道而是专家信号传递的抽象层级。",
+      "insight_zh": "该研究表明，在视觉语言模型中，将专家信号以离散符号而非连续视觉信号传递可能更有效，这一发现对多模态地理空间智能中的专家知识融合策略具有参考价值，但其应用场景为人群计数而非地理空间分析。"
+    },
+    {
       "key": "arxiv:2609.24760",
       "title": "Construting Reverse Thinking: Developing Large Language Models' Reverse Thingking Ability",
       "title_zh": "构建逆向思维：发展大语言模型的逆向思维能力",
@@ -21945,6 +22006,36 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容、方法、数据与结论。",
       "insight_zh": "从标题可推测其构建了一个面向宝可梦卡牌游戏的智能体评测基准，但具体任务设计、评价指标与结论均无法从摘要获知，不宜作进一步推断。"
+    },
+    {
+      "key": "arxiv:2609.22987",
+      "title": "OptiSkill: A Hierarchical and Evolving SkillBank for LLM-Based Optimization Modeling",
+      "title_zh": "OptiSkill：面向基于LLM的优化建模的层次化演进技能库",
+      "url": "https://arxiv.org/abs/2609.22987",
+      "arxiv_id": "2609.22987",
+      "authors": [
+        "Ruiqing Zhao",
+        "Rui Liu",
+        "Yuan Zuo",
+        "Huarong Zhang",
+        "Xiao Han",
+        "Junjie Wu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-19T12:43:46+00:00",
+      "score": 10,
+      "reason": "该论文研究基于LLM的优化建模中的层次化技能库，属于LLM智能体与知识复用领域，与多智能体系统和LLM应用有方法论上的间接关联，但不涉及地理空间数据。",
+      "tags": [
+        "LLM",
+        "优化建模",
+        "技能库",
+        "层次化经验",
+        "运筹学"
+      ],
+      "summary_zh": "自动化运筹学（OR）建模要求LLM将自然语言决策问题转化为正确的数学规划。现有方法可以改进单个公式，但通常孤立地求解问题，几乎不保留可复用经验，并重复类似的建模错误。先前的基于记忆的方法将示例、思路或见解存储为参考，而OR建模需要可复用的建模技能，能够跨问题叙述迁移并指导具体建模决策。作者提出OptiSkill，一种技能增强框架，为基于LLM的OR建模构建层次化演进的技能库。技能库将求解器验证的经验存储为可复用技能，包括用于问题级建模骨架的全局策略和用于局部错误预防规则的步骤经验。它通过稳定的批级测试时演化进一步精炼，候选技能仅在验证后才被纳入。在八个OR建模基准上的实验表明，OptiSkill在多个LLM骨干上提升了建模准确率，优于强智能体基线，并随着技能库覆盖率和可靠性的扩展而进一步提升。",
+      "insight_zh": "该研究提出的层次化技能库和批级测试时演化机制，对LLM智能体在专业领域中的经验积累与复用具有方法论参考价值，其思路可能启发地理空间智能中LLM智能体的知识组织方式，但论文本身未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2603.25954",
@@ -24668,6 +24759,35 @@
       "insight_zh": "该研究揭示了多模态生成模型中的捷径学习问题，并论证了共享隐变量方法无法解决该问题，而需要对干扰变量进行显式干预。这一因果推断框架对遥感变化检测中区分真实变化与虚假相关（如季节性外观变化与真实地表变化）具有方法论启示，但该文的应用领域为音视频生成。"
     },
     {
+      "key": "arxiv:2609.23008",
+      "title": "Interpretable Multi-Hypersphere Deep Anomaly Detection for Open-set Supervised Anomaly Detection",
+      "title_zh": "面向开集监督异常检测的可解释多超球体深度异常检测",
+      "url": "https://arxiv.org/abs/2609.23008",
+      "arxiv_id": "2609.23008",
+      "authors": [
+        "Zhiji Yang",
+        "Fangyong Wang",
+        "Yue Li",
+        "Xianli Pan",
+        "Jianhua Zhao"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-19T13:12:06+00:00",
+      "score": 8,
+      "reason": "该论文研究可解释多超球体深度异常检测，属于机器学习方法论，与遥感变化检测中的异常识别有极弱的间接关联，但不涉及地理空间数据。",
+      "tags": [
+        "异常检测",
+        "多超球体",
+        "开集识别",
+        "可解释性"
+      ],
+      "summary_zh": "多类开集异常检测要求模型仅使用已知正常类别的类标签样本，刻画由多个异质子分布构成的正常接受域，并在测试时识别未见过的异常。现有单超球体方法无法显式表示类特定位置和接受范围，而当前多超球体或多类方法未充分整合类间边界约束、可学习接受范围和可解释决策。为解决这些局限，作者提出可解释多超球体深度异常检测（IMHD-AD）。IMHD-AD在共享特征空间中为每个已知正常类构建独立超球体。通过目标在内和非目标在外约束，IMHD-AD将类特定超球体中心和半径直接嵌入最终网络层，并与共享表示联合优化。跨超球体的最小带符号边界分数同时决定开集接受或拒绝，并为每个决策提供忠实的几何解释。在MNIST、Fashion-MNIST和CIFAR-10上，IMHD-AD在30个开集比较中的28个取得最高AUC。二维合成研究进一步表明，模型架构必须在已知正常类的紧凑性与未知异常的可分离性之间取得平衡。",
+      "insight_zh": "该研究提出的多超球体几何框架为开集异常检测提供了可解释的决策机制，其类间边界约束和可学习接受范围的设计思路可能对遥感影像中的多类异常检测有方法论借鉴意义，但论文本身未涉及地理空间应用。"
+    },
+    {
       "key": "arxiv:2609.03565",
       "title": "Input-to-State Stability Framework for Fully Distributed Primal-Dual Dynamics for Quadratic GNEPs Without Multiplier Consensus",
       "title_zh": "无乘子共识的二次广义纳什均衡全分布式原始-对偶动力学的输入-状态稳定性框架",
@@ -25318,7 +25438,9 @@
       "categories": [
         "cs.CL",
         "cs.SD",
-        "eess.AS"
+        "eess.AS",
+        "Processing",
+        "(TASLP)"
       ],
       "published": "2026-09-19T02:13:27+00:00",
       "score": 8,
@@ -25455,6 +25577,46 @@
       ],
       "summary_zh": "网格纹理压缩通常依赖2D UV图集，其图表不连续性和映射开销可能限制编码效率。为应对这一挑战，作者提出TexF，一种表面对齐纹理场，将纹理属性组织在从网格表面导出的稀疏体素中。该表示支持高分辨率纹理，同时保留局部3D相关性以利于压缩，并支持直接表面查询。对于比特流压缩，TexF复用已建立的3D属性编解码器，体素位置从解码网格重建而无需单独传输。对于GPU驻留压缩，作者开发3DNTC，结合量化哈希特征与轻量解码器，在表面位置实现随机访问重建。可微渲染支持体素属性和压缩神经场的图像空间精炼。在MPEG和AOM网格压缩基准上的实验表明，对于比特流和GPU驻留压缩，其平均率失真性能均优于代表性UV方法。3DNTC还支持实时渲染。",
       "insight_zh": "该文与地理空间智能无关，仅在3D表面表示与压缩方法上可作技术类比。"
+    },
+    {
+      "key": "arxiv:2609.22977",
+      "title": "Beyond Similarity: Coverage-Aware Prompt Selection for Time Series Forecasting with LLMs",
+      "title_zh": "超越相似性：面向LLM时间序列预测的覆盖感知提示选择",
+      "url": "https://arxiv.org/abs/2609.22977",
+      "arxiv_id": "2609.22977",
+      "authors": [
+        "Daeun Ji",
+        "Minkyoung Kim",
+        "Dongkuk Kim",
+        "Yohan Lee",
+        "Beomsoo Kim",
+        "Beakcheol Jang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "Linguistics:",
+        "EMNLP",
+        "2026.",
+        "24",
+        "pages,",
+        "8",
+        "figures,",
+        "15",
+        "tables"
+      ],
+      "published": "2026-09-19T12:10:41+00:00",
+      "score": 8,
+      "reason": "该论文研究基于LLM的时间序列预测中的覆盖感知提示选择，属于LLM应用与时间序列分析领域，与时空数据挖掘有极弱的间接关联，但不涉及地理空间数据。",
+      "tags": [
+        "LLM",
+        "提示选择",
+        "覆盖感知",
+        "时间序列预测",
+        "上下文学习"
+      ],
+      "summary_zh": "基于相似性的检索是在上下文学习、检索增强生成和基于提示的时间序列预测中条件化大语言模型（LLM）的主导规则。该规则集中于近重复候选，这一问题已促使多样性感知检索的出现，但在其他检索条件化流程中仍未得到审视。作者以基于提示的时间序列预测作为测试平台研究这一问题，其中学习到的提示池通过相似性检索。该设置中的主流方法按余弦相似度检索top-K条目而不进行冗余控制，导致对主导时间模式的偏置，同时忽略稀有但有信息量的事件。作者提出CASP-LLM，一种覆盖感知语义提示框架，通过将使用追踪和饱和门技术结合为覆盖正则化器来解决提示选择偏置，且不增加可学习参数。在六个长期基准和M4短期基准上，CASP-LLM在大多数数据集-预测步长设置上匹配或优于基于相似性的LLM预测器，例外为Electricity、M4-Monthly和少样本长时预测设置。一项受控研究将失败模式定位在跨批次使用层面而非每次检索的冗余：诸如MMR的检索内多样化无帮助，而跨训练正则化锚点使用则有效。",
+      "insight_zh": "该研究揭示了相似性检索在LLM提示选择中的覆盖偏置问题，其覆盖正则化思路对时空数据挖掘中基于LLM的预测任务有方法论借鉴意义，但论文本身聚焦于通用时间序列而非地理空间数据。"
     },
     {
       "key": "arxiv:2609.16752",
@@ -28295,27 +28457,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.22988",
-      "title": "Rethinking Pivot Programming Languages in Code Language Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22988",
-      "arxiv_id": "2609.22988",
-      "authors": [
-        "Andor Diera",
-        "Lukas Galke Poech",
-        "Matthias Tichy"
-      ],
-      "categories": [
-        "cs.CL"
-      ],
-      "published": "2026-09-19T12:45:00+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24057",
       "title": "Representation-guided in-context learning for medical image interpretation with multimodal large language models",
       "title_zh": "",
@@ -29339,30 +29480,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.22987",
-      "title": "OptiSkill: A Hierarchical and Evolving SkillBank for LLM-Based Optimization Modeling",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22987",
-      "arxiv_id": "2609.22987",
-      "authors": [
-        "Ruiqing Zhao",
-        "Rui Liu",
-        "Yuan Zuo",
-        "Huarong Zhang",
-        "Xiao Han",
-        "Junjie Wu"
-      ],
-      "categories": [
-        "cs.AI"
-      ],
-      "published": "2026-09-19T12:43:46+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24202",
       "title": "Opinion Leader Dynamics: How Sparse Attention Shapes Token Clustering",
       "title_zh": "",
@@ -29408,27 +29525,6 @@
       ],
       "summary_zh": "瓦片匹配益智游戏拥有数亿玩家，但决定每回合呈现哪些棋子的内容生成算法仍属专有，且该类型中不存在用于研究自适应难度的开放平台。作者提出一个自适应瓦片匹配平台，其核心算法贡献是双轨内容生成架构：一条始终可用的确定性规则生成器，以及一条可选的学习型生成器，二者均受同一验证门控约束，该门控通过穷举式顺序放置搜索确认每个交付的棋子集合完全可放置，从而使学习轨永远不会降低规则轨的建设性可行性保证。一个自博弈强化学习放置智能体由辅助任务监督，这些任务将每种形状的可放置性暴露给共享表示，用于诊断该游戏的主要失败模式：在高棋盘填充度下，长条棋子失去其大多数合法放置位置。在234,000+自博弈回合中，该智能体达到35.6%的胜率（中位得分4,200），受控模拟显示在70–75%的棋盘填充率下，33–56%的长条棋子没有合法放置位置，而生成难度分布在胜局与负局之间在统计上不可区分——这表明是棋盘状态退化而非内容难度驱动了后期失败。头对头消融显示，是每种形状的可放置性监督——而非聚合难度特征——驱动了表示增益，且一项为期14天的在线灰度发布（48,000名玩家；样本比例已验证，经CUPED调整）相较仅规则轨将次日留存提升1.8个百分点、会话时长提升7%，量化了神经轨的不对称上行空间。",
       "insight_zh": "该文的可验证生成门控与自博弈诊断思路在方法论上或可迁移至空间场景生成的质量保证，但其研究对象为游戏内容生成，与地理空间智能无直接联系。"
-    },
-    {
-      "key": "arxiv:2609.22990",
-      "title": "On attention heads and bilinear forms",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22990",
-      "arxiv_id": "2609.22990",
-      "authors": [
-        "Andrew O'Desky"
-      ],
-      "categories": [
-        "cs.LG",
-        "math.SP",
-        "stat.ML"
-      ],
-      "published": "2026-09-19T12:48:57+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.22295",
@@ -29610,7 +29706,7 @@
     {
       "key": "arxiv:2609.23010",
       "title": "MixiMotion: One-Step Text-to-Motion Generation via Asymmetric Set Distillation",
-      "title_zh": "",
+      "title_zh": "MixiMotion：基于非对称集合蒸馏的一步文本到动作生成",
       "url": "https://arxiv.org/abs/2609.23010",
       "arxiv_id": "2609.23010",
       "authors": [
@@ -29626,10 +29722,14 @@
       ],
       "published": "2026-09-19T13:14:48+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究文本到动作生成的一步蒸馏方法，与GIS、遥感、城市分析无直接关联，仅在生成模型方法论层面有极弱的间接联系。",
+      "tags": [
+        "文本到动作生成",
+        "一步生成",
+        "知识蒸馏"
+      ],
+      "summary_zh": "迭代式文本到动作生成能产生高质量且语义对齐的动作，但需要多次网络评估，导致显著的推理延迟。本文提出MixiMotion，一种基于离线集合蒸馏的严格一步文本到动作生成框架。MixiMotion不针对每个文本提示蒸馏单一教师轨迹，而是构建多个教师动作的离线库，并通过非对称双向匹配对齐教师和学生样本集。教师到学生方向促进对多样教师支持动作的覆盖，学生到教师方向抑制不支持的生成。作者进一步引入可微的解码空间运动学监督，以补充归一化表示匹配。推理时，MixiMotion通过单次网络评估生成完整动作序列，无需教师查询、迭代采样或候选排序。在ViMoGen上，MixiMotion达到0.835的语义对齐分数，优于所评估的一步基线，接近其50步HY-Motion-1.0-Lite教师的0.858分。在盲测人工评估中，MixiMotion获得4.33的总体评分，教师为4.50，同时优于所评估的一步/少步基线。生成延迟从829.58毫秒降至9.30毫秒，实现89.2倍加速。",
+      "insight_zh": "该研究展示了通过离线集合蒸馏实现严格一步生成的可能性，其非对称双向匹配策略在生成效率与质量之间取得了良好平衡，但该工作聚焦于动作生成领域，与地理空间研究无直接关联。"
     },
     {
       "key": "arxiv:2609.24357",
@@ -29957,30 +30057,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23003",
-      "title": "M3GA-Wild: A Large-Scale Dataset and Benchmark for Multi-Modal Multi-session Ground-to-Aerial Place Recognition in Forests",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23003",
-      "arxiv_id": "2609.23003",
-      "authors": [
-        "Ethan Griffiths",
-        "Maryam Haghighat",
-        "Simon Denman",
-        "Clinton Fookes",
-        "Milad Ramezani"
-      ],
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "published": "2026-09-19T13:05:09+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.24144",
       "title": "Luck Is Not Skill: When Do Paired Rollouts Help Group-Relative RL of LLM Agents?",
       "title_zh": "",
@@ -30280,7 +30356,7 @@
     {
       "key": "arxiv:2609.22984",
       "title": "LPINNs: First-Layer Gated Localization for Physics-Informed Neural Networks",
-      "title_zh": "",
+      "title_zh": "LPINNs：面向物理信息神经网络的第一层门控局部化",
       "url": "https://arxiv.org/abs/2609.22984",
       "arxiv_id": "2609.22984",
       "authors": [
@@ -30294,10 +30370,15 @@
       ],
       "published": "2026-09-19T12:36:43+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究物理信息神经网络的第一层门控局部化方法，属于科学计算与神经网络方法论，与遥感变化检测有极弱的间接关联，但不涉及地理空间数据。",
+      "tags": [
+        "物理信息神经网络",
+        "第一层门控",
+        "局部化",
+        "偏微分方程"
+      ],
+      "summary_zh": "物理信息神经网络（PINN）在整个计算域上使用共享表示，这在长域和高阶算子上可能难以优化。作者研究一种最小替代方案：将原本不变的密集PINN的第一隐藏层激活乘以输入依赖的局部化函数，使第一层单元具有感受野，而无需划分域或添加界面损失。作者在非线性谐振子（HO）、长空间区间上的热方程和一个制造的四维（4D）四阶问题上筛选了13类局部化函数（每类最多三种参数化），全程使用十个配对种子。三种配置在匹配预算下大幅降低了求解误差：（i）在2π HO域上的固定高斯局部化函数在3k轮时将平均求解RMSE从4.8369×10⁻¹降至8.83×10⁻³。（ii）具有可学习中心和宽度的逆二次族在10k轮时将8π热域上的误差从2.896×10⁻¹降至3.06×10⁻²。（iii）固定凸起局部化函数在10k轮时将4π 4D域上的误差从1.75947×10¹降至2.260×10⁻¹。在这三个比较中每个配对种子均有改善。筛选还表明该机制并非免费胜利：在HO上仅13个族中的2个优于基线，其余11个中的10个差9到23倍；在4D上四个族非有限，五个比基线差三个数量级以上。逆二次族是唯一在三个方程上都优于基线的族。",
+      "insight_zh": "该研究表明第一层局部化可以为PINN在长域和高阶问题上带来可测量的改进，但其效果高度依赖于局部化函数的选择，这一方法论对地理空间中的物理约束建模有潜在参考价值，但论文未涉及地理空间应用。"
     },
     {
       "key": "arxiv:2609.22904",
@@ -30538,30 +30619,6 @@
         "cs.AI"
       ],
       "published": "2026-09-21T17:51:50+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.23008",
-      "title": "Interpretable Multi-Hypersphere Deep Anomaly Detection for Open-set Supervised Anomaly Detection",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23008",
-      "arxiv_id": "2609.23008",
-      "authors": [
-        "Zhiji Yang",
-        "Fangyong Wang",
-        "Yue Li",
-        "Xianli Pan",
-        "Jianhua Zhao"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "published": "2026-09-19T13:12:06+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -31912,28 +31969,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23012",
-      "title": "CrowdCue: Specialist-Cue Conditioning for Vision-Language Crowd Counting",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23012",
-      "arxiv_id": "2609.23012",
-      "authors": [
-        "Moshiur Farazi",
-        "Bekir Ciftler",
-        "Abdulhalim Dandoush",
-        "Reda Bendraou"
-      ],
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-09-19T13:19:23+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2609.14725",
       "title": "CrossDistill: Balancing Quality and Diversity via Trajectory-Level Hybrid Few-Step Distillation",
       "title_zh": "",
@@ -32239,7 +32274,7 @@
     {
       "key": "arxiv:2609.23005",
       "title": "Compressing 3D Gaussian Splatting via Cross-Representation Priors",
-      "title_zh": "",
+      "title_zh": "通过跨表示先验压缩3D高斯泼溅",
       "url": "https://arxiv.org/abs/2609.23005",
       "arxiv_id": "2609.23005",
       "authors": [
@@ -32256,10 +32291,15 @@
       ],
       "published": "2026-09-19T13:07:59+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究3D高斯泼溅的压缩方法，属于三维场景表示与压缩领域，与遥感三维重建有极弱的间接关联，但不涉及地理空间分析或城市应用。",
+      "tags": [
+        "3D高斯泼溅",
+        "压缩",
+        "跨表示先验",
+        "率失真优化"
+      ],
+      "summary_zh": "3D高斯泼溅（3DGS）能实现高质量新视角合成，但由于密集的高斯基元导致高存储和传输成本。近期基于锚点的压缩减少了逐基元冗余，但锚点间的冗余仍未被充分利用。作者提出CRP-GS（面向高斯泼溅的跨表示先验），一种率失真优化的压缩框架，利用跨表示先验改进锚点级熵建模。首先，面向对应关系的层次结构（COHS）按特征对应而非空间邻近组织锚点，构建根-叶依赖关系，使选定锚点可作为信息先验条件编码其他锚点，从而获得更准确的似然预测和更低的条件熵。其次，共享特征聚合（SFA）从上下文哈希网格中提取全局共享特征并注入锚点表示，分解出场景一致的低频信息，避免其在单个锚点中冗余嵌入。两个模块在统一的率失真目标下训练，以平衡比特率降低和渲染保真度。多个基准实验表明，CRP-GS取得了良好的整体率失真权衡，相比基于锚点的基线平均比特率降低约30%，同时保持可比的渲染质量。",
+      "insight_zh": "该研究通过跨表示先验和层次化锚点组织有效降低了3DGS的存储成本，其率失真优化思路对遥感三维场景的高效表示与传输有潜在参考价值，但论文未涉及地理空间数据或应用。"
     },
     {
       "key": "arxiv:2609.22284",
@@ -32857,40 +32897,6 @@
       ],
       "summary_zh": "模型合并旨在无需额外训练过程的情况下整合多个任务特定模型。然而，现有基于子空间的方法在很大程度上依赖对任务更新的均匀处理，忽视了其内在的谱和深度异质性。我们识别出与这一假设的两个关键偏差：不同任务需要不同的子空间容量，并对谱变换表现出不同的容忍度，而子空间投影引入深度相关失真。基于这些观察，我们提出SADA-Merging，一个用于无数据模型合并的谱感知和深度自适应框架。SADA-Merging根据谱复杂度分配任务特定子空间容量，根据任务级可塑性调整谱保留，并应用深度相关锚定以补偿投影引起的失真。这使融合过程能够适应每个任务的内在几何及其跨网络深度的敏感性。SADA-Merging直接作用于任务更新，适用于全微调和LoRA设置。大量实验表明，在不同任务规模和适配设置下，相比现有无数据合并方法均有一致改进。",
       "insight_zh": "该研究通过谱感知和深度自适应策略改进多任务模型合并，其处理任务异质性的思路对多源数据融合有间接参考意义，但与地理空间研究无直接关联。"
-    },
-    {
-      "key": "arxiv:2609.22977",
-      "title": "Beyond Similarity: Coverage-Aware Prompt Selection for Time Series Forecasting with LLMs",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.22977",
-      "arxiv_id": "2609.22977",
-      "authors": [
-        "Daeun Ji",
-        "Minkyoung Kim",
-        "Dongkuk Kim",
-        "Yohan Lee",
-        "Beomsoo Kim",
-        "Beakcheol Jang"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CL",
-        "Linguistics:",
-        "EMNLP",
-        "2026.",
-        "24",
-        "pages,",
-        "8",
-        "figures,",
-        "15",
-        "tables"
-      ],
-      "published": "2026-09-19T12:10:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.22939",
@@ -34536,6 +34542,32 @@
       "insight_zh": "由于摘要缺失，无法做出实质性推断。从标题看，该工作属于机器学习优化理论的基础研究，与GIS和遥感领域关联度极低。"
     },
     {
+      "key": "arxiv:2609.22988",
+      "title": "Rethinking Pivot Programming Languages in Code Language Models",
+      "title_zh": "重新思考代码语言模型中的枢轴编程语言",
+      "url": "https://arxiv.org/abs/2609.22988",
+      "arxiv_id": "2609.22988",
+      "authors": [
+        "Andor Diera",
+        "Lukas Galke Poech",
+        "Matthias Tichy"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-09-19T12:45:00+00:00",
+      "score": 3,
+      "reason": "该论文研究代码语言模型中的枢轴编程语言问题，属于代码智能领域，与GIS、遥感和城市分析无关联。",
+      "tags": [
+        "代码语言模型",
+        "多语言",
+        "跨语言迁移",
+        "表示分析"
+      ],
+      "summary_zh": "多语言代码语言模型能够跨编程语言（PL）迁移技能，但是否存在某个PL占据特权枢轴位置仍存争议：几何分析指向C族语言和Go，而行为证据则突出Python。作者在控制表示各向异性和长度变异两个混淆因素（这两个因素会影响先前基于余弦的分析）的条件下重新审视这一问题。在三个代码模型和多语言竞赛编程数据上，作者研究了跨PL组织的三个视角：成对PL几何、PL-英语对齐以及通过候选PL表示空间的枢轴检索。结果表明这些关系是依赖性的。代码-代码几何揭示了结构化的语言区域但没有普遍中心；代码-英语对齐偏向高级脚本语言；枢轴检索在代码到代码和英语到代码迁移中偏好不同的中间空间。这些发现表明Python的特殊角色更适合理解为面向英语的亲和性而非普遍的几何中心性。",
+      "insight_zh": "该研究对代码语言模型中枢轴语言的理解提供了更细致的视角，但其研究对象为编程语言而非自然语言地理文本，与地理空间研究无直接关联。"
+    },
+    {
       "key": "arxiv:2607.05737",
       "title": "Optimized Adaptive Loop Filter in Versatile Video Coding",
       "title_zh": "通用视频编码中的优化自适应环路滤波",
@@ -34562,6 +34594,32 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题可推断，该工作针对通用视频编码（VVC）标准，研究优化后的自适应环路滤波方法。",
       "insight_zh": "摘要缺失，无法评估其技术细节。与地理空间研究主题关联极弱，不宜作进一步推断。"
+    },
+    {
+      "key": "arxiv:2609.22990",
+      "title": "On attention heads and bilinear forms",
+      "title_zh": "论注意力头与双线性形式",
+      "url": "https://arxiv.org/abs/2609.22990",
+      "arxiv_id": "2609.22990",
+      "authors": [
+        "Andrew O'Desky"
+      ],
+      "categories": [
+        "cs.LG",
+        "math.SP",
+        "stat.ML"
+      ],
+      "published": "2026-09-19T12:48:57+00:00",
+      "score": 3,
+      "reason": "该论文研究大语言模型注意力头中双线性形式的对称与反对称部分，属于纯理论分析，与GIS、遥感和城市分析无任何关联。",
+      "tags": [
+        "注意力机制",
+        "双线性形式",
+        "大语言模型",
+        "理论分析"
+      ],
+      "summary_zh": "本文研究训练后大语言模型注意力头中双线性形式的对称和反对称部分。作者引入一个从实双线性形式到三维单纯形的正交不变轮廓映射，并观察到训练后双线性形式的轮廓聚集在秩一双线性形式的轮廓附近。作者证明，对于查询-键矩阵的Zariski稠密子集，注意力头中双线性形式的对称部分是双曲形式与零形式之和。",
+      "insight_zh": "该研究为理解注意力机制提供了理论视角，但其纯数学性质与地理空间研究无直接关联。"
     },
     {
       "key": "arxiv:2609.18514",
@@ -34860,7 +34918,31 @@
       ],
       "categories": [
         "cs.LG",
-        "math.FA"
+        "math.FA",
+        "theorem",
+        "and",
+        "pullback",
+        "result,",
+        "which",
+        "form",
+        "the",
+        "backbone",
+        "of",
+        "paper,",
+        "integrating",
+        "explicit",
+        "counterexamples",
+        "several",
+        "results",
+        "that",
+        "predate",
+        "general",
+        "construction",
+        "those",
+        "into",
+        "a",
+        "unified",
+        "framework"
       ],
       "published": "2026-09-09T17:26:26+00:00",
       "score": 0,
