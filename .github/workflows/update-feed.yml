@@ -34,10 +34,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.13"
 
@@ -45,7 +48,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Restore public embedding model weights
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .embedding-model-cache
           key: multilingual-minilm-fastembed-0.8.1-${{ runner.os }}
@@ -56,7 +59,7 @@ jobs:
         run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
       - name: Restore conference source cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .conference-cache
           key: ${{ runner.os }}-conference-http-${{ steps.conference-cache-key.outputs.date }}
@@ -121,10 +124,34 @@ jobs:
           --glob "official-feeds/*.xml"
 
       - name: Commit feed changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
+          skip_fetch: true
+          skip_checkout: true
+          skip_push: true
           commit_message: "Update RSS feed"
           file_pattern: read-suppression.json feed.xml official-feed-seen.json official-feeds/*.xml ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml information-geography.xml building-and-environment.xml buildings.xml sustainability.xml cities.xml ceus.xml jgsa.xml essd.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml information-geography-current-issue.xml building-and-environment-current-issue.xml buildings-current-issue.xml sustainability-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml essd-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml research-papers.xml research-daily.xml research-data/state.json research-archive/*.json research-archive/*.html arxiv-email-papers.xml arxiv-email-daily.xml research-data/arxiv-email-state.json arxiv-email-archive/*.json arxiv-email-archive/*.html arxiv-email-analysis/*.json arxiv-email-analysis/*.html
+
+      - name: Push feeds while preserving concurrent updates
+        env:
+          RSS_READ_FILTER_KEY: ${{ secrets.RSS_READ_FILTER_KEY }}
+        run: python push_feed_updates.py --refresh-read-filter
+
+      - name: Preserve generated output on failure
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: rss-recovery-${{ github.run_id }}
+          retention-days: 7
+          path: |
+            *.xml
+            research-data/
+            research-archive/
+            arxiv-email-analysis/
+            arxiv-email-archive/
+            conference-feeds/
+            conference-feeds.opml
+            official-feeds/
 
       - name: Prepare Pages artifact
         run: |
