@@ -796,7 +796,8 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
         print(f"{conference['acronym']}: {count} papers{suffix}")
         all_papers.extend(papers)
     selected: list[ConferencePaper] = []
-    for paper in deduplicate(all_papers):
+    digest_enabled = config.get('daily_digest_enabled', True)
+    for paper in (deduplicate(all_papers) if digest_enabled else []):
         paper.matched_keywords = match_keywords(paper, config["keywords"])
         if paper.matched_keywords:
             selected.append(paper)
@@ -809,7 +810,9 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
         guid_scope="conference:digest",
     )
     counts["top-conference-daily"] = digest_count
-    if digest_preserved:
+    if not digest_enabled:
+        print('Top Conference Daily Digest: retired; existing entries preserved')
+    elif digest_preserved:
         print(
             "Top Conference Daily Digest: "
             f"{digest_count} papers (preserved because {len(preserved_feeds)} source feeds failed)"

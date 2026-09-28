@@ -196,10 +196,13 @@ class FeedLanguageTests(unittest.TestCase):
 
     def test_workflow_publishes_every_crossref_feed(self):
         workflow = Path('.github/workflows/update-feed.yml').read_text(encoding='utf-8')
-
+        import fnmatch
+        patterns = workflow.split('file_pattern:', 1)[1].split('\n\n', 1)[0].replace('>-', '').split()
+        artifact = workflow.split('- name: Prepare Pages artifact', 1)[1]
         for journal in CROSSREF_JOURNALS:
             with self.subTest(output=journal['output']):
-                self.assertGreaterEqual(workflow.count(journal['output']), 2)
+                self.assertTrue(any(fnmatch.fnmatchcase(journal['output'], pattern) for pattern in patterns))
+                self.assertIn(journal['output'], artifact)
         self.assertIn('official-feed-seen.json', workflow)
 
     def test_workflow_generates_conference_artifacts_before_every_pages_deployment(self):

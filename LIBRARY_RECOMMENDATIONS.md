@@ -1,5 +1,25 @@
 # Personal-library recommendations
 
+## Current mode: no AI, email daily archive only
+
+As requested on 2026-09-28, paid recommendations are retired, not awaiting automatic
+resumption. `arxiv_email_daily.py` maintains `arxiv-email-daily.xml`: one item per
+mail receipt day, with all parsed paper titles, authors, original abstracts and
+links. No ranking, score threshold, daily paper cap, translation or model call.
+This means the paper content included in the email, not the full PDF or private
+mail headers/unsubscribe information. Stable daily GUIDs and the existing URL
+are preserved. Same-day duplicate arXiv IDs are merged; different days keep their
+own snapshots. All matching emails from 2026-09-01 onward are scanned, without
+the previous last-ten-email limit. Legacy-only days are marked as unverified
+cached records until their original mail is fetched.
+
+The workflow no longer injects a DeepSeek key, prepares library embeddings or
+runs the research-selection pipeline. The local `Journal RSS Library Sync` task
+is disabled. Existing selected-paper feeds and historical AI archives are retained
+but no longer regenerated. The keyword-filtered conference daily digest is also
+retired; independent journal/conference feeds are unchanged.
+The mechanisms below document the retired implementation and its safeguards.
+
 The existing research and QQ-mail recommendations now use the entire personal
 Zotero library. Feed libraries, groups, trash, notes and duplicate PDF attachments
 are excluded. No collection needs to be created or maintained. Saved documents

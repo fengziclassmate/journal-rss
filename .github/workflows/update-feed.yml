@@ -27,8 +27,6 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      ZOTERO_EMBEDDING_CACHE: .embedding-model-cache
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -47,12 +45,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Restore public embedding model weights
-        uses: actions/cache@v5
-        with:
-          path: .embedding-model-cache
-          key: multilingual-minilm-fastembed-0.8.1-${{ runner.os }}
-
       - name: Set conference cache key
         id: conference-cache-key
         shell: bash
@@ -66,6 +58,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-conference-http-
 
+      - name: Generate unfiltered QQ arXiv email daily records
+        id: mailbox
+        if: inputs.conference_only != true
+        continue-on-error: true
+        env:
+          ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
+          ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
+        run: python arxiv_email_daily.py
+
+      - name: Report mailbox collection failure
+        if: steps.mailbox.outcome == 'failure'
+        run: echo "::warning::QQ mailbox collection failed. Existing email RSS files are retained; other feeds will still deploy."
+
       - name: Generate official feed mirrors
         run: python official_feed_proxy.py
 
@@ -77,38 +82,6 @@ jobs:
           --end-year 2026
           --output feed.xml
           --feed-link https://fengziclassmate.github.io/journal-rss/feed.xml
-
-      - name: Generate research digest feeds
-        if: inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
-        env:
-          ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
-          ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          ZOTERO_LIBRARY_KEY: ${{ secrets.ZOTERO_LIBRARY_KEY }}
-          GH_TOKEN: ${{ github.token }}
-          RSS_PAID_ANALYSIS_ALLOWED: ${{ vars.RSS_PAID_ANALYSIS_ALLOWED }}
-          CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
-        run: python research_rss.py
-
-      - name: Generate QQ mailbox arXiv feeds
-        id: mailbox
-        if: inputs.conference_only != true
-        continue-on-error: true
-        env:
-          ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
-          ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          ZOTERO_LIBRARY_KEY: ${{ secrets.ZOTERO_LIBRARY_KEY }}
-          GH_TOKEN: ${{ github.token }}
-          RSS_PAID_ANALYSIS_ALLOWED: ${{ vars.RSS_PAID_ANALYSIS_ALLOWED }}
-        run: >
-          python research_rss.py
-          --email-only
-          --state research-data/arxiv-email-state.json
-
-      - name: Report mailbox collection failure
-        if: steps.mailbox.outcome == 'failure'
-        run: echo "::warning::QQ mailbox collection failed. Existing email RSS files are retained; other feeds will still deploy."
 
       - name: Restore conference fallback
         run: python -m zipfile -e conference-feed-fallback.zip .
@@ -134,7 +107,11 @@ jobs:
           skip_checkout: true
           skip_push: true
           commit_message: "Update RSS feed"
-          file_pattern: read-suppression.json feed.xml official-feed-seen.json official-feeds/*.xml ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml information-geography.xml building-and-environment.xml buildings.xml sustainability.xml cities.xml ceus.xml jgsa.xml essd.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml information-geography-current-issue.xml building-and-environment-current-issue.xml buildings-current-issue.xml sustainability-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml essd-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml research-papers.xml research-daily.xml research-data/state.json research-archive/*.json research-archive/*.html arxiv-email-papers.xml arxiv-email-daily.xml research-data/arxiv-email-state.json arxiv-email-archive/*.json arxiv-email-archive/*.html arxiv-email-analysis/*.json arxiv-email-analysis/*.html
+          file_pattern: >-
+            read-suppression.json official-feed-seen.json *.xml official-feeds/*.xml
+            research-data/*.json research-archive/*.json research-archive/*.html
+            arxiv-email-archive/*.json arxiv-email-archive/*.html
+            arxiv-email-analysis/*.json arxiv-email-analysis/*.html
 
       - name: Push feeds while preserving concurrent updates
         env:

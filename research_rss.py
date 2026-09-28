@@ -501,13 +501,24 @@ def fetch_arxiv_email_deliveries(
     try:
         connection.login(address, auth_code)
         connection.select(settings.get("mailbox", "INBOX"), readonly=True)
-        status, message_ids = connection.search(None, '(FROM "arXiv.org" SUBJECT "daily")')
+        criteria = '(FROM "arXiv.org" SUBJECT "daily")'
+        if settings.get('since'):
+            since = dt.date.fromisoformat(settings['since']).strftime('%d-%b-%Y')
+            criteria = f'(FROM "arXiv.org" SUBJECT "daily" SINCE {since})'
+        status, message_ids = connection.search(None, criteria)
         if status != "OK":
             raise RuntimeError("IMAP search failed")
         known = set(store.data.get("processed_email_hashes", []))
         deliveries: list[EmailDelivery] = []
-        maximum = max(1, int(max_emails if max_emails is not None else settings.get("max_emails", 30)))
-        for message_number in message_ids[0].split()[-maximum:]:
+        maximum = max(0, int(max_emails if max_emails is not None else settings.get("max_emails", 30)))
+        numbers = message_ids[0].split()
+        for message_number in (numbers[-maximum:] if maximum else numbers):
+            if known:
+                head_status, head_values = connection.fetch(message_number, '(BODY.PEEK[HEADER.FIELDS (MESSAGE-ID)])')
+                if head_status == 'OK' and head_values and isinstance(head_values[0], tuple):
+                    message_id = email_module.message_from_bytes(head_values[0][1]).get('Message-ID')
+                    if message_id and hashlib.sha256(message_id.encode('utf-8', errors='replace')).hexdigest() in known:
+                        continue
             status, values = connection.fetch(message_number, "(RFC822 INTERNALDATE)")
             if status != "OK" or not values or not isinstance(values[0], tuple):
                 continue
@@ -1151,6 +1162,10 @@ def run_email_only(
     now: dt.datetime | None = None,
 ) -> int:
     config = json.loads(config_path.read_text(encoding="utf-8"))
+    if config.get('email_only', {}).get('mode') == 'full-text':
+        from arxiv_email_daily import run as run_full_email
+        return run_full_email(config_path, state_path.with_name('arxiv-email-full-state.json'),
+                              state_path, output_dir, offline)
     if not offline:
         prepare_library(config)
         prepare_budget(config)
@@ -1269,6 +1284,9 @@ def run_email_only(
 
 def run(config_path: Path, state_path: Path, output_dir: Path, *, offline: bool = False, now: dt.datetime | None = None) -> int:
     config = json.loads(config_path.read_text(encoding="utf-8"))
+    if config.get('research_digest', {}).get('enabled') is False:
+        print('[info] research selection retired; existing archives preserved')
+        return 0
     if not offline:
         prepare_library(config)
         prepare_budget(config)
