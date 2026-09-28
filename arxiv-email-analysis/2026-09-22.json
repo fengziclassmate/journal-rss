@@ -2,11 +2,11 @@
   "date": "2026-09-22",
   "analysis_stats": {
     "total": 1190,
-    "analyzed": 820,
+    "analyzed": 830,
     "high": 5,
     "medium": 35,
     "low": 64,
-    "below_threshold": 716
+    "below_threshold": 726
   },
   "papers": [
     {
@@ -21973,6 +21973,37 @@
       "insight_zh": "在线学习框架可启发时空数据流处理，但主题差异较大。"
     },
     {
+      "key": "arxiv:2609.23587",
+      "title": "On the Efficiency-Safety Dilemma in Large Reasoning Models",
+      "title_zh": "论大推理模型中的效率-安全困境",
+      "url": "https://arxiv.org/abs/2609.23587",
+      "arxiv_id": "2609.23587",
+      "authors": [
+        "Yifei Yang",
+        "Zouying Cao",
+        "Xingrui Wang",
+        "Xiao Zhou",
+        "Yuexian Li",
+        "Dongjie Yang",
+        "Hai Zhao"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-09-20T12:09:34+00:00",
+      "score": 10,
+      "reason": "该论文研究大推理模型中效率技术与越狱脆弱性的关系，属于LLM安全与效率方向，与LLM研究直接相关，但不涉及地理空间数据。",
+      "tags": [
+        "大推理模型",
+        "效率-安全困境",
+        "越狱攻击",
+        "量化剪枝"
+      ],
+      "summary_zh": "大推理模型（LRM）推理成本高，常通过量化和剪枝等效率技术缓解。然而，这些技术对模型对抗鲁棒性的影响在很大程度上尚未被探索。本研究首次全面分析LRM中效率、越狱脆弱性和推理之间的相互作用。作者发现，虽然效率方法表面上降低了越狱攻击成功率，但这种改善往往是表面的。它主要源于推理能力下降导致“尝试但失败”的恶意响应，而非真正对齐的提升。表征漂移的机制分析证实了这一点，揭示了推理能力损失与模型维持恶意语义轨迹能力之间的严格耦合。此外，作者确定量化加剪枝是平衡效率与鲁棒性的最优策略。",
+      "insight_zh": "该研究区分了真正的安全对齐与能力诱导的失败，为LRM部署提供了实证基础；摘要未涉及地理空间或城市更新应用。"
+    },
+    {
       "key": "arxiv:2609.23774",
       "title": "On Probabilistic Inference Through Parametric Tensor Decomposition in Base Tensor Networks",
       "title_zh": "论基础张量网络中通过参数化张量分解的概率推断",
@@ -24724,6 +24755,34 @@
       "insight_zh": "该工作提出的基于交叉Hessian秩的因果发现方法，可能为时空数据中的潜因子建模（如城市更新中的潜在驱动因素识别）提供理论工具，但需验证其在高维地理空间数据上的可行性。"
     },
     {
+      "key": "arxiv:2609.23585",
+      "title": "Global Ranks Survive, Selected Heads Shift: BOS-Sink Topology under 4-bit Weight-Only Quantization",
+      "title_zh": "全局排名幸存，选定头偏移：4比特权重量化下的BOS-Sink拓扑",
+      "url": "https://arxiv.org/abs/2609.23585",
+      "arxiv_id": "2609.23585",
+      "authors": [
+        "Kuanlin Chen",
+        "Chen-Wei Kuo",
+        "Cheng-En Ou"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "tables"
+      ],
+      "published": "2026-09-20T12:07:41+00:00",
+      "score": 8,
+      "reason": "该论文研究4比特权重量化下BOS-Sink注意力头拓扑的变化，属于LLM量化与边缘部署方向，与LLM研究有间接关联，但不涉及地理空间数据。",
+      "tags": [
+        "量化",
+        "注意力头",
+        "BOS-Sink",
+        "边缘部署"
+      ],
+      "summary_zh": "Sink感知部署可能在模型量化之前识别重要的首token注意力头，然后在边缘重用该映射。作者测试了这种捷径在4比特NF4权重量化后训练量化（PTQ）下何时安全。其Sink拓扑一致性（STC）指标分离了全局排名保持、top-k集合重叠和逐层sink质量偏移，并区分了逐输入敏感性与校准映射迁移。在Qwen2.5-0.5B、Qwen2.5-1.5B和Llama-3.2-1B上，全局bf16到4比特排名在4,096 token时保持高位（ρ_s ≥ 0.980），但top-k Jaccard重叠仅为0.619-0.793，对应76.5-88.5%的成员保留率。全局统计还掩盖了局部失败：Qwen终端层偏移达其模型均值的6.2-7.9倍，而Llama-3.2-1B显示低且几乎均匀的漂移。在C4到LongBench的偏移下，两个Qwen模型的跨域重叠比域内精度比较退化更多，但Llama-3.2-1B不是。匹配域4比特重校准在两个Qwen模型的最小测试n=8和Llama-3.2-1B的n=32时达到分半稳定性平台的90%，但并非作为尖锐阈值；对于两个Qwen模型，仅更新选定层无法达到全图稳定性标准。在Jetson Orin NX上，16样本工作负载对两个具有有效设备端sink测量的模型只需数秒。",
+      "insight_zh": "该研究提示，量化后全局排名通常可迁移，但离散头集合、层局部策略和跨域校准应重新验证；摘要未涉及地理空间或城市应用。"
+    },
+    {
       "key": "arxiv:2609.21677",
       "title": "GUARD: Natural Forgetting in Large Reasoning Models via Guided Answer-Reasoning Distillation",
       "title_zh": "GUARD：通过引导式答案-推理蒸馏实现大型推理模型中的自然遗忘",
@@ -25340,6 +25399,33 @@
       ],
       "summary_zh": "摘要内容缺失（仅提供分隔线），无法获取具体研究内容。根据标题推断，该研究提出BridgeShield框架，利用风险感知图建模方法检测跨链桥攻击行为。",
       "insight_zh": "摘要缺失，无法进行实质性推断。该工作涉及图建模与风险检测，在方法论上与地理空间网络分析有表面相似性，但应用场景完全不同。"
+    },
+    {
+      "key": "arxiv:2609.23594",
+      "title": "Bilinear Optimization Divergence: Diagnosing Factor-Constrained LoRA Continual Learning",
+      "title_zh": "双线性优化散度：诊断因子约束的LoRA持续学习",
+      "url": "https://arxiv.org/abs/2609.23594",
+      "arxiv_id": "2609.23594",
+      "authors": [
+        "YongShun Wang",
+        "JianLin Su",
+        "Yong Ma"
+      ],
+      "categories": [
+        "cs.LG",
+        "[https://github.com/legend91019/My_first](https://github.com/legend91019/My_first)"
+      ],
+      "published": "2026-09-20T12:26:14+00:00",
+      "score": 8,
+      "reason": "该论文研究LoRA持续学习中的因子约束优化问题，属于大模型参数高效微调与持续学习方向，与LLM研究有间接关联，但不涉及地理空间数据或城市分析。",
+      "tags": [
+        "LoRA",
+        "持续学习",
+        "参数高效微调",
+        "优化分析"
+      ],
+      "summary_zh": "LoRA因子中的正交性本身并不能说明组合更新保护了什么：答案取决于任务起始状态、参数化和实际优化器位移。作者通过双线性优化散度（BOD）形式化该问题，这是一种在选定历史特征上对有效更新响应的锚点相对诊断。有限步分析区分两种情况：在共享适配器中，保护路由位移会通过变化的伴随因子留下学习锚点残差；在全新零输出块中，可行的路由状态可以保护组合更新，同时两个当前因子保持可训练。这些条件产生了用于共享适配器的半冻结正交路由（SFOR）和用于累积O-LoRA的当前块硬保护；权重残差投影（WRP）在优化器步骤后强制执行所需位移。受控双任务轨迹验证了预测的残差路径，将共享族的归一化历史响应从19.12%降至0.005%，累积族从7.72%降至0.002%。在Qwen3-8B上的四任务实验刻画了由此产生的权衡：SFOR将后向迁移（BWT）从-2.47改善至-0.86，平均准确率（AA）几乎不变；而O-LoRA硬保护将三阶平均AA从80.27%提升至81.30%，遗忘度量（FM）从2.20降至0.43。组件控制还表明，更严格的可行性不一定改善最终任务性能。",
+      "insight_zh": "该研究提示，在LoRA持续学习中，约束应针对组合更新而非单个因子，且约束的选择与执行方式需根据架构条件决定；摘要未涉及地理空间或城市更新应用。"
     },
     {
       "key": "arxiv:2609.23606",
@@ -27412,7 +27498,7 @@
     {
       "key": "arxiv:2609.23596",
       "title": "StyleAT: Defending Face Recognition Against Semantic Attacks",
-      "title_zh": "",
+      "title_zh": "StyleAT：防御人脸识别中的语义攻击",
       "url": "https://arxiv.org/abs/2609.23596",
       "arxiv_id": "2609.23596",
       "authors": [
@@ -27443,10 +27529,15 @@
       ],
       "published": "2026-09-20T12:28:23+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究人脸识别模型对语义对抗攻击的脆弱性及防御方法，属于计算机视觉安全领域，与城市更新、时空数据挖掘、遥感变化检测或地理空间智能无直接关联。",
+      "tags": [
+        "对抗攻击",
+        "人脸识别",
+        "StyleGAN",
+        "对抗训练"
+      ],
+      "summary_zh": "随着人脸识别模型被嵌入日常身份验证和监控系统，近期研究指出这些模型对对抗性语义编辑（如轻微老化或姿态变化）仍然高度脆弱。现有攻击虽强但计算成本高，难以用于对抗训练等防御开发。为此，作者提出BoundStyle，一种在StyleGAN潜在空间中运行的强语义攻击，攻击成功率高且比现有最先进攻击快约9.5倍。基于BoundStyle，作者开发了StyleAT，一种高效对抗训练方案，结合低预算攻击变体却能防御更强和未见过的语义攻击。在两个训练时未见的数据集和七个模型上评估，StyleAT提升了对最先进攻击的鲁棒准确率，并在多种设置下优于常见防御方法。",
+      "insight_zh": "该工作表明，在StyleGAN潜在空间中进行高效语义攻击生成，可以支撑对抗训练以提升人脸识别模型对语义编辑的鲁棒性；但摘要未声称该方法可迁移至遥感或地理空间任务。"
     },
     {
       "key": "arxiv:2609.22392",
@@ -28064,7 +28155,7 @@
     {
       "key": "arxiv:2609.23450",
       "title": "Rule-Constrained Assignment for Cue-Ball Identification in Broadcast Snooker",
-      "title_zh": "",
+      "title_zh": "广播斯诺克中母球识别的规则约束分配",
       "url": "https://arxiv.org/abs/2609.23450",
       "arxiv_id": "2609.23450",
       "authors": [
@@ -28078,10 +28169,15 @@
       ],
       "published": "2026-09-20T08:26:51+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究广播斯诺克中母球识别的规则约束分配方法，属于体育视频分析领域，与地理空间智能无直接关联。",
+      "tags": [
+        "斯诺克",
+        "目标识别",
+        "规则约束分配",
+        "广播分析"
+      ],
+      "summary_zh": "准确的母球识别对于广播斯诺克的度量分析至关重要。现有系统独立评估每个候选与固定白色原型的匹配，并拒绝超过外观阈值的候选。在广播条件下，光照变化可能使彩色球看起来像白色，而球员和设备的侵入可能遮挡母球或引入竞争候选。作者将母球识别形式化为一个规则约束分配问题，将检测到的候选联合分配给有界斯诺克库存：一个母球、最多15个红球和六个已知位置的彩球。母球通过将每个候选分配到白色槽的增量成本来选择，传统外观测试作为单槽情况。在419个手工标注的击球上，该方法将身份准确率从88.1%提升至95.5%，在留出场馆上从80.5%提升至95.2%。在CueLift度量状态恢复系统中，该分配将覆盖率从36.2%扩展至55.4%，覆盖6,241个可评分击球。在2,529个击球的单独评估中为每个击球分配估计值保持了这一优势。",
+      "insight_zh": "该工作表明，将母球识别建模为规则约束分配问题可提升广播斯诺克中的身份准确率和覆盖率；摘要未涉及地理空间或城市应用。"
     },
     {
       "key": "arxiv:2609.14360",
@@ -29312,32 +29408,6 @@
       ],
       "summary_zh": "瓦片匹配益智游戏拥有数亿玩家，但决定每回合呈现哪些棋子的内容生成算法仍属专有，且该类型中不存在用于研究自适应难度的开放平台。作者提出一个自适应瓦片匹配平台，其核心算法贡献是双轨内容生成架构：一条始终可用的确定性规则生成器，以及一条可选的学习型生成器，二者均受同一验证门控约束，该门控通过穷举式顺序放置搜索确认每个交付的棋子集合完全可放置，从而使学习轨永远不会降低规则轨的建设性可行性保证。一个自博弈强化学习放置智能体由辅助任务监督，这些任务将每种形状的可放置性暴露给共享表示，用于诊断该游戏的主要失败模式：在高棋盘填充度下，长条棋子失去其大多数合法放置位置。在234,000+自博弈回合中，该智能体达到35.6%的胜率（中位得分4,200），受控模拟显示在70–75%的棋盘填充率下，33–56%的长条棋子没有合法放置位置，而生成难度分布在胜局与负局之间在统计上不可区分——这表明是棋盘状态退化而非内容难度驱动了后期失败。头对头消融显示，是每种形状的可放置性监督——而非聚合难度特征——驱动了表示增益，且一项为期14天的在线灰度发布（48,000名玩家；样本比例已验证，经CUPED调整）相较仅规则轨将次日留存提升1.8个百分点、会话时长提升7%，量化了神经轨的不对称上行空间。",
       "insight_zh": "该文的可验证生成门控与自博弈诊断思路在方法论上或可迁移至空间场景生成的质量保证，但其研究对象为游戏内容生成，与地理空间智能无直接联系。"
-    },
-    {
-      "key": "arxiv:2609.23587",
-      "title": "On the Efficiency-Safety Dilemma in Large Reasoning Models",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23587",
-      "arxiv_id": "2609.23587",
-      "authors": [
-        "Yifei Yang",
-        "Zouying Cao",
-        "Xingrui Wang",
-        "Xiao Zhou",
-        "Yuexian Li",
-        "Dongjie Yang",
-        "Hai Zhao"
-      ],
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "published": "2026-09-20T12:09:34+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
     },
     {
       "key": "arxiv:2609.22990",
@@ -30813,29 +30883,6 @@
       "insight_zh": ""
     },
     {
-      "key": "arxiv:2609.23585",
-      "title": "Global Ranks Survive, Selected Heads Shift: BOS-Sink Topology under 4-bit Weight-Only Quantization",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23585",
-      "arxiv_id": "2609.23585",
-      "authors": [
-        "Kuanlin Chen",
-        "Chen-Wei Kuo",
-        "Cheng-En Ou"
-      ],
-      "categories": [
-        "cs.LG",
-        "cs.CL",
-        "tables"
-      ],
-      "published": "2026-09-20T12:07:41+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
       "key": "arxiv:2509.05259",
       "title": "Glass-Box Deep Learning for FDIA Detection in Nonlinear Automatic Generation Control: A Kolmogorov-Arnold Network Approach",
       "title_zh": "面向非线性自动发电控制中FDIA检测的白盒深度学习：一种Kolmogorov-Arnold网络方法",
@@ -31221,7 +31268,7 @@
     {
       "key": "arxiv:2609.23573",
       "title": "Error-Supervised Synthetic Learner Writing for Automated Essay Scoring",
-      "title_zh": "",
+      "title_zh": "面向自动作文评分的错误监督合成学习者写作",
       "url": "https://arxiv.org/abs/2609.23573",
       "arxiv_id": "2609.23573",
       "authors": [
@@ -31232,10 +31279,15 @@
       ],
       "published": "2026-09-20T11:46:01+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究自动作文评分中错误监督合成学习者写作，属于教育NLP与合成数据方向，与地理空间智能无直接关联。",
+      "tags": [
+        "自动作文评分",
+        "合成数据",
+        "错误监督",
+        "LLM生成"
+      ],
+      "summary_zh": "合成作文可以帮助减少自动作文评分（AES）中对人工写作数据的依赖。然而，它们通常缺乏现实错误，限制了其代表真实人类写作的能力，特别是当目标文本旨在模仿语言学习者所写时。本研究提出了一种简单方法，将错误监督引入合成作文生成。具体而言，作者在语法错误检测（GED）中常用的错误标注文本上微调LLM生成器。为了评估所提方法的效用，作者在三种数据条件下微调和评估AES评分器：真实作文、常规生成的合成作文和使用所提方法生成的合成作文。结果表明，在较大数据设置下，所提方法在12个数据集-指标比较中的11个上优于常规合成基线，在某些情况下性能接近在真实作文上训练的模型。尽管有这些收益，在极低资源设置下性能仍然参差不齐，仅在200篇训练作文时才比常规基线更明显，但并非在所有数据集上一致。定性和定量分析进一步表明，所提方法产生类似学习者的错误，其分布大致类似于真实作文中观察到的错误。",
+      "insight_zh": "该研究提示，错误监督可提升合成作文在AES中的实用性，但在极低资源下收益不稳定；摘要未涉及地理空间或城市应用。"
     },
     {
       "key": "arxiv:2604.13286",
@@ -32014,7 +32066,7 @@
     {
       "key": "arxiv:2609.23590",
       "title": "Cost-Aware Reinforcement Learning with Action Masking and Projection for Battery Energy Storage Dispatch under Suppressed-Spread Market Shifts",
-      "title_zh": "",
+      "title_zh": "成本感知强化学习与动作掩码和投影用于价差受抑市场变化下的电池储能调度",
       "url": "https://arxiv.org/abs/2609.23590",
       "arxiv_id": "2609.23590",
       "authors": [
@@ -32031,10 +32083,15 @@
       ],
       "published": "2026-09-20T12:12:30+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究电池储能调度的成本感知强化学习，属于能源系统优化与强化学习应用，与地理空间智能或城市更新无直接关联。",
+      "tags": [
+        "强化学习",
+        "电池储能",
+        "动作掩码",
+        "能源调度"
+      ],
+      "summary_zh": "电池储能系统（BESS）调度必须在价差下降减少循环收益的情况下保持运行可行性。作者研究了一种近端策略优化（PPO）控制器，其预选物理动作掩码和紧急投影与因果的、预报信息驱动的经济建议相分离。所有依赖预报的方法接收相同的因果24步预报和电网侧结算。在五个PPO种子中，建议开启的净利润在336小时T1和T2窗口分别为30.59和18.04美元，而代理成本MPC为36.77和22.94美元；PPO在两个时期均低于该参考。建议将T2利润从16.45提升至18.04美元，同时减少吞吐量，但在T1中不重要。在不重叠的周块上，PPO在日、周和混合季节预报下稳定，在持续性预报下减弱，且始终低于代理成本MPC。配对诊断将变化定位在观察到的5-10美元/MWh区间，并具有混合的SoC依赖效应。M0-M6消融表明，移除掩码会向投影发送数千个不可行请求，而移除两个物理层会暴露爬坡违规。",
+      "insight_zh": "该研究将经济筛选与可行性执行分离，但未声称形式化安全、生命周期最优老化或RL主导地位；摘要未涉及地理空间或城市应用。"
     },
     {
       "key": "arxiv:2609.22553",
@@ -32230,7 +32287,7 @@
     {
       "key": "arxiv:2609.23592",
       "title": "Collapse, Not Complexity: Failure-Conditioned Decomposition Repair for End-to-End Document Parsing",
-      "title_zh": "",
+      "title_zh": "崩溃而非复杂性：面向端到端文档解析的失败条件分解修复",
       "url": "https://arxiv.org/abs/2609.23592",
       "arxiv_id": "2609.23592",
       "authors": [
@@ -32243,10 +32300,15 @@
       ],
       "published": "2026-09-20T12:23:36+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究端到端文档解析中的推理模式失效与修复，属于文档理解与多模态解析领域，与地理空间智能无直接关联。",
+      "tags": [
+        "文档解析",
+        "推理模式",
+        "失败条件分解",
+        "端到端解析"
+      ],
+      "summary_zh": "端到端文档解析器越来越多地为复杂页面提供可选推理模式。在一个180页熵分层发现样本上，使用一个冻结的4B检查点，复杂性是错误的决策变量。推理使平均质量降低2.21 Overall，同时消耗1.54倍token；一个预注册的仅输入模型无法预测其带符号收益（留出AUROC 0.47，与随机不可区分）。收益集中在普通通道已经崩溃的页面上，而这些页面看起来并不复杂：共享崩溃的布局熵低于健康页面，却因退化重复消耗19倍token，且加倍预算无法治愈。切换模式很少修复它们：83%在推理下复发。作者改为从普通通道轨迹检测崩溃，通过投影分解页面，并重新解析每个区域。修复获得1.40 Overall（95% CI [0.68, 2.16]），消耗1.13倍token，在三个检查点上复现，且在全部参数冻结的情况下，在剩余1,175个基准页面上获得2.41（CI [1.64, 3.46]）。",
+      "insight_zh": "该工作表明，文档解析中推理模式的收益并非由页面复杂性决定，而是集中在普通解析已崩溃的页面上；基于崩溃检测的区域分解修复可提升质量且成本较低。摘要未涉及地理空间数据。"
     },
     {
       "key": "arxiv:2609.23883",
@@ -32713,28 +32775,6 @@
         "cs.AI"
       ],
       "published": "2026-09-20T06:11:40+00:00",
-      "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
-    },
-    {
-      "key": "arxiv:2609.23594",
-      "title": "Bilinear Optimization Divergence: Diagnosing Factor-Constrained LoRA Continual Learning",
-      "title_zh": "",
-      "url": "https://arxiv.org/abs/2609.23594",
-      "arxiv_id": "2609.23594",
-      "authors": [
-        "YongShun Wang",
-        "JianLin Su",
-        "Yong Ma"
-      ],
-      "categories": [
-        "cs.LG",
-        "[https://github.com/legend91019/My_first](https://github.com/legend91019/My_first)"
-      ],
-      "published": "2026-09-20T12:26:14+00:00",
       "score": 5,
       "reason": "未命中核心关键词",
       "tags": [],
@@ -33461,7 +33501,7 @@
     {
       "key": "arxiv:2609.23586",
       "title": "An Efficient and Effective Watermarking Scheme for the Protection of the Intellectual Property Rights of Video Generative Models",
-      "title_zh": "",
+      "title_zh": "一种高效有效的视频生成模型知识产权保护水印方案",
       "url": "https://arxiv.org/abs/2609.23586",
       "arxiv_id": "2609.23586",
       "authors": [
@@ -33476,10 +33516,15 @@
       ],
       "published": "2026-09-20T12:09:16+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究视频生成模型的知识产权保护水印方案，属于生成模型安全与版权保护领域，与地理空间智能无直接关联。",
+      "tags": [
+        "视频生成模型",
+        "水印",
+        "知识产权保护",
+        "模型归属验证"
+      ],
+      "summary_zh": "视频生成模型（VGM）的快速发展使得生成高度逼真的合成视频成为可能，引发了对这些模型知识产权（IPR）的担忧。特别是两个密切相关的取证任务在很大程度上仍未得到解决：合成视频验证（确定视频是否由受保护的VGM生成）和模型归属验证（确定可疑VGM是否是受保护VGM的未经授权副本）。本文提出了一种新的生成中水印方案，可以解决这两个验证任务。首先，提出了一种名为VidMark的新型视频水印网络，它结合了两尺度离散小波变换（DWT）分解和全局时间注意力块（GTAB），以增强水印鲁棒性和不可感知性。其次，提出了一种解码器引导的微调程序。通过利用冻结的VidMark解码器，该过程使VGM能够合成携带不可感知、鲁棒且模型特定水印的视频。最后，建立了两个验证框架来执行合成视频验证和模型归属验证。在代表性VGM上的大量实验表明，该方案在两个任务上实现了超过99%的水印提取准确率和100%的验证准确率，对视频生成质量影响可忽略。",
+      "insight_zh": "该工作表明，生成中水印结合解码器引导微调可同时支持合成视频验证和模型归属验证；摘要未涉及地理空间或遥感应用。"
     },
     {
       "key": "arxiv:2609.22277",
@@ -33916,7 +33961,7 @@
     {
       "key": "arxiv:2609.23582",
       "title": "ARID: A Deployable Edge AI System for Structured Information Extraction from Industrial Maintenance Work Orders",
-      "title_zh": "",
+      "title_zh": "ARID：一种用于工业维护工单结构化信息抽取的可部署边缘AI系统",
       "url": "https://arxiv.org/abs/2609.23582",
       "arxiv_id": "2609.23582",
       "authors": [
@@ -33931,10 +33976,15 @@
       ],
       "published": "2026-09-20T12:00:17+00:00",
       "score": 5,
-      "reason": "未命中核心关键词",
-      "tags": [],
-      "summary_zh": "",
-      "insight_zh": ""
+      "reason": "该论文研究工业维护工单结构化信息抽取的边缘AI系统，属于边缘计算与信息抽取应用，与地理空间智能无直接关联。",
+      "tags": [
+        "边缘AI",
+        "信息抽取",
+        "工业维护",
+        "结构化输出"
+      ],
+      "summary_zh": "维护工单通常需要在嵌入式硬件上离线处理，而下游软件需要可预测的结构化输出。作者提出ARID（Aviation-inspired Routing for Industrial Deployment），在8 GB NVIDIA Jetson Orin NX上将组件、故障模式、症状和维护动作抽取为固定模式JSON。ARID结合了保守的双教师过滤、有针对性的噪声感知合成、每个工单一次路由决策、4比特推理和语法约束解码。从2,326条未标记OMIn记录中，它保留716个训练对，并添加99条针对动作抽取的拓扑约束记录。在300条人工标记记录上，ARID在参考栈上达到84.8% token-F1，在部署的Jetson上达到82.9%。常驻服务在12.5 W下实现5,310/5,656 ms P50/P99。在零样本MaintNet迁移上，语义F1降至46.4%，而解析器成功率保持至少99.8%，表明输出有效性可迁移但字段语义不可迁移。",
+      "insight_zh": "该工作表明，边缘部署的结构化信息抽取系统在输出有效性上可迁移，但字段语义在跨域时显著下降；摘要未涉及地理空间或城市更新应用。"
     },
     {
       "key": "arxiv:2609.22323",
