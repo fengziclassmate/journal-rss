@@ -85,6 +85,8 @@ jobs:
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           ZOTERO_LIBRARY_KEY: ${{ secrets.ZOTERO_LIBRARY_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          RSS_PAID_ANALYSIS_ALLOWED: ${{ vars.RSS_PAID_ANALYSIS_ALLOWED }}
           CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
         run: python research_rss.py
 
@@ -97,6 +99,8 @@ jobs:
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           ZOTERO_LIBRARY_KEY: ${{ secrets.ZOTERO_LIBRARY_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          RSS_PAID_ANALYSIS_ALLOWED: ${{ vars.RSS_PAID_ANALYSIS_ALLOWED }}
         run: >
           python research_rss.py
           --email-only

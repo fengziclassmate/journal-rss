@@ -24,6 +24,7 @@ from pathlib import Path
 from typing import Any, Callable, Iterable
 
 from zotero_library import prepare as prepare_library
+from analysis_budget import prepare_budget
 
 
 UTC = dt.timezone.utc
@@ -552,17 +553,54 @@ def _content_hash(record: dict[str, Any], config: dict[str, Any]) -> str:
     return hashlib.sha256(json.dumps(value, ensure_ascii=False).encode()).hexdigest()
 
 
+def analysis_complete(record, config):
+    if config.get('api_safety'):
+        return bool(record.get('analysis_hash'))
+    return record.get('analysis_hash') == _analysis_hash(record, config)
+
+
+def migrate_analysis(store, config):
+    if not config.get('api_safety'):
+        return
+    for record in store.data['papers'].values():
+        record.setdefault('billing_eligible', False)
+        if record.get('title_zh') and record.get('summary_zh'):
+            record.setdefault('content_hash', _content_hash(record, config))
+    if config.get('_budget'):
+        config['_budget'].hydrate(store, config.get('_billing_stream', 'research'))
+
+
+def restore_legacy_analysis(record, cached, config):
+    if (not config.get('api_safety') or not cached or record.get('analysis_hash')
+            or clean_text(cached.get('title')) != clean_text(record.get('title'))
+            or not cached.get('title_zh') or not cached.get('summary_zh')):
+        return
+    for field in ('score', 'reason', 'tags', 'title_zh', 'summary_zh', 'insight_zh'):
+        record[field] = cached.get(field, record.get(field))
+    record['content_hash'] = _content_hash(record, config)
+    record['analysis_hash'] = 'legacy-frozen:' + record['content_hash']
+
+
 def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, Any]) -> str:
+    if config.get('api_safety') and (config.get('_paid_disabled') or not config.get('_budget')):
+        return 'disabled:cost-safety'
     api_key = os.environ.get("DEEPSEEK_API_KEY")
     if not api_key:
         return "disabled:no-secret"
-    pending = [key for key in keys if store.data["papers"][key].get("analysis_hash") != _analysis_hash(store.data["papers"][key], config)]
+    budget = config.get('_budget')
+    pending = [key for key in keys if not analysis_complete(store.data['papers'][key], config)
+               and (not budget or budget.eligible(store.data['papers'][key]))]
     if not pending:
-        return "cached"
+        return ('cached' if all(analysis_complete(store.data['papers'][key], config) for key in keys)
+                else 'deferred:not-enrolled-or-attempt-limit')
     settings = config.get("llm", {})
     batch_size = max(1, min(int(settings.get("batch_size", 10)), 20))
+    if budget:
+        batch_size = min(batch_size, 3)
     batches = [pending[offset : offset + batch_size] for offset in range(0, len(pending), batch_size)]
     workers = max(1, min(int(settings.get("workers", 1)), 16, len(batches)))
+    if budget:
+        workers = 1
     completed = 0
     failures = 0
 
@@ -607,6 +645,8 @@ def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, 
             },
             ensure_ascii=False,
         ).encode("utf-8")
+        if budget and not budget.reserve(batch, body, int(settings.get('max_tokens', 4096))):
+            return batch, None
         try:
             response = json.loads(
                 _request(
@@ -616,10 +656,15 @@ def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, 
                     timeout=120,
                 ).decode("utf-8")
             )
+            if budget:
+                budget.response(response)
             text = response["choices"][0]["message"]["content"].strip()
             text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text, flags=re.IGNORECASE)
             results = json.loads(text)
-        except (KeyError, TypeError, ValueError, OSError, urllib.error.URLError):
+        except (KeyError, TypeError, ValueError, OSError, urllib.error.URLError) as error:
+            if budget:
+                budget.active['error_type'] = type(error).__name__
+                budget.finish([], 'failed-or-unknown-no-automatic-retry')
             return batch, None
         return batch, results if isinstance(results, list) else None
 
@@ -632,6 +677,8 @@ def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, 
     try:
         for batch_index, (batch, results) in enumerate(responses, 1):
             if results is None:
+                if budget and budget.active:
+                    budget.finish([], 'invalid-result')
                 failures += 1
                 continue
             by_id = {item.get("id"): item for item in results if isinstance(item, dict)}
@@ -657,19 +704,22 @@ def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, 
                 record["insight_zh"] = clean_text(item.get("insight_zh"))
                 record["analysis_hash"] = _analysis_hash(record, config)
                 completed += 1
+            if budget:
+                budget.finish([store.data['papers'][key] for key in batch], 'processed')
             print(
                 f"[info] deepseek batch={batch_index}/{len(batches)} completed={completed}/{len(pending)}"
             )
     finally:
         if workers > 1:
             executor.shutdown(wait=True)
-    return f"ok:{completed}" if not failures else f"partial:{completed}/{len(pending)};failed-batches:{failures}"
+    return f"ok:{completed}" if completed == len(pending) else f"partial:{completed}/{len(pending)};failed-or-deferred-batches:{failures}"
 
 
 def prune_unselected(store: PaperStore, config: dict[str, Any], now: dt.datetime) -> int:
     maximum = max(0, int(config.get("state", {}).get("max_unselected_papers", 2500)))
     unselected = [
         (key, record) for key, record in store.data["papers"].items() if not record.get("digest_dates")
+        and not (config.get('api_safety') and record.get('billing_eligible') and not record.get('analysis_hash'))
     ]
     unselected.sort(key=lambda item: item[1].get("last_seen", ""), reverse=True)
     remove = unselected[maximum:] if maximum else unselected
@@ -897,6 +947,8 @@ def select_papers(
     *,
     candidate_keys: Iterable[str] | None = None,
 ) -> list[str]:
+    if config.get('_budget'):
+        config['_budget'].queue(store.data['papers'].values(), config.get('_billing_stream', 'research'))
     existing = list(dict.fromkeys(store.data.get("digests", {}).get(day, {}).get("paper_keys", [])))
     maximum = int(config.get("selection", {}).get("max_papers_per_day", 10))
     available = max(0, maximum - len(existing))
@@ -913,7 +965,7 @@ def select_papers(
         if record.get("digest_dates"):
             continue
         paper = record_as_paper(record)
-        if record.get("analysis_hash") != _analysis_hash(record, config):
+        if not analysis_complete(record, config):
             score, tags, reason = keyword_score(paper, config)
             record["score"], record["tags"], record["reason"] = score, tags, reason
         candidates.append(key)
@@ -923,10 +975,12 @@ def select_papers(
     )
     pending = [
         key for key in candidates
-        if store.data["papers"][key].get("analysis_hash") != _analysis_hash(store.data["papers"][key], config)
+        if not analysis_complete(store.data['papers'][key], config)
     ]
     matcher = config.get('_library_matcher')
-    if matcher and pending:
+    if config.get('_budget'):
+        pending = [key for key in pending if config['_budget'].eligible(store.data['papers'][key])]
+    if matcher and pending and not config.get('_paid_disabled'):
         records = [store.data['papers'][key] for key in pending]
         try:
             matcher.match(records)
@@ -954,8 +1008,8 @@ def select_papers(
     minimum = int(config.get("selection", {}).get("min_score", 45))
     additions = [key for key in candidates
                  if store.data["papers"][key].get("score", 0) >= minimum
-                 and (not matcher or store.data['papers'][key].get('analysis_hash')
-                      == _analysis_hash(store.data['papers'][key], config))][:available]
+                 and (not (matcher or config.get('api_safety')) or
+                      analysis_complete(store.data['papers'][key], config))][:available]
     return [*existing, *additions]
 
 
@@ -1008,7 +1062,7 @@ def _email_runtime_config(config: dict[str, Any]) -> dict[str, Any]:
 
 def _email_analysis_stats(store: PaperStore, keys: list[str], config: dict[str, Any]) -> dict[str, int]:
     records = [store.data["papers"][key] for key in dict.fromkeys(keys) if key in store.data["papers"]]
-    analyzed = [record for record in records if record.get("analysis_hash") == _analysis_hash(record, config)]
+    analyzed = [record for record in records if analysis_complete(record, config)]
     scores = [int(record.get("score", 0)) for record in analyzed]
     return {
         "total": len(records),
@@ -1099,8 +1153,11 @@ def run_email_only(
     config = json.loads(config_path.read_text(encoding="utf-8"))
     if not offline:
         prepare_library(config)
+        prepare_budget(config)
     email_config = _email_runtime_config(config)
+    email_config['_billing_stream'] = 'email'
     store = PaperStore.load(state_path)
+    migrate_analysis(store, email_config)
     now = now or dt.datetime.now(UTC)
     base_url = config["base_url"].rstrip("/")
 
@@ -1132,15 +1189,23 @@ def run_email_only(
     grouped: dict[str, dict[str, Any]] = {}
     seen_at = now.astimezone(UTC).isoformat()
     for delivery in deliveries:
+        if config.get('api_safety') and delivery.received_day < config['api_safety']['new_papers_from']:
+            continue
         group = grouped.setdefault(delivery.received_day, {"keys": [], "hashes": [], "messages": 0, "papers": 0})
         group["hashes"].append(delivery.message_hash)
         group["messages"] += 1
         group["papers"] += len(delivery.papers)
         for paper in delivery.papers:
+            before = set(store.data['papers'])
             key = store.upsert(paper, now=seen_at)
             record = store.data["papers"][key]
+            if config.get('api_safety') and key not in before:
+                record['billing_eligible'] = True
+            if config.get('_budget'):
+                config['_budget'].restore([record])
             record["email_days"] = list(dict.fromkeys([*record.get("email_days", []), delivery.received_day]))
             cached = archived_analysis.get(key)
+            restore_legacy_analysis(record, cached, email_config)
             if cached and cached.get('content_hash') == _content_hash(record, email_config):
                 for name in ('title_zh', 'summary_zh', 'content_hash'):
                     record[name] = cached.get(name, record.get(name))
@@ -1152,6 +1217,12 @@ def run_email_only(
             group["keys"].append(key)
 
     successful_hashes: list[str] = []
+    if config.get('api_safety'):
+        # Deferred papers stay queued even after their email leaves the last-ten window.
+        for record in store.data['papers'].values():
+            if record.get('billing_eligible') and not record.get('analysis_hash'):
+                for day in record.get('email_days', []):
+                    grouped.setdefault(day, {'keys': [], 'hashes': [], 'messages': 0, 'papers': 0})
     for day, group in sorted(grouped.items()):
         day_keys = [
             key for key, record in store.data["papers"].items()
@@ -1200,7 +1271,9 @@ def run(config_path: Path, state_path: Path, output_dir: Path, *, offline: bool 
     config = json.loads(config_path.read_text(encoding="utf-8"))
     if not offline:
         prepare_library(config)
+        prepare_budget(config)
     store = PaperStore.load(state_path)
+    migrate_analysis(store, config)
     now = now or dt.datetime.now(UTC)
     local_now = now.astimezone(dt.timezone(dt.timedelta(hours=8)))
     day = local_now.date().isoformat()
@@ -1246,8 +1319,15 @@ def run(config_path: Path, state_path: Path, output_dir: Path, *, offline: bool 
         statuses["arxiv-email"] = f"error:{type(error).__name__}"
 
     seen_at = now.astimezone(UTC).isoformat()
+    archived_analysis = load_email_analysis_cache(output_dir / 'arxiv-email-analysis') if config.get('api_safety') else {}
     for paper in papers:
-        store.upsert(paper, now=seen_at)
+        before = set(store.data['papers'])
+        key = store.upsert(paper, now=seen_at)
+        if config.get('api_safety') and key not in before:
+            store.data['papers'][key]['billing_eligible'] = True
+        if config.get('_budget'):
+            config['_budget'].restore([store.data['papers'][key]])
+        restore_legacy_analysis(store.data['papers'][key], archived_analysis.get(key), config)
     selected = select_papers(store, config, day)
     statuses["deepseek"] = store.data.get("runtime", {}).get("llm_status", "not-run")
     digest = build_daily_record(store, day, selected, statuses)

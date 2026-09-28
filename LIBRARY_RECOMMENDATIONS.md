@@ -26,7 +26,7 @@ requiring a custom base directory currently fall back to metadata/title.
 5. Research preselection blends keyword score and cosine similarity equally
    (50 points each) before its existing 30-candidate LLM limit. QQ-mail mode
    still analyzes all collected candidates, selecting up to 30 per email day.
-6. Library changes invalidate relevance, not valid translation/summary caches.
+6. Completed relevance and translation/summary caches are frozen by default.
    Failed LLM analyses cannot qualify on keyword score alone in enhanced mode.
 
 Independent journal/conference feeds, original RSS URLs, receipt-day grouping,
@@ -49,3 +49,37 @@ decrypted library data in public Actions caches or Pages artifacts.
 
 Existing historical digests are not rebuilt merely because the profile changes.
 The change applies to candidates processed in subsequent successful runs.
+
+## Paid-analysis safety (2026-09-28)
+
+Paid analysis is OFF until a budget is approved. Both `api_safety.paid_enabled`
+and repository variable `RSS_PAID_ANALYSIS_ALLOWED=true` are required. Ordinary
+RSS collection/publishing can run with both disabled and makes no DeepSeek calls.
+
+Completed scores are frozen regardless of library, prompt, model or metadata
+changes. Existing library contents still inform each NEW analysis. Legacy title
+translations/summaries are reused; historical unprocessed records are not silently
+enrolled for paid backfill. QQ email enrollment starts on 2026-09-29. Historical
+rescoring/backfill requires a separate explicitly reviewed operation.
+
+The two recommendation streams share an encrypted journal on branch
+`rss-analysis-ledger`, separate from `main`. A reservation is committed BEFORE
+each API call; results, provider request ID, usage and finish reason are committed
+afterward. Git publishing failures cannot erase this checkpoint. Missing journal
+credentials, failed persistence or a concurrent-write conflict fail closed.
+An interrupted reservation remains consumed; ambiguous calls are never silently
+retried. Library plaintext/excerpts are not stored in the journal.
+
+Provisional limits (inactive while paused): 10 requests per Beijing calendar day,
+3 papers per request, and 100,000 reserved workload units (UTF-8 request bytes plus
+maximum output tokens). This is NOT an exact token count or a yuan budget. Attempts
+are limited to ONE per paper by default, shared across both streams and runs.
+The API runs serially to make reservations and checkpoints unambiguous. Deferred
+papers remain queued; reaching the quota does not delete them. Failed/ambiguous
+papers require manual review before any further paid retry. High-volume email
+days will create a backlog under these conservative limits.
+
+Only real provider `usage` values are usage telemetry; pre-request reservations
+remain charged against the local quota even if the provider outcome is unknown.
+Never interpret missing usage as zero cost. The journal is encrypted and is not
+copied into public Pages artifacts. There are no automatic DeepSeek test calls.
