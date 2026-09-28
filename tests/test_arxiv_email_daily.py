@@ -7,7 +7,8 @@ from unittest.mock import patch, Mock
 import xml.etree.ElementTree as ET
 
 from arxiv_email_daily import add_delivery, run, write_outputs
-from research_rss import EmailDelivery, Paper, PaperStore, fetch_arxiv_email_deliveries
+from research_rss import (EmailDelivery, Paper, PaperStore, fetch_arxiv_email_deliveries,
+                          _write_email_only_outputs, build_daily_record)
 
 
 class EmailDailyTests(unittest.TestCase):
@@ -28,12 +29,16 @@ class EmailDailyTests(unittest.TestCase):
             write_outputs(state,root,'https://example.test')
             items=ET.parse(root/'arxiv-email-daily.xml').findall('./channel/item')
             self.assertEqual(len(items),1)
+            self.assertIn('| 1001 ',items[0].findtext('title'))
             self.assertEqual(items[0].findtext('guid'),'arxiv-email-daily:2026-09-28')
             body=items[0].findtext('description')
             self.assertEqual(body.count('<article>'),1001)
             self.assertIn(' END',body)
             self.assertNotIn('/100',body)
             self.assertNotIn('DeepSeek',body)
+            archive=json.loads((root/'arxiv-email-archive/2026-09-28.json').read_text('utf-8'))
+            self.assertEqual(len(archive['papers']),1001)
+            self.assertTrue(items[0].findtext('link').endswith('/arxiv-email-archive/2026-09-28.html'))
 
     def test_same_day_dedup_and_stable_repeated_fetch(self):
         state=self.state()
@@ -96,6 +101,34 @@ class EmailDailyTests(unittest.TestCase):
         self.assertNotIn('DEEPSEEK_API_KEY',workflow)
         self.assertNotIn('ZOTERO_LIBRARY_KEY',workflow)
         self.assertIn('python arxiv_email_daily.py',workflow)
+
+    @patch.dict(os.environ, {'ARXIV_EMAIL_ADDRESS':'test@example.test','ARXIV_EMAIL_AUTH_CODE':'test'})
+    def test_mailbox_filters_old_results_even_when_server_ignores_since(self):
+        connection=Mock()
+        connection.search.return_value=('OK',[b'1'])
+        connection.fetch.return_value=('OK',[(b'1 (INTERNALDATE "20-Aug-2026 09:00:00 +0800")',
+            b'Message-ID: <old>\n\nbody')])
+        with patch('research_rss.imaplib.IMAP4_SSL',return_value=connection), \
+             patch('research_rss.parse_arxiv_email') as parse:
+            deliveries,_=fetch_arxiv_email_deliveries(PaperStore.empty(),
+                {'sources':{'email':{'since':'2026-09-01'}}},max_emails=0)
+        self.assertEqual(deliveries,[])
+        parse.assert_not_called()
+
+    def test_legacy_selected_count_does_not_link_to_full_analysis(self):
+        store=PaperStore.empty()
+        selected=store.upsert(self.paper(1))
+        store.upsert(self.paper(2))
+        store.data['digests']['2026-09-28']=build_daily_record(
+            store,'2026-09-28',[selected],{},guid_prefix='arxiv-email-daily')
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            _write_email_only_outputs(store,root,'https://example.test')
+            item=ET.parse(root/'arxiv-email-daily.xml').find('./channel/item')
+            self.assertIn('| 1 ',item.findtext('title'))
+            self.assertTrue(item.findtext('link').endswith('/arxiv-email-archive/2026-09-28.html'))
+            linked=json.loads((root/'arxiv-email-archive/2026-09-28.json').read_text('utf-8'))
+            self.assertEqual(len(linked['papers']),1)
 
 
 if __name__ == '__main__':

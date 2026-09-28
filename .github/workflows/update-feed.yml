@@ -3,6 +3,10 @@ name: Update and deploy RSS feed
 on:
   workflow_dispatch:
     inputs:
+      publish_only:
+        description: Deploy saved feeds without fetching sources
+        type: boolean
+        default: false
       conference_only:
         description: Only refresh conference feeds; keep existing journal and email feeds
         type: boolean
@@ -60,7 +64,7 @@ jobs:
 
       - name: Generate unfiltered QQ arXiv email daily records
         id: mailbox
-        if: inputs.conference_only != true
+        if: inputs.conference_only != true && inputs.publish_only != true
         continue-on-error: true
         env:
           ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
@@ -72,10 +76,11 @@ jobs:
         run: echo "::warning::QQ mailbox collection failed. Existing email RSS files are retained; other feeds will still deploy."
 
       - name: Generate official feed mirrors
+        if: inputs.publish_only != true
         run: python official_feed_proxy.py
 
       - name: Generate feed
-        if: inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
+        if: inputs.publish_only != true && inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
         run: >
           python journal_rss_aggregator.py
           --start-year 2020
@@ -87,6 +92,7 @@ jobs:
         run: python -m zipfile -e conference-feed-fallback.zip .
 
       - name: Generate conference feeds
+        if: inputs.publish_only != true
         run: python conference_rss.py
 
       - name: Remove previously read Zotero items

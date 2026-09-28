@@ -523,13 +523,16 @@ def fetch_arxiv_email_deliveries(
             if status != "OK" or not values or not isinstance(values[0], tuple):
                 continue
             message = email_module.message_from_bytes(values[0][1])
+            received_day = _email_received_day(message, now, imap_received_datetime(values[0][0]))
+            if settings.get('since') and received_day < settings['since']:
+                continue
             message_id = message.get("Message-ID") or hashlib.sha256(values[0][1]).hexdigest()
             digest = hashlib.sha256(message_id.encode("utf-8", errors="replace")).hexdigest()
             if digest in known:
                 continue
             deliveries.append(
                 EmailDelivery(
-                    received_day=_email_received_day(message, now, imap_received_datetime(values[0][0])),
+                    received_day=received_day,
                     message_hash=digest,
                     papers=parse_arxiv_email(_email_text(message)),
                 )
@@ -1040,7 +1043,7 @@ def _write_email_only_outputs(store: PaperStore, output_dir: Path, base_url: str
         title="QQ 邮箱 arXiv 每日速递",
         description="仅记录 QQ 邮箱 arXiv 推送邮件的每日筛选结果",
         item_title="QQ 邮箱 arXiv 每日速递",
-        archive_path="arxiv-email-analysis",
+        archive_path="arxiv-email-archive",
     )
     write_daily_archive(
         store,

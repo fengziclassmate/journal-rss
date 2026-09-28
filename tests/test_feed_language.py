@@ -210,7 +210,13 @@ class FeedLanguageTests(unittest.TestCase):
 
         self.assertIn('cron: "30 6 * * 1-5"', workflow)
         conference_step = workflow.split('- name: Generate conference feeds', 1)[1].split('- name:', 1)[0]
-        self.assertNotIn('if:', conference_step)
+        self.assertIn('if: inputs.publish_only != true', conference_step)
+        restore_step = workflow.split('- name: Restore conference fallback', 1)[1].split('- name:', 1)[0]
+        self.assertNotIn('if:', restore_step)
+        import zipfile
+        with zipfile.ZipFile('conference-feed-fallback.zip') as archive:
+            self.assertIn('conference-feeds.opml', archive.namelist())
+            self.assertTrue(any(name.startswith('conference-feeds/') for name in archive.namelist()))
 
     @mock.patch('journal_rss_aggregator.fetch_bytes')
     def test_current_issue_stops_after_all_crossref_records_are_read(self, fetch_bytes):
