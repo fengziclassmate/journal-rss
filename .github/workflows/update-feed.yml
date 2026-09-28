@@ -27,6 +27,8 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      ZOTERO_EMBEDDING_CACHE: .embedding-model-cache
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -37,10 +39,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.13"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Restore public embedding model weights
+        uses: actions/cache@v4
+        with:
+          path: .embedding-model-cache
+          key: multilingual-minilm-fastembed-0.8.1-${{ runner.os }}
 
       - name: Set conference cache key
         id: conference-cache-key
@@ -73,6 +81,7 @@ jobs:
           ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          ZOTERO_LIBRARY_KEY: ${{ secrets.ZOTERO_LIBRARY_KEY }}
           CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
         run: python research_rss.py
 
@@ -84,6 +93,7 @@ jobs:
           ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          ZOTERO_LIBRARY_KEY: ${{ secrets.ZOTERO_LIBRARY_KEY }}
         run: >
           python research_rss.py
           --email-only

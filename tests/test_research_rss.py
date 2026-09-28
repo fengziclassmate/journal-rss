@@ -231,6 +231,9 @@ class FeedOutputTests(unittest.TestCase):
                         "papers": [
                             {
                                 "key": "arxiv:2609.00001",
+                                "analysis_hash": __import__('research_rss')._analysis_hash(
+                                    {"title": cached.title, "abstract": cached.abstract},
+                                    {"research_profile": "GIS"}),
                                 "score": 95,
                                 "reason": "已缓存",
                                 "tags": ["GIS"],
