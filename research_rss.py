@@ -1141,6 +1141,9 @@ def run_email_only(
             record = store.data["papers"][key]
             record["email_days"] = list(dict.fromkeys([*record.get("email_days", []), delivery.received_day]))
             cached = archived_analysis.get(key)
+            if cached and cached.get('content_hash') == _content_hash(record, email_config):
+                for name in ('title_zh', 'summary_zh', 'content_hash'):
+                    record[name] = cached.get(name, record.get(name))
             if (cached and cached.get('analysis_hash') == _analysis_hash(record, email_config)
                     and record.get("analysis_hash") != _analysis_hash(record, email_config)):
                 for name in ("score", "reason", "tags", "title_zh", "summary_zh", "insight_zh", "content_hash"):

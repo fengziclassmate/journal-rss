@@ -97,7 +97,9 @@ def read_library(database, data_dir, pdf_cache):
                     break
         if not title and not abstract:
             continue
-        identity = plain(row['doi']).lower() or title.casefold() or row['key']
+        # Standalone PDFs often share generic names such as "Full Text".
+        identity = (plain(row['doi']).lower() or
+                    (row['key'] if row['typeName'] == 'attachment' else title.casefold()) or row['key'])
         if identity in seen:
             continue
         seen.add(identity)
