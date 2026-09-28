@@ -188,12 +188,13 @@ class IdentityAndScoringTests(unittest.TestCase):
         config = {
             "research_profile": "GIS",
             "llm": {"batch_size": 10, "max_tokens": 4096, "workers": 3},
+            "_budget": mock.Mock(),
         }
 
         status = analyze_with_deepseek(store, keys, config)
 
         self.assertEqual(status, "ok:21")
-        self.assertEqual(sorted(batch_sizes), [1, 10, 10])
+        self.assertEqual(sorted(batch_sizes), [3] * 7)
         self.assertTrue(all(store.data["papers"][key]["title_zh"] for key in keys))
 
 

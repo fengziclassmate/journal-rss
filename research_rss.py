@@ -582,7 +582,7 @@ def restore_legacy_analysis(record, cached, config):
 
 
 def analyze_with_deepseek(store: PaperStore, keys: list[str], config: dict[str, Any]) -> str:
-    if config.get('api_safety') and (config.get('_paid_disabled') or not config.get('_budget')):
+    if config.get('_paid_disabled') or not config.get('_budget'):
         return 'disabled:cost-safety'
     api_key = os.environ.get("DEEPSEEK_API_KEY")
     if not api_key:

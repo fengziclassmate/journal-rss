@@ -4,7 +4,7 @@ import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 
 import numpy as np
 from research_rss import Paper, PaperStore, _analysis_hash, _content_hash, analyze_with_deepseek, select_papers
@@ -68,7 +68,7 @@ class LibraryTests(unittest.TestCase):
         store = PaperStore.empty()
         key = store.upsert(Paper('test','1','Paper','https://example.test'), now='2026-09-28')
         r = store.data['papers'][key]
-        config = {'_library_version':'new'}
+        config = {'_library_version':'new', '_budget':Mock()}
         r.update(title_zh='translation', summary_zh='summary', content_hash=_content_hash(r, config))
         answer = dict(choices=[dict(message=dict(content=json.dumps([
             dict(id=key,relevance_score=80,tags=[],reason_zh='relevant',insight_zh='inference')])) )])

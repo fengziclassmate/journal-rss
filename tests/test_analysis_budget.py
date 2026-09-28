@@ -122,6 +122,12 @@ class BudgetTests(unittest.TestCase):
             self.assertEqual(analyze_with_deepseek(self.store,[self.key],config),'disabled:cost-safety')
         request.assert_not_called()
 
+    @patch.dict(os.environ, {'DEEPSEEK_API_KEY':'test'})
+    def test_old_configuration_cannot_bypass_billing_guard(self):
+        with patch('research_rss._request') as request:
+            self.assertEqual(analyze_with_deepseek(self.store,[self.key],{}),'disabled:cost-safety')
+        request.assert_not_called()
+
     def test_historical_email_is_not_enrolled_and_paid_off_stays_off(self):
         old=Paper('arxiv-email','2609.00001','Old','https://arxiv.org/abs/2609.00001')
         new=Paper('arxiv-email','2609.00002','New','https://arxiv.org/abs/2609.00002')

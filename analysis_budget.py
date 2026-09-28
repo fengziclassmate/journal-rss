@@ -19,6 +19,7 @@ class GitHubJournal:
         self.token = os.environ['GH_TOKEN']
         self.cipher = Fernet(os.environ['ZOTERO_LIBRARY_KEY'].encode())
         self.sha = None
+        self.new_branch = False
         try:
             self.api(f'git/ref/heads/{self.branch}')
         except urllib.error.HTTPError as error:
@@ -26,6 +27,7 @@ class GitHubJournal:
                 raise
             head = self.api('git/ref/heads/main')['object']['sha']
             self.api('git/refs', {'ref': f'refs/heads/{self.branch}', 'sha': head}, 'POST')
+            self.new_branch = True
 
     def api(self, path, body=None, method='GET'):
         request = urllib.request.Request(
@@ -40,7 +42,7 @@ class GitHubJournal:
         try:
             item = self.api(f'contents/{self.path}?ref={self.branch}')
         except urllib.error.HTTPError as error:
-            if error.code == 404:
+            if error.code == 404 and self.new_branch:
                 return {'version': 1, 'days': {}, 'papers': {}, 'requests': []}
             raise
         self.sha = item['sha']
@@ -63,6 +65,7 @@ class GitHubJournal:
         # A conflict or network error must stop paid processing, not retry blindly.
         result = self.api(f'contents/{self.path}', body, 'PUT')
         self.sha = result['content']['sha']
+        self.new_branch = False
 
 
 class Budget:
@@ -131,7 +134,7 @@ class Budget:
 
     def response(self, response):
         self.active.update(usage=response.get('usage', {}), response_id=response.get('id'),
-                           finish_reason=response.get('choices', [{}])[0].get('finish_reason'))
+                           finish_reason=(response.get('choices') or [{}])[0].get('finish_reason'))
 
     def finish(self, records, status):
         fields = ('score', 'reason', 'tags', 'title_zh', 'summary_zh', 'insight_zh',
