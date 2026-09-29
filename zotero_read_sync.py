@@ -181,9 +181,17 @@ def _git(repo: Path, *args: str, check: bool = True) -> subprocess.CompletedProc
 
 
 def push_suppression(repo: Path, suppression: Path, new_hashes: int) -> str:
-    if new_hashes == 0:
-        return "unchanged"
     relative = suppression.resolve().relative_to(repo.resolve())
+    ahead = _git(repo, 'rev-list', '--count', 'origin/main..HEAD').stdout.strip()
+    if ahead and int(ahead):
+        changed = set(_git(repo, 'diff', '--name-only', 'origin/main', 'HEAD').stdout.splitlines())
+        if changed != {relative.as_posix()}:
+            raise RuntimeError('Unpublished non-reading commits exist; refusing to push unrelated changes')
+    if new_hashes == 0:
+        if ahead and int(ahead):
+            _git(repo, 'push', 'origin', 'HEAD:main')
+            return 'pushed-pending'
+        return "unchanged"
     _git(repo, "add", "--", str(relative))
     committed = _git(
         repo,

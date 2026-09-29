@@ -13,6 +13,8 @@ from rss_read_filter import filter_feed, hash_tokens, identity_tokens, write_rec
 from zotero_cleanup import eligible, BASE, verify_published_feeds, main as cleanup_main
 from rss_read_filter import key_id, suppression_digest
 from journal_rss_aggregator import FeedItem, filter_official_duplicates
+from zotero_read_sync import push_suppression
+from types import SimpleNamespace
 
 
 class OperationsTests(unittest.TestCase):
@@ -157,6 +159,20 @@ class OperationsTests(unittest.TestCase):
         self.assertIn("set(changed) <= {'read-suppression.json'}",value)
         self.assertNotIn('DEEPSEEK_API_KEY',value)
         self.assertIn('write_receipt()',value)
+
+    def test_retry_pushes_pending_read_history_without_new_reads(self):
+        with patch('zotero_read_sync._git',side_effect=[SimpleNamespace(stdout='1'),
+                SimpleNamespace(stdout='read-suppression.json\n'),SimpleNamespace(stdout='')]) as git:
+            result=push_suppression(self.root,self.root/'read-suppression.json',0)
+        self.assertEqual(result,'pushed-pending')
+        self.assertEqual(git.call_args.args[1:],('push','origin','HEAD:main'))
+
+    def test_read_sync_does_not_publish_unrelated_pending_commits(self):
+        with patch('zotero_read_sync._git',side_effect=[SimpleNamespace(stdout='1'),
+                SimpleNamespace(stdout='unrelated.py\n')]) as git:
+            with self.assertRaises(RuntimeError):
+                push_suppression(self.root,self.root/'read-suppression.json',0)
+        self.assertEqual(git.call_count,2)
 
 
 if __name__=='__main__':unittest.main()
