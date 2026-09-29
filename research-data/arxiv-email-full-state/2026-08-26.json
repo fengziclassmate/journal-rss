@@ -1,0 +1,805 @@
+{
+  "papers": {
+    "arxiv:2608.08882": {
+      "title": "Epistemic Transfer in AI-Assisted Verification: A Framework and Evaluation Protocol",
+      "url": "https://arxiv.org/abs/2608.08882",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Christoph Trattner"
+      ],
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": ""
+    },
+    "arxiv:2608.19914": {
+      "title": "Multi-Source Wasserstein Distributionally Robust Graph Learning",
+      "url": "https://arxiv.org/abs/2608.19914",
+      "abstract": "Network topology inference from graph signals is central to graph signal processing with applications in neuroscience, sensor, and social networks. In practice, target-domain samples are scarce while heterogeneous source-domain data are abundant. Fusing these sources is challenging: Euclidean averaging works for homogeneous sources but degrades sharply as inter-source divergence grows, collapsing distinct geometries into an inflated, biased consensus. We exploit the Wasserstein metric's distribution-preserving properties to counter heterogeneity while preserving each source's intrinsic geometry. We propose MS-WDRO, a multi-source Wasserstein distributionally robust graph learning framework that fuses heterogeneous sources via their weighted Wasserstein barycenter, a geometrically principled nominal distribution, then builds an ambiguity ball around it to hedge residual uncertainty. Minimizing worst-case risk yields a tractable regularized Laplacian estimator solved efficiently via a provably convergent ADMM scheme. We establish non-asymptotic guarantees: a finite-sample concentration bound for the empirical barycenter, a pooling bias lower bound proving naive aggregation is suboptimal, and an out-of-sample excess risk bound decaying at a parametric rate with only logarithmic dependence on source count. To calibrate hyperparameters governing robustness, sparsity, and source fusion, we unroll the solver into a differentiable architecture trained end-to-end, achieving data-adaptive calibration beyond cross-validation while retaining interpretability. Experiments on synthetic benchmarks and the multi-site ABIDE~I neuroimaging dataset show MS-WDRO consistently outperforms seven baselines in graph recovery, sample efficiency, and downstream diagnostic utility, with the largest gains in the sample-scarce regime.",
+      "authors": [
+        "Chuansen Peng",
+        "Yifan Xia",
+        "Jinshan Zhong",
+        "and Xiaojing Shen"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-20T11:30:59+00:00"
+    },
+    "arxiv:2608.21114": {
+      "title": "CIVA: Critic-Induced Value-Subspace Attacks on Visual World-Model Agents",
+      "url": "https://arxiv.org/abs/2608.21114",
+      "abstract": "Visual world-model agents such as DreamerV3 act through a recurrent latent state rather than a single observation, which weakens frame-wise observation attacks and makes their perturbations vary sharply over time under a strict per-frame perturbation constraint. We study white-box, causal, online attacks on such agents and propose Critic-Induced Value-Subspace Attacks (\\textbf{CIVA}). Our key observation is that, along a rollout, critic-guided perturbations concentrate in a low-dimensional subspace induced by the victim's own critic. Based on this observation, CIVA first probes the frozen victim offline with critic-guided PGD and extracts a low-rank value-subspace by SVD. At test time, it optimizes only the subspace coefficients, smooths them with an exponential moving average (EMA), and maps them back to pixels. This design attacks value-sensitive recurrent dynamics while keeping the online optimization cheap and temporally coherent. Extensive experiments on DMC walker walk, Atari Pong, and Crafter show that CIVA consistently outperforms five recent methods; on DMC walker walk, it achieves the largest reward drop of 26.07\\% while keeping temporal variation low, with TempAbs of 0.646.",
+      "authors": [
+        "Jiancheng Wang",
+        "Mingli Zhu",
+        "Tong Zhang",
+        "Jiaqi Ruan",
+        "Wei Wang",
+        "Siyuan Liang",
+        "Dacheng Tao"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-21T13:58:56+00:00"
+    },
+    "arxiv:2608.21334": {
+      "title": "Across-Design Uncertainty in Short Pricing Panels: Inference and Identification",
+      "url": "https://arxiv.org/abs/2608.21334",
+      "abstract": "Short observational pricing panels can contain many observations while offering only a small number of distinct price movements. This paper studies the inferential consequences of that distinction in a synthetic data-generating process calibrated to a sparse pricing regime. We separate uncertainty conditional on a realised price trajectory from variation in estimation error across alternative trajectories generated by the same pricing process. In the baseline simulations, the latter component accounts for 97.6% of the variance of estimation error for the gradient-boosted specification. Within-panel resampling procedures use the information of one realised trajectory and do not identify this across-design component. Three results organise the analysis. First, across-design dispersion is well described by the empirical relation sigma_hat approx 0.182 V^(-0.271), where V equals moves times magnitude squared. Second, adding regions sharing a common price path reduces outcome noise but does not create independent price trajectories; conversely, averaging across units with independent design-specific errors reduces dispersion at the standard square root rate. Third, a Paule-Mandel variance component estimated across independently priced units substantially increases empirical coverage in homogeneous simulations, from 0.469 to 0.931. The broader implication is a shift toward designing data-generating processes that create independent identifying variation rather than relying solely on fixed passive panels.",
+      "authors": [
+        "Pedro Cadahia Delgado"
+      ],
+      "categories": [
+        "cs.LG",
+        "econ.EM"
+      ],
+      "doi": "",
+      "published": "2026-08-21T17:40:31+00:00"
+    },
+    "arxiv:2608.23200": {
+      "title": "LongWoF-Bench: Evaluating EvoMap Genes for Verifiable Long-Workflow Tasks",
+      "url": "https://arxiv.org/abs/2608.23200",
+      "abstract": "Large language models are increasingly expected to execute complex workflows whose success depends on maintaining interdependent constraints and producing artifacts that satisfy strict end-to-end verification. Yet successful execution experience is typically lost after a single run, forcing subsequent models to rediscover strategies and failure modes from scratch. We study whether such experience can instead be externalized and reused through EvoMap, where verifier-confirmed execution trajectories are consolidated into structured Gene. To evaluate this setting, we introduce the Long-Workflow Benchmark (LongWoF-Bench), comprising 778 machine-verifiable tasks across code generation, agent-environment synthesis, mathematical reasoning, and rule following. On the 252 tasks with verifier-confirmed Opus trajectories, evolved EvoMap Gene outperform Skill across all seven evaluated models by 8.7-15.5 percentage points, with the gains extending to consumer models from different model families. In contrast, reference-distilled Gene do not exhibit the same advantage, indicating that compact representation alone is insufficient and that Gene utility is closely associated with verified experience provenance. For Claude Opus, Gene reuse also completes 39 more tasks than Skill while reducing solve-time token consumption by 9.9%. Together, these results show that verified execution experience can be retained and shared as a reusable external resource, enabling models to improve long-workflow completion without repeatedly paying the full cost of experience discovery.",
+      "authors": [
+        "Xiao Zhang",
+        "Qumeng Sun",
+        "Jiahao Li",
+        "Xiang Liu",
+        "Bruno",
+        "Haoyang Zhang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": "",
+      "published": "2026-08-24T12:50:16+00:00"
+    },
+    "arxiv:2608.23474": {
+      "title": "What's the Catch? Evaluating Temporal Consistency in Vision-Language Models",
+      "url": "https://arxiv.org/abs/2608.23474",
+      "abstract": "Vision-language models (VLMs) achieve strong performance on video and image-sequence benchmarks, yet it remains unclear whether they capture temporal structure. To study this question, we formulate temporal grounding as an anomaly detection problem, providing a simple and controlled evaluation that directly tests sensitivity to temporal consistency. We introduce TimeCatch, where temporal anomalies are created by swapping consecutive frames and frame-level anomalies by replacing a frame with Gaussian noise. Models are evaluated on anomaly detection and localization tasks across four synthetic and real-world datasets, alongside a human study. Our evaluation reveals a substantial gap between frame-level and temporal anomaly detection. While VLMs consistently detect frame-level anomalies and often localize them accurately, they perform near chance on temporal anomaly detection and only modestly above chance on localization. Humans, in contrast, achieve near-ceiling performance on both tasks. Additional analyses across model scales, prompting strategies, sequence lengths, and visual similarity suggest that these failures cannot be explained solely by limitations in perception or model capacity. Together, these findings indicate that current VLMs can identify anomalies within individual frames but struggle to integrate information across frames to reason about temporal consistency. TimeCatch provides a controlled benchmark for evaluating temporal grounding in vision-language models.",
+      "authors": [
+        "Marek Hradil",
+        "Danae S\\'anchez Villegas"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-24T16:40:49+00:00"
+    },
+    "arxiv:2608.22821": {
+      "title": "SiZeUp: Fast 3D Proxy from Aerial Images via Depth Ordinal Loss",
+      "url": "https://arxiv.org/abs/2608.22821",
+      "abstract": "We present SiZeUp, a fast and scalable approach for constructing large-scale 3D urban proxy models directly from calibrated oblique aerial imagery. Our method adopts a height-from-footprint representation, reducing 3D building abstraction to a low-dimensional optimization problem in which building footprints are extruded by a single height parameter. To enable efficient and robust height estimation, we introduce an ordinal depth consistency loss that enforces agreement between the relative depth ordering of rendered proxies and depth priors predicted by a monocular depth model. This is realized through a differentiable renderer that maps parametric building proxies into multi-view depth images, allowing gradients to be propagated from depth supervision to building heights. Our ordinal formulation produces stable optimization in practice and avoids explicit feature matching or dense point cloud reconstruction. Rather than relying on metric depth, which can be unreliable under monocular scale ambiguity, our ordinal depth consistency loss operates on relative depths, providing a more reliable signal across views. Combined with an efficient dynamic view selection, our approach achieves a 23-52$\\times$ speedup over state-of-the-art proxy reconstruction pipelines while maintaining comparable proxy-level coverage and volume consistency, making it well suited for large-scale urban modeling tasks.",
+      "authors": [
+        "Wenjun Zhou",
+        "Yunshan Li",
+        "Qiaoyu Zhu",
+        "Weidan Xiong",
+        "Hao Zhang",
+        "Daniel Cohen-Or",
+        "Hui Huang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-24T05:37:34+00:00"
+    },
+    "arxiv:2608.23206": {
+      "title": "Learning Spherical Occupancy Profiles for Multi-View 3D Reconstruction and Generation",
+      "url": "https://arxiv.org/abs/2608.23206",
+      "abstract": "We study spherical occupancy profiles-the ray-wise occupancy probability profiles P(r) = T(r) o(r) distilled from multi-view 3D Gaussian reconstructions-as a unified intermediate representation for both discriminative and generative 3D reconstruction from images. On a 999-object subset of Google Scanned Objects with 48 turntable views each, we train (i) a discriminative per-ray decoder that injects global view-averaged and ray-specific image evidence into a FiLM-conditioned profile head, reaching median soft depth error 0.035 (normalized) on an independent 90-object test split, and (ii) a generative pipeline built on a profile VAE and a latent diffusion model, which supports unconditional sampling that matches the reconstruction manifold and image-conditioned multi-solution reconstruction whose per-object solution spread is quantifiable and tunable via classifier-free guidance. We further analyze the morphology of predicted profiles: post-hoc power sharpening and a learned sharpening target both recover ground-truth profile width without degrading depth, exposing a monotonic width-peak frontier in the L1-per-ray loss family and motivating a principled redefinition of morphology gates. Real-photo validation on two DTU scenes confirms the pipeline transfers to non-synthetic input. Our results suggest that ray-wise occupancy profiles offer a compact, learned, and uncertainty-aware interface between multi-view reconstruction and generative priors.",
+      "authors": [
+        "YiHsuan Tsai"
+      ],
+      "categories": [
+        "cs.CV",
+        "https://github.com/102324988/LSOP_code_release"
+      ],
+      "doi": "",
+      "published": "2026-08-24T12:56:39+00:00"
+    },
+    "arxiv:2608.23486": {
+      "title": "GeoWAM: Visual Geometry World Action Models for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2608.23486",
+      "abstract": "World action models (WAMs) have recently gained increasing attention as a framework for jointly modeling scene evolution and ego actions in autonomous driving. Most existing WAMs learn scene dynamics in pixel space by combining a video-generation backbone for future-observation prediction with an action head for ego-trajectory prediction. Pixels, however, provide only an indirect representation of these dynamics: they entangle geometry and motion with appearance, texture, and illumination, forcing the model to infer three-dimensional transformations from two-dimensional observations. We argue that geometry, represented by point clouds, offers a more natural state space for driving because it explicitly captures spatial structure and the rigid and non-rigid transformations that govern scene evolution while directly aligning with the space in which driving actions are executed. Building on this insight, we introduce \\textbf{GeoWAM}, a visual geometry world action model for autonomous driving. Rather than predicting future images, GeoWAM is pretrained to forecast future scene geometry, yielding representations that jointly encode spatial structure and temporal evolution. A geometry-conditioned action head then leverages these learned geometric dynamics to predict future ego trajectories. Extensive open-loop and closed-loop evaluations show that visual geometry world modeling yields substantially stronger driving policies than image-based alternatives, establishing future-geometry prediction as an effective pretraining objective for autonomous driving.",
+      "authors": [
+        "Yiren Lu",
+        "Xin Ye",
+        "Jiaming Liu",
+        "Jin Yao",
+        "Yi-chung Chen",
+        "Liam Merino",
+        "Dhruva Dixith Kurra",
+        "Min Cai",
+        "Tom Lampo",
+        "Yu Yin",
+        "Danhua Guo",
+        "Burhan Yaman"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "doi": "",
+      "published": "2026-08-24T16:49:53+00:00"
+    },
+    "arxiv:2606.08405": {
+      "title": "Self-Evolving Scientific Agent Designs Physically Reasoned White-Box Fluid Control",
+      "url": "https://arxiv.org/abs/2606.08405",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Boai Sun",
+        "Wenjin Guo",
+        "Zongmin Yu",
+        "Liu Yang"
+      ],
+      "categories": [
+        "cs.AI",
+        "physics.flu-dyn"
+      ],
+      "doi": "",
+      "published": ""
+    },
+    "arxiv:2506.20073": {
+      "title": "A Modular Multitask Reasoning Framework Integrating Spatio-temporal Models and LLMs",
+      "url": "https://arxiv.org/abs/2506.20073",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Kethmi Hirushini Hettige",
+        "Jiahao Ji",
+        "Cheng Long",
+        "Shili Xiang",
+        "Gao Cong",
+        "Jingyuan Wang"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "Information",
+        "Systems",
+        "(SIGSPATIAL",
+        "'26),",
+        "November",
+        "03--06,",
+        "2026,",
+        "Riverside,",
+        "CA,",
+        "USA"
+      ],
+      "doi": "",
+      "published": ""
+    },
+    "arxiv:2608.24263": {
+      "title": "Real-World Knowledge-Guided Change Data Synthesis for Remote Sensing",
+      "url": "https://arxiv.org/abs/2608.24263",
+      "abstract": "Change data synthesis provides a cost-effective solution for expanding training data and improving the performance of change detection models. However, existing synthesis methods typically rely on handcrafted rules to simulate changes, where limited coverage of class transitions restricts the diversity of synthesized data, while predefined transition designs limit their flexibility in accommodating varied change types. In this work, we introduce KnowChange, a knowledge-guided change data synthesis framework that leverages pretrained vision-language models as knowledge sources to reason about plausible change locations and class transitions from pre-change scenes and desired change types. By integrating knowledge-guided change simulation with generalizable synthesis models, KnowChange enables flexible synthesis of diverse change types within a unified framework. Extensive experiments demonstrate that KnowChange-generated data consistently outperforms existing synthetic datasets in both synthetic-to-real transfer and synthetic data augmentation, despite being generated at a compact scale. Further analyses show that the knowledge-guided change simulation can be seamlessly integrated into existing synthesis pipelines and enhance the downstream utility of synthesized data.",
+      "authors": [
+        "Yaoyi Qi",
+        "Xingxing Weng",
+        "Chao Pang",
+        "Yongkang Cui",
+        "Xiangyu Hao",
+        "Xiaokang Zhang",
+        "Guibo Zhu",
+        "Gui-Song Xia"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-25T08:51:05+00:00"
+    },
+    "arxiv:2608.23746": {
+      "title": "CRISP: Calibration-Aware Visual State Space Duality for Remote Sensing Semantic Segmentation",
+      "url": "https://arxiv.org/abs/2608.23746",
+      "abstract": "State space models, especially Visual State Space Duality (VSSD), have emerged as efficient linear-time alternatives to Transformers for dense visual tasks. However, we observe that VSSD compresses spatial context into a global aggregation that suppresses high-frequency responses, causing excessive boundary smoothing in remote sensing semantic segmentation. To address this, we propose CRISP, a calibration framework with two components. Its core, the Duality Calibration Operator (DCO), restores local contrast and boundary responses through residual injection and frequency calibration within the VSSD backbone, without altering its linear complexity. To retain the recovered detail, an Orthogonal Multi-Prototype (OMP) head assigns multiple orthogonally constrained prototypes per class to model large intra-class variance. Extensive experiments on Potsdam, Vaihingen, and LoveDA show that, with approximately 30M parameters, CRISP achieves consistent gains in mean F1 (mF) and mIoU while remaining competitive with state-of-the-art methods. Code is available at https://github.com/crazylifeha/CRISP.",
+      "authors": [
+        "Kangning Wang",
+        "Haopeng Zhang",
+        "Zhiguo Jiang"
+      ],
+      "categories": [
+        "cs.CV",
+        "figures.",
+        "Code:",
+        "https://github.com/crazylifeha/CRISP"
+      ],
+      "doi": "",
+      "published": "2026-08-24T18:35:00+00:00"
+    },
+    "arxiv:2608.24133": {
+      "title": "PlaceSeek: Human-Centered Geospatial Retrieval of Urban Outdoor Places via Semantic Grounding and Affective Alignment",
+      "url": "https://arxiv.org/abs/2608.24133",
+      "abstract": "People search for urban outdoor places not only by category or function, but also by what activities a place can support and how it is perceived. Existing geospatial retrieval remains largely POIcentric and metadata-driven, making it difficult to satisfy openended, affective, or activity-oriented needs. We present PlaceSeek, a human-centered outdoor place retrieval framework that maps natural-language queries to geolocated street-view imagery. PlaceSeek introduces an intent-aware retrieval mechanism that decomposes user queries into functional and affective sub-intents. A Semantic Grounding Module verifies whether candidate street-view results contain the physical evidence needed to support the intended activity, while an Affective Alignment Module re-ranks physically valid candidates using a LoRA-adapted vision-language model trained on human urban perception judgments. We evaluate PlaceSeek on 31,956 street-view locations in Milan across 10 naturallanguage queries annotated by five human evaluators. PlaceSeek achieves 88.0% Precision@5, a mean match score of 3.39/4.0, and 0.920 nDCG@5, outperforming CLIP, fine-tuned CLIP, SigLIP, and a VQA-based baseline. Ablation results show that physical grounding is essential for retrieval validity, while affective alignment improves ranking quality among physically valid candidates. These findings highlight that complex urban spatial queries require modeling both verifiable visual evidence and human perceptual preferences. PlaceSeek provides a potential framework for human-centered nextgeneration geospatial retrieval systems.",
+      "authors": [
+        "Ziqi Cui",
+        "Shangyu Lou"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.IR",
+        "arXiv",
+        "version",
+        "is",
+        "the",
+        "full",
+        "of",
+        "paper"
+      ],
+      "doi": "",
+      "published": "2026-08-25T06:57:29+00:00"
+    },
+    "arxiv:2608.24715": {
+      "title": "Deep Learning Super Resolution for Satellite Cloud Mask Downscaling",
+      "url": "https://arxiv.org/abs/2608.24715",
+      "abstract": "A vast amount of optical satellite data is being transmitted to Earth-based servers every day, and more than half of this data is affected by haze or clouds. Additionally, this data suffers from the fundamental trade-off between spatial and temporal resolution, which remains largely unresolved, making the acquisition of continuous high-resolution satellite observations of clouds an ongoing challenge. This work addresses this challenge by proposing two Deep Learning super-resolution methods for the accurate downscaling of SEVIRI cloud mask products, as well as a novel cross-sensor cloud mask dataset called SEVMOD-CM, created by spatially and temporally matching MODIS and SEVIRI satellite observations. The two proposed models are a CNN-based (SpatialCNN) and a GAN-based (SpatialGAN) Neural Network. Trained on the SEVIRI spectral and cloud mask products, the proposed methods predict the corresponding MODIS Cloud masks, achieving a 4x spatial enhancement across sensor domains. Both approaches are evaluated experimentally, and compared against the standard bicubic interpolation upsampling technique. The experimental results demonstrate the value of the proposed models and dataset for the remote sensing community, highlighting the benefits of applying super-resolution techniques to geostationary-derived cloud mask products for applications such as atmospheric monitoring, weather forecasting, disaster risk reduction, solar energy forecasting, and climate research.",
+      "authors": [
+        "Angelos Georgakis",
+        "Valentina Kanaki",
+        "Giorgos Giannopoulos",
+        "Stella Girtsou",
+        "Ioannis Kontogiorgakis",
+        "Charalampos Kontoes",
+        "Kostas Philippopoulos"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "Symposium",
+        "(IGARSS",
+        "2026)"
+      ],
+      "doi": "",
+      "published": "2026-08-25T15:34:18+00:00"
+    },
+    "arxiv:2608.24756": {
+      "title": "Weakly Supervised Seafloor Segmentation for Seagrass Habitat Mapping in Side-Scan Sonar Imagery",
+      "url": "https://arxiv.org/abs/2608.24756",
+      "abstract": "Seagrass meadows are crucial blue-carbon habitats, and mapping their extent is a prerequisite for coastal management and carbon inventory. Optical satellite sensors cover large areas but cannot reach deep or turbid water, whereas side-scan sonar (SSS) images the seabed at high resolution and at any depth. Interpreting SSS, however, still relies on dense manual annotation, which is slow and costly. We address this by adapting a weakly supervised semantic segmentation framework to SSS benthic habitat mapping, so that pixel-level maps are learned from image-level labels alone. The framework couples a ViT-based encoder-decoder with a classification branch, extracts class activation maps, and refines them into pseudo-labels with a dense conditional random field that we tune for the noise and weak boundaries of acoustic imagery. It follows an iterative self-training scheme, together with a sampling strategy to cope with the strong class imbalance of the data. We also study the effect of different loss functions on segmentation quality, finding Lov\\'asz-Softmax loss the most effective. On a held-out transect, the refined pseudo-labels reached an mIoU of 89.3\\% against the ground truth, and the segmentation branch, trained without any pixel-level labels, reached 87.6\\%. Self-supervised pretraining on unlabelled SSS added a further 3\\% in mean intersection-over-union. Field trials further demonstrate the generalizability of the trained model. These results show that accurate and label-efficient benthic habitat mapping from side-scan sonar is feasible at the scale needed for coast-wide seagrass monitoring.",
+      "authors": [
+        "Hayat Rajani",
+        "Nuno Gracias",
+        "Rafael Garcia"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-25T15:55:49+00:00"
+    },
+    "arxiv:2608.24665": {
+      "title": "Data Leakage Inflates Generalizability of Power Outage Prediction Models",
+      "url": "https://arxiv.org/abs/2608.24665",
+      "abstract": "Power outage prediction models are increasingly used in assessments of climate-driven infrastructure risk, yet current evaluation practices obscure whether these models generalize to the novel conditions such applications require. We identify three common methodological choices in power outage prediction models that influence their ability to generalize across spatial, temporal, and event-based settings. We compare the predictive performance impacts of different methodological decisions using publicly available data for the U.S. East Coast from 2018 to 2023 and feature sets derived from weather reanalysis and land-cover data, and embeddings from a GeoAI foundation model (Prithvi WxC). Specifically, we assess model performance under multiple test selection strategies, including unfiltered random splits, leave-one-state-out, and leave-one-event-out designs, which increasingly approximate real-world deployment conditions. While random train-test splits yield strong performance, we show that these results are inflated by spatial and temporal autocorrelation. Under spatial and temporal holdout experiments, predictive accuracy degrades substantially, with models often failing to outperform a simple null baseline. Incorporating GeoAI foundation model embeddings yields limited and inconsistent improvements, primarily for spatial generalization, and does not resolve poor event-level transferability. These findings suggest that, given current data availability and evaluation practices, publicly trained outage prediction models offer limited and uncertain operational value. Progress will likely require improved data coverage, more realistic evaluation protocols, and a shift in focus from marginal modeling advances toward addressing structural data constraints.",
+      "authors": [
+        "Yamil Essus",
+        "Ranga Raju Vatsavai",
+        "Benjamin Rachunok"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-25T15:05:55+00:00"
+    },
+    "arxiv:2608.23622": {
+      "title": "LLM Agents Perform Controlled Experiments Using Simulation Models",
+      "url": "https://arxiv.org/abs/2608.23622",
+      "abstract": "Large language models (LLMs) have shown strong capabilities in reasoning, planning, and tool use, but many scientific and engineering tasks require more than plausible text and code generation. They require understanding how a system responds to intervention, which in practice depends on controlled experimentation. In this work, we propose a multi-agent framework that enables LLM agents to conduct controlled experiments with scientific simulation models for pharmaceutical process design. Given a user query and a baseline configuration, the system constructs a structured task representation, designs experiments, executes comparative simulation, interprets the resulting outcomes, and synthesizes evidence-based recommendations for process parameter optimization. By coupling language models with high-fidelity simulation models in an interactive agent framework, the proposed system supports reasoning through intervention, comparison, and observation. As a result, it produces more specific and actionable outputs than language-only reasoning. In an industrial application setting, this advantage is reflected in higher output specificity as well as improved user-rated correctness and helpfulness. Ablation studies and visualized case analyses further demonstrate the effectiveness and practical utility of simulation-integrated experimental reasoning.",
+      "authors": [
+        "Yuchen Xia",
+        "Michael Weyrich",
+        "Nasser Jazdi",
+        "Johannes St\\\"umpfle",
+        "Johannes Sigel",
+        "Akshay Narla",
+        "Gavin K. Reynolds",
+        "Anna Jawor-Baczynska",
+        "Pol Llopart"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA",
+        "cs.SE",
+        "Technologies",
+        "and",
+        "Factory",
+        "Automation",
+        "ETFA",
+        "2026"
+      ],
+      "doi": "",
+      "published": "2026-08-22T18:54:52+00:00"
+    },
+    "arxiv:2608.23740": {
+      "title": "AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace",
+      "url": "https://arxiv.org/abs/2608.23740",
+      "abstract": "Concurrent multi-agent coding promises division of labor across modules, robustness through redundancy, and parallel exploration at the natural granularity of multi-file projects. Realtime collaborative editing protocols solve this coordination problem for human teams via Conflict-free Replicated Data Types (CRDTs), but the LLMs underneath generate one token at a time and existing multi-agent coding systems inherit this serial limit: they either sequence agents through phase handoffs or pool independent samples without coordination, and a single agent abandons up to half of hard tasks with a one-file stub-and-exit. AgentRoom is a realtime collaborative editing protocol for concurrent coding agents. Its runtime layer exposes file-level claim, status, and broadcast as MCP tools on a CRDT-merged shared filesystem. Five frontier coding-CLI models ran four backend coding tasks, with cross-language checks in Python DevBench and Rust+axum. For CLI-stable models, AgentRoom with 2 agents abandons fewer tasks than Solo and has less run-to-run variation. At matched-compute, one positive mean LLM-judge contrast puts AgentRoom over parallel-merge. The other contrast, a bundle probe, puts full AgentRoom above each partial case: an ordering rather than a percentage split. Coordination, not parallelism or CRDT-merge, bears the load.",
+      "authors": [
+        "Seonglae Cho",
+        "Donghyun Lee"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "doi": "",
+      "published": "2026-08-24T18:28:33+00:00"
+    },
+    "arxiv:2608.23855": {
+      "title": "In-Context Inpainting for Time Series Forecasting",
+      "url": "https://arxiv.org/abs/2608.23855",
+      "abstract": "We propose ICI-Time, a novel framework that reframes time series forecasting as a visual inpainting task, leveraging the generalisation power of large vision models (LVMs). Unlike methods that require specialised temporal architectures and extensive domain-specific training, ICI-Time transforms time series into structured visual representations (area charts) and applies visual in-context learning, reformulating forecasting as pattern completion within a grid-structured prompt that pre-trained vision transformers can solve without fine-tuning or architectural modification. Temporal dependencies are represented through spatial layout, with a consistent, invertible mapping between numerical and visual domains. Extensive experiments across epidemiology, meteorology, and power systems demonstrate that ICI-Time performs competitively against deep learning baselines and shows promising adaptability under limited-data settings, introducing a new paradigm that bridges temporal and visual domains.",
+      "authors": [
+        "Thang Nguyen",
+        "Dung Nguyen",
+        "Romero Morais",
+        "Truyen Tran"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-24T21:57:56+00:00"
+    },
+    "arxiv:2608.23922": {
+      "title": "Data Mixing as Mixture Experiment: Response Surface Methodology and Optimal Design for Large Language Model Pretraining",
+      "url": "https://arxiv.org/abs/2608.23922",
+      "abstract": "Data mixing is a central design problem in large language model pretraining: given a fixed token budget, practitioners must decide how much data to allocate to each domain. Recent proxy-based methods address this problem by training small models on candidate mixtures, fitting a response model, and using the response to select mixtures for larger-scale training. We show that this workflow has the structure of a classical mixture experiment. Under this view, data domains are mixture components, token shares are component proportions, proxy-training runs are experimental design points, and validation loss defines a response surface over the probability simplex. We develop this formulation using sparse second-order Scheff\\'{e} response-surface models and construct model-robust $\\mathcal{I}$-optimal designs for proxy data-mixing experiments. Using RegMix as an empirical case study, we demonstrate how the framework can both interpret observed mixture responses and design more efficient proxy experiments. The Scheff\\'{e} analysis shows that domain value is strongly relational: several domains that are weak under additive effects become favourable through pairwise interactions, especially through combinations with web-derived text. The sparse Scheff\\'{e} model preserves mixture rankings across model scales and remains competitive with a flexible machine-learning predictor while providing an explicit decomposition of additive and interaction effects. In a simulation study calibrated to observed proxy-training responses, model-robust $\\mathcal{I}$-optimal designs recover the relevant mixture ordering after removing about 25\\% of the original proxy runs. These results suggest that LLM data mixing should be treated not only as a prediction problem, but also as an experimental-design problem in which the proxy mixtures themselves can be chosen to improve statistical efficiency.",
+      "authors": [
+        "Yicheng Mao",
+        "Hongru Du"
+      ],
+      "categories": [
+        "cs.AI",
+        "stat.ML"
+      ],
+      "doi": "",
+      "published": "2026-08-24T23:56:38+00:00"
+    },
+    "arxiv:2608.24237": {
+      "title": "STRIVE: Multi-Agent Structured Temporal Reasoning with Integrated Verification for Longitudinal Radiology Report Generation",
+      "url": "https://arxiv.org/abs/2608.24237",
+      "abstract": "Longitudinal radiology report generation (LRRG) requires identifying both current findings and their changes relative to a prior study. Existing methods jointly model diagnosis, attribute estimation, temporal comparison, and language generation within implicit representations, which can cause task interference, obscure the evidence underlying each decision, and limit error traceability. They also model progression states as independent labels, ignoring their ordered structure and thus treating missed changes and direction reversals equally. We present STRIVE, Multi-Agent Structured Temporal Reasoning with Integrated Verification for LRRG, which decomposes clinical reasoning into specialized Diagnosis, Attribute, and Temporal Change Agents that produce explicit intermediate evidence. In particular, the Temporal Change Agent is further post-trained using Progression-Aware GRPO, a verifiable, shaped reward that assigns partial credit to direction-preserving errors while scoring direction reversals lowest. STRIVE performs verification at two stages: a deterministic Consistency Gate reconciles the agent outputs before report generation, and a Validation Agent checks whether the generated report is supported by the aggregated clinical evidence. On Longitudinal-MIMIC, STRIVE attains the best clinical efficacy among recent methods and more than doubles Longitudinal Change Concordance (LCC), a measure of temporal agreement with the reference report, over the strongest baseline.",
+      "authors": [
+        "Junyeong Maeng",
+        "Eunsong Kang",
+        "Heung-Il Suk"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-25T08:43:15+00:00"
+    },
+    "arxiv:2608.24441": {
+      "title": "A Behavior-Guided Online Probabilistic Forecasting Method for Electric vehicle Charging Loads",
+      "url": "https://arxiv.org/abs/2608.24441",
+      "abstract": "Electric vehicle (EV) charging loads exhibit strong behavioral heterogeneity and temporal variability, posing significant challenges for online probabilistic forecasting under evolving operating conditions. In particular, persistent charging patterns may differ substantially across stations, while recent behavioral changes can continuously alter the underlying load distributions. This paper proposes a behavior-guided online probabilistic forecasting framework that explicitly characterizes persistent station-specific patterns and recent behavioral changes. A dual-timescale behavior representation is constructed to distinguish long-term charging characteristics from recent behavioral states and quantify their deviations. These behavioral changes are further semantically encoded to guide drift-aware forecasting adaptation, while a delayed-feedback mechanism ensures temporally consistent online updates when observations become available across different forecasting horizons. Experiments on ten heterogeneous real-world charging stations demonstrate that the proposed method consistently outperforms conventional forecasting models and concept-drift-aware online baselines in forecasting accuracy and probabilistic reliability. For 1-h-ahead forecasting, the proposed method reduces MSE and Pinball loss by 15.3\\% and 17.8\\%, respectively, over the corresponding best baselines. For 4-h-ahead forecasting, the improvements further reach 16.8\\% and 22.6\\%, respectively, demonstrating consistent performance gains under evolving charging behaviors and extended forecasting horizons.",
+      "authors": [
+        "Chenghan Li",
+        "Qingxiang Liu",
+        "Yinliang Xu",
+        "Yuxuan Liang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-25T11:57:06+00:00"
+    },
+    "arxiv:2608.24471": {
+      "title": "Implicit Q-learning-bootstrapped ant colony optimization for maritime moving-target observation scheduling with agile satellites",
+      "url": "https://arxiv.org/abs/2608.24471",
+      "abstract": "Maritime moving-target observation scheduling with agile Earth observation satellites is a dynamic, sequence-dependent combinatorial optimization problem. Sea-surface targets move continuously, causing feasible observation windows to vary with target motion and satellite orbital geometry. The scheduler must jointly determine task selection, satellite assignment, observation-window selection, and observation ordering under time-window, attitude-maneuvering, onboard-resource, and cloud-affected availability constraints. This paper proposes an implicit Q-learning-bootstrapped ant colony optimization method, termed IQACO, for multi-satellite maritime moving-target observation scheduling. Rather than directly learning a task-selection policy, IQACO embeds an offline implicit Q-learning module into constructive ant colony optimization to adaptively adjust the pheromone factor, heuristic factor, and evaporation rate. A compact search-state representation captures pheromone distribution, current and historical-best solution quality, and iteration progress. During online scheduling, ant colony optimization constructs feasible observation sequences, while the learned policy regulates exploration and exploitation according to the current search state. Experiments on 14 scenarios with different scales and satellite configurations show that IQACO obtains the highest mean observation benefit in every scenario, improves the result of conventional ant colony optimization by 3.40\\%--9.40\\%, accelerates convergence, and remains stable under different objective-weight settings. These results demonstrate that offline value learning provides an effective adaptive search-control mechanism for constrained maritime moving-target observation scheduling.",
+      "authors": [
+        "He Wang",
+        "Junyu Wu",
+        "Yeye Liu",
+        "Yifan Zhou",
+        "Jie Zhang",
+        "Hui Li",
+        "Yanjie Song",
+        "Liang Li"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-25T12:17:25+00:00"
+    },
+    "arxiv:2608.24809": {
+      "title": "Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch",
+      "url": "https://arxiv.org/abs/2608.24809",
+      "abstract": "We present Crase, a bounded and inspectable alternative to deep research agents for scholarly search. Instead of an open-ended search loop, Crase queries a search engine once for seed papers, expands them along their 1.5-hop citation neighborhood, prunes citation edges whose claims lack entailment support, and ranks the remaining papers with a recency-aware random walk. This makes the candidate set, the reason each paper is kept, and the stopping condition explicit and fixed before inference. On LitSearch and one further benchmarks over a 500K-paper arXiv corpus, Crase outperforms deep research agents built on proprietary models by up to 3$\\times$ recall@50 at roughly a third of the cost.",
+      "authors": [
+        "Rima Hazra",
+        "Sayan Layek",
+        "Somnath Banerjee",
+        "Soumen Chakrabarti",
+        "Animesh Mukherjee"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "doi": "",
+      "published": "2026-08-25T16:51:26+00:00"
+    },
+    "arxiv:2608.23845": {
+      "title": "Object Counting Across Modalities: Taxonomies, Benchmarks, Applications, and Open Challenges",
+      "url": "https://arxiv.org/abs/2608.23845",
+      "abstract": "Object-counting methods have rapidly shifted from class-specific density regression to open-vocabulary, foundation-model-backed counters. These methods now enumerate instances from various visual and textual prompts. While this shift marks major conceptual progress, our survey argues that claims of universal generality have outpaced the evaluative infrastructure. Most progress metrics rely on a few saturated benchmarks that models exploit for statistical regularities. Newly introduced diagnostic datasets reveal systematic failures in semantic grounding, temporal identity, and spatial reasoning with occlusion. To address these failures, we introduce a five-axis taxonomy (modality, mechanism, prompting, supervision level, and generalization setting). We use this taxonomy to audit the literature across application domains, including microscopy, remote sensing, crowd counting, and agriculture. This formalizes prevailing challenges into six structural contradictions. From these, we propose a roadmap for compositional scene understanding, active counting agents, and unified multimodal evaluation protocols. The main imperative is to build a robust evaluation infrastructure to distinguish open-world generalization from benchmark-specific optimization, rather than simple incremental engineering.",
+      "authors": [
+        "Joana Konadu Owusu",
+        "Shivanand Venkanna Sheshappanavar"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-24T21:32:56+00:00"
+    },
+    "arxiv:2608.23903": {
+      "title": "Continual Visual Learning under Evolving Semantic Concept Shift",
+      "url": "https://arxiv.org/abs/2608.23903",
+      "abstract": "Visual foundation models are commonly adapted under the assumption that the appearance of incoming data may change while the semantic meaning of the prediction task remains fixed. In long-lived visual systems, however, taxonomies, policies, and concept definitions can themselves evolve, causing the same visual evidence to require a different interpretation. We study this setting as evolving semantic concept shift and introduce SemReWrite, a framework for selectively updating obsolete visual--semantic mappings while preserving knowledge that remains valid. SemReWrite represents changes between old and revised semantic specifications, combines semantic discrepancy with sparse revised supervision to localize affected visual regions, and uses an input-dependent low-rank rewriting mechanism together with structured semantic memory, preservation, and obsolete-decision suppression. We further introduce EvoShift-Bench, spanning ImageNet, iNaturalist, CUB-200-2011, and DomainNet, with semantic transitions including class split, merge, boundary revision, insertion, partial redefinition, recurrence, and mixed semantic--appearance shift. To explicitly evaluate selective semantic revision, we introduce Rewrite Accuracy (RA) and Preservation Accuracy (PA) for affected and unaffected regions, respectively, Obsolete Retention (OR) for measuring residual outdated semantic associations, and the Selective Revision Score (SRS), which jointly summarizes rewriting and preservation performance. Experiments show that SemReWrite achieves a stronger balance between learning revised semantics and retaining unaffected knowledge than prompt replacement, conventional fine-tuning, parameter-efficient adaptation, and continual-learning strategies.",
+      "authors": [
+        "Ismail Lamaakal",
+        "Chaymae Yahyati",
+        "Yassine Maleh",
+        "Khalid El Makkaoui",
+        "Ibrahim Ouahbi"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "doi": "",
+      "published": "2026-08-24T23:14:46+00:00"
+    },
+    "arxiv:2608.23930": {
+      "title": "SceneReGen: Generative Reconstruction of 3D Scenes from a Single Image",
+      "url": "https://arxiv.org/abs/2608.23930",
+      "abstract": "Single-image 3D scene reconstruction must complete partially observed objects and place them coherently in a shared observation-aligned scene frame. Object-level generative priors offer strong completion ability, but their centered, scale-normalized outputs are typically expressed in an object frame, creating a fundamental representation gap between object generation and scene reconstruction. We introduce SceneReGen, a generative reconstruction framework that reinterprets scene reconstruction as the generation and assembly of complete object assets in a shared observation-aligned scene frame. SceneReGen addresses the generation-reconstruction gap through selective pose factorization: each object's observed orientation is encoded directly in the generated mesh, while translation and scale are estimated from instance-level and global scene evidence. Given a scene image and instance masks, a geometry encoder extracts dense cues; learnable shape queries condition a pretrained DiT-based 3D generator to produce complete meshes in their observed orientations, while position queries fuse object and scene features to assemble them in the shared frame. On the 3D-FUTURE evaluation subset, SceneReGen achieves the best scene-level CD, scene-level F-Score, and 3D bounding-box IoU among the evaluated methods, ties the best object-level CD, and ranks second in object-level F-Score. Qualitative outputs in autonomous-driving and embodied-AI scenes further illustrate the potential of asset-centric reconstruction beyond indoor furniture.",
+      "authors": [
+        "Zefan Tian",
+        "Yuteng Ye",
+        "Yiheng Zhang",
+        "Yuhang Yang",
+        "Xueqiang Lv",
+        "Shizhou Zhang",
+        "Le Liu",
+        "Di Xu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-25T00:29:37+00:00"
+    },
+    "arxiv:2608.24043": {
+      "title": "ConsensusTAS: Self-Supervised Temporal Action Segmentation for Long-Horizon Construction Videos",
+      "url": "https://arxiv.org/abs/2608.24043",
+      "abstract": "Recognizing sequential construction activities is important for collaborative human-robot work; for example, robots are able to understand workers' current and upcoming actions and provide timely tool delivery or physical support. However, despite extensive research on construction worker activity recognition, existing studies have been limited to classifying activity categories, such as climbing, lifting, and walking, instead of recognizing fine-grained activity transitions from long-horizon sequences. Addressing this problem is challenging because annotating action temporal boundaries in long construction videos is time-consuming. In this study, we propose ConsensusTAS, a label-free, self-supervised learning approach to segment continuous video streams into distinct activity phases by exploiting the internal consensus of candidate segmentations. We evaluated our algorithm on three public datasets, where it outperformed state-of-the-art methods, achieving an F1@10 of 73.08 on GTEA, an F1@10 of 64.33 on Breakfast, and an F1@50 of 33.50 on static-camera videos from Assembly101. We also tested it on real-world construction videos, where post-hoc evaluation showed that the model successfully recognized and segmented actions within the composite activity of bricklaying, such as spreading mortar on a brick, placing the brick, pressing, and aligning. Compared with other temporal action segmentation models that require computationally intensive large vision-language models, our method can run on a CPU, which provides practical value for video surveillance and human-robot collaboration on mobile robotic platforms.",
+      "authors": [
+        "Xiaoshan Zhou",
+        "Yafei Sun"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-25T04:05:15+00:00"
+    },
+    "arxiv:2608.24130": {
+      "title": "Syn2RealTrack: Bridging the Gap Between Synthetic and Real-World Datasets for Online Multi-View Multi-Target Tracking",
+      "url": "https://arxiv.org/abs/2608.24130",
+      "abstract": "Multi-camera 3D perception systems for warehouse scenes are trained largely on synthetic data and evaluated on physically captured environments. The resulting synthetic-to-real gap, which corrupts ground-plane localization and cross-camera identity association, is usually treated as one deficiency for a single domain-adaptation module to absorb; we argue instead that it enters the pipeline at three separable points: the camera calibration, the object shape prior, and the assumption that the object census is known, each admitting a different local remedy. Our online pipeline, Syn2RealTrack, follows this decomposition: lens distortion is recovered from images alone under a calibration that provides none, detections are fused across views by a visibility-weighted part-based descriptor that abstains on occluded parts rather than guessing, person height is measured in closed form from calibration instead of copied from a synthetic prior, and a closed-world cardinality prior is paired with a causal filter that removes the phantom boxes the prior manufactures. The system therefore adapts by reallocating trust between geometry and appearance without retraining a feature extractor. On the AI City Challenge 2026 Track~1 evaluation server it reaches a 3D Higher Order Tracking Accuracy (HOTA) of 52.0118%. The code will be released at https://github.com/SKKUAutoLab/aic26_mc3dp",
+      "authors": [
+        "Duong Nguyen-Ngoc Tran",
+        "Ngoc Doan-Minh Huynh",
+        "Cu Quoc Le",
+        "Hoang-Khang Nguyen",
+        "Long Hoang Pham",
+        "Huy-Hung Nguyen",
+        "Quoc Pham-Nam Ho",
+        "Trinh Le Ba Khanh",
+        "Chi Dai Tran",
+        "Duong Khac Vu",
+        "Son Hong Phan",
+        "Hyung-Min Jeon",
+        "Jae Wook Jeon"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "European",
+        "Conference",
+        "on",
+        "Computer",
+        "Vision",
+        "(ECCV",
+        "2026)"
+      ],
+      "doi": "",
+      "published": "2026-08-25T06:48:50+00:00"
+    },
+    "arxiv:2608.24154": {
+      "title": "Rethinking Pre-Training and Augmentation for Zero-Shot Cross-City Object Detection",
+      "url": "https://arxiv.org/abs/2608.24154",
+      "abstract": "Real-world deployment of traffic surveillance systems is bottlenecked by geographic domain shift, in which models trained in one city underperform when applied to an unseen target city. Conventional domain adaptation relies on hyperparameter-sensitive architectures or direct profiling of target data. Both are fundamentally precluded in privacy-conscious ecosystems that require completely blind training and evaluation loops. In this setting, we explore the effects of pre-training and augmentation in addressing the domain shift problem. Specifically, we propose a new modular training pipeline for object detection structured around two core orthogonal pillars: (1) a multi-dataset pre-training strategy featuring a class-agnostic objectness distillation to decouple structural vehicle geometry from semantic taxonomies, and (2) a domain-resilient augmentation stream featuring a novel Grayworld transformation that forces global attention heads to strip volatile chromatic shortcuts in favor of robust shape priors. When evaluated with the real-time transformer-based detector RF-DETR, our framework bridges cross-city distribution gaps while using limited GPU memory (16GB). Our optimized variants, RF-DETR-HR and RF-DETR-Grayworld, deliver a substantial empirical gain of +24.29 over the baseline, achieving 1st place (47.53 mAP) on the AI City Challenge Track 6 leaderboard. Code and data are available at: ------------------------------------------------------------------------------",
+      "authors": [
+        "Long Hoang Pham",
+        "Quoc Pham-Nam Ho",
+        "Huy-Hung Nguyen",
+        "Duong Nguyen-Ngoc Tran",
+        "Ngoc Doan-Minh Huynh",
+        "Cu Quoc Le",
+        "Hoang-Khang Nguyen",
+        "Hyung-Min Jeon",
+        "Chi Dai Tran",
+        "Son Hong Phan",
+        "Duong Khac Vu",
+        "Trinh Le Ba Khanh",
+        "Jae Wook Jeon"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "European",
+        "Conference",
+        "on",
+        "Computer",
+        "Vision",
+        "(ECCV",
+        "2026)"
+      ],
+      "doi": "",
+      "published": "2026-08-25T07:16:42+00:00"
+    },
+    "arxiv:2608.24212": {
+      "title": "NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation",
+      "url": "https://arxiv.org/abs/2608.24212",
+      "abstract": "The advancement of Embodied AI necessitates high-quality simulation assets that faithfully mirror the real world. However, transforming raw visual observations into simulation-ready scenes remains challenging due to the lack of physical grounding and scene-level interactivity in current image-to-URDF methods. We propose NeoWorld-Pro, a framework that reformulates monocular scene reconstruction as procedural programming for interactive 3D environments. Leveraging the zero-shot reasoning and code synthesis capabilities of MLLMs, NeoWorld-Pro converts a single RGB image into executable programs specifying object geometry, articulation, and physical properties. A physics-in-the-loop mechanism then iteratively refines the generated programs by validating their execution in a physics engine, enforcing physically plausible articulations, valid object compositions and interactions, and accurate spatial relationships. Experiments show that NeoWorld-Pro outperforms open-loop and prior monocular reconstruction methods, while enabling complex downstream tasks such as stable stacking and fine-grained manipulation.",
+      "authors": [
+        "Yumeng He",
+        "Yichen Song",
+        "Xiaotian Yang",
+        "Weijia Zhang",
+        "Zanwei Zhou",
+        "Junru Gong",
+        "Xiaokang Yang",
+        "Yunbo Wang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-25T08:19:39+00:00"
+    },
+    "arxiv:2608.24223": {
+      "title": "Event-Based Motion Estimation via Oriented Distance Fields",
+      "url": "https://arxiv.org/abs/2608.24223",
+      "abstract": "Event-based motion estimation is central to tasks that demand high temporal resolution and robustness to fast motion. Existing methods typically rely on iterative optimization or repeated hypothesis comparison, offsetting the sensor's low-latency advantage. We propose Oriented Distance Field Motion Estimation (ODF Motion Estimation), which replaces this optimization with a single averaging step over a precomputed field of event distance vectors, combined with an adaptive event-count selection strategy and a parameter-free trail filter. On public and self-collected datasets, ODF motion estimation reaches sub-pixel accuracy at the lowest latency among compared methods. We validate its generality on two downstream applications rather than treating them as separate contributions. First, the estimated trajectory is converted into a blur kernel and paired with a compact iterative-unfolding network, trained on simulated motion-estimation noise, for real-time non-blind image deblurring, attaining competitive or superior PSNR/SSIM with under 1M parameters. Second, the same precomputed field is repurposed for directional event filtering in a low-power asynchronous pupil and glint tracker, sustaining stable tracking for tens of seconds while lowering a near-eye module's power draw.",
+      "authors": [
+        "Lei Sun",
+        "Yuqin Ma",
+        "Weilun Li",
+        "Haoran Liang",
+        "Runyi Yang",
+        "Kaiwei Wang",
+        "Danda Pani Paudel",
+        "and Luc Van Gool"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "doi": "",
+      "published": "2026-08-25T08:27:42+00:00"
+    },
+    "arxiv:2608.24366": {
+      "title": "Variance-Guided Spatial Attention Fusion for Robust End-to-End Driving under Asymmetric Sensor Degradation",
+      "url": "https://arxiv.org/abs/2608.24366",
+      "abstract": "End-to-end multimodal driving has progressed rapidly by fusing camera and LiDAR streams. Existing pipelines remain fragile under asymmetric sensor degradation, where either an entire modality or only a localized region is corrupted while other regions remain useful. The key difficulty is not simply to add an uncertainty head, but to obtain dense reliability supervision, calibrate this reliability against physical fault severity, and use it before unreliable features bias the planner. We propose Variance-Guided Spatial Attention Fusion (VG-SAF), in which dense heteroscedastic reliability estimates act as interpretable spatial gates. The framework couples three components. First, a physically grounded augmentor simulates representative camera and LiDAR failures and emits a continuous spatial mask, providing dense supervision without additional annotation. Second, modality-specific experts predict per-pixel reliability scales through cross-branch dense distillation in log space, enforcing a monotone severity-to-scale response. Third, calibrated reliability maps drive a hybrid attention mechanism that suppresses unreliable cells with a local spatial gate and arbitrates between modalities through a cross-modal trust softmax. A Laplace uncertainty head emits a systemic waypoint uncertainty scale that signals severe or combined sensor degradation, including severities outside the training ranges. On the CARLA Longest6 benchmark, VG-SAF consistently improves closed-loop robustness over the baselines across camera-only, LiDAR-only, and joint degradation regimes, as measured by driving score, route completion, and infraction score.",
+      "authors": [
+        "Weizhi Tao",
+        "Zengwang Jin",
+        "Xiao Wang",
+        "Hailong Huang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.RO",
+        "Submitted",
+        "to",
+        "IEEE",
+        "Transactions",
+        "on",
+        "Vehicular",
+        "Technology"
+      ],
+      "doi": "",
+      "published": "2026-08-25T10:27:02+00:00"
+    },
+    "arxiv:2608.24680": {
+      "title": "Game2World Engine: Unlocking In-the-Wild Gameplay Videos for World Model Training",
+      "url": "https://arxiv.org/abs/2608.24680",
+      "abstract": "Video games provide a scalable source of training data for video world models, offering diverse environments, complex interactions, and abundant in-the-wild gameplay videos. However, raw gameplay footage entangles the game world with screen-space interfaces, introducing game-specific biases and irrelevant dynamics that hinder world-model training. To address this problem, we introduce GameUI-Taxonomy and G2WEngine, a full-stack framework that formalizes gameplay UI grounding and removal. G2WEngine automatically extracts reusable UI assets from real gameplay videos and synthesizes temporally coherent UI overlays on clean footage. Using this engine, we construct Game2World, comprising 96K synthetic paired videos with precise reconstruction targets and 1,079 in-the-wild clips from 303 games for realistic evaluation. Its asset library contains 5,132 verified UI elements across 21 taxonomy categories, collected from 1,010 representative gameplay frames. Based on Game2World, we propose GameCleaner, a mask-free gameplay UI removal model that combines multimodal semantic understanding with video editing capabilities. Unlike mask-based methods, GameCleaner directly identifies and removes diverse HUD elements while preserving the underlying scene content and temporal dynamics. In a controlled pilot, world models trained on UI-free gameplay improve overall VideoReward by 6.83% over those trained on UI-overlaid data. On UI-removal evaluation, GameCleaner achieves an average AAR of 95.36 on synthetic videos, outperforming the strongest temporal mask baseline by 57.3%, and obtains the best in-the-wild AAR of 80.05 with 99.8 background preservation. These results demonstrate the scalable potential of transforming Internet gameplay videos into high-quality world-model training data. Code, dataset, and model will be available at https://github.com/Dongping-Chen/Game2World.",
+      "authors": [
+        "Wenxuan Shen",
+        "Dongna Jin",
+        "Dongping Chen"
+      ],
+      "categories": [
+        "cs.CV",
+        "transfers",
+        "game",
+        "dynamics",
+        "to",
+        "robotics.",
+        "Feel",
+        "free",
+        "contact",
+        "Dongping",
+        "Chen",
+        "(dongpingchen0612@gmail.com)",
+        "if",
+        "you",
+        "are",
+        "interested",
+        "in",
+        "research",
+        "collaboration",
+        "or",
+        "financial",
+        "support"
+      ],
+      "doi": "",
+      "published": "2026-08-25T15:13:32+00:00"
+    },
+    "arxiv:2608.24738": {
+      "title": "TorchMorph: CUDA-accelerated Morphological Transforms",
+      "url": "https://arxiv.org/abs/2608.24738",
+      "abstract": "Morphological transforms are long-standing tools for shape and mask processing, but the de facto reference implementation in the Python ecosystem, i.e. scipy.ndimage, is CPU-only, single-array, and therefore unusable inside a GPU training loop without an expensive device-to-host round trip. GPU vision libraries built on PyTorch cover a narrow subset of these operators, typically restricted to two spatial dimensions and flat structuring elements. We present TorchMorph, a lightweight PyTorch extension that closes this gap. TorchMorph exposes 22 public operators covering binary morphology, greyscale morphology, exact and approximate distance transforms, and entropy-regularised optimal transport, all implemented as fused CUDA kernels that operate directly on (B, C, Spatial...) CUDA tensors with up to eight spatial dimensions. The API deliberately mirrors scipy.ndimage argument-for-argument, including border modes, structuring-element origins and pre-allocated outputs, so that existing pipelines port with a change of import. We describe the layered architecture and the kernel designs behind each operator family. Against single-threaded CPU references, batched execution reaches up to 1.1e3 times the throughput of scipy.ndimage on greyscale morphology and up to 350x on exact Euclidean distance transforms, while the Sinkhorn solver runs up to 42x faster than POT. Binary and chamfer operators reproduce their SciPy counterparts exactly, and every float-valued operator agrees with the CPU reference to within 1.8e-6 absolute error. TorchMorph is released under the MIT licence at https://intcomp.github.io/tm.",
+      "authors": [
+        "Kai Zhao"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-25T15:46:45+00:00"
+    },
+    "arxiv:2608.24782": {
+      "title": "Image Difference Quantification Using Autoencoder-Based Latent Representations",
+      "url": "https://arxiv.org/abs/2608.24782",
+      "abstract": "Traditional image similarity metrics such as Mean Squared Error (MSE), Peak Signal-to-Noise Ratio (PSNR), and the Structural Similarity Index Measure (SSIM) rely on pixel-level comparisons and often fail to capture perceptually meaningful differences between images. In contrast, latent representations learned by deep neural networks encode high-level semantic information that is more closely aligned with human visual perception. This paper proposes a convolutional autoencoder-based framework for quantifying image differences using cosine similarity in latent space. The learned compact embeddings enable robust differentiation between visually distinct images under variations in illumination, pose, and background. Extensive evaluation on dog-cat images and additional cross-domain datasets demonstrates clear class-wise clustering and strong inter-class separability in the latent space, with 98.4% of dog-cat image pairs exhibiting similarity scores below 0.5. Further validation using the TID2013 dataset shows that latent-space distance correlates positively with human Mean Opinion Scores (MOS), demonstrating sensitivity to perceptually relevant image distortions. The proposed approach provides a computationally efficient and semantically grounded alternative to conventional pixel-based similarity metrics, with potential applications in content-based retrieval, perceptual quality assessment, and semantic similarity analysis.",
+      "authors": [
+        "Manish Sharma",
+        "Timothy Yim",
+        "Clifton Forlines"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-25T16:23:47+00:00"
+    },
+    "arxiv:2608.23857": {
+      "title": "UHI-Bench: Benchmarking Dual-Source Urban Heat Island Modeling Across Cities in Diverse Climate Regimes",
+      "url": "https://arxiv.org/abs/2608.23857",
+      "abstract": "Urban heat islands (UHIs) are intensifying under climate change, exacerbating thermal exposure risks. Their two primary observations, land surface temperature UHI (LST-UHI) and near-surface air temperature UHI (AirT-UHI), capture physically distinct aspects of urban heat. However, most studies rely on a single source, and substituting one for the other can substantially bias the magnitude and spatial variability of human heat exposure. Accurate UHI modeling also requires dynamic meteorological drivers and static urban morphology features, but spatiotemporal incompatibilities hinder their alignment. Cloud gaps in LST observations and sparse AirT station networks further limit dual-source UHI modeling, motivating cross-city transfer across diverse climates. To bridge these gaps, we introduce UHI-Bench, the first UHI benchmark for dual-source UHI modeling that integrates dynamic and static environmental context. Following a unified signal, mechanism, and transfer framework, it evaluates over 20 baselines from four model families on five tasks across 20 cities and nine K\\\"oppen climate classes. Results show that no model is uniformly best, although foundation models remain consistently competitive and stable. Environmental covariates generally improve performance, but their utility varies across sources and tasks. Cross-city transferability is better explained by overlap in UHI regimes than by climate-zone similarity. With the dataset and standardized pipeline, our work provides practical guidance for urban heat modeling, promotes climate data equity, and supports future advances in climate research.",
+      "authors": [
+        "Wanyun Ling",
+        "Chenxi Liu",
+        "Yi Xie",
+        "Aopu Xu",
+        "Zhuoqi Zeng",
+        "and Ziyue Li"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-24T22:00:52+00:00"
+    },
+    "arxiv:2608.24087": {
+      "title": "Knowing When to Ask for Help: Bayesian Self-Escalation in Hierarchical LLM Agents",
+      "url": "https://arxiv.org/abs/2608.24087",
+      "abstract": "Current LLM agent systems decide delegation before reasoning begins (a router picks a model) or after a response is complete (a verifier scores it and may retry). We study a third regime: an agent that recognises, during its own reasoning, that it is unlikely to succeed and transfers control to a stronger model. We formulate intra-generation delegation as a Bayesian optimal-stopping problem over a learned competence posterior -- an online estimate of the agent's eventual task success whose sufficient statistics are learned from labelled trajectories, not read off raw entropy. We derive the myopic escalation threshold in closed form, characterise the optimal policy via dynamic programming, and prove that the optimal policy is a time-varying threshold with no shape assumption on the raw signal. We further prove exponential separation of the oracle belief at the Chernoff-information rate of the signal, a regret bound governed by the calibration of the posterior, and a finite-sample guarantee: with n labelled calibration trajectories the deployed plug-in policy's regret decays as 1/sqrt(n). A controlled simulation study confirms each prediction of the theory, including the predicted 1/sqrt(n) rate. We additionally report a real-model validation on a Qwen2.5-Coder 1.5B->7B code cascade (MBPP, 257 tasks), confirming two of three pre-registered predictions: the escalation frontier dominates post-hoc routing at equal cost, and the cumulative competence belief's discrimination rises over generation.",
+      "authors": [
+        "Nadeem Shaikh"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML",
+        "https://github.com/nadeem-shaikh/llm-self-escalation",
+        ".",
+        "Associated",
+        "record:",
+        "https://doi.org/10.5281/zenodo.21330787"
+      ],
+      "doi": "",
+      "published": "2026-08-25T05:35:07+00:00"
+    },
+    "arxiv:2608.23867": {
+      "title": "Markets, Not Planners: Decentralized Orchestration of LLM Agents with Private Information",
+      "url": "https://arxiv.org/abs/2608.23867",
+      "abstract": "As LLM agents proliferate, built by different parties and with different capabilities and costs, orchestrating them is more like assembling labor across the economy than a computer calling a subroutine. Existing orchestration is typically centralized, with a single planner assigning every task, but this creates a bottleneck as agent pools grow, requires private information (e.g., agents' execution costs), and can easily be manipulated, such that a single inserted preference nearly doubles a favored agent's task share under a centralized LLM allocator. We introduce AgentLance, a repeated labor market in which agents bid on tasks using their private costs and self-maintained strategy notes, an allocator selects winners from bids and public reputation records, and a VCG-style payment rule rewards cost-aware bidding. Complex tasks are handled by hierarchical delegation: winning agents can decompose work and subcontract it through the same mechanism. Across mathematical reasoning, code generation, knowledge-intensive QA, and agentic tasks, AgentLance matches agents to their specializations, shifts work toward cheaper agents as cost sensitivity rises, and consistently outperforms single-model, centralized-orchestration, and market baselines. Diagnosing market failures, including inaccurate cost self-estimation and sub-optimal bidding, then correcting them in controlled experiments yields further gains, charting a path toward more efficient agent economies.",
+      "authors": [
+        "Xiao Liu",
+        "Haoyang Li",
+        "Songwei Li",
+        "Hongbo Fang",
+        "Fengli Xu",
+        "Feng Shi",
+        "James Evans"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.CL"
+      ],
+      "doi": "",
+      "published": "2026-08-24T22:15:37+00:00"
+    },
+    "arxiv:2605.05535": {
+      "title": "Housing Potential Common Data Model and City Digital Twin",
+      "url": "https://arxiv.org/abs/2605.05535",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Megan Katsumi",
+        "Mark Fox",
+        "Anderson Wong",
+        "Divnoor Chatha"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": ""
+    }
+  },
+  "messages": [],
+  "coverage": "legacy-cache"
+}

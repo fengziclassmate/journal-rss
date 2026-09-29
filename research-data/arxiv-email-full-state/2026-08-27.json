@@ -1,0 +1,740 @@
+{
+  "papers": {
+    "arxiv:2608.18062": {
+      "title": "TokEval: A Tokenizer Evaluation Suite",
+      "url": "https://arxiv.org/abs/2608.18062",
+      "abstract": "Language model tokenizers are typically selected with minimal evaluation, despite the fact that their design choices directly impact model capabilities. This can be partly attributed to a limited understanding of which tokenizer properties affect which aspects of downstream performance. We introduce TokEval, a framework of tokenizer evaluation metrics that goes beyond standard measures like fertility and compression rate to capture linguistically and structurally meaningful properties, e.g., UTF-8 character boundary integrity and digit place-value boundary alignment for mathematics. To validate whether these metrics are predictive of downstream model performance, we conduct controlled language model pretraining experiments, varying solely the tokenizers' training data mixture, pretokenization strategy, and training algorithm. We evaluate the resulting models on bits-per-byte (a tokenizer-agnostic version of perplexity) and several benchmarks, spanning linguistic understanding, mathematical reasoning, and code generation. Our experiments suggest that different intrinsic properties have different impacts on model abilities: information-theoretic metrics predict language modeling abilities (Spearman rho up to 0.80), while structure-sensitive metrics, such as those measuring digit and line-break handling, correlate with task accuracy. We hope TokEval enables more principled tokenizer evaluation, replacing pretraining sweeps with intrinsic measurement wherever the two agree.",
+      "authors": [
+        "Clara Meister"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "https://github.com/cimeister/tokenizer-intrinsic-evals"
+      ],
+      "doi": "",
+      "published": "2026-08-18T17:52:52+00:00"
+    },
+    "arxiv:2608.19914": {
+      "title": "Multi-Source Wasserstein Distributionally Robust Graph Learning",
+      "url": "https://arxiv.org/abs/2608.19914",
+      "abstract": "Network topology inference from graph signals is central to graph signal processing with applications in neuroscience, sensor, and social networks. In practice, target-domain samples are scarce while heterogeneous source-domain data are abundant. Fusing these sources is challenging: Euclidean averaging works for homogeneous sources but degrades sharply as inter-source divergence grows, collapsing distinct geometries into an inflated, biased consensus. We exploit the Wasserstein metric's distribution-preserving properties to counter heterogeneity while preserving each source's intrinsic geometry. We propose MS-WDRO, a multi-source Wasserstein distributionally robust graph learning framework that fuses heterogeneous sources via their weighted Wasserstein barycenter, a geometrically principled nominal distribution, then builds an ambiguity ball around it to hedge residual uncertainty. Minimizing worst-case risk yields a tractable regularized Laplacian estimator solved efficiently via a provably convergent ADMM scheme. We establish non-asymptotic guarantees: a finite-sample concentration bound for the empirical barycenter, a pooling bias lower bound proving naive aggregation is suboptimal, and an out-of-sample excess risk bound decaying at a parametric rate with only logarithmic dependence on source count. To calibrate hyperparameters governing robustness, sparsity, and source fusion, we unroll the solver into a differentiable architecture trained end-to-end, achieving data-adaptive calibration beyond cross-validation while retaining interpretability. Experiments on synthetic benchmarks and the multi-site ABIDE~I neuroimaging dataset show MS-WDRO consistently outperforms seven baselines in graph recovery, sample efficiency, and downstream diagnostic utility, with the largest gains in the sample-scarce regime.",
+      "authors": [
+        "Chuansen Peng",
+        "Yifan Xia",
+        "Jinshan Zhong",
+        "and Xiaojing Shen"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-20T11:30:59+00:00"
+    },
+    "arxiv:2608.20365": {
+      "title": "Trilingual Topic Modeling of Sri Lankan Parliamentary Debates",
+      "url": "https://arxiv.org/abs/2608.20365",
+      "abstract": "Sri Lankan parliamentary debates (Hansards) constitute a trilingual corpus of speeches in Sinhala, Tamil, and English, including code-mixed content, yet remain inaccessible to standard NLP pipelines due to layout-complex PDFs, multilingual scripts, and agglutinative morphology. We present an end-to-end framework that addresses these challenges through LLM-based text extraction followed by a multilingual embedding and density-based clustering pipeline for topic modeling. A hybrid semantic-lexical extension, BiTopic, is further explored to improve interpretability and recover speeches otherwise discarded as noise. Applied to 19,553 speeches spanning 2017-2026, the pipeline recovers 30 macro-topics achieving a cluster purity (BCP) of 0.673, whose temporal trajectories align unsupervised with major national events including the 2019 Easter Sunday attacks and the 2022 economic crisis. Traditional LDA fails on this corpus due to cross-lingual fragmentation, whereas the proposed approach successfully identifies thematic structure across all three languages without supervision.",
+      "authors": [
+        "Himath Dhanapala",
+        "Haren Daishika",
+        "Himandhi Kuruppu",
+        "Sithija Seneviratne",
+        "Ashini Kavindya",
+        "Patalee Narasinghe",
+        "Sandeepa Weerasekara",
+        "Nisansa de Silva",
+        "Sandareka Wickramanayake"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-06-18T19:00:11+00:00"
+    },
+    "arxiv:2504.09772": {
+      "title": "Two Heads are Better Than One: Test-time Scaling of Multi-agent Collaborative Reasoning",
+      "url": "https://arxiv.org/abs/2504.09772",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Can Jin",
+        "Hongwu Peng",
+        "Qixin Zhang",
+        "Yang Zhou",
+        "Yujin Tang",
+        "Tong Che",
+        "Dimitris N. Metaxas"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": ""
+    },
+    "arxiv:2608.21567": {
+      "title": "Quantifying geographic domain shift to decouple the geospatial transferability of human mobility flow generation models",
+      "url": "https://arxiv.org/abs/2608.21567",
+      "abstract": "Human mobility serves as an essential proxy for understanding social, economic, and environmental dynamics in urban systems. Geospatial transferability, which measures a model's capability in a new location or unseen region, is a critical dimension for comparing different human mobility generation models. However, few studies have studied the intrinsic characteristics of geospatial transferability. To this end, this study systematically investigates the geospatial transferability of four representative human mobility generation models using a large-scale benchmark dataset of census tract level commuting flows across 2265 counties in the United States. Inspired by the domain adaptation theory in machine learning, we introduce geographic domain shift to describe the intrinsic differences in geographic feature distributions and spatial structures between source and target regions, which may jointly affect model transferability. Moreover, we propose two metrics, mutual information and spatial shift, to quantify the geographic domain shift. To examine their associations with model transferability, we employ linear mixed-effects regression to analyze the associations between geographic domain shifts and transferability. Our results reveal substantial spatial heterogeneity and asymmetry in transfer performance across regions. Both information shift and spatial shift exhibit statistically significant and complementary explanatory power. This indicates that geospatial transferability depends not only on model design but also on intrinsic geographic differences. These findings provide a novel methodological framework for evaluating and improving the geospatial transferability of human mobility generation models and support more robust and fair human mobility data synthesis across diverse regions. It also offers insights on spatial transferability for GeoAI model development.",
+      "authors": [
+        "Zhiyong Zhou",
+        "Song Gao",
+        "Qianheng Zhang",
+        "Feng Zhang",
+        "Zhenhong Du"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-21T19:15:20+00:00"
+    },
+    "arxiv:2608.23137": {
+      "title": "Simulate, record, verify: A language-portable framework for muscle-grounded articulatory QA (extended version)",
+      "url": "https://arxiv.org/abs/2608.23137",
+      "abstract": "Existing articulatory corpora based on real-time MRI and electromagnetic articulography capture tongue shape and motion but do not provide traceable labels for the muscle-driven process that generated an observed configuration. We introduce a simulator-grounded data-construction framework and instantiate it as 3DTongueQA. Controlled 11-dimensional muscle activations are mapped to fixed-topology tongue meshes with the ArtiSynth Badin finite-element model, converted into structured biomechanical records, and rendered as deterministic QA on muscle state, geometry, and target-directed change. We screen 295,157 configurations, retain 295,115 valid meshes, and construct 891,156 QA records per language. Language naturalization changes only surface form and is verified against the source records; English and Korean instantiations demonstrate construction-level portability. A swappable SpiralNet++--Qwen3-8B baseline reaches 62.9 $\\pm$ 9.2 Muscle EM, 74.0 $\\pm$ 0.2 Value Accuracy, and 65.9 $\\pm$ 4.7 Direction EM, while mismatching the paired mesh reduces Muscle EM to 2.2; a dataset-leakage-controlled anchor-held-out model retains 80.4--98.6\\% of the full-inventory scores on unseen anchors. Task-specific structured readouts further reach 88.7 $\\pm$ 0.7 Muscle EM and 93.3 $\\pm$ 1.0 Direction EM. These complementary results show that the constructed supervision supports both efficient structured prediction and heterogeneous natural-language QA rather than being tied to a particular decoder architecture.",
+      "authors": [
+        "Seungho Eum",
+        "Unsang Park"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "doi": "",
+      "published": "2026-08-24T11:43:30+00:00"
+    },
+    "arxiv:2608.23322": {
+      "title": "Beyond Point Predictions: Uncertainty-Aware Satellite Poverty Mapping for Public Policy",
+      "url": "https://arxiv.org/abs/2608.23322",
+      "abstract": "Despite their critical importance for policy and research, high-resolution poverty data remain limited across much of Africa. Machine learning (ML) with earth observation (EO) imagery has recently emerged as a way to supplement these data by predicting (i.e., estimating) poverty where it has not been directly measured. Yet to be used reliably, decision-makers and analysts need assurances that they will not be misled by the errors in these predictions. To meet this need, we develop an uncertainty-aware EO-ML method for poverty mapping based on simultaneous quantile regression and a novel form of conformal prediction. Using a spatiotemporal transformer trained on sequences of Landsat and nighttime-light images, we produce prediction intervals for neighborhood-level International Wealth Index estimates across Africa which are statistically guaranteed to achieve their desired coverage rates. While our method's point-prediction performance matches the state of the art, its prediction intervals are wider than might be expected given its high $R^2$ of $0.75$. However, other models of similar accuracy likely suffer from comparable uncertainty, pointing to an inherent limitation: even with its remarkably high explanatory power, EO-ML cannot naively be relied upon for policy-making, such as when designing poverty-targeting programs. To handle this challenge, we develop a procedure to efficiently allocate aid using both ground-truth surveys and model predictions while provably ensuring the risk of excluding eligible neighborhoods remains below a prespecified level. In simulations, this approach delivers substantially more aid per eligible recipient than other strategies, thereby demonstrating that EO-ML can indeed be a reliable supplement to traditional data sources---as long as methods",
+      "authors": [
+        "Markus B. Pettersson",
+        "James Bailie",
+        "Mohammad Kakooei",
+        "Eagon Meng",
+        "Adel Daoud"
+      ],
+      "categories": [
+        "cs.LG",
+        "of",
+        "the",
+        "National",
+        "Academy",
+        "Sciences",
+        "(PNAS)"
+      ],
+      "doi": "",
+      "published": "2026-08-24T14:38:23+00:00"
+    },
+    "arxiv:2608.25039": {
+      "title": "LifePlanner: Evaluating LLM Agents for Geo-spatial Planning with Social Media Data",
+      "url": "https://arxiv.org/abs/2608.25039",
+      "abstract": "Geo-spatial planning, like trip design, is a realistic testbed for LLM agents because it requires grounded tool use, noisy evidence retrieval, and multi-constraint reasoning. Most benchmarks, however, only provide clean geospatial data and tools, missing the open-ended social signals that people use in daily planning. We introduce LifePlanner, a benchmark that enriches map data with large-scale local social media posts and provides access through an MCP toolset. LifePlanner provides an evaluation suite spanning four task categories and three difficulty levels. Experiments show frontier LLMs perform well on simple retrieval but degrade sharply on complex planning, with the Pass Rate dropping to 40.2%. Results show that failures mainly stem from incomplete evidence acquisition from such a large multimodal database, imprecise tool use, and weak constraint integration rather than model size or reasoning length, suggesting that future progress requires effective grounded planning instead of scaling alone.",
+      "authors": [
+        "Zhen Dong",
+        "Yuning Peng",
+        "Yutao Shi",
+        "Lei Zhong",
+        "Yongsen Mao",
+        "Yuan Liu",
+        "Haiping Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-25T18:28:29+00:00"
+    },
+    "arxiv:2608.26088": {
+      "title": "Planetary Prediction Engine: Autonomous Geospatial Prediction via Intelligent Data Selection and Foundation Model Embeddings",
+      "url": "https://arxiv.org/abs/2608.26088",
+      "abstract": "Addressing critical global challenges, from food security and disaster risk to disease outbreaks and socio-economic vulnerability, demands high-fidelity geospatial modeling. However, building predictive planetary models remains bottlenecked by a fragmented data ecosystem, requiring manual data retrieval, multimodal data curation and fusion along with iterative model selection. We present the Planetary Prediction Engine (PPE), an autonomous AI system that executes this end-to-end workflow directly from natural-language queries. PPE synthesizes multimodal datasets on the fly, retrieving spatiotemporally relevant covariates across open-web and Earth observation platforms (Data Commons, Google Earth Engine) and fusing them with geospatial foundation model embeddings (PDFM, AlphaEarth). Simultaneously, it searches over task-tailored model architecture families with automated overfitting guards. Across diverse tasks, geographies, and scientific domains, PPE consistently outperforms state-of-the-art or manually tuned expert baselines. For US spatial regression, PPE improves mean $R^2$ across 21 CDC health indicators (76.8% vs. 60.0%), FEMA national risk indices (64.9% vs. 60.0%), and the Social Vulnerability Index (66.2% vs. 58.6%). For spatial downscaling in data-scarce settings, PPE integrates localized proxies to double baseline accuracy in Nigerian food security indicators ($R^2$ of 66.1% vs. 31.5%). For epidemiological nowcasting of the 2026 DRC Bundibugyo Ebola outbreak, PPE achieves a Recall@10 of 83.3% (identifying 15 of 18 newly invaded health zones across five weekly forecasts), a +10.3 percentage-point improvement over the public state-of-the-art modeling (~73%). By combining autonomous multimodal planetary data discovery with targeted model optimization, PPE lowers the technical barrier to planetary-scale analytics, enabling rapid, customized, expert-level deployment.",
+      "authors": [
+        "Evelyn Ma",
+        "Rama Kumar Pasumarthi",
+        "Kishwar Shafin",
+        "Mandar Sharma",
+        "Mimi Sun",
+        "Hamed Sadeghi",
+        "Dav M. Ebengo",
+        "Mbulayi Onesime",
+        "Ciara Judge",
+        "Rouslan Solomakhin",
+        "John Wamburu",
+        "William Ogallo",
+        "Aisha Walcott-Bryant",
+        "Sanxing Chen",
+        "Arbaaz Muslim",
+        "Yael Mayer",
+        "Ronald Ho",
+        "Roy Lee",
+        "Ruth Alcantara",
+        "Abdoulaye Diack",
+        "Monica Bharel",
+        "Lambert Rosique",
+        "Jeremy Amez-Droz",
+        "Christopher Haire",
+        "James Manyika",
+        "Yossi Matias",
+        "Niv Efron",
+        "Gautam Prasad",
+        "Shravya Shetty"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-26T17:50:52+00:00"
+    },
+    "arxiv:2608.25485": {
+      "title": "Semi-Supervised Adaptation of Vision-Language Models for Image Classification",
+      "url": "https://arxiv.org/abs/2608.25485",
+      "abstract": "Vision-language models like CLIP have shown sig- nificant potential in handling natural images, yet their perfor- mance is often limited by the distinct characteristics of satellite imagery. While parameter-efficient adaptation techniques exist, their efficacy is frequently limited by the scarcity of annotated samples. In this letter, we propose Self-Evolutionary CLIP (SE- CLIP), a semi-supervised framework designed for recursive label mining in scene classification. The approach follows a dual-phase pipeline, where an initial warm-up on a few annotated seeds is followed by a recursive discovery phase that iteratively identifies high-confidence samples from unlabeled pools. To maintain the integrity of the evolving support set, we employ a class-balanced selection strategy that prevents the model from being dominated by easily learned categories. Results on the UCM and NWPU benchmarks indicate that SE-CLIP significantly outperforms existing semi-supervised approaches. The framework provides a viable solution for adapting VLMs to the remote sensing domain with minimal human intervention.",
+      "authors": [
+        "Mohamed L. Mekhalfi",
+        "Mohamad M. Al Rahhal",
+        "Yakoub Bazi",
+        "Salah E. Khenfer",
+        "Mingdeng Shi",
+        "Hua Zou",
+        "and Mansour Zuair"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-26T07:54:50+00:00"
+    },
+    "arxiv:2608.25698": {
+      "title": "Modeling spatio-temporal locality in multi-step forecasting of geo-referenced time series",
+      "url": "https://arxiv.org/abs/2608.25698",
+      "abstract": "Forecasting future measurements from geographically distributed sensors is essential across many domains. However, the spatial distribution of these sensors raises multiple challenges, primarily due to spatial autocorrelation phenomena, that introduce inter-dependencies among nearby locations, that cannot therefore be treated independently. While some existing approaches can capture such phenomena, they generally model the spatial dimension globally across all locations. On the other hand, the method we propose in this paper, called SPALT, focuses on capturing spatial relationships among time series with similar trends, even if they occur at different times, thus modeling the spatio-temporal locality. SPALT leverages linear model trees, which allow us to consider the spatial autocorrelation locally: during the tree-building process, the adopted heuristics group time series exhibiting similar trends into the same node, on which additional features considering the spatial dimension are selectively injected. Additionally, we propose a new pruning strategy, based on Reduced Error Pruning, that also considers the spatio-temporal locality during the tree simplification. Designed for a multi-step setting, SPALT provides forecasts for multiple future time steps across multiple sensors simultaneously. The characteristics exhibited by SPALT can provide significant benefits in different domains, where measurements come from distributed sensors. In this paper, we focus on data produced by sensors located in multiple renewable power plants measuring their energy production at regular, short intervals. Experiments on 3 real-world datasets demonstrate the effectiveness of SPALT in forecasting the production of energy at different time horizons, and its superior performance in comparison with tree-based models and state-of-the-art neural networks that incorporate both temporal and spatial dimensions.",
+      "authors": [
+        "Annunziata D'Aversa",
+        "Gianvito Pio",
+        "Michelangelo Ceci"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-26T12:16:04+00:00"
+    },
+    "arxiv:2608.25700": {
+      "title": "Tropospheric temperature and humidity profile retrieval from Meteosat Flexible Combined Imager based on deep learning",
+      "url": "https://arxiv.org/abs/2608.25700",
+      "abstract": "The Meteosat Third Generation (MTG) Flexible Combined Imager (FCI) offers new opportunities for tropospheric temperature and humidity profiling, at higher spatio-temporal resolutions and expanded spectral coverage relative to its predecessor. Vertically resolved retrievals from broadband imagers are inherently challenging, and operational retrieval algorithms typically rely on numerical weather prediction (NWP) background fields to compensate for limited infrared spectral resolution, reducing the retrievals' independence. We develop a spatially aware deep learning framework to retrieve all-sky tropospheric temperature and humidity profiles from FCI, without forecast profiles as input. A Residual U-Net that exploits spatial context across all 16 FCI channels was trained on 14 months of collocated FCI observations and CERRA reanalysis targets over Europe. Validated against independent radiosondes, retrieved temperatures show biases below 0.4 K and standard deviations of 1.5-1.9 K. Retrieved relative humidity standard deviations range from 12-20 %, compared to 9-19 % for CERRA. Performance degrades modestly under clouds, with standard deviation increases below 0.4 K and 3 % RH beneath cloud tops despite limited direct radiative information. Ablation experiments show that spatial context improves retrievals, with the largest gains below cloud tops. Feature sensitivity analysis indicates broad consistency with FCI bands' established radiative transfer characteristics. Visible and near-infrared channels contribute despite not being commonly used in physics-based profile inversions. These results demonstrate that spatially aware deep learning models can extract statistically reliable tropospheric profiles from geostationary imager observations, independent of NWP forecast fields, enabling more rapid autonomous monitoring of the atmosphere.",
+      "authors": [
+        "Alejandro Salgueiro",
+        "Johannes Rausch",
+        "Julie Th\\'er\\`ese Villinger",
+        "Angela Meyer"
+      ],
+      "categories": [
+        "cs.LG",
+        "physics.ao-ph",
+        "figures.",
+        "Submitted",
+        "for",
+        "publication",
+        "in",
+        "Journal",
+        "of",
+        "Geophysical",
+        "Research:",
+        "Atmospheres"
+      ],
+      "doi": "",
+      "published": "2026-08-26T12:16:38+00:00"
+    },
+    "arxiv:2608.24886": {
+      "title": "VLM-based automatic multi-granularity graph representation of building layouts for design informatics",
+      "url": "https://arxiv.org/abs/2608.24886",
+      "abstract": "Architectural floorplan images encode rich relational knowledge among functional spaces, which underpins design retrieval, knowledge-based reasoning, and BIM enrichment through the building lifecycle. However, it remains challenging to automatically construct task-adaptive graph representations for public buildings. To address this gap, we first define a multi-granularity Level-of-Graphs (LoGs) for public building layouts. Methodologically, we present a Vision-Language Model (VLM)-based automatic LoG construction through node identification, edge inference, text parsing, and graph coarsening. VLM-generated representations are systematically evaluated and tested in real-world tasks, using 147 academic library floorplans worldwide as a case study. Experiments showed VLM-generated graphs were broadly consistent with human-labeled graphs (matched node ratio >= 92%; 509.3 s per floor plan for three-LoG graph generation). Meso-grained graphs yield the best node-level zone prediction (Macro F1 = 0.647, at 65% of fine-grained complexity), while coarse-grained graphs are most effective for graph-level layout quality evaluation (Spearman's \\r{ho} = 0.610, at 16% of fine-grained complexity). By enabling scalable, annotation-free extraction of structured layout information from floorplan images, this study advances design informatics by converting plan images into knowledge representations, thereby enhancing the utilization of design information across the building life cycle.",
+      "authors": [
+        "Song Guo",
+        "Zhuoshi Chen",
+        "Maosu Li",
+        "Weimin Zhuang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-05-08T00:27:11+00:00"
+    },
+    "arxiv:2608.25920": {
+      "title": "Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2608.25920",
+      "abstract": "As large language model (LLM)-based multi-agent systems (MASs) are increasingly applied to long-horizon complex tasks, their reliability has emerged as the core bottleneck hindering their real-world deployment. Existing MAS debugging and repair methods typically rely on rerunning and resampling the entire execution trajectory. However, a fundamental question remains to be answered: do these methods causally repair MAS failures or merely stochastically repair by leveraging the randomness of LLM sampling? To evaluate the effectiveness of MAS repair methods, we introduce SymTrace, a controlled evaluation framework that records the MAS execution trajectory and establishes intervention anchors. During replay, it effectively reconstructs the execution before the anchor using recorded logs and only regenerates the downstream trajectory, thereby enabling the reliable reproduction of MAS failures. We further construct the dataset SymFail, comprising 536 human-annotated failure trajectories with graph-linked locations, categories, and trace evidence. Based on these foundations, we conduct a large-scale empirical study across three mainstream MAS frameworks. Our findings reveal that existing unguided rerun methods are highly unreliable, exhibiting low failure reproduction and repair rates (only 67.97% and 6.90%, respectively). Building upon these findings, we further explore the effectiveness of a symptom-driven intervention method, which successfully repairs 20.15% of the failed cases (a 191.89% improvement to state-of-the-art repair methods). This study aims to provide actionable insights for MAS debugging and repair research, paving the way for the robust deployment of multi-agent systems.",
+      "authors": [
+        "Zhongwen Luan",
+        "Xiaoyu Zhang",
+        "Ming Hu",
+        "Yue Yang",
+        "Jiongchi Yu",
+        "Xiaohong Chen"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "doi": "",
+      "published": "2026-08-26T15:33:47+00:00"
+    },
+    "arxiv:2608.25937": {
+      "title": "Candidate supply and answer selection shape the value of LLM judging in multi-agent systems",
+      "url": "https://arxiv.org/abs/2608.25937",
+      "abstract": "Multi-agent systems (MAS) sometimes already have the potential to answer correctly, but still report a wrong answer. Explaining this outcome is difficult because generation, communication and final answer-selection rules usually change simultaneously. We conceptualize multi-agent reasoning as an evolutionary pipeline of candidate generation, peer communication and terminal selection, wherein consensus without quality control can exhibit patterns of memetic drift. We study two questions: (1) when an LLM judge provides effective selection pressure by supplying a signal of answer correctness for candidates generated in a multi-agent system, and (2) when using that signal improves the reported answer. To map judge reliability, we analysed 15,336 questions from MMLU-Pro, GPQA, MedXpertQA and MuSR, with Humanity's Last Exam analysed separately. To test these rules, we replayed 81,390 fixed candidate pools drawn from 16,278 questions across five benchmarks. We report three findings. (1) A correct answer is often already present among the generated candidates, but the system can still converge on and report a wrong answer. (2) Judge reliability is not a fixed trait of the model, but varies with the task, the generator and how rare the correct answer is. (3) Combining answer frequency with the judge's evaluation changed only the final answer-selection rule and raised accuracy from 63.82% to 70.82-70.95%, primarily by rescuing correct answers that were outnumbered by popular errors. In the systems studied here, the value of generating more candidates depends on whether those extra samples make correct answers present, frequent or recognisable. By isolating generation, recognition and selection, these findings establish a diagnostic basis for designing multi-agent architectures that protect generated correct answers from being lost.",
+      "authors": [
+        "Jia-Hao Ji",
+        "Sijie Li",
+        "Jiabei Cheng",
+        "Zixi She",
+        "Jin-Tai Yu",
+        "Zhiyuan Yuan"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "doi": "",
+      "published": "2026-08-26T15:52:20+00:00"
+    },
+    "arxiv:2608.25960": {
+      "title": "LivingRAG: Augmenting Graph RAG with Experience",
+      "url": "https://arxiv.org/abs/2608.25960",
+      "abstract": "Graph-based RAG improves multi-hop question answering by organizing evidence as a knowledge graph. However, most existing RAG systems process each query in isolation and discard useful reasoning from the LLM's response after inference. As a result, later related queries need to retrieve evidence and reason from scratch. We propose LivingRAG, a Graph RAG framework with writable and reusable reasoning experience. LivingRAG adds a writable experience store to a graph-based retrieval backbone, enabling verified experiences to be reused during inference in two ways. Stored graph signals help retrieval find entities and passages that were useful in earlier related queries. Stored summaries provide a reference reasoning pattern for answer generation. We analyze online QA streams and find reusable signals from shared entities, graph neighborhoods, and question templates. Experiments on multi-hop QA benchmarks show that LivingRAG improves accuracy over strong RAG baselines and reduces completion-token use when relevant prior experience is reused.",
+      "authors": [
+        "Yuzhuo Cui",
+        "Zongye Zhang",
+        "Qingjie Liu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-26T16:21:06+00:00"
+    },
+    "arxiv:2608.25986": {
+      "title": "Multi-Granularity Context-Enhanced RAG over Multimodal Knowledge Graphs",
+      "url": "https://arxiv.org/abs/2608.25986",
+      "abstract": "Retrieval-augmented generation (RAG) is widely used to mitigate hallucination issues in large language models (LLMs) and multimodal large language models (MLLMs). In particular, knowledge graph (KG)-based RAG leverages structured knowledge to provide (M)LLMs with high-quality external information. Building on these works, recent studies have explored multimodal knowledge graphs (MMKGs) as knowledge bases for GraphRAG. This enables Graph RAG to integrate knowledge across multiple modalities, thereby further enhancing its performance. However, existing MMKG-based RAG methods generally follow a common pipeline in which different modalities are largely processed independently before being fusion. As a result, textual context is only used to a limited extent during visual information extraction and subsequent multimodal knowledge fusion. This brings a semantic gap between images and text which limits the multimodal GraphRAG performance. To address this issue, we propose a novel framework for constructing a Context-Enhanced MMKG (CEMMKG) to better support multimodal GraphRAG. The proposed CEMMKG enriches each image with complementary textual context at both local and global scopes. Local context goes beyond the surrounding text by incorporating sentences that are semantically related to the image, while global context provides a summary of the entire passage. We further introduce a multi-granularity design for the local context, allowing it to capture semantically relevant information at different levels of detail. Extensive experiments on the selected vision-centric dataset validate that CEMMKG is effective in leveraging contextual information to improve MMKG-based RAG performance. Moreover, its effectiveness across different MMKG-based RAG methods demonstrates its broad applicability.",
+      "authors": [
+        "Zongyu Wu",
+        "Yilong Wang",
+        "Xiaochen Wang",
+        "Minhua Lin",
+        "Zhichao Xu",
+        "Fenglong Ma",
+        "Xiang Zhang",
+        "Suhang Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-26T16:38:02+00:00"
+    },
+    "arxiv:2608.25992": {
+      "title": "ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs",
+      "url": "https://arxiv.org/abs/2608.25992",
+      "abstract": "Multi-agent large language model (LLM) workflows have emerged as a powerful paradigm for solving complex, open-ended tasks through collaborative reasoning among specialized LLM agents, but they incur substantial operating costs due to repeated LLM invocations and long-horizon context accumulation. Existing cascade routing methods make one-shot, query-level decisions and cannot adapt to the dynamic, state-dependent nature of multi-step workflows, in which the right LLM at each step depends on evolving task progress, remaining task difficulty, and cost-efficiency requirements. We present ProgRouter, an online progress-guided routing framework that adaptively selects LLM agents across workflow steps to preserve task-solving quality while adhering to time and cost budgets. ProgRouter introduces a multi-view task progress scorer that combines coarse workflow outcome regimes with fine-grained signals on subtask completion, progress trends, and workflow state quality. Then, a dual-path task progress predictor and an adaptive meta-gating mechanism estimate the progress gain for each candidate routed LLM. ProgRouter makes online step-wise routing decisions that balance progress gain, task time budgets, and long-term operating cost efficiency. Experiments on HumanEval Plus, MBPP, MATH-500, and ASQA, spanning agentic code generation, mathematical reasoning, and retrieval-augmented long-form question answering, demonstrate that ProgRouter reduces the operating cost relative to key baselines while maintaining strong task-solving performance.",
+      "authors": [
+        "Songyuan Li",
+        "Ahmed M. Abdelmoniem",
+        "Shiqiang Wang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.MA",
+        "Linguistics:",
+        "EMNLP",
+        "2026.",
+        "Index",
+        "Terms:",
+        "Collaborative",
+        "agentic",
+        "workflows,",
+        "LLM",
+        "agent",
+        "orchestration,",
+        "Quality-cost",
+        "trade-off,",
+        "Task",
+        "progress",
+        "prediction,",
+        "Online",
+        "decision-making"
+      ],
+      "doi": "",
+      "published": "2026-08-26T16:42:02+00:00"
+    },
+    "arxiv:2608.25717": {
+      "title": "When RAG Fails to Equalize: Geo-bias in Factual Question Answering over Public Companies",
+      "url": "https://arxiv.org/abs/2608.25717",
+      "abstract": "Retrieval-augmented generation (RAG) is widely assumed to mitigate factual errors in large language models (LLMs), but it remains unclear whether retrieval uniformly compensates for missing knowledge. We study this question in a controlled factual QA setting over public companies, constructing a benchmark of approximately 2,000 firms across global equity indices. We evaluate six LLMs on four atomic attributes under four conditions: no-context, perfect context, misleading context, and distraction context. We find strong geographic disparities in no-context accuracy, indicating uneven parametric knowledge. While perfect context improves performance, it does not eliminate these gaps: gains are correlated with baseline accuracy, suggesting retrieval effectiveness is coupled to internal representations. Under misleading context, models frequently copy incorrect information. Larger models improve overall performance but do not remove these structural effects. These results challenge the view of RAG as a universal corrective and highlight the interaction between model knowledge, context quality, and entity representation.",
+      "authors": [
+        "Abhinav Havaldar",
+        "Enrico Santus"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-26T12:34:12+00:00"
+    },
+    "arxiv:2608.24956": {
+      "title": "Synergising Local Geo-Environmental Characteristics with Spatial Context for Enhancing Landslide Susceptibility Mapping",
+      "url": "https://arxiv.org/abs/2608.24956",
+      "abstract": "Data-driven methods are widely used in landslide susceptibility mapping (LSM) because they can effectively model the complex relationships between landslides and geo-environmental conditions. Existing data-driven approaches generally follow two types of data representations. Pixel-based models focus solely on the geo-environmental characteristics of a specific landslide but neglect the influence of its surrounding environment. Patch-based models incorporate surrounding spatial context but may include pixels with weak or no spatial relevance to the target landslide location. To address this limitation, this study proposes a Local-Geo and Spatial Context Fusion (LGSCF) strategy, which synergises the geo-environmental characteristics of landslide points with their corresponding spatial context through a feature-wise modulation mechanism. We tested the LGSCF strategy by integrating it into several representative convolutional neural network (CNN) architectures, creating nine different LGSCF-based models. The study area covers approximately 2644 km2 across Jenai and Sinyi Townships in Nantou County, Taiwan, and the dataset comprises 5332 landslide samples and an equal number of non-landslide samples. The results show that LGSCF-based models consistently outperform their original versions, achieving F1-scores up to 87.09% and AUC values up to 0.9472. Furthermore, the susceptibility maps produced by LGSCF-based models show that known landslides are more accurately concentrated in \"very high\" susceptibility zones with fewer misclassifications. These findings demonstrate that our fusion strategy can significantly improve the accuracy of landslide susceptibility mapping.",
+      "authors": [
+        "Yusen Cheng",
+        "Lei Fan",
+        "Qinfeng Zhu",
+        "Cheng Zhang",
+        "Yangyang Li",
+        "Ron Mahabir"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-25T02:32:10+00:00"
+    },
+    "arxiv:2608.25608": {
+      "title": "When Should a Network Emit Geometry, and When Should It Detect It? Readout, Reconciliation, and Representation in Floorplan Vectorization",
+      "url": "https://arxiv.org/abs/2608.25608",
+      "abstract": "A network trained to recover the walls, openings, and rooms of a rasterized floorplan can produce its output in two ways: by emitting the geometry as an autoregressive coordinate sequence, or by detecting it on dense junction and centerline heatmaps and assembling a graph. We compare the two readouts on the same trained network. On real scans (CubiCasa5K) detection is better on every wall measure (+2.7 wall F1 at tolerance 0.05, +5.1 at 0.015; paired bootstrap intervals exclude zero), and reading an opening heatmap the decoder never used raises opening F1 by 2.6x without retraining. Within real scans the readout's advantage grows with plan size and reverses on small plans; on clean vector renders sequence decoding is better by 5 to 8 points where its training covered the render style, while under full domain shift the readout, given calibrated thresholds, stays ahead; neither ink density nor plan size explains the reversal. With matched data and recipe, a room-centric system with a reconciliation step and a wall-first sequence model reach comparable wall quality, so the output representation matters less than is usually assumed. A prior from the other family helps at the output but not at the input: deterministic fusion of the two outputs raises wall F1 by 7 points, whereas conditioning one model on the other's output gives no gain in three forms, including two ground-truth-content controls. We also provide an edit-cost metric that scores a draft by the human work needed to correct it, corrected CubiCasa5K annotations, and ResPlan-FP, a CC BY 4.0 benchmark of 16,998 plans with frozen splits and three baseline tracks. Code, the benchmark, and the corrected annotations are available at https://github.com/Cyprinus12138/fpvec-lab",
+      "authors": [
+        "He Zhang"
+      ],
+      "categories": [
+        "cs.CV",
+        "https://github.com/Cyprinus12138/fpvec-lab"
+      ],
+      "doi": "",
+      "published": "2026-08-26T10:25:09+00:00"
+    },
+    "arxiv:2608.25693": {
+      "title": "Unsupervised Anatomical Feature Learning via Diffusion Models: Enhanced Medical Image Segmentation with Denoising Diffusion Probabilistic Models",
+      "url": "https://arxiv.org/abs/2608.25693",
+      "abstract": "Acquiring pixel-level annotations for medical image segmentation is a severe bottleneck. Traditional U-Net architectures, while effective, learn local texture patterns and lack awareness of global anatomical structures, leading to boundary delineation failures in low-data regimes. This research paper proposes utilizing unsupervised Denoising Diffusion Probabilistic Models (DDPMs) to extract anatomical features. We train a DDPM on 21 unlabeled abdominal CT scans to learn structural representations, transferring the encoder weights to a downstream segmentation task evaluated on the BTCV multi-organ dataset. Diffusion pretraining significantly improved liver segmentation: Dice increased from $0.75\\pm0.36$ to $0.93\\pm0.16$ ($p < 5.33\\times10^{-26}$, 0.529 Cohen's d), Average Surface Distance (ASD) decreased by 66%, and 95th-percentile Hausdorff Distance (HD95) reduced by 45%. For kidney segmentation, Dice improved from $0.90\\pm0.19$ to $0.95\\pm0.10$ ($p < 4.01\\times10^{-11}$). Multi-organ pooled performance showed a 68% variance reduction and a 74% improvement in boundary precision (Dice $0.95\\pm0.07$). Crucially, frozen encoder models retained > 80% of fine-tuned performance without exposure to segmentation labels, proving the existence of learned anatomical priors. In low-data scenarios, diffusion-pretrained models maintained robust performance with only 50% (Dice: 0.92 liver, 0.94 kidney), 25%, and even 10% (Dice: 0.89 liver, 0.71 kidney) of labeled data. Using unlabeled images for diffusion-based pretraining successfully embeds robust anatomical features prior to human supervision, transforming U-Nets into anatomy-aware systems.",
+      "authors": [
+        "Akshat G",
+        "Divyansh Gupta",
+        "Shaleen Bhatnagar",
+        "Shilpa Ankalaki",
+        "Tusar Kanti Mishra"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-26T12:10:56+00:00"
+    },
+    "arxiv:2608.25808": {
+      "title": "TDFNet: Tri-projection Deformable Fusion Network for Panoramic Salient Object Detection",
+      "url": "https://arxiv.org/abs/2608.25808",
+      "abstract": "Recent years have witnessed the growing potential of panoramic salient object detection in robotic vision, virtual reality, and related applications. However, projecting spherical scenes onto 2D planes inevitably introduces geometric distortions, which fundamentally limit the effectiveness of existing projection-based methods. Specifically, Equirectangular Projection (ERP) suffers from severe polar stretching distortions, while cube map projection introduces discontinuities across cube-face boundaries, resulting in degraded feature discriminability and compromised geometric consistency. To address these limitations, we propose TDFNet, the first Tri-projection Deformable Fusion Network for panoramic salient object detection, exploiting complementary projection representations to alleviate geometric distortions and improve detection performance.Specifically, we design a cross-projection deformable attention (CDA) module that leverages spatial correspondences between different projections to construct geometry-aware sampling locations, guiding deformable attention for cross-projection contextual aggregation and enhancing robustness against projection-induced deformations. Furthermore, we introduce a latitude-guided fusion module, which utilizes spherical latitude priors to construct geometric confidence weights for adaptively balancing ERP and CMP features. Meanwhile, LGF incorporates distortion-reduced semantic references from Tangent Projection to achieve cross-projection feature refinement and spatial alignment.By constructing a three-branch encoding architecture based on ERP, CMP, and Tangent Projection, TDFNet simultaneously preserves global spatial continuity, local geometric details, and fine-grained boundary information.",
+      "authors": [
+        "Qiangqiang Zhou",
+        "Jiacong Yu",
+        "Jiawei Xu",
+        "Yong Chen",
+        "Xin Huang",
+        "Ping Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-26T13:54:44+00:00"
+    },
+    "arxiv:2608.25810": {
+      "title": "Label-Free Foundational Model Selection for Medical Image Classification under Distribution Shift via Pseudo Label Discrepancy",
+      "url": "https://arxiv.org/abs/2608.25810",
+      "abstract": "Foundation models are increasingly deployed for medical image analysis. However, under the inter-institutional distribution shift typical of deployment, their performance varies widely and cannot be known without target-domain labels, which are rarely available. This leaves a practical question unresolved: given several candidate foundational models and labeled-data from a source domain, which one to deploy in an unlabeled target domain? We propose a label-free selection criterion built on SUDO, a framework for evaluating clinical AI systems without ground-truth annotations. SUDO partitions the unlabeled target data by predicted probability and, for each region, measures a pseudo-label discrepancy reflecting class contamination; aggregated across regions, this yields a score (AURCC) requiring neither target annotation nor fine-tuning. We show that AURCC can be used to rank a variety of vision-language models (BioMedCLIP, CXR-CLIP, CheXzero, MedCLIP, MedImageInsight, CLIP) on chest X-ray classification across three inter-hospital shift scenarios, under zero-shot and MLP-probe regimes. The AURCC ranking recovers the ground-truth ranking with Spearman rho up to 0.943 (p<0.05). Against the natural baseline of ranking by held-out source accuracy, AURCC is competitive when the labeled source is large and yields a more accurate ranking once it is small; the regime of interest in resource-constrained settings.",
+      "authors": [
+        "Juan I\\~naki Larrea",
+        "Lucas Mansilla",
+        "Enzo Ferrante"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-26T13:56:29+00:00"
+    },
+    "arxiv:2608.25836": {
+      "title": "Socialized Detector Learning: Trajectory-Guided and Reciprocal Distillation for Heterogeneous Object Detectors",
+      "url": "https://arxiv.org/abs/2608.25836",
+      "abstract": "Object detection knowledge is fragmented across independently trained, heterogeneous detectors with complementary category supports. In socialized learning, this knowledge resides in a society, and learning aims to evolve the society collectively through exchange. However, aggregation-based socialization does not explicitly plan transfer order, whereas progressive multi-teacher distillation considers order but remains a one-way student enhancement in a shared category space. Building on Socialized Learning, we formulate Socialized Detector Learning (SDL) for heterogeneous, category-specialized object detectors and propose Trajectory-Guided and Reciprocal Distillation (TGRD).TGRD estimates directed operational Inter-Detector Transfer Difficulty (IDTD) from held-out feature-alignment residuals, precomputes a fixed score table, and greedily constructs a carrier trajectory. Along the trajectory, knowledge is progressively consolidated into a union-category carrier and then returned to experts through reciprocal transfer. A conditional proxy-certificate analysis shows that, under stated assumptions, the progressive certificate is no larger than an aggregated-target counterpart. On MS COCO with four heterogeneous experts and two carrier initializations, final carriers outperform epoch-matched simultaneous aggregation controls by 2.6 AP in both settings. Reciprocal detectors attain 20.8--28.4 AP on previously unsupported categories while remaining within 1.3 AP of original expert-specific performance. These results support order-aware progressive consolidation followed by reciprocal transfer as a viable mechanism for detector-society evolution.",
+      "authors": [
+        "Weihao Li",
+        "Yunqi Zhu",
+        "Zhihe Fan",
+        "Ruipu Zhao",
+        "Boan Tao",
+        "Xinjie Yao",
+        "Yan Fan",
+        "Pengfei Zhu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-26T14:14:31+00:00"
+    },
+    "arxiv:2608.25858": {
+      "title": "Precipitation Downscaling Using Foundation Model-Conditioned Diffusion",
+      "url": "https://arxiv.org/abs/2608.25858",
+      "abstract": "High-resolution precipitation fields are essential for hydrological impact assessment, yet global climate model outputs are too coarse and biased for direct use. AI-based statistical downscaling with diffusion models offers a promising approach, but the mechanism by which large-scale atmospheric predictors condition generation remains largely unexplored. We investigate three conditioning strategies for a denoising diffusion probabilistic model applied to daily precipitation downscaling: channel concatenation of upsampled coarse predictors, cross-attention conditioning with a learned convolutional encoder, and cross-attention conditioning with the frozen encoder of the pretrained Prithvi WxC weather foundation model. All strategies are evaluated against an unconditioned baseline under identical conditions using probabilistic, distributional, spectral, and extreme-event metrics for the Colorado River Basin. Concatenation conditioning achieves the lowest point-wise CRPS and MSE, but tends to produce over-smoothed fields that suppress high-intensity events. In contrast, cross-attention conditioning provides substantially better distributional realism and modest improvements in spectral fidelity. Improvements are greatest for extremes: the Prithvi-WxC conditioned model retains over half of >100mm/day events, although estimates are uncertain due to limited samples. When trained on the full dataset, the learned convolutional model performs similarly to the foundation model-conditioned approach while requiring lower computational resources. However, the Prithvi-WxC-conditioned model achieves comparable performance with only five years of training data. These results indicate that cross-attention conditioning offers advantages over simple concatenation for probabilistic precipitation downscaling, and that pre-trained foundation model representations may offer benefits in data-limited settings.",
+      "authors": [
+        "Victor Nascimento Ribeiro",
+        "Jorge Guevara",
+        "Jorge Sebastian Moraga",
+        "Chris Lucas",
+        "Natalie Lord",
+        "Andrew Taylor",
+        "Edward Lockhart",
+        "Will Trojak",
+        "Johannes Schmude",
+        "and Anne Jones"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "physics.ao-ph"
+      ],
+      "doi": "",
+      "published": "2026-08-26T14:30:39+00:00"
+    },
+    "arxiv:2608.25888": {
+      "title": "Embedding NDRE Trajectories into Contrastive Learning for Label-Free, Physiology-Aware Crop-Stress Staging and DSS Outputs",
+      "url": "https://arxiv.org/abs/2608.25888",
+      "abstract": "Timely detection of crop stress is critical for sustaining yields under increasing drought frequency, yet conventional vegetation index thresholds or image-based clustering often fail to capture stress progression, limiting their value for farm decision-making. To address this gap, we present EigenCL, a physiology-guided contrastive learning framework that stages crop stress from Sentinel-2 NDRE trajectories, with the goal of providing interpretable and transferable stress diagnostics for decision support systems (DSS). EigenCL was trained on 10,000 maize NDRE patches from drought-affected Iowa fields in 2020 and tested on Nebraska fields in 2023 without retraining, with validation incorporating soil-moisture records, U.S. Drought Monitor maps, and county-level yield statistics. The model produced four physiologically coherent stress clusters (Healthy, Mild, Moderate, Severe), significantly outperforming baselines including K-Means, SimCLR, ProtoCLR, and an ablation model (Silhouette = 0.748, DBI = 0.35, CHI = 49,624). Clusters aligned with maize growth stages, with severe stress peaking around tasseling-silking (VT-R1), a stage known to drive yield loss; moreover, EigenCL clusters correlated with soil moisture at 0-14-day lags (rho up to 0.72) and matched yield anomalies in drought-affected counties. By embedding NDRE trajectory dynamics into contrastive learning, EigenCL enables early stress alerts and interpretable DSS outputs (e.g., heatmaps, scouting priorities, regional risk indices), extending beyond single-date NDRE thresholds and supporting scalable monitoring for climate-smart agronomy.",
+      "authors": [
+        "Shafqaat Ahmad"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": "2026-08-26T15:01:56+00:00"
+    },
+    "arxiv:2608.25935": {
+      "title": "TAU-Agent: An Agentic Retrieval-Augmented Framework for Traffic Anomaly Understanding",
+      "url": "https://arxiv.org/abs/2608.25935",
+      "abstract": "Traffic Anomaly Understanding (TAU) requires models and systems to detect, reason about, and explain anomalous events in transportation videos. To address this challenge, we propose TAU-Agent, an agentic retrieval-augmented framework for traffic anomaly understanding. Given a task query, a central retrieval agent orchestrates two visual perception tools, namely a Video Captioning Tool and an Open-Vocabulary Tracking Tool, to retrieve and select query-relevant evidence, including captions, temporal intervals, and object trajectories. The selected evidence, together with sampled video frames and the input query, is provided to a supervised fine-tuned vision-language model for final reasoning and answer generation. We evaluate TAU-Agent on both the in-domain and the out-of-domain benchmarks from the AI City Challenge 2026. TAU-Agent achieves scores of 0.6779 on Track 3, 0.3998 on Track 7, and 67.9275 on Track 8, ranking second, twelfth, and fifth, respectively. Code is available at: https://github.com/siri-rouser/TAU-Agent.",
+      "authors": [
+        "Yuqiang Lin",
+        "Yan Shi",
+        "Sam Lockyer",
+        "Harish Tayyar Madabushi",
+        "Adrian Evans",
+        "Wenbin Li",
+        "Yinhai Wang",
+        "Nic Zhang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "doi": "",
+      "published": "2026-08-26T15:50:38+00:00"
+    },
+    "arxiv:2608.25149": {
+      "title": "SNAP-KG: Streaming Node Assignment via Projection for Knowledge Graph Entity Integration",
+      "url": "https://arxiv.org/abs/2608.25149",
+      "abstract": "Knowledge graph (KG) construction pipelines must continuously integrate newly arriving entities into a growing graph. Unlike inserting triples between existing nodes, a newly arriving entity has no graph connectivity: it emerges from the acquisition phase as a raw feature vector and must be assigned to a semantic community before entity resolution and link prediction can operate over a tractable candidate set. Existing multi-view graph clustering methods exploit multiple relation types as structural views, but are transductive: they assume a fixed graph and cannot assign unseen entities without retraining. We propose SNAP-KG (Streaming Node Assignment via Projection for Knowledge Graph Entity Integration), a framework supporting graph-structural multi-view relational clustering and inductive inference for streaming entities. SNAP-KG trains a projector to map a new entity directly to the learned embedding space using only raw features, enabling immediate cluster assignment without graph access or model retraining. Experiments on five benchmark multi-view graph datasets and a production-scale KG of 2.4 million nodes demonstrate multiple orders-of-magnitude inference speedups over retraining-based approaches and competitive clustering quality. As a candidate scoping mechanism for downstream tasks, SNAP-KG achieves 62-75% candidate search reduction on the five benchmark datasets and 97% on OGB-WikiKG2 for entity resolution and link prediction.",
+      "authors": [
+        "Jui-Chien Lin",
+        "Mohammad Mohammadi Amiri",
+        "Oshani Seneviratne"
+      ],
+      "categories": [
+        "cs.LG",
+        "2026)"
+      ],
+      "doi": "",
+      "published": "2026-08-25T20:56:01+00:00"
+    },
+    "arxiv:2608.25744": {
+      "title": "A Constitutive Markov Physics-Informed Neural Operator (MPNO) for Autoregressive Stability in Transient Dynamics",
+      "url": "https://arxiv.org/abs/2608.25744",
+      "abstract": "Neural operators applied to transient-dynamics PDEs with strong discontinuities exhibit autoregressive instability: in concrete-penetration stress-field prediction, the wavelet neural operator (WNO) diverges in autoregressive rollout, while MeshGraphNets collapse to zero predictions. WNO's instability stems from the lack of a structural constraint on the spectral radius of its propagation operator; the Fourier neural operator (FNO) is stable in these measurements but only emergently, not by construction. We propose a constitutive Markov physics-informed neural operator (MPNO) modeling one-step evolution as a Markov (row-stochastic) propagation operator. Physics-coupled edge weights (acoustic-impedance harmonic mean, contact area, and traction amplitude) encode material-interface constitutive information into a nonnegative symmetric adjacency matrix W; after normalizing the graph Laplacian L = D - W by lambda_max, the propagator P = I - alpha*L~ is constructively constrained to spectral radius rho(P) <= 1, suppressing exponential amplification of autoregressive errors. Stability is thus a designable architectural property, not an optimized loss objective. On three PDEs (Burgers and two-dimensional transverse-section concrete penetration), MPNO rolls out stably with bounded error on all test seeds at 100/135/165 m/s; the single-step relative L2 error is 0.7304 +/- 0.0008, better than WNO and comparable to FNO at about one quarter of FNO's parameters. The edge-weight formula transfers across scenarios by replacing material-property variables. With about 20K parameters, MPNO delivers roughly 10^5x inference speedup over LS-DYNA.",
+      "authors": [
+        "Wenpu Du",
+        "Peng Zhou",
+        "Yunlong Xia",
+        "Sinuo Xin",
+        "Congcong Zhang",
+        "Boyang Zhang",
+        "Yi Zhang",
+        "Wenzheng Xu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "doi": "",
+      "published": "2026-08-26T12:54:37+00:00"
+    },
+    "arxiv:2608.25823": {
+      "title": "Learning Continuous Regional Temperature Fields with Lead-Time and Resolution Queries",
+      "url": "https://arxiv.org/abs/2608.25823",
+      "abstract": "Accurate regional near-surface temperature forecasting is fundamental to short-range weather services and downstream risk assessment. Existing deep learning-based regional forecasters commonly produce a fixed set of future frames on a prescribed grid, limiting their use when forecast products must be evaluated at query-dependent lead times or display resolutions. To overcome these fixed-output constraints, we formulate regional T2M forecasting as query-conditioned continuous spatiotemporal temperature field evaluation and propose the Continuous Spatiotemporal Temperature Forecaster (CSTF), a neural field that turns forecast lead time and output resolution into explicit queries when evaluating 2-m temperature (T2M). Specifically, CSTF first encodes multivariable ERA5 histories into latent meteorological states and then decodes T2M as a coordinate-based field. Accordingly, spatial location, forecast lead time, and output resolution are introduced as queries, enabling standard hourly forecasts, intermediate lead-time diagnostics, and resolution-controllable outputs within a unified field-evaluation framework. Furthermore, to maintain coherence across flexible field queries, we design spatial-gradient, temporal-difference, and scale-consistency objectives that regularize regional thermal structures, lead-wise evolution, and cross-resolution agreement. Experiments on the Southeast China 0-6 h ERA5-Land benchmark demonstrate that CSTF achieves the best aggregate deterministic skill, including a 17.0 percent reduction in Bias, with global-scope diagnostics further illustrating flexible lead-time and resolution-controllable inference.",
+      "authors": [
+        "Chunlei Shi",
+        "Jiong Wang",
+        "Yi-Lin Wei",
+        "Junming Hou",
+        "Jinjin Liu",
+        "Yecheng Zhang",
+        "and Dan Niu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.MM"
+      ],
+      "doi": "",
+      "published": "2026-08-26T14:04:31+00:00"
+    },
+    "arxiv:2608.25907": {
+      "title": "Quantum-Inspired Modeling of Driving Behavior",
+      "url": "https://arxiv.org/abs/2608.25907",
+      "abstract": "Driver behavior is heterogeneous, context-dependent, and changes over time, and these properties shape the traffic phenomena we observe. Most models, however, fix in advance which behavioral variables interact and how. Behavior outside that form is absorbed as noise, while models flexible enough to capture it tend to lose interpretability. We introduce a quantum-inspired representation of driver behavior that combines properties usually treated separately or in part: it is continuous, probabilistic, context-dependent, history-dependent, and represents interactions among behavioral variables as learned from data. Each driver is encoded as an evolving density matrix, providing a unified representation of behavioral uncertainty, temporal evolution, and context-dependent behavioral variation. Trained without supervision on the I-24 MOTION dataset, the framework recovers three interpretable driving profiles representing three regimes: free flow, transition, and congestion. The profiles capture the behavioral range of the data and the smooth transitions drivers make between regimes as conditions change. The same representation also reproduces known macroscopic phenomena, aligning with the fundamental diagram and reproducing hysteresis loops. We also show how the representation supports practical use: it supplies context-dependent parameters to classical car-following models, and gives an autonomous vehicle a live behavioral read of the surrounding drivers with a short-horizon forecast of their motion. The framework points toward models of traffic that are interpretable and trustworthy by construction. We release an open-source toolkit on GitHub (https://github.com/mselayan/quantum-driver-representation) spanning data processing, training, inference, and analysis.",
+      "authors": [
+        "Mohammad Elayan",
+        "Omid Armantalab",
+        "Wissam Kontar"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.SY",
+        "eess.SY",
+        "stat.ML",
+        "Transportation",
+        "Research",
+        "Part",
+        "B:",
+        "Methodological.",
+        "Code",
+        "and",
+        "toolkit:",
+        "https://github.com/mselayan/quantum-driver-representation"
+      ],
+      "doi": "",
+      "published": "2026-08-26T15:24:42+00:00"
+    },
+    "arxiv:2608.25770": {
+      "title": "HypoForge: A Self-Improving Multi-Agent Framework for Automated Hypothesis Generation and Testing via Scientific Skill Learning",
+      "url": "https://arxiv.org/abs/2608.25770",
+      "abstract": "Large language models (LLMs) have enabled AI scientist systems to automate scientific discovery, yet existing approaches most rely on static prompting or fixed workflows and fail to accumulate experience for continual improvement. We propose HypoForge, an experience-guided multi-agent framework that learns reusable scientific skills for automated hypothesis generation and hypothesis testing. HypoForge is built on the observation that these two stages involve different supervision signals. For hypothesis generation, where explicit feedback is unavailable, HypoForge adopts an adversarial generator--discriminator mechanism to improve reasoning through comparative critique. For hypothesis testing, where empirical feedback is available, HypoForge learns testing skills from execution outcomes and ground-truth results. By matching skill learning strategies with stage-specific supervision, HypoForge enables continual improvement without fine-tuning foundation models. Experiments on hypothesis generation and testing benchmarks show that HypoForge consistently outperforms existing AI scientist frameworks and skill-level variants. Further analysis demonstrates the effectiveness of the proposed stage-specific skill learning paradigms.",
+      "authors": [
+        "Ziqing Qian",
+        "Jiaying Lei",
+        "Yifang Wang",
+        "Nan Cao"
+      ],
+      "categories": [
+        "cs.MA"
+      ],
+      "doi": "",
+      "published": "2026-08-26T13:14:23+00:00"
+    },
+    "arxiv:2509.08897": {
+      "title": "Recurrence Meets Transformers for Universal Multimodal Retrieval",
+      "url": "https://arxiv.org/abs/2509.08897",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Davide Caffagni",
+        "Sara Sarto",
+        "Marcella Cornia",
+        "Lorenzo Baraldi",
+        "Rita Cucchiara"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.MM"
+      ],
+      "doi": "",
+      "published": ""
+    },
+    "arxiv:2509.09297": {
+      "title": "Model-Agnostic Open-Set Air-to-Air Visual Object Detection for Reliable UAV Perception",
+      "url": "https://arxiv.org/abs/2509.09297",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Spyridon Loukovitis",
+        "Anastasios Arsenos",
+        "Vasileios Karampinis",
+        "Athanasios Voulodimos"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO",
+        "arXiv:2511.15343"
+      ],
+      "doi": "",
+      "published": ""
+    },
+    "arxiv:2512.17021": {
+      "title": "FORMSpoT: Revealing Fine-Scale Forest Disturbances from Nation-Wide 1.5 m Forest Canopy Height Time Series",
+      "url": "https://arxiv.org/abs/2512.17021",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Martin Schwartz",
+        "Fajwel Fogel",
+        "Nikola Besic",
+        "Damien Robert",
+        "Louis Geist",
+        "Jean-Pierre Renaud",
+        "Jean-Matthieu Monnet",
+        "Clemens Mosig",
+        "C\\'edric Vega",
+        "Alexandre d'Aspremont",
+        "Loic Landrieu",
+        "Philippe Ciais"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": "",
+      "published": ""
+    },
+    "arxiv:2606.03890": {
+      "title": "OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs",
+      "url": "https://arxiv.org/abs/2606.03890",
+      "abstract": "------------------------------------------------------------------------------",
+      "authors": [
+        "Yifei Li",
+        "Pengyiang Liu",
+        "Yuhang Zang",
+        "Zhongyue Shi",
+        "Qi Fu",
+        "Hongye Hao",
+        "Jiwen Lu"
+      ],
+      "categories": [
+        "cs.CV",
+        "tables.",
+        "Project",
+        "page:",
+        "https://internlm.github.io/OVO-S-Bench/"
+      ],
+      "doi": "",
+      "published": ""
+    }
+  },
+  "messages": [],
+  "coverage": "legacy-cache"
+}

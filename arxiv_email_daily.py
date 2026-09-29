@@ -11,6 +11,8 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 from research_rss import PaperStore, UTC, _rss_root, _write_xml, fetch_arxiv_email_deliveries
+from rss_ops import write_json, write_changed, write_feed
+from rss_health import record
 
 
 TITLE = 'QQ 邮箱 arXiv 邮件全文日报'
@@ -18,15 +20,28 @@ FIELDS = ('title', 'url', 'abstract', 'authors', 'categories', 'doi', 'published
 
 
 def save(state, path):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix('.tmp')
-    temporary.write_text(json.dumps(state, ensure_ascii=False, indent=2), 'utf-8')
-    temporary.replace(path)
+    path = Path(path)
+    directory = path.with_suffix('')
+    days = {}
+    for day, entry in state['days'].items():
+        dt.date.fromisoformat(day)
+        write_json(directory / f'{day}.json', entry)
+        days[day] = f'{day}.json'
+    manifest = {k:v for k,v in state.items() if k not in ('days','version')}
+    write_json(path, dict(manifest, version=2, day_files=days))
 
 
 def load(path, legacy):
     if path.exists():
         state = json.loads(path.read_text('utf-8'))
+        if state.get('version') == 2:
+            days = {}
+            for day, filename in state.pop('day_files').items():
+                dt.date.fromisoformat(day)
+                if filename != f'{day}.json':
+                    raise ValueError('Invalid email state shard path')
+                days[day] = json.loads((path.with_suffix('') / filename).read_text('utf-8'))
+            return dict(state, version=1, days=days)
         if state.get('version') != 1:
             raise ValueError('Unsupported email daily state')
         return state
@@ -96,21 +111,28 @@ def write_outputs(state, output, base_url):
         ET.SubElement(item, 'description').text = body
         published = dt.datetime.combine(date, dt.time(), dt.timezone(dt.timedelta(hours=8)))
         ET.SubElement(item, 'pubDate').text = email.utils.format_datetime(published)
-        (archive / f'{day}.html').write_text(
+        write_changed(archive / f'{day}.html',
             '<!doctype html><html lang="zh-CN"><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>{TITLE} {day}</title><style>body{{max-width:1000px;margin:24px auto;padding:0 16px;'
             'font:16px/1.7 sans-serif;overflow-wrap:anywhere}article{border-bottom:1px solid #ddd;'
             'padding:12px 0}h2{font-size:18px}</style>'
-            f'<h1>{TITLE} | {day}</h1>{body}</html>', 'utf-8')
-        (archive / f'{day}.json').write_text(json.dumps(
+            f'<h1>{TITLE} | {day}</h1>'
+            '<link rel="stylesheet" href="../assets/email-reader.css">'
+            '<form id="filters" role="search"><label>搜索 <input id="search" type="search"></label>'
+            '<label>类别 <select id="category"><option value="">全部类别</option></select></label>'
+            '<label><input id="abstracts" type="checkbox">展开摘要</label>'
+            '<output id="count" aria-live="polite"></output></form>'
+            '<details id="directory"><summary>论文目录</summary><nav id="toc"></nav></details>'
+            f'<main id="papers">{body}</main><script src="../assets/email-reader.js" defer></script></html>')
+        write_changed(archive / f'{day}.json', json.dumps(
             {'date': day, 'coverage': entry['coverage'], 'papers': list(entry['papers'].values())},
-            ensure_ascii=False, indent=2), 'utf-8')
+            ensure_ascii=False, indent=2))
         links.append(f'<li><a href="{day}.html">{day} ({len(entry["papers"])} 篇)</a></li>')
-    (archive / 'index.html').write_text(
+    write_changed(archive / 'index.html',
         f'<!doctype html><meta charset="utf-8"><title>{TITLE}</title><h1>{TITLE}</h1><ul>'
-        + ''.join(links) + '</ul>', 'utf-8')
-    _write_xml(rss, output / 'arxiv-email-daily.xml')
+        + ''.join(links) + '</ul>')
+    write_feed(output / 'arxiv-email-daily.xml', rss)
 
 
 def run(config_path, state_path, legacy_path, output, offline=False):
@@ -120,12 +142,22 @@ def run(config_path, state_path, legacy_path, output, offline=False):
         cursor = PaperStore.empty()
         cursor.data['processed_email_hashes'] = state['processed_email_hashes']
         config['sources']['email']['since'] = config.get('email_full', {}).get('since', '2026-09-01')
-        deliveries, status = fetch_arxiv_email_deliveries(cursor, config, max_emails=0)
+        try:
+            deliveries, status = fetch_arxiv_email_deliveries(cursor, config, max_emails=0)
+        except Exception as error:
+            record('QQ arXiv 邮件', 'failed', detail=type(error).__name__)
+            raise
+        accepted = 0
         for delivery in deliveries:
             if add_delivery(state, delivery):
                 save(state, state_path)
+                accepted += 1
         state['last_fetch_status'] = status
         state['last_run'] = dt.datetime.now(UTC).isoformat()
+        record('QQ arXiv 邮件', 'ok' if status.startswith('ok:') and accepted == len(deliveries) else 'partial',
+               count=sum(len(day['papers']) for day in state['days'].values()),
+               identities=[f'{day}:{key}' for day,entry in state['days'].items() for key in entry['papers']],
+               detail=f'新邮件 {len(deliveries)} 封，成功解析 {accepted} 封；{status}')
     save(state, state_path)
     write_outputs(state, output, config['base_url'])
     print(f"[info] unfiltered email days={len(state['days'])}; paid API calls=0")

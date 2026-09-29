@@ -656,7 +656,8 @@ def doi_identities(*values: str) -> set[str]:
 
 
 def feed_item_identity_keys(item: FeedItem) -> set[str]:
-    identities = doi_identities(item.guid, item.link, item.description)
+    from rss_read_filter import identity_tokens
+    identities = identity_tokens(guid=item.guid, link=item.link)
     title_identity = normalized_title_identity(item.title)
     if title_identity:
         identities.add(title_identity)
@@ -669,32 +670,36 @@ def parse_official_feed_identity_keys(raw: bytes) -> set[str]:
     root = ET.fromstring(raw)
     identities: set[str] = set()
     for element in root.iter():
-        if local_name(element.tag) != "item":
+        if local_name(element.tag) not in ("item", "entry"):
             continue
         title_identity = normalized_title_identity(child_text(element, "title"))
         if title_identity:
             identities.add(title_identity)
-        searchable_values = list(element.itertext())
-        searchable_values.extend(
-            attribute
-            for descendant in element.iter()
-            for attribute in descendant.attrib.values()
-        )
-        identities.update(doi_identities(*searchable_values))
+        from rss_read_filter import _item_tokens
+        tokens = _item_tokens(element)
+        identities.update(token for token in tokens if not token.startswith('title:'))
     return identities
 
 
 def filter_official_duplicates(
     items: Iterable[FeedItem],
     official_identities: set[str],
+    audit: list | None = None,
+    official_url: str = '',
 ) -> list[FeedItem]:
     if not official_identities:
         return list(items)
-    return [
-        item
-        for item in items
-        if feed_item_identity_keys(item).isdisjoint(official_identities)
-    ]
+    kept = []
+    for item in items:
+        matches = feed_item_identity_keys(item) & official_identities
+        strong = {key for key in matches if not key.startswith('title:')}
+        if not strong:
+            kept.append(item)
+        if matches and audit is not None:
+            audit.append({'title':item.title, 'url':item.link, 'guid':item.guid,
+                          'official_source':official_url, 'action':'hidden' if strong else 'review-title-only',
+                          'matched':sorted(strong or matches)})
+    return kept
 
 
 def load_official_seen(path: Path) -> dict[str, set[str]]:
@@ -1165,6 +1170,7 @@ def collect_parallel(
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         future_map = {executor.submit(fetcher, job): job for job in jobs}
         done_count = 0
+        errors = 0
         for future in concurrent.futures.as_completed(future_map):
             job = future_map[future]
             done_count += 1
@@ -1173,9 +1179,13 @@ def collect_parallel(
                 if new_items:
                     items.extend(new_items)
             except Exception as exc:  # noqa: BLE001 - continue other feeds.
+                errors += 1
                 log(f"[warn] {label} job failed: {job}: {exc}")
             if done_count % 20 == 0 or done_count == len(jobs):
                 log(f"[info] {label}: {done_count}/{len(jobs)} feeds checked")
+    from rss_health import record
+    record(label, 'partial' if errors else 'ok', len(items), identities=[item.guid for item in items],
+           detail=f'任务 {len(jobs)}；失败 {errors}')
     return items
 
 
@@ -1303,7 +1313,8 @@ def write_rss(
     output_path.parent.mkdir(parents=True, exist_ok=True)
     tree = ET.ElementTree(rss)
     ET.indent(tree, space="  ")
-    tree.write(output_path, encoding="utf-8", xml_declaration=True)
+    from rss_ops import write_feed
+    write_feed(output_path, rss)
     return len(items)
 
 
@@ -1349,13 +1360,16 @@ def main() -> int:
     output_path = Path(args.output)
 
     log("[info] fetching dqxxkx current issue")
+    from rss_health import record
     try:
         dqxxkx_items = parse_dqxxkx_current()
         all_items.extend(dqxxkx_items)
         log(f"[info] dqxxkx: {len(dqxxkx_items)} items")
+        record('地球信息科学学报', 'ok', len(dqxxkx_items), identities=[item.guid for item in dqxxkx_items])
     except Exception as exc:  # noqa: BLE001
         log(f"[warn] dqxxkx failed: {exc}")
         failed_sources.add("地球信息科学学报")
+        record('地球信息科学学报', 'preserved', detail=type(exc).__name__)
 
     log("[info] discovering ygxb periods")
     try:
@@ -1372,6 +1386,7 @@ def main() -> int:
     except Exception as exc:  # noqa: BLE001
         log(f"[warn] ygxb failed: {exc}")
         failed_sources.add("遥感学报")
+        record('ygxb', 'preserved', detail=type(exc).__name__)
 
     ch_whu_jobs = [
         (year, issue)
@@ -1417,6 +1432,9 @@ def main() -> int:
     official_mirror_paths = load_official_mirror_paths(Path(args.official_feed_config))
     refreshed_official_feeds: set[str] = set()
     for journal in CROSSREF_JOURNALS:
+        from rss_health import record
+        from rss_ops import write_json
+        collection_status = 'ok'
         source = journal["source"]
         journal_output = crossref_output_dir / journal["output"]
         log(f"[info] crossref: fetching {source}")
@@ -1430,6 +1448,7 @@ def main() -> int:
             log(f"[info] crossref: {source}: {len(crossref_items)} items")
         except Exception as exc:  # noqa: BLE001
             log(f"[warn] crossref failed for {source}: {exc}")
+            collection_status = 'preserved'
             crossref_items = read_existing_feed_items(journal_output)
             if crossref_items:
                 log(
@@ -1438,6 +1457,8 @@ def main() -> int:
                 )
 
         crossref_items = dedupe_items(crossref_items)
+        record(journal['output'], collection_status, len(crossref_items),
+               identities=[item.guid for item in crossref_items], detail=source)
         official_url = OFFICIAL_FEED_URLS[journal["issn"]]
         if official_url not in refreshed_official_feeds:
             refreshed_official_feeds.add(official_url)
@@ -1466,10 +1487,13 @@ def main() -> int:
                 log(f"[warn] official RSS failed for {official_url}: {exc}")
 
         before_official_filter = len(crossref_items)
+        audit = []
         crossref_items = filter_official_duplicates(
             crossref_items,
             official_seen.get(official_url, set()),
+            audit=audit, official_url=official_url,
         )
+        write_json(crossref_output_dir/'duplicate-audit'/f"{journal['output']}.json", audit)
         removed_as_official = before_official_filter - len(crossref_items)
         if removed_as_official:
             log(

@@ -177,7 +177,7 @@ class FeedLanguageTests(unittest.TestCase):
             {'doi:10.1234/official', 'title:officialbytitle'},
         )
 
-        self.assertEqual([item.guid for item in filtered], ['10.1234/missing'])
+        self.assertEqual([item.guid for item in filtered], ['10.1234/title-match', '10.1234/missing'])
 
     def test_crossref_cursor_query_avoids_unsupported_publication_sort(self):
         params = crossref_query_params(
@@ -210,7 +210,7 @@ class FeedLanguageTests(unittest.TestCase):
 
         self.assertIn('cron: "30 6 * * 1-5"', workflow)
         conference_step = workflow.split('- name: Generate conference feeds', 1)[1].split('- name:', 1)[0]
-        self.assertIn('if: inputs.publish_only != true', conference_step)
+        self.assertIn("if: steps.mode.outputs.filter_only != 'true'", conference_step)
         restore_step = workflow.split('- name: Restore conference fallback', 1)[1].split('- name:', 1)[0]
         self.assertNotIn('if:', restore_step)
         import zipfile

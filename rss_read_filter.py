@@ -20,6 +20,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
+from rss_ops import write_json
 
 
 ATOM_NS = "http://www.w3.org/2005/Atom"
@@ -124,13 +125,19 @@ def load_suppression(path: Path, key: bytes) -> set[str]:
     if not path.exists():
         return set()
     payload = json.loads(path.read_text(encoding="utf-8"))
+    return validate_suppression(payload, key)
+
+
+def validate_suppression(payload, key):
+    if not key or not key.strip():
+        raise ValueError('Empty suppression key')
     if payload.get("version") != 1 or payload.get("algorithm") != "hmac-sha256":
-        raise ValueError(f"Unsupported suppression file format: {path}")
+        raise ValueError('Unsupported suppression file format')
     if payload.get("key_id") != key_id(key):
         raise ValueError("Suppression file and RSS_READ_FILTER_KEY do not match")
     hashes = payload.get("hashes", [])
     if not isinstance(hashes, list) or any(not isinstance(value, str) for value in hashes):
-        raise ValueError(f"Invalid suppression hashes: {path}")
+        raise ValueError('Invalid suppression hashes')
     return set(hashes)
 
 
@@ -169,19 +176,28 @@ def _item_tokens(item: ET.Element) -> set[str]:
     links = _child_values(item, "link")
     guids = _child_values(item, "guid", "id")
     is_digest = any(
-        guid.lower().startswith(("research-daily:", "arxiv-email-daily:", "conference:digest:"))
+        guid.lower().startswith(("research-daily:", "arxiv-email-daily:", "conference:digest:", "rss-health:"))
         for guid in guids
     )
     descriptions = [] if is_digest else _child_values(
         item, "description", "summary", "content", "encoded", "identifier"
     )
-    return identity_tokens(
+    tokens = identity_tokens(
         guid=" ".join(guids),
         link=links[0] if links else "",
         title=" ".join(_child_values(item, "title")),
-        description=" ".join(descriptions),
         doi=" ".join(_child_values(item, "doi", "identifier")),
     )
+    # A reference inside an abstract is not the identity of the article itself.
+    if not any(token.startswith(('doi:', 'arxiv:')) for token in tokens) and descriptions:
+        text=' '.join(descriptions)
+        dois={_doi(match.group(0)) for match in DOI_RE.finditer(text)}
+        arxiv={match.group(1).lower() for match in ARXIV_RE.finditer(text)}
+        if len(dois)==1:
+            tokens.add('doi:'+next(iter(dois)))
+        if len(arxiv)==1 and not dois:
+            tokens.add('arxiv:'+next(iter(arxiv)))
+    return tokens
 
 
 def filter_feed(path: Path, suppressed: set[str], key: bytes) -> FilterResult:
@@ -189,7 +205,8 @@ def filter_feed(path: Path, suppressed: set[str], key: bytes) -> FilterResult:
     parent, entries = _feed_entries(tree.getroot(), path)
     removed = 0
     for item in entries:
-        if hash_tokens(_item_tokens(item), key) & suppressed:
+        tokens = {token for token in _item_tokens(item) if not token.startswith('title:')}
+        if hash_tokens(tokens, key) & suppressed:
             parent.remove(item)
             removed += 1
     kept = len(entries) - removed
@@ -242,6 +259,27 @@ def main() -> None:
             indent=2,
         )
     )
+
+
+def write_receipt(root=Path('.')):
+    root=Path(root)
+    suppression=root/'read-suppression.json'
+    paths=_paths(root,['*.xml','conference-feeds/*.xml','official-feeds/*.xml'])
+    write_json(root/'read-filter-status.json', {
+        'version':2,
+        'suppression_sha256':suppression_digest(suppression),
+        'feeds':{path.relative_to(root).as_posix():hashlib.sha256(path.read_bytes()).hexdigest() for path in paths},
+    })
+
+
+def suppression_digest(path):
+    value=json.loads(Path(path).read_text('utf-8'))
+    return suppression_payload_digest(value)
+
+
+def suppression_payload_digest(value):
+    canonical=json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=True)
+    return hashlib.sha256(canonical.encode('ascii')).hexdigest()
 
 
 if __name__ == "__main__":

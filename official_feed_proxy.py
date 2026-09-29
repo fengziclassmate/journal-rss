@@ -17,6 +17,8 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
+from rss_health import record
+from rss_read_filter import _feed_entries, _item_tokens
 
 
 USER_AGENT = (
@@ -166,7 +168,28 @@ def mirror_all(config: Path, root: Path, workers: int = 8) -> list[MirrorResult]
     specs = load_config(config)
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         futures = [executor.submit(mirror_one, spec, root) for spec in specs]
-        return [future.result() for future in futures]
+        results = []
+        for spec, future in zip(specs, futures):
+            try:
+                result = future.result()
+            except Exception as error:
+                record(spec['output'], 'failed', detail=type(error).__name__)
+                results.append(MirrorResult(spec['name'], spec['output'], 0, 'failed'))
+                continue
+            status = 'ok' if result.status == 'updated' else 'fallback' if result.status.startswith('crossref-fallback') else 'preserved'
+            identities = None
+            if status == 'ok':
+                _, entries = _feed_entries(ET.parse(root/spec['output']).getroot(), Path(spec['output']))
+                identities = []
+                for item in entries:
+                    tokens = _item_tokens(item)
+                    identity = next((token for prefix in ('doi:', 'arxiv:', 'guid:', 'url:', 'title:')
+                                     for token in sorted(tokens) if token.startswith(prefix)), '')
+                    identities.append(identity)
+            record(spec['output'], status, result.entries, identities=identities,
+                   detail=spec['name'] + ('；官网采集失败，使用 Crossref' if status == 'fallback' else ''))
+            results.append(result)
+        return results
 
 
 def main() -> None:

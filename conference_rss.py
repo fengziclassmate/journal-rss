@@ -57,6 +57,7 @@ class PoliteClient:
         self.delay_seconds = delay_seconds
         self.last_request = 0.0
         self.cache_dir = cache_dir
+        self.failures = 0
 
     def get(self, url: str, *, timeout: int = 90) -> bytes:
         cache_path = None
@@ -92,11 +93,13 @@ class PoliteClient:
                         cache_path.write_bytes(b"")
                     return b""
                 if attempt == len(waits):
+                    self.failures += 1
                     raise
                 time.sleep(wait_after_error)
             except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.RemoteDisconnected):
                 self.last_request = time.monotonic()
                 if attempt == len(waits):
+                    self.failures += 1
                     raise
                 time.sleep(wait_after_error)
         raise AssertionError("unreachable")
@@ -701,7 +704,8 @@ def write_rss(
     output.parent.mkdir(parents=True, exist_ok=True)
     tree = ET.ElementTree(rss)
     ET.indent(tree, space="  ")
-    tree.write(output, encoding="utf-8", xml_declaration=True)
+    from rss_ops import write_feed
+    write_feed(output, rss)
     return len(papers)
 
 
@@ -780,7 +784,15 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
     all_papers: list[ConferencePaper] = []
     preserved_feeds: list[str] = []
     for conference in config["conferences"]:
-        papers = collect_conference(client, conference, start_year, end_year)
+        from rss_health import record
+        failed = False
+        initial_failures = client.failures
+        try:
+            papers = collect_conference(client, conference, start_year, end_year)
+        except Exception as error:
+            papers = []
+            failed = True
+            print(f"{conference['acronym']}: source failed ({type(error).__name__})")
         feed_url = f"{config['base_url']}/{conference['slug']}.xml"
         count, preserved = write_rss_preserving_existing(
             papers, output_dir / f"{conference['slug']}.xml",
@@ -790,6 +802,10 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
             guid_scope=f"conference:{conference['slug']}",
         )
         counts[conference["slug"]] = count
+        record(f"conference-feeds/{conference['slug']}.xml",
+               'preserved' if preserved else 'failed' if failed else 'partial' if client.failures > initial_failures else 'ok', count,
+               identities=[paper.guid for paper in papers],
+               detail='索引采集结果（可能使用缓存或备用来源），不是官网收录完整性承诺')
         if preserved:
             preserved_feeds.append(conference["slug"])
         suffix = " (preserved fallback)" if preserved else ""

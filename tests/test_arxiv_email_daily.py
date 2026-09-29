@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch, Mock
 import xml.etree.ElementTree as ET
 
-from arxiv_email_daily import add_delivery, run, write_outputs
+from arxiv_email_daily import add_delivery, run, write_outputs, load
 from research_rss import (EmailDelivery, Paper, PaperStore, fetch_arxiv_email_deliveries,
                           _write_email_only_outputs, build_daily_record)
 
@@ -65,7 +65,7 @@ class EmailDailyTests(unittest.TestCase):
                  patch('research_rss.prepare_library',side_effect=AssertionError('library read')):
                 run(config,root/'state.json',root/'missing.json',root)
             self.assertEqual(fetch.call_args.kwargs['max_emails'],0)
-            self.assertEqual(len(json.loads((root/'state.json').read_text('utf-8'))['days']['2026-09-28']['papers']),11)
+            self.assertEqual(len(load(root/'state.json',root/'missing.json')['days']['2026-09-28']['papers']),11)
 
     def test_unsafe_html_is_escaped_and_days_sorted_newest_first(self):
         state=self.state()

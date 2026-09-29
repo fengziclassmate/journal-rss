@@ -46,6 +46,25 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Select collection mode
+        id: mode
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          PUBLISH_ONLY: ${{ inputs.publish_only }}
+        run: |
+          python - <<'PY'
+          import os, subprocess
+          only = os.environ.get('PUBLISH_ONLY') == 'true'
+          before = os.environ.get('BEFORE', '')
+          if os.environ['EVENT'] == 'push' and before and set(before) != {'0'}:
+              changed = subprocess.check_output(['git','diff','--name-only',before,os.environ['AFTER']],text=True).splitlines()
+              only = only or bool(changed) and set(changed) <= {'read-suppression.json'}
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              out.write('filter_only=' + str(only).lower() + '\n')
+          PY
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
@@ -64,25 +83,27 @@ jobs:
 
       - name: Generate unfiltered QQ arXiv email daily records
         id: mailbox
-        if: inputs.conference_only != true && inputs.publish_only != true
+        if: inputs.conference_only != true && steps.mode.outputs.filter_only != 'true'
         continue-on-error: true
         env:
           ARXIV_EMAIL_ADDRESS: ${{ secrets.ARXIV_EMAIL_ADDRESS }}
           ARXIV_EMAIL_AUTH_CODE: ${{ secrets.ARXIV_EMAIL_AUTH_CODE }}
-        run: python arxiv_email_daily.py
+        run: python rss_health.py run mailbox -- python arxiv_email_daily.py
 
       - name: Report mailbox collection failure
         if: steps.mailbox.outcome == 'failure'
         run: echo "::warning::QQ mailbox collection failed. Existing email RSS files are retained; other feeds will still deploy."
 
       - name: Generate official feed mirrors
-        if: inputs.publish_only != true
-        run: python official_feed_proxy.py
+        if: steps.mode.outputs.filter_only != 'true'
+        continue-on-error: true
+        run: python rss_health.py run official -- python official_feed_proxy.py
 
       - name: Generate feed
-        if: inputs.publish_only != true && inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
+        if: steps.mode.outputs.filter_only != 'true' && inputs.conference_only != true && (github.event_name != 'schedule' || github.event.schedule == '20 22 * * *')
+        continue-on-error: true
         run: >
-          python journal_rss_aggregator.py
+          python rss_health.py run journals -- python journal_rss_aggregator.py
           --start-year 2020
           --end-year 2026
           --output feed.xml
@@ -92,8 +113,20 @@ jobs:
         run: python -m zipfile -e conference-feed-fallback.zip .
 
       - name: Generate conference feeds
-        if: inputs.publish_only != true
-        run: python conference_rss.py
+        if: steps.mode.outputs.filter_only != 'true'
+        continue-on-error: true
+        run: python rss_health.py run conferences -- python conference_rss.py
+
+      - name: Save latest complete conference fallback
+        if: steps.mode.outputs.filter_only != 'true'
+        run: python rss_reports.py conferences
+
+      - name: Build health report and validate sizes
+        run: |
+          python rss_health.py guard
+          python rss_health.py render
+          python rss_reports.py duplicates
+          python rss_reports.py sharing
 
       - name: Remove previously read Zotero items
         env:
@@ -115,9 +148,11 @@ jobs:
           commit_message: "Update RSS feed"
           file_pattern: >-
             read-suppression.json official-feed-seen.json *.xml official-feeds/*.xml
-            research-data/*.json research-archive/*.json research-archive/*.html
+            research-data/*.json research-data/arxiv-email-full-state/*.json research-archive/*.json research-archive/*.html
             arxiv-email-archive/*.json arxiv-email-archive/*.html
             arxiv-email-analysis/*.json arxiv-email-analysis/*.html
+            rss-health-state/*.json rss-health/*.json rss-health/*.html duplicate-audit/*.json
+            conference-feed-fallback.zip
 
       - name: Push feeds while preserving concurrent updates
         env:
@@ -142,7 +177,11 @@ jobs:
 
       - name: Prepare Pages artifact
         run: |
+          python -c "from rss_read_filter import write_receipt; write_receipt()"
           mkdir -p _site
+          cp read-filter-status.json rss-health.xml _site/
+          cp sharing.html official-sources.opml _site/
+          cp -r rss-health assets duplicate-audit _site/
           cp feed.xml ijde.xml pattern-recognition.xml scs.xml asc.xml applied-geography.xml habitat-international.xml information-fusion.xml information-geography.xml building-and-environment.xml buildings.xml sustainability.xml cities.xml ceus.xml jgsa.xml essd.xml grsm-early-access.xml tgrs-early-access.xml tpami-early-access.xml ijde-current-issue.xml pattern-recognition-current-issue.xml scs-current-issue.xml asc-current-issue.xml applied-geography-current-issue.xml habitat-international-current-issue.xml information-fusion-current-issue.xml information-geography-current-issue.xml building-and-environment-current-issue.xml buildings-current-issue.xml sustainability-current-issue.xml cities-current-issue.xml ceus-current-issue.xml jgsa-current-issue.xml essd-current-issue.xml grsm-current-issue.xml tgrs-current-issue.xml tpami-current-issue.xml index.html .nojekyll _site/
           cp research-papers.xml research-daily.xml _site/
           cp -r research-archive _site/

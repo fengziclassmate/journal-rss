@@ -4,14 +4,14 @@ import json
 import sqlite3
 from pathlib import Path
 
-from arxiv_email_daily import TITLE, day_html
+from arxiv_email_daily import TITLE, day_html, load
 from zotero_subscribe_conferences import ZoteroDebugger
 
 FEED = 'https://fengziclassmate.github.io/journal-rss/arxiv-email-daily.xml'
 
 
 def prepare(database, state_path, output):
-    state = json.loads(state_path.read_text('utf-8'))
+    state = load(state_path, Path('unused-legacy-state.json'))
     c = sqlite3.connect(f'{database.as_uri()}?mode=ro', uri=True)
     try:
         rows = c.execute('''SELECT i.itemID, i.libraryID, fi.guid, fi.readTime
