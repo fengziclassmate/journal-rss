@@ -8,6 +8,7 @@ import sqlite3
 import urllib.request
 import tempfile
 import traceback
+import time
 
 from rss_ops import write_json
 from zotero_read_sync import create_database_snapshot
@@ -15,6 +16,38 @@ from zotero_subscribe_conferences import ZoteroDebugger
 from rss_read_filter import hash_tokens, identity_tokens, validate_suppression, suppression_payload_digest
 
 BASE='https://fengziclassmate.github.io/journal-rss/'
+
+
+def check_ready(timeout=90):
+    deadline=time.monotonic()+timeout
+    while True:
+        try:
+            debugger=ZoteroDebugger()
+            break
+        except ConnectionRefusedError as error:
+            if time.monotonic()>=deadline:
+                raise RuntimeError('Zotero debugger unavailable. Check the Zotero startup error; nothing deleted.') from error
+            time.sleep(1)
+    try:
+        return debugger.evaluate('''(async()=>{
+          const deadline=Date.now()+90000;
+          while(!Zotero.initialized){
+            if(Zotero.skipLoading || Zotero.startupError){
+              throw new Error('Zotero startup failed: '+(Zotero.startupError || 'initialization aborted'));
+            }
+            if(Date.now()>deadline) throw new Error('Zotero initialization timed out; nothing deleted');
+            await new Promise(resolve=>setTimeout(resolve,250));
+          }
+          if(Zotero.skipLoading || Zotero.DB.readOnly) throw new Error('Zotero database is not ready for cleanup (read-only or startup failure)');
+          const databases=await Zotero.DB.queryAsync('PRAGMA database_list');
+          const main=databases.find(row=>row.name==='main');
+          if(!main || main.file.replaceAll('\\\\','/').toLowerCase()!=='f:/zotero/zotero.sqlite') throw new Error('Wrong database');
+          const types=await Zotero.DB.valueQueryAsync('SELECT COUNT(*) FROM itemTypesCombined');
+          if(!types) throw new Error('Zotero schema initialization is incomplete');
+          return JSON.stringify({ready:true,database:main.file,readOnly:false});
+        })()''',timeout_seconds=100)
+    finally:
+        debugger.close()
 
 
 def inspect(database):
@@ -139,7 +172,7 @@ def verification(before, after):
 def run_cleanup(args):
     folder=args.database.parent/('read-cleanup-'+dt.datetime.now().strftime('%Y%m%d-%H%M%S-%f'))
     folder.mkdir()
-    report={'status':'running','phase':'receipt','backup':str(folder)}
+    report={'status':'running','phase':'startup','backup':str(folder),'checkpoint_removed':0}
     plan=None
 
     def save_report():
@@ -149,6 +182,8 @@ def run_cleanup(args):
 
     save_report()
     try:
+        check_ready()
+        report['phase']='receipt';save_report()
         receipt=fetch_receipt()
         report['phase']='backup';save_report()
         plan=inspect(create_database_snapshot(args.database,folder))
@@ -166,7 +201,8 @@ def run_cleanup(args):
             after=inspect(create_database_snapshot(args.database,Path(temp)))
         checks=verification(plan,after)
         write_json(folder/'verification.json',checks)
-        report.update(removed=len(result['removed']),skipped=len(skipped)+len(result['skipped']),**checks)
+        report.update(removed=len(result['removed']),checkpoint_removed=len(result['removed']),
+                      skipped=len(skipped)+len(result['skipped']),**checks)
         if not all(checks.values()):
             raise RuntimeError('Verification requires attention; keep backup: '+str(folder))
         report.update(status='complete',phase='complete')
@@ -198,9 +234,13 @@ def main():
     parser.add_argument('--suppression',type=Path,default=Path(__file__).parent/'read-suppression.json')
     parser.add_argument('--apply',action='store_true')
     parser.add_argument('--shutdown',action='store_true')
+    parser.add_argument('--check-ready',action='store_true')
     parser.add_argument('--report-file',type=Path)
     parser.add_argument('--key-file',type=Path,default=Path('F:/Zotero/journal-rss-read-filter.key'))
     args=parser.parse_args()
+    if args.check_ready:
+        print(json.dumps(check_ready()))
+        return
     if args.shutdown:
         debugger=ZoteroDebugger()
         try:

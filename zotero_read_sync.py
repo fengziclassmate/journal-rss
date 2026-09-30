@@ -101,17 +101,16 @@ def create_database_snapshot(
 
 
 def choose_readable_database(database: Path, snapshot_dir: Path | None = None) -> Path:
+    # Even a read-only SQLite connection can create live WAL/SHM sidecars.
+    # Production exports must query a copy, never contend with Zotero startup.
+    if snapshot_dir is not None:
+        return create_database_snapshot(database, snapshot_dir)
     errors = []
     try:
         _database_is_readable(database)
         return database
     except sqlite3.Error as error:
         errors.append(f"{database}: {error}")
-    if snapshot_dir is not None:
-        try:
-            return create_database_snapshot(database, snapshot_dir)
-        except (OSError, sqlite3.Error, RuntimeError) as error:
-            errors.append(f"current snapshot: {error}")
     backups = sorted(
         database.parent.glob(f"{database.name}*.bak"),
         key=lambda path: path.stat().st_mtime,

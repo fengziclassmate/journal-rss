@@ -54,17 +54,7 @@ try {
     if (Get-Process zotero -ErrorAction SilentlyContinue) { throw 'Zotero is still running. Nothing deleted.' }
     $launched = Start-Process 'C:\Program Files\Zotero\zotero.exe' -ArgumentList '--start-debugger-server','6011' -WindowStyle Hidden -PassThru
     $started = $true
-    $debugReady = $false
-    for ($attempt = 0; $attempt -lt 60; $attempt++) {
-        if ($launched.HasExited) { throw 'Zotero exited during startup. Nothing deleted.' }
-        $client = New-Object System.Net.Sockets.TcpClient
-        try {
-            $client.Connect('127.0.0.1', 6011)
-            $debugReady = $true
-            break
-        } catch { Start-Sleep -Seconds 1 } finally { $client.Dispose() }
-    }
-    if (-not $debugReady) { throw 'Zotero debugger did not become ready. Nothing deleted.' }
+    $null = Invoke-PythonStep -Name 'startup' -PythonArgs @('zotero_cleanup.py', '--check-ready')
     $result = Invoke-PythonStep -Name 'apply' -PythonArgs @('zotero_cleanup.py', '--apply', '--report-file', $reportPath)
     $report = $result | ConvertFrom-Json
     [System.Windows.MessageBox]::Show("Removed: $($report.removed). Skipped: $($report.skipped). Backup: $($report.backup)", 'RSS read cleanup') | Out-Null

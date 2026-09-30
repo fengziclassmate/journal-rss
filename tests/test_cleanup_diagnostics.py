@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import patch
 
 from zotero_cleanup import cleanup_script, run_cleanup
+from zotero_read_sync import choose_readable_database
 
 
 class CleanupDiagnosticsTests(unittest.TestCase):
@@ -47,7 +48,8 @@ if(-not (Get-Content (Join-Path $logDir 'failure.stderr.log') -Raw).Contains('TE
         self.assertEqual(result.returncode,0,result.stdout+result.stderr)
 
     def test_network_error_is_saved_before_any_deletion(self):
-        with patch('zotero_cleanup.fetch_receipt', side_effect=OSError('network failed')), \
+        with patch('zotero_cleanup.check_ready'), \
+             patch('zotero_cleanup.fetch_receipt', side_effect=OSError('network failed')), \
              patch('zotero_cleanup.apply') as apply:
             with self.assertRaises(OSError):
                 run_cleanup(self.args)
@@ -65,7 +67,8 @@ if(-not (Get-Content (Join-Path $logDir 'failure.stderr.log') -Raw).Contains('TE
             (folder/'result.json').write_text(json.dumps({'removed':[1],'skipped':[]}))
             raise RuntimeError('native failure')
 
-        with patch('zotero_cleanup.fetch_receipt',return_value={}), \
+        with patch('zotero_cleanup.check_ready'), \
+             patch('zotero_cleanup.fetch_receipt',return_value={}), \
              patch('zotero_cleanup.create_database_snapshot',return_value=self.args.database), \
              patch('zotero_cleanup.inspect',return_value=plan), \
              patch('zotero_cleanup.eligible',return_value=(plan['targets'],[])), \
@@ -77,6 +80,33 @@ if(-not (Get-Content (Join-Path $logDir 'failure.stderr.log') -Raw).Contains('TE
         self.assertEqual(report['phase'],'apply')
         self.assertEqual(report['checkpoint_removed'],1)
         self.assertTrue(all(report['observed_checks'].values()))
+
+    def test_startup_failure_blocks_backup_and_deletion(self):
+        with patch('zotero_cleanup.check_ready',side_effect=RuntimeError('readonly database')), \
+             patch('zotero_cleanup.create_database_snapshot') as snapshot, \
+             patch('zotero_cleanup.apply') as apply:
+            with self.assertRaisesRegex(RuntimeError,'readonly'):
+                run_cleanup(self.args)
+        snapshot.assert_not_called()
+        apply.assert_not_called()
+        report=json.loads(self.args.report_file.read_text())
+        self.assertEqual(report['phase'],'startup')
+        self.assertEqual(report['checkpoint_removed'],0)
+
+    def test_export_uses_copy_without_opening_live_sqlite(self):
+        with patch('zotero_read_sync.create_database_snapshot',return_value=self.root/'copy.sqlite') as snapshot, \
+             patch('zotero_read_sync._database_is_readable') as live:
+            result=choose_readable_database(self.args.database,self.root/'copy')
+        self.assertEqual(result,self.root/'copy.sqlite')
+        snapshot.assert_called_once_with(self.args.database,self.root/'copy')
+        live.assert_not_called()
+
+    def test_export_snapshot_failure_never_falls_back_to_live_or_old_backup(self):
+        with patch('zotero_read_sync.create_database_snapshot',side_effect=RuntimeError('copy failed')), \
+             patch('zotero_read_sync._database_is_readable') as live:
+            with self.assertRaisesRegex(RuntimeError,'copy failed'):
+                choose_readable_database(self.args.database,self.root/'copy')
+        live.assert_not_called()
 
     def test_javascript_rollback_does_not_report_uncommitted_deletions(self):
         script = cleanup_script(self.root)
