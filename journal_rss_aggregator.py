@@ -10,6 +10,7 @@ Sources:
 from __future__ import annotations
 
 import argparse
+import calendar
 import concurrent.futures
 import dataclasses
 import datetime as dt
@@ -51,6 +52,7 @@ UTC = dt.timezone.utc
 RUN_TIMEZONE = ZoneInfo("Asia/Shanghai")
 
 OFFICIAL_FEED_URLS = {
+    "2220-9964": "https://www.mdpi.com/rss/journal/ijgi",
     "1753-8955": "https://www.tandfonline.com/feed/rss/tjde20",
     "0031-3203": "https://rss.sciencedirect.com/publication/science/00313203",
     "2210-6707": "https://rss.sciencedirect.com/publication/science/22106707",
@@ -78,6 +80,16 @@ OFFICIAL_FEED_URLS = {
 DOI_PATTERN = re.compile(r"10\.\d{4,9}/[^\s\"'<>]+", re.IGNORECASE)
 
 CROSSREF_JOURNALS = [
+    {
+        "source": "ISPRS International Journal of Geo-Information",
+        "issn": "2220-9964",
+        "homepage": "https://www.mdpi.com/journal/ijgi",
+        "added_on": "2026-10-01",
+        "output": "ijgi.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/ijgi.xml",
+        "feed_title": "IJGI RSS",
+        "date_filter": "pub",
+    },
     {
         "source": "International Journal of Digital Earth",
         "issn": "1753-8955",
@@ -1076,6 +1088,16 @@ def crossref_query_params(
     }
 
 
+def journal_start_date(journal: dict, start_year: int) -> str:
+    if journal.get('from_date'):
+        return journal['from_date']
+    if journal.get('added_on'):
+        added = dt.date.fromisoformat(journal['added_on'])
+        year, month = (added.year, added.month-1) if added.month>1 else (added.year-1,12)
+        return dt.date(year, month, min(added.day, calendar.monthrange(year,month)[1])).isoformat()
+    return f'{start_year}-01-01'
+
+
 def fetch_crossref_journal_items(
     journal: dict[str, str],
     *,
@@ -1086,7 +1108,7 @@ def fetch_crossref_journal_items(
     source = journal["source"]
     issn = journal["issn"]
     base_url = f"https://api.crossref.org/journals/{issn}/works"
-    from_date = journal.get("from_date") or f"{start_year}-01-01"
+    from_date = journal_start_date(journal, start_year)
     until_date = journal.get("until_date") or dt.datetime.now(RUN_TIMEZONE).date().isoformat()
     date_filter_map = {
         "pub": ("from-pub-date", "until-pub-date"),
@@ -1544,7 +1566,7 @@ def main() -> int:
                 f"{source} current formal issue articles."
                 if journal.get("current_issue_only", "").lower() == "true"
                 else (
-                    f"{source} articles from {journal.get('from_date', f'{args.start_year}-01-01')} "
+                    f"{source} articles from {journal_start_date(journal, args.start_year)} "
                     f"to the current run date."
                 )
             ),

@@ -1,5 +1,11 @@
 # Journal RSS Aggregator
 
+## 新增期刊的采集起点（2026-10-01 起）
+
+新增自建期刊须在 `CROSSREF_JOURNALS` 配置中填写固定的 `added_on`（北京时间添加日期），默认从该日期向前一个日历月开始，持续更新到每次运行当天。例如 `2026-10-01` 对应 `2026-09-01`，`2026-10-02` 对应 `2026-09-02`；上月不存在同一天时取上月最后一天。后续运行不移动起点、不因超过一个月自动删除论文。已有期刊的 `from_date` 保持不变；显式 `from_date` 优先于 `added_on`。官方优先去重与个人已读过滤仍然生效。
+
+IJGI 自建源为 `ijgi.xml`，添加日 `2026-10-01`，起点 `2026-09-01`。官方原始地址为 `https://www.mdpi.com/rss/journal/ijgi`；`official-feeds/ijgi.xml` 仅镜像官方内容，不使用 Crossref 冒充官方条目。官方首次抓取不可用时，该镜像显示明确的不可用说明且没有论文，后续采集成功后替换为真实官方 RSS。
+
 Zotero 订阅重复标记、标题译文缓存与已读归档见 [Journal RSS Memory](zotero-feed-memory/README.md)。这些个人状态只保存在本机，不随公开 RSS 发布。英文期刊的语言标记为 `en`，中文汇总为 `zh-CN`。
 
 ## Zotero 已读过滤
