@@ -121,6 +121,9 @@ jobs:
         if: steps.mode.outputs.filter_only != 'true'
         run: python rss_reports.py conferences
 
+      - name: Enforce official priority on every publication
+        run: python official_priority.py
+
       - name: Build health report and validate sizes
         run: |
           python rss_health.py guard

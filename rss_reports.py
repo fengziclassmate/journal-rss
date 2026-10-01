@@ -31,7 +31,8 @@ def duplicate_page(root=Path('.')):
     rows=[]
     for path in sorted(directory.glob('*.json')):
         for record in json.loads(path.read_text('utf-8')):
-            action='已隐藏：官网已有相同标识' if record['action']=='hidden' else '仅标题相似：保留待核对'
+            action=('已隐藏：同刊完整标题和作者一致' if 'same-journal:title-and-authors' in record['matched']
+                    else '已隐藏：官网已有相同标识') if record['action']=='hidden' else '仅标题相似：保留待核对'
             rows.append('<tr>'+''.join('<td>'+html.escape(str(value))+'</td>' for value in (
                 path.stem, record['title'], action, ', '.join(record['matched']),record['official_source'],record['url']))+'</tr>')
     content='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RSS 去重记录</title>

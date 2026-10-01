@@ -664,6 +664,20 @@ def feed_item_identity_keys(item: FeedItem) -> set[str]:
     return identities
 
 
+def author_signature(description: str, authors: str = '', *, generated: bool = False) -> str:
+    if not authors:
+        lines = BeautifulSoup(html.unescape(description or ''), 'html.parser').get_text('\n', strip=True).splitlines()
+        for line in lines:
+            match = re.match(r'Author\(s\):\s*(.+)', line, re.I)
+            if match:
+                authors = match.group(1)
+                break
+        if not authors and generated and lines:
+            # Our generated descriptions start with authors, before the journal/DOI.
+            authors = lines[0] if re.search(r'<br\s*/?>', description, re.I) else ''
+    return ''.join(c.casefold() for c in unicodedata.normalize('NFKC', authors) if c.isalnum())
+
+
 def parse_official_feed_identity_keys(raw: bytes) -> set[str]:
     if not raw.strip():
         return set()
@@ -678,6 +692,13 @@ def parse_official_feed_identity_keys(raw: bytes) -> set[str]:
         from rss_read_filter import _item_tokens
         tokens = _item_tokens(element)
         identities.update(token for token in tokens if not token.startswith('title:'))
+        authors = ', '.join(''.join(child.itertext()) for child in element
+                            if local_name(child.tag) in ('creator', 'author'))
+        signature = author_signature(child_text(element, 'description', 'encoded', 'summary'), authors)
+        if title_identity and signature:
+            primary = doi_identities(child_text(element, 'guid', 'id'), child_text(element, 'link'),
+                                     child_text(element, 'doi', 'identifier'))
+            identities.add('evidence:' + json.dumps([title_identity, signature, sorted(primary)], ensure_ascii=True))
     return identities
 
 
@@ -689,13 +710,26 @@ def filter_official_duplicates(
 ) -> list[FeedItem]:
     if not official_identities:
         return list(items)
+    evidence = {}
+    for key in official_identities:
+        if key.startswith('evidence:'):
+            title, authors, dois = json.loads(key[len('evidence:'):])
+            evidence.setdefault(title, []).append((authors, set(dois)))
     kept = []
     for item in items:
         matches = feed_item_identity_keys(item) & official_identities
         strong = {key for key in matches if not key.startswith('title:')}
+        title = normalized_title_identity(item.title)
+        authors = author_signature(item.description, generated=True)
+        primary = doi_identities(item.guid, item.link)
+        if not strong and official_url and len(title) >= 46 and len(authors) >= 6:
+            for official_authors, official_dois in evidence.get(title, []):
+                if authors == official_authors and not (primary and official_dois and primary.isdisjoint(official_dois)):
+                    strong = {'same-journal:title-and-authors'}
+                    break
         if not strong:
             kept.append(item)
-        if matches and audit is not None:
+        if (matches or strong) and audit is not None:
             audit.append({'title':item.title, 'url':item.link, 'guid':item.guid,
                           'official_source':official_url, 'action':'hidden' if strong else 'review-title-only',
                           'matched':sorted(strong or matches)})
