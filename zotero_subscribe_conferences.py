@@ -78,14 +78,14 @@ def feed_specs() -> list[dict[str, str]]:
     base_url = config["base_url"].rstrip("/")
     feeds = [
         {
-            "name": f"TopConf {conference['id']:02d} | {conference['acronym']}",
+            "name": f"Conf {conference['acronym']}",
             "url": f"{base_url}/{conference['slug']}.xml",
         }
         for conference in config["conferences"]
     ]
     feeds.append(
         {
-            "name": "TopConf Daily | \u9876\u4f1a\u6bcf\u65e5\u901f\u9012",
+            "name": "Conf Daily",
             "url": f"{base_url}/top-conference-daily.xml",
         }
     )
