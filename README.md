@@ -1,5 +1,15 @@
 # Journal RSS Aggregator
 
+## TMLR
+
+`tmlr_rss.py` publishes [TMLR_FZTX](https://fengziclassmate.github.io/journal-rss/tmlr.xml)
+from the publisher's accepted-paper directory. Initial coverage starts September
+2026 (month precision); subsequent runs retain history and discover new papers.
+RSS dates are persistent first-discovery times, explicitly distinguished from
+publication months in each description. State is stored in
+`research-data/tmlr-state.json`. Personal read filtering runs after collection.
+No paid API is used. TMLR is separate from JMLR; no official RSS is fabricated.
+
 ## Additional subscribed journals (2026-10-02)
 
 `additional-journals.json` registers 51 more canonical custom feeds, verified by
