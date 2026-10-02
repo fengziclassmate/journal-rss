@@ -1526,6 +1526,10 @@ def main() -> int:
         crossref_items = dedupe_items(crossref_items)
         record(journal['output'], collection_status, len(crossref_items),
                identities=[item.guid for item in crossref_items], detail=source)
+        if journal.get('current_issue_only') != 'true':
+            from journal_merge import merge_items
+            # Retain earlier merged issue articles when the publisher advances to a new issue.
+            crossref_items = merge_items(crossref_items, read_existing_feed_items(journal_output))
         official_url = OFFICIAL_FEED_URLS[journal["issn"]]
         if official_url not in refreshed_official_feeds:
             refreshed_official_feeds.add(official_url)
@@ -1568,6 +1572,8 @@ def main() -> int:
                 f"duplicate {source} items"
             )
         item_limit = journal_item_limit(journal, args.max_items)
+        if journal.get('current_issue_only') != 'true':
+            item_limit = max(item_limit, len(crossref_items))
         crossref_written = write_rss(
             crossref_items,
             journal_output,

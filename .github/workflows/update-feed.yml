@@ -121,6 +121,9 @@ jobs:
         if: steps.mode.outputs.filter_only != 'true'
         run: python rss_reports.py conferences
 
+      - name: Merge current issues into canonical journal feeds
+        run: python journal_merge.py
+
       - name: Enforce official priority on every publication
         run: python official_priority.py
 

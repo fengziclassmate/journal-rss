@@ -1,5 +1,20 @@
 # Journal RSS Aggregator
 
+## Unified custom journal feeds (2026-10-02)
+
+Each journal now has one canonical custom subscription. `journal_merge.py` combines
+regular/early-access entries and current-issue entries before official-priority and
+read-history filtering. DOI/GUID/link identities are deduplicated; main-feed GUIDs
+are preserved. Existing main-feed articles survive later issue changes, without a
+small per-feed item cap. The original current-issue URLs remain available for
+compatibility and as collection inputs, but should not be subscribed to alongside
+the canonical feed. IEEE canonical URLs retain `early-access` in their filenames
+for compatibility even though they now also include formal-issue articles.
+
+IJGI and Land Use Policy already collect published articles within their fixed
+initial date ranges, including formal-issue articles; they do not require separate
+current-issue subscriptions. Existing starting dates are unchanged.
+
 ## 新增期刊的采集起点（2026-10-01 起）
 
 新增自建期刊须在 `CROSSREF_JOURNALS` 配置中填写固定的 `added_on`（北京时间添加日期），默认从该日期向前一个日历月开始，持续更新到每次运行当天。例如 `2026-10-01` 对应 `2026-09-01`，`2026-10-02` 对应 `2026-09-02`；上月不存在同一天时取上月最后一天。后续运行不移动起点、不因超过一个月自动删除论文。已有期刊的 `from_date` 保持不变；显式 `from_date` 优先于 `added_on`。官方优先去重与个人已读过滤仍然生效。
