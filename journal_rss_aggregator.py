@@ -52,6 +52,7 @@ UTC = dt.timezone.utc
 RUN_TIMEZONE = ZoneInfo("Asia/Shanghai")
 
 OFFICIAL_FEED_URLS = {
+    "0264-8377": "https://rss.sciencedirect.com/publication/science/02648377",
     "2220-9964": "https://www.mdpi.com/rss/journal/ijgi",
     "1753-8955": "https://www.tandfonline.com/feed/rss/tjde20",
     "0031-3203": "https://rss.sciencedirect.com/publication/science/00313203",
@@ -80,6 +81,16 @@ OFFICIAL_FEED_URLS = {
 DOI_PATTERN = re.compile(r"10\.\d{4,9}/[^\s\"'<>]+", re.IGNORECASE)
 
 CROSSREF_JOURNALS = [
+    {
+        "source": "Land Use Policy",
+        "issn": "0264-8377",
+        "homepage": "https://www.sciencedirect.com/journal/land-use-policy",
+        "added_on": "2026-10-02",
+        "output": "land-use-policy.xml",
+        "feed_link": "https://fengziclassmate.github.io/journal-rss/land-use-policy.xml",
+        "feed_title": "Land Use Policy RSS",
+        "date_filter": "pub",
+    },
     {
         "source": "ISPRS International Journal of Geo-Information",
         "issn": "2220-9964",

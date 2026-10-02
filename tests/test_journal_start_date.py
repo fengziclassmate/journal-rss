@@ -18,3 +18,9 @@ class JournalStartDateTests(unittest.TestCase):
         self.assertEqual(spec['issn'],'2220-9964')
         self.assertEqual(journal_start_date(spec,2020),'2026-09-01')
         self.assertEqual(spec['date_filter'],'pub')
+
+    def test_land_use_policy_configuration(self):
+        spec=next(j for j in CROSSREF_JOURNALS if j['output']=='land-use-policy.xml')
+        self.assertEqual(spec['issn'],'0264-8377')
+        self.assertEqual(journal_start_date(spec,2020),'2026-09-02')
+        self.assertEqual(spec['date_filter'],'pub')
