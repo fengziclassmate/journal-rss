@@ -77,7 +77,8 @@ def fetch_bytes(url: str, attempts: int = 3) -> bytes:
 
 
 def build_crossref_rss(spec: dict, payload: dict) -> bytes:
-    rss = ET.Element("rss", {"version": "2.0", "xmlns:dc": "http://purl.org/dc/elements/1.1/"})
+    from journal_dates import DC
+    rss = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = spec["name"]
     ET.SubElement(channel, "link").text = spec["source_url"]
@@ -95,15 +96,18 @@ def build_crossref_rss(spec: dict, payload: dict) -> bytes:
         ET.SubElement(item, "guid", {"isPermaLink": "true"}).text = link
         doi = record.get("DOI", "")
         if doi:
-            ET.SubElement(item, "dc:identifier").text = f"doi:{doi}"
+            ET.SubElement(item, '{' + DC + '}identifier').text = f"doi:{doi}"
         for author in record.get("author", []):
             name = " ".join(filter(None, (author.get("given", ""), author.get("family", "")))).strip()
             if name:
-                ET.SubElement(item, "dc:creator").text = name
-        date_parts = (record.get("published") or record.get("created") or {}).get("date-parts", [[]])[0]
-        if date_parts:
-            year, month, day = (date_parts + [1, 1])[:3]
-            published = dt.datetime(year, month, day, tzinfo=dt.timezone.utc)
+                ET.SubElement(item, '{' + DC + '}creator').text = name
+        from journal_dates import crossref_dates, append_metadata, describe
+        dates = crossref_dates(record)
+        append_metadata(item, dates)
+        ET.SubElement(item, 'description').text = describe('', dates)
+        value = dates.get('publication', '')
+        if len(value) == 10:
+            published = dt.datetime.fromisoformat(value).replace(tzinfo=dt.timezone.utc)
             ET.SubElement(item, "pubDate").text = email.utils.format_datetime(published)
     return ET.tostring(rss, encoding="utf-8", xml_declaration=True)
 
@@ -115,7 +119,7 @@ def fetch_crossref_feed(spec: dict) -> bytes:
         "sort": "created",
         "order": "desc",
         "rows": str(spec.get("crossref_rows", 300)),
-        "select": "DOI,title,URL,resource,published,created,author",
+        "select": "DOI,title,URL,resource,published,published-online,published-print,created,author",
     })
     url = f"https://api.crossref.org/journals/{issn}/works?{params}"
     request = urllib.request.Request(url, headers={"User-Agent": "journal-rss/1.0 (mailto:rss@example.com)"})

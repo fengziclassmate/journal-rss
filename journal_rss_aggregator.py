@@ -522,6 +522,7 @@ class FeedItem:
     published: dt.datetime | None = None
     guid: str = ""
     source_url: str = ""
+    dates: dict[str, str] = dataclasses.field(default_factory=dict)
 
 
 def log(message: str) -> None:
@@ -598,6 +599,11 @@ def parse_datetime(value: str) -> dt.datetime | None:
     except (TypeError, ValueError):
         pass
 
+    try:
+        parsed = dt.datetime.fromisoformat(value.replace('Z', '+00:00'))
+        return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
+    except ValueError:
+        pass
     patterns = [
         "%Y-%m-%d %H:%M:%S",
         "%Y/%m/%d %H:%M:%S",
@@ -608,7 +614,7 @@ def parse_datetime(value: str) -> dt.datetime | None:
     ]
     for pattern in patterns:
         try:
-            parsed = dt.datetime.strptime(value[: len(pattern)], pattern)
+            parsed = dt.datetime.strptime(value, pattern)
             return parsed.replace(tzinfo=UTC)
         except ValueError:
             continue
@@ -936,6 +942,7 @@ def parse_dqxxkx_current() -> list[FeedItem]:
                 link=link,
                 description=description,
                 published=issue_to_datetime(year, issue),
+                dates={'issue_month': issue_to_datetime(year, issue).strftime('%Y-%m')} if year else {},
                 guid=doi or link,
                 source_url=url,
             )
@@ -1078,6 +1085,7 @@ def crossref_item_to_feed_item(
     if abstract:
         details.append(abstract)
 
+    from journal_dates import crossref_dates
     return FeedItem(
         source=source,
         title=title,
@@ -1086,6 +1094,7 @@ def crossref_item_to_feed_item(
         published=published,
         guid=doi,
         source_url=source_url,
+        dates=crossref_dates(item),
     )
 
 
@@ -1132,7 +1141,7 @@ def fetch_crossref_journal_items(
         published = {k:v for k,v in journal.items() if k != 'include_created'}
         registered = dict(published, date_filter='created',
             date_fields='created,published-online,published-print,published',
-            date_note='RSS date is the Crossref registration date, not the formal publication date. This record supplements the publication-date collection.')
+            date_note='Collected using Crossref registration time. Publication and registration dates are reported separately.')
         return dedupe_items(
             fetch_crossref_journal_items(published,start_year=start_year,end_year=end_year,mailto=mailto)
             + fetch_crossref_journal_items(registered,start_year=start_year,end_year=end_year,mailto=mailto)
@@ -1314,6 +1323,8 @@ def read_existing_feed_items(path: Path) -> list[FeedItem]:
         description = child_text(element, "description")
         published = parse_datetime(child_text(element, "pubDate"))
         guid = child_text(element, "guid")
+        from journal_dates import NS
+        dates = {local_name(node.tag): node.text or '' for node in element if node.tag.startswith('{' + NS + '}')}
         source_url = ""
         for child in list(element):
             if local_name(child.tag) == "source":
@@ -1329,6 +1340,7 @@ def read_existing_feed_items(path: Path) -> list[FeedItem]:
                     published=published,
                     guid=guid or link,
                     source_url=source_url,
+                    dates=dates,
                 )
             )
     return items
@@ -1367,9 +1379,23 @@ def write_rss(
     prefix_item_titles: bool = True,
     feed_language: str = "zh-CN",
 ) -> int:
+    from journal_dates import describe, append_metadata
+    from rss_ops import write_json
+    dated = [item for item in items if item.dates]
+    if dated:
+        state_path = output_path.parent / 'research-data/journal-first-seen.json'
+        state = json.loads(state_path.read_text('utf-8')) if state_path.exists() else {}
+        now = dt.datetime.now(UTC).isoformat()
+        for item in dated:
+            key = item.guid or item.link
+            first = state.setdefault(key, item.dates.get('first_seen', now))
+            item.dates.setdefault('first_seen', first)
+        write_json(state_path, state)
     items = sorted(
         items,
-        key=lambda item: item.published or dt.datetime(1900, 1, 1, tzinfo=UTC),
+        key=lambda item: (parse_datetime(item.dates.get('publication', '')) or
+                          parse_datetime(item.dates.get('first_seen', '')) or
+                          item.published or dt.datetime(1900, 1, 1, tzinfo=UTC)),
         reverse=True,
     )[:max_items]
 
@@ -1395,12 +1421,17 @@ def write_rss(
         ET.SubElement(item_el, "link").text = item.link
         ET.SubElement(item_el, "guid", isPermaLink="false").text = item.guid or item.link
         ET.SubElement(item_el, "category").text = item.source
-        if item.description:
-            ET.SubElement(item_el, "description").text = item.description
-        if item.published:
+        description = describe(item.description, item.dates) if item.dates else item.description
+        if description:
+            ET.SubElement(item_el, "description").text = description
+        publication = item.dates.get('publication', '')
+        rss_date = (parse_datetime(publication) if len(publication) == 10 else None) if item.dates else item.published
+        if rss_date:
             ET.SubElement(item_el, "pubDate").text = email.utils.format_datetime(
-                item.published
+                rss_date
             )
+        if item.dates:
+            append_metadata(item_el, item.dates)
         if item.source_url:
             ET.SubElement(item_el, "source", url=item.source_url).text = item.source
 

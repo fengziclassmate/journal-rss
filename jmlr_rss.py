@@ -59,11 +59,12 @@ def feed_items(state, now):
             continue
         description = '<p>Authors: ' + html.escape(paper['authors']) + '</p>'
         description += '<p>Publication month (PDF first page): ' + paper['month'] + '.</p>'
-        description += '<p>First discovered: ' + paper['first_seen'] + '. RSS date is discovery time, not publication date.</p>'
         description += '<p><a href="' + html.escape(paper['pdf'], quote=True) + '">Publisher PDF</a></p>'
         items.append(FeedItem(source='JMLR', title=paper['title'], link=link,
                               guid=link, description=description,
-                              published=dt.datetime.fromisoformat(paper['first_seen']), source_url=BASE))
+                              published=dt.datetime.fromisoformat(paper['first_seen']), source_url=BASE,
+                              dates={'publication': paper['month'], 'publication_source': 'publisher PDF',
+                                     'first_seen': paper['first_seen']}))
     return items
 
 
@@ -93,7 +94,7 @@ def main():
         raise RuntimeError(f'{len(errors)} unresolved publication dates; cached successes, previous feed retained')
     items = feed_items(state, now)
     write_rss(items, Path('jmlr.xml'), feed_title='JMLR_FZTX', feed_link=FEED,
-              feed_description='JMLR since September 2026, verified by PDF publication month; RSS dates are discovery times.',
+              feed_description='JMLR since September 2026, verified by PDF publication month; discovery times are separate.',
               max_items=max(1, len(items)), prefix_item_titles=False, feed_language='en')
     print(f'JMLR: {len(state)} checked, {len(items)} eligible before official/read filtering')
 

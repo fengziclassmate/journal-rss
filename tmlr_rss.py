@@ -1,4 +1,4 @@
-"""Accepted TMLR papers; RSS dates are stable discovery times, not publication dates."""
+"""Accepted TMLR papers with separate publication months and discovery times."""
 import datetime as dt
 import html
 import json
@@ -49,13 +49,14 @@ def main():
         link = 'https://openreview.net/forum?id=' + ident
         description = '<p>Authors: ' + html.escape(paper['authors']) + '</p>'
         description += '<p>Publication month: ' + paper['month'] + ' (publisher provides no exact day).</p>'
-        description += '<p>First discovered: ' + paper['first_seen'] + '. RSS date is discovery time, not publication date.</p>'
         description += '<p><a href="' + html.escape(link, quote=True) + '">OpenReview</a></p>'
         items.append(FeedItem(source='TMLR', title=paper['title'], link=link, description=description,
                               published=dt.datetime.fromisoformat(paper['first_seen']),
-                              guid='tmlr:' + ident, source_url=SOURCE))
+                              guid='tmlr:' + ident, source_url=SOURCE,
+                              dates={'publication': paper['month'], 'publication_source': 'publisher directory',
+                                     'first_seen': paper['first_seen']}))
     write_rss(items, Path('tmlr.xml'), feed_title='TMLR_FZTX', feed_link=FEED,
-              feed_description='Accepted TMLR papers since September 2026. Dates are first discovery times.',
+              feed_description='Accepted TMLR papers since September 2026. Publication months and first discovery times are separate.',
               max_items=max(1, len(items)), prefix_item_titles=False, feed_language='en')
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix('.tmp')

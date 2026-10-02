@@ -1,12 +1,25 @@
 # Journal RSS Aggregator
 
+## Date semantics
+
+Journal feeds preserve publication precision: `dc:date` can be a year, month or
+full date. `pubDate` is emitted only for a verified day-level publication date.
+Crossref registration and metadata-update dates never substitute for publication.
+Discovery timestamps are stored separately in the description and `jrdate`
+metadata, with a persistent `research-data/journal-first-seen.json` ledger.
+Tracking starts when the upgraded collector first observes an item; it does not
+claim to reconstruct observation times before tracking existed. Existing TMLR and
+JMLR first-seen timestamps are preserved. Unknown publication dates remain unknown.
+Publisher-native RSS dates are left unchanged; this policy covers custom journal
+feeds and our Crossref fallback renderer. Conference/digest date policies are not changed.
+
 ## TMLR
 
 `tmlr_rss.py` publishes [TMLR_FZTX](https://fengziclassmate.github.io/journal-rss/tmlr.xml)
 from the publisher's accepted-paper directory. Initial coverage starts September
 2026 (month precision); subsequent runs retain history and discover new papers.
-RSS dates are persistent first-discovery times, explicitly distinguished from
-publication months in each description. State is stored in
+Publication months are exported as partial dates without invented days;
+first-discovery times are separately labelled. State is stored in
 `research-data/tmlr-state.json`. Personal read filtering runs after collection.
 No paid API is used. TMLR is separate from JMLR; no official RSS is fabricated.
 
