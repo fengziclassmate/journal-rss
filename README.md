@@ -2,8 +2,10 @@
 
 ## Date semantics
 
-Journal feeds preserve publication precision: `dc:date` can be a year, month or
-full date. `pubDate` is emitted only for a verified day-level publication date.
+Journal feeds preserve publication precision in `jrdate:publication` and the
+description. `dc:date` and `pubDate` are emitted only for a verified day-level
+publication date. Zotero coerces partial standard dates to a fabricated first
+day, so month/year-only records deliberately leave its date column blank.
 Crossref registration and metadata-update dates never substitute for publication.
 Discovery timestamps are stored separately in the description and `jrdate`
 metadata, with a persistent `research-data/journal-first-seen.json` ledger.

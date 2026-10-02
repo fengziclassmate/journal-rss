@@ -57,7 +57,9 @@ def describe(description, dates):
 def append_metadata(node, dates):
     ET.register_namespace('dc', DC)
     ET.register_namespace('jrdate', NS)
-    if dates.get('publication'):
+    # Zotero FeedItem.fromJSON coerces partial dc:date values to an invented day.
+    # Keep partial precision in our namespace and description, not its date input.
+    if len(dates.get('publication', '')) == 10:
         ET.SubElement(node, '{' + DC + '}date').text = dates['publication']
     for key, value in dates.items():
         ET.SubElement(node, '{' + NS + '}' + key).text = value
