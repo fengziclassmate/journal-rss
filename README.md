@@ -10,13 +10,23 @@ publication months in each description. State is stored in
 `research-data/tmlr-state.json`. Personal read filtering runs after collection.
 No paid API is used. TMLR is separate from JMLR; no official RSS is fabricated.
 
+## JMLR
+
+`jmlr_rss.py` publishes [JMLR_FZTX](https://fengziclassmate.github.io/journal-rss/jmlr.xml).
+The fixed start is September 2026. Publication months are extracted from the
+publisher PDF's first-page `Published` field, not inferred from the webpage year
+or submission date. Verified months and stable discovery times are cached in
+`research-data/jmlr-state.json`; only new papers require PDF downloads. Unknown
+dates fail the collection visibly and retain the previous feed. Publisher
+priority and personal read suppression can leave this feed empty legitimately.
+
 ## Additional subscribed journals (2026-10-02)
 
 `additional-journals.json` registers 51 more canonical custom feeds, verified by
 ISSN against Crossref. Together with the previous 20, 71 subscribed journals have
-a custom feed. JMLR is intentionally excluded at the user's request: its website
-provides year-only dates and Crossref has no works, so a September 2 backfill
-cannot be established reliably. Its official subscription is unchanged.
+a Crossref-based custom feed. JMLR was initially skipped because its webpage
+dates only provide years; the separate PDF-based collector above now supports
+it. Its official subscription is unchanged.
 
 New feeds start on September 2, 2026 and continue accumulating updates. New IEEE
 feeds union publication-date records with newly registered records to include

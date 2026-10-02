@@ -20,11 +20,13 @@ def reconcile(root):
             history.setdefault(url, set()).update(parse_official_feed_identity_keys(path.read_bytes()))
     save_official_seen(history_path, history)
     results = []
-    for journal in CROSSREF_JOURNALS:
+    journals = [*CROSSREF_JOURNALS, {'source': 'JMLR', 'output': 'jmlr.xml',
+                                  'official_url': 'https://jmlr.org/jmlr.xml'}]
+    for journal in journals:
         path = root/journal['output']
         if not path.exists():
             continue
-        url = OFFICIAL_FEED_URLS[journal['issn']]
+        url = journal.get('official_url') or OFFICIAL_FEED_URLS[journal['issn']]
         tree = ET.parse(path)
         parent, entries = _feed_entries(tree.getroot(), path)
         items = [FeedItem(source=journal['source'], title=child_text(node,'title'),

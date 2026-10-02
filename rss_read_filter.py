@@ -119,6 +119,13 @@ def publisher_identity_tokens(url: str) -> set[str]:
     except ValueError:
         return set()
     host = (parts.hostname or '').lower()
+    if host in ('jmlr.org', 'www.jmlr.org'):
+        match = re.fullmatch(r'/papers/(v\d+/[^/]+\.html)', parts.path)
+        if match:
+            path = '/papers/' + match.group(1)
+            return {'jmlr-paper:' + match.group(1)} | {
+                'url:' + scheme + '://' + domain + path
+                for scheme in ('http', 'https') for domain in ('jmlr.org', 'www.jmlr.org')}
     if host == 'ieeexplore.ieee.org':
         match = re.search(r'/document/(\d+)', parts.path)
         if match:

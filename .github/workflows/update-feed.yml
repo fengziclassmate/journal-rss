@@ -126,6 +126,11 @@ jobs:
         continue-on-error: true
         run: python rss_health.py run tmlr -- python tmlr_rss.py
 
+      - name: Collect JMLR papers with verified publication months
+        if: steps.mode.outputs.filter_only != 'true'
+        continue-on-error: true
+        run: python rss_health.py run jmlr -- python jmlr_rss.py
+
       - name: Merge current issues into canonical journal feeds
         run: python journal_merge.py
 
@@ -193,7 +198,7 @@ jobs:
           mkdir -p _site
           cp read-filter-status.json rss-health.xml _site/
           cp sharing.html official-sources.opml _site/
-          cp ijgi.xml tmlr.xml _site/
+          cp ijgi.xml tmlr.xml jmlr.xml _site/
           cp land-use-policy.xml _site/
           cp rse.xml jag.xml isprsjprs.xml computer-science-review.xml laup.xml ai.xml eiar.xml sb.xml urban-climate.xml ufug.xml tdf-ijgis.xml tdf-agis.xml csu-not-tdf-aaag.xml tdf-bed.xml tdf-gi.xml tdf-gsis.xml tdf-gisrs.xml tdf-ijrs.xml artificial-intelligence-science-and-engineering.xml transactions-on-neural-networks-and-learning-systems.xml transactions-on-intelligent-transportation-systems.xml transactions-on-image-processing.xml transactions-on-big-data.xml big-data-mining-and-analytics.xml transactions-on-artificial-intelligence.xml sd.xml communications-earth-environment.xml nature.xml nature-cities.xml nature-communications.xml nature-computational-science.xml nature-geoscience.xml nature-human-behaviour.xml nature-machine-intelligence.xml nature-reviews-earth-environment.xml nature-sustainability.xml npjus.xml smart-cities.xml journal-of-planning-literature.xml journal-of-urban-management.xml urban-studies.xml csu-not-tdf-planning-theory-practice.xml csu-not-tdf-journal-of-urban-technology.xml european-urban-and-regional-studies.xml journal-of-urban-economics.xml science-of-remote-sensing.xml tgis.xml nature-climate-change.xml buildings-cities.xml remote-sensing.xml energy-and-buildings.xml _site/
           cp -r rss-health assets duplicate-audit _site/
