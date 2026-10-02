@@ -1,5 +1,21 @@
 # Journal RSS Aggregator
 
+## Additional subscribed journals (2026-10-02)
+
+`additional-journals.json` registers 51 more canonical custom feeds, verified by
+ISSN against Crossref. Together with the previous 20, 71 subscribed journals have
+a custom feed. JMLR is intentionally excluded at the user's request: its website
+provides year-only dates and Crossref has no works, so a September 2 backfill
+cannot be established reliably. Its official subscription is unchanged.
+
+New feeds start on September 2, 2026 and continue accumulating updates. New IEEE
+feeds union publication-date records with newly registered records to include
+year-only early-access metadata. Supplementary registration dates are explicitly
+identified in article descriptions; they are not presented as publication dates.
+Official-priority deduplication and personal read suppression run before release.
+Empty feeds can mean no in-range metadata or no remaining items after filtering,
+not necessarily that the publisher has published nothing.
+
 ## Unified custom journal feeds (2026-10-02)
 
 Each journal now has one canonical custom subscription. `journal_merge.py` combines

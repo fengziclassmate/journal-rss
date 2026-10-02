@@ -99,6 +99,7 @@ def identity_tokens(
         tokens.add(f"guid:{clean_guid}")
     if clean_link:
         tokens.add(f"url:{clean_link}")
+        tokens.update(publisher_identity_tokens(clean_link))
     if clean_title:
         tokens.add(f"title:{clean_title}")
 
@@ -109,6 +110,30 @@ def identity_tokens(
     for match in ARXIV_RE.finditer(combined):
         tokens.add(f"arxiv:{match.group(1).lower()}")
     return tokens
+
+
+def publisher_identity_tokens(url: str) -> set[str]:
+    """Bridge publisher URL variants without relying on article titles."""
+    try:
+        parts = urllib.parse.urlsplit(url)
+    except ValueError:
+        return set()
+    host = (parts.hostname or '').lower()
+    if host == 'ieeexplore.ieee.org':
+        match = re.search(r'/document/(\d+)', parts.path)
+        if match:
+            number = match.group(1)
+            return {'ieee-document:' + number,
+                    'url:http://ieeexplore.ieee.org/document/' + number,
+                    'url:https://ieeexplore.ieee.org/document/' + number}
+    if host in ('www.sciencedirect.com', 'sciencedirect.com', 'linkinghub.elsevier.com'):
+        match = re.search(r'/pii/(S[0-9A-Z]+)', parts.path, re.I)
+        if match:
+            pii = match.group(1).upper()
+            return {'elsevier-pii:' + pii,
+                    'url:https://www.sciencedirect.com/science/article/pii/' + pii,
+                    'url:http://www.sciencedirect.com/science/article/pii/' + pii}
+    return set()
 
 
 def hash_tokens(tokens: Iterable[str], key: bytes) -> set[str]:

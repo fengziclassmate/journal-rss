@@ -506,6 +506,13 @@ CROSSREF_JOURNALS = [
 ]
 
 
+ADDITIONAL_JOURNALS = json.loads(
+    Path(__file__).with_name('additional-journals.json').read_text(encoding='utf-8')
+)
+CROSSREF_JOURNALS.extend(ADDITIONAL_JOURNALS)
+OFFICIAL_FEED_URLS.update({journal['issn']: journal['official_url'] for journal in ADDITIONAL_JOURNALS})
+
+
 @dataclasses.dataclass
 class FeedItem:
     source: str
@@ -716,7 +723,7 @@ def parse_official_feed_identity_keys(raw: bytes) -> set[str]:
         tokens = _item_tokens(element)
         identities.update(token for token in tokens if not token.startswith('title:'))
         authors = ', '.join(''.join(child.itertext()) for child in element
-                            if local_name(child.tag) in ('creator', 'author'))
+                            if local_name(child.tag) in ('creator', 'author', 'authors'))
         signature = author_signature(child_text(element, 'description', 'encoded', 'summary'), authors)
         if title_identity and signature:
             primary = doi_identities(child_text(element, 'guid', 'id'), child_text(element, 'link'),
@@ -733,6 +740,11 @@ def filter_official_duplicates(
 ) -> list[FeedItem]:
     if not official_identities:
         return list(items)
+    from rss_read_filter import publisher_identity_tokens
+    official_identities = set(official_identities)
+    for key in list(official_identities):
+        if key.startswith(('url:', 'guid:')):
+            official_identities.update(publisher_identity_tokens(key.split(':',1)[1]))
     evidence = {}
     for key in official_identities:
         if key.startswith('evidence:'):
@@ -1116,6 +1128,15 @@ def fetch_crossref_journal_items(
     end_year: int,
     mailto: str,
 ) -> list[FeedItem]:
+    if journal.get('include_created') == 'true':
+        published = {k:v for k,v in journal.items() if k != 'include_created'}
+        registered = dict(published, date_filter='created',
+            date_fields='created,published-online,published-print,published',
+            date_note='RSS date is the Crossref registration date, not the formal publication date. This record supplements the publication-date collection.')
+        return dedupe_items(
+            fetch_crossref_journal_items(published,start_year=start_year,end_year=end_year,mailto=mailto)
+            + fetch_crossref_journal_items(registered,start_year=start_year,end_year=end_year,mailto=mailto)
+        )
     source = journal["source"]
     issn = journal["issn"]
     base_url = f"https://api.crossref.org/journals/{issn}/works"
@@ -1185,6 +1206,12 @@ def fetch_crossref_journal_items(
                 source_url=journal.get("homepage", base_url),
                 date_fields=date_fields,
             )
+            if feed_item and journal.get('date_note'):
+                feed_item.description += '<p>' + html.escape(journal['date_note']) + '</p>'
+            if feed_item and journal.get('publisher_link') == 'true':
+                publisher_url = item.get('resource', {}).get('primary', {}).get('URL', '')
+                if publisher_url.startswith(('https://', 'http://')):
+                    feed_item.link = publisher_url
             if feed_item and current_issue_only:
                 issue_key = crossref_formal_issue_key(item)
                 if issue_key:
