@@ -14,7 +14,7 @@ class OfficialFeedProxyTests(unittest.TestCase):
     def test_config_has_unique_official_mirrors_including_ijgi(self):
         mirrors = load_config(Path("official-feed-config.json"))
         self.assertEqual(len(mirrors), 72)
-        self.assertEqual(len({item["mirror_url"] for item in mirrors}), 80)
+        self.assertEqual(len({item["mirror_url"] for item in mirrors}), 72)
         self.assertIn('https://rss.sciencedirect.com/publication/science/02648377', {item['source_url'] for item in mirrors})
         self.assertIn('https://www.mdpi.com/rss/journal/ijgi', {item['source_url'] for item in mirrors})
 
