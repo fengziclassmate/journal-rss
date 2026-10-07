@@ -35,6 +35,7 @@ function installConferenceWalker(prototype) {
   const conferencePrefix = "https://fengziclassmate.github.io/journal-rss/conference-feeds/";
   const largeJournalURLs = new Set([
     "https://fengziclassmate.github.io/journal-rss/sustainability.xml",
+    "https://fengziclassmate.github.io/journal-rss/journal-feeds/sustainability.xml",
   ]);
   const replacement = function () {
     const url = this.baseURI?.href || this.baseURI?.spec || String(this.baseURI || "");

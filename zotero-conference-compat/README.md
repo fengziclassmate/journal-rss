@@ -6,20 +6,36 @@ in the subscription UI), even when the XML is valid.
 
 This add-on uses an iterative DOM traversal only for URLs starting with
 `https://fengziclassmate.github.io/journal-rss/conference-feeds/` and the explicitly
-listed large journal feed `https://fengziclassmate.github.io/journal-rss/sustainability.xml`.
+listed large journal feeds `https://fengziclassmate.github.io/journal-rss/sustainability.xml`
+and `https://fengziclassmate.github.io/journal-rss/journal-feeds/sustainability.xml`.
 All items and existing GUIDs are retained. Other URLs use Zotero's original implementation.
-It adds no timers, network requests, translation, cache, archive or item observers.
+It adds no timers, translation, archive or item observers.
+Version 1.1 also checks the published `read-filter-status.json` receipt during
+normal refreshes of managed Pages feeds. One small request is shared for 30 seconds.
+An exact SHA-256 of the actual response and its GUID membership is checkpointed
+only after successful native import. An unchanged feed skips XML downloading and
+parsing, while still updating last-check status and running native expiry/unread
+handling. Missing local entries, changed payloads, receipt failures and invalid
+checkpoints use the complete native importer. Other hosts retain native downloading
+and parsing. Checkpoints also record Zotero's last metadata-update timestamp.
+Large managed native imports are serialized to avoid long-transaction contention.
+An import-generation UUID in Zotero preferences rejects stale checkpoints even
+if a read-only cache directory prevents deleting/replacing its previous file.
+The disposable `rss-refresh-cache` directory in Zotero's data directory contains
+hashes and GUIDs only, not abstracts, translations, reading history or PDF contents.
+The first refresh builds the cache; updated feeds still import all their papers.
 Conference subscription views also sort by publication date descending rather
 than Zotero's default import-ID order. Other subscription views are unchanged.
 Year-only and month-only dates in conference entries retain their precision
 instead of being expanded by Zotero's FeedItem importer to January 1/the first day.
-Disabling it restores the original parser and sorting. It skips installation of the parser patch
+Disabling it restores the original parser, refresh and sorting. It skips installation of the parser patch
 if a future Zotero version no longer has the recognized recursive walk method.
 
 Build and test:
 
 ```text
 node zotero-conference-compat/test-walker.cjs
+node zotero-conference-compat/test-refresh.cjs
 python zotero-conference-compat/build.py
 ```
 
