@@ -85,13 +85,61 @@ def migration_script(folder):
     return '''(async()=>{
 await Zotero.initializationPromise;
 if(Zotero.DataDirectory.dir.replaceAll('\\\\','/').toLowerCase()!=='f:/zotero' || Zotero.DB.readOnly) throw new Error('Unsafe database');
-const plan=await IOUtils.readJSON(PLAN), result=[];
+const plan=await IOUtils.readJSON(PLAN);
+const result=await IOUtils.exists(RESULT) ? await IOUtils.readJSON(RESULT) : [];
 globalThis.__journalUnionPause ||= await Zotero.Feeds.pause();
 const pane=Zotero.getActiveZoteroPane();
 await pane.collectionsView.selectLibrary(Zotero.Libraries.userLibraryID);
+async function finish(group,record){
+  const target=Zotero.Feeds.get(record.id);
+  if(!target || target.url!==group.spec.url) throw new Error('Checkpoint target changed');
+  const expected=group.items.map(r=>r.guid).sort();
+  if(JSON.stringify(record.copied.map(r=>r.guid).sort())!==JSON.stringify(expected)) throw new Error('Checkpoint differs from migration plan');
+  for(const copy of record.copied){
+    const item=await Zotero.FeedItems.getAsyncByGUID(copy.guid);
+    if(!item || item.id!==copy.id || item.libraryID!==target.libraryID) throw new Error('Checkpoint copy is missing; re-export before proceeding');
+    await item.loadAllData();
+    const expectedRow=group.items.find(r=>r.guid===copy.guid), saved=item.toJSON();
+    for(const [field,value] of Object.entries(expectedRow.data)){
+      if(['key','version','collections','relations','dateModified'].includes(field)) continue;
+      if(JSON.stringify(saved[field])!==JSON.stringify(value)) throw new Error('Checkpoint copy data changed; re-export before proceeding');
+    }
+    if((item._feedItemReadTime || null)!==expectedRow.readTime || (item._feedItemTranslatedTime || null)!==expectedRow.translatedTime) throw new Error('Checkpoint copy reading state changed; re-export before proceeding');
+  }
+  // Validate all surviving originals again before deleting any of them on resume.
+  for(const old of group.feeds){
+    if(old.id===target.libraryID || !Zotero.Feeds.get(old.id)) continue;
+    for(const member of group.items.flatMap(r=>r.members.filter(m=>m.library===old.id))){
+      const source=await Zotero.Items.getAsync(member.id);
+      if(!source) throw new Error('Source disappeared after checkpoint');
+      await source.loadAllData();
+      if(source.guid!==member.guid || (source._feedItemReadTime || null)!==(member.readTime || null) ||
+         (source._feedItemTranslatedTime || null)!==(member.translatedTime || null) ||
+         JSON.stringify(source.toJSON())!==JSON.stringify(member.data)) throw new Error('Source data or reading state changed after checkpoint; originals retained');
+    }
+  }
+  for(const old of group.feeds){
+    if(old.id===target.libraryID) continue;
+    const feed=Zotero.Feeds.get(old.id);
+    if(feed){
+      if(feed.url!==old.url) throw new Error('Source subscription changed after checkpoint');
+      const ids=await Zotero.DB.columnQueryAsync('SELECT itemID FROM items WHERE libraryID=?',[old.id]);
+      const expectedIDs=group.items.flatMap(r=>r.members.filter(m=>m.library===old.id).map(m=>m.id));
+      if(JSON.stringify(ids.sort((a,b)=>a-b))!==JSON.stringify(expectedIDs.sort((a,b)=>a-b))) throw new Error('Source changed after copy; originals retained');
+      await feed.erase();
+    }
+    if(!record.removed.includes(old.id)) record.removed.push(old.id);
+    await IOUtils.writeJSON(RESULT,result);
+  }
+  await target.updateUnreadCount();
+  record.phase='complete';
+  await IOUtils.writeJSON(RESULT,result);
+}
 try{
 for(const group of plan){
   const spec=group.spec;
+  const checkpoint=result.find(r=>r.url===spec.url);
+  if(checkpoint){await finish(group,checkpoint);continue;}
   // Abort if the user or another task changed any source after the export.
   for(const old of group.feeds){
     const feed=Zotero.Feeds.get(old.id);
@@ -145,14 +193,11 @@ for(const group of plan){
     if((item._feedItemReadTime || null)!==row.readTime || (item._feedItemTranslatedTime || null)!==row.translatedTime) throw new Error('Reading state not preserved');
     copied.push({id:item.id,guid:item.guid,sourceIDs:row.members.map(m=>m.id),readTime:row.readTime,translatedTime:row.translatedTime});
   }
-  // Originals are removed only after every copy in this journal is verified.
-  const removed=[];
-  for(const old of group.feeds){
-    if(old.id!==target.libraryID){await Zotero.Feeds.get(old.id).erase();removed.push(old.id);}
-  }
-  await target.updateUnreadCount();
-  result.push({name:spec.name,id:target.libraryID,url:spec.url,copied,removed});
+  // Persist verified copies before erasing originals, so interruption can resume safely.
+  const record={name:spec.name,id:target.libraryID,url:spec.url,copied,removed:[],phase:'copied'};
+  result.push(record);
   await IOUtils.writeJSON(RESULT,result);
+  await finish(group,record);
 }
 }finally{
   if(globalThis.__journalUnionPause){globalThis.__journalUnionPause.resume();delete globalThis.__journalUnionPause;}

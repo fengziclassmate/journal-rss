@@ -9,7 +9,7 @@ import html
 import xml.etree.ElementTree as ET
 
 from journal_rss_aggregator import (
-    CROSSREF_JOURNALS, OFFICIAL_FEED_URLS, FeedItem,
+    CROSSREF_JOURNALS, OFFICIAL_FEED_URLS, FeedItem, author_signature, normalized_title_identity,
     child_text, filter_official_duplicates, parse_datetime,
     parse_official_feed_identity_keys,
 )
@@ -113,7 +113,8 @@ def matching(node, evidence):
     if not evidence:
         return False
     item = FeedItem(source='', title=child_text(node, 'title'), link=child_text(node, 'link'),
-                    guid=child_text(node, 'guid'), description=child_text(node, 'description', 'encoded'))
+                    guid=' '.join([child_text(node, 'guid'), child_text(node, 'doi', 'identifier')]),
+                    description=child_text(node, 'description', 'encoded'))
     # RSS dc:creator and generated first-line authors share the established matcher.
     authors = ', '.join(child_text(c, 'name') or ''.join(c.itertext()) for c in node
                         if _local_name(c.tag) in ('creator', 'author'))
@@ -139,33 +140,82 @@ def stable_guid(spec, tokens):
 
 
 def union(spec, groups, aliases):
-    selected = []
-    by_token = {}
-    by_guid = {}
-    evidence = set()
+    records, parents, dois = [], [], []
+    by_token, by_guid, by_authors = {}, {}, {}
+
+    def find(index):
+        while parents[index] != index:
+            parents[index] = parents[parents[index]]
+            index = parents[index]
+        return index
+
+    # Form complete identity components before assigning GUIDs or selecting metadata.
+    # This also handles an entry bridging two previously separate identity groups.
     for nodes in groups:
         for node in nodes:
             tokens = identities(node)
-            existing = next((by_token[token] for token in sorted(tokens) if token in by_token), None)
-            if existing is None and matching(node, evidence):
-                existing = next((row for row in selected if matching(node, evidence_for(row))), None)
-            if existing is None:
-                guid = next((aliases[token] for token in sorted(tokens) if token in aliases), None)
-                guid = guid or stable_guid(spec, tokens)
-                existing = by_guid.get(guid)
-            if existing is None:
-                for old in list(node):
-                    if _local_name(old.tag) == 'guid':
-                        node.remove(old)
-                ET.SubElement(node, 'guid', isPermaLink='false').text = guid
-                selected.append(node)
-                existing = node
-            guid = child_text(existing, 'guid')
-            by_guid[guid] = existing
-            for token in tokens | identities(existing):
-                aliases[token] = guid
-                by_token[token] = existing
-            evidence.update(evidence_for(node))
+            index = len(records)
+            records.append((node, tokens))
+            parents.append(index)
+            dois.append({token for token in tokens if token.startswith('doi:')})
+            known = {aliases[token] for token in tokens if token in aliases}
+            old_guid = child_text(node, 'guid')
+            if old_guid.startswith('unified:'):
+                known.add(old_guid)
+            title = normalized_title_identity(child_text(node, 'title'))
+            authors = ', '.join(''.join(c.itertext()) for c in node if _local_name(c.tag) in ('creator', 'author'))
+            signature = author_signature(child_text(node, 'description', 'encoded'), authors, generated=True)
+            weak = (title, signature) if len(title) >= 46 and len(signature) >= 6 else None
+            strong_candidates = {other for token in tokens for other in by_token.get(token, [])}
+            strong_candidates.update(other for guid in known for other in by_guid.get(guid, []))
+            candidates = strong_candidates | set(by_authors.get(weak, []))
+            for other in sorted(candidates):
+                left, right = find(index), find(other)
+                if left == right or (dois[left] and dois[right] and dois[left].isdisjoint(dois[right])):
+                    continue
+                if other not in strong_candidates and not matching(node, evidence_for(records[other][0])):
+                    continue
+                parents[left] = right
+                dois[right].update(dois[left])
+            for token in tokens:
+                by_token.setdefault(token, []).append(index)
+            for guid in known:
+                by_guid.setdefault(guid, []).append(index)
+            if weak:
+                by_authors.setdefault(weak, []).append(index)
+    components = {}
+    for index in range(len(records)):
+        components.setdefault(find(index), []).append(index)
+    selected, redirects, assignments = [], {}, {}
+    for members in components.values():
+        tokens = set().union(*(records[index][1] for index in members))
+        historical = [child_text(records[index][0], 'guid') for index in members
+                      if child_text(records[index][0], 'guid').startswith('unified:')]
+        known = list(dict.fromkeys(aliases[token] for index in members for token in sorted(records[index][1]) if token in aliases))
+        guid = next(iter(historical or known), None) or stable_guid(spec, tokens)
+        # Retained publisher metadata still wins when it leaves the rolling publisher feed.
+        best = min(members, key=lambda index: (not any(c.tag == 'source' and c.get('url') == spec['official_url']
+                                                        for c in records[index][0]), index))
+        node = copy.deepcopy(records[best][0])
+        for child in list(node):
+            if _local_name(child.tag) == 'guid':
+                node.remove(child)
+        ET.SubElement(node, 'guid', isPermaLink='false').text = guid
+        selected.append(node)
+        for old in historical + known:
+            if old in redirects and redirects[old] != guid:
+                raise ValueError('Conflicting historical GUID; manual identity review required')
+            redirects[old] = guid
+        for token in tokens | {'guid:'+guid}:
+            assignments.setdefault(token, set()).add(guid)
+    for token, guid in list(aliases.items()):
+        aliases[token] = redirects.get(guid, guid)
+    for token, targets in assignments.items():
+        if len(targets) == 1:
+            aliases[token] = next(iter(targets))
+        else:
+            # A conflicting URL/GUID is not evidence for merging different known DOIs.
+            aliases.pop(token, None)
     # Keep both collectors' identities available to the private read filter.
     alias_tag = '{'+BASE+'ns/unified/1}identity'
     by_alias = {}
