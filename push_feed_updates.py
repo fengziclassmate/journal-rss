@@ -28,8 +28,9 @@ def push_updates(repo, refresh_read_filter=False, attempts=3):
                 sys.executable, 'rss_read_filter.py', '--root', '.',
                 '--suppression', 'read-suppression.json', '--glob', '*.xml',
                 '--glob', 'conference-feeds/*.xml', '--glob', 'official-feeds/*.xml',
+                '--glob', 'journal-feeds/*.xml',
             ], cwd=repo, check=True)
-            git(repo, 'add', '-u', '--', '*.xml', 'official-feeds/*.xml')
+            git(repo, 'add', '-u', '--', '*.xml', 'official-feeds/*.xml', 'journal-feeds/*.xml')
             if git(repo, 'diff', '--cached', '--quiet', check=False).returncode:
                 git(repo, 'commit', '-m', 'Apply latest RSS read suppression')
         result = git(repo, 'push', 'origin', 'HEAD:main', check=False)

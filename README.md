@@ -237,6 +237,24 @@ https://fengziclassmate.github.io/journal-rss/sustainability-current-issue.xml
 - `https://www.mdpi.com/journal/buildings`：按电子 ISSN `2075-5309` 拉取 *Buildings* 从 `2026-06-01` 到运行当天的新文章，输出到 `buildings.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `buildings-current-issue.xml`。MDPI 官方 RSS 镜像优先，自建源只补充官方源缺失的条目。
 - `https://www.mdpi.com/journal/sustainability`：按电子 ISSN `2071-1050` 拉取 *Sustainability* 从 `2026-06-01` 到运行当天的新文章，输出到 `sustainability.xml`；同时按 Crossref 卷期元数据识别最新正式期，输出到 `sustainability-current-issue.xml`。MDPI 官方 RSS 镜像优先，自建源只补充官方源缺失的条目。
 
+### 统一期刊订阅（2026-10-07）
+
+`journal_unified.py` 将 72 组官方 RSS 镜像与对应的自建采集合并到
+`journal-feeds/`；TMLR 没有独立官方 RSS，沿用其自建采集作为第 73 个统一源。
+订阅名称只保留期刊名，清单为 `journals.opml`。会议、中文期刊汇总和邮箱日报不变。
+
+每次发布先合并 Current Issue，再构建统一源，最后执行个人已读排除。
+相同 DOI、出版商论文标识，或同刊完整长标题与作者一致时，只发布一条，优先官方内容。
+仅标题相同但 DOI 冲突不会合并。身份映射保存在
+`research-data/journal-unified-identities.json`，即使论文先由自建采集发现、后来进入官方 RSS，
+统一源的 GUID 也不会更换；同时保留两边的身份别名，避免已读论文换来源后重新出现。
+统一源保留此前已收录的未被排除条目，官方 RSS 滚动缩短或临时故障不会使它们丢失。
+旧官方镜像和 `_FZTX` 地址保留兼容，但同一期刊只需订阅统一源。
+
+统一源不把首次发现时间或 Atom 更新时间伪装成发表日期。
+发表日期只有月份/年份时仍只在正文和日期扩展字段显示，避免 Zotero 自动补成月初/年初。
+`journals.opml` 指向个人已读过滤地址，分享给其他人时应 Fork 并独立生成阅读排除记录。
+
 建议定时任务每天运行一次即可，不要高频抓取。
 
 本仓库已包含 GitHub Actions 工作流 `.github/workflows/update-feed.yml`，默认每天北京时间 06:20 自动刷新并部署 GitHub Pages，也可以在 GitHub 的 Actions 页面手动运行。

@@ -220,6 +220,11 @@ def _item_tokens(item: ET.Element) -> set[str]:
         title=" ".join(_child_values(item, "title")),
         doi=" ".join(_child_values(item, "doi", "identifier")),
     )
+    for child in item:
+        if child.tag == '{https://fengziclassmate.github.io/journal-rss/ns/unified/1}identity':
+            token = child.text or ''
+            if token.startswith(('guid:', 'url:', 'doi:', 'ieee-document:', 'elsevier-pii:', 'jmlr-paper:', 'arxiv:')):
+                tokens.add(token)
     # A reference inside an abstract is not the identity of the article itself.
     if not any(token.startswith(('doi:', 'arxiv:')) for token in tokens) and descriptions:
         text=' '.join(descriptions)
@@ -273,7 +278,7 @@ def main() -> None:
     if not suppression_path.is_absolute():
         suppression_path = args.root / suppression_path
     suppressed = load_suppression(suppression_path, key)
-    patterns = args.patterns or ["*.xml", "conference-feeds/*.xml"]
+    patterns = args.patterns or ["*.xml", "conference-feeds/*.xml", "official-feeds/*.xml", "journal-feeds/*.xml"]
     results = [filter_feed(path, suppressed, key) for path in _paths(args.root, patterns)]
     print(
         json.dumps(
@@ -296,7 +301,7 @@ def main() -> None:
 def write_receipt(root=Path('.')):
     root=Path(root)
     suppression=root/'read-suppression.json'
-    paths=_paths(root,['*.xml','conference-feeds/*.xml','official-feeds/*.xml'])
+    paths=_paths(root,['*.xml','conference-feeds/*.xml','official-feeds/*.xml','journal-feeds/*.xml'])
     write_json(root/'read-filter-status.json', {
         'version':2,
         'suppression_sha256':suppression_digest(suppression),
