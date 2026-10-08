@@ -139,7 +139,16 @@ def stable_guid(spec, tokens):
     return 'unified:' + Path(spec['custom']).stem + ':' + digest
 
 
-def union(spec, groups, aliases):
+def union(spec, groups, aliases, *, ignored_tokens=(), allow_weak=True):
+    groups = [list(nodes) for nodes in groups]
+    doi_evidence = {}
+    for nodes in groups:
+        for node in nodes:
+            tokens = identities(node)
+            values = {token for token in tokens if token.startswith('doi:')}
+            for token in tokens:
+                doi_evidence.setdefault(token, set()).update(values)
+    ignored_tokens = set(ignored_tokens) | {token for token, values in doi_evidence.items() if len(values)>1}
     records, parents, dois = [], [], []
     by_token, by_guid, by_authors = {}, {}, {}
 
@@ -153,7 +162,7 @@ def union(spec, groups, aliases):
     # This also handles an entry bridging two previously separate identity groups.
     for nodes in groups:
         for node in nodes:
-            tokens = identities(node)
+            tokens = identities(node) - set(ignored_tokens)
             index = len(records)
             records.append((node, tokens))
             parents.append(index)
@@ -165,7 +174,7 @@ def union(spec, groups, aliases):
             title = normalized_title_identity(child_text(node, 'title'))
             authors = ', '.join(''.join(c.itertext()) for c in node if _local_name(c.tag) in ('creator', 'author'))
             signature = author_signature(child_text(node, 'description', 'encoded'), authors, generated=True)
-            weak = (title, signature) if len(title) >= 46 and len(signature) >= 6 else None
+            weak = (title, signature) if allow_weak and len(title) >= 46 and len(signature) >= 6 else None
             strong_candidates = {other for token in tokens for other in by_token.get(token, [])}
             strong_candidates.update(other for guid in known for other in by_guid.get(guid, []))
             candidates = strong_candidates | set(by_authors.get(weak, []))

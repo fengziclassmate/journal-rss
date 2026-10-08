@@ -209,12 +209,20 @@ def _merge_mirror(spec: dict, output: Path, raw: bytes, *, fallback: bool = Fals
     previous = [normalize(node, backup_url if any(_local_name(c.tag) == 'source' and c.get('url') == backup_url
                                                 for c in node) else spec['source_url']) for node in previous]
     fresh = [normalize(node, backup_url if fallback else spec['source_url']) for node in fresh]
+    doi_evidence = {}
+    for node in previous + fresh:
+        tokens = identities(node)
+        dois = {token for token in tokens if token.startswith('doi:')}
+        for token in tokens:
+            doi_evidence.setdefault(token, set()).update(dois)
+    ambiguous = {token for token, dois in doi_evidence.items() if len(dois)>1}
     old_tokens = [identities(node) for node in previous]
     old_dois = [{token for token in tokens if token.startswith('doi:')} for tokens in old_tokens]
     by_token = {}
     for index, tokens in enumerate(old_tokens):
         for token in tokens:
-            by_token.setdefault(token, set()).add(index)
+            if token not in ambiguous:
+                by_token.setdefault(token, set()).add(index)
     historical_guids = {child_text(node, 'guid') for node in previous} - {''}
     targets, token_dois = {}, {}
 
@@ -228,24 +236,24 @@ def _merge_mirror(spec: dict, output: Path, raw: bytes, *, fallback: bool = Fals
     for node, tokens in zip(previous, old_tokens):
         seed(tokens, child_text(node, 'guid'))
     for node in fresh:
-        tokens = identities(node)
+        tokens = identities(node) - ambiguous
         dois = {token for token in tokens if token.startswith('doi:')}
         candidates = {index for token in tokens for index in by_token.get(token, ())}
         matches = [index for index in sorted(candidates)
                    if not (dois and old_dois[index] and dois.isdisjoint(old_dois[index]))
                    and child_text(previous[index], 'guid')]
         guid = child_text(previous[matches[0]], 'guid') if matches else child_text(node, 'guid')
-        if not matches and (not guid or guid in historical_guids) and dois:
+        if not matches and (not guid or guid in historical_guids or 'guid:'+guid.lower() in ambiguous) and dois:
             guid = sorted(dois)[0]
         seed(tokens, guid)
 
     # Shared URL/GUID aliases must not assign one historical GUID to conflicting DOIs.
     aliases = {token: next(iter(guids)) for token, guids in targets.items()
-               if len(guids) == 1 and len(token_dois[token]) <= 1}
+               if token not in ambiguous and len(guids) == 1 and len(token_dois[token]) <= 1}
     keyed_fresh = [node for node in fresh if identities(node)]
     keyed_previous = [node for node in previous if identities(node)]
     merged = union({'custom': spec['output'], 'official_url': spec['source_url']},
-                   [keyed_fresh, keyed_previous], aliases)
+                   [keyed_fresh, keyed_previous], aliases, ignored_tokens=ambiguous, allow_weak=False)
     # Without a strong identity, retain the entry rather than guessing from its title.
     merged.extend(node for node in fresh + previous if not identities(node))
     if _local_name(fresh_root.tag) == 'rss':

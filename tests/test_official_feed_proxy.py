@@ -57,6 +57,21 @@ def mirrored_items(path):
 
 
 class OfficialFeedProxyTests(unittest.TestCase):
+    def test_shared_url_with_distinct_fresh_dois_does_not_reuse_unknown_old_guid(self):
+        old=b'<rss><channel><item><guid>old-guid</guid><title>Historical</title><link>https://publisher.test/shared</link></item></channel></rss>'
+        payload={'message':{'items':[{'title':[f'Article {n}'],'DOI':f'10.1234/{n}','URL':f'https://doi.org/10.1234/{n}','resource':{'primary':{'URL':'https://publisher.test/shared'}}} for n in ('a','b')]}}
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            output=root/SPEC['output']
+            output.parent.mkdir()
+            output.write_bytes(old)
+            raw=build_crossref_rss(BACKUP_SPEC,payload)
+            with patch('official_feed_proxy.fetch_crossref_feed',return_value=raw):
+                mirror_one(BACKUP_SPEC,root,lambda _:(_ for _ in ()).throw(OSError('offline')))
+            items=ET.parse(output).findall('./channel/item')
+            self.assertEqual(len(items),3)
+            self.assertEqual(len({i.findtext('guid') for i in items}),3)
+            self.assertEqual({i.findtext('title') for i in items},{'Historical','Article a','Article b'})
     def test_config_has_unique_official_mirrors_including_ijgi(self):
         mirrors = load_config(Path("official-feed-config.json"))
         self.assertEqual(len(mirrors), 72)
