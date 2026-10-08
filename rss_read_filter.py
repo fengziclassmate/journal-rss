@@ -107,6 +107,9 @@ def identity_tokens(
     clean_doi = _doi(combined)
     if clean_doi:
         tokens.add(f"doi:{clean_doi}")
+        anthology = re.fullmatch(r'10\.18653/v1/(\d{4}\.[a-z0-9-]+\.\d+)', clean_doi)
+        if anthology:
+            tokens.add('acl-paper:' + anthology.group(1))
     for match in ARXIV_RE.finditer(combined):
         tokens.add(f"arxiv:{match.group(1).lower()}")
     return tokens
@@ -119,6 +122,10 @@ def publisher_identity_tokens(url: str) -> set[str]:
     except ValueError:
         return set()
     host = (parts.hostname or '').lower()
+    if host in ('aclanthology.org', 'www.aclanthology.org'):
+        match = re.fullmatch(r'/(\d{4}\.[a-z0-9-]+\.\d+)/?', parts.path)
+        if match:
+            return {'acl-paper:' + match.group(1)}
     if host in ('jmlr.org', 'www.jmlr.org'):
         match = re.fullmatch(r'/papers/(v\d+/[^/]+\.html)', parts.path)
         if match:

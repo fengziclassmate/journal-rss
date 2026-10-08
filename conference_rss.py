@@ -8,6 +8,7 @@ import datetime as dt
 import email.utils
 import hashlib
 import html
+import gzip
 import http.client
 import json
 import re
@@ -21,6 +22,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from bs4 import BeautifulSoup
+from source_response import SourceResponseError, format_source_error, validate_response
 
 
 UTC = dt.timezone.utc
@@ -58,33 +60,66 @@ class PoliteClient:
         self.last_request = 0.0
         self.cache_dir = cache_dir
         self.failures = 0
+        self.cache_hits = 0
+        self.network_reads = 0
+        self.blocked_hosts: dict[str, Exception] = {}
+        self.errors: list[str] = []
 
     def get(self, url: str, *, timeout: int = 90) -> bytes:
+        try:
+            return self._get(url, timeout=timeout)
+        except (SourceResponseError, urllib.error.URLError, OSError):
+            if url.startswith('https://dblp.org/'):
+                return self._get(url.replace('https://dblp.org/', 'https://dblp.uni-trier.de/', 1), timeout=timeout)
+            raise
+
+    def _get(self, url: str, *, timeout: int = 90) -> bytes:
         cache_path = None
         if self.cache_dir:
             cache_path = self.cache_dir / hashlib.sha256(url.encode("utf-8")).hexdigest()
             if cache_path.exists() and time.time() - cache_path.stat().st_mtime < 20 * 60 * 60:
-                return cache_path.read_bytes()
+                content = cache_path.read_bytes()
+                try:
+                    validate_response(content, url)
+                except SourceResponseError:
+                    cache_path.unlink()
+                else:
+                    self.cache_hits += 1
+                    return content
+        host = urllib.parse.urlsplit(url).hostname or ''
+        if host in self.blocked_hosts:
+            self.failures += 1
+            error = self.blocked_hosts[host]
+            self.errors.append(format_source_error(error, url))
+            raise error
         waits = (2, 5, 15, 30, 60, 120)
         for attempt, wait_after_error in enumerate(waits, start=1):
             elapsed = time.monotonic() - self.last_request
             if elapsed < self.delay_seconds:
                 time.sleep(self.delay_seconds - elapsed)
             request_url = url
-            if attempt % 2 == 0 and url.startswith("https://dblp.org/"):
-                request_url = url.replace("https://dblp.org/", "https://dblp.uni-trier.de/", 1)
             request = urllib.request.Request(
                 request_url,
-                headers={"User-Agent": USER_AGENT, "Accept": "application/json,text/html,application/xml"},
+                headers={"User-Agent": USER_AGENT, "Accept": "application/json,text/html,application/xml", 'Accept-Encoding':'gzip'},
             )
             try:
                 with urllib.request.urlopen(request, timeout=timeout) as response:
                     self.last_request = time.monotonic()
                     content = response.read()
+                    if getattr(response,'headers',{}).get('Content-Encoding') == 'gzip':
+                        content = gzip.decompress(content)
+                    validate_response(content, url)
+                    self.network_reads += 1
                     if cache_path:
                         cache_path.parent.mkdir(parents=True, exist_ok=True)
                         cache_path.write_bytes(content)
                     return content
+            except SourceResponseError as exc:
+                self.last_request = time.monotonic()
+                self.failures += 1
+                self.blocked_hosts[host] = exc
+                self.errors.append(format_source_error(exc, url))
+                raise
             except urllib.error.HTTPError as exc:
                 self.last_request = time.monotonic()
                 if exc.code == 404:
@@ -92,14 +127,21 @@ class PoliteClient:
                         cache_path.parent.mkdir(parents=True, exist_ok=True)
                         cache_path.write_bytes(b"")
                     return b""
+                if exc.code in (401, 403):
+                    self.failures += 1
+                    self.errors.append(format_source_error(exc, url))
+                    self.blocked_hosts[host] = exc
+                    raise
                 if attempt == len(waits):
                     self.failures += 1
+                    self.errors.append(format_source_error(exc, url))
                     raise
                 time.sleep(wait_after_error)
-            except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.RemoteDisconnected):
+            except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.RemoteDisconnected) as exc:
                 self.last_request = time.monotonic()
                 if attempt == len(waits):
                     self.failures += 1
+                    self.errors.append(format_source_error(exc, url))
                     raise
                 time.sleep(wait_after_error)
         raise AssertionError("unreachable")
@@ -578,18 +620,48 @@ def _crossref_date(item: dict[str, Any]) -> str:
 def fetch_crossref_fallback(client: PoliteClient, conference: dict[str, Any], year: int) -> list[ConferencePaper]:
     papers: list[ConferencePaper] = []
     for title_query in conference.get("crossref_titles", []):
-        filters = f"from-pub-date:{year}-01-01,until-pub-date:{year}-12-31,type:proceedings-article"
+        filters = f"from-pub-date:{year}-01-01,until-pub-date:{year}-12-31"
         query_field = conference.get("crossref_query_field", "query.container-title")
-        params = urllib.parse.urlencode({query_field: title_query, "filter": filters, "rows": 1000})
-        try:
-            payload = json.loads(client.get(f"https://api.crossref.org/works?{params}"))
-        except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError):
-            continue
-        for item in payload.get("message", {}).get("items", []):
+        fields = 'DOI,title,URL,container-title,event,published,published-online,published-print,author,type'
+        def matches(item):
+            haystack = ' '.join([*(item.get('container-title') or []), clean_text(item.get('event', {}).get('name'))]).casefold()
+            return all(token in haystack for token in title_query.casefold().split() if len(token)>2)
+        # Discover actual container names with a bounded search, then enumerate only exact matches.
+        params = urllib.parse.urlencode({query_field:title_query,'filter':filters,'rows':100,'select':fields})
+        discovery = json.loads(client.get(f'https://api.crossref.org/works?{params}'))['message']['items']
+        containers = {title for item in discovery if matches(item) for title in item.get('container-title', [])}
+        records = list(discovery)
+        for container in sorted(containers):
+            if ',' in container:
+                client.failures += 1
+                client.errors.append('Crossref container cannot be safely filtered: '+container)
+                continue
+            cursor = '*'
+            received = 0
+            while True:
+                params = urllib.parse.urlencode({'filter':filters+',container-title:'+container,'rows':1000,'cursor':cursor,'select':fields})
+                payload = json.loads(client.get(f'https://api.crossref.org/works?{params}'))
+                message = payload.get('message', {})
+                page = message.get('items', [])
+                records.extend(page)
+                received += len(page)
+                if not page or received >= message.get('total-results', received):
+                    break
+                following = message.get('next-cursor')
+                if not following or following == cursor:
+                    client.failures += 1
+                    client.errors.append('Crossref pagination incomplete: '+container)
+                    break
+                cursor = following
+        for item in records:
+            if item.get('type') not in ('proceedings-article','journal-article','book-chapter'):
+                continue
             containers = [clean_text(value) for value in item.get("container-title", [])]
             event_name = clean_text(item.get("event", {}).get("name"))
             haystack = " ".join([*containers, event_name]).casefold()
             if not all(token in haystack for token in title_query.casefold().split() if len(token) > 2):
+                continue
+            if not _is_main_paper({'title':(item.get('title') or [''])[0],'venue':haystack},conference):
                 continue
             title = clean_text((item.get("title") or [""])[0])
             if not title:
@@ -602,7 +674,7 @@ def fetch_crossref_fallback(client: PoliteClient, conference: dict[str, Any], ye
                 guid=identity_from_fields(doi, title), year=year, authors=authors, doi=doi,
                 published=_crossref_date(item),
             ))
-    return papers
+    return deduplicate(papers)
 
 
 def deduplicate(papers: Iterable[ConferencePaper]) -> list[ConferencePaper]:
@@ -630,22 +702,44 @@ def collect_conference(
     client: PoliteClient, conference: dict[str, Any], start_year: int, end_year: int
 ) -> list[ConferencePaper]:
     collected: list[ConferencePaper] = []
+    def attempt(collector, *args):
+        before = client.failures
+        try:
+            return collector(client, conference, *args)
+        except (urllib.error.URLError, SourceResponseError, ValueError, OSError, http.client.RemoteDisconnected) as error:
+            if client.failures == before:
+                client.failures += 1
+                client.errors.append(format_source_error(error))
+            return []
     for year in eligible_years(start_year, end_year, conference.get("year_parity", "")):
         official: list[ConferencePaper] = []
-        official.extend(fetch_virtual_json(client, conference, year))
-        official.extend(fetch_cvf_event(client, conference, year))
-        official.extend(fetch_eccv_event(client, conference, year))
-        official.extend(fetch_copernicus_volumes(client, conference, year))
-        official.extend(fetch_robotics_proceedings(client, conference, year))
-        official.extend(fetch_ieee_vis_page(client, conference, year))
+        official.extend(attempt(fetch_virtual_json, year))
+        official.extend(attempt(fetch_cvf_event, year))
+        official.extend(attempt(fetch_eccv_event, year))
+        official.extend(attempt(fetch_copernicus_volumes, year))
+        official.extend(attempt(fetch_robotics_proceedings, year))
+        official.extend(attempt(fetch_ieee_vis_page, year))
+        from conference_sources import collect_official_alternative
+        official.extend(attempt(collect_official_alternative, year))
         collected.extend(official)
         dblp_for_year: list[ConferencePaper] = []
         if not official:
             for stream in conference.get("streams", []):
-                dblp_for_year.extend(fetch_dblp_toc_year(client, conference, stream, year))
+                dblp_for_year.extend(attempt(fetch_dblp_toc_year, stream, year))
         collected.extend(dblp_for_year)
-        if not official and not dblp_for_year and conference.get("crossref_titles"):
-            collected.extend(fetch_crossref_fallback(client, conference, year))
+        if not official and not dblp_for_year and conference.get('streams'):
+            fallback = dict(conference)
+            fallback.setdefault('crossref_titles', [conference['name']])
+            before = client.failures
+            try:
+                backup = fetch_crossref_fallback(client, fallback, year)
+                collected.extend(backup)
+                if backup:
+                    client.errors.append(f'Alternative Crossref index: {conference["acronym"]} {year}, {len(backup)} papers; coverage not guaranteed')
+            except (urllib.error.URLError, SourceResponseError, ValueError, OSError) as error:
+                if client.failures == before:
+                    client.failures += 1
+                    client.errors.append(format_source_error(error))
     return deduplicate(collected)
 
 
@@ -659,10 +753,10 @@ def match_keywords(paper: ConferencePaper, keywords: list[str]) -> list[str]:
     return matches
 
 
-def write_rss(
-    papers: Iterable[ConferencePaper], output: Path, *, title: str, link: str,
+def _build_rss(
+    papers: Iterable[ConferencePaper], *, title: str, link: str,
     description: str, guid_scope: str = "conference"
-) -> int:
+) -> ET.Element:
     papers = sorted(papers, key=lambda p: (p.year, p.published, p.title.casefold()), reverse=True)
     rss = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(rss, "channel")
@@ -701,12 +795,17 @@ def write_rss(
         if paper.matched_keywords:
             parts.append(f"<p><strong>Matched keywords:</strong> {html.escape(', '.join(paper.matched_keywords))}</p>")
         ET.SubElement(item, "description").text = "".join(parts)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    tree = ET.ElementTree(rss)
-    ET.indent(tree, space="  ")
+    return rss
+
+
+def write_rss(
+    papers: Iterable[ConferencePaper], output: Path, *, title: str, link: str,
+    description: str, guid_scope: str = "conference"
+) -> int:
+    rss = _build_rss(papers,title=title,link=link,description=description,guid_scope=guid_scope)
     from rss_ops import write_feed
     write_feed(output, rss)
-    return len(papers)
+    return len(rss.findall('./channel/item'))
 
 
 def _existing_rss_item_count(output: Path) -> int:
@@ -724,15 +823,56 @@ def write_rss_preserving_existing(
 ) -> tuple[int, bool]:
     papers = list(papers)
     existing_count = _existing_rss_item_count(output)
+    old_items = ET.parse(output).findall('./channel/item') if existing_count else []
     if not papers and existing_count:
         return existing_count, True
-    return (
-        write_rss(
-            papers, output, title=title, link=link, description=description,
-            guid_scope=guid_scope,
-        ),
-        False,
-    )
+    rss = _build_rss(papers, title=title, link=link, description=description, guid_scope=guid_scope)
+    count = len(rss.findall('./channel/item'))
+    if old_items:
+        from rss_read_filter import _item_tokens
+        channel = rss.find('channel')
+        items = channel.findall('item')
+        old_by_token = {}
+        for old in old_items:
+            for token in _item_tokens(old):
+                if token.startswith('title:'):
+                    continue
+                old_by_token[token] = old if token not in old_by_token else None
+        for item in items:
+            tokens = _item_tokens(item)
+            matches = {old_by_token[token] for token in tokens if old_by_token.get(token) is not None}
+            if len(matches) == 1:
+                old = matches.pop()
+                old_dois = {t for t in _item_tokens(old) if t.startswith('doi:')}
+                new_dois = {t for t in tokens if t.startswith('doi:')}
+                if not (old_dois and new_dois and old_dois.isdisjoint(new_dois)):
+                    item.find('guid').text = old.findtext('guid') or item.findtext('guid')
+                    old_date = old.findtext(f'{{{DC_NS}}}date') or ''
+                    new_date = item.findtext(f'{{{DC_NS}}}date') or ''
+                    if len(old_date)>len(new_date) and old_date.startswith(new_date):
+                        import copy
+                        for tag in (f'{{{DC_NS}}}date','pubDate',f'{{{PRISM_NS}}}publicationDate'):
+                            previous = old.find(tag)
+                            if previous is not None:
+                                current = item.find(tag)
+                                if current is not None:
+                                    item.remove(current)
+                                item.append(copy.deepcopy(previous))
+        known = {item.findtext('guid') or item.findtext('link') for item in items}
+        for item in old_items:
+            key = item.findtext('guid') or item.findtext('link')
+            if key not in known:
+                channel.append(item)
+                items.append(item)
+                known.add(key)
+        for item in items:
+            channel.remove(item)
+        items.sort(key=lambda item: (item.findtext(f'{{{DC_NS}}}date') or '', item.findtext('title') or ''), reverse=True)
+        channel.extend(items)
+        count = len(items)
+    from rss_ops import write_feed
+    write_feed(output,rss)
+    return count, False
 
 
 def write_opml(config: dict[str, Any], output: Path) -> None:
@@ -787,11 +927,16 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
         from rss_health import record
         failed = False
         initial_failures = client.failures
+        initial_errors = len(client.errors)
+        initial_cache = client.cache_hits
+        initial_network = client.network_reads
+        failure_detail = ''
         try:
             papers = collect_conference(client, conference, start_year, end_year)
         except Exception as error:
             papers = []
             failed = True
+            failure_detail = format_source_error(error)
             print(f"{conference['acronym']}: source failed ({type(error).__name__})")
         feed_url = f"{config['base_url']}/{conference['slug']}.xml"
         count, preserved = write_rss_preserving_existing(
@@ -805,7 +950,13 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
         record(f"conference-feeds/{conference['slug']}.xml",
                'preserved' if preserved else 'failed' if failed else 'partial' if client.failures > initial_failures else 'ok', count,
                identities=[paper.guid for paper in papers],
-               detail='索引采集结果（可能使用缓存或备用来源），不是官网收录完整性承诺')
+               detail='；'.join(filter(None, [
+                   f"缓存命中 {client.cache_hits-initial_cache}；网络有效响应 {client.network_reads-initial_network}",
+                   failure_detail,
+                   ' | '.join(dict.fromkeys(client.errors[initial_errors:]))[:1500],
+                   '本次返回零篇；保留旧数据，不能据此断言没有新论文' if not papers else '',
+                   '索引采集结果，不是官网收录完整性承诺',
+               ])))
         if preserved:
             preserved_feeds.append(conference["slug"])
         suffix = " (preserved fallback)" if preserved else ""

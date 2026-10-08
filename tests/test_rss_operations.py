@@ -71,6 +71,18 @@ class OperationsTests(unittest.TestCase):
         record('source','ok',20,root=folder)
         self.assertTrue(json.loads(next(folder.glob('*.json')).read_text('utf-8'))['drop_warning'])
 
+    def test_fallback_data_success_does_not_claim_publisher_success(self):
+        folder=self.root/'rss-health-state'
+        record('source','ok',2,root=folder)
+        path=next(folder.glob('*.json'))
+        primary=json.loads(path.read_text('utf-8'))['last_success']
+        record('source','fallback',3,root=folder,detail='HTTP 403; Crossref backup succeeded')
+        value=json.loads(path.read_text('utf-8'))
+        self.assertEqual(value['last_success'],primary)
+        self.assertTrue(value['last_fallback_success'])
+        render(self.root)
+        self.assertIn('最近备用成功',(self.root/'rss-health/index.html').read_text('utf-8'))
+
     def test_cleanup_gate_rejects_old_receipt_and_unmanaged_feeds(self):
         key=b'test';path=self.root/'read-suppression.json'
         path.write_text(json.dumps({'version':1,'algorithm':'hmac-sha256','key_id':key_id(key),
@@ -135,6 +147,12 @@ class OperationsTests(unittest.TestCase):
         path.write_text('<rss><channel><item><guid>10.1234/new</guid><description>Compare arxiv.org/abs/2609.00001 and DOI 10.1234/old</description></item></channel></rss>')
         suppressed=hash_tokens(identity_tokens(doi='10.1234/old',link='https://arxiv.org/abs/2609.00001'),b'key')
         self.assertEqual(filter_feed(path,suppressed,b'key').removed,0)
+
+    def test_anthology_url_and_explicit_doi_share_publisher_identity(self):
+        link=identity_tokens(link='https://aclanthology.org/2026.acl-long.1/')
+        doi=identity_tokens(doi='10.18653/v1/2026.acl-long.1')
+        self.assertEqual(link & doi, {'acl-paper:2026.acl-long.1'})
+        self.assertNotIn('doi:10.18653/v1/2026.acl-long.1',link)
 
     def test_same_title_alone_never_hides_unread_article(self):
         path=self.root/'rss.xml';path.write_text('<rss><channel><item><title>Shared title</title><guid>new</guid></item></channel></rss>')

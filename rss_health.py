@@ -26,6 +26,8 @@ def record(source, status, count=None, *, identities=None, detail='', root=None)
     value = dict(old, source=source, status=status, last_attempt=now, detail=detail)
     if count is not None:
         value['count'] = count
+    if status == 'fallback':
+        value['last_fallback_success'] = now
     if status == 'ok':
         value['last_success'] = now
         value['drop_warning'] = count is not None and old.get('successful_count', 0) >= 20 and count < old['successful_count'] * .5
@@ -54,7 +56,7 @@ def render(root=Path('.')):
         states = [item for item in states if item['source']!='监控初始化']
     lines = []
     for item in sorted(states, key=lambda x: x['source']):
-        status = {'ok': '成功', 'failed': '失败，未确认新数据', 'preserved': '采集失败，保留旧数据',
+        status = {'ok': '成功', 'failed': '失败，未确认新数据', 'preserved': '保留旧数据（本次未取得有效新结果）',
                   'fallback': '降级来源', 'partial': '部分失败', 'running': '运行未完成', 'unverified': '完整性待核验'}.get(item['status'], item['status'])
         if item.get('drop_warning'):
             status += '；数量下降超过 50%'
@@ -65,8 +67,8 @@ def render(root=Path('.')):
         label = '新增数未核验' if new is None else f'新增 {new}'
         lines.append('<tr>' + ''.join(f'<td>{html.escape(str(v))}</td>' for v in (
             item['source'], status, item.get('count', '-'), label,
-            item.get('last_attempt') or '尚无记录', last or '尚无记录', item.get('detail', ''))) + '</tr>')
-    body = '<table><thead><tr><th>来源</th><th>状态</th><th>采集数</th><th>变化</th><th>最近尝试 UTC</th><th>最近成功 UTC</th><th>详情</th></tr></thead><tbody>' + ''.join(lines) + '</tbody></table>'
+            item.get('last_attempt') or '尚无记录', last or '尚无记录', item.get('last_fallback_success') or '尚无记录', item.get('detail', ''))) + '</tr>')
+    body = '<table><thead><tr><th>来源</th><th>状态</th><th>采集数</th><th>变化</th><th>最近尝试 UTC</th><th>最近主源成功 UTC</th><th>最近备用成功 UTC</th><th>详情</th></tr></thead><tbody>' + ''.join(lines) + '</tbody></table>'
     if not states:
         body = '<p>尚无采集证据；发布成功不代表采集成功。</p>'
     directory = root/'rss-health'

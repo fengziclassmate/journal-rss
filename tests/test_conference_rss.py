@@ -12,6 +12,7 @@ from conference_rss import (
     _parse_dblp_toc,
     deduplicate,
     fetch_virtual_json,
+    fetch_crossref_fallback,
     match_keywords,
     parse_copernicus_volume,
     parse_ieee_vis_page,
@@ -50,6 +51,51 @@ class ConferenceConfigTests(unittest.TestCase):
 
 
 class ConferenceFeedTests(unittest.TestCase):
+    def test_crossref_fallback_enumerates_exact_containers_not_the_entire_fuzzy_search(self):
+        import urllib.parse
+        def work(n):
+            return {'type':'proceedings-article','title':[f'Paper {n}'],'DOI':f'10.1234/{n}','URL':f'https://doi.org/10.1234/{n}','container-title':['Test Conference'],'published':{'date-parts':[[2026,6,2]]}}
+        class Client:
+            failures=0
+            errors=[]
+            def __init__(self): self.urls=[]
+            def get(self,url):
+                self.urls.append(url)
+                q=urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
+                if 'query.container-title' in q:
+                    book=dict(work(9999),type='proceedings')
+                    data={'items':[work(0),book],'total-results':500000}
+                elif q['cursor']==['*']:
+                    data={'items':[work(n) for n in range(1000)],'total-results':1001,'next-cursor':'second'}
+                else:
+                    data={'items':[work(1000)],'total-results':1001,'next-cursor':'end'}
+                return json.dumps({'message':data}).encode()
+        client=Client()
+        papers=fetch_crossref_fallback(client,{'acronym':'Test','name':'Test Conference','crossref_titles':['Test Conference']},2026)
+        self.assertEqual(len(papers),1001)
+        self.assertEqual(len(client.urls),3)
+        for url in client.urls[1:]:
+            self.assertIn('container-title:Test Conference',urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)['filter'][0])
+
+    def test_failure_in_one_year_does_not_discard_successful_other_year(self):
+        from unittest.mock import patch
+        from conference_rss import collect_conference, PoliteClient
+        from source_response import SourceResponseError
+        paper=ConferencePaper('C','C','Paper','https://test/paper','paper',2025)
+        def source(client,conference,year):
+            if year==2026: raise SourceResponseError('Blocked')
+            return [paper]
+        with patch('conference_rss.fetch_virtual_json',side_effect=source), \
+             patch('conference_rss.fetch_cvf_event',return_value=[]), \
+             patch('conference_rss.fetch_eccv_event',return_value=[]), \
+             patch('conference_rss.fetch_copernicus_volumes',return_value=[]), \
+             patch('conference_rss.fetch_robotics_proceedings',return_value=[]), \
+             patch('conference_rss.fetch_ieee_vis_page',return_value=[]), \
+             patch('conference_sources.collect_official_alternative',return_value=[]):
+            client=PoliteClient(delay_seconds=0)
+            result=collect_conference(client,{'name':'C','acronym':'C'},2025,2026)
+        self.assertEqual(result,[paper])
+        self.assertEqual(client.failures,1)
     def test_empty_collection_preserves_existing_nonempty_feed(self):
         old = ConferencePaper("C", "C", "Existing", "https://test/old", "old", 2026)
         with tempfile.TemporaryDirectory() as directory:
@@ -75,6 +121,41 @@ class ConferenceFeedTests(unittest.TestCase):
             self.assertEqual(count, 0)
             self.assertFalse(preserved)
             self.assertEqual(ET.parse(output).findall("./channel/item"), [])
+
+    def test_partial_refresh_does_not_remove_previous_papers(self):
+        old=ConferencePaper('C','C','Existing','https://test/old','old',2025)
+        new=ConferencePaper('C','C','New','https://test/new','new',2026)
+        with tempfile.TemporaryDirectory() as d:
+            output=Path(d)/'feed.xml'
+            write_rss([old],output,title='Test',link='https://test/feed',description='Test')
+            count,preserved=write_rss_preserving_existing([new],output,title='Test',link='https://test/feed',description='Test')
+            self.assertEqual(count,2)
+            self.assertFalse(preserved)
+            self.assertEqual(ET.parse(output).findtext('./channel/item/title'),'New')
+            self.assertEqual({i.findtext('title') for i in ET.parse(output).findall('./channel/item')},{'Existing','New'})
+
+    def test_enriched_metadata_keeps_existing_guid_and_avoids_duplicate(self):
+        old=ConferencePaper('C','C','Paper','https://test/paper','old',2025,published='2025-06-02')
+        new=ConferencePaper('C','C','Paper','https://test/paper','new',2025,doi='10.1234/paper')
+        with tempfile.TemporaryDirectory() as d:
+            output=Path(d)/'feed.xml'
+            write_rss([old],output,title='Test',link='https://test/feed',description='Test')
+            guid=ET.parse(output).findtext('./channel/item/guid')
+            count,_=write_rss_preserving_existing([new],output,title='Test',link='https://test/feed',description='Test')
+            self.assertEqual(count,1)
+            self.assertEqual(ET.parse(output).findtext('./channel/item/guid'),guid)
+            self.assertIn('02 Jun 2025',ET.parse(output).findtext('./channel/item/pubDate'))
+
+    def test_anthology_paper_without_doi_matches_its_previous_registered_doi(self):
+        old=ConferencePaper('ACL','ACL','Paper','https://doi.org/10.18653/v1/2026.acl-long.1','old',2026,doi='10.18653/v1/2026.acl-long.1')
+        new=ConferencePaper('ACL','ACL','Paper','https://aclanthology.org/2026.acl-long.1/','new',2026)
+        with tempfile.TemporaryDirectory() as d:
+            output=Path(d)/'feed.xml'
+            write_rss([old],output,title='Test',link='https://test/feed',description='Test')
+            guid=ET.parse(output).findtext('./channel/item/guid')
+            count,_=write_rss_preserving_existing([new],output,title='Test',link='https://test/feed',description='Test')
+            self.assertEqual(count,1)
+            self.assertEqual(ET.parse(output).findtext('./channel/item/guid'),guid)
 
     def test_newer_year_precedes_older_exact_date(self):
         papers = [

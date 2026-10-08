@@ -9,8 +9,10 @@ import datetime as dt
 import email.utils
 import json
 import os
+import re
 import tempfile
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -19,6 +21,7 @@ from pathlib import Path
 from typing import Callable
 from rss_health import record
 from rss_read_filter import _feed_entries, _item_tokens
+from source_response import SourceResponseError, format_source_error, validate_response
 
 
 USER_AGENT = (
@@ -39,7 +42,11 @@ def _local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1].lower()
 
 
-def feed_entry_count(raw: bytes) -> int:
+def feed_entry_count(raw: bytes, url: str = "") -> int:
+    validate_response(raw, url)
+    if re.match(br'\s*(?:<\?xml[^>]*>\s*)?(?:<!--.*?-->\s*)*<(?:!doctype\s+html|html|head)\b',
+                raw[:65536].lstrip(b'\xef\xbb\xbf'), re.I | re.S):
+        raise SourceResponseError("HTML document, not an RSS/Atom feed")
     root = ET.fromstring(raw)
     root_name = _local_name(root.tag)
     if root_name == "rss":
@@ -55,6 +62,8 @@ def feed_entry_count(raw: bytes) -> int:
 
 
 def fetch_bytes(url: str, attempts: int = 3) -> bytes:
+    if attempts < 1:
+        raise ValueError("Fetch attempts must be positive")
     request = urllib.request.Request(
         url,
         headers={
@@ -67,8 +76,14 @@ def fetch_bytes(url: str, attempts: int = 3) -> bytes:
     for attempt in range(attempts):
         try:
             with urllib.request.urlopen(request, timeout=60) as response:
-                return response.read()
+                raw = response.read()
+            validate_response(raw, url)
+            return raw
         except Exception as exc:  # pragma: no cover - network dependent
+            if isinstance(exc, SourceResponseError) or (
+                isinstance(exc, urllib.error.HTTPError) and exc.code in (403, 404)
+            ):
+                raise
             last_error = exc
             if attempt + 1 < attempts:
                 time.sleep(2**attempt)
@@ -78,25 +93,42 @@ def fetch_bytes(url: str, attempts: int = 3) -> bytes:
 
 def build_crossref_rss(spec: dict, payload: dict) -> bytes:
     from journal_dates import DC
+    message = payload.get("message") if isinstance(payload, dict) else None
+    if not isinstance(message, dict) or not isinstance(message.get("items"), list):
+        raise ValueError("Invalid Crossref work-list response: missing items list")
+    if payload.get("status", "ok") != "ok":
+        raise ValueError("Crossref returned an error response")
     rss = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = spec["name"]
     ET.SubElement(channel, "link").text = spec["source_url"]
     ET.SubElement(channel, "description").text = f"Official-feed fallback metadata for {spec['name']}"
-    for record in payload.get("message", {}).get("items", []):
+    written = 0
+    for record in message["items"]:
+        if not isinstance(record, dict):
+            raise ValueError("Invalid Crossref work record")
+        issns = record.get("ISSN")
+        if spec.get("crossref_issn") and issns is not None:
+            if not isinstance(issns, list) or spec["crossref_issn"] not in issns:
+                raise ValueError("Crossref work ISSN does not match the configured journal")
         titles = record.get("title") or []
+        if not isinstance(titles, list) or any(not isinstance(title, str) for title in titles):
+            raise ValueError("Invalid Crossref work title")
         resource = record.get("resource", {}).get("primary", {}).get("URL", "")
         link = resource or record.get("URL", "")
         title = titles[0].strip() if titles else ""
         if not title or not link:
             continue
+        written += 1
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = title
         ET.SubElement(item, "link").text = link
-        ET.SubElement(item, "guid", {"isPermaLink": "true"}).text = link
         doi = record.get("DOI", "")
+        ET.SubElement(item, "guid", {"isPermaLink": "false" if doi else "true"}).text = f"doi:{doi.lower()}" if doi else link
         if doi:
             ET.SubElement(item, '{' + DC + '}identifier').text = f"doi:{doi}"
+        backup_url = f"https://api.crossref.org/journals/{spec['crossref_issn']}/works" if spec.get('crossref_issn') else 'https://api.crossref.org'
+        ET.SubElement(item, 'source', url=backup_url).text = 'Crossref'
         for author in record.get("author", []):
             name = " ".join(filter(None, (author.get("given", ""), author.get("family", "")))).strip()
             if name:
@@ -109,22 +141,42 @@ def build_crossref_rss(spec: dict, payload: dict) -> bytes:
         if len(value) == 10:
             published = dt.datetime.fromisoformat(value).replace(tzinfo=dt.timezone.utc)
             ET.SubElement(item, "pubDate").text = email.utils.format_datetime(published)
+    if message["items"] and not written:
+        raise ValueError("Crossref returned records but no usable feed entries")
     return ET.tostring(rss, encoding="utf-8", xml_declaration=True)
 
 
 def fetch_crossref_feed(spec: dict) -> bytes:
     issn = spec["crossref_issn"]
+    if not re.fullmatch(r"\d{4}-\d{3}[\dX]", issn):
+        raise ValueError("Invalid Crossref journal ISSN")
+    from_date = dt.date.fromisoformat(spec.get("crossref_from", "2026-06-01"))
+    today = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date()
+    until_date = dt.date.fromisoformat(spec.get("crossref_until", today.isoformat()))
+    if from_date > until_date:
+        raise ValueError("Crossref start date is after its end date")
+    date_filter = spec.get("crossref_date_filter", "created")
+    if date_filter not in ("created", "pub"):
+        raise ValueError("Unsupported Crossref date filter")
+    rows = int(spec.get("crossref_rows", 300))
+    if not 1 <= rows <= 1000:
+        raise ValueError("Crossref rows must be between 1 and 1000")
     params = urllib.parse.urlencode({
-        "filter": f"from-created-date:{spec.get('crossref_from', '2026-06-01')}",
-        "sort": "created",
+        "filter": f"from-{date_filter}-date:{from_date},until-{date_filter}-date:{until_date},type:journal-article",
+        "sort": "published" if date_filter == "pub" else "created",
         "order": "desc",
-        "rows": str(spec.get("crossref_rows", 300)),
-        "select": "DOI,title,URL,resource,published,published-online,published-print,created,author",
+        "rows": str(rows),
+        "select": "DOI,title,URL,resource,published,published-online,published-print,created,author,ISSN",
     })
     url = f"https://api.crossref.org/journals/{issn}/works?{params}"
     request = urllib.request.Request(url, headers={"User-Agent": "journal-rss/1.0 (mailto:rss@example.com)"})
     with urllib.request.urlopen(request, timeout=90) as response:
-        return build_crossref_rss(spec, json.load(response))
+        raw = response.read()
+    validate_response(raw, url)
+    payload = json.loads(raw)
+    if not isinstance(payload, dict) or payload.get("status") != "ok":
+        raise ValueError("Crossref returned an error response")
+    return build_crossref_rss(spec, payload)
 
 
 def _atomic_write(path: Path, raw: bytes) -> None:
@@ -132,30 +184,125 @@ def _atomic_write(path: Path, raw: bytes) -> None:
     with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as handle:
         handle.write(raw)
         temp_name = handle.name
-    os.replace(temp_name, path)
+    try:
+        os.replace(temp_name, path)
+    finally:
+        Path(temp_name).unlink(missing_ok=True)
 
 
-def mirror_one(spec: dict, root: Path, fetcher: Callable[[str], bytes] = fetch_bytes) -> MirrorResult:
+def _merge_mirror(spec: dict, output: Path, raw: bytes, *, fallback: bool = False) -> bytes:
+    from journal_unified import identities, normalize, union
+    from journal_rss_aggregator import child_text
+
+    if not output.exists():
+        return raw
+    previous_raw = output.read_bytes()
+    try:
+        feed_entry_count(previous_raw)
+    except (ValueError, ET.ParseError):
+        return raw
+    fresh_root = ET.fromstring(raw)
+    previous = _feed_entries(ET.fromstring(previous_raw), output)[1]
+    fresh = _feed_entries(fresh_root, output)[1]
+    backup_url = f"https://api.crossref.org/journals/{spec.get('crossref_issn', '')}/works"
+
+    previous = [normalize(node, backup_url if any(_local_name(c.tag) == 'source' and c.get('url') == backup_url
+                                                for c in node) else spec['source_url']) for node in previous]
+    fresh = [normalize(node, backup_url if fallback else spec['source_url']) for node in fresh]
+    old_tokens = [identities(node) for node in previous]
+    old_dois = [{token for token in tokens if token.startswith('doi:')} for tokens in old_tokens]
+    by_token = {}
+    for index, tokens in enumerate(old_tokens):
+        for token in tokens:
+            by_token.setdefault(token, set()).add(index)
+    historical_guids = {child_text(node, 'guid') for node in previous} - {''}
+    targets, token_dois = {}, {}
+
+    def seed(tokens, guid):
+        dois = {token for token in tokens if token.startswith('doi:')}
+        for token in tokens:
+            if guid:
+                targets.setdefault(token, set()).add(guid)
+            token_dois.setdefault(token, set()).update(dois)
+
+    for node, tokens in zip(previous, old_tokens):
+        seed(tokens, child_text(node, 'guid'))
+    for node in fresh:
+        tokens = identities(node)
+        dois = {token for token in tokens if token.startswith('doi:')}
+        candidates = {index for token in tokens for index in by_token.get(token, ())}
+        matches = [index for index in sorted(candidates)
+                   if not (dois and old_dois[index] and dois.isdisjoint(old_dois[index]))
+                   and child_text(previous[index], 'guid')]
+        guid = child_text(previous[matches[0]], 'guid') if matches else child_text(node, 'guid')
+        if not matches and (not guid or guid in historical_guids) and dois:
+            guid = sorted(dois)[0]
+        seed(tokens, guid)
+
+    # Shared URL/GUID aliases must not assign one historical GUID to conflicting DOIs.
+    aliases = {token: next(iter(guids)) for token, guids in targets.items()
+               if len(guids) == 1 and len(token_dois[token]) <= 1}
+    keyed_fresh = [node for node in fresh if identities(node)]
+    keyed_previous = [node for node in previous if identities(node)]
+    merged = union({'custom': spec['output'], 'official_url': spec['source_url']},
+                   [keyed_fresh, keyed_previous], aliases)
+    # Without a strong identity, retain the entry rather than guessing from its title.
+    merged.extend(node for node in fresh + previous if not identities(node))
+    if _local_name(fresh_root.tag) == 'rss':
+        channel, current = _feed_entries(fresh_root, output)
+        for node in current:
+            channel.remove(node)
+    else:
+        fresh_root = ET.Element('rss', version='2.0')
+        channel = ET.SubElement(fresh_root, 'channel')
+        for field, value in [('title', spec['name']), ('link', spec['source_url']),
+                             ('description', 'Publisher feed and retained journal history.')]:
+            ET.SubElement(channel, field).text = value
+    channel.extend(merged)
+    result = ET.tostring(fresh_root, encoding='utf-8', xml_declaration=True)
+    feed_entry_count(result)
+    return result
+
+
+def _source_error(error: Exception, url: str = "") -> str:
+    # Keep each cause bounded so both publisher and backup fit in health detail.
+    return re.sub(r"<[^>]*>", "", format_source_error(error, url))[:240]
+
+
+def mirror_one(spec: dict, root: Path, fetcher: Callable[[str], bytes] | None = None) -> MirrorResult:
     output = root / spec["output"]
+    fetcher = fetcher or fetch_bytes
     try:
         raw = fetcher(spec["source_url"])
+        feed_entry_count(raw, spec["source_url"])
+        raw = _merge_mirror(spec, output, raw)
         entries = feed_entry_count(raw)
         if not output.exists() or output.read_bytes() != raw:
             _atomic_write(output, raw)
         return MirrorResult(spec["name"], spec["output"], entries, "updated")
     except Exception as exc:
+        detail = "publisher: " + _source_error(exc, spec["source_url"])
         if spec.get("crossref_issn"):
             try:
                 raw = fetch_crossref_feed(spec)
                 entries = feed_entry_count(raw)
+                if not entries:
+                    raise ValueError("Crossref backup has no entries in the configured window")
+                raw = _merge_mirror(spec, output, raw, fallback=True)
+                entries = feed_entry_count(raw)
                 _atomic_write(output, raw)
-                return MirrorResult(spec["name"], spec["output"], entries, f"crossref-fallback: {exc}")
-            except Exception:
-                pass
+                return MirrorResult(spec["name"], spec["output"], entries, f"crossref-fallback: {detail}")
+            except Exception as backup_error:
+                backup_url = f"https://api.crossref.org/journals/{spec['crossref_issn']}/works"
+                detail += "; Crossref: " + _source_error(backup_error, backup_url)
         if output.exists():
-            entries = feed_entry_count(output.read_bytes())
-            return MirrorResult(spec["name"], spec["output"], entries, f"preserved: {exc}")
-        raise RuntimeError(f"{spec['name']}: initial mirror failed: {exc}") from exc
+            try:
+                entries = feed_entry_count(output.read_bytes())
+            except Exception as existing_error:
+                detail += "; existing mirror invalid: " + _source_error(existing_error)
+            else:
+                return MirrorResult(spec["name"], spec["output"], entries, f"preserved: {detail}")
+        raise RuntimeError(f"{spec['name']}: mirror failed: {detail}") from exc
 
 
 def load_config(path: Path) -> list[dict]:
@@ -177,7 +324,8 @@ def mirror_all(config: Path, root: Path, workers: int = 8) -> list[MirrorResult]
             try:
                 result = future.result()
             except Exception as error:
-                record(spec['output'], 'failed', detail=type(error).__name__)
+                detail = format_source_error(error)
+                record(spec['output'], 'failed', detail=detail)
                 results.append(MirrorResult(spec['name'], spec['output'], 0, 'failed'))
                 continue
             status = 'ok' if result.status == 'updated' else 'fallback' if result.status.startswith('crossref-fallback') else 'preserved'
@@ -191,7 +339,7 @@ def mirror_all(config: Path, root: Path, workers: int = 8) -> list[MirrorResult]
                                      for token in sorted(tokens) if token.startswith(prefix)), '')
                     identities.append(identity)
             record(spec['output'], status, result.entries, identities=identities,
-                   detail=spec['name'] + ('；官网采集失败，使用 Crossref' if status == 'fallback' else ''))
+                   detail=spec['name'] if status == 'ok' else spec['name'] + '; ' + result.status)
             results.append(result)
         return results
 
