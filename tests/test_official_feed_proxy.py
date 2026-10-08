@@ -115,7 +115,7 @@ class OfficialFeedProxyTests(unittest.TestCase):
                 feed_entry_count(raw)
 
     def test_permanent_http_errors_are_not_retried(self):
-        for code in (403, 404):
+        for code in (403, 404, 418):
             error = HTTPError(SPEC['source_url'], code, 'Denied', {}, None)
             with self.subTest(code=code), patch('official_feed_proxy.urllib.request.urlopen', side_effect=error) as fetch, patch('official_feed_proxy.time.sleep') as sleep:
                 with self.assertRaises(HTTPError):
@@ -133,14 +133,74 @@ class OfficialFeedProxyTests(unittest.TestCase):
         from journal_rss_aggregator import CROSSREF_JOURNALS, OFFICIAL_FEED_URLS, journal_start_date
         registry = {OFFICIAL_FEED_URLS[s['issn']]: s for s in CROSSREF_JOURNALS if s.get('current_issue_only') != 'true'}
         for spec in load_config(Path('official-feed-config.json')):
-            needs_backup = any(host in spec['source_url'] for host in ('www.mdpi.com', 'www.nature.com', 'link.springer.com', 'journal-buildingscities.org'))
+            ieee = 'ieeexplore.ieee.org/rss/' in spec['source_url']
+            needs_backup = ieee or any(host in spec['source_url'] for host in ('www.mdpi.com', 'www.nature.com', 'link.springer.com', 'journal-buildingscities.org'))
             if not needs_backup and not spec.get('crossref_issn'):
                 continue
             with self.subTest(name=spec['name']):
                 source = registry[spec['source_url']]
                 self.assertEqual(spec.get('crossref_issn'), source['issn'])
                 self.assertEqual(spec.get('crossref_from'), journal_start_date(source, 2020))
-                self.assertEqual(spec.get('crossref_date_filter', 'created'), source.get('date_filter', 'pub'))
+                self.assertEqual(spec.get('crossref_date_filter', 'created'), 'created' if ieee else source.get('date_filter', 'pub'))
+                if ieee:
+                    self.assertTrue(spec.get('crossref_paginate'))
+
+    def test_paginated_backup_fetches_every_page_and_deduplicates_dois(self):
+        def work(doi):
+            return {'DOI': doi, 'title': [doi], 'URL': 'https://doi.org/' + doi, 'ISSN': ['2220-9964']}
+        pages = [
+            {'status': 'ok', 'message': {'total-results': 3, 'next-cursor': 'second', 'items': [work('10.1234/a'), work('10.1234/b')]}},
+            {'status': 'ok', 'message': {'total-results': 3, 'next-cursor': 'third', 'items': [work('10.1234/b'), work('10.1234/c')]}},
+        ]
+        spec = dict(BACKUP_SPEC, crossref_paginate=True, crossref_rows=2)
+        with patch('official_feed_proxy.urllib.request.urlopen', side_effect=[response(json.dumps(p).encode()) for p in pages]) as fetch:
+            raw = fetch_crossref_feed(spec)
+        self.assertEqual(feed_entry_count(raw), 3)
+        queries = [parse_qs(urlsplit(c.args[0].full_url).query) for c in fetch.call_args_list]
+        self.assertEqual([q['cursor'] for q in queries], [['*'], ['second']])
+        self.assertEqual(queries[0]['filter'], queries[1]['filter'])
+
+    def test_incomplete_paginated_backup_does_not_replace_history(self):
+        pages = [
+            {'status': 'ok', 'message': {'total-results': 2, 'next-cursor': 'next', 'items': [{'DOI': '10.1234/a', 'title': ['A'], 'URL': 'https://doi.org/10.1234/a'}]}},
+            {'status': 'ok', 'message': {'total-results': 2, 'next-cursor': 'next', 'items': []}},
+        ]
+        spec = dict(BACKUP_SPEC, crossref_paginate=True, crossref_rows=1)
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            output = root / SPEC['output']
+            output.parent.mkdir()
+            output.write_bytes(RSS)
+            with patch('official_feed_proxy.urllib.request.urlopen', side_effect=[response(json.dumps(p).encode()) for p in pages]):
+                result = mirror_one(spec, root, lambda _: (_ for _ in ()).throw(HTTPError(SPEC['source_url'], 418, 'Blocked', {}, None)))
+            self.assertTrue(result.status.startswith('preserved:'))
+            self.assertIn('incomplete', result.status.lower())
+            self.assertEqual(output.read_bytes(), RSS)
+
+    def test_paginated_backup_rejects_missing_counts_or_stalled_cursor(self):
+        work = {'DOI': '10.1234/a', 'title': ['A'], 'URL': 'https://doi.org/10.1234/a'}
+        messages = [
+            {'items': [work], 'next-cursor': 'next'},
+            {'items': [work], 'total-results': 2},
+            {'items': [work], 'total-results': 2, 'next-cursor': '*'},
+        ]
+        for message in messages:
+            with self.subTest(message=message), patch('official_feed_proxy.urllib.request.urlopen', return_value=response(json.dumps({'status': 'ok', 'message': message}).encode())):
+                with self.assertRaises(ValueError):
+                    fetch_crossref_feed(dict(BACKUP_SPEC, crossref_paginate=True, crossref_rows=1))
+
+    def test_registration_window_does_not_invent_a_publication_day(self):
+        from journal_dates import NS
+        spec = dict(BACKUP_SPEC, crossref_date_filter='created')
+        payload = {'status': 'ok', 'message': {'items': [{
+            'DOI': '10.1234/a', 'title': ['Early access'], 'URL': 'https://doi.org/10.1234/a',
+            'ISSN': ['2220-9964'], 'published': {'date-parts': [[2026]]},
+            'created': {'date-parts': [[2026, 10, 6]]},
+        }]}}
+        item = ET.fromstring(build_crossref_rss(spec, payload)).find('./channel/item')
+        self.assertIsNone(item.find('pubDate'))
+        self.assertEqual(item.findtext('{' + NS + '}publication'), '2026')
+        self.assertEqual(item.findtext('{' + NS + '}registered'), '2026-10-06')
 
     def test_crossref_request_bounds_dates_and_rows(self):
         payload = {'status': 'ok', 'message': {'items': []}}

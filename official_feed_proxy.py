@@ -84,7 +84,7 @@ def fetch_bytes(url: str, attempts: int = 3, *, timeout: int = 60, headers: dict
             return raw
         except Exception as exc:  # pragma: no cover - network dependent
             if isinstance(exc, SourceResponseError) or (
-                isinstance(exc, urllib.error.HTTPError) and exc.code in (403, 404)
+                isinstance(exc, urllib.error.HTTPError) and exc.code in (403, 404, 418)
             ):
                 raise
             last_error = exc
@@ -178,21 +178,51 @@ def fetch_crossref_feed(spec: dict) -> bytes:
     rows = int(spec.get("crossref_rows", 300))
     if not 1 <= rows <= 1000:
         raise ValueError("Crossref rows must be between 1 and 1000")
-    params = urllib.parse.urlencode({
+    params = {
         "filter": f"from-{date_filter}-date:{from_date},until-{date_filter}-date:{until_date},type:journal-article",
         "sort": "published" if date_filter == "pub" else "created",
         "order": "desc",
         "rows": str(rows),
         "select": "DOI,title,URL,resource,published,published-online,published-print,created,author,ISSN",
-    })
-    url = f"https://api.crossref.org/journals/{issn}/works?{params}"
-    with CROSSREF_SLOTS:
-        raw = fetch_bytes(url, timeout=90, headers={
-            'User-Agent': 'journal-rss/1.0 (mailto:rss@example.com)', 'Accept': 'application/json'})
-    payload = json.loads(raw)
-    if not isinstance(payload, dict) or payload.get("status") != "ok":
-        raise ValueError("Crossref returned an error response")
-    return build_crossref_rss(spec, payload)
+    }
+    paginate = spec.get('crossref_paginate', False)
+    cursor = '*'
+    seen_cursors = set()
+    works = {}
+    total = None
+    while True:
+        if paginate:
+            params['cursor'] = cursor
+        url = f"https://api.crossref.org/journals/{issn}/works?{urllib.parse.urlencode(params)}"
+        with CROSSREF_SLOTS:
+            raw = fetch_bytes(url, timeout=90, headers={
+                'User-Agent': 'journal-rss/1.0 (mailto:rss@example.com)', 'Accept': 'application/json'})
+        payload = json.loads(raw)
+        if not isinstance(payload, dict) or payload.get("status") != "ok":
+            raise ValueError("Crossref returned an error response")
+        validated_feed = build_crossref_rss(spec, payload)
+        if not paginate:
+            return validated_feed
+        message = payload['message']
+        if total is None:
+            total = message.get('total-results')
+            if type(total) is not int or total < 0:
+                raise ValueError('Paginated Crossref response has no valid total-results')
+        previous_count = len(works)
+        for work in message['items']:
+            doi = work.get('DOI')
+            if not isinstance(doi, str) or not doi.strip():
+                raise ValueError('Paginated Crossref work has no DOI')
+            works.setdefault(doi.strip().lower(), work)
+        if len(works) >= total:
+            return build_crossref_rss(spec, {'status': 'ok', 'message': {'items': list(works.values())}})
+        # Never publish a partial page as if it covered the whole initial window.
+        if len(works) == previous_count:
+            raise ValueError(f'Incomplete Crossref pagination: {len(works)} of {total} works')
+        seen_cursors.add(cursor)
+        cursor = message.get('next-cursor')
+        if not isinstance(cursor, str) or not cursor or cursor in seen_cursors:
+            raise ValueError('Incomplete Crossref pagination: missing or repeated cursor')
 
 
 def _atomic_write(path: Path, raw: bytes) -> None:
