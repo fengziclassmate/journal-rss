@@ -154,6 +154,22 @@ class OfficialFeedProxyTests(unittest.TestCase):
         self.assertEqual(params['sort'], ['published'])
         self.assertEqual(params['rows'], ['300'])
 
+    def test_crossref_rate_limit_retries_after_requested_delay(self):
+        payload = {'status': 'ok', 'message': {'items': []}}
+        error = HTTPError('https://api.crossref.org/works', 429, 'Too Many Requests', {'Retry-After': '7'}, None)
+        with patch('official_feed_proxy.urllib.request.urlopen', side_effect=[error, response(json.dumps(payload).encode())]) as fetch, patch('official_feed_proxy.time.sleep') as sleep:
+            self.assertEqual(feed_entry_count(fetch_crossref_feed(BACKUP_SPEC)), 0)
+        self.assertEqual(fetch.call_count, 2)
+        sleep.assert_called_once_with(7)
+
+    def test_long_rate_limit_does_not_retry_early_or_wait_indefinitely(self):
+        error = HTTPError('https://api.crossref.org/works', 429, 'Too Many Requests', {'Retry-After': '600'}, None)
+        with patch('official_feed_proxy.urllib.request.urlopen', side_effect=error) as fetch, patch('official_feed_proxy.time.sleep') as sleep:
+            with self.assertRaises(HTTPError):
+                fetch_crossref_feed(BACKUP_SPEC)
+        self.assertEqual(fetch.call_count, 1)
+        sleep.assert_not_called()
+
     def test_crossref_invalid_query_is_rejected_before_fetch(self):
         for changes in ({'crossref_rows': 1001}, {'crossref_from': 'invalid'},
                         {'crossref_date_filter': 'unexpected'}, {'crossref_issn': '../other'},

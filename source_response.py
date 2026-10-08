@@ -48,6 +48,9 @@ def validate_response(raw, url=''):
 def format_source_error(error, url=''):
     if isinstance(error, urllib.error.HTTPError):
         text = f'HTTP {error.code}: {error.reason}'
+    elif isinstance(error, urllib.error.URLError):
+        reason = error.reason
+        text = type(error).__name__+': '+(str(reason) or type(reason).__name__)
     else:
         text = type(error).__name__+': '+str(error)
     text = re.sub(r'https?://[^\s<>\"\']+', lambda m: safe_source_url(m.group()), text)

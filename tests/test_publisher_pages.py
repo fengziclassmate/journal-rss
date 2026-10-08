@@ -31,6 +31,16 @@ class PublisherPageTests(unittest.TestCase):
         self.assertEqual(len(items[0].findall('{http://purl.org/dc/elements/1.1/}creator')), 2)
         self.assertEqual(items[0].find('source').get('url'), SPEC['publisher_page'])
 
+    def test_initial_date_boundary_excludes_older_homepage_articles(self):
+        old = ROW.replace('bc.941', 'bc.940').replace('2026-10-07', '2026-08-01')
+        root = ET.fromstring(buildings_cities_feed(document(old + ROW), dict(SPEC, crossref_from='2026-09-02')))
+        self.assertEqual(len(root.findall('./channel/item')), 1)
+
+    def test_full_iso_publisher_timestamp_preserves_the_actual_calendar_date(self):
+        raw = document(ROW.replace('datetime="2026-10-07"', 'datetime="2026-10-07T10:50:08+00:00"'))
+        root = ET.fromstring(buildings_cities_feed(raw, SPEC))
+        self.assertIn('07 Oct 2026', root.findtext('./channel/item/pubDate'))
+
     def test_ambiguous_outer_container_is_not_treated_as_a_paper(self):
         row = '<div><a href="/en/articles/10.5334/bc.941">One</a><a href="/en/articles/10.5334/bc.942">Two</a><time datetime="2026-10-07"></time></div>'
         with self.assertRaises(SourceResponseError):

@@ -11,6 +11,7 @@ import json
 import os
 import re
 import tempfile
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -28,6 +29,7 @@ USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
 )
+CROSSREF_SLOTS = threading.BoundedSemaphore(2)
 
 
 @dataclass(frozen=True)
@@ -61,7 +63,7 @@ def feed_entry_count(raw: bytes, url: str = "") -> int:
     raise ValueError(f"Unsupported feed root: {root.tag}")
 
 
-def fetch_bytes(url: str, attempts: int = 3) -> bytes:
+def fetch_bytes(url: str, attempts: int = 3, *, timeout: int = 60, headers: dict | None = None) -> bytes:
     if attempts < 1:
         raise ValueError("Fetch attempts must be positive")
     request = urllib.request.Request(
@@ -70,12 +72,13 @@ def fetch_bytes(url: str, attempts: int = 3) -> bytes:
             "User-Agent": USER_AGENT,
             "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
             "Accept-Language": "en-US,en;q=0.9",
+            **(headers or {}),
         },
     )
     last_error: Exception | None = None
     for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(request, timeout=60) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 raw = response.read()
             validate_response(raw, url)
             return raw
@@ -86,7 +89,21 @@ def fetch_bytes(url: str, attempts: int = 3) -> bytes:
                 raise
             last_error = exc
             if attempt + 1 < attempts:
-                time.sleep(2**attempt)
+                delay = 2**attempt
+                if isinstance(exc, urllib.error.HTTPError) and exc.code == 429:
+                    retry_after = exc.headers.get('Retry-After') if exc.headers else None
+                    if retry_after:
+                        try:
+                            delay = int(retry_after)
+                        except ValueError:
+                            try:
+                                retry_at = email.utils.parsedate_to_datetime(retry_after)
+                                delay = (retry_at - dt.datetime.now(dt.timezone.utc)).total_seconds()
+                            except (TypeError, ValueError):
+                                pass
+                    if delay > 120:
+                        raise
+                time.sleep(max(1, delay))
     assert last_error is not None
     raise last_error
 
@@ -169,10 +186,9 @@ def fetch_crossref_feed(spec: dict) -> bytes:
         "select": "DOI,title,URL,resource,published,published-online,published-print,created,author,ISSN",
     })
     url = f"https://api.crossref.org/journals/{issn}/works?{params}"
-    request = urllib.request.Request(url, headers={"User-Agent": "journal-rss/1.0 (mailto:rss@example.com)"})
-    with urllib.request.urlopen(request, timeout=90) as response:
-        raw = response.read()
-    validate_response(raw, url)
+    with CROSSREF_SLOTS:
+        raw = fetch_bytes(url, timeout=90, headers={
+            'User-Agent': 'journal-rss/1.0 (mailto:rss@example.com)', 'Accept': 'application/json'})
     payload = json.loads(raw)
     if not isinstance(payload, dict) or payload.get("status") != "ok":
         raise ValueError("Crossref returned an error response")

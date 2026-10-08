@@ -45,9 +45,12 @@ def buildings_cities_feed(raw, spec):
         if len(dates) != 1:
             raise SourceResponseError('Ambiguous publisher article date')
         try:
-            published = dt.date.fromisoformat(dates.pop())
+            value = dates.pop()
+            published = dt.date.fromisoformat(value) if len(value) == 10 else dt.datetime.fromisoformat(value).date()
         except (TypeError, ValueError) as error:
             raise SourceResponseError('Invalid publisher article publication date') from error
+        if spec.get('crossref_from') and published < dt.date.fromisoformat(spec['crossref_from']):
+            continue
         item = ET.SubElement(channel, 'item')
         ET.SubElement(item, 'title').text = title
         ET.SubElement(item, 'link').text = urllib.parse.urlunsplit(link)

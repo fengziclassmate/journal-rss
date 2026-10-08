@@ -28,6 +28,10 @@ class SourceResponseTests(unittest.TestCase):
         self.assertNotIn('password',text)
         self.assertNotIn('secret',text)
 
+    def test_empty_timeout_reason_has_a_useful_error_label(self):
+        text = format_source_error(urllib.error.URLError(TimeoutError()))
+        self.assertIn('TimeoutError', text)
+
     def test_known_bad_cache_is_discarded_without_network_retry_storm(self):
         import hashlib
         with tempfile.TemporaryDirectory() as d:
