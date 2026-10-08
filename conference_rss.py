@@ -628,6 +628,11 @@ def fetch_crossref_fallback(client: PoliteClient, conference: dict[str, Any], ye
             raise ValueError('Invalid conference proceedings journal ISSN')
         if issn:
             fields += ',ISSN'
+        issue = conference.get('crossref_issues', {}).get(str(year))
+        if 'crossref_issues' in conference and not issue:
+            raise ValueError(f'No verified conference journal issue for {year}')
+        if issue:
+            fields += ',volume,issue'
         works_url = f'https://api.crossref.org/journals/{issn}/works' if issn else 'https://api.crossref.org/works'
         def matches(item):
             haystack = ' '.join([*(item.get('container-title') or []), clean_text(item.get('event', {}).get('name'))]).casefold()
@@ -671,6 +676,9 @@ def fetch_crossref_fallback(client: PoliteClient, conference: dict[str, Any], ye
         for item in records:
             if issn and issn not in item.get('ISSN', []):
                 raise ValueError('Crossref conference journal ISSN mismatch')
+            if issue and (str(item.get('volume', '')) != str(issue['volume'])
+                          or str(item.get('issue', '')) != str(issue['issue'])):
+                continue
             if item.get('type') not in ('proceedings-article','journal-article','book-chapter'):
                 continue
             containers = [clean_text(value) for value in item.get("container-title", [])]
@@ -753,6 +761,9 @@ def collect_conference(
                 collected.extend(backup)
                 if backup:
                     client.errors.append(f'Alternative Crossref index: {conference["acronym"]} {year}, {len(backup)} papers; coverage not guaranteed')
+                    issue = conference.get('crossref_issues', {}).get(str(year))
+                    if issue:
+                        client.errors.append(f'Verified journal track only: volume {issue["volume"]}, issue {issue["issue"]}; Conference track completeness unverified')
             except (urllib.error.URLError, SourceResponseError, ValueError, OSError) as error:
                 if client.failures == before:
                     client.failures += 1

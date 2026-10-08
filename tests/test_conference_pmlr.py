@@ -54,6 +54,26 @@ class PmlrTests(unittest.TestCase):
 
 
 class JournalProceedingsTests(unittest.TestCase):
+    def test_verified_conference_issue_does_not_import_other_journal_tracks(self):
+        import json
+        item = {'type': 'journal-article', 'ISSN': ['0730-0301'], 'DOI': '10.1234/a',
+                'title': ['Main paper'], 'container-title': ['ACM Transactions on Graphics'],
+                'volume': '45', 'issue': '4'}
+        config = {'acronym': 'SIGGRAPH', 'name': 'SIGGRAPH', 'crossref_titles': ['SIGGRAPH'],
+                  'crossref_issn': '0730-0301', 'crossref_issues': {'2026': {'volume': '45', 'issue': '4'}}}
+        client = Mock()
+        client.get.return_value = json.dumps({'message': {'items': [item,
+            dict(item, DOI='10.1234/b', issue='6'), dict(item, DOI='10.1234/c', volume='44')], 'total-results': 3}}).encode()
+        self.assertEqual([paper.doi for paper in fetch_crossref_fallback(client, config, 2026)], ['10.1234/a'])
+
+    def test_missing_conference_issue_never_expands_to_a_whole_journal_year(self):
+        client = Mock()
+        with self.assertRaises(ValueError):
+            fetch_crossref_fallback(client, {'crossref_issn': '0730-0301',
+                'crossref_issues': {'2026': {'volume': '45', 'issue': '4'}},
+                'crossref_titles': ['SIGGRAPH']}, 2027)
+        client.get.assert_not_called()
+
     def test_publisher_name_may_be_in_event_metadata_instead_of_book_title(self):
         import json
         item = {'type': 'proceedings-article', 'DOI': '10.1234/a', 'title': ['A paper'],
