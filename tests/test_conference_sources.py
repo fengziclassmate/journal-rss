@@ -225,7 +225,7 @@ class CollectionTests(unittest.TestCase):
             collect_official_alternative(client, ACL, 2026)
         validator.assert_any_call(html, self.event_url)
         client = Client({})
-        for slug in ('aistats', 'uai', 'unknown'):
+        for slug in ('kdd', 'icra', 'unknown'):
             self.assertEqual(collect_official_alternative(client, {'slug': slug}, 2026), [])
         self.assertEqual(client.urls, [])
 

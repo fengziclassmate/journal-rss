@@ -623,13 +623,27 @@ def fetch_crossref_fallback(client: PoliteClient, conference: dict[str, Any], ye
         filters = f"from-pub-date:{year}-01-01,until-pub-date:{year}-12-31"
         query_field = conference.get("crossref_query_field", "query.container-title")
         fields = 'DOI,title,URL,container-title,event,published,published-online,published-print,author,type'
+        issn = conference.get('crossref_issn', '')
+        if issn and not re.fullmatch(r'\d{4}-\d{3}[\dX]', issn):
+            raise ValueError('Invalid conference proceedings journal ISSN')
+        if issn:
+            fields += ',ISSN'
+        works_url = f'https://api.crossref.org/journals/{issn}/works' if issn else 'https://api.crossref.org/works'
         def matches(item):
             haystack = ' '.join([*(item.get('container-title') or []), clean_text(item.get('event', {}).get('name'))]).casefold()
             return all(token in haystack for token in title_query.casefold().split() if len(token)>2)
+        def conference_container(title):
+            generic = {'the', 'and', 'for', 'acm', 'ieee', 'international', 'conference',
+                       'symposium', 'annual', 'meeting', 'proceedings'}
+            tokens = [token for token in title_query.casefold().split() if len(token)>2 and token not in generic]
+            return bool(tokens) and all(token in title.casefold() for token in tokens)
         # Discover actual container names with a bounded search, then enumerate only exact matches.
         params = urllib.parse.urlencode({query_field:title_query,'filter':filters,'rows':100,'select':fields})
-        discovery = json.loads(client.get(f'https://api.crossref.org/works?{params}'))['message']['items']
-        containers = {title for item in discovery if matches(item) for title in item.get('container-title', [])}
+        discovery = [] if issn else json.loads(client.get(f'{works_url}?{params}'))['message']['items']
+        containers = {''} if issn else {
+            title for item in discovery if matches(item) for title in item.get('container-title', [])
+            if conference_container(title)
+        }
         records = list(discovery)
         for container in sorted(containers):
             if ',' in container:
@@ -639,8 +653,9 @@ def fetch_crossref_fallback(client: PoliteClient, conference: dict[str, Any], ye
             cursor = '*'
             received = 0
             while True:
-                params = urllib.parse.urlencode({'filter':filters+',container-title:'+container,'rows':1000,'cursor':cursor,'select':fields})
-                payload = json.loads(client.get(f'https://api.crossref.org/works?{params}'))
+                exact_filter = filters if issn else filters+',container-title:'+container
+                params = urllib.parse.urlencode({'filter':exact_filter,'rows':1000,'cursor':cursor,'select':fields})
+                payload = json.loads(client.get(f'{works_url}?{params}'))
                 message = payload.get('message', {})
                 page = message.get('items', [])
                 records.extend(page)
@@ -654,12 +669,14 @@ def fetch_crossref_fallback(client: PoliteClient, conference: dict[str, Any], ye
                     break
                 cursor = following
         for item in records:
+            if issn and issn not in item.get('ISSN', []):
+                raise ValueError('Crossref conference journal ISSN mismatch')
             if item.get('type') not in ('proceedings-article','journal-article','book-chapter'):
                 continue
             containers = [clean_text(value) for value in item.get("container-title", [])]
             event_name = clean_text(item.get("event", {}).get("name"))
             haystack = " ".join([*containers, event_name]).casefold()
-            if not all(token in haystack for token in title_query.casefold().split() if len(token) > 2):
+            if not issn and not all(token in haystack for token in title_query.casefold().split() if len(token) > 2):
                 continue
             if not _is_main_paper({'title':(item.get('title') or [''])[0],'venue':haystack},conference):
                 continue

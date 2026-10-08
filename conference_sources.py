@@ -1,4 +1,4 @@
-"""Official ACL Anthology alternatives to DBLP, with no per-paper requests.
+"""Official proceedings alternatives to DBLP, with no per-paper requests.
 
 The official repository's data/xml/{year}.{slug}.xml supplies complete volumes,
 including inline titles, author names and explicit DOIs. Event HTML is a fallback.
@@ -10,6 +10,7 @@ safe substitute. Industry, Findings, demonstrations and workshops are excluded.
 Anthology year/month and ingest-date are not exact publication dates. The
 ConferencePaper contract only supports day-precision published values, so these
 sources leave published and presentation_date empty instead of inventing days.
+PMLR volumes use their structured citation export through conference_pmlr.
 """
 
 from __future__ import annotations
@@ -207,6 +208,9 @@ def collect_official_alternative(
     errors remain errors if HTML cannot recover them, for the caller's health log.
     """
     slug = str(conference.get("slug", "")).casefold()
+    if slug in {'aistats', 'uai'}:
+        from conference_pmlr import collect_pmlr
+        return collect_pmlr(client, conference, year)
     if slug not in MAIN_VOLUMES:
         return []
     xml_error = None

@@ -190,7 +190,7 @@ def _atomic_write(path: Path, raw: bytes) -> None:
         Path(temp_name).unlink(missing_ok=True)
 
 
-def _merge_mirror(spec: dict, output: Path, raw: bytes, *, fallback: bool = False) -> bytes:
+def _merge_mirror(spec: dict, output: Path, raw: bytes, *, fallback: bool = False, source_url: str = '') -> bytes:
     from journal_unified import identities, normalize, union
     from journal_rss_aggregator import child_text
 
@@ -206,9 +206,11 @@ def _merge_mirror(spec: dict, output: Path, raw: bytes, *, fallback: bool = Fals
     fresh = _feed_entries(fresh_root, output)[1]
     backup_url = f"https://api.crossref.org/journals/{spec.get('crossref_issn', '')}/works"
 
-    previous = [normalize(node, backup_url if any(_local_name(c.tag) == 'source' and c.get('url') == backup_url
-                                                for c in node) else spec['source_url']) for node in previous]
-    fresh = [normalize(node, backup_url if fallback else spec['source_url']) for node in fresh]
+    def previous_source(node):
+        return next((c.get('url') for c in node if _local_name(c.tag) == 'source' and c.get('url')
+                     and c.get('url') in {backup_url, spec.get('publisher_page')}), spec['source_url'])
+    previous = [normalize(node, previous_source(node)) for node in previous]
+    fresh = [normalize(node, source_url or (backup_url if fallback else spec['source_url'])) for node in fresh]
     doi_evidence = {}
     for node in previous + fresh:
         tokens = identities(node)
@@ -252,7 +254,7 @@ def _merge_mirror(spec: dict, output: Path, raw: bytes, *, fallback: bool = Fals
                if token not in ambiguous and len(guids) == 1 and len(token_dois[token]) <= 1}
     keyed_fresh = [node for node in fresh if identities(node)]
     keyed_previous = [node for node in previous if identities(node)]
-    merged = union({'custom': spec['output'], 'official_url': spec['source_url']},
+    merged = union({'custom': spec['output'], 'official_url': source_url or spec['source_url']},
                    [keyed_fresh, keyed_previous], aliases, ignored_tokens=ambiguous, allow_weak=False)
     # Without a strong identity, retain the entry rather than guessing from its title.
     merged.extend(node for node in fresh + previous if not identities(node))
@@ -290,6 +292,18 @@ def mirror_one(spec: dict, root: Path, fetcher: Callable[[str], bytes] | None = 
         return MirrorResult(spec["name"], spec["output"], entries, "updated")
     except Exception as exc:
         detail = "publisher: " + _source_error(exc, spec["source_url"])
+        if spec.get('publisher_page'):
+            try:
+                from publisher_pages import buildings_cities_feed
+                page_url = spec['publisher_page']
+                raw = buildings_cities_feed(fetcher(page_url), spec)
+                raw = _merge_mirror(spec, output, raw, source_url=page_url)
+                entries = feed_entry_count(raw)
+                _atomic_write(output, raw)
+                return MirrorResult(spec['name'], spec['output'], entries,
+                                    f'publisher-page-fallback: {detail}; source={page_url}')
+            except Exception as page_error:
+                detail += '; publisher page: ' + _source_error(page_error, spec['publisher_page'])
         if spec.get("crossref_issn"):
             try:
                 raw = fetch_crossref_feed(spec)
@@ -336,7 +350,7 @@ def mirror_all(config: Path, root: Path, workers: int = 8) -> list[MirrorResult]
                 record(spec['output'], 'failed', detail=detail)
                 results.append(MirrorResult(spec['name'], spec['output'], 0, 'failed'))
                 continue
-            status = 'ok' if result.status == 'updated' else 'fallback' if result.status.startswith('crossref-fallback') else 'preserved'
+            status = 'ok' if result.status == 'updated' else 'fallback' if result.status.startswith(('crossref-fallback', 'publisher-page-fallback')) else 'preserved'
             identities = None
             if status == 'ok':
                 _, entries = _feed_entries(ET.parse(root/spec['output']).getroot(), Path(spec['output']))
