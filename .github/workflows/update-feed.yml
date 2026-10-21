@@ -31,6 +31,8 @@ jobs:
       # Read-filter commits must not wait behind long source collection.
       group: ${{ (inputs.publish_only == true || (github.event_name == 'push' && github.event.head_commit.message == 'Update Zotero read suppression')) && 'rss-publish-only' || 'rss-collection' }}
       cancel-in-progress: false
+    outputs:
+      suppression_blob: ${{ steps.pages_artifact.outputs.suppression_blob }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -198,7 +200,9 @@ jobs:
             journals.opml
 
       - name: Prepare Pages artifact
+        id: pages_artifact
         run: |
+          echo "suppression_blob=$(git hash-object read-suppression.json)" >> "$GITHUB_OUTPUT"
           python -c "from rss_read_filter import write_receipt; write_receipt()"
           mkdir -p _site
           cp read-filter-status.json rss-health.xml _site/
@@ -238,8 +242,24 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     steps:
+      - name: Check artifact uses the latest read filter
+        id: current_filter
+        timeout-minutes: 1
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_BLOB: ${{ needs.update-and-deploy.outputs.suppression_blob }}
+        run: |
+          latest=$(gh api "repos/$GITHUB_REPOSITORY/contents/read-suppression.json?ref=main" --jq .sha)
+          if [ "$latest" = "$EXPECTED_BLOB" ]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::A newer read filter superseded this artifact; its publication takes priority."
+          fi
+
       - name: Deploy to GitHub Pages
         id: deployment
+        if: steps.current_filter.outputs.current == 'true'
         continue-on-error: true
         uses: actions/deploy-pages@v5
 
