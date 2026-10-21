@@ -24,16 +24,13 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   update-and-deploy:
     runs-on: ubuntu-24.04
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+    concurrency:
+      # Read-filter commits must not wait behind long source collection.
+      group: ${{ (inputs.publish_only == true || (github.event_name == 'push' && github.event.head_commit.message == 'Update Zotero read suppression')) && 'rss-publish-only' || 'rss-collection' }}
+      cancel-in-progress: false
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -115,6 +112,7 @@ jobs:
       - name: Generate conference feeds
         if: steps.mode.outputs.filter_only != 'true'
         continue-on-error: true
+        timeout-minutes: 20
         run: python rss_health.py run conferences -- python conference_rss.py
 
       - name: Save latest complete conference fallback
@@ -230,6 +228,16 @@ jobs:
           path: _site
           include-hidden-files: true
 
+  deploy-pages:
+    needs: update-and-deploy
+    runs-on: ubuntu-24.04
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         continue-on-error: true
