@@ -46,6 +46,7 @@ assert.equal(forwarded, 1);
 for (const url of [
   'https://fengziclassmate.github.io/journal-rss/conference-feeds/icml.xml',
   'https://fengziclassmate.github.io/journal-rss/sustainability.xml',
+  'https://fengziclassmate.github.io/journal-rss/journal-feeds/knowledge-based-systems.xml',
 ]) {
   const feedRoot = element('rss');
   prototype._walk.call({

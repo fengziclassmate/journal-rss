@@ -7,7 +7,8 @@ in the subscription UI), even when the XML is valid.
 This add-on uses an iterative DOM traversal only for URLs starting with
 `https://fengziclassmate.github.io/journal-rss/conference-feeds/` and the explicitly
 listed large journal feeds `https://fengziclassmate.github.io/journal-rss/sustainability.xml`
-and `https://fengziclassmate.github.io/journal-rss/journal-feeds/sustainability.xml`.
+and `https://fengziclassmate.github.io/journal-rss/journal-feeds/sustainability.xml`,
+plus `https://fengziclassmate.github.io/journal-rss/journal-feeds/knowledge-based-systems.xml`.
 All items and existing GUIDs are retained. Other URLs use Zotero's original implementation.
 It adds no timers, translation, archive or item observers.
 Version 1.1 also checks the published `read-filter-status.json` receipt during
