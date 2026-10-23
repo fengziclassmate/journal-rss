@@ -138,6 +138,18 @@ jobs:
         # Build the union before the legacy custom-only feeds hide publisher matches.
         run: python journal_unified.py
 
+      - name: Update additional venue subscriptions
+        timeout-minutes: 10
+        continue-on-error: true
+        env:
+          FILTER_ONLY: ${{ steps.mode.outputs.filter_only }}
+        run: |
+          if [ "$FILTER_ONLY" = "true" ]; then
+            python additional_venue_rss.py --cached
+          else
+            python rss_health.py run additional-venues -- python additional_venue_rss.py
+          fi
+
       - name: Enforce official priority on every publication
         run: python official_priority.py
 
@@ -173,7 +185,7 @@ jobs:
             arxiv-email-archive/*.json arxiv-email-archive/*.html
             arxiv-email-analysis/*.json arxiv-email-analysis/*.html
             rss-health-state/*.json rss-health/*.json rss-health/*.html duplicate-audit/*.json duplicate-audit/*.html
-            sharing.html official-sources.opml
+            sharing.html official-sources.opml additional-venues.opml
             conference-feed-fallback.zip
 
       - name: Push feeds while preserving concurrent updates
@@ -207,6 +219,7 @@ jobs:
           mkdir -p _site
           cp read-filter-status.json rss-health.xml _site/
           cp sharing.html official-sources.opml _site/
+          cp additional-venues.opml _site/
           cp journals.opml _site/
           cp -r journal-feeds _site/
           cp ijgi.xml tmlr.xml jmlr.xml _site/
