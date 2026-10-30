@@ -17,11 +17,26 @@ def push_updates(repo, refresh_read_filter=False, attempts=3):
     for attempt in range(attempts):
         git(repo, 'fetch', 'origin', 'main')
         result = git(repo, 'rebase', 'origin/main', check=False)
-        if result.returncode:
-            git(repo, 'rebase', '--abort', check=False)
-            raise RuntimeError('Concurrent changes conflict with generated feeds. '
-                               'Preserved remote commits; recover output from the workflow artifact.\n'
-                               + result.stderr)
+        while result.returncode:
+            conflicts = git(repo, 'diff', '--name-only', '--diff-filter=U').stdout.splitlines()
+            generated = bool(conflicts) and all(
+                (Path(path).suffix == '.xml' and Path(path).parent.as_posix() in
+                 {'.', 'official-feeds', 'journal-feeds'}) or
+                (Path(path).parent.as_posix() in {'rss-health', 'rss-health-state', 'duplicate-audit'}
+                 and Path(path).suffix in {'.json', '.html'})
+                for path in conflicts
+            )
+            if not (refresh_read_filter and generated):
+                git(repo, 'rebase', '--abort', check=False)
+                raise RuntimeError('Concurrent changes conflict with generated feeds. '
+                                   'Preserved remote commits; recover output from the workflow artifact.\n'
+                                   + result.stdout + result.stderr)
+            # During rebase, "theirs" is the collected output being replayed.
+            # Keep it, then apply origin/main's latest read suppression below.
+            print('Resolving generated RSS/report conflicts: ' + ', '.join(conflicts), flush=True)
+            git(repo, 'checkout', '--theirs', '--', *conflicts)
+            git(repo, 'add', '--', *conflicts)
+            result = git(repo, '-c', 'core.editor=true', 'rebase', '--continue', check=False)
         # A read-history upload may have arrived while feeds were generating.
         if refresh_read_filter:
             subprocess.run([
