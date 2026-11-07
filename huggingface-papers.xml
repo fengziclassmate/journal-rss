@@ -231,6 +231,16 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation</title>
+      <link>https://huggingface.co/papers/2611.06498</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.06498</guid>
+      <pubDate>Wed, 04 Nov 2026 13:32:04 +0000</pubDate>
+      <dc:creator>Georgios Feretzakis</dc:creator>
+      <dc:creator>Alexandros Papaspyridis</dc:creator>
+      <description>&lt;p&gt;Offline retrieval-augmented generation (RAG) on edge devices is updated through signed knowledge packs that carry text and precomputed embedding vectors. A signature proves who published a pack, not that its vectors encode its text. We study this text-vector integrity gap. A verifier that recomputes vectors and accepts them within a cosine tolerance concedes a predictable share of queries to an attacker who controls the vectors: the hijack rate equals the distribution of angular retrieval margins at the tolerance (the margin law). Margins are small in five corpora and two embedding models, so an idealised tolerance at the level of floating-point noise leaves up to 5.5% of queries exposed (at most 1.2% in any corpus once exact duplicate documents are excluded), and a threshold calibrated from our CPU INT8-FP32 comparison of a small embedding model (at the empirical 0.1% quantile of honest cosines) leaves 98-100% exposed; on a Raspberry Pi 5 running a local language model, such an attack lowers correct answers from 0.75 to 0.39. Integrity audits of compressed vector stores fare no better: on a FAISS product-quantisation index over 57,638 documents, tampered vectors that all pass the audit put the attacker&amp;#x27;s document first for 25% of targets. Verifying quantisation codes instead, with ambiguity decided by the verifier, a calibrated guard band and canonicalisation, accepted every honest vector in our samples on three platforms and left the publisher no choice. We also show that common floating-point and dynamic-INT8 inference pipelines are not bit-reproducible across batch sizes or architectures, and report pre-registered negative results on abstention, context pruning and semantic screening. We release code and data.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.06498"&gt;arXiv:2611.06498&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.06498"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Decode Before You Hear: Speculative Listening for Chunk-Interleaved Full-Duplex Speech Language Models</title>
       <link>https://huggingface.co/papers/2611.06982</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.06982</guid>
@@ -301,6 +311,20 @@
       <dc:creator>Lewei Lu</dc:creator>
       <dc:creator>Tianfan Xue</dc:creator>
       <description>&lt;p&gt;Strong single-turn editing performance does not guarantee reliable multi-turn interaction: as edited outputs are repeatedly reused, small unintended changes can accumulate into severe visual drift. This long-term drift is often mitigated through training on multi-turn data or cross-turn rollouts, potentially altering pretrained priors, or through specialized inference-time mechanisms that are difficult to scale to foundation models. We introduce TailSteer, a final-stage training framework that improves multi-turn robustness while retaining the generative and editing capabilities acquired through earlier training. TailSteer follows a simple principle: keep early denoising dynamics close to those of the base model and concentrate preservation corrections near the trajectory tail, where fine-grained deviations can be suppressed. These corrections are learned from the editor&amp;#x27;s own on-policy denoising rollouts, using unchanged source content as a preservation reference without requiring curated ground-truth editing pairs. Experiments across the FLUX, SenseNova, and Qwen families show that TailSteer substantially reduces cumulative drift over 15-20 editing turns while largely preserving base-model performance on extensive text-to-image and single-image editing benchmarks. These results demonstrate that long-horizon editing robustness can be unlocked in foundation models after TailSteer, rather than by relearning their existing capabilities.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.06741"&gt;arXiv:2611.06741&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.06741"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Tools Need Not Speak in Text: Latent Context Compression for Agents</title>
+      <link>https://huggingface.co/papers/2611.06500</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.06500</guid>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yuetong Liu</dc:creator>
+      <dc:creator>Zhehao Zhou</dc:creator>
+      <dc:creator>Yitong Zhang</dc:creator>
+      <dc:creator>Haorui Chen</dc:creator>
+      <dc:creator>Jia Li</dc:creator>
+      <description>&lt;p&gt;Large language model (LLM) agents typically append raw tool outputs to their context. Over multi-step interactions, long and noisy observations incur substantial context overhead and dilute the agent&amp;#x27;s attention to task-relevant information. Existing token pruning and summarization methods remain constrained by discrete text representations, limiting the achievable compression ratios.
+  In this work, we challenge the prevailing assumption that agents must consume tool observations as explicit text tokens. To this end, we propose Coca-Cola, a continuous latent context compression model for LLM agents. Coca-Cola compresses tool observations into latent tokens and embeds them into the input embedding space of the agent. We further introduce Action-Preserving Training, which aligns the agent&amp;#x27;s next-action distributions under full and compressed observations. This trains the compression model to learn action-sufficient latent tokens that retain decision-critical information. Experiments with web-search agents on four QA benchmarks and two model families show that Coca-Cola reduces the agent&amp;#x27;s token consumption by 70.01%-89.24% and end-to-end runtime by 24.45%-55.97%, while consistently improving task performance. These results suggest that Coca-Cola offers a promising approach for context compression in agents. Our code is available at https://github.com/THU-Agent/Coca-cola.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.06500"&gt;arXiv:2611.06500&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.06500"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
