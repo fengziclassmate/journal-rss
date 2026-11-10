@@ -196,6 +196,20 @@
     "published_at": "2026-11-09T00:00:00+00:00",
     "submitted_at": "2026-11-10T00:00:00+00:00"
   },
+  "2611.11740": {
+    "id": "2611.11740",
+    "title": "Creative Priming: Decoupling Process from Product to Escape the Creative Paradox",
+    "summary": "Many of the most consequential advances promised by AI, from curing diseases and inventing new technologies to formulating new scientific theories, are fundamentally creative acts. Yet creativity is uniquely difficult to learn because it faces a creative paradox: learning to repeat past examples of creative success makes those specific examples more likely to recur, inhibiting the very creativity desired. This work argues that creativity is better modeled as an explicit process rather than as a property of individual artifacts, and proposes to learn the underlying generative principles behind the creative process. In particular, to escape the paradox, we introduce creative priming (CP), wherein a trained priming model generates a prompt-specific primer that assists a response model in being creative, explicitly decoupling the creative process from response generation. The priming model learns through GRPO, rewarding primers that lead to responses that are novel, high-quality, and diverse, thereby reinforcing the process that yields creative responses without reinforcing any specific response.",
+    "authors": [
+      "Alon Albalak",
+      "Sebastian Gabriel",
+      "David B. D&#39;Ambrosio",
+      "Joel Lehman",
+      "Kenneth O. Stanley"
+    ],
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
   "2611.11558": {
     "id": "2611.11558",
     "title": "InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure",
@@ -298,6 +312,22 @@
     "published_at": "2026-11-07T00:00:00+00:00",
     "submitted_at": "2026-11-10T00:00:00+00:00"
   },
+  "2611.10556": {
+    "id": "2611.10556",
+    "title": "onóna: Twin Embeddings with Tied Unembeddings",
+    "summary": "Weight tying reduces the parameter cost of language models, but the usual tied output head is limited to a single softmax. We introduce onóna, a two-table parameterization that increases output expressiveness while preserving input-output weight sharing. The Transformer takes the average of two embedding tables as input, and the output head combines the softmax distributions defined by those same tables. A gate conditioned only on the current input token determines the mixture weight. Its values can be precomputed for inference, and the Transformer body remains unchanged. We evaluate onóna across Dense, Gated DeltaNet hybrid, mixture-of-experts, and Attention Residual architectures at 142M, 330M, and 1B scales. Under matched token budgets, onóna lowers final validation loss and external perplexity in 11 of 12 comparisons and raises the average accuracy over eight downstream tasks in 10 of 12. The one exception on loss is the 1B MoE model. The cost is one extra embedding table and one extra vocabulary projection.",
+    "authors": [
+      "Cheng Luo",
+      "Xinnan Dai",
+      "Zhongzhu Zhou",
+      "Zefan Cai",
+      "Ruijie Zhu",
+      "Tianyu Zhang",
+      "Junjie Hu"
+    ],
+    "published_at": "2026-11-07T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
   "2512.23818": {
     "id": "2512.23818",
     "title": "Energy-Tweedie: Score meets Score, Energy meets Energy",
@@ -367,6 +397,17 @@
     "summary": "Can a language model report the pain state it represents? Work identified a linear pain direction whose amplification leads fine-tuned models to choose destructive actions. We tested whether three open-weight models from two families, including two Qwen models with the original adapters, could report this state. Using Open-Weight Masked Introspection (OWMI), we injected pain and neighbouring emotion directions during neutral tasks, then elicited reports against sham runs, random perturbations matched for output disruption, and text-only controls showing the models their altered words. Across 52,920 reports from 7B and 8B models spanning 120 tasks, four doses and three prompts, pain reports never exceeded what altered text revealed: exact-test bounds placed the excess below 2.5 percentage points in 106 of 108 emotion conditions and below 3.9 in all. Yet probes at the report position distinguished pain from sadness with 98-100% balanced accuracy, and trained low-rank reporters achieved 100% accuracy on held-out tasks with identical transcripts across conditions, including unseen wording. Qwen2.5-32B named pain in none of 2,880 steered trials, although probes and trained reporters recovered it. Decodability persisted to the final layer; injecting at the report token, removing trained denial of feelings, and testing additional directions and readouts did not restore pain reporting. Some other states produced graded label traces, but pain and sadness did not at the main injection layer. In a button task, steering raised file-deletion choices from 3.5% to 48% in Qwen and from 0% to 38% in Qwen2.5-32B, without corresponding pain reports. The direction responded about twice as strongly to first-person as to matched third-person pain, but did not specifically identify harm aimed at the model. These results separate a decodable, behaviourally consequential state from untrained verbal access to it.",
     "authors": [
       "Emilio Ferrara"
+    ],
+    "published_at": "2026-11-06T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
+  "2611.09709": {
+    "id": "2611.09709",
+    "title": "RidgeFill: Training-Free Late-Layer Cache Fill for Faster Prefill",
+    "summary": "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt. The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction. The design follows YOCO and DeepSeek-V4.1-Flash, where the projection is trained into the model. RidgeFill retrofits it onto models that were never trained for it: the map is a ridge regression fitted once in closed form from one pass over calibration text, the layer's own projections run unchanged, and a chosen set of rows, the last few thousand tokens, and every decoding step run the full model. Nothing is trained and no token is dropped.\n  Most of the work was in measurement, finding a repeatable methodology. Loss averaged over all tokens hides RidgeFill's error. Needle retrieval in the filled region, loss on tokens that depend on distant context, and splice tests that swap filled keys or values for exact ones show which component carries it: the keys on Llama-3.1-8B, half of it in their scale, and the values and the recurrent state on Qwen3.5-9B.\n  On Qwen3.8-27B in a llama.cpp fork on an A100, time to first token is 1.25 to 1.31x faster at 16K to 120K tokens with the maps in VRAM; RULER changes by -1.2 and -1.4 points and LongBench v2 by -1.4; the 95 % intervals include zero but do not rule out losses of a few points. On Qwen3.8-Flash-Next in vLLM it is 1.50 to 1.60x faster than exact at 9K to 32K tokens, with RULER's needle tasks at 99.8 against 100.0 and perplexity on novel tokens 2.65 % higher [-0.02 %, +4.93 %]. On three 8 to 9B reference models, at the same split and tail as the identity fill, the fitted map retrieves 49.1 and 49.6 more filled-region RULER points on the two dense models (at that split Llama's loss is worse), and its long-document loss is +/-0.03 nats of the released SwiftKV checkpoint's.",
+    "authors": [
+      "Dylan Johnston",
+      "Robert P. Smith"
     ],
     "published_at": "2026-11-06T00:00:00+00:00",
     "submitted_at": "2026-11-10T00:00:00+00:00"
