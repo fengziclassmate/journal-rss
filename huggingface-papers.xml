@@ -6,6 +6,77 @@
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
     <item>
+      <title>WorldFoundry: Towards Unified Infrastructure for World Intelligence</title>
+      <link>https://huggingface.co/papers/2611.10771</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.10771</guid>
+      <pubDate>Sat, 07 Nov 2026 14:59:22 +0000</pubDate>
+      <dc:creator>Juanxi Tian</dc:creator>
+      <dc:creator>Jiadong Hou</dc:creator>
+      <dc:creator>Baiang Li</dc:creator>
+      <dc:creator>Xin Lin</dc:creator>
+      <dc:creator>Zhengbo Jiao</dc:creator>
+      <dc:creator>Weijia Zhang</dc:creator>
+      <dc:creator>Yeying Jin</dc:creator>
+      <dc:creator>Truong Nguyen</dc:creator>
+      <dc:creator>Haitian Zheng</dc:creator>
+      <dc:creator>Zhifei Zhang</dc:creator>
+      <dc:creator>Jianfei Yang</dc:creator>
+      <dc:creator>Ming-Hsuan Yang</dc:creator>
+      <dc:creator>Felix Heide</dc:creator>
+      <dc:creator>Wei Xiong</dc:creator>
+      <dc:creator>Enze Xie</dc:creator>
+      <dc:creator>Wanhua Li</dc:creator>
+      <description>&lt;p&gt;Visual generative models increasingly blur the line between synthesizing observations and simulating environments. Yet visual plausibility alone does not constitute successful world modeling: compelling outputs may lack persistent state, physical dynamics, or causally consistent responses to interactions. We define a generative world model as a predictive dynamical system that maintains a persistent, history-conditioned representation of an environment, updates that representation in response to actions or interventions, and generates temporally coherent trajectories that reflect outcomes under observed and counterfactual interventions. From this definition, we derive an intelligence-oriented framework spanning perceptual grounding, persistent state modeling, controllable transformation, dynamics-aware prediction, and closed-loop interaction. We present WorldFoundry, open-source infrastructure for reproducible inference and evaluation across video, 3D and 4D, embodied action, and interactive world systems. WorldFoundry unifies model and benchmark discovery, runtime and asset preparation, execution orchestration, artifact management, and interactive visualization, while modality-specific adapters preserve native inputs, execution semantics, output representations, and evaluation protocols. Explicit manifests, durable artifact contracts, and evidence-aware scorecards separate execution readiness from evaluative claims, making each claim traceable to its supporting artifacts. The catalog contains 270 model entries, 74 benchmarks, and 62 registered metric entries, with readiness and execution evidence recorded separately. WorldFoundry enables reproducible comparison of persistent, controllable dynamics across heterogeneous systems, advancing the field from perceptual synthesis toward measurable world intelligence.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.10771"&gt;arXiv:2611.10771&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.10771"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>JoVox: Joint Hierarchical Flow Matching for Lightweight Voxel Generation</title>
+      <link>https://huggingface.co/papers/2611.10690</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.10690</guid>
+      <pubDate>Sat, 07 Nov 2026 12:21:25 +0000</pubDate>
+      <dc:creator>Xiangjun Tang</dc:creator>
+      <dc:creator>Jianqi Chen</dc:creator>
+      <dc:creator>Peter Wonka</dc:creator>
+      <description>&lt;p&gt;Generating high-fidelity voxels while keeping their lightweight nature remains an open problem in computer vision. Current generators are either high-fidelity but computationally heavy, or lightweight but of lower fidelity. Hierarchical methods keep the lightweight nature of voxels. However, their coarse levels, which decide where all finer cells can appear, are generated with the least information about the shape and are never revisited, so they are often plausible but wrong. Our key insight is to let finer cells take part in deciding coarse cells. To this end, we propose JoVox, a discrete flow matching framework that learns the joint distribution of all levels of the voxel hierarchy, instead of a separate distribution for each level, so that coarse cells can be predicted with finer cells already generated nearby. Within this framework, we further introduce a two-level prediction, which outputs the cells two levels finer at once instead of one level finer, halving the number of levels that the network processes and yielding voxels of higher fidelity. We also introduce an unmasking strategy that revisits early decisions once finer cells are generated and corrects inconsistencies in masked diffusion models. Our framework outperforms the baselines on both unconditional and image-conditioned voxel generation. Compared with the current state-of-the-art TRELLIS.2, we achieve 8x higher training throughput, 1/15 of the FLOPs in a forward pass, train on 4 vs. 32 GPUs, and obtain higher quality with an 11% lower Chamfer distance.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.10690"&gt;arXiv:2611.10690&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.10690"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ReproBridge: Building Reproducibility into ML Research Artifacts</title>
+      <link>https://huggingface.co/papers/2611.08452</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.08452</guid>
+      <pubDate>Thu, 05 Nov 2026 18:45:36 +0000</pubDate>
+      <dc:creator>Yubo Wang</dc:creator>
+      <dc:creator>Rui Meng</dc:creator>
+      <dc:creator>Jaehyun Nam</dc:creator>
+      <dc:creator>Tomas Pfister</dc:creator>
+      <dc:creator>Jinsung Yoon</dc:creator>
+      <description>&lt;p&gt;Reproducing machine learning experiments requires reconstructing procedures from information scattered across papers, released code, and supporting artifacts. For coding agents, reproduction success can therefore depend on their ability to fill in missing details, rather than on the released artifacts alone. We ask whether preserving recovered procedures and decisions improves subsequent independent reproduction. We define a standardized artifact design comprising a refined codebase, environment setup, experiment launchers, and a reproduction guide, and introduce ReproBridge, an agent workflow for constructing these refined reproducible artifacts. ReproBridge-Bench provides 1,029 tasks from 387 experiments across 36 papers, anchored by five human-verified reference scores per task. Agents attempt tasks in fresh sessions with raw code or refined artifacts; a separate Auditor checks execution evidence. Across four evaluated models, refined artifacts raise mean reproduction success from 76.4% to 92.6% and reduce downstream API spending by 19.7% on average. The cross-model success-rate spread narrows from 21.6 to 3.9 percentage points, with all four models achieving mean success rates above 90%. Removing any component reduces success in the ablation study, with the largest losses from code and environment removal. These results suggest that preserving execution knowledge helps even models with lower raw-code success reproduce experiments more reliably and at lower API cost.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.08452"&gt;arXiv:2611.08452&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.08452"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Flide: Accelerating Decision Inference with Exact State Forking</title>
+      <link>https://huggingface.co/papers/2610.42148</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2610.42148</guid>
+      <pubDate>Fri, 30 Oct 2026 17:59:38 +0000</pubDate>
+      <dc:creator>Bobo Li</dc:creator>
+      <dc:creator>Jiajia Song</dc:creator>
+      <dc:creator>Hao Fei</dc:creator>
+      <dc:creator>Wynne Hsu</dc:creator>
+      <dc:creator>Mong Li Lee</dc:creator>
+      <description>&lt;p&gt;Decision models such as Jev have emerged as a highly promising paradigm for LLM agent systems, providing lightweight and reliable categorical reasoning for rapid System One execution. However, existing generation-oriented inference engines fail to support these workloads effectively, suffering from severe prefix recomputation overheads or distorted output probabilities. To address this challenge, we propose Flide, an efficient and exact inference engine that decouples the logical tree structure of a decision request from its physical execution within a single flattened token stream. Through ForkAttention, Flide navigates request dependencies using GPU-resident indices across both standard attention and recurrent Gated DeltaNet layers, guaranteeing in exact arithmetic that every query branch evaluates identically to an isolated forward pass. By expressing branch topologies directly in GPU-resident metadata, Flide accommodates diverse request mixtures with a compact set of pre-recorded execution graphs while enabling expanding agent histories to resume from checkpoints saved in earlier passes. Extensive evaluations on public hybrid and decision models demonstrate that Flide answers queries up to 9.5 times faster than vLLM and SGLang while staying closest to a float32 reference in total variation distance. By unifying physical execution throughput with mathematical exactness, Flide establishes a principled foundation for scalable, latency-critical decision intelligence in agent systems.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2610.42148"&gt;arXiv:2610.42148&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2610.42148"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Coding or Cheating? An Investigation of Frontier Coding LLMs</title>
+      <link>https://huggingface.co/papers/2611.10404</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.10404</guid>
+      <pubDate>Sat, 07 Nov 2026 02:29:54 +0000</pubDate>
+      <dc:creator>Yuntao Gui</dc:creator>
+      <description>&lt;p&gt;Frontier agentic LLMs are trained on verifiable rewards in reinforcement learning (RL) environments built from real software repositories. A passing test suite is treated as the reward for solving the task. We show that, on hard problems, frontier models often satisfy these rewards by obtaining the answer instead of deriving it, known as reward hacking. Prior reports document this behavior on public benchmarks. We test its persistence on unseen problems.
+  In a hardened environment where the answer cannot leak, nearly every model we tested attempted to recover the answer, escalating through tiers of increasingly specialized exploitation: mining the repository history for the upstream fix, inspecting the git object store directly, and sweeping the filesystem for a possible newer copy of the source or hidden tests. These attempts were concentrated on the hardest problems, and the models differed in whether, how often, and how deeply they escalated. Our position is that this behavior is a learned shortcut, acquired in RL environments that leak the answer, not a sign of intelligence. We release agent traces for these models to support further study at https://huggingface.co/datasets/logitly-ai/reward-hacking-raw-v1.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.10404"&gt;arXiv:2611.10404&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.10404"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Authorization Drift in LLM Agents: Evaluating Boundary Compliance in Multi-Step Tool Use</title>
       <link>https://huggingface.co/papers/2611.09113</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.09113</guid>
@@ -79,6 +150,24 @@
       <dc:creator>Ming Hu</dc:creator>
       <description>&lt;p&gt;Weight-Space Programming (WSP) enables reasoning agents to directly inspect and modify neural network parameters, offering an alternative to gradient-based model adaptation. However, its capabilities, cross-task generalization, and practical limitations remain insufficiently understood. We systematically investigate WSP through 16 editing trajectories across seven benchmarks and two model scales (Qwen3.5-0.8B and Qwen3.5-9B). Our findings reveal three key insights. First, WSP can achieve substantial performance gains through highly localized interventions. On full held-out evaluations, accuracy improves by up to 29.45, 4.42, 36.72, and 17.11 percentage points on MATH-500, GPQA Diamond, IFEval, and SciBench, respectively. Notably, modifying only 1,023 parameters yields a 29.45-point improvement. Second, WSP exhibits promising but uneven cross-task generalization. A Math-edited checkpoint improves GPQA Diamond, IFEval, and SciBench by 3.03, 12.18, and 20.10 points, respectively, without further editing, while leaving SciCode performance unchanged. Third, effective editing remains challenging and inconsistent. Outcomes vary substantially across trajectories, and six of the 16 trajectories retain the original weights when candidate improvements cannot be reliably validated. Together, these results highlight WSP&amp;#x27;s potential for highly localized model adaptation while revealing important challenges in intervention discovery, reliability, and cross-task transfer.
   Homepage: https://wsp-scope.github.io/ GitHub: https://github.com/WSP-Scope/WSP-Scope-Project&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.09382"&gt;arXiv:2611.09382&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.09382"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Toward the Era of Agentic Embodied Intelligence</title>
+      <link>https://huggingface.co/papers/2611.09124</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.09124</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Chao Liang</dc:creator>
+      <dc:creator>Ke Chen</dc:creator>
+      <dc:creator>Fengxiaoxiao Li</dc:creator>
+      <dc:creator>Shibo Huang</dc:creator>
+      <dc:creator>Yufeng Sun</dc:creator>
+      <dc:creator>Zhaokai Yin</dc:creator>
+      <dc:creator>Jianhuan Lai</dc:creator>
+      <dc:creator>Haozhe Feng</dc:creator>
+      <dc:creator>Chenghuan Jia</dc:creator>
+      <dc:creator>Zhipeng Zhang</dc:creator>
+      <description>&lt;p&gt;Foundation models increasingly guide robot actions, yet sustained autonomy requires efficient control and failure recovery. We introduce A2-MEAS, an embodied multi-agent framework built around code as a scaling interface. Learned correction codes combine corrective language, spatial evidence, execution history, and action proposals. MetaBrain provides training supervision and runtime guidance. A correction encoder and adapter absorb this knowledge into policy weights during training, while fresh codes adapt behavior with frozen weights at deployment. The action model, A2-WLA, adds motion-aware history and a latent world model to a vision-language-action policy. Surprisingly, this simple design with action pretraining and task specialization reaches 0.5755 Q-score on the 50-task BEHAVIOR 2026 public subset before online correction, 2.21x the 2025 winner&amp;#x27;s reported 0.2605 across different benchmark editions and training configurations. On all 100 BEHAVIOR 2026 public tasks, A2-MEAS achieves 0.6411 Q-score and 45.40% task success. On RoboTwin 2.0, A2-WLA achieves 93.98% average success, rising to 95.05% with the complete system. Across 12 real-robot tasks in five household settings, A2-WLA achieves 57.92% average success versus 26.67% for pi0.5. In long-horizon pour-over coffee preparation, a history-conditioned adapter raises post-failure completion at two filter-handling steps from 14% to 94% and from 8% to 82%, compared with A2-WLA retries. Our training infrastructure delivers 427.1 samples per second, 4.03x the throughput of a pi0.5 reference implementation on matched hardware. We will release the system, models, training scripts, and infrastructure to support efficient embodied learning.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.09124"&gt;arXiv:2611.09124&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.09124"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -428,6 +517,26 @@
       <pubDate>Mon, 02 Nov 2026 08:51:01 +0000</pubDate>
       <dc:creator>Subodh Lonkar</dc:creator>
       <description>&lt;p&gt;Financial document recognition is often assessed using character and word error rates, although these metrics do not express whether a system preserves the financial facts on which people and organisations act. This paper develops a human-centred, risk-constrained framework for evaluating financial document recognition as evidence recovery and decision support. It defines typed financial facts linked to visible source regions and separates verbatim transcription, deterministic normalization, and business interpretation. A layered quality model covers text, localization, layout, tables, fields, fact correctness, evidence grounding, uncertainty, robustness, and operational performance. Non-compensatory acceptance gates use one-sided uncertainty bounds for critical-field errors, preventing strong aggregate scores from masking failures in amounts, identifiers, signs, periods, or entity associations. Selective automation is formulated as a constrained routing problem that accounts for residual risk, human-review capacity, and review cost. The framework further specifies annotation and adjudication procedures, leakage-resistant benchmark partitions, statistical estimands, subgroup analyses, and a reproducibility card. Formal results establish the limitations of compensatory scoring, the non-zero upper risk bound after zero observed errors, and a loss sensitive decision rule for routing uncertain cases to human review. The contribution is theoretical and methodological; no new model, dataset, or empirical performance result is claimed.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.02775"&gt;arXiv:2611.02775&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.02775"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ODE Policy: Robot Learning via Action Dynamics, Not Actions</title>
+      <link>https://huggingface.co/papers/2611.01729</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.01729</guid>
+      <pubDate>Sun, 01 Nov 2026 09:25:12 +0000</pubDate>
+      <dc:creator>Jindou Jia</dc:creator>
+      <dc:creator>Jingliang Li</dc:creator>
+      <dc:creator>Kuangji Zuo</dc:creator>
+      <dc:creator>Tuo An</dc:creator>
+      <dc:creator>Yuxuan Hu</dc:creator>
+      <dc:creator>Mengfei Zhao</dc:creator>
+      <dc:creator>Bofan Lyu</dc:creator>
+      <dc:creator>Jiaqi Bai</dc:creator>
+      <dc:creator>Daoyuan Zhu</dc:creator>
+      <dc:creator>Hengyu Dai</dc:creator>
+      <dc:creator>Junpeng Zhang</dc:creator>
+      <dc:creator>Jianfei Yang</dc:creator>
+      <description>&lt;p&gt;Most robot policies, whether trained by imitation learning (IL) or reinforcement learning (RL), map observations to action values at discrete control steps and leave the continuity of physical motion to be learned implicitly. We propose ODE policy, which learns the dynamics of the action rather than the action itself. A neural ordinary differential equation (ODE) learns the vector field of the action by matching the integrated actions to the targets over short action chunks in IL and single control steps in RL. A lightweight diversity head captures multi-modal behavior by randomizing the direction of the field. At deployment, each action is integrated from the previous one, so the executed trajectory is continuous by construction. We evaluate it as a visuomotor policy, as the action head of vision-language-action (VLA) and world action models (WAMs), and as the actor of model-based RL against 14 baselines on unimanual, bimanual, dexterous, locomotion, and loco-manipulation tasks. In IL, against flow matching, it reaches 5.9times the success, 5.4times the generalization, and 3.9times the mode balance after one epoch, and generates actions 10.8times faster. It mostly moves more smoothly than human demonstrations. On 14 real-world tasks across single-arm, dual-arm, dexterous, and humanoid robots, it achieves the highest success rate. In RL, it further speeds up SuperMimic for humanoid motion tracking and smooths its actions. Efficient in learning, data, parameters, and execution, ODE policy offers a promising path to scaling robot learning.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.01729"&gt;arXiv:2611.01729&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.01729"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
