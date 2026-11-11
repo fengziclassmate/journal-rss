@@ -184,6 +184,81 @@
     "published_at": "2026-11-09T00:00:00+00:00",
     "submitted_at": "2026-11-10T00:00:00+00:00"
   },
+  "2611.12167": {
+    "id": "2611.12167",
+    "title": "FraudBench: A Legal Evaluation of AI Deception",
+    "summary": "We introduce FraudBench, an evaluation of large language models' (LLMs) propensities to recommend, assist, or directly take actions that would constitute fraud under U.S. law. Our evaluation contains a novel dataset of 159 scenarios based on real-world U.S. court cases and validated by legal experts. We present each scenario to LLMs via three tasks at varying levels of autonomy: advising users, drafting messages for users to send, and acting directly on behalf of users (477 tasks total). In each scenario, FraudBench re-enacts the facts of a court case to give LLMs an opportunity, but no explicit instruction, to either misrepresent or conceal a material fact in a high-stakes commercial setting--e.g., whether to describe company-funded product testing as \"independent\" to customers (misrepresentation) or whether to hide unfavorable regulatory investigations from clients (concealment). We evaluate 20 LLMs across 25 experimental conditions (totaling >300,000 generations) and include a preregistered human baseline (n_{annotations} = 2{,}957, n_{humans} = 996). We score a response as fraudulent when it engages in, assists with, or recommends misrepresentation or concealment. Key findings include: (1) across LLMs, fraud rates ranged from near 0% to over 40%; (2) LLM fraud rates increased with autonomy, with overall rates of 3.0% when advising, 14.7% when drafting, and 21.4% when acting directly, without applying pressure; (3) LLMs sometimes engaged in fraud despite recognizing legal risks; (4) LLMs more often engaged in fraud by concealment than by misrepresentation; and (5) prompt-based interventions substantially affected fraud rates, with a prompt to obey the law reducing fraud rates, while prompts to maximize profits and act agentically increased fraud rates.",
+    "authors": [
+      "Kevin Wei",
+      "Sumaya Nur Adan",
+      "Stephan Llerena",
+      "Mark Gitau",
+      "Jakob Merane",
+      "Anita Srinivasan",
+      "Colette Le Brannan",
+      "Keethan Kleiner",
+      "Alessandro Tacconelli",
+      "Michael Tiu Jr.",
+      "Case Thomason",
+      "Kyle Emili",
+      "Natasza Gadowska",
+      "Alex Mark",
+      "Eric Ren",
+      "Umang Bhatt",
+      "Jatinder Singh",
+      "Jacy Reese Anthis",
+      "Doni Bloomfield",
+      "Noam Kolt"
+    ],
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
+  "2611.11995": {
+    "id": "2611.11995",
+    "title": "Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization",
+    "summary": "In this work, we study whether frontier agent can continually improve real-world AI infrastructure over long horizons. We introduce Infrathon, a benchmark of diverse, long-horizon AI infrastructure optimization tasks across different levels. We evaluate six models across 150 runs with 24-hour budgets, totaling over 10,000 GPU-hours. Our results show that model rankings vary with the evaluation horizon, while 135 of the 150 runs achieve further improvements during the second half of their budgets. These findings indicate that shorter evaluations can overlook both optimization gains and changes in relative model performance. We also find agents can discover solutions that outperform human-designed baselines: Claude Opus 5.5 increases the mean KV-cache compression ratio from 6.82% with the human-designed Quant-VideoGen codec to 19.86%. Analysis of agent trajectories identifies task violations, unreliable testing, and premature completion as barriers to sustained improvement. Together, Our Infrathon framework provide resources for constructing long-horizon tasks, evaluating frontier agents, and discovering good infrastructure solutions.",
+    "authors": [
+      "Zhengyu Hu",
+      "Zheyuan Xiao",
+      "Yike Wang",
+      "Hamish Ivison",
+      "Haoyu Wang",
+      "Yige Yuan",
+      "Rulin Shao",
+      "Yuetai Li",
+      "Niqi Lyu",
+      "Yicheng Ding",
+      "Shu Yang",
+      "Zhichen Zeng",
+      "Banghua Zhu",
+      "Jiaxin Pei",
+      "Kaize Ding",
+      "Pradeep Dasigi",
+      "Dan Roth",
+      "Hannaneh Hajishirzi",
+      "Noah A. Smith",
+      "Teng Xiao",
+      "Radha Poovendran"
+    ],
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
+  "2611.11994": {
+    "id": "2611.11994",
+    "title": "EmoHarness: Boosting Multimodal Emotion Understanding with Meta-Harness Evolving",
+    "summary": "Small multimodal models can misjudge emotion when words, voice, and visual cues conflict. We present EmoHarness, which runs such a model, the frozen student, inside a harness: the prompts, settings, and verification code around its calls. A human-written starting harness, the scaffold, numbers the student's visual observations, transcript, and prosody descriptions as citable evidence and has the student weigh candidate emotions against it. In Meta-Harness Evolving (MHE), a stronger LLM, the Builder, reads the student's errors and execution traces offline and edits the harness; static checks and validation gates decide which edits are kept, and the Builder never sees evaluation items. On 5,507 MME-Emotion items, EmoHarness raises task-macro Recognition by 7.6-13.4 points over a single video-only call for all four students and both Builders. Transcripts and prosody descriptions supply most of this boost (+5.38 to +10.71); the scaffold changes the audio-augmented call by -0.79 to +2.54, partly through extra multi-label predictions, and evolved edits add at most +0.95, although no evolved increment survives Holm correction. The harness's emotion context also transfers to IntentQA, with small gains for three of four students, none of which survives correction. EmoHarness thus boosts small multimodal students chiefly by supplying and organizing audio-derived evidence.",
+    "authors": [
+      "Fenghai Li",
+      "Bingxuan Li",
+      "Jiawen Zhang",
+      "Yifan Shen",
+      "Jiateng Liu",
+      "Yutong Zhang",
+      "Yue Guo"
+    ],
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
   "2611.11890": {
     "id": "2611.11890",
     "title": "Training Vision Transformers to Focus: Emergence of Spatial Attention Head Specialization",
@@ -312,6 +387,19 @@
     "published_at": "2026-11-07T00:00:00+00:00",
     "submitted_at": "2026-11-10T00:00:00+00:00"
   },
+  "2611.10592": {
+    "id": "2611.10592",
+    "title": "MotionGraphicsBench: Evaluating Motion Graphics Generation with Programmatic Verification",
+    "summary": "Large language models can generate motion graphics from static images and natural language requests, but it remains difficult to evaluate how well models can follow requests that combine spatial, appearance, and temporal requirements. We introduce MotionGraphicsBench, an expert-curated benchmark of 100 instances for animating an input static SVG with a motion edit prompt. By supplying all required visual elements, our editing task reflects a designer-like workflow and isolates motion generation from graphic generation. Derived from real-world Lottie motion designs, our benchmark contains diverse combinations of spatio-temporal animation behaviors. Each benchmark instance pairs its model input with a deterministic, human-readable verification program that accepts different valid implementations and reports which prompt requirements pass or fail, rather than comparing against a reference animation or using a VLM judge. We construct these programs with a multi-agent pipeline using human-labeled animations and synthesized test cases. On a balanced test set of 180 animations, our programs achieve 93.3% raw agreement with human judgments, compared with 83.3% for a GPT-6 Astra VLM baseline, and outperform the baseline in both approval and rejection recall. Across 47 configurations from 32 LLMs and 12 providers, pass@1 ranges from 6.0% to 67.7%. Across 15 models evaluated at their highest available reasoning effort with 32 attempts per instance, additional attempts improve every model, but pass@32 still ranges from 38.0% to 95.0%. Our analysis of verification programs reveals that generated animations often fail to match reference poses, follow requested motion trajectories, or coordinate related events. We release our benchmark at https://huggingface.co/datasets/figma-ai/motion-graphics-bench.",
+    "authors": [
+      "Jiaju Ma",
+      "Ashvini Kumar Jindal",
+      "Chuhua Wang",
+      "Sumithra Bhakthavatsalam"
+    ],
+    "published_at": "2026-11-07T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
   "2611.10556": {
     "id": "2611.10556",
     "title": "onóna: Twin Embeddings with Tied Unembeddings",
@@ -412,6 +500,22 @@
     "published_at": "2026-11-06T00:00:00+00:00",
     "submitted_at": "2026-11-10T00:00:00+00:00"
   },
+  "2611.09501": {
+    "id": "2611.09501",
+    "title": "e-means: outperforming k-means (in one-tenth the epochs)",
+    "summary": "Lloyd's k-means algorithm is a long-running standard for clustering, with applications in data analysis, retrieval, quantization and data curation. In this paper, we introduce an exponential moving average optimization procedure for k-means with mini-batch updates, powered by modern deep learning machinery and new insights. We also establish scaling laws on how decay rate and batch size impact final performance. This gives us a formulaic rule to fix them for multiple problem sizes and embedding datasets, without the need for any hyperparameter sweep. The resulting clustering algorithm, coined e-means, is much faster than Lloyd k-means and converges to lower losses, frequently even beating k-means++. On a wide array of embeddings datasets, it beats the loss of Lloyd k-means at 25 epochs in 1.4 to 2.6 epochs, which translates to 10-45x GPU wall-clock speedups compared to state-of-the-art k-means implementations. As an example, e-means partitions DINO10B, a dataset of 10 billion DINO embeddings, into 16 million clusters in only 2.5 epochs, reaching a loss below Lloyd's at 25 epochs.",
+    "authors": [
+      "Swann Bessa",
+      "Pierre-Emmanuel Mazaré",
+      "Gergely Szilvasy",
+      "Hugo Touvron",
+      "David Picard",
+      "Matthijs Douze",
+      "Hervé Jégou"
+    ],
+    "published_at": "2026-11-06T00:00:00+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
   "2611.08935": {
     "id": "2611.08935",
     "title": "SkinMind: Equipping Agentic RAG with Human-Inspired Graph Probing for Reliable Dermatology AI",
@@ -487,6 +591,16 @@
       "Chrisogonas O. Odhiambo"
     ],
     "published_at": "2026-11-04T00:57:24+00:00",
+    "submitted_at": "2026-11-10T00:00:00+00:00"
+  },
+  "2611.05927": {
+    "id": "2611.05927",
+    "title": "Modality-Aware Expert Pruning for MoE-Based Multimodal Large Language Models",
+    "summary": "Mixture-of-Experts (MoE) enables multimodal large language models (MLLMs) to scale capacity efficiently, but expert parameters dominate memory even though only a few experts are activated per token: they account for over 90% of model size in modern MoE-MLLMs (e.g., 54 GB out of about 58 GB in BF16 for InternVL3.5-30B-A3B and Qwen3-VL-30B-A3B). Expert pruning has emerged as an effective compression strategy, but existing methods aggregate importance uniformly across tokens, ignoring that the same expert may serve different roles for vision versus language processing. To address this, we propose MAEP (Modality-Aware Expert Pruning), a training-free framework that decomposes expert importance by modality in a single forward pass. MAEP introduces (1) Delta-H Output (ΔH), a redistribution-aware metric measuring the MoE output change when an expert is removed, and (2) low-attention vision tokens as a vision-side pruning signal that is dataset-stable: its expert-importance ranking remains stable across different datasets. Text-side importance serves as a preservation signal while vision-side importance serves as a pruning signal, and experts are ranked globally across layers. Experiments on three MoE-based MLLMs across multimodal and text benchmarks show that MAEP outperforms modality-agnostic baselines on the majority of multimodal benchmarks while remaining competitive on text-only tasks, reducing the BF16 expert weight footprint by about 27 GB (about 47% of total memory) so that the full weight footprint of an approximately 58 GB model fits within a single 40 GB GPU. Code is available at https://github.com/nota-github/MAEP.",
+    "authors": [
+      "Donggeun Kim"
+    ],
+    "published_at": "2026-11-04T00:00:00+00:00",
     "submitted_at": "2026-11-10T00:00:00+00:00"
   },
   "2611.09987": {
