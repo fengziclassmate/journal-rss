@@ -1,4 +1,25 @@
 {
+  "2611.17334": {
+    "id": "2611.17334",
+    "title": "Unbundling Multimodal Vision Encoding",
+    "summary": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e., before the multimodal backbone). Because published models also differ in data, architecture, and compute, comparing them cannot isolate the effect of each choice. We disentangle these choices via a controlled framework where we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute. We find that the visual prior is not necessary; an encoder trained jointly from scratch is on par with a pretrained one, without a separate training stage. What matters instead is dedicated vision capacity: an encoder-free model trails on visual understanding even when its backbone is enlarged by the encoder's parameter count. Yet that capacity need not precede multimodal fusion, as vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder and can lower time to first token. These results also hold across backbone sizes, when encoder pretraining is treated as free, and when starting from a pretrained language model. Overall, our findings favor dedicated vision capacity trained jointly with the backbone and placed early within it.",
+    "authors": [
+      "Ellis Brown",
+      "Chris Hoang",
+      "Shengyi Qian",
+      "Shang-Wen Li",
+      "Mike Lewis",
+      "Marjan Ghazvininejad",
+      "Luke Zettlemoyer",
+      "Lucas Beyer",
+      "Mengye Ren",
+      "Jakob Verbeek",
+      "Saining Xie",
+      "Hu Xu"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
   "2611.17331": {
     "id": "2611.17331",
     "title": "TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models",
@@ -66,6 +87,21 @@
     "published_at": "2026-11-12T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
   },
+  "2611.16961": {
+    "id": "2611.16961",
+    "title": "The Value of Thinking: Learning When to Reason in Hybrid Decision Models",
+    "summary": "Existing adaptive-reasoning methods shorten the explicit reasoning a model writes, or skip it by switching modes; either way the answer is still written out token by token. Rather than deciding how much to think, we explore a different paradigm, zero-or-T thinking: a single model either answers from the implicit thinking inside one forward pass, generating no token, or performs full autoregressive reasoning at a cost of T tokens when that is worth paying. We realise it in a hybrid decision model (HDM), where one frozen backbone serves both modes and a lightweight self-routing block chooses between them. The block estimates the value of thinking, the utility the slow mode is expected to add over the fast one, from what that implicit thinking has already produced, and the slow mode runs only where that value exceeds a price λ set per request. Where no per-decision label exists, as in episodic agentic tasks, we introduce Calibrated Decision Policy Optimisation (CDPO), a reinforcement-learning recipe that trains the block from episode-level returns. We evaluate HDM on MMLU-Pro, AGIEval, GPQA-Diamond, JevBench, BANKING77 and MiniWoB. Specifically, on JevBench HDM-4B scores 0.857 against Jev's 0.851 (+0.7%) at a median 0.179\\,s against 0.652 (-72.5%). On the agentic venue MiniWoB HDM-27B cuts token cost by 80.1%.",
+    "authors": [
+      "Zhengxu Yu",
+      "Ke Xu",
+      "Meng Fang",
+      "Haitham Ammar",
+      "Weilin Luo",
+      "Jun Wang"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
   "2611.16905": {
     "id": "2611.16905",
     "title": "Factored One-sided Adam-Moment for Practical and Scalable SOAP",
@@ -117,6 +153,19 @@
       "Ka Long Cheng",
       "Xinyang Wang",
       "Yujun Shen"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
+  "2611.16409": {
+    "id": "2611.16409",
+    "title": "Experience-Handoff Reinforcement Learning for Recursive Self-Improvement",
+    "summary": "It is common to train Large Language Models (LLMs) for agentic tasks with Reinforcement Learning (RL) from scalar rewards. However, this throws away the fine-grained information about the environment that the agent experienced during the trial (e.g., error logs). To utilize this rich information, recent works wrap the agent in a harness that refines its own inputs through reflection or compaction and hands past experience to future rollouts, but the construction of the handed-off artifacts (e.g., a playbook) is itself not learned. We want the best of both worlds: gradient updates from a scalar reward, while also utilizing environment information to hand off experience. As a concrete testbed, we fix the Agentic Context Engineering () harness and train one model to act, reflect, and curate task-local playbooks. Our method, , evaluates candidate experience-handoff artifacts by their downstream effect on future actor rollouts, and co-optimizes the role-specific behaviors (action generator, insight reflector, and playbook curator) under a fixed scaffold. Across agentic benchmarks,  achieves higher held-out performance than baseline methods. The results suggest that agent training should optimize not only the actions in the current rollout, but also the model-written experience that future rollouts inherit.",
+    "authors": [
+      "Doyoung Kim",
+      "Byeongguk Jeon",
+      "Kailin Zhang",
+      "Sherry Yang"
     ],
     "published_at": "2026-11-12T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
@@ -242,6 +291,37 @@
     "published_at": "2026-11-11T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
   },
+  "2611.15094": {
+    "id": "2611.15094",
+    "title": "A frontier machine intelligence for human neuroimaging",
+    "summary": "Medical imaging is essential for diagnosing disease, guiding treatment and monitoring patients over time. Although artificial intelligence has advanced image interpretation, existing medical models often address restricted tasks, while general-purpose proprietary models lack access to private clinical imaging required to achieve medical expertise. Developing models that can interpret complex examinations and communicate their findings in the context of clinical decisions remains a major challenge. Here, we show that Neuro-VL, a vision-language model trained on nearly one million neuroimaging studies from routine clinical care, can interpret complete imaging examinations and engage in natural language conversations about their findings. Across internal and international datasets, Neuro-VL outperformed frontier general-purpose and specialized medical models in diagnosing, localizing, and describing abnormalities, as well as generating comprehensive radiology reports. The model also compared serial examinations to assess disease progression and more reliably resisted misleading clinical assumptions than leading frontier models from OpenAI and Google. These results extend health system learning beyond individual predictions to interactive image interpretation and longitudinal disease monitoring. They demonstrate how the collective clinical experience of health systems can be used to develop medical AI with specialized expertise and broad clinical capabilities.",
+    "authors": [
+      "Chenhui Zhao",
+      "Akshay Rao",
+      "Akhil Kondepudi",
+      "Yiwei Lyu",
+      "Xinhai Hou",
+      "Rikhil Seshadri",
+      "Cheng Jiang",
+      "Soumyanil Banerjee",
+      "Rushikesh Joshi",
+      "Samir Harake",
+      "Ashok Srinivasan",
+      "Shruti Mishra",
+      "Francisco Rivas-Rodriguez",
+      "Seunghong Rhee",
+      "Nathaniel Roddenberry",
+      "Neeraj Chaudhary",
+      "Zach Wilseck",
+      "Paul Park",
+      "Honglak Lee",
+      "Vikas Gulani",
+      "Aditya Pandey",
+      "Todd Hollon"
+    ],
+    "published_at": "2026-11-11T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
   "2611.14815": {
     "id": "2611.14815",
     "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
@@ -299,6 +379,19 @@
     "published_at": "2026-11-09T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
   },
+  "2611.12750": {
+    "id": "2611.12750",
+    "title": "The Narrative Gap: Can LLMs Help Us Navigate Diverse Narratives Across Languages?",
+    "summary": "Large language models (LLMs) increasingly mediate how people seek and consume information, including accounts that differ across languages and regions, especially on contested topics. Supporting diverse information seeking requires models to help users navigate competing narratives across languages and information streams. We define six capabilities necessary for diverse multilingual information seeking: three foundational capabilities for narrative inclusion, narrative exclusion, and missing narrative identification; and three higher-level capabilities for presenting diverse narratives, preserving narrative coverage under confirmatory queries, and maintaining information parity across languages. To guide the development of those information seeking capabilities, we introduce NarrativeBench, a benchmark comprising 1,333 news articles in 23 publication languages across 23 contested topics and 460 Reddit-grounded queries. Evaluating 14 LLMs across 24 query languages, we find that current models lack the capabilities needed to reliably navigate diverse narratives, limiting users' control over the perspectives they receive and leaving substantial gaps in exposure to competing accounts even when diversity is explicitly requested. Information access also differs across query framings and languages, risking echo chambers, linguistic filter bubbles, and information disparities that weaken the common ground needed for democratic discourse. NarrativeBench provides a foundation for developing information systems that give users across languages and regions agency to navigate diverse narratives.",
+    "authors": [
+      "Nikhil Sharma",
+      "Kelly Marchisio",
+      "Kenton Murray",
+      "Ziang Xiao"
+    ],
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
   "2611.13004": {
     "id": "2611.13004",
     "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
@@ -317,6 +410,19 @@
       "Daquan Zhou"
     ],
     "published_at": "2026-11-08T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
+  "2611.09567": {
+    "id": "2611.09567",
+    "title": "TurtLES: A Large-Scale Benchmark for Turbulent 3D Neural PDE Surrogates",
+    "summary": "Machine-learning surrogates are increasingly used to accelerate computational fluid dynamics, yet progress is limited by the lack of benchmarks capturing realistic, time-dependent turbulent flows. We introduce TurtLES, a 14 TB dataset of 3D turbulent cylinder wakes in the shear-layer transition regime, computed via high-fidelity implicit large-eddy simulations. The dataset contains 400 trajectories of 400 time steps each, with 3-11 million points per frame, spanning variations in geometry, Reynolds number, and angle of attack. Unlike existing datasets, TurtLES combines (i) physically realistic turbulence with an active energy cascade driven by vortex stretching, (ii) dense irregular meshes, and (iii) long-horizon temporal dynamics. We benchmark state-of-the-art neural operators on autoregressive rollouts and identify key failure modes, including temporal instability, loss of small-scale energy, and challenges in learning on large irregular domains. TurtLES provides a new benchmark for evaluating surrogate models on 3D turbulent wakes at industrially relevant mesh resolution.",
+    "authors": [
+      "Jarno Platenburg",
+      "Armand Kassaï Koupaï",
+      "Paola Cinnella",
+      "Patrick Gallinari"
+    ],
+    "published_at": "2026-11-06T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
   },
   "2611.08318": {
