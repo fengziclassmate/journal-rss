@@ -129,6 +129,19 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>Probing Transformer Representations Layer by Layer, Module by Module</title>
+      <link>https://huggingface.co/papers/2611.11531</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.11531</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Ambroise Odonnat</dc:creator>
+      <dc:creator>Theo Gnassounou</dc:creator>
+      <dc:creator>Laetitia Chapel</dc:creator>
+      <dc:creator>Romain Tavenard</dc:creator>
+      <dc:creator>Ievgen Redko</dc:creator>
+      <description>&lt;p&gt;Which representation should be probed in a transformer-based foundation model? Recent work shows that the standard practice of probing the final layer is often suboptimal, as intermediate layers can provide better features. Yet, representations are still largely studied along depth alone, treating each transformer block as an atomic unit. In this work, we analyze transformer representations layer by layer, module by module. Through more than 144,000 linear probing evaluations of vision foundation models (VFMs) and large language models (LLMs), we show that layer and module choices should be considered jointly: the best layer-module pair yields substantially larger gains over the final-layer residual stream than the best layer with the residual stream fixed. Moreover, module performance can vary substantially across layers, showing that useful representations cannot be characterized by depth alone. Building on these findings, we evaluate simple fixed probing strategies: the final-layer feedforward activation (Act@100) for vision and the second normalization layer at 60% depth (LN2@60) for language. These strategies improve over the probing baseline in a majority of evaluations and recover, on average, 42% and 86% of the gains from probing the best layer-module pair for vision and language, respectively. For VFMs, these gains increase with the transfer difficulty between pretraining and downstream data.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.11531"&gt;arXiv:2611.11531&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.11531"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Read Less, Solve More: Token-Efficient Sparse Reading of External Content for AI Agents</title>
       <link>https://huggingface.co/papers/2608.22237</link>
       <guid isPermaLink="false">hf-papers:arxiv:2608.22237</guid>
@@ -188,6 +201,17 @@
       <dc:creator>Ran Xu</dc:creator>
       <dc:creator>Honglu Zhou</dc:creator>
       <description>&lt;p&gt;Visual interaction models that support users during ongoing physical tasks require evaluation in closed loop, where assistant responses can change subsequent user behavior and task outcomes. Existing benchmarks largely rely on offline replay and therefore cannot capture these effects. We introduce Interactive Visual Gym, a framework for closed-loop evaluation and training of visual interaction models through joint simulation of executable task environments and human users. We contribute three simulators that recreate everyday tasks and human-aligned action spaces across cooking, household manipulation, and mobile-interface domains, together with a persona-conditioned user simulation harness that collaborates with the assistant while incorporating controlled execution errors and other out-of-plan behaviors. We instantiate the framework as IVG-Bench, a benchmark with 315 interaction scenarios. Evaluating state-of-the-art VLMs as visual interaction models reveals substantial limitations: the best-performing model, Gemini 4 Argon, completes only 53.4% of tasks within the time limit, exhibits significant weaknesses in factual grounding and actionable guidance, and is often too slow to prevent errors when response latency is considered. We verify our evaluation protocol with a human study which finds 78.5% agreement between our interaction-quality metric and participant preferences. We further show that the environments provide useful learning signals: in a proof-of-concept GRPO experiment, closed-loop training improves both task success and interaction quality for Qwen3.5-4B model in our cooking environment.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.08286"&gt;arXiv:2611.08286&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.08286"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Subliminal Learning in Vision-Language Models</title>
+      <link>https://huggingface.co/papers/2611.08538</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.08538</guid>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Arman Hatami</dc:creator>
+      <dc:creator>Romina Aalishah</dc:creator>
+      <dc:creator>Ilya E. Monosov</dc:creator>
+      <description>&lt;p&gt;Subliminal learning is a phenomenon in large language models (LLMs) where a teacher passes a hidden preference to a student through training data unrelated to that preference. We study whether subliminal learning also occurs in vision-language models (VLMs). We finetune a teacher VLM to prefer a specific animal or facial attribute and use a control teacher from the same base model. Both teachers generate numbers for an unrelated visual task involving geometric shapes. Two students initialized from the same base VLM are finetuned on the same images, using numbers generated by either the biased or control teacher. Across VLMs ranging from 2B to 7B parameters, we find that both animal and facial preferences can transfer through this unrelated task. Students trained on biased-teacher outputs select the target more often than control students, with a difference of up to sim10 percentage points in the animal preference task. Transfer can become stronger with more training data and varies with the target preference, model, and how the numbers are generated. Beyond preferences, we show that the biased student&amp;#x27;s explanations use more of the same words and phrases as the biased teacher&amp;#x27;s explanations than those of the control student, even when all three models select the same image. These results matter for training VLMs and show that training on unrelated data may change both a VLM&amp;#x27;s image preferences and how it explains its choices, and that transfer can become stronger with more training samples.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.08538"&gt;arXiv:2611.08538&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.08538"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
