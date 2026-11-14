@@ -1,4 +1,25 @@
 {
+  "2611.17336": {
+    "id": "2611.17336",
+    "title": "Back to Pixels: Lifting Latent Video Diffusion into Pixel Space",
+    "summary": "Frontier video generation models work in a VAE latent space that compresses video in both space and time. This compression made training tractable, but now limits high-resolution, controllable, and interactive generation -- doubling resolution quadruples token count, conditions apply to groups of frames rather than individual ones, and each response must wait for the rest of its multi-frame block. We present PixVid, a simple yet effective method that lifts a pretrained latent video model to directly generate every frame in pixel space. PixVid keeps the diffusion transformer and replaces the VAE decoder with a convolutional head that renders its outputs into pixels. We find that predicting clean video rather than velocity, together with a larger noise shift, is key to quality. Finetuned from Wan2.1-14B, PixVid is competitive with the latent baseline within sim 1.3M training clips. Working framewise in pixels, it generates at 2times higher resolution with the same per-frame token count, keeps depth-conditioned video editing aligned under fast motion, and responds to each action at the next frame. Project page: https://chenshuo20.github.io/PixVid/",
+    "authors": [
+      "Yanke Song",
+      "Shuo Chen",
+      "Chris Rockwell",
+      "Guande He",
+      "Nan Liu",
+      "Desai Xie",
+      "Tianpei Gu",
+      "Yong-Hyun Park",
+      "Aryan V S",
+      "Dennis Yuren Menn",
+      "Ming-Hsuan Yang",
+      "Xun Huang"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
   "2611.17334": {
     "id": "2611.17334",
     "title": "Unbundling Multimodal Vision Encoding",
@@ -34,6 +55,17 @@
       "Wei-Chen Chiu",
       "Yu-Lun Liu",
       "Cheng Sun"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
+  "2611.17190": {
+    "id": "2611.17190",
+    "title": "Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes",
+    "summary": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag. A two-part benchmark measures it and the object masking meant to prevent it. A static protocol scores ten pipelines under exactly known homographies on 4K aerial frames, tuned on a site-disjoint split at a matched resolution and feature budget. A dynamic protocol scores them at an offline and a real-time budget on hovers selected from the video alone to span the amount and coherence of moving foreground, plus a stationary control. It measures background alignment, object position error and the share of a moving group's displacement an estimate follows, against a pseudo-ground-truth reference audited with manually annotated ground control points, which also score every candidate. On static scenes, tuned AKAZE, RootSIFT, SIFT and BRISK lead, retuning the matcher thresholds raises the mean average accuracy (mAA) by at most 0.0062, and masking costs less than 0.005. Unmasked ORB is captured on 28 of 304 real-time dynamic pairs and on 6 offline; its real-time captured estimates have a median corner error of 18.8 px yet typical inlier counts and ratios. Masking removes capture for every pipeline and leaves the leading pipelines unchanged. Code, data and results are released.",
+    "authors": [
+      "Robert Fonod",
+      "Nikolas Geroliminis"
     ],
     "published_at": "2026-11-12T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
@@ -134,6 +166,37 @@
       "Yan Zeng",
       "Jianwei Zhang",
       "Daquan Zhou"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
+  "2611.16728": {
+    "id": "2611.16728",
+    "title": "EgoX: Egocentric Cross-Embodiment Manipulation with Embodiment Dreaming",
+    "summary": "Generalist manipulation policies can benefit from the complementary experience of humans, real robots, and simulated agents. However, differences in morphology, sensing, and control interfaces make it difficult to learn effectively from their combined demonstrations. We introduce EgoX, an egocentric cross-embodiment learning framework that organizes heterogeneous demonstrations through semantically corresponding observation and action modalities. EgoX pretrains a Modularized Cross-Embodiment Transformer with Embodiment Dreaming (MXT+) on this mixture and fine-tunes it on target-embodiment demonstrations. Within each embodiment, MXT+ assigns a dedicated tokenizer to each observation modality and a dedicated expert to each action modality, with a Transformer trunk shared across embodiments. A training-only embodiment-dreaming objective predicts latent representations of future visual and proprioceptive states, encouraging the shared trunk to model each embodiment's dynamics. Across 13 task-embodiment pairs spanning five tasks and six robot embodiments, including five physical robots and one simulated humanoid, cross-embodiment pretraining raises MXT+'s average normalized task progress from 0.63 to 0.80 over training from scratch. The gains are particularly pronounced under out-of-distribution conditions, where average task progress increases from 0.53 to 0.77. Ablations demonstrate the benefits of broader pretraining mixtures, modular interfaces, and embodiment dreaming, with dreaming producing more similar latent geometry across embodiments. Project page: egox-dream.github.io.",
+    "authors": [
+      "Yaru Niu",
+      "Binghong Chen",
+      "Changwei Yao",
+      "Shangtao Li",
+      "Zhenlong Fang",
+      "Revanth Krishna Senthilkumaran",
+      "Shuai Zhou",
+      "Yuemin Mao",
+      "Kalie Ching",
+      "Po-Ju Chao",
+      "Yudong Luo",
+      "Peiqi Yu",
+      "Heng Zhang",
+      "Hao Zhang",
+      "Bingqing Chen",
+      "Chen Qiu",
+      "H. Eric Tseng",
+      "Ye Yuan",
+      "Umar Iqbal",
+      "Changliu Liu",
+      "Jonathan Francis",
+      "Ding Zhao"
     ],
     "published_at": "2026-11-12T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
@@ -410,6 +473,20 @@
       "Daquan Zhou"
     ],
     "published_at": "2026-11-08T00:00:00+00:00",
+    "submitted_at": "2026-11-13T00:00:00+00:00"
+  },
+  "2611.10439": {
+    "id": "2611.10439",
+    "title": "Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction",
+    "summary": "Self-evolving agents improve their own skills, memory, and harness code from experience without retraining the base LLM, and group-evolving agents go further by sharing these lessons across agents. Yet most such systems overlook that sharing across users and heterogeneous agents requires deciding who can benefit from each lesson and what information must remain private. We present MixUA, a memory system that distills independent user-agent trajectories into lessons and assigns each lesson to a user-agent pair, user, agent, or global scope according to whom it benefits and what it may disclose. For evaluation, we introduce CrossLearnBench, a mixed-user-agent benchmark that pairs established agent tasks with user preferences and privacy probes that test whether private facts leak into memory other users can read. With five users and seven agents, MixUA raises pass rates by up to 16 points over no memory and 5 over a single global memory, even on tasks previously tried only by other users on other agents. It retains up to 90% of previously stated preferences, and at most 0.02% of privacy probes find a planted private fact in a forbidden scope. We hope MixUA offers a scalable path toward a global system where users and agents co-evolve.",
+    "authors": [
+      "Yunzhe Wang",
+      "Mesut Erhan Unal",
+      "Sheng Zhang",
+      "Shabnam Ghadar",
+      "Peng Tang"
+    ],
+    "published_at": "2026-11-07T00:00:00+00:00",
     "submitted_at": "2026-11-13T00:00:00+00:00"
   },
   "2611.09567": {

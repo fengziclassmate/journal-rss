@@ -6,6 +6,26 @@
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
     <item>
+      <title>Back to Pixels: Lifting Latent Video Diffusion into Pixel Space</title>
+      <link>https://huggingface.co/papers/2611.17336</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.17336</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yanke Song</dc:creator>
+      <dc:creator>Shuo Chen</dc:creator>
+      <dc:creator>Chris Rockwell</dc:creator>
+      <dc:creator>Guande He</dc:creator>
+      <dc:creator>Nan Liu</dc:creator>
+      <dc:creator>Desai Xie</dc:creator>
+      <dc:creator>Tianpei Gu</dc:creator>
+      <dc:creator>Yong-Hyun Park</dc:creator>
+      <dc:creator>Aryan V S</dc:creator>
+      <dc:creator>Dennis Yuren Menn</dc:creator>
+      <dc:creator>Ming-Hsuan Yang</dc:creator>
+      <dc:creator>Xun Huang</dc:creator>
+      <description>&lt;p&gt;Frontier video generation models work in a VAE latent space that compresses video in both space and time. This compression made training tractable, but now limits high-resolution, controllable, and interactive generation -- doubling resolution quadruples token count, conditions apply to groups of frames rather than individual ones, and each response must wait for the rest of its multi-frame block. We present PixVid, a simple yet effective method that lifts a pretrained latent video model to directly generate every frame in pixel space. PixVid keeps the diffusion transformer and replaces the VAE decoder with a convolutional head that renders its outputs into pixels. We find that predicting clean video rather than velocity, together with a larger noise shift, is key to quality. Finetuned from Wan2.1-14B, PixVid is competitive with the latent baseline within sim 1.3M training clips. Working framewise in pixels, it generates at 2times higher resolution with the same per-frame token count, keeps depth-conditioned video editing aligned under fast motion, and responds to each action at the next frame. Project page: https://chenshuo20.github.io/PixVid/&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17336"&gt;arXiv:2611.17336&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17336"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Unbundling Multimodal Vision Encoding</title>
       <link>https://huggingface.co/papers/2611.17334</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.17334</guid>
@@ -40,6 +60,16 @@
       <dc:creator>Yu-Lun Liu</dc:creator>
       <dc:creator>Cheng Sun</dc:creator>
       <description>&lt;p&gt;Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding. The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality. The second key addresses a modality misalignment between context prefilling and novel-view rendering: we disentangle context tokens into camera-only context rendering tokens to serve as TTB input, and context ground-truth tokens with image content to serve as the TTB mapping target, ensuring the baked MLPs are relieved of the modality generalization challenge between context and novel-view processing. Our method achieves up to **23x** rendering speedup with quality on par with the state-of-the-art across several benchmarks. Project page: https://test-time-baking.github.io&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17331"&gt;arXiv:2611.17331&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17331"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes</title>
+      <link>https://huggingface.co/papers/2611.17190</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.17190</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Robert Fonod</dc:creator>
+      <dc:creator>Nikolas Geroliminis</dc:creator>
+      <description>&lt;p&gt;Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag. A two-part benchmark measures it and the object masking meant to prevent it. A static protocol scores ten pipelines under exactly known homographies on 4K aerial frames, tuned on a site-disjoint split at a matched resolution and feature budget. A dynamic protocol scores them at an offline and a real-time budget on hovers selected from the video alone to span the amount and coherence of moving foreground, plus a stationary control. It measures background alignment, object position error and the share of a moving group&amp;#x27;s displacement an estimate follows, against a pseudo-ground-truth reference audited with manually annotated ground control points, which also score every candidate. On static scenes, tuned AKAZE, RootSIFT, SIFT and BRISK lead, retuning the matcher thresholds raises the mean average accuracy (mAA) by at most 0.0062, and masking costs less than 0.005. Unmasked ORB is captured on 28 of 304 real-time dynamic pairs and on 6 offline; its real-time captured estimates have a median corner error of 18.8 px yet typical inlier counts and ratios. Masking removes capture for every pipeline and leaves the leading pipelines unchanged. Code, data and results are released.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17190"&gt;arXiv:2611.17190&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17190"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -135,6 +165,36 @@
       <dc:creator>Jianwei Zhang</dc:creator>
       <dc:creator>Daquan Zhou</dc:creator>
       <description>&lt;p&gt;Video generation models produce visually realistic videos but still struggle with physical dynamics and causal consistency. Learning from generated videos requires fine-grained physical supervision, yet reliable quality judgments, correction pairs, and controlled variations are difficult to obtain. Large language models (LLMs) possess physical knowledge, but struggle to reliably guide video generation models in producing their training videos. We present PhysLoop, a unified harness designed to support physically grounded self-improvement in video generation models. The harness guides and constrains LLMs throughout video generation, selection, and correction, distilling their physical knowledge into physically consistent videos. The framework supports controllable training-data construction and inference-time video repair. By identifying and correcting failures, PhysLoop marks a key milestone toward recursive self-improvement (RSI) in video generation models with limited human intervention. We release 100K videos spanning diverse, realistic indoor and outdoor scenes, along with generation tools and two evaluation datasets: PhysLoop-Gen and PhysLoop-Repair. We evaluate controllable generation and localized repair on these datasets, respectively, and assess physical behavior on the external Physics-IQ Verified benchmark.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.16748"&gt;arXiv:2611.16748&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.16748"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>EgoX: Egocentric Cross-Embodiment Manipulation with Embodiment Dreaming</title>
+      <link>https://huggingface.co/papers/2611.16728</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.16728</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yaru Niu</dc:creator>
+      <dc:creator>Binghong Chen</dc:creator>
+      <dc:creator>Changwei Yao</dc:creator>
+      <dc:creator>Shangtao Li</dc:creator>
+      <dc:creator>Zhenlong Fang</dc:creator>
+      <dc:creator>Revanth Krishna Senthilkumaran</dc:creator>
+      <dc:creator>Shuai Zhou</dc:creator>
+      <dc:creator>Yuemin Mao</dc:creator>
+      <dc:creator>Kalie Ching</dc:creator>
+      <dc:creator>Po-Ju Chao</dc:creator>
+      <dc:creator>Yudong Luo</dc:creator>
+      <dc:creator>Peiqi Yu</dc:creator>
+      <dc:creator>Heng Zhang</dc:creator>
+      <dc:creator>Hao Zhang</dc:creator>
+      <dc:creator>Bingqing Chen</dc:creator>
+      <dc:creator>Chen Qiu</dc:creator>
+      <dc:creator>H. Eric Tseng</dc:creator>
+      <dc:creator>Ye Yuan</dc:creator>
+      <dc:creator>Umar Iqbal</dc:creator>
+      <dc:creator>Changliu Liu</dc:creator>
+      <dc:creator>Jonathan Francis</dc:creator>
+      <dc:creator>Ding Zhao</dc:creator>
+      <description>&lt;p&gt;Generalist manipulation policies can benefit from the complementary experience of humans, real robots, and simulated agents. However, differences in morphology, sensing, and control interfaces make it difficult to learn effectively from their combined demonstrations. We introduce EgoX, an egocentric cross-embodiment learning framework that organizes heterogeneous demonstrations through semantically corresponding observation and action modalities. EgoX pretrains a Modularized Cross-Embodiment Transformer with Embodiment Dreaming (MXT+) on this mixture and fine-tunes it on target-embodiment demonstrations. Within each embodiment, MXT+ assigns a dedicated tokenizer to each observation modality and a dedicated expert to each action modality, with a Transformer trunk shared across embodiments. A training-only embodiment-dreaming objective predicts latent representations of future visual and proprioceptive states, encouraging the shared trunk to model each embodiment&amp;#x27;s dynamics. Across 13 task-embodiment pairs spanning five tasks and six robot embodiments, including five physical robots and one simulated humanoid, cross-embodiment pretraining raises MXT+&amp;#x27;s average normalized task progress from 0.63 to 0.80 over training from scratch. The gains are particularly pronounced under out-of-distribution conditions, where average task progress increases from 0.53 to 0.77. Ablations demonstrate the benefits of broader pretraining mixtures, modular interfaces, and embodiment dreaming, with dreaming producing more similar latent geometry across embodiments. Project page: egox-dream.github.io.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.16728"&gt;arXiv:2611.16728&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.16728"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -393,6 +453,19 @@
       <dc:creator>Duomin Wang</dc:creator>
       <dc:creator>Daquan Zhou</dc:creator>
       <description>&lt;p&gt;Discrete autoregressive models offer a scalable framework for image generation. However, they face a fundamental trade-off: long token sequences preserve representation quality but slow generation, while aggressive spatial compression reduces representation capacity. Based on product quantization, we show that, under a fixed nominal information budget, group size should scale quadratically with the per-axis spatial compression factor. Building on this principle, we propose GSTAR, a spatial--group co-scaling framework that enables \(32\times\) and even effective \(64\times\) compression while preserving strong reconstruction, understanding, and generation performance. Since larger groups introduce intra-group dependencies that must be modeled efficiently, we analyze their impact on inference latency and generation quality and introduce a semi-autoregressive decoder that combines parallel feature computation with lightweight causal modeling. With these designs, our highly compressed models perform competitively with leading models across five representative text-to-image benchmarks (GenEval, DPG-Bench, PRISM, LongText-Bench, and Qwen-Image-Bench). At \(1024\times1024\) resolution, our model delivers a \(20\times\) speedup over prior discrete autoregressive models, generating each image in 2.5 seconds on a single NVIDIA H200. Together, these results show that highly compressed discrete representations can enable high-quality autoregressive generation at low latency.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.13004"&gt;arXiv:2611.13004&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.13004"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction</title>
+      <link>https://huggingface.co/papers/2611.10439</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.10439</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yunzhe Wang</dc:creator>
+      <dc:creator>Mesut Erhan Unal</dc:creator>
+      <dc:creator>Sheng Zhang</dc:creator>
+      <dc:creator>Shabnam Ghadar</dc:creator>
+      <dc:creator>Peng Tang</dc:creator>
+      <description>&lt;p&gt;Self-evolving agents improve their own skills, memory, and harness code from experience without retraining the base LLM, and group-evolving agents go further by sharing these lessons across agents. Yet most such systems overlook that sharing across users and heterogeneous agents requires deciding who can benefit from each lesson and what information must remain private. We present MixUA, a memory system that distills independent user-agent trajectories into lessons and assigns each lesson to a user-agent pair, user, agent, or global scope according to whom it benefits and what it may disclose. For evaluation, we introduce CrossLearnBench, a mixed-user-agent benchmark that pairs established agent tasks with user preferences and privacy probes that test whether private facts leak into memory other users can read. With five users and seven agents, MixUA raises pass rates by up to 16 points over no memory and 5 over a single global memory, even on tasks previously tried only by other users on other agents. It retains up to 90% of previously stated preferences, and at most 0.02% of privacy probes find a planted private fact in a forbidden scope. We hope MixUA offers a scalable path toward a global system where users and agents co-evolve.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.10439"&gt;arXiv:2611.10439&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.10439"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
