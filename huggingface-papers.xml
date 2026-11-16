@@ -6,6 +6,21 @@
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
     <item>
+      <title>Restoring Diversity in Distilled Image and Video Generators by Probing Activations</title>
+      <link>https://huggingface.co/papers/2611.18550</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.18550</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Furkan Horoz</dc:creator>
+      <dc:creator>Ozgur Kara</dc:creator>
+      <dc:creator>Kaan Oktay</dc:creator>
+      <dc:creator>Adil Kaan Akan</dc:creator>
+      <dc:creator>Atakan Kara</dc:creator>
+      <dc:creator>Anand Bhattad</dc:creator>
+      <dc:creator>James Matthew Rehg</dc:creator>
+      <description>&lt;p&gt;Distilling diffusion models into few-step student models substantially reduces sampling latency, but induces severe diversity collapse: samples generated from different random seeds show minimal variation. In this work, we investigate the root cause of this failure by probing the internal representations of student models relative to their teachers. We find that distilled students maintain total activation variance comparable to their teachers, but concentrate it into substantially fewer directions. This directional collapse is localized to an identifiable intermediate block at the initial denoising step. Consequently, diversity collapse stems from a misallocation of activation variance rather than an inherent loss of generative capacity. Guided by this finding, we propose ReDiverse to reinstate the missing variance directions. At training time, ReDiverse-FT fine-tunes a lightweight adapter that regresses student activations onto the teacher&amp;#x27;s, reviving the teacher&amp;#x27;s feature variance characteristic. At inference time, ReDiverse-TF introduces a training-free mechanism that steers activations along precomputed teacher principal directions. Across image and video distillation benchmarks, ReDiverse consistently restores sample diversity while preserving generation quality, further supported by the user study.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.18550"&gt;arXiv:2611.18550&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.18550"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>JVT: Just Video Transformer makes pixel-space video diffusion simple</title>
       <link>https://huggingface.co/papers/2611.18549</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.18549</guid>
@@ -243,6 +258,18 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent</title>
+      <link>https://huggingface.co/papers/2611.17780</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.17780</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Ibrahim Memon</dc:creator>
+      <dc:creator>Armin Karamzade</dc:creator>
+      <dc:creator>M. Hanif Jhaveri</dc:creator>
+      <dc:creator>Roy Fox</dc:creator>
+      <description>&lt;p&gt;Frontier LLM agents that query databases with tools are among the most accurate text-to-SQL systems, but per-query calls to a hosted model are slow, costly, and expose sensitive organizational queries to external APIs. For example, a Claude Opus 5.5 agent serving 10,000 queries a day costs over $70,000 a year at list price. To what extent can local hardware already owned by an organization offload this burden without compromising the agent&amp;#x27;s accuracy? We present LuthorSQL, a non-autoregressive 7B text-to-SQL model that serves as a rapid System 1 gate for a slower LLM agent (System 2), escalating queries only when uncertain. LuthorSQL makes a single forward pass to predict slot scores over a bounded grammar for query plans, compiles and runs up to 32 candidate plans, and chooses an answer using a trained validator. On its own, LuthorSQL reaches 68.03% execution accuracy on BIRD&amp;#x27;s hidden test set at 0.84 s per question on a single GPU, maintains its accuracy in 9 GB with 8-bit quantized weights, and transfers zero-shot to Snowflake, BigQuery, MySQL, PostgreSQL, and DuckDB within 3.1 points of its native SQLite accuracy. Combined with Claude Opus 5.5 in a pre-registered confidence cascade over 227 questions on databases published after Opus&amp;#x27;s training cutoff, LuthorSQL answers nearly half of all questions locally and cuts API cost by 33.3% at the same accuracy. Finally, contamination probing shows that Opus reproduces 48-92% of public benchmark gold queries verbatim without seeing the schema; however, its tool-assisted accuracy holds on renamed schemas and reaches 95.6-97.4% on post-cutoff databases. Code and data: https://github.com/IAMIbrahimmemon/luthorsql&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17780"&gt;arXiv:2611.17780&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17780"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>OneSteer: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control</title>
       <link>https://huggingface.co/papers/2610.41354</link>
       <guid isPermaLink="false">hf-papers:arxiv:2610.41354</guid>
@@ -274,6 +301,16 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>BrickFlow: Connectivity-Guided Brick Reconstruction</title>
+      <link>https://huggingface.co/papers/2611.17321</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.17321</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Peter Kulits</dc:creator>
+      <dc:creator>Cordelia Schmid</dc:creator>
+      <description>&lt;p&gt;Given a set of LEGO parts and an image of an assembled object, our task is to infer the pose of each part to assemble the object. In contrast with traditional 3D reconstruction, doing so requires satisfying discrete physical constraints, which provide structure but render the problem combinatorial and highly sensitive to small pose errors. To learn a prior over how parts fit together, we train a set-conditioned SE(3) flow model on procedurally generated assemblies. We then finetune this model to inject image conditioning, using 1% as much data. However, while the learned flow captures global structure, it does not enforce connectivity. To address this, we introduce an analytic connectivity-field guidance to pull predictions toward connected assemblies at test time. Through this, we demonstrate improved build quality with model size, pretraining, and guidance. We make our models and data available for research purposes at https://kulits.github.io/BrickFlow/&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17321"&gt;arXiv:2611.17321&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17321"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>eDMD: Endpoint Distribution Matching for Few-Step Diffusion Distillation</title>
       <link>https://huggingface.co/papers/2611.17194</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.17194</guid>
@@ -286,6 +323,29 @@
       <dc:creator>Gang Yu</dc:creator>
       <dc:creator>Chi Zhang</dc:creator>
       <description>&lt;p&gt;Distribution matching distillation (DMD) has emerged as a leading paradigm for distilling diffusion models into few-step students, where an auxiliary fake score model tracks the student&amp;#x27;s distribution and the discrepancy between the teacher and fake predictions drives the student toward the teacher. In multi-step distillation, although only the student&amp;#x27;s final output is delivered, existing methods train the fake model on intermediate states or across all denoising steps. Consequently, the student&amp;#x27;s update signal becomes entangled with intermediate distributions, which can distort the matching direction and remain nonzero even after the student&amp;#x27;s final outputs already match the teacher distribution. To resolve this mismatch, we propose Endpoint Distribution Matching Distillation (eDMD), which trains a single shared fake model exclusively on the student&amp;#x27;s final outputs and uses it to correct every denoising step. Our theoretical analysis proves that this endpoint reference guarantees that the distribution matching term vanishes if and only if the student&amp;#x27;s final output distribution matches the teacher&amp;#x27;s, regardless of intermediate distributions. Beyond the fake reference, we further strengthen teacher supervision through a precise teacher (PT) that replaces single-step guided predictions with short multi-step trajectories on the final noise interval, paired with a calibrated query density for intermediate steps. Experiments on SD3-Medium, FLUX.2-klein (4B and 9B), and Qwen-Image-2.1 demonstrate that eDMD consistently outperforms existing distribution matching methods for 4-step generation.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17194"&gt;arXiv:2611.17194&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17194"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing</title>
+      <link>https://huggingface.co/papers/2611.17169</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.17169</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Umar Ahmed</dc:creator>
+      <dc:creator>Maxim Dunaev</dc:creator>
+      <dc:creator>Mohammad Nour Al Awad</dc:creator>
+      <dc:creator>Sergey Ivanov</dc:creator>
+      <dc:creator>Ivan Khodnenko</dc:creator>
+      <description>&lt;p&gt;A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell. We ask whether the output format, a free design choice, controls how often this happens. On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3.5-0.8B and LFM2.5-350M) with LoRA on six lossless encodings of the same target tree, from 44.3 down to 10.9 tokens per order, including two matched-length pairs that vary surface form at fixed length. Across 300 runs (5 training pool sizes, 5 seeds) with a hierarchical bootstrap and Holm correction fixed before the results were read, shortening alone never helps, but writing the target in ordinary words does. The word encoding is the most accurate format on both models (87.5% vs. 85.8% exact match for the native s-expression on Qwen) while emitting 4.1x fewer tokens, and it cuts the silent error rate by 2.3x on Qwen and 1.8x on LFM2, separating at every pool size. Error analysis locates much of the gain in negation. All runs also learn to refuse off-menu input (held out: 95.9-99.0% handled) and to apply in-utterance self-corrections. Strict refusal has a measured price: 2.1-10.1% of real, mostly polite, orders are refused.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17169"&gt;arXiv:2611.17169&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17169"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>EvenVLM: A Text and Multimodal Dataset for the Even Language with Vision-Language Fine-Tuning</title>
+      <link>https://huggingface.co/papers/2611.16500</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.16500</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Daniil Makovetskii</dc:creator>
+      <dc:creator>Ivan Bondarenko</dc:creator>
+      <description>&lt;p&gt;We present EvenVLM, the first text and multimodal (VQA) dataset for Even (Lamut), an endangered Northern Tungusic language spoken by approximately 6,800 people in Siberia. Our dataset comprises 50,521 structured Even-Russian entries extracted from dictionary and phrasebook sources via GPT-4o Mini-based parsing, from which we synthetically generate 107,543 training examples spanning translation, grammar, reading comprehension, and semantic classification. To address tokenization inefficiency on Even&amp;#x27;s agglutinative morphology, we propose a three-step tokenizer expansion algorithm that adds Even-specific graphemes (eng, oe, o-umlaut), whitelisted vocabulary, and BPE merges, reducing average tokens per word by 27% (4.99 to 3.64). Using LoRA fine-tuning of Qwen3-VL-4B, we adapt the model for text tasks (0.53% trainable parameters, rank 32) and separately for visual question answering (rank 64, frozen vision encoder). Our best configuration achieves 11.4% exact match and a 13.6 weighted score on text benchmarks, 0.1283 chrF for sentence translation, and 65% accuracy on VQA (up from 0% for the base model and text-only fine-tuning). We release our datasets, evaluation benchmarks, and training pipeline to support further research on Even and other low-resource languages.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.16500"&gt;arXiv:2611.16500&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.16500"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -308,6 +368,26 @@
       <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
       <dc:creator>Subodh Lonkar</dc:creator>
       <description>&lt;p&gt;Autonomous agents modify prompts, memories, tools, workflows, and policies using interaction histories. Yet a plausible modification is not necessarily suitable for persistent adoption: candidate selection is adaptive, evaluators may be imperfect, and local gains can hide degradation against an earlier baseline. We introduce Evidence-Governed Evolution (EGE), a framework for governing adoption of self-generated agent modifications. EGE separates candidate generation from confirmatory adoption, evaluates frozen candidates on fresh paired audits, requires meaningful improvement on a prespecified primary objective, protects declared capabilities through reference-relative non-inferiority tests, and applies governance constraints before bounded canary deployment. We establish an evaluator-calibrated simultaneous lower-bound construction for a countable sequence of adaptively generated candidates. It combines candidate-wise Hoeffding bounds with independent calibration samples comparing the operational evaluator with a prespecified reference procedure. We also formalise reference replacement through bridge tests, derive a cumulative degradation bound along a versioned reference lineage, and provide an audit-planning condition relating effect-size margin, sample sizes, and acceptance probability. A Monte Carlo stress test illustrates calibration under candidate-dependent evaluator optimism; it is a stylised statistical experiment, not an evaluation of a deployed agent. The guarantees are conditional on bounded paired scores, fresh sampling, a valid reference-evaluation construct, and declared evaluation distributions; they do not establish universal agent safety or robustness to arbitrary distribution shift.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.16378"&gt;arXiv:2611.16378&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.16378"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Alloy: A Multi-Material Physics Engine for Robot Learning</title>
+      <link>https://huggingface.co/papers/2611.16312</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.16312</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Pranay Gupta</dc:creator>
+      <dc:creator>Deepanshu Rohilla</dc:creator>
+      <description>&lt;p&gt;Robots handle much more than rigid objects: towels, cables, water, sand. The simulators used to train robots at scale are strongest on rigid bodies, and adding another material usually means a second engine and hand-written glue between the two. We present Alloy, an open-source physics engine for robot learning in which rigid robots, cloth, cables, liquids, granular material and soft bodies share one scene. Each object is described once; Alloy assigns it to a solver suited to its material, couples the solvers inside every control step, and runs the scene in many parallel worlds on one GPU, or on a CPU. Every world carries a health grade, to help tell a failure of the physics from a failure of the policy. Alloy is built on Newton, MuJoCo Warp and Warp, and it is written to be driven by coding agents: its documentation ships inside the package, every error names its fix, and the engine is exposed as tools over the Model Context Protocol. In a cold test, agents that had never seen Alloy installed a pre-release from the package index and trained policies for walking, cable handling and pouring on a single GPU. We also report how throughput grows with the number of worlds, depth-camera throughput, agreement with closed-form references, and a reliability test over a thousand worlds.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.16312"&gt;arXiv:2611.16312&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.16312"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Dual Flow: Joint Image-Measurement Interpolation for Inverse Problems</title>
+      <link>https://huggingface.co/papers/2611.05843</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.05843</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Sevket Ege Yesilyurt</dc:creator>
+      <dc:creator>Figen S. Oktem</dc:creator>
+      <description>&lt;p&gt;Generative model-based approaches to linear inverse problems typically use the acquired noisy measurement to condition or guide sampling in the image domain. In this work, we introduce Dual Flow, a novel joint-flow model for solving linear inverse problems by jointly estimating the clean image and corresponding noise-free measurement from the observation. Specifically, Dual Flow formulates image reconstruction and measurement denoising as a coupled estimation problem, using coupled flows in the image and measurement domains. The acquired noisy measurement is used only to initialize the measurement state; thereafter, image and measurement states are jointly updated based on their current values. By construction, the final image and measurement estimates are guaranteed to satisfy the underlying forward model. We derive the sampling updates for the joint-flow which involves the conditional mean of the clean image given the joint state. We further derive a closed-form expression for a sufficient statistic of the joint state and show that the required conditional mean can be obtained by solving an image-domain Gaussian denoising problem involving operator-dependent, correlated noise. We train a velocity-prediction network using this formulation to estimate the conditional mean from the derived sufficient statistic. Extensive experiments across various linear inverse problems and image datasets demonstrate state-of-the-art performance in both distortion metrics and perceptual quality. Dual Flow requires no hyperparameter tuning beyond the number of inference steps and achieves shorter reconstruction times than competing methods. Additional analyses assess robustness to model mismatch, as well as the ability to generate diverse plausible reconstructions and characterize reconstruction uncertainty.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.05843"&gt;arXiv:2611.05843&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.05843"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -341,6 +421,27 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>MemInStream: Memorizing or Merely Recognizing? Rethinking Streaming Video Memory Evaluation</title>
+      <link>https://huggingface.co/papers/2611.15640</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.15640</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Zhenqi He</dc:creator>
+      <dc:creator>Dunyuan Xu</dc:creator>
+      <dc:creator>Yang Bo</dc:creator>
+      <dc:creator>Kien T. Pham</dc:creator>
+      <dc:creator>Yanghao Wang</dc:creator>
+      <dc:creator>Shuhan Li</dc:creator>
+      <dc:creator>Xintong Guo</dc:creator>
+      <dc:creator>Yuyang He</dc:creator>
+      <dc:creator>Fang Liu</dc:creator>
+      <dc:creator>Huankang Guan</dc:creator>
+      <dc:creator>Jingyan Chen</dc:creator>
+      <dc:creator>Rui Liu</dc:creator>
+      <dc:creator>Long Chen</dc:creator>
+      <description>&lt;p&gt;Streaming video understanding aims to continuously process incoming visual observations, making the retention and retrieval of relevant information increasingly important as the video history grows. Although existing benchmarks include memory-related questions, question-answering accuracy alone does not reliably measure memory capabilities. Incorrect predictions may arise from failures in visual understanding rather than forgetting, whereas correct predictions may rely on linguistic priors or recent observations without requiring historical memory. To address these ambiguities, we introduce MemInStream, a benchmark dedicated to evaluating memory capabilities in streaming video understanding. We develop an evidence-controlled validation protocol that associates each question with temporally localized evidence intervals. The protocol validates evidence solvability and memory necessity by retaining questions that models can answer from the annotated evidence but cannot resolve using recent observations, post-evidence observations, or textual input alone. This helps disentangle memory limitations from understanding failures while reducing memory-independent shortcuts. MemInStream provides a systematic evaluation of memory capabilities through four major categories, covering Episodic Retrieval, State Tracking \&amp;amp; Updating, Multi-Evidence Integration, and Contextual Memory across diverse video scenarios. Overall, MemInStream provides a comprehensive and reliable benchmark for systematically evaluating memory capabilities in streaming video understanding.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.15640"&gt;arXiv:2611.15640&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.15640"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Continual-ARC: Measuring Skill Acquisition over a Working Lifetime</title>
       <link>https://huggingface.co/papers/2611.14505</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.14505</guid>
@@ -358,6 +459,20 @@
       <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
       <dc:creator>Adi Mashiach</dc:creator>
       <description>&lt;p&gt;Foundation models trained on large unlabeled corpora develop emergent capabilities, tasks that go beyond the training objective. We extend this paradigm to multimodal biology with Bonbon, a foundation model for molecular interactions trained on approximately 3.2 trillion tokens of paired protein-ligand sequences. From a single representation space, Bonbon exhibits three zero-shot emergent capabilities at hierarchical levels of resolution: functional (mechanism of action), residue (binding site localization, including orthosteric/allosteric discrimination), and bond (covalent versus non-covalent engagement). All three capabilities generalize to out-of-distribution complexes. Bonbon was trained on protein-ligand sequences alone, without any task-specific supervision and without structural coordinates. We conducted controlled scaling experiments across six model scales from 42M to 1.6B parameters; every capability evaluated shows a sharp jump at the largest scale on continuous metrics, even as pretraining loss decreases smoothly. This demonstrates that loss-based scaling laws alone are insufficient to predict when zero-shot emergent capabilities become available. The capabilities reported here emerge after training at a 1:2,000 parameter-to-token ratio to accommodate the sparsity of paired biological interaction data. The same frozen representations achieve state-of-the-art binding and affinity prediction at five orders of magnitude greater speed than co-folding methods. In prospective wet-lab validation across nine disease targets spanning seven protein families, Bonbon achieves a 61.5% dose-response hit rate on de novo compounds, yielding structurally novel molecules not previously reported to inhibit these proteins, including for out-of-distribution targets.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.14504"&gt;arXiv:2611.14504&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.14504"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game</title>
+      <link>https://huggingface.co/papers/2611.14487</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.14487</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Muhan Gao</dc:creator>
+      <dc:creator>Hangxiao Zhu</dc:creator>
+      <dc:creator>Xinqi Su</dc:creator>
+      <dc:creator>Yu Zhang</dc:creator>
+      <dc:creator>Daniel Khashabi</dc:creator>
+      <dc:creator>Kuan-Hao Huang</dc:creator>
+      <description>&lt;p&gt;Research ideation is iterative: researchers refine their ideas step by step based on feedback. Yet existing evaluations obscure this search process, making it difficult to understand how LLMs explore the space of research ideas and what limits their progress. We introduce Re-Search, which adapts the format of Twenty Questions to research ideation: given only the research problem of a published paper, a model must rediscover the paper&amp;#x27;s core idea by asking yes-or-no questions. Built from 200 ICML 2026 papers, Re-Search tracks how a model&amp;#x27;s idea evolves as it asks questions and receives binary oracle feedback, isolating ideation from execution. Across six recent LLMs, nearly all progress happens within the first 30 of 100 questions, which largely decide how the game ends; after that, most models plateau. Through controlled interventions on the candidate questions and the hypothesis space, we find that the bottleneck is generation, not judgment: models recognize a good idea or a good question when one is offered, but often cannot produce it on their own. We further analyze the ideation traces and find that models fail by either over-exploiting one direction or over-exploring too many. These findings point to concrete design principles for autoresearch systems: since models can judge candidates they cannot produce, enriching the search with externally sourced ideas and questions may be more effective than improving any single model&amp;#x27;s generation ability.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.14487"&gt;arXiv:2611.14487&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.14487"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
