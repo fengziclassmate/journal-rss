@@ -27,9 +27,16 @@ class UnifiedJournalTests(unittest.TestCase):
 
     def test_complete_one_to_one_inventory(self):
         specs = journal_specs()
-        self.assertEqual(len(specs), 73)
-        self.assertEqual(sum(bool(s['official']) for s in specs), 72)
+        self.assertEqual(len(specs), 74)
+        self.assertEqual(sum(bool(s['official']) for s in specs), 73)
         self.assertTrue(all('_FZTX' not in s['name'] for s in specs))
+
+    def test_jstars_combines_independent_collection_and_official_mirror(self):
+        spec = next(s for s in journal_specs() if s['name'] == 'JSTARS')
+        self.assertEqual(spec['custom'], 'jstars.xml')
+        self.assertEqual(spec['official'], 'official-feeds/jstars.xml')
+        self.assertEqual(spec['url'], BASE + 'journal-feeds/jstars.xml')
+        self.assertIn(BASE + 'official-feeds/jstars.xml', spec['old_urls'])
 
     def test_official_metadata_wins_and_aliases_remember_both(self):
         official = self.item('pub', 'https://doi.org/10.1234/a')
