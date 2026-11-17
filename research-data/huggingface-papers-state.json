@@ -354,6 +354,24 @@
     "published_at": "2026-11-12T00:00:00+00:00",
     "submitted_at": "2026-11-16T00:00:00+00:00"
   },
+  "2611.16661": {
+    "id": "2611.16661",
+    "title": "Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination",
+    "summary": "Efficient batch execution of agent tasks is critical to LLM training and development workflows, including benchmark evaluation, synthetic-data generation, and RL rollouts. Since these tasks alternate between LLM inference and environment interaction, we present coordinated optimizations to reduce batch makespan, the time required to complete all tasks in a batch. For hybrid LLMs, a workload-based resource model guides GPU-memory allocation between key-value (KV) cache and recurrent state and provides a reference sample concurrency to exploit parallelism while limiting recomputation. Trajectory-aware routing and scheduling promote cache reuse while balancing worker load. Under constrained environment capacity, we decouple sample admission from environment execution and introduce Chain-Advancing Action Scheduling (CAAS), which prioritizes long chains using observed progress to shorten the batch tail. Controlled replay combines actual inference with recorded environment responses and durations for ablations of individual optimizations. Live evaluations with Ling-3.0-Flash and Ling-3.1-Flash on the BFCL, SWE-bench Multilingual, WideSearch, and MCP-Atlas benchmarks demonstrate makespan reductions of 10.4% to 65.0%, while evaluation scores remain aligned. Furthermore, these methods have been successfully applied to training and evaluation workflows for the Ling-3.x model series, accelerating the model-development cycle.",
+    "authors": [
+      "Wei Feng",
+      "Meiling Chen",
+      "Boxiao Chen",
+      "Lu Liu",
+      "Bin Zi",
+      "Libin Ye",
+      "Xingyu Lu",
+      "Lei Xu",
+      "Jun Zhou"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-16T00:00:00+00:00"
+  },
   "2611.16500": {
     "id": "2611.16500",
     "title": "EvenVLM: A Text and Multimodal Dataset for the Even Language with Vision-Language Fine-Tuning",
@@ -409,6 +427,17 @@
       "Figen S. Oktem"
     ],
     "published_at": "2026-11-12T00:00:00+00:00",
+    "submitted_at": "2026-11-16T00:00:00+00:00"
+  },
+  "2611.16010": {
+    "id": "2611.16010",
+    "title": "Iris-Z: Scaling One Generative Model Past Specialist Geometry Models",
+    "summary": "Language moved from many task-specific models to one unified model: a single generative model with a single generative training task that handles all of them within the same backbone, and keeps improving with data, parameters and compute. We believe the bitter lesson applies just as much to computer vision, 3D and spatial understanding, in the end to visual intelligence: the effort should go into general architectures that solve all these tasks in a unified way, and into scaling them, rather than into task-specific designs. We test this on monocular geometry, a task that has belonged to specialised architectures for years. Iris-Z is a general image generator that produces appearance and geometry together. A single backbone denoises, reasons about and understands the image and its depth at the same time, and one set of weights generates images with their depth, estimates depth from photographs and paints images onto a given depth. At enough scale it surpasses state-of-the-art specialists on established depth benchmarks while keeping the generative abilities of the backbone it started from without specialized layers. We release two models for the community.",
+    "authors": [
+      "Alejandro Cañada",
+      "Chema Garabito"
+    ],
+    "published_at": "2026-11-11T00:00:00+00:00",
     "submitted_at": "2026-11-16T00:00:00+00:00"
   },
   "2611.15789": {
