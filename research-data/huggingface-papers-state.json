@@ -20,6 +20,27 @@
     "published_at": "2026-11-16T00:00:00+00:00",
     "submitted_at": "2026-11-17T00:00:00+00:00"
   },
+  "2611.21605": {
+    "id": "2611.21605",
+    "title": "ViRA: Toward Ultra-High-Resolution Visual Agents via Cross-Input Relative Policy Optimization",
+    "summary": "Visual agents answer questions about ultra-high-resolution photos by zooming into the relevant regions. However, existing agents often answer from common sense instead of reading the evidence. Reinforcement learning (RL) on the final answer cannot correct this, because a guess earns the same reward as reading. We propose Cross-Input Relative Policy Optimization (CrossRPO), which trains agents on contrast sets. A contrast set asks one question about several versions of an image that differ only in a small region with the evidence and have different answers, so only reading the evidence solves the whole set. CrossRPO rewards solving the whole set, and we prove that it does not reinforce a set answered from common sense. We build contrast sets for training (ViRA-Train) and evaluation (ViRA-Bench) by editing one small object in images of 21 to 120 megapixels, and we photograph further sets with real changes (ViRA-Bench-Real) to exclude editing traces. We train two Visual Reasoning Agents, ViRA-9B and ViRA-27B, with CrossRPO on only about 3,500 items of ViRA-Train each. CrossRPO achieves 63.3% set accuracy on ViRA-Bench at the maximum resolution, against 59.3% for GRPO. ViRA-9B is the most accurate open model of its size on all benchmarks, and ViRA-27B outperforms Claude Haiku 5.5 and GPT-6-Luna, both at their highest thinking level, on most benchmarks.",
+    "authors": [
+      "Huawei Lin",
+      "Jinting Liu",
+      "Tongyan Wang",
+      "Xuyang Chen",
+      "Ruihua Shi",
+      "Zhichao Xu",
+      "Jiaxin Qin",
+      "Guoshenghui Zhao",
+      "Baijian Yang",
+      "Yingjie Victor Chen",
+      "Tan Yu",
+      "Weijie Zhao"
+    ],
+    "published_at": "2026-11-16T00:00:00+00:00",
+    "submitted_at": "2026-11-17T00:00:00+00:00"
+  },
   "2611.21479": {
     "id": "2611.21479",
     "title": "LynnReal-Hand: Unlocking World Interaction with Hand Control",
@@ -39,6 +60,28 @@
     "summary": "In particle physics, discrepancies between experimental measurements and Standard Model (SM) predictions are commonly interpreted within new theoretical models. In this context, the Standard Model Effective Field Theory (SMEFT) provides a general framework encompassing a broad class of models. However, exploring the enormous space of possible SMEFT operators rapidly becomes a challenging combinatorial problem: many operators can contribute simultaneously to different observables, their effects are correlated, and distinct operator combinations can provide comparably good descriptions of the data. In this work, we formulate the exploration of the SMEFT operator space as a sequential decision-making problem using reinforcement learning (RL). Our RL agent employs a lightweight actor-critic architecture with approximately 40K trainable parameters in total. Rather than searching for a single best-fit theory, our method is designed to discover a diverse set of high-quality theory hypotheses. We test the method in a complex phenomenological environment comprising 132 observables across several sectors of particle physics, including 24 measurements that deviate from their SM predictions by more than 1.5σ. We show that the learned RL policy efficiently constructs multi-operator theories that substantially improve the global fit. Comparisons with independent random-subset and random-sequential searches demonstrate the ability of the RL policy to navigate this large combinatorial space. Our results establish RL as a systematic framework for exploring diverse patterns of new physics (NP) interactions within SMEFT.",
     "authors": [
       "Jacky Kumar"
+    ],
+    "published_at": "2026-11-16T00:00:00+00:00",
+    "submitted_at": "2026-11-17T00:00:00+00:00"
+  },
+  "2611.21412": {
+    "id": "2611.21412",
+    "title": "Flexible Multi-Stack Super-Resolution of Clinical Brain MRI Using Hetero-Orientation Variational Encoding: Expert Reader Evaluation in a Nigerian Cohort",
+    "summary": "High-resolution brain MRI is important for neuroradiological assessment, yet routine clinical protocols often rely on fast, anisotropic 2D acquisitions, particularly in resource-constrained settings. These acquisitions may differ in orientation, alignment and anatomical coverage, resulting in partially overlapping image stacks. Existing learning-based super-resolution methods typically rely on single, under-constrained inputs or fixed multi-stack configurations with idealised acquisition geometry. We introduce MS-HVED, a sequence-agnostic framework for flexible multi-stack brain MRI super-resolution. Available axial, coronal and sagittal stacks are independently encoded into multi-scale Gaussian posteriors and fused using a field-of-view-aware Product-of-Gaussians formulation that limits contributions from unsupported regions. Physics-informed domain randomisation simulates heterogeneous clinical acquisition conditions, including obliqueness, partial coverage and imaging artefacts. MS-HVED achieved competitive or superior reconstruction fidelity across synthetic benchmarks and improved downstream tissue segmentation relative to low-resolution inputs. To assess generalisation beyond the training cohorts, we performed external clinical validation on 30 routine brain MRI examinations from a Nigerian cohort, representing an under-represented population in medical imaging research. These examinations formed the largest component of a blinded reader study involving 44 real cases and seven expert neuroradiologists. In the Nigerian cohort, MS-HVED was preferred over the supervised baseline for overall image quality in 187 of 210 paired assessments. Across all clinical cohorts, MS-HVED achieved higher overall-quality scores with all available inputs (5.93 vs. 4.49, p<.001), with the preference persisting when axial or coronal inputs were omitted (p<.001). Code at github.com/cai4cai/ms-hved",
+    "authors": [
+      "Kabir Hamzah Muhammad",
+      "Lorena Garcia-Foncillas Macias",
+      "Soumya Snigdha Kundu",
+      "Emily Guilhem",
+      "Jon Cleary",
+      "Amal Saleh Nour",
+      "Yodit Abraham Yaynishet",
+      "Chinasa Kalaiwo",
+      "Peter Chibuta",
+      "Ugumba Kwikima",
+      "Udunna Anazodo",
+      "Jonathan Shapey",
+      "Tom Vercauteren"
     ],
     "published_at": "2026-11-16T00:00:00+00:00",
     "submitted_at": "2026-11-17T00:00:00+00:00"
@@ -429,6 +472,18 @@
     "published_at": "2026-11-16T00:00:00+00:00",
     "submitted_at": "2026-11-17T00:00:00+00:00"
   },
+  "2611.20595": {
+    "id": "2611.20595",
+    "title": "Invariant-Aware Harness Enforcement to Protect LLM Agents from Silent API Failures",
+    "summary": "LLM agents answer questions by calling APIs and trusting the results. An API can fail silently. It ignores part of a request, such as a misnamed filter, yet returns HTTP 200 and a plausible but wrong result. Current fixes, such as checklists, reviewer models and LLM judges, ask the model to catch it. But models often see the problem and answer anyway. We present SilentGuard, which moves the decision from the model to the harness running tool calls. It tests each result against invariants that any correct API must satisfy and withholds values that break one. We find silent failures in 11 of 15 public research APIs, with counts inflated up to 691 times. Current fixes leave over 70% of answers wrong, and agents report 77.4% of counts a judge flags. Across 7 open models, SilentGuard cuts wrong answers on its target faults from 74.0% to 1.7%, with no loss on fault-free tasks. On three frontier models they fall from 70.2% to 0.5%. A warning from the same check leaves 70.1% wrong, so enforcement is the key. On new fault types, the harness alone cuts wrong answers from 61.1% to 24.5%. It avoids wrong answers by abstaining rather than recovering.",
+    "authors": [
+      "Sajib Acharjee Dip",
+      "Brian Ouyang",
+      "Lala Motlhabi"
+    ],
+    "published_at": "2026-11-16T00:00:00+00:00",
+    "submitted_at": "2026-11-17T00:00:00+00:00"
+  },
   "2611.20404": {
     "id": "2611.20404",
     "title": "Latent Feedback Is a Compute and Data Amplifier",
@@ -614,6 +669,20 @@
     "published_at": "2026-11-14T00:00:00+00:00",
     "submitted_at": "2026-11-17T00:00:00+00:00"
   },
+  "2611.18981": {
+    "id": "2611.18981",
+    "title": "GPBam: A Retrieval-Aware German Public Law Exam Benchmark",
+    "summary": "Legal reasoning in civil-law systems is not rule-lookup: the German state examination asks for a structured opinion (Gutachten) that names the governing norms, applies them to the facts, and argues to a conclusion. We introduce GPBam (German Public Law Bar-style Exam), 81 public-law examination cases with reference solutions, paired with a recitation task over 200 statutory provisions. Drawn from state examination preparation, the cases are broad and rarely repeat, and are not publicly available - we find no evidence of exact-solution memorisation in the models we evaluate, and keeping them private limits contamination. Because each reference solution's cited norms form a retrieval gold set over the very instances the essays are graded on, GPBam scores retrieval and long-form generation jointly, which makes it a benchmark for legal retrieval as well as for legal writing and lets us ask how much retrieval quality a legal opinion actually needs. Across 32 open-weight and proprietary models evaluated without retrieval, scores span 4.81-76.42 out of 100. Supplying the law helps modestly: across seven models and eight retrieval configurations, retrieval performance varies nearly threefold and buys at most 4.1 essay points, and nothing significant for three of the seven, while an oracle with 91% gold-norm recall improves scores by 2-6 points. Essay quality strongly tracks prior knowledge: verbatim statute recall, measured in a separate task, correlates at ρ= 0.92 over 32 models.",
+    "authors": [
+      "Abdullah Al Zubaer",
+      "Lorenz Wendlinger",
+      "Simon Alexander Nonn",
+      "Michael Granitzer",
+      "Jelena Mitrović"
+    ],
+    "published_at": "2026-11-13T00:00:00+00:00",
+    "submitted_at": "2026-11-17T00:00:00+00:00"
+  },
   "2611.18919": {
     "id": "2611.18919",
     "title": "Correcting Persistent Failures in Point-Cloud Grasping Policies using Human Demonstrations in Virtual Reality",
@@ -623,6 +692,16 @@
       "Karthik Rengarajan",
       "Bharath Narasimhan",
       "Chris von Csefalvay"
+    ],
+    "published_at": "2026-11-13T00:00:00+00:00",
+    "submitted_at": "2026-11-17T00:00:00+00:00"
+  },
+  "2611.18330": {
+    "id": "2611.18330",
+    "title": "Marimba: A System One Model for Speech",
+    "summary": "Speech applications require decisions about term presence, turn completion, and language within an audio window. We present Marimba, an interface for typed speech decisions built on frozen Qwen3-ASR 0.6B features. Lexical questions use zero-shot scoring of ASR transcripts; non-lexical questions use a question-conditioned head and a separate layer-18 turn-end readout. Language identification uses the ASR model's own language scores. On private conversational test sets, decoder AUROC is 0.80-0.92; on public read speech it is 0.92-0.97. Speech Commands four-way accuracy is 0.93; binary lexical ECE is at most 0.08. Personal-information detection, which passes the greedy transcript to a private, curated PII pipeline, reaches item-level F1 0.904 on synthetic Brazilian Portuguese speech (1.000 on reference transcripts). Layer-12 speaker readouts detect speaker change with AUROC 0.966-0.980 on AMI and VoxConverse, above an ECAPA baseline, and count speakers (0, 1, 2, or 3+) more accurately than pyannote 3.1. The turn-end readout reaches AUROC 0.930 versus Smart Turn v3.2 at 0.982 on Smart Turn's own test set. On a subset of ICSI meetings labeled by next speaker, AUROC is 0.716 versus 0.712; the paired confidence interval includes zero.",
+    "authors": [
+      "Solano Amadori"
     ],
     "published_at": "2026-11-13T00:00:00+00:00",
     "submitted_at": "2026-11-17T00:00:00+00:00"
@@ -656,6 +735,27 @@
       "Carolyn Rose"
     ],
     "published_at": "2026-11-13T00:00:00+00:00",
+    "submitted_at": "2026-11-17T00:00:00+00:00"
+  },
+  "2611.17610": {
+    "id": "2611.17610",
+    "title": "More Agents, More Samples, or More Thinking? Untangling Coordination, Ensembling, and Test-Time Compute in Multi-Agent LLMs",
+    "summary": "Evaluations of multi-agent language models often compare communicating architectures against a single greedy pass. This practice confounds coordination with sample multiplicity and inference compute. We synthesize nine primary empirical evaluations comprising 516 unique multi-agent configurations organized along a resource vector R with six dimensions and a baseline ladder with four categories. Against baselines with a single pass (Category A), multi-agent accuracy differences are negative overall and near zero when omitting the largest contributing study. When evaluated against baselines matched on sample count (Category B) or resource budget (Category C), multi-agent systems average -0.042 in accuracy, and multilevel random effects modeling on the log odds scale remains negative across sensitivity checks. Multi-agent accuracy equals or falls below the baseline in 74% of these comparable contrasts, and study means are nonpositive in almost all evaluated studies. Across studies reporting both baselines, moving from a greedy pass to a sampled baseline shifts accuracy differences by -0.038 on average. Because communication adds no information when agents share identical evidence, positive returns require partitioned evidence, external verification, or error diversity across models. We provide a reviewer checklist and accounting utilities.",
+    "authors": [
+      "Seyed Mahmoud Sajjadi Mohammadabadi"
+    ],
+    "published_at": "2026-11-13T00:00:00+00:00",
+    "submitted_at": "2026-11-17T00:00:00+00:00"
+  },
+  "2611.16694": {
+    "id": "2611.16694",
+    "title": "When Expert Disagreement Hurts: Prestige and Selectivity in LLM Decision Revision",
+    "summary": "When language models revise a decision after another agent disagrees, neither reversal counts nor final accuracy shows whether they are fixing mistakes or abandoning correct answers. We introduce a controlled two-pass audit that holds the question, the evidence, and the model's initial answer fixed and varies only the revision context: neutral reflection, anonymous disagreement, or disagreement attributed to a domain expert. For binary decisions the accounting is exact: revision raises accuracy only if it is selective enough, reversing wrong answers more than a/(1-a) times as often as correct ones, where a is initial accuracy (nine times at 90%). Across five models and 1,989 evidence-grounded decisions in medicine, science, and law, no model clears this bar under expert disagreement, and accuracy falls by up to 16.1 points. The expert label, a prestige cue, adds reversals for four of the five models, yet its effect on accuracy ranges from a 5.2-point loss to a 2.4-point gain, so reversal counts are a poor proxy for harm. With identical arguments from both sources, the label still raises reversal for three proprietary models and in a pooled analysis of four newer models. Models also respond to stated source reliability. Revision pipelines should therefore be evaluated with paired, conditional metrics, per model and protocol.",
+    "authors": [
+      "Yupeng Tang",
+      "Mingfeng Lin"
+    ],
+    "published_at": "2026-11-12T00:00:00+00:00",
     "submitted_at": "2026-11-17T00:00:00+00:00"
   },
   "2611.16642": {
