@@ -962,32 +962,5 @@
       <description>&lt;p&gt;Unified multimodal models can support both visual understanding and generation, yet generative training does not necessarily improve understanding. We argue that this limitation may arise from a mismatch between the representation targeted by generation and the perceptual representation used for understanding. Conventional generation objectives primarily optimize synthesis-oriented spaces such as discrete visual codes or generative latents. We therefore introduce UMM-JEPA, which reformulates generation as progressive prediction of continuous visual-understanding representations. The model constructs a multi-scale representation hierarchy from coarse to fine, while pixel rendering is decoupled from representation pretraining and attached only afterward. Controlled comparisons show that the representation-prediction objective accounts for most of the understanding improvement, while a data-matched control leaves the group means nearly unchanged. UMM-JEPA reaches a 16-benchmark visual mean of 51.71, against 46.36 for the understanding-only Qwen-VL baseline, and the text mean also rises. Compared with discrete-code and latent-flow generation objectives, perceptual representation prediction yields stronger and more consistent transfer to understanding. Linear probes and visual-evidence interventions further reveal richer object and spatial structure and stronger use of image-specific information. These results suggest that generation can benefit understanding when it directly supervises the perceptual representations that understanding consumes.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.18668"&gt;arXiv:2611.18668&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.18668"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
-    <item>
-      <title>Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination</title>
-      <link>https://huggingface.co/papers/2611.16661</link>
-      <guid isPermaLink="false">hf-papers:arxiv:2611.16661</guid>
-      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
-      <dc:creator>Wei Feng</dc:creator>
-      <dc:creator>Meiling Chen</dc:creator>
-      <dc:creator>Boxiao Chen</dc:creator>
-      <dc:creator>Lu Liu</dc:creator>
-      <dc:creator>Bin Zi</dc:creator>
-      <dc:creator>Libin Ye</dc:creator>
-      <dc:creator>Xingyu Lu</dc:creator>
-      <dc:creator>Lei Xu</dc:creator>
-      <dc:creator>Jun Zhou</dc:creator>
-      <description>&lt;p&gt;Efficient batch execution of agent tasks is critical to LLM training and development workflows, including benchmark evaluation, synthetic-data generation, and RL rollouts. Since these tasks alternate between LLM inference and environment interaction, we present coordinated optimizations to reduce batch makespan, the time required to complete all tasks in a batch. For hybrid LLMs, a workload-based resource model guides GPU-memory allocation between key-value (KV) cache and recurrent state and provides a reference sample concurrency to exploit parallelism while limiting recomputation. Trajectory-aware routing and scheduling promote cache reuse while balancing worker load. Under constrained environment capacity, we decouple sample admission from environment execution and introduce Chain-Advancing Action Scheduling (CAAS), which prioritizes long chains using observed progress to shorten the batch tail. Controlled replay combines actual inference with recorded environment responses and durations for ablations of individual optimizations. Live evaluations with Ling-3.0-Flash and Ling-3.1-Flash on the BFCL, SWE-bench Multilingual, WideSearch, and MCP-Atlas benchmarks demonstrate makespan reductions of 10.4% to 65.0%, while evaluation scores remain aligned. Furthermore, these methods have been successfully applied to training and evaluation workflows for the Ling-3.x model series, accelerating the model-development cycle.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.16661"&gt;arXiv:2611.16661&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.16661"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
-      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
-    </item>
-    <item>
-      <title>Iris-Z: Scaling One Generative Model Past Specialist Geometry Models</title>
-      <link>https://huggingface.co/papers/2611.16010</link>
-      <guid isPermaLink="false">hf-papers:arxiv:2611.16010</guid>
-      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
-      <dc:creator>Alejandro Cañada</dc:creator>
-      <dc:creator>Chema Garabito</dc:creator>
-      <description>&lt;p&gt;Language moved from many task-specific models to one unified model: a single generative model with a single generative training task that handles all of them within the same backbone, and keeps improving with data, parameters and compute. We believe the bitter lesson applies just as much to computer vision, 3D and spatial understanding, in the end to visual intelligence: the effort should go into general architectures that solve all these tasks in a unified way, and into scaling them, rather than into task-specific designs. We test this on monocular geometry, a task that has belonged to specialised architectures for years. Iris-Z is a general image generator that produces appearance and geometry together. A single backbone denoises, reasons about and understands the image and its depth at the same time, and one set of weights generates images with their depth, estimates depth from photographs and paints images onto a given depth. At enough scale it surpasses state-of-the-art specialists on established depth benchmarks while keeping the generative abilities of the backbone it started from without specialized layers. We release two models for the community.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.16010"&gt;arXiv:2611.16010&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.16010"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
-      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
-    </item>
     </channel>
 </rss>
