@@ -1,9 +1,247 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Hugging Face Daily Papers</title>
     <link>https://huggingface.co/papers</link>
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
+    <item>
+      <title>Game2Player: Scaling Gameplay Experience for Visual Agents through Environment-Player Co-Development</title>
+      <link>https://huggingface.co/papers/2611.24154</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.24154</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xirui Jiang</dc:creator>
+      <dc:creator>Yuxi Chen</dc:creator>
+      <dc:creator>Rui Yang</dc:creator>
+      <dc:creator>Feng Luo</dc:creator>
+      <dc:creator>Pengcheng Wang</dc:creator>
+      <dc:creator>Bingxuan Li</dc:creator>
+      <dc:creator>Zihao Zhao</dc:creator>
+      <dc:creator>Yushan Li</dc:creator>
+      <dc:creator>Han Wang</dc:creator>
+      <dc:creator>Manling Li</dc:creator>
+      <dc:creator>Yang Zhang</dc:creator>
+      <dc:creator>Shiyu Chang</dc:creator>
+      <dc:creator>Tong Zhang</dc:creator>
+      <dc:creator>Huan Zhang</dc:creator>
+      <description>&lt;p&gt;Games are a rich testbed for visual agents, demanding perception, long-horizon planning, and precise control. However, collecting human gameplay is costly, and learning from gameplay videos requires inferring missing actions. Existing datasets also cover a limited range of games, often without explicit tasks or verifiable outcomes. To address these gaps, we introduce Game2Player, a framework that co-develops game environments and players to collect diverse and verifiable gameplay experience at scale. In the Game2Player loop, a Builder agent adapts existing web games, exposes their internal state, and defines tasks with state-based progress measures and success checks. A Coding Player and a VLM Player then attempt the tasks and report problems to the Builder for repair, so that play serves as both environment validation and training data collection. With Game2Player, we build 568 verified web games with 3,436 tasks, collect 15.7K trajectories (307 hours of gameplay), and hold out 50 games as the benchmark PlayerBench. To evaluate the collected experience as training data, we train VLM agents with progress-weighted SFT, assigning greater weight to steps that advance task progress. Game2Player-9B improves progress from 14.3% to 31.2% on PlayerBench and from 30.0% to 53.1% on the external GameWorld benchmark. More broadly, our work suggests a path for visual agents to scale their gameplay experience by building, verifying, and learning from existing game worlds.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.24154"&gt;arXiv:2611.24154&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.24154"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>IDEA: Intent-Dominance Evidence Audit for Inference-Time Backdoor Detection in GUI Agents</title>
+      <link>https://huggingface.co/papers/2611.24102</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.24102</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Zhizhuo Kou</dc:creator>
+      <dc:creator>Sizai Hou</dc:creator>
+      <dc:creator>Jian Yang</dc:creator>
+      <dc:creator>Ge Sun</dc:creator>
+      <dc:creator>Junyu Luo</dc:creator>
+      <dc:creator>Wenkai Zhang</dc:creator>
+      <dc:creator>Sirui Han</dc:creator>
+      <dc:creator>Yike Guo</dc:creator>
+      <description>&lt;p&gt;Organizations increasingly deploy downloaded open-weight GUI agents. A backdoored agent passes acceptance tests on clean data and misbehaves only when a visual trigger appears on screen, turning an unvetted checkpoint into a supply-chain risk. However, existing sample-level detectors target image classifiers and CLIP-style encoders, leaving step-level backdoor detection for GUI agents unaddressed. On clean steps, the instruction drives the action; when an unreferenced screen region hijacks the step, the instruction loses control over the decision state or that region dictates it instead. We term this signature intent--evidence dominance inversion and propose IDEA (Intent-Dominance Evidence Audit) to detect backdoor activation at inference time for each step without trigger knowledge or attack data. Specifically, Intent Counterfactual Probing (ICP) measures how far redirected instructions move the decision state, and Region Causal Audit (RCA) quantifies how far ablating a candidate region moves it. A gated conformal score compares both displacements against clean steps at the same distance from the clean manifold, providing a finite-sample false-positive guarantee. Extensive experiments on Qwen2.5-VL-3B across five attack families show that IDEA consistently detects backdoor activation under a controlled false-positive rate and outperforms state-of-the-art detection methods, while localizing the trigger region for every alarm and adding only modest inference overhead.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.24102"&gt;arXiv:2611.24102&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.24102"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Recurrent Domain Incremental Adaptation of Time-Series Foundation Models</title>
+      <link>https://huggingface.co/papers/2611.24075</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.24075</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Sachith Abeywickrama</dc:creator>
+      <dc:creator>Peiliang Gong</dc:creator>
+      <dc:creator>Emadeldeen Eldele</dc:creator>
+      <dc:creator>Min Wu</dc:creator>
+      <dc:creator>Chau Yuen</dc:creator>
+      <description>&lt;p&gt;Pretrained Time-Series Foundation Models (TSFMs) provide strong representations for downstream classification tasks. Yet adapting a TSFM under changing operating conditions remains challenging. A model must improve on each newly observed condition without sacrificing conditions it has already learned, often from only a small labeled calibration set and without knowing the operating condition at inference time. We find that this difficulty has an important geometric structure. Under an operating-condition shift, the embedding space of a TSFM does not move uniformly: some local regions change substantially, while others remain nearly unchanged. Consequently, a global adaptation can unnecessarily move embeddings that were already correctly classified. To address this, we propose the novel PACT (Piecewise Adaptation via Chart Transport). PACT partitions the frozen source embedding space into local charts and learns lightweight residual transports for the regions affected by each new condition. An explicit identity path is always retained, and a learned gate softly selects among the identity and accumulated transports for each input. The pretrained TSFM encoder, classifier head, and previously learned transports remain fixed. With only 5% labeled calibration data per arriving condition and no condition identity at test time, PACT maintains an average macro-F1 above 0.95 across a four-condition bearing-fault stream. Under homogeneous tasks and label spaces, similar retention-adaptation behavior is observed across public benchmarks. Code is available at https://github.com/Sachithx/PACT.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.24075"&gt;arXiv:2611.24075&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.24075"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>QDA: Closed-Loop LLM Quantization Design with Agents</title>
+      <link>https://huggingface.co/papers/2611.23388</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.23388</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xingyang Li</dc:creator>
+      <dc:creator>Tianlang Zhao</dc:creator>
+      <dc:creator>Song Han</dc:creator>
+      <dc:creator>Ligeng Zhu</dc:creator>
+      <description>&lt;p&gt;Post-training quantization is the standard way to serve large language models at low cost. However, the best quantization recipe differs across models and precisions. As a result, experts must redesign it for every new model, which is time-consuming and often sub-optimal. Fortunately, an LLM agent can take over this design by refining the recipe over rounds of building and evaluating candidates, so that more rounds lead to better recipes. However, evaluating one quantized reasoning model takes tens of GPU-hours, and combining methods from different codebases means porting each to the new architecture by hand. We present QDA, a system in which an agent designs the recipe for each model and precision. To make evaluation fast, QDA scores each candidate in minutes by its output KL divergence from the original model on reasoning traces that the agent never sees, and checks promising ones with long generations to catch failures such as repetition loops. To make building fast, QDA provides a library of public PTQ methods that are compatible with one another and with new model architectures. Across four reasoning models, QDA improves accuracy over the strongest public recipe by 0.9, 1.4 and 2.2 percentage points on average at W4A16, W4A8 and W3A16, using 64 GPU-hours per search. On the 320B-parameter MoE model GLM-5.3-Flash at NVFP4 W4A4, it recovers 98.3% of the FP8 model&amp;#x27;s accuracy, against 96.9% for the best vendor checkpoint. Every QDA checkpoint also runs on existing serving kernels with no inference overhead. We will release the library, the evaluator and the harness.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.23388"&gt;arXiv:2611.23388&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.23388"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements</title>
+      <link>https://huggingface.co/papers/2611.23068</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.23068</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yuanhao Zeng</dc:creator>
+      <dc:creator>Shaocheng Lan</dc:creator>
+      <dc:creator>Ao Lu</dc:creator>
+      <dc:creator>Kuang Yan</dc:creator>
+      <dc:creator>Heng Lin</dc:creator>
+      <dc:creator>Xinang Xu</dc:creator>
+      <dc:creator>Yuan Luo</dc:creator>
+      <dc:creator>Yueting Wang</dc:creator>
+      <dc:creator>Yexin Li</dc:creator>
+      <dc:creator>Ruo Shan</dc:creator>
+      <dc:creator>Kan Ren</dc:creator>
+      <description>&lt;p&gt;Agent evolution follows a simple loop: a proposer writes candidate artifacts (prompts, skills, memories) and selection accepts those that score higher. This loop has shown promise, yet practitioners face a puzzle: methods trade wins across papers, and evolution often fails to bootstrap on certain tasks. We trace this puzzle to the Resolution Hypothesis: agent evolution stalls not because methods fail to propose better artifacts, but because noisy evaluations cannot reliably identify them. Across seven evolution methods and six models (over 10M LLM calls), we find support for the hypothesis at both levels where evaluation scores are used. At the candidate level (choosing artifacts), helpful candidate artifacts exist, but selection is no better than random at telling them from harmful ones, so errors accumulate across rounds. At the method level (ranking methods), typical margins of a few percentage points are smaller than the difference between two independent runs of the same method, so published rankings often rest on luck. Together, these findings indicate that agent evolution is often bottlenecked by reliably identifying improvements. This calls for a shift in how we develop and evaluate self-improving agents, from designing ever more candidate improvement systems to making true improvements detectable and accumulable.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.23068"&gt;arXiv:2611.23068&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.23068"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Code World Model 2.0: Towards Infinite Controllable Video Generation</title>
+      <link>https://huggingface.co/papers/2611.22925</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.22925</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Ruoyu Wang</dc:creator>
+      <dc:creator>Hao Zhong</dc:creator>
+      <dc:creator>Yanming Yang</dc:creator>
+      <dc:creator>Jiahao Tian</dc:creator>
+      <dc:creator>Lin Liu</dc:creator>
+      <dc:creator>Biao Gong</dc:creator>
+      <dc:creator>Guoshan Lu</dc:creator>
+      <dc:creator>Yiding Tian</dc:creator>
+      <dc:creator>Chunhua Shen</dc:creator>
+      <dc:creator>Zhenzhong Lan</dc:creator>
+      <dc:creator>Chi Zhang</dc:creator>
+      <description>&lt;p&gt;Visual proxies decouple explicit world-state simulation from photorealistic video synthesis, offering a controllable interface for both offline clip creation and real-time interactive streaming. Yet a practical renderer must address two challenges. Upstream proxies vary from coarse layouts to fine articulated geometry depending on the interaction, and streaming inference must operate in a few causal steps without accumulating drift across self-generated history. We present Invoker-Render, pairing a bidirectional creation model with a causal four-step streaming model under a shared conditioning interface over structural proxies, an appearance reference, and language. Trained on an aligned approximately 200-hour multi-granularity corpus, Invoker-Render honors fine geometric constraints when supplied while synthesizing plausible local motion under coarse proxies, enabling runtime selection of input detail. To bridge bidirectional creation and real-time streaming without compounding step compression and rollout drift, we introduce Progressive Forcing (ProForcing). ProForcing first trains a causal predictor and distills it into a four-step renderer using histories derived from training videos. Training then shifts to continuous self-generated rollouts. A pipelined serving stack supports efficient streaming inference. Experiments show versatile control across proxy families, granularities, and camera paths, consistent gains over recent streaming baselines, and stable 30-minute racing rollouts that preserve scene and subject appearance.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.22925"&gt;arXiv:2611.22925&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.22925"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Let Samples Sing in Chorus: Mitigating Spurious Correlations via Cross-view Consensus</title>
+      <link>https://huggingface.co/papers/2611.22668</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.22668</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Weiwei Li</dc:creator>
+      <dc:creator>Junzhuo Liu</dc:creator>
+      <dc:creator>Tong Chu</dc:creator>
+      <dc:creator>Hengfu Yu</dc:creator>
+      <dc:creator>Yinjie Lei</dc:creator>
+      <dc:creator>Wen Li</dc:creator>
+      <description>&lt;p&gt;Deep models often rely on spurious correlations that fail on underrepresented groups. Existing methods either correct human-specified bias attributes or infer unknown biases from the learned representation space. However, annotated attributes may differ from the shortcuts actually used by a model, while a single representation provides incomplete and potentially noisy evidence. Our key insight is that a bias obscured in one feature space may be clearer in another. In this work, we propose CHORD (Cross-view Harmonic Outlier Reversal for Debiasing), a multi-view framework that allows samples to &amp;quot;sing in chorus&amp;quot; across diverse representation spaces to achieve robust cross-view consensus. CHORD aggregates aggregates within-class partitions in each view, which is a proxy for specifying candidate biases, to debias the target representation and classifier without bias supervision. Experiments on seven benchmarks across vision, language, speech, and medical imaging show consistent improvements in worst-group accuracy. Code and checkpoints are available at https://github.com/davelee-uestc/chord_debiasing_public .&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.22668"&gt;arXiv:2611.22668&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.22668"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Decoding Without a Decoder: Direct Pixel Prediction from Diffusion Transformers</title>
+      <link>https://huggingface.co/papers/2611.22287</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.22287</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Hansheng Chen</dc:creator>
+      <dc:creator>Shengqu Cai</dc:creator>
+      <dc:creator>Jan Ackermann</dc:creator>
+      <dc:creator>Rayhan Zirvi</dc:creator>
+      <dc:creator>Gordon Wetzstein</dc:creator>
+      <dc:creator>Xinchen Yan</dc:creator>
+      <dc:creator>Leonidas Guibas</dc:creator>
+      <description>&lt;p&gt;Latent diffusion models rely on a decoder to map denoised latents to pixels, adding complexity and inference cost. We introduce Decoding Without a Decoder (DWD), which lets a finetuned diffusion transformer produce final pixels directly through a linear head. Unlike previous methods, where the denoising output leads to final pixels, DWD separates the two roles: the original denoising head continues to drive sampling, then the new DWD head predicts the pixels at the final step. We extend pretrained latent models with DWD efficiently by finetuning only the last few transformer blocks, training the DWD head with pixel quality losses while anchoring the denoising head to the pretrained model to preserve the sample trajectory. Across latent image and video generators, DWD removes the decoder and reduces inference cost while maintaining or even improving pixel quality. On Wan video generation, it visibly reduces detail distortion and flickering, lowering warping error by 23%. Remarkably, the same separation also improves pixel diffusion models that do not even use a decoder: a final-step DWD head produces substantially better texture detail in text-to-image generation, and improves ImageNet FID from 1.55 to 1.43, a new state of the art among pixel flow models.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.22287"&gt;arXiv:2611.22287&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.22287"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Thinking Harder Doesn't Lead to Better Choices: Reasoning Effort Increases the Confidence but Not the Correctness of LLM Shopping Agents</title>
+      <link>https://huggingface.co/papers/2611.22033</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.22033</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Adi Krishnamoorthy</dc:creator>
+      <dc:creator>X. Y. Han</dc:creator>
+      <description>&lt;p&gt;Large language models (LLMs) are increasingly deployed as autonomous shopping agents that process multimodal product listings (consisting of visual and text data) and recommend purchases on behalf of consumers. Naturally, one might assume that models with more thinking power would make higher-quality purchasing decisions. To test this belief, we ask two questions about such agents: does asking a model to think harder make it choose better products, and does the confidence it reports tell us the likelihood it may be wrong? We benchmark ten frontier models on three product-choice benchmarks built from WebShop, Amazon&amp;#x27;s SQID and Wayfair&amp;#x27;s WANDS platforms to see if LLMs with more thinking power actually make better-quality product purchase decisions. Across all three benchmarks, we found that increasing the thinking effort does not increase decision quality in a statistically meaningful way. The same change in thinking effort raises stated confidence at a statistically significant level, so extra thinking buys confidence rather than correctness. We also measure the calibration of these models (how well their reported confidence percentage matches their true correctness percentage) in these tasks and show that most models are not well-calibrated at every effort level. We also find that errors are strongly shared: when one model errs in a task, several others tend to err on that same task. Furthermore, on tasks where several models all err, a large number of them pick the same wrong product.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.22033"&gt;arXiv:2611.22033&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.22033"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ALIVE: Making Streaming Video Models Interactive</title>
+      <link>https://huggingface.co/papers/2611.21366</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.21366</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Jinzhao Li</dc:creator>
+      <dc:creator>Yuan Xu</dc:creator>
+      <dc:creator>Jinxuan Wu</dc:creator>
+      <dc:creator>Yukun Wang</dc:creator>
+      <dc:creator>Yijia Lei</dc:creator>
+      <dc:creator>Hanyu Ji</dc:creator>
+      <dc:creator>Yinuo Chen</dc:creator>
+      <dc:creator>Zining Huang</dc:creator>
+      <dc:creator>Chi Zhang</dc:creator>
+      <dc:creator>Hang Ye</dc:creator>
+      <dc:creator>Yiwu Zhong</dc:creator>
+      <dc:creator>Honglei Yan</dc:creator>
+      <dc:creator>Panwang Pan</dc:creator>
+      <dc:creator>Yizhou Wang</dc:creator>
+      <dc:creator>Yin Li</dc:creator>
+      <dc:creator>Miao Liu</dc:creator>
+      <description>&lt;p&gt;Streaming video LLMs can continuously observe the world, yet often handle user requests in isolation. We introduce ALIVE, an interactive streaming video model supporting proactive monitoring, streaming task coordination, and feedback-seeking interaction. We construct ALIVE-SFT-288K and ALIVE-RL-3K for two-stage training. Contrastive supervised fine-tuning teaches when and how to respond, while reinforcement learning with Behavior-Aligned Credit Assignment (BACA) combines trajectory-level and local advantages to refine decisions, responses, and silence across multi-turn interactions. We also introduce FSI-Bench to evaluate feedback seeking and subsequent task completion. ALIVE achieves the highest overall scores among the compared models on four public benchmarks and FSI-Bench, demonstrating strong streaming understanding and interactive capabilities.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.21366"&gt;arXiv:2611.21366&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.21366"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>LogT: Logically Think with Images for Visual Search</title>
+      <link>https://huggingface.co/papers/2611.19200</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.19200</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yanjun Fu</dc:creator>
+      <dc:creator>Quanzeng You</dc:creator>
+      <dc:creator>Jiadong Guo</dc:creator>
+      <dc:creator>Yujie Lu</dc:creator>
+      <dc:creator>Sai Charitha Akula</dc:creator>
+      <dc:creator>Haiping Wu</dc:creator>
+      <dc:creator>Miao Liu</dc:creator>
+      <dc:creator>Sanghamitra Dutta</dc:creator>
+      <dc:creator>Lu Yuan</dc:creator>
+      <description>&lt;p&gt;Thinking with images empowers vision-language models (VLMs) to use an external Zoom-in tool for fine-grained visual search. Recent works employ supervised fine-tuning (SFT) and reinforcement learning (RL) with tool-specific designs to enable such capabilities. However, achieving logical reasoning alongside accurate and efficient tool use remains a significant challenge. To address this, we shift the focus away from increasing RL complexity and instead identify SFT data quality as a key bottleneck. We then propose LogT (short for Logically Think with Images), a fully automated SFT data engine that explicitly enforces logic-chain-guided reasoning. LogT generates an SFT dataset featuring challenging, visually grounded questions and structured tool-use traces with human-like logic. We validate our approach by fine-tuning two base models, Qwen2.5-VL-7B and InternVL3.5-8B, on the dataset and evaluating them across seven benchmark test sets. We show that LogT-SFT based on Qwen2.5-VL-7B outperforms the state-of-the-art trained with both SFT and RL, despite using 3.1times less data and &amp;gt;120times fewer GPU hours. Furthermore, applying a simple RL recipe without tool-specific design on LogT-SFT yields a model that surpasses prior methods with complex RL setups by a substantial 9.59-point margin. In addition to strong performance gains, our model exhibits higher tool-use accuracy and efficiency, as well as more structured and logically consistent reasoning traces, directly validating the effectiveness of our approach.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.19200"&gt;arXiv:2611.19200&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.19200"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Learning Anisotropic Prediction Targets for Flow Models</title>
+      <link>https://huggingface.co/papers/2611.17767</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.17767</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Rayhan Zirvi</dc:creator>
+      <dc:creator>Hansheng Chen</dc:creator>
+      <dc:creator>Gordon Wetzstein</dc:creator>
+      <dc:creator>Leonidas Guibas</dc:creator>
+      <description>&lt;p&gt;Flow-based generative models are trained on a hand-chosen prediction target, such as the velocity, the noise, or the clean data. This choice strongly affects training and sample quality. We introduce Anisotropic Flow Models (AnisoFlow), which replaces a fixed prediction target with a fully learnable one. AnisoFlow learns to scale the noise component of the target anisotropically, assigning a separate nonnegative weight to each direction in a jointly learned basis. A closed-form map recovers the velocity from the network&amp;#x27;s prediction, leaving the architecture, flow-matching loss, and sampler unchanged. Since recovery is exact, training optimizes the target purely to make it easier for the network to predict. We theoretically analyze the resulting prediction error and predict that the preferred noise weight in each direction scales near-linearly with data variance, in agreement with the weights learned empirically in pixel space. AnisoFlow improves FID from 1.90 to 1.55 over the JiT baseline on ImageNet 256times256, by learning only the prediction target, without representation alignment or architectural changes. In pixel-space text-to-image generation, AnisoFlow improves image quality and, through better-conditioned velocity recovery, largely removes patch-seam artifacts under reduced-precision inference.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17767"&gt;arXiv:2611.17767&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17767"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>PROLA: Principal-Orthogonal Low-rank Adaptation for Predictive Spatiotemporal Weather Downscaling</title>
+      <link>https://huggingface.co/papers/2611.11318</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.11318</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Minseo Yoon</dc:creator>
+      <dc:creator>Minseong Bae</dc:creator>
+      <dc:creator>Sojin Lee</dc:creator>
+      <dc:creator>Hyunwoo J. Kim</dc:creator>
+      <description>&lt;p&gt;High-resolution weather prediction is important for resolving local atmospheric patterns missed by coarse global forecasts. Large pretrained weather backbones have improved global forecasting, but adapting them to produce future high-resolution fields from recent coarse states remains challenging and costly. We formulate this setting as Predictive Spatiotemporal Weather Downscaling (PSWD), a task that jointly refines spatial and temporal resolution while predicting future high-resolution trajectories. To this end, we propose a framework that decomposes prediction into spatial and temporal stages using a shared pretrained backbone, fixed numerical scaffolds, and lightweight residual heads. For backbone adaptation, we introduce PROLA (PRincipal-Orthogonal Low-rank Adaptation), which allocates a fixed low-rank budget between pretrained weights&amp;#x27; principal directions and their orthogonal complement. PROLA further rescales rank-1 optimizer updates using gradient signals, improving adaptation without increasing trainable rank. Experiments in the PSWD setting show that PROLA outperforms representative low-rank adaptation baselines. Further experiments across diverse datasets and tasks support the broader applicability of PROLA, showing that its benefits extend beyond the primary weather downscaling setting.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.11318"&gt;arXiv:2611.11318&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.11318"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Attention at Absolute Zero</title>
+      <link>https://huggingface.co/papers/2611.11937</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.11937</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Mostafa &amp;#39;Neo&amp;#39; Mohsenvand</dc:creator>
+      <description>&lt;p&gt;Attention scores candidate supports of an answer, which we call witnesses, and reads the scores at a temperature. We build a higher-order attention layer whose state lives on pairs of items: for a pair (a, b), each third item k is a witness judged through its legs (a, k) and (k, b). It reads witnesses at zero temperature, keeping the best and the number tied with it, passes on only bits comparing such counts, rebuilds its pair state from the input and these bits at every loop, and is trained from answers alone. Each choice removes one way soft attention fails at size: dispersed weight, unresolved gaps between learned scores, and a drifting soft state. In maximum retrieval it is right on at least 99.95% of sets 1,000 times larger than in training, on all ten seeds; trained with a soft count, the same network falls to 42% at 4,096 items. On CLRS-30 without hints, a general form of the layer (half its channels read at zero temperature, numbers embedded, state carried) beats the best published model, which uses hints on some tasks; the full cold layer is exact on every test input of 9 of the 12 tasks whose answers depend on numbers only through comparisons. From yes-or-no answers it decides 2-SAT and two-colouring exactly at 500 variables and, as our theory predicts, not parity equations. Beside a frozen 7B language model it chains family relations exactly at 1,000 statements after training on 16, where the model alone falls to 44%; finite checks on the weights prove every block that learned correct at every size, on acyclic contexts and given what the model reads. On CLUTRR it is right on every story of five to ten relations given the graphs, learning the 62 rules exactly; from text, with the model frozen, no hand-written rule and only a small read-in trained, it lifts an open 7B model from 33% to 65%, above every system we found without hand-written rules except frontier reasoning models.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.11937"&gt;arXiv:2611.11937&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.11937"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>CONGA: Compiling Gaussian Fiber Geometry for Structured Bayesian Inference</title>
+      <link>https://huggingface.co/papers/2611.20995</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.20995</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Víctor Gallego</dc:creator>
+      <description>&lt;p&gt;In structured Bayesian models, a large latent block is often Gaussian conditional on a smaller set of parameters, yet generic inference methods relearn this geometry during warmup. We study how this structure can be used to construct transports for posterior inference. The conditional mean and precision determine exact affine maps, including symmetric Brenier and triangular Knothe-Rosenblatt maps, that separate a standard normal block from the remaining non-Gaussian core. KL and relative Fisher objectives then reduce to objectives on this core. We introduce CONGA, a compiler that identifies candidate Gaussian blocks and selects a temporal, spectral, or sparse implementation according to their structure and computational cost. Marginalization requires an identity established from the model; numerical evidence alone permits only a target-preserving change of variables, and a failed check leaves the model unchanged. On the Stock-Watson inflation model, CONGA improves minimum ESS per second by 12.5x for NUTS. It also restores convergence where the raw target fails: for WALNUTS on the same model, and for NUTS on a 6760-dimensional electricity load model reduced to 34 core coordinates. Experiments on graph-indexed fields show how coloring and fill affect the choice of map, including cases where retaining the original target is preferable.
+  Code at https://github.com/vicgalle/conga&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.20995"&gt;arXiv:2611.20995&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.20995"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>MInfoVisQA: A Multilingual Benchmark for Information-Rich Visual Question Answering</title>
+      <link>https://huggingface.co/papers/2611.21644</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.21644</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Changjiang Jiang</dc:creator>
+      <dc:creator>Jiang Zhou</dc:creator>
+      <dc:creator>Xinbin Yuan</dc:creator>
+      <dc:creator>Fan Zhang</dc:creator>
+      <dc:creator>Tao Feng</dc:creator>
+      <dc:creator>Zhuohan Xie</dc:creator>
+      <description>&lt;p&gt;Multimodal large language models (MLLMs) excel in vision-language tasks; yet, whether they maintain consistent understanding of information-rich visuals (InfoVis) when the surface language changes remains unclear. To quantify this capability, we introduce MInfoVisQA, a parallel benchmark with 8,960 QA configurations derived from 128 seed instances across 24 languages. We construct seed-matched, language-parallel visuals and QA pairs by disentangling numerical-structural data from text and programmatically synchronizing translated labels. We evaluate 25 MLLMs under two settings: Language-Aligned QA (LQA, matching visual-text languages) and Cross-Language QA (XQA, fixed QA language with varying visual languages). The results show that aggregate accuracy masks substantial robustness gaps: two models with comparable mean LQA accuracy (80.4\%) exhibit performance spreads of 7.8 and 20.3 percentage points across languages. Moreover, all 25 models score lower with non-English visuals under fixed English QA, underscoring the need for cross-language sensitivity metrics.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.21644"&gt;arXiv:2611.21644&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.21644"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
     </channel>
 </rss>
