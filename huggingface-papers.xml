@@ -333,6 +333,25 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>TabBioMed: A Large-Scale Benchmark for Biomedical Tabular Learning</title>
+      <link>https://huggingface.co/papers/2611.23779</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.23779</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Pau Mateo-Bernadó</dc:creator>
+      <dc:creator>Saivenkata Nagavyjayanthi Polapragada</dc:creator>
+      <dc:creator>David Bonet</dc:creator>
+      <dc:creator>Pol Arbiol Rakuljic</dc:creator>
+      <dc:creator>Laia Mogas Pladevall</dc:creator>
+      <dc:creator>Marçal Comajoan Cara</dc:creator>
+      <dc:creator>Jesus Gonzalez-Ferrer</dc:creator>
+      <dc:creator>Jordi Abante</dc:creator>
+      <dc:creator>Daniel Mas Montserrat</dc:creator>
+      <dc:creator>David Haussler</dc:creator>
+      <dc:creator>Alexander G. Ioannidis</dc:creator>
+      <description>&lt;p&gt;Recent advances in machine learning have accelerated biomedical prediction, but evaluation on structured biomedical data remains fragmented, especially for datasets with high dimensionality, large sample size, missingness, and class imbalance. We introduce TabBioMed, a large-scale benchmark of 94 curated public biomedical tabular datasets spanning electronic health records, drug discovery, genomics, transcriptomics, proteomics, metabolomics, single-cell omics, and systems biology. TabBioMed unifies these datasets through a standardized, dataset-aware preprocessing and evaluation framework, enabling reproducible comparison across classification, regression, and multi-target tasks. We benchmark 23 models across classical baselines, gradient-boosted trees, neural tabular architectures, and tabular foundation models. Foundation models deliver the strongest family-level predictive performance. However, their gains are regime-dependent: tree-based models and tuned multilayer perceptrons remain highly competitive, often dominating under inference-time or training-cost constraints. Overall, TabBioMed shows that biomedical tabular learning is strongly context-dependent, with optimal model choice depending on data regime, task type, and computational budget. We release TabBioMed with curated datasets and splits, preprocessing code, baselines, and results, providing a reproducible benchmark for practical model selection and future methods development in biomedical machine learning, available at https://github.com/AI-sandbox/TabBioMed.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.23779"&gt;arXiv:2611.23779&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.23779"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Thinking Fast, Anywhere: One System-1 for the Decision Points of Any Agent Workflow</title>
       <link>https://huggingface.co/papers/2611.23751</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.23751</guid>
@@ -458,6 +477,18 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation</title>
+      <link>https://huggingface.co/papers/2611.22382</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.22382</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Prashant Khatri</dc:creator>
+      <dc:creator>Bhavana Malagavalli</dc:creator>
+      <dc:creator>Saiful Haq</dc:creator>
+      <dc:creator>Niyati Chhaya</dc:creator>
+      <description>&lt;p&gt;Large language models (LLMs) have renewed interest in Page Stream Segmentation (PSS), splitting a multi-page file into its constituent documents. Yet published LLM methods still frame the task as boundary classification over one or a few neighboring pages, and commercial document-splitting APIs do not disclose their methods. We reimagine PSS for LLMs as a sequential process over the whole stream and propose RICoT (Recurrent Interleaved Chain-of-Thought), a prompting framework that works through the pages as a reader would: within a sliding window it reasons about each page and commits its boundary decision before moving on, and across windows it carries forward a compact record of what it has read, keeping per-call cost bounded. We also introduce FinancePSS-205, a benchmark of 205 real-world, de-identified financial page streams, to be released publicly. On FinancePSS-205, RICoT matches or outperforms pairwise and windowed prompting with the same backbone for each of three open-weight LLMs; on a TABME test subset, RICoT with GLM-5 reaches document F1 0.847 and boundary F1 0.915, above published zero-shot results. A 2B-parameter student, trained on a larger teacher&amp;#x27;s decisions with and without the page-level reasoning, performs comparably in both modes and comes within 0.05 document F1 of the strongest prompted model on FinancePSS-205.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.22382"&gt;arXiv:2611.22382&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.22382"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Decoding Without a Decoder: Direct Pixel Prediction from Diffusion Transformers</title>
       <link>https://huggingface.co/papers/2611.22287</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.22287</guid>
@@ -492,6 +523,22 @@
       <dc:creator>Hyebin Cho</dc:creator>
       <dc:creator>Joon Son Chung</dc:creator>
       <description>&lt;p&gt;The goal of this paper is to reduce the input token cost of Omni-modal large language models (Omni-LLMs) at inference time. Omni-LLMs reason jointly over audio, video and text, but the cost of the three streams is highly unbalanced: visual tokens account for the vast majority of the input, and are highly redundant. In this paper, we propose ReMo, a training-free framework that compresses visual tokens by redistributing their information across modalities: a visual token is kept only if its information appears nowhere else. ReMo achieves this in two ways: (i) it aligns audio and video in a shared space via closed-form calibration, and removes visual tokens already explained by the audio or by other visual tokens; and (ii) it replaces object-level visual tokens, identified by a lightweight object detector, with compact text proxies, short descriptions of each object and its location, conveying the same content in far fewer tokens. On Qwen2.5-Omni at two model scales, ReMo removes 54% of the input tokens with comparable accuracy. It performs comparably to the full-token model, reaching 101.2% and 101.4% of its average accuracy over five audio-visual benchmarks.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2607.21179"&gt;arXiv:2607.21179&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2607.21179"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>BLIP-Live: Balancing Timeliness &amp; Firing Precision in Proactive Streaming Video Agents</title>
+      <link>https://huggingface.co/papers/2611.21553</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.21553</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Kanchana Ranasinghe</dc:creator>
+      <dc:creator>Honglu Zhou</dc:creator>
+      <dc:creator>Dominick Reilly</dc:creator>
+      <dc:creator>Le Xue</dc:creator>
+      <dc:creator>Shusheng Yang</dc:creator>
+      <dc:creator>Juan Carlos Niebles</dc:creator>
+      <dc:creator>Silvio Savarese</dc:creator>
+      <dc:creator>Ran Xu</dc:creator>
+      <description>&lt;p&gt;Streaming video understanding is becoming increasingly important for real-world interactive systems. Such systems must be proactive for natural and useful human interaction: they should respond as soon as sufficient evidence becomes available while avoiding premature, redundant, or incorrect responses. We present BLIP-Live, a framework unifying data, metrics, harness, and training around a shared formulation of proactivity as effective causal response decisions balancing the two competing objectives of responding vs silence. First, we construct BLIP-Live-780K dataset containing human annotations of proactive response content and timing, which defines this desired behavior. We then propose PAUC-F, a metric to effectively measure our desired proactive behavior. PAUC-F combines existing response timeliness metrics with firing precision to reward early useful responses without rewarding excessive firing. With our desired behavior defined and measurable, we finally investigate model-agnostic inference harnesses that draw out proactive streaming capabilities of offline vision language models (VLMs), together with training pipelines that learn to further improve their proactive responsiveness. Across both settings, we find that combinations of sliding visual windows, online interaction memory, and structured response outputs consistently yield strongest proactive performance. Our experiments result in two models, with our BLIP-Live-Qwen model achieving state-of-the-art performance across four proactive streaming benchmarks, with gains up to 44% over baselines and outperforming multiple closed API models. Our code and data will be released publicly.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.21553"&gt;arXiv:2611.21553&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.21553"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -557,6 +604,15 @@
       <dc:creator>Gordon Wetzstein</dc:creator>
       <dc:creator>Leonidas Guibas</dc:creator>
       <description>&lt;p&gt;Flow-based generative models are trained on a hand-chosen prediction target, such as the velocity, the noise, or the clean data. This choice strongly affects training and sample quality. We introduce Anisotropic Flow Models (AnisoFlow), which replaces a fixed prediction target with a fully learnable one. AnisoFlow learns to scale the noise component of the target anisotropically, assigning a separate nonnegative weight to each direction in a jointly learned basis. A closed-form map recovers the velocity from the network&amp;#x27;s prediction, leaving the architecture, flow-matching loss, and sampler unchanged. Since recovery is exact, training optimizes the target purely to make it easier for the network to predict. We theoretically analyze the resulting prediction error and predict that the preferred noise weight in each direction scales near-linearly with data variance, in agreement with the weights learned empirically in pixel space. AnisoFlow improves FID from 1.90 to 1.55 over the JiT baseline on ImageNet 256times256, by learning only the prediction target, without representation alignment or architectural changes. In pixel-space text-to-image generation, AnisoFlow improves image quality and, through better-conditioned velocity recovery, largely removes patch-seam artifacts under reduced-precision inference.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17767"&gt;arXiv:2611.17767&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17767"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Choosing Quantized Code LLMs by File Size and Energy per Solved Task</title>
+      <link>https://huggingface.co/papers/2611.17605</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.17605</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Aditi Patodiya</dc:creator>
+      <description>&lt;p&gt;A developer running a code assistant on a laptop downloads one model file, and local inference moves the energy of every request onto that machine. A common rule says a larger model at lower precision tends to beat a smaller one at higher precision. We ran 24 GGUF files of Qwen2.5-Coder at four sizes on a fanless MacBook Air M2 and priced each in energy per solved task on 542 EvalPlus tasks. The result is a selection guide indexed by Ollama&amp;#x27;s listed file size, with an evidence label on each pick. At 1 and 2 GB it picks the q4_K_M files of the 1.5B and 3B models, both on the correctness and energy frontier under every accounting. At 3 GB as listed, the larger-model rule picks 7B-q2_K, the only measured 7B file that fits, and there it does not pay. That file brings no significant gain in solves over the 2 GB pick, 3B-q4_K_M, and the 90% CI limits any 3B-q4_K_M deficit to 2.4 points. Yet 7B-q2_K needs 2.03 times the energy per solved task on CPU, GPU and memory rails, or 1.66 to 1.81 times on whole-system power. On HumanEval+, five alternating session pairs give a ratio of 1.925 against 1.956 in the main grid. At 8 GB, 7B-q6_K buys a significant gain over the 2 GB pick at a higher energy price. From 1.5B up, q4_K_M trails the highest precision measured at its size by less than 3 points (90% CI). We release per-task results, power logs and the analysis script.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.17605"&gt;arXiv:2611.17605&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.17605"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
