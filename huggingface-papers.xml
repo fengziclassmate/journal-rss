@@ -18,6 +18,20 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>RL Post-Training in Diffusion Transformers Is Activation Steering</title>
+      <link>https://huggingface.co/papers/2611.26627</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.26627</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Tuna Han Salih Meral</dc:creator>
+      <dc:creator>Kaan Oktay</dc:creator>
+      <dc:creator>Alec Helbling</dc:creator>
+      <dc:creator>Atakan Kara</dc:creator>
+      <dc:creator>Duen Horng Chau</dc:creator>
+      <dc:creator>Pinar Yanardag</dc:creator>
+      <description>&lt;p&gt;Reinforcement learning (RL) post-training substantially improves the visual quality, text rendering, and compositional accuracy of diffusion transformers. Because capabilities such as rendering requested text or composing multiple objects are inherently prompt-dependent, a natural hypothesis is that improving them requires learning complex, input-dependent transformations. To isolate how much of these gains an input-independent shift explains, we probe each RL-tuned model with a deliberately simple parameterization: a fixed set of steering vectors added to the block outputs of the frozen base model. On SD3.5-M, these vectors hold 65x fewer parameters than the RL-tuned LoRA (0.29M against 18.8M). We fit them to match the velocity predictions of public RL-tuned checkpoints, with no reward in the objective. Although the vectors are identical for every prompt, token, and sampling seed, they recover 90.0-96.3% of the reward gains of six RL-tuned image models, and 89.8% and 111.9% on two RL-tuned video models. Initialized at zero and trained with online RL, the vectors alone exceed the reward gains of weight-based RL on text rendering (OCR) and human preference (PickScore) on SD3.5-M. A constant shift thus suffices for most of the gain of policy-gradient RL post-training: without new input-dependent transformations, it steers the pretrained generator toward what it can already compute.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.26627"&gt;arXiv:2611.26627&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.26627"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>PlayCraft: Designing Engaging Games from Agent Play Experience</title>
       <link>https://huggingface.co/papers/2611.26624</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.26624</guid>
@@ -457,6 +471,19 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>Squoosh Bench: Evaluating UX-1 on 318 Historical Website A/B Tests</title>
+      <link>https://huggingface.co/papers/2611.25200</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.25200</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Rohith Pasula</dc:creator>
+      <dc:creator>Johari Dramiga</dc:creator>
+      <dc:creator>Viraj Shah</dc:creator>
+      <dc:creator>Suzan Halim</dc:creator>
+      <dc:creator>Tyler Dooskin</dc:creator>
+      <description>&lt;p&gt;Experimentation teams must decide which proposed website changes to test with live traffic. We evaluated whether forecasts from simulated shoppers could inform that choice. We screened 412 historical website A/B tests and evaluated four systems on the 318 that ran longer than 21 days. Each system predicted an original win, a variant win, or an inconclusive result. Page roles were masked and recorded outcomes were withheld during inference. Squoosh UX-1, a model fine-tuned on human browsing data, simulated 1,000 shoppers per arm and correctly classified 267 of 318 outcomes (84.0%, 95% Wilson interval 79.5-87.6%, treating experiments as independent). Qwen3 Next 80B, the strongest general-purpose configuration on outcome accuracy, correctly classified 196 of 318 (61.6%). UX-1 favored the variant in 126 experiments. In the live tests, 118 of those variants won (93.7%), four lost, and four had inconclusive results. The remaining 192 experiments included 19 additional variant wins.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.25200"&gt;arXiv:2611.25200&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.25200"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation Benchmarks</title>
       <link>https://huggingface.co/papers/2611.25179</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.25179</guid>
@@ -526,6 +553,19 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>In Situ Training of Optical Neural Networks by Coding Agents</title>
+      <link>https://huggingface.co/papers/2611.23875</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.23875</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Ilker Oguz</dc:creator>
+      <dc:creator>Colin Christian</dc:creator>
+      <dc:creator>Christophe Moser</dc:creator>
+      <dc:creator>Demetri Psaltis</dc:creator>
+      <dc:creator>Gordon Wetzstein</dc:creator>
+      <description>&lt;p&gt;Optical neural networks promise fast, energy-efficient computing, but every device departs from its design and must be trained with the hardware. In situ training relies on an expert-built calibrated digital model of each device or on gradient-free trial and error. Coding agents, large language models that write and run programs, have shown an emergent ability to understand and edit the weights of digital neural networks. Here we introduce optics as code, a method in which a coding agent trains an optical neural network from measurements alone, through a harness that returns camera images of its probes and requires a hypothesis per request. We discovered that the agent forms a physical understanding of the optics and reparametrizes the network with interpretable optical elements tuned on the hardware. It outperforms gradient-free methods in classification and image encoding, approaching backpropagation through a calibrated model at a fraction of the cost. Needing neither per-device calibration nor gradients through the hardware, and improving with more capable models, optics as code offers a practical route to large, scalable optical neural networks and a general tool for calibrating and optimizing optical experiments.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.23875"&gt;arXiv:2611.23875&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.23875"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>NarrowSpec: Draft Hidden Width Need Not Match the Target in Speculative Decoding</title>
       <link>https://huggingface.co/papers/2611.23835</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.23835</guid>
@@ -549,6 +589,25 @@
       <dc:creator>Jaewook Jeong</dc:creator>
       <dc:creator>Joon Son Chung</dc:creator>
       <description>&lt;p&gt;Our aim is to accelerate autoregressive vision-language-action models (VLAs), which generate robot actions one token at a time. Speculative decoding makes this possible: a lightweight draft model proposes several tokens at once, and the VLA verifies them in a single pass, accepting only those that match its own predictions, so decoding remains lossless. The speedup, however, is limited in robot control, where many different tokens encode nearly the same motion and a draft close to the correct action is still rejected. To address this, our approach, VSpark, is built upon three design choices: (i) rollouts collected with calibrated action noise, which expose the draft to a wider range of robot states; (ii) feature alignment, which trains the draft to match the VLA&amp;#x27;s hidden features rather than its output tokens alone; and (iii) continuation reuse, which keeps the predictions the VLA has already computed along rejected drafts as candidates for the next verification step, instead of discarding them. On four VLAs with different action tokenizers and four manipulation benchmarks, VSpark achieves 1.28x to 2.10x speedup while keeping the VLA&amp;#x27;s decoding lossless.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.22666"&gt;arXiv:2611.22666&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.22666"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Language Models Can Rewrite Their Own Weights</title>
+      <link>https://huggingface.co/papers/2611.21885</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.21885</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Jiajun Fan</dc:creator>
+      <dc:creator>Neil He</dc:creator>
+      <dc:creator>Changyi Yang</dc:creator>
+      <dc:creator>Andy Mao</dc:creator>
+      <dc:creator>Xi Zhu</dc:creator>
+      <dc:creator>Chaoran Cheng</dc:creator>
+      <dc:creator>Kaiqu Liang</dc:creator>
+      <dc:creator>Shuaike Shen</dc:creator>
+      <dc:creator>Zetian Li</dc:creator>
+      <dc:creator>Ruihan Guo</dc:creator>
+      <dc:creator>Ge Liu</dc:creator>
+      <description>&lt;p&gt;Language models are trained once, frozen and deployed: improving one again takes another training run, and a prompt, a scaffold or extra computation at inference is gone once the task ends. A frontier model has been shown to edit the weights of a much smaller one. We ask whether a model can rewrite its own weights to make itself better, and find that it can, by its own reasoning, with no gradients and no training; we call this self-rewriting. Given its weights, graded answers and the ability to run itself, a 27B model diagnoses its failure and edits the weights behind it. It surpasses itself: its own edit makes it 6.6 points more accurate on 490 problems it never saw, in a test fixed in advance, and another session&amp;#x27;s edit also makes it significantly better. It keeps getting better: it submits an edit only when its own tests support it, each edit replacing the last, and over its first eight such sessions its accuracy only rises. Unlike test-time scaling, the gain persists in its weights and adds no cost per answer; unlike training, it needs no pre- or post-training infrastructure, only an open model and hours on one GPU. It repairs a damaged copy of itself: it locates the corrupted matrix and rewrites it with values of its own, never reading the undamaged weights; found on text math problems alone, the repair lifts the copy on six image benchmarks it never saw from 7% to 70% accuracy, 83% of the undamaged model&amp;#x27;s. And the ability emerges with scale: across four sizes of one family, the 2B model makes no edit and the 4B and 9B models break themselves; only the 27B model works on itself as a human would, comparing its hidden states on answers that finish and on answers that run out of tokens, weakening the direction that separates them. Like a human, a model need not separate training from inference; improving a language model may come to take a conversation rather than a training run.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.21885"&gt;arXiv:2611.21885&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.21885"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -576,6 +635,16 @@
       <dc:creator>Jing Lyu</dc:creator>
       <dc:creator>Ying Tai</dc:creator>
       <description>&lt;p&gt;Recent advances in video generation call for reliable detection grounded in explicit forensic evidence. However, current methods primarily depend on single-pass chain-of-thought reasoning that overlooks brief or localized artifacts, or on predefined multi-agent workflows that offer limited flexibility in selecting relevant inspections. Even with adaptive investigation, optimizing the investigation policy alone does not directly improve the forensic capabilities of fixed experts. We introduce WeVisForensics, an agentic framework in which a main investigator agent coordinates a self-evolving library of forensic inspector sub-agents spanning visual and audio cues. The investigator learns which artifact type to examine, over which window, and when to conclude, and these interactions provide shared feedback for both levels of agents. Our dual-timescale policy optimization strategy, DTPO, closes this loop through fast reinforcement learning of the investigator and slower refinement of the inspectors, guided by annotated artifact intervals, to report subtle artifacts they once dismissed. Furthermore, we curate ForenCue-30K, combining role-specific forensic annotations and interaction trajectories to supervise individual inspections and their coordination, with an accompanying reinforcement-learning pool. Experiments show that WeVisForensics averages 95.2% detection accuracy across in-domain, out-of-domain and agentic benchmarks, 9.0% above the strongest prior detector, while grounding its verdicts in localized evidence.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.21373"&gt;arXiv:2611.21373&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.21373"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>System 1 agents: a method for local, reliable and fast agentic AI</title>
+      <link>https://huggingface.co/papers/2611.21053</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.21053</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Eleftherios Tzanis</dc:creator>
+      <dc:creator>Michail E. Klontzas</dc:creator>
+      <description>&lt;p&gt;Agentic artificial intelligence could automate analyses of sensitive clinical data, but current agents depend on large language models (LLMs). Cloud LLMs expose patient data. Local LLMs hallucinate, and an invented value in a tool call propagates through every later step. Here we present a method to build System 1 agents: local agents that call tools without generating text. A deterministic compiler turns each tool&amp;#x27;s schema and the request into multiple-choice questions whose options come from the request and the schema, then a one-pass decision model answers them. On 1,952 requests to 157 biomedical tools, the best System 1 agent chose the right tool, or correctly declined, for 97.0% of requests, significantly ahead of all 18 local LLM-agent settings (best 95.2%). The System 1 agent filled 97.0% of 6,056 stated argument values. No System 1 call contained invented content, against 5.5-19.7% of LLM calls. The System 1 Agents framework is freely available as open-source software at https://github.com/eltzanis/SystemOneAgents.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.21053"&gt;arXiv:2611.21053&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.21053"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -631,6 +700,21 @@
       <dc:creator>Dengzhe Hou</dc:creator>
       <dc:creator>Kazunori D Yamada</dc:creator>
       <description>&lt;p&gt;Decision-making in humans and AI involves multiple cognitive abilities. System One decision models produce fast, structured choices. Their cognitive strengths and limitations, however, remain poorly understood. We introduce S1CogBench, a benchmark of 24 established cognitive tasks and 27 evaluation modes, evaluating seven open models and the API model Jev. It combines human-response prediction, autonomous execution, and controlled task manipulations to reveal strengths and failures that aggregate scores miss. We find distinct behavioral profiles across the evaluated models. In these models, strong performance on some learning tasks coexists with failures to gather information or adapt to feedback, while high accuracy does not guarantee human-like responses to changing task demands. Shared readout controls show that model rankings depend partly on how choices are extracted. Separate latency comparisons with generative language models show that long responses are much slower than direct decisions, whereas matched one-token generation adds little overhead. To our knowledge, S1CogBench is the first benchmark of System One decision models on established cognitive experiments. It provides a common empirical basis for identifying their capabilities and limitations before integrating them into automated decision systems.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.00911"&gt;arXiv:2611.00911&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.00911"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Lang-SVG: Hierarchical Image Vectorization with Language Priors</title>
+      <link>https://huggingface.co/papers/2611.15941</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.15941</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xi Liu</dc:creator>
+      <dc:creator>Chaoyi Zhou</dc:creator>
+      <dc:creator>Run Wang</dc:creator>
+      <dc:creator>Jiaang Li</dc:creator>
+      <dc:creator>Feng Luo</dc:creator>
+      <dc:creator>Junxiang Huang</dc:creator>
+      <dc:creator>Siyu Huang</dc:creator>
+      <description>&lt;p&gt;Image vectorization reconstructs raster images as compact scalable vector graph- ics (SVG), providing a structured and editable code representation of images. However, most existing vectorization methods optimize for pixel-level render- ing fidelity, often producing SVGs that lack alignment with human-perceived object-part hierarchies, making them difficult to manipulate. To address this, we propose Lang-SVG, which introduces an explicit tree structure to organize SVG primitives with semantic labels and parent-child relationships. Lang-SVG incorporates granularity-controllable and open-vocabulary segmentation priors to initialize object-part hierarchies and leverages multimodal large language models (MLLMs) with SVG tree context to assign semantic labels to unlabeled nodes. To reduce redundancy, we introduce depth-adaptive simplification to reduce shape complexity and Tree-Guided Pruning and Merging to eliminate redundant SVG nodes. L1-SAM-Prompting further recovers missing regions to improve recon- struction fidelity and structural completeness. Beyond reconstruction fidelity, we introduce a new evaluation protocol that measures structural quality and semantic part alignment. Experiments demonstrate that Lang-SVG achieves state-of-the-art performance in both rendering fidelity and structural quality. Project website: https://xiliu8006.github.io/Lang-SVG/.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.15941"&gt;arXiv:2611.15941&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.15941"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     </channel>

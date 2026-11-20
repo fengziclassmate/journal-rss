@@ -12,6 +12,21 @@
     "published_at": "2026-11-19T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
   },
+  "2611.26627": {
+    "id": "2611.26627",
+    "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+    "summary": "Reinforcement learning (RL) post-training substantially improves the visual quality, text rendering, and compositional accuracy of diffusion transformers. Because capabilities such as rendering requested text or composing multiple objects are inherently prompt-dependent, a natural hypothesis is that improving them requires learning complex, input-dependent transformations. To isolate how much of these gains an input-independent shift explains, we probe each RL-tuned model with a deliberately simple parameterization: a fixed set of steering vectors added to the block outputs of the frozen base model. On SD3.5-M, these vectors hold 65x fewer parameters than the RL-tuned LoRA (0.29M against 18.8M). We fit them to match the velocity predictions of public RL-tuned checkpoints, with no reward in the objective. Although the vectors are identical for every prompt, token, and sampling seed, they recover 90.0-96.3% of the reward gains of six RL-tuned image models, and 89.8% and 111.9% on two RL-tuned video models. Initialized at zero and trained with online RL, the vectors alone exceed the reward gains of weight-based RL on text rendering (OCR) and human preference (PickScore) on SD3.5-M. A constant shift thus suffices for most of the gain of policy-gradient RL post-training: without new input-dependent transformations, it steers the pretrained generator toward what it can already compute.",
+    "authors": [
+      "Tuna Han Salih Meral",
+      "Kaan Oktay",
+      "Alec Helbling",
+      "Atakan Kara",
+      "Duen Horng Chau",
+      "Pinar Yanardag"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
   "2611.26624": {
     "id": "2611.26624",
     "title": "PlayCraft: Designing Engaging Games from Agent Play Experience",
@@ -478,6 +493,20 @@
     "published_at": "2026-11-18T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
   },
+  "2611.25200": {
+    "id": "2611.25200",
+    "title": "Squoosh Bench: Evaluating UX-1 on 318 Historical Website A/B Tests",
+    "summary": "Experimentation teams must decide which proposed website changes to test with live traffic. We evaluated whether forecasts from simulated shoppers could inform that choice. We screened 412 historical website A/B tests and evaluated four systems on the 318 that ran longer than 21 days. Each system predicted an original win, a variant win, or an inconclusive result. Page roles were masked and recorded outcomes were withheld during inference. Squoosh UX-1, a model fine-tuned on human browsing data, simulated 1,000 shoppers per arm and correctly classified 267 of 318 outcomes (84.0%, 95% Wilson interval 79.5-87.6%, treating experiments as independent). Qwen3 Next 80B, the strongest general-purpose configuration on outcome accuracy, correctly classified 196 of 318 (61.6%). UX-1 favored the variant in 126 experiments. In the live tests, 118 of those variants won (93.7%), four lost, and four had inconclusive results. The remaining 192 experiments included 19 additional variant wins.",
+    "authors": [
+      "Rohith Pasula",
+      "Johari Dramiga",
+      "Viraj Shah",
+      "Suzan Halim",
+      "Tyler Dooskin"
+    ],
+    "published_at": "2026-11-18T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
   "2611.25179": {
     "id": "2611.25179",
     "title": "Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation Benchmarks",
@@ -552,6 +581,20 @@
     "published_at": "2026-11-18T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
   },
+  "2611.23875": {
+    "id": "2611.23875",
+    "title": "In Situ Training of Optical Neural Networks by Coding Agents",
+    "summary": "Optical neural networks promise fast, energy-efficient computing, but every device departs from its design and must be trained with the hardware. In situ training relies on an expert-built calibrated digital model of each device or on gradient-free trial and error. Coding agents, large language models that write and run programs, have shown an emergent ability to understand and edit the weights of digital neural networks. Here we introduce optics as code, a method in which a coding agent trains an optical neural network from measurements alone, through a harness that returns camera images of its probes and requires a hypothesis per request. We discovered that the agent forms a physical understanding of the optics and reparametrizes the network with interpretable optical elements tuned on the hardware. It outperforms gradient-free methods in classification and image encoding, approaching backpropagation through a calibrated model at a fraction of the cost. Needing neither per-device calibration nor gradients through the hardware, and improving with more capable models, optics as code offers a practical route to large, scalable optical neural networks and a general tool for calibrating and optimizing optical experiments.",
+    "authors": [
+      "Ilker Oguz",
+      "Colin Christian",
+      "Christophe Moser",
+      "Demetri Psaltis",
+      "Gordon Wetzstein"
+    ],
+    "published_at": "2026-11-18T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
   "2611.23835": {
     "id": "2611.23835",
     "title": "NarrowSpec: Draft Hidden Width Need Not Match the Target in Speculative Decoding",
@@ -580,6 +623,26 @@
     "published_at": "2026-11-17T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
   },
+  "2611.21885": {
+    "id": "2611.21885",
+    "title": "Language Models Can Rewrite Their Own Weights",
+    "summary": "Language models are trained once, frozen and deployed: improving one again takes another training run, and a prompt, a scaffold or extra computation at inference is gone once the task ends. A frontier model has been shown to edit the weights of a much smaller one. We ask whether a model can rewrite its own weights to make itself better, and find that it can, by its own reasoning, with no gradients and no training; we call this self-rewriting. Given its weights, graded answers and the ability to run itself, a 27B model diagnoses its failure and edits the weights behind it. It surpasses itself: its own edit makes it 6.6 points more accurate on 490 problems it never saw, in a test fixed in advance, and another session's edit also makes it significantly better. It keeps getting better: it submits an edit only when its own tests support it, each edit replacing the last, and over its first eight such sessions its accuracy only rises. Unlike test-time scaling, the gain persists in its weights and adds no cost per answer; unlike training, it needs no pre- or post-training infrastructure, only an open model and hours on one GPU. It repairs a damaged copy of itself: it locates the corrupted matrix and rewrites it with values of its own, never reading the undamaged weights; found on text math problems alone, the repair lifts the copy on six image benchmarks it never saw from 7% to 70% accuracy, 83% of the undamaged model's. And the ability emerges with scale: across four sizes of one family, the 2B model makes no edit and the 4B and 9B models break themselves; only the 27B model works on itself as a human would, comparing its hidden states on answers that finish and on answers that run out of tokens, weakening the direction that separates them. Like a human, a model need not separate training from inference; improving a language model may come to take a conversation rather than a training run.",
+    "authors": [
+      "Jiajun Fan",
+      "Neil He",
+      "Changyi Yang",
+      "Andy Mao",
+      "Xi Zhu",
+      "Chaoran Cheng",
+      "Kaiqu Liang",
+      "Shuaike Shen",
+      "Zetian Li",
+      "Ruihan Guo",
+      "Ge Liu"
+    ],
+    "published_at": "2026-11-16T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
   "2611.21383": {
     "id": "2611.21383",
     "title": "The Mask Is Not the Object: Volumetric Supervision for 3D Gaussian Segmentation",
@@ -605,6 +668,17 @@
       "Chen Li",
       "Jing Lyu",
       "Ying Tai"
+    ],
+    "published_at": "2026-11-16T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
+  "2611.21053": {
+    "id": "2611.21053",
+    "title": "System 1 agents: a method for local, reliable and fast agentic AI",
+    "summary": "Agentic artificial intelligence could automate analyses of sensitive clinical data, but current agents depend on large language models (LLMs). Cloud LLMs expose patient data. Local LLMs hallucinate, and an invented value in a tool call propagates through every later step. Here we present a method to build System 1 agents: local agents that call tools without generating text. A deterministic compiler turns each tool's schema and the request into multiple-choice questions whose options come from the request and the schema, then a one-pass decision model answers them. On 1,952 requests to 157 biomedical tools, the best System 1 agent chose the right tool, or correctly declined, for 97.0% of requests, significantly ahead of all 18 local LLM-agent settings (best 95.2%). The System 1 agent filled 97.0% of 6,056 stated argument values. No System 1 call contained invented content, against 5.5-19.7% of LLM calls. The System 1 Agents framework is freely available as open-source software at https://github.com/eltzanis/SystemOneAgents.",
+    "authors": [
+      "Eleftherios Tzanis",
+      "Michail E. Klontzas"
     ],
     "published_at": "2026-11-16T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
@@ -665,6 +739,22 @@
       "Kazunori D Yamada"
     ],
     "published_at": "2026-11-14T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
+  "2611.15941": {
+    "id": "2611.15941",
+    "title": "Lang-SVG: Hierarchical Image Vectorization with Language Priors",
+    "summary": "Image vectorization reconstructs raster images as compact scalable vector graph- ics (SVG), providing a structured and editable code representation of images. However, most existing vectorization methods optimize for pixel-level render- ing fidelity, often producing SVGs that lack alignment with human-perceived object-part hierarchies, making them difficult to manipulate. To address this, we propose Lang-SVG, which introduces an explicit tree structure to organize SVG primitives with semantic labels and parent-child relationships. Lang-SVG incorporates granularity-controllable and open-vocabulary segmentation priors to initialize object-part hierarchies and leverages multimodal large language models (MLLMs) with SVG tree context to assign semantic labels to unlabeled nodes. To reduce redundancy, we introduce depth-adaptive simplification to reduce shape complexity and Tree-Guided Pruning and Merging to eliminate redundant SVG nodes. L1-SAM-Prompting further recovers missing regions to improve recon- struction fidelity and structural completeness. Beyond reconstruction fidelity, we introduce a new evaluation protocol that measures structural quality and semantic part alignment. Experiments demonstrate that Lang-SVG achieves state-of-the-art performance in both rendering fidelity and structural quality. Project website: https://xiliu8006.github.io/Lang-SVG/.",
+    "authors": [
+      "Xi Liu",
+      "Chaoyi Zhou",
+      "Run Wang",
+      "Jiaang Li",
+      "Feng Luo",
+      "Junxiang Huang",
+      "Siyu Huang"
+    ],
+    "published_at": "2026-11-11T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
   },
   "2611.24161": {
