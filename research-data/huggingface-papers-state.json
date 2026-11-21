@@ -350,6 +350,36 @@
     "published_at": "2026-11-19T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
   },
+  "2611.26239": {
+    "id": "2611.26239",
+    "title": "Teaching Vision-Language-Action Models to Stop Safely",
+    "summary": "Vision-language-action (VLA) models enable robots to perform diverse tasks from visual observations and language instructions. While prior work has explored task suppression and refusal, stopping prohibited behavior once execution is underway and controlling the resulting physical response remain challenging. Our evaluation reveals that policies which suppress a task from its initial state can still complete it when taking over partway through execution. Even when the task remains unfinished, the robot may drop a held object, making non-completion an incomplete measure of safety. To address these challenges, we introduce State-Aware Fallback Imitation (SAFI) for tasks where holding provides an appropriate alternative response. SAFI comprises two stages, (1) fallback target construction, which assigns stationary arm commands and consistent gripper targets throughout prohibited-task demonstrations, and (2) joint policy adaptation, which learns these targets alongside the original actions of retained tasks. This supervision teaches an explicit alternative response at intermediate execution states while maintaining the robot's other skills. Extensive experiments with OpenVLA-OFT across LIBERO and BadLIBERO tasks evaluate prohibited completion, physical incidents, and retained-task performance. On the evaluated LIBERO tasks, SAFI reduces aggregate target success after takeover to 1.3\\%, with no recorded physical incidents or action saturation, while preserving high retained-task success.",
+    "authors": [
+      "Zheyuan Liu",
+      "Chuhan Wang",
+      "Jinduo Guo",
+      "Yue Huang",
+      "Xiangchi Yuan",
+      "Ningshan Ma",
+      "Meng Jiang"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
+  "2611.26232": {
+    "id": "2611.26232",
+    "title": "Time Series Structure Learning with Local Causal Parent Discovery",
+    "summary": "Learning and inference on time series can pose significant statistical challenges, including autocorrelated observations, distribution shift over time, and the curse of dimensionality. These challenges complicate the practical application of causal discovery algorithms, which already suffer from high computational and sample complexity in the general case. To mitigate these issues, this work introduces Iterative Temporal Parent Discovery (ITPD): a sound and complete constraint-based procedure for causal structure learning on multivariate time series with causal nonstationarity. ITPD takes a local-to-global learning approach that discovers the global graph by sequentially discovering the parent set for each variable. ITPD exploits temporal structural priors, graph partitioning, and the local Markov condition to swap higher-order conditional independence tests for lower-order alternatives. With an exact oracle, ITPD performed the least number of tests and used the smallest average conditioning set sizes relative to baselines. In benchmarking simulations, ITPD sat on the Pareto frontier with respect to F1 and wall-clock time and was faster than baselines on large graphs (geq 1000 nodes). For graphs with 2000 nodes, ITPD ran 2.3times, 9.1times, and 40.9times faster than iterative IAMB, DF-PC, and PCMCI, respectively.",
+    "authors": [
+      "Jacqueline Maasch",
+      "Shu Wan",
+      "Hank Zhu",
+      "Huan Liu",
+      "Zhiguang Wang"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
   "2611.26211": {
     "id": "2611.26211",
     "title": "SpecWM: Turning Verification into Refinement for Streaming World Models",
@@ -441,6 +471,23 @@
       "Youngwoo Shin",
       "Jongsuk Kim",
       "Junmo Kim"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-20T00:00:00+00:00"
+  },
+  "2611.25604": {
+    "id": "2611.25604",
+    "title": "PAD: Policy-Aware Data Valuation for Autonomous Driving",
+    "summary": "End-to-end autonomous driving increasingly depends on scaling training demonstrations, yet data growth does not guarantee proportional gains. However, additional data do not guarantee better policies: a demonstration that benefits one planner may be redundant or harmful to another. Existing curation methods typically infer data value from intrinsic sample properties or training-dependent proxies that do not measure downstream policy utility. To address this, we introduce Policy-Aware Data Valuation (PAD), a framework that assigns each candidate demonstration a utility specific to the target driving policy. PAD combines scene-level calibration feedback with projected policy gradients and a regularized approximation of local training geometry, producing scalable influence-based values for the policy. A controlled group-removal study establishes the directional fidelity of these values, while cross-planner analysis shows that the same candidate pool induces markedly different rankings across planner families. On DiffusionDrive, PAD improves EPDMS over real-only training by 3.5 points on NavTest and 5.0 points on NavHard. Policy-specific curation consistently outperforms real-only and full-pool training across diffusion-, regression-, and flow-matching-based planners while substantially reducing scene-level regressions. These results establish policy-aware data valuation as a basis for replacing indiscriminate data accumulation with targeted policy improvement, enabling more efficient and reliable scaling of autonomous-driving systems.",
+    "authors": [
+      "Chengkai Xu",
+      "Yicheng Guo",
+      "Jiaqi Liu",
+      "Yiming Cui",
+      "Shiyu Fang",
+      "Peng Hang",
+      "Hao Zhang",
+      "Jian Sun"
     ],
     "published_at": "2026-11-19T00:00:00+00:00",
     "submitted_at": "2026-11-20T00:00:00+00:00"
