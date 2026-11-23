@@ -1,9 +1,84 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Hugging Face Daily Papers</title>
     <link>https://huggingface.co/papers</link>
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
+    <item>
+      <title>Prune to Expand: Training Prompt Enhancers with Less to Imitate</title>
+      <link>https://huggingface.co/papers/2611.27229</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.27229</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Tianhe Wu</dc:creator>
+      <dc:creator>Qilin Sun</dc:creator>
+      <dc:creator>Kede Ma</dc:creator>
+      <description>&lt;p&gt;Prompt enhancement (PE) refines concise user prompts into detailed descriptions to improve the compositional aesthetics of generated images while preserving user intent. A common practice constructs supervised fine-tuning (SFT) pairs by deriving short, user-like prompts from dense captions, implicitly assuming that captions that improve image generation also provide effective supervision. In this paper, however, we uncover a counterintuitive finding: PE models trained on caption pairs with substantial generation gains perform comparably to those trained on pairs with only marginal gains. We argue that dense captions can impose redundant supervision by requiring PE models to reproduce image-specific details weakly related to user intent. Motivated by this discrepancy, we introduce Prune to Expand (P2E), a simple text-only method that refines dense-caption supervision by selectively removing redundant sentences under a per-example deletion bound while preserving explicit user requirements and informative visual structure. Extensive experiments under identical training configurations demonstrate that P2E improves alignment with human preferences and visual quality over conventional dense-caption SFT across diverse image categories and visual generators.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.27229"&gt;arXiv:2611.27229&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.27229"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Duopra: From Full-Duplex Conversation to Full-Duplex Agency</title>
+      <link>https://huggingface.co/papers/2611.25773</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.25773</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Chiyu Chen</dc:creator>
+      <dc:creator>Pengzhou Cheng</dc:creator>
+      <dc:creator>Yuezhao Ma</dc:creator>
+      <dc:creator>Xiaocheng Li</dc:creator>
+      <dc:creator>Can Liu</dc:creator>
+      <dc:creator>Haonan Hu</dc:creator>
+      <dc:creator>Yao Yao</dc:creator>
+      <dc:creator>Yifei Yang</dc:creator>
+      <dc:creator>Yijie Lu</dc:creator>
+      <dc:creator>Taolei Wang</dc:creator>
+      <dc:creator>Yansi Li</dc:creator>
+      <dc:creator>Muhuan Wu</dc:creator>
+      <dc:creator>Chenglu Sun</dc:creator>
+      <dc:creator>Gongshen Liu</dc:creator>
+      <dc:creator>Zhuosheng Zhang</dc:creator>
+      <description>&lt;p&gt;Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections. Frontend-backend agents separate initiation from execution: the frontend decides whether and what to request, while the backend determines how. Execution can be offloaded, but unsent requests cannot be executed, and incomplete ones can misdirect the backend. On Full-Duplex-Bench v3 (FDB v3), most failures of Realtime-Venus-Audio + Harness in our streaming pipeline occur before a domain tool executes. We introduce Duopra, a full-duplex interaction model that learns task execution alongside conversational control. Duopra treats the backend as a tool, accepting a self-contained natural-language request. Direct calls and backend delegation share an action interface and requirements for faithful initiation and correct execution. Its three-stage training combines protocol SFT, full-duplex RL rewarding timely and complete execution, and projector-only repair of talker conditioning after thinker updates. With the same backend, Pass@1 rises from 4.7% to 44.7%; Duopra achieves 47.7% calling tools directly (26.0% after SFT) and 49.3% with a DeepSeek backend. It improves three FDB v1.0 takeover rates over the base model. These results show that task agency can coexist with key conversational agency.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.25773"&gt;arXiv:2611.25773&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.25773"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation</title>
+      <link>https://huggingface.co/papers/2611.24077</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.24077</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Shiwei Wu</dc:creator>
+      <dc:creator>Yuwen Pan</dc:creator>
+      <dc:creator>Zhi Li</dc:creator>
+      <dc:creator>Yaowen Li</dc:creator>
+      <dc:creator>Yan Zhou</dc:creator>
+      <dc:creator>Xuemiao Xu</dc:creator>
+      <dc:creator>Yu Liu</dc:creator>
+      <description>&lt;p&gt;Vision-language-action (VLA) models enable unmanned aerial vehicles (UAVs) to follow natural-language instructions, yet still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid them at the states the policy itself reaches, which human pilots cannot label at scale and rule-based planners cannot supply reliably. In this paper, we present AeroRSI, a recursive self-improvement framework in which an aerial navigation policy iteratively learns from its own failures. Our key insight is that a failing policy should judge its own repairs by flying on from them. Judged in this way, its sampled actions and even rule-based proposals that hurt it when imitated directly become reliable supervision. Moreover, an episode terminates at its first failure, concealing subsequent failures until the earlier ones are repaired. AeroRSI thus renews its supervision in every round, anchoring the failures of the current policy, verifying repairs by its continuation, and distilling them while keeping its behavior elsewhere. On TravelUAV, three rounds raise the success rate of a supervised 2B-parameter policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. Code and models are available at https://github.com/starsholic/AeroRSI.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.24077"&gt;arXiv:2611.24077&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.24077"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>PURE: A Diagnostic Benchmark for Multi-Granularity Multimodal Identity Matching</title>
+      <link>https://huggingface.co/papers/2611.22343</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.22343</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Hengyu You</dc:creator>
+      <dc:creator>Xintong Wang</dc:creator>
+      <dc:creator>Jin Cao</dc:creator>
+      <dc:creator>Liang Ding</dc:creator>
+      <description>&lt;p&gt;Identity matching asks whether two records denote the same identity, yet the answer depends on the target granularity. Two records may match at the base level but not at the variant level: they share an underlying design while differing in attributes such as color or size. Final matching accuracy does not separately characterize the capabilities involved. To study this problem, we use e-commerce as a challenging real-world domain. We introduce PURE, a diagnostic benchmark for multi-granularity multimodal identity matching covering four capability dimensions: Perception, Understanding, Reasoning, and Evidence-grounded Judgment. The benchmark comprises 1,457 multiple-choice questions across 14 tasks, derived from real-world matching pairs and verified by two domain experts. Across ten recent MLLMs, overall scores range from 47.1% to 86.0%. Understanding receives the highest mean score and Judgment the lowest, with weaknesses in visual difference localization and variant-level rule judgment. Modality ablations show that models benefit from multimodal evidence but can incorrectly identify conflicts between matching records. In direct matching, most models recognize matching pairs more reliably than non-matching pairs at the base level, whereas the reverse holds at the variant level. PURE therefore reveals what aggregate matching accuracy hides: not only whether models judge a pair correctly, but where they struggle to interpret evidence and apply matching criteria.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.22343"&gt;arXiv:2611.22343&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.22343"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Lost in the Hallway: Benchmarking Persistent Spatial Memory Across Revisits</title>
+      <link>https://huggingface.co/papers/2611.21485</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.21485</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Henry Zheng</dc:creator>
+      <dc:creator>Weibo Gong</dc:creator>
+      <dc:creator>Yang Yue</dc:creator>
+      <dc:creator>Rui Huang</dc:creator>
+      <dc:creator>Yang Zhang</dc:creator>
+      <dc:creator>Gao Huang</dc:creator>
+      <description>&lt;p&gt;Persistent spatial understanding is essential for embodied agents to operate reliably in environments they repeatedly encounter. It requires recognizing revisited places despite viewpoint changes, distinguishing them from similar-looking rooms, and updating memories as environments change. Yet existing evaluations often leave physical place identity across separated visits implicit. We introduce ReSpaceBench, a benchmark comprising 3,244 questions across 590 synthetic and real-home scenes, organized into 9 tasks spanning room association, persistent state tracking, and downstream reasoning. Controlled walkthroughs define visits by physical room entry and deliberately include same-type room distractors and cross-session object changes. Our evaluation of 32 models and 3 agentic video-understanding frameworks reveals substantial limitations: the strongest evaluated zero-shot model achieves 50.5% overall accuracy and 52.2% on a 450-question subset, compared with 90.1% for human annotators. The evaluated agentic frameworks offer no overall improvement over direct inference with the same base model. Analysis of agent execution traces reveals evidence omissions and incorrect cross-visit room associations as major failure modes, suggesting that iterative evidence seeking alone does not ensure consistent spatial memory. Further analyses expose a gap between recognizing familiar rooms and identifying the correct visited room, while annotation-guided sampling highlights the importance of preserving intervening visits and transitions. We also provide RS-30K, a separate training dataset from synthetic sources with no template, scene, route, or video overlap with the benchmark. Fine-tuning Qwen3-VL-8B raises overall accuracy from 35.5% to 60.4%, with the largest gains in association and improvements extending to real-life scenes.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.21485"&gt;arXiv:2611.21485&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.21485"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
     </channel>
 </rss>
