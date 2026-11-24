@@ -196,6 +196,20 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>GlanceNav: Efficient Vision-and-Language Navigation with Streaming Memory and Counterfactual Rewind</title>
+      <link>https://huggingface.co/papers/2611.30900</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30900</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Anh Dao</dc:creator>
+      <dc:creator>Quan-Dung Pham</dc:creator>
+      <dc:creator>Danh Vinh Le</dc:creator>
+      <dc:creator>Tuyen Pham Le</dc:creator>
+      <dc:creator>Quan Nguyen</dc:creator>
+      <dc:creator>Yuzhang Shang</dc:creator>
+      <description>&lt;p&gt;Multimodal large language models (MLLMs) have become strong policies for vision-and-language navigation (VLN). However, most of them encode a sample of past frames again at every decision and are trained on isolated decisions, so computation is redundant and the usable history is short. They also learn from their own mistakes through outcome rewards that give one scalar to a whole episode. We ask whether a navigator can encode each frame only once, at a constant cost per step, and still remember what matters and learn efficiently from its mistakes. We present GlanceNav, a streaming navigator built on a hybrid MLLM. Its Gated DeltaNet layers carry a recurrent state through the whole episode, while its attention layers keep a short window of recent observations and a small bank of keyframes, selected by how much each frame changes the recurrent state. This constant-size memory keeps the cost per step fixed and allows training on whole episodes with the same memory as at inference. Because the entire memory can also be copied in constant time, we further propose Counterfactual Rewind (CoRe), a reinforcement learning stage that rewinds a drifting rollout to its closest approach to the goal, lets an expert correct a few actions, and credits decisions by the resulting change in outcome. Trained only on the R2R-CE and RxR-CE training splits, with 1,000 instructions for reinforcement learning, a 4B GlanceNav reaches success rates of 71.9% and 73.6% on R2R-CE and RxR-CE val-unseen. On R2R-CE, it outperforms the strongest previous single-RGB method trained without external data by 9.1 points, while running at 104 ms per step.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30900"&gt;arXiv:2611.30900&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30900"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>World Models as Native Latent Action Models</title>
       <link>https://huggingface.co/papers/2611.30898</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.30898</guid>
@@ -448,6 +462,25 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>PixelOne: From Options to Pixels in a Single Forward for GUI Grounding</title>
+      <link>https://huggingface.co/papers/2611.30235</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30235</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Kanghui Tian</dc:creator>
+      <dc:creator>Shuai Dong</dc:creator>
+      <dc:creator>Yuhan Zhu</dc:creator>
+      <dc:creator>Congcong Wang</dc:creator>
+      <dc:creator>Ji Zhao</dc:creator>
+      <dc:creator>Tianxiang Jiang</dc:creator>
+      <dc:creator>Zhixiong Zhang</dc:creator>
+      <dc:creator>Shengyuan Ding</dc:creator>
+      <dc:creator>Yi Wang</dc:creator>
+      <dc:creator>Jiaqi Wang</dc:creator>
+      <dc:creator>Yu Qiao</dc:creator>
+      <description>&lt;p&gt;GUI grounding requires precise clicks at low latency. Recent models such as GUI-Decisions and GUI-Swift predict coordinates in one forward pass using fixed global bins with local refinement. However, screenshot downsampling removes detail needed to locate small controls, while fixed bins cover larger pixel ranges at higher resolutions. We introduce PixelOne, which transfers spatial knowledge from a search teacher to a student that predicts clicks directly from screenshots at native resolution. The teacher uses VideoJEV&amp;#x27;s text-option scorer to select rows and columns and progressively zoom into candidate regions. The student inherits the teacher&amp;#x27;s parameters and matches its distributions over explored regions through spatial distillation alongside box supervision. At inference, the same decision head selects a visual token, and a lightweight pixel head predicts the click within it, all in one forward pass. A click-aligned loss encourages pixels inside the target box to score above those outside. Across four benchmarks, PixelOne-Pro-35B-A3B achieves 83.8% mean accuracy, the highest among the evaluated single-forward grounders, with a mean latency of 0.43 s per target.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30235"&gt;arXiv:2611.30235&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30235"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>What Makes Good Data for Training Coding Agents? A Systematic Study on SWE-Gym</title>
       <link>https://huggingface.co/papers/2611.30207</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.30207</guid>
@@ -584,6 +617,26 @@
       <dc:creator>Kunat Pipatanakul</dc:creator>
       <dc:creator>Warit Sirichotedumrong</dc:creator>
       <description>&lt;p&gt;Typhoon OCR 1.5 focused on reading Thai documents. However, in real-world workflows, users often need to extract specific information or preserve the structure of an entire page for further processing. Typhoon OCR 2 handles both tasks in a single model, with prompt-driven extraction and structured full-page parsing. Full-page parsing covers Thai, English, and Chinese. We release compact 2B and 0.8B models adapted from open document parsers through supervised fine-tuning on curated Thai and public multilingual data, followed by Group Relative Policy Optimization (GRPO) with task rewards and a rule penalizing unfinished responses. Among evaluated open models, Typhoon OCR 2 2B scores highest on Thai MDPBench (80.7 versus 68.9 for Typhoon OCR 1.5) and on ThaiOCRBench (59.91 versus 40.45), which covers recognition, extraction, and document understanding. The 2B model remains close to its base on English olmOCR-bench (84.7 versus 84.4) and on OmniDocBench, which evaluates English and Chinese together (90.97 versus 91.03). On MDPBench, GRPO reduces the mean share of pages with repetition loops for the 2B model from 3.2% to 0.7%, with a smaller and statistically uncertain score gain for the 0.8B model. We release the model weights, Python package, and evaluation suite.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.27494"&gt;arXiv:2611.27494&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.27494"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Frontier models need only one text to unmask its human or AI author</title>
+      <link>https://huggingface.co/papers/2611.26216</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.26216</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Atrey Desai</dc:creator>
+      <dc:creator>Deniz Bölöni-Turgut</dc:creator>
+      <dc:creator>Ty Brassington</dc:creator>
+      <dc:creator>Minjoon Choi</dc:creator>
+      <dc:creator>Jenna Russell</dc:creator>
+      <dc:creator>Rishanth Rajendhran</dc:creator>
+      <dc:creator>Bradley Emi</dc:creator>
+      <dc:creator>Hila Gonen</dc:creator>
+      <dc:creator>Hal Daumé III</dc:creator>
+      <dc:creator>John Wieting</dc:creator>
+      <dc:creator>Marzena Karpinska</dc:creator>
+      <dc:creator>Mohit Iyyer</dc:creator>
+      <description>&lt;p&gt;Given a single text and a simple zero-shot prompt (no web access, tools, candidate lists, or writing samples), frontier models can answer &amp;quot;who wrote this?&amp;quot; at three increasingly specific levels: (1) whether an AI or human wrote it, (2) if an AI, which lab, and (3) if a human, often exactly who. The latest models (Claude Fable 5.2, GPT-6.1 Sol, Gemini 4 Carbon) match trained detectors like Pangram while also explaining their predictions in natural language, and Opus 5.5 names the correct lab for 98% of texts generated by models from Anthropic, OpenAI, and Google. Most strikingly, Fable 5.2 correctly names the author of 55% of 15K anonymous ICML 2020 reviews that were never made public, and identifies the username behind 69% of comments from active Redditors (with &amp;gt;500 posts over the last year). Accuracy depends on exposure to an author&amp;#x27;s writing in pretraining data and on reasoning effort, and simply asking a model how familiar it is with someone predicts whether it can identify their writing. For anyone who has published enough writing online, frontier models present a greater threat to anonymity than commonly assumed, and defenses are limited.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.26216"&gt;arXiv:2611.26216&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.26216"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -827,6 +880,18 @@
       <dc:creator>Michael Kagan</dc:creator>
       <dc:creator>Philip Harris</dc:creator>
       <description>&lt;p&gt;Agentic systems are increasingly being explored for automating experimental high-energy physics measurements, but the correctness of their results can today be reliably evaluated only via extensive expert review. To address this, we propose a method to perform detailed quantitative evaluations of agent-driven analyses through the use of blind analysis and injection tests, which are critical in a typical expert review. Agents develop a data analysis pipeline on a public dataset, while the evaluation is performed on programmatically generated sealed private datasets where signals are injected and simulation settings varied within realistic detector uncertainties. By requiring agents to provide a single workflow that is evaluated across these &amp;quot;sealed worlds&amp;quot;, we are able to test the accuracy and robustness of the workflows. We demonstrate the approach on four tasks built from CMS open data and present it as a way to reliably benchmark scientific work in experimental high-energy physics. At the time of writing, the best-performing model, Gemini 4 Argon, reaches 60% of the score of the expert reference analyses on average, ahead of GPT 6 Astra at 38% and Claude Opus 5.5 at 31%. In individual sessions on one of the tasks, Gemini 4 Argon exceeds the reference. The benchmark is hosted at https://hep-ex-bench.github.io&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.28194"&gt;arXiv:2611.28194&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.28194"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>VideoJSON: A Minimal Harness Beats Purpose-Built Memory for Ultra-Long Video Understanding</title>
+      <link>https://huggingface.co/papers/2611.28167</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.28167</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Wenqi Marshall Guo</dc:creator>
+      <dc:creator>Kuan-Hao Huang</dc:creator>
+      <dc:creator>Junda Chen</dc:creator>
+      <dc:creator>Hao Zhang</dc:creator>
+      <description>&lt;p&gt;Answering questions over days or weeks of video requires searching for scattered clues across long timelines. Existing video agents rely on complex memory graphs and fixed retrieval pipelines, which restrict how the agent can search. We propose VideoJSON, a minimal harness for ultra-long video understanding that keeps the memory simple and lets a coding agent write its own search programs. During indexing, a vision-language model turns each minute of video into a single JSON record containing a dense caption and structured fields such as events, entities, places, and speech transcripts. At query time, the agent writes Python or Bash programs in a sandboxed container to filter, link, and read these records over multiple steps, without task-specific training or raw video access. On four ultra-long video benchmarks, VideoJSON with DeepSeek V4.1 Flash outperforms MAGIC-Video by 7.0, 20.0, and 24.75 points on EgoLifeQA, Ego-R1-Bench, and MM-Lifelong Week, and beats the best prior EgoMemReason score by 12.6 points. Across four policy models of increasing capability, VideoJSON&amp;#x27;s average score rises by up to 11.58 points over the weakest model, compared with at most 5.50 points for MAGIC-Video. Ablations show that both agentic code search and the structured JSON records drive these gains, while adding hourly summaries, extra tools, or video access changes the average score by less than 1.5 points. In addition, fine-tuning Qwen-3.5-Flash on 64 VideoJSON trajectories from an unrelated 100-hour livestream improves its MM-Lifelong scores by up to 8.25 points. Code will be open-sourced after publication.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.28167"&gt;arXiv:2611.28167&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.28167"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
