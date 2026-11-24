@@ -1,4 +1,319 @@
 {
+  "2611.30771": {
+    "id": "2611.30771",
+    "title": "GameDojo: Benchmarking Real-Time Interactive Agents in Video Games",
+    "summary": "Interactive intelligence requires agents to act on observations and adapt to the consequences of actions. Studying these abilities calls for diverse, challenging tasks under controlled conditions. We introduce GameDojo, a controllable interactive gameplay benchmark of 120 boss encounters across 20 games for evaluating model capabilities, learning algorithms, and agent harnesses. Coding agents reconstruct the environments and write gameplay scripts, producing GameDojo-Data with 600 hours of gameplay trajectories. Experiments reveal substantial challenges for frontier models, especially in real-time interaction. Training on GameDojo-Data brings GameDojo-4B to frontier performance, with the strongest real-time performance. We also find joint training improves individual tasks, and learned policies transfer across bosses. Together, these findings establish GameDojo as a challenging and valuable interactive gameplay benchmark for the community. Our project page is at https://gamedojo-benchmark.github.io/ , and our code is at https://github.com/THUSI-Lab/GameDojo .",
+    "authors": [
+      "Kuan Zhang",
+      "Zhihao Yang",
+      "Yukun Chen",
+      "Xingyilang Yin",
+      "Mingyu Ouyang",
+      "Yue Su",
+      "Xiangnan Wu",
+      "Jiaming Li",
+      "Longze Chen",
+      "Run Luo",
+      "Zirong Chen",
+      "Lu Wang",
+      "Yiming Li"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.30637": {
+    "id": "2611.30637",
+    "title": "SWEEP-Bench: Do Embodied Policies Act on the Speed They See?",
+    "summary": "Robot policies must adapt to the speed of moving objects, yet existing benchmarks rarely measure this ability across diverse tasks and speeds. We introduce SWEEP-Bench, a simulation benchmark with 80 conveyor-belt manipulation tasks spanning 16 skill categories, each evaluated at 13 belt speeds (0.10-0.40 m/s). Objects are transported through physical contact with a visibly moving belt. Each task has a static counterpart, and each evaluation episode uses the same randomized scene at all 13 speeds. We fine-tune eight vision-language-action and world-action models on demonstrations spanning the full speed range, comparing observations from the current frame alone with those including two past frames. For six models, the success rate peaks at intermediate speeds, and their failures indicate that they tend to produce actions suited to the average demonstration speed rather than to the actual one. Past frames raise the success rate by 10-40 percentage points for three models, and linear probes show that the belt speed is also most linearly decodable from these three. Adding ground-truth speed input to four of the models improves all of them, and a speed estimated from the images keeps most of this gain. These results show that SWEEP-Bench exposes speed-dependent failures and suggest that past frames help only policies from which the speed is most decodable, such as those pretrained on multiple frames. Project page: https://damin3927.github.io/SWEEP-Bench",
+    "authors": [
+      "Hiroaki Honda",
+      "Koya Sakamoto",
+      "Shu Morikuni",
+      "Yusuke Iwasawa",
+      "Taiki Miyanishi"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.30581": {
+    "id": "2611.30581",
+    "title": "A Pipeline-Parallel System for Depth-Recurrent Models",
+    "summary": "Depth-recurrent (Looped) models raise effective depth by applying a shared stack of blocks several times. Scaling them usually requires pipeline parallelism, but commonly used interleaved 1F1B is drawn for an acyclic stage graph in which each micro-batch enters each stage once. Once that stack is split across stages, the same stage is visited several times on one micro-batch and later stages feed earlier ones: native 1F1B has no slot for the extra visit, cannot rank a first iteration against a second, and its neighbour-only send/receive order has no back edge to the first stage, so the arrangement stalls or fires out of order. We present Loop-PP, which rebuilds both the timetable and the communication for this cyclic layout. It schedules different iterations of the same stage separately, specializes a 1F1B skeleton into a globally consistent order over those visits, and emits a static instruction stream per rank that separates posting from waiting so communication overlaps local compute. Loop-PP is bit-identical to a single-stage reference. On 8B-60B MoE models, it lowers peak memory by as much as 32.8\\%, and with compute budget fixed, the best observed throughput rises by 12.7\\%.",
+    "authors": [
+      "Yunjia Xi",
+      "Jiarui Qin",
+      "Di Yin",
+      "Xing Sun"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.30013": {
+    "id": "2611.30013",
+    "title": "3AGameFactory-Motion: Agentic Rigging and Reliable Complex Motion Generation for Diverse 3D Assets",
+    "summary": "Animating arbitrary 3D assets from instructions requires both structural inference and motion control, yet existing motion benchmarks mostly cover conventional human or animal skeletons with simple instructions. We introduce DivDynBench, which evaluates rigging and motion generation across six morphology categories, with instructions requiring multi-phase part coordination and explicit timing, angle, repetition, and trajectory constraints. With large language models, we systematically compare three common paradigms: specialized motion generation, video generation followed by motion recovery, and direct agent-driven generation. We analyze their control capabilities, cross-morphology adaptability, and generation costs. Guided by this comparison, we propose an Agentic Motion Framework in which an agent writes compact parametric skeleton and motion programs, and a deterministic executor performs rigging, kinematic solving, and geometric correction. Compact parameter control reduces generation overhead and improves rigging reliability and motion-control accuracy, providing practical guidance for deploying complex 3D motion generation.",
+    "authors": [
+      "Bohan Zeng",
+      "Kaixin Zhu",
+      "Yifan Yang",
+      "Dongge Yu",
+      "Zihao Wu",
+      "Yifan Dai",
+      "Zhou Liu",
+      "Junbo Niu",
+      "Xiaochen Ma",
+      "Shiran Ge",
+      "Zimo Meng",
+      "Junzhu Liang",
+      "Huanyao Zhang",
+      "Jinhang Liu",
+      "Tianqi Xiao",
+      "Jinhao Zhang",
+      "Tianyi Bai",
+      "Zhixiong Zeng",
+      "Penghao Zhao",
+      "Yuanbo Peng",
+      "Key Zhang",
+      "Wentao Zhang"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.29897": {
+    "id": "2611.29897",
+    "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+    "summary": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, while repeated denoising introduces substantial inference overhead. We present Motion Mamba 2.0, a Mamba-based root-body diffusion architecture that integrates local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon controllable motion generation. PCM transforms compressed motion history from Mamba recurrent states, together with state changes and text-conditioned features, into dynamically updated content slots accessible to local attention. To enable efficient inference, we further develop an execution scheme tailored to this architecture, combining CUDA Graph replay, fused kernels, and execution-flow simplification while preserving the canonical history update. Evaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show that the model also retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138times while preserving identical outputs and committed states in the tested rollouts. Moreover, we conduct extensive real-world evaluation on the Unitree G1, demonstrating sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
+    "authors": [
+      "Yue Huang",
+      "Tianshan Zhang",
+      "Zeyu Zhang",
+      "Jayeon Kang",
+      "Akide Liu",
+      "Sungjoon Choi",
+      "Dacheng Tao",
+      "Hao Tang"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.27689": {
+    "id": "2611.27689",
+    "title": "Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation",
+    "summary": "Vision-language model (VLM)-based agents offer a promising approach to robotic manipulation, yet remain limited by inadequate memory organization, uncertain failure attribution, and limited reuse of execution experience. We propose Embodied-Harness, a dual-agent framework that improves manipulation by refining the execution harness without updating model parameters. The Actor interacts with the environment through a robot-control interface, while the Reflector converts execution evidence into reusable operational guidance. Hierarchical Memory Architecture maintains short-term execution context and long-term experiential knowledge to support execution and reflection. Evidence-based Experience Reflection grounds failure diagnosis in observed interactions, while Recursive Harness Self-Improvement refines operational guidance across successive attempts. Experiments on RoboTwin 2.0, RoboSPA, and RMBench demonstrate the effectiveness of Embodied-Harness in generalization under environmental variations, spatial reasoning, long-horizon planning, and memory-dependent manipulation. Our method achieves success rates of 82.4%, 76.7%, and 94.4% on the three benchmarks, respectively. Real-world evaluation further yields an average success rate of 96.7% across three manipulation tasks. These results highlight the potential of Embodied-Harness to improve robotic manipulation through experience-driven harness self-improvement.",
+    "authors": [
+      "Zhenxuan Fan",
+      "Zhuoya Wang",
+      "Yuqian Yuan",
+      "Wenqiao Zhang",
+      "Juncheng Li",
+      "Jun Xiao",
+      "Siliang Tang",
+      "Yueting Zhuang"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.27494": {
+    "id": "2611.27494",
+    "title": "Typhoon OCR 2: From Thai Document Transcription to Multilingual, Multi-Task OCR",
+    "summary": "Typhoon OCR 1.5 focused on reading Thai documents. However, in real-world workflows, users often need to extract specific information or preserve the structure of an entire page for further processing. Typhoon OCR 2 handles both tasks in a single model, with prompt-driven extraction and structured full-page parsing. Full-page parsing covers Thai, English, and Chinese. We release compact 2B and 0.8B models adapted from open document parsers through supervised fine-tuning on curated Thai and public multilingual data, followed by Group Relative Policy Optimization (GRPO) with task rewards and a rule penalizing unfinished responses. Among evaluated open models, Typhoon OCR 2 2B scores highest on Thai MDPBench (80.7 versus 68.9 for Typhoon OCR 1.5) and on ThaiOCRBench (59.91 versus 40.45), which covers recognition, extraction, and document understanding. The 2B model remains close to its base on English olmOCR-bench (84.7 versus 84.4) and on OmniDocBench, which evaluates English and Chinese together (90.97 versus 91.03). On MDPBench, GRPO reduces the mean share of pages with repetition loops for the 2B model from 3.2% to 0.7%, with a smaller and statistically uncertain score gain for the 0.8B model. We release the model weights, Python package, and evaluation suite.",
+    "authors": [
+      "Surapon Nonesung",
+      "Natapong Nitarach",
+      "Sittipong Sripaisarnmongkol",
+      "Kunat Pipatanakul",
+      "Warit Sirichotedumrong"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.29361": {
+    "id": "2611.29361",
+    "title": "Beyond Attention Maps: Understanding and Improving Medical MLLMs via Visual Values",
+    "summary": "Current MLLM methods largely focus on whether models attend to the right visual regions, implicitly treating spatial attention map as the primary key of effective visual perception. To examine this assumption, we introduce a medical VQA dataset with paired non-contrast (NC) and contrast-enhanced (CE) images that share corresponding anatomy while providing different cues. We show that this view is incomplete: across paired NC and CE medical images, MLLMs often exhibit similar attention patterns despite producing contrasting answers, while controlled bidirectional interventions induce substantially larger prediction changes on visual values than attention weights. These results identify the visual content retrieved through values as a critical factor in improving perception beyond spatial attention alone. Guided by this finding, we propose VIVID (VIsual Value Intervention Distillation), which uses enhanced visual values to identify and refine teacher corrections aligned with useful visual evidence to improve on-policy distillation from CE to NC images. Across six internal and external test sets, VIVID consistently outperforms existing on-policy distillation methods across different model scales and architectures, requires only NC images at inference, and maintains strong zero-shot performance on general-domain VQA benchmarks. The project page is available at https://qiuzyc.github.io/VIVID.",
+    "authors": [
+      "Yichen Zhao",
+      "Fenghe Tang",
+      "Wenxin Ma",
+      "Rongsheng Wang",
+      "Zihao Wan",
+      "Shaohua Kevin Zhou"
+    ],
+    "published_at": "2026-11-22T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.29338": {
+    "id": "2611.29338",
+    "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
+    "summary": "Recently, GPT-6 Astra demonstrates strong generalization in robot control, yet limited disclosure of its training leaves open how such capabilities can be reproduced. We introduce nanoAstra, an approach to training vision-language models (VLMs) for generalizable manipulation that combines semantic action modeling with capability-preserving supervised fine-tuning (CP-SFT). nanoAstra represents robot behavior as semantic steps composed of reusable, parameterized action primitives, guided by explicit progress descriptions. Meanwhile, CP-SFT uses an explicit robot-specific system prompt to constrain manipulation outputs to a structured action space, aiming to focus adaptation on robot-specific contexts and promote specialization while minimizing interference with broader pretrained capabilities. With this formulation, we train nanoAstra on more than 5,000 hours of robot data together with general VQA data. On RoboTwin 2.0's randomized benchmark, nanoAstra-9B achieves a 17.8% zero-shot success rate, substantially outperforming advanced VLA and WAM baselines as well as similarly sized VLMs. With inference faster than the corresponding motion execution on a single H20 GPU, our model supports action-chunk-like streaming execution that overlaps inference with motion, reducing the robot's idle time from 35.0% to 6.9%.",
+    "authors": [
+      "Meng-Hao Guo",
+      "Yi Zhang",
+      "Zhe-Han Mo",
+      "Han-Zheng Wang",
+      "Jia-Jun Wang",
+      "Xin-Sheng Chen",
+      "Jiaxi Song",
+      "Yi-Xuan Deng",
+      "Jia-Ning Li",
+      "Xuanyu Chu",
+      "Hengrui Zhang",
+      "Huan-ang Gao",
+      "Yongming Rao",
+      "Shi-Min Hu"
+    ],
+    "published_at": "2026-11-22T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.29238": {
+    "id": "2611.29238",
+    "title": "GameAnything: From Any Inspirations to Playable Game Worlds",
+    "summary": "AI-driven game development holds the potential to transform diverse human inspirations into interactive experiences. However, existing systems and benchmarks primarily focus on explicit development specifications, with limited support for adapting multimodal references and evaluating actual gameplay experiences. We introduce GameAnything, an open-source agentic platform that transforms multimodal inspirations into playable extensions of existing games through iterative development. GameAnything integrates coding agents with an independent playtesting critic, persistent development state, and reusable experience memory to support continuous refinement. We further present GameAnything-Bench, a benchmark spanning diverse reference modalities, game creation objectives, and gaming environments, with exploratory gameplay testing to assess both functional correctness and gameplay quality. Evaluations of nine coding agent configurations reveal that current agents can adapt reference content but still struggle with playable interactions and precise modifications. Moreover, multimodal references improve content fidelity, while iterative refinement yields substantial but varying improvements across agents. These findings highlight both the potential and remaining challenges of inspiration-driven game development.",
+    "authors": [
+      "Wenyi Wu",
+      "Siqi Liu",
+      "Yuru Feng",
+      "Zixuan Song",
+      "Aayush Salvi",
+      "Sibo Zhu",
+      "Kun Zhou",
+      "Biwei Huang"
+    ],
+    "published_at": "2026-11-22T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.28833": {
+    "id": "2611.28833",
+    "title": "Self-WSP: Can Language Models Improve Themselves Through Weight-Space Programming?",
+    "summary": "Frontier language models can now read and edit the weights of a neural network much like code and thereby improve a small model, an approach known as Weight-Space Programming (WSP). We further explore applying WSP to a language model itself, which we call Self-WSP. Specifically, Qwen3.5-0.8B reads its own weights, proposes an edit, and then continues with the edited weights as both problem solver and editor. We find many cases of genuine self-improvement. Self-edits can raise GSM8K accuracy from 11.8% to 62.2% and MATH500 accuracy from 7.0% to 32.2%, sometimes by changing only 16 parameters, and in some cases repeated self-editing keeps improving the model. A closer look, however, reveals that these gains lack interpretability. The model shows little understanding of the edits it makes, and WSP driven by random search sometimes performs comparably. Self-WSP thus holds promise as a path toward recursive self-improvement (RSI), but realizing this promise requires further exploration.",
+    "authors": [
+      "Guoming Ling",
+      "Shanshan Zhong",
+      "Kaixuan Zhang",
+      "Zhongzhan Huang"
+    ],
+    "published_at": "2026-11-21T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.28618": {
+    "id": "2611.28618",
+    "title": "Distilling Visual Agents from Limited Interaction Experience",
+    "summary": "How much interaction experience is needed to distill a capable visual agent? We study learning from few tasks and recorded interaction histories. Our framework selects representative trajectories using skill-context coverage and ordered visual-decision similarity. On-policy distillation (OPD) learns through fresh interaction on selected tasks or fresh student responses at fixed histories. Across Navigation, Sokoban, and spatial mapping, even one online training task supports transfer to other tasks. Four fixed trajectories raise a 4B student's success from 49.17% to 82.08% on standard Navigation and from 60.16% to 85.55% on Sokoban, recovering over 90% of the measured gap to a 27B teacher on these panels. On an independent Navigation panel, replay improves success from 45.83% to 76.67%, retaining 91.36% of the same-task online gain without new interaction during optimization. Training repetitions, matched supervised fine-tuning (SFT), and a 9B extension further support the value of compact experience.",
+    "authors": [
+      "Siyu Zhou",
+      "Jing Jiang",
+      "Chengqi Zhang",
+      "Guodong Long"
+    ],
+    "published_at": "2026-11-21T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.28202": {
+    "id": "2611.28202",
+    "title": "AutoPILOT: A Visual Agent Harness for Real-Time Gameplay",
+    "summary": "Multimodal foundation models can play video games well when the game waits for them, but often fail when it keeps running. We find that much of this gap lies in the harness, which decides what the model sees, what it remembers, and how its outputs become actions over time. Existing harnesses such as VISTA improve the first two, yet turn each model call into at most one action, so the agent acts only as often as its model thinks. We introduce AutoPILOT, which changes the third: in each model call, the model can send a primitive action, start an open-loop macro, or write a closed-loop controller that keeps playing from the screen without further model calls until it hands control back. To evaluate agents in real-time games, we build AFK-Bench, 120 diverse browser games grouped by how they respond to inaction and playable in real time or with the clock paused. With GPT-6.1 Sol under the same budgets, AutoPILOT reaches 68.6% real-time success against 38.3% for VISTA, and on GameWorld it keeps 80.0% in real time while VISTA drops from 84.1% to 42.9%. Its gains hold across models, and it reaches VISTA's final success rate at a fifth of its API cost. Our results suggest that how a harness turns model outputs into actions over time is a central yet underexplored part of agent design, and we hope AutoPILOT and AFK-Bench will serve as a foundation for agents in a world that does not wait.",
+    "authors": [
+      "Mark Zhao",
+      "Pengcheng Wang",
+      "Rui Yang",
+      "Jiarui Yao",
+      "Xirui Jiang",
+      "Yuxi Chen",
+      "Bingxuan Li",
+      "Hanyang Chen",
+      "Ke Yang",
+      "Manling Li",
+      "Tong Zhang",
+      "Huan Zhang"
+    ],
+    "published_at": "2026-11-20T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.27319": {
+    "id": "2611.27319",
+    "title": "SAVIOR: Sample-efficient Adaptation of Vision-Language Models for OCR Representation",
+    "summary": "Optical Character Recognition (OCR) pipelines and vision-language models exhibit high accuracy on standard OCR and document-understanding benchmarks, yet they systematically underperform on document patterns that are operationally critical in financial workflows. These patterns include vertical or rotated text, logo-embedded vendor names, fine-print regulatory clauses, degraded scans, and complex multi-column layouts. While underrepresented in public datasets, they constitute a substantial portion of real-world failure cases. We introduce SAVIOR, a sample-efficient data curation methodology that targets such high-impact failure scenarios to adapt vision-language models for robust financial OCR. We further propose PaIRS, a structure-aware evaluation metric that measures layout fidelity by comparing pairwise spatial relationships between tokens. Fine-tuning Qwen2.5-VL-Instruct with SAVIOR-Train achieves a word recall of 0.93. When the resulting layout-aware OCR output is used as context for document question answering, it attains an F1 score of 0.89, outperforming both open- and closed-source models such as GPT-4o, Mistral-OCR, PaddleOCR-VL, and DeepSeek-OCR.",
+    "authors": [
+      "Akshata A Bhat",
+      "Sharath Naganna",
+      "Saiful Haq",
+      "Prashant Khatri",
+      "Krishna Chaitanya Reddy Tamataam",
+      "Neha Arun",
+      "Niyati Chhaya",
+      "Pushpak Bhattacharyya"
+    ],
+    "published_at": "2026-11-20T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.26516": {
+    "id": "2611.26516",
+    "title": "Plan4D: Generative Plannable 4D Worlds",
+    "summary": "Most world models for future prediction prioritize aestetic quality of generated videos, but offer only weak physical grounding and limited geometric consistency over time, due to the lack of explicit 4D modeling. In this paper, we introduce plan4d, a possible next milestone towards building a generative plannable 4D world model that predicts future RGB videos together with dense 4D geometry, including depth, cameras, point clouds, and scene flow from an observed scene context and text-specified actions. Since training data with paired actions and dense 4D annotations is inherently scarce, plan4d leverages the complementary priors of foundational video generators and 3D reconstructors. Specifically, we propose a model-stitching architecture that couples Depth Anything 3 with LongCat-Video and augments it with an auxiliary DPT head for scene-flow prediction. The resulting model allows us to plan and generate complex, long-horizon, and fine-grained actions in a dynamic 3D scenes, while substantially improving both visual fidelity and geometric accuracy of the generated future videos. Extensive experiments on both synthetic and real-world datasets demonstrate that plan4d achieves state-of-the-art performance in generative 4D modeling of environmental reactions. Project Page: https://fogradio.github.io/plan4d-project",
+    "authors": [
+      "Hangwei Zhang",
+      "Rujing Dang",
+      "Ruimin Lin",
+      "Jiahong Wu",
+      "Xiangxiang Chu",
+      "Chuanxia Zheng"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.25927": {
+    "id": "2611.25927",
+    "title": "Fast-JEPA: Advancing the Success-Latency Frontier for Latent World Models",
+    "summary": "Latent world models predict the outcomes of action sequences, but comparing candidate plans through recursive rollout remains expensive at test time. We introduce Fast-JEPA, a latent world model planning framework that advances the success-latency Pareto frontier of predictive search. Fast-JEPA reorganizes predictive computation to support effective action-sequence search at low planning cost. It constructs a goal-directed plan to guide search and directly predicts the outcomes of complete candidates for efficient comparison, avoiding recursive state rollout during refinement. Across PushT, Reacher, Cube, and TwoRoom, Fast-JEPA achieves 96.50% average success rate with 2.41x faster planning than INTACT. Search-budget sweeps show that its competitive success and low latency extend across candidate counts and refinement depths. We further introduce DynaGoal, a benchmark for evaluating world-model planning under dynamic out-of-distribution conditions, execution deadlines, and controlled response delays. Fast-JEPA achieves average success rates of 73.83% on DynaGoal-Shift and 87.67% on DynaGoal-Deadline, demonstrating the practical value of low-latency predictive planning under changing control conditions and execution-time constraints. Our code is available at https://github.com/Sofilyzia/Fast-JEPA.",
+    "authors": [
+      "Yao Zhang",
+      "Bin Yu",
+      "Shijie Lian",
+      "Haishan Liu",
+      "Changti Wu",
+      "Yu Wu",
+      "Kai Chen"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.25476": {
+    "id": "2611.25476",
+    "title": "WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming",
+    "summary": "Neural networks encode learned capabilities in their weights, yet extending those capabilities with explicit task knowledge remains a fundamental challenge. Here we show that Weight-Space Programming (WSP), in which executable programs read, construct or modify a network's weights directly, can install new capabilities within trained neural networks. WeightCode, a WSP framework, uses a frozen language model to write executable weight programs that install new computations into trained neural networks using task knowledge and their existing weights, without gradient-based training. Once installed, the new capabilities run independently of the language model. Given a grammar or eight demonstrations, weight programs enable previously unseen command compositions (0% to 99.8% exact match) and a new pickup action (0% to 98.4% success), while preserving the original command and navigation capabilities. On ImageNet, four weight programs achieve net gains of 8.84-17.62 points while preserving clean accuracy, outperforming the best of eight fine-tuning methods under matched examples, checks, and retention constraints. In a Vision Transformer, causal interventions show that installed noise-correction gates drive robustness gains, while their selective activation preserves clean accuracy. Rerun on five independently trained Vision Transformers without further language model calls, ten weight programs retain 83-110% of their source-network gains on average, whereas copying their fixed weight edits yields negligible gains. Six programs written for an already edited network add 5.23-14.50 points of contrast robustness while retaining the previously installed noise gain. Together, these results establish WSP as a new route to acquiring and accumulating capabilities in trained neural networks through reusable weight programs.",
+    "authors": [
+      "Bo Li",
+      "Taoyong Cui",
+      "Bob Zhang",
+      "Mengran Li",
+      "Chengyang Zhang",
+      "Yang Zhang",
+      "Pheng Ann Heng",
+      "Wanli Ouyang",
+      "Zhenfei Yin",
+      "Yingcheng Wu",
+      "Ling Yang"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
+  "2611.23946": {
+    "id": "2611.23946",
+    "title": "How Complete Must an Environment Be to Train a Capable GUI Agent?",
+    "summary": "Graphical user interface (GUI) agents are widely trained in executable GUI environments. To lower cost, build environments in batches, and reduce manual effort, each work trades away part of the environment through its construction choices. We describe these choices along three dimensions: reward coverage, the goal-reaching trajectories the verifier rewards; data coverage, the application data the agent is exposed to beyond what the task reads or writes; and feature coverage, the application features beyond what the task uses. Existing works set each dimension on engineering grounds, but they do not measure its effect on training. How complete must an environment be to train a capable agent, and along which dimensions? In MobileGym, we adjust each dimension separately, train Qwen3-VL-4B-Instruct, and evaluate every policy in the original full environment. A verifier that rewards only one reference path lowers success by 10.53 points, and removing unneeded records also lowers success. Pruning unneeded features instead raises success from 51.61% to 56.13%, entirely on tasks whose environments it left unchanged. The gain reverses when each episode is weighted equally and vanishes when only episodes on the pruned tasks are balanced. Without pruning, length weighting there reinforces long detour successes that erode skills on other tasks. Following these findings, we build MobileGym-Lite, which keeps reward and data coverage complete and prunes unneeded features. It outperforms Full in the full environment (55.48% versus 51.61% success) with lower construction cost.",
+    "authors": [
+      "Jingxing Wang",
+      "Teng Wang",
+      "Xingyu Lou",
+      "Zihan Guo",
+      "Jun Wang",
+      "Weiwen Liu",
+      "Weinan Zhang",
+      "Jianghao Lin"
+    ],
+    "published_at": "2026-11-18T00:00:00+00:00",
+    "submitted_at": "2026-11-24T00:00:00+00:00"
+  },
   "2611.27915": {
     "id": "2611.27915",
     "title": "StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning",
@@ -206,6 +521,36 @@
     "published_at": "2026-11-19T00:00:00+00:00",
     "submitted_at": "2026-11-23T00:00:00+00:00"
   },
+  "2611.25534": {
+    "id": "2611.25534",
+    "title": "How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study",
+    "summary": "Agent skills are documents in which experts write down procedural knowledge, and models increasingly maintain them by rewriting them without feedback. Such rewriting could adapt a skill to the model that uses it or erode the expert knowledge that makes it useful, yet how skills evolve under this feedback-free self-evolution has not been studied. We let models rewrite expert skills round after round without any task, run or judgment and run agents built on the same models with the rewritten skills. Our experiments show that the skills lose value rather than improve, as every model we test performs worse with them on every benchmark, by 15 points on average on SkillsBench after thirty rounds. Sampling each model's prior with skills it writes from the topic alone, we find that rewriting pulls skills toward this prior and gives up first the knowledge outside it. Putting this knowledge back recovers much of the lost pass rate, so an expert's skill is valuable largely for what the model does not write on its own. Building on this insight, SkillDiff marks this knowledge in place and raises the pass rate on SkillsBench by 4.8 points on average without feedback or any change to the skill's text. Project repository: https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills.",
+    "authors": [
+      "Litao Guo",
+      "Man Chen",
+      "Xinli Xu",
+      "Jinsong Zhou",
+      "Zixin Zhang",
+      "Ying-Cong Chen"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
+    "submitted_at": "2026-11-23T00:00:00+00:00"
+  },
+  "2611.28123": {
+    "id": "2611.28123",
+    "title": "Seeing the Invisible: How Vision-Language Models Read, Predict and Trace Radio Fields",
+    "summary": "Operating in the physical world requires reasoning beyond what cameras directly capture. In a city, radio signals are invisible to the lens, yet their strength is governed by the buildings and streets an image does show. Given only these visible structures, can vision-language models (VLMs) infer the invisible radio field they shape? Probing true physical reasoning requires exact fields in real cities, alongside controlled interventions where a single physical factor changes. We build a label-free engine that turns any coordinate on Earth into a ray-traceable city, simulates matched single-factor counterfactuals, and computes every answer exactly. This yields RadioVISTA, a benchmark and training dataset for visual reasoning about invisible fields. Physically, a radio field is the sum of its propagation paths, yet across six continents we uncover a striking field-path dissociation: frontier VLMs accurately judge where a field is strong, but fail to tell whether a single direct or one-wall path exists. Open models fail even earlier at reading the field itself, and are systematically wrong, scoring below random guessing even when credited for any of four attempts. On unseen cities, fine-tuning brings a 9B open model close to frontier proprietary models on fields, yet neither supervised nor reinforcement fine-tuning improves path tracing. Supervising only final answers teaches models to approximate the field, yet leaves single-path geometry out of reach.",
+    "authors": [
+      "Yiyang Zhu",
+      "Xin Li",
+      "Guangyuan Liu",
+      "Ziheng Liu",
+      "Jiayi Zhang",
+      "Chau Yuen"
+    ],
+    "published_at": "2026-11-18T00:00:00+00:00",
+    "submitted_at": "2026-11-23T00:00:00+00:00"
+  },
   "2611.25252": {
     "id": "2611.25252",
     "title": "Moving Generality from Model to Modeler: LLM Agents for PHM on a Deployment-Style Benchmark",
@@ -224,6 +569,20 @@
     "summary": "We introduce Clover-35B-A3B-Preview (Clover), a mixture-of-experts diffusion language model with 35 billion total parameters and 3 billion activated parameters, supporting thinking-mode generation. Clover adapts Gated Delta Networks to block diffusion by combining recurrent memory of previously generated context with bidirectional softmax attention inside the current block. Historical memory readout competes with current-block tokens in a shared softmax, with learnable block-size calibration and a separate, zero-initialized right-context convolution branch. Clover leads the seven evaluated agent metrics, including 73.6 on SWE-bench Verified and 51.7 on Terminal-Bench 2.1. On internal agent workloads, it reaches a reported generation speed of 680 tokens/s using one NVIDIA GB300 GPU at BF16 precision and batch size one. We organize the evaluation around model quality, drafting and verification costs, and deployment under constrained memory. We also describe a decision-model variant that generates answers to related questions in one denoising pass. On an internal set of 500 groups, joint prediction raises question accuracy from 90.37% to 93.88% and all-correct group accuracy from 65.4% to 77.0%.",
     "authors": [
       "DiffuSpace Technical Team"
+    ],
+    "published_at": "2026-11-18T00:00:00+00:00",
+    "submitted_at": "2026-11-23T00:00:00+00:00"
+  },
+  "2611.24249": {
+    "id": "2611.24249",
+    "title": "From Points to Trajectories: Rethinking Multimodal Alignment for Physical Events",
+    "summary": "Advancing physical artificial intelligence (Physical AI) requires moving beyond static object recognition to ground how real-world mechanics (e.g., impact, friction, and force transfer) unfold over time. While multimodal aligners seek to capture these interactions by matching multi-sensor streams, prevailing architectures compress each temporal sequence into a single pooled embedding. We show that this paradigm fails on twin events: distinct physical executions recorded under identical task conditions. Collapsing the temporal dimension averages out transient cross-modal dynamics, effectively reducing physical event alignment to static scene recognition. Formally, we prove that as sequence length increases, any temporally pooled representation converges to the stationary recording condition. Consequently, as windows grow, no choice of loss function or embedding geometry can disambiguate twin events from pooled features alone. Instead, we show that physical events are uniquely identified by the event gap, namely the instantaneous, synchronous co-fluctuations across modalities that are erased by pooling and accumulate only along unpooled trajectories. To recover this signal, we introduce CounterPoint, a lightweight plug-in module that strips out each modality's temporal mean to score frame-level cross-modal agreement. Integrated across four state-of-the-art (SOTA) multimodal aligners, CounterPoint shifts representations from coarse condition matching to fine-grained physical event alignment, consistently outperforming existing temporal alignment methods.",
+    "authors": [
+      "Yiyang Zhu",
+      "Guangyuan Liu",
+      "Jingdi Lei",
+      "Li Wei",
+      "Chau Yuen"
     ],
     "published_at": "2026-11-18T00:00:00+00:00",
     "submitted_at": "2026-11-23T00:00:00+00:00"
