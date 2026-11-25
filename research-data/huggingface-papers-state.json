@@ -288,6 +288,18 @@
     "published_at": "2026-11-24T00:00:00+00:00",
     "submitted_at": "2026-11-25T00:00:00+00:00"
   },
+  "2611.32393": {
+    "id": "2611.32393",
+    "title": "Fractal Neural Synthesis: Constant-Storage Procedural Weight Derivation via Complex Quadratic Boundary Dynamics",
+    "summary": "Conventional neural networks store synaptic parameters as explicit tensors whose persistent Flash footprint scales linearly (O(W)) with parameter count, constraining resource-limited edge microcontrollers. We formulate and systematically evaluate Fractal Neural Synthesis (FNS), a procedural weight derivation architecture that replaces hidden-layer matrices with a constant 24-byte coordinate seed Theta = (c_x, c_y, ell) in F_64^3 anchored near the complex quadratic bifurcation boundary dM of f_c(z) = z^2 + c. We introduce a large-bailout (R = 256) smooth escape kernel, four zero-overhead geometric sampling apertures--Cartesian Grid, coprime 3x3 Rule-of-Thirds (Z/9Z), phi-Vogel spiral, and multi-scale Harmonic Tripod--and prove conditional Kolmogorov (K_Kolm <= 192 + c_0 bits) and Shannon entropy bounds. Across magnifications zeta in [10^0, 10^8], C^1 Fourier and lattice-noise bases collapse to post-standardization rank ~2.25 and SHA-256 PRNG exhibits avalanche discontinuity (rho ~ 0.019, 50.6% micro-step retention), whereas dM uniquely sustains both rank (~10.0) and local continuity (rho in [0.81, 0.97], 89.2% retention). Under leak-free 10-fold CV across four zero-scaler-byte non-linear benchmarks, FNS with an INT8 readout surpasses 0-hidden Linear-INT8 by +3.6 to +10.8 pp while delivering 10.7x-129x total Flash reduction (725x-2,773x hidden reduction) relative to converged Float32 MLPs (90.30% Ionosphere in 285 B; 97.22% Optical Digits in 2,598 B; 97.90% PenDigits in 2,598 B; 87.00% Satimage in 1,570 B).",
+    "authors": [
+      "Volkan Dagli",
+      "Zerrin Dagli",
+      "Daghan Dagli"
+    ],
+    "published_at": "2026-11-24T00:00:00+00:00",
+    "submitted_at": "2026-11-25T00:00:00+00:00"
+  },
   "2611.32183": {
     "id": "2611.32183",
     "title": "ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks",
@@ -610,6 +622,21 @@
     "published_at": "2026-11-23T00:00:00+00:00",
     "submitted_at": "2026-11-25T00:00:00+00:00"
   },
+  "2611.30017": {
+    "id": "2611.30017",
+    "title": "OWE-Bench: A long-horizon benchmark for measuring real-world engineering",
+    "summary": "We present OWE-Bench (OpenWorldEngineer-Bench), a benchmark of 26 long-horizon engineering tasks written by domain experts in software engineering, physical engineering, machine learning, and scientific computing. Tasks range from optimizing kernels and designing an aircraft, to identifying the faults responsible for an earthquake. Each task requires significant domain knowledge and engineering work, with models averaging hundreds of millions of tokens per task. Solutions are scored on practical measures such as speed, cost and accuracy, both on provided cases the agent could test against and on hidden cases that an engineer would expect from the task description. The best-performing frontier model so far, Claude Fable 5.2, scores 54.6% and averages 211 million tokens per task. We highlight two findings. First, when models are given more time, they use more test-time compute and achieve higher scores. Models also scale differently with test-time compute: GPT-6 Astra achieves higher scores at shorter time limits and at equal token use, while Claude Fable 5.2 uses more tokens at longer limits to achieve the highest overall score. Second, each model scores lower on hidden cases than on the provided cases, by an average of 18 points, which we call the deployment gap. Models also fail to predict the deployment gap, overestimating their performance on hidden test cases by an average of 21 points. We hope that OWE-Bench grounds progress toward agents whose engineering solutions perform as well in deployment as they do in testing.",
+    "authors": [
+      "Jacob Cole",
+      "Martin Dimakis",
+      "Victor Barres",
+      "Bertie Vidgen",
+      "Edward Hu",
+      "Jason Wei"
+    ],
+    "published_at": "2026-11-23T00:00:00+00:00",
+    "submitted_at": "2026-11-25T00:00:00+00:00"
+  },
   "2611.29874": {
     "id": "2611.29874",
     "title": "Escriba-OCR: A 1B Vision-Language Model for Error-Preserving Transcription of Handwritten Portuguese Essays",
@@ -736,6 +763,16 @@
     "published_at": "2026-11-21T00:00:00+00:00",
     "submitted_at": "2026-11-25T00:00:00+00:00"
   },
+  "2611.27404": {
+    "id": "2611.27404",
+    "title": "Degradation of Language Models under Controlled Load: Synchronization, Rule Execution and Misfires on the Background",
+    "summary": "As the load grows, a language model makes more and more errors, but different processes stand behind this decline in quality. The model may lose the correspondence with the source text, it may keep its place in the text but execute a rule wrongly, or it may change a word that no rule concerns. In this work the degradation of a model under controlled load is separated into these three components: synchronization, rule execution and misfires. The load is set by rules that replace one word with another in a meaningless text, and each kind of load (the text length, the position of a word in the answer, the replacement density, the number of rules and the place of a rule in the list) is set separately. The alignment of the answer with the reference makes it possible to follow the outcome of every word, and a statistical model that takes into account that the spread of difficulty between requests itself depends on the load restores, for each component, the laws of its dependence on every kind of load. These laws make up the passport of a model. The paper presents the method of the separation, the principles of constructing the laws and the passports of seven models built by this method; the separation opens the way to studying the fine structure of the behavior of a neural network.",
+    "authors": [
+      "Hennadii Kutomanov"
+    ],
+    "published_at": "2026-11-20T00:00:00+00:00",
+    "submitted_at": "2026-11-25T00:00:00+00:00"
+  },
   "2510.22622": {
     "id": "2510.22622",
     "title": "Mega-MMDF and DeepfakeBench-MM: Benchmarking Multimodal Deepfake Detection Across Diverse Forgery Pipelines",
@@ -756,6 +793,23 @@
       "Baicheng Chen"
     ],
     "published_at": "2026-11-20T00:00:00+00:00",
+    "submitted_at": "2026-11-25T00:00:00+00:00"
+  },
+  "2611.25946": {
+    "id": "2611.25946",
+    "title": "Point Dynamics as Proxy for Robotic World Models",
+    "summary": "Robotic world models predict future video frames from the current observation and a sequence of robot actions. While recent models follow the given actions closely, manipulated objects often collapse or move inconsistently with the action. We attribute this to the conditioning: an action, or a rendering of the robot, specifies where the robot goes but not how the scene responds, leaving a single video model to infer the interaction dynamics implicitly while also rendering appearance. We therefore separate dynamics prediction from visual rendering, with 3D point dynamics as the proxy between them. Specifically, we lift the first frame into 3D points, simulate how they respond to the robot's motion with a learned point dynamics model, and render the simulated points back into pixel-aligned videos that any video model can read. In controlled experiments on the DROID dataset with two video renderers of different architectures, this point dynamics proxy reduces object motion error by 8.6% and 6.2% without degrading image quality, and by 8.1% on a real bimanual robot. Moreover, the video follows the simulation: more accurate dynamics yield more accurate object motion, and editing the points steers the video. This suggests that advances in dynamics modeling can translate into more faithful robotic world models.",
+    "authors": [
+      "Dong An",
+      "Tianyu Liu",
+      "Haoran Ding",
+      "Wen Yang",
+      "Anqing Duan",
+      "Zhengzhong Liu",
+      "Eric P. Xing",
+      "Guangyi Liu"
+    ],
+    "published_at": "2026-11-19T00:00:00+00:00",
     "submitted_at": "2026-11-25T00:00:00+00:00"
   },
   "2611.25848": {
