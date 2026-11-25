@@ -1,9 +1,412 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Hugging Face Daily Papers</title>
     <link>https://huggingface.co/papers</link>
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
+    <item>
+      <title>CoT-Proxy: Cross-Format Transfer for Distilling Long-Horizon Policies</title>
+      <link>https://huggingface.co/papers/2611.33148</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.33148</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Dawid J. Kopiczko</dc:creator>
+      <dc:creator>Tijmen Blankevoort</dc:creator>
+      <dc:creator>Yuki M. Asano</dc:creator>
+      <description>&lt;p&gt;Reasoning models become long-horizon agents through reinforcement learning or, more cheaply, through fine-tuning on a stronger teacher&amp;#x27;s trajectories, which contain the teacher&amp;#x27;s chain-of-thought as well as its actions. The standard fine-tuning approach imitates both, yet the strongest teachers are closed models whose chain-of-thought is hidden behind an API. We show that the chain-of-thought can be left out altogether and that the long-horizon policy can be distilled from the teacher&amp;#x27;s actions alone. The student is trained on these trajectories with its reasoning block left empty, while a KL loss on a replay buffer of its own generations limits drift from its initial model. Surprisingly, the policy learned from these trajectories with an empty reasoning block carries over to inference with thinking enabled, where the student reasons in its own style while acting like the teacher, an effect we call cross-format transfer. Distilling the actions of Qwen3.6-27B raises the task success of Qwen3-4B on AppWorld from 7% to 18% and that of Qwen3-32B from 12% to 25%. We further introduce CoT-proxies, short summaries of the teacher&amp;#x27;s reasoning placed after the empty reasoning block, which raise Qwen3-4B further, to 35%. Since neither actions nor CoT-proxies need the hidden chain-of-thought, the recipe applies unchanged to closed teachers. Distilling GPT-5.6 Luna from its visible outputs and the reasoning summaries its API returns raises Qwen3-4B from 7% to 48% on AppWorld and from 3% to 28% on SWE-bench Verified.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.33148"&gt;arXiv:2611.33148&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.33148"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>GRAPE-Bench: When Vision Degrades, Does Video Reasoning Hold?</title>
+      <link>https://huggingface.co/papers/2611.33020</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.33020</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Ce Zhang</dc:creator>
+      <dc:creator>Junyi He</dc:creator>
+      <dc:creator>Tianshi Ming</dc:creator>
+      <dc:creator>Jinxi He</dc:creator>
+      <dc:creator>Jianshu Zhang</dc:creator>
+      <dc:creator>Xiyuan Yang</dc:creator>
+      <dc:creator>Jianuo Zhu</dc:creator>
+      <dc:creator>Yicheng Tao</dc:creator>
+      <dc:creator>Xiyu Luo</dc:creator>
+      <dc:creator>Minghao Fu</dc:creator>
+      <dc:creator>Jiahui Zhu</dc:creator>
+      <dc:creator>Kehan Guo</dc:creator>
+      <dc:creator>Yunzhong Xiao</dc:creator>
+      <dc:creator>Jingyang Lin</dc:creator>
+      <dc:creator>Wei Chow</dc:creator>
+      <dc:creator>Lingdong Kong</dc:creator>
+      <dc:creator>Katia Sycara</dc:creator>
+      <dc:creator>Yaqi Xie</dc:creator>
+      <description>&lt;p&gt;Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios. Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they can make the simpler judgments that matter for safe driving. To this end, we introduce GRAPE-Bench, which jointly evaluates video reasoning across visual degradation conditions and question difficulty. It combines a synthetic set spanning twelve corruption types across daily-life and driving videos with real-world footage of driving at night or in rain, snow, or fog. Each video is paired with three progressively challenging questions, from fundamental judgments with potential safety implications to demanding reasoning stress tests. Across open-weight and frontier models, we observe ranking reversals between synthetic and real-world conditions and level-specific weaknesses obscured by overall accuracy. Synthetic-data fine-tuning improves Qwen3.5-9B&amp;#x27;s real-world accuracy from 76.7% to 81.1%, while clean-privileged on-policy distillation reaches 80.4% in a separate reasoning-enabled setting. Through preference steering, we further demonstrate continuous control over a frozen model&amp;#x27;s trade-off between safety-relevant judgments and challenging reasoning, with little change in overall accuracy. Together, GRAPE-Bench provides a unified testbed for evaluating, improving, and controlling video reasoning under degraded visual conditions.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.33020"&gt;arXiv:2611.33020&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.33020"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies</title>
+      <link>https://huggingface.co/papers/2611.33010</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.33010</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xuanchen Liu</dc:creator>
+      <dc:creator>Hejun Zhang</dc:creator>
+      <dc:creator>Boxuan Dong</dc:creator>
+      <dc:creator>Ying Wu</dc:creator>
+      <dc:creator>Heshuai Li</dc:creator>
+      <dc:creator>Wen Gao</dc:creator>
+      <dc:creator>Yonghong Tian</dc:creator>
+      <dc:creator>Weihao Yu</dc:creator>
+      <description>&lt;p&gt;Can a simple mirror expose the limitations of today&amp;#x27;s robotic manipulation policies? Inspired by the mirror self-recognition test in animal cognition, we investigate whether robot policies can reliably manipulate physical objects in scenes containing their reflections. We introduce RoboDojo-Mirror, a benchmark built on RoboDojo that preserves task objectives, success criteria, and policy checkpoints while comparing a mirror-free baseline with single-mirror, dual-mirror, and mirrored-tabletop conditions. Across five policies spanning Vision-Language-Action models, World Action Models, and agentic policies, every mirror condition reduces aggregate success rates: averaged over the three conditions, the drop ranges from 10.8 to 56.7 percentage points across policies, and it reaches 62.5 points on the mirrored tabletop. Because a mirror is also a physical obstacle, we compare it against geometrically matched non-reflective panels; 50--88\% of mirror-specific failures occur without recorded robot--panel contact, so direct collisions alone do not explain the degradation. Trajectory and contact analyses instead reveal recurring behaviors consistent with phantom targeting of reflected objects and spatial mislocalization of real ones. Targeted diagnostics further characterize grasping near reflections, policy-dependent pushing progress, and physical-target interaction under main-camera occlusion. Real-robot experiments with π_{0.5} and FastWAM also show lower overall success rates under the upright-mirror and mirrored-tabletop conditions. These findings reveal a shared vulnerability to reflective environments across diverse robot policies and motivate reflection-aware evaluation of embodied intelligence. Code is available at https://github.com/iPPLab/robodojo-mirror.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.33010"&gt;arXiv:2611.33010&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.33010"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>SpecEngineeringBench: Evaluating Coding Agents as Autonomous Specification Engineers</title>
+      <link>https://huggingface.co/papers/2611.32973</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32973</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xingjian Wang</dc:creator>
+      <dc:creator>Shijian Wang</dc:creator>
+      <dc:creator>Minghao Liu</dc:creator>
+      <dc:creator>Ji Zou</dc:creator>
+      <dc:creator>Zetao Yang</dc:creator>
+      <dc:creator>Xinping Lei</dc:creator>
+      <dc:creator>Yiming Liang</dc:creator>
+      <dc:creator>Shen Yan</dc:creator>
+      <dc:creator>Enduo Zhao</dc:creator>
+      <dc:creator>Xiaoyang Shen</dc:creator>
+      <dc:creator>Weihao Xuan</dc:creator>
+      <dc:creator>Jiaheng Liu</dc:creator>
+      <dc:creator>Ge Zhang</dc:creator>
+      <description>&lt;p&gt;Autonomous specification engineering requires coding agents to translate functional requirements into executable tests and use the results to discover and validate defects. However, existing benchmarks evaluate coding agents on explicitly specified test generation tasks, commonly providing an issue description, a designated test entry point, or files to inspect, leaving the ability to determine what to test and where to investigate insufficiently evaluated. Relying on such clues bypasses the challenge of mapping requirements to implementations and proactively uncovering unknown defects. We propose SpecEngineeringBench, comprising 100 instances from 78 open-source Python repositories across 16 application categories, with multiple recorded defects in each instance. Two independent tasks evaluate complementary capabilities: generating test suites and discovering defects through execution analysis. The evaluation combines test validity, defect detection, and coverage with localization precision and recall. Across seven frontier coding agents, results reveal that test validity and coverage decouple from defect exposure: agents achieve a 91.47% Head Pass Rate and 80.48% Change-focused Coverage alongside a 26.36% Fail-to-Pass Rate, while localization recall drops from 78.11% at the file level to 51.29% at the function level. Autonomous test generation improves file, function, and hunk localization recall by 4.99, 2.77, and 2.69 percentage points over relying solely on existing repository test suites.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32973"&gt;arXiv:2611.32973&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32973"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>InstructReplay: Replaying Assistant Turns to Preserve General Behavior During Factual Fine-Tuning</title>
+      <link>https://huggingface.co/papers/2611.32918</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32918</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xiaofeng Shi</dc:creator>
+      <dc:creator>Qian Kou</dc:creator>
+      <dc:creator>Hua Zhou</dc:creator>
+      <description>&lt;p&gt;Fine-tuning an instruction-tuned language model on new facts often erodes its general abilities. We find that standard fine-tuning lowers instruction-following, reasoning and coding benchmarks by 35 points on average, and that these losses track a collapse in answer length: fine-tuned models at least halve their responses, and the further a response drifts from the initial model&amp;#x27;s length, the more often it fails. We propose InstructReplay: the initial model answers a set of general instructions once, and during fine-tuning the model is kept close to the initial model on these answers. Across three model families and two domains, InstructReplay reduces the average decline on five general benchmarks from 28.1 to 2.4 points and keeps answer length close to the initial model&amp;#x27;s, while learning the new facts as well as standard fine-tuning. It balances learning and retention better than seven adaptation methods in all six settings. Controlled comparisons attribute the gain to replaying the model&amp;#x27;s own answers to general instructions rather than to the form of the loss.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32918"&gt;arXiv:2611.32918&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32918"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe</title>
+      <link>https://huggingface.co/papers/2611.32884</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32884</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Richmond Sin Jing Xuan</dc:creator>
+      <dc:creator>Peilin Feng</dc:creator>
+      <dc:creator>Wenbin Wang</dc:creator>
+      <dc:creator>Soujanya Poria</dc:creator>
+      <description>&lt;p&gt;AI agents working on long tasks often commit to an answer before they have enough evidence, a behavior called laziness. In our evaluations, they frequently commit even while their stated belief still names several possible answers. An outcome reward at the end of the episode scores only the final answer, so it cannot teach the agent when to commit, because a lucky guess receives the same reward as an answer backed by evidence. During training, however, the simulator can compute the exact posterior over the answer at every step and tell whether the evidence is already enough. We propose Reinforcement Learning with Verifiable Beliefs (RLVB), which rewards the agent for taking further steps while this posterior still allows several answers and for committing once the evidence is sufficient. The reward needs no judge, critic or reward model, and it never reads the belief line the agent writes before each action. We also introduce Pro Worlds, a benchmark of visual puzzles where the agent views a large world through a small window. We evaluate three vision-language models on three benchmarks, two of which are never seen in training. RLVB improves the base model in all nine settings, by 17.1% on average. Under the outcome reward, GRPO and PPO fall below the base model on average. RLVB also outperforms PPO with a process reward from an LLM judge by 9.3% on average while using 1.6 times fewer GPU-hours. The trained agent answers with sufficient evidence in 51%, 12% and 74% of the episodes on the three benchmarks, against 8%, 0.4% and 36% for the base model. Its accuracy gain therefore comes from answering more often at high levels of evidence. The belief line shows how the agent reaches this evidence: it acts on its own belief. It commits at only 0.1 to 2.2% of the turns at which the evidence is insufficient and its line still names several answers, against 3 to 68% for the base model.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32884"&gt;arXiv:2611.32884&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32884"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Residual Guidance for Real-Time Interactive Video Generation</title>
+      <link>https://huggingface.co/papers/2611.32820</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32820</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>NaHyeon Park</dc:creator>
+      <dc:creator>Kyeong-Hwan Moon</dc:creator>
+      <dc:creator>Youjin Jeon</dc:creator>
+      <dc:creator>Hyunjung Shim</dc:creator>
+      <description>&lt;p&gt;Real-time interactive video generation allows users to change the prompt during generation to steer the evolving video. However, existing streaming models, which generate videos chunk by chunk, often keep following the previous prompt after a switch. We trace this failure to context inertia, where the previous chunk acts as a strong prior that suppresses the new prompt. Furthermore, we find that this inertia persists even when the cache retains only the previous chunk, yet discarding the context breaks visual continuity, which limits approaches that edit the cache. Rather than editing the cache, we propose Residual Guidance (RG), a simple, training-free method that counteracts context inertia with a correction measured outside the cache. Specifically, RG denoises the re-noised previous chunk once under the new prompt without the cache and adds the resulting residual to the early denoising steps of the next chunk, where its content is largely decided and the new prompt is most suppressed. Across settings ranging from a single switch to long multi-switch generation, RG substantially improves prompt switching capability on existing streaming models, including those with dedicated switching mechanisms, while largely retaining visual quality. As it requires no training or per-model tuning and adds only one forward pass per chunk, RG can be easily integrated into existing real-time video generation pipelines.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32820"&gt;arXiv:2611.32820&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32820"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>SpatialArena: Where Do Geometric Foundation Models Stand?</title>
+      <link>https://huggingface.co/papers/2611.32816</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32816</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yu Chen</dc:creator>
+      <dc:creator>Haosen Yang</dc:creator>
+      <dc:creator>Su Ee Tan</dc:creator>
+      <dc:creator>Zhensong Zhang</dc:creator>
+      <dc:creator>Jifei Song</dc:creator>
+      <dc:creator>Jiankang Deng</dc:creator>
+      <description>&lt;p&gt;3D perception is shifting from task-specific pipelines to geometric foundation models: monocular depth networks, feed-forward 3D/4D reconstruction models, and vision--language models that predict geometry. However, their progress cannot be measured reliably. Published numbers are not comparable, because every paper samples frames, sets resolutions, and selects test splits differently. They are not robust because the alignment required for every up-to-scale prediction can outweigh the gap between models: fitting depth in the wrong space nearly triples its error, and standard trajectory alignment understates the error of failing methods by up to 2.6times. And they rarely cover long recordings, dynamic scenes, or aerial views. We present SpatialArena, an open arena that scores geometric models with the same metrics and rules, with robust and deterministic alignment. SpatialArena spans five tasks, from monocular depth to SLAM. It covers 23 public datasets with 418,929 images across indoor, outdoor, aerial, object-centric, and dynamic scenes, together with Spatial Arena, our own captures with accurate poses and depth. Evaluating 52 models, we find that single-image depth is close to saturation on public benchmarks but not on large, uncontrolled scenes, and that progress now comes from consistency across frames and views, where feed-forward 3D/4D models match or surpass monocular specialists and overtake video depth models. The benchmark, toolbox, and leaderboard will be publicly released.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32816"&gt;arXiv:2611.32816&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32816"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Measuring Layer-wise Intrinsic Dimensionality of FFNs in LLMs via PCA</title>
+      <link>https://huggingface.co/papers/2611.32782</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32782</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Daehee Kim</dc:creator>
+      <description>&lt;p&gt;Modern large language models (LLMs) keep the feed-forward network (FFN) intermediate width identical across every layer, a convention inherited from the original Transformer. Yet mechanistic work suggests layers at different depths do qualitatively different work, raising a natural question: are their capacity demands also non-uniform, and if so, can a fixed parameter budget be allocated more wisely than uniformly? To probe this, we apply principal component analysis (PCA) to the input of each FFN down-projection and measure, for every layer, its intrinsic dimensionality as the smallest number of principal components needed to reconstruct the activation up to a fixed cosine similarity. Scanning 58 open-weight LLMs spanning 14 families and 70M to 72B parameters, we find a recurring middle-heavy profile in which middle layers carry higher intrinsic dimensionality than edge layers; the profile is robust to the calibration corpus, even across English and Chinese, and is largely preserved through post-training fine-tuning. As a direct test that this signal is structurally meaningful, we use it to guide width pruning in a knowledge-distilled student under a matched parameter budget: the PCA-guided allocation outperforms the uniform-width convention by +2.3 points on Qwen3-8B and +2.5 on Qwen2.5-3B, while lower-dispersion teachers show smaller gaps (+0.9 on Gemma-3-4B, +0.5 on LLaMA-3-8B), and a budget-matched inverted control does worst on all four teachers. Across these four teachers, the size of the gap tracks how unevenly the teacher&amp;#x27;s intrinsic dimensionality is distributed across layers (a single-number summary we call σ_{99}), and the advantage persists through downstream supervised fine-tuning. Code is available at https://github.com/naver-ai/lidf.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32782"&gt;arXiv:2611.32782&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32782"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation</title>
+      <link>https://huggingface.co/papers/2611.32736</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32736</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Zihao Liu</dc:creator>
+      <dc:creator>Zekai Zhang</dc:creator>
+      <dc:creator>Shengming Yin</dc:creator>
+      <dc:creator>Zikai Zhou</dc:creator>
+      <dc:creator>Donghao Zhou</dc:creator>
+      <dc:creator>Chenyang Zhu</dc:creator>
+      <dc:creator>Lihan Jiang</dc:creator>
+      <dc:creator>Ningyuan Tang</dc:creator>
+      <dc:creator>Bingxuan Zhao</dc:creator>
+      <dc:creator>Yanran Zhang</dc:creator>
+      <dc:creator>Yan Shu</dc:creator>
+      <dc:creator>Zhening Liu</dc:creator>
+      <dc:creator>Jiahao Li</dc:creator>
+      <dc:creator>Jie Zhang</dc:creator>
+      <dc:creator>Kaiyuan Gao</dc:creator>
+      <dc:creator>Kun Yan</dc:creator>
+      <dc:creator>Qihang Ai</dc:creator>
+      <dc:creator>Rui Song</dc:creator>
+      <dc:creator>Shuo Cao</dc:creator>
+      <dc:creator>Xiao Xu</dc:creator>
+      <dc:creator>Xiaoyue Chen</dc:creator>
+      <dc:creator>Yuxiang Chen</dc:creator>
+      <dc:creator>Zhendong Wang</dc:creator>
+      <dc:creator>Zhouyang Li</dc:creator>
+      <dc:creator>Bo Zheng</dc:creator>
+      <dc:creator>Jun Zhou</dc:creator>
+      <dc:creator>Xiu Li</dc:creator>
+      <dc:creator>Chenfei Wu</dc:creator>
+      <description>&lt;p&gt;Fine-tuning a generator on a complete high-resolution canvas requires long image sequences and substantial computation, yet local regions can still exhibit unnatural repetitive stripes when training resources are limited. We introduce Qwen-Image-HD, which adapts Qwen-Image 2.0 to high-resolution synthesis through local training and blockwise autoregressive generation. Each prediction covers a target tile at 1K scale, conditioned on high-resolution upper and left neighbors and a compressed historical thumbnail. These conditions provide adjacent fine-scale structures and an overview of the scene generated so far. To integrate these complementary cues, we map both forms of history and the target to a shared canvas coordinate system to express their spatial relationships and scale differences. On Qwen-Image-Bench at 4K, Qwen-Image-HD achieves stronger overall evaluation performance than direct 4K generation with FLUX-3-Image-Klein. Compared with full-image 4K supervised fine-tuning of the same backbone, it achieves better generation quality with lower training compute and higher inference efficiency, while exhibiting fewer unnatural repetitive stripes in original-resolution comparisons. We further introduce a Wavefront-AutoRegressive inference schedule that generates tiles on the same anti-diagonal concurrently across GPUs to reduce single-image latency.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32736"&gt;arXiv:2611.32736&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32736"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ICLWorld: Benchmarking In-Context Learning of Agents from Digital to Physical Worlds</title>
+      <link>https://huggingface.co/papers/2611.32649</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32649</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Qingle Liu</dc:creator>
+      <dc:creator>Jieming Li</dc:creator>
+      <dc:creator>Pei-lin Li</dc:creator>
+      <dc:creator>Shenghan Zheng</dc:creator>
+      <dc:creator>Ruize Yang</dc:creator>
+      <dc:creator>Sunqi Fan</dc:creator>
+      <dc:creator>Deyao Hong</dc:creator>
+      <dc:creator>Huan-ang Gao</dc:creator>
+      <dc:creator>Meng-Hao Guo</dc:creator>
+      <dc:creator>Shuojin Yang</dc:creator>
+      <description>&lt;p&gt;In-context learning (ICL) lets agents acquire new rules from context and adapt to user-specific requirements at inference time. The same frontier agents now operate both computers and robots, yet their ICL remains insufficiently assessed: existing benchmarks are largely offline, rely on text or static images, and risk training-data contamination, while robot evaluations are limited to method-level ablations. We present ICLWorld, an online benchmark that evaluates the ICL of agents from digital to physical worlds, covering computer use and robot use, together with UIverse, a unified harness that turns every environment into a user interface. We build 30 environments, record 630 demonstration videos (10+ hours), and design 160 tasks with customized, often counter-intuitive rules that cannot be satisfied without learning from the context. Each task comes with three rule versions, given as text or video, and we test generalization at three levels, from replaying the demonstration to new instances and unseen environments. Across six frontier models, the strongest agents, Claude Opus 5.5 and GPT-6 Astra, succeed on 82% and 76% of computer-use runs but only 27% and 26% of robot-use runs, and a no-rule control reduces success to at most 8%. GPT-6 Astra succeeds under all three rule versions on only 38% of computer-use tasks, half its rate under a single rule, and answers 98% of robot rule questions correctly yet completes only 20% of these tasks. Frontier agents learn rules comparably well from video and from text and transfer them across environments, whereas weaker agents rely on text and lose most of their video-based success once the demonstrated situation is resampled. These findings reveal substantial gaps between the digital and the physical world and between identifying a rule and acting on it.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32649"&gt;arXiv:2611.32649&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32649"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ReFocus: Progress-Guided Adaptive Practice for Long-Horizon Robotic Manipulation Reinforcement Learning</title>
+      <link>https://huggingface.co/papers/2611.32639</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32639</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Haoyuan Li</dc:creator>
+      <dc:creator>Wei Huang</dc:creator>
+      <dc:creator>Jiehong Lin</dc:creator>
+      <dc:creator>Shengrong Zhang</dc:creator>
+      <dc:creator>Chenzhi Liu</dc:creator>
+      <dc:creator>Shengchao Zhou</dc:creator>
+      <dc:creator>Hehe Fan</dc:creator>
+      <dc:creator>Xiaojuan Qi</dc:creator>
+      <dc:creator>Yi Yang</dc:creator>
+      <description>&lt;p&gt;Online reinforcement learning (RL) enables vision-language-action policies to improve through environmental interaction. However, in long-horizon manipulation, sparse success/failure feedback provides little information about where policies encounter bottlenecks. Moreover, repeated full-task rollouts also leave these bottlenecks weakly analyzed and insufficiently practiced. To this end, we introduce ReFocus, a progress-guided multi-round RL framework that alternates between Global and Local RL to identify task-specific bottlenecks and allocate additional practice to them. Specifically, during Global RL, we decompose each task into a Directed Acyclic Graph (DAG) of subtasks. Then a DAG-based Progress Reward is leveraged for both policy training and bottleneck diagnosis. Based on the identified bottlenecks, ReFocus selects Adaptive Practice Windows, defining task segments from an entry stage to a target stage. It allocates additional interaction to these segments during Local RL while updating the entire policy. After that, it evaluates the policy to perform the full task for the next round of RL, forming an iteration between Global and Local RL. Experiments on LIBERO-Long and RoboCasa365 show that ReFocus achieves success rates of 97.8% and 51.3%, respectively, compared with 90.6% and 39.3% for the π_{0.5} baseline. Furthermore, we evaluate a real-world adaptation on three long-horizon tasks. On BreadBaker, ReFocus achieves 95% success, compared with 30% for the π_{0.5}. Project page: https://refocus-robotics.github.io.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32639"&gt;arXiv:2611.32639&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32639"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>VenusOCR2.0: Towards Efficient and Effective Document Parsing</title>
+      <link>https://huggingface.co/papers/2611.32617</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32617</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Lei Li</dc:creator>
+      <dc:creator>Zheng Wei</dc:creator>
+      <dc:creator>Yi Yuan</dc:creator>
+      <dc:creator>Qingbin Liu</dc:creator>
+      <dc:creator>Jiang Bian</dc:creator>
+      <dc:creator>Zang Li</dc:creator>
+      <description>&lt;p&gt;We present VenusOCR2.0, a compact 1B-parameter vision-language recognizer designed for both high-accuracy and high-throughput document parsing across text, tables, and formulas. To continuously improve recognition quality without self-training collapse, we build a bounded recursive self-improvement (RSI) data engine where the model acts strictly as a weakness probe, while external multi-expert medoid consensus, VLM visual verification, and factorized synthesis supply reliable supervision across pretraining, curated SFT, and RLVR. VenusOCR2.0 couples a dynamic-resolution SigLIP2 encoder and 2x2 spatial token merging with a Qwen3-0.6B decoder, adopting compact atomic OTSL tokens to shorten table sequences and reduce structural errors. To further eliminate the autoregressive decoding bottleneck, we introduce PTPv2, a lightweight (sim67M) decoupled parallel draft module that combines frozen multi-layer verifier conditioning, a standalone learned mask, and block-causal all-position next-token prediction. On OmniDocBenchv1.6, VenusOCR2.0 achieves an overall score of 96.45 and a state-of-the-art 98.57 formula CDM, substantially outperforming massive general-purpose VLMs such as Gemini-3-Pro (92.91) and Qwen3-VL-235B (89.78). Deployed in vLLM on a single H20 GPU, PTPv2 delivers a 2.96x single-request speedup and up to 2.36x higher batched throughput while guaranteeing lossless, token-for-token equivalence with standard autoregressive decoding.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32617"&gt;arXiv:2611.32617&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32617"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Factorized Context Attention: From Emulated to Native Grid Probing</title>
+      <link>https://huggingface.co/papers/2611.32423</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32423</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Mohamed Eltahir</dc:creator>
+      <dc:creator>Manar Eyad</dc:creator>
+      <dc:creator>Yara Alzahrani</dc:creator>
+      <dc:creator>Fatimah Albesher</dc:creator>
+      <dc:creator>Duaa M. Tahir</dc:creator>
+      <dc:creator>Tanveer Hussain</dc:creator>
+      <dc:creator>Naeemullah Khan</dc:creator>
+      <description>&lt;p&gt;Models read a book, an hour of video, or an image in one forward pass. As the context grows, this pass slows down, loses accuracy, and stops at the context window. Sparse attention is efficient, but keeps the other two limitations. Grid probing, a recent training-free method, recovers the accuracy and extends the reach by asking a frozen model the same question about short local and strided spans of the input, but every question repeats the whole computation, since each span is encoded again. Our insight is that grid probing is emulated attention, an attention pattern reproduced from outside the model through prompts, since each probe only restricts which part of the input the question can see. We introduce Factorized Context Attention (FCA), a training-free block-sparse attention that runs the same pattern natively, as the attention of the model itself. FCA encodes the input once into a KV cache, reads all spans as masked sequences in one batched forward, and uses a stair position schedule to keep every span inside the trained position range. Across long video understanding, long-context text inference and image grounding, FCA matches the accuracy and the reach of grid probing at a fraction of its cost. It gains about 10 points over the single pass on long video and 9 to 14 points on long novels, finds needles in videos of over a thousand frames and in texts four times the length of the window, and answers a later question about the same input in as little as a tenth of the time of grid probing. Native attention thus keeps what emulated attention gains without its cost, all with existing frozen language and vision-language models.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32423"&gt;arXiv:2611.32423&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32423"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks</title>
+      <link>https://huggingface.co/papers/2611.32183</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32183</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Jiawei Gu</dc:creator>
+      <dc:creator>Linjie Li</dc:creator>
+      <dc:creator>Yiming Liu</dc:creator>
+      <dc:creator>Yunzhuo Hao</dc:creator>
+      <dc:creator>Huichen Wang</dc:creator>
+      <dc:creator>Guanzheng Chen</dc:creator>
+      <dc:creator>Zhichao Peng</dc:creator>
+      <dc:creator>Luxin Xu</dc:creator>
+      <dc:creator>Xinyu Zhang</dc:creator>
+      <dc:creator>Li Luo</dc:creator>
+      <dc:creator>Disen Lan</dc:creator>
+      <dc:creator>Zican Hu</dc:creator>
+      <dc:creator>Mingyang Song</dc:creator>
+      <dc:creator>David Valente</dc:creator>
+      <dc:creator>Alex Jinpeng Wang</dc:creator>
+      <dc:creator>Yafu Li</dc:creator>
+      <dc:creator>Ganqu Cui</dc:creator>
+      <dc:creator>Zhengyuan Yang</dc:creator>
+      <dc:creator>Qizhe Xie</dc:creator>
+      <dc:creator>Yejin Choi</dc:creator>
+      <dc:creator>Ranjay Krishna</dc:creator>
+      <dc:creator>Yu Cheng</dc:creator>
+      <description>&lt;p&gt;People reason with pictures as well as words. Interleaved multimodal reasoning gives models a similar way to solve problems by creating intermediate images and using them to guide further reasoning. Training models with this ability usually relies on task-specific demonstrations, which are difficult to collect. We introduce ThinkMorph-SSL, a two-stage training recipe that uses images themselves as a source of supervision. The first stage, pretext reasoning, converts visual pretext tasks, such as image colorization and denoising, into instruction-free interleaved traces. Models describe a corrupted or transformed image, generate a restored or canonical image, and interpret the result. The second stage uses automatically constructed demonstrations for question-driven instruction tuning. At the same instruction-tuning budget, models trained with pretext reasoning outperform those trained with instruction tuning alone. The full recipe improves over the base model by an average of 11.33 accuracy points across twelve benchmarks. These results show that supervision derived from images can build the visual skills needed for interleaved reasoning and improve learning from task-specific demonstrations.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32183"&gt;arXiv:2611.32183&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32183"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Distill to Loop: Turning Pretrained Diffusion Transformers into Looped Models with Adjustable Depth</title>
+      <link>https://huggingface.co/papers/2611.31977</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31977</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Chenru Wang</dc:creator>
+      <dc:creator>Shengwei An</dc:creator>
+      <description>&lt;p&gt;Looped transformers reuse one block of shared weights along the depth of the network. Recent looped diffusion transformers are trained from scratch, which repeats the full pretraining cost although strong pretrained non-looped diffusion transformers exist. We propose Distill to Loop (Dooop), which distills a pretrained non-looped diffusion transformer into a looped student whose blocks are initialized from the teacher&amp;#x27;s. We cast distillation as a fixed-point iteration toward the teacher, in which the output after every loop is trained toward the teacher, and each loop is one step of an ordinary differential equation in depth. As a result, one model runs any number of loops at test time without retraining, and the higher-order ODE solvers of diffusion model sampling can be applied along the depth dimension for better results. Meanwhile, because a looped model produces an output after every loop, we also construct loop guidance between the outputs of different loop counts, which improves the generated samples at little extra compute. On SD3-medium, a looped student with about 37% of the teacher&amp;#x27;s parameters matches the teacher on average over GenEval, ImageReward, PickScore and HPSv2.1 with two to four loops, and with two loops it uses about 58% of the teacher&amp;#x27;s compute. And on a four-step SD3-medium, loop guidance raises the average of the four metrics from 88.2 to 99.2.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31977"&gt;arXiv:2611.31977&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31977"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>RoMo Hands: A Large Scale Richly Organized Text to Hand Motion Dataset</title>
+      <link>https://huggingface.co/papers/2611.31766</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31766</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yizhak Ben-Shabat</dc:creator>
+      <dc:creator>Jiahao Zhang</dc:creator>
+      <dc:creator>Joseph Liu</dc:creator>
+      <dc:creator>Seonghyeon Moon</dc:creator>
+      <dc:creator>Young-Yoon Lee</dc:creator>
+      <dc:creator>Haomiao Jiang</dc:creator>
+      <dc:creator>Oren Jacob</dc:creator>
+      <dc:creator>Mubbasir Kapadia</dc:creator>
+      <description>&lt;p&gt;While text-driven body motion generation has matured, pure-hand synthesis remains bottlenecked by data. Existing datasets often treat hands as rigid end-effectors, lack fine-grained captions, or are too limited in scale to support robust generalization. We introduce RoMo Hands, an in-the-wild, text-paired dataset of ~542K sequences (884 hours, 95.5M frames at 30 fps) which is an order of magnitude larger than prior work. To ensure high-quality supervision, a stringent dexterity filter discards low-articulation sequences, focusing the distribution on complex bimanual movement. Each clip is paired with five captions at increasing granularities from global semantic tags to atomic finger states, organized under a hierarchical taxonomy. To bridge the gap between body and hand architectures, we propose a novel 393-D bimanual representation that adapts redundant body-motion paradigms to the high-DoF kinematics of hands. Systematic benchmarking of diffusion, masked-token, and autoregressive generators reveals distinct trade-offs under these hand-specific adaptations, including a sharp divergence between semantic alignment and kinematic plausibility. Our dataset, representation, and benchmark establish a rigorous foundation for the next generation of dexterous motion synthesis. Project page: https://romodataset.github.io/romo-hands/.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31766"&gt;arXiv:2611.31766&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31766"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Separating Measurement Failures from Defence Failures in Split Language-Model Privacy</title>
+      <link>https://huggingface.co/papers/2611.31752</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31752</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Georgios Politis</dc:creator>
+      <dc:creator>Evangelos Pappas</dc:creator>
+      <description>&lt;p&gt;Split-training privacy evaluations fail through distinct mechanisms. Evaluators can overlook an exposed gradient channel, align reconstructions against shifted labels, or deploy uncalibrated probes before testing a candidate defence, while calibrated attacks can also refute real defences. Separating these failure modes alters which claims survive. We conduct a retrospective evidentiary reanalysis across four split-LLM campaigns and two cross-cutting scope checks covering host key custody and variational mutual-information bounds, mapping every recorded claim to one of five admissibility states (breach, non-detection, undetermined coverage, invalid measurement, or out-of-scope inference). Across a 19-configuration exploration, only four of 24 required probes qualified, yet those four calibrated probes still established qualified privacy breaches in 13 configurations, while utility or learning-gain failures eliminated the remaining 6. In a seven-cell defence-redesign pilot, 2 quantised configurations failed utility gates, calibrated next-byte structure probes breached the 0.02 gate on all 7 cells (0.097 to 0.112), and qualified punctuation-property probes reached 0.79 to 0.89, yielding 4 failed and 3 undetermined composite privacy assessments (the latter from marginal null-band excursions on punctuation bindings). Negative evidence against both defence families remains intact. Scope checks further show that shared-key orthogonal wrappers protect passive network captures without hiding activations from a compromised restoring host, and why near-zero variational lower bounds leave worst-case leakage unconstrained. Rerunnable scripts verify 1,522 checks across 122 SHA-256-pinned artifacts while preserving each campaign&amp;#x27;s native seed intervals and retrospective boundaries.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31752"&gt;arXiv:2611.31752&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31752"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Reinforcing Diffusion Models by Instantaneous Trajectory Distribution Matching</title>
+      <link>https://huggingface.co/papers/2611.30986</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30986</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yihong Luo</dc:creator>
+      <description>&lt;p&gt;Forward diffusion reinforcement learning (RL)---enabling deterministic ODE sampling without trajectory backpropagation---has grown increasingly popular for efficiently aligning diffusion models. However, we reveal that existing methods essentially rely on signed reward-weighted regression (RWR), regressing the trainable policy velocity onto rollouts from a behavior distribution. Unbiased baseline subtraction implicitly assumes that the policy velocity equals the behavior marginal velocity---an idealized assumption violated under classifier-free guidance (CFG) rollouts, offline/off-policy updates, and imperfect online self-consistency. This behavior--policy mismatch breaks baseline invariance and injects baseline-induced gradient drift, destabilizing training. To resolve this issue, we propose Instantaneous Trajectory Distribution Matching (iTDM), taking the infinitesimal limit of Trajectory Distribution Matching toward a time-local reward-guided target via the posterior-score identity to yield a sample-level gradient anchored at the behavior velocity without learning an additional reward-tilted target score. Tracking this velocity with an online auxiliary denoiser guarantees exact baseline invariance at the auxiliary optimum, effectively suppressing baseline drift across both online and offline RL. Extensive experiments across compositional generation, text rendering, and preference alignment show that iTDM achieves state-of-the-art in-domain and out-of-domain performance across group-wise online/offline RL and pairwise offline RL. Notably, on the challenging GenEval2 benchmark, iTDM converges nearly 3\times faster than competing methods while scaling smoothly to 0.87 without collapse. Furthermore, iTDM scales effectively to the 5.6B FLUX.3 model, achieving better performance across both in-domain and unseen metrics. Code is available at https://github.com/Luo-Yihong/iTDM&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30986"&gt;arXiv:2611.30986&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30986"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>AdProducer: Towards Agentic Advertising Video Generation</title>
+      <link>https://huggingface.co/papers/2611.31466</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31466</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Kunyang Li</dc:creator>
+      <dc:creator>Chaoyang Wang</dc:creator>
+      <dc:creator>Mubarak Shah</dc:creator>
+      <dc:creator>Yuzhang Shang</dc:creator>
+      <description>&lt;p&gt;Recent advances in video generation have made automated advertising production increasingly feasible. However, an effective advertisement must faithfully represent the product and communicate its selling points through compelling visual storytelling, which requires more than visual synthesis: it calls for deeper product understanding and strategic decisions about how to present product value. Crucially, product research and creative design are closely intertwined, as the information gathered about a product determines which features can be faithfully demonstrated and how they should be presented. In this paper, we introduce AdProducer, the first end-to-end agentic framework for advertising video creation, transforming concise creative briefs into finished advertisements. Our multimodal agent autonomously researches products through web and image search and translates its findings into selling-point-driven storyboards that guide a frozen video generator. To achieve this, we develop a dedicated data construction pipeline that yields two training datasets, AdProducer-SFT and AdProducer-RL, and train the agent through supervised fine-tuning followed by reinforcement learning with joint optimization of storyboard- and video-level rewards. We further introduce AdCreation-Bench, comprising 305 advertising briefs across eight domains, with two complementary metrics: PG-Score for product correctness and creative execution, and Ad-Score for overall advertising effectiveness assessed by an independent judge. Experiments demonstrate that AdProducer improves the PG-Score of MiniMax H3 from 17.3 to 51.3 and generalizes to Veo 3.1 without additional training, improving its score from 28.0 to 35.9, with consistent gains in Ad-Score, VideoScore2, and human evaluations. Code, models, and data are released.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31466"&gt;arXiv:2611.31466&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31466"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Small Learned Projections for Semantic-Reversal-Aware Retrieval with Spectral Acceleration: A Four-Domain Empirical Study</title>
+      <link>https://huggingface.co/papers/2611.31442</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31442</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Sayed Amir Karim</dc:creator>
+      <description>&lt;p&gt;Dense-embedding retrievers can fail adversarially: when a query is answered by a document A and reversed by a near-copy B that differs from A by a small meaning-changing edit (a &amp;quot;trap&amp;quot;), raw cosine over E5-Large-v2 places B in the top-10 for 82-100% of queries at a pool of 5,000. We study two things. First, a small learned projection W: R^1024 -&amp;gt; R^d (d in {11, 32}), trained by a deterministic recipe on a declared set of cases, that suppresses the trap: for the declared cases, HN@10 = 0.0000 (no trap in the top-10) in all twelve (domain, pool-size) settings across four independent domains (legal, medical, patent, financial) and pools up to 100,000, while the correct paraphrase is retained for 93-99% of cases, under exact nearest-neighbour search. Second, a boundary-conditioned accelerator that serves the projection at that scale: an acceleration of spectral graph retrieval (SpectRAG) that replaces a dense eigendecomposition with a boundary-value solve, holding HN@10 = 0.0000 at n = 100,000 in every domain and retrieving the ~300-query suite in 0.6-1.1 s (~2-4 ms per query on average). Because the lens&amp;#x27;s output is the stored representation (a few floats per document), a hardened, specialised index per domain or tenant is ~90x smaller and dimension-proportionally faster than the full embedding, making many small declared indexes a practical alternative to one large vector store. The claim is scoped to the declared cases on the measured pools, with no probabilistic bound; the correct-answer rate drops for a reworded query against an unchanged corpus (about 0.79, trap suppression still holding). A projection transfers only partly to other domains, which we report in full. The recipe, lenses, trap sets and evaluation harness are released under AGPL-3.0; the accelerator&amp;#x27;s implementation is a reserved commercial component, and every HN number is reproducible under exact search.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31442"&gt;arXiv:2611.31442&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31442"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>FATCAT: Fault Injection Attacks Targeting Chip-level Alignment</title>
+      <link>https://huggingface.co/papers/2611.31129</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31129</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Peter Horvath</dc:creator>
+      <dc:creator>Ilia Shumailov</dc:creator>
+      <dc:creator>Zhuoran Liu</dc:creator>
+      <dc:creator>Lukasz Chmielewski</dc:creator>
+      <dc:creator>Lejla Batina</dc:creator>
+      <description>&lt;p&gt;Model alignment is the primary safety and security mechanism for enforcing refusal of malicious prompts in modern foundation models; yet, existing adversarial evaluations implicitly assume underlying hardware integrity. In this paper, we present FATCAT, the first physical fault-injection attacks capable of eliminating refusal in modern large language and vision-language models. Specifically, we present a non-invasive electromagnetic (EM) fault injection attack targeting GPU-accelerated Systems-on-Chip with physical access, requiring neither software execution privileges nor model-layer access. By leveraging an autonomous Radio Frequency (RF) side-channel trigger to synchronize EM faults to the prompt prefill phase, the attack corrupts safety-critical memory transactions across off-chip LPDDR5 DRAM and on-chip LPDDR physical interfaces without crashing the system while preserving model coherence. Evaluated on an NVIDIA Jetson Orin Nano and AGX Thor running Llama 3.2 1B and Gemma 3 1B, localized physical faults reliably force models to fulfill restricted requests, demonstrating that model-level alignment provides no robust security guarantees without hardware-level fault tolerance. Finally, we demonstrate the physical-world consequences of this vulnerability on an active 6-DoF robotic manipulator controlled by a SmolVLA vision-language-action policy. Our attack silently corrupts the model forcing the arm into abrupt, hazardous lunges; in two instances the robotic arm attempted to pinch the paper author -- proving that hardware faults can directly translate into real physical harm.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31129"&gt;arXiv:2611.31129&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31129"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Foresight Forcing: Learning Spatial Foresight for Robotic Manipulation</title>
+      <link>https://huggingface.co/papers/2611.30963</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30963</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Mishuo Han</dc:creator>
+      <dc:creator>Zhixuan Liang</dc:creator>
+      <dc:creator>Zhaoyuan Wan</dc:creator>
+      <dc:creator>Wendi Chen</dc:creator>
+      <dc:creator>Jiarui Chen</dc:creator>
+      <dc:creator>Xinkai Wang</dc:creator>
+      <dc:creator>Yue Ma</dc:creator>
+      <dc:creator>Yu Zhou</dc:creator>
+      <dc:creator>Junting Chen</dc:creator>
+      <dc:creator>Yao Mu</dc:creator>
+      <dc:creator>Jun Lv</dc:creator>
+      <dc:creator>Chuan Wen</dc:creator>
+      <dc:creator>Cewu Lu</dc:creator>
+      <description>&lt;p&gt;Robotic manipulation policies can improve action prediction by anticipating how objects move and how their spatial relationships change. World Action Models (WAMs) learn to predict future visual observations, but their training objectives typically leave the underlying 3D geometric transitions implicit. To alleviate this problem, we introduce Foresight Forcing (F^{2}), a WAM that learns a spatial transition representation from changes in a pretrained 3D feature space. During training, a frozen 3D foundation model extracts patch-wise feature differences from aligned current and future observations that provide dense supervision for geometry-aware feature transitions. We distill these targets into spatial transition queries, which are progressively refined from the current observation, language instruction, and proprioceptive state, and use them alongside current visual features to generate actions. At deployment, the policy predicts the queries without future observations or the 3D teacher. Experiments on LIBERO, LIBERO-Plus, and RoboTwin2.0 demonstrate strong manipulation performance and improved robustness, including 95.01% average success on RoboTwin2.0 Full. On six real-world manipulation tasks, F^{2} achieves a mean task score of 85.8%.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30963"&gt;arXiv:2611.30963&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30963"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Mega-MMDF and DeepfakeBench-MM: Benchmarking Multimodal Deepfake Detection Across Diverse Forgery Pipelines</title>
+      <link>https://huggingface.co/papers/2510.22622</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2510.22622</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Kangran Zhao</dc:creator>
+      <dc:creator>Xiaoyu Zhang</dc:creator>
+      <dc:creator>Yupeng Chen</dc:creator>
+      <dc:creator>Yize Chen</dc:creator>
+      <dc:creator>Weinan Guan</dc:creator>
+      <dc:creator>Bo Zheng</dc:creator>
+      <dc:creator>Yufan Liao</dc:creator>
+      <dc:creator>Chengzhe Sun</dc:creator>
+      <dc:creator>Soumyya Kanti Datta</dc:creator>
+      <dc:creator>Qingshan Liu</dc:creator>
+      <dc:creator>Siwei Lyu</dc:creator>
+      <dc:creator>Baoyuan Wu</dc:creator>
+      <dc:creator>Baicheng Chen</dc:creator>
+      <description>&lt;p&gt;Audio-visual deepfakes can spread misinformation and enable impersonation, undermining trust in digital media. However, existing datasets provide limited coverage of forgery operations and their combinations, constraining detector development and systematic evaluation. We introduce Mega-MMDF, containing 100,000 real and 1.2 million forged clips across 22 pipelines spanning modality-specific manipulations, stacked forgeries, and joint audio-video generation. To assess its training value and enable fair comparisons, we develop DeepfakeBench-MM, which standardizes training and evaluation across 8 datasets and 10 detectors. Training-based detectors achieve their highest mean AUC when trained on Mega-MMDF, with gains of up to 0.0784 over the best alternative training dataset for each detector. Experiments on data scale and pipeline coverage further support the value of large, diverse training data. Cross-pipeline evaluations reveal bidirectional and asymmetric generalization. Training on composite forgeries does not necessarily enable detection of their constituent operations in isolation. Our analysis of altered inputs shows that modality masking can increase false alarms and missed detections, and temporal misalignment can raise mean predicted forgery probabilities. Together, these resources provide a foundation for understanding and improving multimodal deepfake detection, with publicly available code and dataset access subject to application and usage terms.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2510.22622"&gt;arXiv:2510.22622&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2510.22622"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>LingSante MedGuard Technical Report</title>
+      <link>https://huggingface.co/papers/2611.25509</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.25509</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>LingSante MedGuard Team</dc:creator>
+      <description>&lt;p&gt;As medical AI is increasingly used for patient consultation and clinical decision support, identifying harmful, non-compliant, or ethically problematic responses is essential for responsible deployment. Assessing these risks requires checking clinical claims against relevant evidence, verifying calculations, and applying medical requirements under their intended conditions. We introduce LingSante MedGuard, a capability-enhanced guardrail that integrates supervision from a medical guardrail teacher model and six specialized medical capability experts into a unified model. The guardrail teacher supervises risk decisions and explanations across medical safety, compliance, and ethics, while the capability experts support medical rule understanding, numerical reasoning, multimodal hallucination detection, agentic safety verification, risk localization, and multimodal entity understanding. We consolidate these sources of supervision through offline supervised fine-tuning on teacher-generated demonstrations, followed by multi-teacher on-policy distillation using feedback on student-generated responses. We further introduce LingSante MedGuardBench, a benchmark comprising 11 risk-detection subsets spanning medical safety, compliance, and ethics. At 4B, 9B, and 27B scales, LingSante MedGuard achieves mean benchmark F1 scores of 82.3%, 82.4%, and 87.4%, respectively. The 4B model also achieves 73.9% mean accuracy across MedHallu and MedHALT-NOTA under retrieval-enabled evaluation. Additional evaluations of the verification components show improvements in evidence-supported consistency, source traceability, and rule-guided rationale quality across model scales. These results support the integration of specialized medical capabilities into a unified guardrail for medical risk assessment and evidence-based medical safety verification.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.25509"&gt;arXiv:2611.25509&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.25509"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>RECAP: Training Long-horizon LLM Agents with Context Compaction</title>
+      <link>https://huggingface.co/papers/2611.31258</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31258</guid>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yulun Jiang</dc:creator>
+      <dc:creator>Maria Brbic</dc:creator>
+      <dc:creator>Michael Moor</dc:creator>
+      <description>&lt;p&gt;Context compaction enables large language model agents to tackle long-horizon tasks within limited context budgets by replacing interaction histories with compressed summaries. However, learning effective compaction jointly with the agent policy remains challenging, as summaries affect task success over many subsequent interactions. We introduce RECAP, a reinforcement learning (RL) framework based on the principle that a summary should preserve the behavior induced by the original interaction history. We formalize this principle with a behavior distortion objective that measures the divergence between the agent&amp;#x27;s subsequent behavior under compressed and original contexts. We show that the gradient of the distortion objective decomposes into two complementary learning signals: distortion-based reward for summary generation and self-distillation for subsequent actions. Experiments on Qwen3.5-4B show that RECAP consistently outperforms the task-reward-only RL baselines on both environments, leading to an absolute improvement of 4.6% and 4.3% on BrowseComp-plus and SWE-bench Verified, respectively. Ablations further highlight the value of jointly supervising summary generation and post-compaction behavior for RECAP.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31258"&gt;arXiv:2611.31258&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31258"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
     </channel>
 </rss>
