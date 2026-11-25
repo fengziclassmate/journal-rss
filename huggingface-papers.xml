@@ -6,6 +6,405 @@
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
     <item>
+      <title>PartAgent: Agentic 3D Part Segmentation via Expert Integration and Closed-Loop Refinement</title>
+      <link>https://huggingface.co/papers/2611.32554</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32554</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yang Cao</dc:creator>
+      <dc:creator>Zhe Zhu</dc:creator>
+      <dc:creator>Yiheng Zhang</dc:creator>
+      <dc:creator>Zhengqiang Zhang</dc:creator>
+      <dc:creator>Haoyuan Li</dc:creator>
+      <dc:creator>Le Wan</dc:creator>
+      <dc:creator>Dan Xu</dc:creator>
+      <description>&lt;p&gt;Segmenting a 3D object into semantically meaningful parts requires joint reasoning about geometric structure and semantic context. Pretrained 3D experts provide spatially grounded region proposals, while 2D experts provide semantic cues for identifying object parts. The challenge is to integrate these complementary capabilities into a framework that can both produce meaningful part segmentations and progressively refine them. We present PartAgent, a training-free agentic framework for 3D part segmentation built upon two complementary modules: (i) Structural-Semantic Expert Integration combines regions predicted by the 3D expert with multiview semantic evidence from the 2D expert through image-to-surface correspondences, constructing compositional part partitions at multiple granularities. (ii) Observation-Driven Closed-Loop Partition Refinement observes the current partition and its supporting evidence to select targeted inspection, evidence repair, composition, or reselection actions. It verifies proposed changes and uses the updated state and action outcomes to guide subsequent decisions. On PartObjaverse-Tiny-WT, PartAgent achieves 68.41 mIoU, outperforming the strongest competing method by 8.53 points. Across 3DCoMPaT200, PartNeXt, PartNetE, and PartObjaverse-Tiny, PartAgent achieves the highest mIoU on each dataset, averaging 69.36 across the four datasets, 7.28 points above the highest mean among competing methods.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32554"&gt;arXiv:2611.32554&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32554"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>MAGPIE: Agentic Multi-Reference Image Generation via Executable Scene Construction</title>
+      <link>https://huggingface.co/papers/2611.32462</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32462</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yifan Dai</dc:creator>
+      <dc:creator>Daili Hua</dc:creator>
+      <dc:creator>Bohan Zeng</dc:creator>
+      <dc:creator>Yuran Wang</dc:creator>
+      <dc:creator>Jialing Liu</dc:creator>
+      <dc:creator>Bozhou Li</dc:creator>
+      <dc:creator>Chengzhuo Tong</dc:creator>
+      <dc:creator>Yang Shi</dc:creator>
+      <dc:creator>Kai Zeng</dc:creator>
+      <dc:creator>Liu Yang</dc:creator>
+      <dc:creator>Xinyu Liu</dc:creator>
+      <dc:creator>Shujie Li</dc:creator>
+      <dc:creator>Yiyan Ji</dc:creator>
+      <dc:creator>Bingyin Mei</dc:creator>
+      <dc:creator>Yushuo Guan</dc:creator>
+      <dc:creator>Yuanxing Zhang</dc:creator>
+      <dc:creator>Fangcheng Fu</dc:creator>
+      <dc:creator>Wentao Zhang</dc:creator>
+      <description>&lt;p&gt;Multi-reference image generation requires a model to preserve the appearance of selected subjects while arranging them according to an instruction. Despite recent progress in reference-based generation and compositional control, reliably organizing selected subjects into the intended scene remains challenging. Although existing methods provide various forms of compositional guidance, the planned relationships are not always explicitly instantiated for inspection and refinement before image synthesis. To address this limitation, we introduce MAGPIE, which represents the intended composition as a simplified 3D scene defined by an executable Blender program. A coding agent links each scene instance to its reference, checks the geometry and rendered view against the instruction, and revises the program to correct discrepancies. The final proxy rendering serves as a visual plan for the image generator. Using MAGPIE-Instruct-3K, we train the generator to follow this plan while drawing each subject&amp;#x27;s appearance from its reference. MAGPIE improves both Qwen and FLUX on DreamOmni2 and SconeEval. With FLUX, it improves overall success on DreamOmni2 by 28.21 percentage points over the original backbone and achieves the highest overall score among the models evaluated on SconeEval.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32462"&gt;arXiv:2611.32462&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32462"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>EEGJev: A System One Decision Model and Benchmark for Multi-Task EEG Question Answering</title>
+      <link>https://huggingface.co/papers/2611.32100</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32100</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Dengzhe Hou</dc:creator>
+      <dc:creator>Kazunori D. Yamada</dc:creator>
+      <description>&lt;p&gt;A single electroencephalographic (EEG) recording can support multiple decoding tasks. Fixed-label tests cannot show how EEG foundation models handle changing questions or options. We introduce EEGJev, a fast decision model that scores candidate answers in one pass. Our benchmark, EEGJev-Bench, covers six question types across 19 public EEG sources. We held the recording and options fixed while switching between questions about attributes paired during training, such as facial expression and the hand participants were asked to use. Across 13 test sources, EEGJev selected a label for the requested attribute with 99.70% accuracy (49.20% under uniform choice). Balanced accuracy for the specific answer was 62.04%. Its 95th-percentile response time was shorter than NeuroLM&amp;#x27;s on matched validation questions answered individually. EEGJev lets users switch decoding targets by changing the question. With EEGJev-Bench, researchers can test whether new decoders follow the question more reliably, identify the correct answer more often, or both.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32100"&gt;arXiv:2611.32100&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32100"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Clinical3D-Bench: Evaluating and Improving Spatial Intelligence of Multimodal LLMs in Hospital Environments</title>
+      <link>https://huggingface.co/papers/2611.32094</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32094</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yang Bai</dc:creator>
+      <dc:creator>Yingzhi Xia</dc:creator>
+      <dc:creator>Ling Lin</dc:creator>
+      <dc:creator>Jun Cheng</dc:creator>
+      <dc:creator>Lin Fu</dc:creator>
+      <dc:creator>Huazhu Fu</dc:creator>
+      <description>&lt;p&gt;Spatial reasoning in hospitals requires tracking look-alike equipment, interpreting patient-relative directions, and judging passage widths, yet existing benchmarks provide limited coverage of these abilities. We introduce Clinical3D-Bench, a simulated benchmark with 3,368 questions of eight types on egocentric walkthroughs of 373 hospital-room layouts. Layouts follow hospital design guidelines, answers are computed from the 3D scenes, and paired scene states test whether models change their answers when relevant evidence changes. Videos are photorealistic, and ten physicians screened the layouts. Among 35 multimodal large language models (MLLMs), the best open and proprietary models reach 45.7% and 53.6% macro accuracy, against 40.8% for an answer prior and 79.0% for physicians on a subset, and 27 of 32 open models score below 40% on two-way patient-relative directions. Fine-tuning on Clinical3D-45K, our 44,750-question training set, lifts two MLLMs 16-20 points above the best proprietary model. 3D maps given to the fine-tuned MLLM as input go largely unused: replacing them with another video&amp;#x27;s, even when they are ground truth, barely changes its accuracy. The proposed GeoJeV instead lets the MLLM compute with 3D: it reconstructs a scene memory from each video, selects 3D operations and their arguments from the MLLM&amp;#x27;s question state, and adds their evidence to its option scores. It achieves the highest accuracy of all evaluated models, narrowing the gap to physicians.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32094"&gt;arXiv:2611.32094&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32094"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>LoopDVR: Looped Transformer for Efficient Dense Visual Recognition</title>
+      <link>https://huggingface.co/papers/2611.32067</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32067</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Sirui Liang</dc:creator>
+      <dc:creator>Xuanlong Yu</dc:creator>
+      <dc:creator>Longfei Liu</dc:creator>
+      <dc:creator>Xiaodong Cun</dc:creator>
+      <dc:creator>Xi Shen</dc:creator>
+      <description>&lt;p&gt;We propose LoopDVR, a framework for converting pretrained Transformer-based dense visual recognition models into parameter-efficient looped networks. Rather than reducing the network width or depth directly, LoopDVR reuses Transformer blocks across layers in both the ViT backbone and Transformer decoder, reducing the number of parameters while retaining the original computational structure. However, naively sharing parameters can disrupt the distinct transformations learned at different depths. To address this challenge, we identify suitable sharing groups based on inter-layer representation dissimilarity and keep the final backbone block independent for multi-scale feature construction. We then initialize each shared backbone block with the pretrained weights of its group&amp;#x27;s terminal layer to better preserve the learned representations. An independent Loop Adapter at each layer further helps retain depth-specific transformations within shared blocks. Subsequently, we distill visual representations into the looped backbone and integrate it with a looped decoder for task-specific training. Experiments demonstrate that LoopDVR achieves the best accuracy--parameter trade-offs across dense recognition tasks. Compared with the reference models, it reduces parameters by approximately 28% while maintaining competitive accuracy. Notably, LoopDet-S achieves 50.9 box AP with only 7.0M parameters, highlighting its effectiveness in compact models.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32067"&gt;arXiv:2611.32067&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32067"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Coding4Games: Can Modern Coding Agents Play Modern Video Games?</title>
+      <link>https://huggingface.co/papers/2611.31974</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31974</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Shifang Zhao</dc:creator>
+      <dc:creator>Haoyu Wang</dc:creator>
+      <dc:creator>Yuyang Yin</dc:creator>
+      <dc:creator>Dong Chen</dc:creator>
+      <dc:creator>Xingyilang Yin</dc:creator>
+      <dc:creator>Yunkang Tao</dc:creator>
+      <dc:creator>Honghao Chen</dc:creator>
+      <dc:creator>Guangzhi Wang</dc:creator>
+      <dc:creator>Yiran Wang</dc:creator>
+      <dc:creator>Junfu Pu</dc:creator>
+      <dc:creator>Cheng Cheng</dc:creator>
+      <dc:creator>Xiaodong Cun</dc:creator>
+      <dc:creator>Ying Shan</dc:creator>
+      <description>&lt;p&gt;Games, especially modern AAA games, challenge language models to perceive complex scenes, control actions, and make decisions over long horizons. Existing game benchmarks primarily test language models as computer-use agents that query a language model throughout play, incurring repeated inference cost and, in real-time games, acting while the environment continues to evolve. We ask whether coding agents can learn from game interaction to develop standalone game-playing programs that run without language model inference. We thus introduce Coding4Games, a benchmark for evaluating whether coding agents can develop standalone programs that play modern games through visual observations and standard game inputs. Coding4Games has three defining features: 1) Diverse Modern Games, covering 15 games with diverse visual, strategic, and control demands; 2) Development-Test Separation, in which a coding agent uses a sandbox and the standard player interface to iteratively develop a program, after which the selected program is frozen and independently tested without language-model inference; and 3) Outcome and Process Evaluation, which measures not only game performance and reliability but also how agents use feedback, revise programs, and resolve problems during development. Across 15 games, the best program per game outscores the strongest GUI baseline on 13 and ties it on one. The human player outscores all agents on 10 games. We additionally examine the effects of development budgets. Coding4Games evaluates whether coding agents can turn their understanding of complex interactive environments into programs that work reliably on their own.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31974"&gt;arXiv:2611.31974&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31974"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ACAP: Asynchronous Coding Agents for Efficient Robot Control</title>
+      <link>https://huggingface.co/papers/2611.31205</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31205</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Zexin He</dc:creator>
+      <dc:creator>Rui Li</dc:creator>
+      <dc:creator>Yushi Lan</dc:creator>
+      <dc:creator>Chengkai Jin</dc:creator>
+      <dc:creator>Zhi Hou</dc:creator>
+      <dc:creator>Xingang Pan</dc:creator>
+      <description>&lt;p&gt;Coding agents can construct and revise robot behavior during execution, but using one agent for the whole robot can delay otherwise independent work. We introduce Asynchronous Coding Agents as Policy (ACAP), an asynchronous framework that organizes one robot as a team of persistent agents. Each member reasons and acts for a configurable control group, such as an arm with its gripper or the torso and chassis, enabling asynchronous reasoning and execution. However, different robot components often have physical dependencies that require coordination. To address this challenge, ACAP introduces a hyper-agent that assigns tasks, coordinates dependencies, and dynamically allocates control between the lead and member agents. This allows independent work to progress concurrently while supporting tightly coupled manipulation when necessary. Across 72 real-world rollouts covering 25 task/platform settings, ACAP reduces task-balanced time cost by 28.2% compared with a single-agent Direct Policy, with improvements across Fully Parallel, Parallel-Sequential, and Collaborative tasks. Across all eight Collaborative settings, ACAP also achieves lower mean time cost than Fixed Delegation, where only member agents can control their assigned groups. An additional 90-rollout study shows lower mean 30-minute-capped time cost than Direct on all six tasks. We further demonstrate mobile manipulation using the same member interface for chassis and torso control. We present the framework and a real-world rollout dataset containing observations, generated programs, actions, and feedback to support research on how coding agents reason and act in the physical world.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31205"&gt;arXiv:2611.31205&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31205"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>On-Policy Codec Distillation for Efficient All-in-One Video Generation</title>
+      <link>https://huggingface.co/papers/2611.31184</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31184</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Boyang Wang</dc:creator>
+      <dc:creator>Kevin Blackburn-Matzen</dc:creator>
+      <dc:creator>Oindrila Saha</dc:creator>
+      <dc:creator>Matheus Gadelha</dc:creator>
+      <dc:creator>Zezhou Cheng</dc:creator>
+      <description>&lt;p&gt;Modern visual generative models operate on tokens, and every visual asset they receive, whether an identity, a scribble, a depth map, or a motion video, is tokenized and appended to the input token sequence. Consequently, conditioning quickly dominates the computation cost. Yet most of these tokens carry redundant spatiotemporal information. Our key insight is that identifying what is genuinely new is exactly the problem that classical video codecs have long solved. Thus, we first introduce a codec-based token pruning method that discards redundant tokens. Then, we propose an on-policy self-distillation (OPSD) strategy to train a DiT adapter capable of learning the codec pruning pattern well without quality degradation. Together, they form On-Policy Codec Distillation (CodecOPSD). We scale CodecOPSD to 16 condition modalities on our own video diffusion model, where it prunes 66% of the condition tokens on average with almost no quality drop. Therefore, denoising becomes 2x faster, and the cache memory shrinks by up to 73% in KV cache mode. CodecOPSD also extends to other state-of-the-art pretrained image and video generative models, where its benefit grows further with more conditions, longer frames, and higher resolution.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31184"&gt;arXiv:2611.31184&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31184"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Self-Evolving Evaluation Environments for Computer-Use Agents</title>
+      <link>https://huggingface.co/papers/2611.30962</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30962</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Wenhao Wang</dc:creator>
+      <dc:creator>Panrong Tong</dc:creator>
+      <dc:creator>Quyu Kong</dc:creator>
+      <dc:creator>Pengxiang Li</dc:creator>
+      <dc:creator>Haowen Yang</dc:creator>
+      <dc:creator>chenglin Cai</dc:creator>
+      <dc:creator>Siheng Chen</dc:creator>
+      <dc:creator>Yue Wang</dc:creator>
+      <description>&lt;p&gt;Computer-use agents (CUAs) are rapidly improving, yet their evaluation remains largely static. Existing benchmarks provide a strong foundation, but fixed difficulty ceilings, limited feature coverage, and coarse aggregate scores progressively weaken their discriminative and diagnostic value. We introduce CUA-SEE, a closed-loop evaluation environment that co-evolves tasks and executable verifiers from rollout evidence. It disentangles three objectives: benchmark evolution expands evaluation scope through cohort-calibrated difficulty and coverage growth; diagnostic evolution increases resolution through agent-conditional capability-boundary probes; and verifier evolution improves precision by translating changing requirements into state-grounded checkpoints with adversarial validation. Across multiple agents, applications, and rounds, CUA-SEE generates challenging, measurable tasks while preserving process-level evidence. Our results position adaptive evaluation as a scalable counterpart to self-evolving agents, continuously tracking what agents can do, where their boundaries lie, and how reliably progress is measured.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30962"&gt;arXiv:2611.30962&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30962"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Rewirable Circuits in Transformers with Loom Attention</title>
+      <link>https://huggingface.co/papers/2611.30634</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30634</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Da Xiao</dc:creator>
+      <dc:creator>Qingye Meng</dc:creator>
+      <dc:creator>Shengping Li</dc:creator>
+      <dc:creator>Xingyuan Yuan</dc:creator>
+      <description>&lt;p&gt;We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head&amp;#x27;s vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens. We instantiate vertical attention efficiently with normalized and gated linear attention over a per-token matrix memory, which stores the compressed head outputs and serves as a second residual stream. This yields LoomFormer, a dual-stream architecture that splits control and content between the vector and matrix streams. Across model sizes and training token budgets in language modeling and downstream tasks, LoomFormer matches Transformers trained with over 3x compute and recent residual-stream baselines (HC/mHC, MUDDFormer, AttnRes) trained with ~1.7-2.8x. For example, trained on the same 300B tokens with only 2% extra FLOPs, LoomPythia-2.8B achieves ~1.6x the average downstream gain of mHC-Pythia-2.8B over Pythia-2.8B, and matches (0-shot) or surpasses (5-shot) Pythia-12B. Code is available at https://github.com/Caiyun-AI/LoomFormer&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30634"&gt;arXiv:2611.30634&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30634"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Do learned image captioning metrics generalize? Auditing duplicated samples in human-judgment benchmarks</title>
+      <link>https://huggingface.co/papers/2611.30488</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30488</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xiaochen Zhang</dc:creator>
+      <dc:creator>Jin Li</dc:creator>
+      <dc:creator>Chunlong Xia</dc:creator>
+      <dc:creator>Longjiang Guo</dc:creator>
+      <description>&lt;p&gt;Learned image captioning metrics are trained and tested on human judgments, so their reported correlation is a claim about generalization. We audit this claim for the three most recent collections of such judgments, Polaris, Nebula, and Spica, matching images at the pixel level. First, test samples reappear in training sets: the Spica training set contains about two-thirds of the Polaris test set, with identical human ratings. Second, controlled retraining shows that duplicates can inflate a metric: for Pearl, the gain is confined to the duplicated samples and grows with every epoch; for DENEB, it stays below one point. The gain depends on the learner and on how often a training set repeats a sample. Third, Kendall&amp;#x27;s τ over all samples is the sum of two terms, detecting captions with the lowest human score and ranking the others; the first supplies most of the reported correlation and is nearly saturated. The recent test sets cannot order Polos, DENEB and Pearl consistently, and a ridge regression on frozen features matches or exceeds all three. Fourth, we propose a protocol that ranks a learned metric only with a model trained without test samples, reports both terms, and compares metrics by paired tests. Under it, zero-shot vision--language judges rank first on the three recent test sets, and a fine-tuned judge ranks first on the three earlier benchmarks. The same analysis applies to any evaluator learned from human judgments; filter lists and code are released at https://github.com/morninghut/ic-dataset-audit .&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30488"&gt;arXiv:2611.30488&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30488"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>RoomTokens: Masked Diffusion over Structured Tokens for Indoor Scene Synthesis</title>
+      <link>https://huggingface.co/papers/2611.30219</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30219</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xiaohao Sun</dc:creator>
+      <dc:creator>Angel X. Chang</dc:creator>
+      <description>&lt;p&gt;Generating 3D indoor scenes requires a representation that captures object semantics, instance identity, height structure, and orientation while respecting room geometry. Methods that model scenes as sequences of object vectors learn spatial constraints implicitly, leaving collisions and boundary violations to losses or post-processing; semantic-map methods make occupancy explicit, but collapse instance and directional structure. We introduce RoomTokens, a sliced structured-token representation in which each token stores semantic class, instance-color identity, and facing field. This representation allows a scene to be generated as a discrete grid while preserving cues for instance grouping, orientation estimation, and 3D extent prediction. To learn the RoomToken distribution, we propose MDIRT (Masked Diffusion over RoomTokens), a masked discrete diffusion model that denoises semantic/instance-color/facing channels jointly with a shared cross-slice backbone. Architectural tokens are clamped as explicit floor- plan constraints, so the model samples furniture layouts that respect room geometry while retaining instance and object-attribute structure. Experiments on 3D-FRONT show that RoomTokens with MDIRT improve layout fidelity and physical consistency over sequence/vector- and map-based methods, suggesting structured spatial tokens as a practical choice for discrete 3D scene synthesis.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30219"&gt;arXiv:2611.30219&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30219"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>LeadVLA: Learning Follower-Aware Route Execution for Robot Leading</title>
+      <link>https://huggingface.co/papers/2611.30149</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30149</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Tianle Zeng</dc:creator>
+      <dc:creator>Hanjing Ye</dc:creator>
+      <dc:creator>Bingyi Xia</dc:creator>
+      <dc:creator>Yuchen Zhou</dc:creator>
+      <dc:creator>Zibo Zhang</dc:creator>
+      <dc:creator>Yufei Huang</dc:creator>
+      <dc:creator>Yonggen Ling</dc:creator>
+      <dc:creator>Hong Zhang</dc:creator>
+      <description>&lt;p&gt;Robot leading requires executing a route while continuously adapting to a designated follower. Existing robot-leading systems often mediate follower understanding and physical route execution through explicit states, planners, or modular interfaces; directly learning this coupling through end-to-end trajectory prediction can instead entangle route execution with follower response. We introduce LeadVLA, a structured multimodal policy that preserves the route as an explicit Path reference while learning a Pace for route progress and a Residual for local follower- and scene-conditioned adaptation. To make this problem trainable and measurable, we develop LeadInfra, a configurable Unreal Engine-based closed-loop data-generation infrastructure from which we instantiate an approximately 4M-sample training corpus, and LeadBench, a standardized benchmark with 108 fully held-out closed-loop episodes. LeadVLA achieves the highest task success (39.6%) among evaluated robot policies on LeadBench while maintaining strong route fidelity and follower responsiveness, and transfers to unseen real-world environments without real-world policy fine-tuning. Project Page: https://louiszengCN.github.io/LeadVLA_PAGE/&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30149"&gt;arXiv:2611.30149&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30149"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Escriba-OCR: A 1B Vision-Language Model for Error-Preserving Transcription of Handwritten Portuguese Essays</title>
+      <link>https://huggingface.co/papers/2611.29874</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.29874</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Tardelli Ronan Coelho Stekel</dc:creator>
+      <description>&lt;p&gt;Feedback tools and research on learner writing need transcriptions of handwritten essays that keep exactly what the student wrote: misspellings, line breaks, struck-through words and insertions. Vision-language models (VLMs) read handwriting well, but they also tend to rewrite it into correct language. We measure this on BRESSAY, 1,000 handwritten Brazilian Portuguese essays, with a benchmark that adds error preservation, invented errors, edit-markup precision and recall and line structure to the character error rate (CER) and uses paired bootstrap confidence intervals. We restrict the study to open-weight models that schools can run on their own hardware. Of 22 open baselines, the best, Qwen3-VL 235B-A22B, reaches 5.6% CER on the 199 test pages; none reproduces the edit markup reliably, and every VLM replaces 39-78% of the words absent from a Portuguese dictionary with dictionary words. We fine-tune LightOnOCR-3-1B on the 647 training pages in 85 minutes on one GPU. The resulting Escriba-OCR-1B reaches 2.06% CER, 3.5 points below the best baseline (95% CI [-4.2, -2.9]); under the ICDAR 2024 competition metric it reaches 2.1% CER, below the best published page-level results (2.2-2.4%). It recovers 67% of insertions and 77% of illegible deletions, and reproduces the line structure of 97% of the pages, but still normalises 60% of likely misspellings. Three seeds agree within 0.04 CER points, and quantised to 4 bits the model runs on an ordinary CPU at about one minute per page. On 40 letters of another corpus it matches its base model (without that model&amp;#x27;s appended comments) but misreads unseen words more often; weight interpolation recovers half the gap. A teacher&amp;#x27;s review finds that 45% of the judgeable apparent corrections are errors in the BRESSAY ground truth, so dictionary-based scores likely understate preservation. We release the model, the benchmark code and the review data.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.29874"&gt;arXiv:2611.29874&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.29874"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Align the Pair, Not the Sample: Representation Alignment for Faster and Better One-Step Generato</title>
+      <link>https://huggingface.co/papers/2611.29547</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.29547</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Mingxiao Li</dc:creator>
+      <dc:creator>Xuantuo Huang</dc:creator>
+      <dc:creator>Encheng Su</dc:creator>
+      <dc:creator>Aoran Wang</dc:creator>
+      <dc:creator>Han Zhang</dc:creator>
+      <dc:creator>Jinouwen Zhang</dc:creator>
+      <dc:creator>Shixiang Tang</dc:creator>
+      <description>&lt;p&gt;Representation alignment markedly accelerates diffusion training, but one-step generators raise a question that diffusion does not: which training path should receive the loss? A one-step generator sees two kinds of inputs. Corrupted real images come with their clean counterpart, which provides an instance-paired target. Samples generated from pure noise have no corresponding real image, yet this is where the final model operates. We study this question on Priming, which trains one-step generators from scratch by reconstructing corrupted images and then matching feature distributions with optimal transport. Aligning the generative path, the natural choice, collapses recall (0.45!to!0.15--0.25) in all 17 configurations we test, including five target constructions and loss weights down to 0.05. Aligning the paired reconstruction path with a frozen DINOv2 encoder instead helps in every setting we test. A short analysis explains this asymmetry: when the target carries no instance information about the input, the optimal aligned feature is constant within each class, so the loss pulls samples toward class prototypes. A control confirms this: aligning the paired path to a random same-class image instead of the input&amp;#x27;s own image removes most of the gain. Inside the generator, paired-path alignment creates an interface block through which post-training routes noise, and the image semantics carried through it predict sample quality across 16 models. The resulting recipe, \method, accelerates both training stages on ImageNet 256!times!256: it matches the 160-epoch baseline with 2times fewer priming epochs, surpasses its final quality with 4times fewer post-training updates, and lowers FID to 1.30 (B) and 1.155 (L) at the standard budget. A joint single-stage variant trains native one-step generators and reaches FID 1.22 with 115M parameters.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.29547"&gt;arXiv:2611.29547&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.29547"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>PINE: Point, Instance and Normal Estimation in One-Step Diffusion Model</title>
+      <link>https://huggingface.co/papers/2611.29389</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.29389</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Zeyu Ren</dc:creator>
+      <dc:creator>Jie Ni</dc:creator>
+      <dc:creator>Rui Qian</dc:creator>
+      <dc:creator>Jiahao Wei</dc:creator>
+      <dc:creator>Hao Tang</dc:creator>
+      <dc:creator>Yongtai Liu</dc:creator>
+      <dc:creator>Zeyu Zhang</dc:creator>
+      <description>&lt;p&gt;Understanding a scene requires both geometry and semantics: geometry recovers its spatial structure, and semantics separates it into objects. Current models obtain the two from separate networks or separate passes. We present PINE, a one-step Omni Diffusion Transformer that predicts the point map, the surface normals, and the instance map of an image in one forward pass. PINE treats each map as a token stream, and a stream mask decides which streams interact. A camera-aware ray encoding positions every token by its camera ray rather than its pixel. Grounding attention adds the affinity of pretrained DINOv3 features to the attention logits. Trained on only 139K synthetic images for geometry, PINE achieves state-of-the-art point maps whether or not intrinsics are given and the best average rank on surface normals. It also exceeds SAM on large objects with less than 1 percent of its training images, and it predicts all three maps 5.7x faster than MoGe-3 with SAM.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.29389"&gt;arXiv:2611.29389&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.29389"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>PhyCoVE: Benchmarking Physical Counterfactual Video Editing across Diverse Material Dynamics</title>
+      <link>https://huggingface.co/papers/2611.29184</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.29184</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Conghan Yue</dc:creator>
+      <dc:creator>Yuanjie Chen</dc:creator>
+      <dc:creator>Yunyan Xiao</dc:creator>
+      <dc:creator>Zeyu Peng</dc:creator>
+      <dc:creator>Xingsong Ye</dc:creator>
+      <dc:creator>Ya Gao</dc:creator>
+      <dc:creator>Yanglin Huang</dc:creator>
+      <dc:creator>WeiYao Zhang</dc:creator>
+      <dc:creator>Yue Han</dc:creator>
+      <dc:creator>Zhineng Chen</dc:creator>
+      <dc:creator>Yu-Gang Jiang</dc:creator>
+      <description>&lt;p&gt;Physical counterfactual video editing turns a source video and a language-specified physical edit at a given execution frame into a counterfactual video that shows how the scene would evolve after the edit. Existing evaluations with counterfactual target videos mainly cover object removal or specific rigid-body motions, although real scenes also involve elastic deformation, fluid flow, and interactions among rigid bodies, elastic solids, and fluids. We introduce PhyCoVE, a benchmark of 533 cases on 110 source videos that covers rigid, elastic, and fluid dynamics in five interaction patterns, with edits that remove an object, change a physical quantity, or insert a new object. For the simulated cases, a language model proposes scene designs, coding agents build them with solvers suited to each material and physically based rendering and then simulate each edit from the source scene state, and humans check every stage. For the real cases, we record continuously from one camera position before and after each edit. We also propose counterfactual fidelity, a metric that applies across materials and their interactions and measures how much of the physical change from the source video to the target video a generated video reproduces. We evaluate seven open-source and commercial video editing models and find that counterfactual fidelity ranks them nearly as human preference does, but even the best model reproduces only about one seventh of the physical change. The models change how a scene looks but rarely how it evolves, whereas a physical edit requires understanding the dynamics that it changes. Physical counterfactual video editing thus remains far from solved, and PhyCoVE provides a foundation for developing and evaluating methods for it.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.29184"&gt;arXiv:2611.29184&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.29184"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Can an Agent Trust Its Own Zoom? Cross-Magnification Provenance Verification for Whole-Slide Images</title>
+      <link>https://huggingface.co/papers/2611.29150</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.29150</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yan Wang</dc:creator>
+      <dc:creator>Yiran Song</dc:creator>
+      <dc:creator>Zizhuo Gong</dc:creator>
+      <dc:creator>Jianxiang Qi</dc:creator>
+      <dc:creator>Zhongxing Xu</dc:creator>
+      <dc:creator>Lingfei Qian</dc:creator>
+      <dc:creator>Minquan Lin</dc:creator>
+      <description>&lt;p&gt;Visual agents navigate whole-slide images through magnified observations associated with claimed locations. However, a visually plausible observation does not necessarily originate from its claimed location, particularly across magnifications and in regions with similar tissue structures. We formulate cross-magnification provenance verification (CMPV) to evaluate whether visual evidence supports a claimed spatial association, recover the source when possible, and abstain when evidence is insufficient. We introduce PyraFault, a benchmark of 3.06 million coordinate-supervised examples from 2,200 cases across five TCGA cohorts, covering within-context substitutions, absent-source faults, and geometric perturbations. We further propose ZoomTrace, a claim-independent verifier that estimates the observation&amp;#x27;s source before evaluating its agreement with the claimed location. It combines physical-scale alignment, visual retrieval, geometric refinement, and reliability estimation using spatially disjoint competing matches. On 503,320 test examples, ZoomTrace achieves 0.969 AUPRC and 0.987 AUROC, compared with 0.789 and 0.903 for Efficient LoFTR. Further evaluations reveal trade-offs in reliability estimation and limitations in vision-language models, cross-dataset retrieval, and calibration. Integrating ZoomTrace into visual agent tool paths reduces exposure to corrupted observations and silent failures, while downstream accuracy improvements depend on the agent and verification threshold.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.29150"&gt;arXiv:2611.29150&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.29150"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Don't Sleep, Keep Watch: Proactive Perception for Computer-Use Agents</title>
+      <link>https://huggingface.co/papers/2611.28947</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.28947</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Jiaqi Su</dc:creator>
+      <dc:creator>Jie-Jing Shao</dc:creator>
+      <dc:creator>Yichen Liu</dc:creator>
+      <dc:creator>Long-Kai Huang</dc:creator>
+      <dc:creator>Haiyan Yin</dc:creator>
+      <description>&lt;p&gt;Computer-use agents (CUAs) built on vision-language models are increasingly entrusted with long-horizon tasks in live desktop, web, and mobile environments, where the screen keeps changing on its own. However, current CUAs lack real-time situational awareness: they perceive the environment through discrete snapshots, and the substantial inference latency of VLMs, compounded by highly dynamic interfaces, opens a perception-action gap in which the observed state frequently becomes stale before the corresponding action is executed. To bridge this gap, we present NightWatch, a plug-and-play framework that endows any CUA with continuous, temporally grounded perception without changing the agent&amp;#x27;s model, prompt, or action space. NightWatch couples the VLM agent with NightWatch-0.8B, a lightweight System-1 model that performs streaming monitoring of the interface state and keeps the agent synchronized with the evolving environment at low computational cost and latency, thereby grounding each decision in the current state rather than an outdated snapshot and reducing both stale actions and idle waiting while preserving task success. Experiments on desktop and dynamic web environments (OSWorld-Verified and DynaCU-Bench) show that NightWatch, driven by a watcher of only 0.8B parameters, reduces non-reasoning wall-clock time by 33% and wasted time by 53% on OSWorld while keeping task success on par, raises success on DynaCU-Bench from 39.5% to 44.2% with the large VLM agent, and is more efficient than passive-watching baselines such as AOI and PUSV under the same screenshot-only input, as well as a System-1 decision model more than 30times its size. Overall, NightWatch demonstrates that the timing of perception is as critical as its content, marking a step toward agents that maintain continuous awareness of their environment rather than perceiving it turn by turn.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.28947"&gt;arXiv:2611.28947&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.28947"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>KMed-31B Technical Report</title>
+      <link>https://huggingface.co/papers/2611.28719</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.28719</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>KMed Team</dc:creator>
+      <description>&lt;p&gt;We present KMed-31B, a medical large language model post-trained from an open-weight model for on-premises deployment with limited hardware. Post-training a model for diverse medical tasks remains difficult, because improving one kind of task can lower performance on another. We attribute this to differences between tasks in expected output and available feedback. Medical question answering and diagnosis prediction have reference answers, whereas clinical inquiry has no single correct response and is judged with rubrics. We therefore divide medical training tasks into four categories by these two properties, train one specialist per category with a reward that its feedback supports, and integrate the specialists into a single student with Multi-teacher On-policy Delta Distillation (MOPD^2). For clinical inquiry, we build Synthetic Health Dialogue, a simulated corpus of consultations with lay users and clinicians whose patient cases span common clinical presentations in primary care. Relative to its base model, KMed-31B raises HealthBench Hard from 22.95 to 41.87 and HealthBench Professional from 37.92 to 50.20 in non-thinking mode, and from 23.80 to 51.48 and from 41.97 to 59.18 in thinking mode, while its scores on four multiple-choice medical benchmarks are maintained or slightly improved. KMed-31B has the highest unadjusted HealthBench Hard score among the compared models, including proprietary ones, and scores higher on HealthBench Professional than every open-weight model we compare, including models with more than ten times as many total parameters. Applied to another base model, Qwen3.8-27B, the same training recipe also raises both HealthBench scores. We describe the training recipe, data construction, and settings in detail so that institutions requiring on-premises deployment can develop medical models from open-weight foundations.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.28719"&gt;arXiv:2611.28719&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.28719"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>S-Mind: Internalizing Multi-View Geometry for Spatial Intelligence</title>
+      <link>https://huggingface.co/papers/2611.28649</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.28649</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Muxin Fu</dc:creator>
+      <dc:creator>Peike Yu</dc:creator>
+      <dc:creator>Guibin Zhang</dc:creator>
+      <dc:creator>Wenrui Zhou</dc:creator>
+      <dc:creator>Runze Liu</dc:creator>
+      <dc:creator>Lang Feng</dc:creator>
+      <dc:creator>Fuchao Yang</dc:creator>
+      <dc:creator>Feng Chen</dc:creator>
+      <dc:creator>Yixuan Li</dc:creator>
+      <dc:creator>Mengao Zhang</dc:creator>
+      <dc:creator>Shiying Zhang</dc:creator>
+      <dc:creator>Wen Shen</dc:creator>
+      <dc:creator>Ling Pan</dc:creator>
+      <dc:creator>Shuicheng Yan</dc:creator>
+      <dc:creator>Bo An</dc:creator>
+      <description>&lt;p&gt;Spatial intelligence, the ability to reason about 3D space from visual observations, becomes essential as multimodal large language models (MLLMs) move into the physical world. Beyond perceiving each view, it rests on two cornerstones of human cognition: fusing multiple views into one coherent 3D scene and mentally transforming that scene to new viewpoints as reasoning unfolds. Yet our spatial probes reveal that MLLMs largely lack both capabilities, even after spatial fine-tuning. We therefore present S-Mind, which internalizes multi-view geometry within the MLLM through a compact set of spatial tokens. It supervises these tokens to hold the fused 3D scene and re-emits them to re-express this scene from every viewpoint the reasoning adopts. Across four spatial benchmarks, S-Mind improves its Qwen3.5 backbones by up to 22.26 points and surpasses frontier general models such as GPT-6-Astra (+0.45), Kimi-K3.1-Pro (+1.97), and GLM-5.3-Flash (+7.80) in average accuracy. Moreover, the same probes confirm that it acquires both capabilities, reaching fusion and transformation accuracies of 65.11% and 82.17%, against at most 16.02% and 37.28% for the baselines. At inference, S-Mind also runs about 100x faster than a tool-based agent on the same backbone. Instilled through these spatial tokens during training, spatial capability becomes intrinsic to the backbone and persists even when the tokens are withheld, offering a promising path toward spatial intelligence in MLLMs.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.28649"&gt;arXiv:2611.28649&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.28649"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Interpretable Prototype-Conditioned Adaptation for Weather Forecasting</title>
+      <link>https://huggingface.co/papers/2611.25848</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.25848</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Zhixuan Li</dc:creator>
+      <dc:creator>Hao Jiang</dc:creator>
+      <dc:creator>Chen Hui</dc:creator>
+      <dc:creator>Kai Geng</dc:creator>
+      <dc:creator>Weisi Lin</dc:creator>
+      <description>&lt;p&gt;Data-driven weather forecasting requires distinguishing local states and their temporal evolution. However, learned patterns remain implicit in neural forecasters, making their influence difficult to interpret. Failing to distinguish local evolution can lead to similar forecasts for locations that develop differently, increasing prediction error. This motivates explicit references for distinguishing and interpreting local patterns. Prototypes provide explicit pattern references, but sample- or task-level conditioning leaves open how to adapt to distinct locations and variable groups. To deal with this problem, we design ProtoCast, which uses group-specific prototype banks to adapt local features while accounting for cross-variable dependencies. Specifically, (1) we combine each group&amp;#x27;s historical features and temporal change with forecast context from cross-variable attention for evolution-aware prototype matching. (2) Sparse mixtures of prototype-specific low-rank operators tailor corrections to each group and location. A gated attention block then exchanges the corrected features across groups before prediction. Each group&amp;#x27;s correction decomposes into explicit prototype contributions before this fusion. (3) We jointly train the forecasting network and operators from scratch and refit each group&amp;#x27;s prototypes before every training epoch. Slot tracking preserves prototype-operator associations, making each prototype&amp;#x27;s contribution to local corrections more interpretable. Experiments on GlobalForecast and TyphoonTracking show improved forecasting accuracy, while prototype deletion links local feature contributions to changes in prediction error. This work advances the development of more accurate and interpretable data-driven weather forecasting models. Project page: https://zhixuanli.github.io/projects/li2026protocast&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.25848"&gt;arXiv:2611.25848&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.25848"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>LoopedWAM: Looped World Action Models for Elastic Inference</title>
+      <link>https://huggingface.co/papers/2611.25595</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.25595</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Anh Dao</dc:creator>
+      <dc:creator>Xinxin Liu</dc:creator>
+      <dc:creator>Hang Yu</dc:creator>
+      <dc:creator>Jeffrey A Chan Santiago</dc:creator>
+      <dc:creator>Yuzhang Shang</dc:creator>
+      <description>&lt;p&gt;World action models (WAMs) couple generative video modeling with robotic action prediction but typically require large video and action transformers, limiting deployment efficiency. We present LoopedWAM, a compact WAM that recurrently applies a shared six-block core in each expert, executing 30 transformer layers while storing only 12 blocks per expert. To account for their asymmetric inference costs, the video and action experts can operate at different depths: visual features are computed once per query, whereas action computation repeats at every sampling step. We further propose elastic self-distillation, which trains a single elastic checkpoint, LoopedWAM-E, across action-depth and sampling-step budgets. With only 0.58B policy parameters and no robot pretraining, LoopedWAM achieves 96.1% success on LIBERO, 91.9% on RoboTwin 2.0, and 52.2% on RoboCasaGR1, while using 7.4times less peak GPU memory than Fast-WAM under matched inference measurements. On LIBERO, LoopedWAM-E achieves 96.0% success in 27.6 ms or 95.2% in 24.7 ms on an H100, providing multiple accuracy-latency operating points from a single checkpoint; with two sampling steps and four action loops, it stays within 0.5 points of LoopedWAM on all three benchmarks. Ablations demonstrate that weight-shared depth preserves competitive performance, while aggressive action-depth reduction requires explicit budget-aware training. On a real AgileX PiPER arm, LoopedWAM succeeds in 71.3% of 80 trials across four tasks.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.25595"&gt;arXiv:2611.25595&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.25595"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Antom 3-in-1 Transformer: A Payment Foundation Model</title>
+      <link>https://huggingface.co/papers/2611.25403</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.25403</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Weiyu Han</dc:creator>
+      <dc:creator>Haoyu Jiang</dc:creator>
+      <dc:creator>Jie Sheng</dc:creator>
+      <dc:creator>Youxi Pan</dc:creator>
+      <dc:creator>Xianglong Liu</dc:creator>
+      <dc:creator>Zeqi Ren</dc:creator>
+      <dc:creator>Dongquan Yi</dc:creator>
+      <dc:creator>Yinhao Liu</dc:creator>
+      <dc:creator>Ruobing Zuo</dc:creator>
+      <dc:creator>Ze Zhao</dc:creator>
+      <dc:creator>Huilin He</dc:creator>
+      <dc:creator>Nairong Zhang</dc:creator>
+      <dc:creator>Xinyi He</dc:creator>
+      <dc:creator>Xiao Tan</dc:creator>
+      <dc:creator>Jun Wang</dc:creator>
+      <dc:creator>Pan Fang</dc:creator>
+      <dc:creator>Wei Zeng</dc:creator>
+      <dc:creator>Jianan Su</dc:creator>
+      <dc:creator>Kaixin Shen</dc:creator>
+      <dc:creator>Jingtong Wu</dc:creator>
+      <dc:creator>Hao Li</dc:creator>
+      <dc:creator>Shuai Chen</dc:creator>
+      <dc:creator>Jiangming Yang</dc:creator>
+      <dc:creator>Tianyi Zhang</dc:creator>
+      <description>&lt;p&gt;We report the development of Antom 3-in-1 Transformer, a payment foundation model that integrates sequence, tabular, and graph representations for payment risk detection. The model contains approximately 7B parameters, with approximately 1.7B activated per task route. Antom 3-in-1 Transformer is pretrained to learn reusable behavioral and relational representations, primarily on Ant International&amp;#x27;s internal payment data. In a cross-business transfer experiment, pretraining improves the target business metric by 34.5% over the same architecture trained from scratch. With only 25% of the training labels, the pretrained model outperforms the full-label scratch baseline in Average Precision (AP) and Recall@0.5% on different merchant domains. In a four-month online experiment on Ant International&amp;#x27;s billion-scale payment platform, the model reduced the overall loss rate by 37.88% relative to XGB-Online.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.25403"&gt;arXiv:2611.25403&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.25403"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>LUCID: Statistically Grounded Self-Correction for LLM Reasoning Evaluation</title>
+      <link>https://huggingface.co/papers/2611.31595</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31595</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Satiyabooshan Murugaboopathy</dc:creator>
+      <dc:creator>Adel Daoud</dc:creator>
+      <dc:creator>Connor T. Jerzak</dc:creator>
+      <description>&lt;p&gt;Cheap language-model raters grade chain-of-thought reasoning at scale, yet systematic step-rating errors can skew reasoning audits and solution rankings. We introduce LUCID (Loop for Unbiased Calibration via Inference-time Diagnosis), which pairs prompt self-correction with Design-based Supervised Learning (DSL). Without retraining or weight access, LUCID calibrates binary step ratings by aligning predicted and expert soundness rates. From a small expert-labeled set, LUCID summarizes rater bias in plain text and prompts the rater to re-grade unseen steps. For example, on PRM800K, GPT-5-mini grades too strictly, under-rating computation, verification, and late-trace steps most acutely. In one pass, LUCID shrinks GPT-5-mini&amp;#x27;s calibration gap from 7.8 to 0.9 percentage points in absolute predicted-expert rate difference. LUCID also halves false alarms (sound steps rated unsound) and lifts error-detection F1 on unsound steps by 32%. LUCID retains these gains with 1,000 diagnostic steps or overall-gap feedback alone. The loop also transfers across models and domains: it applies GPT-5-mini&amp;#x27;s bias profile to lift GLM-5.2&amp;#x27;s PRM800K accuracy, and it narrows calibration gaps for overly strict but capable raters across math, science, web, and logic benchmarks. Because prompt feedback shifts thresholds without improving class-balanced sound/unsound discrimination, LUCID filters re-grading with pre-/post-checks that skip already calibrated raters and roll back ineffective passes. Finally, we reuse that expert set with raw corpus ratings in DSL for calibration and regression debiasing, and apply DSL to pair-labeled steps for sound-step transitions. DSL&amp;#x27;s out-of-fold soundness probabilities lift best-of-K selection to match expert labels, while its doubly-robust estimators beat expert-only regression fits at small budgets and cut sound-step transition error by nearly two-thirds.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31595"&gt;arXiv:2611.31595&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31595"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Nemotron-Labs-VisualCreation: Pixel as Code for Agentic Visual Creation</title>
+      <link>https://huggingface.co/papers/2611.31358</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31358</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Guo Chen</dc:creator>
+      <dc:creator>Fuxiao Liu</dc:creator>
+      <dc:creator>Haoqin Tu</dc:creator>
+      <dc:creator>Yiyang Zhou</dc:creator>
+      <dc:creator>Andrew Tao</dc:creator>
+      <dc:creator>Bryan Catanzaro</dc:creator>
+      <dc:creator>Cihang Xie</dc:creator>
+      <dc:creator>Yuyin Zhou</dc:creator>
+      <dc:creator>Huaxiu Yao</dc:creator>
+      <dc:creator>Didong Lu</dc:creator>
+      <dc:creator>Zongxia Li</dc:creator>
+      <dc:creator>Guilin Liu</dc:creator>
+      <description>&lt;p&gt;Visual creation demands expressive imagery together with precise control over text, layout, and structure. We introduce Nemotron-Labs-VisualCreation, an agentic framework that connects these capabilities through Pixel as Code. Raster images are represented by learned discrete visual tokens, while structured artifacts use explicit programs. A shared generation-and-rendering interface connects these representations to visual feedback across images, vector graphics, webpages, and documents. A Nemotron-native harness coordinates planning and raster candidate selection, with targeted repair for editable structured and hybrid artifacts. To support this interface, we develop Nemotron-Labs-Image-Tokenizer, the autoregressive raster generator Nemotron-Labs-Image-30B-A3B, and the structured-code model family Nemotron-Labs-VisionCode. On approximately 178K images spanning six visual domains, our tokenizer improves reconstruction PSNR from 26.08 to 29.57 dB over Emu3.5 IBQ. It also provides 7.13x faster encoding and 10.93x faster decoding at batch size one on A100. In standalone evaluation, one Nemotron-Labs-VisionCode variant surpasses Kimi K3.1 Pro on the aggregate across Chart2Code, MMSVG, Design2Code, and Image2Struct. At the system level, the Nemotron-native configuration raises GenEval2 Soft-TIFA GM from 31.71 to 52.56 using the same raster generator. With our best setting, Nemotron-Labs-VisualCreation achieves performance competitive with GPT Image 2 and Nano Banana Pro across most benchmarks with available comparisons.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31358"&gt;arXiv:2611.31358&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31358"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>Lyris: Layout-Guided Long Video Generation with Persistent 3D Memory</title>
       <link>https://huggingface.co/papers/2611.31239</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.31239</guid>
@@ -21,6 +420,22 @@
       <dc:creator>Lingjie Liu</dc:creator>
       <dc:creator>Haithem Turki</dc:creator>
       <description>&lt;p&gt;Exploring a scene from as little as a single photo requires generating a long, camera-controlled walkthrough that extends far beyond what was captured, yet remains consistent upon return. Memory-based video generation methods preserve what they have already seen, but have no anchor beyond it, where the camera drifts from its path and a text prompt can name objects but not place them. Layout-conditioned methods provide such an anchor and precise control over what appears where, but rely on layouts that are typically authored by hand. Both limitations arise because, beyond what was captured, nothing anchors the video model unless a human authors one. To overcome both, we propose Lyris, a long video generation framework that never leaves the video model without an anchor: a persistent point-cloud memory where the scene has been observed or generated, and a 3D layout that a vision-language model authors where it has not. Our key insight is that the interface between the two models can be surprisingly coarse. A layout of one labeled 3D box per object is simple enough for a vision-language model to author (and for a user to edit), yet expressive enough for a video model to follow once rendered along the camera path. We demonstrate walkthroughs of over three minutes and 50 meters from a single photo, passing through doorways into rooms it never shows. When evaluated on minute-long round trips across four datasets, Lyris outperforms state-of-the-art methods by a wide margin, reducing camera error by 3.8x and improving consistency upon return by 22% on average.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31239"&gt;arXiv:2611.31239&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31239"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Let Vision-Language Models Generate Images through Their Representations</title>
+      <link>https://huggingface.co/papers/2611.31237</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.31237</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>JB Kim</dc:creator>
+      <dc:creator>Byungwoo Jeon</dc:creator>
+      <dc:creator>Kyungmin Lee</dc:creator>
+      <dc:creator>Hyeonmo Kang</dc:creator>
+      <dc:creator>Cheonbok Park</dc:creator>
+      <dc:creator>Shinyoung Joo</dc:creator>
+      <dc:creator>Jinwoo Shin</dc:creator>
+      <dc:creator>Jeonghoon Kim</dc:creator>
+      <description>&lt;p&gt;Recent unified multimodal models aim to combine visual understanding and generation within a single model, yet effectively integrating the two capabilities remains challenging. Leveraging pretrained vision-language models offers a way to build on already learned multimodal knowledge, but making this knowledge effectively accessible to visual generation remains nontrivial. We find that a central challenge lies in the heterogeneous visual representations used for understanding and generation. To address this challenge, we introduce Integral, which converts a pretrained vision-language model into a unified multimodal model by constructing a shared visual representation space across the two capabilities. Integral implements this design through two complementary components. Abstraction Fusion constructs shared visual tokens by aggregating hierarchical representations from the frozen vision encoder, while Block-wise MoT introduces a lightweight generative stream that interacts with the vision-language model only at block boundaries. Our approach effectively preserves the pretrained understanding capability while extending it to strong visual generation. Controlled comparisons further demonstrate that sharing visual representations between understanding and generation substantially improves generative learning compared with using a separate visual representation space, despite comparable reconstruction fidelity. These results suggest that representations learned by pretrained vision-language models already provide an effective foundation for visual generation.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.31237"&gt;arXiv:2611.31237&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.31237"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
@@ -529,6 +944,19 @@
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
+      <title>Context-Grounded Skill Internalization for Vision-Language Agents</title>
+      <link>https://huggingface.co/papers/2611.30075</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.30075</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Jinlin Liu</dc:creator>
+      <dc:creator>Yumeng He</dc:creator>
+      <dc:creator>Qihan Huang</dc:creator>
+      <dc:creator>Kevin Qinghong Lin</dc:creator>
+      <dc:creator>Han Peng</dc:creator>
+      <description>&lt;p&gt;Skill internalization offers a way for agents to learn useful behaviors from skills and use them without explicit guidance in context at inference time. A common approach is to generate demonstration trajectories with the skill in context and then fine-tune the same model on its own trajectories with the skill removed. However, this leads to the problem that the model may learn to reference the removed skill, which we named as context misalignment (CoMi). In this work, we first analyze agent behaviors related to CoMi under this common pipeline. Across ALFWorld, WebShop, and ARC-AGI-1, skill-removed fine-tuning consistently results in CoMi: 12.2-46.0% of test trajectories reference the removed skill. To address this problem, we develop Context-Grounded Skill Internalization (CGSI). CGSI uses a sentence detector to identify unsupported references and then masks or rewrites the selected sentences before fine-tuning. Experimental results demonstrate the effectiveness of CGSI and reveal two key findings. (i) Compared with directly fine-tuning with the skill removed, CGSI reduces CoMi at test time by 72.5-94.6% while preserving task success. (ii) Compared with existing reinforcement learning-based skill-internalization baselines, CGSI achieves comparable performance with substantially less training time. CGSI also significantly reduces processing costs compared with large-scale trajectory auditing and correction.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.30075"&gt;arXiv:2611.30075&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.30075"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
       <title>3AGameFactory-Motion: Agentic Rigging and Reliable Complex Motion Generation for Diverse 3D Assets</title>
       <link>https://huggingface.co/papers/2611.30013</link>
       <guid isPermaLink="false">hf-papers:arxiv:2611.30013</guid>
@@ -815,6 +1243,17 @@
       <dc:creator>Chengqi Zhang</dc:creator>
       <dc:creator>Guodong Long</dc:creator>
       <description>&lt;p&gt;How much interaction experience is needed to distill a capable visual agent? We study learning from few tasks and recorded interaction histories. Our framework selects representative trajectories using skill-context coverage and ordered visual-decision similarity. On-policy distillation (OPD) learns through fresh interaction on selected tasks or fresh student responses at fixed histories. Across Navigation, Sokoban, and spatial mapping, even one online training task supports transfer to other tasks. Four fixed trajectories raise a 4B student&amp;#x27;s success from 49.17% to 82.08% on standard Navigation and from 60.16% to 85.55% on Sokoban, recovering over 90% of the measured gap to a 27B teacher on these panels. On an independent Navigation panel, replay improves success from 45.83% to 76.67%, retaining 91.36% of the same-task online gain without new interaction during optimization. Training repetitions, matched supervised fine-tuning (SFT), and a 9B extension further support the value of compact experience.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.28618"&gt;arXiv:2611.28618&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.28618"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>EvoViM: Recursively Self-Evolving Visual Agents for Exploration with Deferred Queries</title>
+      <link>https://huggingface.co/papers/2611.28574</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.28574</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xinyu Cao</dc:creator>
+      <dc:creator>Tianjie Ju</dc:creator>
+      <dc:creator>Zhuosheng Zhang</dc:creator>
+      <description>&lt;p&gt;Multimodal large language model (MLLM) agents have shown promising capabilities in task-oriented environments. However, they still struggle when queries are deferred until after exploration, requiring them to retain visual evidence before knowing which details will matter. We introduce EvoViM, a recursively self-evolving framework in which a frozen multimodal model turns its own interaction experience into one visual program for memory and skills. The program retains images and computes directly on pixels, and its operations decide how this evidence is used in each task. During memory evolution, the same model traces failures in its visual trajectories to the operations that lost or misused evidence and revises them. It also rewrites the notes and analysis tools that guide later revisions, which then build on earlier findings and skip changes that have already failed. We evaluate EvoViM with three multimodal models on six tasks covering visual matching, spatial recall, and sequential decision-making, including three tasks with deferred queries. Across the six tasks, EvoViM improves the average score over AutoMem, the strongest baseline in the main comparison, by 31.3-47.6 points on held-out episodes. Programs written once from the initial environment instructions perform substantially worse, highlighting the value of interaction experience in shaping how visual evidence is retained and used. Code and dataset are available at https://evovim.github.io/.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.28574"&gt;arXiv:2611.28574&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.28574"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
       <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
     </item>
     <item>
