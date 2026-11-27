@@ -1,9 +1,296 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Hugging Face Daily Papers</title>
     <link>https://huggingface.co/papers</link>
     <description>Papers featured on Hugging Face Daily Papers, without topic filtering.</description>
     <language>en</language>
+    <item>
+      <title>DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents</title>
+      <link>https://huggingface.co/papers/2611.34852</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34852</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Han Huang</dc:creator>
+      <dc:creator>Yuchen Yan</dc:creator>
+      <dc:creator>Xingyu Wu</dc:creator>
+      <dc:creator>Yijun Li</dc:creator>
+      <dc:creator>Chao Deng</dc:creator>
+      <dc:creator>Jie Liu</dc:creator>
+      <dc:creator>Jin Ma</dc:creator>
+      <dc:creator>Yongliang Shen</dc:creator>
+      <description>&lt;p&gt;Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated knowledge-centric evaluation of which research directions a report covers and how deeply it explores them. We introduce DRBench Pro, a benchmark that makes structured knowledge coverage the primary evaluation target. Our automated pipeline builds local knowledge trees from Wikipedia and uses sampled subgraphs to generate research queries and evidence-grounded rubrics. Each rubric corresponds to a relation in the tree, preserving the structure of the knowledge being evaluated. Agents receive only the research query. This structure allows us to measure breadth across major research directions and depth along related knowledge chains, with their geometric mean giving overall coverage. The benchmark includes 144 cases across 24 domains and 44,102 rubrics. Evaluating 16 deep research agents reveals different strengths in breadth and depth, with the best-performing agent reaching 57.04% overall coverage. Rubric judgments agree closely with human annotations, and agent rankings remain stable across the tested metric configurations.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34852"&gt;arXiv:2611.34852&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34852"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models</title>
+      <link>https://huggingface.co/papers/2611.34813</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34813</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Dezhi Luo</dc:creator>
+      <dc:creator>Fengyuan Yu</dc:creator>
+      <dc:creator>Haotian Zhang</dc:creator>
+      <dc:creator>Zehong Zhao</dc:creator>
+      <dc:creator>Ran Ji</dc:creator>
+      <dc:creator>Siyuan An</dc:creator>
+      <dc:creator>Huayi Qin</dc:creator>
+      <dc:creator>Qingying Gao</dc:creator>
+      <dc:creator>Zhongang Cai</dc:creator>
+      <dc:creator>Lei Yang</dc:creator>
+      <dc:creator>Ziqi Huang</dc:creator>
+      <dc:creator>Ruisi Wang</dc:creator>
+      <dc:creator>Maijunxian Wang</dc:creator>
+      <dc:creator>Hokin Deng</dc:creator>
+      <description>&lt;p&gt;Video generation models are increasingly evaluated as visual reasoners: given a first frame and a natural-language prompt, can the model produce the video in which the specified task is carried out? The paradigm is considered advantageous because the reasoning is native to the visual medium, unfolding directly in the frames rather than through language or code. Whether this native route is in fact the more reliable path to visual reasoning has not been tested against a symbolic alternative under the same conditions. We therefore pose the same tasks, with identical inputs, output specification and evaluator, to both media: rather than denoising pixels, a coding agent writes a program that renders the answer video, which an unmodified rule-based evaluator scores. On VBVR-Pro-Bench (Xu et al., 2026), a 500-instance suite spanning five cognitive categories with symbolic ground truth, the agent receives the same first frame and prompt as the video model, with no access to ground truth, metadata or generation models, and one attempt per instance. Three closed-model agents (Codex with gpt-6-astra, Claude Code with Fable 5.1 and Gemini CLI with Gemini 3.1 Pro) score 0.923, 0.894 and 0.893, each more than 0.22 above the strongest video model. Among 23 runnable open-weight models, the best, GLM-5, reaches 0.572, above all video models except the RL-trained one. Together, we show that for tasks whose solutions can be computed from a first frame and a prompt, program synthesis is currently a substantially more reliable route to visual reasoning than video generation. We further distinguish depictive programs, which navigate the image to recover a transferable scheme, from propositional programs, which operate on hard-coded values, revealing how visual reasoning unfolds in agent-written programs and what it implies for its nature of reasoning in general.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34813"&gt;arXiv:2611.34813&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34813"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Reading, Not Adapting: Unlocking Frozen Visual Knowledge for AI-Generated Image Detection</title>
+      <link>https://huggingface.co/papers/2611.34719</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34719</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yuncheng Guo</dc:creator>
+      <dc:creator>Ying Dong</dc:creator>
+      <dc:creator>Xiaodong Gu</dc:creator>
+      <description>&lt;p&gt;Generalization to unseen image generators has driven efforts to adapt pretrained visual representations for detection. Yet recent findings show that vision foundation models already encode transferable detection knowledge, while further adaptation can impair generalization. This motivates a shift from backbone adaptation to knowledge readout. Conventional linear probing offers a direct way to read this knowledge but is limited to final-layer RGB features. Multi-cue detectors broaden the evidence base, but their designs introduce other tradeoffs: adaptation may compromise pretrained transferability, heterogeneous encoders complicate feature integration, and late fusion precludes intermediate cross-view interaction. To overcome these limitations, we propose ReMoT, a Mixture-of-Transformers-inspired framework that reads complementary knowledge from spatially aligned RGB and wavelet views within a fully frozen visual foundation. ReMoT employs staged joint attention to enable controlled local and global cross-view interaction, while learnable fusion queries progressively read complementary evidence across Transformer depth without writeback. ReMoT achieves 91.2% average accuracy across eight benchmark groups with 3,074 trainable parameters, attaining the highest overall average among the evaluated methods. These results support structured knowledge readout as a promising alternative to backbone adaptation. Code is available at https://github.com/yunncheng/ReMoT.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34719"&gt;arXiv:2611.34719&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34719"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ShowNow: Fine-Grained Speculative Streaming for Responsive World Models</title>
+      <link>https://huggingface.co/papers/2611.34693</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34693</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yiren Song</dc:creator>
+      <dc:creator>Guian Fang</dc:creator>
+      <dc:creator>Mike Zheng Shou</dc:creator>
+      <description>&lt;p&gt;Interactive world models must generate video continuously while responding promptly to user actions. Real-time throughput alone leaves input latency unresolved: coarse generation blocks delay action updates, and generation after input adds work to the response path. We introduce ShowNow, a fine-grained speculative streaming framework that uses computation available during playback to prepare action-conditioned futures before input arrives. Single-latent commitment enables frequent decisions, while configurable preparation covers one to eight actions. We construct a matched multi-future dataset to train alternative continuations from a common state; shared-history tree execution and fused commitment make their preparation efficient. On a single H100, our 5B model sustains 480p generation at 16 fps with eight prepared futures. In ViZDoom, the complete ShowNow deployment reduces median input-to-display latency from 620 to 208 ms relative to the native-block SolarWM-FT deployment. Matched-policy experiments reduce restart empty ticks from 1.56% to 0.09% (94%) and improve on-time responses to action changes. These results establish complementary roles for fine-grained commitment and advance preparation, with measured trade-offs in visual fidelity and long-horizon consistency. ShowNow turns playback-time computation into responsive visual interaction. Project: https://github.com/showlab/ShowNow.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34693"&gt;arXiv:2611.34693&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34693"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>ProxyGenBench: Benchmarking Proxy-Guided Video Generation</title>
+      <link>https://huggingface.co/papers/2611.34457</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34457</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Zhenchen Tang</dc:creator>
+      <dc:creator>Haolin Lu</dc:creator>
+      <dc:creator>Songlin Yang</dc:creator>
+      <dc:creator>Xiaotong Zhao</dc:creator>
+      <dc:creator>Ran Zhang</dc:creator>
+      <dc:creator>Bo Peng</dc:creator>
+      <dc:creator>Shuai Li</dc:creator>
+      <dc:creator>Haotian Fan</dc:creator>
+      <dc:creator>Haobin Zhong</dc:creator>
+      <dc:creator>Yanni Zhang</dc:creator>
+      <dc:creator>Songlian Li</dc:creator>
+      <dc:creator>Ning Zhang</dc:creator>
+      <dc:creator>Xun Gao</dc:creator>
+      <dc:creator>Alan Zhao</dc:creator>
+      <dc:creator>Jing Dong</dc:creator>
+      <description>&lt;p&gt;Recent video generators produce realistic videos, yet controlling how scenes unfold remains challenging. Structural proxies, such as animated 3D blockouts, guide generation by specifying scene layout, motion, camera behavior, and event order. However, these coarse inputs leave details unspecified and may contain artifacts that should not be reproduced. Successful proxy-guided generation must therefore Preserve intended structure, Complete missing content and correct proxy artifacts, and Bind text, image, and audio conditions to the right entities and events. We introduce ProxyGenBench to study these interacting requirements, with 312 evaluation cases from 60 scenes across three scene tasks and controlled variations in proxy fidelity, text detail, and multimodal inputs. We evaluate five video generators using verified, case-specific checklists. Experiments show that proxies improve spatiotemporal control, but greater proxy detail can coincide with poorer completion, while strong structural adherence does not ensure correct binding.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34457"&gt;arXiv:2611.34457&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34457"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation</title>
+      <link>https://huggingface.co/papers/2611.34290</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34290</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Modi Jin</dc:creator>
+      <dc:creator>Xuying Zhang</dc:creator>
+      <dc:creator>Yijing Guo</dc:creator>
+      <dc:creator>Haoran Li</dc:creator>
+      <dc:creator>Yanwen Ma</dc:creator>
+      <dc:creator>Jing Wang</dc:creator>
+      <dc:creator>Chenyu Ge</dc:creator>
+      <dc:creator>Ming-Ming Cheng</dc:creator>
+      <dc:creator>Haoyang Huang</dc:creator>
+      <description>&lt;p&gt;Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited. We introduce StateWeaver, which combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance. Active States translate state discrepancies identified during review into concrete visual asset requirements that guide reference construction, validation, and regeneration, preserving identity and already-correct content while repairing target attributes. Confirmed generation results are linked to the corresponding asset states, story time, and reference versions for verification and reuse by subsequent shots. Hierarchical Collaboration isolates execution contexts by task, clip, and repair round, and uses hierarchical memory to organize this process across multiple sets. Across multiple benchmarks, StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34290"&gt;arXiv:2611.34290&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34290"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms</title>
+      <link>https://huggingface.co/papers/2611.34232</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34232</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Hui Shen</dc:creator>
+      <dc:creator>Yunta Hsieh</dc:creator>
+      <dc:creator>Jianing Ma</dc:creator>
+      <dc:creator>Zhuoran Yin</dc:creator>
+      <dc:creator>Zhuhan Bao</dc:creator>
+      <dc:creator>Ziyuan Liu</dc:creator>
+      <dc:creator>Qi Han</dc:creator>
+      <dc:creator>Xiuqi Xu</dc:creator>
+      <dc:creator>Xianbang Wang</dc:creator>
+      <dc:creator>Wenhao Chai</dc:creator>
+      <dc:creator>Sihan Xu</dc:creator>
+      <dc:creator>Chenyang Zhao</dc:creator>
+      <dc:creator>Yanheng Shang</dc:creator>
+      <dc:creator>Dongfu Jiang</dc:creator>
+      <dc:creator>Rui Sun</dc:creator>
+      <dc:creator>Xingzhi Li</dc:creator>
+      <dc:creator>Chenqi Yin</dc:creator>
+      <dc:creator>Zesen Zhao</dc:creator>
+      <dc:creator>Boyuan Zheng</dc:creator>
+      <dc:creator>Jisen Li</dc:creator>
+      <dc:creator>Xiaoxia Wu</dc:creator>
+      <dc:creator>Ruoyan Zhang</dc:creator>
+      <dc:creator>Ruiyao Liu</dc:creator>
+      <dc:creator>Jing Xiong</dc:creator>
+      <dc:creator>He Xiao</dc:creator>
+      <dc:creator>Nan Zheng</dc:creator>
+      <dc:creator>Hangxiang Chen</dc:creator>
+      <dc:creator>Shengyang Tao</dc:creator>
+      <dc:creator>Deyang Luorong</dc:creator>
+      <dc:creator>Yifeng Liu</dc:creator>
+      <dc:creator>Jingxuan Zhang</dc:creator>
+      <dc:creator>Chaofan Tao</dc:creator>
+      <dc:creator>Yuren Wang</dc:creator>
+      <dc:creator>Jiaqi Mo</dc:creator>
+      <dc:creator>Rui Hu</dc:creator>
+      <dc:creator>Xing Wei</dc:creator>
+      <dc:creator>Xiaofeng Liu</dc:creator>
+      <dc:creator>Xin Xu</dc:creator>
+      <dc:creator>Han Wu</dc:creator>
+      <dc:creator>Mengyao Wen</dc:creator>
+      <dc:creator>Guobin Zhang</dc:creator>
+      <dc:creator>Shatong Zhu</dc:creator>
+      <dc:creator>Hei Ting Una Chan</dc:creator>
+      <dc:creator>Sicheng Chen</dc:creator>
+      <dc:creator>Kai Zhang</dc:creator>
+      <dc:creator>Mengkang Hu</dc:creator>
+      <dc:creator>Zhongwei Wan</dc:creator>
+      <dc:creator>Xin Wang</dc:creator>
+      <dc:creator>Chuanyang Zheng</dc:creator>
+      <dc:creator>Ziheng Zhang</dc:creator>
+      <dc:creator>Hengyuan Zhang</dc:creator>
+      <dc:creator>Zunhai Su</dc:creator>
+      <dc:creator>Kanzhi Cheng</dc:creator>
+      <dc:creator>Dehan Kong</dc:creator>
+      <dc:creator>Yian Wang</dc:creator>
+      <dc:creator>Hanrong Zhang</dc:creator>
+      <dc:creator>Jiawei Lu</dc:creator>
+      <dc:creator>Yifan Zhang</dc:creator>
+      <dc:creator>Junnan Li</dc:creator>
+      <dc:creator>Changyi Yang</dc:creator>
+      <dc:creator>Jintao Qu</dc:creator>
+      <dc:creator>Wenyao Gao</dc:creator>
+      <dc:creator>Jiaxuan Luo</dc:creator>
+      <dc:creator>Jiaxin Deng</dc:creator>
+      <dc:creator>Yuhao Chen</dc:creator>
+      <dc:creator>Xuesong Ye</dc:creator>
+      <dc:creator>Jingwen Gu</dc:creator>
+      <dc:creator>Yichi Zhang</dc:creator>
+      <dc:creator>Qun Lou</dc:creator>
+      <dc:creator>Shen Yan</dc:creator>
+      <dc:creator>Ben Athiwaratkun</dc:creator>
+      <dc:creator>Qiushi Sun</dc:creator>
+      <dc:creator>Mi Zhang</dc:creator>
+      <dc:creator>Ping Luo</dc:creator>
+      <dc:creator>Wenhu Chen</dc:creator>
+      <dc:creator>Ngai Wong</dc:creator>
+      <description>&lt;p&gt;Computer-using agents are increasingly expected to complete realistic user goals rather than isolated GUI actions. However, existing benchmarks typically isolate web, mobile, or desktop environments, leaving it unclear whether a single generalist agent can execute long-horizon workflows that span multiple operating systems and persistent application states. We introduce OS-Omni, a live cross-platform benchmark and execution environment for evaluating computer-using agents across Windows, Ubuntu, macOS, iOS, Android, and Web environments. OS-Omni is released in versioned waves of 300 tasks each; this paper focuses on the first release, v1, which contains 48 tasks per platform and 12 cross-platform workflows that pair a desktop with an Android phone. OS-Omni provides reproducible initialization, platform-specific adapters, trajectory logging, and executable final-state evaluators, and includes controlled service-backed applications for workflows involving account, cart, budget, calendar, message, and other persistent state. Human studies show that OS-Omni tasks require 67.54 interaction steps, substantially exceeding OSWorld references of 15.0 steps. On v1, the strongest evaluated agent, Claude Opus 5.5, reaches 68.5% average success, trailing the 77.3% human reference by 8.8 points; the gap is uneven across platforms, with frontier models exceeding humans on Linux but trailing them by more than 25 points on iOS and macOS. These results indicate that current agents remain far from platform-robust, long-horizon computer use, especially when success requires sustained state tracking and durable final-state changes.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34232"&gt;arXiv:2611.34232&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34232"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Stable Gated DeltaNet-2: Understanding and Mitigating Recurrent State Instability</title>
+      <link>https://huggingface.co/papers/2611.34051</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.34051</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xichong Zhang</dc:creator>
+      <dc:creator>Xixuan Hao</dc:creator>
+      <dc:creator>Zhichen Liu</dc:creator>
+      <dc:creator>Le Zhou</dc:creator>
+      <dc:creator>Zeyu Zhang</dc:creator>
+      <dc:creator>Boyu Chen</dc:creator>
+      <dc:creator>Mingfei Lu</dc:creator>
+      <dc:creator>Zehao Lin</dc:creator>
+      <dc:creator>Bo Tang</dc:creator>
+      <dc:creator>Yonggang Zhang</dc:creator>
+      <dc:creator>Linyun Liu</dc:creator>
+      <dc:creator>Feiyu Xiong</dc:creator>
+      <dc:creator>Jianlin Su</dc:creator>
+      <dc:creator>Zhiyu Li</dc:creator>
+      <description>&lt;p&gt;Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states. Gated DeltaNet-2 (GDN-2) introduces independent channel-wise control over erasure and writing, enhancing state-update expressiveness and in-context retrieval, yet it suffers from training failures during long-context training. We trace these failures to the asymmetry between reading and modification directions during erasure, which yields non-normal erase operators whose directional gains accumulate across tokens, triggering exponential state growth even without new writes. To resolve this, we propose , employing symmetric erasure to ensure non-expansive state propagation and decay-regulated residual writing to preserve writing flexibility. Theoretically, we establish an O(T) upper bound on recurrent state growth while retaining chunkwise parallel computation. Experiments on ~1.6B parameter models show that  achieves stable training alongside improved long-context retrieval. Compared to GDN-2, it boosts the 128K average RULER score by 6.80 points in the recurrent setting and average accuracy across nine downstream tasks by 0.62 points in the hybrid setting.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.34051"&gt;arXiv:2611.34051&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.34051"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Decision-Native Multimodal Clinical Modeling via Anatomical Grounding and Confidence Calibration</title>
+      <link>https://huggingface.co/papers/2611.32993</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32993</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Juntao Jiang</dc:creator>
+      <dc:creator>Wenqi Zhong</dc:creator>
+      <dc:creator>Guangyu Guo</dc:creator>
+      <dc:creator>Dexia Chen</dc:creator>
+      <dc:creator>Yilong Hu</dc:creator>
+      <dc:creator>Yunhao Bai</dc:creator>
+      <dc:creator>Zhenyu Yi</dc:creator>
+      <dc:creator>Jianwei Xu</dc:creator>
+      <dc:creator>Tony C. W. Mok</dc:creator>
+      <dc:creator>Muxuan Gao</dc:creator>
+      <dc:creator>Ling Zhang</dc:creator>
+      <dc:creator>Yong Liu</dc:creator>
+      <dc:creator>Jiangning Zhang</dc:creator>
+      <dc:creator>Zhongwei Qiu</dc:creator>
+      <description>&lt;p&gt;Structured clinical decisions from volumetric computed tomography (CT) require anatomically grounded predictions and calibrated confidence estimates. However, existing 3D medical multimodal models often suffer from uncalibrated autoregressive decoding and shortcut reliance on irrelevant anatomical regions. We introduce Radev, a decision-native multimodal model that integrates anatomy-guided visual compression, direct candidate prediction, and counterfactual confidence supervision. To bridge global context with fine-grained slice details, a frozen 3D encoder extracts reusable organ-level features, which are dynamically selected by the query to attend to 2D slice features within predicted anatomical bounds. The resulting compact visual tokens enable the language backbone to estimate candidate probabilities in a single forward pass without autoregressive decoding. We further propose Counterfactual-Calibrated Training (CCT) to compare predictions under intact and intervened organ representations. CCT encourages confidence to decrease when removing target-organ evidence degrades decision quality, while penalizing excessive confidence drops under unrelated-organ removal. To facilitate rigorous evaluation, we construct CT-Verdict, a comprehensive benchmark spanning binary finding presence, multiple-choice questions, and ordinal severity assessment across both in-distribution and external cohorts. Extensive experiments demonstrate that Radev significantly outperforms state-of-the-art methods in both decision accuracy and confidence calibration, while generalizing robustly under distribution shifts. Project page at https://juntaojianggavin.github.io/projects/Radev/&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32993"&gt;arXiv:2611.32993&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32993"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation</title>
+      <link>https://huggingface.co/papers/2611.32238</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.32238</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Kaipeng Fang</dc:creator>
+      <dc:creator>Yuhao Wang</dc:creator>
+      <dc:creator>Ji Zhang</dc:creator>
+      <dc:creator>Yunsong Zhou</dc:creator>
+      <dc:creator>Jingkuan Song</dc:creator>
+      <dc:creator>Lianli Gao</dc:creator>
+      <description>&lt;p&gt;Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, while the agent may invoke it outside this region. We call this region the policy&amp;#x27;s handoff boundary. Existing whole-task policies typically have handoff boundaries that are narrow and difficult for an agent to characterize, making reliable coordination challenging. We propose Boundary-Aware Policy Learning, which explicitly shapes and then expands the handoff boundary of a visuomotor policy. First, Boundary-Explicit Training fine-tunes the policy on contact segments with diverse start poses, yielding a wide and well-defined boundary that can be communicated to the agent through a simple handoff protocol. Second, Boundary-Expanding Self-Improvement retrains the policy on curated successful system rollouts, extending the boundary toward earlier stages of each task and allowing the agent to hand over sooner with fewer language-model calls. Across RoboTwin 2.0 and RoboDojo, our system outperforms the strongest baseline by over 26 percentage points, reaching 98.4% success in randomized RoboTwin 2.0 scenes, while further reducing its API cost and execution time by 41.3% and 37.5%, respectively. These results suggest that the key to robust agent-policy orchestration lies not only in improving either component individually, but also in explicitly shaping the boundary between them.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.32238"&gt;arXiv:2611.32238&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.32238"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>CARE-3D: Reinforcement Learning for Evidence Grounded Agentic Reasoning in Situated 3D Scenes</title>
+      <link>https://huggingface.co/papers/2611.29969</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.29969</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Xiaoqian Hu</dc:creator>
+      <dc:creator>Ruihong Qiu</dc:creator>
+      <dc:creator>Yanran Tang</dc:creator>
+      <dc:creator>Sen Wang</dc:creator>
+      <description>&lt;p&gt;Situated 3D reasoning requires embodied agents to interpret objects, scene geometry, and viewpoint dependent spatial relations. Existing methods learn grounded interactions from supervised traces, but largely imitate prescribed evidence acquisition patterns rather than optimizing the support that the returned evidence provides for the correct answer. Moreover, outcome rewards provide limited credit for intermediate tool choices and may leave infrequent tools underexplored. An effective agent should instead adaptively decide what to ground, which tool to invoke, and how to assess the utility of returned evidence. To this end, this paper presents CARE-3D, a reinforcement post-training framework for adaptive grounded reasoning. Supervised fine-tuning (SFT) on grounding instructions first establishes valid interactions, after which Group Relative Policy Optimization (GRPO) optimizes the agent while keeping the 3D grounding module frozen. CARE-3D combines Counterfactual Attribution of Returned Evidence for evidence sensitive credit assignment, and Group Coverage Sampling to preserve tool coverage. Experiments on MSQA and Beacon3D show consistent gains over SFT and GRPO using only answer and format rewards, especially in spatial reasoning and grounding answer coherence. Our code is available at https://github.com/xiaoqian-UQ/CARE-3D{CARE-3D}.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.29969"&gt;arXiv:2611.29969&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.29969"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>Who Makes the Decision? Auditing an Agentic LLM Pipeline for Illicit Cryptocurrency Transaction Monitoring</title>
+      <link>https://huggingface.co/papers/2611.29829</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.29829</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Vaishnavi Chaughule</dc:creator>
+      <dc:creator>Yuchen Zhang</dc:creator>
+      <dc:creator>Mohammed Ahnaf Tajwar</dc:creator>
+      <dc:creator>Sai Akshay Menta</dc:creator>
+      <dc:creator>Saanidhya Vats</dc:creator>
+      <dc:creator>Vinija Jain</dc:creator>
+      <dc:creator>Aman Chadha</dc:creator>
+      <dc:creator>Divya Chaudhary</dc:creator>
+      <description>&lt;p&gt;Agentic pipelines that combine graph detectors, deterministic rules, retrieval-augmented generation and an LLM judge are being proposed to monitor illicit cryptocurrency flows and to write regulation-citing justifications for analysts. They are evaluated on end-to-end accuracy or on the quality of those justifications, and neither shows which component made a decision. We audit such a pipeline on the Elliptic++ Bitcoin dataset with decision-source attribution, a trace-level protocol with three layers: per-case actual causation, interventional Shapley credit, and mediation of upstream risk scores. A deterministic wallet-score override carries about 94% of the credit for flags, and a verification gate cancels most of the judge&amp;#x27;s own flags, which fall on licit transactions. Testing the judge alone over 76 evidence bundles, four backbones and two prompts, we find that it follows an injected risk score on the anonymous transaction features it is given, although stronger models decide correctly when the facts are explicit; that a context too short for the system prompt leaves it with no verdict at all; and that it cites regulatory clauses that do not apply, which a substring-based citation check accepts. Hiding the score does not fix the judge, because evidence gathered with the score visible still encodes it. For illicit-activity monitoring, an LLM&amp;#x27;s justification should therefore not be read as evidence of which component flagged a transaction.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.29829"&gt;arXiv:2611.29829&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.29829"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
+    <item>
+      <title>DetourBench: Trajectory-Level Evaluation of Interactive Agents with Exact Minimum-Action Bounds</title>
+      <link>https://huggingface.co/papers/2611.20844</link>
+      <guid isPermaLink="false">hf-papers:arxiv:2611.20844</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Hanlin Tian</dc:creator>
+      <dc:creator>Sihan Zhu</dc:creator>
+      <dc:creator>Zhao Yang</dc:creator>
+      <dc:creator>Yuxiang Wang</dc:creator>
+      <dc:creator>Zhiquan Hu</dc:creator>
+      <dc:creator>Yu Mi</dc:creator>
+      <dc:creator>Hongquan Zhu</dc:creator>
+      <dc:creator>Qiufei Hu</dc:creator>
+      <description>&lt;p&gt;Benchmarks judge language-model agents mainly by whether they reach the correct final state, not by how they got there. Endpoint scoring cannot separate an agent that retrieved exactly the evidence a decision required from one that read most of the environment, nor an agent that never located the evidence from one that stopped a single action short. Settling this needs a reference cost, and authored solutions establish only that a task is solvable, not that no shorter route exists.
+  We present DetourBench, which constrains the environment until that minimum is computable. Each task is a finite, partially observable transition system with unit-cost accesses whose resources become globally addressable after discovery. Exhaustive search yields the full-information minimum action count L_0 with a replayable witness; from graph-recoverable terminal states it also yields exact residual work R_T, which separates an episode that stopped one access short from one that wandered, while an irreversible wrong commitment is recorded as having no finite residual distance rather than assigned one. Success, attainment, residual progress, and normalized detour are reported separately. Across 375 scored episodes --- five model endpoints, 25 integrated tasks, three repeats --- success ranges from 58.7% to 96.0% while conditional attainment ranges from 0.803 to 0.890 and orders the models differently. Among recoverable failures, residual work separates near-complete trajectories from costly incompletion and from irreversible commitment. We open-source the instances, oracle witnesses, and evaluation harness at https://github.com/DatagridsAI/DetourBench.&lt;/p&gt;&lt;p&gt;&lt;a href="https://arxiv.org/abs/2611.20844"&gt;arXiv:2611.20844&lt;/a&gt; | &lt;a href="https://arxiv.org/pdf/2611.20844"&gt;PDF&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="https://huggingface.co/papers">Hugging Face Daily Papers</source>
+    </item>
     </channel>
 </rss>
