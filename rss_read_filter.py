@@ -273,12 +273,16 @@ def _paths(root: Path, patterns: list[str]) -> list[Path]:
 
 
 def _active_paths(root: Path, patterns: list[str]) -> list[Path]:
-    # Retain the last published versions of MDPI Sustainability (ISSN 2071-1050).
+    # Preserve the last published versions of retired journal feeds.
     frozen = {
         root / 'sustainability.xml',
         root / 'sustainability-current-issue.xml',
         root / 'official-feeds/sustainability.xml',
         root / 'journal-feeds/sustainability.xml',
+        root / 'buildings.xml',
+        root / 'buildings-current-issue.xml',
+        root / 'official-feeds/buildings.xml',
+        root / 'journal-feeds/buildings.xml',
     }
     config_path = root / 'conference-config.json'
     if config_path.exists():

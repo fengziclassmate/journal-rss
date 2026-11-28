@@ -98,32 +98,27 @@ class FeedLanguageTests(unittest.TestCase):
             'true',
         )
 
-    def test_buildings_has_latest_and_current_issue_feeds(self):
-        feeds = {item['output']: item for item in CROSSREF_JOURNALS if item['issn'] == '2075-5309'}
-
-        self.assertEqual(set(feeds), {'buildings.xml', 'buildings-current-issue.xml'})
-        self.assertEqual(feeds['buildings.xml']['from_date'], '2026-06-01')
-        self.assertNotIn('current_issue_only', feeds['buildings.xml'])
-        self.assertEqual(feeds['buildings-current-issue.xml']['current_issue_only'], 'true')
-
-    def test_mdpi_sustainability_is_archived_at_existing_urls(self):
+    def test_retired_journals_are_archived_at_existing_urls(self):
         from official_feed_proxy import load_config
         from rss_read_filter import _active_paths
 
         root = Path(__file__).resolve().parents[1]
         mirrors = load_config(root / 'official-feed-config.json')
-        self.assertFalse(any(journal['issn'] == '2071-1050' for journal in CROSSREF_JOURNALS))
-        self.assertFalse(any(mirror['source_url'] == 'https://www.mdpi.com/rss/journal/sustainability'
-                             for mirror in mirrors))
-        archived = {root / path for path in (
-            'sustainability.xml', 'sustainability-current-issue.xml',
-            'journal-feeds/sustainability.xml', 'official-feeds/sustainability.xml',
-        )}
-        for path in archived:
-            self.assertEqual(ET.parse(path).getroot().tag, 'rss')
         active = _active_paths(root, ['*.xml', 'journal-feeds/*.xml', 'official-feeds/*.xml'])
-        self.assertTrue(archived.isdisjoint(active))
-        for name in ('nature-sustainability', 'npjus', 'buildings', 'smart-cities'):
+        for slug, issn in [('sustainability', '2071-1050'), ('buildings', '2075-5309')]:
+            with self.subTest(journal=slug):
+                self.assertFalse(any(journal['issn'] == issn for journal in CROSSREF_JOURNALS))
+                self.assertFalse(any(mirror['source_url'] == f'https://www.mdpi.com/rss/journal/{slug}'
+                                     for mirror in mirrors))
+                archived = {root / path for path in (
+                    f'{slug}.xml', f'{slug}-current-issue.xml',
+                    f'journal-feeds/{slug}.xml', f'official-feeds/{slug}.xml',
+                )}
+                for path in archived:
+                    self.assertEqual(ET.parse(path).getroot().tag, 'rss')
+                self.assertTrue(archived.isdisjoint(active))
+        for name in ('nature-sustainability', 'npjus', 'buildings-cities',
+                     'building-and-environment', 'energy-and-buildings', 'smart-cities'):
             self.assertIn(root / f'journal-feeds/{name}.xml', active)
 
     def test_every_custom_journal_has_an_official_feed_for_priority_deduplication(self):
