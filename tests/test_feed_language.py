@@ -106,21 +106,25 @@ class FeedLanguageTests(unittest.TestCase):
         self.assertNotIn('current_issue_only', feeds['buildings.xml'])
         self.assertEqual(feeds['buildings-current-issue.xml']['current_issue_only'], 'true')
 
-    def test_sustainability_has_latest_and_current_issue_feeds(self):
-        feeds = {item['output']: item for item in CROSSREF_JOURNALS if item['issn'] == '2071-1050'}
+    def test_mdpi_sustainability_is_archived_at_existing_urls(self):
+        from official_feed_proxy import load_config
+        from rss_read_filter import _active_paths
 
-        self.assertEqual(
-            set(feeds),
-            {'sustainability.xml', 'sustainability-current-issue.xml'},
-        )
-        self.assertEqual(feeds['sustainability.xml']['from_date'], '2026-06-01')
-        self.assertNotIn('max_items', feeds['sustainability.xml'])
-        self.assertNotIn('current_issue_only', feeds['sustainability.xml'])
-        self.assertEqual(
-            feeds['sustainability-current-issue.xml']['current_issue_only'],
-            'true',
-        )
-        self.assertNotIn('max_items', feeds['sustainability-current-issue.xml'])
+        root = Path(__file__).resolve().parents[1]
+        mirrors = load_config(root / 'official-feed-config.json')
+        self.assertFalse(any(journal['issn'] == '2071-1050' for journal in CROSSREF_JOURNALS))
+        self.assertFalse(any(mirror['source_url'] == 'https://www.mdpi.com/rss/journal/sustainability'
+                             for mirror in mirrors))
+        archived = {root / path for path in (
+            'sustainability.xml', 'sustainability-current-issue.xml',
+            'journal-feeds/sustainability.xml', 'official-feeds/sustainability.xml',
+        )}
+        for path in archived:
+            self.assertEqual(ET.parse(path).getroot().tag, 'rss')
+        active = _active_paths(root, ['*.xml', 'journal-feeds/*.xml', 'official-feeds/*.xml'])
+        self.assertTrue(archived.isdisjoint(active))
+        for name in ('nature-sustainability', 'npjus', 'buildings', 'smart-cities'):
+            self.assertIn(root / f'journal-feeds/{name}.xml', active)
 
     def test_every_custom_journal_has_an_official_feed_for_priority_deduplication(self):
         self.assertEqual(

@@ -273,14 +273,20 @@ def _paths(root: Path, patterns: list[str]) -> list[Path]:
 
 
 def _active_paths(root: Path, patterns: list[str]) -> list[Path]:
+    # Retain the last published versions of MDPI Sustainability (ISSN 2071-1050).
+    frozen = {
+        root / 'sustainability.xml',
+        root / 'sustainability-current-issue.xml',
+        root / 'official-feeds/sustainability.xml',
+        root / 'journal-feeds/sustainability.xml',
+    }
     config_path = root / 'conference-config.json'
-    if not config_path.exists():
-        return _paths(root, patterns)
-    config = json.loads(config_path.read_text('utf-8'))
-    paused = set(config.get('paused_conferences', []))
-    if not config.get('daily_digest_enabled', True):
-        paused.add('top-conference-daily')
-    frozen = {root / 'conference-feeds' / f'{slug}.xml' for slug in paused}
+    if config_path.exists():
+        config = json.loads(config_path.read_text('utf-8'))
+        paused = set(config.get('paused_conferences', []))
+        if not config.get('daily_digest_enabled', True):
+            paused.add('top-conference-daily')
+        frozen.update(root / 'conference-feeds' / f'{slug}.xml' for slug in paused)
     return [path for path in _paths(root, patterns) if path not in frozen]
 
 

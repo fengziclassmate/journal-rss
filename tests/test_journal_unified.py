@@ -27,8 +27,8 @@ class UnifiedJournalTests(unittest.TestCase):
 
     def test_complete_one_to_one_inventory(self):
         specs = journal_specs()
-        self.assertEqual(len(specs), 74)
-        self.assertEqual(sum(bool(s['official']) for s in specs), 73)
+        self.assertEqual(len(specs), 73)
+        self.assertEqual(sum(bool(s['official']) for s in specs), 72)
         self.assertTrue(all('_FZTX' not in s['name'] for s in specs))
 
     def test_jstars_combines_independent_collection_and_official_mirror(self):
