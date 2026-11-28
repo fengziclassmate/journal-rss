@@ -283,6 +283,9 @@ def _active_paths(root: Path, patterns: list[str]) -> list[Path]:
         root / 'buildings-current-issue.xml',
         root / 'official-feeds/buildings.xml',
         root / 'journal-feeds/buildings.xml',
+        root / 'smart-cities.xml',
+        root / 'official-feeds/051-smart-cities.xml',
+        root / 'journal-feeds/smart-cities.xml',
     }
     config_path = root / 'conference-config.json'
     if config_path.exists():

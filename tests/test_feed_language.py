@@ -105,20 +105,25 @@ class FeedLanguageTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         mirrors = load_config(root / 'official-feed-config.json')
         active = _active_paths(root, ['*.xml', 'journal-feeds/*.xml', 'official-feeds/*.xml'])
-        for slug, issn in [('sustainability', '2071-1050'), ('buildings', '2075-5309')]:
+        for slug, issn, publisher_slug, mirror_name, current_issue in [
+            ('sustainability', '2071-1050', 'sustainability', 'sustainability', True),
+            ('buildings', '2075-5309', 'buildings', 'buildings', True),
+            ('smart-cities', '2624-6511', 'smartcities', '051-smart-cities', False),
+        ]:
             with self.subTest(journal=slug):
                 self.assertFalse(any(journal['issn'] == issn for journal in CROSSREF_JOURNALS))
-                self.assertFalse(any(mirror['source_url'] == f'https://www.mdpi.com/rss/journal/{slug}'
+                self.assertFalse(any(mirror['source_url'] == f'https://www.mdpi.com/rss/journal/{publisher_slug}'
                                      for mirror in mirrors))
                 archived = {root / path for path in (
-                    f'{slug}.xml', f'{slug}-current-issue.xml',
-                    f'journal-feeds/{slug}.xml', f'official-feeds/{slug}.xml',
+                    f'{slug}.xml', f'journal-feeds/{slug}.xml', f'official-feeds/{mirror_name}.xml',
                 )}
+                if current_issue:
+                    archived.add(root / f'{slug}-current-issue.xml')
                 for path in archived:
                     self.assertEqual(ET.parse(path).getroot().tag, 'rss')
                 self.assertTrue(archived.isdisjoint(active))
         for name in ('nature-sustainability', 'npjus', 'buildings-cities',
-                     'building-and-environment', 'energy-and-buildings', 'smart-cities'):
+                     'building-and-environment', 'energy-and-buildings', 'nature-cities'):
             self.assertIn(root / f'journal-feeds/{name}.xml', active)
 
     def test_every_custom_journal_has_an_official_feed_for_priority_deduplication(self):
