@@ -248,6 +248,8 @@ jobs:
           cp -r arxiv-email-analysis _site/
           cp conference-feeds.opml _site/
           cp -r conference-feeds _site/
+          # Keep the last public versions of paused feeds at their existing URLs.
+          python -m zipfile -e paused-conference-feeds.zip _site
           cp -r official-feeds _site/
 
       - name: Configure Pages

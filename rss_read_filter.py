@@ -272,6 +272,18 @@ def _paths(root: Path, patterns: list[str]) -> list[Path]:
     return sorted({path for pattern in patterns for path in root.glob(pattern) if path.is_file()})
 
 
+def _active_paths(root: Path, patterns: list[str]) -> list[Path]:
+    config_path = root / 'conference-config.json'
+    if not config_path.exists():
+        return _paths(root, patterns)
+    config = json.loads(config_path.read_text('utf-8'))
+    paused = set(config.get('paused_conferences', []))
+    if not config.get('daily_digest_enabled', True):
+        paused.add('top-conference-daily')
+    frozen = {root / 'conference-feeds' / f'{slug}.xml' for slug in paused}
+    return [path for path in _paths(root, patterns) if path not in frozen]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -286,7 +298,7 @@ def main() -> None:
         suppression_path = args.root / suppression_path
     suppressed = load_suppression(suppression_path, key)
     patterns = args.patterns or ["*.xml", "conference-feeds/*.xml", "official-feeds/*.xml", "journal-feeds/*.xml"]
-    results = [filter_feed(path, suppressed, key) for path in _paths(args.root, patterns)]
+    results = [filter_feed(path, suppressed, key) for path in _active_paths(args.root, patterns)]
     print(
         json.dumps(
             {
@@ -308,7 +320,7 @@ def main() -> None:
 def write_receipt(root=Path('.')):
     root=Path(root)
     suppression=root/'read-suppression.json'
-    paths=_paths(root,['*.xml','conference-feeds/*.xml','official-feeds/*.xml','journal-feeds/*.xml'])
+    paths=_active_paths(root,['*.xml','conference-feeds/*.xml','official-feeds/*.xml','journal-feeds/*.xml'])
     write_json(root/'read-filter-status.json', {
         'version':2,
         'suppression_sha256':suppression_digest(suppression),

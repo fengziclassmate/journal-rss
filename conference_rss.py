@@ -951,7 +951,11 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
     counts: dict[str, int] = {}
     all_papers: list[ConferencePaper] = []
     preserved_feeds: list[str] = []
+    paused = set(config.get("paused_conferences", []))
     for conference in config["conferences"]:
+        if conference["slug"] in paused:
+            print(f"{conference['acronym']}: paused; existing feed kept")
+            continue
         from rss_health import record
         failed = False
         initial_failures = client.failures
@@ -990,28 +994,27 @@ def run(config_path: Path, output_dir: Path, start_year: int | None = None, end_
         suffix = " (preserved fallback)" if preserved else ""
         print(f"{conference['acronym']}: {count} papers{suffix}")
         all_papers.extend(papers)
-    selected: list[ConferencePaper] = []
-    digest_enabled = config.get('daily_digest_enabled', True)
-    for paper in (deduplicate(all_papers) if digest_enabled else []):
-        paper.matched_keywords = match_keywords(paper, config["keywords"])
-        if paper.matched_keywords:
-            selected.append(paper)
-    digest_url = f"{config['base_url']}/top-conference-daily.xml"
-    digest_papers = [] if preserved_feeds else selected
-    digest_count, digest_preserved = write_rss_preserving_existing(
-        digest_papers, output_dir / "top-conference-daily.xml", title="Top Conference Daily Digest",
-        link=digest_url,
-        description="Keyword-filtered and deduplicated papers from 35 conference feeds.",
-        guid_scope="conference:digest",
-    )
-    counts["top-conference-daily"] = digest_count
-    if not digest_enabled:
-        print('Top Conference Daily Digest: retired; existing entries preserved')
-    elif digest_preserved:
-        print(
-            "Top Conference Daily Digest: "
-            f"{digest_count} papers (preserved because {len(preserved_feeds)} source feeds failed)"
+    if config.get('daily_digest_enabled', True):
+        selected: list[ConferencePaper] = []
+        for paper in deduplicate(all_papers):
+            paper.matched_keywords = match_keywords(paper, config["keywords"])
+            if paper.matched_keywords:
+                selected.append(paper)
+        digest_url = f"{config['base_url']}/top-conference-daily.xml"
+        digest_count, digest_preserved = write_rss_preserving_existing(
+            [] if preserved_feeds else selected, output_dir / "top-conference-daily.xml",
+            title="Top Conference Daily Digest", link=digest_url,
+            description="Keyword-filtered and deduplicated papers from the active conference feeds.",
+            guid_scope="conference:digest",
         )
+        counts["top-conference-daily"] = digest_count
+        if digest_preserved:
+            print(
+                "Top Conference Daily Digest: "
+                f"{digest_count} papers (preserved because {len(preserved_feeds)} source feeds failed)"
+            )
+    else:
+        print('Top Conference Daily Digest: retired; existing entries preserved')
     write_opml(config, output_dir.parent / "conference-feeds.opml")
     write_index(config, output_dir / "index.html")
     return counts
@@ -1025,7 +1028,7 @@ def main() -> None:
     parser.add_argument("--end-year", type=int)
     args = parser.parse_args()
     counts = run(args.config, args.output_dir, args.start_year, args.end_year)
-    print(f"Generated {len(counts) - 1} conference feeds and one digest ({sum(counts.values())} feed items).")
+    print(f"Processed {len(counts)} active conference RSS outputs ({sum(counts.values())} feed items).")
 
 
 if __name__ == "__main__":
